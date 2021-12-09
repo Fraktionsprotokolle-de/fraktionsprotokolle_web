@@ -24,10 +24,10 @@ Wir freuen uns über jede Anregung zu diesem Repositorium und darüber wie wir e
 
 ## Kontakt
 
-**Dr. Sven Jüngerkes**
-Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)
-Schiffbauerdamm 40
-10117 Berlin
-juengerkes@kgparl.de
-Telefon 030/206 33 94-32 - Fax 030/206 33 94-50
+**Dr. Sven Jüngerkes**\
+Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)\
+Schiffbauerdamm 40\
+10117 Berlin\
+juengerkes@kgparl.de\
+Telefon 030/206 33 94-32 - Fax 030/206 33 94-50\
 http://www.kgparl.de – https://fraktionsprotokolle.de
