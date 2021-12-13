@@ -12,7 +12,7 @@ In diesem öffentlichen Repositorium werden alle TEI-XML-Dateien der edierten Si
 
 ## Veröffentlichungszyklus
 
-Updates für dieses Repositorium werden veröffentlicht, sobald neue oder geänderte Dateien auf fraktionsprotokolle.de zu finden sind. Die Veröffentlichungen umfassen Korrekturen an bereits veröffentlichten und edierten Protokollen, digitalisierte und in XML konvertierte Printveröffentlichung und neue Publikationen. Sobald die Retrodigitalisierung und semantische Erschließung der bislang auf PDF basierenden alten Edition abgeschlossen ist, werden die Sitzungsprotokolle für neue Wahlperioden und Fraktionen bzw. Gruppen im Drei-Jahres-Rhythmus veröffentlicht.
+Updates für dieses Repositorium werden veröffentlicht, sobald neue oder geänderte Dateien auf fraktionsprotokolle.de zu finden sind. Die Veröffentlichungen umfassen Korrekturen an bereits veröffentlichten und edierten Protokollen, digitalisierte und in XML konvertierte Printveröffentlichung und neue Publikationen. Sobald die Retrodigitalisierung und semantische Erschließung der bislang auf PDF basierenden alten Edition abgeschlossen ist, werden die Sitzungsprotokolle für neue Wahlperioden und Fraktionen bzw. Gruppen voraussichtlich im Drei-Jahres-Rhythmus veröffentlicht.
 
 Neue (substantielle) Veröffentlichungen werden entsprechend als Release in Github gekennzeichnet.
 
