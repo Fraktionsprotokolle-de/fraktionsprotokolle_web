@@ -1,3 +1,5 @@
+<img src="https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/blob/main/logos/logo_editionsprogramm_1990-2005_Oswald_quer_ohneURL_mitLinie_rgb_210x52px_final.svg" style="zoom:50%;" />
+
 # »Editionsprogramm: Fraktionen im Deutschen Bundestag 1949–2005«
 
 *Digitale Edition. Herausgegeben von der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien, e.V. (KGParl)](https://kgparl.de/) in Berlin.*
