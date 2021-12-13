@@ -34,4 +34,4 @@ http://www.kgparl.de – https://fraktionsprotokolle.de
 
 ------
 
-<img src="../../../XML-Entwicklung/SJ-Screenshots_für_Typora/member-of-editiones-color.svg" style="zoom:25%;" />
+<img src="https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/blob/main/logos/member-of-editiones-color.svg" style="zoom:25%;" />
