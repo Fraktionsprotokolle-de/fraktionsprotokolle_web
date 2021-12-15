@@ -22,6 +22,9 @@ Neue (substantielle) Veröffentlichungen werden entsprechend als Release in Gith
 
 Wir freuen uns über jede Anregung zu diesem Repositorium und darüber wie wir es verbessern können. Wir freuen uns auch über jeden Hinweis oder jeden Kommentar zu den edierten Quellen. Sie können uns per E-Mail info@fraktionsprotokolle.de oder über das Issue-System von Github erreichen.
 
+## Lizenz
+
+Copyright © 2020 KGParl e.V. – Alle Rechte vorbehalten! Möchten Sie dieses Textkorpus verwenden oder weiter verarbeiten, bitten wir Sie, mit uns Kontakt aufzunehmen.
 
 
 ## Kontakt
