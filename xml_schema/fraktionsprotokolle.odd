@@ -1,0 +1,381 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Fraktionsprotokolle - TEI with minimal setup</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>TEI Consortium</publisher>
+				<availability status="free">
+					<licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed under a Creative
+Commons Attribution-ShareAlike 3.0 Unported License </licence>
+					<licence target="http://www.opensource.org/licenses/BSD-2-Clause">
+						<p>Copyright 2013 TEI Consortium.</p>
+						<p>All rights reserved.</p>
+						<p>Redistribution and use in source and binary forms, with or without modification, are
+permitted provided that the following conditions are met:</p>
+						<list>
+							<item>Redistributions of source code must retain the above copyright notice, this list of
+conditions and the following disclaimer.</item>
+							<item>Redistributions in binary form must reproduce the above copyright notice, this list of
+conditions and the following disclaimer in the documentation and/or other materials provided
+with the distribution.</item>
+						</list>
+						<p>This software is provided by the copyright holders and contributors "as is" and any express
+or implied warranties, including, but not limited to, the implied warranties of
+merchantability and fitness for a particular purpose are disclaimed. In no event shall the
+copyright holder or contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement of substitute
+goods or services; loss of use, data, or profits; or business interruption) however caused
+and on any theory of liability, whether in contract, strict liability, or tort (including
+negligence or otherwise) arising in any way out of the use of this software, even if advised
+of the possibility of such damage.</p>
+					</licence>
+					<p>TEI material can be licensed differently depending on the use you intend to make of it.
+Hence it is made available under both the CC+BY and BSD-2 licences. The CC+BY licence is
+generally appropriate for usages which treat TEI content as data or documentation. The BSD-2
+licence is generally appropriate for usage of TEI content in a software environment. For
+further information or clarification, please contact the <ref target="mailto:info@tei-c.org">TEI Consortium</ref>. </p>
+				</availability>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Written from scratch.</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<head>A Minimal TEI Customization</head>
+			<p>This is as minimal a TEI customization as is possible. That is, this
+ODD file is just about as simple as can be. It does not create a minimal
+TEI schema, of course. Adding various <gi>elementSpec</gi>,
+<gi>classSpec</gi>, and <gi>macroSpec</gi> elements to this
+customization file could make the resulting schema more minimal, but
+would make this customization more complicated. E.g., the customization
+<name>tei_bare</name> produces a much more minimal schema than the one
+created here.</p>
+			<schemaSpec ident="tei_minimal" start="TEI" prefix="tei_" targetLang="en" docLang="de">
+				<!--modules-->
+				<!---->
+				<!---->
+				<moduleRef key="header"/>
+				<moduleRef key="core"/>
+				<moduleRef key="tei"/>
+				<moduleRef key="textstructure"/>
+				<!--Ungeprüft übergreifend für teiHeader eingeführt-->
+				<moduleRef key="namesdates" except=""/>
+				<moduleRef key="msdescription" except=""/>
+				<!--Ungeprüft übergreifend für Nutzung von<table> eingeführt-->
+				<moduleRef key="figures" except=""/>
+				<!--Ungeprüft übergreifend für Nutzung von @corresp und <seg> eingeführt-->
+				<moduleRef key="linking" except=""/>
+				<!--Ermöglicht <incident> und <pause> (alle anderen Elemente aus spoken gelöscht) transcriptionDesc eventuell wieder zu lassen -->
+				<moduleRef key="spoken" except="annotationBlock broadcast equipment kinesic recording recordingStmt scriptStmt shift u vocal writing"/>
+				<!--element specifications-->
+				<!---->
+				<!---->
+				<!--header-->
+				<elementSpec ident="change" module="header" mode="change">
+					<attList>
+						<attDef ident="status" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="draft">
+									<desc>Basisfassungen des Protokolls</desc>
+								</valItem>
+								<valItem ident="textkritik">
+									<desc>Protokoll wurde textkritisch bearbeitet</desc>
+								</valItem>
+								<valItem ident="kommentierung">
+									<desc>Protokoll wurde kommentiert</desc>
+								</valItem>
+								<valItem ident="final">
+									<desc>Editorische Bearbeitung abgeschlossen</desc>
+								</valItem>
+								<valItem ident="public">
+									<desc>Freischaltung für Webpräsentation</desc>
+								</valItem>
+								<valItem ident="textloop-1_raw">
+									<desc>Aus Wordvorlage konvertierte raw-Version mit Layoutinformationen</desc>
+								</valItem>
+								<valItem ident="textloop-2_basic">
+<desc>Aus raw-Version transformierte KGParl-schemakonforme Datei (aus Layoutinformatione wurden Personenauszeichnungen)</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<!---->
+				<!---->
+				<!--core-->
+				<elementSpec ident="bibl" module="core" mode="change">
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="single-item">
+									<desc>Monographie, Zeitschriftenaufsatz oder Sammelband</desc>
+								</valItem>
+								<valItem ident="series-item">
+									<desc>Zeitschriften/Nachschlagewerke</desc>
+								</valItem>
+								<valItem ident="item-in-archive">
+									<desc>Archivalien</desc>
+								</valItem>
+								<valItem ident="btp">
+									<desc>BT Plenarprotokolle</desc>
+								</valItem>
+								<valItem ident="btd">
+									<desc>BT Drucksachen</desc>
+								</valItem>
+								<valItem ident="bgbl">
+									<desc>Bundesgesetzblatt</desc>
+								</valItem>
+								<valItem ident="kbp">
+									<desc>Kabinettsprotokolle</desc>
+								</valItem>
+								<valItem ident="brp">
+									<desc>Bundesratsprotokolle</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="hi" module="core" mode="change">
+					<attList>
+						<attDef ident="rendition" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="#smcap">
+									<desc>Text in Kapitälchen (aber: Text normal in Groß- und Kleinschreibung tippen!) </desc>
+								</valItem>
+								<valItem ident="#sup">
+									<desc>Hochgestellte kleiner gesetzte Ziffer</desc>
+								</valItem>
+								<valItem ident="#sub">
+									<desc>Tiefgestellte kleiner gesetzte Ziffer</desc>
+								</valItem>
+								<valItem ident="#u">
+									<desc>Text ist unterstrichen (underline)</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="list" module="core" mode="change">
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="undefined">
+									<desc>Nicht weiter spezifizierte Auflistung</desc>
+								</valItem>
+								<valItem ident="SVP">
+									<desc>Sitzungsverlauf</desc>
+								</valItem>
+								<valItem ident="SVPsub">
+									<desc>Sitzungsverlauf - untergeordnete Liste</desc>
+								</valItem>
+								<valItem ident="Anwesenheitsliste">
+									<desc>Auflistung der Anwesenden</desc>
+								</valItem>
+								<valItem ident="Anwesenheitsliste_gegliedert">
+									<desc>Auflistung der Anwesenden</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="name" module="core" mode="change">
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="Person">
+									<desc/>
+								</valItem>
+								<valItem ident="Ort">
+									<desc/>
+								</valItem>
+								<valItem ident="Organisation">
+									<desc/>
+								</valItem>
+								<!--eventuell vereinheitlichen zu type="Organisation" role="xy"-->
+								<valItem ident="Institution">
+									<desc/>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="role" mode="change" usage="opt">
+							<valList type="closed" mode="replace">
+								<!--Personen-->
+								<valItem ident="Sitzungsleitung">
+									<desc/>
+								</valItem>
+								<valItem ident="Sprecher">
+									<desc>Anwesenheitsliste Sitzungsverlauf</desc>
+								</valItem>
+								<valItem ident="Erwaehnung">
+									<desc/>
+								</valItem>
+								<valItem ident="Mitarbeiter-KGParl">
+									<desc/>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="note" module="core" mode="change">
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="critical">
+									<desc>textkritische Anmerkung</desc>
+								</valItem>
+								<valItem ident="comment">
+									<desc>inhaltliche Anmerkung</desc>
+								</valItem>
+								<valItem ident="source">
+									<desc>Anmerkung in der Vorlage</desc>
+								</valItem>
+								<!--HEADER-->
+								<valItem ident="Kommentar-Edition">
+									<desc>inhaltliche Anmerkung</desc>
+								</valItem>
+								<valItem ident="Erstveroeffentlichung">
+									<desc>inhaltliche Anmerkung</desc>
+								</valItem>
+								<valItem ident="Verbundene-Protokolle">
+									<desc>inhaltliche Anmerkung</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="ref" module="core" mode="change">
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="internal">
+									<desc>Projektinterner Verweis</desc>
+								</valItem>
+								<valItem ident="external">
+									<desc>Projektexterner Verweis</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="target" mode="change" usage="req"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="said" module="core" mode="change">
+					<attList>
+						<attDef ident="direct" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="true">
+									<desc>Direkte Rede</desc>
+								</valItem>
+								<valItem ident="false">
+									<desc>Indirekte Rede</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<!--textstructure-->
+				<elementSpec ident="div" module="textstructure" mode="change">
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<!--front-->
+								<valItem ident="SVPListe">
+									<desc>Überblicksliste Sitzungsverlauf (front)</desc>
+								</valItem>
+								<valItem ident="Anwesenheitsliste">
+									<desc>Anwesenheitsliste Sitzungsverlauf</desc>
+								</valItem>
+								<valItem ident="Kopfdaten">
+									<desc>Kopfdaten Protokoll (front)</desc>
+								</valItem>
+								<!--body-->
+								<valItem ident="SVP">
+									<desc>Punkt in Sitzungsverlauf (SVP)</desc>
+								</valItem>
+								<valItem ident="SVPsub">
+									<desc>Unterabschnitt zu Punkt in Sitzungsverlauf (SVP)</desc>
+								</valItem>
+								<valItem ident="Anhang">
+									<desc>Anhang zu SVP /Gesamtprotokoll</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<!--figures-->
+				<elementSpec ident="table" module="core" mode="change">
+					<attList>
+						<attDef ident="rendition" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="#hidden">
+									<desc>Gitternetzlinien der Tabelle sollen in den Hintergrund treten</desc>
+								</valItem>
+								<valItem ident="#boxed">
+									<desc>Gitternetzlinien der Tabelle sollen deutlich hervortreten</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<!--namesdates-->
+				<elementSpec ident="object" module="namesdates" mode="change">
+					<attList>
+						<attDef ident="direct" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="true">
+									<desc>Direkte Rede</desc>
+								</valItem>
+								<valItem ident="false">
+									<desc>Indirekte Rede</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="type" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="Papier">
+									<desc>Tonbandtranskript der Sitzung auf Papier</desc>
+								</valItem>
+								<valItem ident="Audio">
+									<desc>Tonband der Sitzung</desc>
+								</valItem>
+								<valItem ident="tbd">
+									<desc>to be defined: Vorläufiger Dummy-Wert aus Konversionsprozeß der Altprotokolle</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="org" module="namesdates" mode="change">
+					<attList>
+						<attDef ident="role" mode="change" usage="req">
+							<valList type="closed" mode="replace">
+								<valItem ident="news">
+									<desc>Zeitungen, Zeitschriften etc.</desc>
+								</valItem>
+								<valItem ident="pol">
+									<desc>Politische, gewerkschaftliche Einrichtungen, Organisationen</desc>
+								</valItem>
+								<valItem ident="com">
+									<desc>Unternehmen, Firmen, wirtschaftlichen Organisationen</desc>
+								</valItem>
+								<valItem ident="soc">
+									<desc>Kirchen, zivilgesellschaftliche Einrichtungen</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+				<!--spoken-->
+				<elementSpec ident="pause" module="spoken" mode="change">
+					<attList>
+						<attDef ident="dur" mode="change" usage="req"/>
+					</attList>
+				</elementSpec>
+				<elementSpec ident="teiCorpus" mode="delete" module="core"/>
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>

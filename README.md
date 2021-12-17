@@ -2,15 +2,32 @@
 
 # »Editionsprogramm: Fraktionen im Deutschen Bundestag 1949–2005«
 
-*Digitale Edition. Herausgegeben von der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien, e.V. (KGParl)](https://kgparl.de/) in Berlin.*
+*Digitale Edition – herausgegeben von der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien, e.V. (KGParl)](https://kgparl.de/) in Berlin. – Gefördert durch den Deutschen Bundestag.*
 
-*Gefördert durch den Deutschen Bundestag.*
+*Stand: Dezember 2021*
 
 ------
 
 Die KGParl hat es sich zum Ziel gesetzt, die Sitzungsprotokolle bzw. die verschriftlichten Tondokumente der wichtigsten Fraktionen im Deutschen Bundestag sukzessive editorisch zu erschließen und zu veröffentlichen. Die Kommission stellt damit der historischen und anderweitig parlamentsbezogenen Forschung sowie der interessierten Öffentlichkeit eine gut handhabbare und verlässliche Quellengrundlage zur Verfügung. Näheres zum Projekt unter https://kgparl.de/forschung/fraktionen-im-bundestag/.
 
 In diesem öffentlichen Repositorium werden alle TEI-XML-Dateien der edierten Sitzungsprotokolle veröffentlicht, die der digitalen Edition unter https://www.fraktionsprotokolle.de zugrunde liegen und vom Editionsteam soweit bearbeitet wurden, dass sie veröffentlicht werden konnten. 
+
+## Struktur und Umfang der Daten
+
+Alle veröffentlichten Dateien finden sich im Verzeichnis `xml_quellen`. Die Quelltexte der einzelnen Fraktionen bzw. der Landesgruppe der CSU sowie die Dateien für die Personen- sowie (später) die Schlagwortdatenbank finden sich innerhalb des `Fraktionen`-Verzeichnisses. Alle Sitzungsprotokolle sind nach Fraktionen bzw. Gruppen geordnet und innerhalb dieser Verzeichnisse wiederum nach Wahlperioden.
+
+Das XML-Schema und die Schematron-Datei finden sich im gleichnamigen Verzeichnis `xml_schema`. 
+
+Aktuell umfasst die veröffentlichte Edition die Protokolle von
+
+- CDU/CSU-Fraktion 1.–7. Wahlperiode (1949–1976)
+- SPD-Fraktion 1.–7. Wahlperiode (1949–1976)
+- FDP-Fraktion 1.–5. Wahlperiode (1949–1969)
+- CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983) (42 Protokolle der CSU-Landesgruppe aus der 2. Wahlperiode im Zeitraum Februar 1956 bis Juli 1957 fehlen aus technischen Gründen und werden nachgereicht.)
+
+Nachgereicht werden auch die Protokolle der Fraktion der Grünen in der 10. und 11. Wahlperiode (1983–1990). Da sich die Druckvorlage dieser Protokolle sehr stark vom übrigen Layout der Edition unterscheidet, ist die Aufbereitung vom Drucklayout zu XML sehr (zeit-)aufwändig. Sobald der erste Bearbeitungsschritt abgeschlossen ist, werden diese Protokolle in einem neuen Release hier veröffentlicht. (Sollte jemand in der Zwischenzeit Zugriff auf die Quellen benötigen, bitten wir sie oder ihn, sich bei uns zu melden.)
+
+Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeichen, erhält die als XML-Datei vorliegende Personendatenbank. Sie ist Grundlage des Namensregisters der Edition. Sie wird kontinuierlich um Personennamen ergänzt, die bisherigen Einträge um Normdaten wie GND und Kurzbiogramme angereichert sowie etwaige Fehler behoben. 
 
 ## Veröffentlichungszyklus
 
