@@ -4,7 +4,7 @@
 
 *Digitale Edition – herausgegeben von der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien, e.V. (KGParl)](https://kgparl.de/) in Berlin. – Gefördert durch den Deutschen Bundestag.*
 
-*Stand: Dezember 2021*
+*Stand: 20. Dezember 2021*
 
 ------
 
@@ -14,7 +14,14 @@ In diesem öffentlichen Repositorium werden alle TEI-XML-Dateien der edierten Si
 
 ## Struktur und Umfang der Daten
 
-Alle veröffentlichten Dateien finden sich im Verzeichnis `xml_quellen`. Die Quelltexte der einzelnen Fraktionen bzw. der Landesgruppe der CSU sowie die Dateien für die Personen- sowie (später) die Schlagwortdatenbank finden sich innerhalb des `Fraktionen`-Verzeichnisses. Alle Sitzungsprotokolle sind nach Fraktionen bzw. Gruppen geordnet und innerhalb dieser Verzeichnisse wiederum nach Wahlperioden.
+Alle veröffentlichten Dateien finden sich im Verzeichnis `xml_quellen`. Die Quelltexte der einzelnen Fraktionen bzw. der Landesgruppe der CSU sowie die Dateien für die Personen- sowie (später) die Schlagwortdatenbank finden sich *ohne jede weitere Untergliederung* innerhalb dieses Verzeichnisses (dies hat technische Gründe, da das Repositorium mit der Datenbank eXist und dem teiPublisher verknüpft ist). Die weitere Sortierung Untergliederung der Sitzungsprotokolle nach Fraktionen bzw. Gruppen und nach Wahlperioden geschieht über die Dateinamen. Beispiel: 
+
+`fdp-05_1965-09-28-t1540_EP.xml`
+
+- `fdp-05` —  Fraktion/Gruppe und Wahlperiode
+- `1965-09-28` — Datum (`JJJJ-MM-TT`) der (Fraktions-, Fraktionsvorstands- oder sonstigen) Sitzung (bzw. Datum des ersten Sitzungstags bei mehrtägigen Sitzungen), hier: 28. September 1965
+- `t1540` — Uhrzeit des Beginns der Sitzung
+- `EP` — Protokolltyp, hier: Verlaufs- bzw. Ergebnisprotokoll (weitere Typen: `WN` = Wortprotokoll nachträglich transkribiert, `WZ` = Wortprotokoll zeitgenössisch erstellt, `AN` = andere bzw. bislang nicht näher spezifizierte Protokolltypen)
 
 Das XML-Schema und die Schematron-Datei finden sich im gleichnamigen Verzeichnis `xml_schema`. 
 
