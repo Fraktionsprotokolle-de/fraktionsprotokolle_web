@@ -14,7 +14,7 @@ In diesem öffentlichen Repositorium werden alle TEI-XML-Dateien der edierten Si
 
 ## Struktur und Umfang der Daten
 
-Alle veröffentlichten Dateien finden sich im Verzeichnis `xml_quellen`. Die Quelltexte der einzelnen Fraktionen bzw. der Landesgruppe der CSU sowie die Dateien für die Personen- sowie (später) die Schlagwortdatenbank finden sich *ohne jede weitere Untergliederung* innerhalb dieses Verzeichnisses (dies hat technische Gründe, da das Repositorium mit der Datenbank eXist und dem teiPublisher verknüpft ist). Die weitere Sortierung Untergliederung der Sitzungsprotokolle nach Fraktionen bzw. Gruppen und nach Wahlperioden geschieht über die Dateinamen. Beispiel: 
+Alle veröffentlichten Dateien finden sich im Verzeichnis `xml_quellen`. Die Quelltexte der einzelnen Fraktionen bzw. der Landesgruppe der CSU sowie die Dateien für die Personen- sowie (später) die Schlagwortdatenbank finden sich innerhalb dieses Verzeichnisses und sind nach Fraktion/Landesgruppe und Wahlperiode in Unterordner geordnet. Die weitere Sortierung der Sitzungsprotokolle über die Dateinamen. Beispiel: 
 
 `fdp-05_1965-09-28-t1540_EP.xml`
 
