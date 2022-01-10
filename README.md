@@ -4,7 +4,7 @@
 
 *Digitale Edition – herausgegeben von der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien, e.V. (KGParl)](https://kgparl.de/) in Berlin. – Gefördert durch den Deutschen Bundestag.*
 
-*Stand: 20. Dezember 2021*
+*Stand: 10. Januar 2022*
 
 ------
 
