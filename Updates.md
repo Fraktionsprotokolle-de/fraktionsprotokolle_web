@@ -1,4 +1,4 @@
-[<img src="C:\Users\Sven\KGParl-NC\XML-Entwicklung\SJ-Screenshots_für_Typora\logo_editionsprogramm_1990-2005_Oswald_quer_ohneURL_mitLinie_rgb_210x52px_final.svg" />](https:///www.fraktionsprotokolle.de)
+[<img src="https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/blob/main/logos/logo_editionsprogramm_1990-2005_Oswald_quer_ohneURL_mitLinie_rgb_210x52px_final.svg" />](https:///www.fraktionsprotokolle.de)
 
 # »Editionsprogramm: Fraktionen im Deutschen Bundestag 1949–2005« – Updates
 
