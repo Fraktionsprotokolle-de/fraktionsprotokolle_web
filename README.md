@@ -33,6 +33,7 @@ Aktuell umfasst die veröffentlichte Edition die Protokolle von
 - SPD-Fraktion 1.–7. Wahlperiode (1949–1976)
 - FDP-Fraktion 1.–5. Wahlperiode (1949–1969)
 - CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983) (42 Protokolle der CSU-Landesgruppe aus der 2. Wahlperiode im Zeitraum Februar 1956 bis Juli 1957 fehlen aus technischen Gründen und werden 2022 nachgereicht.)
+- Grüne-Fraktion 11. Wahlperiode (1987–1990) (Hierbei handelt es sich um eine Vorabversion, ohne Normdaten-Verknüpfung etc.)
 
 Nachgereicht werden auch die Protokolle der Fraktion der Grünen in der 10. und 11. Wahlperiode (1983–1990). Da sich die Druckvorlage dieser Protokolle sehr stark vom übrigen Layout der Edition unterscheidet, ist die Aufbereitung vom Drucklayout zu XML sehr (zeit-)aufwändig. Sobald der erste Bearbeitungsschritt abgeschlossen ist, werden diese Protokolle in einem neuen Release hier veröffentlicht. (Sollte jemand in der Zwischenzeit Zugriff auf die Quellen benötigen, bitten wir sie oder ihn, sich bei uns zu melden.)
 
