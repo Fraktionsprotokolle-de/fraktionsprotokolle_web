@@ -9,6 +9,8 @@
 Genauere Veränderungen an den Dateien lassen sich über die Versionierung in Github nachvollziehen. Sobald substantielle Veränderungen erfolgen, beispielsweise eine neue Fraktion oder Wahlperiode hinzugefügt wird oder die Annotationsarbeit bei einer Fraktion oder Wahlperiode abgeschlossen ist, wird die [Github-Release-Seite](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/releases) ergänzt.
 Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig und kurzfristig, ohne hier eigens erwähnt zu werden.
 
+- 2022-04-26: Beacon-Datei https://fraktionsprotokolle.de/beacon_kgparl.txt wird nun je nach Bedarf (Änderungen am Personenregister) einmal am Tag neu erzeugt und aktualisiert.
+- 2022-04-26: Update des Personenauthority-File (neue Personen erfasst und weiter GND-Nummern für bestehende Personen ergänzt); Update Institutionen-Authorityfile.
 - 2022-03-21: Update Grüne 10. WP (Personennamentags, Auflösung von Personenreihen, Vorbereitung zur Verknüpfung der Personennamen mit dem Personenauhority-File).
 - 2022-03-16: Update des Personenauthority-File (neue Personen erfasst und weiter GND-Nummern für bestehende Personen ergänzt).
 - 2022-03-01: Korrekturen und weitere Annotationen bei der CSU-Landesgruppe. Update des Relax-NG-Schemas (Erweiterung der Typen bei Bibliographie).
