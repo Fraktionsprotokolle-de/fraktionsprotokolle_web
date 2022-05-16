@@ -32,7 +32,7 @@ Aktuell umfasst die veröffentlichte Edition die Protokolle von
 - CDU/CSU-Fraktion 1.–7. Wahlperiode (1949–1976)
 - SPD-Fraktion 1.–7. Wahlperiode (1949–1976)
 - FDP-Fraktion 1.–5. Wahlperiode (1949–1969)
-- CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983) (42 Protokolle der CSU-Landesgruppe aus der 2. Wahlperiode im Zeitraum Februar 1956 bis Juli 1957 fehlen aus technischen Gründen und werden 2022 nachgereicht.)
+- CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983)
 - Grüne-Fraktion 11. Wahlperiode (1987–1990) (Hierbei handelt es sich um eine Vorabversion, ohne Normdaten-Verknüpfung etc.)
 
 Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeichnen, erhält die als XML-Datei vorliegende Personendatenbank. Sie ist Grundlage des Namensregisters der Edition. Sie wird kontinuierlich um Personennamen ergänzt, die bisherigen Einträge um Normdaten wie GND und Kurzbiogramme angereichert sowie etwaige Fehler behoben. 
