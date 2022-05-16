@@ -35,9 +35,11 @@ Aktuell umfasst die veröffentlichte Edition die Protokolle von
 - CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983) (42 Protokolle der CSU-Landesgruppe aus der 2. Wahlperiode im Zeitraum Februar 1956 bis Juli 1957 fehlen aus technischen Gründen und werden 2022 nachgereicht.)
 - Grüne-Fraktion 11. Wahlperiode (1987–1990) (Hierbei handelt es sich um eine Vorabversion, ohne Normdaten-Verknüpfung etc.)
 
-Nachgereicht werden auch die Protokolle der Fraktion der Grünen in der 10. und 11. Wahlperiode (1983–1990). Da sich die Druckvorlage dieser Protokolle sehr stark vom übrigen Layout der Edition unterscheidet, ist die Aufbereitung vom Drucklayout zu XML sehr (zeit-)aufwändig. Sobald der erste Bearbeitungsschritt abgeschlossen ist, werden diese Protokolle in einem neuen Release hier veröffentlicht. (Sollte jemand in der Zwischenzeit Zugriff auf die Quellen benötigen, bitten wir sie oder ihn, sich bei uns zu melden.)
-
 Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeichnen, erhält die als XML-Datei vorliegende Personendatenbank. Sie ist Grundlage des Namensregisters der Edition. Sie wird kontinuierlich um Personennamen ergänzt, die bisherigen Einträge um Normdaten wie GND und Kurzbiogramme angereichert sowie etwaige Fehler behoben. 
+
+## Beacon
+
+Eine Beacon-Datei (XML:ID und GND-Nummer) findet sich unter https://fraktionsprotokolle.de/beacon_kgparl.txt
 
 ## Veröffentlichungszyklus
 
