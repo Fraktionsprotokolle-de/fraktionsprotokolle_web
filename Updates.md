@@ -9,6 +9,9 @@
 Genauere Veränderungen an den Dateien lassen sich über die Versionierung in Github nachvollziehen. Sobald substantielle Veränderungen erfolgen, beispielsweise eine neue Fraktion oder Wahlperiode hinzugefügt wird oder die Annotationsarbeit bei einer Fraktion oder Wahlperiode abgeschlossen ist, wird die [Github-Release-Seite](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/releases) ergänzt.
 Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig und kurzfristig, ohne hier eigens erwähnt zu werden.
 
+*(Die Änderungen werden spätestens 24h nachdem sie hier veröffentlicht wurden auch auf der Webseite fraktionsprotokolle.de sichtbar sein.)*
+
+- 2022-06-09: Grüne, 10. und 11. Wahlperiode: Kleinere Verbesserungen und Korrekturen im Sitzungsverlauf sowie bei der Personennamenidentifizierung und dem Abgleich mit dem Personenauthority-File.
 - 2022-06-09: Korrekturen und Anpassungen im teiHeader. Zahlreiche Updates bei der Bearbeitung/semantischen Anreicherung der Altprotokolle (v.a. Grüne 10. und 11. WP). Update des Personenauthority-File (GND-Nummern, neue Personen).
 - 2022-05-16: Vervollständigung der CSU-Landesgruppe.
 - 2022-05-16: Hinzugefügt Grüne 10. WP. Update des Personenauthority-File. 
