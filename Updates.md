@@ -11,6 +11,8 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Die Änderungen werden spätestens 24h nachdem sie hier veröffentlicht wurden auch auf der Webseite fraktionsprotokolle.de sichtbar sein.)*
 
+- 2022-07-06: Update des Personenauthority-File (GND-Nummern, neue Personen)
+- 2022-07-06: Grüne, 10. und 11. Wahlperiode: weitere Personennamenidentifizierung, Ergänzungen im teiHeader.
 - 2022-06-09: Grüne, 10. und 11. Wahlperiode: Kleinere Verbesserungen und Korrekturen im Sitzungsverlauf sowie bei der Personennamenidentifizierung und dem Abgleich mit dem Personenauthority-File.
 - 2022-06-09: Korrekturen und Anpassungen im teiHeader. Zahlreiche Updates bei der Bearbeitung/semantischen Anreicherung der Altprotokolle (v.a. Grüne 10. und 11. WP). Update des Personenauthority-File (GND-Nummern, neue Personen).
 - 2022-05-16: Vervollständigung der CSU-Landesgruppe.
