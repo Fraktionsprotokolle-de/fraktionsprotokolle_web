@@ -11,6 +11,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Die Änderungen werden spätestens 24h nachdem sie hier veröffentlicht wurden auch auf der Webseite fraktionsprotokolle.de sichtbar sein.)*
 
+- Korrekturen an SPD 7. Wahlperiode (Ergänzungen im teiHeader, Korrektur falscher Namensergänzungen.)
 - 2022-07-06: Update des Personenauthority-File (GND-Nummern, neue Personen)
 - 2022-07-06: Grüne, 10. und 11. Wahlperiode: weitere Personennamenidentifizierung, Ergänzungen im teiHeader.
 - 2022-06-09: Grüne, 10. und 11. Wahlperiode: Kleinere Verbesserungen und Korrekturen im Sitzungsverlauf sowie bei der Personennamenidentifizierung und dem Abgleich mit dem Personenauthority-File.
