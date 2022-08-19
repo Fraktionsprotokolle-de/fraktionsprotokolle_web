@@ -21,7 +21,10 @@
 					<resp>Finale Bearbeitung der XML-Datei</resp>
 					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
 				</respStmt>
-			</titleStmt><editionStmt><p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 09. Juni 2022.</p></editionStmt>
+			</titleStmt>
+			<editionStmt>
+				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 16. August 2022.</p>
+			</editionStmt>
 			<publicationStmt>
 				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
 						<street>Schiffbauerdamm 40</street>
@@ -29,7 +32,7 @@
 						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
 					</address><email>info@fraktionsprotokolle.de</email></publisher>
 				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
+				<date when="2022-08-16"/>
 				<idno type="url">https://fraktionsprotokolle.de/</idno>
 				<availability status="restricted">
 					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
@@ -92,6 +95,9 @@
 				<normalization>
 					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
 				</normalization>
+				<stdVals>
+					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+				</stdVals>
 			</editorialDecl>
 			<projectDesc>
 				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
@@ -123,7 +129,16 @@
 			</tagsDecl>
 		</encodingDesc>
 		<profileDesc>
-			<creation><date when="1956-09-26"><time type="start" when="09:45:00"/><time type="end" when="20:35:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#KunzeJohannes_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
+			<creation>
+				<date type="firstpart" from="1956-09-26">
+					<time type="start" when="09:45:00"/>
+					<time type="end" when="13:15:00"/>
+				</date>
+				<date type="secondpart" to="1956-09-26">
+					<time type="start" when="15:20:00"/>
+					<time type="end" when="20:35:00"/>
+				</date>
+				<name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#KunzeJohannes_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
 			<langUsage>
 				<language ident="de-DE">German</language>
 			</langUsage>
@@ -135,17 +150,21 @@
 			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
 			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
 			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
 		</revisionDesc>
 	</teiHeader>
 	<text>
 		<front>
-			<head type="number">291</head>
-			<div type="Kopfdaten">
-				<p>ACDP, VIII-001–1007/3. Zeit: 9.45 Uhr–20.35 Uhr. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, [Kunze].</p>
+			<div type="SVPListe">
+				<head>Sitzungsverlauf:</head>
+				<list type="SVP">
+					<item xml:id="cdu-csu-02_1956-09-26-t0945_EP_SVP-1" corresp="#cdu-csu-02_1956-09-26-t0945_EP_div_SVP-1">A. TOP 1: Politische Lage (Wehrpolitik, insbesondere Dauer der Wehrpflicht). – TOP 2: Aus dem Ältestenrat. – TOP 3: Sozialreform. – TOP 4: Jugoslawien-Vertrag. – TOP 5: Schutzbereichgesetz. – TOP 6: SPD-Änderungsantrag zum Kriegsgefangenenentschädigungsgesetz.</item>
+				</list>
 			</div>
 		</front>
 		<body>
 			<div type="SVP" xml:id="cdu-csu-02_1956-09-26-t0945_EP_div_SVP-1">
+				<head>A.</head>
 				<p>[1. Politische Lage: Wehrpolitik, insbesondere Dauer der Wehrpflicht]</p>
 				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> eröffnet die Sitzung mit dem Ausdruck des Bedauerns, daß der Bundestagspräsident durch eine Verlautbarung in der Pressekonferenz zur Frage der Moskau-Einladung die in Bad Honnef abgesprochene Linie des Verfahrens bereits wieder verlassen habe.<seg type="note"><note xml:id="cdu-csu-02_1956-09-26-t0945_EP_FN001" type="comment"><p>Siehe Nr. 290, Anm. 2. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> hatte sich am Abend des 25. 9. 1956 gegenüber der Presse geäußert, »auch die Christlichen Demokraten werden an der Reise einer Bundestagsdelegation nach Moskau teilnehmen.« (vgl. »Die Welt« v. 26. 9. 1956: »<name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> für Moskaureise« und FAZ v. 26. 9. 1956: »Die Marschroute der Unionsparteien«).</p></note></seg></p>
 				<p>Dann wendet er sich dem Thema einer gesamtpolitischen Überschau zu und gibt zunächst seine wesentlichen Eindrücke der abgeschlossenen Amerika-Reise wieder.<seg type="note"><note xml:id="cdu-csu-02_1956-09-26-t0945_EP_FN002" type="comment"><p>Siehe Nr. 289, 2.a.</p></note></seg> Es handele sich bei Amerika um einen ganzen Kontinent mit noch nicht entdeckten Entwicklungsmöglichkeiten, und von dort aus gesehen sei Europa klein, Deutschland noch kleiner und Bonn ganz klein. Es sei ganz gut, wenn man einmal ein richtiges Augenmaß für diese Dinge bekomme. Die Partnerschaft Amerikas sei sehr wertvoll. Man müsse aber auch sehen, daß dieses Land seine eigenen Sorgen habe und bei ihm, dem Redner, sei der Eindruck stark gewesen, daß z. B. die Suez-Frage und alles andere damit Zusammenhängende sehr im Vordergrund stehe, daß es Aufgabe der deutschen Politik sei, dafür zu sorgen, daß im Rahmen all dieser Sorgen das deutsche Problem seine richtige Stellung behalte.</p>

@@ -21,7 +21,10 @@
 					<resp>Finale Bearbeitung der XML-Datei</resp>
 					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
 				</respStmt>
-			</titleStmt><editionStmt><p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 09. Juni 2022.</p></editionStmt>
+			</titleStmt>
+			<editionStmt>
+				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 16. August 2022.</p>
+			</editionStmt>
 			<publicationStmt>
 				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
 						<street>Schiffbauerdamm 40</street>
@@ -29,7 +32,7 @@
 						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
 					</address><email>info@fraktionsprotokolle.de</email></publisher>
 				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
+				<date when="2022-08-16"/>
 				<idno type="url">https://fraktionsprotokolle.de/</idno>
 				<availability status="restricted">
 					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
@@ -92,6 +95,9 @@
 				<normalization>
 					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
 				</normalization>
+				<stdVals>
+					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+				</stdVals>
 			</editorialDecl>
 			<projectDesc>
 				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
@@ -123,7 +129,16 @@
 			</tagsDecl>
 		</encodingDesc>
 		<profileDesc>
-			<creation><date when="1954-07-07"><time type="start" when="09:45:00"/><time type="end" when="16:45:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
+			<creation>
+				<date type="firstpart" from="1954-07-07">
+					<time type="start" when="09:45:00"/>
+					<time type="end" when="12:35:00"/>
+				</date>
+				<date type="secondpart" to="1954-07-07">
+					<time type="start" when="14:45:00"/>
+					<time type="end" when="16:45:00"/>
+				</date>
+				<name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
 			<langUsage>
 				<language ident="de-DE">German</language>
 			</langUsage>
@@ -135,17 +150,21 @@
 			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
 			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
 			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
 		</revisionDesc>
 	</teiHeader>
 	<text>
 		<front>
-			<head type="number">69</head>
-			<div type="Kopfdaten">
-				<p>ACDP, VIII-001–1006/3.<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN001" type="comment"><p>Im Bestand ACDP, VIII-001–1502/1 liegt die Tagesordnung für eine Sitzung des Fraktionsvorstandes für den 5. 7. 1954 vor, zu der keine weiteren Unterlagen ermittelt werden konnten.</p></note></seg> Zeit: 9.45 Uhr–12.35 Uhr und 14.45 Uhr–16.45 Uhr. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>.</p>
+			<div type="SVPListe">
+				<head>Sitzungsverlauf:</head>
+				<list type="SVP">
+					<item xml:id="cdu-csu-02_1954-07-07-t0945_EP_SVP-1" corresp="#cdu-csu-02_1954-07-07-t0945_EP_div_SVP-1">A.<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN001" type="comment"><p>Im Bestand ACDP, VIII-001–1502/1 liegt die Tagesordnung für eine Sitzung des Fraktionsvorstandes für den 5. 7. 1954 vor, zu der keine weiteren Unterlagen ermittelt werden konnten.</p></note></seg> TOP 1: Politische Lage. – TOP 2: Erklärung Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>. – TOP 3: Sitz des Bundespräsidenten und des Ministeriums für gesamtdeutsche Fragen. – TOP 4: Verfassungsschutz. – TOP 5: Verwaltungsgerichtsordnung. – TOP 6: Wettbewerbsbehinderung. – TOP 7 &amp; 8: Legion Condor und Wiedergutmachung. – TOP 9: Tagesordnung der 37. (und 38.) Sitz. am 8. (und 9.) Juli 1954. – TOP 10: Sozialgerichtsgesetz. – TOP 11: Beitritt der Bundesrepublik zur Konvention betr. Völkermord. – TOP 12: Errichtung einer Europäischen Organisation für kernphysikalische Forschung. – TOP 13: Großer Knechtsand. – TOP 14: Kontrollausschuss. – TOP 15: Koordinierungsausschuss. – TOP 16: Nahzonenregelung. – TOP 17: Luftfahrtbundesamt. – TOP 18: Senkung der Zuckersteuer. – TOP 19: Zollsätze für Tonbänder, Zitronen, Kaffee, Kakaobohnen; allgemeine Senkung. – TOP 20: Verfassungsschutz. – TOP 21: Realsteuergarantie für die Gemeinden. – TOP 22: Rheinseitenkanal. – TOP 23: Ausfallarbeitslosenunterstützung. – TOP 24: Sozialgerichtsgesetz. – TOP 25: Verhalten im Ausland. – TOP 26: Steuerreform und Mittelstand. – TOP 27: Bauten in Bonn. – TOP 28: Investitionshilfe. – TOP 29: Verkehrsgesetz.</item>
+				</list>
 			</div>
 		</front>
 		<body>
 			<div type="SVP" xml:id="cdu-csu-02_1954-07-07-t0945_AN_div_SVP-1">
+				<head>A.</head>
 				<p>1. Politische Lage</p>
 				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>: Er wolle einige allgemeine Bemerkungen über die politische Lage machen. Zusammen mit Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> habe er an dem Parteitag der Christlichen Demokraten Italiens<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN002" type="comment"><p>Parteitag der Democrazia Cristiana vom 26. bis 29. 6. 1954 in Neapel. Vgl. zur Reise auch Krone, S. 141.</p></note></seg> teilgenommen. Wie auch die Abstimmungen gezeigt hätten, hätten in dieser Zeit gewisse Spannungen bestanden, die darauf zurückzuführen seien, daß ein kleiner rechter Flügel Anschluß nach rechts und [ein] etwas radikaler linker Flügel Anschluß an die <name type="Person" role="Erwaehnung" ref="#NenniPietro">Nenni</name>-Sozialisten gesucht habe. In Neapel sei es gelungen, diese Schwierigkeiten zu überwinden. Die Iniziativa Democrazia, die von <name type="Person" role="Erwaehnung" ref="#FanfaniAmintore">Fanfani</name> geführt sei und der sich auch andere maßgebliche Männer angeschlossen hätten, habe [eine] klare Mehrheit in der Partei gewonnen und die nach links und rechts tendierenden Flügel seien zurückgedrängt worden.<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN003" type="comment"><p>Zum Verlauf des Parteitages vgl. I Congressi Nazionali della Democrazia Cristiana, Rom 1959, S. 473–571.</p></note></seg> Diese Entwicklung könne die CDU nur begrüßen, doch sei damit die Gefahr für die italienische Entwicklung im Ganzen noch nicht überwunden. Es sei kein Zweifel, daß die Kommunisten in Italien eine Stellung wie in keinem anderen Lande der Welt hätten. Sie seien die stärkste Partei und übten einen Einfluß aus, der in einzelnen Provinzen so weit gehe, daß dort die Staatsgewalt tatsächlich außer Kraft gesetzt sei. Doch sei es interessant gewesen, daß zur Niederwerfung des Landarbeiterstreikes nur der Entschluß nötig gewesen sei, Truppen einzusetzen, ohne daß es zu einer einzigen Auseinandersetzung gekommen wäre.<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN004" type="comment"><p>Die Landarbeiter hatten für eine Lohnerhöhung gestreikt. Zu einer endgültigen Einigung kam es am 12. 7. 1954. Vgl. Grindrod, S. 110.</p></note></seg></p>
 				<p>Für die italienische Regierung sei der neapolitaner Kongreß sehr wichtig gewesen. Außer der DC gehören der Regierung die Republikaner, die Liberalen und die <name type="Person" role="Erwaehnung" ref="#SaragatGiuseppe">Saragat</name>-Sozialisten an. Mit diesen drei Gruppen habe die Regierung eine klare Mehrheit im Parlament. Die Vertreter dieser Gruppen hätten sich auch für die europäische Politik der Regierung klar ausgesprochen. Wenige Tage vor dem Kongreß habe <name type="Person" role="Erwaehnung" ref="#ScelbaMario">Scelba</name> seine Außenpolitik im Senat zur Aussprache gebracht und mit 120:70 Stimmen einen Sieg davongetragen.<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN005" type="comment"><p>Am 23. 6. 1954 hatten nach einer Erklärung des Außenministers <name type="Person" role="Erwaehnung" ref="#PiccioniAttilio">Piccioni</name> 121 Senatoren bei 85 Gegenstimmen und 12 Enthaltungen der Außenpolitik der Regierung das Vertrauen ausgesprochen. Vgl. AdG 1954, S. 4584.</p></note></seg> Italien sei eindeutig entschlossen, seine bisherige Politik fortzuführen und die Verträge noch in diesem Herbst zur Abstimmung zu bringen.</p>
@@ -175,7 +194,8 @@
 				<p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name>: Wegen dieser Frage habe es schon ernste Auseinandersetzungen im Ausschuß für Verfassungsschutz gegeben. Er sehe aber keinen Anlaß, hier den Innenminister nicht zu decken und trete deshalb dem Standpunkt Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinsts</name> voll bei.</p>
 				<p>Dr. <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name>: Auch er beuge sich den überzeugenden Rechtsausführungen von Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, auch wenn der Geschmack dabei unangenehm bitter sei. Wenn er sich nämlich vorstelle, welche Mühe es koste, die Frage der Wiedergutmachung zu regeln, dann müsse er die Geschicklichkeit aller Kreise im entgegengesetzten Lager bewundern, die es verstünden, ihre Ansprüche sicherzustellen. Dieser Vorgang solle Anlaß dazu geben, daran zu denken, das Wiedergutmachungsgesetz so auszugestalten, daß man auch vor den Opfern des Nationalsozialismus bestehen könne.</p>
 				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>: Wegen der Frage der Wiedergutmachung habe er an den Innenminister geschrieben, da er der Meinung sei, daß diese Frage unter allen Umständen bald geklärt werden müsse.<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN020" type="comment"><p>Nicht ermittelt.</p></note></seg> In der Frage Condor stimme die Fraktion der Auffassung Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinsts</name> bei.</p>
-				<p>9. Tagesordnung der 37. (und 38.) Sitz. am 8. (und 9.) 7. 1954 Ohne Debatte würden in der Plenarsitzung erledigt die Anträge betr.:</p>
+				<p>9. Tagesordnung der 37. (und 38.) Sitz. am 8. (und 9.) 7. 1954</p>
+				<p>Ohne Debatte würden in der Plenarsitzung erledigt die Anträge betr.:</p>
 				<p>a) Weltpostverein [Drucksache II/585 v. 15. 6. 1954]<seg type="note"><note xml:id="cdu-csu-02_1954-07-07-t0945_AN_FN021" type="comment"><p>Vgl. Sten. Ber., S. 1758.</p></note></seg>,</p>
 				<p>Herkunftsbezeichnung für Hopfen [Gesetzentwurf Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> und Gen., Drucksache II/278 v. 23. 2. 1954]21,</p>
 				<p>b) Bergarbeiterwohnungsbau [Drucksache II/657 v. 1. 7. 1954]21,</p>

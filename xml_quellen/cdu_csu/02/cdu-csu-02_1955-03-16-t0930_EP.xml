@@ -21,7 +21,10 @@
 					<resp>Finale Bearbeitung der XML-Datei</resp>
 					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
 				</respStmt>
-			</titleStmt><editionStmt><p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 09. Juni 2022.</p></editionStmt>
+			</titleStmt>
+			<editionStmt>
+				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 16. August 2022.</p>
+			</editionStmt>
 			<publicationStmt>
 				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
 						<street>Schiffbauerdamm 40</street>
@@ -29,7 +32,7 @@
 						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
 					</address><email>info@fraktionsprotokolle.de</email></publisher>
 				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
+				<date when="2022-08-16"/>
 				<idno type="url">https://fraktionsprotokolle.de/</idno>
 				<availability status="restricted">
 					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
@@ -92,6 +95,9 @@
 				<normalization>
 					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
 				</normalization>
+				<stdVals>
+					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+				</stdVals>
 			</editorialDecl>
 			<projectDesc>
 				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
@@ -123,7 +129,16 @@
 			</tagsDecl>
 		</encodingDesc>
 		<profileDesc>
-			<creation><date when="1955-03-16"><time type="start" when="09:30:00"/><time type="end" when="19:25:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#WeberHelene_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
+			<creation>
+				<date type="firstpart" from="1955-03-16">
+					<time type="start" when="09:30:00"/>
+					<time type="end" when="12:50:00"/>
+				</date>
+				<date type="secondpart" to="1955-03-16">
+					<time type="start" when="15:20:00"/>
+					<time type="end" when="19:25:00"/>
+				</date>
+				<name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#WeberHelene_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
 			<langUsage>
 				<language ident="de-DE">German</language>
 			</langUsage>
@@ -135,18 +150,22 @@
 			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
 			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
 			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
 		</revisionDesc>
 	</teiHeader>
 	<text>
 		<front>
-			<head type="number">137</head>
-			<head type="head">a)</head>
-			<div type="Kopfdaten">
-				<p>ACDP, VIII-001–1007/1. Zeit: 9.30 Uhr–12.50 Uhr und 15.20 Uhr–19.25 Uhr. Vorsitz: <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>.</p>
+			<div type="SVPListe">
+				<head>Sitzungsverlauf:</head>
+				<list type="SVP">
+					<item xml:id="cdu-csu-02_1955-03-16-t0930_EP_SVP-1" corresp="#cdu-csu-02_1955-03-16-t0930_EP_div_SVP-1">A. TOP 1: NWDR. – TOP 2: Personalvertretungsgesetz. – TOP 3: Verkehrsfinanzgesetz.</item>
+					<item xml:id="cdu-csu-02_1955-03-16-t0930_EP_SVP-2" corresp="#cdu-csu-02_1955-03-16-t0930_EP_div_SVP-2">B. Parlamentarischer Bericht des BPA vom 17. März 1955 zu den abschließenden Beratungen über das Personalvertretungs- und Verkehrsfinanzgesetz in der CDU/CSU-Fraktion am 16. März 1955.</item>
+				</list>
 			</div>
 		</front>
 		<body>
 			<div type="SVP" xml:id="cdu-csu-02_1955-03-16-t0930_EP_div_SVP-1">
+				<head>A.</head>
 				<p>1. NWDR</p>
 				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> befaßt sich zunächst mit der Darstellung des geplanten Ablaufs der bevorstehenden Plenarsitzungen und wendet sich dann der Tatsache zu, daß im NWDR ein politisches Gespräch ohne Zuziehung eines CDU-Sprechers durchgeführt worden sei.<seg type="note"><note xml:id="cdu-csu-02_1955-03-16-t0930_EP_FN001" type="comment"><p>Der NWDR hatte schon wiederholt der CDU/CSU bzw. der Regierung die Möglichkeit, Stellung zu nehmen, verweigert (vgl. Kabinettsprotokolle 1955, S. 104).</p></note></seg> Dagegen müsse Stellung genommen werden. In kurzer Aussprache wird der Sachverhalt geklärt, abschließend bittet <name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name> darum, daß die Fraktionsführung dafür Sorge tragen möge, daß der Ausschuß für Presse, Rundfunk und Film der CDU wieder aktiv werde.</p>
 				<p>2. Personalvertretungsgesetz [Drucksache II/160 neu v. 3. 4. 1954]</p>
@@ -323,7 +342,9 @@
 				<p><name type="Person" role="Sprecher" ref="#UnertlFranzXaver_1953-10-06">Unertl</name> meint, daß man diesem Gesetz nicht zustimmen könne, wenn keine Zweckbindung erfolge.</p>
 				<p><name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> weist darauf hin, daß ja bisher der Steuerzahler im allgemeinen den Straßenbau finanziert habe.</p>
 				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> läßt über den Antrag <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> abstimmen, der mit Mehrheit angenommen wird und schließt die Sitzung mit der Feststellung, daß keine Fraktionsänderungsanträge beschlossenen seien, so daß es den einzelnen Abgeordneten überlassen bleibe, Anträge einzubringen<seg type="note"><note xml:id="cdu-csu-02_1955-03-16-t0930_EP_FN014" type="comment"><p>Die Abgeordneten machten von dieser Möglichkeit ausgiebig Gebrauch und brachten insgesamt 16 Änderungsanträge ein. Vgl. Sten. Ber., 73. und 74. Sitz, am 17. und 18. 3. 1955, S. 4018–4022 und 4087f.</p></note></seg>, um 19.25 Uhr.</p>
-				<p>b)</p>
+			</div>
+			<div type="SVP" xml:id="cdu-csu-02_1955-03-16-t0930_EP_div_SVP-2">
+				<head>B.</head>
 				<p>BA B 145/1904: Parlamentarischer Bericht des BPA v. 17. 3. 1955.</p>
 				<p>Die abschließenden Beratungen über das Personalvertretungs- und Verkehrsfinanzgesetz in der CDU/CSU-Fraktion am 16. d. M.</p>
 				<p>Die Beratungen über diese umstrittenen Gesetze fanden in der CDU/CSU-Fraktion in einer Form statt, daß sich hieraus ein allgemein die Fraktionsarbeit als solche und ihre Organisation betreffendes Problem ergibt. Bei dem Personalvertretungsgesetz haben sich die Fronten derartig versteift, daß der Fraktionsvorstand auf die Erzielung einer fraktionsinternen Meinungsbildung zumindest in der Form eines Stimmungstestes vollständig verzichten kann. Dabei wurden ausreichende Kompromißvorschläge vorgetragen. Bei dem Problem der Letztinstanz, wofür die Ausschußfassung einen besonderen Personalausschuß vorsieht, hatte Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> anstelle des zuständigen Ministers in der Fassung der Regierungsvorlage die Bundesregierung als Kollegium vorgeschlagen. <name type="Person" role="Sprecher" ref="#EvenJohannes_1949-09-07">Even</name> machte den Vorschlag, ausgehend vom allgemeinen Betriebsverfassungsgesetz, wo das Mitwirkungsrecht des Betriebsrates gegenüber Personaleinstellungen durch den Letztentscheid des Unternehmers begrenzt ist und im Konfliktfall das Arbeitsgericht angerufen werden kann, auch hier in Berücksichtigung der analogen Stellung des Ministers zum Unternehmer diesem den Letztentscheid zu belassen, aber hierbei die Anrufungsmöglichkeit der zuständigen Gerichte im Konfliktfalle vorzusehen. Da auf eine Fraktionsabstimmung verzichtet wurde und da die Vertreter der Regierungsvorlage und die Vertreter der Ausschußvorlage nicht unter dem Zwang standen, sich zumindest in annähernder Form zwecks Herbeiführung einer gemeinsamen Abstimmung zusammenzuraufen, wurden jeweils nur die altbekannten Gesichtspunkte vorgetragen, so daß im Verlauf der Debatte bei der Fraktionssitzung nur noch die eigentlichen Interessenten an diesen Vorlagen zurückgeblieben waren.</p>
