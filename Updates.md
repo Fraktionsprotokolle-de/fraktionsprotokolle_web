@@ -9,7 +9,7 @@
 Genauere Veränderungen an den Dateien lassen sich über die Versionierung in Github nachvollziehen. Sobald substantielle Veränderungen erfolgen, beispielsweise eine neue Fraktion oder Wahlperiode hinzugefügt wird oder die Annotationsarbeit bei einer Fraktion oder Wahlperiode abgeschlossen ist, wird die [Github-Release-Seite](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/releases) ergänzt.
 Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig und kurzfristig, ohne hier eigens erwähnt zu werden.
 
-*(Die Änderungen werden spätestens 24h nachdem sie hier veröffentlicht wurden auch auf der Webseite fraktionsprotokolle.de sichtbar sein.)*
+*(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
 - 2022-08-19: Update des Personenauthority-File (GND-Nummern, neue Personen), weitere Personen-ID bei Grünen 10. und 11. Wahlperiode. Verbesserte Sitzungsverlaufspunkte bei CDU/CSU 2. Wahlperiode.  Kleinere Fehlerkorrekturen im teiHeader (Tippfehler).
 - 2022-08-18: Korrekturen an SPD 7. Wahlperiode (Ergänzungen im teiHeader, Korrektur falscher Namensergänzungen).
