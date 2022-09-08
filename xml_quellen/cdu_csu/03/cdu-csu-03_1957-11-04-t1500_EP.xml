@@ -20,7 +20,10 @@
 					<resp>Finale Bearbeitung der XML-Datei</resp>
 					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
 				</respStmt>
-			</titleStmt><editionStmt><p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 09. Juni 2022.</p></editionStmt>
+			</titleStmt>
+			<editionStmt>
+				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+			</editionStmt>
 			<publicationStmt>
 				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
 						<street>Schiffbauerdamm 40</street>
@@ -91,6 +94,9 @@
 				<normalization>
 					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
 				</normalization>
+				<stdVals>
+					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+				</stdVals>
 			</editorialDecl>
 			<projectDesc>
 				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
@@ -134,6 +140,7 @@
 			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
 			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
 			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
 		</revisionDesc>
 	</teiHeader>
 	<text>
@@ -141,61 +148,20 @@
 			<div type="SVPListe">
 				<head>Sitzungsverlauf:</head>
 				<list type="SVP">
-					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-1"
-						corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-1"
-						> A. Ablauf der Debatte zur Regierungserklärung.</item>
-					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-2"
-						corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-2"
-						> B. Wahl der stellvertretenden Fraktionsvorsitzenden.</item>
-					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-3"
-						corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-3"
-						> C. Arbeitskreisvorsitzende.</item>
-					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-4"
-						corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-4"
-						> D. Ausschussbesetzung.</item>
-					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-5"
-						corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-5"> E. Verschiedenes.</item>
-				</list></div>
+					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-1" corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-1"> A. Ablauf der Debatte zur Regierungserklärung.</item>
+					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-2" corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-2"> B. Wahl der stellvertretenden Fraktionsvorsitzenden.</item>
+					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-3" corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-3"> C. Arbeitskreisvorsitzende.</item>
+					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-4" corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-4"> D. Ausschussbesetzung.</item>
+					<item xml:id="cdu-csu-03_1957-11-04-t1500_EP_SVP-5" corresp="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-5"> E. Verschiedenes.</item>
+				</list>
+			</div>
 			<div type="Anwesenheitsliste">
 				<head>Anwesend:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name
-						type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06"
-						>Cillien</name>, <name type="Person" role="Erwaehnung"
-						ref="#ArndgenJosef_1949-09-07">Kunze</name>; <name type="Person"
-						role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, Dr. <name
-						type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06"
-						>Hellwig</name>, <name type="Person" role="Erwaehnung"
-						ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person"
-						role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name
-						type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10"
-						>Horn</name>, <name type="Person" role="Erwaehnung"
-						ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person"
-						role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, <name
-						type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07"
-						>Neuburger</name>, Dr. <name type="Person" role="Erwaehnung"
-						ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person"
-						role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, Frau Dr. <name
-						type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07"
-						>Rehling</name>, <name type="Person" role="Erwaehnung"
-						ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person"
-						role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name
-						type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07"
-						>Schmücker</name>, <name type="Person" role="Erwaehnung"
-						ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person"
-						role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Dr. <name
-						type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07"
-						>Vogel</name>, <name type="Person" role="Erwaehnung"
-						ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person"
-						role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>.</p>
+				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Kunze</name>; <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>.</p>
 			</div>
 			<div type="Anwesenheitsliste">
 				<head>Anwesend Regierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name
-						type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07"
-						>Lücke</name>, Prof. <name type="Person" role="Erwaehnung"
-						ref="#OberlaenderTheodor_1953-10-06">Oberländer</name>, Dr. <name
-						type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07"
-						>Schröder</name>.</p>
+				<p><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Prof. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>.</p>
 			</div>
 		</front>
 		<body>
@@ -204,24 +170,24 @@
 				<p>1. Ablauf des 5. 11. 1957</p>
 				<p>9.00 Uhr Fraktionssitzung; 10.00 Uhr Plenum – Debatte über die Regierungserklärung – Reihenfolge der Redner: CDU, SPD, FDP, DP, CSU<seg type="note"><note xml:id="cdu-csu-03_1957-11-04-t1500_EP_FN001" type="comment"><p>Es sprachen <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> (CDU), <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> (SPD), <name type="Person" role="Erwaehnung" ref="#BeckerMax_1949-09-07">Becker</name> (Hersfeld) (FDP), <name type="Person" role="Erwaehnung" ref="#SchneiderHerbert_1953-10-06">Schneider</name> (Bremerhaven) (DP) und <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> (CSU). Vgl. Sten. Ber., 4. Sitzung am 5. 11. 1957, S. 31– 81.</p></note></seg></p>
 			</div>
-				<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-2">
+			<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-2">
 				<head>B.</head>
 				<p>2. Wahl der stellvertretenden Fraktionsvorsitzenden</p>
 				<p>Es soll an der Zahl von vier Stellvertretern festgehalten werden. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> nicht mehr kandidieren wolle. Der neue Vorstand soll zunächst für ein Jahr gewählt werden, und dann für drei Jahre.</p>
-				</div>
-				<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-3">
+			</div>
+			<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-3">
 				<head>C.</head>
 				<p>3. Arbeitskreisvorsitzende</p>
 				<p>Der Vorstand beschließt, daß es bei den bisherigen fünf Arbeitskreisen bleiben soll.<seg type="note"><note xml:id="cdu-csu-03_1957-11-04-t1500_EP_FN002" type="comment"><p>AK I: Allgemeine und Rechtsfragen, AK II: Wirtschafts- und Landwirtschaftsfragen, AK III: Finanz- und Steuerfragen, AK IV: Sozialfragen, AK V: Auswärtige und Verteidigungsfragen. Vgl. Datenhandbuch I, S. 990.</p></note></seg> Für die einzelnen Diskussionskreise soll der Grundsatz der offenen Tür für alle Abge-ordneten weiterhin gelten. Bei der Wahl der stellvertretenden Vorsitzenden der Arbeitskreise sollen die neuen Kollegen so weit wie möglich berücksichtigt werden.</p>
 				<p>Die fünf Arbeitskreisvorsitzenden sollen stärker in die Fraktionsführung eingeschaltet werden und zwar in der Form, daß sie im Plenum der Fraktion bei den Punkten, in denen ihre Sachgebiete behandelt werden, die Leitung übernehmen.</p>
-				</div>
-				<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-4">
+			</div>
+			<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-4">
 				<head>D.</head>
-					<p>4. Ausschußbesetzung</p>
+				<p>4. Ausschußbesetzung</p>
 				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> trägt den bisherigen Diskussionsstand der interfraktionellen Verhandlungen vor – hierbei insbesondere, welche Ausschüsse neben den bereits im großen und ganzen festliegenden an die SPD und FDP abgegeben werden können.</p>
 				<p>Der Vorstand ist in der Mehrheit der Meinung, daß der Verkehrsausschuß an die SPD<seg type="note"><note xml:id="cdu-csu-03_1957-11-04-t1500_EP_FN003" type="comment"><p>Vorsitzender des Verkehrsausschusses wurde Paul <name type="Person" role="Erwaehnung" ref="#BleißPaul_1949-09-07">Bleiss</name> (SPD).</p></note></seg>, der Ausschuß für Atomfragen und Wasserwirtschaft sowie der Gesundheitsausschuß an die FDP fallen sollen.<seg type="note"><note xml:id="cdu-csu-03_1957-11-04-t1500_EP_FN004" type="comment"><p>Vorsitzender des Ausschusses für Atomkernenergie und Wasserwirtschaft wurde Thomas <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> (FDP), Vorsitzender des Gesundheitsausschusses Wolfgang <name type="Person" role="Erwaehnung" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name> (FDP).</p></note></seg></p>
-				</div>
-				<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-5">
+			</div>
+			<div type="SVP" xml:id="cdu-csu-03_1957-11-04-t1500_EP_div_SVP-5">
 				<head>E.</head>
 				<p>5. Verschiedenes</p>
 				<p>Es soll Anfang Advent wieder ein geselliger Fraktionsabend stattfinden – vorher aber noch ein geselliger Abend der neuen Abgeordneten mit einigen Vertretern der alten Fraktion.</p>
