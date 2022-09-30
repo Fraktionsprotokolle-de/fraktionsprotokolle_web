@@ -33,7 +33,7 @@ Aktuell umfasst die veröffentlichte Edition die Protokolle von
 - SPD-Fraktion 1.–7. Wahlperiode (1949–1976)
 - FDP-Fraktion 1.–5. Wahlperiode (1949–1969)
 - CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983)
-- Grüne-Fraktion 11. Wahlperiode (1987–1990) (Hierbei handelt es sich um eine Vorabversion, ohne Normdaten-Verknüpfung etc.)
+- Grüne-Fraktion 10. und 11. Wahlperiode (1983–1990)
 
 Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeichnen, erhält die als XML-Datei vorliegende Personendatenbank. Sie ist Grundlage des Namensregisters der Edition. Sie wird kontinuierlich um Personennamen ergänzt, die bisherigen Einträge um Normdaten wie GND und Kurzbiogramme angereichert sowie etwaige Fehler behoben. 
 
@@ -53,7 +53,7 @@ Wir freuen uns über jede Anregung zu diesem Repositorium und darüber wie wir e
 
 ## Lizenz
 
-Copyright © 2020 KGParl e.V. – Alle Rechte vorbehalten! Möchten Sie dieses Textkorpus verwenden oder weiter verarbeiten, bitten wir Sie, mit uns Kontakt aufzunehmen.
+Copyright © 2022 KGParl e.V. – Alle Rechte vorbehalten! Möchten Sie dieses Textkorpus verwenden oder weiter verarbeiten, bitten wir Sie, mit uns Kontakt aufzunehmen.
 
 
 ## Kontakt
