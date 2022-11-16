@@ -11,6 +11,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2022-11-16: Fehlerkorrekturen in Protokollen der SPD (falsche Namenszuordnung), Verbesserung der Sitzungsverläufe in der SPD 04. Wahlperiode.
 - 2022-11-15: Update des Personenauthority-File (GND-Nummern, neue Personen, Fehlerkorrekturen).
 - 2022-10-04: Update des Personenauthority-File (GND-Nummern, neue Personen), Verbesserung der Struktur in einigen Protokollen der CDU/CSU-Fraktion.
 - 2022-09-08: Update des Personenauthority-File (GND-Nummern, neue Personen), kleinere Erweiterungen an Organisationen/Abkürzungsliste, Fehlerkorrekturen in einzelnen Protokollen, Verbesserung der Sitzungsverlaufsstruktur in einigen Protokollen der CDU/CSU-Fraktion.
