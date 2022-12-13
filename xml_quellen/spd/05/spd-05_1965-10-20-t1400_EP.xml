@@ -1,197 +1,293 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1965-10-20-t1400_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title><author>Heinrich Potthoff</author><pubPlace>Düsseldorf</pubPlace><date>1993</date>
-						<idno type="DNB">https://d-nb.info/930888952</idno>
-						<idno type="DNB">https://d-nb.info/930907760</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 2)</idno>
-							<objectName>SPD-Fraktion im Deutschen Bundestag. Bonn, den 20. Okt. 1965. Sitzungsprotokoll der Fraktionssitzung am Mittwoch, dem 20. Okt. 1965, 14.00 Uhr</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 20. Oktober 1965</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>3 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1965-10-20"><time type="start" when="14:00:00"/><time type="end" when="14:40:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#ErlerFritz_1949-09-07"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-06-28" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1965-10-20-t1400_EP_SVP-1" corresp="#spd-05_1965-10-20-t1400_EP_div_SVP-1">A. TOP 1: Vorbereitung der  Plenarsitzung.</item>
-					<item xml:id="spd-05_1965-10-20-t1400_EP_SVP-2" corresp="#spd-05_1965-10-20-t1400_EP_div_SVP-2">B. TOP 2: Mitteilung über die Wahl des Fraktionsvorstandes.</item>
-					<item xml:id="spd-05_1965-10-20-t1400_EP_SVP-3" corresp="#spd-05_1965-10-20-t1400_EP_div_SVP-3">C. TOP 3: Nächste Termine. – TOP 4: Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1965-10-20-t1400_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Der Fraktionsvorsitzende, Fritz <name type="Person" role="Sprecher" ref="#ErlerFritz_1949-09-07">Erler</name>, eröffnet die Sitzung.</p>
-				<p>Punkt 1 der Tagesordnung (Vorbereitung der heutigen Plenarsitzung):</p>
-				<p>Hierzu erteilt der Vorsitzende dem Parlamentarischen Geschäftsführer, Dr. Karl <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name>, das Wort.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> führt aus:</p>
-				<p>In der heutigen Plenarsitzung um 15.00 Uhr erfolgt die Abstimmung über den Vorschlag des Bundespräsidenten, Professor Ludwig <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> zum Bundeskanzler zu wählen.<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN001" type="comment"><p>Siehe <bibl type="btp"><ref type="external" target="05/02">BT Sten. Ber. 60</ref>, S. 7 f.</bibl></p></note></seg> Nach der Kanzlerwahl und nach Aushändigung der Ernennungsurkunde durch den Bundespräsidenten folgt um 18.00 Uhr die Vereidigung des Bundeskanzlers vor dem Bundestage (Art. 63, 64 Abs. 2 GG).<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN002" type="comment"><p><bibl type="btp"><ref type="external" target="05/02">Ebd.</ref>, S. 8</bibl>.</p></note></seg></p>
-				<p>In der nächsten Zeit sind folgende Plenarsitzungen vorgesehen:</p>
-				<p>Dienstag, den 26. Okt., 17.00 Uhr: Vorstellung des neuen Kabinetts und Vereidigung der Minister<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN003" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1965-10-26-t1505_EP_SVP-1">Nr. 126, TOP 1</ref>.</p></note></seg></p>
-				<p>Mittwoch, den 3. Nov., 11.00 Uhr: Abgabe der Regierungserklärung<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN004" type="comment"><p>Die 4. Plenarsitzung mit der Abgabe der Regierungserklärung war erst am 10.11.1965; vgl. <ref type="internal" target="#spd-05_1965-11-03-t1008_EP">Nr. 127</ref>. Die Entscheidung <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhards</name>, die Regierungserklärung um eine Woche zu verschieben, bezeichnete <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> in einer Erklärung vom 27.10.1965 als ein »blamables Armutszeugnis«. Die während der Koalitionsverhandlungen demonstrierte »Einigkeit« in Sachfragen erweise sich »als Windei. Die wichtigste anstehende innenpolitische Frage, der Haushaltsausgleich, ist nicht geklärt.« <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhards</name> Regierungs-»Mannschaft« beginne mit einem »Fehlstart. Das ist ein schlechtes Vorzeichen für die Regierungszeit.« <bibl type="series-item">AdG 1965, S. 12137</bibl>.</p></note></seg></p>
-				<p>Mittwoch, den 10. Nov., 9.00 Uhr: Fragestunde und Aussprache über die Regierungserklärung<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN005" type="comment"><p>Die erste Fragestunde fand erst in der 5. Sitzung am 24.11.1965 statt, die Aussprache über die Regierungserklärung erfolgte am 30.11. und am 1. und 2.12.1965. Vgl. <ref type="internal" target="#spd-05_1965-11-23-t1500_EP">Nr. 129</ref>.</p></note></seg></p>
-				<p>Donnerstag, den 11. Nov., 9.00 Uhr: ebenso, falls Aussprache</p>
-				<p>Freitag, den 12. Nov., 9.00 Uhr: noch nicht beendet</p>
-				<p>Montag, den 15. Nov., bis Freitag, den 19. Nov.: sitzungsfreie Woche (17.11. Bußtag!)</p>
-				<p>Es folgen bis 17. Dez. 1965 4 volle Arbeitswochen.</p>
-				<p>Am 17. Dez. beginnt die Weihnachtspause, die am 9. Jan. 1966 endet (3 Wochen).</p>
-				<p>Wortmeldungen: Abg. <name type="Person" role="Sprecher" ref="#LiehrHarry_1962-01-11">Liehr</name><seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN006" type="comment"><p>Harry <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name> war Abgeordneter für Berlin.</p></note></seg> fragt, ob die Berliner Abgeordneten bei der Wahl des Bundeskanzlers volles Stimmrecht haben. Der Vorsitzende verneint die Frage.<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN007" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1965-10-19-t1400_EP_SVP-1">Nr. 124, TOP 1</ref>.</p></note></seg> Das vom Bundestagspräsidenten Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> in der Sitzung am 19. Oktober bekundete Bedauern darüber, daß die Berliner Abgeordneten noch immer einem Sonderstatus unterworfen seien,<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN008" type="comment"><p><bibl type="btp"><ref type="external" target="05/01">BT Sten. Ber. 60</ref>, S. 3</bibl>. – Zum Vorlauf vgl. <ref type="internal" target="#spd-05_1965-10-19-t1400_EP_SVP-1">Nr. 124, TOP 1</ref>.</p></note></seg> genüge allerdings nicht. Dies sollte seitens der SPD-Fraktion in einem besonderen Brief zum Ausdruck gebracht werden. Nötigenfalls müsse die Bundesregierung aufgefordert werden, mit den Alliierten hierüber zu verhandeln. Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> mahnt zur vorsichtigen Behandlung der Frage; die alliierten Vorbehaltsrechte müßten schrittweise abgebaut werden mit dem Ziele, den Berliner Abgeordneten das volle Stimmrecht zu verschaffen.<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN009" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1965-10-19-t1400_EP_FN006">Nr. 124, bes. Anm. 6</ref>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1965-10-20-t1400_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Punkt 2 der Tagesordnung (Mitteilung über die Wahl des Fraktionsvorstandes):</p>
-				<p>Der Vorsitzende erteilt Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> das Wort. Dieser verweist auf den überreichten Wahlvorschlag des bisherigen Fraktionsvorstandes zur Wahl eines neuen Vorstandes (s. Anlage).<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN010" type="comment"><p>Dieser »Wahlvorschlag des bisherigen Fraktionsvorstandes zur Wahl des neuen Vorstandes nach § 13 der Fraktionsgeschäftsordnung« vom 20.10.1965, gez. <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mo[mmer]</name>
-								<name type="Person" role="Erwaehnung" ref="#DobertGerti">Do[bert]</name> (Ms.) in der Anl.</p></note></seg></p>
-				<p>Wahlvorschlag des bisherigen Fraktionsvorstandes zur Wahl des neuen Vorstandes nach § 13 der Fraktionsgeschäftsordnung.</p>
-				<p>1.) Vorsitzender: Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name></p>
-				<p>2.) 4 Stellvertreter des Vorsitzenden: Alex <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name>, Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>, Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name></p>
-				<p>3.) 3 Parlamentarische Geschäftsführer: Gerhard <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>, Karl <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name>, Fritz <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name></p>
-				<p>4.) 16 weitere Mitglieder des Vorstandes: Walter <name type="Person" role="Erwaehnung" ref="#BehrendtWalter_1957-10-15">Behrendt</name>, Peter <name type="Person" role="Erwaehnung" ref="#BlachsteinPeter_1949-09-07">Blachstein</name>, Heinz <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, Gustav <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, H.-J. <name type="Person" role="Erwaehnung" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name>, Georg <name type="Person" role="Erwaehnung" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name>, Georg <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name>, Ulrich <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>, Kurt <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name>, Ludwig <name type="Person" role="Erwaehnung" ref="#MetzgerLudwig_1953-10-06">Metzger</name>, Fritz <name type="Person" role="Erwaehnung" ref="#SaengerFritz_1961-10-17">Sänger</name>, Marta <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, Ernst <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, Hermann <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, Karl <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name>.</p>
-				<p>Vorschläge aus der Mitte der Fraktion können bis nächste Woche Dienstag (26.10.), 14.00 Uhr, eingereicht werden.</p>
-				<p>Der neue Gesamtvorschlag wird eine Stunde später in die Fächer gelegt.</p>
-				<p>Die Wahl findet am Mittwoch, d. 27.10. um 14.00 Uhr statt.</p>
-				<p>Die 4 Wahlzettel werden in der Sitzung ausgegeben.</p>
-				<p>Es wird einstimmig beschlossen:</p>
-				<p>1. Die Frist zur Einreichung von Änderungsvorschlägen läuft am Donnerstag, den 28. Okt. 1965, um 14.00 Uhr ab.</p>
-				<p>2. Die Abstimmung über die Vorschläge zur Wahl des neuen Fraktionsvorstandes findet in der Fraktionssitzung am Dienstag, den 2. Nov. 1965, um 15.00 Uhr statt.<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN011" type="comment"><p>Die betreffende Fraktionssitzung war am 3.11.1965; siehe <ref type="internal" target="#spd-05_1965-11-03-t1008_EP">Nr. 127</ref>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1965-10-20-t1400_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Punkt 3 der Tagesordnung (Die nächsten Termine):</p>
-				<p>Vorstandssitzung am Dienstag, den 26. Okt., um 10.00 Uhr</p>
-				<p>Fraktionssitzung am Dienstag, den 26. Okt., um 15.00 Uhr</p>
-				<p>Fraktionssitzung am Dienstag, den 2. Nov., um 15.00 Uhr</p>
-				<p>Punkt 4 der Tagesordnung (Verschiedenes):</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#HaageHermann_1957-10-15">Haage</name> macht Vorschläge zu einer günstigeren Regelung der Flugzeugbenutzung. Der Vorsitzende erklärt dazu, daß die angestrebte Regelung nur im Wege einer Diätengesetzänderung möglich sei.<seg type="note"><note xml:id="spd-05_1965-10-20-t1400_EP_FN012" type="comment"><p>Nach dem Diätengesetz vom 6.3.1964 wurde eine Reisekostenpauschale gewährt, die – gestaffelt nach 15 Entfernungszonen – monatlich zwischen 500 bis 1 040 DM betrug. Vgl. <bibl type="single-item">Datenhandbuch 1949-1982, S. 980 f</bibl>. Die Erstattung von Kosten für die Benutzung von Flugzeugen wurde erst in dem von CDU/CSU, SPD, FDP am 2.2.1968 eingebrachten Gesetzentwurf »zur Änderung und Ergänzung des Diätengesetzes 1964« vorgesehen. <bibl type="btd"><ref type="external" target="05/2526">BT Anl. 128, Drs., V/2526</ref></bibl>.</p></note></seg> Bemühungen in diesem Sinne laufen.</p>
-				<p>Schluß der Sitzung: 14.40 Uhr. F. d. R. Dr. <name type="Person" role="Erwaehnung" ref="#WagnerJohannes">Wagner</name></p>
-				<p>2 Anlagen: Tagesordnung, Wahlvorschlag</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1965-10-20-t1400_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title>
+                  <author>Heinrich Potthoff</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930888952</idno>
+                  <idno type="DNB">https://d-nb.info/930907760</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 2)</idno>
+                     <objectName>SPD-Fraktion im Deutschen Bundestag. Bonn, den 20. Okt. 1965. Sitzungsprotokoll der Fraktionssitzung am Mittwoch, dem 20. Okt. 1965, 14.00 Uhr</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 20. Oktober 1965</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>3 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1965-10-20">
+               <time type="start" when="14:00:00"/>
+               <time type="end" when="14:40:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#ErlerFritz_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-06-28" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1965-10-20-t1400_EP_SVP-1" corresp="#spd-05_1965-10-20-t1400_EP_div_SVP-1">A. TOP 1: Vorbereitung der  Plenarsitzung.</item>
+               <item xml:id="spd-05_1965-10-20-t1400_EP_SVP-2" corresp="#spd-05_1965-10-20-t1400_EP_div_SVP-2">B. TOP 2: Mitteilung über die Wahl des Fraktionsvorstandes.</item>
+               <item xml:id="spd-05_1965-10-20-t1400_EP_SVP-3" corresp="#spd-05_1965-10-20-t1400_EP_div_SVP-3">C. TOP 3: Nächste Termine. – TOP 4: Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1965-10-20-t1400_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Der Fraktionsvorsitzende, Fritz <name type="Person" role="Sprecher" ref="#ErlerFritz_1949-09-07">Erler</name>, eröffnet die Sitzung.</p>
+            <p>Punkt 1 der Tagesordnung (Vorbereitung der heutigen Plenarsitzung):</p>
+            <p>Hierzu erteilt der Vorsitzende dem Parlamentarischen Geschäftsführer, Dr. Karl <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name>, das Wort.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> führt aus:</p>
+            <p>In der heutigen Plenarsitzung um 15.00 Uhr erfolgt die Abstimmung über den Vorschlag des Bundespräsidenten, Professor Ludwig <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> zum Bundeskanzler zu wählen.<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN001" type="comment">
+                     <p>Siehe <bibl type="btp">
+                           <ref type="external" target="05/02">BT Sten. Ber. 60</ref>, S. 7 f.</bibl>
+                     </p>
+                  </note>
+               </seg> Nach der Kanzlerwahl und nach Aushändigung der Ernennungsurkunde durch den Bundespräsidenten folgt um 18.00 Uhr die Vereidigung des Bundeskanzlers vor dem Bundestage (Art. 63, 64 Abs. 2 GG).<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN002" type="comment">
+                     <p>
+                        <bibl type="btp">
+                           <ref type="external" target="05/02">Ebd.</ref>, S. 8</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der nächsten Zeit sind folgende Plenarsitzungen vorgesehen:</p>
+            <p>Dienstag, den 26. Okt., 17.00 Uhr: Vorstellung des neuen Kabinetts und Vereidigung der Minister<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN003" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1965-10-26-t1505_EP_SVP-1">Nr. 126, TOP 1</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Mittwoch, den 3. Nov., 11.00 Uhr: Abgabe der Regierungserklärung<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN004" type="comment">
+                     <p>Die 4. Plenarsitzung mit der Abgabe der Regierungserklärung war erst am 10.11.1965; vgl. <ref type="internal" target="#spd-05_1965-11-03-t1008_EP">Nr. 127</ref>. Die Entscheidung <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhards</name>, die Regierungserklärung um eine Woche zu verschieben, bezeichnete <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> in einer Erklärung vom 27.10.1965 als ein »blamables Armutszeugnis«. Die während der Koalitionsverhandlungen demonstrierte »Einigkeit« in Sachfragen erweise sich »als Windei. Die wichtigste anstehende innenpolitische Frage, der Haushaltsausgleich, ist nicht geklärt.« <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhards</name> Regierungs-»Mannschaft« beginne mit einem »Fehlstart. Das ist ein schlechtes Vorzeichen für die Regierungszeit.« <bibl type="series-item">AdG 1965, S. 12137</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Mittwoch, den 10. Nov., 9.00 Uhr: Fragestunde und Aussprache über die Regierungserklärung<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN005" type="comment">
+                     <p>Die erste Fragestunde fand erst in der 5. Sitzung am 24.11.1965 statt, die Aussprache über die Regierungserklärung erfolgte am 30.11. und am 1. und 2.12.1965. Vgl. <ref type="internal" target="#spd-05_1965-11-23-t1500_EP">Nr. 129</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Donnerstag, den 11. Nov., 9.00 Uhr: ebenso, falls Aussprache</p>
+            <p>Freitag, den 12. Nov., 9.00 Uhr: noch nicht beendet</p>
+            <p>Montag, den 15. Nov., bis Freitag, den 19. Nov.: sitzungsfreie Woche (17.11. Bußtag!)</p>
+            <p>Es folgen bis 17. Dez. 1965 4 volle Arbeitswochen.</p>
+            <p>Am 17. Dez. beginnt die Weihnachtspause, die am 9. Jan. 1966 endet (3 Wochen).</p>
+            <p>Wortmeldungen: Abg. <name type="Person" role="Sprecher" ref="#LiehrHarry_1962-01-11">Liehr</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN006" type="comment">
+                     <p>Harry <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name> war Abgeordneter für Berlin.</p>
+                  </note>
+               </seg> fragt, ob die Berliner Abgeordneten bei der Wahl des Bundeskanzlers volles Stimmrecht haben. Der Vorsitzende verneint die Frage.<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN007" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1965-10-19-t1400_EP_SVP-1">Nr. 124, TOP 1</ref>.</p>
+                  </note>
+               </seg> Das vom Bundestagspräsidenten Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> in der Sitzung am 19. Oktober bekundete Bedauern darüber, daß die Berliner Abgeordneten noch immer einem Sonderstatus unterworfen seien,<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN008" type="comment">
+                     <p>
+                        <bibl type="btp">
+                           <ref type="external" target="05/01">BT Sten. Ber. 60</ref>, S. 3</bibl>. – Zum Vorlauf vgl. <ref type="internal" target="#spd-05_1965-10-19-t1400_EP_SVP-1">Nr. 124, TOP 1</ref>.</p>
+                  </note>
+               </seg> genüge allerdings nicht. Dies sollte seitens der SPD-Fraktion in einem besonderen Brief zum Ausdruck gebracht werden. Nötigenfalls müsse die Bundesregierung aufgefordert werden, mit den Alliierten hierüber zu verhandeln. Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> mahnt zur vorsichtigen Behandlung der Frage; die alliierten Vorbehaltsrechte müßten schrittweise abgebaut werden mit dem Ziele, den Berliner Abgeordneten das volle Stimmrecht zu verschaffen.<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN009" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1965-10-19-t1400_EP_FN006">Nr. 124, bes. Anm. 6</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1965-10-20-t1400_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Punkt 2 der Tagesordnung (Mitteilung über die Wahl des Fraktionsvorstandes):</p>
+            <p>Der Vorsitzende erteilt Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> das Wort. Dieser verweist auf den überreichten Wahlvorschlag des bisherigen Fraktionsvorstandes zur Wahl eines neuen Vorstandes (s. Anlage).<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN010" type="comment">
+                     <p>Dieser »Wahlvorschlag des bisherigen Fraktionsvorstandes zur Wahl des neuen Vorstandes nach § 13 der Fraktionsgeschäftsordnung« vom 20.10.1965, gez. <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mo[mmer]</name>
+                        <name type="Person" role="Erwaehnung" ref="#DobertGerti">Do[bert]</name> (Ms.) in der Anl.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Wahlvorschlag des bisherigen Fraktionsvorstandes zur Wahl des neuen Vorstandes nach § 13 der Fraktionsgeschäftsordnung.</p>
+            <p>1.) Vorsitzender: Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>
+            </p>
+            <p>2.) 4 Stellvertreter des Vorsitzenden: Alex <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name>, Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>, Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>
+            </p>
+            <p>3.) 3 Parlamentarische Geschäftsführer: Gerhard <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>, Karl <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name>, Fritz <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>
+            </p>
+            <p>4.) 16 weitere Mitglieder des Vorstandes: Walter <name type="Person" role="Erwaehnung" ref="#BehrendtWalter_1957-10-15">Behrendt</name>, Peter <name type="Person" role="Erwaehnung" ref="#BlachsteinPeter_1949-09-07">Blachstein</name>, Heinz <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, Gustav <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, H.-J. <name type="Person" role="Erwaehnung" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name>, Georg <name type="Person" role="Erwaehnung" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name>, Georg <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name>, Ulrich <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>, Kurt <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name>, Ludwig <name type="Person" role="Erwaehnung" ref="#MetzgerLudwig_1953-10-06">Metzger</name>, Fritz <name type="Person" role="Erwaehnung" ref="#SaengerFritz_1961-10-17">Sänger</name>, Marta <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, Ernst <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, Hermann <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, Karl <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name>.</p>
+            <p>Vorschläge aus der Mitte der Fraktion können bis nächste Woche Dienstag (26.10.), 14.00 Uhr, eingereicht werden.</p>
+            <p>Der neue Gesamtvorschlag wird eine Stunde später in die Fächer gelegt.</p>
+            <p>Die Wahl findet am Mittwoch, d. 27.10. um 14.00 Uhr statt.</p>
+            <p>Die 4 Wahlzettel werden in der Sitzung ausgegeben.</p>
+            <p>Es wird einstimmig beschlossen:</p>
+            <p>1. Die Frist zur Einreichung von Änderungsvorschlägen läuft am Donnerstag, den 28. Okt. 1965, um 14.00 Uhr ab.</p>
+            <p>2. Die Abstimmung über die Vorschläge zur Wahl des neuen Fraktionsvorstandes findet in der Fraktionssitzung am Dienstag, den 2. Nov. 1965, um 15.00 Uhr statt.<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN011" type="comment">
+                     <p>Die betreffende Fraktionssitzung war am 3.11.1965; siehe <ref type="internal" target="#spd-05_1965-11-03-t1008_EP">Nr. 127</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1965-10-20-t1400_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Punkt 3 der Tagesordnung (Die nächsten Termine):</p>
+            <p>Vorstandssitzung am Dienstag, den 26. Okt., um 10.00 Uhr</p>
+            <p>Fraktionssitzung am Dienstag, den 26. Okt., um 15.00 Uhr</p>
+            <p>Fraktionssitzung am Dienstag, den 2. Nov., um 15.00 Uhr</p>
+            <p>Punkt 4 der Tagesordnung (Verschiedenes):</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#HaageHermann_1957-10-15">Haage</name> macht Vorschläge zu einer günstigeren Regelung der Flugzeugbenutzung. Der Vorsitzende erklärt dazu, daß die angestrebte Regelung nur im Wege einer Diätengesetzänderung möglich sei.<seg type="note">
+                  <note xml:id="spd-05_1965-10-20-t1400_EP_FN012" type="comment">
+                     <p>Nach dem Diätengesetz vom 6.3.1964 wurde eine Reisekostenpauschale gewährt, die – gestaffelt nach 15 Entfernungszonen – monatlich zwischen 500 bis 1 040 DM betrug. Vgl. <bibl type="single-item">Datenhandbuch 1949-1982, S. 980 f</bibl>. Die Erstattung von Kosten für die Benutzung von Flugzeugen wurde erst in dem von CDU/CSU, SPD, FDP am 2.2.1968 eingebrachten Gesetzentwurf »zur Änderung und Ergänzung des Diätengesetzes 1964« vorgesehen. <bibl type="btd">
+                           <ref type="external" target="05/2526">BT Anl. 128, Drs., V/2526</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Bemühungen in diesem Sinne laufen.</p>
+            <p>Schluß der Sitzung: 14.40 Uhr. F. d. R. Dr. <name type="Person" role="Erwaehnung" ref="#WagnerJohannes">Wagner</name>
+            </p>
+            <p>2 Anlagen: Tagesordnung, Wahlvorschlag</p>
+         </div>
+      </body>
+   </text>
 </TEI>

@@ -1,204 +1,359 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1960-05-20-t1540_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 20. Mai 1960</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>6 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1960-05-20"><time type="start" when="15:40:00"/><time type="end" when="17:05:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1960-05-20-t1540_EP_SVP-1" corresp="#cdu-csu-03_1960-05-20-t1540_EP_div_SVP-1">A. Artikel im »Rheinischen Merkur« über die Arbeit der Fraktion. – Pariser Gipfelkonferenz. – Gesetz über den Weinbau. – Vorsitz im Außenpolitischen Ausschuss. – Freigewordener Sitz im Europarat. – <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> zu den Vorwürfen gegen ihn. – Reichsbankliquidationsgesetz und gründlichere Vorbereitung der Abgeordneten auf Gesetzesentwürfe. – Krankenversicherungsreform.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1960-05-20-t1540_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bezieht sich auf den Artikel im »Rheinischen Merkur«, in dem die Arbeit der Fraktion stark kritisiert worden ist. Er habe sich selbst mit Herrn <name type="Person" role="Erwaehnung" ref="#RoegeleOttoBernhard">Roegele</name> in Verbindung gesetzt und ihn auf die Unrichtigkeit seiner Behauptung hingewiesen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN001" type="comment"><p><name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krones</name> Beschwerde beim Chefredakteur des »Rheinischen Merkur« betraf den Artikel »Kritik vertragen« von Dr. Anton <name type="Person" role="Erwaehnung" ref="#BöhmAnton">Böhm</name> in Nr. 21 v. 20. 5. 1960, S. 1. Vgl. Parl. Ber. Nr. 39-59/60 v. 20. 5. 1960, S. 1 (BA Koblenz, B 145/1911).</p></note></seg> Die Arbeit der Fraktion in den letzten Wochen sei gerade besonders gut und fruchtbar gewesen. Natürlich gebe es sachliche Meinungsverschiedenheiten, aber das sei ja gerade gut so.</p>
-				<p>Der Bundesaußenminister sei noch in Paris festgehalten<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN002" type="comment"><p>Anlaß war die gescheiterte Pariser Gipfelkonferenz v. 16./17. 5. 1960. Vgl. Nr. 170 v. 8. 12. 1959.</p></note></seg>, der Bundeskanzler habe noch keine Erklärung zu den Vorgängen in Paris abgegeben, weil er Wert darauf lege, nicht als erster Stellung zu nehmen. Man werde also eine Erklärung in der nächsten Woche erwarten können.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN003" type="comment"><p>Vgl. die Erklärung <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in Sten. Ber., Nr. 117 am 24. 5. 1960, S. 6700–6702.</p></note></seg></p>
-				<p>Eine Reihe von Fraktionsmitgliedern hätte ein Gesetz über den Weinbau eingebracht. Es bestehe der Eindruck, daß das Gesetz, so wie es formuliert sei, nicht angenommen werden könne. Es solle aber trotzdem als Fraktionsantrag eingebracht werden. Die Zustimmung der Fraktion wird festgestellt. [Gesetzentwurf zur Überleitung des dt. Weinbaues in die EWG der Abg. <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> u. Gen.: Drucksache III/1870 – zu 1870 v. 12.5. und 5. 7. 1960]</p>
-				<p>Nachdem Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name> Präsident der Europäischen Wirtschaftsgemeinschaft geworden ist<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN004" type="comment"><p><name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name> wurde Präsident des Europäischen Parlaments. Siehe Nr. 200 v. 10. 5. 1960.</p></note></seg>, hat er den Vorsitz im Außenpolitischen Ausschuß niedergelegt. Für die Nachfolge sind mehrere Vorschläge gemacht worden. Der Vorstand schlägt vor, und zwar in Übereinstimmung mit <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> als Nachfolger zu benennen. Das Wort wird nicht gewünscht. Die Fraktion ist einverstanden.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN005" type="comment"><p>Ab 25. 5. 1960: Hermann <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> (CDU/CSU). Vgl. Datenhandbuch II, S. 2046.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt dann vor, daß Hamburg Wert darauf lege, den durch den Tod des Abg. <name type="Person" role="Erwaehnung" ref="#LeverkuehnPaul_1953-10-06">Leverkuehn</name> freigewordenen Sitz im Europarat wieder zu besetzen. Der Fraktionsvorstand schlägt dafür Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> vor. Gewiß sei die Fraktion in einer Reihe von Fragen mit Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> nicht einverstanden<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN006" type="comment"><p>Zur Kritik an <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> aus der eigenen Fraktion siehe Nr. 132 v. 9. 6. 1959 und Nr. 146 v. 23. 6. 1959.</p></note></seg>; das müsse man ihm auch sagen; auf der anderen Seite solle man auch dem Wunsche Hamburgs entsprechen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) fragt an, ob eine Regelung solcher Fragen nach Landesparteien wirklich den Interessen der Fraktion entspreche; das sei doch kein Prinzip für die Lösung solcher Dinge.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwidert, daß bei anderen Gelegenheiten auch Nordrhein-Westfalen mit der gleichen Argumentation einen Sitz verlangt habe.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> bringt unter Hinweis auf ein Bibelzitat den Wunsch zum Ausdruck, daß Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, der leider nicht anwesend sei, doch gebeten werde, sich zu entschließen, die pornographischen Bilder in seiner Illustrierten<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN007" type="comment"><p>Vgl. »Der Stern« (Hamburg); Herausgeber war damals <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>.</p></note></seg> künftig wegzulassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwidert, daß wohl verstanden worden sei, was <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name> habe sagen wollen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> stellt fest, daß Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> den Hauptvorwurf gegen die Einheit Nachtigall wiederholt habe entgegen allen Feststellungen der Staatsanwaltschaft. So sei veranlaßt worden, daß die Staatsanwaltschaft diese Sache aufgreife.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN008" type="comment"><p>Gegen zwei frühere Offiziere des Bataillons Nachtigall, Dr. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> und Dr. <name type="Person" role="Erwaehnung" ref="#HerznerHansAlbrecht">Herzner</name>, war Strafanzeige erstattet worden. Diese legte den Genannten eine Beteiligung an Massentötungen von Lemberger Einwohnern zur Last. Das Verfahren wurde am 26. 9. 1960 angesichts des Fehlens jeglicher Anhaltspunkte für eine Beteiligung dieses Bataillons an der Tötungsaktion eingestellt. Vgl. Bulletin des BPA Nr. 181 v. 27. 9. 1960, S. 1751.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> antwortet, daß er Dr. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> noch einmal versichert habe, daß auch nicht ein Deut von dem zurückgenommen werde, was man ihm zugesagt habe, daß man ihm also mit allen Mitteln helfen werde, seine Rehabilitierung zu erreichen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN009" type="comment"><p>Zum Fall <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> siehe Nr. 172 v. 11. 1. 1960, TOP 1.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> erläutert, daß er an den Fall <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> nicht gedacht habe. Wenn er aber Kenntnis davon gehabt hätte, hätte er gesagt, daß Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> solange nicht von der Fraktion vor der breiten Öffentlichkeit herausgestellt werden könne, bis er sein Verhalten geklärt habe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, daß er diesen Punkt jetzt absetze.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) regt an, daß doch über die Bedeutung jedes Gesetzes eine gründliche Information erfolgt, damit es nicht wieder passiere, daß Gesetze deshalb nicht durchkämen, weil sich die Fraktionsmitglieder nicht völlig über die Materie in klaren seien, wie es beim Reichsbankliquidationsgesetz gewesen sei.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN010" type="comment"><p>Vor Eintritt in die dritte Lesung wurde zunächst ein SPD-Gesetzentwurf zur Reichsbankliquidation abgelehnt. Die Schlußabstimmung, bei der das Haus nur schwach besetzt war, ergab zur allgemeinen Überraschung die Ablehnung auch der Regierungsvorlage. Vgl. Sten. Ber., 115. Sitzung am 19. 5. 1960, S. 6548, 6555, 6557 f.; Bulletin des BPA Nr. 96 v. 21. 5. 1960, S. 942.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwidert, daß dieses Gesetz auf der Tagesordnung der Fraktion gestanden habe. Es sei allerdings nicht diskutiert worden. Für die Abgeordneten sei es aber auch notwendig, bis zum Ende der Fraktionssitzung anwesend zu sein.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN011" type="comment"><p>Siehe Nr. 202 v. 10. 5. 1960 (am Schluß).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> erinnert daran, daß nach der Erklärung der SPD zu diesem Gesetz<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN012" type="comment"><p>Vgl. Sten. Ber., 115. Sitzung am 19. 5. 1960, S. 6548–6550, 6557 (Dr. <name type="Person" role="Erwaehnung" ref="#SeumeFranz_1957-10-15">Seume</name>).</p></note></seg> noch etwas hätte gesagt werden müssen. So aber habe der zuständige Wirtschaftsminister in seiner Bank gesessen und nicht geredet. Dabei sei die Rede davon gewesen, daß Aktien verschoben würden. Es sei also kein Zufall gewesen, wenn die Abstimmung so ausgegangen sei. Eine Erklärung des Ministers sei in dieser Situation unumgänglich notwendig gewesen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stimmt dieser Auffassung völlig zu.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LindenbergHeinrich_1953-10-06">Lindenberg</name> unterstützt die Anregung, die einzelnen Gesetze gründlich in der Fraktion zu besprechen. Daß dies aber in diesem Falle nicht hätte stattfinden können, sei eine unglückliche Verknüpfung von Umständen gewesen. Das Gesetz habe drei Monate im Vorstand gelegen, ohne weitergegeben zu werden. So sei es sehr überraschend auf die Tagesordnung gekommen. Auch im Arbeitskreis habe es nicht besprochen werden können. Als es dann im Plenum kritisch geworden sei, habe der Minister geschwiegen. Ein Minister, der nichts sagt, sei aber schlimmer als ein Minister, der nicht da ist.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wandte sich dann der Krankenversicherungsreform zu und bezeichnet es als notwendig, innerhalb der Fraktion eine Einigung über den einzuschlagenden Weg zu erzielen. Es sei die Frage aufgetaucht, ob man die Entscheidung über die Selbstbeteiligung nicht in die Hand der Selbstverwaltungsorgane legen könne. Das habe nichts damit zu tun, daß man sich die Sache vom Hals schaffen wolle, sondern entspreche dem Grundsatz, daß der Staat nicht Dinge übernehmen solle, die andere tragen könnten. Es wäre zu begrüßen, wenn die Fraktion nun wenigstens grundsätzlich zu diesen Fragen sich entscheiden könnte; dann könnte man die Durchführung dieses Prinzips weiterberaten. Er wolle noch betonen, daß keiner daran denke, vom Grundgedanken des Ministers <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> oder von ihm Abstand zu nehmen.</p>
-				<p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> erinnert daran, daß er die Entscheidung in einer der letzten Fraktionssitzungen hätte herbeiführen können, wobei er wohl eine günstige Abstimmung erzielt hätte. Es gehe ihm nicht darum, nun die Fraktion unter allen Umständen dazu zu bewegen, sich seine Gedanken zu eigen zu machen. Aber er wolle endlich einmal eine klare Entscheidung.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN013" type="comment"><p>Zum Meinungsstreit in der Regierungsfraktion (Streitpunkte Selbstbeteiligung und Lohnfortzahlung, Divergenzen zwischen Arbeitnehmer- und Arbeitgebervertretern) siehe Nr. 202 v. 17. 5. 1960; vgl. Reucher, Krankenversicherung, S. 157–173.</p></note></seg> Die bisherige Methode der Behandlung dieser Sache könne nicht fortgesetzt werden. Schon jetzt habe die SPD ihr Vorschaltgesetz gemacht [Drucksache III/1926 v. 21. 6. 1960]<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN014" type="comment"><p>Vgl. ebd., S. 175 f.</p></note></seg>, und man müsse sich doch klar sein, daß es unmöglich sein werde, später dann die schwierigen Dinge nachzuziehen, wenn man jetzt alle Rosinen aus dem Kuchen gepickt habe. Er habe gerne für die CDU Verantwortung getragen, aber er lege auch Wert darauf, nun nicht sein Gesicht verlieren zu müssen. Auch wolle er die Fraktion davor bewahren, daß sie zwar die absolute Mehrheit habe, jedoch nicht mehr in der Lage sei, politisch zu handeln.</p>
-				<p>Es könne nicht ohne weiteres gesagt werden, daß die Entscheidung jetzt darüber fallen solle, ob man die Selbstverwaltung der Versicherungen einschalte, sondern es müsse der ganze Komplex erörtert werden; dann erst könne die Fraktion sich entscheiden. Auf diese Entscheidung der Fraktion habe er ein Anrecht.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, daß er nach wie vor bemüht sei, einen Weg zusammen mit <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> zu finden.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN015" type="comment"><p><name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> trafen sich am Sonntag, den 22. 5. 1960 bei einer »Flasche Wein« und fanden einen Kompromiß in der Krankenversicherungsreform. Vgl. Krone, Tgb. 1945–1961, S. 420.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> führt aus, daß er vor acht Tagen, als der Sozialpolitische Ausschuß geplatzt sei, und die SPD der CDU Konzeptionslosigkeit vorwarf, nicht mehr gesehen habe, was nun aus dem Gesetz werden solle.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN016" type="comment"><p>In diesem Ausschuß sah sich die SPD-Fraktion – so Frau <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name> – nicht in der Lage, sich an Abstimmungen des Ausschusses zum Gesetzentwurf zu beteiligen, solange die Grundkonzeption der CDU/CSU noch nicht fixiert sei und die Stellungnahme des mitbeteiligten Ausschusses für Gesundheitswesen zu den wichtigsten Vorschriften des Gesetzentwurfes ausstehe. Nach einer Erwiderung von <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> (CDU) verließen die SPD-Mitglieder des Ausschusses die Sitzung. Vgl. 73. Sitzung des 20. Ausschusses v. 12. 5. 1960, S. 6 f. (Parl. Arch., Ausschuß für Sozialpolitik).</p></note></seg> Nach der Pressekonferenz <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenbergs</name><seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN017" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, sozialpolitischer Sprecher der SPD, hatte vor der Presse auf das Durcheinander in der CDU/CSU und die andauernden Unstimmigkeiten in der Frage der Krankenkassenneuregelung verwiesen. Vgl. »SPD ergreift Initiative im Krankenkassendilemma. Vorschaltgesetz soll dringendste Verbesserungen vorab ermöglichen«, in: PPP (M) v. 20. 5. 1960 (97), S. 1 f.</p></note></seg> habe auch er dann die Presse unterrichtet, daß man entschlossen sei, die Zuständigkeit der Selbstverwaltung über den Regierungsentwurf hinaus auszubauen, und zwar auch in der Frage der Selbstbeteiligung.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN018" type="comment"><p><name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> hatte nach dem Verlassen des Sozialpolitischen Ausschusses durch die SPD-Vertreter (siehe Anm. 16) vor der Presse die Stellungnahme der SPD entschieden zurückgewiesen. Es bestünden – so <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> – zwar über einige Paragraphen des Entwurfs in der CDU/CSU noch Meinungsunterschiede, doch stehe die Fraktion grundsätzlich zur Konzeption des Regierungsentwurfs. Vgl. »Ungerechtfertigtes Verhalten«, in: DUD Nr. 91 v. 13. 5. 1960, S. 4 f.</p></note></seg> In diesem Sinne seien dann die Neuformulierungen der entsprechenden Paragraphen vorgenommen worden. Die dabei aufgetretenen Schwierigkeiten seien aber so groß gewesen, daß man sich entschlossen habe, mit Vertretern der Krankenkassen darüber zu sprechen. Dabei habe niemand im Grunde diese Lösung abgelehnt, und mehrere Vertreter der Kassen hätten sich sachverständig zu dem Vorschlag geäußert. Man habe dann diese Vertreter gebeten, ihre Meinung schriftlich zu formulieren, dieser Aufforderung seien aber nicht alle gefolgt. Die abgegebenen Stellungnahmen enthielten mancherlei Kritik in diesem Vorhaben.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> schildert, wie man nach dem Gespräch mit dem Bundeskanzler<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN019" type="comment"><p>Gespräch am 11. 5. 1960 (18.20 Uhr) mit Sts. <name type="Person" role="Erwaehnung" ref="#ClaussenWilhelm">Claussen</name> und den Abg. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> und <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> (StBKAH, Besucherlisten Adenauer 04.11).</p></note></seg> im Kreise der Sozialpolitiker der Fraktion eine Formulierung erarbeitet habe, die davon ausging, daß die Selbstverwaltung verpflichtet sei, eine Selbstbeteiligung anzuordnen, wenn die Beträge für die Arztleistungen ein gewisses Maß übersteigen. Die Selbstverwaltung müsse dann entweder eine dem Regierungsentwurf entsprechende Selbstbeteiligung vorsehen oder aber eine bestimmte prozentuale Beteiligung mit Mindestgrenze festsetzen. Höchstgrenze sei dabei 15 DM im Vierteljahr, wobei freigestellt bleibe, wer weniger als 300 DM im Monat verdient. Eine Mehrheit sei dafür gewesen, bei Krankenhausbehandlung solle eine Selbstbeteiligung nicht erfolgen. Die Gebühr für eine Verordnung solle -,50 DM betragen.</p>
-				<p>Dann sei wieder das Thema Krankenscheingebühr aufgekommen. Natürlich spiele bei der ganzen Diskussion die Lohnfortzahlung der Arbeiter im Krankheitsfall eine ausschlaggebende Rolle.</p>
-				<p>Auf die Bitte des Abg. <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name>, das Vorschaltgesetz der SPD bekanntzumachen, trägt <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> die Mitteilung des SPD-Pressedienstes vor und erläutert dazu, daß dieser Entwurf natürlich alle Rosinen aus dem Kuchen herausnehme und alles weglasse, was Reform bedeute. Wenn das verabschiedet werde, werde man nie zu einer Reform der Krankenkassen kommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> regt an, doch in der Reihenfolge Selbstbeteiligung und Lohnfortzahlung, dann Reform der Selbstbeteiligung im Sinne der Regierungsvorlage oder über die Selbstverwaltung der Kassen, dann erst in welcher Form praktisch zu beraten.</p>
-				<p><name type="Person" role="Sprecher" ref="#FranzenJakob_1953-10-06">Franzen</name> glaubt, daß zunächst darüber entschieden werden müsse, wie man grundsätzlich zur Selbstbeteiligung stehe. Davon hänge alles andere ab. Er erklärt es für politisch unmöglich, wenn sich diese Fraktion gegen die Selbstbeteiligung aussprechen würde; das würde eine unglückliche Entwicklung bedeuten. Die Wähler werde man verlieren, wenn man keine klare Konzeption habe, nicht aber, wenn man entschlossen eine vernünftige Politik betreibe und die Leute richtig darüber informiere.</p>
-				<p><name type="Person" role="Sprecher" ref="#WeimerAugust_1957-10-15">Weimer</name> führt aus, daß die Grundsätze der Regierungsvorlage in der Fraktion sicher von allen geteilt würden. Über die Notwendigkeit der Reform bestehe vollkommene Übereinstimmung, Streit bestehe über die Form. Er habe seine Vorschläge schriftlich zusammengestellt.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN020" type="comment"><p>Eine Gruppe um die Abg. <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#WeimerAugust_1957-10-15">Weimer</name>, <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> und <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> sprach sich gegen die im Regierungsentwurf vorgesehene Inanspruchnahmegebühr aus. Vgl. Reucher, Krankenversicherung, S. 165 f., 172.</p></note></seg> Auch die Krankenscheingebühr sei eine Art der Selbstbeteiligung, rege zur behutsamen Inanspruchnahme an, ermögliche die Honorierung nach Einzelleistung. Nicht die Verbände, aber die Versicherten würden eine solche Regelung bejahen. Auch blieben für alle künftig notwendig werdenden Regelungen die Wege offen. Die Krankenscheingebühr werde sicher zu einer Teilfinanzierung der aufkommenden Belastung führen, da sich dabei erhebliche Beträge ergäben.</p>
-				<p>Wenn man die Beteiligung der Selbstverwaltung anstrebe, so sei das eine Art Teilkapitulation, wenn nicht festgelegt werde, daß die Selbstbeteiligung in bestimmten Fällen zwingend vorgeschrieben sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> weist darauf hin, daß er im Interesse der Krankenkassen bitten müsse, auch auf die Krankenscheingebühr zu verzichten, wenn man sich zu einer anderen Form nicht entschließen könne. Diese Regelung öffne allen Mißbräuchen wieder Tür und Tor. Die Krankenscheingebühr sei außerdem familienpolitisch das Unsozialste, was man sich vorstellen könne. Es komme doch nicht darauf an, irgendeine Gebühr zu erheben, sondern man wolle den Menschen unmittelbar an dem ganzen Prozeß teilhaben lassen. Man brauche die Selbstbeteiligung auch deshalb, weil man sonst bei den Kassen vor der finanziellen Katastrophe stehe. Nach den vorliegenden Unterlagen bleibe nichts anderes übrig, als die Selbstbeteiligung einzuführen. Er fände sich auch damit ab, wenn das über die Selbstverwaltung erfolge, aber es müsse im vorgesehenen Rahmen erfolgen. Es müsse in jedem Falle vermieden werden, daß der Arbeitsminister dann im Wege der Staatsaufsicht den Kommissar zu den Kassen schicken müsse.</p>
-				<p>In der ganzen Welt gehe die Entwicklung auf die Selbstbeteiligung zu und jetzt lasse man sich von der SPD bange machen. Man solle doch einen mutigen Schritt tun und die Sache beschleunigen; dann werde man auch den Wähler überzeugen können, daß das zu seinem Besten ist. Man müsse den Mut haben, der zu einer repräsentativen Demokratie gehöre: »hic Rhodos, hic salta!«</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> meint dazu, daß ja wohl alle tanzen wollten, daß man aber nicht wisse, wie.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> (Remscheid) berichtet, daß für die Frage der Lohnfortzahlung im Krankheitsfalle die Arbeitskreise II und IV eine Kommission eingesetzt hätten, die aber noch nicht zu einer einheitlichen Auffassung gekommen sei. Das vorläufige Ergebnis sei folgendes:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Eine volle Lohnfortzahlung für sechs Wochen wird im Hinblick auf die Belastung der Wirtschaft (2,7 Milliarden) als nicht realisierbar angesehen;</p></item>
-					<item><label>2.</label><p>Es besteht Übereinstimmung, daß bei einer Lohnfortzahlung die beteiligten Gruppen materiell interessiert bleiben müßten, um eine sich einseitig auswirkende Belastung zu verhüten.</p></item>
-					<item><label>3</label><p>Arbeitskreis II sei sich darin einig, daß die im Regierungsentwurf vorgesehene Selbstbeteiligung erhalten bleiben müsse, weil sie die Voraussetzung für die Lohnfortzahlung bildet;</p></item>
-					<item><label>4.</label><p>Arbeitskreis II legt Wert auf Beibehaltung eines Karenztages, während Arbeitskreis IV beide Karenztage beseitigt wissen will.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN021" type="comment"><p>Nicht im Protokollbestand der AK II und IV (ACDP-003-001/1 und 005-001/3).</p></note></seg></p></item>
-					<item><label>5.</label><p>Der Vorschlag <name type="Person" role="Erwaehnung" ref="#WeimerAugust_1957-10-15">Weimer</name> wird für zu aufwendig gehalten und schafft zuviel Schwierigkeiten bei der Neuregelung.</p></item>
-					<item><label>6.</label><p>So zeichnet sich folgende Lösungsmöglichkeit ab: Erhöhung der bisherigen 90%igen Nettolohnfortzahlung auf 100%. Finanzierung durch Neuaufteilung der Beitragsquoten.</p></item>
-				</list>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt hier die Fraktionssitzung mit der Mitteilung, daß die Diskussion nach der dritten Lesung des Mietengesetzes fortgesetzt werde.<seg type="note"><note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN022" type="comment"><p>Siehe Nr. 204 v. 25. 5. 1960. Zur Verabschiedung der Vorlage vgl. Sten. Ber., 117. Sitzung am 24. 5. 1960, S. 6776.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1960-05-20-t1540_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 20. Mai 1960</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>6 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1960-05-20">
+               <time type="start" when="15:40:00"/>
+               <time type="end" when="17:05:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1960-05-20-t1540_EP_SVP-1" corresp="#cdu-csu-03_1960-05-20-t1540_EP_div_SVP-1">A. Artikel im »Rheinischen Merkur« über die Arbeit der Fraktion. – Pariser Gipfelkonferenz. – Gesetz über den Weinbau. – Vorsitz im Außenpolitischen Ausschuss. – Freigewordener Sitz im Europarat. – <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> zu den Vorwürfen gegen ihn. – Reichsbankliquidationsgesetz und gründlichere Vorbereitung der Abgeordneten auf Gesetzesentwürfe. – Krankenversicherungsreform.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1960-05-20-t1540_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bezieht sich auf den Artikel im »Rheinischen Merkur«, in dem die Arbeit der Fraktion stark kritisiert worden ist. Er habe sich selbst mit Herrn <name type="Person" role="Erwaehnung" ref="#RoegeleOttoBernhard">Roegele</name> in Verbindung gesetzt und ihn auf die Unrichtigkeit seiner Behauptung hingewiesen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN001" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krones</name> Beschwerde beim Chefredakteur des »Rheinischen Merkur« betraf den Artikel »Kritik vertragen« von Dr. Anton <name type="Person" role="Erwaehnung" ref="#BoehmAnton">Böhm</name> in Nr. 21 v. 20. 5. 1960, S. 1. Vgl. Parl. Ber. Nr. 39-59/60 v. 20. 5. 1960, S. 1 (BA Koblenz, B 145/1911).</p>
+                  </note>
+               </seg> Die Arbeit der Fraktion in den letzten Wochen sei gerade besonders gut und fruchtbar gewesen. Natürlich gebe es sachliche Meinungsverschiedenheiten, aber das sei ja gerade gut so.</p>
+            <p>Der Bundesaußenminister sei noch in Paris festgehalten<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN002" type="comment">
+                     <p>Anlaß war die gescheiterte Pariser Gipfelkonferenz v. 16./17. 5. 1960. Vgl. Nr. 170 v. 8. 12. 1959.</p>
+                  </note>
+               </seg>, der Bundeskanzler habe noch keine Erklärung zu den Vorgängen in Paris abgegeben, weil er Wert darauf lege, nicht als erster Stellung zu nehmen. Man werde also eine Erklärung in der nächsten Woche erwarten können.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN003" type="comment">
+                     <p>Vgl. die Erklärung <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in Sten. Ber., Nr. 117 am 24. 5. 1960, S. 6700–6702.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Eine Reihe von Fraktionsmitgliedern hätte ein Gesetz über den Weinbau eingebracht. Es bestehe der Eindruck, daß das Gesetz, so wie es formuliert sei, nicht angenommen werden könne. Es solle aber trotzdem als Fraktionsantrag eingebracht werden. Die Zustimmung der Fraktion wird festgestellt. [Gesetzentwurf zur Überleitung des dt. Weinbaues in die EWG der Abg. <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> u. Gen.: Drucksache III/1870 – zu 1870 v. 12.5. und 5. 7. 1960]</p>
+            <p>Nachdem Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name> Präsident der Europäischen Wirtschaftsgemeinschaft geworden ist<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN004" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name> wurde Präsident des Europäischen Parlaments. Siehe Nr. 200 v. 10. 5. 1960.</p>
+                  </note>
+               </seg>, hat er den Vorsitz im Außenpolitischen Ausschuß niedergelegt. Für die Nachfolge sind mehrere Vorschläge gemacht worden. Der Vorstand schlägt vor, und zwar in Übereinstimmung mit <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> als Nachfolger zu benennen. Das Wort wird nicht gewünscht. Die Fraktion ist einverstanden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN005" type="comment">
+                     <p>Ab 25. 5. 1960: Hermann <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> (CDU/CSU). Vgl. Datenhandbuch II, S. 2046.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt dann vor, daß Hamburg Wert darauf lege, den durch den Tod des Abg. <name type="Person" role="Erwaehnung" ref="#LeverkuehnPaul_1953-10-06">Leverkuehn</name> freigewordenen Sitz im Europarat wieder zu besetzen. Der Fraktionsvorstand schlägt dafür Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> vor. Gewiß sei die Fraktion in einer Reihe von Fragen mit Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> nicht einverstanden<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN006" type="comment">
+                     <p>Zur Kritik an <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> aus der eigenen Fraktion siehe Nr. 132 v. 9. 6. 1959 und Nr. 146 v. 23. 6. 1959.</p>
+                  </note>
+               </seg>; das müsse man ihm auch sagen; auf der anderen Seite solle man auch dem Wunsche Hamburgs entsprechen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) fragt an, ob eine Regelung solcher Fragen nach Landesparteien wirklich den Interessen der Fraktion entspreche; das sei doch kein Prinzip für die Lösung solcher Dinge.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwidert, daß bei anderen Gelegenheiten auch Nordrhein-Westfalen mit der gleichen Argumentation einen Sitz verlangt habe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> bringt unter Hinweis auf ein Bibelzitat den Wunsch zum Ausdruck, daß Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, der leider nicht anwesend sei, doch gebeten werde, sich zu entschließen, die pornographischen Bilder in seiner Illustrierten<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN007" type="comment">
+                     <p>Vgl. »Der Stern« (Hamburg); Herausgeber war damals <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>.</p>
+                  </note>
+               </seg> künftig wegzulassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwidert, daß wohl verstanden worden sei, was <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name> habe sagen wollen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> stellt fest, daß Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> den Hauptvorwurf gegen die Einheit Nachtigall wiederholt habe entgegen allen Feststellungen der Staatsanwaltschaft. So sei veranlaßt worden, daß die Staatsanwaltschaft diese Sache aufgreife.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN008" type="comment">
+                     <p>Gegen zwei frühere Offiziere des Bataillons Nachtigall, Dr. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> und Dr. <name type="Person" role="Erwaehnung" ref="#HerznerHansAlbrecht">Herzner</name>, war Strafanzeige erstattet worden. Diese legte den Genannten eine Beteiligung an Massentötungen von Lemberger Einwohnern zur Last. Das Verfahren wurde am 26. 9. 1960 angesichts des Fehlens jeglicher Anhaltspunkte für eine Beteiligung dieses Bataillons an der Tötungsaktion eingestellt. Vgl. Bulletin des BPA Nr. 181 v. 27. 9. 1960, S. 1751.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> antwortet, daß er Dr. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> noch einmal versichert habe, daß auch nicht ein Deut von dem zurückgenommen werde, was man ihm zugesagt habe, daß man ihm also mit allen Mitteln helfen werde, seine Rehabilitierung zu erreichen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN009" type="comment">
+                     <p>Zum Fall <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> siehe Nr. 172 v. 11. 1. 1960, TOP 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> erläutert, daß er an den Fall <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> nicht gedacht habe. Wenn er aber Kenntnis davon gehabt hätte, hätte er gesagt, daß Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> solange nicht von der Fraktion vor der breiten Öffentlichkeit herausgestellt werden könne, bis er sein Verhalten geklärt habe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, daß er diesen Punkt jetzt absetze.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) regt an, daß doch über die Bedeutung jedes Gesetzes eine gründliche Information erfolgt, damit es nicht wieder passiere, daß Gesetze deshalb nicht durchkämen, weil sich die Fraktionsmitglieder nicht völlig über die Materie in klaren seien, wie es beim Reichsbankliquidationsgesetz gewesen sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN010" type="comment">
+                     <p>Vor Eintritt in die dritte Lesung wurde zunächst ein SPD-Gesetzentwurf zur Reichsbankliquidation abgelehnt. Die Schlußabstimmung, bei der das Haus nur schwach besetzt war, ergab zur allgemeinen Überraschung die Ablehnung auch der Regierungsvorlage. Vgl. Sten. Ber., 115. Sitzung am 19. 5. 1960, S. 6548, 6555, 6557 f.; Bulletin des BPA Nr. 96 v. 21. 5. 1960, S. 942.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwidert, daß dieses Gesetz auf der Tagesordnung der Fraktion gestanden habe. Es sei allerdings nicht diskutiert worden. Für die Abgeordneten sei es aber auch notwendig, bis zum Ende der Fraktionssitzung anwesend zu sein.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN011" type="comment">
+                     <p>Siehe Nr. 202 v. 10. 5. 1960 (am Schluß).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> erinnert daran, daß nach der Erklärung der SPD zu diesem Gesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN012" type="comment">
+                     <p>Vgl. Sten. Ber., 115. Sitzung am 19. 5. 1960, S. 6548–6550, 6557 (Dr. <name type="Person" role="Erwaehnung" ref="#SeumeFranz_1957-10-15">Seume</name>).</p>
+                  </note>
+               </seg> noch etwas hätte gesagt werden müssen. So aber habe der zuständige Wirtschaftsminister in seiner Bank gesessen und nicht geredet. Dabei sei die Rede davon gewesen, daß Aktien verschoben würden. Es sei also kein Zufall gewesen, wenn die Abstimmung so ausgegangen sei. Eine Erklärung des Ministers sei in dieser Situation unumgänglich notwendig gewesen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stimmt dieser Auffassung völlig zu.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LindenbergHeinrich_1953-10-06">Lindenberg</name> unterstützt die Anregung, die einzelnen Gesetze gründlich in der Fraktion zu besprechen. Daß dies aber in diesem Falle nicht hätte stattfinden können, sei eine unglückliche Verknüpfung von Umständen gewesen. Das Gesetz habe drei Monate im Vorstand gelegen, ohne weitergegeben zu werden. So sei es sehr überraschend auf die Tagesordnung gekommen. Auch im Arbeitskreis habe es nicht besprochen werden können. Als es dann im Plenum kritisch geworden sei, habe der Minister geschwiegen. Ein Minister, der nichts sagt, sei aber schlimmer als ein Minister, der nicht da ist.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wandte sich dann der Krankenversicherungsreform zu und bezeichnet es als notwendig, innerhalb der Fraktion eine Einigung über den einzuschlagenden Weg zu erzielen. Es sei die Frage aufgetaucht, ob man die Entscheidung über die Selbstbeteiligung nicht in die Hand der Selbstverwaltungsorgane legen könne. Das habe nichts damit zu tun, daß man sich die Sache vom Hals schaffen wolle, sondern entspreche dem Grundsatz, daß der Staat nicht Dinge übernehmen solle, die andere tragen könnten. Es wäre zu begrüßen, wenn die Fraktion nun wenigstens grundsätzlich zu diesen Fragen sich entscheiden könnte; dann könnte man die Durchführung dieses Prinzips weiterberaten. Er wolle noch betonen, daß keiner daran denke, vom Grundgedanken des Ministers <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> oder von ihm Abstand zu nehmen.</p>
+            <p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> erinnert daran, daß er die Entscheidung in einer der letzten Fraktionssitzungen hätte herbeiführen können, wobei er wohl eine günstige Abstimmung erzielt hätte. Es gehe ihm nicht darum, nun die Fraktion unter allen Umständen dazu zu bewegen, sich seine Gedanken zu eigen zu machen. Aber er wolle endlich einmal eine klare Entscheidung.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN013" type="comment">
+                     <p>Zum Meinungsstreit in der Regierungsfraktion (Streitpunkte Selbstbeteiligung und Lohnfortzahlung, Divergenzen zwischen Arbeitnehmer- und Arbeitgebervertretern) siehe Nr. 202 v. 17. 5. 1960; vgl. Reucher, Krankenversicherung, S. 157–173.</p>
+                  </note>
+               </seg> Die bisherige Methode der Behandlung dieser Sache könne nicht fortgesetzt werden. Schon jetzt habe die SPD ihr Vorschaltgesetz gemacht [Drucksache III/1926 v. 21. 6. 1960]<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN014" type="comment">
+                     <p>Vgl. ebd., S. 175 f.</p>
+                  </note>
+               </seg>, und man müsse sich doch klar sein, daß es unmöglich sein werde, später dann die schwierigen Dinge nachzuziehen, wenn man jetzt alle Rosinen aus dem Kuchen gepickt habe. Er habe gerne für die CDU Verantwortung getragen, aber er lege auch Wert darauf, nun nicht sein Gesicht verlieren zu müssen. Auch wolle er die Fraktion davor bewahren, daß sie zwar die absolute Mehrheit habe, jedoch nicht mehr in der Lage sei, politisch zu handeln.</p>
+            <p>Es könne nicht ohne weiteres gesagt werden, daß die Entscheidung jetzt darüber fallen solle, ob man die Selbstverwaltung der Versicherungen einschalte, sondern es müsse der ganze Komplex erörtert werden; dann erst könne die Fraktion sich entscheiden. Auf diese Entscheidung der Fraktion habe er ein Anrecht.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, daß er nach wie vor bemüht sei, einen Weg zusammen mit <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> zu finden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN015" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> trafen sich am Sonntag, den 22. 5. 1960 bei einer »Flasche Wein« und fanden einen Kompromiß in der Krankenversicherungsreform. Vgl. Krone, Tgb. 1945–1961, S. 420.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> führt aus, daß er vor acht Tagen, als der Sozialpolitische Ausschuß geplatzt sei, und die SPD der CDU Konzeptionslosigkeit vorwarf, nicht mehr gesehen habe, was nun aus dem Gesetz werden solle.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN016" type="comment">
+                     <p>In diesem Ausschuß sah sich die SPD-Fraktion – so Frau <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name> – nicht in der Lage, sich an Abstimmungen des Ausschusses zum Gesetzentwurf zu beteiligen, solange die Grundkonzeption der CDU/CSU noch nicht fixiert sei und die Stellungnahme des mitbeteiligten Ausschusses für Gesundheitswesen zu den wichtigsten Vorschriften des Gesetzentwurfes ausstehe. Nach einer Erwiderung von <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> (CDU) verließen die SPD-Mitglieder des Ausschusses die Sitzung. Vgl. 73. Sitzung des 20. Ausschusses v. 12. 5. 1960, S. 6 f. (Parl. Arch., Ausschuß für Sozialpolitik).</p>
+                  </note>
+               </seg> Nach der Pressekonferenz <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenbergs</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN017" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, sozialpolitischer Sprecher der SPD, hatte vor der Presse auf das Durcheinander in der CDU/CSU und die andauernden Unstimmigkeiten in der Frage der Krankenkassenneuregelung verwiesen. Vgl. »SPD ergreift Initiative im Krankenkassendilemma. Vorschaltgesetz soll dringendste Verbesserungen vorab ermöglichen«, in: PPP (M) v. 20. 5. 1960 (97), S. 1 f.</p>
+                  </note>
+               </seg> habe auch er dann die Presse unterrichtet, daß man entschlossen sei, die Zuständigkeit der Selbstverwaltung über den Regierungsentwurf hinaus auszubauen, und zwar auch in der Frage der Selbstbeteiligung.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN018" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> hatte nach dem Verlassen des Sozialpolitischen Ausschusses durch die SPD-Vertreter (siehe Anm. 16) vor der Presse die Stellungnahme der SPD entschieden zurückgewiesen. Es bestünden – so <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> – zwar über einige Paragraphen des Entwurfs in der CDU/CSU noch Meinungsunterschiede, doch stehe die Fraktion grundsätzlich zur Konzeption des Regierungsentwurfs. Vgl. »Ungerechtfertigtes Verhalten«, in: DUD Nr. 91 v. 13. 5. 1960, S. 4 f.</p>
+                  </note>
+               </seg> In diesem Sinne seien dann die Neuformulierungen der entsprechenden Paragraphen vorgenommen worden. Die dabei aufgetretenen Schwierigkeiten seien aber so groß gewesen, daß man sich entschlossen habe, mit Vertretern der Krankenkassen darüber zu sprechen. Dabei habe niemand im Grunde diese Lösung abgelehnt, und mehrere Vertreter der Kassen hätten sich sachverständig zu dem Vorschlag geäußert. Man habe dann diese Vertreter gebeten, ihre Meinung schriftlich zu formulieren, dieser Aufforderung seien aber nicht alle gefolgt. Die abgegebenen Stellungnahmen enthielten mancherlei Kritik in diesem Vorhaben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> schildert, wie man nach dem Gespräch mit dem Bundeskanzler<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN019" type="comment">
+                     <p>Gespräch am 11. 5. 1960 (18.20 Uhr) mit Sts. <name type="Person" role="Erwaehnung" ref="#ClaussenWilhelm">Claussen</name> und den Abg. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> und <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> (StBKAH, Besucherlisten Adenauer 04.11).</p>
+                  </note>
+               </seg> im Kreise der Sozialpolitiker der Fraktion eine Formulierung erarbeitet habe, die davon ausging, daß die Selbstverwaltung verpflichtet sei, eine Selbstbeteiligung anzuordnen, wenn die Beträge für die Arztleistungen ein gewisses Maß übersteigen. Die Selbstverwaltung müsse dann entweder eine dem Regierungsentwurf entsprechende Selbstbeteiligung vorsehen oder aber eine bestimmte prozentuale Beteiligung mit Mindestgrenze festsetzen. Höchstgrenze sei dabei 15 DM im Vierteljahr, wobei freigestellt bleibe, wer weniger als 300 DM im Monat verdient. Eine Mehrheit sei dafür gewesen, bei Krankenhausbehandlung solle eine Selbstbeteiligung nicht erfolgen. Die Gebühr für eine Verordnung solle -,50 DM betragen.</p>
+            <p>Dann sei wieder das Thema Krankenscheingebühr aufgekommen. Natürlich spiele bei der ganzen Diskussion die Lohnfortzahlung der Arbeiter im Krankheitsfall eine ausschlaggebende Rolle.</p>
+            <p>Auf die Bitte des Abg. <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name>, das Vorschaltgesetz der SPD bekanntzumachen, trägt <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> die Mitteilung des SPD-Pressedienstes vor und erläutert dazu, daß dieser Entwurf natürlich alle Rosinen aus dem Kuchen herausnehme und alles weglasse, was Reform bedeute. Wenn das verabschiedet werde, werde man nie zu einer Reform der Krankenkassen kommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> regt an, doch in der Reihenfolge Selbstbeteiligung und Lohnfortzahlung, dann Reform der Selbstbeteiligung im Sinne der Regierungsvorlage oder über die Selbstverwaltung der Kassen, dann erst in welcher Form praktisch zu beraten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#FranzenJakob_1953-10-06">Franzen</name> glaubt, daß zunächst darüber entschieden werden müsse, wie man grundsätzlich zur Selbstbeteiligung stehe. Davon hänge alles andere ab. Er erklärt es für politisch unmöglich, wenn sich diese Fraktion gegen die Selbstbeteiligung aussprechen würde; das würde eine unglückliche Entwicklung bedeuten. Die Wähler werde man verlieren, wenn man keine klare Konzeption habe, nicht aber, wenn man entschlossen eine vernünftige Politik betreibe und die Leute richtig darüber informiere.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WeimerAugust_1957-10-15">Weimer</name> führt aus, daß die Grundsätze der Regierungsvorlage in der Fraktion sicher von allen geteilt würden. Über die Notwendigkeit der Reform bestehe vollkommene Übereinstimmung, Streit bestehe über die Form. Er habe seine Vorschläge schriftlich zusammengestellt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN020" type="comment">
+                     <p>Eine Gruppe um die Abg. <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#WeimerAugust_1957-10-15">Weimer</name>, <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> und <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> sprach sich gegen die im Regierungsentwurf vorgesehene Inanspruchnahmegebühr aus. Vgl. Reucher, Krankenversicherung, S. 165 f., 172.</p>
+                  </note>
+               </seg> Auch die Krankenscheingebühr sei eine Art der Selbstbeteiligung, rege zur behutsamen Inanspruchnahme an, ermögliche die Honorierung nach Einzelleistung. Nicht die Verbände, aber die Versicherten würden eine solche Regelung bejahen. Auch blieben für alle künftig notwendig werdenden Regelungen die Wege offen. Die Krankenscheingebühr werde sicher zu einer Teilfinanzierung der aufkommenden Belastung führen, da sich dabei erhebliche Beträge ergäben.</p>
+            <p>Wenn man die Beteiligung der Selbstverwaltung anstrebe, so sei das eine Art Teilkapitulation, wenn nicht festgelegt werde, daß die Selbstbeteiligung in bestimmten Fällen zwingend vorgeschrieben sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> weist darauf hin, daß er im Interesse der Krankenkassen bitten müsse, auch auf die Krankenscheingebühr zu verzichten, wenn man sich zu einer anderen Form nicht entschließen könne. Diese Regelung öffne allen Mißbräuchen wieder Tür und Tor. Die Krankenscheingebühr sei außerdem familienpolitisch das Unsozialste, was man sich vorstellen könne. Es komme doch nicht darauf an, irgendeine Gebühr zu erheben, sondern man wolle den Menschen unmittelbar an dem ganzen Prozeß teilhaben lassen. Man brauche die Selbstbeteiligung auch deshalb, weil man sonst bei den Kassen vor der finanziellen Katastrophe stehe. Nach den vorliegenden Unterlagen bleibe nichts anderes übrig, als die Selbstbeteiligung einzuführen. Er fände sich auch damit ab, wenn das über die Selbstverwaltung erfolge, aber es müsse im vorgesehenen Rahmen erfolgen. Es müsse in jedem Falle vermieden werden, daß der Arbeitsminister dann im Wege der Staatsaufsicht den Kommissar zu den Kassen schicken müsse.</p>
+            <p>In der ganzen Welt gehe die Entwicklung auf die Selbstbeteiligung zu und jetzt lasse man sich von der SPD bange machen. Man solle doch einen mutigen Schritt tun und die Sache beschleunigen; dann werde man auch den Wähler überzeugen können, daß das zu seinem Besten ist. Man müsse den Mut haben, der zu einer repräsentativen Demokratie gehöre: »hic Rhodos, hic salta!«</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> meint dazu, daß ja wohl alle tanzen wollten, daß man aber nicht wisse, wie.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> (Remscheid) berichtet, daß für die Frage der Lohnfortzahlung im Krankheitsfalle die Arbeitskreise II und IV eine Kommission eingesetzt hätten, die aber noch nicht zu einer einheitlichen Auffassung gekommen sei. Das vorläufige Ergebnis sei folgendes:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Eine volle Lohnfortzahlung für sechs Wochen wird im Hinblick auf die Belastung der Wirtschaft (2,7 Milliarden) als nicht realisierbar angesehen;</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>Es besteht Übereinstimmung, daß bei einer Lohnfortzahlung die beteiligten Gruppen materiell interessiert bleiben müßten, um eine sich einseitig auswirkende Belastung zu verhüten.</p>
+               </item>
+               <item>
+                  <label>3</label>
+                  <p>Arbeitskreis II sei sich darin einig, daß die im Regierungsentwurf vorgesehene Selbstbeteiligung erhalten bleiben müsse, weil sie die Voraussetzung für die Lohnfortzahlung bildet;</p>
+               </item>
+               <item>
+                  <label>4.</label>
+                  <p>Arbeitskreis II legt Wert auf Beibehaltung eines Karenztages, während Arbeitskreis IV beide Karenztage beseitigt wissen will.<seg type="note">
+                        <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN021" type="comment">
+                           <p>Nicht im Protokollbestand der AK II und IV (ACDP-003-001/1 und 005-001/3).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <p>Der Vorschlag <name type="Person" role="Erwaehnung" ref="#WeimerAugust_1957-10-15">Weimer</name> wird für zu aufwendig gehalten und schafft zuviel Schwierigkeiten bei der Neuregelung.</p>
+               </item>
+               <item>
+                  <label>6.</label>
+                  <p>So zeichnet sich folgende Lösungsmöglichkeit ab: Erhöhung der bisherigen 90%igen Nettolohnfortzahlung auf 100%. Finanzierung durch Neuaufteilung der Beitragsquoten.</p>
+               </item>
+            </list>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt hier die Fraktionssitzung mit der Mitteilung, daß die Diskussion nach der dritten Lesung des Mietengesetzes fortgesetzt werde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-20-t1540_EP_FN022" type="comment">
+                     <p>Siehe Nr. 204 v. 25. 5. 1960. Zur Verabschiedung der Vorlage vgl. Sten. Ber., 117. Sitzung am 24. 5. 1960, S. 6776.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

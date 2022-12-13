@@ -1,291 +1,585 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-02-15-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title><author>Heinrich Potthoff</author><pubPlace>Düsseldorf</pubPlace><date>1993</date>
-						<idno type="DNB">https://d-nb.info/930888952</idno>
-						<idno type="DNB">https://d-nb.info/930907760</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 14)</idno>
-							<objectName>SPD-Fraktion im Bundestag. Protokoll der Fraktionssitzung vom 15.2.1966</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 15. Februar 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>13 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-02-15"><time type="start" when="15:00:00"/><time type="end" when="20:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1966-02-15-t1500_EP_SVP-1" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-1">A. TOP 1: Vorträge der Vertreter der Wissenschaftsorganisationen.</item>
-					<item xml:id="spd-05_1966-02-15-t1500_EP_SVP-2" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-2">B. TOP 2: Vorbereitung der Plenarsitzungen.</item>
-					<item xml:id="spd-05_1966-02-15-t1500_EP_SVP-3" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-3">C. TOP 3: Vorlagen aus den Arbeitskreisen. </item>
-					<item xml:id="spd-05_1966-02-15-t1500_EP_SVP-4" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-4">D. TOP 4: Termine. – TOP 5: Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> eröffnet die Fraktionssitzung und gibt bekannt, daß die Genesung Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> weiter gute Fortschritte macht. Voraussichtlich können wir hier in der Fraktion ab 4. März wieder mit Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> rechnen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN009" type="comment"><p><name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> leitete erstmals wieder die Fraktionssitzung am 9.3.1966. Vgl. <ref type="internal" target="#spd-05_1966-03-08-t1510_EP">Nr. 139</ref>.</p></note></seg> Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> begrüßt besonders die anwesenden Vertreter der Wissenschaftsorganisationen und zwar vom Wissenschaftsrat den Vorsitzenden Prof. Dr. Hans <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN001" type="comment"><p><name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name> (geb. 1912), Direktor des Instituts für Bodenmechanik an der Technischen Hochschule Karlsruhe, 1960-1962 Präsident der Westdeutschen Rektorenkonferenz, war von 1966 bis 1969 Vors. des Wissenschaftsrates.</p></note></seg> und den Generalsekretär Ministerialdirektor Dr. Friedrich <name type="Person" role="Erwaehnung" ref="#SchneiderFriedrich">Schneider</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN002" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchneiderFriedrich">Schneider</name> (geb. 1913), seit 1946 in Verwaltungsämtern der Universität Köln, zuletzt als Kanzler, 1958-1966 Generalsekretär des Wissenschaftsrates, ab 1966 der Max-Planck-Gesellschaft.</p></note></seg>, von der Deutschen Forschungsgemeinschaft den Prof. Dr. Julius <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN003" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name> (geb. 1905), Direktor des Instituts für Forstpolitik und forstliche Betriebswirtschaftslehre an der Universität München, 1962-1964 Präsident der Westdeutschen Rektorenkonferenz, seit 1964 Präsident der Deutschen Forschungsgemeinschaft.</p></note></seg> und den Generalsekretär Dr. Carl-Heinz <name type="Person" role="Erwaehnung" ref="#SchielCarl-Heinz">Schiel</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN004" type="comment"><p>Carl-Heinz<name type="Person" role="Erwaehnung" ref="#SchielCarl-Heinz">Schiel</name> (geb. 1922), seit 1956 Senatsreferent und ab 1965 Generalsekretär der Deutschen Forschungsgemeinschaft.</p></note></seg>, von der Westdeutschen Rektorenkonferenz den Präsidenten Prof. Dr. Rudolf <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN005" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name> (geb. 1903), Direktor der Seminare für Strafrecht und Kriminalpolitik und für Jugendrecht und Jugendhilfe in Hamburg, Präsident der Westdeutschen Rektorenkonferenz 1964-1967.</p></note></seg> und den Generalsekretär Dr. Jürgen <name type="Person" role="Erwaehnung" ref="#FischerJürgen">Fischer</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN006" type="comment"><p>Jürgen <name type="Person" role="Erwaehnung" ref="#FischerJürgen">Fischer</name> (geb. 1923), Gen. Sekr. der Rektorenkonferenz 1954-1980.</p></note></seg> und schließlich von der Max-Planck-Gesellschaft den Präsidenten Prof. Dr. Adolf <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name><seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN007" type="comment"><p>Adolf <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name> (geb. 1903), Direktor des Max-Planck-Instituts für Biochemie in München, Nobelpreisträger 1939, Präsident der Max-Planck-Gesellschaft zur Förderung der Wissenschaften seit 1960.</p></note></seg> und den Generalsekretär Dr. Hans <name type="Person" role="Erwaehnung" ref="#BallreichHans">Ballreich</name>.</p>
-				<p>Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> erteilt als erstem Herrn Prof. Dr. <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name> das Wort.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#ButenandtAdolf">Butenandt</name>:</p>
-				<p>Meine Damen und Herren, für ihre Einladung bedanke ich mich recht herzlich. Wir hatten schön öfters die Gelegenheit einer gemeinsamen Aussprache und die heutige Diskussion möge nicht die letzte sein. In kurzen Umrissen darf ich Ihnen die Aufgaben der Max-Planck-Gesellschaft erläutern.</p>
-				<p>Zu unserer wissenschaftlichen Gruppe gehören 50 Institute. Vor ein paar Jahren haben wir mit der Großforschung begonnen, da heute nur noch große Wissenschaftlerteams die immer komplizierter werdenden Probleme lösen und neue Erkenntnisse finden können. Ein solches Großforschungsprojekt läuft in Garching, wo wir uns mit Plasmafragen befassen und auf dem Gebiet der Materieumwandlung schon beachtliche Erfolge erzielen konnten.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN010" type="comment"><p>Das Max-Planck-Institut für Plasmaphysik in München-Garching befaßte sich mit Forschungen auf dem Gebiet der Atomkern-Verschmelzung. Dem Forscherteam unter Leitung der Professoren Ewald <name type="Person" role="Erwaehnung" ref="#FünferEwald">Fünfer</name> und Arnulf <name type="Person" role="Erwaehnung" ref="#SchlueterHelmut_1964-09-11">Schlüter</name> war es gelungen, in einem Experiment kurzzeitig eine Temperatur von 60 Mio. Grad Kelvin zu erzeugen, was als ein bedeutender Schritt zur Kernfusion gewertet wurde. Vgl. <bibl type="series-item">»Der Spiegel« Nr. 9 vom 21.2.1966, S. 34</bibl>.</p></note></seg> Die Anlage in Garching ist noch nicht vollendet; der heutige Personalbestand von 800 Wissenschaftlern und Angestellten muß nach Fertigstellung der geplanten Anlage verdoppelt werden. Ein anderes Gebiet der Großforschung ist die Astronomie und Weltraumforschung, die einen sehr großen Aufwand erfordert. Deutschland hat in diesem Bereich einen großen Rückstand aufzuholen. Die internationale wissenschaftliche Zusammenarbeit gewinnt immer mehr an Bedeutung und die hier bisher gemachten Erfahrungen sind gut. In Genf ist u. a. der Bau eines Instituts für internationale Forschung vorgesehen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN011" type="comment"><p>Gemeint sein könnte der Beschluß des Rates der Europäischen Organisation für Kernforschung (CERN) von Dezember 1965 über ein Programm zur Errichtung einer sog. Speicherringanlage in Genf, mit der Grundlagenforschung über das Wesen der Materie betrieben werden sollte. Vgl. <bibl type="series-item">Bulletin Nr. 5 vom 12.1.1966, S. 38</bibl>.</p></note></seg> Diese internationale Zusammenarbeit führt aber kein Eigenleben und ist kein Ersatz für nationale Arbeit auf den ähnlichen Gebieten. Die Mitarbeit an der übernationalen Forschung und die Entsendung gleichwertiger Wissenschaftler, die auch anerkannt werden, ist nur möglich, wenn im eigenen Land die gleiche Forschung betrieben wird.</p>
-				<p>Wir sind der Ansicht, daß der Bund nicht allein Träger dieser Großforschung sein sollte, sondern wir halten eine Beteiligung der Sitzländer an den Kosten für richtig. Nach dem bisherigen Bund-Länder-Abkommen werden die Kosten geteilt.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN012" type="comment"><p>Gemeint war das Verwaltungsabkommen von Bund und Länder zur Finanzierung der Max-Planck-Gesellschaft und der Deutschen Forschungsgemeinschaft.</p></note></seg> Dieser Vertrag läuft nun in diesem Jahr ab und man sollte bei der Erneuerung der Vereinbarung eine Verbesserung der Abmachungen dahingehend vornehmen, daß die Kostenbeteiligung von Bund und Ländern nicht nach einem starren System erfolgt. Dabei bestimmt natürlich das finanzschwächste Land auch die Zuwendung des Bundes an die jeweiligen Einrichtungen. Eine glücklichere Lösung würde die Zentralfinanzierung darstellen, bei der der Bund 70 v. H. und die Länder 30 v. H. aufbringen sollten.</p>
-				<p>Ein anderes ernstes Problem ist die Abwanderung deutscher Wissenschaftler. Im Jahre 1964 sind allein nach den USA 400 wissenschaftliche Akademiker ausgewandert. Als Hauptgrund für diesen Wandertrieb muß die schlechte Bezahlung des wissenschaftlichen Nachwuchses gesehen werden, besonders in der mittleren Stufe zwischen jungem Assistenten und Professor. Als Abhilfe muß hier ein neuer Tarif geschaffen werden, der eine Bezahlung nach echter Leistung ermöglicht. Bis zur Schaffung dieses neuen Tarifes ist eine Sonderregelung zur Überbrückung unbedingt erforderlich. Damit möchte ich den kurzen Überblick beschließen. Ich danke Ihnen.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> bedankt sich bei Prof. <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name> und erteilt Herrn Prof. <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name> das Wort.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SpeerJulius">Speer</name>:</p>
-				<p>Die Deutsche Forschungsgemeinschaft gleicht einem vielgestaltigen Januskopf. Von den mannigfachen Aufgaben, die uns gestellt sind, möchte ich die wichtigsten aufführen:</p>
-				<p>1. Die Finanzierung der Forschung und die Förderung des Nachwuchses.</p>
-				<p>Zwischen beiden Gebieten besteht eine enge Wechselbeziehung, die genau aufeinander abgestimmt werden muß. Neben der Förderung der Habilitationen ist die Unterstützung der Wissenschaft stärker geworden. Die Voraussetzung für die fortlaufende Entwicklung ist die Kontinuität beider Bereiche. Vor allem dürfen keine Stockungen auftreten bei der Versorgung der Hochschulen mit wissenschaftlichem Nachwuchs.</p>
-				<p>2. Die Bearbeitung von Forschungsanträgen.</p>
-				<p>Neben der Großforschung werden von uns jährlich 6 000 solcher Anträge bearbeitet. Die angesetzten Gutachter entscheiden über die Anträge anonym.</p>
-				<p>3. Die Forschungsgemeinschaft hat Schwerpunkte zu setzen und sie zu fördern.</p>
-				<p>Eine Kommission des Senats entscheidet über die diesbezüglichen Anregungen der Gelehrten und Behörden.</p>
-				<p>Ein solcher Schwerpunkt ist zur Zeit die Elektronik und Informationsverarbeitung. In dieses Projekt haben wir bis jetzt 120 Mio. DM hineingesteckt. Unsere Hoffnung, die Länder würden in Zukunft die Unterhaltung dieser Anlagen übernehmen, erfüllte sich nicht. Bei den elektronischen Einrichtungen sind wir überwiegend auf das Ausland angewiesen, da die deutschen Entwicklungen noch nicht konkurrenzfähig sind. Die Nachfrage nach geeignetem Bedienungspersonal ist groß.</p>
-				<p>4. Die Forschungsgemeinschaft ermittelt Grundlagen für weitere Forschungen, z. B. in der Wasserforschung, Ozeanographie, der Ernährungsforschung und in der Frage der Berufskrankheiten.</p>
-				<p>Besonders der letzte Komplex erfordert Untersuchungen über einen langen Zeitraum, die sehr kostspielig sind.</p>
-				<p>5. Eine wesentliche Aufgabe der Forschungsgemeinschaft ist die Schaffung von Hilfseinrichtungen für die Wissenschaft. Hierzu gehören, ein Zentralinstitut für Mutationsgenität, Zentralbibliotheken und Zuchtanstalten für Versuchstiere.</p>
-				<p>Entscheidend für die Durchführung unserer Aufgabe ist die Kontinuität der uns bereitgestellten Mittel. Nur dann können wir die uns übertragenen Arbeiten zufriedenstellend lösen.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt Herrn Prof. <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name> für seine Ausführungen und erteilt Herrn Prof. <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name> das Wort.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#LeussinkHans">Leussink</name>:</p>
-				<p>Auch die Wissenschaft muß planen, auch wenn dies so gar nicht zur Wissenschaft passen mag. Heute wissen wir, daß unsere Schätzungen über die erforderlichen Mittel für den Ausbau der wissenschaftlichen Einrichtungen von 1960 mit 2,5 Mrd. DM für die folgenden fünf Jahre zu gering angesetzt waren.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN013" type="comment"><p>Die Empfehlungen des Wissenschaftsrates vom 25.11.1960 zum Ausbau der wissenschaftlichen Hochschulen sahen allein für das Bauprogramm 2,6 Mrd. vor, die von Bund und Ländern je zur Hälfte getragen werden sollten. Der jährliche Aufwand für das wissenschaftliche Personal sollte nach den Vorstellungen des Wissenschaftsrates von 210 auf 360 Mio. DM steigen. Vgl. <bibl type="series-item">AdG 1960, S. 8773 f.</bibl>; <bibl type="series-item">»Der Spiegel« Nr. 9 vom 21.2.1966, S. 44</bibl>.</p></note></seg> Nach unserem jetzigen Überblick wird die Wissenschaft in den nächsten 3 bis 5 Jahren etwa 10 Mrd. DM benötigen. Dieser Betrag ist in erster Linie von den Ländern aufzubringen zusammen mit der Hilfe des Bundes. Nach unserem heutigen Überblick werden für im Bau befindliche Einrichtungen und Projekte etwa 6,5 bis 7 Mrd. DM benötigt. Wenn die vorgesehenen Programme verwirklicht werden sollen, müßte der Bund jährlich einen Zuschuß von 1 Mrd. DM bereitstellen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN014" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN009">Nr. 136, Anm. 9</ref>.</p></note></seg></p>
-				<p>Neben der Finanzierung der Wissenschaft beschäftigt sich der Wissenschaftsrat auch mit der sog. Studienreform.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN015" type="comment"><p>Als Ergebnis dieser Beratungen überreichte der Wissenschaftsrat am 10.6.1966 Bundespräsident <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> eine Empfehlung zur Neuordnung des Hochschulstudiums. Vgl. <bibl type="series-item">AdG 1966, S. 12550</bibl>.</p></note></seg> Das äußere Gehäuse hierzu fehlt heute allerdings noch, da nicht genügend Seminarräume und Arbeitsplätze für die Studenten vorhanden sind.</p>
-				<p>Die geübte Kritik an den bisherigen Hochschulbauten ist zum Teil berechtigt, da manchmal in der Tat zu luxuriös gebaut wurde. In Zukunft wird man jedoch Institute von der Stange bauen müssen. Diese Entwicklung kommt von selbst, da man mit den zur Verfügung stehenden Mitteln auskommen muß.</p>
-				<p>Obwohl eine Planung zur Wissenschaft so gar nicht paßt, müssen wir sie vornehmen. Grundsätzlich kann aber nur mittelfristig – für 3 bis 5 Jahre – vorgeplant werden, da man stets wieder die neuen Erkenntnisse mit in die Planungen verarbeiten muß. – Ich danke Ihnen.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt Prof. <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name> für seine Ausführungen und erteilt Prof. <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name> das Wort.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SievertsRudolf">Sieverts</name>:</p>
-				<p>Nach der westdeutschen Rektorenkonferenz gehören Forschung und Lehre unbedingt zusammen. Die Leistungen der Wissenschaft nach dem Kriege waren angesichts der ungenügenden Umstände dennoch beachtlich. Ein großer Störungsfaktor nach dem Kriege war der große Andrang zu den Hochschulen bei unzureichenden Einrichtungen. Heute sind besonders stark gefragt die Fakultäten Jurisprudenz, Wirtschafts- und Sozialpolitik und Philosophie, während bei den anderen Fakultäten normale Besetzungen zu beobachten sind. Auf dem Gebiet der Mathematik und Chemie wird man in einigen Jahren den Bedarf der Industrie nach Wissenschaftlern kaum decken können. Schon heute macht es Schwierigkeiten, die Planstellen an neugebauten Hochschulen zu besetzen. Erfreulich ist der Leistungsanstieg der Studenten aufgrund der Hochschulneubauten und Hochschulerweiterungen.</p>
-				<p>Eine Reform der Studienpläne ist unbedingt erforderlich. Diese muß auch ausgedehnt werden auf die Prüfungsordnungen bei Staatsprüfungen. Dabei sind die Bestallungsverordnungen des Staates mit bestimmend für die Neuordnung der Studienpläne. Ziel der Neuordnung der Studienpläne ist die Beseitigung von unnötigem Ballast und die Verkürzung des Studiums. Die neuen Rahmenordnungen für die Studienpläne sehen vor allem Zwischenprüfungen vor, wodurch die Auslese nach etwa 3 bis 4 Semestern erfolgen soll. Für Studienanfänger ist eine Beratung vorgesehen, die das Schwimmen der Studenten zu Beginn ihres Studiums verhindern soll.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN016" type="comment"><p>Siehe dazu die vom Wissenschaftsrat am 10.6.1966 vorgelegte Empfehlung. Sie sah ein dreistufiges System vor: ein Regelstudium, das mit einer die Berufsfähigkeit bestätigenden Prüfung abschließen sollte (Staats-, Diplom- oder Magisterexamen), ein »Aufbaustudium«, das einen »engeren Kontakt« zur Forschung bringen und ein »Kontaktstudium«, das eine spätere Weiterführung der wissenschaftlichen Ausbildung ermöglichen sollte.</p></note></seg> Vorgesehen ist auch eine befristete Immatrikulation, wie sie bereits mit Erfolg schon in Hannover praktiziert wurde. Durch die Neuordnung der Studienpläne wird das Studium allgemein verkürzt, die Hochschulen entlastet und die jungen Akademiker früher einem Beruf zugeführt. – Ich danke Ihnen.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt Prof. <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name> und eröffnet die Diskussion.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> begrüßt die Zusammenarbeit zwischen den Wissenschaftsorganisationen und versichert, daß in der Frage der Hochschulfinanzierung seitens der SPD nicht nur allgemeine Bekenntnisse abgegeben worden sind, sondern Lücken im Etat gesucht werden, um die fehlenden 180 Mio. DM bereitzustellen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN017" type="comment"><p>Die von der SPD-Fraktion im Antrag vom 8.2.1966 geforderte Aufstockung der Bundesmittel für den Hochschulausbau um 180 Mio. auf 530 Mio. – siehe <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN010">Nr. 136, Anm. 10</ref> – wurde auch von ihren Sprechern in der Wissenschaftsdebatte des Bundestages am 10.2.1966 vertreten. Zur Bereitstellung der zusätzlichen 180 Mio. deutete <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name> an, diese stellten nur den »Gegenwert von 26 Starfightern dar« und es gebe auch »überflüssige Subventionen«. <bibl type="btp"><ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 741</bibl>. <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name>, SPD (<bibl type="btp"><ref type="external" target="05/19">ebd.</ref>, S. 771 f.</bibl>) gab in seiner Rede zu verstehen, bei der Aufbringung dieser Mittel lasse die SPD den Regierungsparteien »gern den Vortritt«. Aber sie sei bereit, »wenn sie dazu nicht in der Lage sein sollten«, der Koalition »an der richtigen Stelle, nämlich im Haushaltsausschuß«, ihre Vorschläge zu dieser Frage zu machen«. <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, SPD, äußerte anschließend zum Problem eines »Deckungsvorschlags«, daß der gesamte Bundeshaushalt formaliter »noch nicht überreicht worden« sei. Wenn wir ihn hätten, würde die SPD-Fraktion »einen konkreten Deckungsvorschlag, zusammengesetzt aus einigen Titeln, unterbreiten«. Dabei sei »die Subventionsfront in dem Bundeshaushalt der gegebene Ansatzpunkt, um dort Deckungsmöglichkeiten im Rahmen des Haushalts zu finden«. <bibl type="btp"><ref type="external" target="05/19">Ebd.</ref>, S. 799</bibl>. – Zur Konkretisierung der Deckungsvorschläge siehe <ref type="internal" target="#spd-05_1966-03-01-t1510_EP_SVP-1">Nr. 138, TOP 1</ref>.</p></note></seg> Er stellt nachstehende Fragen:</p>
-				<p>1. Wie sieht die Arbeitsteilung national und international aus?</p>
-				<p>2. Macht der Wissenschaftsrat die Vorschläge für mittelfristige Planungen und werden darin auch schon die neuen Universitäten mit einbezogen?</p>
-				<p>3. Was halten sie von einer quantitativen Reform des Honnefer Modells?</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> stellt folgende Fragen:</p>
-				<p>1. Ist der einheitliche Schulbeginn in Deutschland für die Hochschule von Bedeutung?</p>
-				<p>2. Kann bei der Studienreform ein gemeinsamer Nenner zwischen Hochschulen und Ländern gefunden werden?</p>
-				<p>3. Werden die Professoren nicht überfordert, wenn die jungen Leute zu den Hochschulen kommen und nur eine Eintrittskarte für einen gehobenen Beruf haben wollen? Sollte man nicht wie in Amerika zwischen Ausbildung und Forschung trennen?</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> geht kurz auf die letzte Frage von Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> ein und versichert, daß eine solche Arbeitsteilung zwischen Forschung und Ausbildung in Hamburg schon erfolgt ist.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN018" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> war seit 1947 o. Professor der Universität Hamburg und Direktor des Instituts für Außenhandel und Überseewirtschaft und Sozialökonomie.</p></note></seg> Er stellt nachstehende Fragen:</p>
-				<p>1. Kann der Wissenschaftsrat seinen Finanzbedarf für 1967 ebenso rechtzeitig anmelden wie für dieses Jahr?</p>
-				<p>2. Wie verhalten sich die Vertreter des Bundes im Wissenschaftsrat?</p>
-				<p>3. Ist es vorteilhaft, nur einen verantwortlichen Sprecher des Bundes für den Bereich der Wissenschaft zu haben?</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#MertenHans_1951-04-23">Merten</name> stellt einige Fragen im Zusammenhang mit der internationalen Forschung:</p>
-				<p>1. Wirken sich die in Deutschland auftretenden Mängel auf die Arbeit der internationalen Forschung aus?</p>
-				<p>2. Wie können die Mängel beseitigt werden?</p>
-				<p>3. Welche Wirkung haben bilaterale Abmachungen auf die internationale Forschung?</p>
-				<p>4. In welchem Verhältnis zu den nationalen Beiträgen werden die Forschungsarbeiten verteilt?</p>
-				<p>Der Abg. <name type="Person" role="Sprecher" ref="#RauFriedrich_1965-10-19">Rau</name> fragt nach den Gesichtspunkten für die Aufstellung der sog. Negativliste.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#KueblerPaul_1961-10-17">Kübler</name> möchte wissen, ob die vorgeschlagene Sonderprämie für Wissenschaftler nur für die Naturwissenschaftler vorgesehen ist.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#PorznerKonrad_1962-05-21">Porzner</name> erkundigt sich, ob nicht auch eine Verkürzung der Schulzeit an den höheren Schulen zur Straffung der Ausbildung von Akademikern beitragen kann?</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#RaffertJoachim_1965-10-19">Raffert</name> stellt folgende Fragen:</p>
-				<p>1. Wie funktioniert die Zusammenarbeit unter den Wissenschaftsorganisationen?</p>
-				<p>2. Wird bei den Planungen des Wissenschaftsrates auch der volkswirtschaftliche Effekt einzelner Projekte mit berücksichtigt?</p>
-				<p>Günther <name type="Person" role="Sprecher" ref="#MuellerGuenther_1965-10-19">Müller</name> stellt folgende Fragen:</p>
-				<p>1. Wie war die Zusammenarbeit der einzelnen Institute in der Frage der Negativliste?</p>
-				<p>2. Wird die Abwanderung der Wissenschaftler nicht durch die internationale Zusammenarbeit angereizt?</p>
-				<p>3. Sollte man nicht durch eine Konzentration der Aufgaben zu einer Steigerung der Effektivität der Anlagen kommen?</p>
-				<p>4. Die schlechte Bezahlung der Wissenschaftler ergibt sich auch aus der Unterschiedlichkeit zwischen den Tarifen für Angestellte und Beamte. Müßte der vorgesehene Sondertarif also diese Unterschiede nicht berücksichtigen?</p>
-				<p>Elinor <name type="Person" role="Sprecher" ref="#HubertElinor_1949-09-07">Hubert</name> erkundigt sich nach dem staatlichen Einfluß bei der Studienneuordnung und ob die Ausbildung der Mediziner nicht auch auf Krankenhäuser ausgedehnt werden könnte.</p>
-				<p>Carlo <name type="Person" role="Sprecher" ref="#SchmidCarlo_1949-09-07">Schmid</name> weist darauf hin, daß es bei den Problemen der Wissenschaft nicht allein um Geld geht. Die SPD-Fraktion wird sich allerdings ernsthaft bemühen, für die fehlenden 180 Mio. DM eine Deckungslücke zu finden<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN019" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-03-01-t1510_EP_SVP-1">Nr. 138, TOP 1</ref>.</p></note></seg>, da es sich bei der Förderung der Wissenschaft um eine Investition und nicht um Konsumausgaben handelt. Da die höhere Schule die jungen Menschen für die Hochschulen vorbereitet, muß mit der Neuordnung der Studienpläne für die Hochschulen eine Reform der höheren Schulen einhergehen. Bei den Gesprächen mit den Kultusministerien zur Entrümpelung der Studienpläne muß auch über eine Kürzung der Pflichtstudienfächer gesprochen werden. Trotz akademischer Freiheit muß der junge Student in den ersten Semestern geführt werden, damit er durch die Umstellung so wenig wie möglich Zeit verliert.</p>
-				<p>Egon <name type="Person" role="Sprecher" ref="#HoehmannEgon_1957-10-15">Höhmann</name> erwähnt die Tatsache, daß für die Abwanderung deutscher Wissenschaftler nicht allein die ungenügende Bezahlung verantwortlich ist. Vielmehr müsse mit der Verbesserung der Tarife für Wissenschaftler auch eine Reform der inneren Organisation der Hochschulen vorgenommen werden.</p>
-				<p>Horst <name type="Person" role="Sprecher" ref="#SchmidtHorst_1961-10-17">Schmidt</name> hält es für zweckmäßig, trotz der augenblicklichen Schwierigkeiten doch mit den langfristigen Forschungsarbeiten zu beginnen, damit man in absehbarer Zeit auch hier Ergebnisse erzielen kann.</p>
-				<p>Hans-Jürgen <name type="Person" role="Sprecher" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name> hält eine intensivere Verständigung zwischen einzelnen Fachrichtungen für dringend angebracht, weil nur so die Entwicklung auf einem bestimmten Gebiet ohne Verzögerung fortgesetzt werden kann. Auch an den Nahtstellen bestimmter Wissenschaftsbereiche müßte die Koordinierung zur größeren Effektuierung angestrebt werden.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#ButenandtAdolf">Butenandt</name> geht auf die Fragen der Abgeordneten ein:</p>
-				<p>Die von der Wissenschaft angeforderten Mittel stellen nicht nur eine Wunschliste dar, sondern sind der echte Bedarf für eine reibungslose Arbeit.</p>
-				<p>Durch die internationale Zusammenarbeit wurden die nationalen Leistungen befruchtet und angehoben. Trotzdem muß aber die Grundlagenforschung weiter verstärkt werden, damit wir international konkurrieren können. Durch die internationale Zusammenarbeit ist eine verstärkte Abwanderung deutscher Wissenschaftler nicht zu befürchten, da die Verträge nur befristet laufen.</p>
-				<p>In der Forschung ist eine langfristige Planung deswegen nicht möglich, weil immer wieder neue Probleme und Erkenntnisse mit berücksichtigt werden müssen. Die volkswirtschaftliche Ergiebigkeit einzelner Projekte kann für die Beurteilung dieser Arbeiten nicht der alleinige Maßstab sein. Die Ausnutzung der vorhandenen Anlagen kann verbessert werden durch die Behebung einer zu starken Abwanderung deutscher Wissenschaftler in das Ausland. Doppelarbeiten werden laufend überprüft und sind in manchen Fällen dringend notwendig, weil bei gleichlaufenden Arbeiten oft unterschiedliche Ergebnisse herauskommen, die für die Wissenschaft sehr aufschlußreich sein können.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SpeerJulius">Speer</name> geht nochmal auf die Frage der Abwanderung der deutschen Wissenschaftler ein. Auch in Deutschland arbeiten ausländische Forscher und Gastprofessoren aus dem Ausland, dozieren bei uns auf Zeit. Dabei kommt es nicht selten vor, daß sich auch Forscher aus dem Ausland bei uns für ständig niederlassen. Zur stärkeren Koordinierung einzelner Fachgebiete werden [Symposien]<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN020" type="critical"><p>In Or. »Komposien«.</p></note></seg> und Kolloquien veranstaltet, auf denen die Dringlichkeit und Finanzierung bestimmter Fragen geklärt werden.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#LeussinkHans">Leussink</name> nimmt zu den gestellten Fragen Stellung:</p>
-				<p>Die Wissenschaft steht der Trennung zwischen Ausbildung und Forschung sehr aufgeschlossen gegenüber, wobei man allerdings angelsächsische Vorbilder nicht ohne weiteres übernehmen kann, da die Voraussetzungen unterschiedlich sind. Der Finanzbedarf der Wissenschaft wird für die kommenden Jahre rechtzeitig vorgelegt werden. Die Zusammenarbeit im Wissenschaftsrat mit den Vertretern des Bundes hat sich in diesem Jahr verbessert. Die Vertreter des Bundes gaben uns eine Vorschau auf die vorgesehenen Mittel für die Wissenschaft und wir konnten uns rechtzeitig auf diese Vorstellungen einrichten.</p>
-				<p>Bei der Studienreform stellt der Wissenschaftsrat in aller Freiheit Überlegungen an, die auch mit den Kultusministern ausgetauscht werden. Vorerst sollten aber in erster Linie grundsätzliche Überlegungen stattfinden, bevor man zu einer endgültigen Entscheidung in der Frage der Studienreform kommt. Über die Zweckmäßigkeit einer Verkürzung der Ausbildung an den höheren Schulen wird der Bildungsrat eine Antwort geben. Der Bildungsrat ist allerdings heute noch nicht existent<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN021" type="comment"><p>Der »Deutsche Bildungsrat« setzte sich aus der »Bildungskommission«, deren Mitgl. am 15.2.1966 formell vom Bundespräsidenten berufen wurden, und einer »Regierungskommission« zusammen. Jede dieser Kommissionen hatte 18 Mitgl., davon stellte jeweils 4 der Bund und 14 die Länder; von den letzteren wurden 3 auf Vorschlag der kommunalen Spitzenverbände berufen. Den Vors. der Regierungskommission erhielt der hessische Kultusminister <name type="Person" role="Erwaehnung" ref="#SchütteErnst">Schütte</name> (SPD), den der Bildungskommission der Kieler Historiker Professor Karl Dietrich <name type="Person" role="Erwaehnung" ref="#ErdmannKarlDietrich">Erdmann</name>. Der Bildungsrat hielt seine konstituierende Sitzung am 17.3.1966 ab. Zur Entstehung, Zusammensetzung und Funktion vgl. <bibl type="series-item">AdG 1965, S. 11957; 1966, S. 12339 und 12392</bibl>; <bibl type="series-item">Bulletin Nr. 16 vom 4.2., S. 117 f.; Nr. 20 vom 12.2., S. 156; Nr. 24 vom 19.2., S. 188; Nr. 39 vom 22.3., S. 305 f. und Nr. 40 vom 23.3.1966, S. 315</bibl>.</p></note></seg>; der Bildungsrat und Wissenschaftsrat sollen über Kontaktkommissionen der Präsidien zusammenarbeiten.</p>
-				<p>Ministerialdirektor Dr. Friedrich <name type="Person" role="Sprecher" ref="#SchneiderFriedrich">Schneider</name> geht auf die Frage der Zusammenstellung der Negativliste ein. Ausgangspunkt war die Berücksichtigung der bereits im Bau befindlichen Projekte, die in ihrer Fortführung in den Jahren 1966 und 67 nicht gestört werden sollten. Bei der Bildung von Schwerpunkten an den Hochschulen werden die Fachgebiete wegen der Knappheit der Mittel auf einzelne Hochschulen aufgeteilt, wobei auf die vorhandenen Einrichtungen der Hochschulen Rücksicht genommen wird. Diese Konzentration der Arbeiten an den wissenschaftlichen Hochschulen ist auch im Zusammenhang mit der internationalen Konkurrenz notwendiger denn je. Bei Vergleichen über den Stand der Wissenschaft in einzelnen Ländern kann man heute Deutschland nicht mehr mit Amerika vergleichen, sondern müßte hier den Vergleich ziehen zwischen Amerika und Europa.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SievertsRudolf">Sieverts</name> geht auf die Verbesserung des Honnefer Modells ein. Eine Neuregelung war vorerst nicht beabsichtigt und man einigte sich auf eine Verbesserung auf der Basis des bisherigen Systems. Vorgesehen ist u. a. eine Anhebung des Förderungsmeßbetrages von 240 auf 290 DM. Ferner soll der Unterschied zwischen der Anfangs- und Hauptförderung wegfallen (Zahlung von Förderungsbeträgen auch in den Semesterferien).<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN022" type="comment"><p>Einen entsprechenden Entschließungsantrag brachte die SPD-Fraktion bei der 3. Lesung des Haushaltsplans 1966 am 27.5.1966 ein. Vgl. <bibl type="btp"><ref type="external" target="05/45">BT Sten. Ber. 61</ref>, S. 2205 f. und 2224-2226 (Anl. 25)</bibl>.</p></note></seg></p>
-				<p>Die von den Rektoren- und Kultusministerkonferenzen aufgestellten Richtlinien werden erfreulicherweise von den Kultusverwaltungen auch eingehalten.</p>
-				<p>Die Angleichung der Studienpläne auf europäischer Ebene wird angestrebt.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt den Gästen für ihre weiteren Erläuterungen und versichert, daß die gegebenen Anregungen sicher Früchte tragen werden.</p>
-				<p>Ministerialdirektor <name type="Person" role="Sprecher" ref="#SchneiderFriedrich">Schneider</name> betont, daß die Vertreter der Wissenschaft zu danken hätten, wenn ihnen eine ganze Fraktion so geduldig Gehör schenkt. Die Vertreter der Wissenschaft würden jederzeit zu weiteren Erörterungen bereitstehen, sobald aktuelle Fragen anstehen.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Zu 2.:</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> erläutert den Ablauf der Plenarsitzungen.</p>
-				<p>1. Zur Fragestunde wurden 99 Fragen eingereicht.</p>
-				<p>3. Bericht der Bundesregierung über die Lage der Landwirtschaft gemäß §§ 4 und 5 des Landwirtschaftsgesetzes; Drs. V/255 und zu V/255.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN023" type="comment"><p>Der »Grüne Bericht« 1966 war gemäß § 4 des Landwirtschaftsgesetzes von Bundeskanzler <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> dem Präsidenten des Bundestages am 7.2.1966 übersandt worden; <bibl type="btd"><ref type="external" target="05/255">BT Anl. 102, Drs. V/255</ref></bibl>. Beigefügt »zu Drs. V/255« war mit Datum 8.2. »die Zusammenstellung über die von der Bundesregierung zugunsten der Landwirtschaft bereits getroffenen und noch beabsichtigten Maßnahmen gemäß § 5 des Landwirtschaftsgesetzes (Grüner Plan 1966)«.</p></note></seg> Der Bericht des Landwirtschaftsministers wird entgegengenommen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN024" type="comment"><p>Zum »Bericht« von BML <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> in der Plenarsitzung vom 18.2.1966 siehe <bibl type="btp"><ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 998-1005</bibl>.</p></note></seg> Die Aussprache erfolgt in der übernächsten Woche am Mittwoch.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN025" type="comment"><p>Zur Vorbereitung der Debatte am 2.3.1966 vgl. <ref type="internal" target="#spd-05_1966-03-01-t1510_EP_SVP-1">Nr. 138, TOP 1</ref>.</p></note></seg></p>
-				<p>4. bis 6. Beratung von Anträgen der SPD zu Beamtenfragen betr. Änderung des Rahmengesetzes zur Vereinheitlichung des Beamtenrechtes, betr. Studienkommission zur Ausarbeitung von Vorschlägen für das Beamtenrecht, betr. Einheitliche Richtlinien zur Bewertung der Dienstposten und Harmonisierung der Stellenpläne.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN026" type="comment"><p>Zu den betreffenden Anträgen siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP">Nr. 133</ref>.</p></note></seg> Zu diesen Anträgen werden nur kurze Begründungen gegeben.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN027" type="comment"><p>Zur Begründung sprachen in der Plenarsitzung vom 18.2.1966 <name type="Person" role="Erwaehnung" ref="#RauFriedrich_1965-10-19">Rau</name> und <name type="Person" role="Erwaehnung" ref="#GscheidleKurt_1961-10-17">Gscheidle</name>. <bibl type="btp"><ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 1005-1007 und S. 1011-1016</bibl>.</p></note></seg></p>
-				<p>7. Beratung des Antrags der Fraktion der CDU/CSU, FDP betr. Besoldungsreform. Nur kurze Begründung.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN028" type="comment"><p>Der am 9.2.1966 von der CDU/CSU und FDP eingebrachte Antrag – <bibl type="btd"><ref type="external" target="05/271">BT Anl. 103, Drs. V/271</ref></bibl> – wurde von Leo <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> (CSU) begründet. <bibl type="btp"><ref type="external" target="05/271">Ebd.</ref>, S. 1010 f.</bibl></p></note></seg></p>
-				<p>8. Beratung des Antrags der Fraktion der SPD betr. Abschlußgesetz zur Gesetzgebung zur Regelung der Wiedergutmachung nationalsozialistischen Unrechts für Angehörige des öffentlichen Dienstes. Kurze Begründung.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN029" type="comment"><p>Zum Antrag siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN004">Nr. 133, bes. Anm. 4</ref>; zur Begründung durch <name type="Person" role="Erwaehnung" ref="#GscheidleKurt_1961-10-17">Gscheidle</name>
-								<bibl type="btp"><ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 1011 und 1015 f.</bibl></p></note></seg></p>
-				<p>9. Beratung des Antrags der Fraktion der SPD betr. Abschlußgesetz zur Gesetzgebung nach Artikel 131 GG. – Kurze Begründung.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN030" type="comment"><p>Zur Begründung ebd.; für den Antrag siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN029">Nr. 133, bes. Anm. 29</ref>.</p></note></seg></p>
-				<p>10. Beratung des Antrages der Abgeordneten <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, Frau <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, <name type="Person" role="Erwaehnung" ref="#WestphalHeinz_1965-10-19">Westphal</name> und Genossen und der Fraktion der SPD betr. Bericht der Bundesregierung über die Lage der Jugend und über die Bestrebungen auf dem Gebiet der Jugendhilfe.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN031" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-3">Nr. 135, TOP 3</ref>.</p></note></seg> Dieser Antrag wurde zurückgezogen, da der Bericht der Bundesregierung über die Lage der Jugend nun vorliegt und an den zuständigen Ausschuß überwiesen wird.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN032" type="comment"><p>Der betr. Bericht der BReg »über die Lage der Jugend und über die Bestrebungen auf dem Gebiete der Jugendhilfe« gemäß § 25 des Jugendwohlfahrtsgesetzes wurde im Februar 1966 (o. D.) vorgelegt. <bibl type="btd"><ref type="external" target="05/302">BT Anl. 103, Drs. V/302</ref></bibl>. Der Antrag aus der SPD wurde daraufhin zurückgezogen und der »Bericht« am 16.3.1966 den Ausschüssen für Familie und Jugendfragen – federführend – und Gesundheitswesen überwiesen. <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/21">S. 833</ref> und <ref type="external" target="05/30">1293</ref></bibl>.</p></note></seg></p>
-				<p>11. Beratung des Antrags der Fraktion der CDU/CSU betr. Anpassung des Gesetzes über Arbeitsvermittlung und Arbeitslosenversicherung an den technischen Fortschritt und an die wirtschaftliche Entwicklung. – Ohne Begründung an den Ausschuß.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN033" type="comment"><p>Der gleichlautende Antrag vom 26.1.1966 – <bibl type="btd"><ref type="external" target="05/222">BT Anl. 102, Drs. V/222</ref></bibl> – forderte insbesondere eine Anpassung der »Leistungsbemessungsgrenze an die verbesserten Einkommensverhältnisse«, eine prozentuale Erhöhung des Arbeitslosengeldes und eine Verbesserung der Arbeitsförderungsmaßnahmen nach dem AVAVG, so daß »unerwünschte soziale Folgen, die sich aus dem technischen Fortschritt und den Strukturveränderungen […] ergeben können, durch gezielte Beschäftigungs- und Berufspolitik verhindert werden«. – Zur Ausschußüberweisung siehe <bibl type="btp"><ref type="external" target="05/27">BT Sten. Ber. 60</ref>, S. 1231</bibl>.</p></note></seg></p>
-				<p>12. Beratung des Antrags der Abgeordneten <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#SeifrizHansStefan_1961-10-17">Seifritz</name>, <name type="Person" role="Erwaehnung" ref="#IvenHans_1957-10-15">Iven</name> und der Fraktion der SPD betr. Sicherheit in der Zivilluftfahrt. Dieser Tagesordnungspunkt wird abgesetzt, wenn die SPD ihren Antrag begründen will, sonst erfolgt Überweisung an den Ausschuß.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN034" type="comment"><p>Zum Antrag siehe <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_SVP-1">Nr. 136, TOP 2</ref>, <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN006">bes. Anm. 6</ref>. – <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name> gab am 18.2.1966 keine Begründung. Er beantragte nur, die darin genannte Frist für die Vorlegung eines Berichts der BReg über den Stand der zivilen Flugsicherung vom 1.3. auf den 1.4.1966 zu verlängern und dann über den Antrag abzustimmen, was einstimmig beschlossen wurde; <bibl type="btp"><ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 1022</bibl>. – Die »Überweisung« an einen Ausschuß schied von der Sache her aus.</p></note></seg></p>
-				<p>Holger <name type="Person" role="Sprecher" ref="#BoernerHolger_1957-10-15">Börner</name> bedauert, daß dieser Beratungspunkt nach dem Bericht des Landwirtschaftsministers über die Lage der Landwirtschaft auf die Tagesordnung gesetzt wurde.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN035" type="comment"><p>Der Antrag wurde am 18.2.1966 als letzter (19.) TOP aufgerufen.</p></note></seg></p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> hält unter den gegebenen Umständen die Überweisung an den Ausschuß für taktisch richtig.</p>
-				<p>2. Beratung des zweiten Jahresgutachtens des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung sowie der Stellungnahme der Bundesregierung zu dem zweiten Jahresgutachten des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung (Drs. V/123, V/127).<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN036" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1965-12-07-t1510_EP_FN042">Nr. 132, Anm. 42</ref> und <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_SVP-1">Nr. 133, TOP 1</ref>.</p></note></seg></p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> gibt die Marschroute der SPD bei dieser Debatte bekannt.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN037" type="comment"><p>Neben <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, der am 16. und 17.2.1966 dazu redete – <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/21">S. 859-866</ref> und <ref type="external" target="05/22">S. 947-952</ref> –, sprachen für die SPD-Fraktion am 16.2. noch <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name> (S. 878-889) und am 17.2.1966 <name type="Person" role="Erwaehnung" ref="#KripsUrsula_1965-10-19">Krips</name> (S. 924-926), <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> (S. 937-941), K. D. <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name> (S. 960-964) und <name type="Person" role="Erwaehnung" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name> (S. 972-974)</bibl>.</p></note></seg> Die SPD wird dabei für einen Stopp bei den Preissteigerungen eintreten und auf der Linie des in Dortmund 1965 aufgestellten finanzwirtschaftlichen Planes<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN038" type="comment"><p>Auf dem »Deutschland-Treffen« am 14.8.1965 in Dortmund, mit dem durch die SPD die letzte Wahlkampfphase 1965 eröffnet worden war, hatte <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> ein Programm zur Zurückdrängung der schleichenden Geldentwertung vorgestellt. Es sah vor, die Preissteigerungsrate jahresweise von 3 auf 2 und 1% bis zum Jahr 1969 zurückzuführen. Vgl. <bibl type="single-item">Jahrbuch SPD 1964/65, S. 80 f.</bibl></p></note></seg> für die kommenden 4 Jahre argumentieren.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN039" type="comment"><p>Vgl. dazu besonders <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schillers</name> Ausführungen in <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/21">S. 861 f.</ref>, <ref type="external" target="05/22">947 f. und 952</ref></bibl>, der u. a. »eine konzertierte Aktion aller beteiligten Wirtschaftsgruppen […] unter eindeutiger Führung der BReg« forderte; ferner <bibl type="btp"><ref type="external" target="05/22">ebd.</ref>
-									<name type="Person" role="Erwaehnung" ref="#KripsUrsula_1965-10-19">Krips</name> (S. 925 f.) und <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> (S. 939)</bibl>. Der Preisindex für die Lebenshaltung lag im Winter 1965/66 (Zahlen für Dezember und Januar) jeweils um 4,2% über dem Stand des Vorjahres.</p></note></seg></p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name> warnt vor einer Festlegung zu den gegenwärtigen Verhandlungen der Industriegewerkschaft Metall.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN040" type="comment"><p>Bei den Tarifverhandlungen in der Metallindustrie ging es um neue Lohnabkommen in insgesamt 13 von 14 Tarifgebieten. In den drei wichtigsten Tarifgebieten Nordrhein-Westfalen, Baden-Württemberg und Hessen waren unter dem Vorsitz der Schlichter Anton <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> (CDU, ehemaliger BMA), Viktor <name type="Person" role="Erwaehnung" ref="#RennerViktor">Renner</name> (SPD, ehemaliger baden-württembergischer Innen- und Justizminister) und Friedrich <name type="Person" role="Erwaehnung" ref="#WehnerFriedrich">Wehner</name> (Präsident des hessischen Landesarbeitsamtes) Anfang Februar Kompromißvorschläge unterbreitet worden, die von Gewerkschaftsseite akzeptiert, von den Arbeitgebervertretungen aber abgelehnt wurden. Seit dem 8.2.1966 kam es in einzelnen Betrieben zu spontanen Streiks. Der zunächst für diesen Tag erwartete Beschluß der IG Metall zu einer Urabstimmung über Streikmaßnahmen wurde erst am 14.2.1966 gefaßt. Vgl. <bibl type="series-item">»Der Spiegel« Nr. 8 vom 14.2.1966, S. 40 f.</bibl> – Hans <name type="Person" role="Erwaehnung" ref="#GeigerHans_1954-01-01">Geiger</name> war Betriebsratsvors. bei den NSU-Werken in Neckarsulm und seit 1960 stellv. Vors. des DGB-Landesverbandes Baden-Württemberg.</p></note></seg></p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> stellt heraus, daß wir bei dieser Debatte über das Gutachten eine einmalige Gelegenheit haben, die gesamtwirtschaftlichen Verfehlungen der Bundesregierung offen zur Diskussion zu stellen.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Zu 3. der TO:</p>
-				<p>Vorlagen aus den Arbeitskreisen.</p>
-				<p>Zu a):</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> begründet den Antrag und betont, daß die Regierung die Regelung der Kostenverteilung bei den Krankenhäusern 12 Jahre lang vernachlässigt hat.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN041" type="comment"><p>Der am 16.2.1966 eingebrachte Antrag »betr. Pflegesätze von Krankenhäusern« forderte die BReg auf, vor einer Änderung der Pflegesatzverordnung vom 31.8.1954 dem Bundestag einen schriftlichen Bericht über die »gesundheitspolitischen, sozialpolitischen und finanziellen Auswirkungen« der beabsichtigten Neuregelung vorzulegen. <bibl type="btd"><ref type="external" target="05/314">BT Anl. 103, Drs. V/314</ref></bibl>.</p></note></seg> Es entsteht eine umfangreiche Diskussion zwischen den Genossinnen und Genossen <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name>, <name type="Person" role="Sprecher" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name>, Elinor <name type="Person" role="Sprecher" ref="#HubertElinor_1949-09-07">Hubert</name>, <name type="Person" role="Sprecher" ref="#KillatArthur_1959-03-19">Killat</name>, <name type="Person" role="Sprecher" ref="#BardensHans_1965-10-19">Bardens</name>, <name type="Person" role="Sprecher" ref="#RohdeHelmut_1957-10-15">Rohde</name>, <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, <name type="Person" role="Sprecher" ref="#NeumannFranz_1949-09-07">Neumann</name>, <name type="Person" role="Sprecher" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>, <name type="Person" role="Sprecher" ref="#SeidelMax_1953-10-06">Seidel</name> und Brigitte <name type="Person" role="Sprecher" ref="#FreyhBrigitte_1961-12-22">Freyh</name> über die Form des Antrages in seiner Wirksamkeit, von der Regierung einen Bericht über die Vorstellungen einer Neuregelung zu erhalten, ohne daß eine eingehende Debatte entsteht, zu der auch in unserer Fraktion noch die nötigen Untersuchungen fehlen.</p>
-				<p>Die Mehrheit der Fraktion beschließt bei einer Enthaltung, den vorgelegten Antrag des Arbeitskreises [IV]<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN042" type="comment"><p>Im Or. versehentlich »V«. – In der Plenarsitzung am 9.3.1966 betonten sowohl <name type="Person" role="Erwaehnung" ref="#RohdeHelmut_1957-10-15">Rohde</name>, der den Antrag begründete, wie <name type="Person" role="Erwaehnung" ref="#BardensHans_1965-10-19">Bardens</name> als Sprecher für die SPD-Fraktion, es gehe dabei um Grundsatzfragen bei den Krankenhäusern und es sei das legitime Recht des Parlamentes, ausreichend informiert zu werden. Vgl. <bibl type="btp"><ref type="external" target="05/27">BT Sten. Ber. 61</ref>, S. 1231-1233 und 1235 f.</bibl> Auf Grund einer »interfraktionellen Übereinkunft« erfolgte die Überweisung an die Ausschüsse für Wirtschaft und Mittelstandsfragen – federführend – und Gesundheitswesen sowie Sozialpolitik. <bibl type="btp"><ref type="external" target="05/27">Ebd.</ref>, S. 1236</bibl>.</p></note></seg> – Sozialpolitik – einzubringen.</p>
-				<p>Zu b):</p>
-				<p>Antrag betr. Änderung der Disziplinarordnung.</p>
-				<p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet diesen Antrag. – Die Fraktion beschließt einstimmig, den Antrag einzubringen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN043" type="comment"><p>Der vom AK Innenpolitik vorgelegte, auf den 15.2. datierte Antrag (Anl.), eingebracht am 16.2.1966 – <bibl type="btd"><ref type="external" target="05/313">BT Anl. 103, Drs. V/313</ref></bibl> – forderte die BReg zur Vorlage eines Gesetzentwurfs auf. Dieser solle u. a. eine Einschränkung disziplinarrechtlicher Maßnahmen, eine Erweiterung der Rechte der Verteidiger und der Disziplinargerichte und ein »Disziplinarrahmengesetz« enthalten. Der Antrag wurde ohne Aussprache am 9.3. dem Innen- und am 16.3. 1966 zusätzlich dem Rechtsausschuß überwiesen. <bibl type="btp">BT Sten. Ber. 61, <ref type="external" target="05/27">S. 1230</ref> und <ref type="external" target="05/30">1293</ref></bibl>.</p></note></seg></p>
-				<p>Zu c):</p>
-				<p>Kleine Anfrage betr. Internationaler Jugendaustausch.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet den Antrag. – Die Fraktion beschließt einstimmig, den Antrag einzubringen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN044" type="comment"><p>Die von den AK Innen- und Sozialpolitik schon am 10.2. vorgelegte »Kleine Anfrage« (nicht Antrag) der Abgeordneten <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name> u. a. und »Fraktion der SPD« wurde am 16.2. eingebracht und vom BMAusw am 28.2.1966 beantwortet. <bibl type="btd">BT Anl. 103, Drs. <ref type="external" target="05/312">V/312</ref> und <ref type="external" target="05/363">V/363</ref></bibl>.</p></note></seg></p>
-				<p>Zu d):</p>
-				<p>Kleine Anfrage betr. Ausbildungsbeihilfe.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet diesen Antrag. – Die Fraktion beschließt einstimmig, diesen Antrag einzubringen.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN045" type="comment"><p>Die Kleine Anfrage der Abgeordneten <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name> u. a. und »Fraktion der SPD« mit der Überschrift »betr. Ausbildungsförderung« (Anl.) wurde am 16.2.1966 unter dem Titel betr. »Ausbildungsbeihilfe« eingebracht. Sie bezog sich auf die Aufwendungen von Bund, Ländern und Gemeinden für Berufsausbildungs- und Erziehungsbeihilfen in den Jahren 1963-1965 und die Folgen des Auslaufens einzelner Förderungsmaßnahmen. Beantwortet wurde sie vom BMFa am 25.3.1966. <bibl type="btd">BT Anl. <ref type="external" target="05/309">103, Drs. V/309</ref> und <ref type="external" target="05/477">104, Drs. V/477</ref></bibl>.</p></note></seg></p>
-				<p>Zu e):</p>
-				<p>Kleine Anfrage betr. Kriegsopferversorgung.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> erläutert die Kleine Anfrage und weist auf die Erklärung der BundesreZu f):</p>
-				<p>Kleine Anfrage betr. Berechnung des durchschnittlichen Diensteinkommens vergleichbarer Bundesbeamten für BEG<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN046" type="comment"><p>D. h. Bundesentschädigungsgesetz.</p></note></seg> -Renten.</p>
-				<p><name type="Person" role="Sprecher" ref="#FritzKarl-Walter_1965-10-19">Fritz</name> gibt nähere Erläuterungen zu dieser Kleinen Anfrage.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN047" type="comment"><p>Die Renten nach dem BEG wurden anhand der Durchschnittseinkommen vergleichbarer Diensteinkommen oder Versorgungsbezüge von Bundesbeamten berechnet, wobei bis 1965 die Nettoeinkünfte zugrunde gelegt wurden. Die von der BReg am 15.9.1965 beschlossene Regelung sah eine Änderung der Bemessungsgrundlagen vor. Die von <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name> entworfene, am 16.2.1966 eingebrachte Kleine Anfrage (Anl.) des Abgeordneten <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name> und »Fraktion der SPD« sah darin ein Indiz, daß durch eine zuvor angewandte fehlerhafte Berechnung die Rentenempfänger nach BEG für die zurückliegenden Jahre zu wenig erhalten hatten. BMF <name type="Person" role="Erwaehnung" ref="#DahlgruenRolf_1957-10-15">Dahlgrün</name> wies diesen Vorwurf in seiner Antwort vom 2.3.1966 zurück. <bibl type="btd">BT Anl. 103, Drs. <ref type="external" target="05/311">V/311</ref> und <ref type="external" target="05/362">V/362</ref></bibl>.</p></note></seg> – Die Fraktion beschließt einstimmig, die Kleine Anfrage einzubringen.</p>
-				<p>Zu g): Einbringung eines interfraktionellen Antrages zur Änderung des Bundespolizeibeamtengesetzes.</p>
-				<p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> weist auf den interfraktionellen Antrag gleichen Inhalts aus der IV. Legislaturperiode<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN048" type="comment"><p>Es handelte sich jedoch nur um einen Antrag von CDU/CSU und FDP vom 17.3.1965. <bibl type="btd"><ref type="external" target="04/3204">BT Anl. 97, Drs. IV/3204</ref></bibl>.</p></note></seg> hin und ersucht die Fraktion um Zustimmung für die Wiedereinbringung dieses interfraktionellen Antrags. Der Antrag soll die gleiche Form haben wie auf der Drs. IV/3204. – Die Fraktion gibt einstimmig ihr Einverständnis zu diesem interfraktionellen Antrag.<seg type="note"><note xml:id="spd-05_1966-02-15-t1500_EP_FN049" type="comment"><p>Eingebracht am 1.3. als Antrag der Fraktionen CDU/CSU, SPD und FDP und am 9.3.1966 in 1. Lesung beraten. <bibl type="btd"><ref type="external" target="05/350">BT Anl. 103, Drs. V/350</ref></bibl> und <bibl type="btp"><ref type="external" target="05/27">BT Sten. Ber. 61</ref>, S. 1237</bibl>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-4">
-				<head>D.</head>
-				<p>Zu 4. der TO:</p>
-				<p>Termine: Nächste Vorstandssitzung Dienstag, den 1.3.1966, 11.00 Uhr</p>
-				<p>Nächste Fraktionssitzung Dienstag, 1.3.1966, 15.00 Uhr</p>
-				<p>Nächste Vorstandssitzung Donnerstag, 3.3.1966, 18.00 Uhr</p>
-				<p>Zu 5. der TO:</p>
-				<p>Keine Wortmeldungen.</p>
-				<p>Ende der Fraktionssitzung: 20.00 Uhr.</p>
-				<p>Protokoll: Hans <name type="Person" role="Erwaehnung" ref="#SchejaHans">Scheja</name></p>
-				<p>Bonn, den 18.2.1966.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-02-15-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title>
+                  <author>Heinrich Potthoff</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930888952</idno>
+                  <idno type="DNB">https://d-nb.info/930907760</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 14)</idno>
+                     <objectName>SPD-Fraktion im Bundestag. Protokoll der Fraktionssitzung vom 15.2.1966</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 15. Februar 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>13 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-02-15">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="20:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1966-02-15-t1500_EP_SVP-1" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-1">A. TOP 1: Vorträge der Vertreter der Wissenschaftsorganisationen.</item>
+               <item xml:id="spd-05_1966-02-15-t1500_EP_SVP-2" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-2">B. TOP 2: Vorbereitung der Plenarsitzungen.</item>
+               <item xml:id="spd-05_1966-02-15-t1500_EP_SVP-3" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-3">C. TOP 3: Vorlagen aus den Arbeitskreisen. </item>
+               <item xml:id="spd-05_1966-02-15-t1500_EP_SVP-4" corresp="#spd-05_1966-02-15-t1500_EP_div_SVP-4">D. TOP 4: Termine. – TOP 5: Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> eröffnet die Fraktionssitzung und gibt bekannt, daß die Genesung Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> weiter gute Fortschritte macht. Voraussichtlich können wir hier in der Fraktion ab 4. März wieder mit Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> rechnen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN009" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> leitete erstmals wieder die Fraktionssitzung am 9.3.1966. Vgl. <ref type="internal" target="#spd-05_1966-03-08-t1510_EP">Nr. 139</ref>.</p>
+                  </note>
+               </seg> Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> begrüßt besonders die anwesenden Vertreter der Wissenschaftsorganisationen und zwar vom Wissenschaftsrat den Vorsitzenden Prof. Dr. Hans <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN001" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name> (geb. 1912), Direktor des Instituts für Bodenmechanik an der Technischen Hochschule Karlsruhe, 1960-1962 Präsident der Westdeutschen Rektorenkonferenz, war von 1966 bis 1969 Vors. des Wissenschaftsrates.</p>
+                  </note>
+               </seg> und den Generalsekretär Ministerialdirektor Dr. Friedrich <name type="Person" role="Erwaehnung" ref="#SchneiderFriedrich">Schneider</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN002" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchneiderFriedrich">Schneider</name> (geb. 1913), seit 1946 in Verwaltungsämtern der Universität Köln, zuletzt als Kanzler, 1958-1966 Generalsekretär des Wissenschaftsrates, ab 1966 der Max-Planck-Gesellschaft.</p>
+                  </note>
+               </seg>, von der Deutschen Forschungsgemeinschaft den Prof. Dr. Julius <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN003" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name> (geb. 1905), Direktor des Instituts für Forstpolitik und forstliche Betriebswirtschaftslehre an der Universität München, 1962-1964 Präsident der Westdeutschen Rektorenkonferenz, seit 1964 Präsident der Deutschen Forschungsgemeinschaft.</p>
+                  </note>
+               </seg> und den Generalsekretär Dr. Carl-Heinz <name type="Person" role="Erwaehnung" ref="#SchielCarl-Heinz">Schiel</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN004" type="comment">
+                     <p>Carl-Heinz<name type="Person" role="Erwaehnung" ref="#SchielCarl-Heinz">Schiel</name> (geb. 1922), seit 1956 Senatsreferent und ab 1965 Generalsekretär der Deutschen Forschungsgemeinschaft.</p>
+                  </note>
+               </seg>, von der Westdeutschen Rektorenkonferenz den Präsidenten Prof. Dr. Rudolf <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN005" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name> (geb. 1903), Direktor der Seminare für Strafrecht und Kriminalpolitik und für Jugendrecht und Jugendhilfe in Hamburg, Präsident der Westdeutschen Rektorenkonferenz 1964-1967.</p>
+                  </note>
+               </seg> und den Generalsekretär Dr. Jürgen <name type="Person" role="Erwaehnung" ref="#FischerJuergen">Fischer</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN006" type="comment">
+                     <p>Jürgen <name type="Person" role="Erwaehnung" ref="#FischerJuergen">Fischer</name> (geb. 1923), Gen. Sekr. der Rektorenkonferenz 1954-1980.</p>
+                  </note>
+               </seg> und schließlich von der Max-Planck-Gesellschaft den Präsidenten Prof. Dr. Adolf <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN007" type="comment">
+                     <p>Adolf <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name> (geb. 1903), Direktor des Max-Planck-Instituts für Biochemie in München, Nobelpreisträger 1939, Präsident der Max-Planck-Gesellschaft zur Förderung der Wissenschaften seit 1960.</p>
+                  </note>
+               </seg> und den Generalsekretär Dr. Hans <name type="Person" role="Erwaehnung" ref="#BallreichHans">Ballreich</name>.</p>
+            <p>Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> erteilt als erstem Herrn Prof. Dr. <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name> das Wort.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#ButenandtAdolf">Butenandt</name>:</p>
+            <p>Meine Damen und Herren, für ihre Einladung bedanke ich mich recht herzlich. Wir hatten schön öfters die Gelegenheit einer gemeinsamen Aussprache und die heutige Diskussion möge nicht die letzte sein. In kurzen Umrissen darf ich Ihnen die Aufgaben der Max-Planck-Gesellschaft erläutern.</p>
+            <p>Zu unserer wissenschaftlichen Gruppe gehören 50 Institute. Vor ein paar Jahren haben wir mit der Großforschung begonnen, da heute nur noch große Wissenschaftlerteams die immer komplizierter werdenden Probleme lösen und neue Erkenntnisse finden können. Ein solches Großforschungsprojekt läuft in Garching, wo wir uns mit Plasmafragen befassen und auf dem Gebiet der Materieumwandlung schon beachtliche Erfolge erzielen konnten.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN010" type="comment">
+                     <p>Das Max-Planck-Institut für Plasmaphysik in München-Garching befaßte sich mit Forschungen auf dem Gebiet der Atomkern-Verschmelzung. Dem Forscherteam unter Leitung der Professoren Ewald <name type="Person" role="Erwaehnung" ref="#FuenferEwald">Fünfer</name> und Arnulf <name type="Person" role="Erwaehnung" ref="#SchlueterHelmut_1964-09-11">Schlüter</name> war es gelungen, in einem Experiment kurzzeitig eine Temperatur von 60 Mio. Grad Kelvin zu erzeugen, was als ein bedeutender Schritt zur Kernfusion gewertet wurde. Vgl. <bibl type="series-item">»Der Spiegel« Nr. 9 vom 21.2.1966, S. 34</bibl>.</p>
+                  </note>
+               </seg> Die Anlage in Garching ist noch nicht vollendet; der heutige Personalbestand von 800 Wissenschaftlern und Angestellten muß nach Fertigstellung der geplanten Anlage verdoppelt werden. Ein anderes Gebiet der Großforschung ist die Astronomie und Weltraumforschung, die einen sehr großen Aufwand erfordert. Deutschland hat in diesem Bereich einen großen Rückstand aufzuholen. Die internationale wissenschaftliche Zusammenarbeit gewinnt immer mehr an Bedeutung und die hier bisher gemachten Erfahrungen sind gut. In Genf ist u. a. der Bau eines Instituts für internationale Forschung vorgesehen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN011" type="comment">
+                     <p>Gemeint sein könnte der Beschluß des Rates der Europäischen Organisation für Kernforschung (CERN) von Dezember 1965 über ein Programm zur Errichtung einer sog. Speicherringanlage in Genf, mit der Grundlagenforschung über das Wesen der Materie betrieben werden sollte. Vgl. <bibl type="series-item">Bulletin Nr. 5 vom 12.1.1966, S. 38</bibl>.</p>
+                  </note>
+               </seg> Diese internationale Zusammenarbeit führt aber kein Eigenleben und ist kein Ersatz für nationale Arbeit auf den ähnlichen Gebieten. Die Mitarbeit an der übernationalen Forschung und die Entsendung gleichwertiger Wissenschaftler, die auch anerkannt werden, ist nur möglich, wenn im eigenen Land die gleiche Forschung betrieben wird.</p>
+            <p>Wir sind der Ansicht, daß der Bund nicht allein Träger dieser Großforschung sein sollte, sondern wir halten eine Beteiligung der Sitzländer an den Kosten für richtig. Nach dem bisherigen Bund-Länder-Abkommen werden die Kosten geteilt.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN012" type="comment">
+                     <p>Gemeint war das Verwaltungsabkommen von Bund und Länder zur Finanzierung der Max-Planck-Gesellschaft und der Deutschen Forschungsgemeinschaft.</p>
+                  </note>
+               </seg> Dieser Vertrag läuft nun in diesem Jahr ab und man sollte bei der Erneuerung der Vereinbarung eine Verbesserung der Abmachungen dahingehend vornehmen, daß die Kostenbeteiligung von Bund und Ländern nicht nach einem starren System erfolgt. Dabei bestimmt natürlich das finanzschwächste Land auch die Zuwendung des Bundes an die jeweiligen Einrichtungen. Eine glücklichere Lösung würde die Zentralfinanzierung darstellen, bei der der Bund 70 v. H. und die Länder 30 v. H. aufbringen sollten.</p>
+            <p>Ein anderes ernstes Problem ist die Abwanderung deutscher Wissenschaftler. Im Jahre 1964 sind allein nach den USA 400 wissenschaftliche Akademiker ausgewandert. Als Hauptgrund für diesen Wandertrieb muß die schlechte Bezahlung des wissenschaftlichen Nachwuchses gesehen werden, besonders in der mittleren Stufe zwischen jungem Assistenten und Professor. Als Abhilfe muß hier ein neuer Tarif geschaffen werden, der eine Bezahlung nach echter Leistung ermöglicht. Bis zur Schaffung dieses neuen Tarifes ist eine Sonderregelung zur Überbrückung unbedingt erforderlich. Damit möchte ich den kurzen Überblick beschließen. Ich danke Ihnen.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> bedankt sich bei Prof. <name type="Person" role="Erwaehnung" ref="#ButenandtAdolf">Butenandt</name> und erteilt Herrn Prof. <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name> das Wort.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SpeerJulius">Speer</name>:</p>
+            <p>Die Deutsche Forschungsgemeinschaft gleicht einem vielgestaltigen Januskopf. Von den mannigfachen Aufgaben, die uns gestellt sind, möchte ich die wichtigsten aufführen:</p>
+            <p>1. Die Finanzierung der Forschung und die Förderung des Nachwuchses.</p>
+            <p>Zwischen beiden Gebieten besteht eine enge Wechselbeziehung, die genau aufeinander abgestimmt werden muß. Neben der Förderung der Habilitationen ist die Unterstützung der Wissenschaft stärker geworden. Die Voraussetzung für die fortlaufende Entwicklung ist die Kontinuität beider Bereiche. Vor allem dürfen keine Stockungen auftreten bei der Versorgung der Hochschulen mit wissenschaftlichem Nachwuchs.</p>
+            <p>2. Die Bearbeitung von Forschungsanträgen.</p>
+            <p>Neben der Großforschung werden von uns jährlich 6 000 solcher Anträge bearbeitet. Die angesetzten Gutachter entscheiden über die Anträge anonym.</p>
+            <p>3. Die Forschungsgemeinschaft hat Schwerpunkte zu setzen und sie zu fördern.</p>
+            <p>Eine Kommission des Senats entscheidet über die diesbezüglichen Anregungen der Gelehrten und Behörden.</p>
+            <p>Ein solcher Schwerpunkt ist zur Zeit die Elektronik und Informationsverarbeitung. In dieses Projekt haben wir bis jetzt 120 Mio. DM hineingesteckt. Unsere Hoffnung, die Länder würden in Zukunft die Unterhaltung dieser Anlagen übernehmen, erfüllte sich nicht. Bei den elektronischen Einrichtungen sind wir überwiegend auf das Ausland angewiesen, da die deutschen Entwicklungen noch nicht konkurrenzfähig sind. Die Nachfrage nach geeignetem Bedienungspersonal ist groß.</p>
+            <p>4. Die Forschungsgemeinschaft ermittelt Grundlagen für weitere Forschungen, z. B. in der Wasserforschung, Ozeanographie, der Ernährungsforschung und in der Frage der Berufskrankheiten.</p>
+            <p>Besonders der letzte Komplex erfordert Untersuchungen über einen langen Zeitraum, die sehr kostspielig sind.</p>
+            <p>5. Eine wesentliche Aufgabe der Forschungsgemeinschaft ist die Schaffung von Hilfseinrichtungen für die Wissenschaft. Hierzu gehören, ein Zentralinstitut für Mutationsgenität, Zentralbibliotheken und Zuchtanstalten für Versuchstiere.</p>
+            <p>Entscheidend für die Durchführung unserer Aufgabe ist die Kontinuität der uns bereitgestellten Mittel. Nur dann können wir die uns übertragenen Arbeiten zufriedenstellend lösen.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt Herrn Prof. <name type="Person" role="Erwaehnung" ref="#SpeerJulius">Speer</name> für seine Ausführungen und erteilt Herrn Prof. <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name> das Wort.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#LeussinkHans">Leussink</name>:</p>
+            <p>Auch die Wissenschaft muß planen, auch wenn dies so gar nicht zur Wissenschaft passen mag. Heute wissen wir, daß unsere Schätzungen über die erforderlichen Mittel für den Ausbau der wissenschaftlichen Einrichtungen von 1960 mit 2,5 Mrd. DM für die folgenden fünf Jahre zu gering angesetzt waren.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN013" type="comment">
+                     <p>Die Empfehlungen des Wissenschaftsrates vom 25.11.1960 zum Ausbau der wissenschaftlichen Hochschulen sahen allein für das Bauprogramm 2,6 Mrd. vor, die von Bund und Ländern je zur Hälfte getragen werden sollten. Der jährliche Aufwand für das wissenschaftliche Personal sollte nach den Vorstellungen des Wissenschaftsrates von 210 auf 360 Mio. DM steigen. Vgl. <bibl type="series-item">AdG 1960, S. 8773 f.</bibl>; <bibl type="series-item">»Der Spiegel« Nr. 9 vom 21.2.1966, S. 44</bibl>.</p>
+                  </note>
+               </seg> Nach unserem jetzigen Überblick wird die Wissenschaft in den nächsten 3 bis 5 Jahren etwa 10 Mrd. DM benötigen. Dieser Betrag ist in erster Linie von den Ländern aufzubringen zusammen mit der Hilfe des Bundes. Nach unserem heutigen Überblick werden für im Bau befindliche Einrichtungen und Projekte etwa 6,5 bis 7 Mrd. DM benötigt. Wenn die vorgesehenen Programme verwirklicht werden sollen, müßte der Bund jährlich einen Zuschuß von 1 Mrd. DM bereitstellen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN014" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN009">Nr. 136, Anm. 9</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Neben der Finanzierung der Wissenschaft beschäftigt sich der Wissenschaftsrat auch mit der sog. Studienreform.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN015" type="comment">
+                     <p>Als Ergebnis dieser Beratungen überreichte der Wissenschaftsrat am 10.6.1966 Bundespräsident <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> eine Empfehlung zur Neuordnung des Hochschulstudiums. Vgl. <bibl type="series-item">AdG 1966, S. 12550</bibl>.</p>
+                  </note>
+               </seg> Das äußere Gehäuse hierzu fehlt heute allerdings noch, da nicht genügend Seminarräume und Arbeitsplätze für die Studenten vorhanden sind.</p>
+            <p>Die geübte Kritik an den bisherigen Hochschulbauten ist zum Teil berechtigt, da manchmal in der Tat zu luxuriös gebaut wurde. In Zukunft wird man jedoch Institute von der Stange bauen müssen. Diese Entwicklung kommt von selbst, da man mit den zur Verfügung stehenden Mitteln auskommen muß.</p>
+            <p>Obwohl eine Planung zur Wissenschaft so gar nicht paßt, müssen wir sie vornehmen. Grundsätzlich kann aber nur mittelfristig – für 3 bis 5 Jahre – vorgeplant werden, da man stets wieder die neuen Erkenntnisse mit in die Planungen verarbeiten muß. – Ich danke Ihnen.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt Prof. <name type="Person" role="Erwaehnung" ref="#LeussinkHans">Leussink</name> für seine Ausführungen und erteilt Prof. <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name> das Wort.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SievertsRudolf">Sieverts</name>:</p>
+            <p>Nach der westdeutschen Rektorenkonferenz gehören Forschung und Lehre unbedingt zusammen. Die Leistungen der Wissenschaft nach dem Kriege waren angesichts der ungenügenden Umstände dennoch beachtlich. Ein großer Störungsfaktor nach dem Kriege war der große Andrang zu den Hochschulen bei unzureichenden Einrichtungen. Heute sind besonders stark gefragt die Fakultäten Jurisprudenz, Wirtschafts- und Sozialpolitik und Philosophie, während bei den anderen Fakultäten normale Besetzungen zu beobachten sind. Auf dem Gebiet der Mathematik und Chemie wird man in einigen Jahren den Bedarf der Industrie nach Wissenschaftlern kaum decken können. Schon heute macht es Schwierigkeiten, die Planstellen an neugebauten Hochschulen zu besetzen. Erfreulich ist der Leistungsanstieg der Studenten aufgrund der Hochschulneubauten und Hochschulerweiterungen.</p>
+            <p>Eine Reform der Studienpläne ist unbedingt erforderlich. Diese muß auch ausgedehnt werden auf die Prüfungsordnungen bei Staatsprüfungen. Dabei sind die Bestallungsverordnungen des Staates mit bestimmend für die Neuordnung der Studienpläne. Ziel der Neuordnung der Studienpläne ist die Beseitigung von unnötigem Ballast und die Verkürzung des Studiums. Die neuen Rahmenordnungen für die Studienpläne sehen vor allem Zwischenprüfungen vor, wodurch die Auslese nach etwa 3 bis 4 Semestern erfolgen soll. Für Studienanfänger ist eine Beratung vorgesehen, die das Schwimmen der Studenten zu Beginn ihres Studiums verhindern soll.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN016" type="comment">
+                     <p>Siehe dazu die vom Wissenschaftsrat am 10.6.1966 vorgelegte Empfehlung. Sie sah ein dreistufiges System vor: ein Regelstudium, das mit einer die Berufsfähigkeit bestätigenden Prüfung abschließen sollte (Staats-, Diplom- oder Magisterexamen), ein »Aufbaustudium«, das einen »engeren Kontakt« zur Forschung bringen und ein »Kontaktstudium«, das eine spätere Weiterführung der wissenschaftlichen Ausbildung ermöglichen sollte.</p>
+                  </note>
+               </seg> Vorgesehen ist auch eine befristete Immatrikulation, wie sie bereits mit Erfolg schon in Hannover praktiziert wurde. Durch die Neuordnung der Studienpläne wird das Studium allgemein verkürzt, die Hochschulen entlastet und die jungen Akademiker früher einem Beruf zugeführt. – Ich danke Ihnen.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt Prof. <name type="Person" role="Erwaehnung" ref="#SievertsRudolf">Sieverts</name> und eröffnet die Diskussion.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> begrüßt die Zusammenarbeit zwischen den Wissenschaftsorganisationen und versichert, daß in der Frage der Hochschulfinanzierung seitens der SPD nicht nur allgemeine Bekenntnisse abgegeben worden sind, sondern Lücken im Etat gesucht werden, um die fehlenden 180 Mio. DM bereitzustellen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN017" type="comment">
+                     <p>Die von der SPD-Fraktion im Antrag vom 8.2.1966 geforderte Aufstockung der Bundesmittel für den Hochschulausbau um 180 Mio. auf 530 Mio. – siehe <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN010">Nr. 136, Anm. 10</ref> – wurde auch von ihren Sprechern in der Wissenschaftsdebatte des Bundestages am 10.2.1966 vertreten. Zur Bereitstellung der zusätzlichen 180 Mio. deutete <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name> an, diese stellten nur den »Gegenwert von 26 Starfightern dar« und es gebe auch »überflüssige Subventionen«. <bibl type="btp">
+                           <ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 741</bibl>. <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name>, SPD (<bibl type="btp">
+                           <ref type="external" target="05/19">ebd.</ref>, S. 771 f.</bibl>) gab in seiner Rede zu verstehen, bei der Aufbringung dieser Mittel lasse die SPD den Regierungsparteien »gern den Vortritt«. Aber sie sei bereit, »wenn sie dazu nicht in der Lage sein sollten«, der Koalition »an der richtigen Stelle, nämlich im Haushaltsausschuß«, ihre Vorschläge zu dieser Frage zu machen«. <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, SPD, äußerte anschließend zum Problem eines »Deckungsvorschlags«, daß der gesamte Bundeshaushalt formaliter »noch nicht überreicht worden« sei. Wenn wir ihn hätten, würde die SPD-Fraktion »einen konkreten Deckungsvorschlag, zusammengesetzt aus einigen Titeln, unterbreiten«. Dabei sei »die Subventionsfront in dem Bundeshaushalt der gegebene Ansatzpunkt, um dort Deckungsmöglichkeiten im Rahmen des Haushalts zu finden«. <bibl type="btp">
+                           <ref type="external" target="05/19">Ebd.</ref>, S. 799</bibl>. – Zur Konkretisierung der Deckungsvorschläge siehe <ref type="internal" target="#spd-05_1966-03-01-t1510_EP_SVP-1">Nr. 138, TOP 1</ref>.</p>
+                  </note>
+               </seg> Er stellt nachstehende Fragen:</p>
+            <p>1. Wie sieht die Arbeitsteilung national und international aus?</p>
+            <p>2. Macht der Wissenschaftsrat die Vorschläge für mittelfristige Planungen und werden darin auch schon die neuen Universitäten mit einbezogen?</p>
+            <p>3. Was halten sie von einer quantitativen Reform des Honnefer Modells?</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> stellt folgende Fragen:</p>
+            <p>1. Ist der einheitliche Schulbeginn in Deutschland für die Hochschule von Bedeutung?</p>
+            <p>2. Kann bei der Studienreform ein gemeinsamer Nenner zwischen Hochschulen und Ländern gefunden werden?</p>
+            <p>3. Werden die Professoren nicht überfordert, wenn die jungen Leute zu den Hochschulen kommen und nur eine Eintrittskarte für einen gehobenen Beruf haben wollen? Sollte man nicht wie in Amerika zwischen Ausbildung und Forschung trennen?</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> geht kurz auf die letzte Frage von Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> ein und versichert, daß eine solche Arbeitsteilung zwischen Forschung und Ausbildung in Hamburg schon erfolgt ist.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN018" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> war seit 1947 o. Professor der Universität Hamburg und Direktor des Instituts für Außenhandel und Überseewirtschaft und Sozialökonomie.</p>
+                  </note>
+               </seg> Er stellt nachstehende Fragen:</p>
+            <p>1. Kann der Wissenschaftsrat seinen Finanzbedarf für 1967 ebenso rechtzeitig anmelden wie für dieses Jahr?</p>
+            <p>2. Wie verhalten sich die Vertreter des Bundes im Wissenschaftsrat?</p>
+            <p>3. Ist es vorteilhaft, nur einen verantwortlichen Sprecher des Bundes für den Bereich der Wissenschaft zu haben?</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#MertenHans_1951-04-23">Merten</name> stellt einige Fragen im Zusammenhang mit der internationalen Forschung:</p>
+            <p>1. Wirken sich die in Deutschland auftretenden Mängel auf die Arbeit der internationalen Forschung aus?</p>
+            <p>2. Wie können die Mängel beseitigt werden?</p>
+            <p>3. Welche Wirkung haben bilaterale Abmachungen auf die internationale Forschung?</p>
+            <p>4. In welchem Verhältnis zu den nationalen Beiträgen werden die Forschungsarbeiten verteilt?</p>
+            <p>Der Abg. <name type="Person" role="Sprecher" ref="#RauFriedrich_1965-10-19">Rau</name> fragt nach den Gesichtspunkten für die Aufstellung der sog. Negativliste.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#KueblerPaul_1961-10-17">Kübler</name> möchte wissen, ob die vorgeschlagene Sonderprämie für Wissenschaftler nur für die Naturwissenschaftler vorgesehen ist.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#PorznerKonrad_1962-05-21">Porzner</name> erkundigt sich, ob nicht auch eine Verkürzung der Schulzeit an den höheren Schulen zur Straffung der Ausbildung von Akademikern beitragen kann?</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#RaffertJoachim_1965-10-19">Raffert</name> stellt folgende Fragen:</p>
+            <p>1. Wie funktioniert die Zusammenarbeit unter den Wissenschaftsorganisationen?</p>
+            <p>2. Wird bei den Planungen des Wissenschaftsrates auch der volkswirtschaftliche Effekt einzelner Projekte mit berücksichtigt?</p>
+            <p>Günther <name type="Person" role="Sprecher" ref="#MuellerGuenther_1965-10-19">Müller</name> stellt folgende Fragen:</p>
+            <p>1. Wie war die Zusammenarbeit der einzelnen Institute in der Frage der Negativliste?</p>
+            <p>2. Wird die Abwanderung der Wissenschaftler nicht durch die internationale Zusammenarbeit angereizt?</p>
+            <p>3. Sollte man nicht durch eine Konzentration der Aufgaben zu einer Steigerung der Effektivität der Anlagen kommen?</p>
+            <p>4. Die schlechte Bezahlung der Wissenschaftler ergibt sich auch aus der Unterschiedlichkeit zwischen den Tarifen für Angestellte und Beamte. Müßte der vorgesehene Sondertarif also diese Unterschiede nicht berücksichtigen?</p>
+            <p>Elinor <name type="Person" role="Sprecher" ref="#HubertElinor_1949-09-07">Hubert</name> erkundigt sich nach dem staatlichen Einfluß bei der Studienneuordnung und ob die Ausbildung der Mediziner nicht auch auf Krankenhäuser ausgedehnt werden könnte.</p>
+            <p>Carlo <name type="Person" role="Sprecher" ref="#SchmidCarlo_1949-09-07">Schmid</name> weist darauf hin, daß es bei den Problemen der Wissenschaft nicht allein um Geld geht. Die SPD-Fraktion wird sich allerdings ernsthaft bemühen, für die fehlenden 180 Mio. DM eine Deckungslücke zu finden<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN019" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-03-01-t1510_EP_SVP-1">Nr. 138, TOP 1</ref>.</p>
+                  </note>
+               </seg>, da es sich bei der Förderung der Wissenschaft um eine Investition und nicht um Konsumausgaben handelt. Da die höhere Schule die jungen Menschen für die Hochschulen vorbereitet, muß mit der Neuordnung der Studienpläne für die Hochschulen eine Reform der höheren Schulen einhergehen. Bei den Gesprächen mit den Kultusministerien zur Entrümpelung der Studienpläne muß auch über eine Kürzung der Pflichtstudienfächer gesprochen werden. Trotz akademischer Freiheit muß der junge Student in den ersten Semestern geführt werden, damit er durch die Umstellung so wenig wie möglich Zeit verliert.</p>
+            <p>Egon <name type="Person" role="Sprecher" ref="#HoehmannEgon_1957-10-15">Höhmann</name> erwähnt die Tatsache, daß für die Abwanderung deutscher Wissenschaftler nicht allein die ungenügende Bezahlung verantwortlich ist. Vielmehr müsse mit der Verbesserung der Tarife für Wissenschaftler auch eine Reform der inneren Organisation der Hochschulen vorgenommen werden.</p>
+            <p>Horst <name type="Person" role="Sprecher" ref="#SchmidtHorst_1961-10-17">Schmidt</name> hält es für zweckmäßig, trotz der augenblicklichen Schwierigkeiten doch mit den langfristigen Forschungsarbeiten zu beginnen, damit man in absehbarer Zeit auch hier Ergebnisse erzielen kann.</p>
+            <p>Hans-Jürgen <name type="Person" role="Sprecher" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name> hält eine intensivere Verständigung zwischen einzelnen Fachrichtungen für dringend angebracht, weil nur so die Entwicklung auf einem bestimmten Gebiet ohne Verzögerung fortgesetzt werden kann. Auch an den Nahtstellen bestimmter Wissenschaftsbereiche müßte die Koordinierung zur größeren Effektuierung angestrebt werden.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#ButenandtAdolf">Butenandt</name> geht auf die Fragen der Abgeordneten ein:</p>
+            <p>Die von der Wissenschaft angeforderten Mittel stellen nicht nur eine Wunschliste dar, sondern sind der echte Bedarf für eine reibungslose Arbeit.</p>
+            <p>Durch die internationale Zusammenarbeit wurden die nationalen Leistungen befruchtet und angehoben. Trotzdem muß aber die Grundlagenforschung weiter verstärkt werden, damit wir international konkurrieren können. Durch die internationale Zusammenarbeit ist eine verstärkte Abwanderung deutscher Wissenschaftler nicht zu befürchten, da die Verträge nur befristet laufen.</p>
+            <p>In der Forschung ist eine langfristige Planung deswegen nicht möglich, weil immer wieder neue Probleme und Erkenntnisse mit berücksichtigt werden müssen. Die volkswirtschaftliche Ergiebigkeit einzelner Projekte kann für die Beurteilung dieser Arbeiten nicht der alleinige Maßstab sein. Die Ausnutzung der vorhandenen Anlagen kann verbessert werden durch die Behebung einer zu starken Abwanderung deutscher Wissenschaftler in das Ausland. Doppelarbeiten werden laufend überprüft und sind in manchen Fällen dringend notwendig, weil bei gleichlaufenden Arbeiten oft unterschiedliche Ergebnisse herauskommen, die für die Wissenschaft sehr aufschlußreich sein können.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SpeerJulius">Speer</name> geht nochmal auf die Frage der Abwanderung der deutschen Wissenschaftler ein. Auch in Deutschland arbeiten ausländische Forscher und Gastprofessoren aus dem Ausland, dozieren bei uns auf Zeit. Dabei kommt es nicht selten vor, daß sich auch Forscher aus dem Ausland bei uns für ständig niederlassen. Zur stärkeren Koordinierung einzelner Fachgebiete werden [Symposien]<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN020" type="critical">
+                     <p>In Or. »Komposien«.</p>
+                  </note>
+               </seg> und Kolloquien veranstaltet, auf denen die Dringlichkeit und Finanzierung bestimmter Fragen geklärt werden.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#LeussinkHans">Leussink</name> nimmt zu den gestellten Fragen Stellung:</p>
+            <p>Die Wissenschaft steht der Trennung zwischen Ausbildung und Forschung sehr aufgeschlossen gegenüber, wobei man allerdings angelsächsische Vorbilder nicht ohne weiteres übernehmen kann, da die Voraussetzungen unterschiedlich sind. Der Finanzbedarf der Wissenschaft wird für die kommenden Jahre rechtzeitig vorgelegt werden. Die Zusammenarbeit im Wissenschaftsrat mit den Vertretern des Bundes hat sich in diesem Jahr verbessert. Die Vertreter des Bundes gaben uns eine Vorschau auf die vorgesehenen Mittel für die Wissenschaft und wir konnten uns rechtzeitig auf diese Vorstellungen einrichten.</p>
+            <p>Bei der Studienreform stellt der Wissenschaftsrat in aller Freiheit Überlegungen an, die auch mit den Kultusministern ausgetauscht werden. Vorerst sollten aber in erster Linie grundsätzliche Überlegungen stattfinden, bevor man zu einer endgültigen Entscheidung in der Frage der Studienreform kommt. Über die Zweckmäßigkeit einer Verkürzung der Ausbildung an den höheren Schulen wird der Bildungsrat eine Antwort geben. Der Bildungsrat ist allerdings heute noch nicht existent<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN021" type="comment">
+                     <p>Der »Deutsche Bildungsrat« setzte sich aus der »Bildungskommission«, deren Mitgl. am 15.2.1966 formell vom Bundespräsidenten berufen wurden, und einer »Regierungskommission« zusammen. Jede dieser Kommissionen hatte 18 Mitgl., davon stellte jeweils 4 der Bund und 14 die Länder; von den letzteren wurden 3 auf Vorschlag der kommunalen Spitzenverbände berufen. Den Vors. der Regierungskommission erhielt der hessische Kultusminister <name type="Person" role="Erwaehnung" ref="#SchuetteErnst">Schütte</name> (SPD), den der Bildungskommission der Kieler Historiker Professor Karl Dietrich <name type="Person" role="Erwaehnung" ref="#ErdmannKarlDietrich">Erdmann</name>. Der Bildungsrat hielt seine konstituierende Sitzung am 17.3.1966 ab. Zur Entstehung, Zusammensetzung und Funktion vgl. <bibl type="series-item">AdG 1965, S. 11957; 1966, S. 12339 und 12392</bibl>; <bibl type="series-item">Bulletin Nr. 16 vom 4.2., S. 117 f.; Nr. 20 vom 12.2., S. 156; Nr. 24 vom 19.2., S. 188; Nr. 39 vom 22.3., S. 305 f. und Nr. 40 vom 23.3.1966, S. 315</bibl>.</p>
+                  </note>
+               </seg>; der Bildungsrat und Wissenschaftsrat sollen über Kontaktkommissionen der Präsidien zusammenarbeiten.</p>
+            <p>Ministerialdirektor Dr. Friedrich <name type="Person" role="Sprecher" ref="#SchneiderFriedrich">Schneider</name> geht auf die Frage der Zusammenstellung der Negativliste ein. Ausgangspunkt war die Berücksichtigung der bereits im Bau befindlichen Projekte, die in ihrer Fortführung in den Jahren 1966 und 67 nicht gestört werden sollten. Bei der Bildung von Schwerpunkten an den Hochschulen werden die Fachgebiete wegen der Knappheit der Mittel auf einzelne Hochschulen aufgeteilt, wobei auf die vorhandenen Einrichtungen der Hochschulen Rücksicht genommen wird. Diese Konzentration der Arbeiten an den wissenschaftlichen Hochschulen ist auch im Zusammenhang mit der internationalen Konkurrenz notwendiger denn je. Bei Vergleichen über den Stand der Wissenschaft in einzelnen Ländern kann man heute Deutschland nicht mehr mit Amerika vergleichen, sondern müßte hier den Vergleich ziehen zwischen Amerika und Europa.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SievertsRudolf">Sieverts</name> geht auf die Verbesserung des Honnefer Modells ein. Eine Neuregelung war vorerst nicht beabsichtigt und man einigte sich auf eine Verbesserung auf der Basis des bisherigen Systems. Vorgesehen ist u. a. eine Anhebung des Förderungsmeßbetrages von 240 auf 290 DM. Ferner soll der Unterschied zwischen der Anfangs- und Hauptförderung wegfallen (Zahlung von Förderungsbeträgen auch in den Semesterferien).<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN022" type="comment">
+                     <p>Einen entsprechenden Entschließungsantrag brachte die SPD-Fraktion bei der 3. Lesung des Haushaltsplans 1966 am 27.5.1966 ein. Vgl. <bibl type="btp">
+                           <ref type="external" target="05/45">BT Sten. Ber. 61</ref>, S. 2205 f. und 2224-2226 (Anl. 25)</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die von den Rektoren- und Kultusministerkonferenzen aufgestellten Richtlinien werden erfreulicherweise von den Kultusverwaltungen auch eingehalten.</p>
+            <p>Die Angleichung der Studienpläne auf europäischer Ebene wird angestrebt.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> dankt den Gästen für ihre weiteren Erläuterungen und versichert, daß die gegebenen Anregungen sicher Früchte tragen werden.</p>
+            <p>Ministerialdirektor <name type="Person" role="Sprecher" ref="#SchneiderFriedrich">Schneider</name> betont, daß die Vertreter der Wissenschaft zu danken hätten, wenn ihnen eine ganze Fraktion so geduldig Gehör schenkt. Die Vertreter der Wissenschaft würden jederzeit zu weiteren Erörterungen bereitstehen, sobald aktuelle Fragen anstehen.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Zu 2.:</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> erläutert den Ablauf der Plenarsitzungen.</p>
+            <p>1. Zur Fragestunde wurden 99 Fragen eingereicht.</p>
+            <p>3. Bericht der Bundesregierung über die Lage der Landwirtschaft gemäß §§ 4 und 5 des Landwirtschaftsgesetzes; Drs. V/255 und zu V/255.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN023" type="comment">
+                     <p>Der »Grüne Bericht« 1966 war gemäß § 4 des Landwirtschaftsgesetzes von Bundeskanzler <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> dem Präsidenten des Bundestages am 7.2.1966 übersandt worden; <bibl type="btd">
+                           <ref type="external" target="05/255">BT Anl. 102, Drs. V/255</ref>
+                        </bibl>. Beigefügt »zu Drs. V/255« war mit Datum 8.2. »die Zusammenstellung über die von der Bundesregierung zugunsten der Landwirtschaft bereits getroffenen und noch beabsichtigten Maßnahmen gemäß § 5 des Landwirtschaftsgesetzes (Grüner Plan 1966)«.</p>
+                  </note>
+               </seg> Der Bericht des Landwirtschaftsministers wird entgegengenommen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN024" type="comment">
+                     <p>Zum »Bericht« von BML <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> in der Plenarsitzung vom 18.2.1966 siehe <bibl type="btp">
+                           <ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 998-1005</bibl>.</p>
+                  </note>
+               </seg> Die Aussprache erfolgt in der übernächsten Woche am Mittwoch.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN025" type="comment">
+                     <p>Zur Vorbereitung der Debatte am 2.3.1966 vgl. <ref type="internal" target="#spd-05_1966-03-01-t1510_EP_SVP-1">Nr. 138, TOP 1</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. bis 6. Beratung von Anträgen der SPD zu Beamtenfragen betr. Änderung des Rahmengesetzes zur Vereinheitlichung des Beamtenrechtes, betr. Studienkommission zur Ausarbeitung von Vorschlägen für das Beamtenrecht, betr. Einheitliche Richtlinien zur Bewertung der Dienstposten und Harmonisierung der Stellenpläne.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN026" type="comment">
+                     <p>Zu den betreffenden Anträgen siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP">Nr. 133</ref>.</p>
+                  </note>
+               </seg> Zu diesen Anträgen werden nur kurze Begründungen gegeben.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN027" type="comment">
+                     <p>Zur Begründung sprachen in der Plenarsitzung vom 18.2.1966 <name type="Person" role="Erwaehnung" ref="#RauFriedrich_1965-10-19">Rau</name> und <name type="Person" role="Erwaehnung" ref="#GscheidleKurt_1961-10-17">Gscheidle</name>. <bibl type="btp">
+                           <ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 1005-1007 und S. 1011-1016</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>7. Beratung des Antrags der Fraktion der CDU/CSU, FDP betr. Besoldungsreform. Nur kurze Begründung.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN028" type="comment">
+                     <p>Der am 9.2.1966 von der CDU/CSU und FDP eingebrachte Antrag – <bibl type="btd">
+                           <ref type="external" target="05/271">BT Anl. 103, Drs. V/271</ref>
+                        </bibl> – wurde von Leo <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> (CSU) begründet. <bibl type="btp">
+                           <ref type="external" target="05/271">Ebd.</ref>, S. 1010 f.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. Beratung des Antrags der Fraktion der SPD betr. Abschlußgesetz zur Gesetzgebung zur Regelung der Wiedergutmachung nationalsozialistischen Unrechts für Angehörige des öffentlichen Dienstes. Kurze Begründung.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN029" type="comment">
+                     <p>Zum Antrag siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN004">Nr. 133, bes. Anm. 4</ref>; zur Begründung durch <name type="Person" role="Erwaehnung" ref="#GscheidleKurt_1961-10-17">Gscheidle</name>
+                        <bibl type="btp">
+                           <ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 1011 und 1015 f.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>9. Beratung des Antrags der Fraktion der SPD betr. Abschlußgesetz zur Gesetzgebung nach Artikel 131 GG. – Kurze Begründung.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN030" type="comment">
+                     <p>Zur Begründung ebd.; für den Antrag siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN029">Nr. 133, bes. Anm. 29</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>10. Beratung des Antrages der Abgeordneten <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, Frau <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, <name type="Person" role="Erwaehnung" ref="#WestphalHeinz_1965-10-19">Westphal</name> und Genossen und der Fraktion der SPD betr. Bericht der Bundesregierung über die Lage der Jugend und über die Bestrebungen auf dem Gebiet der Jugendhilfe.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN031" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-3">Nr. 135, TOP 3</ref>.</p>
+                  </note>
+               </seg> Dieser Antrag wurde zurückgezogen, da der Bericht der Bundesregierung über die Lage der Jugend nun vorliegt und an den zuständigen Ausschuß überwiesen wird.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN032" type="comment">
+                     <p>Der betr. Bericht der BReg »über die Lage der Jugend und über die Bestrebungen auf dem Gebiete der Jugendhilfe« gemäß § 25 des Jugendwohlfahrtsgesetzes wurde im Februar 1966 (o. D.) vorgelegt. <bibl type="btd">
+                           <ref type="external" target="05/302">BT Anl. 103, Drs. V/302</ref>
+                        </bibl>. Der Antrag aus der SPD wurde daraufhin zurückgezogen und der »Bericht« am 16.3.1966 den Ausschüssen für Familie und Jugendfragen – federführend – und Gesundheitswesen überwiesen. <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/21">S. 833</ref> und <ref type="external" target="05/30">1293</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>11. Beratung des Antrags der Fraktion der CDU/CSU betr. Anpassung des Gesetzes über Arbeitsvermittlung und Arbeitslosenversicherung an den technischen Fortschritt und an die wirtschaftliche Entwicklung. – Ohne Begründung an den Ausschuß.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN033" type="comment">
+                     <p>Der gleichlautende Antrag vom 26.1.1966 – <bibl type="btd">
+                           <ref type="external" target="05/222">BT Anl. 102, Drs. V/222</ref>
+                        </bibl> – forderte insbesondere eine Anpassung der »Leistungsbemessungsgrenze an die verbesserten Einkommensverhältnisse«, eine prozentuale Erhöhung des Arbeitslosengeldes und eine Verbesserung der Arbeitsförderungsmaßnahmen nach dem AVAVG, so daß »unerwünschte soziale Folgen, die sich aus dem technischen Fortschritt und den Strukturveränderungen […] ergeben können, durch gezielte Beschäftigungs- und Berufspolitik verhindert werden«. – Zur Ausschußüberweisung siehe <bibl type="btp">
+                           <ref type="external" target="05/27">BT Sten. Ber. 60</ref>, S. 1231</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>12. Beratung des Antrags der Abgeordneten <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#SeifrizHansStefan_1961-10-17">Seifritz</name>, <name type="Person" role="Erwaehnung" ref="#IvenHans_1957-10-15">Iven</name> und der Fraktion der SPD betr. Sicherheit in der Zivilluftfahrt. Dieser Tagesordnungspunkt wird abgesetzt, wenn die SPD ihren Antrag begründen will, sonst erfolgt Überweisung an den Ausschuß.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN034" type="comment">
+                     <p>Zum Antrag siehe <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_SVP-1">Nr. 136, TOP 2</ref>, <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN006">bes. Anm. 6</ref>. – <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name> gab am 18.2.1966 keine Begründung. Er beantragte nur, die darin genannte Frist für die Vorlegung eines Berichts der BReg über den Stand der zivilen Flugsicherung vom 1.3. auf den 1.4.1966 zu verlängern und dann über den Antrag abzustimmen, was einstimmig beschlossen wurde; <bibl type="btp">
+                           <ref type="external" target="05/23">BT Sten. Ber. 60</ref>, S. 1022</bibl>. – Die »Überweisung« an einen Ausschuß schied von der Sache her aus.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Holger <name type="Person" role="Sprecher" ref="#BoernerHolger_1957-10-15">Börner</name> bedauert, daß dieser Beratungspunkt nach dem Bericht des Landwirtschaftsministers über die Lage der Landwirtschaft auf die Tagesordnung gesetzt wurde.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN035" type="comment">
+                     <p>Der Antrag wurde am 18.2.1966 als letzter (19.) TOP aufgerufen.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> hält unter den gegebenen Umständen die Überweisung an den Ausschuß für taktisch richtig.</p>
+            <p>2. Beratung des zweiten Jahresgutachtens des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung sowie der Stellungnahme der Bundesregierung zu dem zweiten Jahresgutachten des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung (Drs. V/123, V/127).<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN036" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1965-12-07-t1510_EP_FN042">Nr. 132, Anm. 42</ref> und <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_SVP-1">Nr. 133, TOP 1</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> gibt die Marschroute der SPD bei dieser Debatte bekannt.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN037" type="comment">
+                     <p>Neben <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, der am 16. und 17.2.1966 dazu redete – <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/21">S. 859-866</ref> und <ref type="external" target="05/22">S. 947-952</ref> –, sprachen für die SPD-Fraktion am 16.2. noch <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name> (S. 878-889) und am 17.2.1966 <name type="Person" role="Erwaehnung" ref="#KripsUrsula_1965-10-19">Krips</name> (S. 924-926), <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> (S. 937-941), K. D. <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name> (S. 960-964) und <name type="Person" role="Erwaehnung" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name> (S. 972-974)</bibl>.</p>
+                  </note>
+               </seg> Die SPD wird dabei für einen Stopp bei den Preissteigerungen eintreten und auf der Linie des in Dortmund 1965 aufgestellten finanzwirtschaftlichen Planes<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN038" type="comment">
+                     <p>Auf dem »Deutschland-Treffen« am 14.8.1965 in Dortmund, mit dem durch die SPD die letzte Wahlkampfphase 1965 eröffnet worden war, hatte <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> ein Programm zur Zurückdrängung der schleichenden Geldentwertung vorgestellt. Es sah vor, die Preissteigerungsrate jahresweise von 3 auf 2 und 1% bis zum Jahr 1969 zurückzuführen. Vgl. <bibl type="single-item">Jahrbuch SPD 1964/65, S. 80 f.</bibl>
+                     </p>
+                  </note>
+               </seg> für die kommenden 4 Jahre argumentieren.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN039" type="comment">
+                     <p>Vgl. dazu besonders <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schillers</name> Ausführungen in <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/21">S. 861 f.</ref>, <ref type="external" target="05/22">947 f. und 952</ref>
+                        </bibl>, der u. a. »eine konzertierte Aktion aller beteiligten Wirtschaftsgruppen […] unter eindeutiger Führung der BReg« forderte; ferner <bibl type="btp">
+                           <ref type="external" target="05/22">ebd.</ref>
+                           <name type="Person" role="Erwaehnung" ref="#KripsUrsula_1965-10-19">Krips</name> (S. 925 f.) und <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> (S. 939)</bibl>. Der Preisindex für die Lebenshaltung lag im Winter 1965/66 (Zahlen für Dezember und Januar) jeweils um 4,2% über dem Stand des Vorjahres.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name> warnt vor einer Festlegung zu den gegenwärtigen Verhandlungen der Industriegewerkschaft Metall.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN040" type="comment">
+                     <p>Bei den Tarifverhandlungen in der Metallindustrie ging es um neue Lohnabkommen in insgesamt 13 von 14 Tarifgebieten. In den drei wichtigsten Tarifgebieten Nordrhein-Westfalen, Baden-Württemberg und Hessen waren unter dem Vorsitz der Schlichter Anton <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> (CDU, ehemaliger BMA), Viktor <name type="Person" role="Erwaehnung" ref="#RennerViktor">Renner</name> (SPD, ehemaliger baden-württembergischer Innen- und Justizminister) und Friedrich <name type="Person" role="Erwaehnung" ref="#WehnerFriedrich">Wehner</name> (Präsident des hessischen Landesarbeitsamtes) Anfang Februar Kompromißvorschläge unterbreitet worden, die von Gewerkschaftsseite akzeptiert, von den Arbeitgebervertretungen aber abgelehnt wurden. Seit dem 8.2.1966 kam es in einzelnen Betrieben zu spontanen Streiks. Der zunächst für diesen Tag erwartete Beschluß der IG Metall zu einer Urabstimmung über Streikmaßnahmen wurde erst am 14.2.1966 gefaßt. Vgl. <bibl type="series-item">»Der Spiegel« Nr. 8 vom 14.2.1966, S. 40 f.</bibl> – Hans <name type="Person" role="Erwaehnung" ref="#GeigerHans_1954-01-01">Geiger</name> war Betriebsratsvors. bei den NSU-Werken in Neckarsulm und seit 1960 stellv. Vors. des DGB-Landesverbandes Baden-Württemberg.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> stellt heraus, daß wir bei dieser Debatte über das Gutachten eine einmalige Gelegenheit haben, die gesamtwirtschaftlichen Verfehlungen der Bundesregierung offen zur Diskussion zu stellen.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Zu 3. der TO:</p>
+            <p>Vorlagen aus den Arbeitskreisen.</p>
+            <p>Zu a):</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> begründet den Antrag und betont, daß die Regierung die Regelung der Kostenverteilung bei den Krankenhäusern 12 Jahre lang vernachlässigt hat.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN041" type="comment">
+                     <p>Der am 16.2.1966 eingebrachte Antrag »betr. Pflegesätze von Krankenhäusern« forderte die BReg auf, vor einer Änderung der Pflegesatzverordnung vom 31.8.1954 dem Bundestag einen schriftlichen Bericht über die »gesundheitspolitischen, sozialpolitischen und finanziellen Auswirkungen« der beabsichtigten Neuregelung vorzulegen. <bibl type="btd">
+                           <ref type="external" target="05/314">BT Anl. 103, Drs. V/314</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Es entsteht eine umfangreiche Diskussion zwischen den Genossinnen und Genossen <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name>, <name type="Person" role="Sprecher" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name>, Elinor <name type="Person" role="Sprecher" ref="#HubertElinor_1949-09-07">Hubert</name>, <name type="Person" role="Sprecher" ref="#KillatArthur_1959-03-19">Killat</name>, <name type="Person" role="Sprecher" ref="#BardensHans_1965-10-19">Bardens</name>, <name type="Person" role="Sprecher" ref="#RohdeHelmut_1957-10-15">Rohde</name>, <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, <name type="Person" role="Sprecher" ref="#NeumannFranz_1949-09-07">Neumann</name>, <name type="Person" role="Sprecher" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>, <name type="Person" role="Sprecher" ref="#SeidelMax_1953-10-06">Seidel</name> und Brigitte <name type="Person" role="Sprecher" ref="#FreyhBrigitte_1961-12-22">Freyh</name> über die Form des Antrages in seiner Wirksamkeit, von der Regierung einen Bericht über die Vorstellungen einer Neuregelung zu erhalten, ohne daß eine eingehende Debatte entsteht, zu der auch in unserer Fraktion noch die nötigen Untersuchungen fehlen.</p>
+            <p>Die Mehrheit der Fraktion beschließt bei einer Enthaltung, den vorgelegten Antrag des Arbeitskreises [IV]<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN042" type="comment">
+                     <p>Im Or. versehentlich »V«. – In der Plenarsitzung am 9.3.1966 betonten sowohl <name type="Person" role="Erwaehnung" ref="#RohdeHelmut_1957-10-15">Rohde</name>, der den Antrag begründete, wie <name type="Person" role="Erwaehnung" ref="#BardensHans_1965-10-19">Bardens</name> als Sprecher für die SPD-Fraktion, es gehe dabei um Grundsatzfragen bei den Krankenhäusern und es sei das legitime Recht des Parlamentes, ausreichend informiert zu werden. Vgl. <bibl type="btp">
+                           <ref type="external" target="05/27">BT Sten. Ber. 61</ref>, S. 1231-1233 und 1235 f.</bibl> Auf Grund einer »interfraktionellen Übereinkunft« erfolgte die Überweisung an die Ausschüsse für Wirtschaft und Mittelstandsfragen – federführend – und Gesundheitswesen sowie Sozialpolitik. <bibl type="btp">
+                           <ref type="external" target="05/27">Ebd.</ref>, S. 1236</bibl>.</p>
+                  </note>
+               </seg> – Sozialpolitik – einzubringen.</p>
+            <p>Zu b):</p>
+            <p>Antrag betr. Änderung der Disziplinarordnung.</p>
+            <p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet diesen Antrag. – Die Fraktion beschließt einstimmig, den Antrag einzubringen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN043" type="comment">
+                     <p>Der vom AK Innenpolitik vorgelegte, auf den 15.2. datierte Antrag (Anl.), eingebracht am 16.2.1966 – <bibl type="btd">
+                           <ref type="external" target="05/313">BT Anl. 103, Drs. V/313</ref>
+                        </bibl> – forderte die BReg zur Vorlage eines Gesetzentwurfs auf. Dieser solle u. a. eine Einschränkung disziplinarrechtlicher Maßnahmen, eine Erweiterung der Rechte der Verteidiger und der Disziplinargerichte und ein »Disziplinarrahmengesetz« enthalten. Der Antrag wurde ohne Aussprache am 9.3. dem Innen- und am 16.3. 1966 zusätzlich dem Rechtsausschuß überwiesen. <bibl type="btp">BT Sten. Ber. 61, <ref type="external" target="05/27">S. 1230</ref> und <ref type="external" target="05/30">1293</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu c):</p>
+            <p>Kleine Anfrage betr. Internationaler Jugendaustausch.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet den Antrag. – Die Fraktion beschließt einstimmig, den Antrag einzubringen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN044" type="comment">
+                     <p>Die von den AK Innen- und Sozialpolitik schon am 10.2. vorgelegte »Kleine Anfrage« (nicht Antrag) der Abgeordneten <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name> u. a. und »Fraktion der SPD« wurde am 16.2. eingebracht und vom BMAusw am 28.2.1966 beantwortet. <bibl type="btd">BT Anl. 103, Drs. <ref type="external" target="05/312">V/312</ref> und <ref type="external" target="05/363">V/363</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu d):</p>
+            <p>Kleine Anfrage betr. Ausbildungsbeihilfe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet diesen Antrag. – Die Fraktion beschließt einstimmig, diesen Antrag einzubringen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN045" type="comment">
+                     <p>Die Kleine Anfrage der Abgeordneten <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name> u. a. und »Fraktion der SPD« mit der Überschrift »betr. Ausbildungsförderung« (Anl.) wurde am 16.2.1966 unter dem Titel betr. »Ausbildungsbeihilfe« eingebracht. Sie bezog sich auf die Aufwendungen von Bund, Ländern und Gemeinden für Berufsausbildungs- und Erziehungsbeihilfen in den Jahren 1963-1965 und die Folgen des Auslaufens einzelner Förderungsmaßnahmen. Beantwortet wurde sie vom BMFa am 25.3.1966. <bibl type="btd">BT Anl. <ref type="external" target="05/309">103, Drs. V/309</ref> und <ref type="external" target="05/477">104, Drs. V/477</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu e):</p>
+            <p>Kleine Anfrage betr. Kriegsopferversorgung.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> erläutert die Kleine Anfrage und weist auf die Erklärung der BundesreZu f):</p>
+            <p>Kleine Anfrage betr. Berechnung des durchschnittlichen Diensteinkommens vergleichbarer Bundesbeamten für BEG<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN046" type="comment">
+                     <p>D. h. Bundesentschädigungsgesetz.</p>
+                  </note>
+               </seg> -Renten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#FritzKarl-Walter_1965-10-19">Fritz</name> gibt nähere Erläuterungen zu dieser Kleinen Anfrage.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN047" type="comment">
+                     <p>Die Renten nach dem BEG wurden anhand der Durchschnittseinkommen vergleichbarer Diensteinkommen oder Versorgungsbezüge von Bundesbeamten berechnet, wobei bis 1965 die Nettoeinkünfte zugrunde gelegt wurden. Die von der BReg am 15.9.1965 beschlossene Regelung sah eine Änderung der Bemessungsgrundlagen vor. Die von <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name> entworfene, am 16.2.1966 eingebrachte Kleine Anfrage (Anl.) des Abgeordneten <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name> und »Fraktion der SPD« sah darin ein Indiz, daß durch eine zuvor angewandte fehlerhafte Berechnung die Rentenempfänger nach BEG für die zurückliegenden Jahre zu wenig erhalten hatten. BMF <name type="Person" role="Erwaehnung" ref="#DahlgruenRolf_1957-10-15">Dahlgrün</name> wies diesen Vorwurf in seiner Antwort vom 2.3.1966 zurück. <bibl type="btd">BT Anl. 103, Drs. <ref type="external" target="05/311">V/311</ref> und <ref type="external" target="05/362">V/362</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> – Die Fraktion beschließt einstimmig, die Kleine Anfrage einzubringen.</p>
+            <p>Zu g): Einbringung eines interfraktionellen Antrages zur Änderung des Bundespolizeibeamtengesetzes.</p>
+            <p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> weist auf den interfraktionellen Antrag gleichen Inhalts aus der IV. Legislaturperiode<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN048" type="comment">
+                     <p>Es handelte sich jedoch nur um einen Antrag von CDU/CSU und FDP vom 17.3.1965. <bibl type="btd">
+                           <ref type="external" target="04/3204">BT Anl. 97, Drs. IV/3204</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> hin und ersucht die Fraktion um Zustimmung für die Wiedereinbringung dieses interfraktionellen Antrags. Der Antrag soll die gleiche Form haben wie auf der Drs. IV/3204. – Die Fraktion gibt einstimmig ihr Einverständnis zu diesem interfraktionellen Antrag.<seg type="note">
+                  <note xml:id="spd-05_1966-02-15-t1500_EP_FN049" type="comment">
+                     <p>Eingebracht am 1.3. als Antrag der Fraktionen CDU/CSU, SPD und FDP und am 9.3.1966 in 1. Lesung beraten. <bibl type="btd">
+                           <ref type="external" target="05/350">BT Anl. 103, Drs. V/350</ref>
+                        </bibl> und <bibl type="btp">
+                           <ref type="external" target="05/27">BT Sten. Ber. 61</ref>, S. 1237</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-15-t1500_EP_div_SVP-4">
+            <head>D.</head>
+            <p>Zu 4. der TO:</p>
+            <p>Termine: Nächste Vorstandssitzung Dienstag, den 1.3.1966, 11.00 Uhr</p>
+            <p>Nächste Fraktionssitzung Dienstag, 1.3.1966, 15.00 Uhr</p>
+            <p>Nächste Vorstandssitzung Donnerstag, 3.3.1966, 18.00 Uhr</p>
+            <p>Zu 5. der TO:</p>
+            <p>Keine Wortmeldungen.</p>
+            <p>Ende der Fraktionssitzung: 20.00 Uhr.</p>
+            <p>Protokoll: Hans <name type="Person" role="Erwaehnung" ref="#SchejaHans">Scheja</name>
+            </p>
+            <p>Bonn, den 18.2.1966.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

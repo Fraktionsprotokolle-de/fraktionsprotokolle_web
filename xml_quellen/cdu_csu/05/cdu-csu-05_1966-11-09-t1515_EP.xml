@@ -1,227 +1,315 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1966-11-09-t1515_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1011/1</idno>
-							<objectName>[Nicht überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 9. November 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>7 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-11-09"><time type="start" when="15:15:00"/><time type="end" when="16:37:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrandPeterWilhelm_1953-10-06"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
-			<change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-05_1966-11-09-t1515_EP_SVP-1" corresp="#cdu-csu-05_1966-11-09-t1515_EP_div_SVP-1">A. TOP 1: Eröffnung. – TOP 2: Bericht über den Bundesparteivorstand (Koalitions- und Kanzlerkandidatenfrage). – TOP 3: Wahl des Kanzlerkandidaten. – TOP 4: Bericht aus dem Ältestenrat. – TOP 5: Steuern und Abgaben, Bundeshaushalt. – TOP 6: Bundeshaushalt.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-05_1966-11-09-t1515_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Eröffnung]</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> eröffnet die Sitzung mit der Mitteilung, daß der Fraktionsvorsitzende gebeten habe, bis zur erfolgten Wahl des Bundeskanzlerkandidaten von seinen Funktionen entbunden zu werden. Deshalb leite er, <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>, und am folgenden Tage <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> die Sitzung. Zunächst werde <name type="Person" role="Erwaehnung" ref="#KraskeKonrad_1965-10-19">Kraske</name> einen kurzen Bericht über die Sitzung des Bundesparteivorstandes vom Vortage geben.</p>
-				<p>[2. Bericht über den Bundesparteivorstand: Koalitions- und Kanzlerkandidatenfrage]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KraskeKonrad_1965-10-19">Kraske</name> teilt mit, daß der Bundesvorstand nach einem Bericht des Parteivorsitzenden <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> bewußt darauf verzichtet habe, in eine eingehende Diskussion über die zurückliegende Entwicklung einzutreten, sondern sich vielmehr der künftigen Entwicklung zugewandt habe. Dabei hätten sich sehr rasch zwei Fragen ergeben, nämlich die nach der Kommission, die die kommenden Verhandlungen führen soll, und die eines Nachfolgers für <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> als Bundeskanzler.</p>
-				<p>Die Verhandlungskommission solle so klein wie möglich gehalten werden und etwa fünf, maximal sieben Mitglieder haben. Zwei Mitglieder sollten von der CDU, zwei von der CSU und die restlichen von der Fraktion vorgeschlagen werden. Der Bundesvorstand schlage <name type="Person" role="Erwaehnung" ref="#DufhuesJosefHermann">Dufhues</name> und <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name> vor. Selbstverständlich gehöre der Parteivorsitzende <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> der Kommission an.</p>
-				<p>Hinsichtlich der Kandidatenfrage habe der Parteivorsitzende begrüßt, daß die Fraktion in der vergangenen Woche alle Diskussionen über diesen Punkt zurückgestellt habe, um den Gremien der CDU und CSU die Möglichkeit zu Äußerungen zu geben. Dem Parteivorstand sei klar gewesen, daß er sich zwar äußern müsse, daß die Entscheidung über diese Frage aber hier in dieser Fraktion liege und er diese Entscheidung nicht präjudizieren könne und wolle. Nach einiger Diskussion seien dann doch die Namen <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>, <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Ministerpräsident <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> und <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> genannt worden. Außerdem seien ohne weitere Vertiefung der Diskussion noch die Namen <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name> und <name type="Person" role="Erwaehnung" ref="#DufhuesJosefHermann">Dufhues</name> genannt worden. Der Parteivorsitzende habe an die vier genannten Herren die Frage gestellt, ob sie bereit seien, sich der Abstimmung zu stellen, eine Frage, die von allen vier Herren mit Ja beantwortet wurde, wobei <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> und <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> Wert darauf gelegt hätten festzustellen, daß sie sich nicht um dieses Amt beworben hätten oder bewerben würden, aber bereit seien, sich einer Abstimmung zu stellen. Der Vorstand habe dann noch festgestellt, daß es wünschenswert sei, wenn diese Entscheidung so bald wie möglich fallen würde. Die Diskussion sei in einer hervorragenden Atmosphäre und mit großer Sachlichkeit geführt worden. Besonders beeindruckt sei der Bundesvorstand von der Form und Haltung gewesen, in der der Parteivorsitzende diese Sitzung geleitet und diesen Weg eröffnet habe.</p>
-				<p>[3. Wahl des Kanzlerkandidaten]</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> stellt fest, daß niemand das Wort wünscht, und teilt mit, daß die Wahl für den kommenden Tag, 13.00 Uhr, vorgeschlagen werde. Die Fraktion sei damit einverstanden. Im Laufe des Tages werde noch eine Wahlordnung erarbeitet von einer Kommission, die aus <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name>, <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> und <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> bestehen solle. Diese Wahlordnung werde am kommenden Tage um 12.00 Uhr dem Vorstand, dann der Gesamtfraktion schriftlich zur Genehmigung vorgelegt werden. Einer aus der Fraktion kommenden Anregung folgend, schlage er vor, als fünften Mann in der Kommission <name type="Person" role="Erwaehnung" ref="#VogelBernhard_1965-10-19">Vogel</name> (Speyer) hinzuzunehmen.</p>
-				<p>Die Wahl werde wie in der Fraktion üblich ohne Aussprache stattfinden. Man werde von den vier Kandidaten eine Erklärung verlangen, daß sie bereit sind, echte Koalitionsverhandlungen nach beiden Seiten zu führen, und daß die bei der Wahl Unterlegenen absolute Loyalität gegenüber dem gewählten Kandidaten wahren werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LenzCarlOtto_1965-10-19">Lenz</name> fragt, ob die Nennung dieser vier Namen bedeute, daß die Fraktion an diese Vorschläge gebunden sein solle.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> antwortet, daß auch der Bundesvorstand der Meinung sei, daß weitere Kandidaten genannt werden könnten, wie das bei jeder Wahl sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HauserHugo_1960-03-11">Hauser</name> (Sasbach) regt an, die Wahlordnung schon am nächsten Vormittag vorzulegen, damit man auch noch Anregungen dazu geben könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt, dieser Anregung werde entsprochen.</p>
-				<p><name type="Person" role="Sprecher" ref="#DeringerArved_1957-10-15">Deringer</name> fragt, ob der zweite Teil der Erklärung der Kandidaten auch beinhalte, daß diese bereit seien, eventuell in das Kabinett einzutreten, wenn sie darum gebeten würden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> bejaht diese Frage.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> hält eine solche Loyalitätserklärung für politisch unklug, weil sie nach außen den Eindruck erwecke, daß innere Spannungen vorhanden sind.</p>
-				<p>Bundesinnenminister <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> unterstützt den Vorschlag des Bundesparteivorstandes, regt aber an zu erklären, daß die ganze Fraktion loyal hinter dem Wahlergebnis stehen werde.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> hält diese Anregung für ganz besonders bedeutend wegen der Wirkung in der Öffentlichkeit. Weiter fragt sie, wozu man eigentlich jetzt eine neue Wahlordnung brauche; es sei doch schon öfters in der Fraktion gewählt worden.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> antwortet auf die gestellte Frage, solange es nur einen Kandidaten gegeben habe, sei das etwas einfacher gewesen. Eine Wahlordnung sei deshalb notwendig, weil vom Grundsatz her drei Prinzipien denkbar seien, entweder man wähle im Konklave, bis einer die absolute Mehrheit habe, oder es scheide jedesmal der mit der geringsten Stimmenzahl aus, oder nach der ersten Wahl kommen die beiden mit der stärksten Stimmenzahl in die Stichwahl, wie das bei der Vorstandswahl der Fall sei. Diese Entscheidung müsse getroffen werden, weil erstmals mehrere Kandidaten zur Wahl stünden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> fragt, ob diese Wahl durch Namensaufruf stattfinden werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> empfiehlt, sich jetzt nicht über Einzelheiten zu unterhalten, sondern die Wahlordnung abzuwarten; diese könne dann von jedem in Ruhe überdacht werden.</p>
-				<p>[4. Bericht aus dem Ältestenrat]</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> erstattet einen kurzen Bericht aus dem Ältestenrat.</p>
-				<p>[5. Steuern und Abgaben, Bundeshaushalt]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> bezieht sich auf die Auseinandersetzung in der letzten Fraktionssitzung<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN001" type="comment"><p>Siehe Fraktionssitzung vom 7.11.1966, TOP 3.</p></note></seg>, ob hinsichtlich des Steueränderungsgesetzes und des Finanzplanungsgesetzes eine Fraktionsinitiative erfolgen solle.<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN002" type="comment"><p>Entwurf eines Zweiten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Steueränderungsgesetz 1966 – (Drs. V/1068 vom 2.11.1966), CDU/CSU-Gesetzentwurf zur Ergänzung des Zweiten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Ergänzungsgesetz zum Steueränderungsgesetz 1966 – (Drs. V/1096 vom 8.11.1966) sowie Entwurf eines Ersten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Finanzplanungsgesetz – (Drs. V/1067 vom 2.11.1966).</p></note></seg> Die Steueränderungsgesetze kommen nun auf die Tagesordnung. Bei dem Finanzplanungsgesetz habe sich inzwischen herausgestellt, daß es sich nur mit der Kapitalisierung von Kriegsopferrenten befasse. Er wäre dankbar, wenn Minister <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> eine Erklärung abgeben könnte, daß es nicht notwendig sei, diese Sache jetzt als Initiative einzubringen; im anderen Falle müsse darüber gründlich diskutiert werden.</p>
-				<p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> antwortet, ganz so liege die Sache nicht. Es genüge zwar, wenn dieses Gesetz erst im Januar oder im März komme. Aber er teile die grundsätzlichen Bedenken <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidts</name> nicht, weil die Zinsverbilligungen, die hier vorgesehen seien, an Größenordnungen gebunden seien. Bisher seien dafür 140 Mio. DM ausgegeben worden, jetzt sehe man nur 20 Mio. DM für diesen Zweck vor. Es wäre vielleicht zweckmäßig, wenn sich Minister <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> zu dieser Frage äußerte, da er ja sachlich zuständig sei.</p>
-				<p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> setzt sich dafür ein, diese Sache doch auch zu verabschieden. Die Auffassung, daß eine Kürzung von 120 Mio. DM erfolgen solle, habe in den Kriegsopferverbänden bereits erheblichen Ärger gemacht. Es wäre besser, wenn auch in diesem Punkt die Fraktion hinter der Regierungsvorlage stehen würde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> erläutert, es gehe nicht darum, ob man hinter der Regierungsvorlage stehe oder nicht, sondern darum, ob man das als eigene Initiative aufnehme oder nicht. Niemand sei gegen die Kapitalisierung von Kriegsopferrenten, aber hier werde doch ein ganz neues Prinzip eingeführt. Das Thema Zinszuschüsse sei doch von grundlegender Bedeutung und könne nicht so Hals über Kopf gelöst werden. Der Fraktion müsse bewußt werden, daß sie sich nun wieder an einem Punkt mit Zinszuschüssen abfinde.</p>
-				<p><name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name> setzt sich für die Einbringung ein. Die einzelnen Fragen auch grundsätzlicher Art könne man im Ausschuß behandeln.</p>
-				<p><name type="Person" role="Sprecher" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) fordert, daß sich die Fraktion Klarheit darüber verschaffen müsse, welche Konsequenzen diese Entscheidung für die Zukunft haben werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> widerspricht der anklingenden Auffassung, daß es sich um steigende Lasten für den Haushalt handele. Er bestehe allerdings nicht auf der Initiative, aber zu lange dürfe man nicht warten, wenn man den Kriegsopfern nicht schaden wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SiemerJHermann_1953-10-06">Siemer</name> weist darauf hin, daß man sonst auf allen Gebieten die Zinssubventionen abbaue. Deshalb könne man nicht wollen, daß ein Prinzip, das man auf allen anderen Gebieten fallenlasse, hier erneut eingeführt würde.</p>
-				<p><name type="Person" role="Sprecher" ref="#KoepplerHeinrich_1965-10-19">Köppler</name> regt an, jetzt eine Sachdebatte zu unterlassen und es der Bundesregierung zu überlassen, dieses Gesetz einzubringen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> empfiehlt, in diesem Punkt den Vorschlägen von Minister <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> zu folgen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> bemerkt, daß er zu diesem Punkt in dem Bericht über die Arbeitskreissitzung noch Stellung nehmen werde. Jetzt aber sei auch er der Meinung, daß eine überstürzte Sachdebatte keinen Sinn habe. Hier könne man es sehr wohl bei einer Initiative der Bundesregierung belassen.</p>
-				<p>Bundeslandwirtschaftsminister <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> bemerkt, daß er wegen einer ähnlichen Frage schon vor einem Jahr große Schwierigkeiten gehabt habe. Aber jetzt empfehle auch er, die Sachdebatte nicht zu führen. Die geäußerten Befürchtungen bestünden jedoch nicht zu Unrecht.</p>
-				<p><name type="Person" role="Sprecher" ref="#RusseHermannJosef_1965-10-19">Russe</name> glaubt, daß die Fraktion wohl nicht völlig klar sehe, um was es geht. Es handele sich doch wohl um ein Junktim. Wenn das aber so sei, dann müsse diese Sache jetzt ebenfalls von der Fraktion eingebracht werden. Außerdem wisse doch noch kein Mensch, wie die neue Regierung aussehe. Wenn man es aber dieser überlassen könnte, das einzubringen, dann könne das die Fraktion doch wohl ebenso. Man solle also die Sache nicht verschieben, sondern jetzt entscheiden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> erläutert, daß nun neben dem Steueränderungsgesetz auch ein Finanzplanungsgesetz vorgelegt werde, das in der Fraktion überhaupt noch nicht vorgetragen sei, das man aber bereits mit dem anderen Gesetz verbunden habe. Erst am heutigen Tage habe man sich mit der Vorlage überhaupt vertraut machen können. Jetzt stelle sich heraus, daß hier wieder von Zinszuschüssen die Rede ist. Davon habe er die Fraktion unterrichten wollen, um sie zu fragen, ob sie bereit sei, wieder einmal eine Initiative zu übernehmen, die sie überhaupt nicht kennt. Es gehe nicht um diese lächerlichen 20 Mio. DM, sondern darum, wenn erst einmal eine Grundposition in einem Gesetz eingeführt sei, daß das dann der Anlaß werde, diese Sache jedes Jahr auszuweiten. Darauf habe er aufmerksam machen wollen. Wenn die Fraktion meine, sie könne so verfahren, dann könne sie das tun, allerdings ohne ihn selbst. Er habe geglaubt, es mit einer Fraktion zu tun zu haben, die in Zukunft wissen möchte, worüber sie eigentlich entscheidet.</p>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> weist darauf hin, daß es im Haushalt eine Reihe von Dingen gebe, die wesentlicher seien als diese relativ geringe Summe.<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN003" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1967 – Haushaltsgesetz 1967 – (Drs. V/1000 vom 2.11.1966).</p></note></seg> Man könne nicht einerseits sagen, daß man diese Kapitalisierungsbestimmung für ausgezeichnet halte, andererseits aber Schwierigkeiten machen. Wenn man diese Möglichkeit wirklich wolle, dann müsse man die Regierungsvorlage wiederherstellen. Das sei eine politische Entscheidung. Den vorgeschlagenen Weg sei man doch nicht leichtfertig gegangen. Man solle sich doch hier nicht Ärger machen, der vermeidbar sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> bezeichnet die ganze Sache als eine Verfahrensfrage. Es sei doch bisher darum gegangen, durch eine Initiative die Beratungsmöglichkeiten für diese Dinge zu schaffen. Das habe vor allem für das Steueränderungsgesetz gegolten. Nicht unbedingt notwendig sei es aber für das Finanzplanungsgesetz. Da hier keine Gefahr im Verzuge sei, müsse diese Sache eben von der Bundesregierung eingebracht werden, den Bundesrat durchlaufen und könne dann normal, ohne Fraktionsinitiative, verabschiedet werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erläutert an Hand eines Beispiels noch einmal, daß in Zukunft nach der neuen Regelung die Aufwendungen geringer sein würden als bisher.</p>
-				<p><name type="Person" role="Sprecher" ref="#RusseHermannJosef_1965-10-19">Russe</name> sieht nach diesen Erklärungen der zuständigen Minister keine Notwendigkeit, von der Initiative abzugehen. Es handele sich nicht um eine Verfahrensfrage, sondern wenn die Bundesregierung eine solche Vorlage machen könne, dann stelle sich doch nur die Frage, ob man ihr dabei folgen wolle oder nicht. Er unterstelle niemandem, daß er hier nicht folgen würde.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> betont noch einmal, daß es sich bei dieser Zinsverbilligung um etwas anderes handele als bei anderen Verbilligungen. Er wolle aber die Frage stellen, ob man nicht vielleicht schon im nächsten Jahre, wenn das notwendige Geld vorhanden wäre, wieder zur alten Regelung zurückgehen könnte.</p>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> antwortet, daß auch diese Möglichkeit gegeben sei, wenn man das wolle.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt, er lasse nicht gern über diese Frage abstimmen, weil er das Gefühl habe, daß niemand so recht wisse, wie diese Abstimmung ausfallen werde.</p>
-				<p>(Die Abstimmung ergibt Zustimmung der Fraktion zur Fraktionsinitiative.)</p>
-				<p>[6. Bundeshaushalt]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> berichtet über die Sitzung des Arbeitskreises III, der viele Mitglieder der Arbeitskreise II und IV beigewohnt hätten. Dort sei die am kommenden Tage bevorstehende Haushaltsdebatte erörtert worden.<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN004" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1967 – Haushaltsgesetz 1967 – (Drs. V/1000 vom 2.11.1966).</p></note></seg> Man habe es für richtig gehalten, daß der Haushalt eingebracht würde. An Unsicherheitsfaktoren sei aber vorhanden, daß niemand<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN005" type="comment"><p>Lesung unsicher.</p></note></seg> wisse, wie die Regierung aussieht, wenn die Ausschußberatungen beginnen, und daß auch die Konsequenzen der angesprochenen Finanzvorschau nicht zu übersehen seien und daß zuletzt über dem Ganzen das Damoklesschwert der Verteilung der Einkommen- und Körperschaftsteuer schwebe.<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN006" type="comment"><p>Entwurf eines Zweiten Gesetzes über das Beteiligungsverhältnis an der Einkommensteuer und der Körperschaftsteuer (Drs. V/1066 vom 2.11.1966).</p></note></seg> Deshalb müsse man die Ausschußberatungen elastisch führen. Auch die Bundesregierung werde nicht darauf bestehen, daß alles, was sie vorschlägt, auch so übernommen wird. Entsprechend müsse man auch die bevorstehende Debatte im Plenum gestalten. Dabei sollte darauf bestanden werden, daß die CDU/CSU als stärkste Fraktion zunächst zu Wort kommt. Nicht zu verstehen ist, daß die Frage der Kuponsteuer mitten in diese Beratungen hinein auf die Tagesordnung gesetzt worden ist.<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN007" type="comment"><p>SPD-Gesetzentwurf zur Änderung des Einkommensteuergesetzes und des Körperschaftsteuergesetzes (Drs. V/1011 vom 19.10.1966).</p></note></seg> Die SPD wolle die Wiederaufhebung dieser Steuer und werde offenbar die ganze Haushaltsfrage an dieser Sache aufhängen, obwohl diese Frage doch ganz unerheblich für den Haushalt sei. Man könne nun nur noch so verfahren, daß man den Antrag betreffend Kuponsteuer an die Ausschüsse verweist und ihn dort in allen Einzelheiten erörtert. Ebenfalls könne die Fraktion keinen Beschluß fassen, der ihre einzelnen Mitglieder in dieser Frage festlege.</p>
-				<p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> gibt zu bedenken, daß trotz mancher mißlichen Begleiterscheinung man den Standpunkt weiter vertreten sollte, daß die Regelung der Kuponsteuer EWG-einheitlich erfolgen sollte. Man müsse für eine Harmonisierung dieser Steuer sorgen. Wenn man jetzt die Kuponsteuer ohne Änderung des Restriktionskurses der Bundesbank ändern würde, dann ergebe das wohl eine Belebung am Geld- und Kapitalmarkt, aber mit Geldern aus dem Ausland oder deutschem Geld, das aus dem Ausland zurückkäme, während man sich selbst Fesseln anlege. In dieser Frage müsse man also sehr vorsichtig verfahren.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> unterstützt diese Auffassung.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> tritt dafür ein, daß ein Redner der CDU/CSU die Debatte eröffnet, um deren günstigen Ablauf sicherzustellen. Weiter müßten Abgeordnete bereitstehen, wenn die Debatte in Einzelheiten gehen sollte, was man ja noch nicht überblicken könne. Er selbst werde einige Punkte in der Haushaltsdebatte anschneiden, von denen er gerne wissen wolle, wie die Fraktion dazu steht. Diese Fragen seien in der Fraktion bisher nicht geklärt. Er werde sagen müssen, daß diese Dinge noch ungeklärt seien, zum Beispiel die Ausbildungshilfe oder die Kilometerpauschale, auch die Frage der Sparprämie. Alle diese Fragen müßten offengehalten werden, damit sich die Fraktion im Laufe der nächsten Woche entscheiden könne. Auch müsse klargestellt werden, daß die mittelfristige Vorausschau kein sehr rosiges Bild ergebe. Hinsichtlich des Anteils an der Einkommen- und Köperschaftsteuer werde er sehr klar aussprechen, daß das Verhältnis 39:61% sein müsse; anders werde es nicht gehen. Komme es im Endergebnis zu einem anderen Verhältnis, dann müßten eben Ausgaben des Bundes für Aufgaben der Länder gestrichen werden. Auch zum Landwirtschaftsetat werde er Ausführungen machen müssen, jedoch so, daß auch hier alles offenbleibe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> deutet kurz an, daß er sich für notwendige Repliken bereithalten und dabei die staatspolitische Verantwortung unterstreichen werde, die die CDU/CSU dazu bringe, jetzt diesen Haushalt überhaupt zu lesen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> wendet sich dem Thema Zusammentreffen von Pension und Rente, der sogenannten Doppelversorgung, zu. Hier sei im Finanzplanungsgesetz eine Revision der bisherigen Beschlüsse vorgesehen. Die FDP habe bereits erklärt, sie werde diese Revision nicht mitmachen, die SPD stehe wohl auf dem gleichen Standpunkt. Bei dieser Lage empfehle sich, in der Debatte sich nicht durch die anderen Fraktionen festlegen oder in die Enge treiben zu lassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> erhebt Bedenken dagegen, daß in der Drucksache V/1096 nur alle unangenehmen Dinge zusammengefaßt seien, während die angenehmeren Sachen nicht enthalten seien.<seg type="note"><note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN008" type="comment"><p>CDU/CSU-Gesetzentwurf zur Ergänzung des Zweiten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Ergänzungsgesetz zum Steueränderungsgesetz 1966 – (Drs. V/1096 vom 8.11.1966).</p></note></seg> Dabei habe er gemeint, daß man in diesen Punkten bereits einig sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erinnert daran, daß er selbst vorgeschlagen habe, auch diese Dinge aufzunehmen; aber die Fraktion habe anders beschlossen. Er habe jedenfalls bei der Endberechnung unterstellt, daß auch diese Dinge kämen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> erklärt, er werde jedenfalls hinsichtlich der Kilometerpauschale deutlich machen, daß die Fraktion eine gegenüber der Regierungsvorlage günstigere Regelung wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HammansHugo_1965-10-19">Hammans</name> regt an, die Kilometerpauschale auf 40 Pfennig, nicht auf 36 Pfennig festzusetzen.</p>
-				<p><name type="Person" role="Sprecher" ref="#PortenJosef_1961-10-17">Porten</name> tritt dafür ein, auch in anderen Punkten ebenso klare Erklärungen abzugeben wie bei der Kilometerpauschale.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> fordert, daß auch hinsichtlich der Ausbildungszulage deutlich gemacht werde, worüber sich die Fraktion einig ist.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> bedauert, daß in dieser Frage die Meinung der Fraktion nicht so ganz eindeutig sei.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> verweist darauf, daß die Fraktion nicht willens gewesen sei, bei der Ausbildungszulage so zu verfahren, wie das die <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>-Kommission vorschlage. Sie stelle den Antrag, daß <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> zu diesem Punkt in der Debatte klar Stellung nehme in dem Sinn, wie es die Fraktion beschlossen habe.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#SchroederChrista_1961-10-17">Schroeder</name> befürchtet, daß die Verbesserungen, die vorgesehen seien, politisch untergehen würden, wenn sie nur als Änderungsanträge im Ausschuß vorgebracht würden. Es wäre doch besser, diese Verbesserungen in einem eigenen Antrag zusammenzufassen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> bedauert, diesen Weg nicht gehen zu können, weil sich die Fraktion hinsichtlich dieser Punkte noch nicht klar genug geäußert habe. Er könne nur zu den Punkten klar Stellung nehmen, in denen eine Meinung der Fraktion tatsächlich gebildet ist.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#JacobiMaria_1961-10-17">Jacobi</name> meint, es läge doch weitgehende Übereinstimmung in der Fraktion vor.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> erinnert daran, daß die Fraktion in der vergangenen Woche die Familienverbände empfangen und eindeutig durch <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> zu erkennen gegeben habe, daß sie nicht an den Abbau des Familienlastenausgleichs denke. An dieser Linie sollte festgehalten werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> bemerkt, daß es natürlich schwierig sei, verbindliche Aussagen im Rahmen der Fraktion zu machen, wenn sich diese noch keine abschließende Meinung gebildet habe. <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> werde aber bestimmt die richtige Form finden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> betont, daß die Zusage, der Familienlastenausgleich werde nicht abgebaut, nur so gedeutet werden könne, daß die gesetzlichen Vorschriften über die Voraussetzungen für den Bezug dieser Kinderzulagen nicht verschlechtert werden. Man sollte nicht versuchen, diese Lasten dadurch zu verringern, daß man die Leistungsansprüche abbaut. Das wäre gegen die gemeinsame Auffassung der Fraktion.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1966-11-09-t1515_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1011/1</idno>
+                     <objectName>[Nicht überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 9. November 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>7 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-11-09">
+               <time type="start" when="15:15:00"/>
+               <time type="end" when="16:37:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BrandPeterWilhelm_1953-10-06"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
+         <change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-05_1966-11-09-t1515_EP_SVP-1" corresp="#cdu-csu-05_1966-11-09-t1515_EP_div_SVP-1">A. TOP 1: Eröffnung. – TOP 2: Bericht über den Bundesparteivorstand (Koalitions- und Kanzlerkandidatenfrage). – TOP 3: Wahl des Kanzlerkandidaten. – TOP 4: Bericht aus dem Ältestenrat. – TOP 5: Steuern und Abgaben, Bundeshaushalt. – TOP 6: Bundeshaushalt.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-05_1966-11-09-t1515_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Eröffnung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> eröffnet die Sitzung mit der Mitteilung, daß der Fraktionsvorsitzende gebeten habe, bis zur erfolgten Wahl des Bundeskanzlerkandidaten von seinen Funktionen entbunden zu werden. Deshalb leite er, <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>, und am folgenden Tage <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> die Sitzung. Zunächst werde <name type="Person" role="Erwaehnung" ref="#KraskeKonrad_1965-10-19">Kraske</name> einen kurzen Bericht über die Sitzung des Bundesparteivorstandes vom Vortage geben.</p>
+            <p>[2. Bericht über den Bundesparteivorstand: Koalitions- und Kanzlerkandidatenfrage]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KraskeKonrad_1965-10-19">Kraske</name> teilt mit, daß der Bundesvorstand nach einem Bericht des Parteivorsitzenden <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> bewußt darauf verzichtet habe, in eine eingehende Diskussion über die zurückliegende Entwicklung einzutreten, sondern sich vielmehr der künftigen Entwicklung zugewandt habe. Dabei hätten sich sehr rasch zwei Fragen ergeben, nämlich die nach der Kommission, die die kommenden Verhandlungen führen soll, und die eines Nachfolgers für <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> als Bundeskanzler.</p>
+            <p>Die Verhandlungskommission solle so klein wie möglich gehalten werden und etwa fünf, maximal sieben Mitglieder haben. Zwei Mitglieder sollten von der CDU, zwei von der CSU und die restlichen von der Fraktion vorgeschlagen werden. Der Bundesvorstand schlage <name type="Person" role="Erwaehnung" ref="#DufhuesJosefHermann">Dufhues</name> und <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name> vor. Selbstverständlich gehöre der Parteivorsitzende <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> der Kommission an.</p>
+            <p>Hinsichtlich der Kandidatenfrage habe der Parteivorsitzende begrüßt, daß die Fraktion in der vergangenen Woche alle Diskussionen über diesen Punkt zurückgestellt habe, um den Gremien der CDU und CSU die Möglichkeit zu Äußerungen zu geben. Dem Parteivorstand sei klar gewesen, daß er sich zwar äußern müsse, daß die Entscheidung über diese Frage aber hier in dieser Fraktion liege und er diese Entscheidung nicht präjudizieren könne und wolle. Nach einiger Diskussion seien dann doch die Namen <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>, <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Ministerpräsident <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> und <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> genannt worden. Außerdem seien ohne weitere Vertiefung der Diskussion noch die Namen <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name> und <name type="Person" role="Erwaehnung" ref="#DufhuesJosefHermann">Dufhues</name> genannt worden. Der Parteivorsitzende habe an die vier genannten Herren die Frage gestellt, ob sie bereit seien, sich der Abstimmung zu stellen, eine Frage, die von allen vier Herren mit Ja beantwortet wurde, wobei <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> und <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> Wert darauf gelegt hätten festzustellen, daß sie sich nicht um dieses Amt beworben hätten oder bewerben würden, aber bereit seien, sich einer Abstimmung zu stellen. Der Vorstand habe dann noch festgestellt, daß es wünschenswert sei, wenn diese Entscheidung so bald wie möglich fallen würde. Die Diskussion sei in einer hervorragenden Atmosphäre und mit großer Sachlichkeit geführt worden. Besonders beeindruckt sei der Bundesvorstand von der Form und Haltung gewesen, in der der Parteivorsitzende diese Sitzung geleitet und diesen Weg eröffnet habe.</p>
+            <p>[3. Wahl des Kanzlerkandidaten]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> stellt fest, daß niemand das Wort wünscht, und teilt mit, daß die Wahl für den kommenden Tag, 13.00 Uhr, vorgeschlagen werde. Die Fraktion sei damit einverstanden. Im Laufe des Tages werde noch eine Wahlordnung erarbeitet von einer Kommission, die aus <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name>, <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> und <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> bestehen solle. Diese Wahlordnung werde am kommenden Tage um 12.00 Uhr dem Vorstand, dann der Gesamtfraktion schriftlich zur Genehmigung vorgelegt werden. Einer aus der Fraktion kommenden Anregung folgend, schlage er vor, als fünften Mann in der Kommission <name type="Person" role="Erwaehnung" ref="#VogelBernhard_1965-10-19">Vogel</name> (Speyer) hinzuzunehmen.</p>
+            <p>Die Wahl werde wie in der Fraktion üblich ohne Aussprache stattfinden. Man werde von den vier Kandidaten eine Erklärung verlangen, daß sie bereit sind, echte Koalitionsverhandlungen nach beiden Seiten zu führen, und daß die bei der Wahl Unterlegenen absolute Loyalität gegenüber dem gewählten Kandidaten wahren werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LenzCarlOtto_1965-10-19">Lenz</name> fragt, ob die Nennung dieser vier Namen bedeute, daß die Fraktion an diese Vorschläge gebunden sein solle.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> antwortet, daß auch der Bundesvorstand der Meinung sei, daß weitere Kandidaten genannt werden könnten, wie das bei jeder Wahl sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HauserHugo_1960-03-11">Hauser</name> (Sasbach) regt an, die Wahlordnung schon am nächsten Vormittag vorzulegen, damit man auch noch Anregungen dazu geben könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt, dieser Anregung werde entsprochen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DeringerArved_1957-10-15">Deringer</name> fragt, ob der zweite Teil der Erklärung der Kandidaten auch beinhalte, daß diese bereit seien, eventuell in das Kabinett einzutreten, wenn sie darum gebeten würden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> bejaht diese Frage.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> hält eine solche Loyalitätserklärung für politisch unklug, weil sie nach außen den Eindruck erwecke, daß innere Spannungen vorhanden sind.</p>
+            <p>Bundesinnenminister <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> unterstützt den Vorschlag des Bundesparteivorstandes, regt aber an zu erklären, daß die ganze Fraktion loyal hinter dem Wahlergebnis stehen werde.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> hält diese Anregung für ganz besonders bedeutend wegen der Wirkung in der Öffentlichkeit. Weiter fragt sie, wozu man eigentlich jetzt eine neue Wahlordnung brauche; es sei doch schon öfters in der Fraktion gewählt worden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> antwortet auf die gestellte Frage, solange es nur einen Kandidaten gegeben habe, sei das etwas einfacher gewesen. Eine Wahlordnung sei deshalb notwendig, weil vom Grundsatz her drei Prinzipien denkbar seien, entweder man wähle im Konklave, bis einer die absolute Mehrheit habe, oder es scheide jedesmal der mit der geringsten Stimmenzahl aus, oder nach der ersten Wahl kommen die beiden mit der stärksten Stimmenzahl in die Stichwahl, wie das bei der Vorstandswahl der Fall sei. Diese Entscheidung müsse getroffen werden, weil erstmals mehrere Kandidaten zur Wahl stünden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> fragt, ob diese Wahl durch Namensaufruf stattfinden werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> empfiehlt, sich jetzt nicht über Einzelheiten zu unterhalten, sondern die Wahlordnung abzuwarten; diese könne dann von jedem in Ruhe überdacht werden.</p>
+            <p>[4. Bericht aus dem Ältestenrat]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> erstattet einen kurzen Bericht aus dem Ältestenrat.</p>
+            <p>[5. Steuern und Abgaben, Bundeshaushalt]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> bezieht sich auf die Auseinandersetzung in der letzten Fraktionssitzung<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN001" type="comment">
+                     <p>Siehe Fraktionssitzung vom 7.11.1966, TOP 3.</p>
+                  </note>
+               </seg>, ob hinsichtlich des Steueränderungsgesetzes und des Finanzplanungsgesetzes eine Fraktionsinitiative erfolgen solle.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN002" type="comment">
+                     <p>Entwurf eines Zweiten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Steueränderungsgesetz 1966 – (Drs. V/1068 vom 2.11.1966), CDU/CSU-Gesetzentwurf zur Ergänzung des Zweiten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Ergänzungsgesetz zum Steueränderungsgesetz 1966 – (Drs. V/1096 vom 8.11.1966) sowie Entwurf eines Ersten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Finanzplanungsgesetz – (Drs. V/1067 vom 2.11.1966).</p>
+                  </note>
+               </seg> Die Steueränderungsgesetze kommen nun auf die Tagesordnung. Bei dem Finanzplanungsgesetz habe sich inzwischen herausgestellt, daß es sich nur mit der Kapitalisierung von Kriegsopferrenten befasse. Er wäre dankbar, wenn Minister <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> eine Erklärung abgeben könnte, daß es nicht notwendig sei, diese Sache jetzt als Initiative einzubringen; im anderen Falle müsse darüber gründlich diskutiert werden.</p>
+            <p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> antwortet, ganz so liege die Sache nicht. Es genüge zwar, wenn dieses Gesetz erst im Januar oder im März komme. Aber er teile die grundsätzlichen Bedenken <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidts</name> nicht, weil die Zinsverbilligungen, die hier vorgesehen seien, an Größenordnungen gebunden seien. Bisher seien dafür 140 Mio. DM ausgegeben worden, jetzt sehe man nur 20 Mio. DM für diesen Zweck vor. Es wäre vielleicht zweckmäßig, wenn sich Minister <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> zu dieser Frage äußerte, da er ja sachlich zuständig sei.</p>
+            <p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> setzt sich dafür ein, diese Sache doch auch zu verabschieden. Die Auffassung, daß eine Kürzung von 120 Mio. DM erfolgen solle, habe in den Kriegsopferverbänden bereits erheblichen Ärger gemacht. Es wäre besser, wenn auch in diesem Punkt die Fraktion hinter der Regierungsvorlage stehen würde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> erläutert, es gehe nicht darum, ob man hinter der Regierungsvorlage stehe oder nicht, sondern darum, ob man das als eigene Initiative aufnehme oder nicht. Niemand sei gegen die Kapitalisierung von Kriegsopferrenten, aber hier werde doch ein ganz neues Prinzip eingeführt. Das Thema Zinszuschüsse sei doch von grundlegender Bedeutung und könne nicht so Hals über Kopf gelöst werden. Der Fraktion müsse bewußt werden, daß sie sich nun wieder an einem Punkt mit Zinszuschüssen abfinde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name> setzt sich für die Einbringung ein. Die einzelnen Fragen auch grundsätzlicher Art könne man im Ausschuß behandeln.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) fordert, daß sich die Fraktion Klarheit darüber verschaffen müsse, welche Konsequenzen diese Entscheidung für die Zukunft haben werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> widerspricht der anklingenden Auffassung, daß es sich um steigende Lasten für den Haushalt handele. Er bestehe allerdings nicht auf der Initiative, aber zu lange dürfe man nicht warten, wenn man den Kriegsopfern nicht schaden wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SiemerJHermann_1953-10-06">Siemer</name> weist darauf hin, daß man sonst auf allen Gebieten die Zinssubventionen abbaue. Deshalb könne man nicht wollen, daß ein Prinzip, das man auf allen anderen Gebieten fallenlasse, hier erneut eingeführt würde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KoepplerHeinrich_1965-10-19">Köppler</name> regt an, jetzt eine Sachdebatte zu unterlassen und es der Bundesregierung zu überlassen, dieses Gesetz einzubringen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> empfiehlt, in diesem Punkt den Vorschlägen von Minister <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> zu folgen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> bemerkt, daß er zu diesem Punkt in dem Bericht über die Arbeitskreissitzung noch Stellung nehmen werde. Jetzt aber sei auch er der Meinung, daß eine überstürzte Sachdebatte keinen Sinn habe. Hier könne man es sehr wohl bei einer Initiative der Bundesregierung belassen.</p>
+            <p>Bundeslandwirtschaftsminister <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> bemerkt, daß er wegen einer ähnlichen Frage schon vor einem Jahr große Schwierigkeiten gehabt habe. Aber jetzt empfehle auch er, die Sachdebatte nicht zu führen. Die geäußerten Befürchtungen bestünden jedoch nicht zu Unrecht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RusseHermannJosef_1965-10-19">Russe</name> glaubt, daß die Fraktion wohl nicht völlig klar sehe, um was es geht. Es handele sich doch wohl um ein Junktim. Wenn das aber so sei, dann müsse diese Sache jetzt ebenfalls von der Fraktion eingebracht werden. Außerdem wisse doch noch kein Mensch, wie die neue Regierung aussehe. Wenn man es aber dieser überlassen könnte, das einzubringen, dann könne das die Fraktion doch wohl ebenso. Man solle also die Sache nicht verschieben, sondern jetzt entscheiden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> erläutert, daß nun neben dem Steueränderungsgesetz auch ein Finanzplanungsgesetz vorgelegt werde, das in der Fraktion überhaupt noch nicht vorgetragen sei, das man aber bereits mit dem anderen Gesetz verbunden habe. Erst am heutigen Tage habe man sich mit der Vorlage überhaupt vertraut machen können. Jetzt stelle sich heraus, daß hier wieder von Zinszuschüssen die Rede ist. Davon habe er die Fraktion unterrichten wollen, um sie zu fragen, ob sie bereit sei, wieder einmal eine Initiative zu übernehmen, die sie überhaupt nicht kennt. Es gehe nicht um diese lächerlichen 20 Mio. DM, sondern darum, wenn erst einmal eine Grundposition in einem Gesetz eingeführt sei, daß das dann der Anlaß werde, diese Sache jedes Jahr auszuweiten. Darauf habe er aufmerksam machen wollen. Wenn die Fraktion meine, sie könne so verfahren, dann könne sie das tun, allerdings ohne ihn selbst. Er habe geglaubt, es mit einer Fraktion zu tun zu haben, die in Zukunft wissen möchte, worüber sie eigentlich entscheidet.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> weist darauf hin, daß es im Haushalt eine Reihe von Dingen gebe, die wesentlicher seien als diese relativ geringe Summe.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN003" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1967 – Haushaltsgesetz 1967 – (Drs. V/1000 vom 2.11.1966).</p>
+                  </note>
+               </seg> Man könne nicht einerseits sagen, daß man diese Kapitalisierungsbestimmung für ausgezeichnet halte, andererseits aber Schwierigkeiten machen. Wenn man diese Möglichkeit wirklich wolle, dann müsse man die Regierungsvorlage wiederherstellen. Das sei eine politische Entscheidung. Den vorgeschlagenen Weg sei man doch nicht leichtfertig gegangen. Man solle sich doch hier nicht Ärger machen, der vermeidbar sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> bezeichnet die ganze Sache als eine Verfahrensfrage. Es sei doch bisher darum gegangen, durch eine Initiative die Beratungsmöglichkeiten für diese Dinge zu schaffen. Das habe vor allem für das Steueränderungsgesetz gegolten. Nicht unbedingt notwendig sei es aber für das Finanzplanungsgesetz. Da hier keine Gefahr im Verzuge sei, müsse diese Sache eben von der Bundesregierung eingebracht werden, den Bundesrat durchlaufen und könne dann normal, ohne Fraktionsinitiative, verabschiedet werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erläutert an Hand eines Beispiels noch einmal, daß in Zukunft nach der neuen Regelung die Aufwendungen geringer sein würden als bisher.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RusseHermannJosef_1965-10-19">Russe</name> sieht nach diesen Erklärungen der zuständigen Minister keine Notwendigkeit, von der Initiative abzugehen. Es handele sich nicht um eine Verfahrensfrage, sondern wenn die Bundesregierung eine solche Vorlage machen könne, dann stelle sich doch nur die Frage, ob man ihr dabei folgen wolle oder nicht. Er unterstelle niemandem, daß er hier nicht folgen würde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> betont noch einmal, daß es sich bei dieser Zinsverbilligung um etwas anderes handele als bei anderen Verbilligungen. Er wolle aber die Frage stellen, ob man nicht vielleicht schon im nächsten Jahre, wenn das notwendige Geld vorhanden wäre, wieder zur alten Regelung zurückgehen könnte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> antwortet, daß auch diese Möglichkeit gegeben sei, wenn man das wolle.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt, er lasse nicht gern über diese Frage abstimmen, weil er das Gefühl habe, daß niemand so recht wisse, wie diese Abstimmung ausfallen werde.</p>
+            <p>(Die Abstimmung ergibt Zustimmung der Fraktion zur Fraktionsinitiative.)</p>
+            <p>[6. Bundeshaushalt]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> berichtet über die Sitzung des Arbeitskreises III, der viele Mitglieder der Arbeitskreise II und IV beigewohnt hätten. Dort sei die am kommenden Tage bevorstehende Haushaltsdebatte erörtert worden.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN004" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1967 – Haushaltsgesetz 1967 – (Drs. V/1000 vom 2.11.1966).</p>
+                  </note>
+               </seg> Man habe es für richtig gehalten, daß der Haushalt eingebracht würde. An Unsicherheitsfaktoren sei aber vorhanden, daß niemand<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN005" type="comment">
+                     <p>Lesung unsicher.</p>
+                  </note>
+               </seg> wisse, wie die Regierung aussieht, wenn die Ausschußberatungen beginnen, und daß auch die Konsequenzen der angesprochenen Finanzvorschau nicht zu übersehen seien und daß zuletzt über dem Ganzen das Damoklesschwert der Verteilung der Einkommen- und Körperschaftsteuer schwebe.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN006" type="comment">
+                     <p>Entwurf eines Zweiten Gesetzes über das Beteiligungsverhältnis an der Einkommensteuer und der Körperschaftsteuer (Drs. V/1066 vom 2.11.1966).</p>
+                  </note>
+               </seg> Deshalb müsse man die Ausschußberatungen elastisch führen. Auch die Bundesregierung werde nicht darauf bestehen, daß alles, was sie vorschlägt, auch so übernommen wird. Entsprechend müsse man auch die bevorstehende Debatte im Plenum gestalten. Dabei sollte darauf bestanden werden, daß die CDU/CSU als stärkste Fraktion zunächst zu Wort kommt. Nicht zu verstehen ist, daß die Frage der Kuponsteuer mitten in diese Beratungen hinein auf die Tagesordnung gesetzt worden ist.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN007" type="comment">
+                     <p>SPD-Gesetzentwurf zur Änderung des Einkommensteuergesetzes und des Körperschaftsteuergesetzes (Drs. V/1011 vom 19.10.1966).</p>
+                  </note>
+               </seg> Die SPD wolle die Wiederaufhebung dieser Steuer und werde offenbar die ganze Haushaltsfrage an dieser Sache aufhängen, obwohl diese Frage doch ganz unerheblich für den Haushalt sei. Man könne nun nur noch so verfahren, daß man den Antrag betreffend Kuponsteuer an die Ausschüsse verweist und ihn dort in allen Einzelheiten erörtert. Ebenfalls könne die Fraktion keinen Beschluß fassen, der ihre einzelnen Mitglieder in dieser Frage festlege.</p>
+            <p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> gibt zu bedenken, daß trotz mancher mißlichen Begleiterscheinung man den Standpunkt weiter vertreten sollte, daß die Regelung der Kuponsteuer EWG-einheitlich erfolgen sollte. Man müsse für eine Harmonisierung dieser Steuer sorgen. Wenn man jetzt die Kuponsteuer ohne Änderung des Restriktionskurses der Bundesbank ändern würde, dann ergebe das wohl eine Belebung am Geld- und Kapitalmarkt, aber mit Geldern aus dem Ausland oder deutschem Geld, das aus dem Ausland zurückkäme, während man sich selbst Fesseln anlege. In dieser Frage müsse man also sehr vorsichtig verfahren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> unterstützt diese Auffassung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> tritt dafür ein, daß ein Redner der CDU/CSU die Debatte eröffnet, um deren günstigen Ablauf sicherzustellen. Weiter müßten Abgeordnete bereitstehen, wenn die Debatte in Einzelheiten gehen sollte, was man ja noch nicht überblicken könne. Er selbst werde einige Punkte in der Haushaltsdebatte anschneiden, von denen er gerne wissen wolle, wie die Fraktion dazu steht. Diese Fragen seien in der Fraktion bisher nicht geklärt. Er werde sagen müssen, daß diese Dinge noch ungeklärt seien, zum Beispiel die Ausbildungshilfe oder die Kilometerpauschale, auch die Frage der Sparprämie. Alle diese Fragen müßten offengehalten werden, damit sich die Fraktion im Laufe der nächsten Woche entscheiden könne. Auch müsse klargestellt werden, daß die mittelfristige Vorausschau kein sehr rosiges Bild ergebe. Hinsichtlich des Anteils an der Einkommen- und Köperschaftsteuer werde er sehr klar aussprechen, daß das Verhältnis 39:61% sein müsse; anders werde es nicht gehen. Komme es im Endergebnis zu einem anderen Verhältnis, dann müßten eben Ausgaben des Bundes für Aufgaben der Länder gestrichen werden. Auch zum Landwirtschaftsetat werde er Ausführungen machen müssen, jedoch so, daß auch hier alles offenbleibe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> deutet kurz an, daß er sich für notwendige Repliken bereithalten und dabei die staatspolitische Verantwortung unterstreichen werde, die die CDU/CSU dazu bringe, jetzt diesen Haushalt überhaupt zu lesen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> wendet sich dem Thema Zusammentreffen von Pension und Rente, der sogenannten Doppelversorgung, zu. Hier sei im Finanzplanungsgesetz eine Revision der bisherigen Beschlüsse vorgesehen. Die FDP habe bereits erklärt, sie werde diese Revision nicht mitmachen, die SPD stehe wohl auf dem gleichen Standpunkt. Bei dieser Lage empfehle sich, in der Debatte sich nicht durch die anderen Fraktionen festlegen oder in die Enge treiben zu lassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> erhebt Bedenken dagegen, daß in der Drucksache V/1096 nur alle unangenehmen Dinge zusammengefaßt seien, während die angenehmeren Sachen nicht enthalten seien.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-11-09-t1515_EP_FN008" type="comment">
+                     <p>CDU/CSU-Gesetzentwurf zur Ergänzung des Zweiten Gesetzes zur Überleitung der Haushaltswirtschaft des Bundes in eine mehrjährige Finanzplanung – Ergänzungsgesetz zum Steueränderungsgesetz 1966 – (Drs. V/1096 vom 8.11.1966).</p>
+                  </note>
+               </seg> Dabei habe er gemeint, daß man in diesen Punkten bereits einig sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erinnert daran, daß er selbst vorgeschlagen habe, auch diese Dinge aufzunehmen; aber die Fraktion habe anders beschlossen. Er habe jedenfalls bei der Endberechnung unterstellt, daß auch diese Dinge kämen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> erklärt, er werde jedenfalls hinsichtlich der Kilometerpauschale deutlich machen, daß die Fraktion eine gegenüber der Regierungsvorlage günstigere Regelung wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HammansHugo_1965-10-19">Hammans</name> regt an, die Kilometerpauschale auf 40 Pfennig, nicht auf 36 Pfennig festzusetzen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#PortenJosef_1961-10-17">Porten</name> tritt dafür ein, auch in anderen Punkten ebenso klare Erklärungen abzugeben wie bei der Kilometerpauschale.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> fordert, daß auch hinsichtlich der Ausbildungszulage deutlich gemacht werde, worüber sich die Fraktion einig ist.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> bedauert, daß in dieser Frage die Meinung der Fraktion nicht so ganz eindeutig sei.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> verweist darauf, daß die Fraktion nicht willens gewesen sei, bei der Ausbildungszulage so zu verfahren, wie das die <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>-Kommission vorschlage. Sie stelle den Antrag, daß <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> zu diesem Punkt in der Debatte klar Stellung nehme in dem Sinn, wie es die Fraktion beschlossen habe.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#SchroederChrista_1961-10-17">Schroeder</name> befürchtet, daß die Verbesserungen, die vorgesehen seien, politisch untergehen würden, wenn sie nur als Änderungsanträge im Ausschuß vorgebracht würden. Es wäre doch besser, diese Verbesserungen in einem eigenen Antrag zusammenzufassen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> bedauert, diesen Weg nicht gehen zu können, weil sich die Fraktion hinsichtlich dieser Punkte noch nicht klar genug geäußert habe. Er könne nur zu den Punkten klar Stellung nehmen, in denen eine Meinung der Fraktion tatsächlich gebildet ist.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#JacobiMaria_1961-10-17">Jacobi</name> meint, es läge doch weitgehende Übereinstimmung in der Fraktion vor.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> erinnert daran, daß die Fraktion in der vergangenen Woche die Familienverbände empfangen und eindeutig durch <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> zu erkennen gegeben habe, daß sie nicht an den Abbau des Familienlastenausgleichs denke. An dieser Linie sollte festgehalten werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> bemerkt, daß es natürlich schwierig sei, verbindliche Aussagen im Rahmen der Fraktion zu machen, wenn sich diese noch keine abschließende Meinung gebildet habe. <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> werde aber bestimmt die richtige Form finden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> betont, daß die Zusage, der Familienlastenausgleich werde nicht abgebaut, nur so gedeutet werden könne, daß die gesetzlichen Vorschriften über die Voraussetzungen für den Bezug dieser Kinderzulagen nicht verschlechtert werden. Man sollte nicht versuchen, diese Lasten dadurch zu verringern, daß man die Leistungsansprüche abbaut. Das wäre gegen die gemeinsame Auffassung der Fraktion.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

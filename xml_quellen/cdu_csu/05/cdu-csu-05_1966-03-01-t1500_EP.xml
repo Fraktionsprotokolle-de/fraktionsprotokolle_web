@@ -1,278 +1,407 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1966-03-01-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1010/2</idno>
-							<objectName>[Nicht überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 1. März 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>11 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-03-01"><time type="start" when="15:00:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
-			<change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-05_1966-03-01-t1500_EP_SVP-1" corresp="#cdu-csu-05_1966-03-01-t1500_EP_div_SVP-1">A. TOP 1: Bericht des Fraktionsvorsitzenden. – TOP 2: Bericht des Bundeskanzlers. – TOP 3: Bericht aus dem Ältestenrat.</item>
-					<item xml:id="cdu-csu-05_1966-03-01-t1500_EP_SVP-2" corresp="#cdu-csu-05_1966-03-01-t1500_EP_div_SVP-2">B. TOP 4: Bundeshaushalt.</item>
-					<item xml:id="cdu-csu-05_1966-03-01-t1500_EP_SVP-3" corresp="#cdu-csu-05_1966-03-01-t1500_EP_div_SVP-3">C. TOP 5: Landwirtschaft, Zollwesen, Bundesvermögen/ Sondervermögen. – TOP 6: Sozialpolitik. – TOP 7: Gesundheitswesen/ Gesundheitsfürsorge.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-05_1966-03-01-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Bericht des Fraktionsvorsitzenden]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> begrüßt eingangs den Bundeskanzler und gratuliert dann <name type="Person" role="Erwaehnung" ref="#Vittinghoff-SchellFelix_1961-10-17">Frhr. von Vittinghoff-Schell</name> zu seiner Wahl zum Präsidenten des Deutschen Gemeindetages.</p>
-				<p>Anschließend erstattet er einen Bericht aus der gestrigen Vorstandssitzung und verweist im Zusammenhang mit Fallex 66 auf die Schwierigkeit, welche Notstandsverfassung bei dieser Übung zugrunde gelegt werden solle. Die Bundesregierung beabsichtige, die bereits am Ende der letzten Legislaturperiode in zweiter Lesung verabschiedete Fassung der Notstandsverfassung neu einzubringen<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN001" type="comment"><p>Gesetzentwurf zur Ergänzung des Grundgesetzes (Drs. V/1879 vom 13.6.1967).</p></note></seg>, wobei sich die Frage stelle, was mit dem gemeinsamen Ausschuß geschehen solle. Die CDU/CSU wolle sich an dem gemeinsamen Ausschuß beteiligen, während es bei der SPD den Anschein habe, als ob sie sich weigere, auf dieser Basis in diesem gemeinsamen Ausschuß mitzuwirken.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Vittinghoff-SchellFelix_1961-10-17">Frhr. von Vittinghoff-Schell</name> dankt für die Glückwünsche und versichert, daß er im Sinne des Ministers <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> weiterarbeiten werde.</p>
-				<p>[2. Bericht des Bundeskanzlers]</p>
-				<p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine Kollegen, ich habe nicht die Absicht, eine Rede zu halten. Ich habe mich vor dem Vorstand geäußert. In den vergangenen Wochen habe ich eine Pressekonferenz abgehalten und insbesondere auf die Ausführungen <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> eine deutliche Antwort gegeben. Es waren zwei Probleme angeschnitten, einmal eine Wiederbelebung, ein Neubeginnen eines europäischen Gespräches abseits der Gespräche von Brüssel und der EWG und zum anderen die Probleme der NATO.</p>
-				<p>Ich habe dem französischen Staatspräsidenten in bezug auf seine Vorstellungen über das politische europäische Leben eine positive Antwort gegeben, wie vereinbart.</p>
-				<p>Die im Jahre 1962 geschaffene Besprechung der Außenminister soll wiederaufgenommen werden, ohne institutionelle Bindung und starres Programm, um zu sehen, ob sich aus den gemeinsamen Interessen die Möglichkeit ergeben könnte, daß die Regierungschefs auch zusammentreten.</p>
-				<p>In bezug auf die NATO mußte ich die Antwort geben, die unserer deutschen Haltung entspricht, daß wir von der Integration von Form und Struktur nicht abgehen. Das ist für uns eine Lebensnotwendigkeit, bezeugt aber auch unseren Willen, die deutschen Fragen in diesem Rahmen zu meistern.</p>
-				<p>Gestern und heute haben in Brüssel Verhandlungen stattgefunden über die Fortführung der EWG, in bezug auf die Agrarreform. Man hat sich auch unterhalten über die <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-Runde, wie man in der Presse lesen konnte, und die Notwendigkeit der Gleichförmigkeit der Entwicklung. Die Beschlüsse in Brüssel müssen noch einstimmig gefaßt werden, und ich habe den Eindruck, daß unser Standpunkt klar vertreten wurde. Es besteht nicht die Gefahr, daß wir in ein Niemandsland laufen würden.</p>
-				<p>Zur Frage der Kohle hat die Bundesregierung eine rege Aktivität entfaltet; morgen tagt das Wirtschaftskabinett, um aufgrund von Vorarbeiten des Wirtschaftsministers das Problematischste einmal mit den Sachverständigen zu erörtern, um eine Kabinettsentscheidung herbeiführen zu können. Am nächsten Dienstag komme ich mit Dr. <name type="Person" role="Erwaehnung" ref="#MeyersFranz_1957-10-15">Meyers</name>, <name type="Person" role="Erwaehnung" ref="#DufhuesJosefHermann">Dufhues</name>, <name type="Person" role="Erwaehnung" ref="#GrundmannKonrad">Grundmann</name> und Wilhelm <name type="Person" role="Erwaehnung" ref="#LenzWilhelm">Lenz</name> zusammen, um mit ihnen diese Dinge zu besprechen. Auch mit dem Unternehmerverband und der IG-Metall will ich ein weiteres Gespräch führen. Ich bin mir bewußt, ohne die Dinge dramatisieren zu wollen, daß die Bereinigung dieses Problemes für den Wahlausgang in Nordrhein-Westfalen von wesentlicher Bedeutung ist; mehr möchte ich dazu nicht sagen, aber den Eindruck vermitteln, daß es nicht richtig ist, wenn gesagt wird, daß dieser Regierung die Entschlußkraft fehle. Wir packen die Probleme an. Es wird beim Haushalt deutlich werden, wie notwendig es ist, Probleme anzupacken und zu Ende zu bringen.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN002" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Bundeshaushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p></note></seg></p>
-				<p>Deswegen will ich am Donnerstag morgen die Debatte mit einer eigenen Rede eröffnen. Ich möchte deutlich machen, wieweit sich die Grundlagen unseres Kurses verändert haben. Ich bin auch in der wirtschaftlichen Entwicklung nicht pessimistisch, aber wir haben allen Grund, äußerst wachsam zu sein. Die Konjunktur läßt sich nicht allein auf die Verbrauchsgüter abstützen. Jede Vereinseitigung ist hier falsch. Ich kann die Freunde in den Sozialausschüssen nur bitten, daß ich nicht als der Verfechter einer liberalen Wirtschaftspolitik gelte.«</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt keine Wortmeldungen fest.</p>
-				<p>[3. Bericht aus dem Ältestenrat]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Sitzung des Ältestenrates und teilt den Ablauf der Plenarwoche mit.</p>
-				<p>Der Präsident habe versucht, die Frage der Neubauvorhaben für den Deutschen Bundestag nicht in die Debatte zu bringen, weil es nicht in die erste Lesung gehöre und weil es gegenüber dem Bundestagspräsidenten unfair wäre, diese Frage in seiner Abwesenheit zu behandeln. <name type="Person" role="Erwaehnung" ref="#DornWolfram_1961-10-17">Dorn</name> (FDP) werde aber wohl nicht davon abzubringen sein.</p>
-				<p>Zur Frage der Starfighter-Angelegenheit habe die SPD eine Große Anfrage eingebracht<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN003" type="comment"><p>Große SPD-Anfrage betr. Flugsicherheit des Starfighter F 104 G (Drs. V/351 vom 1.3.1966).</p></note></seg>, obwohl bereits zwischen den Fraktionen Einigkeit bestand, darüber eine Debatte zu führen. Wenn die SPD an ihrer Großen Anfrage festhalte, müsse auch die Koalition eine Große Anfrage erarbeiten.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN004" type="comment"><p>Große CDU/CSU-FDP-Anfrage betr. Waffensystem »Starfighter« (Drs. V/360 vom 3.3.1966).</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt fest, daß das Wort hierzu nicht gewünscht wird.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-05_1966-03-01-t1500_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[4. Bundeshaushalt]</p>
-				<p>Bezüglich der Haushaltsdebatte lasse sich im Hinblick auf die diffuse Haltung der Opposition nicht überblicken, was sie zu tun gedenke.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN005" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Bundeshaushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p></note></seg> Er bitte die Arbeitskreise, sich für alle Fragen bereitzuhalten. Der Bundeskanzler werde mit einer haushaltspolitischen Rede die Sitzung eröffnen. Wenn es zu einer haushaltspolitischen Debatte komme, müßte auch der Haushalt 1967 angesprochen werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> führt aus, Arbeitskreis III habe den Haushalt eingehend beraten. Dieser Haushalt sei besser ausgeglichen als der vorhergehende, so daß man mit realen Deckungszahlen aufwarten könne. Wenn es nur auf den Haushalt 1966 ankomme, hätte man eine gute Position. Aber gleichzeitig liege auch der Finanzbericht der Bundesregierung für 1966 vor, über den man ebenfalls diskutieren müsse. Hier beständen gewisse Finanzierungslücken, und zwar im Jahre 1967 von 5,6 Mrd. DM, 1968 von 6 bis 7 Mrd. DM, 1969 von 6,9 bis 7,9 Mrd. DM und 1970 [von] 5 bis 6 Mrd. DM. Auch bei Inanspruchnahme des Kapitalmarktes komme die Vorausschau bei einigermaßen übersehbaren Voraussagen dazu, daß kaum mehr als ein Drittel dieser Finanzierungslücke durch Kreditmarktmittel geschlossen werden könne. Das bedeute, daß eine Lücke von 4 Mrd. DM pro Jahr übrigbleibe. Es liege kein Grund zum Pessimismus vor, wie das eben der Bundeskanzler mit Recht erwähnte. Die deutsche Wirtschaft befinde sich im Wachstum, und kein Mensch könne leugnen, daß man sich in einer Wohlstandsgesellschaft befinde. Auf der anderen Seite müsse man aber wachsam sein. Hier appelliere Arbeitskreis III an die Mitglieder der Fraktion, mit äußerstem Ernst die Sache zu betrachten und eigene Interessen zurückzustellen. Man müsse dahin kommen, das Volumen des Haushalts, zu welchem Zweck auch immer, herunterzudrücken, sei es zu Zwecken der Einsparungen oder zu gewissen Umschichtungen in den Prioritäten. Wenn man von dieser Generallinie ausgehe, werde man nicht darum herumkommen, sich hinter die Bundesregierung und ihren Finanzbericht zu stellen (zitiert Ziffer 3 des Finanzberichts).</p>
-				<p>Für die Debatte seien <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name>, <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, <name type="Person" role="Erwaehnung" ref="#WindelenHeinrich_1957-09-28">Windelen</name>, <name type="Person" role="Erwaehnung" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Erwaehnung" ref="#PohleWolfgang_1953-10-06">Pohle</name> und die Berichterstatter zu den Einzelplänen vorgesehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> bezieht sich auf den Vorwurf, daß die Mitglieder des Haushaltsausschusses für die Ausgaben vor den Wahlen verantwortlich zeichneten. Jeder, der die Sache kenne, wisse, daß die Mitglieder des Haushaltsausschusses immer wieder vor Ausgabenbeschlüssen gewarnt hätten und manche sogar in der Fraktion verhindern konnten, die dann aber im Plenum wieder beschlossen wurden. Er halte es nicht für gut, wenn man sich selber exkulpieren wolle, indem man die Schuld auf den Haushaltsausschuß abwälze. Deshalb sollte so schnell wie möglich §96 der GO<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN006" type="comment"><p>Antrag Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> und Fraktion der CDU/CSU betr. Änderung der Geschäftsordnung des Deutschen Bundestages (Drs. V/ 114 vom 10.12.1965).</p></note></seg> im Plenum behandelt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#MuellerJosef_1961-10-17">Müller</name> (Aachen-Land) spricht sich angesichts der Ausgaben in Höhe von 69 Mrd. DM dafür aus, die Sache mit mehr Aufmerksamkeit und Ernst zu betrachten, als das dem Anschein nach in der Fraktion augenblicklich der Fall sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> verweist auf die in der Fraktion verteilte Übersicht über die voraussichtlichen Finanzierungslücken für die Jahre 1966 bis 1970, die nach seiner Meinung lockerer gefaßt werden sollten, weil sonst eine Diskussion unvermeidbar sei, in der dann ganze Gruppen der Fraktion abweichende Meinungen vertreten würden. Dort werde ausgeführt, daß in den Jahren bis 1970 eine Finanzierungslücke von durchschnittlich 4 Mrd. DM jährlich verbleibe. Diese permanente Finanzierungslücke sei darauf zurückzuführen, daß durch die automatische Steigerung der Ausgaben auf Grund der einigen Gesetzen innewohnenden Dynamisierung der jährliche Einnahmezuwachs mehr als aufgezehrt werde. Gegen diese einfach falsche Darstellung müsse er, <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>, sich wehren.</p>
-				<p>Für die Finanzierungslücke gebe es vielfältige Gründe. Er stelle fest, daß die Rentenversicherungsreform 1957<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN007" type="comment"><p>Arbeiterrentenversicherungs-Neuregelungsgesetz vom 23.2.1957, BGBl. I, S. 45 sowie Angestelltenversicherungs-Neuregelungsgesetz vom 23.2.1957, BGBl. I, S. 88.</p></note></seg> einzig und allein darauf basiere, daß die Renten mit vierjähriger Verzögerung der allgemeinen Preis- und Lohnentwicklung folgen. Diejenigen, die diesen Zustand beklagen, müßten dringend gebeten werden, den Gaul endlich beim Kopf aufzuzäumen und zu zeigen, ob es Möglichkeiten gebe, die Lohn- und Preisentwicklung mit wirtschafts- und konjunkturpolitischen Maßnahmen in der Hand zu behalten. Durch die vierjährige Verzögerung bestehe nun die Möglichkeit, die wachsenden Ausgaben für die Rente so zu gestalten, daß es nicht drücke. Gegen die vorgebrachte Formulierung – er kenne die Handschrift – müsse er sich wehren; sie sei schlicht und einfach unwahr.</p>
-				<p>Weiter werde behauptet, daß es einschneidender Maßnahmen bedürfe, wenn Steuererhöhungen vermieden werden sollten. Was für die Wirtschaft Steuererhöhungen bedeuteten, bedeute für die Arbeitnehmer Erhöhungen der Beiträge. Er bejahe nicht die Steuererhöhung, wenn aber keine Steuererhöhungen kämen, dann könne man auch nicht über den Wege umfangreicher Beitragserhöhungen eine Gruppe des Volkes zur Sanierung des Haushalts mit einer Sonderabgabe belasten.</p>
-				<p>Der Meinung, daß es nicht auch Fehlinvestitionen gebe, widerspreche er energisch. Wenn von der Zukunftssicherung die Rede sei, wolle er nicht in den Verdacht geraten, im Augenblick gegen die Wissenschaftsförderung zu sein. Zur Zukunftssicherung eines Volkes gehöre sicherlich auch eine gesunde soziale Ordnung, und die habe man bei 8 Mio. Rentenempfängern zu gewährleisten.</p>
-				<p>Er, der Redner, bitte die Fraktion, diese Art der Formulierungen nicht zu gebrauchen, weil sie Widersprüche hervorriefen. Er rate, bei globalen Bemerkungen zu bleiben. Es sei erforderlich, nicht nur punktuelle Fragen, sondern alle Aufgaben zu untersuchen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> glaubt, der Vorredner hätte die Formulierungen etwas zu eng aufgefaßt. Auch in anderen Ausgaben seien Dynamisierungseffekte enthalten. Hier zeige sich ein schwerwiegendes Versäumnis der Regierung, die einen Bericht vorlege, der in einer zu strengen Analyse beweist, daß man vor schweren Finanzierungsaufgaben stehe, ohne eine Lösung aufzuzeigen. Deshalb sollte die Fraktion auch keine Einzelbereiche ansprechen, weil die Betroffenen sich sonst dagegen wehren müßten. Hier sollte die Bundesregierung gebeten werden, wiederum in einer Gesamtschau der Gesamtausgaben Vorschläge für eine Restriktion des Haushalts vorzulegen. Es komme darauf an, schwere Auseinandersetzungen untereinander zu vermeiden und dieses Problem sofort in Angriff zu nehmen. Dabei müßten auch andere Tabus angegriffen werden. Nach Auffassung der FDP seien Sparförderung und Steuererhöhung solche Tabus. Wenn man diesem Standpunkt folge, erziele man überhaupt kein Ergebnis. Daher müsse die Regierung aufgefordert werden, ein geschlossenes System vorzulegen. Was aber tue die Regierung? Sie habe erneut die Notstandsgesetzgebung wiedervorgelegt.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN008" type="comment"><p>Gesetzentwurf zur Ergänzung des Grundgesetzes (Drs. V/1879 vom 13.6.1967).</p></note></seg> Wenn dies ohne Finanzierungsvorschläge geschehe, könne er, Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name>, das nicht mitmachen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erklärt, daß das vorliegende Papier ein Auszug aus dem Finanzbericht des Bundesfinanzministers sei, über den man bisher sehr theoretische Erörterungen anstellte. Man könne die Augen nicht vor dem Haushalt 1967 verschließen, der bereits seine Schatten werfe. 1967 würden die Mittel für die Wissenschaft erhöht, auch stände das Problem der Kriegsopfer an, keiner kenne die Auswirkungen der EWG-Agrarbeschlüsse für 1967, beim Lastenausgleich und der Frage des innerstädtischen Verkehrs stehe man im Wort, ebenfalls müßten drei einfache Notstandsgesetze behandelt werden. Deshalb halte er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, es für sehr problematisch, sich durch abstrakte Formulierungen in eine Sackgasse zu manövrieren.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> vertritt die Auffassung, daß man ohne Finanzvorausschau in der Debatte leichter operieren könne, da der Haushalt 1966 sich gut verteidigen lasse. Man müsse aber auch bedenken, welche Wirkung eine Finanzvorausschau bei den Darstellungen der Opposition spielen werde. Hier müsse man die Bundesregierung um Aufklärung bitten, was sie zu tun gedenke, um diesen Dingen entgegnen zu können. Schon wieder würden Gesetze mit einem Inkraftsetzungstermin 1.1.1968 vorbereitet. Man sollte endlich aus den Dingen lernen und den Mitgliedern des Haushaltsausschusses nicht immer vorwerfen, sie hätten nicht von Anfang an vor solchen Entwicklungen gewarnt. Die Fraktion müsse hart und klar sagen, daß nur in einem geschlossenen Tableau etwas geschehen könne, das nicht durch einzelne Wünsche wieder zerstört werden dürfe. Eine weitere Konsequenz ergebe sich nämlich daß bei dieser Finanzierungslücke eine Bereinigung der Situation erfolgen müsse, ehe man neue ausgabenwirksame Beschlüsse fasse. Wenn man sich nicht dazu aufraffen könne, aus diesem Teufelskreis auszubrechen – man habe nur noch eine Dispositionsfreiheit von 10%, die für die Wissenschaftsförderung und die Landwirtschaftsförderung eingesetzt werden sollen –, müsse man schnell Ernst machen und weitere Abstriche vornehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bezieht sich auf die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name>, der auch im Bereich des öffentlichen Dienstes die Besoldungseinheit ansprechen wolle. Jedem sei verständlich, daß die derzeitige Regelung so nicht weiterbestehen könne. Deshalb hätten auch die Ministerpräsidenten einen Beschluß gefaßt, daß gleichmäßig bei der Besoldungserhöhung in den einzelnen Ländern und dem Bund vorgegangen werden solle. In diesem Zusammenhang solle die Prominenz der SPD ihre Bereitschaft zu einer Grundgesetzänderung erklärt haben. Hier solle man die SPD nun fragen, wie sie zu dieser Frage stehe, und nicht sofort seine Bereitschaft zur Änderung des Art.75 GG bekunden. Die SPD müsse in die Enge getrieben werden, sonst erreiche man nichts.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> spricht Art.107 Abs.3 des GG an, über den fünf Länder Ansprüche an den Bund in Höhe von rund 340 Mio. DM stellten. Nach letzten Berichten erkenne der Finanzausschuß des Bundesrates einstimmig die Ansprüche in einer Größenordnung von 250 Mio. DM an. Arbeitskreis III dagegen weise sie zurück. Bei den Ländern handele es sich mit Ausnahme von Niedersachsen, wo eine CDU/FDP-Koalition bestehe, ausschließlich um CDU-Länderregierungen. So beinhalte diese Sache auch eine politische Frage, und man sollte überlegen, ob man statt von Ablehnung von einer Überprüfung sprechen könnte.</p>
-				<p>Ein weiterer Punkt sei eine Flurbereinigung und Durchforstung der Subventionen. Der Finanzbericht spreche von etwa 30 Mrd. DM Subventionen, die zum Teil sichtbar, zum Teil unsichtbar seien. Die unsichtbaren Subventionen kämen der gewerblichen Wirtschaft, die sichtbaren der Landwirtschaft zugute. Auch hier sollte eine einseitige Darstellung im Plenum vermieden werden.</p>
-				<p>Die Finanzvorausschau, die man von der Bundesregierung gefordert habe, bedürfte einer gründlichen Überprüfung, damit man am Ende der Legislaturperiode nicht wieder so dastehe wie im Augenblick. Der Trend dieser Vorausschau sollte zu größerer Sorgfalt und Verantwortung verpflichten. Stützen müßte man sich aber vorweg auf den Haushalt 1966, der einen guten Start habe, und anschließend den Haushalt 1967 in Angriff nehmen. Dabei stehe man vor einer neuen Lage. Man habe das Haushaltssicherungsgesetz in der Vorstellung diskutiert, zwei magere Jahre überbrücken zu müssen.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN009" type="comment"><p>Haushaltssicherungsgesetz vom 20.12.1965, BGBl. I, S. 2065.</p></note></seg> Jetzt scheinen die mageren Jahre aber länger anzudauern. Es gebe Dinge, denen man nicht werde ausweichen können. Es gehe nicht an, daß eine Gruppe der Fraktion für und die anderen gegen Steuererhöhungen sich aussprächen usw. Es komme nun darauf an, möglichst schnell an die Beratungen des Haushalts 1967 zu gehen und die kommenden Fragen zu beantworten. Dabei lasse sich die Frage der Steuererhöhung im Konsumsektor nicht umgehen, so daß eine Debatte darüber notwendig werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> verweist auf die Beratungen des Arbeitskreises III in dieser Sache. Eine Anregung gehe dahin, nach der Verabschiedung des Haushalts 1966 – etwa um Ostern – sich zusammenzusetzen, um die Weichen für den Haushalt 1967 zu stellen. Im übrigen sei mit der Dynamisierung nicht nur die Rente gemeint, sondern auch die großen Ausgabenblöcke, die jeder kenne.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BesoldAnton_1949-09-07">Besold</name> verweist auf das Beispiel der Post. Der Bundestag habe ein Gutachten zur Sanierung der Bundespost angefordert, das Gebührenerhöhung, Verbesserung der eigenen Kapitalausstattung und Beseitigung der politischen Lasten vorschlage.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN010" type="comment"><p>Gutachten der Sachverständigen-Kommission für die Deutsche Bundespost vom 6.11.1965 gem. Bundestagsbeschluß vom 16.4.1964 (Drs. V/203 vom 26.1.1966).</p></note></seg> Der Postverwaltungsrat bemühe sich zur Zeit, die Gebühren massiv zu erhöhen, so daß sie nicht nur kostendeckend seien, sondern auch noch einen Teil für die Eigenfinanzierung herausholen. Trotzdem würden für die Verbesserung des Eigenkapitals noch 5 Mrd. DM auf den Bundestag zukommen, denn 435 Mio. DM würden allein für die Erhöhung der Gehälter aufgezehrt.</p>
-				<p>Die Sanierung der Bundespost müsse mit einkalkuliert werden, weil man andernfalls unglaubwürdig werde. Die Gebührenerhöhung werde aber nur beschlossen, wenn auch die Bundesregierung ihrerseits eine verbindliche Erklärung über die weitere Sanierung der Bundespost abgebe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> weist auf die Entwicklungshilfe hin. Bei den Vorbesprechungen zum Haushaltssicherungsgesetz habe man ihn darauf hingewiesen, daß es sich hier um ein wertvolles Instrument der Außenpolitik handele. Darüber hinaus brauche man ihn nicht zu belehren. Dieser Slogan werde aber zur hohlen Phrase, wenn man sich die Praxis ansehe. Im Finanzbericht stehe zwar, daß die Entwicklungshilfe in diesem Jahr 1,56 Mrd. DM ausmache und im Jahr 1968 1,82 Mrd. DM betragen soll; aber man verfüge dabei nicht über Mobilität. Im vorhinein beständen für Jahre rechtliche Bindungen. Das könne durch den deutschen Gesetzgeber nicht mehr geändert werden. Er, Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, könne sich auch schlecht vorstellen, daß sich hieran nach 1971 etwas ändere. Es genüge ein wenig Phantasie, um sich die Bedeutung dieses Instruments der Außenpolitik, das einem im voraus die Hände so sehr binde, daß man zur Bewegungsunfähigkeit verurteilt sei, vor Augen zu führen. Der Fraktion müsse aber klarer Wein eingeschenkt werden, wie weit diese Bindungen reichen und wann man wieder Bewegungsfreiheit haben werde. In Zukunft sei mit Bindungen langfristiger Art sehr sorgfältig umzugehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> betont, daß ihn die Entwicklungshilfe etwas beunruhige, die den Haushalt 1966 bereits in eine schwierige Situation gebracht habe. Von 31 Haushalten seien 26 gestiegen und nur fünf gekürzt. Dabei sei der Haushalt des Entwicklungshilfeministeriums am stärksten gewachsen. Wie man dieses nach draußen erklären solle, bereite Sorge angesichts der Opfer, die jedem durch das Haushaltssicherungsgesetz auferlegt wurden. Auch in diesem Bereich sollte man prüfen, ob nicht im Wege der Streckung Einsparungen erzielt werden könnten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> erinnert unter Bezugnahme auf die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> daran, daß er dieses Thema schon einmal öffentlich angeschnitten habe, worüber sich der Minister für Entwicklungshilfe prompt beschwerte. Wenn im Finanzbericht stehe, daß die Bindungen vorhanden sind, so ergebe sich das aus der technischen Abwicklung. Zwischen Zusage und Durchführung berechne man im allgemeinen vier Jahre. Im Haushalt 1966 sei man nicht mehr in der Lage zu sagen, daß weniger bewilligt werde, weil man bindende Verpflichtungen eingegangen sei. Die Bindungsermächtigungen lägen bei 1,5 Mrd. DM. Hier müßten Überlegungen angestellt werden, zu welchem Gesamtrahmen man überhaupt kommen wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> unterstreicht die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> hinsichtlich der Streichung im Verteidigungshaushalt. Man wolle deutsche Soldaten in Vietnam nicht zur Verfügung stellen, sondern mit humanitären Mitteln helfen. Diese Politik hätte natürlich Konsequenzen, aber die Bewegungsunfähigkeit sei eine schlechte Sache. Er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, spreche sich dafür aus, den menschlichen Entwicklungsdienst mehr zu fördern als bisher.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> legt dar, daß man sich bei den Bindungsermächtigungen bemühen werde, kürzer zu treten. Real habe man im vergangenen Jahr genau den Standpunkt des Abg. <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> vertreten und 200 bis 300 Mio. DM gekürzt. Die Folge wäre aber eine Nachbewilligung wegen der Bindungen gewesen, die um 150 Mio. DM mehr betragen hätte, als man gestrichen habe.</p>
-				<p>Was die Frage des Art.107 GG anbelange, bestehe die Notwendigkeit, sie im Plenum deutlich anzusprechen, weil man diese Frage auf dem Hintergrund der eventuellen Änderung des Schlüssels für die Einkommen- und Körperschaftsteuer sehen müsse. Die Länder wollten in Zukunft nicht mehr als 35% zur Verfügung stellen, so daß der Bund natürlich in eine schwierige Situation gerate.</p>
-				<p>Art.75 GG sollte man vielleicht in Form einer Frage an die SPD ansprechen.</p>
-				<p>Hinsichtlich des Finanzberichts habe man festgestellt, daß die Dinge zu abstrakt angesprochen seien, Arbeitskreis III habe die Dinge konkret behandelt und sie auch der Fraktion vorgetragen. Er, <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name>, beabsichtige, dazu eine genaue Formulierung zu benutzen und dabei von »Prüfung aus gegebenem Anlaß« zu sprechen. Die Konkretisierung müsse dann aber zu einem Ergebnis führen. Nicht die Fraktion könne die Vorschläge unterbreiten, sondern der Finanzminister und die Bundesregierung. Die Fraktion könne die Bundesregierung lediglich auffordern, konkrete Vorschläge zu erarbeiten.</p>
-				<p>Er glaube, daß man nur zu einem Ausgleich des Haushalts für die kommenden Jahre kommen könne, wenn man Ausgabenkürzungen vornehme. Dieses Ziel werde man nur erreichen, wenn man durch einschneidende Eingriffe die Beeinflussung bei den Ausgaben, insbesondere bei den Subventionen, abwehre, die Steuer- und Prämienvergünstigungen mit dem Ziel der Harmonisierung abbaue, rechtlich gebundene Ausgaben kürze, eine Entlastung bei Bundesbahn und Bundespost erziele und sich bei neuen Ausgaben zurückhalte.</p>
-				<p>Man erwarte von der Bundesregierung in dieser Beziehung alsbald Vorschläge, um den Haushalt 1967 und 1968 in Angriff nehmen zu können.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HofmannJosef_1965-10-19">Hofmann</name> sieht in dem Finanzbericht eine Vorschau auf die kommenden Jahre und eine Aufzeichnung der Probleme, denen man in Zukunft gegenüberstehe. Von den im November 1965 zur Sprache gebrachten Schwierigkeiten sei man noch lange nicht weg. Es bestehe noch die Notwendigkeit eines Währungsstabilisierungsgesetzes.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN011" type="comment"><p>Entwurf eines Gesetzes zur Förderung der wirtschaftlichen Stabilität (Drs. V/890 vom 2.9.1966).</p></note></seg> Über das Defizit von 4 Mrd. DM hinaus müsse man die Dinge sehen, die unausweichlich auf einen zukommen. Das bedeute ein Defizit für das Jahr 1967 von 8 Mrd. DM, knapp gerechnet. Angesichts dieser Lage sei nicht mehr zu verstehen, wie dieses oder jenes gemacht werden solle. Man komme aus der Immobilität nicht heraus, außer man schichte bei den Verhandlungen Geld um. Dabei gebe es natürlich Widerspruch.</p>
-				<p>Die ganze Sache werde problematisch, wenn der Finanzminister eine Vorschau gebe, ohne eine Lösung der Probleme vorzuschlagen. Das heiße, daß die Fraktion die Initiative ergreifen müsse, weil offenbar die Regierung intern nicht in der Lage sei, die Politik für die nächsten Jahre in den Griff zu bekommen. Ohne Geld gebe es keine Politik. Deshalb müsse die Fraktion erwarten, daß die Bundesregierung ihr Gesamttableau vorlege. Das müßte oberstes Gebot sein, damit man nicht wieder vor der gleichen Situation stehe.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name> betont seine Dankbarkeit für den Finanzbericht, wenn er es auch etwas merkwürdig finde, ein so wichtiges Dokument 24 Stunden vor der Haushaltssitzung erscheinen zu lassen. Auch er spreche sich dafür aus, neue Ausgaben nur dann zu beschließen, wenn auch die Deckungsvorlage vorliege, widerspreche aber der Argumentation, daß jedes Haushaltsdefizit eine Inflation bedeute.</p>
-				<p>Was die fehlenden 4 Mrd. DM pro Jahr anbelange, müsse man berücksichtigen, daß in diesem Haushalt 15 bis 16 Mrd. DM Investitionen enthalten seien, die keine konsumtiven Aufwendungen seien. Wenn rechnerisch 4 Mrd. DM fehlten, sei das volkswirtschaftlich eine völlig andere Sache, als wenn sie für Verwaltungsaufwendungen nicht zur Verfügung ständen. Damit komme man wieder zu dem Punkt Kapitalmarkt: Mehr sparen im ganzen Volk. Es müßte eigentlich möglich sein, auf dem Kapitalmarkt mehr als 1,5 bis 2 Mrd. DM zu decken. 90% wolle man über den Preis selbst finanzieren. Die Steuern seien der Preis für die öffentlichen Leistungen des Staates. Wenn diese auf 40% angehoben würden, wäre das Defizit weg. Er, der Redner, warne aber davor, etwas zu tun, was das Sparvolumen reduziere. Dieses müsse vielmehr wachsen, weil es ein Beitrag zur anteiligen Finanzierung der Investitionen bedeuten würde.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> hält diesen Beitrag für dankenswert, auch hinsichtlich des Optimismus, den er in die Debatte bringe.</p>
-				<p>Die Fraktion billigt die vom Arbeitskreis III erarbeiteten Grundsätze.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-05_1966-03-01-t1500_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[5. Landwirtschaft, Zollwesen, Bundesvermögen. Sondervermögen]</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> berichtet über die Beratungen des Arbeitskreises II zur Frage des Grünen Plans und des Grünen Berichts 1966.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN012" type="comment"><p>Bericht der Bundesregierung über die Lage der Landwirtschaft gem. §4 des Landwirtschaftsgesetzes – Grüner Bericht 1966 – und Maßnahmen gem. §5 des Landwirtschaftsgesetzes – Grüner Plan 1966 – (zu Drs. V/255 vom 7.2.1966).</p></note></seg> Im Zusammenhang mit den Vorbereitungen für die Plenardebatte habe der Arbeitskreis die Gelegenheit wahrgenommen, sich eingehend mit den wichtigen Fragen der Landwirtschaft zu befassen. Besonders intensiv sei über die sichtbare Änderung der Agrarstruktur mit ihren Folgen auf die bäuerlichen Betriebe und die Menschen diskutiert und z.B. zur Kenntnis genommen worden, daß Jahr für Jahr 40000 landwirtschaftliche Betriebe oder 197000 in diesen Betrieben tätige Menschen aus der Landwirtschaft abwanderten. Der Arbeitskreis habe sich vorgenommen, in einer gesonderten Sitzung sich mit den damit zusammenhängenden Fragen zu befassen und auch hierbei die Frage der Subventionen aufzuwerfen. Gerade hier sehe es der Arbeitskreis für notwendig an, auch nach außen klarzustellen, daß die Mittel im Etat des Landwirtschaftsministeriums und im Grünen Plan keinesfalls in ihrem vollen Umfange mit Subventionen gleichzusetzen seien. Auch das Problem der Abschöpfungsregelungen im Rahmen der Marktordnungen der EWG bedürfe in ihrem Zusammenhang mit der allgemeinen Wettbewerbsordnung einer Beantwortung.</p>
-				<p>Als Hauptredner für die Debatte wurden die Kollegen <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> und <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> benannt. Außerdem ständen für kurze Diskussionsbeiträge folgende Kollegen bereit:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BewerungeKarl_1961-10-17">Bewerunge</name>:</cell>
-						<cell>Agrarstrukturpolitik, Flurbereinigung,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#ReinhardCarl_1957-10-15">Reinhard</name>:</cell>
-						<cell>Marktstruktur, Veredelungswirtschaft,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BerberichAugust_1957-10-15">Berberich</name>:</cell>
-						<cell>Soziale Fragen,</cell>
-					</row>
-					<row>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name>:</cell>
-						<cell>Erleichterung der Arbeit der Bäuerinnen,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#PrasslerHelmut_1965-10-19">Prassler</name>:</cell>
-						<cell>Raumordnung und Dorfsanierung,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#GluesingHermann_1949-09-07">Glüsing</name>:</cell>
-						<cell>Fragen der Küstengebiete, Lastenausgleich und Küstenplan,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#RichartsHans_1953-10-06">Richarts</name>:</cell>
-						<cell>EWG-Agrarmarktfragen.</cell>
-					</row>
-				</table>
-				<p>Außerdem habe der Arbeitskreis im Grundsatz die Einbringung einer Entschließung, die sich auf EWG-Agrarmarktfragen und auf die Kapitalbeschaffungsmaßnahmen und die Zinsverbilligung beziehe, gebilligt.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN013" type="comment"><p>CDU/CSU-FDP-Entschließung betr. Ersuchen an die Bundesregierung um Beachtung der für die Getreidepreise, Milcherzeugerpreise und der Preise im Rahmen der übrigen Marktordnungen geltenden Grundsätze bei den Verhandlungen in Brüssel und um Prüfung der Finanzierungshilfen […], Sten. Ber., 24. Sitz. am 2.3.1966, S. 1110f. (Umdr. 23).</p></note></seg> Die Formulierung werde noch mit den Mitgliedern des Arbeitskreises III und mit dem Bundeslandwirtschaftsminister abgestimmt.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> bemerkt, daß bei den Beratungen klargeworden sei, wie wenig ausdiskutiert das scheinbar so einfache Problem doch sei. Es wäre gut, wenn Arbeitskreis II möglichst ohne Zeitdruck Gelegenheit bekäme, diese Probleme zu erörtern, denn sonst falle einem die Führung einer solchen Debatte immer schwerer, und es bestehe die Gefahr, daß die Fraktion auseinanderlaufe. Das könne man sich nicht leisten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bittet, diese Fragen für die Vorstandssitzung vorzumerken.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> betont, Arbeitskreis IV habe sich ebenfalls mit dem Grünen Bericht beschäftigt, und zwar hinsichtlich der sozialen Fragen, besonders mit der Krankenversicherung der Bauern. <name type="Person" role="Erwaehnung" ref="#BerberichAugust_1957-10-15">Berberich</name> werde im Plenum dazu sprechen. Bei dieser Frage solle sich die Fraktion nicht festlegen, sondern nur aufzeigen, daß noch eine ganze Reihe von Problemen beständen, die einer Lösung bedürfen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> kommt auf den verbesserten Dumpingschutz für die deutsche Wirtschaft zu sprechen. Der Arbeitskreis habe sich mit dem Initiativentwurf des Abg. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> befaßt, dem Siebten Gesetz zur Änderung des Zollgesetzes, durch den der Dumpingschutz der deutschen Wirtschaft durch eine Verbesserung des Prüfungsverfahrens verstärkt werden solle.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN014" type="comment"><p>CDU/CSU-FDP-Entwurf eines Siebenten Gesetzes zur Änderung des Zollgesetzes (Drs. V/393 vom 9.3.1966).</p></note></seg></p>
-				<p>Der Antrag sei von über 80 Abgeordneten der Koalitionsfraktionen unterschrieben. Er finde auch im Arbeitskreis ungeteilte Zustimmung. Der Arbeitskreis empfehle daher der Fraktion, diesen Gesetzentwurf als Fraktionsantrag und wenn möglich als Koalitionsantrag einzubringen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt bekannt, daß dieser Antrag als Fraktionsantrag eingebracht werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> referiert über den ERP-Wirtschaftsplan.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN015" type="comment"><p>Gesetzentwurf über die Feststellung des Wirtschaftsplans des ERP-Sondervermögens für das Rechnungsjahr 1966 – ERP-Wirtschaftsplangesetz 1966 – (Drs. V/305 vom 15.2.1966).</p></note></seg> Die Kürzung der Mittel im Agraretat und im Grünen Plan für bestimmte agrarische Aufgaben habe im Arbeitskreis zu der Anregung geführt, den Mittelansatz im ERP-Wirtschaftsplan zu überprüfen, und zwar nach dem Gesichtspunkt, im Interesse der kleinen Gemeinden die Maßnahmen zur Verbesserung der Trinkwasserversorgung und der Abwässerbeseitigung fortzusetzen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> erläutert, daß die Landwirtschaft hier immer maßgeblich beteiligt gewesen sei. Etwa 640 bis 650 Mio. DM seien zugunsten der westdeutschen Wirtschaft eingeplant, daneben stände die Entwicklungshilfe und die Berlinhilfe. Auch die Trinkwasserversorgung usw. seien in diesen Jahren ganz erheblich über den ERP-Wirtschaftsplan finanziert worden, der Haushalt 1966 weise sie allerdings nicht mehr aus.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN016" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Bundeshaushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p></note></seg> Er, <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name>, richte die herzliche Bitte an die Fraktion, bei weiteren Gesprächen hier eine Korrektur vorzunehmen, denn es bestehe die Notwendigkeit, hier mit zinsgünstigen Mitteln zu arbeiten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt keine weiteren Wortmeldungen zu diesem Punkt der Tagesordnung fest.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> gibt einen Bericht über die sozialpolitischen Fragen, die bei der Agrardebatte aufkommen könnten. Insbesondere spricht er die Frage einer eventuellen Krankenpflichtversicherung in der Landwirtschaft an. Nach einer eingehenden Diskussion habe der Arbeitskreis beschlossen, der Fraktion zu empfehlen, daß sich als Sprecher zu den sozialpolitischen Fragen <name type="Person" role="Erwaehnung" ref="#BerberichAugust_1957-10-15">Berberich</name> bereit hält mit der Maßgabe, daß die Gesamtproblematik angesprochen werde, die Fraktion aber sich im gegenwärtigen Zeitpunkt noch nicht auf Einführung der Krankenpflichtversicherung festlege.</p>
-				<p>[6. Sozialpolitik]</p>
-				<p>Arbeitskreis IV werde in der nächsten Woche den sozialpolitischen Teil der Kohle-Debatte vorbereiten. Berichterstatter: <name type="Person" role="Erwaehnung" ref="#SpringorumGerd_1965-10-19">Springorum</name>. Im Rahmen der Etat-Debatte solle sich für den Fall, daß familienpolitische Fragen angesprochen werden, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> bereit halten; im übrigen Einsatz von Rednern nach Bedarf durch die Vorsitzenden bzw. Obleute der einzelnen Arbeitskreise. (Gemeinsam mit Arbeitskreis VI).</p>
-				<p>[7. Gesundheitswesen. Gesundheitsfürsorge]</p>
-				<p>Bundesgesundheitsministerin Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> wies auf die Notwendigkeit einer neuen Pflegesatzverordnung nicht nur wegen der finanzielle Notlage der Krankenhäuser im allgemeinen [hin], sondern auch wegen der Gefahr, daß die freigemeinnützigen Träger ihre Aufgaben künftig nicht mehr erfüllen können.</p>
-				<p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> hielt den Erlaß einer neuen Pflegesatzverordnung in der Fassung des jetzt vorliegenden Entwurfs nicht für zweckmäßig und für die gesetzlichen Krankenversicherungsträger für nicht tragbar. Die Verordnung würde dazu beitragen, daß die heute bestehenden Ungleichheiten (unterschiedliche Zuschüsse in den Ländern) verstärkt würden. Im übrigen bringe die Verordnung keine Lösung des Problems, erschwere sie sogar. Auch werde in dieser grundsätzlichen Frage der Sozialenquete vorgegriffen.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN017" type="comment"><p>Bericht der Sozialenquete-Kommission über die »Soziale Sicherung in der Bundesrepublik Deutschland« (Drs. V/961 vom 3.10.1966).</p></note></seg> Um den Schwierigkeiten der Krankenhäuser für den Übergang gerecht zu werden, rege er die Bildung eines Stiftungsfonds an, der Gelder von allen interessierten Bereichen der Gesellschaft erhalten und in einem ausgewogenen Verhältnis Zinssubventionen, Amortisationshilfen und Zuschüsse gewähren solle.</p>
-				<p>In einer sehr eingehenden Diskussion habe der größte Teil der Redner gegen die Pflegesatzverordnung Stellung genommen. Nur wenige Mitglieder der Arbeitskreise hätten sich für den Erlaß einer neuen Pflegesatzverordnung ausgesprochen. Einige Mitglieder verwiesen auf das Beispiel Nordrhein-Westfalen, wo im Rahmen der bestehenden Pflegesatzverordnung das Land einen Weg gefunden habe, der alle Beteiligten einigermaßen zufriedenstelle. Dieser Weg könne auch von anderen Ländern beschritten werden, wenn sie wie NRW in angemessenem Umfang und unter gerechter Aufteilung Mittel für die Krankenhäuser bereitstellen.</p>
-				<p>Die Arbeitskreise beschlossen die Bildung einer gemeinsamen Unterkommission, die sich mit dem Problem der Sanierung der Krankenhäuser befassen und insbesondere die Möglichkeiten einer Neuordnung der Krankenhausfinanzierung untersuchen soll. Ebenfalls solle diese Kommission sich mit dem SPD-Antrag – Pflegesätze von Krankenhäusern, V/314 – befassen.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN018" type="comment"><p>SPD-Antrag betr. Pflegesätze von Krankenhäusern (Drs. V/314 vom 16.2.1966).</p></note></seg></p>
-				<p>Vorsitz dieser Kommission: <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>,</p>
-				<p>Mitglieder: <name type="Person" role="Erwaehnung" ref="#JungmannGerhard_1961-10-17">Jungmann</name>, Frau <name type="Person" role="Erwaehnung" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name>, <name type="Person" role="Erwaehnung" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin), <name type="Person" role="Erwaehnung" ref="#PortenJosef_1961-10-17">Porten</name>, <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>, Frau <name type="Person" role="Erwaehnung" ref="#SchroederChrista_1961-10-17">Schroeder</name>, <name type="Person" role="Erwaehnung" ref="#SpringorumGerd_1965-10-19">Springorum</name>, <name type="Person" role="Erwaehnung" ref="#Sayn-Wittgenstein-HohensteinBotho_1965-10-19">Sayn-Wittgenstein</name>.</p>
-				<p>Dem Antrag von <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> betreffend Lärmzonen im Umkreis der Flughäfen schlossen sich die Arbeitskreise IV und VI an.<seg type="note"><note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN019" type="comment"><p>Gesetzentwurf zum Schutz gegen Fluglärm in der Umgebung von Flughäfen d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> u.a. (Drs. V/355 vom 2.3.1966) sowie Antrag Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> u.a. betr. Lärm an Militärflugplätzen (Drs. V/356 neu vom 2.3.1966).</p></note></seg></p>
-				<p>Die Fraktion erklärt sich mit der Einbringung als Fraktionsantrag einverstanden.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1966-03-01-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1010/2</idno>
+                     <objectName>[Nicht überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 1. März 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>11 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-03-01">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
+         <change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-05_1966-03-01-t1500_EP_SVP-1" corresp="#cdu-csu-05_1966-03-01-t1500_EP_div_SVP-1">A. TOP 1: Bericht des Fraktionsvorsitzenden. – TOP 2: Bericht des Bundeskanzlers. – TOP 3: Bericht aus dem Ältestenrat.</item>
+               <item xml:id="cdu-csu-05_1966-03-01-t1500_EP_SVP-2" corresp="#cdu-csu-05_1966-03-01-t1500_EP_div_SVP-2">B. TOP 4: Bundeshaushalt.</item>
+               <item xml:id="cdu-csu-05_1966-03-01-t1500_EP_SVP-3" corresp="#cdu-csu-05_1966-03-01-t1500_EP_div_SVP-3">C. TOP 5: Landwirtschaft, Zollwesen, Bundesvermögen/ Sondervermögen. – TOP 6: Sozialpolitik. – TOP 7: Gesundheitswesen/ Gesundheitsfürsorge.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-05_1966-03-01-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Bericht des Fraktionsvorsitzenden]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> begrüßt eingangs den Bundeskanzler und gratuliert dann <name type="Person" role="Erwaehnung" ref="#Vittinghoff-SchellFelix_1961-10-17">Frhr. von Vittinghoff-Schell</name> zu seiner Wahl zum Präsidenten des Deutschen Gemeindetages.</p>
+            <p>Anschließend erstattet er einen Bericht aus der gestrigen Vorstandssitzung und verweist im Zusammenhang mit Fallex 66 auf die Schwierigkeit, welche Notstandsverfassung bei dieser Übung zugrunde gelegt werden solle. Die Bundesregierung beabsichtige, die bereits am Ende der letzten Legislaturperiode in zweiter Lesung verabschiedete Fassung der Notstandsverfassung neu einzubringen<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN001" type="comment">
+                     <p>Gesetzentwurf zur Ergänzung des Grundgesetzes (Drs. V/1879 vom 13.6.1967).</p>
+                  </note>
+               </seg>, wobei sich die Frage stelle, was mit dem gemeinsamen Ausschuß geschehen solle. Die CDU/CSU wolle sich an dem gemeinsamen Ausschuß beteiligen, während es bei der SPD den Anschein habe, als ob sie sich weigere, auf dieser Basis in diesem gemeinsamen Ausschuß mitzuwirken.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Vittinghoff-SchellFelix_1961-10-17">Frhr. von Vittinghoff-Schell</name> dankt für die Glückwünsche und versichert, daß er im Sinne des Ministers <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> weiterarbeiten werde.</p>
+            <p>[2. Bericht des Bundeskanzlers]</p>
+            <p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine Kollegen, ich habe nicht die Absicht, eine Rede zu halten. Ich habe mich vor dem Vorstand geäußert. In den vergangenen Wochen habe ich eine Pressekonferenz abgehalten und insbesondere auf die Ausführungen <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> eine deutliche Antwort gegeben. Es waren zwei Probleme angeschnitten, einmal eine Wiederbelebung, ein Neubeginnen eines europäischen Gespräches abseits der Gespräche von Brüssel und der EWG und zum anderen die Probleme der NATO.</p>
+            <p>Ich habe dem französischen Staatspräsidenten in bezug auf seine Vorstellungen über das politische europäische Leben eine positive Antwort gegeben, wie vereinbart.</p>
+            <p>Die im Jahre 1962 geschaffene Besprechung der Außenminister soll wiederaufgenommen werden, ohne institutionelle Bindung und starres Programm, um zu sehen, ob sich aus den gemeinsamen Interessen die Möglichkeit ergeben könnte, daß die Regierungschefs auch zusammentreten.</p>
+            <p>In bezug auf die NATO mußte ich die Antwort geben, die unserer deutschen Haltung entspricht, daß wir von der Integration von Form und Struktur nicht abgehen. Das ist für uns eine Lebensnotwendigkeit, bezeugt aber auch unseren Willen, die deutschen Fragen in diesem Rahmen zu meistern.</p>
+            <p>Gestern und heute haben in Brüssel Verhandlungen stattgefunden über die Fortführung der EWG, in bezug auf die Agrarreform. Man hat sich auch unterhalten über die <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-Runde, wie man in der Presse lesen konnte, und die Notwendigkeit der Gleichförmigkeit der Entwicklung. Die Beschlüsse in Brüssel müssen noch einstimmig gefaßt werden, und ich habe den Eindruck, daß unser Standpunkt klar vertreten wurde. Es besteht nicht die Gefahr, daß wir in ein Niemandsland laufen würden.</p>
+            <p>Zur Frage der Kohle hat die Bundesregierung eine rege Aktivität entfaltet; morgen tagt das Wirtschaftskabinett, um aufgrund von Vorarbeiten des Wirtschaftsministers das Problematischste einmal mit den Sachverständigen zu erörtern, um eine Kabinettsentscheidung herbeiführen zu können. Am nächsten Dienstag komme ich mit Dr. <name type="Person" role="Erwaehnung" ref="#MeyersFranz_1957-10-15">Meyers</name>, <name type="Person" role="Erwaehnung" ref="#DufhuesJosefHermann">Dufhues</name>, <name type="Person" role="Erwaehnung" ref="#GrundmannKonrad">Grundmann</name> und Wilhelm <name type="Person" role="Erwaehnung" ref="#LenzWilhelm">Lenz</name> zusammen, um mit ihnen diese Dinge zu besprechen. Auch mit dem Unternehmerverband und der IG-Metall will ich ein weiteres Gespräch führen. Ich bin mir bewußt, ohne die Dinge dramatisieren zu wollen, daß die Bereinigung dieses Problemes für den Wahlausgang in Nordrhein-Westfalen von wesentlicher Bedeutung ist; mehr möchte ich dazu nicht sagen, aber den Eindruck vermitteln, daß es nicht richtig ist, wenn gesagt wird, daß dieser Regierung die Entschlußkraft fehle. Wir packen die Probleme an. Es wird beim Haushalt deutlich werden, wie notwendig es ist, Probleme anzupacken und zu Ende zu bringen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN002" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Bundeshaushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Deswegen will ich am Donnerstag morgen die Debatte mit einer eigenen Rede eröffnen. Ich möchte deutlich machen, wieweit sich die Grundlagen unseres Kurses verändert haben. Ich bin auch in der wirtschaftlichen Entwicklung nicht pessimistisch, aber wir haben allen Grund, äußerst wachsam zu sein. Die Konjunktur läßt sich nicht allein auf die Verbrauchsgüter abstützen. Jede Vereinseitigung ist hier falsch. Ich kann die Freunde in den Sozialausschüssen nur bitten, daß ich nicht als der Verfechter einer liberalen Wirtschaftspolitik gelte.«</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt keine Wortmeldungen fest.</p>
+            <p>[3. Bericht aus dem Ältestenrat]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Sitzung des Ältestenrates und teilt den Ablauf der Plenarwoche mit.</p>
+            <p>Der Präsident habe versucht, die Frage der Neubauvorhaben für den Deutschen Bundestag nicht in die Debatte zu bringen, weil es nicht in die erste Lesung gehöre und weil es gegenüber dem Bundestagspräsidenten unfair wäre, diese Frage in seiner Abwesenheit zu behandeln. <name type="Person" role="Erwaehnung" ref="#DornWolfram_1961-10-17">Dorn</name> (FDP) werde aber wohl nicht davon abzubringen sein.</p>
+            <p>Zur Frage der Starfighter-Angelegenheit habe die SPD eine Große Anfrage eingebracht<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN003" type="comment">
+                     <p>Große SPD-Anfrage betr. Flugsicherheit des Starfighter F 104 G (Drs. V/351 vom 1.3.1966).</p>
+                  </note>
+               </seg>, obwohl bereits zwischen den Fraktionen Einigkeit bestand, darüber eine Debatte zu führen. Wenn die SPD an ihrer Großen Anfrage festhalte, müsse auch die Koalition eine Große Anfrage erarbeiten.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN004" type="comment">
+                     <p>Große CDU/CSU-FDP-Anfrage betr. Waffensystem »Starfighter« (Drs. V/360 vom 3.3.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt fest, daß das Wort hierzu nicht gewünscht wird.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-05_1966-03-01-t1500_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[4. Bundeshaushalt]</p>
+            <p>Bezüglich der Haushaltsdebatte lasse sich im Hinblick auf die diffuse Haltung der Opposition nicht überblicken, was sie zu tun gedenke.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN005" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Bundeshaushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p>
+                  </note>
+               </seg> Er bitte die Arbeitskreise, sich für alle Fragen bereitzuhalten. Der Bundeskanzler werde mit einer haushaltspolitischen Rede die Sitzung eröffnen. Wenn es zu einer haushaltspolitischen Debatte komme, müßte auch der Haushalt 1967 angesprochen werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> führt aus, Arbeitskreis III habe den Haushalt eingehend beraten. Dieser Haushalt sei besser ausgeglichen als der vorhergehende, so daß man mit realen Deckungszahlen aufwarten könne. Wenn es nur auf den Haushalt 1966 ankomme, hätte man eine gute Position. Aber gleichzeitig liege auch der Finanzbericht der Bundesregierung für 1966 vor, über den man ebenfalls diskutieren müsse. Hier beständen gewisse Finanzierungslücken, und zwar im Jahre 1967 von 5,6 Mrd. DM, 1968 von 6 bis 7 Mrd. DM, 1969 von 6,9 bis 7,9 Mrd. DM und 1970 [von] 5 bis 6 Mrd. DM. Auch bei Inanspruchnahme des Kapitalmarktes komme die Vorausschau bei einigermaßen übersehbaren Voraussagen dazu, daß kaum mehr als ein Drittel dieser Finanzierungslücke durch Kreditmarktmittel geschlossen werden könne. Das bedeute, daß eine Lücke von 4 Mrd. DM pro Jahr übrigbleibe. Es liege kein Grund zum Pessimismus vor, wie das eben der Bundeskanzler mit Recht erwähnte. Die deutsche Wirtschaft befinde sich im Wachstum, und kein Mensch könne leugnen, daß man sich in einer Wohlstandsgesellschaft befinde. Auf der anderen Seite müsse man aber wachsam sein. Hier appelliere Arbeitskreis III an die Mitglieder der Fraktion, mit äußerstem Ernst die Sache zu betrachten und eigene Interessen zurückzustellen. Man müsse dahin kommen, das Volumen des Haushalts, zu welchem Zweck auch immer, herunterzudrücken, sei es zu Zwecken der Einsparungen oder zu gewissen Umschichtungen in den Prioritäten. Wenn man von dieser Generallinie ausgehe, werde man nicht darum herumkommen, sich hinter die Bundesregierung und ihren Finanzbericht zu stellen (zitiert Ziffer 3 des Finanzberichts).</p>
+            <p>Für die Debatte seien <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name>, <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, <name type="Person" role="Erwaehnung" ref="#WindelenHeinrich_1957-09-28">Windelen</name>, <name type="Person" role="Erwaehnung" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Erwaehnung" ref="#PohleWolfgang_1953-10-06">Pohle</name> und die Berichterstatter zu den Einzelplänen vorgesehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> bezieht sich auf den Vorwurf, daß die Mitglieder des Haushaltsausschusses für die Ausgaben vor den Wahlen verantwortlich zeichneten. Jeder, der die Sache kenne, wisse, daß die Mitglieder des Haushaltsausschusses immer wieder vor Ausgabenbeschlüssen gewarnt hätten und manche sogar in der Fraktion verhindern konnten, die dann aber im Plenum wieder beschlossen wurden. Er halte es nicht für gut, wenn man sich selber exkulpieren wolle, indem man die Schuld auf den Haushaltsausschuß abwälze. Deshalb sollte so schnell wie möglich §96 der GO<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN006" type="comment">
+                     <p>Antrag Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> und Fraktion der CDU/CSU betr. Änderung der Geschäftsordnung des Deutschen Bundestages (Drs. V/ 114 vom 10.12.1965).</p>
+                  </note>
+               </seg> im Plenum behandelt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuellerJosef_1961-10-17">Müller</name> (Aachen-Land) spricht sich angesichts der Ausgaben in Höhe von 69 Mrd. DM dafür aus, die Sache mit mehr Aufmerksamkeit und Ernst zu betrachten, als das dem Anschein nach in der Fraktion augenblicklich der Fall sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> verweist auf die in der Fraktion verteilte Übersicht über die voraussichtlichen Finanzierungslücken für die Jahre 1966 bis 1970, die nach seiner Meinung lockerer gefaßt werden sollten, weil sonst eine Diskussion unvermeidbar sei, in der dann ganze Gruppen der Fraktion abweichende Meinungen vertreten würden. Dort werde ausgeführt, daß in den Jahren bis 1970 eine Finanzierungslücke von durchschnittlich 4 Mrd. DM jährlich verbleibe. Diese permanente Finanzierungslücke sei darauf zurückzuführen, daß durch die automatische Steigerung der Ausgaben auf Grund der einigen Gesetzen innewohnenden Dynamisierung der jährliche Einnahmezuwachs mehr als aufgezehrt werde. Gegen diese einfach falsche Darstellung müsse er, <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>, sich wehren.</p>
+            <p>Für die Finanzierungslücke gebe es vielfältige Gründe. Er stelle fest, daß die Rentenversicherungsreform 1957<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN007" type="comment">
+                     <p>Arbeiterrentenversicherungs-Neuregelungsgesetz vom 23.2.1957, BGBl. I, S. 45 sowie Angestelltenversicherungs-Neuregelungsgesetz vom 23.2.1957, BGBl. I, S. 88.</p>
+                  </note>
+               </seg> einzig und allein darauf basiere, daß die Renten mit vierjähriger Verzögerung der allgemeinen Preis- und Lohnentwicklung folgen. Diejenigen, die diesen Zustand beklagen, müßten dringend gebeten werden, den Gaul endlich beim Kopf aufzuzäumen und zu zeigen, ob es Möglichkeiten gebe, die Lohn- und Preisentwicklung mit wirtschafts- und konjunkturpolitischen Maßnahmen in der Hand zu behalten. Durch die vierjährige Verzögerung bestehe nun die Möglichkeit, die wachsenden Ausgaben für die Rente so zu gestalten, daß es nicht drücke. Gegen die vorgebrachte Formulierung – er kenne die Handschrift – müsse er sich wehren; sie sei schlicht und einfach unwahr.</p>
+            <p>Weiter werde behauptet, daß es einschneidender Maßnahmen bedürfe, wenn Steuererhöhungen vermieden werden sollten. Was für die Wirtschaft Steuererhöhungen bedeuteten, bedeute für die Arbeitnehmer Erhöhungen der Beiträge. Er bejahe nicht die Steuererhöhung, wenn aber keine Steuererhöhungen kämen, dann könne man auch nicht über den Wege umfangreicher Beitragserhöhungen eine Gruppe des Volkes zur Sanierung des Haushalts mit einer Sonderabgabe belasten.</p>
+            <p>Der Meinung, daß es nicht auch Fehlinvestitionen gebe, widerspreche er energisch. Wenn von der Zukunftssicherung die Rede sei, wolle er nicht in den Verdacht geraten, im Augenblick gegen die Wissenschaftsförderung zu sein. Zur Zukunftssicherung eines Volkes gehöre sicherlich auch eine gesunde soziale Ordnung, und die habe man bei 8 Mio. Rentenempfängern zu gewährleisten.</p>
+            <p>Er, der Redner, bitte die Fraktion, diese Art der Formulierungen nicht zu gebrauchen, weil sie Widersprüche hervorriefen. Er rate, bei globalen Bemerkungen zu bleiben. Es sei erforderlich, nicht nur punktuelle Fragen, sondern alle Aufgaben zu untersuchen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> glaubt, der Vorredner hätte die Formulierungen etwas zu eng aufgefaßt. Auch in anderen Ausgaben seien Dynamisierungseffekte enthalten. Hier zeige sich ein schwerwiegendes Versäumnis der Regierung, die einen Bericht vorlege, der in einer zu strengen Analyse beweist, daß man vor schweren Finanzierungsaufgaben stehe, ohne eine Lösung aufzuzeigen. Deshalb sollte die Fraktion auch keine Einzelbereiche ansprechen, weil die Betroffenen sich sonst dagegen wehren müßten. Hier sollte die Bundesregierung gebeten werden, wiederum in einer Gesamtschau der Gesamtausgaben Vorschläge für eine Restriktion des Haushalts vorzulegen. Es komme darauf an, schwere Auseinandersetzungen untereinander zu vermeiden und dieses Problem sofort in Angriff zu nehmen. Dabei müßten auch andere Tabus angegriffen werden. Nach Auffassung der FDP seien Sparförderung und Steuererhöhung solche Tabus. Wenn man diesem Standpunkt folge, erziele man überhaupt kein Ergebnis. Daher müsse die Regierung aufgefordert werden, ein geschlossenes System vorzulegen. Was aber tue die Regierung? Sie habe erneut die Notstandsgesetzgebung wiedervorgelegt.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN008" type="comment">
+                     <p>Gesetzentwurf zur Ergänzung des Grundgesetzes (Drs. V/1879 vom 13.6.1967).</p>
+                  </note>
+               </seg> Wenn dies ohne Finanzierungsvorschläge geschehe, könne er, Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name>, das nicht mitmachen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erklärt, daß das vorliegende Papier ein Auszug aus dem Finanzbericht des Bundesfinanzministers sei, über den man bisher sehr theoretische Erörterungen anstellte. Man könne die Augen nicht vor dem Haushalt 1967 verschließen, der bereits seine Schatten werfe. 1967 würden die Mittel für die Wissenschaft erhöht, auch stände das Problem der Kriegsopfer an, keiner kenne die Auswirkungen der EWG-Agrarbeschlüsse für 1967, beim Lastenausgleich und der Frage des innerstädtischen Verkehrs stehe man im Wort, ebenfalls müßten drei einfache Notstandsgesetze behandelt werden. Deshalb halte er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, es für sehr problematisch, sich durch abstrakte Formulierungen in eine Sackgasse zu manövrieren.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> vertritt die Auffassung, daß man ohne Finanzvorausschau in der Debatte leichter operieren könne, da der Haushalt 1966 sich gut verteidigen lasse. Man müsse aber auch bedenken, welche Wirkung eine Finanzvorausschau bei den Darstellungen der Opposition spielen werde. Hier müsse man die Bundesregierung um Aufklärung bitten, was sie zu tun gedenke, um diesen Dingen entgegnen zu können. Schon wieder würden Gesetze mit einem Inkraftsetzungstermin 1.1.1968 vorbereitet. Man sollte endlich aus den Dingen lernen und den Mitgliedern des Haushaltsausschusses nicht immer vorwerfen, sie hätten nicht von Anfang an vor solchen Entwicklungen gewarnt. Die Fraktion müsse hart und klar sagen, daß nur in einem geschlossenen Tableau etwas geschehen könne, das nicht durch einzelne Wünsche wieder zerstört werden dürfe. Eine weitere Konsequenz ergebe sich nämlich daß bei dieser Finanzierungslücke eine Bereinigung der Situation erfolgen müsse, ehe man neue ausgabenwirksame Beschlüsse fasse. Wenn man sich nicht dazu aufraffen könne, aus diesem Teufelskreis auszubrechen – man habe nur noch eine Dispositionsfreiheit von 10%, die für die Wissenschaftsförderung und die Landwirtschaftsförderung eingesetzt werden sollen –, müsse man schnell Ernst machen und weitere Abstriche vornehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bezieht sich auf die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name>, der auch im Bereich des öffentlichen Dienstes die Besoldungseinheit ansprechen wolle. Jedem sei verständlich, daß die derzeitige Regelung so nicht weiterbestehen könne. Deshalb hätten auch die Ministerpräsidenten einen Beschluß gefaßt, daß gleichmäßig bei der Besoldungserhöhung in den einzelnen Ländern und dem Bund vorgegangen werden solle. In diesem Zusammenhang solle die Prominenz der SPD ihre Bereitschaft zu einer Grundgesetzänderung erklärt haben. Hier solle man die SPD nun fragen, wie sie zu dieser Frage stehe, und nicht sofort seine Bereitschaft zur Änderung des Art.75 GG bekunden. Die SPD müsse in die Enge getrieben werden, sonst erreiche man nichts.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> spricht Art.107 Abs.3 des GG an, über den fünf Länder Ansprüche an den Bund in Höhe von rund 340 Mio. DM stellten. Nach letzten Berichten erkenne der Finanzausschuß des Bundesrates einstimmig die Ansprüche in einer Größenordnung von 250 Mio. DM an. Arbeitskreis III dagegen weise sie zurück. Bei den Ländern handele es sich mit Ausnahme von Niedersachsen, wo eine CDU/FDP-Koalition bestehe, ausschließlich um CDU-Länderregierungen. So beinhalte diese Sache auch eine politische Frage, und man sollte überlegen, ob man statt von Ablehnung von einer Überprüfung sprechen könnte.</p>
+            <p>Ein weiterer Punkt sei eine Flurbereinigung und Durchforstung der Subventionen. Der Finanzbericht spreche von etwa 30 Mrd. DM Subventionen, die zum Teil sichtbar, zum Teil unsichtbar seien. Die unsichtbaren Subventionen kämen der gewerblichen Wirtschaft, die sichtbaren der Landwirtschaft zugute. Auch hier sollte eine einseitige Darstellung im Plenum vermieden werden.</p>
+            <p>Die Finanzvorausschau, die man von der Bundesregierung gefordert habe, bedürfte einer gründlichen Überprüfung, damit man am Ende der Legislaturperiode nicht wieder so dastehe wie im Augenblick. Der Trend dieser Vorausschau sollte zu größerer Sorgfalt und Verantwortung verpflichten. Stützen müßte man sich aber vorweg auf den Haushalt 1966, der einen guten Start habe, und anschließend den Haushalt 1967 in Angriff nehmen. Dabei stehe man vor einer neuen Lage. Man habe das Haushaltssicherungsgesetz in der Vorstellung diskutiert, zwei magere Jahre überbrücken zu müssen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN009" type="comment">
+                     <p>Haushaltssicherungsgesetz vom 20.12.1965, BGBl. I, S. 2065.</p>
+                  </note>
+               </seg> Jetzt scheinen die mageren Jahre aber länger anzudauern. Es gebe Dinge, denen man nicht werde ausweichen können. Es gehe nicht an, daß eine Gruppe der Fraktion für und die anderen gegen Steuererhöhungen sich aussprächen usw. Es komme nun darauf an, möglichst schnell an die Beratungen des Haushalts 1967 zu gehen und die kommenden Fragen zu beantworten. Dabei lasse sich die Frage der Steuererhöhung im Konsumsektor nicht umgehen, so daß eine Debatte darüber notwendig werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> verweist auf die Beratungen des Arbeitskreises III in dieser Sache. Eine Anregung gehe dahin, nach der Verabschiedung des Haushalts 1966 – etwa um Ostern – sich zusammenzusetzen, um die Weichen für den Haushalt 1967 zu stellen. Im übrigen sei mit der Dynamisierung nicht nur die Rente gemeint, sondern auch die großen Ausgabenblöcke, die jeder kenne.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BesoldAnton_1949-09-07">Besold</name> verweist auf das Beispiel der Post. Der Bundestag habe ein Gutachten zur Sanierung der Bundespost angefordert, das Gebührenerhöhung, Verbesserung der eigenen Kapitalausstattung und Beseitigung der politischen Lasten vorschlage.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN010" type="comment">
+                     <p>Gutachten der Sachverständigen-Kommission für die Deutsche Bundespost vom 6.11.1965 gem. Bundestagsbeschluß vom 16.4.1964 (Drs. V/203 vom 26.1.1966).</p>
+                  </note>
+               </seg> Der Postverwaltungsrat bemühe sich zur Zeit, die Gebühren massiv zu erhöhen, so daß sie nicht nur kostendeckend seien, sondern auch noch einen Teil für die Eigenfinanzierung herausholen. Trotzdem würden für die Verbesserung des Eigenkapitals noch 5 Mrd. DM auf den Bundestag zukommen, denn 435 Mio. DM würden allein für die Erhöhung der Gehälter aufgezehrt.</p>
+            <p>Die Sanierung der Bundespost müsse mit einkalkuliert werden, weil man andernfalls unglaubwürdig werde. Die Gebührenerhöhung werde aber nur beschlossen, wenn auch die Bundesregierung ihrerseits eine verbindliche Erklärung über die weitere Sanierung der Bundespost abgebe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> weist auf die Entwicklungshilfe hin. Bei den Vorbesprechungen zum Haushaltssicherungsgesetz habe man ihn darauf hingewiesen, daß es sich hier um ein wertvolles Instrument der Außenpolitik handele. Darüber hinaus brauche man ihn nicht zu belehren. Dieser Slogan werde aber zur hohlen Phrase, wenn man sich die Praxis ansehe. Im Finanzbericht stehe zwar, daß die Entwicklungshilfe in diesem Jahr 1,56 Mrd. DM ausmache und im Jahr 1968 1,82 Mrd. DM betragen soll; aber man verfüge dabei nicht über Mobilität. Im vorhinein beständen für Jahre rechtliche Bindungen. Das könne durch den deutschen Gesetzgeber nicht mehr geändert werden. Er, Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, könne sich auch schlecht vorstellen, daß sich hieran nach 1971 etwas ändere. Es genüge ein wenig Phantasie, um sich die Bedeutung dieses Instruments der Außenpolitik, das einem im voraus die Hände so sehr binde, daß man zur Bewegungsunfähigkeit verurteilt sei, vor Augen zu führen. Der Fraktion müsse aber klarer Wein eingeschenkt werden, wie weit diese Bindungen reichen und wann man wieder Bewegungsfreiheit haben werde. In Zukunft sei mit Bindungen langfristiger Art sehr sorgfältig umzugehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> betont, daß ihn die Entwicklungshilfe etwas beunruhige, die den Haushalt 1966 bereits in eine schwierige Situation gebracht habe. Von 31 Haushalten seien 26 gestiegen und nur fünf gekürzt. Dabei sei der Haushalt des Entwicklungshilfeministeriums am stärksten gewachsen. Wie man dieses nach draußen erklären solle, bereite Sorge angesichts der Opfer, die jedem durch das Haushaltssicherungsgesetz auferlegt wurden. Auch in diesem Bereich sollte man prüfen, ob nicht im Wege der Streckung Einsparungen erzielt werden könnten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> erinnert unter Bezugnahme auf die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> daran, daß er dieses Thema schon einmal öffentlich angeschnitten habe, worüber sich der Minister für Entwicklungshilfe prompt beschwerte. Wenn im Finanzbericht stehe, daß die Bindungen vorhanden sind, so ergebe sich das aus der technischen Abwicklung. Zwischen Zusage und Durchführung berechne man im allgemeinen vier Jahre. Im Haushalt 1966 sei man nicht mehr in der Lage zu sagen, daß weniger bewilligt werde, weil man bindende Verpflichtungen eingegangen sei. Die Bindungsermächtigungen lägen bei 1,5 Mrd. DM. Hier müßten Überlegungen angestellt werden, zu welchem Gesamtrahmen man überhaupt kommen wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> unterstreicht die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> hinsichtlich der Streichung im Verteidigungshaushalt. Man wolle deutsche Soldaten in Vietnam nicht zur Verfügung stellen, sondern mit humanitären Mitteln helfen. Diese Politik hätte natürlich Konsequenzen, aber die Bewegungsunfähigkeit sei eine schlechte Sache. Er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, spreche sich dafür aus, den menschlichen Entwicklungsdienst mehr zu fördern als bisher.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> legt dar, daß man sich bei den Bindungsermächtigungen bemühen werde, kürzer zu treten. Real habe man im vergangenen Jahr genau den Standpunkt des Abg. <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> vertreten und 200 bis 300 Mio. DM gekürzt. Die Folge wäre aber eine Nachbewilligung wegen der Bindungen gewesen, die um 150 Mio. DM mehr betragen hätte, als man gestrichen habe.</p>
+            <p>Was die Frage des Art.107 GG anbelange, bestehe die Notwendigkeit, sie im Plenum deutlich anzusprechen, weil man diese Frage auf dem Hintergrund der eventuellen Änderung des Schlüssels für die Einkommen- und Körperschaftsteuer sehen müsse. Die Länder wollten in Zukunft nicht mehr als 35% zur Verfügung stellen, so daß der Bund natürlich in eine schwierige Situation gerate.</p>
+            <p>Art.75 GG sollte man vielleicht in Form einer Frage an die SPD ansprechen.</p>
+            <p>Hinsichtlich des Finanzberichts habe man festgestellt, daß die Dinge zu abstrakt angesprochen seien, Arbeitskreis III habe die Dinge konkret behandelt und sie auch der Fraktion vorgetragen. Er, <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name>, beabsichtige, dazu eine genaue Formulierung zu benutzen und dabei von »Prüfung aus gegebenem Anlaß« zu sprechen. Die Konkretisierung müsse dann aber zu einem Ergebnis führen. Nicht die Fraktion könne die Vorschläge unterbreiten, sondern der Finanzminister und die Bundesregierung. Die Fraktion könne die Bundesregierung lediglich auffordern, konkrete Vorschläge zu erarbeiten.</p>
+            <p>Er glaube, daß man nur zu einem Ausgleich des Haushalts für die kommenden Jahre kommen könne, wenn man Ausgabenkürzungen vornehme. Dieses Ziel werde man nur erreichen, wenn man durch einschneidende Eingriffe die Beeinflussung bei den Ausgaben, insbesondere bei den Subventionen, abwehre, die Steuer- und Prämienvergünstigungen mit dem Ziel der Harmonisierung abbaue, rechtlich gebundene Ausgaben kürze, eine Entlastung bei Bundesbahn und Bundespost erziele und sich bei neuen Ausgaben zurückhalte.</p>
+            <p>Man erwarte von der Bundesregierung in dieser Beziehung alsbald Vorschläge, um den Haushalt 1967 und 1968 in Angriff nehmen zu können.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HofmannJosef_1965-10-19">Hofmann</name> sieht in dem Finanzbericht eine Vorschau auf die kommenden Jahre und eine Aufzeichnung der Probleme, denen man in Zukunft gegenüberstehe. Von den im November 1965 zur Sprache gebrachten Schwierigkeiten sei man noch lange nicht weg. Es bestehe noch die Notwendigkeit eines Währungsstabilisierungsgesetzes.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN011" type="comment">
+                     <p>Entwurf eines Gesetzes zur Förderung der wirtschaftlichen Stabilität (Drs. V/890 vom 2.9.1966).</p>
+                  </note>
+               </seg> Über das Defizit von 4 Mrd. DM hinaus müsse man die Dinge sehen, die unausweichlich auf einen zukommen. Das bedeute ein Defizit für das Jahr 1967 von 8 Mrd. DM, knapp gerechnet. Angesichts dieser Lage sei nicht mehr zu verstehen, wie dieses oder jenes gemacht werden solle. Man komme aus der Immobilität nicht heraus, außer man schichte bei den Verhandlungen Geld um. Dabei gebe es natürlich Widerspruch.</p>
+            <p>Die ganze Sache werde problematisch, wenn der Finanzminister eine Vorschau gebe, ohne eine Lösung der Probleme vorzuschlagen. Das heiße, daß die Fraktion die Initiative ergreifen müsse, weil offenbar die Regierung intern nicht in der Lage sei, die Politik für die nächsten Jahre in den Griff zu bekommen. Ohne Geld gebe es keine Politik. Deshalb müsse die Fraktion erwarten, daß die Bundesregierung ihr Gesamttableau vorlege. Das müßte oberstes Gebot sein, damit man nicht wieder vor der gleichen Situation stehe.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name> betont seine Dankbarkeit für den Finanzbericht, wenn er es auch etwas merkwürdig finde, ein so wichtiges Dokument 24 Stunden vor der Haushaltssitzung erscheinen zu lassen. Auch er spreche sich dafür aus, neue Ausgaben nur dann zu beschließen, wenn auch die Deckungsvorlage vorliege, widerspreche aber der Argumentation, daß jedes Haushaltsdefizit eine Inflation bedeute.</p>
+            <p>Was die fehlenden 4 Mrd. DM pro Jahr anbelange, müsse man berücksichtigen, daß in diesem Haushalt 15 bis 16 Mrd. DM Investitionen enthalten seien, die keine konsumtiven Aufwendungen seien. Wenn rechnerisch 4 Mrd. DM fehlten, sei das volkswirtschaftlich eine völlig andere Sache, als wenn sie für Verwaltungsaufwendungen nicht zur Verfügung ständen. Damit komme man wieder zu dem Punkt Kapitalmarkt: Mehr sparen im ganzen Volk. Es müßte eigentlich möglich sein, auf dem Kapitalmarkt mehr als 1,5 bis 2 Mrd. DM zu decken. 90% wolle man über den Preis selbst finanzieren. Die Steuern seien der Preis für die öffentlichen Leistungen des Staates. Wenn diese auf 40% angehoben würden, wäre das Defizit weg. Er, der Redner, warne aber davor, etwas zu tun, was das Sparvolumen reduziere. Dieses müsse vielmehr wachsen, weil es ein Beitrag zur anteiligen Finanzierung der Investitionen bedeuten würde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> hält diesen Beitrag für dankenswert, auch hinsichtlich des Optimismus, den er in die Debatte bringe.</p>
+            <p>Die Fraktion billigt die vom Arbeitskreis III erarbeiteten Grundsätze.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-05_1966-03-01-t1500_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[5. Landwirtschaft, Zollwesen, Bundesvermögen. Sondervermögen]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> berichtet über die Beratungen des Arbeitskreises II zur Frage des Grünen Plans und des Grünen Berichts 1966.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN012" type="comment">
+                     <p>Bericht der Bundesregierung über die Lage der Landwirtschaft gem. §4 des Landwirtschaftsgesetzes – Grüner Bericht 1966 – und Maßnahmen gem. §5 des Landwirtschaftsgesetzes – Grüner Plan 1966 – (zu Drs. V/255 vom 7.2.1966).</p>
+                  </note>
+               </seg> Im Zusammenhang mit den Vorbereitungen für die Plenardebatte habe der Arbeitskreis die Gelegenheit wahrgenommen, sich eingehend mit den wichtigen Fragen der Landwirtschaft zu befassen. Besonders intensiv sei über die sichtbare Änderung der Agrarstruktur mit ihren Folgen auf die bäuerlichen Betriebe und die Menschen diskutiert und z.B. zur Kenntnis genommen worden, daß Jahr für Jahr 40000 landwirtschaftliche Betriebe oder 197000 in diesen Betrieben tätige Menschen aus der Landwirtschaft abwanderten. Der Arbeitskreis habe sich vorgenommen, in einer gesonderten Sitzung sich mit den damit zusammenhängenden Fragen zu befassen und auch hierbei die Frage der Subventionen aufzuwerfen. Gerade hier sehe es der Arbeitskreis für notwendig an, auch nach außen klarzustellen, daß die Mittel im Etat des Landwirtschaftsministeriums und im Grünen Plan keinesfalls in ihrem vollen Umfange mit Subventionen gleichzusetzen seien. Auch das Problem der Abschöpfungsregelungen im Rahmen der Marktordnungen der EWG bedürfe in ihrem Zusammenhang mit der allgemeinen Wettbewerbsordnung einer Beantwortung.</p>
+            <p>Als Hauptredner für die Debatte wurden die Kollegen <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> und <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> benannt. Außerdem ständen für kurze Diskussionsbeiträge folgende Kollegen bereit:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BewerungeKarl_1961-10-17">Bewerunge</name>:</cell>
+                  <cell>Agrarstrukturpolitik, Flurbereinigung,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#ReinhardCarl_1957-10-15">Reinhard</name>:</cell>
+                  <cell>Marktstruktur, Veredelungswirtschaft,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BerberichAugust_1957-10-15">Berberich</name>:</cell>
+                  <cell>Soziale Fragen,</cell>
+               </row>
+               <row>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name>:</cell>
+                  <cell>Erleichterung der Arbeit der Bäuerinnen,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#PrasslerHelmut_1965-10-19">Prassler</name>:</cell>
+                  <cell>Raumordnung und Dorfsanierung,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#GluesingHermann_1949-09-07">Glüsing</name>:</cell>
+                  <cell>Fragen der Küstengebiete, Lastenausgleich und Küstenplan,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#RichartsHans_1953-10-06">Richarts</name>:</cell>
+                  <cell>EWG-Agrarmarktfragen.</cell>
+               </row>
+            </table>
+            <p>Außerdem habe der Arbeitskreis im Grundsatz die Einbringung einer Entschließung, die sich auf EWG-Agrarmarktfragen und auf die Kapitalbeschaffungsmaßnahmen und die Zinsverbilligung beziehe, gebilligt.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN013" type="comment">
+                     <p>CDU/CSU-FDP-Entschließung betr. Ersuchen an die Bundesregierung um Beachtung der für die Getreidepreise, Milcherzeugerpreise und der Preise im Rahmen der übrigen Marktordnungen geltenden Grundsätze bei den Verhandlungen in Brüssel und um Prüfung der Finanzierungshilfen […], Sten. Ber., 24. Sitz. am 2.3.1966, S. 1110f. (Umdr. 23).</p>
+                  </note>
+               </seg> Die Formulierung werde noch mit den Mitgliedern des Arbeitskreises III und mit dem Bundeslandwirtschaftsminister abgestimmt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> bemerkt, daß bei den Beratungen klargeworden sei, wie wenig ausdiskutiert das scheinbar so einfache Problem doch sei. Es wäre gut, wenn Arbeitskreis II möglichst ohne Zeitdruck Gelegenheit bekäme, diese Probleme zu erörtern, denn sonst falle einem die Führung einer solchen Debatte immer schwerer, und es bestehe die Gefahr, daß die Fraktion auseinanderlaufe. Das könne man sich nicht leisten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bittet, diese Fragen für die Vorstandssitzung vorzumerken.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> betont, Arbeitskreis IV habe sich ebenfalls mit dem Grünen Bericht beschäftigt, und zwar hinsichtlich der sozialen Fragen, besonders mit der Krankenversicherung der Bauern. <name type="Person" role="Erwaehnung" ref="#BerberichAugust_1957-10-15">Berberich</name> werde im Plenum dazu sprechen. Bei dieser Frage solle sich die Fraktion nicht festlegen, sondern nur aufzeigen, daß noch eine ganze Reihe von Problemen beständen, die einer Lösung bedürfen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> kommt auf den verbesserten Dumpingschutz für die deutsche Wirtschaft zu sprechen. Der Arbeitskreis habe sich mit dem Initiativentwurf des Abg. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> befaßt, dem Siebten Gesetz zur Änderung des Zollgesetzes, durch den der Dumpingschutz der deutschen Wirtschaft durch eine Verbesserung des Prüfungsverfahrens verstärkt werden solle.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN014" type="comment">
+                     <p>CDU/CSU-FDP-Entwurf eines Siebenten Gesetzes zur Änderung des Zollgesetzes (Drs. V/393 vom 9.3.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Antrag sei von über 80 Abgeordneten der Koalitionsfraktionen unterschrieben. Er finde auch im Arbeitskreis ungeteilte Zustimmung. Der Arbeitskreis empfehle daher der Fraktion, diesen Gesetzentwurf als Fraktionsantrag und wenn möglich als Koalitionsantrag einzubringen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt bekannt, daß dieser Antrag als Fraktionsantrag eingebracht werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> referiert über den ERP-Wirtschaftsplan.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN015" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Wirtschaftsplans des ERP-Sondervermögens für das Rechnungsjahr 1966 – ERP-Wirtschaftsplangesetz 1966 – (Drs. V/305 vom 15.2.1966).</p>
+                  </note>
+               </seg> Die Kürzung der Mittel im Agraretat und im Grünen Plan für bestimmte agrarische Aufgaben habe im Arbeitskreis zu der Anregung geführt, den Mittelansatz im ERP-Wirtschaftsplan zu überprüfen, und zwar nach dem Gesichtspunkt, im Interesse der kleinen Gemeinden die Maßnahmen zur Verbesserung der Trinkwasserversorgung und der Abwässerbeseitigung fortzusetzen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> erläutert, daß die Landwirtschaft hier immer maßgeblich beteiligt gewesen sei. Etwa 640 bis 650 Mio. DM seien zugunsten der westdeutschen Wirtschaft eingeplant, daneben stände die Entwicklungshilfe und die Berlinhilfe. Auch die Trinkwasserversorgung usw. seien in diesen Jahren ganz erheblich über den ERP-Wirtschaftsplan finanziert worden, der Haushalt 1966 weise sie allerdings nicht mehr aus.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN016" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Bundeshaushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p>
+                  </note>
+               </seg> Er, <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name>, richte die herzliche Bitte an die Fraktion, bei weiteren Gesprächen hier eine Korrektur vorzunehmen, denn es bestehe die Notwendigkeit, hier mit zinsgünstigen Mitteln zu arbeiten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt keine weiteren Wortmeldungen zu diesem Punkt der Tagesordnung fest.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> gibt einen Bericht über die sozialpolitischen Fragen, die bei der Agrardebatte aufkommen könnten. Insbesondere spricht er die Frage einer eventuellen Krankenpflichtversicherung in der Landwirtschaft an. Nach einer eingehenden Diskussion habe der Arbeitskreis beschlossen, der Fraktion zu empfehlen, daß sich als Sprecher zu den sozialpolitischen Fragen <name type="Person" role="Erwaehnung" ref="#BerberichAugust_1957-10-15">Berberich</name> bereit hält mit der Maßgabe, daß die Gesamtproblematik angesprochen werde, die Fraktion aber sich im gegenwärtigen Zeitpunkt noch nicht auf Einführung der Krankenpflichtversicherung festlege.</p>
+            <p>[6. Sozialpolitik]</p>
+            <p>Arbeitskreis IV werde in der nächsten Woche den sozialpolitischen Teil der Kohle-Debatte vorbereiten. Berichterstatter: <name type="Person" role="Erwaehnung" ref="#SpringorumGerd_1965-10-19">Springorum</name>. Im Rahmen der Etat-Debatte solle sich für den Fall, daß familienpolitische Fragen angesprochen werden, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> bereit halten; im übrigen Einsatz von Rednern nach Bedarf durch die Vorsitzenden bzw. Obleute der einzelnen Arbeitskreise. (Gemeinsam mit Arbeitskreis VI).</p>
+            <p>[7. Gesundheitswesen. Gesundheitsfürsorge]</p>
+            <p>Bundesgesundheitsministerin Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> wies auf die Notwendigkeit einer neuen Pflegesatzverordnung nicht nur wegen der finanzielle Notlage der Krankenhäuser im allgemeinen [hin], sondern auch wegen der Gefahr, daß die freigemeinnützigen Träger ihre Aufgaben künftig nicht mehr erfüllen können.</p>
+            <p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> hielt den Erlaß einer neuen Pflegesatzverordnung in der Fassung des jetzt vorliegenden Entwurfs nicht für zweckmäßig und für die gesetzlichen Krankenversicherungsträger für nicht tragbar. Die Verordnung würde dazu beitragen, daß die heute bestehenden Ungleichheiten (unterschiedliche Zuschüsse in den Ländern) verstärkt würden. Im übrigen bringe die Verordnung keine Lösung des Problems, erschwere sie sogar. Auch werde in dieser grundsätzlichen Frage der Sozialenquete vorgegriffen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN017" type="comment">
+                     <p>Bericht der Sozialenquete-Kommission über die »Soziale Sicherung in der Bundesrepublik Deutschland« (Drs. V/961 vom 3.10.1966).</p>
+                  </note>
+               </seg> Um den Schwierigkeiten der Krankenhäuser für den Übergang gerecht zu werden, rege er die Bildung eines Stiftungsfonds an, der Gelder von allen interessierten Bereichen der Gesellschaft erhalten und in einem ausgewogenen Verhältnis Zinssubventionen, Amortisationshilfen und Zuschüsse gewähren solle.</p>
+            <p>In einer sehr eingehenden Diskussion habe der größte Teil der Redner gegen die Pflegesatzverordnung Stellung genommen. Nur wenige Mitglieder der Arbeitskreise hätten sich für den Erlaß einer neuen Pflegesatzverordnung ausgesprochen. Einige Mitglieder verwiesen auf das Beispiel Nordrhein-Westfalen, wo im Rahmen der bestehenden Pflegesatzverordnung das Land einen Weg gefunden habe, der alle Beteiligten einigermaßen zufriedenstelle. Dieser Weg könne auch von anderen Ländern beschritten werden, wenn sie wie NRW in angemessenem Umfang und unter gerechter Aufteilung Mittel für die Krankenhäuser bereitstellen.</p>
+            <p>Die Arbeitskreise beschlossen die Bildung einer gemeinsamen Unterkommission, die sich mit dem Problem der Sanierung der Krankenhäuser befassen und insbesondere die Möglichkeiten einer Neuordnung der Krankenhausfinanzierung untersuchen soll. Ebenfalls solle diese Kommission sich mit dem SPD-Antrag – Pflegesätze von Krankenhäusern, V/314 – befassen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN018" type="comment">
+                     <p>SPD-Antrag betr. Pflegesätze von Krankenhäusern (Drs. V/314 vom 16.2.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Vorsitz dieser Kommission: <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>,</p>
+            <p>Mitglieder: <name type="Person" role="Erwaehnung" ref="#JungmannGerhard_1961-10-17">Jungmann</name>, Frau <name type="Person" role="Erwaehnung" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name>, <name type="Person" role="Erwaehnung" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin), <name type="Person" role="Erwaehnung" ref="#PortenJosef_1961-10-17">Porten</name>, <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>, Frau <name type="Person" role="Erwaehnung" ref="#SchroederChrista_1961-10-17">Schroeder</name>, <name type="Person" role="Erwaehnung" ref="#SpringorumGerd_1965-10-19">Springorum</name>, <name type="Person" role="Erwaehnung" ref="#Sayn-Wittgenstein-HohensteinBotho_1965-10-19">Sayn-Wittgenstein</name>.</p>
+            <p>Dem Antrag von <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> betreffend Lärmzonen im Umkreis der Flughäfen schlossen sich die Arbeitskreise IV und VI an.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-01-t1500_EP_FN019" type="comment">
+                     <p>Gesetzentwurf zum Schutz gegen Fluglärm in der Umgebung von Flughäfen d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> u.a. (Drs. V/355 vom 2.3.1966) sowie Antrag Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> u.a. betr. Lärm an Militärflugplätzen (Drs. V/356 neu vom 2.3.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Fraktion erklärt sich mit der Einbringung als Fraktionsantrag einverstanden.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

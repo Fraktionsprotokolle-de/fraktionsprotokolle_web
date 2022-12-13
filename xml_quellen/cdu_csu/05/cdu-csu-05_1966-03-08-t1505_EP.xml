@@ -1,284 +1,473 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1966-03-08-t1505_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor><name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/></editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1010/2</idno>
-							<objectName>[Nicht überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 8. März 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>12 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-03-08"><time type="start" when="15:05:00"/><time type="end" when="17:45:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
-			<change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-05_1966-03-08-t1505_EP_SVP-1" corresp="#cdu-csu-05_1966-03-08-t1505_EP_div_SVP-1">A. TOP 1: Bericht des Fraktionsvorsitzenden. – TOP 2: Bericht aus dem Ältestenrat, Plenarplan. – TOP 3: Gesundheitswesen. Gesundheitsfürsorge. – TOP 4: Bundeswehr/ Ausrüstung und Beschaffung. – TOP 5: Post- und Fernmeldewesen. – TOP 6: Elbeseitenkanal. – TOP 7: Gesellschafts- und Kulturpolitik, Schul- und Bildungswesen. – TOP 8: Finanzwesen.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-05_1966-03-08-t1505_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Bericht des Fraktionsvorsitzenden]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> berichtet eingangs über die Sitzung des Vorstandes, der die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#AdornoEduard_1961-10-17">Adorno</name> über die Tagung der Landtagsfraktionen entgegengenommen habe. Weiter habe man über Fragen der Familienpolitik gesprochen und in diesem Zusammenhang an den Beschluß des letzten Bundestages bei der Steuerreform erinnert, Kindergeld bei Beibehaltung der Einkommensgrenze und Ausbildungshilfe zu gewähren. In der Haushaltsdebatte seien SPD und FDP bei der Frage des Familienausgleichs über das Ziel hinausgeschossen.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN002" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Haushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p></note></seg> Arbeitskreis IV vertrete die Meinung, daß hier wohl eine Klarstellung nützlich wäre und habe deshalb eine Entschließung erarbeitet.</p>
-				<p>Anschließend habe der Vorstand über die Haushaltslage und die Schatten, die der Haushalt 1967 werfe, debattiert. Der Vorstand rate zu Gesprächen mit dem Bundeskanzler, um rechtzeitig eine interne Vorklärung zu finden. Außerdem empfehle er, eine Kommission einzusetzen, die die wichtige Entscheidung über Anteile zwischen Bund und Ländern vorbereite.</p>
-				<p><name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> bezieht sich auf die Tagung des Wirtschaftsrats der CDU, wo das Wort vom »Pennälergehalt« gefallen sei. Die Fraktion sollte es sich zu einer Gewissenspflicht machen, diesen anrüchigen Ausdruck nicht mehr in den Mund zu nehmen.</p>
-				<p>[2. Bericht aus dem Ältestenrat, Plenarplan]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet aufgrund der Beschlüsse des Ältestenrates über die Gestaltung der nächsten Plenarwoche.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> fragt unter Bezugnahme auf die frühere Übung, am Freitag die Präsenzpflicht aufzuheben, wenn nur Fragestunde abgehalten werde, ob dies nicht am kommenden Freitag geschehen könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> merkt sich diese Anregung für die nächste Ältestenratssitzung vor. Der Bundestagspräsident sei bei der Pauschalierung der Tagegelder von 15 Präsenztagen im Monat ausgegangen. Außerdem betrachte der Präsident die Fragestunde als Plenarsitzung, die durch die Präsenzpflicht geschützt werden müsse.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> widerspricht der Aufhebung der Präsenzpflicht, weil an diesem Tag auch noch Ausschüsse tagten.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> informiert die Fraktion, daß keine Debatte zur Novelle des Jugendarbeitsschutzes und zur Patentanwaltsordnung stattfinde.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN003" type="comment"><p>Bundesratsvorlage Entwurf eines Dritten Gesetzes zur Änderung des Jugendarbeitsschutzgesetzes (Drs. V/267 vom 7.2.1966) und Entwurf einer Patentanwaltsordnung d. Abg. <name type="Person" role="Erwaehnung" ref="#DeringerArved_1957-10-15">Deringer</name> u.a. und d. Fraktionen der CDU/CSU, FDP (Drs. V/276 vom 10.2.1966).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> teilt mit, daß zur Bundesdisziplinarordnung <name type="Person" role="Erwaehnung" ref="#SchlagerManfred_1965-10-19">Schlager</name> und zum Tierschutzgesetz <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> im Plenum sprechen werden.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN004" type="comment"><p>CDU/CSU-FDP-Gesetzentwurf zur Änderung und Ergänzung der Bundesdisziplinarordnung (Drs. V/325 vom 17.2.1966) und Antrag <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name> u.a. und d. Fraktion der SPD betr. Entwurf eines Tierschutzgesetzes (Drs. V/182 vom 14.1.1966).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> erklärt hinsichtlich des Antrages betreffend Schutz der landwirtschaftlichen Veredelungswirtschaft, daß es sich hierbei um eine Begrenzung bei der Geflügelhaltung handele.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN005" type="comment"><p>CDU/CSU-FDP-Gesetzentwurf zum Schutze der landwirtschaftlichen Veredelungswirtschaft (Drs. V/353 vom 2.3.1966).</p></note></seg>
-					<name type="Person" role="Erwaehnung" ref="#ReinhardCarl_1957-10-15">Reinhard</name> werde den Antrag begründen, die Abg. <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#FreyMartin_1949-09-07">Frey</name> und andere ständen für die Debatte bereit. Von seiten des Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> kämen Bedenken, die er jedoch bei der 1. Lesung zurückstellen wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> rät, nicht allzugroße Hoffnungen an dieses Gesetz zu knüpfen, da gegen diesen Gesetzentwurf starke verfassungsrechtliche Bedenken laut würden.</p>
-				<p>[3. Gesundheitswesen. Gesundheitsfürsorge]</p>
-				<p><name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> betont, hinsichtlich der Frage der Pflegesatzverordnung beständen innerhalb der Bundesregierung selbst Meinungsverschiedenheiten. Während die Frau Gesundheitsministerin eine Änderung ins Auge fasse, vertrete der Arbeitsminister die entgegengesetzte Auffassung. Es sei also eine Abklärung in der Fraktion erforderlich. Die SPD habe hierzu einen Antrag eingebracht und einen Bericht von der Bundesregierung gefordert.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN006" type="comment"><p>SPD-Antrag betr. Pflegesätze von Krankenhäusern (Drs. V/314 vom 16.2.1966).</p></note></seg></p>
-				<p>Der Arbeitskreis [IV] glaube, gegen einen solchen Antrag schwerlich etwas einwenden zu können. Das Parlament mache von seinem ureigensten Recht Gebrauch, sich informieren zu lassen. Es gelte, gewisse Tatbestände, die beklagt würden, aufzuhellen. Dies sei ein legitimes Anliegen, so daß der Antrag der SPD nicht abgelehnt werden könne. Darüber hinaus habe sich eine Kommission mit dieser Sache befaßt und einen eigenen Antrag vorgelegt.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN007" type="comment"><p>CDU/CSU-FDP-Antrag betr. finanzielle Situation der Krankenhäuser (Drs. V/389 vom 8.3.1966).</p></note></seg></p>
-				<p>Bundesgesundheitsministerin Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> bemerkt, daß im Fall der Annahme beider Anträge eine dringend notwendige Hilfe für die Krankenhäuser um mindestens ein Jahr verschoben werde, denn es sei nicht möglich, den gestellten Anforderungen dieser Anträge in Kürze nachzukommen. Auch sei es der Bundesregierung nicht möglich, einen Bericht differenziert nach Ländern und Trägerschaften vorzulegen. Die Länder benötigten mindestens ein halbes Jahr, was ein Verschieben der Änderung der Pflegesatzverordnung um ein Jahr bedeute.</p>
-				<p>Immer wieder werde der Zweck der Änderung der VO falsch dargestellt. Keineswegs würden die Lasten auf die Kassen abgeschoben, im Gegenteil, die Leistungen der öffentlichen Hand blieben unberührt und würden bei der Bemessung des Pflegesatzes nicht berücksichtigt.</p>
-				<p>In der VO stehe, daß bei der Bemessung der Pflegesätze eine Abschreibungsfrist von 100 Jahren eingesetzt sei. Das sei wirklichkeitsfremd, falsch und unrichtig. Solche Unrichtigkeiten sollten bereinigt werden.</p>
-				<p>Mit dieser Änderung werde in keiner Weise eine grundsätzliche Regelung der Krankenhausfinanzierung überflüssig gemacht oder vorweggenommen. Eine Regelung könne nur erfolgen durch Übernahme der Vorhaltekosten, durch die Schaffung eines Krankenhausfonds, einer gemeinsamen Regelung in den Ländern aufgrund eines Verwaltungsabkommens oder der Trägerschaften, nicht aber vom Bund her. Die Länder bemühten sich um eine Grundregelung der Krankenhausfinanzierung. Sie hätten für diesen Zweck einen Ausschuß gebildet, an dem sich auch der Bund beteilige. Der Ausschuß habe seine Beratungen jetzt mit der Bitte an den Bund abgeschlossen, die Pflegesatzverordnung zu ändern. Wenn dies geschehe, würden die Länder über die Grundfinanzierung weiter verhandeln.</p>
-				<p>Durch die VO werde also nichts verbaut. Es müsse auf diesem Gebiet aber etwas geschehen, denn das jährliche Defizit der Krankenhäuser betrage 270 bis 280 Mio. DM. Dieses werde durch Sammlungen abgedeckt, Erneuerungen würden unterlassen, und das Ganze gehe auf Kosten der Ärzte und Schwestern an konfessionellen Krankenhäusern. Diesem Zustand könne in einem gewissen Maße begegnet werden. Für die Grundfinanzierung wären allerdings Verhandlungen notwendig. Wenn die beiden Anträge das Plenum passierten, hätte das zur Folge, daß die Verbesserung für die Krankenhäuser um ein Jahr zurückgestellt werde. Deshalb lehne sie, Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>, beide Anträge ab und bitte die Fraktion, ebenfalls so zu verfahren.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> verweist auf die Beratungen der Arbeitskreise IV und VI, die diese Frage sehr lange und ernsthaft erörtert haben, um dann ihre Empfehlung zu geben. Wenn jetzt davon gesprochen werde, daß diese Anträge eine Verzögerung bewirkten, dann sei nicht zu verstehen, wie die Regierung von einer VO sprechen könne, wenn sie die Folgen überhaupt nicht kenne. Auch halte er es nicht für richtig, wenn behauptet werde, daß die Leistungen der öffentlichen Hand unberührt blieben. Auch die Sorge für die karitativen Häuser könnte man durch die Pflegesätze nicht beseitigen.</p>
-				<p>Das Beispiel Nordrhein-Westfalen zeige, daß es auch ohne Pflegesatzverordnung möglich sei, den Krankenhäusern zu helfen. Der Arbeitskreis empfehle, die beiden vorliegenden Anträge ohne Debatte anzunehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#WeimerAugust_1957-10-15">Weimer</name> warnt davor, einer Änderung der VO zuzustimmen, ohne sich vorher die notwendigen Informationen verschafft zu haben. Damit komme man draußen schlecht an. Nicht nur die Krankenanstalten, sondern auch die Versicherungsträger würden Vorwürfe an die Fraktion richten, daß [sich] das Parlament über die materiellen Auswirkungen nicht im klaren gewesen sei. Aus diesen Gründen sollte man beiden Anträgen zustimmen. Er glaube nicht, daß ein derartiges Vorgehen den Erlaß der VO um ein Jahr verschieben könnte.</p>
-				<p><name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> hält eine schnelle Hilfe für geboten, da das Defizit der karitativen Häuser so groß werde, daß die Weiterführung gefährdet sei. Aus dieser Situation heraus – hier stehe die Bundesregierung im Wort – hätte die Bundesregierung eine VO zur Diskussion gestellt. Die Frage der grundsätzlichen Finanzierung für die Zukunft, über die keine Meinungsverschiedenheiten bestehen, sollte getrennt behandelt werden. Aus den Zahlen der Inneren Mission lasse sich erfahren, daß ein großes evangelisches Krankenhaus mit einer Unterbilanz von 28% der Gesamtausgaben arbeite, ohne daß das Land Hessen daran denke, nach Möglichkeiten zur Beseitigung dieser Schwierigkeiten zu suchen. Das Land Nordrhein-Westfalen sei das einzige Land ohne solche Schwierigkeiten.</p>
-				<p>In der Zwischenzeit könnten sicher schwierige Verhältnisse auftreten. Er, <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name>, verstehe nicht, warum man den Streit so prinzipiell zuspitzen müsse. Es gelte, jetzt eine praktikable Lösung zu finden, um später eine endgültige und vernünftige Regelung machen zu können. Es könne nicht Aufgabe dieses Hauses sein, der Regierung in die Zügel zu fallen, wenn diese glaube, etwas tun zu müssen. Man habe deutlich gemacht, welche Fülle von Angaben sie brauche, um zu glaubhaften Lösungen zu kommen. Auf diesem Hintergrund sollte man den Antrag der CDU/CSU annehmen, den SPD-Antrag aber ablehnen. Der CDU/CSU-Antrag biete eine Basis, jetzt die Schwierigkeiten zu vermeiden. Man müsse aber der Regierung die Verfügungsfreiheit lassen, das Notwendige tun zu können.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> glaubt, daß man im Hinblick auf die Zuständigkeit der Bundesregierung für Verordnungen es nicht zulassen sollte, verschiedene Ressortstandpunkte hinzunehmen, ohne daß die Meinung der Bundesregierung vorgetragen werde. Das Kabinett sollte einen gemeinsamen Vorschlag erarbeiten. Immer wieder beschwere sich die Fraktion über die mangelnde Führung der Regierung. Die Fraktion sollte die Regierung nicht noch in dieser Haltung unterstützen und sich ein derartiges Vorgehen gefallen lassen.</p>
-				<p>Wenn man der Regierung die Vollmacht erteilt habe, könne man ihr nicht in den Rücken fallen, sondern müsse ihr die Regelung überlassen. Die Fraktion dürfe der Regierung nicht die Verantwortung abnehmen, indem sie der Regierung den Zeitpunkt für eine Regelung, den diese für richtig und notwendig erachte, vereitele. Wenn zum Beispiel die wirtschaftlichen Daten der Krankenhäuser aufeinander abgestimmt werden sollen, arbeiteten doch verschiedene Ministerien ein Vierteljahr an den objektiven Maßstäben und Gesichtspunkten. Nach seiner, Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidts</name>, Meinung, würde die VO erheblich verzögert. Das sollte man sich gut überlegen.</p>
-				<p>Er könne sich des Eindrucks nicht erwehren, als ob man bei jeder Gelegenheit versuche, sich vor Ausgaben zu drücken. Im allgemeinen wolle man die Kosten der Wohlfahrt nicht bezahlen. Auch dieses Manöver diene nur wieder einer Verzögerung, um einer harten Entscheidung aus dem Wege gehen zu können. Für die Befriedigung der Wünsche müßte auch bezahlt werden, aber dagegen sträube man sich im allgemeinen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> vertritt, da es sich um eine VO der Bundesregierung handelt, die Auffassung, daß die Fraktion sich nicht in einen derartigen Prozeß einschalten sollte. Wenn die Bundesregierung diesen Prozeß für notwendig halte, dürfe er nicht durch dieses Haus verhindert werden, d.h., daß man dem Antrag der SPD seine Zustimmung nicht geben dürfe. Dagegen lasse es der Antrag der CDU/CSU der Regierung offen, ob sie sich gehemmt fühlen wolle oder nicht. Außerdem übe er eine heilsame Wirkung auf die Länder aus. Deshalb sollte der Antrag angenommen werden.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> widerspricht der Auffassung, daß man gegen die Krankenhäuser eingestellt sei, wenn man die VO in dieser Form oder zu diesem Zeitpunkt ablehne. Sicher sei es richtig, wenn der Bundeskanzler und der Vorstand weisheitsvoll zum Sparen mahnen, über die nüchterne Tatsache, daß auch die Krankenbetten teurer werden, werde aber nichts gesagt.</p>
-				<p>Diejenigen, die auf den größeren Zusammenhang in dieser Sache hinweisen, hätten sicherlich recht, darüber bestehe kein Zweifel. Die moderne Gesellschaft hätte sich so geändert, daß bei der Inanspruchnahme des Krankenhauses heute über Dinge gesprochen werden müsse, die früher gar nicht interessant waren. Es sei auch richtig, daß die Bundesregierung über die Zahlen verfügen müßte, die jetzt von ihr erbeten werden, denn wie wolle sie selbst sonst eine Entscheidung treffen.</p>
-				<p>Sie, Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, halte es für betrüblich, in einer Situation über diese Dinge zu diskutieren, in der die Zahlen voneinander abwichen, und man annehmen müsse, daß von allen Seiten nicht mit klarem Wasser gekocht werde. Man könne von einer Übergangslösung – <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> habe auch nicht gesagt, wie eine solche aussehen solle – und von einer Dauerlösung sprechen. Wenn die VO nicht verhindert werde, müsse man an die Frau Gesundheitsministerin die Frage stellen, ob die Hilfe für die Krankenhäuser nicht auch erst nach einem dreiviertel Jahr erfolgen könne.</p>
-				<p>Die Ausführungen der Abg. <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> und <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> träfen wohl zu, daß mit der vorgesehenen VO nicht sichergestellt werden könne, daß die Krankenhäuser auch weiterhin ihre jetzigen Mittel erhalten.</p>
-				<p>Der Bundeskanzler beabsichtige, dieses Problem mit Vorrang zu lösen. Dabei müsse das Kabinett versuchen, die verschiedenen Ansichten der Ressorts auf einen Nenner zu bringen. Auch müsse mit der endgültigen Regelung begonnen werden, wofür der Antrag der CDU/CSU ein Vorschlag sei. Sie, Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, sehe aber noch nicht, wie man den Antrag der SPD ablehnen könne, außer, man sage offen, daß man die Worte »vor dem Erlaß« streichen wolle.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> erklärt, es werde keine neue Preisverordnung erlassen. Zu den Preisgesetzen gebe es jetzt schon eine VO über Pflegesätze. Diese enthalte Unbilligkeiten, die man beseitigen müsse. Diese VO obliege der Regierung, die mittlerweile so vorbereitet sei, daß sie nun ins Kabinett kommen könnte. In diesem Zeitpunkt komme nun die SPD mit ihrem Antrag, der das Unterbleiben der VO fordere und statt dessen einen Bericht von der Bundesregierung verlange. Man sollte nicht zulassen, daß in diesem Augenblick in die Sache hineingespielt und etwas gefordert werde, was an sich nicht Sache des Parlaments sei. Dieser Antrag der SPD trage doch eine richtige Spitze gegen die Regierung in sich. Auch schon deshalb sollte man den Antrag der SPD ablehnen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) kommt auf die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> zurück, der beim Antrag zum AVAVG erklärte, daß man den Angestellten und Arbeitern keinen Pfennig mehr an Beitrag zumuten könne.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN008" type="comment"><p>CDU/CSU-Antrag betr. Anpassung des Gesetzes über Arbeitsvermittlung und Arbeitslosenversicherung (AVAVG) an den technischen Fortschritt und an die wirtschaftliche Entwicklung (Drs. V/222 vom 26.1.1966).</p></note></seg> Nun sollte auch konsequent vorgegangen werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> ergreift noch einmal das Wort, da die Ministerin den wesentlichsten Tatbestand irrig dargestellt habe. Nirgends stehe geschrieben, daß beim Festsetzen der Pflegesätze einseitig die wirtschaftliche Lage der Krankenkassen zu berücksichtigen sei, nicht aber die Lage der Krankenhäuser. Die Ministerin beabsichtige, ausgerechnet diese Bestimmung zu entfernen. Darin liege schon eine Vorwegnahme einer Grundsatzentscheidung.</p>
-				<p>Nur die Regierung könne die VO erlassen, aber niemand könne das Parlament hindern, rechtzeitig nach den Folgen zu fragen. Als die Fraktion damals die Pflichtversicherungsgrenze angehoben habe<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN009" type="comment"><p>Siehe Fraktionssitzung vom 6.7.1965 TOP 2.</p></note></seg>, seien 2,3 Mrd. DM aus der Wirtschaft herausgezogen worden. In Kürze könne man prüfen, ob man die entscheidende Abstimmung in der RVO ändern wolle oder nicht. Er, <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>, habe damals einen anderen Standpunkt vertreten.</p>
-				<p>Nun stehe man wieder vor einem solchen Problem. Es habe sich doch herausgestellt, daß auf den Entwurf der VO Protestkundgebungen aller Beteiligten erfolgt seien. Diese Sache könne nicht mit einem Federstrich über die Bühne gehen. Man stehe vor der Notwendigkeit, eine schnelle Regelung herbeizuführen. Es hätten Gespräche stattgefunden, durch die man autorisiert sei, im Rahmen der Krankenkassenverbände zu erklären, beim Aushandeln der Pflegesätze den karitativen Häusern entgegenzukommen. Dagegen würden die Träger der Krankenhäuser Widerspruch erheben.</p>
-				<p>Die Bundesregierung sehe sich nicht in der Lage, eine VO vorzulegen, weil die Sache im Kabinett noch strittig sei. Der Fraktion stehe das Recht zu, daß ihr die Folgen dieser Politik dargelegt werden, auch schon deshalb, weil die Sache Geld koste. Man wolle einmal wissen, warum die konfessionellen Häuser bei <name type="Person" role="Erwaehnung" ref="#GrundmannKonrad">Grundmann</name> keinen Anlaß zur Klage haben, merkwürdigerweise aber diejenigen in Baden-Württemberg. Die Regierung könne tun und lassen, was sie wolle, auch könne sie ihre VO erlassen. Er, <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>, glaube aber nicht, daß sie diesen Schritt unternehme. Die Fraktion biete ihre guten Dienste an, wie man zu vernünftigen Vereinbarungen kommen könne. Dann habe man Zeit, in Ruhe eine endgültige Lösung zu suchen.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> versteht die Sorge von Frau <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> hinsichtlich der freien Träger. Darum gehe es aber nicht, weil hierzu die Grundfinanzierung vorerst geregelt werden müsse. Diese Probleme ließen sich nicht über die Pflegesatzverordnung lösen. Die Gemeinden würden triumphieren, weil sie dann weniger Zuschüsse zu geben brauchten. In fast allen Großstädten regiere die Sozialdemokratie, so daß die konfessionellen Häuser wohl mit Abstrichen zu rechnen hätten.</p>
-				<p><name type="Person" role="Sprecher" ref="#PortenJosef_1961-10-17">Porten</name> erwähnt, bereits vor einem Jahr seien derartige Diskussionen geführt worden, ohne daß die Ministerien einig gingen. Seit dem Parteitag<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN010" type="comment"><p>CDU-Bundesparteitag 1964 in Hannover.</p></note></seg> gebe es in Verbindung mit der Krankenversicherungsreform über die Lohnfortzahlung einen Beschluß. Dies werfe neue Probleme auf.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt zu überlegen, wie die Fraktion sich im Plenum verhalten solle. Er sehe einen Ausweg, indem man den SPD-Antrag ablehne und den CDU-Antrag annehme. Beide Anträge könnten aber auch an den Ausschuß überwiesen werden.</p>
-				<p>Diese Lösung erscheine ihm die beste zu sein. Damit wäre auch eine breite Debatte vermieden.</p>
-				<p>Die Fraktion beschließt, die Anträge federführend an den Wirtschaftsausschuß zu überweisen.</p>
-				<p>[4. Bundeswehr. Ausrüstung und Beschaffung]</p>
-				<p>Bundesverteidigungsminister <name type="Person" role="Sprecher" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> referiert über die Starfighter-Angelegenheit und berichtet über die Beratungen des Verteidigungsausschusses, der in einer Reihe von Sitzungen diese Frage behandelt und praktisch keine Frage unbeantwortet gelassen habe. Auch sei keine Frage in der Beantwortung zugunsten der SPD ausgegangen. Er halte es für gut, dieses Thema so bald wie möglich zu behandeln; so werde die Debatte am 24. und 25. März stattfinden. Dabei solle gezeigt werden, was an den Vorwürfen wahr sei und was nicht. Um diesen Termin einzuhalten, müsse der Ausschuß in dieser Woche seine Beratungen abschließen.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN011" type="comment"><p>Bericht des Verteidigungsausschusses über die Beratungen zum Waffensystem »Starfighter« (Drs. V/450 vom 17.3.1966).</p></note></seg> Dazu seien Anträge vorbereitet.</p>
-				<p>Die Diskussion habe sich auf drei Gebieten ausgedehnt, auf das Personal, auf die Technik und auf die Infrastruktur; davon komme der Frage des Personals die größere Bedeutung zu. Hier gehe es um eine bessere Einstufung der Piloten im Stellenplan. Dazu komme die Frage der Zulage, z.B. die Frage der Ruhegehaltsfähigkeit. Auf technischer Ebene brauche man eine große Zahl von Elektronentechnikern. Diese ständen aber nur in begrenztem Maße zur Verfügung. Vielleicht ließe sich dieser Zustand ändern, wenn diesem speziellen Personal eine gewisse Zulage gegeben werde. Dazu komme noch das Problem des Fliegerpersonals, das keine Fünf-Tage-Woche kenne; auch diesen sollte eine gewisse Zulage gewährt werden. Zu diesen Fragen lägen Anträge vor, die vorsichtig formuliert seien. <name type="Person" role="Erwaehnung" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> werde diese Anträge im Ausschuß einbringen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> bittet die Fraktion bei einigen Punkten um ihre politische Unterstützung. Es sei wichtig, über die Vorleistungen auf NATO-Maßnahmen hinaus in nationaler Verantwortung etliches zu tun, was ziemlich ins Geld gehe. Es würden 200 Hallen für Starfighter benötigt, was Aufwendungen von 23 Mio. DM bedeute. Nach bisherigen Verhandlungen lehne die NATO es ab, diese Hallen zu erstellen.</p>
-				<p>Einem Punkt komme besondere Wichtigkeit zu. Aufgrund des Drängens der SPD in den vergangenen Jahren habe die Luftwaffe weitgehend auf die Ausbildung in der Bundesrepublik verzichtet. Die SPD habe es fertiggebracht, ein öffentliches Begehren zu erzeugen, aufgrund dessen man zu gewissen Stunden völlig auf den fliegerischen Einsatz verzichtet habe. Dies schränke die Fliegertüchtigkeit sehr ein, und es sei im Interesse einer besseren Ausbildung erforderlich, wieder mehr in Deutschland zu fliegen, d.h., daß den dann wohl erfolgenden Protesten begegnet werden müsse.</p>
-				<p>Ein weiteres Problem tauche auf, nämlich die Forderung, die Luftunfallentschädigung zu erhöhen, aber nur im Bereich der Menschen, die im Strahlenflugzeug eingesetzt seien.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN012" type="comment"><p>Entwurf eines Vierten Gesetzes zur Änderung des Soldatenversorgungsgesetzes – SVG – (Drs. V/673 vom 8.6.1966).</p></note></seg> Aus vielerlei Gründen sehe man sich nicht in der Lage, diese Maßnahme rückwirkend zu ergreifen. So könne man nur den harten Stichtag 1. April 1966 nehmen. Dies werde sicher draußen ein Aufbegehren hervorrufen, und sicher würden die Worte fallen, daß die Männer die Entschädigung mit ihrem Tode hätten erkaufen müssen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erklärt, die Anträge würden jetzt vorgelegt, weil sie eine Festlegung für die Debatte der nächsten Woche bedeuten. Zusätzliche Kosten entständen jetzt nicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> verweist darauf, daß der Verteidigungsausschuß Vorschläge unterbreite und sie im schriftlichen Bericht vorlegen werde. Nach dem Beschluß im Plenum gingen die Anträge ihren normalen Gang.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#FrerichsGoekeD_1965-10-19">Frerichs</name> fragt, warum die Unfallentschädigung zu einem so späten Zeitpunkt kommen soll. Dies führe doch zu Protesten. Nach seiner Meinung müßte sich doch feststellen lassen, wieviele Opfer es gebe und was die Entschädigung ausmachen würde.</p>
-				<p><name type="Person" role="Sprecher" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) hält es nicht für vertretbar, die Nichtdüsenflieger anders zu behandeln.</p>
-				<p><name type="Person" role="Sprecher" ref="#StahlbergHermann_1965-10-19">Stahlberg</name> verweist darauf, daß für eine Nachentschädigung 258 Flieger in Frage kämen. Diese Zahl verdreifache sich, wenn die Verluste bei Panzern und ähnlichem dazugerechnet würden. Das Parlament stehe vor einer Starfighter-Debatte und habe die Aufgabe, über diese Sache hinwegzukommen. Er spreche sich dafür aus, den 15 Starfigther-Opfern aus einem anderen Fonds zu helfen, ähnlich wie bei dem Iller-Unglück.</p>
-				<p>Bundesverteidigungsminsiter <name type="Person" role="Sprecher" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> erläutert, bislang bekämen die Flieger überhaupt keine Entschädigung. Dieser Zustand solle aber jetzt geändert werden. Die Flieger sollten jetzt mit hineingenommen, die Düsenflugzeugflieger aber in doppelter Höhe versorgt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> glaubt, die Frage der Rückwirkung berge unübersehbar schwere Folgen in sich, weil dann alle im Dienst Umgekommenen hineingezogen werden müßten. Über die Frage eines Härtefonds liefen noch Gespräche.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt das Einverständnis der Fraktion fest.</p>
-				<p>[5. Post- und Fernmeldewesen]</p>
-				<p>Anschließend berichtet Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> über die Beratungen des Arbeitskreises III zusammen mit dem Bundespostminister über die finanzielle Lage der Bundespost. Der Bundespostminister habe nochmals die besonderen Gründe in Erinnerung gebracht (Einstellung von Modernisierungsmaßnahmen seit 1935 wegen Rüstungsvorhaben, Kriegszerstörungen, Teilung Deutschlands, Auswirkungen der wirtschaftlichen Dynamik und der internationalen Verflechtungen auf den Postbedarf), die die gegenwärtige finanzwirtschaftliche Lage der Bundespost entscheidend mitbestimmt haben. Sodann würdigte er die Arbeit der Sachverständigenkommission für die Deutsche Bundespost und gab einen Überblick über die in ihrem Gutachten enthaltenen Vorschläge:<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN013" type="comment"><p>Gutachten der Sachverständigen-Kommission für die Deutsche Bundespost vom 6.11.1965 gem. Bundestagsbeschluß vom 16.4.1964 (Drs. V/203 vom 26.1.1966).</p></note></seg></p>
-				<list type="undefined">
-					<item><label>a)</label><p>Gebührenerhöhungen,</p></item>
-					<item><label>b)</label><p>Abbau der politischen Lasten,</p></item>
-					<item><label>c)</label><p>Stundung der Abführungen an den Bund zur Verbesserung der Eigenkapitalbasis.</p></item>
-				</list>
-				<p>Bei den Verhandlungen zwischen ihm und dem Bundesfinanzminister sei es zu folgendem Kompromiß gekommen:</p>
-				<list type="undefined">
-					<item><label>a)</label><p>Die Ablieferungen an den Bund sollen künftig auf das Eigenkapital (bisher Betriebseinnahmen) bei einer Verzinsung von 7% bezogen werden.</p></item>
-					<item><label>b)</label><p>Kapitalaufstockung durch Aufnahme einer Anleihe von 500 Mio. DM, bei welcher die Post den Zinsendienst und der Bund die in den Jahren 1976–1980 einsetzende Tilgung übernimmt.</p></item>
-					<item><label>c)</label><p>Übernahme von politischen Lasten durch den Bund (namentlich 22 Mio. DM für die Verzinsung von Ausgleichsforderungen, 40 Mio. DM Kindergeld und rd. 100 Mio. DM Aufwendungen nach dem 131er-Gesetz).</p></item>
-				</list>
-				<p>In einer eingehenden Aussprache habe der Arbeitskreis den zwischen dem Bundespostminister und dem Bundesfinanzminister erzielten Kompromiß begrüßt. In der Diskussion wurde weiter die Notwendigkeit der beabsichtigten Gebührenerhöhung anerkannt und dabei herausgestellt, daß die Erhöhungen nicht nur die Kostendeckung, sondern auch eine gewisse Eigenfinanzierung ermöglichen sollten. Ferner wurde der Abbau einzelner stark defizitärer Dienstzweige der Bundespost befürwortet.</p>
-				<p>Beschluß:</p>
-				<p>Der Arbeitskreis habe den zwischen dem Bundespostminister und dem Bundesfinanzminister getroffenen Kompromiß und die beabsichtigte Gebührenerhöhung für gut befunden.</p>
-				<p>6. Elbeseitenkanal</p>
-				<p>Bereits in früheren Sitzungen habe der Arbeitskreis [III] den Ausbau des nordwestdeutschen Wasserstraßennetzes beraten. In der Aussprache beschränkte man sich auf eine Würdigung der bisher vorgetragenen Argumente. Mit Mehrheit stimmte der Arbeitskreis der Vorlage des Bundesfinanzministers Nr. 157/65 zu.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name> bittet angesichts eines neuen Kanalbaus um Aufklärung, ob ein solches Vorhaben mit dem Haushaltsdefizit in Übereinstimmung gebracht werden könne. Ehe er nicht einen Überblick bekomme, wie sich das in der Defizitplanung darstelle, könne er diesem Vorschlag nicht zustimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MengelkampTheodor_1957-10-15">Mengelkamp</name> stimmt dieser Betrachtung zu, wenn auch gesagt werden müsse, daß der Nord-Süd-Kanal vielleicht hingenommen werden könne, weil es der Bundesregierung geglückt sei, in dieses Gesamtprogramm auch ein Unterhaltungsprogramm hineinzunehmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> gibt zu bedenken, daß es unbedingt erforderlich sei, das vorhandene Kanalnetz zu reparieren und zu erweitern. Für diesen Ausbau benötige der Bund einen Betrag von 3 Mrd. DM. Verschiedene Länder hätten ihr Interesse an diesem Bau bekundet, so daß dem Bund nur Aufwendungen in Höhe von 2 Mrd. DM erwüchsen. Bei diesem Vorhaben handele es sich um eine vernünftige Infrastrukturmaßnahme.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> unterstützt den Gedanken einer Debatte mit dem Verkehrs- und Finanzminister über den gesamten Kanalbau. Dadurch könnte man einen Überblick gewinnen. Im jetzigen Zeitpunkt sollte die Fraktion aber die Entscheidung des Arbeitskreises übernehmen, wobei es sich lediglich um eine Vorlage des Finanzministers an den Haushaltsausschuß handele, wobei Arbeitskreis III um Rückendeckung gebeten wurde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bemerkt, auch Arbeitskreis II befasse sich mit der Kanalfrage, da sie für weite Teile der Fraktion von Bedeutung sei. Die Entscheidung hinsichtlich des Nord-Süd-Kanals berge Konsequenzen in sich, so daß er vorschlage, diese Sache um eine Woche zu vertagen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> teilt mit, daß für diese Sache ein leerer Titel im Haushalt 1965 existiere.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN014" type="comment"><p>Haushaltsgesetz 1965 vom 18.3.1965, BGBl. II, S. 193.</p></note></seg> Der Verkehrsminister habe mit den Ländern ein Verwaltungsabkommen erzielt, so daß der Haushaltsausschuß diese Sache an sich alleine hätte behandeln können. Die Mitglieder des Haushaltsausschusses hätten aber auf einer Deckung durch die Fraktion bestanden. Er, Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name>, lehne eine Verschiebung<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN015" type="comment"><p>Von der Bearbeiterin korrigiert aus: Verabschiedung.</p></note></seg> ab, weil an dem Tatbestand nichts Wesentliches mehr geändert werden könne.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name> erklärt sich mit der Vertagung einverstanden. Bei dieser Angelegenheit gehe es nicht nur um die Kanäle, sondern um Prinzipien, die man jetzt schon wieder aufzulösen beginne. Von der Fraktion verlange man die Rückendeckung, um ihr dann die Verantwortung für das Durchbrechen der Prinzipien zuschieben zu können. Dies wolle er verhindern. Wenn der Haushaltsausschuß glaube, diese Sache auf seine Kappe nehmen zu können, dann sei das seine Sache.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> erläutert, Arbeitskreis III habe sich mit der Sache mindestens drei bis vier Tage befaßt und die Angelegenheit nicht leichtgenommen. Mit einer knappen Mehrheit – 14:12 bei drei Enthaltungen – sei die Sache dann so beschlossen worden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> spricht sich dafür aus, diese Frage bis zur nächsten Vorstandssitzung zu vertagen, da man politisch aus der Sache nicht herauskomme.</p>
-				<p>[7. Gesellschafts- und Kulturpolitik, Schul- und Bildungswesen]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> berichtet über die Tagung deutscher Studentenverbände in Heidelberg. Minister <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> und er hätten vor diesem Kreis von den Gemeinschaftsaufgaben gesprochen und seien gut damit angekommen. Auf diesem Gebiet seien einige Verfassungsänderungen erforderlich. Weiter empfehle es sich, sich mehr um die Studenten zu kümmern.</p>
-				<p>Dann kommt der Redner auf die Beratungen des Arbeitskreises VI zu sprechen und teilt mit, daß der Arbeitskreis einen Bericht über den Wirtschaftsplan der Kulturabteilung des Auswärtigen Amtes durch Ministerialdirektor <name type="Person" role="Erwaehnung" ref="#SattlerDieter">Sattler</name> gegeben habe. Der Arbeitskreis kam nach Erörterung der Einzelpositionen zu dem Schluß, eine Änderung nicht vorzunehmen. Möglich sind Umschichtungen in Einzelsachgebieten.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#HuysLambert_1957-10-15">Huys</name> hätte eine Große Anfrage betreffend Schulen im Ausland ausgearbeitet, die eingebracht werden sollte. Es sei erforderlich, das Interesse der Fraktion an dieser Sache zu bekunden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HuysLambert_1957-10-15">Huys</name> äußert sich zu dieser Anfrage, die auf die Auslandsschulen beschränkt bleibe und keine Ausweitung auf die gesamte auswärtige Kulturpolitik beinhalte. Die Bundesregierung bekomme die Möglichkeit, ihre Konzeption darzulegen. Weiter wolle man Auskunft darüber, welche Schulen neu [eingerichtet] oder ausgebaut werden sollen und wie weit die Planung für den Bau einer Zentralstelle für deutsche Auslandsschulen gediehen sei. Außerdem werde die Besoldungsfrage angeschnitten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stimmt dieser Großen Anfrage zu.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN016" type="comment"><p>Große CDU/CSU-FDP-Anfrage betr. auswärtige Kulturpolitik, auslandsdeutsche Schulen (Drs. V/439 vom 16.3.1966).</p></note></seg></p>
-				<p>[8. Finanzwesen]</p>
-				<p><name type="Person" role="Sprecher" ref="#AdornoEduard_1961-10-17">Adorno</name> berichtet über die Fraktionsvorsitzenden-Konferenz der CDU/CSU-Landtags- bzw. Bürgerschaftsfraktionen vom 2. bis 4. März 1966 in Saarbrücken zur Beratung der Finanzpolitik.</p>
-				<p>I. Einleitend habe <name type="Person" role="Erwaehnung" ref="#HettlageKarlMaria">Hettlage</name> einen behutsamen und abgewogenen Bericht zu dem Gutachten der Sachverständigen zur Finanzreform gegeben.</p>
-				<p>Die Finanzreform solle die Finanzverfassung auf die neuen Grundtatsachen unserer gewandelten politischen, wirtschaftlichen und gesellschaftlichen Wirklichkeit hin korrigieren.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN017" type="comment"><p>Entwurf eines … Gesetzes zur Änderung und Ergänzung des Grundgesetzes – Finanzreformgesetz – (Drs. V/2861 vom 30.4.1968).</p></note></seg></p>
-				<p>Erstens müßten die vielfältigen Überschneidungen, die sich bei Zielsetzung und Bewältigung der Gemeinschaftsaufgaben ergeben haben, sowie das Auseinanderklaffen von Aufgaben und Möglichkeiten zu ihrer Lösung bereinigt bzw. überwunden werden. Die bisher gefundenen Lösungen zur Bewältigung der großen Gemeinschaftsaufgaben gingen neben der Verfassung einher.</p>
-				<p>Der »kooperative Föderalismus«, also die Verwirklichung eines Partnerschaftsverhältnisses zwischen Bund und Ländern auf der Grundlage des Art.79 Abs.3 GG habe die bessere Abstimmung öffentlicher Aufgaben zur Voraussetzung. Auch die unterschiedliche Finanzkraft einzelner bundesstaatlicher Glieder sei kein Argument mehr dafür, daß notwendige Sozialinvestitionen dann dort nicht durchgeführt werden können.</p>
-				<p>Zweitens müsse das Trennsystem der Finanzquellen – nur bei der Einkommen- und Körperschaftsteuer kam bisher der Gedanke des Steuerverbunds zum Tragen – mit dem Ziel eines verbesserten finanziellen Ausgleichs in quantitativer und qualitativer Hinsicht einem stärkeren Verbundsystem weichen. Hierzu sei es notwendig, daß man sich zunächst über die Ziele einigt. Die Frage der Formen und Methoden könne dann später gelöst werden. Da die Länder trotz steigender Umsätze befürchten, daß sich die Ertragskurve abflache, was zu kleineren Gewinnspannen und damit zu verminderten Steuereinnahmen führe, sei eine Beteiligung der Länder an der Umsatzsteuer notwendig.</p>
-				<p>Drittens sei eine Verbesserung der Gemeindefinanzen notwendig.</p>
-				<p>II. Diskussionsbeiträge:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Gutachten versucht mit wissenschaftlicher Akribie, die Länder weiter zu strangulieren – Aushöhlung des Subsidiaritätsprinzips.</p></item>
-					<item><label>2.</label><p>Bund drängt sich in die sogenannte »graue Zone« als einer Zwischenzone zwischen den Kompetenzen des Bundes und der Länder. (Konferenz der Ministerpräsidenten in Saarbrücken und München beweisen das Gegenteil.)</p></item>
-					<item><label>3.</label><p>Auswirkung von Bundesgesetzen auf die Länderfinanzen durch Dotationsauflagen mit dem Zwang zur quotalen Beteiligung. (Die Besoldungserhöhung in Nordrhein-Westfalen acht Tage vor der letzten Landtagswahl beweist aber ebenso mangelnde Koordination und Kooperation mit nachteiligen Folgen.)</p></item>
-					<item><label>4.</label><p>Es wurde, insbesondere von den bayerischen Vertretern, die Forderung erhoben, bei der Durchführung der Finanzreform die Grundgesetzänderungen möglichst einzuschränken.</p></item>
-					<item><label>5.</label><p>Der Verteidigungsetat enthält ein Polster von etwa 3 Milliarden DM. Dieser Betrag könnte für andere Aufgaben eingesetzt werden. (Die Folge wäre eine Änderung der Verteidigungskonzeption; Anteil des Verteidigungsetats am Bruttosozialprodukt in USA 11%, in Großbritannien 7%, in der Bundesrepublik 4%.)</p></item>
-					<item><label>6.</label><p>Der Vorteil des Gutachtens liegt darin, daß wir gezwungen werden, als Union Stellung zu beziehen. Dabei wird die Führungsaufgabe des Bundes, die er nicht immer wahrgenommen hat, durchaus anerkannt. »Das Ja zum Föderalismus beinhaltet das Ja zu einem starken Staat.«</p></item>
-				</list>
-				<p>III. Beteiligungsverhältnis an der Einkommen- und Körperschaftsteuer.</p>
-				<p>Diskussionsbeiträge:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Die Länder vertreten die Auffassung, daß bei einem Nichtzustandekommen einer neuen Regelung zum 1.1.1967 die Beteiligungsquote des Bundes wieder auf 35% zurückgeht.</p></item>
-					<item><label>2.</label><p>Die Einnahmesituation wird von den Ländern anders als vom Bund beurteilt. Während der Bund davon ausgehe, daß 1966 die Einnahmen beim Bund nur um 8,3%, bei den Ländern dagegen um 10% ansteigen, schlössen die Länder aus der Entwicklung in den beiden ersten Monaten 1966 (4,7% Zunahme beim Bund, 1,5% Zunahme bei den Ländern), daß sich im Vergleich zum Bund die Zuwachsquote ihrer Einnahmen ungünstiger gestalten wird.</p></item>
-					<item><label>3.</label><p>Die Steuerausfälle durch die letzte Änderung des Beteiligungsverhältnisses sowie durch die beiden Steueränderungsgesetze<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN018" type="comment"><p>Steueränderungsgesetz 1964 vom 16.11.1964, BGBl. I, S. 885 sowie Steueränderungsgesetz 1965 vom 14.5.1965, BGBl. I, S. 377.</p></note></seg> gingen in die Milliarden. Eine Intensivierung des Länderausgleichs sei daher nicht mehr möglich. Der horizontale Finanzausgleich habe sich Anfang der 50er Jahre auf ca. 250 Mio., 1959 auf über eine Milliarde und 1966 auf 1,75 Milliarden DM belaufen. Ergänzungszuweisungen des Bundes nach Art.107 Abs. 2 [Satz 3] GG seien daher für 1966 unerläßlich. Das einheitliche Vorgehen der Länder sei eine Folge der Not und nicht der Absprache.</p></item>
-				</list>
-				<p>Trotz dieser von den Ländern vorgebrachten Argumente sei es gelungen, die Konferenz davon zu überzeugen, daß die gegenseitige Ausgangsposition bei den Verhandlungen zur Neuregelung des Beteiligungsverhältnisses nicht durch die Forderung nach einer Verringerung des Bundesanteils auf 35% erschwert werden dürfte. Einmütig habe man die Auffassung vertreten, daß eine Verhärtung der Ausgangsposition vermieden werden müsse. Dazu sei es allerdings notwendig, daß keiner der Beteiligten mit seinen Argumenten auf den Markt gehe. Vielmehr müsse rechtzeitig eine Übereinkunft angestrebt werden; denn es handele sich hier um eine politische Entscheidung hohen Ranges, die nur von der Union als Ganzes vorbereitet werden könne. Zu diesem Zweck habe man eine Kommission vorgeschlagen, die bis Mitte des Jahres diese Entscheidung vorzubereiten hätte. Dieser Kommission sollen angehören: ein Vertreter der Parteispitze, ein Vertreter der Bundesregierung, ein Vertreter der Länderkabinette, ein Vertreter der Bundestagsfraktion, ein Vertreter der CDU/CSU-Landtags- und Bürgerschaftsfraktionen, ein Vertreter der KPV, ein Vertreter der CSU.</p>
-				<p>Diesem Vorschlag habe die Kommission einstimmig zugestimmt. Weiter sei überlegt worden, daß diese Kommission, falls sie sich nach einmütiger Überzeugung bewährt hätte, auch gute Dienste bei der Beratung der Finanzreform im allgemeinen leisten könnte.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> dankt dem Redner für diesen Bericht und die geleistete Arbeit.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> macht darauf aufmerksam, daß die Frage der Neuregelung des Verteidigungsverhältnisses bereits ihre Schatten vorauswerfe. Er, <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name>, sehe den Zusammenhang mit der Finanzreform noch nicht ganz, weil die Sache zu kurzfristig vorliege. Aktuell sei ein Junktim zu Art.107 Abs.2 Satz 3 GG<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN019" type="comment"><p>Von der Bearbeiterin korrigiert aus: §107 Abs.3.</p></note></seg> und die Verteilungsquote. Der Bundesrat habe einstimmig aufgrund des Art.107 Abs.2 Satz 3 GG<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN020" type="comment"><p>Von der Bearbeiterin korrigiert aus: §107 Abs.3.</p></note></seg> beschlossen, den Ländern 250 Mio. DM zu geben. Die SPD unterstütze diesen Gedanken, die FDP schweige, in der CDU/CSU gebe es unterschiedliche Auffassungen. In der Tat sollte dieses Problem vorrangig behandelt werden. Wenn es bei diesen 250 Mio. nicht zu einem Kompromiß komme, gehe die Sache in den Vermittlungsausschuß. Er, <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name>, bitte den Fraktionsvorsitzenden, sich in diese Sache einzuschalten.</p>
-				<p>Bundesratsminister <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> unterstreicht die Vordringlichkeit dieser Frage, die mit den Aufgaben <name type="Person" role="Erwaehnung" ref="#AdornoEduard_1961-10-17">Adornos</name> unmittelbar nichts zu tun habe. Der Standpunkt, den der Bundesfinanzminister eingenommen habe, bedürfe in der Form wie auch materiell einer Änderung. Er, <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, werde sich bemühen, diesen Gesetzentwurf des Bundesrates so schnell wie möglich weiter zu behandeln.<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN021" type="comment"><p>Bundesratsvorlage Gesetzentwurf zur Änderung des Gesetzes über den Finanzausgleich unter den Ländern vom Rechnungsjahr 1965 – Länderfinanzausgleichsgesetz 1965 – (Drs. V/511 vom 6.4.1966).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#AdornoEduard_1961-10-17">Adorno</name> glaubt auch, daß die Arbeit an der Finanzreform zu lange dauern werde, so daß es erforderlich sei, wenigstens hinsichtlich des Verteilungsverhältnisses zu einer Lösung zu kommen. Die Tür für künftige Verhandlungen dürfe man nicht zuschlagen und müsse anerkennen, daß die Länder schon von 338 Mio. auf 250 Mio. DM heruntergegangen seien. Die Aufgabe der für dieses Problem eingesetzten Kommission bestehe darin, die Diskussion zusammenzufassen und nicht die verschiedenen Ebenen gegeneinanderzustellen. Wenn sich diese Kommission bewähre, könne sie sich auch mit den Fragen der Finanzreform befassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> betont, daß man den Art.107 GG<seg type="note"><note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN022" type="comment"><p>Von der Bearbeiterin korrigiert aus: §107.</p></note></seg> und das Verteilungsverhältnis miteinander sehen müsse. Wahrscheinlich müsse man auch bei den Dotationsauflagen noch entgegenkommen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> teilt mit, daß der Vorstand dem Bundeskanzler diese Kommission nahelege, aber nur dann, falls er sie auch selbst wolle.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1966-03-08-t1505_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1010/2</idno>
+                     <objectName>[Nicht überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 8. März 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>12 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-03-08">
+               <time type="start" when="15:05:00"/>
+               <time type="end" when="17:45:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
+         <change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-05_1966-03-08-t1505_EP_SVP-1" corresp="#cdu-csu-05_1966-03-08-t1505_EP_div_SVP-1">A. TOP 1: Bericht des Fraktionsvorsitzenden. – TOP 2: Bericht aus dem Ältestenrat, Plenarplan. – TOP 3: Gesundheitswesen. Gesundheitsfürsorge. – TOP 4: Bundeswehr/ Ausrüstung und Beschaffung. – TOP 5: Post- und Fernmeldewesen. – TOP 6: Elbeseitenkanal. – TOP 7: Gesellschafts- und Kulturpolitik, Schul- und Bildungswesen. – TOP 8: Finanzwesen.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-05_1966-03-08-t1505_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Bericht des Fraktionsvorsitzenden]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> berichtet eingangs über die Sitzung des Vorstandes, der die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#AdornoEduard_1961-10-17">Adorno</name> über die Tagung der Landtagsfraktionen entgegengenommen habe. Weiter habe man über Fragen der Familienpolitik gesprochen und in diesem Zusammenhang an den Beschluß des letzten Bundestages bei der Steuerreform erinnert, Kindergeld bei Beibehaltung der Einkommensgrenze und Ausbildungshilfe zu gewähren. In der Haushaltsdebatte seien SPD und FDP bei der Frage des Familienausgleichs über das Ziel hinausgeschossen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN002" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1966 – Haushaltsgesetz 1966 – (Drs. V/250 vom 16.2.1966).</p>
+                  </note>
+               </seg> Arbeitskreis IV vertrete die Meinung, daß hier wohl eine Klarstellung nützlich wäre und habe deshalb eine Entschließung erarbeitet.</p>
+            <p>Anschließend habe der Vorstand über die Haushaltslage und die Schatten, die der Haushalt 1967 werfe, debattiert. Der Vorstand rate zu Gesprächen mit dem Bundeskanzler, um rechtzeitig eine interne Vorklärung zu finden. Außerdem empfehle er, eine Kommission einzusetzen, die die wichtige Entscheidung über Anteile zwischen Bund und Ländern vorbereite.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> bezieht sich auf die Tagung des Wirtschaftsrats der CDU, wo das Wort vom »Pennälergehalt« gefallen sei. Die Fraktion sollte es sich zu einer Gewissenspflicht machen, diesen anrüchigen Ausdruck nicht mehr in den Mund zu nehmen.</p>
+            <p>[2. Bericht aus dem Ältestenrat, Plenarplan]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet aufgrund der Beschlüsse des Ältestenrates über die Gestaltung der nächsten Plenarwoche.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> fragt unter Bezugnahme auf die frühere Übung, am Freitag die Präsenzpflicht aufzuheben, wenn nur Fragestunde abgehalten werde, ob dies nicht am kommenden Freitag geschehen könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> merkt sich diese Anregung für die nächste Ältestenratssitzung vor. Der Bundestagspräsident sei bei der Pauschalierung der Tagegelder von 15 Präsenztagen im Monat ausgegangen. Außerdem betrachte der Präsident die Fragestunde als Plenarsitzung, die durch die Präsenzpflicht geschützt werden müsse.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> widerspricht der Aufhebung der Präsenzpflicht, weil an diesem Tag auch noch Ausschüsse tagten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> informiert die Fraktion, daß keine Debatte zur Novelle des Jugendarbeitsschutzes und zur Patentanwaltsordnung stattfinde.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN003" type="comment">
+                     <p>Bundesratsvorlage Entwurf eines Dritten Gesetzes zur Änderung des Jugendarbeitsschutzgesetzes (Drs. V/267 vom 7.2.1966) und Entwurf einer Patentanwaltsordnung d. Abg. <name type="Person" role="Erwaehnung" ref="#DeringerArved_1957-10-15">Deringer</name> u.a. und d. Fraktionen der CDU/CSU, FDP (Drs. V/276 vom 10.2.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> teilt mit, daß zur Bundesdisziplinarordnung <name type="Person" role="Erwaehnung" ref="#SchlagerManfred_1965-10-19">Schlager</name> und zum Tierschutzgesetz <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> im Plenum sprechen werden.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN004" type="comment">
+                     <p>CDU/CSU-FDP-Gesetzentwurf zur Änderung und Ergänzung der Bundesdisziplinarordnung (Drs. V/325 vom 17.2.1966) und Antrag <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name> u.a. und d. Fraktion der SPD betr. Entwurf eines Tierschutzgesetzes (Drs. V/182 vom 14.1.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> erklärt hinsichtlich des Antrages betreffend Schutz der landwirtschaftlichen Veredelungswirtschaft, daß es sich hierbei um eine Begrenzung bei der Geflügelhaltung handele.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN005" type="comment">
+                     <p>CDU/CSU-FDP-Gesetzentwurf zum Schutze der landwirtschaftlichen Veredelungswirtschaft (Drs. V/353 vom 2.3.1966).</p>
+                  </note>
+               </seg>
+               <name type="Person" role="Erwaehnung" ref="#ReinhardCarl_1957-10-15">Reinhard</name> werde den Antrag begründen, die Abg. <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#FreyMartin_1949-09-07">Frey</name> und andere ständen für die Debatte bereit. Von seiten des Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> kämen Bedenken, die er jedoch bei der 1. Lesung zurückstellen wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> rät, nicht allzugroße Hoffnungen an dieses Gesetz zu knüpfen, da gegen diesen Gesetzentwurf starke verfassungsrechtliche Bedenken laut würden.</p>
+            <p>[3. Gesundheitswesen. Gesundheitsfürsorge]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> betont, hinsichtlich der Frage der Pflegesatzverordnung beständen innerhalb der Bundesregierung selbst Meinungsverschiedenheiten. Während die Frau Gesundheitsministerin eine Änderung ins Auge fasse, vertrete der Arbeitsminister die entgegengesetzte Auffassung. Es sei also eine Abklärung in der Fraktion erforderlich. Die SPD habe hierzu einen Antrag eingebracht und einen Bericht von der Bundesregierung gefordert.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN006" type="comment">
+                     <p>SPD-Antrag betr. Pflegesätze von Krankenhäusern (Drs. V/314 vom 16.2.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Arbeitskreis [IV] glaube, gegen einen solchen Antrag schwerlich etwas einwenden zu können. Das Parlament mache von seinem ureigensten Recht Gebrauch, sich informieren zu lassen. Es gelte, gewisse Tatbestände, die beklagt würden, aufzuhellen. Dies sei ein legitimes Anliegen, so daß der Antrag der SPD nicht abgelehnt werden könne. Darüber hinaus habe sich eine Kommission mit dieser Sache befaßt und einen eigenen Antrag vorgelegt.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN007" type="comment">
+                     <p>CDU/CSU-FDP-Antrag betr. finanzielle Situation der Krankenhäuser (Drs. V/389 vom 8.3.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bundesgesundheitsministerin Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> bemerkt, daß im Fall der Annahme beider Anträge eine dringend notwendige Hilfe für die Krankenhäuser um mindestens ein Jahr verschoben werde, denn es sei nicht möglich, den gestellten Anforderungen dieser Anträge in Kürze nachzukommen. Auch sei es der Bundesregierung nicht möglich, einen Bericht differenziert nach Ländern und Trägerschaften vorzulegen. Die Länder benötigten mindestens ein halbes Jahr, was ein Verschieben der Änderung der Pflegesatzverordnung um ein Jahr bedeute.</p>
+            <p>Immer wieder werde der Zweck der Änderung der VO falsch dargestellt. Keineswegs würden die Lasten auf die Kassen abgeschoben, im Gegenteil, die Leistungen der öffentlichen Hand blieben unberührt und würden bei der Bemessung des Pflegesatzes nicht berücksichtigt.</p>
+            <p>In der VO stehe, daß bei der Bemessung der Pflegesätze eine Abschreibungsfrist von 100 Jahren eingesetzt sei. Das sei wirklichkeitsfremd, falsch und unrichtig. Solche Unrichtigkeiten sollten bereinigt werden.</p>
+            <p>Mit dieser Änderung werde in keiner Weise eine grundsätzliche Regelung der Krankenhausfinanzierung überflüssig gemacht oder vorweggenommen. Eine Regelung könne nur erfolgen durch Übernahme der Vorhaltekosten, durch die Schaffung eines Krankenhausfonds, einer gemeinsamen Regelung in den Ländern aufgrund eines Verwaltungsabkommens oder der Trägerschaften, nicht aber vom Bund her. Die Länder bemühten sich um eine Grundregelung der Krankenhausfinanzierung. Sie hätten für diesen Zweck einen Ausschuß gebildet, an dem sich auch der Bund beteilige. Der Ausschuß habe seine Beratungen jetzt mit der Bitte an den Bund abgeschlossen, die Pflegesatzverordnung zu ändern. Wenn dies geschehe, würden die Länder über die Grundfinanzierung weiter verhandeln.</p>
+            <p>Durch die VO werde also nichts verbaut. Es müsse auf diesem Gebiet aber etwas geschehen, denn das jährliche Defizit der Krankenhäuser betrage 270 bis 280 Mio. DM. Dieses werde durch Sammlungen abgedeckt, Erneuerungen würden unterlassen, und das Ganze gehe auf Kosten der Ärzte und Schwestern an konfessionellen Krankenhäusern. Diesem Zustand könne in einem gewissen Maße begegnet werden. Für die Grundfinanzierung wären allerdings Verhandlungen notwendig. Wenn die beiden Anträge das Plenum passierten, hätte das zur Folge, daß die Verbesserung für die Krankenhäuser um ein Jahr zurückgestellt werde. Deshalb lehne sie, Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>, beide Anträge ab und bitte die Fraktion, ebenfalls so zu verfahren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> verweist auf die Beratungen der Arbeitskreise IV und VI, die diese Frage sehr lange und ernsthaft erörtert haben, um dann ihre Empfehlung zu geben. Wenn jetzt davon gesprochen werde, daß diese Anträge eine Verzögerung bewirkten, dann sei nicht zu verstehen, wie die Regierung von einer VO sprechen könne, wenn sie die Folgen überhaupt nicht kenne. Auch halte er es nicht für richtig, wenn behauptet werde, daß die Leistungen der öffentlichen Hand unberührt blieben. Auch die Sorge für die karitativen Häuser könnte man durch die Pflegesätze nicht beseitigen.</p>
+            <p>Das Beispiel Nordrhein-Westfalen zeige, daß es auch ohne Pflegesatzverordnung möglich sei, den Krankenhäusern zu helfen. Der Arbeitskreis empfehle, die beiden vorliegenden Anträge ohne Debatte anzunehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WeimerAugust_1957-10-15">Weimer</name> warnt davor, einer Änderung der VO zuzustimmen, ohne sich vorher die notwendigen Informationen verschafft zu haben. Damit komme man draußen schlecht an. Nicht nur die Krankenanstalten, sondern auch die Versicherungsträger würden Vorwürfe an die Fraktion richten, daß [sich] das Parlament über die materiellen Auswirkungen nicht im klaren gewesen sei. Aus diesen Gründen sollte man beiden Anträgen zustimmen. Er glaube nicht, daß ein derartiges Vorgehen den Erlaß der VO um ein Jahr verschieben könnte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> hält eine schnelle Hilfe für geboten, da das Defizit der karitativen Häuser so groß werde, daß die Weiterführung gefährdet sei. Aus dieser Situation heraus – hier stehe die Bundesregierung im Wort – hätte die Bundesregierung eine VO zur Diskussion gestellt. Die Frage der grundsätzlichen Finanzierung für die Zukunft, über die keine Meinungsverschiedenheiten bestehen, sollte getrennt behandelt werden. Aus den Zahlen der Inneren Mission lasse sich erfahren, daß ein großes evangelisches Krankenhaus mit einer Unterbilanz von 28% der Gesamtausgaben arbeite, ohne daß das Land Hessen daran denke, nach Möglichkeiten zur Beseitigung dieser Schwierigkeiten zu suchen. Das Land Nordrhein-Westfalen sei das einzige Land ohne solche Schwierigkeiten.</p>
+            <p>In der Zwischenzeit könnten sicher schwierige Verhältnisse auftreten. Er, <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name>, verstehe nicht, warum man den Streit so prinzipiell zuspitzen müsse. Es gelte, jetzt eine praktikable Lösung zu finden, um später eine endgültige und vernünftige Regelung machen zu können. Es könne nicht Aufgabe dieses Hauses sein, der Regierung in die Zügel zu fallen, wenn diese glaube, etwas tun zu müssen. Man habe deutlich gemacht, welche Fülle von Angaben sie brauche, um zu glaubhaften Lösungen zu kommen. Auf diesem Hintergrund sollte man den Antrag der CDU/CSU annehmen, den SPD-Antrag aber ablehnen. Der CDU/CSU-Antrag biete eine Basis, jetzt die Schwierigkeiten zu vermeiden. Man müsse aber der Regierung die Verfügungsfreiheit lassen, das Notwendige tun zu können.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> glaubt, daß man im Hinblick auf die Zuständigkeit der Bundesregierung für Verordnungen es nicht zulassen sollte, verschiedene Ressortstandpunkte hinzunehmen, ohne daß die Meinung der Bundesregierung vorgetragen werde. Das Kabinett sollte einen gemeinsamen Vorschlag erarbeiten. Immer wieder beschwere sich die Fraktion über die mangelnde Führung der Regierung. Die Fraktion sollte die Regierung nicht noch in dieser Haltung unterstützen und sich ein derartiges Vorgehen gefallen lassen.</p>
+            <p>Wenn man der Regierung die Vollmacht erteilt habe, könne man ihr nicht in den Rücken fallen, sondern müsse ihr die Regelung überlassen. Die Fraktion dürfe der Regierung nicht die Verantwortung abnehmen, indem sie der Regierung den Zeitpunkt für eine Regelung, den diese für richtig und notwendig erachte, vereitele. Wenn zum Beispiel die wirtschaftlichen Daten der Krankenhäuser aufeinander abgestimmt werden sollen, arbeiteten doch verschiedene Ministerien ein Vierteljahr an den objektiven Maßstäben und Gesichtspunkten. Nach seiner, Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidts</name>, Meinung, würde die VO erheblich verzögert. Das sollte man sich gut überlegen.</p>
+            <p>Er könne sich des Eindrucks nicht erwehren, als ob man bei jeder Gelegenheit versuche, sich vor Ausgaben zu drücken. Im allgemeinen wolle man die Kosten der Wohlfahrt nicht bezahlen. Auch dieses Manöver diene nur wieder einer Verzögerung, um einer harten Entscheidung aus dem Wege gehen zu können. Für die Befriedigung der Wünsche müßte auch bezahlt werden, aber dagegen sträube man sich im allgemeinen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> vertritt, da es sich um eine VO der Bundesregierung handelt, die Auffassung, daß die Fraktion sich nicht in einen derartigen Prozeß einschalten sollte. Wenn die Bundesregierung diesen Prozeß für notwendig halte, dürfe er nicht durch dieses Haus verhindert werden, d.h., daß man dem Antrag der SPD seine Zustimmung nicht geben dürfe. Dagegen lasse es der Antrag der CDU/CSU der Regierung offen, ob sie sich gehemmt fühlen wolle oder nicht. Außerdem übe er eine heilsame Wirkung auf die Länder aus. Deshalb sollte der Antrag angenommen werden.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> widerspricht der Auffassung, daß man gegen die Krankenhäuser eingestellt sei, wenn man die VO in dieser Form oder zu diesem Zeitpunkt ablehne. Sicher sei es richtig, wenn der Bundeskanzler und der Vorstand weisheitsvoll zum Sparen mahnen, über die nüchterne Tatsache, daß auch die Krankenbetten teurer werden, werde aber nichts gesagt.</p>
+            <p>Diejenigen, die auf den größeren Zusammenhang in dieser Sache hinweisen, hätten sicherlich recht, darüber bestehe kein Zweifel. Die moderne Gesellschaft hätte sich so geändert, daß bei der Inanspruchnahme des Krankenhauses heute über Dinge gesprochen werden müsse, die früher gar nicht interessant waren. Es sei auch richtig, daß die Bundesregierung über die Zahlen verfügen müßte, die jetzt von ihr erbeten werden, denn wie wolle sie selbst sonst eine Entscheidung treffen.</p>
+            <p>Sie, Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, halte es für betrüblich, in einer Situation über diese Dinge zu diskutieren, in der die Zahlen voneinander abwichen, und man annehmen müsse, daß von allen Seiten nicht mit klarem Wasser gekocht werde. Man könne von einer Übergangslösung – <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> habe auch nicht gesagt, wie eine solche aussehen solle – und von einer Dauerlösung sprechen. Wenn die VO nicht verhindert werde, müsse man an die Frau Gesundheitsministerin die Frage stellen, ob die Hilfe für die Krankenhäuser nicht auch erst nach einem dreiviertel Jahr erfolgen könne.</p>
+            <p>Die Ausführungen der Abg. <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> und <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> träfen wohl zu, daß mit der vorgesehenen VO nicht sichergestellt werden könne, daß die Krankenhäuser auch weiterhin ihre jetzigen Mittel erhalten.</p>
+            <p>Der Bundeskanzler beabsichtige, dieses Problem mit Vorrang zu lösen. Dabei müsse das Kabinett versuchen, die verschiedenen Ansichten der Ressorts auf einen Nenner zu bringen. Auch müsse mit der endgültigen Regelung begonnen werden, wofür der Antrag der CDU/CSU ein Vorschlag sei. Sie, Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, sehe aber noch nicht, wie man den Antrag der SPD ablehnen könne, außer, man sage offen, daß man die Worte »vor dem Erlaß« streichen wolle.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> erklärt, es werde keine neue Preisverordnung erlassen. Zu den Preisgesetzen gebe es jetzt schon eine VO über Pflegesätze. Diese enthalte Unbilligkeiten, die man beseitigen müsse. Diese VO obliege der Regierung, die mittlerweile so vorbereitet sei, daß sie nun ins Kabinett kommen könnte. In diesem Zeitpunkt komme nun die SPD mit ihrem Antrag, der das Unterbleiben der VO fordere und statt dessen einen Bericht von der Bundesregierung verlange. Man sollte nicht zulassen, daß in diesem Augenblick in die Sache hineingespielt und etwas gefordert werde, was an sich nicht Sache des Parlaments sei. Dieser Antrag der SPD trage doch eine richtige Spitze gegen die Regierung in sich. Auch schon deshalb sollte man den Antrag der SPD ablehnen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) kommt auf die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> zurück, der beim Antrag zum AVAVG erklärte, daß man den Angestellten und Arbeitern keinen Pfennig mehr an Beitrag zumuten könne.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN008" type="comment">
+                     <p>CDU/CSU-Antrag betr. Anpassung des Gesetzes über Arbeitsvermittlung und Arbeitslosenversicherung (AVAVG) an den technischen Fortschritt und an die wirtschaftliche Entwicklung (Drs. V/222 vom 26.1.1966).</p>
+                  </note>
+               </seg> Nun sollte auch konsequent vorgegangen werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> ergreift noch einmal das Wort, da die Ministerin den wesentlichsten Tatbestand irrig dargestellt habe. Nirgends stehe geschrieben, daß beim Festsetzen der Pflegesätze einseitig die wirtschaftliche Lage der Krankenkassen zu berücksichtigen sei, nicht aber die Lage der Krankenhäuser. Die Ministerin beabsichtige, ausgerechnet diese Bestimmung zu entfernen. Darin liege schon eine Vorwegnahme einer Grundsatzentscheidung.</p>
+            <p>Nur die Regierung könne die VO erlassen, aber niemand könne das Parlament hindern, rechtzeitig nach den Folgen zu fragen. Als die Fraktion damals die Pflichtversicherungsgrenze angehoben habe<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN009" type="comment">
+                     <p>Siehe Fraktionssitzung vom 6.7.1965 TOP 2.</p>
+                  </note>
+               </seg>, seien 2,3 Mrd. DM aus der Wirtschaft herausgezogen worden. In Kürze könne man prüfen, ob man die entscheidende Abstimmung in der RVO ändern wolle oder nicht. Er, <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>, habe damals einen anderen Standpunkt vertreten.</p>
+            <p>Nun stehe man wieder vor einem solchen Problem. Es habe sich doch herausgestellt, daß auf den Entwurf der VO Protestkundgebungen aller Beteiligten erfolgt seien. Diese Sache könne nicht mit einem Federstrich über die Bühne gehen. Man stehe vor der Notwendigkeit, eine schnelle Regelung herbeizuführen. Es hätten Gespräche stattgefunden, durch die man autorisiert sei, im Rahmen der Krankenkassenverbände zu erklären, beim Aushandeln der Pflegesätze den karitativen Häusern entgegenzukommen. Dagegen würden die Träger der Krankenhäuser Widerspruch erheben.</p>
+            <p>Die Bundesregierung sehe sich nicht in der Lage, eine VO vorzulegen, weil die Sache im Kabinett noch strittig sei. Der Fraktion stehe das Recht zu, daß ihr die Folgen dieser Politik dargelegt werden, auch schon deshalb, weil die Sache Geld koste. Man wolle einmal wissen, warum die konfessionellen Häuser bei <name type="Person" role="Erwaehnung" ref="#GrundmannKonrad">Grundmann</name> keinen Anlaß zur Klage haben, merkwürdigerweise aber diejenigen in Baden-Württemberg. Die Regierung könne tun und lassen, was sie wolle, auch könne sie ihre VO erlassen. Er, <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>, glaube aber nicht, daß sie diesen Schritt unternehme. Die Fraktion biete ihre guten Dienste an, wie man zu vernünftigen Vereinbarungen kommen könne. Dann habe man Zeit, in Ruhe eine endgültige Lösung zu suchen.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name> versteht die Sorge von Frau <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> hinsichtlich der freien Träger. Darum gehe es aber nicht, weil hierzu die Grundfinanzierung vorerst geregelt werden müsse. Diese Probleme ließen sich nicht über die Pflegesatzverordnung lösen. Die Gemeinden würden triumphieren, weil sie dann weniger Zuschüsse zu geben brauchten. In fast allen Großstädten regiere die Sozialdemokratie, so daß die konfessionellen Häuser wohl mit Abstrichen zu rechnen hätten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#PortenJosef_1961-10-17">Porten</name> erwähnt, bereits vor einem Jahr seien derartige Diskussionen geführt worden, ohne daß die Ministerien einig gingen. Seit dem Parteitag<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN010" type="comment">
+                     <p>CDU-Bundesparteitag 1964 in Hannover.</p>
+                  </note>
+               </seg> gebe es in Verbindung mit der Krankenversicherungsreform über die Lohnfortzahlung einen Beschluß. Dies werfe neue Probleme auf.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt zu überlegen, wie die Fraktion sich im Plenum verhalten solle. Er sehe einen Ausweg, indem man den SPD-Antrag ablehne und den CDU-Antrag annehme. Beide Anträge könnten aber auch an den Ausschuß überwiesen werden.</p>
+            <p>Diese Lösung erscheine ihm die beste zu sein. Damit wäre auch eine breite Debatte vermieden.</p>
+            <p>Die Fraktion beschließt, die Anträge federführend an den Wirtschaftsausschuß zu überweisen.</p>
+            <p>[4. Bundeswehr. Ausrüstung und Beschaffung]</p>
+            <p>Bundesverteidigungsminister <name type="Person" role="Sprecher" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> referiert über die Starfighter-Angelegenheit und berichtet über die Beratungen des Verteidigungsausschusses, der in einer Reihe von Sitzungen diese Frage behandelt und praktisch keine Frage unbeantwortet gelassen habe. Auch sei keine Frage in der Beantwortung zugunsten der SPD ausgegangen. Er halte es für gut, dieses Thema so bald wie möglich zu behandeln; so werde die Debatte am 24. und 25. März stattfinden. Dabei solle gezeigt werden, was an den Vorwürfen wahr sei und was nicht. Um diesen Termin einzuhalten, müsse der Ausschuß in dieser Woche seine Beratungen abschließen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN011" type="comment">
+                     <p>Bericht des Verteidigungsausschusses über die Beratungen zum Waffensystem »Starfighter« (Drs. V/450 vom 17.3.1966).</p>
+                  </note>
+               </seg> Dazu seien Anträge vorbereitet.</p>
+            <p>Die Diskussion habe sich auf drei Gebieten ausgedehnt, auf das Personal, auf die Technik und auf die Infrastruktur; davon komme der Frage des Personals die größere Bedeutung zu. Hier gehe es um eine bessere Einstufung der Piloten im Stellenplan. Dazu komme die Frage der Zulage, z.B. die Frage der Ruhegehaltsfähigkeit. Auf technischer Ebene brauche man eine große Zahl von Elektronentechnikern. Diese ständen aber nur in begrenztem Maße zur Verfügung. Vielleicht ließe sich dieser Zustand ändern, wenn diesem speziellen Personal eine gewisse Zulage gegeben werde. Dazu komme noch das Problem des Fliegerpersonals, das keine Fünf-Tage-Woche kenne; auch diesen sollte eine gewisse Zulage gewährt werden. Zu diesen Fragen lägen Anträge vor, die vorsichtig formuliert seien. <name type="Person" role="Erwaehnung" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> werde diese Anträge im Ausschuß einbringen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> bittet die Fraktion bei einigen Punkten um ihre politische Unterstützung. Es sei wichtig, über die Vorleistungen auf NATO-Maßnahmen hinaus in nationaler Verantwortung etliches zu tun, was ziemlich ins Geld gehe. Es würden 200 Hallen für Starfighter benötigt, was Aufwendungen von 23 Mio. DM bedeute. Nach bisherigen Verhandlungen lehne die NATO es ab, diese Hallen zu erstellen.</p>
+            <p>Einem Punkt komme besondere Wichtigkeit zu. Aufgrund des Drängens der SPD in den vergangenen Jahren habe die Luftwaffe weitgehend auf die Ausbildung in der Bundesrepublik verzichtet. Die SPD habe es fertiggebracht, ein öffentliches Begehren zu erzeugen, aufgrund dessen man zu gewissen Stunden völlig auf den fliegerischen Einsatz verzichtet habe. Dies schränke die Fliegertüchtigkeit sehr ein, und es sei im Interesse einer besseren Ausbildung erforderlich, wieder mehr in Deutschland zu fliegen, d.h., daß den dann wohl erfolgenden Protesten begegnet werden müsse.</p>
+            <p>Ein weiteres Problem tauche auf, nämlich die Forderung, die Luftunfallentschädigung zu erhöhen, aber nur im Bereich der Menschen, die im Strahlenflugzeug eingesetzt seien.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN012" type="comment">
+                     <p>Entwurf eines Vierten Gesetzes zur Änderung des Soldatenversorgungsgesetzes – SVG – (Drs. V/673 vom 8.6.1966).</p>
+                  </note>
+               </seg> Aus vielerlei Gründen sehe man sich nicht in der Lage, diese Maßnahme rückwirkend zu ergreifen. So könne man nur den harten Stichtag 1. April 1966 nehmen. Dies werde sicher draußen ein Aufbegehren hervorrufen, und sicher würden die Worte fallen, daß die Männer die Entschädigung mit ihrem Tode hätten erkaufen müssen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erklärt, die Anträge würden jetzt vorgelegt, weil sie eine Festlegung für die Debatte der nächsten Woche bedeuten. Zusätzliche Kosten entständen jetzt nicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> verweist darauf, daß der Verteidigungsausschuß Vorschläge unterbreite und sie im schriftlichen Bericht vorlegen werde. Nach dem Beschluß im Plenum gingen die Anträge ihren normalen Gang.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#FrerichsGoekeD_1965-10-19">Frerichs</name> fragt, warum die Unfallentschädigung zu einem so späten Zeitpunkt kommen soll. Dies führe doch zu Protesten. Nach seiner Meinung müßte sich doch feststellen lassen, wieviele Opfer es gebe und was die Entschädigung ausmachen würde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) hält es nicht für vertretbar, die Nichtdüsenflieger anders zu behandeln.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StahlbergHermann_1965-10-19">Stahlberg</name> verweist darauf, daß für eine Nachentschädigung 258 Flieger in Frage kämen. Diese Zahl verdreifache sich, wenn die Verluste bei Panzern und ähnlichem dazugerechnet würden. Das Parlament stehe vor einer Starfighter-Debatte und habe die Aufgabe, über diese Sache hinwegzukommen. Er spreche sich dafür aus, den 15 Starfigther-Opfern aus einem anderen Fonds zu helfen, ähnlich wie bei dem Iller-Unglück.</p>
+            <p>Bundesverteidigungsminsiter <name type="Person" role="Sprecher" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> erläutert, bislang bekämen die Flieger überhaupt keine Entschädigung. Dieser Zustand solle aber jetzt geändert werden. Die Flieger sollten jetzt mit hineingenommen, die Düsenflugzeugflieger aber in doppelter Höhe versorgt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> glaubt, die Frage der Rückwirkung berge unübersehbar schwere Folgen in sich, weil dann alle im Dienst Umgekommenen hineingezogen werden müßten. Über die Frage eines Härtefonds liefen noch Gespräche.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt das Einverständnis der Fraktion fest.</p>
+            <p>[5. Post- und Fernmeldewesen]</p>
+            <p>Anschließend berichtet Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> über die Beratungen des Arbeitskreises III zusammen mit dem Bundespostminister über die finanzielle Lage der Bundespost. Der Bundespostminister habe nochmals die besonderen Gründe in Erinnerung gebracht (Einstellung von Modernisierungsmaßnahmen seit 1935 wegen Rüstungsvorhaben, Kriegszerstörungen, Teilung Deutschlands, Auswirkungen der wirtschaftlichen Dynamik und der internationalen Verflechtungen auf den Postbedarf), die die gegenwärtige finanzwirtschaftliche Lage der Bundespost entscheidend mitbestimmt haben. Sodann würdigte er die Arbeit der Sachverständigenkommission für die Deutsche Bundespost und gab einen Überblick über die in ihrem Gutachten enthaltenen Vorschläge:<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN013" type="comment">
+                     <p>Gutachten der Sachverständigen-Kommission für die Deutsche Bundespost vom 6.11.1965 gem. Bundestagsbeschluß vom 16.4.1964 (Drs. V/203 vom 26.1.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>a)</label>
+                  <p>Gebührenerhöhungen,</p>
+               </item>
+               <item>
+                  <label>b)</label>
+                  <p>Abbau der politischen Lasten,</p>
+               </item>
+               <item>
+                  <label>c)</label>
+                  <p>Stundung der Abführungen an den Bund zur Verbesserung der Eigenkapitalbasis.</p>
+               </item>
+            </list>
+            <p>Bei den Verhandlungen zwischen ihm und dem Bundesfinanzminister sei es zu folgendem Kompromiß gekommen:</p>
+            <list type="undefined">
+               <item>
+                  <label>a)</label>
+                  <p>Die Ablieferungen an den Bund sollen künftig auf das Eigenkapital (bisher Betriebseinnahmen) bei einer Verzinsung von 7% bezogen werden.</p>
+               </item>
+               <item>
+                  <label>b)</label>
+                  <p>Kapitalaufstockung durch Aufnahme einer Anleihe von 500 Mio. DM, bei welcher die Post den Zinsendienst und der Bund die in den Jahren 1976–1980 einsetzende Tilgung übernimmt.</p>
+               </item>
+               <item>
+                  <label>c)</label>
+                  <p>Übernahme von politischen Lasten durch den Bund (namentlich 22 Mio. DM für die Verzinsung von Ausgleichsforderungen, 40 Mio. DM Kindergeld und rd. 100 Mio. DM Aufwendungen nach dem 131er-Gesetz).</p>
+               </item>
+            </list>
+            <p>In einer eingehenden Aussprache habe der Arbeitskreis den zwischen dem Bundespostminister und dem Bundesfinanzminister erzielten Kompromiß begrüßt. In der Diskussion wurde weiter die Notwendigkeit der beabsichtigten Gebührenerhöhung anerkannt und dabei herausgestellt, daß die Erhöhungen nicht nur die Kostendeckung, sondern auch eine gewisse Eigenfinanzierung ermöglichen sollten. Ferner wurde der Abbau einzelner stark defizitärer Dienstzweige der Bundespost befürwortet.</p>
+            <p>Beschluß:</p>
+            <p>Der Arbeitskreis habe den zwischen dem Bundespostminister und dem Bundesfinanzminister getroffenen Kompromiß und die beabsichtigte Gebührenerhöhung für gut befunden.</p>
+            <p>6. Elbeseitenkanal</p>
+            <p>Bereits in früheren Sitzungen habe der Arbeitskreis [III] den Ausbau des nordwestdeutschen Wasserstraßennetzes beraten. In der Aussprache beschränkte man sich auf eine Würdigung der bisher vorgetragenen Argumente. Mit Mehrheit stimmte der Arbeitskreis der Vorlage des Bundesfinanzministers Nr. 157/65 zu.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name> bittet angesichts eines neuen Kanalbaus um Aufklärung, ob ein solches Vorhaben mit dem Haushaltsdefizit in Übereinstimmung gebracht werden könne. Ehe er nicht einen Überblick bekomme, wie sich das in der Defizitplanung darstelle, könne er diesem Vorschlag nicht zustimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MengelkampTheodor_1957-10-15">Mengelkamp</name> stimmt dieser Betrachtung zu, wenn auch gesagt werden müsse, daß der Nord-Süd-Kanal vielleicht hingenommen werden könne, weil es der Bundesregierung geglückt sei, in dieses Gesamtprogramm auch ein Unterhaltungsprogramm hineinzunehmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> gibt zu bedenken, daß es unbedingt erforderlich sei, das vorhandene Kanalnetz zu reparieren und zu erweitern. Für diesen Ausbau benötige der Bund einen Betrag von 3 Mrd. DM. Verschiedene Länder hätten ihr Interesse an diesem Bau bekundet, so daß dem Bund nur Aufwendungen in Höhe von 2 Mrd. DM erwüchsen. Bei diesem Vorhaben handele es sich um eine vernünftige Infrastrukturmaßnahme.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> unterstützt den Gedanken einer Debatte mit dem Verkehrs- und Finanzminister über den gesamten Kanalbau. Dadurch könnte man einen Überblick gewinnen. Im jetzigen Zeitpunkt sollte die Fraktion aber die Entscheidung des Arbeitskreises übernehmen, wobei es sich lediglich um eine Vorlage des Finanzministers an den Haushaltsausschuß handele, wobei Arbeitskreis III um Rückendeckung gebeten wurde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bemerkt, auch Arbeitskreis II befasse sich mit der Kanalfrage, da sie für weite Teile der Fraktion von Bedeutung sei. Die Entscheidung hinsichtlich des Nord-Süd-Kanals berge Konsequenzen in sich, so daß er vorschlage, diese Sache um eine Woche zu vertagen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> teilt mit, daß für diese Sache ein leerer Titel im Haushalt 1965 existiere.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN014" type="comment">
+                     <p>Haushaltsgesetz 1965 vom 18.3.1965, BGBl. II, S. 193.</p>
+                  </note>
+               </seg> Der Verkehrsminister habe mit den Ländern ein Verwaltungsabkommen erzielt, so daß der Haushaltsausschuß diese Sache an sich alleine hätte behandeln können. Die Mitglieder des Haushaltsausschusses hätten aber auf einer Deckung durch die Fraktion bestanden. Er, Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name>, lehne eine Verschiebung<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN015" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: Verabschiedung.</p>
+                  </note>
+               </seg> ab, weil an dem Tatbestand nichts Wesentliches mehr geändert werden könne.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name> erklärt sich mit der Vertagung einverstanden. Bei dieser Angelegenheit gehe es nicht nur um die Kanäle, sondern um Prinzipien, die man jetzt schon wieder aufzulösen beginne. Von der Fraktion verlange man die Rückendeckung, um ihr dann die Verantwortung für das Durchbrechen der Prinzipien zuschieben zu können. Dies wolle er verhindern. Wenn der Haushaltsausschuß glaube, diese Sache auf seine Kappe nehmen zu können, dann sei das seine Sache.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> erläutert, Arbeitskreis III habe sich mit der Sache mindestens drei bis vier Tage befaßt und die Angelegenheit nicht leichtgenommen. Mit einer knappen Mehrheit – 14:12 bei drei Enthaltungen – sei die Sache dann so beschlossen worden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> spricht sich dafür aus, diese Frage bis zur nächsten Vorstandssitzung zu vertagen, da man politisch aus der Sache nicht herauskomme.</p>
+            <p>[7. Gesellschafts- und Kulturpolitik, Schul- und Bildungswesen]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> berichtet über die Tagung deutscher Studentenverbände in Heidelberg. Minister <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> und er hätten vor diesem Kreis von den Gemeinschaftsaufgaben gesprochen und seien gut damit angekommen. Auf diesem Gebiet seien einige Verfassungsänderungen erforderlich. Weiter empfehle es sich, sich mehr um die Studenten zu kümmern.</p>
+            <p>Dann kommt der Redner auf die Beratungen des Arbeitskreises VI zu sprechen und teilt mit, daß der Arbeitskreis einen Bericht über den Wirtschaftsplan der Kulturabteilung des Auswärtigen Amtes durch Ministerialdirektor <name type="Person" role="Erwaehnung" ref="#SattlerDieter">Sattler</name> gegeben habe. Der Arbeitskreis kam nach Erörterung der Einzelpositionen zu dem Schluß, eine Änderung nicht vorzunehmen. Möglich sind Umschichtungen in Einzelsachgebieten.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#HuysLambert_1957-10-15">Huys</name> hätte eine Große Anfrage betreffend Schulen im Ausland ausgearbeitet, die eingebracht werden sollte. Es sei erforderlich, das Interesse der Fraktion an dieser Sache zu bekunden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HuysLambert_1957-10-15">Huys</name> äußert sich zu dieser Anfrage, die auf die Auslandsschulen beschränkt bleibe und keine Ausweitung auf die gesamte auswärtige Kulturpolitik beinhalte. Die Bundesregierung bekomme die Möglichkeit, ihre Konzeption darzulegen. Weiter wolle man Auskunft darüber, welche Schulen neu [eingerichtet] oder ausgebaut werden sollen und wie weit die Planung für den Bau einer Zentralstelle für deutsche Auslandsschulen gediehen sei. Außerdem werde die Besoldungsfrage angeschnitten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stimmt dieser Großen Anfrage zu.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN016" type="comment">
+                     <p>Große CDU/CSU-FDP-Anfrage betr. auswärtige Kulturpolitik, auslandsdeutsche Schulen (Drs. V/439 vom 16.3.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>[8. Finanzwesen]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AdornoEduard_1961-10-17">Adorno</name> berichtet über die Fraktionsvorsitzenden-Konferenz der CDU/CSU-Landtags- bzw. Bürgerschaftsfraktionen vom 2. bis 4. März 1966 in Saarbrücken zur Beratung der Finanzpolitik.</p>
+            <p>I. Einleitend habe <name type="Person" role="Erwaehnung" ref="#HettlageKarlMaria">Hettlage</name> einen behutsamen und abgewogenen Bericht zu dem Gutachten der Sachverständigen zur Finanzreform gegeben.</p>
+            <p>Die Finanzreform solle die Finanzverfassung auf die neuen Grundtatsachen unserer gewandelten politischen, wirtschaftlichen und gesellschaftlichen Wirklichkeit hin korrigieren.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN017" type="comment">
+                     <p>Entwurf eines … Gesetzes zur Änderung und Ergänzung des Grundgesetzes – Finanzreformgesetz – (Drs. V/2861 vom 30.4.1968).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Erstens müßten die vielfältigen Überschneidungen, die sich bei Zielsetzung und Bewältigung der Gemeinschaftsaufgaben ergeben haben, sowie das Auseinanderklaffen von Aufgaben und Möglichkeiten zu ihrer Lösung bereinigt bzw. überwunden werden. Die bisher gefundenen Lösungen zur Bewältigung der großen Gemeinschaftsaufgaben gingen neben der Verfassung einher.</p>
+            <p>Der »kooperative Föderalismus«, also die Verwirklichung eines Partnerschaftsverhältnisses zwischen Bund und Ländern auf der Grundlage des Art.79 Abs.3 GG habe die bessere Abstimmung öffentlicher Aufgaben zur Voraussetzung. Auch die unterschiedliche Finanzkraft einzelner bundesstaatlicher Glieder sei kein Argument mehr dafür, daß notwendige Sozialinvestitionen dann dort nicht durchgeführt werden können.</p>
+            <p>Zweitens müsse das Trennsystem der Finanzquellen – nur bei der Einkommen- und Körperschaftsteuer kam bisher der Gedanke des Steuerverbunds zum Tragen – mit dem Ziel eines verbesserten finanziellen Ausgleichs in quantitativer und qualitativer Hinsicht einem stärkeren Verbundsystem weichen. Hierzu sei es notwendig, daß man sich zunächst über die Ziele einigt. Die Frage der Formen und Methoden könne dann später gelöst werden. Da die Länder trotz steigender Umsätze befürchten, daß sich die Ertragskurve abflache, was zu kleineren Gewinnspannen und damit zu verminderten Steuereinnahmen führe, sei eine Beteiligung der Länder an der Umsatzsteuer notwendig.</p>
+            <p>Drittens sei eine Verbesserung der Gemeindefinanzen notwendig.</p>
+            <p>II. Diskussionsbeiträge:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Gutachten versucht mit wissenschaftlicher Akribie, die Länder weiter zu strangulieren – Aushöhlung des Subsidiaritätsprinzips.</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>Bund drängt sich in die sogenannte »graue Zone« als einer Zwischenzone zwischen den Kompetenzen des Bundes und der Länder. (Konferenz der Ministerpräsidenten in Saarbrücken und München beweisen das Gegenteil.)</p>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>Auswirkung von Bundesgesetzen auf die Länderfinanzen durch Dotationsauflagen mit dem Zwang zur quotalen Beteiligung. (Die Besoldungserhöhung in Nordrhein-Westfalen acht Tage vor der letzten Landtagswahl beweist aber ebenso mangelnde Koordination und Kooperation mit nachteiligen Folgen.)</p>
+               </item>
+               <item>
+                  <label>4.</label>
+                  <p>Es wurde, insbesondere von den bayerischen Vertretern, die Forderung erhoben, bei der Durchführung der Finanzreform die Grundgesetzänderungen möglichst einzuschränken.</p>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <p>Der Verteidigungsetat enthält ein Polster von etwa 3 Milliarden DM. Dieser Betrag könnte für andere Aufgaben eingesetzt werden. (Die Folge wäre eine Änderung der Verteidigungskonzeption; Anteil des Verteidigungsetats am Bruttosozialprodukt in USA 11%, in Großbritannien 7%, in der Bundesrepublik 4%.)</p>
+               </item>
+               <item>
+                  <label>6.</label>
+                  <p>Der Vorteil des Gutachtens liegt darin, daß wir gezwungen werden, als Union Stellung zu beziehen. Dabei wird die Führungsaufgabe des Bundes, die er nicht immer wahrgenommen hat, durchaus anerkannt. »Das Ja zum Föderalismus beinhaltet das Ja zu einem starken Staat.«</p>
+               </item>
+            </list>
+            <p>III. Beteiligungsverhältnis an der Einkommen- und Körperschaftsteuer.</p>
+            <p>Diskussionsbeiträge:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Die Länder vertreten die Auffassung, daß bei einem Nichtzustandekommen einer neuen Regelung zum 1.1.1967 die Beteiligungsquote des Bundes wieder auf 35% zurückgeht.</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>Die Einnahmesituation wird von den Ländern anders als vom Bund beurteilt. Während der Bund davon ausgehe, daß 1966 die Einnahmen beim Bund nur um 8,3%, bei den Ländern dagegen um 10% ansteigen, schlössen die Länder aus der Entwicklung in den beiden ersten Monaten 1966 (4,7% Zunahme beim Bund, 1,5% Zunahme bei den Ländern), daß sich im Vergleich zum Bund die Zuwachsquote ihrer Einnahmen ungünstiger gestalten wird.</p>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>Die Steuerausfälle durch die letzte Änderung des Beteiligungsverhältnisses sowie durch die beiden Steueränderungsgesetze<seg type="note">
+                        <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN018" type="comment">
+                           <p>Steueränderungsgesetz 1964 vom 16.11.1964, BGBl. I, S. 885 sowie Steueränderungsgesetz 1965 vom 14.5.1965, BGBl. I, S. 377.</p>
+                        </note>
+                     </seg> gingen in die Milliarden. Eine Intensivierung des Länderausgleichs sei daher nicht mehr möglich. Der horizontale Finanzausgleich habe sich Anfang der 50er Jahre auf ca. 250 Mio., 1959 auf über eine Milliarde und 1966 auf 1,75 Milliarden DM belaufen. Ergänzungszuweisungen des Bundes nach Art.107 Abs. 2 [Satz 3] GG seien daher für 1966 unerläßlich. Das einheitliche Vorgehen der Länder sei eine Folge der Not und nicht der Absprache.</p>
+               </item>
+            </list>
+            <p>Trotz dieser von den Ländern vorgebrachten Argumente sei es gelungen, die Konferenz davon zu überzeugen, daß die gegenseitige Ausgangsposition bei den Verhandlungen zur Neuregelung des Beteiligungsverhältnisses nicht durch die Forderung nach einer Verringerung des Bundesanteils auf 35% erschwert werden dürfte. Einmütig habe man die Auffassung vertreten, daß eine Verhärtung der Ausgangsposition vermieden werden müsse. Dazu sei es allerdings notwendig, daß keiner der Beteiligten mit seinen Argumenten auf den Markt gehe. Vielmehr müsse rechtzeitig eine Übereinkunft angestrebt werden; denn es handele sich hier um eine politische Entscheidung hohen Ranges, die nur von der Union als Ganzes vorbereitet werden könne. Zu diesem Zweck habe man eine Kommission vorgeschlagen, die bis Mitte des Jahres diese Entscheidung vorzubereiten hätte. Dieser Kommission sollen angehören: ein Vertreter der Parteispitze, ein Vertreter der Bundesregierung, ein Vertreter der Länderkabinette, ein Vertreter der Bundestagsfraktion, ein Vertreter der CDU/CSU-Landtags- und Bürgerschaftsfraktionen, ein Vertreter der KPV, ein Vertreter der CSU.</p>
+            <p>Diesem Vorschlag habe die Kommission einstimmig zugestimmt. Weiter sei überlegt worden, daß diese Kommission, falls sie sich nach einmütiger Überzeugung bewährt hätte, auch gute Dienste bei der Beratung der Finanzreform im allgemeinen leisten könnte.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> dankt dem Redner für diesen Bericht und die geleistete Arbeit.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> macht darauf aufmerksam, daß die Frage der Neuregelung des Verteidigungsverhältnisses bereits ihre Schatten vorauswerfe. Er, <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name>, sehe den Zusammenhang mit der Finanzreform noch nicht ganz, weil die Sache zu kurzfristig vorliege. Aktuell sei ein Junktim zu Art.107 Abs.2 Satz 3 GG<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN019" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: §107 Abs.3.</p>
+                  </note>
+               </seg> und die Verteilungsquote. Der Bundesrat habe einstimmig aufgrund des Art.107 Abs.2 Satz 3 GG<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN020" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: §107 Abs.3.</p>
+                  </note>
+               </seg> beschlossen, den Ländern 250 Mio. DM zu geben. Die SPD unterstütze diesen Gedanken, die FDP schweige, in der CDU/CSU gebe es unterschiedliche Auffassungen. In der Tat sollte dieses Problem vorrangig behandelt werden. Wenn es bei diesen 250 Mio. nicht zu einem Kompromiß komme, gehe die Sache in den Vermittlungsausschuß. Er, <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name>, bitte den Fraktionsvorsitzenden, sich in diese Sache einzuschalten.</p>
+            <p>Bundesratsminister <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> unterstreicht die Vordringlichkeit dieser Frage, die mit den Aufgaben <name type="Person" role="Erwaehnung" ref="#AdornoEduard_1961-10-17">Adornos</name> unmittelbar nichts zu tun habe. Der Standpunkt, den der Bundesfinanzminister eingenommen habe, bedürfe in der Form wie auch materiell einer Änderung. Er, <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, werde sich bemühen, diesen Gesetzentwurf des Bundesrates so schnell wie möglich weiter zu behandeln.<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN021" type="comment">
+                     <p>Bundesratsvorlage Gesetzentwurf zur Änderung des Gesetzes über den Finanzausgleich unter den Ländern vom Rechnungsjahr 1965 – Länderfinanzausgleichsgesetz 1965 – (Drs. V/511 vom 6.4.1966).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AdornoEduard_1961-10-17">Adorno</name> glaubt auch, daß die Arbeit an der Finanzreform zu lange dauern werde, so daß es erforderlich sei, wenigstens hinsichtlich des Verteilungsverhältnisses zu einer Lösung zu kommen. Die Tür für künftige Verhandlungen dürfe man nicht zuschlagen und müsse anerkennen, daß die Länder schon von 338 Mio. auf 250 Mio. DM heruntergegangen seien. Die Aufgabe der für dieses Problem eingesetzten Kommission bestehe darin, die Diskussion zusammenzufassen und nicht die verschiedenen Ebenen gegeneinanderzustellen. Wenn sich diese Kommission bewähre, könne sie sich auch mit den Fragen der Finanzreform befassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> betont, daß man den Art.107 GG<seg type="note">
+                  <note xml:id="cdu-csu-05_1966-03-08-t1505_EP_FN022" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: §107.</p>
+                  </note>
+               </seg> und das Verteilungsverhältnis miteinander sehen müsse. Wahrscheinlich müsse man auch bei den Dotationsauflagen noch entgegenkommen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> teilt mit, daß der Vorstand dem Bundeskanzler diese Kommission nahelege, aber nur dann, falls er sie auch selbst wolle.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

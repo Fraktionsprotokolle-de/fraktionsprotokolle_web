@@ -1,305 +1,406 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?> <?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="gruene-11_1988-02-18-t1100_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die Grünen im Bundestag. Sitzungsprotokolle und Anlagen. 1987–1990.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 14/II, 2 Halbbände.</title>
-						<author>Wolfgang Hölscher</author>
-						<author>Paul Kraatz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2015</date>
-						<idno type="DNB">https://d-nb.info/108115022X</idno>
-						<idno type="DNB">https://d-nb.info/1096231913</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv Grünes Gedächtnis (AGG)</institution>
-							<idno>B.II.1, 5373</idno>
-							<objectName>Protokoll über die 49. Sitzung des Fraktionsvorstandes am Donnerstag, 18. 2. 1988</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Ediertes Protokoll einer Fraktionsvorstandssitzung der Grünen am 18. Februar 1988</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1988-02-18"><time type="start" when="11:00:00"/><time type="end" when="18:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#NN_Genderunbekannt"/><idno type="sitzung"><idno type="wp">11</idno><idno type="Fraktion-Landesgruppe">Grüne</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2022-05-27" who="#WeistenhoeferSimon" status="draft" n="3">Header ausgefüllt, front vereinheitlicht</change>
-			<change when="2022-06-14" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf (Inhalt)</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="gruene-11_1988-02-18-t1100_EP_SVP-1" corresp="#gruene-11_1988-02-18-t1100_EP_div_SVP-1">A. TOP 1: Geschäftsgang. – TOP 3: Politische und parlamentarische Angelegenheiten. – TOP 4: Personalangelegenheiten.</item>
-				</list>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Abgeordnete (Fraktionsvorstand): <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> (stellv. Parlamentarische Geschäftsführerin), <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name> (Parlamentarischer Geschäftsführer), <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> (Fraktionssprecher), <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name> (Fraktionssprecherin), <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> (Fraktionssprecherin)</p>
-				<p>Fraktionsmitarbeiterinnen und Fraktionsmitarbeiter: <name type="Person" role="Erwaehnung" ref="#GörgGundi">Görg</name>, <name type="Person" role="Erwaehnung" ref="#GrüberWolfram">Grüber</name> (Betriebsrat, zu TOP 4), <name type="Person" role="Erwaehnung" ref="#HoffmannMonika">Hoffmann</name>, <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>, <name type="Person" role="Erwaehnung" ref="#KolodziejGünter">Kolodziej</name>, <name type="Person" role="Erwaehnung" ref="#PerlingerMax">Perlinger</name>, <name type="Person" role="Erwaehnung" ref="#PinlClaudia">Pinl</name> (zu TOP 1.3 a), <name type="Person" role="Erwaehnung" ref="#SchnappertzJürgen">Schnappertz</name> (zu TOP 3.1), <name type="Person" role="Erwaehnung" ref="#StännerFranz">Stänner</name> (Pressesprecher), <name type="Person" role="Erwaehnung" ref="#TillnerChristiane">Tillner</name> (zu TOP 1.3 a), <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> (Fraktionsgeschäftsführer), <name type="Person" role="Erwaehnung" ref="#WagnerElisabeth">Wagner</name> , <name type="Person" role="Erwaehnung" ref="#WolfMonika">Wolf</name> (Betriebsrat, zu TOP 4), <name type="Person" role="Erwaehnung" ref="#WülkerGabriele">Wülffing</name> (zu TOP 1.3 a)</p>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="gruene-11_1988-02-18-t1100_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. Geschäftsgang</p>
-				<p>1.1 Das Protokoll über die 48. Sitzung wird mit folgenden Ergänzungen genehmigt: Zu TOP 4.1 sollen mit der Wiederholungsabstimmung (s. Seite 5 oben) auch die zunächst beschlossenen Arbeitsaufträge (s. Seite 4 unten) bis zur Sitzung der Fraktionsversammlung am 23. Februar 1988 als ausgesetzt gelten. Zu TOP 4.5 d) gibt der Betriebsrat seine Auffassung zu Protokoll, daß in Anbetracht der Berücksichtigung einer nicht im Rahmen der Bewerbungsfrist eingegangenen internen Bewerbung die Stelle einer Öffentlichkeitsreferentin erneut intern hätte ausgeschrieben werden müssen.</p>
-				<p>1.2 Termine</p>
-				<p>a) Die gemeinsame Sitzung mit dem Bundesvorstand findet am kommenden Montag, 22. Februar 1988, von 18.00 bis 20.00 Uhr in Raum HT 10 statt.</p>
-				<p>b) Jo <name type="Person" role="Erwaehnung" ref="#MuellerJoachim_1985-03-13">Müller</name> soll – da er am kommenden Montag verhindert ist – zur Sitzung vom 29. Februar 1988, 14.00 Uhr in Raum HT 10 eingeladen werden, um über die grüne Mitarbeit in der TFA-Enquete-Kommission zu sprechen (vgl. 48. Protokoll zu TOP 3.3).</p>
-				<p>c) Die Föderation der Arbeitervereine aus Kurdistan in der BRD e. V. (KOMKAR) hat den Fraktionsvorstand mit Schreiben vom 11. Februar 1988 gebeten, eine/n Vertreter/in zu einer Großveranstaltung zum kurdischen Neujahrsfest Newroz am 26. März 1988 nach Duisburg zu entsenden, um dort zu sprechen. Der Fraktionsvorstand bittet Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name>, den Termin wahrzunehmen.</p>
-				<p>d) Eine fünfköpfige Delegation der Frauenunion der taiwanesischen »Democratic Progressive Party« wird vom 11. bis zum 15. April 1988 nach Bonn kommen und bittet um einen Gesprächstermin. Der Fraktionsvorstand leitet das Anliegen an den Arbeitskreis VI (federführend) sowie an Uschi <name type="Person" role="Erwaehnung" ref="#Eid-SimonEidUrsula_1985-04-17">Eid</name>, Halo <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name> und Wolfgang <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name> mit der Bitte weiter, einen solchen Termin zu vereinbaren.</p>
-				<p>e) An dem für Freitag, 26. Februar 1988, geplanten gemeinsamen Treffen der Vorstände der Bundestags- und Landtagsfraktionen in Stuttgart wird seitens des Fraktionsvorstandes Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> teilnehmen; sie wird sich um eine/n weitere/n Vertreter/in bemühen.</p>
-				<p>f) An dem für Sonntag, 28. Februar 1988, geplanten Treffen von Mitgliedern der Landesvorstände, des Bundesvorstandes, der Hauptausschüsse und der Bundestagsfraktion in Hannover wird Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> teilnehmen.</p>
-				<p>1.3 Sitzungen der Fraktionsversammlung</p>
-				<p>a) Sitzung vom 23. Februar 1988: Die wochenlange Streitfrage, ob auf dieser Sitzung zwei Schwerpunkte oder aber nur einer – und in diesem Fall: welcher – behandelt werden sollten, ist nun dadurch entschieden worden, daß die Vertreter/innen des Landwirtschaftsbereichs, Dora <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name> und Hias <name type="Person" role="Erwaehnung" ref="#KreuzederMatthias_1987-02-18">Kreuzeder</name>, schriftlich mitgeteilt haben, sie verzichteten unter den gegebenen Umständen zähneknirschend auf die Beratung des Themas »Landwirtschaft«. Der Fraktionsvorstand bedauert außerordentlich, daß die Schwerpunktsetzung für den 23. Februar 1988 mit derart unerfreulichen Komplikationen verbunden war. Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> wird dies Dora <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name> und Hias <name type="Person" role="Erwaehnung" ref="#KreuzederMatthias_1987-02-18">Kreuzeder</name> sowie der Europagruppe mitteilen.</p>
-				<p>Damit steht fest, daß einziges Schwerpunktthema das Thema »Vergewaltigung in der Ehe« ist. An dem ins Auge gefaßten Zeitplan soll auch wegen der bereits eingeladenen Referentinnen festgehalten werden:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>– 12.30 Uhr</cell>
-						<cell>1. Vorbereitung der parlamentarischen Woche</cell>
-					</row>
-					<row>
-						<cell>– 13.15 Uhr</cell>
-						<cell>2. Schwerpunktthema »Vergewaltigung in der Ehe«</cell>
-					</row>
-					<row>
-						<cell>– 16.00 Uhr</cell>
-						<cell>3. Bericht über die Lage in der DDR und Gespräch mit Ausgebür- gerten und Ausgereisten</cell>
-					</row>
-					<row>
-						<cell>– 16.30 Uhr</cell>
-						<cell>4. Strukturdebatte (nicht öffentlich)</cell>
-					</row>
-				</table>
-				<p>Die Leitung der Sitzung übernehmen (bis auf TOP 1, den Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name> leiten soll) Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> und Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>.</p>
-				<p>b) Sitzung vom 1. März 1988: Das für diese Sitzung angesetzte Schwerpunktthema »Golfregion/Iran-Irak-Konflikt« wird aus verschiedenen Gründen abgesetzt. Statt dessen sollen auf dieser Sitzung – neben der parlamentarischen Woche – folgende Themen behandelt werden:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Diskussion und Verabschiedung einer »Erklärung zu den besetzten Gebieten in Israel«, die eine Arbeitsgruppe in Abstimmung mit dem Arbeitskreis VIII/IX im Auftrag der Fraktionsversammlung erarbeiten soll;</p></item>
-					<item><label>–</label>
-						<p>Verabschiedung des Fraktionshaushaltes 1988;</p></item>
-					<item><label>–</label>
-						<p>Diskussion und Verabschiedung der Betriebsvereinbarung über die Gleichstellung zwischen Fraktionsangestellten und Abgeordnetenmitarbeiter/n/innen der GRÜNEN IM BUNDESTAG (»Generalvertrag«);</p></item>
-					<item><label>–</label>
-						<p>Bericht der Finanzkommission über die Spenden der Abgeordneten im Jahre 1987;</p></item>
-					<item><label>–</label>
-						<p>Diskussion über die Überarbeitung des Fraktionsbeschlusses vom 8. Dezember 1987.</p></item>
-				</list>
-				<p>c) Sitzung vom 8. März 1988: Es bleibt bei dem vorgesehenen Schwerpunktthema »Gen- und Reproduktionstechnologien«.</p>
-				<p>d) Für die nachfolgenden Sitzungen vom 12. April, 19. April und 3. Mai 1988 gilt als Priorität für die Festlegung eines Schwerpunktthemas das Thema »Landwirtschaft« in Abstimmung mit der Europagruppe. Die beiden übrigen Sitzungen sollen sich schwerpunktmäßig mit den Themen »Kunst/Kultur in der NS-Zeit« und »Zwanzigster Jahrestag des Prager Frühlings« befassen.</p>
-				<p>1.4 Arbeitsweise des Fraktionsvorstandes</p>
-				<p>a) Die Sitzungszeiten des Fraktionsvorstandes werden – in teilweiser Abänderung des Beschlusses 1.4 a) der 46. Sitzung – auf montags von 14.00 bis 17.00 Uhr (in Sitzungswochen) bzw. dienstags von 12.00 bis 15.00 Uhr (in sitzungsfreien Wochen) festgelegt.</p>
-				<p>b) Die Vorberatung bzw. ggf. konsensuelle Beschlußfassung über Personalangelegenheiten delegiert der Fraktionsvorstand auf Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> und Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>. Beide werden sich mit Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> künftig jeweils eine halbe Stunde vor den Sitzungen des Fraktionsvorstandes treffen, um Personalangelegenheiten zu behandeln.</p>
-				<p>c) Die Systematik der Tagesordnung soll künftig wie folgt umgestellt werden:</p>
-				<p>1. Genehmigung des Protokolls</p>
-				<p>2. Aktuelle politische und parlamentarische Angelegenheiten</p>
-				<p>2.1 Presseangelegenheiten</p>
-				<p>2.2 Beschlußfassung über die Beantragung einer aktuellen Stunde</p>
-				<p>3. Termine und Formales</p>
-				<p>4. Personalangelegenheiten</p>
-				<p>5. Finanzangelegenheiten</p>
-				<p>6. Verschiedenes</p>
-				<p>d) Der Fraktionsvorstand verteilt die Arbeitsschwerpunkte unter den Sprecher/n/innen wie folgt:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name>: Innenpolitik; Frauenpolitik; Forschungspolitik;</p></item>
-					<item><label>–</label>
-						<p>Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>: Außenpolitik; Anti-AKW-Politik; Bildungspolitik;</p></item>
-					<item><label>–</label>
-						<p>Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>: Wirtschafts- und Sozialpolitik; Umweltpolitik; Strukturreform des Gesundheitswesens.</p></item>
-				</list>
-				<p>e) Der Vorschlag von Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>, tägliche Arbeitsbesprechungen der Mitarbeiter/innen der Fraktionssprecher/innen durchzuführen, soll auf einer der nächsten Sitzungen des Fraktionsvorstandes beraten und entschieden werden.</p>
-				<p>f) Die Tagesordnung der Vorstandssitzung wird jeweils freitags um 10.00 Uhr im Büro von Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> zusammengestellt. Wünsche zur Aufnahme von Punkten in die Tagesordnung müssen bis zu diesem Zeitpunkt eingereicht werden.</p>
-				<p>g) Die Protokollführung über die Sitzungen des Fraktionsvorstandes obliegt wie bisher Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>.</p>
-				<p>h) Die Wochendienste sollen künftig jeweils alphabetisch verteilt werden. Im Verhinderungsfall hat ein Vorstandsmitglied selbst für Ersatz zu sorgen und dies dem Fraktionsvorstand mitzuteilen. Es ergeben sich folgende Wochendienste bis zur Sommerpause:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>8. Woche vom 22. 2. bis 28. 2. 1988 Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name></p></item>
-					<item><label>–</label>
-						<p>9. Woche vom 29. 2. bis 6.3.1988 Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name></p></item>
-					<item><label>–</label>
-						<p>10. Woche vom 7. 3. bis 13.3.1988 Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name></p></item>
-					<item><label>–</label>
-						<p>11. Woche vom 14. 3. bis 20.3.1988 Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name></p></item>
-					<item><label>–</label>
-						<p>12. Woche vom 21. 3. bis 27. 3. 1988 Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name></p></item>
-					<item><label>–</label>
-						<p>13. Woche vom 28. 3. bis 3. 4. 1988 Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name></p></item>
-					<item><label>–</label>
-						<p>14. Woche vom 4. 4. bis 10. 4. 1988 Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name></p></item>
-					<item><label>–</label>
-						<p>15. Woche vom 11. 4. bis 17. 4. 1988 Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name></p></item>
-					<item><label>–</label>
-						<p>16. Woche vom 18. 4. bis 24. 4. 1988 Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name></p></item>
-					<item><label>–</label>
-						<p>17. Woche vom 25. 4. bis 1. 5. 1988 Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name></p></item>
-					<item><label>–</label>
-						<p>18. Woche vom 2. 5. bis 8. 5. 1988 Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name></p></item>
-					<item><label>–</label>
-						<p>19. Woche vom 9. 5. bis 15. 5. 1988 Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name></p></item>
-					<item><label>–</label>
-						<p>20. Woche vom 16. 5. bis 22. 5. 1988 Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name></p></item>
-					<item><label>–</label>
-						<p>21. Woche vom 23. 5. bis 29. 5. 1988 Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name></p></item>
-					<item><label>–</label>
-						<p>22. Woche vom 30. 5. bis 5. 6. 1988 Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name></p></item>
-					<item><label>–</label>
-						<p>23. Woche vom 6. 6. bis 12. 6. 1988 Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name></p></item>
-					<item><label>–</label>
-						<p>24. Woche vom 13. 6. bis 19. 6. 1988 Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name></p></item>
-					<item><label>–</label>
-						<p>25. Woche vom 20. 6. bis 26. 6. 1988 Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name></p></item>
-				</list>
-				<p>2. Mitteilungen und Berichte; Aktuelles</p>
-				<p>Entfällt aus Zeitgründen.</p>
-				<p>3. Politische und parlamentarische Angelegenheiten</p>
-				<p>3.1 Erneut wird die Konzeption für eine öffentliche Podiumsdiskussion zur politischen Situation in der DDR beraten (vgl. 48. Protokoll zu TOP 3.9). Der Vorschlag, eine Podiumsdiskussion zum Thema »Reform von unten? Reform von oben? Hat Glasnost in der DDR eine Chance?« zu veranstalten, wird grundsätzlich akzeptiert und zur näheren Präzisierung an den Arbeitskreis VIII/IX weitergegeben. Als Teilnehmer/innen schlägt der Fraktionsvorstand die Damen und Herren Jurek <name type="Person" role="Erwaehnung" ref="#xy_ersetzen">Becker</name>, <name type="Person" role="Erwaehnung" ref="#GausGünter">Gaus</name>, <name type="Person" role="Erwaehnung" ref="#KellyPetraKarin_1983-03-29">Kelly</name>, <name type="Person" role="Erwaehnung" ref="#KlierFreya">Klier</name>, <name type="Person" role="Erwaehnung" ref="#xy_ersetzen">Negt</name>, <name type="Person" role="Erwaehnung" ref="#StolpeManfred">Stolpe</name> und <name type="Person" role="Erwaehnung" ref="#xy_ersetzen">Templin</name> vor. Wer die sehr schwierige Aufgabe der Moderation übernehmen kann, ist noch unklar. Die Veranstaltung soll in einer der beiden Sitzungswochen im April (im Zeitraum vom 11. bis zum 22. April 1988) stattfinden. Der Vorstand stellt einen Finanzrahmen von DM 2 000 bis DM 3 000 bereit.</p>
-				<p>3.2 Zwischenbericht über die Spenden der Abgeordneten an die Öko-Fonds: Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> gibt einen Überblick über den derzeitigen Stand der Spendentätigkeit der Abgeordneten. Die Fraktionsversammlung soll auf der Sitzung vom 1. März 1988 informiert werden.</p>
-				<p>Die übrigen Beratungsgegenstände zu diesem Tagesordnungspunkt werden vertagt.</p>
-				<p>4. Personalangelegenheiten</p>
-				<p>4.1 Abschluß der Betriebsvereinbarung über die Gleichstellung zwischen Fraktionsangestellten und Abgeordnetenmitarbeiter/n/innen der GRÜNEN IM BUNDESTAG (»Generalvertrag«): Nach erneuter eingehender Diskussion (vgl. auch 48. Protokoll zu TOP 4.2) spricht sich der Fraktionsvorstand grundsätzlich dafür aus, wiederum einen »Generalvertrag« mit dem Ziel zu verabschieden, die Fraktionsangestellten und Abgeordnetenmitarbeiter/innen der Fraktion so umfassend, wie juristisch möglich, gleichzustellen. Meinungsverschiedenheiten zwischen Mitgliedern des Fraktionsvorstandes und dem Betriebsrat bestehen in drei Punkten:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>der Frage der unterschiedslosen Einbeziehung der Regionalmitarbeiter/innen;</p></item>
-					<item><label>–</label>
-						<p>der Formulierung der Selbstverpflichtung der Abgeordneten, sich den Bedingungen der Gleichstellungsvereinbarung zu unterwerfen (Ziffer 4 des Entwurfs der Betriebsvereinbarung);</p></item>
-					<item><label>–</label>
-						<p>der Frage, ob die Betriebsvereinbarung bis zum Ende der 11. Wahlperiode oder darüber hinaus abzuschließen sei.</p></item>
-				</list>
-				<p>Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> wird beauftragt, eine Synopse der bisherigen Fassung, des vom Betriebsrat vorgelegten Entwurfs und der auf der Fraktionsvorstandssitzung vorgeschlagenen Änderungen als Beratungsgrundlage für die Fraktionsversammlung zu erarbeiten. Die Verabschiedung der Betriebsvereinbarung ist für die Sitzung vom 1. März 1988 vorgesehen.</p>
-				<p>4.2 Sicherheitsüberprüfung der Abgeordnetenmitarbeiter/innen: Regula <name type="Person" role="Sprecher" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> informiert über die Sitzung der Unterkommission des Ältestenrates für Angelegenheiten der Mitarbeiter/innen vom 4. Februar 1988. Dort sei gegen ihre Stimme beschlossen worden, es bei der bisherigen Regelung zur Sicherheitsüberprüfung zu belassen; die Nichtbeantwortung der Frage 8 (nach der Mitgliedschaft in kommunistischen Organisationen) solle keine negativen Konsequenzen haben. Ab 1. Mai 1988 solle die Überprüfung der Abgeordnetenmitarbeiter/innen nach neuen Sicherheitsrichtlinien erfolgen; der erheblich abgeschwächte Fragebogen zur »einfachen Sicherheitserklärung« umfasse – neben Angaben zur Person – nur noch die Frage nach »Kontakten fremder Nachrichtendienste« und nach den Wohnsitzen in den letzten fünf Jahren.</p>
-				<p>Der Fraktionsvorstand bekräftigt seine Auffassung, die Fraktion fühle sich »sicher« genug und habe kein Interesse an einer Sicherheitsüberprüfung der Mitarbeiter/innen ihrer Abgeordneten. Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> wird in diesem Sinn einen Brief an die Kommission richten; ferner soll sie die Mitarbeiter/innen über den Stand der Dinge unterrichten. Uwe <name type="Person" role="Erwaehnung" ref="#GüntherUwe">Günther</name> wird beauftragt, für beide Briefe Entwürfe zu erstellen.</p>
-				<p>4.3 Personalsituation hinsichtlich des zweiten Untersuchungsausschusses: Der Betriebsrat hat der Nutzung eines Personal Computers für die Arbeit zum Atom-Untersuchungsausschuß unter folgenden Bedingungen zugestimmt: Das Gerät dürfe nicht gekauft, sondern müsse auf Zeit gemietet werden; über die bewilligte eine SB-Stelle hinaus müsse eine zweite SB-Stelle geschaffen werden, damit die Arbeit am PC besser verteilt werden könne; nach Mitteilung des konkreten Gerätetypus und der Software sei eine gesonderte Betriebsvereinbarung über die Nutzung zu schließen.</p>
-				<p>Der Fraktionsvorstand stimmt – wie auch Otto <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name> und Michael <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name> – der Anregung des Betriebsrates zu, eine zweite SB-Stelle zu schaffen. Die Stelle wird für die Dauer des zweiten Untersuchungsausschusses befristet geschaffen.</p>
-				<p>Über die Frage, ob die wirtschaftliche Entscheidung über eine bestimmte Form der Realisierung einer befristeten Nutzung (entweder durch Miete oder durch Kauf mit anschließendem Verkauf) in den Kompetenzbereich des Betriebsrates gehöre, entsteht eine kontroverse Diskussion. Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> erklärt, der Betriebsrat habe zwar das Recht, seine Zustimmung zur PC-Nutzung zu befristen; ob das Gerät freilich für den Befristungszeitraum gemietet oder aber zunächst gekauft und nach Ende des Befristungszeitraums wieder verkauft werde, sei eine Frage, die allein nach Wirtschaftlichkeits- und Zweckmäßigkeitserwägungen zu entscheiden sei und die Rechte der Mitarbeiter/innen bzw. des Betriebsrates überhaupt nicht tangiere (allenfalls insoweit, als ein gekauftes Gerät sich am neuesten technischen und ergonomischen Stand orientieren könne, während gemietete Geräte, wie die Erfahrung auch hinsichtlich des <name type="Person" role="Erwaehnung" ref="#FlickFriedrichKarl">Flick</name>-Untersuchungsausschusses zeige, meist veraltet seien).</p>
-				<p>Der Betriebsrat erwidert, er bestehe auf seiner Bedingung, das Gerät zu mieten. Sofern die Fraktion dieser Bedingung nicht entspreche, werde er seine Zustimmung zur befristeten Nutzung des PC zurückziehen bzw. sein Veto einlegen. – Der Fraktionsvorstand akzeptiert die Auffassung des Betriebsrates und beschließt, ein geeignetes Gerät anzumieten. Erst wenn sich wider Erwarten erweisen sollte, daß dies zumutbar nicht möglich sei, werde er nochmals über die Angelegenheit beraten.</p>
-				<p>4.4 Personalfragen infolge des Ausschlusses von Thomas <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name>: Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> berichtet unter Bezugnahme auf die Beratungen der vorigen Woche (vgl. 48. Protokoll zu TOP 4.4), er habe mittlerweile mit Christian <name type="Person" role="Erwaehnung" ref="#BusoldChristian">Busold</name> gesprochen. Der Fraktionsvorstand stimmt seiner Auffassung zu, daß Christian <name type="Person" role="Erwaehnung" ref="#BusoldChristian">Busold</name> eine Fortsetzung seiner Tätigkeit im Arbeitskreis III angeboten werden solle, daß diese jedoch ab sofort in Bonn erfolgen müsse; falls Christian <name type="Person" role="Erwaehnung" ref="#BusoldChristian">Busold</name> erst ab 1. April 1988 wieder in Bonn arbeiten wolle, müsse er bis zu diesem Zeitpunkt Urlaub nehmen. – Die Stelle soll einen »k. w.-Vermerk« erhalten. Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> wird beauftragt, für Mona <name type="Person" role="Erwaehnung" ref="#HanafiMona">Hanafi</name> – mit der er urlaubsbedingt immer noch nicht habe sprechen können – eine fest umschriebene SB-Stelle in der Fraktion zu finden.</p>
-				<p>4.5 Einstellung von Mitarbeiter/n/innen</p>
-				<p>a) Stelle einer Sachbearbeiterin in der Fraktionsgeschäftsführung: Auf Vorschlag von Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> beschließt der Fraktionsvorstand einstimmig, die freie SB-Stelle in der Fraktionsgeschäftsführung ab 1. März 1988 Frau Dagmar <name type="Person" role="Erwaehnung" ref="#NN_weiblich">Seimann</name> anzubieten. Der Betriebsrat hat der Einstellung zugestimmt.</p>
-				<p>b) Stelle einer wissenschaftlichen Mitarbeiterin als Öffentlichkeitsreferentin: Entsprechend der Beschlußfassung der 48. Sitzung zu TOP 4.5 d) stellen sich die Bewerberinnen Daniela <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>/Susanne <name type="Person" role="Erwaehnung" ref="#HermesSusanne">Hermes</name>, Petra <name type="Person" role="Erwaehnung" ref="#HanfPetra">Hanf</name>, Christiane <name type="Person" role="Erwaehnung" ref="#Gierke-SchnappertzChristianevon">Schnappertz</name> und Helga <name type="Person" role="Erwaehnung" ref="#ZielkeHelga">Zielke</name> einzeln vor. – Nach Ende der Vorstellungsgespräche berät der Fraktionsvorstand über eine Personalentscheidung, kann die Beratungen aber aus Zeitgründen nicht abschließen. Die Entscheidung wird auf die nächste Sitzung des Fraktionsvorstandes vertagt.</p>
-				<p>c) Auf Rückfrage von Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> erklärt der Fraktionsvorstand, die Beschlüsse der 48. Sitzung zu TOP 4.5 a) und b) seien so zu verstehen, daß er den Auftrag habe, nunmehr Michael <name type="Person" role="Erwaehnung" ref="#NN_männlich">Hadamczick</name> als Fraktionsangestellten bzw. Knut <name type="Person" role="Erwaehnung" ref="#KrusewitzKnut">Krusewitz</name> als Abgeordnetenmitarbeiter (Arbeitsgemeinschaft <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>) zum nächstmöglichen Zeitpunkt einzustellen.</p>
-				<p>5. Finanzangelegenheiten</p>
-				<p>Aus Zeitgründen vertagt.</p>
-				<p>gez. Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="gruene-11_1988-02-18-t1100_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die Grünen im Bundestag. Sitzungsprotokolle und Anlagen. 1987–1990.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 14/II, 2 Halbbände.</title>
+                  <author>Wolfgang Hölscher</author>
+                  <author>Paul Kraatz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2015</date>
+                  <idno type="DNB">https://d-nb.info/108115022X</idno>
+                  <idno type="DNB">https://d-nb.info/1096231913</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv Grünes Gedächtnis (AGG)</institution>
+                     <idno>B.II.1, 5373</idno>
+                     <objectName>Protokoll über die 49. Sitzung des Fraktionsvorstandes am Donnerstag, 18. 2. 1988</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Ediertes Protokoll einer Fraktionsvorstandssitzung der Grünen am 18. Februar 1988</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1988-02-18">
+               <time type="start" when="11:00:00"/>
+               <time type="end" when="18:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#NN_Genderunbekannt"/>
+            <idno type="sitzung">
+               <idno type="wp">11</idno>
+               <idno type="Fraktion-Landesgruppe">Grüne</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2022-05-27" who="#WeistenhoeferSimon" status="draft" n="3">Header ausgefüllt, front vereinheitlicht</change>
+         <change when="2022-06-14" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf (Inhalt)</change>
+         <change when="2022-10-25" who="#RochowSylvia" status="draft" n="5">Auszeichnung Personen</change>
+         <change when="2022-11-29" who="#RochowSylvia" status="draft" n="6">Auszeichnung Personen</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="gruene-11_1988-02-18-t1100_EP_SVP-1" corresp="#gruene-11_1988-02-18-t1100_EP_div_SVP-1">A. TOP 1: Geschäftsgang. – TOP 3: Politische und parlamentarische Angelegenheiten. – TOP 4: Personalangelegenheiten.</item>
+            </list>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Abgeordnete (Fraktionsvorstand): <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> (stellv. Parlamentarische Geschäftsführerin), <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name> (Parlamentarischer Geschäftsführer), <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> (Fraktionssprecher), <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name> (Fraktionssprecherin), <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> (Fraktionssprecherin)</p>
+            <p>Fraktionsmitarbeiterinnen und Fraktionsmitarbeiter: <name type="Person" role="Erwaehnung" ref="#GoergGundi">Görg</name>, <name type="Person" role="Erwaehnung" ref="#GrueberWolfram">Grüber</name> (Betriebsrat, zu TOP 4), <name type="Person" role="Erwaehnung" ref="#HoffmannMonika">Hoffmann</name>, <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>, <name type="Person" role="Erwaehnung" ref="#KolodziejGuenter">Kolodziej</name>, <name type="Person" role="Erwaehnung" ref="#PerlingerMax">Perlinger</name>, <name type="Person" role="Erwaehnung" ref="#PinlClaudia">Pinl</name> (zu TOP 1.3 a), <name type="Person" role="Erwaehnung" ref="#SchnappertzJuergen">Schnappertz</name> (zu TOP 3.1), <name type="Person" role="Erwaehnung" ref="#StaennerFranz">Stänner</name> (Pressesprecher), <name type="Person" role="Erwaehnung" ref="#TillnerChristiane">Tillner</name> (zu TOP 1.3 a), <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> (Fraktionsgeschäftsführer), <name type="Person" role="Erwaehnung" ref="#WagnerElisabeth">Wagner</name> , <name type="Person" role="Erwaehnung" ref="#WolfMonika">Wolf</name> (Betriebsrat, zu TOP 4), <name type="Person" role="Erwaehnung" ref="#WuelkerGabriele">Wülffing</name> (zu TOP 1.3 a)</p>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="gruene-11_1988-02-18-t1100_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. Geschäftsgang</p>
+            <p>1.1 Das Protokoll über die 48. Sitzung wird mit folgenden Ergänzungen genehmigt: Zu TOP 4.1 sollen mit der Wiederholungsabstimmung (s. Seite 5 oben) auch die zunächst beschlossenen Arbeitsaufträge (s. Seite 4 unten) bis zur Sitzung der Fraktionsversammlung am 23. Februar 1988 als ausgesetzt gelten. Zu TOP 4.5 d) gibt der Betriebsrat seine Auffassung zu Protokoll, daß in Anbetracht der Berücksichtigung einer nicht im Rahmen der Bewerbungsfrist eingegangenen internen Bewerbung die Stelle einer Öffentlichkeitsreferentin erneut intern hätte ausgeschrieben werden müssen.</p>
+            <p>1.2 Termine</p>
+            <p>a) Die gemeinsame Sitzung mit dem Bundesvorstand findet am kommenden Montag, 22. Februar 1988, von 18.00 bis 20.00 Uhr in Raum HT 10 statt.</p>
+            <p>b) Jo <name type="Person" role="Erwaehnung" ref="#MuellerJoachim_1985-03-13">Müller</name> soll – da er am kommenden Montag verhindert ist – zur Sitzung vom 29. Februar 1988, 14.00 Uhr in Raum HT 10 eingeladen werden, um über die grüne Mitarbeit in der TFA-Enquete-Kommission zu sprechen (vgl. 48. Protokoll zu TOP 3.3).</p>
+            <p>c) Die Föderation der Arbeitervereine aus Kurdistan in der BRD e. V. (KOMKAR) hat den Fraktionsvorstand mit Schreiben vom 11. Februar 1988 gebeten, eine/n Vertreter/in zu einer Großveranstaltung zum kurdischen Neujahrsfest Newroz am 26. März 1988 nach Duisburg zu entsenden, um dort zu sprechen. Der Fraktionsvorstand bittet Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name>, den Termin wahrzunehmen.</p>
+            <p>d) Eine fünfköpfige Delegation der Frauenunion der taiwanesischen »Democratic Progressive Party« wird vom 11. bis zum 15. April 1988 nach Bonn kommen und bittet um einen Gesprächstermin. Der Fraktionsvorstand leitet das Anliegen an den Arbeitskreis VI (federführend) sowie an Uschi <name type="Person" role="Erwaehnung" ref="#Eid-SimonEidUrsula_1985-04-17">Eid</name>, Halo <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name> und Wolfgang <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name> mit der Bitte weiter, einen solchen Termin zu vereinbaren.</p>
+            <p>e) An dem für Freitag, 26. Februar 1988, geplanten gemeinsamen Treffen der Vorstände der Bundestags- und Landtagsfraktionen in Stuttgart wird seitens des Fraktionsvorstandes Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> teilnehmen; sie wird sich um eine/n weitere/n Vertreter/in bemühen.</p>
+            <p>f) An dem für Sonntag, 28. Februar 1988, geplanten Treffen von Mitgliedern der Landesvorstände, des Bundesvorstandes, der Hauptausschüsse und der Bundestagsfraktion in Hannover wird Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> teilnehmen.</p>
+            <p>1.3 Sitzungen der Fraktionsversammlung</p>
+            <p>a) Sitzung vom 23. Februar 1988: Die wochenlange Streitfrage, ob auf dieser Sitzung zwei Schwerpunkte oder aber nur einer – und in diesem Fall: welcher – behandelt werden sollten, ist nun dadurch entschieden worden, daß die Vertreter/innen des Landwirtschaftsbereichs, Dora <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name> und Hias <name type="Person" role="Erwaehnung" ref="#KreuzederMatthias_1987-02-18">Kreuzeder</name>, schriftlich mitgeteilt haben, sie verzichteten unter den gegebenen Umständen zähneknirschend auf die Beratung des Themas »Landwirtschaft«. Der Fraktionsvorstand bedauert außerordentlich, daß die Schwerpunktsetzung für den 23. Februar 1988 mit derart unerfreulichen Komplikationen verbunden war. Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> wird dies Dora <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name> und Hias <name type="Person" role="Erwaehnung" ref="#KreuzederMatthias_1987-02-18">Kreuzeder</name> sowie der Europagruppe mitteilen.</p>
+            <p>Damit steht fest, daß einziges Schwerpunktthema das Thema »Vergewaltigung in der Ehe« ist. An dem ins Auge gefaßten Zeitplan soll auch wegen der bereits eingeladenen Referentinnen festgehalten werden:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>– 12.30 Uhr</cell>
+                  <cell>1. Vorbereitung der parlamentarischen Woche</cell>
+               </row>
+               <row>
+                  <cell>– 13.15 Uhr</cell>
+                  <cell>2. Schwerpunktthema »Vergewaltigung in der Ehe«</cell>
+               </row>
+               <row>
+                  <cell>– 16.00 Uhr</cell>
+                  <cell>3. Bericht über die Lage in der DDR und Gespräch mit Ausgebür- gerten und Ausgereisten</cell>
+               </row>
+               <row>
+                  <cell>– 16.30 Uhr</cell>
+                  <cell>4. Strukturdebatte (nicht öffentlich)</cell>
+               </row>
+            </table>
+            <p>Die Leitung der Sitzung übernehmen (bis auf TOP 1, den Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name> leiten soll) Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> und Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>.</p>
+            <p>b) Sitzung vom 1. März 1988: Das für diese Sitzung angesetzte Schwerpunktthema »Golfregion/Iran-Irak-Konflikt« wird aus verschiedenen Gründen abgesetzt. Statt dessen sollen auf dieser Sitzung – neben der parlamentarischen Woche – folgende Themen behandelt werden:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Diskussion und Verabschiedung einer »Erklärung zu den besetzten Gebieten in Israel«, die eine Arbeitsgruppe in Abstimmung mit dem Arbeitskreis VIII/IX im Auftrag der Fraktionsversammlung erarbeiten soll;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Verabschiedung des Fraktionshaushaltes 1988;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Diskussion und Verabschiedung der Betriebsvereinbarung über die Gleichstellung zwischen Fraktionsangestellten und Abgeordnetenmitarbeiter/n/innen der GRÜNEN IM BUNDESTAG (»Generalvertrag«);</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Bericht der Finanzkommission über die Spenden der Abgeordneten im Jahre 1987;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Diskussion über die Überarbeitung des Fraktionsbeschlusses vom 8. Dezember 1987.</p>
+               </item>
+            </list>
+            <p>c) Sitzung vom 8. März 1988: Es bleibt bei dem vorgesehenen Schwerpunktthema »Gen- und Reproduktionstechnologien«.</p>
+            <p>d) Für die nachfolgenden Sitzungen vom 12. April, 19. April und 3. Mai 1988 gilt als Priorität für die Festlegung eines Schwerpunktthemas das Thema »Landwirtschaft« in Abstimmung mit der Europagruppe. Die beiden übrigen Sitzungen sollen sich schwerpunktmäßig mit den Themen »Kunst/Kultur in der NS-Zeit« und »Zwanzigster Jahrestag des Prager Frühlings« befassen.</p>
+            <p>1.4 Arbeitsweise des Fraktionsvorstandes</p>
+            <p>a) Die Sitzungszeiten des Fraktionsvorstandes werden – in teilweiser Abänderung des Beschlusses 1.4 a) der 46. Sitzung – auf montags von 14.00 bis 17.00 Uhr (in Sitzungswochen) bzw. dienstags von 12.00 bis 15.00 Uhr (in sitzungsfreien Wochen) festgelegt.</p>
+            <p>b) Die Vorberatung bzw. ggf. konsensuelle Beschlußfassung über Personalangelegenheiten delegiert der Fraktionsvorstand auf Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> und Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>. Beide werden sich mit Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> künftig jeweils eine halbe Stunde vor den Sitzungen des Fraktionsvorstandes treffen, um Personalangelegenheiten zu behandeln.</p>
+            <p>c) Die Systematik der Tagesordnung soll künftig wie folgt umgestellt werden:</p>
+            <p>1. Genehmigung des Protokolls</p>
+            <p>2. Aktuelle politische und parlamentarische Angelegenheiten</p>
+            <p>2.1 Presseangelegenheiten</p>
+            <p>2.2 Beschlußfassung über die Beantragung einer aktuellen Stunde</p>
+            <p>3. Termine und Formales</p>
+            <p>4. Personalangelegenheiten</p>
+            <p>5. Finanzangelegenheiten</p>
+            <p>6. Verschiedenes</p>
+            <p>d) Der Fraktionsvorstand verteilt die Arbeitsschwerpunkte unter den Sprecher/n/innen wie folgt:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name>: Innenpolitik; Frauenpolitik; Forschungspolitik;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>: Außenpolitik; Anti-AKW-Politik; Bildungspolitik;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>: Wirtschafts- und Sozialpolitik; Umweltpolitik; Strukturreform des Gesundheitswesens.</p>
+               </item>
+            </list>
+            <p>e) Der Vorschlag von Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>, tägliche Arbeitsbesprechungen der Mitarbeiter/innen der Fraktionssprecher/innen durchzuführen, soll auf einer der nächsten Sitzungen des Fraktionsvorstandes beraten und entschieden werden.</p>
+            <p>f) Die Tagesordnung der Vorstandssitzung wird jeweils freitags um 10.00 Uhr im Büro von Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> zusammengestellt. Wünsche zur Aufnahme von Punkten in die Tagesordnung müssen bis zu diesem Zeitpunkt eingereicht werden.</p>
+            <p>g) Die Protokollführung über die Sitzungen des Fraktionsvorstandes obliegt wie bisher Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>.</p>
+            <p>h) Die Wochendienste sollen künftig jeweils alphabetisch verteilt werden. Im Verhinderungsfall hat ein Vorstandsmitglied selbst für Ersatz zu sorgen und dies dem Fraktionsvorstand mitzuteilen. Es ergeben sich folgende Wochendienste bis zur Sommerpause:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>8. Woche vom 22. 2. bis 28. 2. 1988 Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>9. Woche vom 29. 2. bis 6.3.1988 Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>10. Woche vom 7. 3. bis 13.3.1988 Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>11. Woche vom 14. 3. bis 20.3.1988 Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>12. Woche vom 21. 3. bis 27. 3. 1988 Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>13. Woche vom 28. 3. bis 3. 4. 1988 Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>14. Woche vom 4. 4. bis 10. 4. 1988 Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>15. Woche vom 11. 4. bis 17. 4. 1988 Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>16. Woche vom 18. 4. bis 24. 4. 1988 Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>17. Woche vom 25. 4. bis 1. 5. 1988 Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>18. Woche vom 2. 5. bis 8. 5. 1988 Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>19. Woche vom 9. 5. bis 15. 5. 1988 Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>20. Woche vom 16. 5. bis 22. 5. 1988 Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>21. Woche vom 23. 5. bis 29. 5. 1988 Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>22. Woche vom 30. 5. bis 5. 6. 1988 Hubert <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>23. Woche vom 6. 6. bis 12. 6. 1988 Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>24. Woche vom 13. 6. bis 19. 6. 1988 Ellen <name type="Person" role="Erwaehnung" ref="#OlmsEllen_1987-02-18">Olms</name>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>25. Woche vom 20. 6. bis 26. 6. 1988 Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>
+                  </p>
+               </item>
+            </list>
+            <p>2. Mitteilungen und Berichte; Aktuelles</p>
+            <p>Entfällt aus Zeitgründen.</p>
+            <p>3. Politische und parlamentarische Angelegenheiten</p>
+            <p>3.1 Erneut wird die Konzeption für eine öffentliche Podiumsdiskussion zur politischen Situation in der DDR beraten (vgl. 48. Protokoll zu TOP 3.9). Der Vorschlag, eine Podiumsdiskussion zum Thema »Reform von unten? Reform von oben? Hat Glasnost in der DDR eine Chance?« zu veranstalten, wird grundsätzlich akzeptiert und zur näheren Präzisierung an den Arbeitskreis VIII/IX weitergegeben. Als Teilnehmer/innen schlägt der Fraktionsvorstand die Damen und Herren Jurek <name type="Person" role="Erwaehnung" ref="#BeckerJurek">Becker</name>, <name type="Person" role="Erwaehnung" ref="#GausGuenter">Gaus</name>, <name type="Person" role="Erwaehnung" ref="#KellyPetraKarin_1983-03-29">Kelly</name>, <name type="Person" role="Erwaehnung" ref="#KlierFreya">Klier</name>, <name type="Person" role="Erwaehnung" ref="#NegtOskar">Negt</name>, <name type="Person" role="Erwaehnung" ref="#StolpeManfred">Stolpe</name> und <name type="Person" role="Erwaehnung" ref="#TemplinWolfgang">Templin</name> vor. Wer die sehr schwierige Aufgabe der Moderation übernehmen kann, ist noch unklar. Die Veranstaltung soll in einer der beiden Sitzungswochen im April (im Zeitraum vom 11. bis zum 22. April 1988) stattfinden. Der Vorstand stellt einen Finanzrahmen von DM 2 000 bis DM 3 000 bereit.</p>
+            <p>3.2 Zwischenbericht über die Spenden der Abgeordneten an die Öko-Fonds: Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> gibt einen Überblick über den derzeitigen Stand der Spendentätigkeit der Abgeordneten. Die Fraktionsversammlung soll auf der Sitzung vom 1. März 1988 informiert werden.</p>
+            <p>Die übrigen Beratungsgegenstände zu diesem Tagesordnungspunkt werden vertagt.</p>
+            <p>4. Personalangelegenheiten</p>
+            <p>4.1 Abschluß der Betriebsvereinbarung über die Gleichstellung zwischen Fraktionsangestellten und Abgeordnetenmitarbeiter/n/innen der GRÜNEN IM BUNDESTAG (»Generalvertrag«): Nach erneuter eingehender Diskussion (vgl. auch 48. Protokoll zu TOP 4.2) spricht sich der Fraktionsvorstand grundsätzlich dafür aus, wiederum einen »Generalvertrag« mit dem Ziel zu verabschieden, die Fraktionsangestellten und Abgeordnetenmitarbeiter/innen der Fraktion so umfassend, wie juristisch möglich, gleichzustellen. Meinungsverschiedenheiten zwischen Mitgliedern des Fraktionsvorstandes und dem Betriebsrat bestehen in drei Punkten:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>der Frage der unterschiedslosen Einbeziehung der Regionalmitarbeiter/innen;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>der Formulierung der Selbstverpflichtung der Abgeordneten, sich den Bedingungen der Gleichstellungsvereinbarung zu unterwerfen (Ziffer 4 des Entwurfs der Betriebsvereinbarung);</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>der Frage, ob die Betriebsvereinbarung bis zum Ende der 11. Wahlperiode oder darüber hinaus abzuschließen sei.</p>
+               </item>
+            </list>
+            <p>Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> wird beauftragt, eine Synopse der bisherigen Fassung, des vom Betriebsrat vorgelegten Entwurfs und der auf der Fraktionsvorstandssitzung vorgeschlagenen Änderungen als Beratungsgrundlage für die Fraktionsversammlung zu erarbeiten. Die Verabschiedung der Betriebsvereinbarung ist für die Sitzung vom 1. März 1988 vorgesehen.</p>
+            <p>4.2 Sicherheitsüberprüfung der Abgeordnetenmitarbeiter/innen: Regula <name type="Person" role="Sprecher" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> informiert über die Sitzung der Unterkommission des Ältestenrates für Angelegenheiten der Mitarbeiter/innen vom 4. Februar 1988. Dort sei gegen ihre Stimme beschlossen worden, es bei der bisherigen Regelung zur Sicherheitsüberprüfung zu belassen; die Nichtbeantwortung der Frage 8 (nach der Mitgliedschaft in kommunistischen Organisationen) solle keine negativen Konsequenzen haben. Ab 1. Mai 1988 solle die Überprüfung der Abgeordnetenmitarbeiter/innen nach neuen Sicherheitsrichtlinien erfolgen; der erheblich abgeschwächte Fragebogen zur »einfachen Sicherheitserklärung« umfasse – neben Angaben zur Person – nur noch die Frage nach »Kontakten fremder Nachrichtendienste« und nach den Wohnsitzen in den letzten fünf Jahren.</p>
+            <p>Der Fraktionsvorstand bekräftigt seine Auffassung, die Fraktion fühle sich »sicher« genug und habe kein Interesse an einer Sicherheitsüberprüfung der Mitarbeiter/innen ihrer Abgeordneten. Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Bott</name> wird in diesem Sinn einen Brief an die Kommission richten; ferner soll sie die Mitarbeiter/innen über den Stand der Dinge unterrichten. Uwe <name type="Person" role="Erwaehnung" ref="#GuentherUwe">Günther</name> wird beauftragt, für beide Briefe Entwürfe zu erstellen.</p>
+            <p>4.3 Personalsituation hinsichtlich des zweiten Untersuchungsausschusses: Der Betriebsrat hat der Nutzung eines Personal Computers für die Arbeit zum Atom-Untersuchungsausschuß unter folgenden Bedingungen zugestimmt: Das Gerät dürfe nicht gekauft, sondern müsse auf Zeit gemietet werden; über die bewilligte eine SB-Stelle hinaus müsse eine zweite SB-Stelle geschaffen werden, damit die Arbeit am PC besser verteilt werden könne; nach Mitteilung des konkreten Gerätetypus und der Software sei eine gesonderte Betriebsvereinbarung über die Nutzung zu schließen.</p>
+            <p>Der Fraktionsvorstand stimmt – wie auch Otto <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name> und Michael <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name> – der Anregung des Betriebsrates zu, eine zweite SB-Stelle zu schaffen. Die Stelle wird für die Dauer des zweiten Untersuchungsausschusses befristet geschaffen.</p>
+            <p>Über die Frage, ob die wirtschaftliche Entscheidung über eine bestimmte Form der Realisierung einer befristeten Nutzung (entweder durch Miete oder durch Kauf mit anschließendem Verkauf) in den Kompetenzbereich des Betriebsrates gehöre, entsteht eine kontroverse Diskussion. Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> erklärt, der Betriebsrat habe zwar das Recht, seine Zustimmung zur PC-Nutzung zu befristen; ob das Gerät freilich für den Befristungszeitraum gemietet oder aber zunächst gekauft und nach Ende des Befristungszeitraums wieder verkauft werde, sei eine Frage, die allein nach Wirtschaftlichkeits- und Zweckmäßigkeitserwägungen zu entscheiden sei und die Rechte der Mitarbeiter/innen bzw. des Betriebsrates überhaupt nicht tangiere (allenfalls insoweit, als ein gekauftes Gerät sich am neuesten technischen und ergonomischen Stand orientieren könne, während gemietete Geräte, wie die Erfahrung auch hinsichtlich des <name type="Person" role="Erwaehnung" ref="#FlickFriedrichKarl">Flick</name>-Untersuchungsausschusses zeige, meist veraltet seien).</p>
+            <p>Der Betriebsrat erwidert, er bestehe auf seiner Bedingung, das Gerät zu mieten. Sofern die Fraktion dieser Bedingung nicht entspreche, werde er seine Zustimmung zur befristeten Nutzung des PC zurückziehen bzw. sein Veto einlegen. – Der Fraktionsvorstand akzeptiert die Auffassung des Betriebsrates und beschließt, ein geeignetes Gerät anzumieten. Erst wenn sich wider Erwarten erweisen sollte, daß dies zumutbar nicht möglich sei, werde er nochmals über die Angelegenheit beraten.</p>
+            <p>4.4 Personalfragen infolge des Ausschlusses von Thomas <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name>: Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> berichtet unter Bezugnahme auf die Beratungen der vorigen Woche (vgl. 48. Protokoll zu TOP 4.4), er habe mittlerweile mit Christian <name type="Person" role="Erwaehnung" ref="#BusoldChristian">Busold</name> gesprochen. Der Fraktionsvorstand stimmt seiner Auffassung zu, daß Christian <name type="Person" role="Erwaehnung" ref="#BusoldChristian">Busold</name> eine Fortsetzung seiner Tätigkeit im Arbeitskreis III angeboten werden solle, daß diese jedoch ab sofort in Bonn erfolgen müsse; falls Christian <name type="Person" role="Erwaehnung" ref="#BusoldChristian">Busold</name> erst ab 1. April 1988 wieder in Bonn arbeiten wolle, müsse er bis zu diesem Zeitpunkt Urlaub nehmen. – Die Stelle soll einen »k. w.-Vermerk« erhalten. Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> wird beauftragt, für Mona <name type="Person" role="Erwaehnung" ref="#HanafiMona">Hanafi</name> – mit der er urlaubsbedingt immer noch nicht habe sprechen können – eine fest umschriebene SB-Stelle in der Fraktion zu finden.</p>
+            <p>4.5 Einstellung von Mitarbeiter/n/innen</p>
+            <p>a) Stelle einer Sachbearbeiterin in der Fraktionsgeschäftsführung: Auf Vorschlag von Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> beschließt der Fraktionsvorstand einstimmig, die freie SB-Stelle in der Fraktionsgeschäftsführung ab 1. März 1988 Frau Dagmar <name type="Person" role="Erwaehnung" ref="#NN_weiblich">Seimann</name> anzubieten. Der Betriebsrat hat der Einstellung zugestimmt.</p>
+            <p>b) Stelle einer wissenschaftlichen Mitarbeiterin als Öffentlichkeitsreferentin: Entsprechend der Beschlußfassung der 48. Sitzung zu TOP 4.5 d) stellen sich die Bewerberinnen Daniela <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>/Susanne <name type="Person" role="Erwaehnung" ref="#HermesSusanne">Hermes</name>, Petra <name type="Person" role="Erwaehnung" ref="#HanfPetra">Hanf</name>, Christiane <name type="Person" role="Erwaehnung" ref="#Gierke-SchnappertzChristianevon">Schnappertz</name> und Helga <name type="Person" role="Erwaehnung" ref="#ZielkeHelga">Zielke</name> einzeln vor. – Nach Ende der Vorstellungsgespräche berät der Fraktionsvorstand über eine Personalentscheidung, kann die Beratungen aber aus Zeitgründen nicht abschließen. Die Entscheidung wird auf die nächste Sitzung des Fraktionsvorstandes vertagt.</p>
+            <p>c) Auf Rückfrage von Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> erklärt der Fraktionsvorstand, die Beschlüsse der 48. Sitzung zu TOP 4.5 a) und b) seien so zu verstehen, daß er den Auftrag habe, nunmehr Michael <name type="Person" role="Erwaehnung" ref="#NN_maennlich">Hadamczick</name> als Fraktionsangestellten bzw. Knut <name type="Person" role="Erwaehnung" ref="#KrusewitzKnut">Krusewitz</name> als Abgeordnetenmitarbeiter (Arbeitsgemeinschaft <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>) zum nächstmöglichen Zeitpunkt einzustellen.</p>
+            <p>5. Finanzangelegenheiten</p>
+            <p>Aus Zeitgründen vertagt.</p>
+            <p>gez. Michael <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

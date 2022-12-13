@@ -1,339 +1,391 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-04-26-t1520_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung in Stuttgart</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1007/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 26. April 1956 in Stuttgart</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>8 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1956-04-26"><time type="start" when="15:20:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Stuttgart</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1956-04-26-t1520_EP_SVP-1" corresp="#cdu-csu-02_1956-04-26-t1520_EP_div_SVP-1">A. Wehrpflichtgesetz.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1956-04-26-t1520_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[Wehrpflichtgesetz, Drucksache II/2303 v. 12.4.1956]</p>
-				<p>Bundesverteidigungsminister <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> referiert zum Wehrpflichtgesetz.</p>
-				<p>Er begrüßt die Gelegenheit, bei dieser Fraktionssitzung im Rahmen des Bundesparteitages in Stuttgart<seg type="note"><note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN001" type="comment"><p>Am 26.–29.4.1956.</p></note></seg> das Wehrpflichtgesetz behandeln zu können. In der Öffentlichkeit seien widersprechende Meinungen zutage getreten, und es sei der Eindruck entstanden, als ob die Haltung der CDU/CSU in dieser Frage nicht ganz sicher sei. Darüber müsse Klarheit geschaffen werden; nichts werde der Wähler mehr verargen als eine unklare Haltung in lebenswichtigen, politisch entscheidenden Fragen. Die Notwendigkeit, die Freiheit des deutschen Volkes im Falle einer Aggression verteidigen zu müssen, sei in der Fraktion unbestritten. Die auf die Verteidigung hinzielenden Maßnahmen dienten ausschließlich diesem Zweck und damit der Sicherung des Friedens. Man könne auch sicher sein, daß die der NATO angeschlossenen Mitgliedstaaten von sich aus niemals einen Krieg beginnen würden, Krieg könne es nur geben, wenn eine Aggression die Verteidigung notwendig macht. Er widerstrebe den demokratischen Grundprinzipien dieser Staaten, die keine Annexion fremder Gebiete wollten, sondern wünschten, daß jedes Volk in Freiheit selbst seine Schicksale bestimme; sie strebten nach freundschaftlicher Zusammenarbeit mit allen Völkern auf politischem, sozialem, kulturellem und wirtschaftlichem Gebiet; ihre Abwehrkraft diene ausschließlich der Sicherung dieser Bemühungen.</p>
-				<p>Vom totalitären System beherrschte Staaten dagegen versuchten Einfluß zu nehmen auf die Lebensordnung anderer Staaten. Man müsse sich darüber klar sein, daß trotz aller taktischen Manöver der sowjetrussischen Politik die sowjetische Ideologie sich in nichts geändert habe. Bei der in gewissen Kreisen sich abzeichnenden Neigung, den russischen Bemühungen allzuviel Glauben zu schenken, müsse, wenn es auch eine Binsenwahrheit sei, doch klar und deutlich ausgesprochen werden, daß es nach wie vor das Ziel der Sowjetunion sei, ihre Ideologie der übrigen Welt aufzuzwingen und daß diesem Ziele auch die ungeheuren militärischen Machtmittel der Sowjetunion zu dienen hätten.</p>
-				<p>Man müsse auch einmal wieder an die historische Tatsache erinnern, daß die westlichen Alliierten nach dem Ende des letzten Krieges auch in Deutschland ihre militärische Stärke verringert hatten, daß sie schließlich nicht mehr als zwei Divisionen in den von ihnen besetzten Gebieten stehen hatten, während die Sowjetunion ihre militärischen Kräfte immer weiter ausbauten. Die Stärke der Streitmacht der Sowjetunion und ihre Expansionsbestrebungen schufen jene dauernde Gefahr eines Angriffs, der auch zum Einsatz von Atomwaffen führen könne, eine Möglichkeit, mit der bei allen Überlegungen zu rechnen sei.</p>
-				<p>Es sei eine geschichtliche Erfahrung, daß jeder mögliche Angreifer dann von einem Angriff absehe, wenn eine solche Absicht ein zu großes Risiko beinhalte. Dieser Gedanke habe nichts mit der sogenannten Politik der Stärke zu tun, sondern sei eine uralte, allgemein menschliche Erfahrung. Nur wenn die Sowjetunion wisse, daß das Risiko eines Angriffs für sie sehr groß sei, werde man sie auf die Dauer von einer Aggression abhalten können. Dazu gehöre aber, daß die NATO, die gegenwärtig in ihrer militärischen Stärke nicht gerade als allzu furchterregend bezeichnet werden könne, nicht einem Schwächungsprozeß unterworfen werden dürfe, sondern in die Lage versetzt werden müsse, ihr Abwehrpotential in hinreichender Weise zu steigern.</p>
-				<p>In den vergangenen Jahren sei das Risiko eines Angriffs für die Sowjetunion wegen der Überlegenheit des Westens an atomaren Waffen zu groß gewesen. Unter diesem Schutz sei es möglich gewesen, den Frieden durch all diese Jahre zu bewahren. Diese Lage habe sich jedoch verändert und niemand könne z. Zt. mit Sicherheit sagen, wie das Verhältnis der atomaren Möglichkeiten sei und wie es sich in Zukunft weiter entwickeln werde. Bei diesen Überlegungen könne man auch die Auffassung vertreten, daß eine weitere Entwicklung der Atomwaffen nach Zahl und Wirkung auf beiden Seiten ihre Anwendung vielleicht unmöglich machen könne, wie sich das im letzten Krieg in Bezug auf die Gaswaffen gezeigt habe.</p>
-				<p>Wie immer aber auch diese Dinge beurteilt würden, niemals könne man bei der gegebenen Situation die Lage für die Bundesrepublik isoliert betrachten. Kein einzelner Staat, mit Ausnahme der Großmächte USA und Sowjetrußland, habe ein ausreichendes Potential, um sich aus eigener Kraft verteidigen zu können, auch nicht die Bundesrepublik.</p>
-				<p>Aus dieser Überlegung sei die Bundesrepublik mit Zustimmung des Parlaments in die NATO eingegliedert worden. Die Frage nach Art und Umfang der Verteidigungsleistungen könne nur in diesem Rahmen geprüft und behandelt werden.</p>
-				<p>Das Vorhandensein und die Möglichkeit der Anwendung neuer Kampfmittel, besonders der Atomwaffen, habe bei manchen Leuten zu der Annahme geführt, daß Streitkräfte, die auf der allgemeinen Wehrpflicht basieren, überholt und überflüssig seien und daß es richtiger sei, an ihrer Stelle kleine Berufsheere zu schaffen. Diese Auffassung sei in vollem Umfange unzutreffend, und die in ihr sichtbar werdenden Mißverständnisse müßten einmal ausgeräumt werden. Die Forderung dürfe nicht heißen: kleine Heere, sondern viele kleine hochmobile feuerkräftige und operationsfähige Verbände, nicht Stärkeminderung im Ganzen, sondern Auflockerung und Beweglichkeit. Die Gliederung der modernen deutschen Verbände würde dieser Forderung entsprechen. Gerade der jetzt stattfindende Neuaufbau, ohne Vorbelastung durch eine eigene vorhandene Streitmacht und mit der Möglichkeit, die von den Anderen gemachten Erfahrungen zu nutzen, biete eine einmalige Chance, diese Erkenntnis zu verwirklichen.</p>
-				<p>Es sei festzustellen, daß in allen anderen Ländern, besonders aber in den Ostblockstaaten, das Vorhandensein der Atomwaffen zu keiner nennenswerten Verringerung herkömmlicher Truppen geführt habe. Deren Bedeutung sei unbestritten für den Fall, daß nukleare Waffen nicht zum Einsatz kämen. Aber auch in einem Atomkrieg seien sie nicht überflüssig, wenn man nicht den zu verteidigenden Raum atomaren Vergeltungsschlägen preisgeben wolle.</p>
-				<p>Nun habe man in den letzten Tagen offenbar neueste militärische Erkenntnisse unter dem Schlagwort »Schwert- und Schildarmee« vorgesetzt bekommen. Die »Schwertarmee« solle aus hochbeweglichen kleinen Divisionen von Berufssoldaten bestehen und operationsfähig sein, daneben solle die »Schildarmee« auf der Basis der Miliz aus dem Volke gebildet werden.</p>
-				<p>Es sei überflüssig zu sagen, daß an diesen Ideen kein deutscher Generalstäbler mitgewirkt habe. Solche Vorstellungen hießen doch nichts anderes, als sich zurückzuversetzen in das letzte Jahr des vergangenen Krieges. Nachdem die operativen Verbände nicht mehr vorhanden, jedenfalls nicht mehr Herr der Lage, gewesen seien, habe der Volkssturm retten sollen, was die Armee nicht mehr habe retten können. Man fühle sich versucht zu sagen, daß die Realisierung solcher Vorstellungen nichts anderes bedeuten könne als »organisierten Mord«. Solchen Überlegungen gegenüber müsse man die tatsächlichen Gegebenheiten sehen und sich nach ihnen richten.</p>
-				<p>Um das erforderliche Gegengewicht zu der militärischen Stärke des Ostblocks herzustellen, sei nicht die zahlenmäßige Gleichheit notwendig. Nach aller bisherigen Erfahrung greife der Russe nur an, wenn er sich einer mehrfachen zahlenmäßigen Überlegenheit sicher sei. Es sei nur notwendig, ein Kräfteverhältnis zu schaffen, das dieser Tatsache Rechnung trage. Mit der Aufstellung von 500000 Mann deutscher Truppen im Verband der NATO werde im europäischen Bereich ein solches Verhältnis erreicht, daß der Sowjetblock von jedem überfallmäßigen Angriff werde absehen müssen. Eine solche Stärke der deutschen Streitkräfte könne aber andererseits von der Sowjetunion in keinem Falle als Bedrohung empfunden werden. Diese Planung von 500000 Mann trage auch der Überlegung Rechnung, daß herkömmliche Truppen in hinreichender Stärke notwendig seien, wenn nukleare Waffen ausgeschaltet blieben, weil dann auf ihnen die Sicherheit beruhe. Ein kleines Berufsheer dagegen würde diese Sicherheit ernsthaft in Frage stellen, weil es nicht über ausreichend gut ausgebildete und gut ausgestattete Reserven verfügen würde und die zu erwartenden Ausfälle also nicht ersetzen könne. Eine Armee habe erfahrungsgemäß nur soviel Wert, als hinter ihr ein Mehrfaches an entsprechenden Reserven stehe. Wenn man ein Berufsheer schaffe, befinde man sich – besonders wenn es zur Ächtung des Atomkrieges komme – dem Sowjetblock gegenüber in einer hoffnungslosen Unterlegenheit, weil die Streitkräfte aller Sowjet-blockstaaten auf der Basis der Wehrpflicht aufgebaut seien.</p>
-				<p>Eine sowjetische Aggression könne aus dem besetzten deutschen Gebiet und den dahinter liegenden Räumen heraus mit den dort in Massen stehenden Panzern und unter Ausnutzung des deutschen Straßennetzes mit größter Schnelligkeit erfolgen. Diese Möglichkeit zeige ein Blick auf die Karte und auf die geographischen Gegebenheiten unseres Landes. Deshalb sei zu fordern, daß die deutschen Kontingente in einem solch mobilen Zustande gehalten würden, daß sie in der Lage wären, einem Überraschungsangriff einstweilen entgegenzutreten, um hinter diesem Schirm aus der Reserve heraus entwickeln zu können, was zur Abwehr des Angriffs zugeführt werden müsse. Ein Vergleich mit Schweizer Verhältnissen etwa sei abwegig, da man operativ wirkenden Verbänden nur durch ebensolche begegnen könne und zur Mobilisierung einer Miliz gar keine Möglichkeit mehr bliebe.</p>
-				<p>Der deutsche Anteil an den Verteidigungsleistungen habe neben entsprechenden Luft- und Marinestreitkräften seinen Schwerpunkt im Einsatz von Landstreitkräften. So sicher man sein könne, daß die Verbündeten bereit sein würden, den deutschen Boden zu verteidigen, um so größer sei die Sicherheit. Wenn bei den dazu notwendigen Landtruppen ein möglichst großer deutscher Anteil vorhanden sei, der hochmobil, gut ausgebildet und gut bewaffnet sein müsse. Nur durch das Hinzutreten ausreichender deutscher Verbände könne die augenblicklich bestehende Unterlegenheit der westlichen Verbände in ein für die Verteidigung tragbares Verhältnis umgewandelt werden.</p>
-				<p>Nach allen Berechnungen, die angestellt worden seien – und man habe die Möglichkeiten immer wieder und unter allen Gesichtspunkten überprüft, um zu einer möglichst geringen Zahl von Soldaten zu kommen –, stehe fest, daß zur Erfüllung dieser Aufgaben ein stehendes Heer von rd. 450000 Mann unbedingt erforderlich sei! Darüber hinaus seien weitere etwa 50000 Mann notwendig für gewisse bodenständige Streitkräfte (Luftverteidigung, Nachrichtenwesen, Versorgung, Zusammenarbeit mit zivilen Organisationen usw.). Nach übereinstimmendem Urteil aller Sachverständigen sei diese Zahl von 500000 Mann notwendig. Darüber hinaus müßten möglichst viel selbständig ausgebildete Reserven in großer Zahl vorhanden sein, um auffüllen zu können und weitere Reservisten für Verbände, die im Verteidigungsfall für die Aufgaben der Versorgung aufgestellt werden müßten. Es sei auch irrig anzunehmen, daß man für die bodenständige Verteidigung etwa eine Anzahl von Offizieren und Unteroffizieren bereitstelle und dann auf Grund irgendeiner Verpflichtung Leute dazu fügen könne. Auch diese Menschen müßten eine bedeutende militärische Ausbildung hinter sich haben, weil sie sonst nicht eingesetzt werden könnten. Die Modernisierung der Waffen habe ihre Bedienung bekanntlich nicht leichter gemacht.</p>
-				<p>Die Bundesrepublik sei auch verpflichtet, einen Verteidigungsbeitrag in diesem Umfange zu leisten. Artikel 3 des Natovertrages lege fest, daß die Mitgliedstaaten einzeln und gemeinsam durch ständige wirksame Selbsthilfe und gegenseitige Unterstützung die eigene und gemeinsame Widerstandskraft erhalten und fortentwickeln werden. Dies bedeute die Verpflichtung, eigene Streitkräfte in der Weise und in dem Umfange aufzustellen, daß sie mit den Verteidigungsbemühungen der anderen Mitgliedstaaten und mit den strategischen Planungen der NATO in Übereinstimmung ständen. Durch einstimmigen Beschluß spreche die NATO jedes Jahr eine Empfehlung aus, wieviel Truppen aufzustellen seien. Diese Empfehlung betrage für 1956 für die Bundesrepublik 96000 Mann.</p>
-				<p>Was die NATO-Staaten seit dem Eintritt der Bundesrepublik in die NATO von dieser erwarteten, sei, daß sie nach Anlage 5 zur Schlußakte der Neun-Mächte-Konferenz einen Beitrag zur Verteidigung leiste, der seinem Umfang und seinem Charakter nach dem für die EVG festgesetzten Verteidigungsbeitrag entspreche. Nach dem EVG- Vertrag sei der Umfang der deutschen Streitkräfte auf 500000 Mann auf der Grundlage der allgemeinen Wehrpflicht mit einer Mindestdienstzeit von 18 Monaten festgelegt.</p>
-				<p>Da der Auswärtige Ausschuß des Bundestages in seinem Bericht die Stellungnahme der Bundesregierung anerkannt habe, daß eine Ratifizierung der Londoner Schlußakte nicht notwendig sei, habe er damit sich auch zu deren Inhalt bekannt. Auch in anderen Protokollen sei die Zustimmung des Bundestages niedergelegt.</p>
-				<p>Es sei nun zu prüfen, ob dieser Verteidigungsbeitrag im Verhältnis zu den Beiträgen der anderen Staaten zumutbar und angemessen sei.</p>
-				<p>Ein Vergleich bringe folgende Zahlen:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell/>
-						<cell>Bevölkerung in Mio. Einwohner</cell>
-						<cell>Friedensstärke in 1000 Mann</cell>
-						<cell>in% der Bevölkerung</cell>
-						<cell>Reserven in 1000 Mann</cell>
-					</row>
-					<row>
-						<cell>Frankreich</cell>
-						<cell>42,6</cell>
-						<cell>850</cell>
-						<cell>2,0</cell>
-						<cell>2500</cell>
-					</row>
-					<row>
-						<cell>USA</cell>
-						<cell>160,0</cell>
-						<cell>2 865</cell>
-						<cell>1,8</cell>
-						<cell>6500</cell>
-					</row>
-					<row>
-						<cell>Belgien</cell>
-						<cell>8,8</cell>
-						<cell>145</cell>
-						<cell>1,65</cell>
-						<cell>450</cell>
-					</row>
-					<row>
-						<cell>England</cell>
-						<cell>50,3</cell>
-						<cell>772</cell>
-						<cell>1,5</cell>
-						<cell>1700</cell>
-					</row>
-					<row>
-						<cell>Holland</cell>
-						<cell>10,5</cell>
-						<cell>125</cell>
-						<cell>1,2</cell>
-						<cell>450</cell>
-					</row>
-					<row>
-						<cell>Italien</cell>
-						<cell>47,4</cell>
-						<cell>286</cell>
-						<cell>0,6</cell>
-						<cell>2000</cell>
-					</row>
-				</table>
-				<p>Im v. H. der Bevölkerung sei der Durchschnittsbeitrag dieser Länder 1,4%. Bei der Bundesrepublik stelle also eine Gesamtfriedensstärke von 500000 Mann eine Beteiligung mit 1% dar.</p>
-				<p>Interessant sei nun ein Vergleich mit den Ostblockstaaten:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Sowjetunion</cell>
-						<cell>210,0</cell>
-						<cell>4500</cell>
-						<cell>2,1</cell>
-						<cell>etwa 3200</cell>
-					</row>
-					<row>
-						<cell>Polen</cell>
-						<cell>26,5</cell>
-						<cell>380</cell>
-						<cell>1,5</cell>
-						<cell>700</cell>
-					</row>
-					<row>
-						<cell>Tschechoslowakei</cell>
-						<cell>13,1</cell>
-						<cell>250</cell>
-						<cell>1,9</cell>
-						<cell>450</cell>
-					</row>
-					<row>
-						<cell>Ungarn</cell>
-						<cell>9,8</cell>
-						<cell>190</cell>
-						<cell>1,9</cell>
-						<cell>330</cell>
-					</row>
-					<row>
-						<cell>Rumänien</cell>
-						<cell>16,5</cell>
-						<cell>320</cell>
-						<cell>1,9</cell>
-						<cell>600</cell>
-					</row>
-					<row>
-						<cell>Bulgarien</cell>
-						<cell>7,5</cell>
-						<cell>180</cell>
-						<cell>2,4</cell>
-						<cell>300</cell>
-					</row>
-					<row>
-						<cell>Albanien</cell>
-						<cell>1,25</cell>
-						<cell>32</cell>
-						<cell>2,6</cell>
-						<cell>50</cell>
-					</row>
-				</table>
-				<p>Die durchschnittliche Inanspruchnahme der Bevölkerung liege also bei 2 %.</p>
-				<p>Ein Blick auf drei Staaten, die als typisch neutral gelten, bringe folgende Zahlen:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Schweden</cell>
-						<cell>7,0</cell>
-						<cell>80</cell>
-						<cell>1,2</cell>
-						<cell>450</cell>
-					</row>
-					<row>
-						<cell>Spanien</cell>
-						<cell>27,9</cell>
-						<cell>400</cell>
-						<cell>1,5</cell>
-						<cell>300</cell>
-					</row>
-					<row>
-						<cell>Schweiz</cell>
-						<cell>4,6</cell>
-						<cell>207</cell>
-						<cell>4,4</cell>
-						<cell><seg type="note"><note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN002" type="comment"><p>Anm. im Original: Ständig mobil auf der Basis der allgemeinen Wehrpflicht.</p></note></seg></cell>
-					</row>
-				</table>
-				<p>Diese Zahlen zeigten, daß das Geforderte unter dem Durchschnitt dessen liege, was die Partner der Bundesrepublik leisteten und weit unter dem, was der potentielle Gegner aufbringe. Eine Anwendung des Natodurchschnitts auf die Bundesrepublik würde eine Friedensstärke von 700000 Mann bedeuten. Mit weniger als 500000 Mann würde man also weit hinter dem Zurückbleiben, wozu man einfach nach Treu und Glauben verpflichtet sei. Dies habe man beim Eintritt in das Paktsystem gewußt.</p>
-				<p>Wenn gesagt werde, daß man in England daran sei, die allgemeine Wehrpflicht abzuschaffen, so sei es in Tatsache so, daß man sich dort bemühe, die Zahl der Berufssoldaten zu vermehren und sich überlege, wie man deren wirtschaftliche Lage verbessern könne. Diese Überlegungen sollten auch bei uns angestellt werden, denn man könne z.B. nicht erwarten, daß man mit der beschlossenen Unteroffiziersbesoldung eine Berufsarmee aufstellen könne. Der Unteroffizier solle in seiner Besoldung nicht hinter dem Hilfsarbeiter Zurückbleiben.</p>
-				<p>Die USA haben die allgemeine Wehrpflicht. Dort sei nun <name type="Person" role="Erwaehnung" ref="#TaylorMaxwellD">Taylor</name> für einen möglichst hohen Anteil von Berufssoldaten in der Armee eingetreten.</p>
-				<p>In den Ostblockstaaten kenne man die allgemeine Wehrpflicht mit einer Dienstzeit bis zu vier Jahren. Auch Schweden, die Schweiz, Spanien und Österreich hätten die allgemeine Wehrpflicht.</p>
-				<p>Ausgehend von einer Friedensstärke von 500000 Mann benötige man 230000 Offiziere, Unteroffiziere und länger dienende Mannschaften, darüber hinaus 270000 Mann an Gezogenen. Die Zahl von 230000 müsse mit Freiwilligen erreicht werden. Bisher hätten sich 212000 Mann beworben, davon 55000 Ungediente. Das Einberufungsverfahren habe ergeben, daß ein erheblicher Prozentsatz ausfalle. Es werde also nicht einmal das vorgesehene Kontingent von 230000 Mann zu erfüllen sein. Man soll nicht glauben, daß man darüber hinaus weitere 270000 als Freiwillige gewinnen könne. Dies anzunehmen, bedeute eine Verkennung der Situation.</p>
-				<p>Niemand würde länger dienen, wenn er nicht Zusicherungen in Bezug auf seine Versorgung erhalte, da niemand das Risiko auf sich nehmen werde, etwa mit 30 oder 35 Jahren ohne eine solche dazustehen und sich dann nach einem neuen Lebensberuf Umsehen zu müssen.</p>
-				<p>Es sei auch die Frage zu prüfen, ob man nicht eine Art Miliz aufstellen könne. Miliz sei eine Wehrform, die ausgehend von einer allgemeinen gleichen Verpflichtung der Bürger besondere Eigenarten in der Organisation, Rekrutierung und Mobilisierung besitze; aber auch sie setze die allgemeine Wehrpflicht voraus. Es bestehe zwischen Miliz und Wehrpflicht kein Gegensatz. Besondere Kennzeichen der Miliz seien häufige Übungen, ständige Einsatzbereitschaft, Bekleidung und weitgehend auch Waffen im Besitz des Soldaten; Truppenteile beständen nur während der Übung.</p>
-				<p>Der Schweizer Generalstab habe seine Erfahrungen zur Verfügung gestellt: Die kurze Ausbildungszeit setze das starke demokratische Verantwortungsbewußtsein eines in Jahrhunderten herangewachsenen Staatsbürgers voraus. Weiter seien Einrichtungen für vormilitärische Ausbildungen, Schützenvereine, Sportvereine mit entsprechender Tendenz, Sonderkurse und derartige Dinge notwendig. Es ergäbe sich eine gewisse Beschränkung in der Art der zu verwendenden Waffen und damit auch der Einsatzmöglichkeit, auch wegen der nicht ausreichenden Verbandsausbildung. Die modernen Notwendigkeiten führten selbst in der Schweiz zur Durchbrechung des Milizsystems. Die Truppe sei nicht sofort einsatzbereit, sondern müsse erst zusammengerufen werden. Dadurch entstehe eine Situation, die für die Bundesrepublik nicht tragbar sei.</p>
-				<p>Bei der für die Bundesrepublik gegebenen Lage sei wegen der Möglichkeit von Panzer- und Luftangriffen eine sofort abwehrbereite, modern ausgerüstete, bewegliche Streitkraft notwendig. Solange 8 000 russische Panzer in den Ostgebieten Deutschlands und in den Satellitenstaaten stationiert seien, müsse jede Führung zur Abwehr geeignete operationsfähige schwere Verbände zur Verfügung haben. Vielleicht sei ein Milizsystem wegen der besonderen Verhältnisse des Geländes und der geographischen Lage der Schweiz möglich, sicher aber nicht für die Bundesrepublik.</p>
-				<p>Man könne darüber reden, ob man nicht die Kräfte, die zu den Berufssoldaten dazu treten müßten, etwa durch Personal ergänzen könnte, das auf der Grundlage der Miliz aufgestellt sei. Aber auch hier sei zu prüfen, ob die ständigen Einberufungen zu Übungen im Interesse der deutschen Wirtschaft tragbar seien.</p>
-				<p>Was sei nun der politische Wille der Regierung und der Fraktion gewesen? Man habe verkündet, daß, wenn schon ein Heer notwendig sei, ein solches geschaffen werden solle, das anders als die alte Reichswehr sich in die demokratische Ordnung einfüge und vom Staatsbürger getragen werde. Der Staatsbürger in Uniform sei der Leitgedanke dabeigewesen. Wenn man nun die Berufsarmee wolle, dann bedeute das ein Aufgeben der bisherigen Konzeption vom Soldatentum. Eine Berufsarmee werde ihrer Natur nach die Gefahr mit sich bringen, Staat im Staate zu werden. Dies könne man nur verhindern durch eine Lösung auf der Basis der allgemeinen Wehrpflicht.</p>
-				<p>Zur Beantwortung der Frage nach der Dauer der Wehrpflicht müsse man die sich aus den Präsenzstärken ergebenden Notwendigkeiten berücksichtigen, sowie die Tatsache, daß die Chance zu überleben wesentlich auch von der Dauer der Ausbildung abhänge. Er wolle jedoch zur Dauer der Wehrpflicht noch einmal vor der Fraktion referieren, bevor das Gesetz, wie vorgesehen, am 3. Mai in die 1. Lesung komme.<seg type="note"><note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN003" type="comment"><p>Eine solche Besprechung fand vor der 1. Lesung am 4.5.1956 nicht statt.</p></note></seg> Auch diese Frage sei so ernst wie die Frage, ob Wehrpflicht oder nicht.</p>
-				<p>Bundesaußenminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> unterstreicht den Appell des Verteidigungsministers und stellt gewissen Pressemitteilungen gegenüber klar, daß keine Meinungsverschiedenheiten über den Umfang des deutschen Kontingents bestünden. Alle Beteiligten seien sich bei der Ratifizierung der Pariser Verträge über das Ausmaß der damit übernommenen Verpflichtungen im Klaren gewesen. Man könne jetzt nicht anfangen, daran zu rütteln und abzuhandeln. In der Weltmeinung sei eine gewisse Beunruhigung entstanden, ob nicht das Zögern in Deutschland auf eine gewisse Mentalreservation schließen lasse und ob nicht die politischen Erwägungen wirksam seien, diese Fragen vielleicht im Gespräch mit der Sowjetunion auszuhandeln. Auch in der WEU sei diese Frage sehr nachdrücklich angesprochen worden. Man habe zum Ausdruck gebracht, daß, wenn sich Deutschland ausschließe, das System der europäischen Verteidigung zerstört werde. Man müsse also jetzt zu seinem gegebenen Wort stehen, um verhängnisvolle Folgen zu vermeiden. Auch das deutsche Volk verlange ein klares Bekenntnis zu den bisher vertretenen Grundsätzen. Eine klare Regierungspolitik werde eher Vertrauen erzeugen als Zögern und Angst vor der Entscheidung. Der Weg der Opposition sei verhängnisvoll und zeige tödliche Gefahren, wenn man die Freundschaft derer gefährde, von deren Unterstützung unser Leben abhänge ebenso wie die Beantwortung der Frage nach der Wiedervereinigung Deutschlands. Nicht nur, weil wir die Verträge zu erfüllen hätten, sondern auch mit Rücksicht auf unsere eigene zukünftige Entwicklung sollten wir den Weg der Wehrpflicht gehen. Die Wehrpflicht sei das legitime Kind der Demokratie.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> betont, daß es in der Frage der Wehrpolitik keine Gegensätze zwischen der CDU und der CSU, sondern nur gemeinsame Überzeugung und gemeinsame Bemühungen gäbe. Nie habe man von etwas anderem als von der Wehrpflicht gesprochen. Er selbst habe schon in der ersten Debatte von dem Notwehrrecht und der Notwehrpflicht des Volkes gesprochen und in Übereinstimmung mit allen anderen Rednern auf ein Wehrpflichtheer abgestellt, weil die Wehrpflicht die Gegenseite zu den Rechten des demokratischen Bürgers sei. Wenn man im übrigen von der Wehrpflicht abkommen wolle, dann sei dies doch eine Sache, die schließlich im Rahmen der NATO zu entscheiden sei. Auch solle man sich nicht in eine Atompanik treiben lassen. Je stärker der Westen auf dem Gebiet der klassischen Waffen sei, um so geringer werde die Gefahr des Einsatzes atomarer Waffen. Eine Miliz halte er nur als eine Ergänzung auf dem Gebiet der bodenständigen Verteidigung für möglich. Aber auch zu ihrer Errichtung bedürfe man der Wehrpflicht. Selbst Milizsoldaten müßten etwa 12 Monate ausgebildet werden.</p>
-				<p>Wenn die SPD ihre bisherige 60-jährige Tradition nun auf gebe, so glaube sie damit wohl Stimmen zu gewinnen. Sicher sei aber, daß diese Rechnung für die FDP, bei der Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> einen entsprechenden Vorstoß unternommen habe, nicht aufgehen werde.<seg type="note"><note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN004" type="comment"><p>Daß die SPD sich trotz aller Vorbehalte gegenüber einer Freiwilligenarmee aufgrund ihrer Positionen bei den vorausgegangenen Wehrdiskussionen gegen die Einführung der Wehrpflicht stellen würde, zeichnete sich seit längerem ab. Am 11.4.1956 hatte der Sicherheitsausschuß der Partei schließlich eine – wenn auch nicht unumstrittene – Empfehlung in diesem Sinne ausgesprochen. Überraschender war eher, daß nun auch die FDP der Wehrpflicht ihre Unterstützung entzog, nachdem <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> zunächst und wiederholt erklärt hatte, er halte eine zwölfmonatige Dienstzeit für ausreichend. Vgl. Sicherheitspolitik, Bd. 3, S. 519–521.</p></note></seg></p>
-				<p>Die Frage der Dauer des Wehrdienstes sei nicht grundsätzlicher, sondern praktischer Natur. Die Ausbildung solle so kurz wie möglich, aber so lange wie militärisch notwendig sein. Das sei die Formel, auf der man sich vorläufig einigen solle.</p>
-				<p>Wieder einmal zeige sich eine gewisse Bewegung gegen die Wehrpolitik der Regierung. Die Ohne-mich-Bewegung habe man überwunden, das Paulskirchen-Manifest<seg type="note"><note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN005" type="comment"><p>Eine vom Vorsitzenden des DGB, Walter <name type="Person" role="Erwaehnung" ref="#FreitagWalter_1949-09-07">Freitag</name>, dem evangelischen Theologen Helmut <name type="Person" role="Erwaehnung" ref="#GollwitzerHelmut">Gollwitzer</name>, dem SPD-Vorsitzenden Erich <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> und dem Heidelberger Soziologen Alfred <name type="Person" role="Erwaehnung" ref="#WeberAlfred">Weber</name> initiierte Veranstaltung in der Frankfurter Paulskirche, an der rund 1000 Gegner der Wiederbewaffnung teilgenommen hatten, hatte am 29.1.1955 ein Manifest verabschiedet, das zum Widerstand gegen die Regierungspolitik aufrief. Vgl. Kabinettsprotokolle 1955, S. 116f.</p></note></seg> sei überwunden worden, und nun gehe der Kampf gegen die Wehrpflicht. Diese Auseinandersetzung müsse man in der Öffentlichkeit führen und wenn man entschlossen vorgehe, werde man das Volk überzeugen können.</p>
-				<p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> begrüßt die Erklärungen Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaegers</name> und regt an, auch über die Dauer des Wehrdienstes möglichst bald zu einer klaren Entscheidung zu kommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> fordert dazu auf, die in der Bevölkerung vorhandenen Mißverständnisse wegen Wehrpflicht und Milizsystem aufzuklären, ebenso die militärischen Notwendigkeiten darzulegen, die für die Entschlüsse der Regierung maßgeblich seien. Dann werde der Widerstand gar nicht so groß sein.</p>
-				<p>Er sei der Ansicht, wenn man die Wehrpflicht ausdehne auf eine allgemeine Dienstpflicht, werde man weniger psychologische Schwierigkeiten haben als jetzt. Auch bei der SPD könne man Erfolg haben, wenn man ihr sage, daß man ihr in den Fragen der zivilen Verteidigung entgegenkomme.</p>
-				<p><name type="Person" role="Sprecher" ref="#JostenJohannPeter_1953-10-06">Josten</name> empfiehlt, bald an die Verwirklichung der Wehrpflicht heranzugehen; je schneller man handele, um so besser.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt dann den Text einer Presseerklärung über den Inhalt der Fraktionssitzung vor. An der Aussprache über den Text beteiligen sich <name type="Person" role="Sprecher" ref="#HeixMartin_1949-09-07">Heix</name>, <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> und Prof. <name type="Person" role="Sprecher" ref="#FurlerHans_1953-10-06">Furler</name>. Es wird ein Redaktionskomitee gebildet und die Fraktion billigt die ihr vorgeschlagene Entschließung im Wortlaut.<seg type="note"><note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN006" type="comment"><p>Die Entschließung ist abgedruckt im Heft zum Bundesparteitag. Vgl. CDU Deutschlands, 6. Bundesparteitag, S. 196.</p></note></seg></p>
-				<p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bringt seine Befriedigung über den Verlauf der Debatte zum Ausdruck, die ihn von einer großen Sorge befreit habe. Wenn die Bundesrepublik in dieser Frage versagen würde, wäre die NATO erledigt. Jeder wisse, was das bedeuten würde. Bleibe man aber bei der jetzt beschlossenen Linie, so könne man erwarten, daß die NATO auch zu einem politischen Instrument ausgebildet werde. Das werde die gesamte Entwicklung vorantreiben. Er empfehle ebenfalls die vorgetragene Entschließung, die ihren Eindruck in der Öffentlichkeit nicht verfehlen werde.</p>
-				<p>Zur Frage der Dauer der Dienstzeit habe die amerikanische Regierung Vorstellungen erhoben, daß ein Zurückbleiben unter 18 Monaten Folgerungen in den übrigen NATO-Staaten auslösten. Dann wäre die NATO militärisch erledigt. Wenn man eine Erklärung über die Dienstdauer abgäbe, die Zweifel ermögliche, würde das große Unruhe schaffen. Man solle deshalb sagen, daß man bezüglich der Dienstzeit bereit sei, den militärischen Notwendigkeiten Rechnung zu tragen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt durch Abstimmung bei zwei Enthaltungen die einstimmige Meinung der Fraktion fest, daß die Wehrpflicht bejaht [werde] und in der Frage der Dauer die militärischen Notwendigkeiten und die Maßstäbe der Natoverträge maßgebend seien.</p>
-				<p>Weiter stellt er die einstimmige Billigung des Vorschlages durch die Fraktion fest, im Haushalts- und im Verteidigungsausschuß die Mittel zu bewilligen, die zur sofortigen Durchführung dieses Beschlusses notwendig sind.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-04-26-t1520_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung in Stuttgart</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1007/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 26. April 1956 in Stuttgart</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>8 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1956-04-26">
+               <time type="start" when="15:20:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Stuttgart</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1956-04-26-t1520_EP_SVP-1" corresp="#cdu-csu-02_1956-04-26-t1520_EP_div_SVP-1">A. Wehrpflichtgesetz.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1956-04-26-t1520_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[Wehrpflichtgesetz, Drucksache II/2303 v. 12.4.1956]</p>
+            <p>Bundesverteidigungsminister <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name> referiert zum Wehrpflichtgesetz.</p>
+            <p>Er begrüßt die Gelegenheit, bei dieser Fraktionssitzung im Rahmen des Bundesparteitages in Stuttgart<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN001" type="comment">
+                     <p>Am 26.–29.4.1956.</p>
+                  </note>
+               </seg> das Wehrpflichtgesetz behandeln zu können. In der Öffentlichkeit seien widersprechende Meinungen zutage getreten, und es sei der Eindruck entstanden, als ob die Haltung der CDU/CSU in dieser Frage nicht ganz sicher sei. Darüber müsse Klarheit geschaffen werden; nichts werde der Wähler mehr verargen als eine unklare Haltung in lebenswichtigen, politisch entscheidenden Fragen. Die Notwendigkeit, die Freiheit des deutschen Volkes im Falle einer Aggression verteidigen zu müssen, sei in der Fraktion unbestritten. Die auf die Verteidigung hinzielenden Maßnahmen dienten ausschließlich diesem Zweck und damit der Sicherung des Friedens. Man könne auch sicher sein, daß die der NATO angeschlossenen Mitgliedstaaten von sich aus niemals einen Krieg beginnen würden, Krieg könne es nur geben, wenn eine Aggression die Verteidigung notwendig macht. Er widerstrebe den demokratischen Grundprinzipien dieser Staaten, die keine Annexion fremder Gebiete wollten, sondern wünschten, daß jedes Volk in Freiheit selbst seine Schicksale bestimme; sie strebten nach freundschaftlicher Zusammenarbeit mit allen Völkern auf politischem, sozialem, kulturellem und wirtschaftlichem Gebiet; ihre Abwehrkraft diene ausschließlich der Sicherung dieser Bemühungen.</p>
+            <p>Vom totalitären System beherrschte Staaten dagegen versuchten Einfluß zu nehmen auf die Lebensordnung anderer Staaten. Man müsse sich darüber klar sein, daß trotz aller taktischen Manöver der sowjetrussischen Politik die sowjetische Ideologie sich in nichts geändert habe. Bei der in gewissen Kreisen sich abzeichnenden Neigung, den russischen Bemühungen allzuviel Glauben zu schenken, müsse, wenn es auch eine Binsenwahrheit sei, doch klar und deutlich ausgesprochen werden, daß es nach wie vor das Ziel der Sowjetunion sei, ihre Ideologie der übrigen Welt aufzuzwingen und daß diesem Ziele auch die ungeheuren militärischen Machtmittel der Sowjetunion zu dienen hätten.</p>
+            <p>Man müsse auch einmal wieder an die historische Tatsache erinnern, daß die westlichen Alliierten nach dem Ende des letzten Krieges auch in Deutschland ihre militärische Stärke verringert hatten, daß sie schließlich nicht mehr als zwei Divisionen in den von ihnen besetzten Gebieten stehen hatten, während die Sowjetunion ihre militärischen Kräfte immer weiter ausbauten. Die Stärke der Streitmacht der Sowjetunion und ihre Expansionsbestrebungen schufen jene dauernde Gefahr eines Angriffs, der auch zum Einsatz von Atomwaffen führen könne, eine Möglichkeit, mit der bei allen Überlegungen zu rechnen sei.</p>
+            <p>Es sei eine geschichtliche Erfahrung, daß jeder mögliche Angreifer dann von einem Angriff absehe, wenn eine solche Absicht ein zu großes Risiko beinhalte. Dieser Gedanke habe nichts mit der sogenannten Politik der Stärke zu tun, sondern sei eine uralte, allgemein menschliche Erfahrung. Nur wenn die Sowjetunion wisse, daß das Risiko eines Angriffs für sie sehr groß sei, werde man sie auf die Dauer von einer Aggression abhalten können. Dazu gehöre aber, daß die NATO, die gegenwärtig in ihrer militärischen Stärke nicht gerade als allzu furchterregend bezeichnet werden könne, nicht einem Schwächungsprozeß unterworfen werden dürfe, sondern in die Lage versetzt werden müsse, ihr Abwehrpotential in hinreichender Weise zu steigern.</p>
+            <p>In den vergangenen Jahren sei das Risiko eines Angriffs für die Sowjetunion wegen der Überlegenheit des Westens an atomaren Waffen zu groß gewesen. Unter diesem Schutz sei es möglich gewesen, den Frieden durch all diese Jahre zu bewahren. Diese Lage habe sich jedoch verändert und niemand könne z. Zt. mit Sicherheit sagen, wie das Verhältnis der atomaren Möglichkeiten sei und wie es sich in Zukunft weiter entwickeln werde. Bei diesen Überlegungen könne man auch die Auffassung vertreten, daß eine weitere Entwicklung der Atomwaffen nach Zahl und Wirkung auf beiden Seiten ihre Anwendung vielleicht unmöglich machen könne, wie sich das im letzten Krieg in Bezug auf die Gaswaffen gezeigt habe.</p>
+            <p>Wie immer aber auch diese Dinge beurteilt würden, niemals könne man bei der gegebenen Situation die Lage für die Bundesrepublik isoliert betrachten. Kein einzelner Staat, mit Ausnahme der Großmächte USA und Sowjetrußland, habe ein ausreichendes Potential, um sich aus eigener Kraft verteidigen zu können, auch nicht die Bundesrepublik.</p>
+            <p>Aus dieser Überlegung sei die Bundesrepublik mit Zustimmung des Parlaments in die NATO eingegliedert worden. Die Frage nach Art und Umfang der Verteidigungsleistungen könne nur in diesem Rahmen geprüft und behandelt werden.</p>
+            <p>Das Vorhandensein und die Möglichkeit der Anwendung neuer Kampfmittel, besonders der Atomwaffen, habe bei manchen Leuten zu der Annahme geführt, daß Streitkräfte, die auf der allgemeinen Wehrpflicht basieren, überholt und überflüssig seien und daß es richtiger sei, an ihrer Stelle kleine Berufsheere zu schaffen. Diese Auffassung sei in vollem Umfange unzutreffend, und die in ihr sichtbar werdenden Mißverständnisse müßten einmal ausgeräumt werden. Die Forderung dürfe nicht heißen: kleine Heere, sondern viele kleine hochmobile feuerkräftige und operationsfähige Verbände, nicht Stärkeminderung im Ganzen, sondern Auflockerung und Beweglichkeit. Die Gliederung der modernen deutschen Verbände würde dieser Forderung entsprechen. Gerade der jetzt stattfindende Neuaufbau, ohne Vorbelastung durch eine eigene vorhandene Streitmacht und mit der Möglichkeit, die von den Anderen gemachten Erfahrungen zu nutzen, biete eine einmalige Chance, diese Erkenntnis zu verwirklichen.</p>
+            <p>Es sei festzustellen, daß in allen anderen Ländern, besonders aber in den Ostblockstaaten, das Vorhandensein der Atomwaffen zu keiner nennenswerten Verringerung herkömmlicher Truppen geführt habe. Deren Bedeutung sei unbestritten für den Fall, daß nukleare Waffen nicht zum Einsatz kämen. Aber auch in einem Atomkrieg seien sie nicht überflüssig, wenn man nicht den zu verteidigenden Raum atomaren Vergeltungsschlägen preisgeben wolle.</p>
+            <p>Nun habe man in den letzten Tagen offenbar neueste militärische Erkenntnisse unter dem Schlagwort »Schwert- und Schildarmee« vorgesetzt bekommen. Die »Schwertarmee« solle aus hochbeweglichen kleinen Divisionen von Berufssoldaten bestehen und operationsfähig sein, daneben solle die »Schildarmee« auf der Basis der Miliz aus dem Volke gebildet werden.</p>
+            <p>Es sei überflüssig zu sagen, daß an diesen Ideen kein deutscher Generalstäbler mitgewirkt habe. Solche Vorstellungen hießen doch nichts anderes, als sich zurückzuversetzen in das letzte Jahr des vergangenen Krieges. Nachdem die operativen Verbände nicht mehr vorhanden, jedenfalls nicht mehr Herr der Lage, gewesen seien, habe der Volkssturm retten sollen, was die Armee nicht mehr habe retten können. Man fühle sich versucht zu sagen, daß die Realisierung solcher Vorstellungen nichts anderes bedeuten könne als »organisierten Mord«. Solchen Überlegungen gegenüber müsse man die tatsächlichen Gegebenheiten sehen und sich nach ihnen richten.</p>
+            <p>Um das erforderliche Gegengewicht zu der militärischen Stärke des Ostblocks herzustellen, sei nicht die zahlenmäßige Gleichheit notwendig. Nach aller bisherigen Erfahrung greife der Russe nur an, wenn er sich einer mehrfachen zahlenmäßigen Überlegenheit sicher sei. Es sei nur notwendig, ein Kräfteverhältnis zu schaffen, das dieser Tatsache Rechnung trage. Mit der Aufstellung von 500000 Mann deutscher Truppen im Verband der NATO werde im europäischen Bereich ein solches Verhältnis erreicht, daß der Sowjetblock von jedem überfallmäßigen Angriff werde absehen müssen. Eine solche Stärke der deutschen Streitkräfte könne aber andererseits von der Sowjetunion in keinem Falle als Bedrohung empfunden werden. Diese Planung von 500000 Mann trage auch der Überlegung Rechnung, daß herkömmliche Truppen in hinreichender Stärke notwendig seien, wenn nukleare Waffen ausgeschaltet blieben, weil dann auf ihnen die Sicherheit beruhe. Ein kleines Berufsheer dagegen würde diese Sicherheit ernsthaft in Frage stellen, weil es nicht über ausreichend gut ausgebildete und gut ausgestattete Reserven verfügen würde und die zu erwartenden Ausfälle also nicht ersetzen könne. Eine Armee habe erfahrungsgemäß nur soviel Wert, als hinter ihr ein Mehrfaches an entsprechenden Reserven stehe. Wenn man ein Berufsheer schaffe, befinde man sich – besonders wenn es zur Ächtung des Atomkrieges komme – dem Sowjetblock gegenüber in einer hoffnungslosen Unterlegenheit, weil die Streitkräfte aller Sowjet-blockstaaten auf der Basis der Wehrpflicht aufgebaut seien.</p>
+            <p>Eine sowjetische Aggression könne aus dem besetzten deutschen Gebiet und den dahinter liegenden Räumen heraus mit den dort in Massen stehenden Panzern und unter Ausnutzung des deutschen Straßennetzes mit größter Schnelligkeit erfolgen. Diese Möglichkeit zeige ein Blick auf die Karte und auf die geographischen Gegebenheiten unseres Landes. Deshalb sei zu fordern, daß die deutschen Kontingente in einem solch mobilen Zustande gehalten würden, daß sie in der Lage wären, einem Überraschungsangriff einstweilen entgegenzutreten, um hinter diesem Schirm aus der Reserve heraus entwickeln zu können, was zur Abwehr des Angriffs zugeführt werden müsse. Ein Vergleich mit Schweizer Verhältnissen etwa sei abwegig, da man operativ wirkenden Verbänden nur durch ebensolche begegnen könne und zur Mobilisierung einer Miliz gar keine Möglichkeit mehr bliebe.</p>
+            <p>Der deutsche Anteil an den Verteidigungsleistungen habe neben entsprechenden Luft- und Marinestreitkräften seinen Schwerpunkt im Einsatz von Landstreitkräften. So sicher man sein könne, daß die Verbündeten bereit sein würden, den deutschen Boden zu verteidigen, um so größer sei die Sicherheit. Wenn bei den dazu notwendigen Landtruppen ein möglichst großer deutscher Anteil vorhanden sei, der hochmobil, gut ausgebildet und gut bewaffnet sein müsse. Nur durch das Hinzutreten ausreichender deutscher Verbände könne die augenblicklich bestehende Unterlegenheit der westlichen Verbände in ein für die Verteidigung tragbares Verhältnis umgewandelt werden.</p>
+            <p>Nach allen Berechnungen, die angestellt worden seien – und man habe die Möglichkeiten immer wieder und unter allen Gesichtspunkten überprüft, um zu einer möglichst geringen Zahl von Soldaten zu kommen –, stehe fest, daß zur Erfüllung dieser Aufgaben ein stehendes Heer von rd. 450000 Mann unbedingt erforderlich sei! Darüber hinaus seien weitere etwa 50000 Mann notwendig für gewisse bodenständige Streitkräfte (Luftverteidigung, Nachrichtenwesen, Versorgung, Zusammenarbeit mit zivilen Organisationen usw.). Nach übereinstimmendem Urteil aller Sachverständigen sei diese Zahl von 500000 Mann notwendig. Darüber hinaus müßten möglichst viel selbständig ausgebildete Reserven in großer Zahl vorhanden sein, um auffüllen zu können und weitere Reservisten für Verbände, die im Verteidigungsfall für die Aufgaben der Versorgung aufgestellt werden müßten. Es sei auch irrig anzunehmen, daß man für die bodenständige Verteidigung etwa eine Anzahl von Offizieren und Unteroffizieren bereitstelle und dann auf Grund irgendeiner Verpflichtung Leute dazu fügen könne. Auch diese Menschen müßten eine bedeutende militärische Ausbildung hinter sich haben, weil sie sonst nicht eingesetzt werden könnten. Die Modernisierung der Waffen habe ihre Bedienung bekanntlich nicht leichter gemacht.</p>
+            <p>Die Bundesrepublik sei auch verpflichtet, einen Verteidigungsbeitrag in diesem Umfange zu leisten. Artikel 3 des Natovertrages lege fest, daß die Mitgliedstaaten einzeln und gemeinsam durch ständige wirksame Selbsthilfe und gegenseitige Unterstützung die eigene und gemeinsame Widerstandskraft erhalten und fortentwickeln werden. Dies bedeute die Verpflichtung, eigene Streitkräfte in der Weise und in dem Umfange aufzustellen, daß sie mit den Verteidigungsbemühungen der anderen Mitgliedstaaten und mit den strategischen Planungen der NATO in Übereinstimmung ständen. Durch einstimmigen Beschluß spreche die NATO jedes Jahr eine Empfehlung aus, wieviel Truppen aufzustellen seien. Diese Empfehlung betrage für 1956 für die Bundesrepublik 96000 Mann.</p>
+            <p>Was die NATO-Staaten seit dem Eintritt der Bundesrepublik in die NATO von dieser erwarteten, sei, daß sie nach Anlage 5 zur Schlußakte der Neun-Mächte-Konferenz einen Beitrag zur Verteidigung leiste, der seinem Umfang und seinem Charakter nach dem für die EVG festgesetzten Verteidigungsbeitrag entspreche. Nach dem EVG- Vertrag sei der Umfang der deutschen Streitkräfte auf 500000 Mann auf der Grundlage der allgemeinen Wehrpflicht mit einer Mindestdienstzeit von 18 Monaten festgelegt.</p>
+            <p>Da der Auswärtige Ausschuß des Bundestages in seinem Bericht die Stellungnahme der Bundesregierung anerkannt habe, daß eine Ratifizierung der Londoner Schlußakte nicht notwendig sei, habe er damit sich auch zu deren Inhalt bekannt. Auch in anderen Protokollen sei die Zustimmung des Bundestages niedergelegt.</p>
+            <p>Es sei nun zu prüfen, ob dieser Verteidigungsbeitrag im Verhältnis zu den Beiträgen der anderen Staaten zumutbar und angemessen sei.</p>
+            <p>Ein Vergleich bringe folgende Zahlen:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell/>
+                  <cell>Bevölkerung in Mio. Einwohner</cell>
+                  <cell>Friedensstärke in 1000 Mann</cell>
+                  <cell>in% der Bevölkerung</cell>
+                  <cell>Reserven in 1000 Mann</cell>
+               </row>
+               <row>
+                  <cell>Frankreich</cell>
+                  <cell>42,6</cell>
+                  <cell>850</cell>
+                  <cell>2,0</cell>
+                  <cell>2500</cell>
+               </row>
+               <row>
+                  <cell>USA</cell>
+                  <cell>160,0</cell>
+                  <cell>2 865</cell>
+                  <cell>1,8</cell>
+                  <cell>6500</cell>
+               </row>
+               <row>
+                  <cell>Belgien</cell>
+                  <cell>8,8</cell>
+                  <cell>145</cell>
+                  <cell>1,65</cell>
+                  <cell>450</cell>
+               </row>
+               <row>
+                  <cell>England</cell>
+                  <cell>50,3</cell>
+                  <cell>772</cell>
+                  <cell>1,5</cell>
+                  <cell>1700</cell>
+               </row>
+               <row>
+                  <cell>Holland</cell>
+                  <cell>10,5</cell>
+                  <cell>125</cell>
+                  <cell>1,2</cell>
+                  <cell>450</cell>
+               </row>
+               <row>
+                  <cell>Italien</cell>
+                  <cell>47,4</cell>
+                  <cell>286</cell>
+                  <cell>0,6</cell>
+                  <cell>2000</cell>
+               </row>
+            </table>
+            <p>Im v. H. der Bevölkerung sei der Durchschnittsbeitrag dieser Länder 1,4%. Bei der Bundesrepublik stelle also eine Gesamtfriedensstärke von 500000 Mann eine Beteiligung mit 1% dar.</p>
+            <p>Interessant sei nun ein Vergleich mit den Ostblockstaaten:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Sowjetunion</cell>
+                  <cell>210,0</cell>
+                  <cell>4500</cell>
+                  <cell>2,1</cell>
+                  <cell>etwa 3200</cell>
+               </row>
+               <row>
+                  <cell>Polen</cell>
+                  <cell>26,5</cell>
+                  <cell>380</cell>
+                  <cell>1,5</cell>
+                  <cell>700</cell>
+               </row>
+               <row>
+                  <cell>Tschechoslowakei</cell>
+                  <cell>13,1</cell>
+                  <cell>250</cell>
+                  <cell>1,9</cell>
+                  <cell>450</cell>
+               </row>
+               <row>
+                  <cell>Ungarn</cell>
+                  <cell>9,8</cell>
+                  <cell>190</cell>
+                  <cell>1,9</cell>
+                  <cell>330</cell>
+               </row>
+               <row>
+                  <cell>Rumänien</cell>
+                  <cell>16,5</cell>
+                  <cell>320</cell>
+                  <cell>1,9</cell>
+                  <cell>600</cell>
+               </row>
+               <row>
+                  <cell>Bulgarien</cell>
+                  <cell>7,5</cell>
+                  <cell>180</cell>
+                  <cell>2,4</cell>
+                  <cell>300</cell>
+               </row>
+               <row>
+                  <cell>Albanien</cell>
+                  <cell>1,25</cell>
+                  <cell>32</cell>
+                  <cell>2,6</cell>
+                  <cell>50</cell>
+               </row>
+            </table>
+            <p>Die durchschnittliche Inanspruchnahme der Bevölkerung liege also bei 2 %.</p>
+            <p>Ein Blick auf drei Staaten, die als typisch neutral gelten, bringe folgende Zahlen:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Schweden</cell>
+                  <cell>7,0</cell>
+                  <cell>80</cell>
+                  <cell>1,2</cell>
+                  <cell>450</cell>
+               </row>
+               <row>
+                  <cell>Spanien</cell>
+                  <cell>27,9</cell>
+                  <cell>400</cell>
+                  <cell>1,5</cell>
+                  <cell>300</cell>
+               </row>
+               <row>
+                  <cell>Schweiz</cell>
+                  <cell>4,6</cell>
+                  <cell>207</cell>
+                  <cell>4,4</cell>
+                  <cell>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN002" type="comment">
+                           <p>Anm. im Original: Ständig mobil auf der Basis der allgemeinen Wehrpflicht.</p>
+                        </note>
+                     </seg>
+                  </cell>
+               </row>
+            </table>
+            <p>Diese Zahlen zeigten, daß das Geforderte unter dem Durchschnitt dessen liege, was die Partner der Bundesrepublik leisteten und weit unter dem, was der potentielle Gegner aufbringe. Eine Anwendung des Natodurchschnitts auf die Bundesrepublik würde eine Friedensstärke von 700000 Mann bedeuten. Mit weniger als 500000 Mann würde man also weit hinter dem Zurückbleiben, wozu man einfach nach Treu und Glauben verpflichtet sei. Dies habe man beim Eintritt in das Paktsystem gewußt.</p>
+            <p>Wenn gesagt werde, daß man in England daran sei, die allgemeine Wehrpflicht abzuschaffen, so sei es in Tatsache so, daß man sich dort bemühe, die Zahl der Berufssoldaten zu vermehren und sich überlege, wie man deren wirtschaftliche Lage verbessern könne. Diese Überlegungen sollten auch bei uns angestellt werden, denn man könne z.B. nicht erwarten, daß man mit der beschlossenen Unteroffiziersbesoldung eine Berufsarmee aufstellen könne. Der Unteroffizier solle in seiner Besoldung nicht hinter dem Hilfsarbeiter Zurückbleiben.</p>
+            <p>Die USA haben die allgemeine Wehrpflicht. Dort sei nun <name type="Person" role="Erwaehnung" ref="#TaylorMaxwellD">Taylor</name> für einen möglichst hohen Anteil von Berufssoldaten in der Armee eingetreten.</p>
+            <p>In den Ostblockstaaten kenne man die allgemeine Wehrpflicht mit einer Dienstzeit bis zu vier Jahren. Auch Schweden, die Schweiz, Spanien und Österreich hätten die allgemeine Wehrpflicht.</p>
+            <p>Ausgehend von einer Friedensstärke von 500000 Mann benötige man 230000 Offiziere, Unteroffiziere und länger dienende Mannschaften, darüber hinaus 270000 Mann an Gezogenen. Die Zahl von 230000 müsse mit Freiwilligen erreicht werden. Bisher hätten sich 212000 Mann beworben, davon 55000 Ungediente. Das Einberufungsverfahren habe ergeben, daß ein erheblicher Prozentsatz ausfalle. Es werde also nicht einmal das vorgesehene Kontingent von 230000 Mann zu erfüllen sein. Man soll nicht glauben, daß man darüber hinaus weitere 270000 als Freiwillige gewinnen könne. Dies anzunehmen, bedeute eine Verkennung der Situation.</p>
+            <p>Niemand würde länger dienen, wenn er nicht Zusicherungen in Bezug auf seine Versorgung erhalte, da niemand das Risiko auf sich nehmen werde, etwa mit 30 oder 35 Jahren ohne eine solche dazustehen und sich dann nach einem neuen Lebensberuf Umsehen zu müssen.</p>
+            <p>Es sei auch die Frage zu prüfen, ob man nicht eine Art Miliz aufstellen könne. Miliz sei eine Wehrform, die ausgehend von einer allgemeinen gleichen Verpflichtung der Bürger besondere Eigenarten in der Organisation, Rekrutierung und Mobilisierung besitze; aber auch sie setze die allgemeine Wehrpflicht voraus. Es bestehe zwischen Miliz und Wehrpflicht kein Gegensatz. Besondere Kennzeichen der Miliz seien häufige Übungen, ständige Einsatzbereitschaft, Bekleidung und weitgehend auch Waffen im Besitz des Soldaten; Truppenteile beständen nur während der Übung.</p>
+            <p>Der Schweizer Generalstab habe seine Erfahrungen zur Verfügung gestellt: Die kurze Ausbildungszeit setze das starke demokratische Verantwortungsbewußtsein eines in Jahrhunderten herangewachsenen Staatsbürgers voraus. Weiter seien Einrichtungen für vormilitärische Ausbildungen, Schützenvereine, Sportvereine mit entsprechender Tendenz, Sonderkurse und derartige Dinge notwendig. Es ergäbe sich eine gewisse Beschränkung in der Art der zu verwendenden Waffen und damit auch der Einsatzmöglichkeit, auch wegen der nicht ausreichenden Verbandsausbildung. Die modernen Notwendigkeiten führten selbst in der Schweiz zur Durchbrechung des Milizsystems. Die Truppe sei nicht sofort einsatzbereit, sondern müsse erst zusammengerufen werden. Dadurch entstehe eine Situation, die für die Bundesrepublik nicht tragbar sei.</p>
+            <p>Bei der für die Bundesrepublik gegebenen Lage sei wegen der Möglichkeit von Panzer- und Luftangriffen eine sofort abwehrbereite, modern ausgerüstete, bewegliche Streitkraft notwendig. Solange 8 000 russische Panzer in den Ostgebieten Deutschlands und in den Satellitenstaaten stationiert seien, müsse jede Führung zur Abwehr geeignete operationsfähige schwere Verbände zur Verfügung haben. Vielleicht sei ein Milizsystem wegen der besonderen Verhältnisse des Geländes und der geographischen Lage der Schweiz möglich, sicher aber nicht für die Bundesrepublik.</p>
+            <p>Man könne darüber reden, ob man nicht die Kräfte, die zu den Berufssoldaten dazu treten müßten, etwa durch Personal ergänzen könnte, das auf der Grundlage der Miliz aufgestellt sei. Aber auch hier sei zu prüfen, ob die ständigen Einberufungen zu Übungen im Interesse der deutschen Wirtschaft tragbar seien.</p>
+            <p>Was sei nun der politische Wille der Regierung und der Fraktion gewesen? Man habe verkündet, daß, wenn schon ein Heer notwendig sei, ein solches geschaffen werden solle, das anders als die alte Reichswehr sich in die demokratische Ordnung einfüge und vom Staatsbürger getragen werde. Der Staatsbürger in Uniform sei der Leitgedanke dabeigewesen. Wenn man nun die Berufsarmee wolle, dann bedeute das ein Aufgeben der bisherigen Konzeption vom Soldatentum. Eine Berufsarmee werde ihrer Natur nach die Gefahr mit sich bringen, Staat im Staate zu werden. Dies könne man nur verhindern durch eine Lösung auf der Basis der allgemeinen Wehrpflicht.</p>
+            <p>Zur Beantwortung der Frage nach der Dauer der Wehrpflicht müsse man die sich aus den Präsenzstärken ergebenden Notwendigkeiten berücksichtigen, sowie die Tatsache, daß die Chance zu überleben wesentlich auch von der Dauer der Ausbildung abhänge. Er wolle jedoch zur Dauer der Wehrpflicht noch einmal vor der Fraktion referieren, bevor das Gesetz, wie vorgesehen, am 3. Mai in die 1. Lesung komme.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN003" type="comment">
+                     <p>Eine solche Besprechung fand vor der 1. Lesung am 4.5.1956 nicht statt.</p>
+                  </note>
+               </seg> Auch diese Frage sei so ernst wie die Frage, ob Wehrpflicht oder nicht.</p>
+            <p>Bundesaußenminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> unterstreicht den Appell des Verteidigungsministers und stellt gewissen Pressemitteilungen gegenüber klar, daß keine Meinungsverschiedenheiten über den Umfang des deutschen Kontingents bestünden. Alle Beteiligten seien sich bei der Ratifizierung der Pariser Verträge über das Ausmaß der damit übernommenen Verpflichtungen im Klaren gewesen. Man könne jetzt nicht anfangen, daran zu rütteln und abzuhandeln. In der Weltmeinung sei eine gewisse Beunruhigung entstanden, ob nicht das Zögern in Deutschland auf eine gewisse Mentalreservation schließen lasse und ob nicht die politischen Erwägungen wirksam seien, diese Fragen vielleicht im Gespräch mit der Sowjetunion auszuhandeln. Auch in der WEU sei diese Frage sehr nachdrücklich angesprochen worden. Man habe zum Ausdruck gebracht, daß, wenn sich Deutschland ausschließe, das System der europäischen Verteidigung zerstört werde. Man müsse also jetzt zu seinem gegebenen Wort stehen, um verhängnisvolle Folgen zu vermeiden. Auch das deutsche Volk verlange ein klares Bekenntnis zu den bisher vertretenen Grundsätzen. Eine klare Regierungspolitik werde eher Vertrauen erzeugen als Zögern und Angst vor der Entscheidung. Der Weg der Opposition sei verhängnisvoll und zeige tödliche Gefahren, wenn man die Freundschaft derer gefährde, von deren Unterstützung unser Leben abhänge ebenso wie die Beantwortung der Frage nach der Wiedervereinigung Deutschlands. Nicht nur, weil wir die Verträge zu erfüllen hätten, sondern auch mit Rücksicht auf unsere eigene zukünftige Entwicklung sollten wir den Weg der Wehrpflicht gehen. Die Wehrpflicht sei das legitime Kind der Demokratie.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> betont, daß es in der Frage der Wehrpolitik keine Gegensätze zwischen der CDU und der CSU, sondern nur gemeinsame Überzeugung und gemeinsame Bemühungen gäbe. Nie habe man von etwas anderem als von der Wehrpflicht gesprochen. Er selbst habe schon in der ersten Debatte von dem Notwehrrecht und der Notwehrpflicht des Volkes gesprochen und in Übereinstimmung mit allen anderen Rednern auf ein Wehrpflichtheer abgestellt, weil die Wehrpflicht die Gegenseite zu den Rechten des demokratischen Bürgers sei. Wenn man im übrigen von der Wehrpflicht abkommen wolle, dann sei dies doch eine Sache, die schließlich im Rahmen der NATO zu entscheiden sei. Auch solle man sich nicht in eine Atompanik treiben lassen. Je stärker der Westen auf dem Gebiet der klassischen Waffen sei, um so geringer werde die Gefahr des Einsatzes atomarer Waffen. Eine Miliz halte er nur als eine Ergänzung auf dem Gebiet der bodenständigen Verteidigung für möglich. Aber auch zu ihrer Errichtung bedürfe man der Wehrpflicht. Selbst Milizsoldaten müßten etwa 12 Monate ausgebildet werden.</p>
+            <p>Wenn die SPD ihre bisherige 60-jährige Tradition nun auf gebe, so glaube sie damit wohl Stimmen zu gewinnen. Sicher sei aber, daß diese Rechnung für die FDP, bei der Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> einen entsprechenden Vorstoß unternommen habe, nicht aufgehen werde.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN004" type="comment">
+                     <p>Daß die SPD sich trotz aller Vorbehalte gegenüber einer Freiwilligenarmee aufgrund ihrer Positionen bei den vorausgegangenen Wehrdiskussionen gegen die Einführung der Wehrpflicht stellen würde, zeichnete sich seit längerem ab. Am 11.4.1956 hatte der Sicherheitsausschuß der Partei schließlich eine – wenn auch nicht unumstrittene – Empfehlung in diesem Sinne ausgesprochen. Überraschender war eher, daß nun auch die FDP der Wehrpflicht ihre Unterstützung entzog, nachdem <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> zunächst und wiederholt erklärt hatte, er halte eine zwölfmonatige Dienstzeit für ausreichend. Vgl. Sicherheitspolitik, Bd. 3, S. 519–521.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Frage der Dauer des Wehrdienstes sei nicht grundsätzlicher, sondern praktischer Natur. Die Ausbildung solle so kurz wie möglich, aber so lange wie militärisch notwendig sein. Das sei die Formel, auf der man sich vorläufig einigen solle.</p>
+            <p>Wieder einmal zeige sich eine gewisse Bewegung gegen die Wehrpolitik der Regierung. Die Ohne-mich-Bewegung habe man überwunden, das Paulskirchen-Manifest<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN005" type="comment">
+                     <p>Eine vom Vorsitzenden des DGB, Walter <name type="Person" role="Erwaehnung" ref="#FreitagWalter_1949-09-07">Freitag</name>, dem evangelischen Theologen Helmut <name type="Person" role="Erwaehnung" ref="#GollwitzerHelmut">Gollwitzer</name>, dem SPD-Vorsitzenden Erich <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> und dem Heidelberger Soziologen Alfred <name type="Person" role="Erwaehnung" ref="#WeberAlfred">Weber</name> initiierte Veranstaltung in der Frankfurter Paulskirche, an der rund 1000 Gegner der Wiederbewaffnung teilgenommen hatten, hatte am 29.1.1955 ein Manifest verabschiedet, das zum Widerstand gegen die Regierungspolitik aufrief. Vgl. Kabinettsprotokolle 1955, S. 116f.</p>
+                  </note>
+               </seg> sei überwunden worden, und nun gehe der Kampf gegen die Wehrpflicht. Diese Auseinandersetzung müsse man in der Öffentlichkeit führen und wenn man entschlossen vorgehe, werde man das Volk überzeugen können.</p>
+            <p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> begrüßt die Erklärungen Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaegers</name> und regt an, auch über die Dauer des Wehrdienstes möglichst bald zu einer klaren Entscheidung zu kommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> fordert dazu auf, die in der Bevölkerung vorhandenen Mißverständnisse wegen Wehrpflicht und Milizsystem aufzuklären, ebenso die militärischen Notwendigkeiten darzulegen, die für die Entschlüsse der Regierung maßgeblich seien. Dann werde der Widerstand gar nicht so groß sein.</p>
+            <p>Er sei der Ansicht, wenn man die Wehrpflicht ausdehne auf eine allgemeine Dienstpflicht, werde man weniger psychologische Schwierigkeiten haben als jetzt. Auch bei der SPD könne man Erfolg haben, wenn man ihr sage, daß man ihr in den Fragen der zivilen Verteidigung entgegenkomme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#JostenJohannPeter_1953-10-06">Josten</name> empfiehlt, bald an die Verwirklichung der Wehrpflicht heranzugehen; je schneller man handele, um so besser.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt dann den Text einer Presseerklärung über den Inhalt der Fraktionssitzung vor. An der Aussprache über den Text beteiligen sich <name type="Person" role="Sprecher" ref="#HeixMartin_1949-09-07">Heix</name>, <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> und Prof. <name type="Person" role="Sprecher" ref="#FurlerHans_1953-10-06">Furler</name>. Es wird ein Redaktionskomitee gebildet und die Fraktion billigt die ihr vorgeschlagene Entschließung im Wortlaut.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-04-26-t1520_EP_FN006" type="comment">
+                     <p>Die Entschließung ist abgedruckt im Heft zum Bundesparteitag. Vgl. CDU Deutschlands, 6. Bundesparteitag, S. 196.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bringt seine Befriedigung über den Verlauf der Debatte zum Ausdruck, die ihn von einer großen Sorge befreit habe. Wenn die Bundesrepublik in dieser Frage versagen würde, wäre die NATO erledigt. Jeder wisse, was das bedeuten würde. Bleibe man aber bei der jetzt beschlossenen Linie, so könne man erwarten, daß die NATO auch zu einem politischen Instrument ausgebildet werde. Das werde die gesamte Entwicklung vorantreiben. Er empfehle ebenfalls die vorgetragene Entschließung, die ihren Eindruck in der Öffentlichkeit nicht verfehlen werde.</p>
+            <p>Zur Frage der Dauer der Dienstzeit habe die amerikanische Regierung Vorstellungen erhoben, daß ein Zurückbleiben unter 18 Monaten Folgerungen in den übrigen NATO-Staaten auslösten. Dann wäre die NATO militärisch erledigt. Wenn man eine Erklärung über die Dienstdauer abgäbe, die Zweifel ermögliche, würde das große Unruhe schaffen. Man solle deshalb sagen, daß man bezüglich der Dienstzeit bereit sei, den militärischen Notwendigkeiten Rechnung zu tragen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt durch Abstimmung bei zwei Enthaltungen die einstimmige Meinung der Fraktion fest, daß die Wehrpflicht bejaht [werde] und in der Frage der Dauer die militärischen Notwendigkeiten und die Maßstäbe der Natoverträge maßgebend seien.</p>
+            <p>Weiter stellt er die einstimmige Billigung des Vorschlages durch die Fraktion fest, im Haushalts- und im Verteidigungsausschuß die Mittel zu bewilligen, die zur sofortigen Durchführung dieses Beschlusses notwendig sind.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

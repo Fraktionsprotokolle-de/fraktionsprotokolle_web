@@ -1,257 +1,439 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-01_1950-01-31-t1450_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FoelsSilke"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchumacherRainer"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1953.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/I</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>1998</date>
-						<idno>https://d-nb.info/952142252</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII–001–1006/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 31. Januar 1950</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>9 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1950-01-31"><time type="start" when="14:50:00"/><time type="end" when="19:16:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-22" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-19" who="#WeistenhoeferSimon" status="draft" n="4">SVPs vereinheitlicht/ausgebessert</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend von der Bundesregierung:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> und <name type="Person" role="Erwaehnung" ref="#KaiserJakob_1949-09-07">Kaiser</name>, aus dem Bundesministerium für Arbeit MinDir. Eckert, MinRat. <name type="Person" role="Erwaehnung" ref="#Schönborn">Schönborn</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-1" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-1">A. TOP 1: Tagesordnung der 33. Sitzung des Deutschen Bundestages am 1.2.1950.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-2" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-2">B. TOP 2: Überbrückungsgesetz.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-3" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-3">C. TOP 3: Entlassung <name type="Person" role="Erwaehnung" ref="#BourdinPaul">Bourdin</name>.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-4" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-4">D. TOP 4: Zur Saarfrage.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-5" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-5">E. TOP 5: Zur Frage der Arbeitslosigkeit.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-6" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-6">F. TOP 6: Zur Frage der Koalition.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-7" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-7">G. TOP 7: Zur Frage <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name>.</item>
-					<item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-8" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-8">H. Fortsetzung TOP 1: Tagesordnung der 33. Sitzung des Deutschen Bundestages am 1.2.1950.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1.] Tagesordnung der 33. Sitzung des Deutschen Bundestages [am 1.2.1950]</p>
-				<p>Nach der Begrüßung der Gäste geht die Fraktion sofort zur Beratung der Tagesordnung über.</p>
-				<p>[1.] Tagesordnung der 33. Sitzung des Deutschen Bundestages [am 1.2.1950]</p>
-				<p>1. Drucksache I/475 v. 26.1.1950: Einspruch <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name>s gegen seinen Ausschluß von den Verhandlungen des Bundestages gemäß §92 der vorläufigen Geschäftsordnung.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN001" type="comment"><p><name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name> (WAV) hatte am 26.1.1950 den CSU-Abgeordneten <name type="Person" role="Erwaehnung" ref="#BodensteinerHans_1949-09-07">Bodensteiner</name> in der Wandelhalle des Bundeshauses geohrfeigt, weil dieser vor Heimatvertriebenen behauptet hatte, <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name> fahre als Flüchtlingsvertreter ein Luxusauto. Daraufhin schloß der Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name> gemäß Beschluß des Ältestenrates für 20 Sitzungstage von den Beratungen aus (vgl. Parl. Arch., Ältestenrat, 40. Sitz. am 26.1.1950, Sten. Ber., 31. Sitz. am 26.1.1950, S. 964 f.; PPP v. 26.1.1950 und <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name>, S. 218–224).</p></note></seg></p>
-				<p>Der Einspruch wird zurückgewiesen. Zweifel an der Befugnis des Präsidenten zum Ausschluß nach §91 mögen berechtigt sein, aber sein Recht als Hausherr nach §19 ist unbestritten. Der Ausschluß hätte eigentlich nach §19 in Verbindung mit §91 erfolgen müssen. Der Ausschluß muß aufrecht erhalten bleiben. Der Präsident kann nach einigen Wochen dann nach seinem Ermessen die Bestrafung stillschweigend wieder aufheben.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN002" type="comment"><p>Der Einspruch wurde abgewiesen. Vgl. Sten. Ber., 33. Sitz. am 1. 2. 1950, S. 1027.</p></note></seg></p>
-				<p>2. Drucksache I/444 v. 20.1.1950: Beratung des Gesetzentwurfs über die Wiederherstellung der Ehrenämter und der Selbstverwaltung in der Sozialversicherung<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN003" type="comment"><p>Verbessert aus: Sozialpolitik.</p></note></seg>.</p>
-				<p>Das Gesetz wurde im Wirtschaftsrat schon durchberaten. Es muß herausgestellt werden gegenüber dem Initiativantrag der SPD [Drucksache I/248 v. 29.11.1949], daß auch die Arbeitgeber im Aufsichtsrat vertreten sein müssen. Die Angestelltenversicherung sollte aus der Aufsicht der Landesversicherungsämter herausgenommen werden, wenn wieder eine Bundesanstalt für die Angestelltenversicherung errichtet wird. Bei den Ersatzkassen ist eine Vertretung der Arbeitgeber nicht nötig, da ohnedies die Höhe des Beitrages nicht über dem der Pflichtkassen liegen darf.</p>
-				<p>Ministerialdirektor <name type="Person" role="Sprecher" ref="#EckertJosef">Eckert</name>: Die Angestelltenversicherung unterliegt nicht der Aufsicht der Landesversicherungsämter. Z.Zt. wird ihre Aufsicht nur treuhänderisch durch die Stelle der Invalidenversicherung in Berlin ausgeübt. Eine Bundesanstalt ist wieder vorgesehen, und die Alliierten werden um die Aufhebung der treuhänderischen Aufsicht ersucht.</p>
-				<p>Der Vorschlag, die Ärzte in die Aufsichtsräte mit hereinzunehmen, wurde nicht gutgeheißen. Gegen die Beteiligung der Vertrauensärzte bei größeren Kassen ist nichts einzuwenden.</p>
-				<p>Sprecher: <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, Redezeit insgesamt 90 Minuten.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN004" type="comment"><p>Vgl. Sten. Ber., 33. Sitz. am 1.2.1950, S. 1027–1038.</p></note></seg></p>
-				<p>3. Drucksachen I/416 v. 19.1.1950, I/202 v. 15.11.1949 und I/329 v. 14.12.1949: Beratung des mündlichen Berichtes des Ausschusses für Fragen der öffentlichen Fürsorge betr. Familienunterstützung ehemaliger Kriegsgefangener und Internierter und über Rückerstattungspflicht von Fürsorgeaufwendungen.</p>
-				<p>Empfehlung an die Länderregierungen, auf eine Rückzahlung zu verzichten. Sprecher: Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>.</p>
-				<p>4. Drucksachen I/453 v. 24.1.1950 und I/106<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN005" type="comment"><p>Verbessert aus: 349.</p></note></seg> v. 14.10.1949: Beratung des mündlichen Berichtes des Ausschusses für Sozialpolitik betr. Auswirkungen der Leistungssteigerungen des Sozialversicherungs-Anpassungsgesetzes.</p>
-				<p>Sprecher: <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN006" type="comment"><p>Punkt 3 und 4 wurden gemeinsam behandelt. Für die CDU/CSU-Fraktion sprach <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>. Vgl. Sten. Ber., 33. Sitz. am 1.2.1950 S. 1038—1043.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Überbrückungsgesetz]</p>
-				<p>Obwohl als Hauptpunkt auf der Tagesordnung der Fraktionssitzung die Beratung des Steuergesetzentwurfes stand und der Bundesfinanzminister anwesend ist, wurde die Fraktion einig, diese Frage zurückzustellen und die drängende Frage des Überbrückungsgesetzes für die Kriegsopfer zu behandeln. Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> erstattete Bericht über die entscheidenden Ergebnisse und die ausstehenden Entscheidungen in den Ausschußberatungen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name>: Die Auswirkung des endgültigen Versorgungsgesetzes wird noch lange auf sich warten lassen. Den Kriegsopfern muß aber rasch geholfen werden. Der Regierungsentwurf über Verbesserungen in Höhe von 80 Mio. DM liegt vor [Drucksache I/395 v. 17.1.1950]. Der Vorsitzende des Ausschusses, <name type="Person" role="Erwaehnung" ref="#BazilleHelmut_1949-09-07">Bazille</name><seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN007" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BazilleHelmut_1949-09-07">Bazille</name> hatte keinen Ausschußvorsitz inne.</p></note></seg> möchte die Einengung des §1 fallenlassen. Das würde eine Mehrausgabe von 62 Mio. DM bedeuten. In §3 sollte noch eine Regelung für Mütter mit mehr als 3 Kindern eingebaut werden.§3 bleibt und wird §2. Im §4 sollte ein Ausgleich für Härtefälle geschaffen werden (200000 DM). Im §5 hat der Ausschuß das Pflegegeld von 1 500 auf 1 800 DM erhöht (900 000 DM). §6 möchte die bisher noch nicht Versicherten auch durch die Krankenversicherung erfassen (9,6 Mio. DM für Beschädigte, 18,9 Mio. DM für die Angehörigen). Der §1 kann am ehesten für eine Kürzung zur Debatte gestellt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name>: Aus dem Haushaltsausschuß: Der Regierungsentwurf sieht Mehrausgaben von 80 Mio. DM vor. Der Ausschuß Vorschlag erhöht diese Kosten auf 200–210 Mio. DM. Der Finanzminister aber erklärt, ihm stünden diese Mittel nicht zur Verfügung. Wir sollten nun vielleicht versuchen, einige der Dinge, die der Ausschuß vorgeschlagen hat und die nicht allzuviel kosten, in den Entwurf hineinzubringen. Im Ganzen können wir den geforderten Aufwand nicht beschließen. Die Abänderungen verzögern die Hilfe auf jeden Fall bis zum 1.4.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN008" type="comment"><p>Am Vormittag hatte eine Sitzung des Ausschusses für Kriegsopfer- und Kriegsgefangenenfragen mit dem Haushaltsausschuß stattgefunden, in der die Bundesminister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> und <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> ihre Positionen dargelegt hatten. Bis zur nächsten Sitzung des Kriegsopferausschusses, die um 18.00 Uhr begann, sollten die Stellungnahmen der Fraktionen zu dem Gesetzentwurf vorliegen. Parl. Arch., 26. Ausschuß.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name>: Ich habe mich bis jetzt bei allen Anträgen dagegen gewehrt, Aufwendungen rückwirkend zu beschließen. Die Einnahmen des Bundes stehen ihm erst ab 1.4.1950 zur Verfügung, und auch die Verpflichtung zur Tragung der Kriegsfolgelasten beginnt mit diesem Zeitpunkt. Für die Zeit vorher müssen die Mittel von den Ländern angefordert werden. Die Vertretung der Länder ist der Bundesrat. Diese Länder sind z. Zt. alle in Not. Schleswig-Holstein steht praktisch vor dem Bankrott, in Niedersachsen ist es nicht viel besser, und Bayern hat voraussichtlich ein Defizit von 200 Mio. DM. Die Länder haben mir erklärt, daß sie gar nicht in der Lage sind, die 362 Mio. DM des außerordentlichen Haushalts zu decken. Es ist sehr schwer, die Zahlungen von den Ländern hereinzubekommen.</p>
-				<p>Das einzige Gesetz, dem ich zugestimmt habe mit rückwirkender Kraft, ist das Überbrückungsgesetz für die Kriegsopfer.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN009" type="comment"><p>Vgl. die 36. Kabinettssitzung am 17.1.1950 (Kabinettsprotokolle 1950, S. 136).</p></note></seg> Ich kann aber jetzt nur das Notwendigste tun. Wenn durch höhere Forderungen mit dem Bundesrat ein Konflikt entsteht, wird auf alle Fälle Zeit verloren. Die Zustimmung der Länder war bei 80 Mio. DM noch zu erreichen. Das sind im Vierteljahr etwa 20 Mio. DM. Sie wurden bisher genehmigt. Wenn Sie nun das eine oder andere noch hinzufügen, was keine größere finanzielle Bedeutung hat, dann wird es daran nicht scheitern. Aber vergessen Sie nicht. Was wir jetzt schon für die Kriegsopfer und die Kriegsfolgen zu leisten haben, ist mehr als 3 000 Mio. DM. Die Einnahmen des Bundes sind am 1. April etwa 8,7 Milliarden DM. Der Haushaltsplan umfaßt 5 Mrd. Im nächsten Jahr kommen alle die sozialpolitischen Anforderungen an den Bund. Wenn die Bundesregierung in ihren sozialpolitischen Vorschlägen bis an die Grenze des Möglichen geht und es wird im Bundestag eine weitere Erhöhung der Ausgaben beschlossen, dann wird ein Konflikt herbeigeführt. Um hier auf eine Zusammenarbeit zu kommen, erscheint es mir wünschenswert, daß ich jeweils den Gesetzentwurf der Fraktion mitteilen würde und ihr sagen würde, wie weit man gehen kann. Dann halten wir zusammen und jeder Antrag, der mehr Belastung bedeutet, wird abgelehnt. Bei der Regierungsvorlage ist noch zumutbar, die kleinen Einheiten mit zu übernehmen. Die anderen teuren Anträge sollten sie zurückstellen und den Antrag stellen, daß die Regierung auf diese Vorschläge besonders Rücksicht nimmt und sie in das endgültige Gesetz verarbeitet.</p>
-				<p><name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>: Bei dieser Vorlage müssen wir von nüchternen Erwägungen ausgehen. Wir haben im Bundesgebiet ein völlig zerrissenes Versorgungsgesetz. In der amerikanischen Zone wurde eine Ausweitung der Witwenversorgung erreicht. Diese Ausweitung gilt es jetzt auf die Britische Zone zu übertragen. In der amerikanischen Zone wurden 50% Geschädigten die Invalidenrente gegeben. In Hamburg und Niedersachsen wurde eine 20%ige Erhöhung der Renten als Teuerungszuschlag gewährt. Den anderen wollen wir dieses jetzt geben, damit wir zu einer größeren Einheitlichkeit kommen. Wenn Bayern diesen Vorschlag mit der Krankenversicherung jetzt macht, so müssen wir feststellen, daß Bayern diese Frage bis jetzt nicht geregelt hat. Den §1 über die Teuerungszulagen können wir nicht fallenlassen. Wir müssen eben uns überlegen: Was kann uns der Finanzminister im äußersten Falle geben? Er muß schon 3,1 Mrd. DM für Kriegsbeschädigte aufwenden. Durch das Übergangsgesetz bekommen alle arbeitsunfähigen Kriegsbeschädigten 120 DM. Der Arbeitsinvalide bekommt nur 60 DM. Unsere Aufgabe kann nur sein, die geringen Mittel, die wir haben, unter allen Umständen gerecht zu verteilen. Sie können vielleicht auf die Pflegezulage von 900 000 DM und für den Härteausgleich auf 200 bis 300000 DM gehen, denn wir können nur den Weg gehen, den auch der Finanzminister für gangbar hält.</p>
-				<p>In der anschließenden kurzen Debatte kam zu Ausdruck, daß die Fraktion bereit sein muß, sich demagogischen Anträgen zu entziehen, obwohl die Opposition die Not weiter Kreise ausnützen wird. Unter keinen Umständen aber darf man die SPD weiter als<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN010" type="comment"><p>Wort handschriftlich verbessert.</p></note></seg> Einpeitscher für alle sozialen Gesetze auftreten lassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: Die Fraktion muß Herrn <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> in den nächsten Monaten unbedingt folgen. Wir gehen außerordentlich schweren Zeiten entgegen. Wenn wir jetzt nicht folgen, was wird dann geschehen, wenn eines Tages die Kassen leer sind? Betrachten Sie die Arbeitslosenzahl.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN011" type="comment"><p>Im Winter/Frühjahr 1949/1950 erreichte die Arbeitslosigkeit in der Bundesrepublik mit annähernd 2 Mio. Arbeitslosen ihren Höhepunkt. Vgl. Schwarz, Ära Adenauer 1949–1957, S. 78.</p></note></seg> Dies ist eine Frage, die mich seit Wochen mit schwerster Sorge erfüllt. Wenn wir nicht in den nächsten Wochen Herrn <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> unbedingt folgen, dann geht die Bundesrepublik zu Grunde.</p>
-				<p>2. Es geht natürlich nicht, daß vor der Behandlung im Kabinett jede Gesetzesvorlage der Fraktion vorgelegt wird. Der Bundestag ist nicht dazu berufen, ständig in die Exekutive hineinzureden. Die Situation der Bundesregierung ist schwierig genug. Die Arbeitslosigkeit steigt anhaltend, die Steuern sinken, und die Ausgaben steigen. Dazu kommen die Schwierigkeiten im Bundestag, die Schwierigkeiten im Bundesrat, in dem sich beinahe eine Art Nebenregierung auftut. Dann kommen die Schwierigkeiten mit den Ministern, das Vordringen der FDP im Lande. Es ist eben nicht möglich, daß man draußen für und gegen alles redet und hier notdürftig die Koalition aufrechterhält. Es sind offenkundig gewisse Bestrebungen im Gange, eine andere Koalition vorzubereiten und eines Tages eine Koalition zwischen der FDP und der SPD einzugehen. Dazu kommen Erscheinungen in der CDU, wo es in Freiburg der Herr <name type="Person" role="Erwaehnung" ref="#DichtelAnton">Dichtel</name> fertig gebracht hat, Herrn <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> zu begrüßen.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN012" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> hatte am 26.1.1950 in Freiburg gesprochen. Unter anderem forderte er von der Bundesregierung eine strikt ablehnende Haltung gegenüber der Saarregierung und der von ihr eingegangenen Verpflichtungen. Der Vorsitzende der südbadischen CDU, Anton <name type="Person" role="Erwaehnung" ref="#DichtelAnton">Dichtel</name>, hatte nicht nur an der Veranstaltung teilgenommen, sondern in der Diskussion bedauert, daß es auf Bundesebene nicht zu einer großen Koalition mit der SPD gekommen sei. Vgl. die »Badische Zeitung« v. 28./29.1.1950 und »Das Volk, Südbadische Heimatzeitung« v. 28.1.1950.</p></note></seg> Es sind heute in unseren eigenen Reihen genug Kräfte am Werke, die den Ruf bei den Wählern ruinieren. Treiben wir denn überhaupt noch eine einheitliche Politik? Auch ich ordne mich hier in Fragen der Finanzpolitik dem Herrn <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> unter. Und dann müssen wir darauf sehen, daß wir bei der Abstimmung nicht auseinanderfallen. Man muß auch einmal ein am Herzen liegendes Anliegen zurückstellen können, sonst leiten wir der SPD Wasser auf die Mühlen. Letztlich steht über allem die Einheit der Fraktion und die Einheit der CDU/CSU.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">Fraktionsvorsitzende</name> betont, daß die Fraktion sich nicht in die Exekutive einzuschalten gedenke, aber den Wunsch nach engerem Kontakt mit der Regierung habe. Unter Hinweis auf verschiedene Beispiele der Vergangenheit legt er dem Kanzler dar, wie schwierig die Situation für die Fraktion würde, wenn alle interessierten Kreise über die Gesetzentwürfe unterrichtet wären und die Fraktion über deren Inhalt keine Kenntnis habe. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> bittet um die Einheitlichkeit innerhalb der Fraktion und sagt, daß ihm mitgeteilt worden sei, in den kommenden Abstimmungen würden 20/30 Abgeordnete der CDU/CSU mit der SPD stimmen. Das sei unmöglich, denn in den kommenden Monaten müßten die Mitglieder der Fraktion unbedingt zu dem Finanzminister halten.</p>
-				<p>Auf seine Anregung sei ein Ausschuß zwischen Mitgliedern der Koalitionsfraktionen und des Kabinetts gebildet worden.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN013" type="comment"><p>Nicht ermittelt.</p></note></seg> Der Dekartellisierungsentwurf<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN014" type="comment"><p>Siehe Nr. 76, 1.5.</p></note></seg> sei auch ihm noch nicht vorgelegt worden. Unsere Verwaltung klappt eben noch in keiner Weise. Gewisse Verwaltungen haben sich als selbständige Körperschaften entwickelt.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> schlägt vor, die Regierungsvorlage mit dem §5 des Ausschußantrages [Drucksache I/484 v. 31.1.1950] anzunehmen und dabei die Ziffer 1800 durch 1500 zu ersetzen, die §§2, 6 und 7 der Bundesregierung als Material für die kommende endgültige Regelung des Versorgungsgesetzes zu überweisen. Er sei gerne bereit, wenn es die Einheitlichkeit der Arbeit zwischen Fraktion und Regierung erfordere, die Fragen mit der Fraktion zu beraten.</p>
-				<p>In der anschließenden Debatte wurde mit allem Nachdruck betont, daß man unter keinen Umständen durch propagandistische Beschlüsse Hoffnung erwecken dürfe, die nicht eingehalten werden können. Die Fragen müßten aber doch in der Fraktion besprochen werden. Eine Absprache über die Abstimmung sei im Kriegsopferausschuß nicht getroffen worden. Dann kam zu Ausdruck, daß die Fraktion nicht weiter sich das Gesetz des Handelns von der Opposition aufzwingen lassen dürfe. Dr. <name type="Person" role="Sprecher" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> teilt mit, daß bei allen Gesetzesvorbereitungen auch früher die Fachkreise gehört worden seien. Seit 1946 habe sich leider herausgebildet, solche Entwürfe zu politischen Zwecken zu mißbrauchen. Darum sei zu überlegen, ob nicht künftig die Entwürfe an ausgewählte Sachverständige gehen sollten, um die Vertraulichkeit zu wahren. Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> meinte: ein Auseinanderfallen der Fraktion in der Abstimmung schaffe nur neue Schwierigkeiten und nütze nichts. Eine ständige Rücksichtnahme auf die Wähler könne in einzelnen Fällen zu einer Verletzung der Gewissensverantwortung führen. Schließlich einigte sich die Fraktion auf die Annahme des Regierungsentwurfes zusammen mit dem §5 des Ausschußvorschlages unter Änderung von 1800 in 1500. Die §§1, 2 und 6 sollten in Entschließungsform der Regierung zur Berücksichtigung in der endgültigen Fassung überwiesen werden.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN015" type="comment"><p>Vgl. ebd., Ziffer 2. Gesetzentwurf und Entschließung wurden in der hier beschlossenen Form angenommen. Vgl. 34. Sitz. am 2.2.1950, S. 1061–1079.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[3. Entlassung <name type="Person" role="Erwaehnung" ref="#BourdinPaul">Bourdin</name>]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: Anschließend machte der Kanzler noch Ausführungen zu verschiedenen Punkten der Tagespolitik. Zum Fall <name type="Person" role="Erwaehnung" ref="#BourdinPaul">Bourdin</name> sagte er, <name type="Person" role="Erwaehnung" ref="#BourdinPaul">B</name>. habe um seine Enthebung vom Amt des Bundespressechefs gebeten. Er sei damit nur einer Entlassung zuvorgekommen, denn es habe sich herausgestellt, daß er sowohl nach seinem Wissen wie nach der Notwendigkeit der Herstellung eines entsprechenden Ansehens bei der Presse nicht die in ihn gesetzten Erwartungen erfüllt. Er habe vom Kanzler in ziemlich scharfer Form verlangt 1. daß Herr <name type="Person" role="Erwaehnung" ref="#BöxHeinrich">Böx</name> gehen solle, 2., daß der Bundespressechef nach seinem Ermessen entscheiden müsse, was der Öffentlichkeit mitgeteilt werde.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN016" type="comment"><p>Vgl. Baring, Außenpolitik, S. 41–43.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-4">
-				<head>D.</head>
-				<p>[4.] Zur Saarfrage</p>
-				<p>Herr <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> habe wieder eine Rede gehalten zur Saarfrage.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN017" type="comment"><p>Siehe Anm. 12.</p></note></seg> Aber er habe es ja auch leicht. Er könne sagen, was er wolle, der Kanzler aber müsse schweigen. Man dürfe es aber nicht zulassen, daß immer die Ausführungen <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> denen des Kanzlers gegenübergestellt werden. Er müsse als Kanzler eben seine Aufgabe erfüllen. In der Behandlung der Saarfrage habe die Presse auf einer völlig falschen Linie gelegen. Der Kanzler aber kann, weil die Dinge noch im Fluß sind, nicht dazu Stellung nehmen. Die Saarfrage steht für Deutschland gut. Vielleicht muß Frankreich darin den Rückzug antreten. Die französische Zeitung »Combat« nimmt zu der Mitteilung <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schumans</name> gegenüber dem französischen Kabinett, daß Washington und London den französischen Standpunkt unterstützen, Stellung und schreibt, M. <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> müsse diese Mitteilung doch wohl noch einmal korrigieren.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN018" type="comment"><p>Vgl. »Combat« v. 28./29.1.1950.</p></note></seg> Der französische Standpunkt wird von den angelsächsischen Mächten nicht geteilt.</p>
-			</div>
-			<div type="SVP" xml:id="id_jdk_x22cdu-csu-01_1950-01-31-t1450_EP_div_SVP-5">
-				<head>E.</head>
-				<p>[5.] Zur Frage der Arbeitslosigkeit</p>
-				<p>Unter keinen Umständen dürfe es so weitergehen. Die Periode der Niederschlagung der Planwirtschaft ist seit Monaten vorbei. Es ist zu überlegen, ob es nicht an der Zeit ist, den Kurs unserer Wirtschaftspolitik zu überprüfen und an deren Stelle eine konkrete Behandlung der Wirtschaft vorzunehmen. Dies gilt nicht nur für den Bereich der Wirtschaft, sondern ebenso für die Ernährungswirtschaft. Freilich gibt es Quellen der Arbeitslosigkeit, an die wir nicht herankönnen. Das liegt zum Teil an Fehlern der Gesetzgebung, an der Schlaffheit der Arbeitsämterleiter, die ja zum großen Teil der SPD angehören. Teilen der Arbeitslosigkeit ist ohne Investitionen nicht beizukommen. Wir müssen hier auch an Notstandsarbeiten denken.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-6">
-				<head>F.</head>
-				<p>[6.] Zur Frage der Koalition</p>
-				<p>äußerte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> seine große Sorge über die augenblickliche Entwicklung. Die Sonntagsreden in der letzten Zeit sind verheerend. Der Montag mit den Meldungen, was am Sonntag wieder geredet wurde, sei für ihn geradezu ein Tag des Schreckens. Der Koalitionsausschuß zwischen den Fraktionen müsse wieder mit Energie entwickelt werden.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN019" type="comment"><p>Die regelmäßigen Koalitionsgespräche wurden erst wieder ab dem 21.3.1950 geplant. Vgl. das Schreiben des Bundeskanzlers an von Brentano vom 17.3.1950 (BA NL 239 (von Brentano)/154).</p></note></seg> Im Kabinett sei dies wegen der vielfältigen Arbeit nicht möglich. Daneben erfüllen den Kanzler schwere Sorgen um die Einheit der Fraktion.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-7">
-				<head>G.</head>
-				<p>[7.] Zur Frage <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name></p>
-				<p>Ausgehend von einem Artikel Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers’</name> betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, daß unter keinen Umständen eine konfessionelle Spannung auftreten dürfe. Kirchenpräsident <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> habe vor einiger Zeit in einem »Interview« die Ansicht geäußert, die Bundesrepu blik Deutschland sei »in Rom gezeugt und in Washington geboren«.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN020" type="comment"><p>Vgl. AdG 1950, S. 2225.</p></note></seg> Diese Äußerung mußte auf ihn im höchsten Grade verletzend und im Auslande sehr schädlich für das Ansehen der Bundesrepublik wirken. Nachdem die Hohen Kommissare ihm gegenüber auf die schädliche Wirkung dieses Interviews hingewiesen hatten, habe ich Herrn <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> einen Brief geschrieben, in dem ich ihn um Klarstellung bat, ob er wirklich solche Worte gesagt habe. In einem Briefe vom 25.1. erhielt ich nun eine Antwort, die besagte, diese Äußerung sei eine Wiederholung dessen, was »ich bereits früher zum Ausdruck gebracht habe ... es ist mir natürlich bekannt, wie mein sog. Interview im Ausland aufgenommen worden ist. Dagegen möchte ich es ablehnen, von Ihnen Belehrungen entgegenzunehmen über die Auffassung, die diese Äußerungen bei den Hohen Kommissaren ausgelöst haben ...« Er sei selbst von den Hohen Kommissaren empfangen worden, und sie hätten ihm von seiner Ablehnung nichts gesagt.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN021" type="comment"><p>Zum Briefwechsel <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer-Niemöller</name> im Januar 1950 vgl. Adenauer. Briefe 1949–1951, S. 161 f. und 478 f.</p></note></seg> – Dies muß ich als eine Arroganz bezeichnen, der gegenüber ich sprachlos war. Ich werde Herrn Kirchenpräsident <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> in höflichem Tone eine Antwort geben. Die Mitglieder der Fraktion, die dem evangelischen Bekenntnis angehören, möchte ich aber bitten, alle ihre Verbindungen zu <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> anzuspannen, daß er einsieht, daß er so dem Christentum in Deutschland größten Schaden zufügt.</p>
-				<p>An die Ausführungen des Kanzlers schloß sich eine lebhafte Aussprache der evangelischen Fraktionsmitglieder an, bei der teils sehr scharf die Haltung <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöllers</name> kritisiert wurde, aber zum Ausdruck kam, daß auf diese Weise unter keinen Umständen Verwirrung unter das christliche Volk getragen werden dürfe. Bundesinnenminister Dr. <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> lehnte in maßvollen Worten die zitierten Äußerungen ab, bat aber um menschliches Verständnis für den Angegriffenen. Seine Ausführungen sagten im Wesentlichen:</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>: In Deutschland gibt es 27 Evangelische Landeskirchen, die alle in Kultus und Lehre voneinander unabhängig sind. Diese Unterschiede sind nun einmal gegeben. Diese Landeskirchen sind seit Sommer 1948 zusammengeschlossen in der »Evangelischen Kirche in Deutschland«, ohne ihre weitgehende Selbständigkeit aufzuheben. Die EKD hat die Synode und die Kirchenkonferenz gebildet, aus denen wiederum sich der Rat der Evangelischen Kirche Deutschlands zusammensetzt. Nun hat im Januar in Halle eine Konferenz stattgefunden, die zu den Berichten von Probst <name type="Person" role="Erwaehnung" ref="#GrüberHeinrich">Grüber</name> aus dem Lager Sachsenhausen<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN022" type="comment"><p>Probst <name type="Person" role="Erwaehnung" ref="#GrüberHeinrich">Grüber</name>, der Gottesdienste in Internierungslagern der SBZ abhielt, hatte sich – im Vergleich zu den KZ des Drittes Reiches – positiv über die Zustände in den Lagern geäußert. Vgl. Grüber, S. 295–303.</p></note></seg> und zu den Äußerungen des Kirchenpräsidenten <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> Stellung genommen hat. Ihre Stellungnahme ist in 4 Punkte auch mit Zustimmung von Herrn <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> und Probst <name type="Person" role="Erwaehnung" ref="#GrüberHeinrich">Grüber</name> gefaßt worden.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN023" type="comment"><p>Dabei wurde betont, daß es sich bei den Äußerungen um persönliche Stellungnahmen gehandelt habe und nicht um »Kundgebungen der evangelischen Kirche«. Vgl. AdG 1950, S. 2225.</p></note></seg> Der <name type="Person" role="Erwaehnung" ref="#GrüberHeinrich">Grüber</name>-Bericht wurde von allen Geistlichen bestätigt, die an den Gottesdiensten teilgenommen haben, auch von katholischer Seite. Die Zustände in den Konzentrationslagern waren nach Ort und Zeit unterschiedlich. So sind auch heute noch die Zustände in den Lagern Buchenwald und Bautzen erschütternd. Bei der Konferenz in Halle wurde der ganze Originalbericht vorgelesen. (Der Min. gab Auszüge aus diesem Originalbericht.) Im letzten Jahr sind Verbesserungen eingetreten. Unter dem Druck der Öffentlichkeit haben die Sowjets 1948 einen Teil der KZ-Häftlinge entlassen. Die Heimgekehrten haben wahrheitsgemäß von den Greueln in den Lagern berichtet. Die Sowjets konnten nun auf zwei Arten reagieren: 1. die Zeugen beseitigen und so die Greuel verheimlichen oder die Zustände eben bessern. Sie haben das zweite getan.</p>
-				<p>Wenn nun nach fortgesetzter Kennzeichnung und scharfer Ablehnung aller Gewaltmaßnahmen verantwortliche Männer der Kirche wahrheitsgemäß berichten, um die Erreichung menschenwürdiger Zustände zu erzielen, dann sollten wir uns hüten, uns zum Richter über jene zu machen, die dort das Gefecht durchstehen und ihr Anliegen, auflockernd zu wirken, verfolgen. Daß dabei der Kampf weitergehen muß, ist völlig klar.</p>
-				<p>Zum Fall <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name>: <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> steht unter dem Eindruck folgenden Gedankenganges: Von dem Augenblick der Entzweiung unter den Alliierten war die eigene deutsche Staatlichkeit in Gefahr. Seine Sorge ist: Wie kann jetzt die zweigeteilte Staatlichkeit beseitigt werden? Dr. <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> bedauert das Hineintragen des konfessionellen Zwiespaltes.</p>
-				<p>Zur Konfessionsstatistik in den neuen Ministerien sagt er, daß in seinem Ministerium viel mehr katholische Absagen gekommen wären als evangelische.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN024" type="comment"><p>Vgl. Wengst, Staatsaufbau, S. 181 f.</p></note></seg></p>
-				<p>Bei <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöller</name> dürfe man nicht vergessen, daß seine Äußerungen auch von seinen Auslandserfahrungen her gesehen werden müßten. Er sei in Deutschland ja der verantwortliche Mann dafür. Da habe er Meldungen vorliegen von Benachteiligungen der evangelischen Brüder in Spanien, Italien und Argentinien. Im übrigen sei in den vergangenen Jahren eine Verschärfung der Konturen unter den Konfessionen eingetreten. Die liberale Haltung der Jahrhundertwende oder auch noch von 1920 sei verschwunden und eines neues Bewußtwerden des Inhalts der evangelischen Lehre habe sich durchgesetzt. Dies sei in den Jahren der Verfolgung besonders in Deutschland zu beobachten gewesen. - So komme es, daß aus diesem Wiederbewußtwerden der Konfessionen sich das Ringen um das Wesen gerade in Deutschland auch zu einem Gespräch zwischen den Konfessionen entwickelt habe. Das einzige autorisierte Gespräch zwischen der evangelischen und katholischen Kirche sei in Deutschland im Gange. An der politischen Zusammenarbeit halte er unverbrüchlich fest, ein Zusammenkommen der Konfessionen in der Wiedervereinigung dagegen erscheine ihm unmöglich. Diese Dinge seien eine der wichtigsten Fakten unserer politischen Geschichte.</p>
-				<p>Zum Schluß kam vom <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> zum Ausdruck, daß er mit mehr Hoffnung auf die Frage der Wiedervereinigung sehe und gerade deswegen die Äußerungen <name type="Person" role="Erwaehnung" ref="#NiemöllerMartin">Niemöllers</name> bedauere. Abgeordnete betonten die Notwendigkeit der Bereinigung dieser Angelegenheit durch kluge Einwirkung und durch gemeinsames Gebet. Der Vorsitzende Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> brachte seine Genugtuung zum Ausdruck, daß dieses notwendige Gespräch mit solchem Ernst einmal durchgeführt wurde.</p>
-				<p>Als Beobachtung ist anzumerken, daß kein katholischer Abgeordneter sich in diese Auseinandersetzung eingeschaltet hat und die evangelischen Mitglieder der Fraktion völlig unbeeinflußt und ohne Scheu von sich aus zu der Frage Stellung genommen haben.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-8">
-				<head>H.</head>
-				<p>[weiter zu 1.] Tagesordnung der 33. Sitzung des Deutschen Bundestages [am 1.2.1950]</p>
-				<p>5. Drucksachen I/449 v. 24.1.1950 und I/349 v. 16.12.1949: Mündlicher Bericht des Ausschusses für Ernährung Landwirtschaft und Forsten betr. Wiederherstellung der deutschen Fischerei-Hoheit.</p>
-				<p>Die Deutsche Partei wird sprechen. Fraktionssprecher: Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN025" type="comment"><p>Vgl. Sten. Ben, 33. Sitz. am 1.2.1950, S. 1043 f.</p></note></seg></p>
-				<p>6. Drucksachen I/459 v. 25.1.1950 und I/78 v. 5.10.1949: Mündlicher Bericht des Ausschusses für Heimatvertriebene betr. besonderes Referat für in Polen und in der Tschechoslowakei lebende Deutsche.</p>
-				<p>Ohne Diskussion.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN026" type="comment"><p>Es fand eine Debatte ohne Beteiligung der Fraktion statt. Vgl. ebd., S. 1044–1047.</p></note></seg></p>
-				<p>7. Drucksachen I/460 v. 25.1.1950 und I/92 v. 13.10.1949: Mündlicher Bericht des Ausschusses für Heimatvertriebene betr. Sofortmaßnahmen hinsichtlich der Verteilung der illegal über die Ostzonengrenze kommenden Flüchtlinge.</p>
-				<p>Ohne Diskussion vorgesehen. Bayernpartei will aber sprechen. Wenn es notwendig sein sollte, ist Fraktionssprecher: Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN027" type="comment"><p>Es fand eine Debatte statt, in der <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> für die Fraktion sprach. Vgl. ebd., S. 1047–1052.</p></note></seg></p>
-				<p>8. Drucksachen I/402 v. 18.1.1950 und I/34 v. 27.9.1949: Beschlußfassung über mündlichen Bericht des Ausschusses für Wirtschaftspolitik über die Liquidation des ehemaligen reichseigenen Filmeigentums.</p>
-				<p>Nur Beschlußfassung.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN028" type="comment"><p>Vgl. ebd., S. 1052.</p></note></seg></p>
-				<p>9. Drucksachen I/419 v. 19.1.1950 und I/237 v. 24.11.1949: Mündlicher Bericht des Ausschusses für Wiederaufbau und Wohnungswesen betr. Baudarlehen an Schwer- und Schwerstversehrte.</p>
-				<p>An den Ausschuß für Kriegsopfer- und Kriegsgefangenenfragen.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN029" type="comment"><p>Vgl. ebd.</p></note></seg></p>
-				<p>10. Drucksache I/412 v. 19.1.1950: Beratung des Antrags der KPD betr. abgelaufenes Produktionspermit.</p>
-				<p>Es handelt sich um eine kleine Anfrage, nicht um einen Antrag. Die Regierung soll noch vor dem Antragsteller eine Erklärung abgeben. Dann sollte man unter Herausstellung der Tatsache, daß hier eine Umgehung der Geschäftsordnung vorliegt, zur Tagesordnung übergehen. Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> sollen entsprechendes Vorgehen besprechen.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN030" type="comment"><p>Es wurde dementsprechend vorgegangen. Nach dem Antrag von Bucerius entwickelte sich dennoch eine Debatte. Vgl. ebd., S. 1052–1056.</p></note></seg></p>
-				<p>11. Drucksache I/435 v. 20.1.1950: Beratung des Antrags betr. Bericht über die wirtschaftliche Lage der Deutschen Bundesbahn.</p>
-				<p>Bundesminister <name type="Person" role="Erwaehnung" ref="#SeebohmHans-Christoph_1949-09-07">Seebohm</name> möge eine Erklärung abgeben. Wenn es notwendig sein sollte, soll Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> sprechen.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN031" type="comment"><p>Der Punkt wurde von der TO abgesetzt. Vgl. ebd., S. 1056.</p></note></seg></p>
-				<p>12. Drucksache I/473 v. 26.1.1950: Überweisung von Anträgen – nichts zu sagen.<seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN032" type="comment"><p>Vgl. ebd., S. 1057 f.</p></note></seg></p>
-				<p><name type="Person" role="Erwaehnung" ref="#TewaagHelmut">Tewaag</name><seg type="note"><note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN033" type="comment"><p>Handschriftlich unterzeichnet.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-01_1950-01-31-t1450_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FoelsSilke"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchumacherRainer"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1953.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/I</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1998</date>
+                  <idno>https://d-nb.info/952142252</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII–001–1006/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 31. Januar 1950</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>9 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1950-01-31">
+               <time type="start" when="14:50:00"/>
+               <time type="end" when="19:16:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-22" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-19" who="#WeistenhoeferSimon" status="draft" n="4">SVPs vereinheitlicht/ausgebessert</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend von der Bundesregierung:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> und <name type="Person" role="Erwaehnung" ref="#KaiserJakob_1949-09-07">Kaiser</name>, aus dem Bundesministerium für Arbeit MinDir. Eckert, MinRat. <name type="Person" role="Erwaehnung" ref="#Schoenborn">Schönborn</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-1" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-1">A. TOP 1: Tagesordnung der 33. Sitzung des Deutschen Bundestages am 1.2.1950.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-2" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-2">B. TOP 2: Überbrückungsgesetz.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-3" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-3">C. TOP 3: Entlassung <name type="Person" role="Erwaehnung" ref="#BourdinPaul">Bourdin</name>.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-4" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-4">D. TOP 4: Zur Saarfrage.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-5" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-5">E. TOP 5: Zur Frage der Arbeitslosigkeit.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-6" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-6">F. TOP 6: Zur Frage der Koalition.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-7" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-7">G. TOP 7: Zur Frage <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name>.</item>
+               <item xml:id="cdu-csu-01_1950-01-31-t1450_EP_SVP-8" corresp="#cdu-csu-01_1950-01-31-t1450_EP_div_SVP-8">H. Fortsetzung TOP 1: Tagesordnung der 33. Sitzung des Deutschen Bundestages am 1.2.1950.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1.] Tagesordnung der 33. Sitzung des Deutschen Bundestages [am 1.2.1950]</p>
+            <p>Nach der Begrüßung der Gäste geht die Fraktion sofort zur Beratung der Tagesordnung über.</p>
+            <p>[1.] Tagesordnung der 33. Sitzung des Deutschen Bundestages [am 1.2.1950]</p>
+            <p>1. Drucksache I/475 v. 26.1.1950: Einspruch <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name>s gegen seinen Ausschluß von den Verhandlungen des Bundestages gemäß §92 der vorläufigen Geschäftsordnung.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN001" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name> (WAV) hatte am 26.1.1950 den CSU-Abgeordneten <name type="Person" role="Erwaehnung" ref="#BodensteinerHans_1949-09-07">Bodensteiner</name> in der Wandelhalle des Bundeshauses geohrfeigt, weil dieser vor Heimatvertriebenen behauptet hatte, <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name> fahre als Flüchtlingsvertreter ein Luxusauto. Daraufhin schloß der Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name> gemäß Beschluß des Ältestenrates für 20 Sitzungstage von den Beratungen aus (vgl. Parl. Arch., Ältestenrat, 40. Sitz. am 26.1.1950, Sten. Ber., 31. Sitz. am 26.1.1950, S. 964 f.; PPP v. 26.1.1950 und <name type="Person" role="Erwaehnung" ref="#GoetzendorffGuenter_1949-09-07">Goetzendorff</name>, S. 218–224).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Einspruch wird zurückgewiesen. Zweifel an der Befugnis des Präsidenten zum Ausschluß nach §91 mögen berechtigt sein, aber sein Recht als Hausherr nach §19 ist unbestritten. Der Ausschluß hätte eigentlich nach §19 in Verbindung mit §91 erfolgen müssen. Der Ausschluß muß aufrecht erhalten bleiben. Der Präsident kann nach einigen Wochen dann nach seinem Ermessen die Bestrafung stillschweigend wieder aufheben.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN002" type="comment">
+                     <p>Der Einspruch wurde abgewiesen. Vgl. Sten. Ber., 33. Sitz. am 1. 2. 1950, S. 1027.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. Drucksache I/444 v. 20.1.1950: Beratung des Gesetzentwurfs über die Wiederherstellung der Ehrenämter und der Selbstverwaltung in der Sozialversicherung<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN003" type="comment">
+                     <p>Verbessert aus: Sozialpolitik.</p>
+                  </note>
+               </seg>.</p>
+            <p>Das Gesetz wurde im Wirtschaftsrat schon durchberaten. Es muß herausgestellt werden gegenüber dem Initiativantrag der SPD [Drucksache I/248 v. 29.11.1949], daß auch die Arbeitgeber im Aufsichtsrat vertreten sein müssen. Die Angestelltenversicherung sollte aus der Aufsicht der Landesversicherungsämter herausgenommen werden, wenn wieder eine Bundesanstalt für die Angestelltenversicherung errichtet wird. Bei den Ersatzkassen ist eine Vertretung der Arbeitgeber nicht nötig, da ohnedies die Höhe des Beitrages nicht über dem der Pflichtkassen liegen darf.</p>
+            <p>Ministerialdirektor <name type="Person" role="Sprecher" ref="#EckertJosef">Eckert</name>: Die Angestelltenversicherung unterliegt nicht der Aufsicht der Landesversicherungsämter. Z.Zt. wird ihre Aufsicht nur treuhänderisch durch die Stelle der Invalidenversicherung in Berlin ausgeübt. Eine Bundesanstalt ist wieder vorgesehen, und die Alliierten werden um die Aufhebung der treuhänderischen Aufsicht ersucht.</p>
+            <p>Der Vorschlag, die Ärzte in die Aufsichtsräte mit hereinzunehmen, wurde nicht gutgeheißen. Gegen die Beteiligung der Vertrauensärzte bei größeren Kassen ist nichts einzuwenden.</p>
+            <p>Sprecher: <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, Redezeit insgesamt 90 Minuten.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN004" type="comment">
+                     <p>Vgl. Sten. Ber., 33. Sitz. am 1.2.1950, S. 1027–1038.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3. Drucksachen I/416 v. 19.1.1950, I/202 v. 15.11.1949 und I/329 v. 14.12.1949: Beratung des mündlichen Berichtes des Ausschusses für Fragen der öffentlichen Fürsorge betr. Familienunterstützung ehemaliger Kriegsgefangener und Internierter und über Rückerstattungspflicht von Fürsorgeaufwendungen.</p>
+            <p>Empfehlung an die Länderregierungen, auf eine Rückzahlung zu verzichten. Sprecher: Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>.</p>
+            <p>4. Drucksachen I/453 v. 24.1.1950 und I/106<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN005" type="comment">
+                     <p>Verbessert aus: 349.</p>
+                  </note>
+               </seg> v. 14.10.1949: Beratung des mündlichen Berichtes des Ausschusses für Sozialpolitik betr. Auswirkungen der Leistungssteigerungen des Sozialversicherungs-Anpassungsgesetzes.</p>
+            <p>Sprecher: <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN006" type="comment">
+                     <p>Punkt 3 und 4 wurden gemeinsam behandelt. Für die CDU/CSU-Fraktion sprach <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>. Vgl. Sten. Ber., 33. Sitz. am 1.2.1950 S. 1038—1043.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Überbrückungsgesetz]</p>
+            <p>Obwohl als Hauptpunkt auf der Tagesordnung der Fraktionssitzung die Beratung des Steuergesetzentwurfes stand und der Bundesfinanzminister anwesend ist, wurde die Fraktion einig, diese Frage zurückzustellen und die drängende Frage des Überbrückungsgesetzes für die Kriegsopfer zu behandeln. Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> erstattete Bericht über die entscheidenden Ergebnisse und die ausstehenden Entscheidungen in den Ausschußberatungen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name>: Die Auswirkung des endgültigen Versorgungsgesetzes wird noch lange auf sich warten lassen. Den Kriegsopfern muß aber rasch geholfen werden. Der Regierungsentwurf über Verbesserungen in Höhe von 80 Mio. DM liegt vor [Drucksache I/395 v. 17.1.1950]. Der Vorsitzende des Ausschusses, <name type="Person" role="Erwaehnung" ref="#BazilleHelmut_1949-09-07">Bazille</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN007" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BazilleHelmut_1949-09-07">Bazille</name> hatte keinen Ausschußvorsitz inne.</p>
+                  </note>
+               </seg> möchte die Einengung des §1 fallenlassen. Das würde eine Mehrausgabe von 62 Mio. DM bedeuten. In §3 sollte noch eine Regelung für Mütter mit mehr als 3 Kindern eingebaut werden.§3 bleibt und wird §2. Im §4 sollte ein Ausgleich für Härtefälle geschaffen werden (200000 DM). Im §5 hat der Ausschuß das Pflegegeld von 1 500 auf 1 800 DM erhöht (900 000 DM). §6 möchte die bisher noch nicht Versicherten auch durch die Krankenversicherung erfassen (9,6 Mio. DM für Beschädigte, 18,9 Mio. DM für die Angehörigen). Der §1 kann am ehesten für eine Kürzung zur Debatte gestellt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name>: Aus dem Haushaltsausschuß: Der Regierungsentwurf sieht Mehrausgaben von 80 Mio. DM vor. Der Ausschuß Vorschlag erhöht diese Kosten auf 200–210 Mio. DM. Der Finanzminister aber erklärt, ihm stünden diese Mittel nicht zur Verfügung. Wir sollten nun vielleicht versuchen, einige der Dinge, die der Ausschuß vorgeschlagen hat und die nicht allzuviel kosten, in den Entwurf hineinzubringen. Im Ganzen können wir den geforderten Aufwand nicht beschließen. Die Abänderungen verzögern die Hilfe auf jeden Fall bis zum 1.4.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN008" type="comment">
+                     <p>Am Vormittag hatte eine Sitzung des Ausschusses für Kriegsopfer- und Kriegsgefangenenfragen mit dem Haushaltsausschuß stattgefunden, in der die Bundesminister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> und <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> ihre Positionen dargelegt hatten. Bis zur nächsten Sitzung des Kriegsopferausschusses, die um 18.00 Uhr begann, sollten die Stellungnahmen der Fraktionen zu dem Gesetzentwurf vorliegen. Parl. Arch., 26. Ausschuß.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name>: Ich habe mich bis jetzt bei allen Anträgen dagegen gewehrt, Aufwendungen rückwirkend zu beschließen. Die Einnahmen des Bundes stehen ihm erst ab 1.4.1950 zur Verfügung, und auch die Verpflichtung zur Tragung der Kriegsfolgelasten beginnt mit diesem Zeitpunkt. Für die Zeit vorher müssen die Mittel von den Ländern angefordert werden. Die Vertretung der Länder ist der Bundesrat. Diese Länder sind z. Zt. alle in Not. Schleswig-Holstein steht praktisch vor dem Bankrott, in Niedersachsen ist es nicht viel besser, und Bayern hat voraussichtlich ein Defizit von 200 Mio. DM. Die Länder haben mir erklärt, daß sie gar nicht in der Lage sind, die 362 Mio. DM des außerordentlichen Haushalts zu decken. Es ist sehr schwer, die Zahlungen von den Ländern hereinzubekommen.</p>
+            <p>Das einzige Gesetz, dem ich zugestimmt habe mit rückwirkender Kraft, ist das Überbrückungsgesetz für die Kriegsopfer.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN009" type="comment">
+                     <p>Vgl. die 36. Kabinettssitzung am 17.1.1950 (Kabinettsprotokolle 1950, S. 136).</p>
+                  </note>
+               </seg> Ich kann aber jetzt nur das Notwendigste tun. Wenn durch höhere Forderungen mit dem Bundesrat ein Konflikt entsteht, wird auf alle Fälle Zeit verloren. Die Zustimmung der Länder war bei 80 Mio. DM noch zu erreichen. Das sind im Vierteljahr etwa 20 Mio. DM. Sie wurden bisher genehmigt. Wenn Sie nun das eine oder andere noch hinzufügen, was keine größere finanzielle Bedeutung hat, dann wird es daran nicht scheitern. Aber vergessen Sie nicht. Was wir jetzt schon für die Kriegsopfer und die Kriegsfolgen zu leisten haben, ist mehr als 3 000 Mio. DM. Die Einnahmen des Bundes sind am 1. April etwa 8,7 Milliarden DM. Der Haushaltsplan umfaßt 5 Mrd. Im nächsten Jahr kommen alle die sozialpolitischen Anforderungen an den Bund. Wenn die Bundesregierung in ihren sozialpolitischen Vorschlägen bis an die Grenze des Möglichen geht und es wird im Bundestag eine weitere Erhöhung der Ausgaben beschlossen, dann wird ein Konflikt herbeigeführt. Um hier auf eine Zusammenarbeit zu kommen, erscheint es mir wünschenswert, daß ich jeweils den Gesetzentwurf der Fraktion mitteilen würde und ihr sagen würde, wie weit man gehen kann. Dann halten wir zusammen und jeder Antrag, der mehr Belastung bedeutet, wird abgelehnt. Bei der Regierungsvorlage ist noch zumutbar, die kleinen Einheiten mit zu übernehmen. Die anderen teuren Anträge sollten sie zurückstellen und den Antrag stellen, daß die Regierung auf diese Vorschläge besonders Rücksicht nimmt und sie in das endgültige Gesetz verarbeitet.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>: Bei dieser Vorlage müssen wir von nüchternen Erwägungen ausgehen. Wir haben im Bundesgebiet ein völlig zerrissenes Versorgungsgesetz. In der amerikanischen Zone wurde eine Ausweitung der Witwenversorgung erreicht. Diese Ausweitung gilt es jetzt auf die Britische Zone zu übertragen. In der amerikanischen Zone wurden 50% Geschädigten die Invalidenrente gegeben. In Hamburg und Niedersachsen wurde eine 20%ige Erhöhung der Renten als Teuerungszuschlag gewährt. Den anderen wollen wir dieses jetzt geben, damit wir zu einer größeren Einheitlichkeit kommen. Wenn Bayern diesen Vorschlag mit der Krankenversicherung jetzt macht, so müssen wir feststellen, daß Bayern diese Frage bis jetzt nicht geregelt hat. Den §1 über die Teuerungszulagen können wir nicht fallenlassen. Wir müssen eben uns überlegen: Was kann uns der Finanzminister im äußersten Falle geben? Er muß schon 3,1 Mrd. DM für Kriegsbeschädigte aufwenden. Durch das Übergangsgesetz bekommen alle arbeitsunfähigen Kriegsbeschädigten 120 DM. Der Arbeitsinvalide bekommt nur 60 DM. Unsere Aufgabe kann nur sein, die geringen Mittel, die wir haben, unter allen Umständen gerecht zu verteilen. Sie können vielleicht auf die Pflegezulage von 900 000 DM und für den Härteausgleich auf 200 bis 300000 DM gehen, denn wir können nur den Weg gehen, den auch der Finanzminister für gangbar hält.</p>
+            <p>In der anschließenden kurzen Debatte kam zu Ausdruck, daß die Fraktion bereit sein muß, sich demagogischen Anträgen zu entziehen, obwohl die Opposition die Not weiter Kreise ausnützen wird. Unter keinen Umständen aber darf man die SPD weiter als<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN010" type="comment">
+                     <p>Wort handschriftlich verbessert.</p>
+                  </note>
+               </seg> Einpeitscher für alle sozialen Gesetze auftreten lassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: Die Fraktion muß Herrn <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> in den nächsten Monaten unbedingt folgen. Wir gehen außerordentlich schweren Zeiten entgegen. Wenn wir jetzt nicht folgen, was wird dann geschehen, wenn eines Tages die Kassen leer sind? Betrachten Sie die Arbeitslosenzahl.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN011" type="comment">
+                     <p>Im Winter/Frühjahr 1949/1950 erreichte die Arbeitslosigkeit in der Bundesrepublik mit annähernd 2 Mio. Arbeitslosen ihren Höhepunkt. Vgl. Schwarz, Ära Adenauer 1949–1957, S. 78.</p>
+                  </note>
+               </seg> Dies ist eine Frage, die mich seit Wochen mit schwerster Sorge erfüllt. Wenn wir nicht in den nächsten Wochen Herrn <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> unbedingt folgen, dann geht die Bundesrepublik zu Grunde.</p>
+            <p>2. Es geht natürlich nicht, daß vor der Behandlung im Kabinett jede Gesetzesvorlage der Fraktion vorgelegt wird. Der Bundestag ist nicht dazu berufen, ständig in die Exekutive hineinzureden. Die Situation der Bundesregierung ist schwierig genug. Die Arbeitslosigkeit steigt anhaltend, die Steuern sinken, und die Ausgaben steigen. Dazu kommen die Schwierigkeiten im Bundestag, die Schwierigkeiten im Bundesrat, in dem sich beinahe eine Art Nebenregierung auftut. Dann kommen die Schwierigkeiten mit den Ministern, das Vordringen der FDP im Lande. Es ist eben nicht möglich, daß man draußen für und gegen alles redet und hier notdürftig die Koalition aufrechterhält. Es sind offenkundig gewisse Bestrebungen im Gange, eine andere Koalition vorzubereiten und eines Tages eine Koalition zwischen der FDP und der SPD einzugehen. Dazu kommen Erscheinungen in der CDU, wo es in Freiburg der Herr <name type="Person" role="Erwaehnung" ref="#DichtelAnton">Dichtel</name> fertig gebracht hat, Herrn <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> zu begrüßen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN012" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> hatte am 26.1.1950 in Freiburg gesprochen. Unter anderem forderte er von der Bundesregierung eine strikt ablehnende Haltung gegenüber der Saarregierung und der von ihr eingegangenen Verpflichtungen. Der Vorsitzende der südbadischen CDU, Anton <name type="Person" role="Erwaehnung" ref="#DichtelAnton">Dichtel</name>, hatte nicht nur an der Veranstaltung teilgenommen, sondern in der Diskussion bedauert, daß es auf Bundesebene nicht zu einer großen Koalition mit der SPD gekommen sei. Vgl. die »Badische Zeitung« v. 28./29.1.1950 und »Das Volk, Südbadische Heimatzeitung« v. 28.1.1950.</p>
+                  </note>
+               </seg> Es sind heute in unseren eigenen Reihen genug Kräfte am Werke, die den Ruf bei den Wählern ruinieren. Treiben wir denn überhaupt noch eine einheitliche Politik? Auch ich ordne mich hier in Fragen der Finanzpolitik dem Herrn <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> unter. Und dann müssen wir darauf sehen, daß wir bei der Abstimmung nicht auseinanderfallen. Man muß auch einmal ein am Herzen liegendes Anliegen zurückstellen können, sonst leiten wir der SPD Wasser auf die Mühlen. Letztlich steht über allem die Einheit der Fraktion und die Einheit der CDU/CSU.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">Fraktionsvorsitzende</name> betont, daß die Fraktion sich nicht in die Exekutive einzuschalten gedenke, aber den Wunsch nach engerem Kontakt mit der Regierung habe. Unter Hinweis auf verschiedene Beispiele der Vergangenheit legt er dem Kanzler dar, wie schwierig die Situation für die Fraktion würde, wenn alle interessierten Kreise über die Gesetzentwürfe unterrichtet wären und die Fraktion über deren Inhalt keine Kenntnis habe. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> bittet um die Einheitlichkeit innerhalb der Fraktion und sagt, daß ihm mitgeteilt worden sei, in den kommenden Abstimmungen würden 20/30 Abgeordnete der CDU/CSU mit der SPD stimmen. Das sei unmöglich, denn in den kommenden Monaten müßten die Mitglieder der Fraktion unbedingt zu dem Finanzminister halten.</p>
+            <p>Auf seine Anregung sei ein Ausschuß zwischen Mitgliedern der Koalitionsfraktionen und des Kabinetts gebildet worden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN013" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg> Der Dekartellisierungsentwurf<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN014" type="comment">
+                     <p>Siehe Nr. 76, 1.5.</p>
+                  </note>
+               </seg> sei auch ihm noch nicht vorgelegt worden. Unsere Verwaltung klappt eben noch in keiner Weise. Gewisse Verwaltungen haben sich als selbständige Körperschaften entwickelt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> schlägt vor, die Regierungsvorlage mit dem §5 des Ausschußantrages [Drucksache I/484 v. 31.1.1950] anzunehmen und dabei die Ziffer 1800 durch 1500 zu ersetzen, die §§2, 6 und 7 der Bundesregierung als Material für die kommende endgültige Regelung des Versorgungsgesetzes zu überweisen. Er sei gerne bereit, wenn es die Einheitlichkeit der Arbeit zwischen Fraktion und Regierung erfordere, die Fragen mit der Fraktion zu beraten.</p>
+            <p>In der anschließenden Debatte wurde mit allem Nachdruck betont, daß man unter keinen Umständen durch propagandistische Beschlüsse Hoffnung erwecken dürfe, die nicht eingehalten werden können. Die Fragen müßten aber doch in der Fraktion besprochen werden. Eine Absprache über die Abstimmung sei im Kriegsopferausschuß nicht getroffen worden. Dann kam zu Ausdruck, daß die Fraktion nicht weiter sich das Gesetz des Handelns von der Opposition aufzwingen lassen dürfe. Dr. <name type="Person" role="Sprecher" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> teilt mit, daß bei allen Gesetzesvorbereitungen auch früher die Fachkreise gehört worden seien. Seit 1946 habe sich leider herausgebildet, solche Entwürfe zu politischen Zwecken zu mißbrauchen. Darum sei zu überlegen, ob nicht künftig die Entwürfe an ausgewählte Sachverständige gehen sollten, um die Vertraulichkeit zu wahren. Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> meinte: ein Auseinanderfallen der Fraktion in der Abstimmung schaffe nur neue Schwierigkeiten und nütze nichts. Eine ständige Rücksichtnahme auf die Wähler könne in einzelnen Fällen zu einer Verletzung der Gewissensverantwortung führen. Schließlich einigte sich die Fraktion auf die Annahme des Regierungsentwurfes zusammen mit dem §5 des Ausschußvorschlages unter Änderung von 1800 in 1500. Die §§1, 2 und 6 sollten in Entschließungsform der Regierung zur Berücksichtigung in der endgültigen Fassung überwiesen werden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN015" type="comment">
+                     <p>Vgl. ebd., Ziffer 2. Gesetzentwurf und Entschließung wurden in der hier beschlossenen Form angenommen. Vgl. 34. Sitz. am 2.2.1950, S. 1061–1079.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[3. Entlassung <name type="Person" role="Erwaehnung" ref="#BourdinPaul">Bourdin</name>]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: Anschließend machte der Kanzler noch Ausführungen zu verschiedenen Punkten der Tagespolitik. Zum Fall <name type="Person" role="Erwaehnung" ref="#BourdinPaul">Bourdin</name> sagte er, <name type="Person" role="Erwaehnung" ref="#BourdinPaul">B</name>. habe um seine Enthebung vom Amt des Bundespressechefs gebeten. Er sei damit nur einer Entlassung zuvorgekommen, denn es habe sich herausgestellt, daß er sowohl nach seinem Wissen wie nach der Notwendigkeit der Herstellung eines entsprechenden Ansehens bei der Presse nicht die in ihn gesetzten Erwartungen erfüllt. Er habe vom Kanzler in ziemlich scharfer Form verlangt 1. daß Herr <name type="Person" role="Erwaehnung" ref="#BoexHeinrich">Böx</name> gehen solle, 2., daß der Bundespressechef nach seinem Ermessen entscheiden müsse, was der Öffentlichkeit mitgeteilt werde.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN016" type="comment">
+                     <p>Vgl. Baring, Außenpolitik, S. 41–43.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-4">
+            <head>D.</head>
+            <p>[4.] Zur Saarfrage</p>
+            <p>Herr <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> habe wieder eine Rede gehalten zur Saarfrage.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN017" type="comment">
+                     <p>Siehe Anm. 12.</p>
+                  </note>
+               </seg> Aber er habe es ja auch leicht. Er könne sagen, was er wolle, der Kanzler aber müsse schweigen. Man dürfe es aber nicht zulassen, daß immer die Ausführungen <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> denen des Kanzlers gegenübergestellt werden. Er müsse als Kanzler eben seine Aufgabe erfüllen. In der Behandlung der Saarfrage habe die Presse auf einer völlig falschen Linie gelegen. Der Kanzler aber kann, weil die Dinge noch im Fluß sind, nicht dazu Stellung nehmen. Die Saarfrage steht für Deutschland gut. Vielleicht muß Frankreich darin den Rückzug antreten. Die französische Zeitung »Combat« nimmt zu der Mitteilung <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schumans</name> gegenüber dem französischen Kabinett, daß Washington und London den französischen Standpunkt unterstützen, Stellung und schreibt, M. <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> müsse diese Mitteilung doch wohl noch einmal korrigieren.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN018" type="comment">
+                     <p>Vgl. »Combat« v. 28./29.1.1950.</p>
+                  </note>
+               </seg> Der französische Standpunkt wird von den angelsächsischen Mächten nicht geteilt.</p>
+         </div>
+         <div type="SVP" xml:id="id_jdk_x22cdu-csu-01_1950-01-31-t1450_EP_div_SVP-5">
+            <head>E.</head>
+            <p>[5.] Zur Frage der Arbeitslosigkeit</p>
+            <p>Unter keinen Umständen dürfe es so weitergehen. Die Periode der Niederschlagung der Planwirtschaft ist seit Monaten vorbei. Es ist zu überlegen, ob es nicht an der Zeit ist, den Kurs unserer Wirtschaftspolitik zu überprüfen und an deren Stelle eine konkrete Behandlung der Wirtschaft vorzunehmen. Dies gilt nicht nur für den Bereich der Wirtschaft, sondern ebenso für die Ernährungswirtschaft. Freilich gibt es Quellen der Arbeitslosigkeit, an die wir nicht herankönnen. Das liegt zum Teil an Fehlern der Gesetzgebung, an der Schlaffheit der Arbeitsämterleiter, die ja zum großen Teil der SPD angehören. Teilen der Arbeitslosigkeit ist ohne Investitionen nicht beizukommen. Wir müssen hier auch an Notstandsarbeiten denken.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-6">
+            <head>F.</head>
+            <p>[6.] Zur Frage der Koalition</p>
+            <p>äußerte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> seine große Sorge über die augenblickliche Entwicklung. Die Sonntagsreden in der letzten Zeit sind verheerend. Der Montag mit den Meldungen, was am Sonntag wieder geredet wurde, sei für ihn geradezu ein Tag des Schreckens. Der Koalitionsausschuß zwischen den Fraktionen müsse wieder mit Energie entwickelt werden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN019" type="comment">
+                     <p>Die regelmäßigen Koalitionsgespräche wurden erst wieder ab dem 21.3.1950 geplant. Vgl. das Schreiben des Bundeskanzlers an von Brentano vom 17.3.1950 (BA NL 239 (von Brentano)/154).</p>
+                  </note>
+               </seg> Im Kabinett sei dies wegen der vielfältigen Arbeit nicht möglich. Daneben erfüllen den Kanzler schwere Sorgen um die Einheit der Fraktion.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-7">
+            <head>G.</head>
+            <p>[7.] Zur Frage <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name>
+            </p>
+            <p>Ausgehend von einem Artikel Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers’</name> betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, daß unter keinen Umständen eine konfessionelle Spannung auftreten dürfe. Kirchenpräsident <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> habe vor einiger Zeit in einem »Interview« die Ansicht geäußert, die Bundesrepu blik Deutschland sei »in Rom gezeugt und in Washington geboren«.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN020" type="comment">
+                     <p>Vgl. AdG 1950, S. 2225.</p>
+                  </note>
+               </seg> Diese Äußerung mußte auf ihn im höchsten Grade verletzend und im Auslande sehr schädlich für das Ansehen der Bundesrepublik wirken. Nachdem die Hohen Kommissare ihm gegenüber auf die schädliche Wirkung dieses Interviews hingewiesen hatten, habe ich Herrn <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> einen Brief geschrieben, in dem ich ihn um Klarstellung bat, ob er wirklich solche Worte gesagt habe. In einem Briefe vom 25.1. erhielt ich nun eine Antwort, die besagte, diese Äußerung sei eine Wiederholung dessen, was »ich bereits früher zum Ausdruck gebracht habe ... es ist mir natürlich bekannt, wie mein sog. Interview im Ausland aufgenommen worden ist. Dagegen möchte ich es ablehnen, von Ihnen Belehrungen entgegenzunehmen über die Auffassung, die diese Äußerungen bei den Hohen Kommissaren ausgelöst haben ...« Er sei selbst von den Hohen Kommissaren empfangen worden, und sie hätten ihm von seiner Ablehnung nichts gesagt.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN021" type="comment">
+                     <p>Zum Briefwechsel <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer-Niemöller</name> im Januar 1950 vgl. Adenauer. Briefe 1949–1951, S. 161 f. und 478 f.</p>
+                  </note>
+               </seg> – Dies muß ich als eine Arroganz bezeichnen, der gegenüber ich sprachlos war. Ich werde Herrn Kirchenpräsident <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> in höflichem Tone eine Antwort geben. Die Mitglieder der Fraktion, die dem evangelischen Bekenntnis angehören, möchte ich aber bitten, alle ihre Verbindungen zu <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> anzuspannen, daß er einsieht, daß er so dem Christentum in Deutschland größten Schaden zufügt.</p>
+            <p>An die Ausführungen des Kanzlers schloß sich eine lebhafte Aussprache der evangelischen Fraktionsmitglieder an, bei der teils sehr scharf die Haltung <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöllers</name> kritisiert wurde, aber zum Ausdruck kam, daß auf diese Weise unter keinen Umständen Verwirrung unter das christliche Volk getragen werden dürfe. Bundesinnenminister Dr. <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> lehnte in maßvollen Worten die zitierten Äußerungen ab, bat aber um menschliches Verständnis für den Angegriffenen. Seine Ausführungen sagten im Wesentlichen:</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>: In Deutschland gibt es 27 Evangelische Landeskirchen, die alle in Kultus und Lehre voneinander unabhängig sind. Diese Unterschiede sind nun einmal gegeben. Diese Landeskirchen sind seit Sommer 1948 zusammengeschlossen in der »Evangelischen Kirche in Deutschland«, ohne ihre weitgehende Selbständigkeit aufzuheben. Die EKD hat die Synode und die Kirchenkonferenz gebildet, aus denen wiederum sich der Rat der Evangelischen Kirche Deutschlands zusammensetzt. Nun hat im Januar in Halle eine Konferenz stattgefunden, die zu den Berichten von Probst <name type="Person" role="Erwaehnung" ref="#GrueberHeinrich">Grüber</name> aus dem Lager Sachsenhausen<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN022" type="comment">
+                     <p>Probst <name type="Person" role="Erwaehnung" ref="#GrueberHeinrich">Grüber</name>, der Gottesdienste in Internierungslagern der SBZ abhielt, hatte sich – im Vergleich zu den KZ des Drittes Reiches – positiv über die Zustände in den Lagern geäußert. Vgl. Grüber, S. 295–303.</p>
+                  </note>
+               </seg> und zu den Äußerungen des Kirchenpräsidenten <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> Stellung genommen hat. Ihre Stellungnahme ist in 4 Punkte auch mit Zustimmung von Herrn <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> und Probst <name type="Person" role="Erwaehnung" ref="#GrueberHeinrich">Grüber</name> gefaßt worden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN023" type="comment">
+                     <p>Dabei wurde betont, daß es sich bei den Äußerungen um persönliche Stellungnahmen gehandelt habe und nicht um »Kundgebungen der evangelischen Kirche«. Vgl. AdG 1950, S. 2225.</p>
+                  </note>
+               </seg> Der <name type="Person" role="Erwaehnung" ref="#GrueberHeinrich">Grüber</name>-Bericht wurde von allen Geistlichen bestätigt, die an den Gottesdiensten teilgenommen haben, auch von katholischer Seite. Die Zustände in den Konzentrationslagern waren nach Ort und Zeit unterschiedlich. So sind auch heute noch die Zustände in den Lagern Buchenwald und Bautzen erschütternd. Bei der Konferenz in Halle wurde der ganze Originalbericht vorgelesen. (Der Min. gab Auszüge aus diesem Originalbericht.) Im letzten Jahr sind Verbesserungen eingetreten. Unter dem Druck der Öffentlichkeit haben die Sowjets 1948 einen Teil der KZ-Häftlinge entlassen. Die Heimgekehrten haben wahrheitsgemäß von den Greueln in den Lagern berichtet. Die Sowjets konnten nun auf zwei Arten reagieren: 1. die Zeugen beseitigen und so die Greuel verheimlichen oder die Zustände eben bessern. Sie haben das zweite getan.</p>
+            <p>Wenn nun nach fortgesetzter Kennzeichnung und scharfer Ablehnung aller Gewaltmaßnahmen verantwortliche Männer der Kirche wahrheitsgemäß berichten, um die Erreichung menschenwürdiger Zustände zu erzielen, dann sollten wir uns hüten, uns zum Richter über jene zu machen, die dort das Gefecht durchstehen und ihr Anliegen, auflockernd zu wirken, verfolgen. Daß dabei der Kampf weitergehen muß, ist völlig klar.</p>
+            <p>Zum Fall <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name>: <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> steht unter dem Eindruck folgenden Gedankenganges: Von dem Augenblick der Entzweiung unter den Alliierten war die eigene deutsche Staatlichkeit in Gefahr. Seine Sorge ist: Wie kann jetzt die zweigeteilte Staatlichkeit beseitigt werden? Dr. <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> bedauert das Hineintragen des konfessionellen Zwiespaltes.</p>
+            <p>Zur Konfessionsstatistik in den neuen Ministerien sagt er, daß in seinem Ministerium viel mehr katholische Absagen gekommen wären als evangelische.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN024" type="comment">
+                     <p>Vgl. Wengst, Staatsaufbau, S. 181 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bei <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöller</name> dürfe man nicht vergessen, daß seine Äußerungen auch von seinen Auslandserfahrungen her gesehen werden müßten. Er sei in Deutschland ja der verantwortliche Mann dafür. Da habe er Meldungen vorliegen von Benachteiligungen der evangelischen Brüder in Spanien, Italien und Argentinien. Im übrigen sei in den vergangenen Jahren eine Verschärfung der Konturen unter den Konfessionen eingetreten. Die liberale Haltung der Jahrhundertwende oder auch noch von 1920 sei verschwunden und eines neues Bewußtwerden des Inhalts der evangelischen Lehre habe sich durchgesetzt. Dies sei in den Jahren der Verfolgung besonders in Deutschland zu beobachten gewesen. - So komme es, daß aus diesem Wiederbewußtwerden der Konfessionen sich das Ringen um das Wesen gerade in Deutschland auch zu einem Gespräch zwischen den Konfessionen entwickelt habe. Das einzige autorisierte Gespräch zwischen der evangelischen und katholischen Kirche sei in Deutschland im Gange. An der politischen Zusammenarbeit halte er unverbrüchlich fest, ein Zusammenkommen der Konfessionen in der Wiedervereinigung dagegen erscheine ihm unmöglich. Diese Dinge seien eine der wichtigsten Fakten unserer politischen Geschichte.</p>
+            <p>Zum Schluß kam vom <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> zum Ausdruck, daß er mit mehr Hoffnung auf die Frage der Wiedervereinigung sehe und gerade deswegen die Äußerungen <name type="Person" role="Erwaehnung" ref="#NiemoellerMartin">Niemöllers</name> bedauere. Abgeordnete betonten die Notwendigkeit der Bereinigung dieser Angelegenheit durch kluge Einwirkung und durch gemeinsames Gebet. Der Vorsitzende Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> brachte seine Genugtuung zum Ausdruck, daß dieses notwendige Gespräch mit solchem Ernst einmal durchgeführt wurde.</p>
+            <p>Als Beobachtung ist anzumerken, daß kein katholischer Abgeordneter sich in diese Auseinandersetzung eingeschaltet hat und die evangelischen Mitglieder der Fraktion völlig unbeeinflußt und ohne Scheu von sich aus zu der Frage Stellung genommen haben.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1950-01-31-t1450_EP_div_SVP-8">
+            <head>H.</head>
+            <p>[weiter zu 1.] Tagesordnung der 33. Sitzung des Deutschen Bundestages [am 1.2.1950]</p>
+            <p>5. Drucksachen I/449 v. 24.1.1950 und I/349 v. 16.12.1949: Mündlicher Bericht des Ausschusses für Ernährung Landwirtschaft und Forsten betr. Wiederherstellung der deutschen Fischerei-Hoheit.</p>
+            <p>Die Deutsche Partei wird sprechen. Fraktionssprecher: Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN025" type="comment">
+                     <p>Vgl. Sten. Ben, 33. Sitz. am 1.2.1950, S. 1043 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. Drucksachen I/459 v. 25.1.1950 und I/78 v. 5.10.1949: Mündlicher Bericht des Ausschusses für Heimatvertriebene betr. besonderes Referat für in Polen und in der Tschechoslowakei lebende Deutsche.</p>
+            <p>Ohne Diskussion.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN026" type="comment">
+                     <p>Es fand eine Debatte ohne Beteiligung der Fraktion statt. Vgl. ebd., S. 1044–1047.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>7. Drucksachen I/460 v. 25.1.1950 und I/92 v. 13.10.1949: Mündlicher Bericht des Ausschusses für Heimatvertriebene betr. Sofortmaßnahmen hinsichtlich der Verteilung der illegal über die Ostzonengrenze kommenden Flüchtlinge.</p>
+            <p>Ohne Diskussion vorgesehen. Bayernpartei will aber sprechen. Wenn es notwendig sein sollte, ist Fraktionssprecher: Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN027" type="comment">
+                     <p>Es fand eine Debatte statt, in der <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> für die Fraktion sprach. Vgl. ebd., S. 1047–1052.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. Drucksachen I/402 v. 18.1.1950 und I/34 v. 27.9.1949: Beschlußfassung über mündlichen Bericht des Ausschusses für Wirtschaftspolitik über die Liquidation des ehemaligen reichseigenen Filmeigentums.</p>
+            <p>Nur Beschlußfassung.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN028" type="comment">
+                     <p>Vgl. ebd., S. 1052.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>9. Drucksachen I/419 v. 19.1.1950 und I/237 v. 24.11.1949: Mündlicher Bericht des Ausschusses für Wiederaufbau und Wohnungswesen betr. Baudarlehen an Schwer- und Schwerstversehrte.</p>
+            <p>An den Ausschuß für Kriegsopfer- und Kriegsgefangenenfragen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN029" type="comment">
+                     <p>Vgl. ebd.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>10. Drucksache I/412 v. 19.1.1950: Beratung des Antrags der KPD betr. abgelaufenes Produktionspermit.</p>
+            <p>Es handelt sich um eine kleine Anfrage, nicht um einen Antrag. Die Regierung soll noch vor dem Antragsteller eine Erklärung abgeben. Dann sollte man unter Herausstellung der Tatsache, daß hier eine Umgehung der Geschäftsordnung vorliegt, zur Tagesordnung übergehen. Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> sollen entsprechendes Vorgehen besprechen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN030" type="comment">
+                     <p>Es wurde dementsprechend vorgegangen. Nach dem Antrag von Bucerius entwickelte sich dennoch eine Debatte. Vgl. ebd., S. 1052–1056.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>11. Drucksache I/435 v. 20.1.1950: Beratung des Antrags betr. Bericht über die wirtschaftliche Lage der Deutschen Bundesbahn.</p>
+            <p>Bundesminister <name type="Person" role="Erwaehnung" ref="#SeebohmHans-Christoph_1949-09-07">Seebohm</name> möge eine Erklärung abgeben. Wenn es notwendig sein sollte, soll Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> sprechen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN031" type="comment">
+                     <p>Der Punkt wurde von der TO abgesetzt. Vgl. ebd., S. 1056.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>12. Drucksache I/473 v. 26.1.1950: Überweisung von Anträgen – nichts zu sagen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN032" type="comment">
+                     <p>Vgl. ebd., S. 1057 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#TewaagHelmut">Tewaag</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-01_1950-01-31-t1450_EP_FN033" type="comment">
+                     <p>Handschriftlich unterzeichnet.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

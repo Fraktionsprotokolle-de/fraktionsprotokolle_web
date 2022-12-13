@@ -1,213 +1,394 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-02-08-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title><author>Heinrich Potthoff</author><pubPlace>Düsseldorf</pubPlace><date>1993</date>
-						<idno type="DNB">https://d-nb.info/930888952</idno>
-						<idno type="DNB">https://d-nb.info/930907760</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 13)</idno>
-							<objectName>SPD-Fraktion im Deutschen Bundestag. Protokoll der Fraktionssitzung am Dienstag, den 8. Februar 1966, in Bonn, Bundeshaus</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 8. Februar 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>6 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-02-08"><time type="start" when="15:00:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1966-02-08-t1500_EP_SVP-1" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-1">A. Internes aus der Fraktion. TOP 2: Bericht Holger <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>.</item>
-					<item xml:id="spd-05_1966-02-08-t1500_EP_SVP-2" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-2">B. TOP 1: Vorbereitung der Plenarsizungen.</item>
-					<item xml:id="spd-05_1966-02-08-t1500_EP_SVP-3" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-2">C. TOP 3: Vorlagen aus den Arbeitskreisen.</item>
-					<item xml:id="spd-05_1966-02-08-t1500_EP_SVP-4" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-4">D. Forts. TOP 2: Bericht Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>. </item>
-					<item xml:id="spd-05_1966-02-08-t1500_EP_SVP-5" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-5">E. TOP 4: Nächste Termine.</item>
-					<item xml:id="spd-05_1966-02-08-t1500_EP_SVP-6" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-6">F. TOP 5: Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Zu Beginn der Sitzung teilt der stellvertretende Fraktionsvorsitzende Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> mit, daß der Fraktionsvorsitzende Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> am Vortage aus der Klinik entlassen wurde und sich zur Rekonvaleszenz nach Rothaus/Schwarzwald begeben hat. Die Fraktion spricht ihm ihre guten Wünsche zur baldigen vollständigen Genesung aus.</p>
-				<p>Sodann gibt H. <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> die Namen der erkrankten Fraktionsmitglieder bekannt (Anlage 2).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN002" type="comment"><p>Die betreffende Aufstellung befindet sich in <bibl type="item-in-archive">5. Legislaturperiode V/I. Fraktion. Protokolle und Tgo I 19.10.65-27.4.67</bibl>.</p></note></seg> Die Fraktion übermittelt auch ihnen ihre Genesungswünsche.</p>
-				<p>Die Arbeitskreise Außenpolitik und Sicherheitsfragen haben zu einer Besprechung mit den Abgeordneten <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und Dr. <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> über deren bevorstehende Informationsreise nach Südvietnam eingeladen.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN003" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_SVP-1">Nr. 134, TOP 1</ref>. Über diese Informationsreise von <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> nach Südvietnam und in die Anrainerstaaten erstattete <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> vor dem <bibl type="item-in-archive">»Parteirat 14.4.1966« einen längeren Bericht (Prot. S. 14-22); AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>. Vgl. auch die Wiedergabe des Berichts in <bibl type="series-item">SOPADE-Rednerdienst 4/1966, S. 1-5</bibl>; ferner <bibl type="single-item"><hi rendition="#smcap">Soell</hi>, Erler I, S. 694 (Anm. 728)</bibl>.</p></note></seg> Es wird festgestellt, daß der Termin dieser für Donnerstag, 10.2. 1966, vorgesehenen Sitzung, die mit zahlreichen anderen Terminen zusammenfällt, nicht verlegt werden kann.</p>
-				<p>Punkt 2 der TO: Bericht des Abg. Holger <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name></p>
-				<p>Holger <name type="Person" role="Sprecher" ref="#BoernerHolger_1957-10-15">Börner</name>, der Vorsitzende des Verkehrsausschusses, berichtet über die Untersuchungen, welche zur Klärung der Ursachen des Absturzes einer Verkehrsmaschine der Lufthansa in Bremen<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN004" type="comment"><p>Am 28.1.1966 war beim Landeanflug in Bremen eine Convair 440 – Metropolitan der Lufthansa abgestürzt, wobei alle 46 Insassen zu Tode kamen. Es war in der Bundesrepublik der erste Unfall der neuen Lufthansa, bei dem Passagiere starben.</p></note></seg> eingeleitet worden sind, über den Stand der Flugsicherung in der Bundesrepublik und über die Probleme der Entschädigungsleistungen bei Flugzeugunfällen (vgl. Anlage 3).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN005" type="comment"><p>Nach Anl. 3 – <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 48/66 vom 8.2.1966</bibl>, Überschrift: »Betr.: Fraktionssitzung« – erklärte <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, es könne »fast mit Sicherheit ausgeschlossen werden«, daß »mangelhafte Flugsicherungseinrichtungen« ursächlich für das Unglück seien. Dennoch sei es »Pflicht des Deutschen Bundestages, festzustellen, ob hinsichtlich der Gesetzgebung und der Dotierung der Flugsicherung alles Notwendige getan sei«. Die BReg solle einen »detaillierten Bericht« zur Flugsicherung vorlegen. Danach müßte »dieses Problem im Verkehrsausschuß des Bundestages« beraten werden, vor allem mit Blick auf vier Fragen: »1. Treffen die immer wieder erhobenen Vorwürfe über einen mangelhaften Ausbau der Flugsicherung zu? 2. Wie können die zusätzlichen Risiken beseitigt werden, die sich aus dem Nebeneinander von ziviler und militärischer Flugsicherung ergeben? 3. Wie kann man in der Frage der Flughafenpolitik zu einer einheitlichen Haltung von Bund und Ländern kommen? 4. Was muß geschehen, damit die Versorgung der Hinterbliebenen bei einem Flugzeugunglück den heutigen Vorstellungen von sozialer Sicherheit entspricht?«</p></note></seg></p>
-				<p>Er begründet ferner kurz den bereits eingereichten Antrag der Fraktion betreffend Sicherheit in der Zivilluftfahrt (Anlage 4)<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN006" type="comment"><p>In dem am 1.2.1966 eingebrachten Antrag »<name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#SeifrizHansStefan_1961-10-17">Seifriz</name>, <name type="Person" role="Erwaehnung" ref="#IvenHans_1957-10-15">Iven</name>« und »Fraktion der SPD« wurde die BReg zur Vorlegung eines Berichts zur »zivilen Flugsicherung« bis zum 1.3.1966 aufgefordert. Anl. 4 sowie <bibl type="btd"><ref type="external" target="05/241">BT Anl. 102, Drs. V/241</ref></bibl>; vgl. <ref type="internal" target="#spd-05_1966-02-15-t1500_EP_SVP-2">Nr. 137, TOP 2, 12</ref>.</p></note></seg> und die ebenfalls bereits eingereichte Kleine Anfrage betreffend Entschädigung bei Unglücksfällen in der zivilen Luftfahrt (Anlage 5).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN007" type="comment"><p>In gleicher Weise am 1.3.1966 eingebracht; Anl. 5 sowie <bibl type="btd"><ref type="external" target="05/240">BT Anl. 102, Drs. V/240</ref></bibl>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Punkt 1 der TO: Vorbereitung der Plenarsitzungen am 9., 10. und 11. Februar 1966:</p>
-				<p>a) Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> gibt die Tagesordnung nach den Beschlüssen des Ältestenrates bekannt.</p>
-				<p>b) Dr. Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> stellt die Vorschläge des Fraktionsvorstandes für die Gestaltung der Debatte über die Großen Anfragen der drei Fraktionen zur Wissenschafts- und Bildungspolitik zur Diskussion.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN008" type="comment"><p>Das Plenum beriet die Großen Anfragen der Fraktion der SPD zur »Wissenschafts- und Bildungspolitik« vom 11.1.1966 – vgl. <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_SVP-1">Nr. 133, TOP 3 i</ref> –, der CDU/CSU vom 20.1.1966 zur »Wissenschaftsförderung« – <bibl type="btd"><ref type="external" target="05/198">BT Anl. 102, Drs. V/198</ref></bibl> – und der FDP vom 1.2.1966 zur »Wissenschafts- und Bildungspolitik« – <bibl type="btd"><ref type="external" target="05/239">ebd., Drs. V/239</ref></bibl> – am 10.2.1966. <bibl type="btp"><ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 739-805</bibl>. Nach einer Vereinbarung im Ältestenrat wurden die Großen Anfragen »in der Reihenfolge ihres Eingangs« begründet. Das <bibl type="item-in-archive">»Protokoll der Vorstandssitzung v. Dienstag, d. 18.1.1966« – AdsD, Fraktionsvorstand. Protokolle und Tgo von Okt. 1965 bis 12.12.67</bibl> – erwähnt keine entsprechenden Vorschläge, sondern nur den Beschluß zu Vorträgen der Vertreter von Wissenschaftsorganisationen in der Fraktion am 15.12.1966. Vgl. <ref type="internal" target="#spd-05_1966-02-15-t1500_EP">Nr. 137</ref>. In dem Bericht in <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 18/66 vom 18.1.1966 »Betr.: Vorstandssitzung«</bibl> hieß es, der Vorstand habe den »Wunsch« der BReg zur Kenntnis genommen, die Große Anfrage der SPD »nicht, wie geplant, am 26. Januar, sondern erst Mitte Februar zu beantworten«. Die SPD sei zur Verlängerung der am 25.1. ablaufenden »geschäftsordnungsmäßigen Frist« bereit, »erwartet jedoch, daß die gestellten Fragen dann endlich präzise und sorgfältig beantwortet werden«.</p></note></seg> Danach soll die Fraktion sich darauf konzentrieren, die Auswirkungen der Negativ-Liste der Bundesregierung, welche die Streichung bereits geplanter Vorhaben enthält, in den einzelnen Universitätsstädten darzustellen.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN009" type="comment"><p>Nach der vom Wissenschaftsrat, in dem die BReg mit elf Stimmen vertreten war, 1965 verabschiedeten Bedarfsplanung war vorgesehen, im Bundeshaushalt 1966 530 Mio. DM für den Ausbau der Universitäten und Hochschulen bereitzustellen. Der Ansatz im Bundeshaushalt 1966 sah dann jedoch nur mehr 350 Mio. DM vor. In der sog. Negativliste waren die Maßnahmen aufgeführt, die wegen der Reduzierung der Bundesmittel um 180 Mio. DM nicht ausgeführt werden konnten. – In der Aussprache befaßten sich von der SPD-Fraktion mit dieser Negativliste (<bibl type="btd"><name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>
-									<ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 741 f. und 803), <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name> (S. 771 f.), <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name> (S. 779-783), <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> (S. 796-800). Kritisch äußerte sich von der SPD ferner der hessische Kultusminister <name type="Person" role="Erwaehnung" ref="#SchütteErnst">Schütte</name> (S. 763 f. und 785-787)</bibl>.</p></note></seg></p>
-				<p>Er begründet die beiden Entschließungsanträge betreffend Wissenschafts- und Bildungspolitik (Anlagen 6 und 7).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN010" type="comment"><p>Von den beiden vom AK II Innenpolitik ausgearbeiteten und am 8.2.1966 eingebrachten Anträgen – Anl. 6 und 7 sowie <bibl type="btp"><ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 811 f. (Anl. 2 und 3)</bibl> – forderte der erste, zur Sicherung des Hochschulausbaus im Bundeshaushalt 1966 (Kap. 3102, Tit. 600) 530 Mio. statt 350 Mio. DM zu veranschlagen. Mit dem zweiten Antrag wurde u. a. eine Zusammenfassung der gesamten Forschungs- und Bildungsförderung des Bundes beim BMwF, eine engere Kooperation in den Forschungsorganisationen, eine Aufstockung der öffentlichen Mittel für die Forschung, die Erarbeitung eines »langfristigen Bildungsplanes« und eine Vereinheitlichung der Ausbildungsförderung beantragt.</p></note></seg></p>
-				<p>Dr. Friedrich <name type="Person" role="Sprecher" ref="#RauFriedrich_1965-10-19">Rau</name> äußert Bedenken hinsichtlich des ersten Entschließungsantrages, weil es sich bei dem in dem Antrag genannten Finanzbedarf nicht um einen formellen Beschluß des Wissenschaftsrates handele. Der Wissenschaftsrat könne nur Empfehlungen zur Verwendung der in den Etats ausgewiesenen Mittel geben.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN011" type="comment"><p>Der 1957 gegründete Wissenschaftsrat hatte gemäß dem Verwaltungsabkommen vom 5.9.1964 die Aufgabe, auf der Grundlage der von Bund und Ländern »aufgestellten Pläne einen Gesamtplan für die Förderung der Wissenschaft zu erarbeiten«. Vgl. die Ausführungen von BMwF <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> am 10.2.1966; <bibl type="btp"><ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 751</bibl>.</p></note></seg></p>
-				<p>Professor Dr. Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> und Dr. Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> treten dieser Ansicht entgegen.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name> erklärt sich mit der Einbringung des Antrages auch unter haushaltsmäßigen Gesichtspunkten einverstanden.</p>
-				<p>Beschluß:</p>
-				<p>Die Fraktion stimmt den beiden Anträgen in der vorgelegten Form zu.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN012" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN010">Anm. 10</ref>. – Der erste Antrag der SPD-Fraktion wurde dem Haushaltsausschuß überwiesen, der zweite abgelehnt. <bibl type="btp"><ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 804</bibl>.</p></note></seg></p>
-				<p>c) Manfred <name type="Person" role="Sprecher" ref="#SchulteManfred_1965-10-19">Schulte</name> erläutert den Änderungsantrag der Fraktion, der zur Zweiten Beratung des Regierungsentwurfes und FDP-Entwurfes eines Gesetzes zur Änderung von Vorschriften des Bürgerlichen Gesetzbuches über die Einbringung von Sachen bei Gastwirten – <bibl type="btd">Drucksache <ref type="external" target="05/147">V/147</ref>
-						<ref type="external" target="05/61">und V/61</ref></bibl> – eingebracht werden soll (Anlage 8).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN013" type="comment"><p>Die Gesetzentwürfe und der Änderungsantrag bezogen sich auf die Haftung von Gastwirten für die von ihren Gästen mitgebrachten Sachen. <bibl type="btp"><ref type="external" target="05/19">Ebd.</ref>, S. 805-807 und 812 (Anl. 5)</bibl>.</p></note></seg></p>
-				<p>Beschluß:</p>
-				<p>Die Fraktion stimmt der Einbringung des Antrages zu.</p>
-				<p>d) Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> teilt mit, daß der Antrag der Abgeordneten <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name>, <name type="Person" role="Erwaehnung" ref="#SchwabeWolfgang_1961-10-17">Schwabe</name>, <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> und der Fraktion der SPD betreffend Entwurf eines Tierschutzgesetzes (Drucksache V/182)<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN014" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN029">Nr. 133, Anm. 29</ref>.</p></note></seg> von der Tagesordnung abgesetzt worden sei. Auf Frage Fritz <name type="Person" role="Sprecher" ref="#BuettnerFritz_1957-10-15">Büttners</name> erklärt Dr. <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name>, daß zunächst die insbesondere vom Lande Hessen vorgetragenen Bedenken hinsichtlich der verfassungsrechtlichen Zulässigkeit dieses Antrages geklärt werden sollten.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN015" type="comment"><p>Die 1. Lesung fand erst am 9.3.1966 statt; <bibl type="btp"><ref type="external" target="05/27">BT Sten. Ber. 61</ref>, S. 1230 f.</bibl></p></note></seg></p>
-				<p>e) Brigitte <name type="Person" role="Sprecher" ref="#FreyhBrigitte_1961-12-22">Freyh</name> beanstandet, daß in der letzten Zeit mehrere Fragestunden von der Tagesordnung abgesetzt worden seien und daß die von der Bundesregierung dann erteilten schriftlichen Antworten zu kurz und unzureichend ausfielen.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> begrüßt diesen Protest, weil die Fragestunde ein Instrument der Opposition sei, für dessen Anwendung die Fraktion aber selbst Sorge tragen müsse.</p>
-				<p>Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> erklärt, daß die Absetzung der Fragestunden, welche jeweils für Freitagvormittags vorgesehen waren, auf Wunsch der Fraktion erfolgt seien.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN016" type="comment"><p>In den letzten Sitzungswochen waren die Freitagssitzungen am 28.1.1966, 10.12.1965, 3.12. und 26.11.1965 ausgefallen. In diesem Zeitraum fand nur am 14.1.1966 eine Sitzung am Freitag statt. Nach dem Prot. der Sitzung des Ältestenrates am 8.2.1966 (<bibl type="item-in-archive">Parl. A., 5. WP, Ältestenrat, Bd. 1</bibl>) hatte <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> vorgeschlagen, die Fragestunde auf Freitag von 11 bis 12 Uhr zu legen; dem wurde jedoch widersprochen.</p></note></seg> Nach der Geschäftsordnung sei es nicht möglich, diese Fragestunden des Freitages auf andere Sitzungstage zusätzlich zu verlegen.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN017" type="comment"><p>Der entsprechende »§ 111 Mündliche Anfragen – Fragestunde« der GO schloß eine solche Regelung generell jedoch nicht aus, ebenso nicht die gültigen »Richtlinien für die Fragestunde« (beschlossen am 29.6.1960). Diese waren allerdings unklar. Denn sie bestimmten zunächst unter »3.« pauschal: »Jede Plenarsitzung beginnt mit einer Fragestunde«. Wenn es die Zahl der »eingegangenen Anfragen« erfordere, hieß es dann weiter »wird auch am Donnerstag jeder Plenarwoche eine Fragestunde angesetzt«, und der Präsident könne »auch in dritten Wochen am Mittwoch und Donnerstag jeweils eine Fragestunde ansetzen«. Siehe <bibl type="single-item">Amtliches Handbuch 5, S. 145-147</bibl>.</p></note></seg> Einer Ausnahme von der Geschäftsordnung widersetzten sich die Regierungsparteien.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Punkt 3 der TO: Vorlagen aus den Arbeitskreisen.</p>
-				<p>a) Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet die Kleine Anfrage betreffend die Einführung von datenverarbeitenden Anlagen im öffentlichen Dienst (Anlage 9).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN018" type="comment"><p>Vorgelegt vom AK Innenpolitik mit Datum 8.2.1966 (Anl. 9), eingebracht am gleichen Tage – <bibl type="btd"><ref type="external" target="05/268">BT Anl. 103, Drs. V/268</ref></bibl> – und beantwortet vom BMI am 11.3.1966, <bibl type="btd"><ref type="external" target="05/449">Anl. 104, Drs. V/449</ref></bibl>.</p></note></seg> Die Fraktion beschließt, die Vorlage einzubringen.</p>
-				<p>Die Buchstaben b und c der Ziff. 3 der TO wurden bereits bei Punkt 2 der TO (Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>) erledigt.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN019" type="comment"><p>Siehe oben, <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_SVP-1">Anfang TOP 2</ref> sowie <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN006">Anm. 6</ref>
-								<ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN007">und 7</ref>.</p></note></seg></p>
-				<p>b) Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> weist darauf hin, daß die Kleine Anfrage der Abgeordneten <name type="Person" role="Erwaehnung" ref="#BauerHannsheinz_1953-10-06">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#BalsHans_1953-10-06">Bals</name>, <name type="Person" role="Erwaehnung" ref="#FelderJosef_1957-10-15">Felder</name>, <name type="Person" role="Erwaehnung" ref="#HeroldKarl_1953-10-06">Herold</name> und Genossen betreffend praktische Auswirkung des Systems der Rechtsbehelfe im Bezug auf die Einberufung von Wehrpflichtigen der Fraktion vor der Einreichung nicht zur Kenntnis gebracht worden ist, und bittet, die Fraktion künftig von solchen Initiativen zu verständigen (Anl. 10).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN020" type="comment"><p>»Anl. 10« hs. von der Protokollantin <name type="Person" role="Erwaehnung" ref="#MaierIrene">Maier</name> ergänzt. Die Kleine Anfrage war in dieser Form schon am 28.1.1966 eingebracht worden; <bibl type="btd"><ref type="external" target="05/235">BT Anl. 102, Drs. V/235</ref></bibl>. Bei der Anl. 10 handelt es sich um ein Exemplar von <bibl type="btd"><ref type="external" target="05/235">Drs. V/235</ref></bibl>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-4">
-				<head>D.</head>
-				<p>Punkt 2 der TO: Bericht des Abg. Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name></p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> berichtet über eine Konferenz sozialdemokratischer Politiker aus den Ländern, welche an den Genfer Abrüstungsverhandlungen beteiligt sind.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN021" type="comment"><p>Am 27.1.1966 war in Genf die Konferenz des Abrüstungsausschusses der 18 beteiligten Staaten (sog. Genfer Abrüstungskonferenz) wieder zusammengetreten. Vgl. <bibl type="series-item">AdG 1966, S. 12304</bibl>. – Nach <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 49/66 vom 8./2.1966 »Betr. Fraktionssitzung (Teil II]«</bibl> berichtete H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> der Fraktion über die aus diesem Anlaß stattfindende Tagung der beteiligten sozialdemokratischen Politiker: »Unter anderem hätten an dieser Konferenz der britische Abrüstungsminister Lord <name type="Person" role="Erwaehnung" ref="#ChalfontLordAlunGwynne-Jones">Chalfont</name> und die schwedische Delegierte Alva <name type="Person" role="Erwaehnung" ref="#MyrdalAlva">Myrdal</name> teilgenommen.</p><p>Die Teilnehmer der Konferenz hätten Verständnis dafür gezeigt, daß die Frage der nuklearen Beteiligung im Rahmen der westlichen Allianz vor dem Abschluß eines Vertrages über die Nichtweitergabe von Atomwaffen gelöst werden müsse. Es sei aber auch zum Ausdruck gekommen, daß das Verlangen der Bundesregierung, ihre Unterschrift an Zugeständnisse in der deutschen Frage zu binden, die Gefahr einer Isolierung der Bundesrepublik auch im Westen beinhalte. Man habe auch nicht verstanden, warum die Bundesregierung sich jetzt immer auf die 1954 übernommene Verpflichtung zurückziehe, auf ihrem Gebiet keine Atomwaffen herzustellen und dadurch den Verdacht errege, als wolle sie sich an der Herstellung außerhalb ihres Territoriums beteiligen.</p><p>Obwohl die in Osteuropa stationierten 750 Mittelstreckenraketen durch die strategische Atommacht der USA abgedeckt seien, könne psychologisch der Eindruck eines Ungleichgewichts entstehen. Verständnis habe für das deutsche Verlangen nach einem Veto-Recht für solche Fälle bestanden, daß sich eine Sonderstellung der Bundesrepublik auch innerhalb des westlichen Bündnisses ergebe. Das sei insbesondere der Fall, wenn atomare Waffen allein von deutschem Gebiet oder allein auf deutsches Gebiet abgeschossen würden. Alle Teilnehmer hätten es als wesentliches Hemmnis empfunden, daß am Genfer Konferenztisch nicht alle Atommächte versammelt seien. Die 1961 von <name type="Person" role="Erwaehnung" ref="#SorinWalerianAlexandrowitsch">Sorin</name> [zu der Zeit stellv. Außenminister der UdSSR] und <name type="Person" role="Erwaehnung" ref="#McCloyJohnJay">McCloy</name> [zu der Zeit Direktor der Abrüstungskommission der USA] ausgearbeiteten Prinzipien würden auch heute noch als nützliche Grundlage betrachtet. Sie sehen vor allem eine Abrüstung in mehreren Phasen vor, wobei jede Phase in sich abgeschlossen sein müsse, bevor man zur nächsten übergehe und dies durch entsprechende Kontrollen verifiziert werden müsse und wobei das Kräftegleichgewicht in allen Phasen nicht gestört werden dürfe. Man habe es als nützlich angesehen, das Abrüstungsproblem mit Teilmaßnahmen wie dem Teststopabkommen voranzutreiben, dessen Ausdehnung auch auf unterirdische Explosionen erstrebt werden müsse. Im Vordergrund der Bemühungen stehe jetzt das Projekt eines Non-Proliferation-Vertrages. Ferner habe man sich für eine Verminderung der vorhandenen nuklearen Waffen – wieder unter der Voraussetzung der Aufrechterhaltung des Gleichgewichts – ausgesprochen. Als weitere Teilmaßnahmen habe man ein internationales Abkommen zwischen den Staaten für den Waffenhandel angesehen. Ferner habe man sich für einen Austausch technischen Wissens in der Weltraumforschung, insbesondere zwischen den USA und der Sowjetunion, ausgesprochen und schließlich die Überzeugung zum Ausdruck gebracht, daß in allen Regierungen ein eigenes Amt sich mit der Ausarbeitung und Durchführung von Abrüstungsverträgen befassen müsse. In diesem Zusammenhang habe der Entschluß der Bundesregierung, einen Abrüstungsbeauftragten einzusetzen, Anerkennung gefunden; doch stehe die Bundesrepublik hinsichtlich der Ausstattung und personellen Besetzung noch weit hinter anderen Ländern, wie z. B. Großbritannien oder Schweden, zurück.«</p></note></seg> Er gibt ferner eine Übersicht über den gegenwärtigen Stand der Untersuchungen im Verteidigungsausschuß zur Frage des Einsatzes von Starfightern bei der Bundeswehr (vgl. Anlage 11).<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN022" type="comment"><p>Der in Anl. 11 (<bibl type="series-item">»Die SPD-Fraktion teilt mit«; <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN021"
-									>siehe die vorige Anm.</ref></bibl>) wiedergegebene Bericht enthält keine weitergehenden Informationen zur Starfighter-Krise. Der Verteidigungsausschuß befaßte sich am 9. und 10.2.1966 wieder mit der Starfighter-Krise. Vgl. <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 53/66 vom 9.2. und Nr. 63/66 vom 10.2.1966</bibl>.</p></note></seg> Er schlägt der Fraktion vor, nunmehr alsbald eine Debatte im Plenum über diese Frage herbeizuführen. Eine solche Debatte, die von den bis jetzt erreichten Zwischenergebnissen ausgehen müsse, wäre unabhängig von den im Verteidigungsausschuß auch dann noch weiter zu führenden Untersuchungen.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN023" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-4">Nr. 135, TOP 5</ref>. Nach einer am 1.3.1966 eingebrachten Großen Anfrage der SPD-Fraktion »betr. Flugsicherheit des Starfighters F 104 G« – <bibl type="btd"><ref type="external" target="05/351">BT Anl. 103, Drs. V/351</ref></bibl> – und einer weiteren der CDU/CSU und FDP betr. »Waffensystem Starfighter« – <bibl type="btd"><ref type="external" target="05/360">Drs. V/360</ref></bibl> – debattierte das Plenum am 25.3.1966 über den Gesamtkomplex des Starfighter-Waffensystems; <bibl type="btp"><ref type="external" target="05/33">BT Sten. Ber. 61</ref>, S. 1510</bibl>.</p></note></seg></p>
-				<p>An der anschließenden Diskussion über das Abrüstungsproblem beteiligen sich die Fraktionsmitglieder <name type="Person" role="Sprecher" ref="#Kahn-AckermannGeorg_1953-10-06">Kahn-Ackermann</name>, Dr. <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name>, Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>, Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>, Hermann <name type="Person" role="Sprecher" ref="#AhrensHermann_1965-10-19">Ahrens</name>, Helene <name type="Person" role="Sprecher" ref="#WesselHelene_1949-09-07">Wessel</name> und Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> und an der Diskussion über die Starfighter-Affäre Egon <name type="Person" role="Sprecher" ref="#FrankeEgon_1951-05-17">Franke</name>, Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>, Dr. <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name>, Max <name type="Person" role="Sprecher" ref="#SeidelMax_1953-10-06">Seidel</name> und Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> und Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name>.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-5">
-				<head>E.</head>
-				<p>Punkt 4 der TO: Die nächsten Termine</p>
-				<p>Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> gibt die nächsten Termine für die Vorstands- und Fraktionssitzungen bekannt.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN024" type="comment"><p>Siehe oben.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-6">
-				<head>F.</head>
-				<p>Punkt 5 der TO: Verschiedenes</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> weist darauf hin, daß es Bestrebungen gebe, welche eine Änderung des Gesetzes über den 17. Juni zum Inhalt hätten. Er bittet die Fraktion, ihre Vorstellungen über die künftige Gestaltung des 17. Juni zu äußern.<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN025" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-4">Nr. 135, TOP 5</ref>.</p></note></seg></p>
-				<p>Egon <name type="Person" role="Sprecher" ref="#FrankeEgon_1951-05-17">Franke</name> teilt mit, daß in dem zuständigen Arbeitskreis beschlossen worden sei<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN026" type="comment"><p>D. h. wohl der AK I Außenpolitik und Gesamtdeutsche Fragen.</p></note></seg>, keine Änderung der bestehenden Bestimmungen vorzuschlagen.</p>
-				<p>Die Fraktion ist mit diesem Vorschlag einverstanden.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> äußert sich sodann noch zur Diskussion über die Wahl eines Vorsitzenden der CDU und die Publizität, welche das um die Nachfolge Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> entstandene Tauziehen in der Presse und in der Öffentlichkeit erlangt habe<seg type="note"><note xml:id="spd-05_1966-02-08-t1500_EP_FN027" type="comment"><p>Der XIV. Bundesparteitag der CDU, auf dem ein neuer CDU-Vorsitzender gewählt wurde, fand vom 21.-23.3.1966 statt. Die offizielle Bekanntgabe der Kandidatur war für die Bundesvorstandssitzung der CDU am 16.2.1966 vorgesehen. Zu den Spekulationen, wer zum Nachfolger <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> gewählt werden sollte, vgl. die Berichte in <bibl type="series-item">»Der Spiegel« Nr. 6 vom 31.1., S. 15 f.; Nr. 7 vom 7.2., S. 22 f.; Nr. 8 vom 14.2. 1966, S. 15-17</bibl>.</p></note></seg>. Er äußert die Meinung, daß es nicht Sache der SPD sein könne, eigene Vorschläge und Diskussionsbeiträge zu diesem Thema beizusteuern und damit dessen Publizität noch zu erhöhen. Schließlich gehe es um die Wahl des Vorsitzenden einer Partei und nicht um die Wahl des Bundespräsidenten durch das Volk.</p>
-				<p>Bonn, den 8. Februar 1966</p>
-				<p>Ma/F Irene <name type="Person" role="Erwaehnung" ref="#MaierIrene">Maier</name></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-02-08-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title>
+                  <author>Heinrich Potthoff</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930888952</idno>
+                  <idno type="DNB">https://d-nb.info/930907760</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 13)</idno>
+                     <objectName>SPD-Fraktion im Deutschen Bundestag. Protokoll der Fraktionssitzung am Dienstag, den 8. Februar 1966, in Bonn, Bundeshaus</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 8. Februar 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>6 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-02-08">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1966-02-08-t1500_EP_SVP-1" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-1">A. Internes aus der Fraktion. TOP 2: Bericht Holger <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>.</item>
+               <item xml:id="spd-05_1966-02-08-t1500_EP_SVP-2" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-2">B. TOP 1: Vorbereitung der Plenarsizungen.</item>
+               <item xml:id="spd-05_1966-02-08-t1500_EP_SVP-3" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-2">C. TOP 3: Vorlagen aus den Arbeitskreisen.</item>
+               <item xml:id="spd-05_1966-02-08-t1500_EP_SVP-4" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-4">D. Forts. TOP 2: Bericht Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>. </item>
+               <item xml:id="spd-05_1966-02-08-t1500_EP_SVP-5" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-5">E. TOP 4: Nächste Termine.</item>
+               <item xml:id="spd-05_1966-02-08-t1500_EP_SVP-6" corresp="#spd-05_1966-02-08-t1500_EP_div_SVP-6">F. TOP 5: Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Zu Beginn der Sitzung teilt der stellvertretende Fraktionsvorsitzende Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> mit, daß der Fraktionsvorsitzende Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> am Vortage aus der Klinik entlassen wurde und sich zur Rekonvaleszenz nach Rothaus/Schwarzwald begeben hat. Die Fraktion spricht ihm ihre guten Wünsche zur baldigen vollständigen Genesung aus.</p>
+            <p>Sodann gibt H. <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> die Namen der erkrankten Fraktionsmitglieder bekannt (Anlage 2).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN002" type="comment">
+                     <p>Die betreffende Aufstellung befindet sich in <bibl type="item-in-archive">5. Legislaturperiode V/I. Fraktion. Protokolle und Tgo I 19.10.65-27.4.67</bibl>.</p>
+                  </note>
+               </seg> Die Fraktion übermittelt auch ihnen ihre Genesungswünsche.</p>
+            <p>Die Arbeitskreise Außenpolitik und Sicherheitsfragen haben zu einer Besprechung mit den Abgeordneten <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und Dr. <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> über deren bevorstehende Informationsreise nach Südvietnam eingeladen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN003" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_SVP-1">Nr. 134, TOP 1</ref>. Über diese Informationsreise von <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> nach Südvietnam und in die Anrainerstaaten erstattete <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> vor dem <bibl type="item-in-archive">»Parteirat 14.4.1966« einen längeren Bericht (Prot. S. 14-22); AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>. Vgl. auch die Wiedergabe des Berichts in <bibl type="series-item">SOPADE-Rednerdienst 4/1966, S. 1-5</bibl>; ferner <bibl type="single-item">
+                           <hi rendition="#smcap">Soell</hi>, Erler I, S. 694 (Anm. 728)</bibl>.</p>
+                  </note>
+               </seg> Es wird festgestellt, daß der Termin dieser für Donnerstag, 10.2. 1966, vorgesehenen Sitzung, die mit zahlreichen anderen Terminen zusammenfällt, nicht verlegt werden kann.</p>
+            <p>Punkt 2 der TO: Bericht des Abg. Holger <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>
+            </p>
+            <p>Holger <name type="Person" role="Sprecher" ref="#BoernerHolger_1957-10-15">Börner</name>, der Vorsitzende des Verkehrsausschusses, berichtet über die Untersuchungen, welche zur Klärung der Ursachen des Absturzes einer Verkehrsmaschine der Lufthansa in Bremen<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN004" type="comment">
+                     <p>Am 28.1.1966 war beim Landeanflug in Bremen eine Convair 440 – Metropolitan der Lufthansa abgestürzt, wobei alle 46 Insassen zu Tode kamen. Es war in der Bundesrepublik der erste Unfall der neuen Lufthansa, bei dem Passagiere starben.</p>
+                  </note>
+               </seg> eingeleitet worden sind, über den Stand der Flugsicherung in der Bundesrepublik und über die Probleme der Entschädigungsleistungen bei Flugzeugunfällen (vgl. Anlage 3).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN005" type="comment">
+                     <p>Nach Anl. 3 – <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 48/66 vom 8.2.1966</bibl>, Überschrift: »Betr.: Fraktionssitzung« – erklärte <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, es könne »fast mit Sicherheit ausgeschlossen werden«, daß »mangelhafte Flugsicherungseinrichtungen« ursächlich für das Unglück seien. Dennoch sei es »Pflicht des Deutschen Bundestages, festzustellen, ob hinsichtlich der Gesetzgebung und der Dotierung der Flugsicherung alles Notwendige getan sei«. Die BReg solle einen »detaillierten Bericht« zur Flugsicherung vorlegen. Danach müßte »dieses Problem im Verkehrsausschuß des Bundestages« beraten werden, vor allem mit Blick auf vier Fragen: »1. Treffen die immer wieder erhobenen Vorwürfe über einen mangelhaften Ausbau der Flugsicherung zu? 2. Wie können die zusätzlichen Risiken beseitigt werden, die sich aus dem Nebeneinander von ziviler und militärischer Flugsicherung ergeben? 3. Wie kann man in der Frage der Flughafenpolitik zu einer einheitlichen Haltung von Bund und Ländern kommen? 4. Was muß geschehen, damit die Versorgung der Hinterbliebenen bei einem Flugzeugunglück den heutigen Vorstellungen von sozialer Sicherheit entspricht?«</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Er begründet ferner kurz den bereits eingereichten Antrag der Fraktion betreffend Sicherheit in der Zivilluftfahrt (Anlage 4)<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN006" type="comment">
+                     <p>In dem am 1.2.1966 eingebrachten Antrag »<name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#SeifrizHansStefan_1961-10-17">Seifriz</name>, <name type="Person" role="Erwaehnung" ref="#IvenHans_1957-10-15">Iven</name>« und »Fraktion der SPD« wurde die BReg zur Vorlegung eines Berichts zur »zivilen Flugsicherung« bis zum 1.3.1966 aufgefordert. Anl. 4 sowie <bibl type="btd">
+                           <ref type="external" target="05/241">BT Anl. 102, Drs. V/241</ref>
+                        </bibl>; vgl. <ref type="internal" target="#spd-05_1966-02-15-t1500_EP_SVP-2">Nr. 137, TOP 2, 12</ref>.</p>
+                  </note>
+               </seg> und die ebenfalls bereits eingereichte Kleine Anfrage betreffend Entschädigung bei Unglücksfällen in der zivilen Luftfahrt (Anlage 5).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN007" type="comment">
+                     <p>In gleicher Weise am 1.3.1966 eingebracht; Anl. 5 sowie <bibl type="btd">
+                           <ref type="external" target="05/240">BT Anl. 102, Drs. V/240</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Punkt 1 der TO: Vorbereitung der Plenarsitzungen am 9., 10. und 11. Februar 1966:</p>
+            <p>a) Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> gibt die Tagesordnung nach den Beschlüssen des Ältestenrates bekannt.</p>
+            <p>b) Dr. Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> stellt die Vorschläge des Fraktionsvorstandes für die Gestaltung der Debatte über die Großen Anfragen der drei Fraktionen zur Wissenschafts- und Bildungspolitik zur Diskussion.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN008" type="comment">
+                     <p>Das Plenum beriet die Großen Anfragen der Fraktion der SPD zur »Wissenschafts- und Bildungspolitik« vom 11.1.1966 – vgl. <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_SVP-1">Nr. 133, TOP 3 i</ref> –, der CDU/CSU vom 20.1.1966 zur »Wissenschaftsförderung« – <bibl type="btd">
+                           <ref type="external" target="05/198">BT Anl. 102, Drs. V/198</ref>
+                        </bibl> – und der FDP vom 1.2.1966 zur »Wissenschafts- und Bildungspolitik« – <bibl type="btd">
+                           <ref type="external" target="05/239">ebd., Drs. V/239</ref>
+                        </bibl> – am 10.2.1966. <bibl type="btp">
+                           <ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 739-805</bibl>. Nach einer Vereinbarung im Ältestenrat wurden die Großen Anfragen »in der Reihenfolge ihres Eingangs« begründet. Das <bibl type="item-in-archive">»Protokoll der Vorstandssitzung v. Dienstag, d. 18.1.1966« – AdsD, Fraktionsvorstand. Protokolle und Tgo von Okt. 1965 bis 12.12.67</bibl> – erwähnt keine entsprechenden Vorschläge, sondern nur den Beschluß zu Vorträgen der Vertreter von Wissenschaftsorganisationen in der Fraktion am 15.12.1966. Vgl. <ref type="internal" target="#spd-05_1966-02-15-t1500_EP">Nr. 137</ref>. In dem Bericht in <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 18/66 vom 18.1.1966 »Betr.: Vorstandssitzung«</bibl> hieß es, der Vorstand habe den »Wunsch« der BReg zur Kenntnis genommen, die Große Anfrage der SPD »nicht, wie geplant, am 26. Januar, sondern erst Mitte Februar zu beantworten«. Die SPD sei zur Verlängerung der am 25.1. ablaufenden »geschäftsordnungsmäßigen Frist« bereit, »erwartet jedoch, daß die gestellten Fragen dann endlich präzise und sorgfältig beantwortet werden«.</p>
+                  </note>
+               </seg> Danach soll die Fraktion sich darauf konzentrieren, die Auswirkungen der Negativ-Liste der Bundesregierung, welche die Streichung bereits geplanter Vorhaben enthält, in den einzelnen Universitätsstädten darzustellen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN009" type="comment">
+                     <p>Nach der vom Wissenschaftsrat, in dem die BReg mit elf Stimmen vertreten war, 1965 verabschiedeten Bedarfsplanung war vorgesehen, im Bundeshaushalt 1966 530 Mio. DM für den Ausbau der Universitäten und Hochschulen bereitzustellen. Der Ansatz im Bundeshaushalt 1966 sah dann jedoch nur mehr 350 Mio. DM vor. In der sog. Negativliste waren die Maßnahmen aufgeführt, die wegen der Reduzierung der Bundesmittel um 180 Mio. DM nicht ausgeführt werden konnten. – In der Aussprache befaßten sich von der SPD-Fraktion mit dieser Negativliste (<bibl type="btd">
+                           <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>
+                           <ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 741 f. und 803), <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name> (S. 771 f.), <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name> (S. 779-783), <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> (S. 796-800). Kritisch äußerte sich von der SPD ferner der hessische Kultusminister <name type="Person" role="Erwaehnung" ref="#SchuetteErnst">Schütte</name> (S. 763 f. und 785-787)</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Er begründet die beiden Entschließungsanträge betreffend Wissenschafts- und Bildungspolitik (Anlagen 6 und 7).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN010" type="comment">
+                     <p>Von den beiden vom AK II Innenpolitik ausgearbeiteten und am 8.2.1966 eingebrachten Anträgen – Anl. 6 und 7 sowie <bibl type="btp">
+                           <ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 811 f. (Anl. 2 und 3)</bibl> – forderte der erste, zur Sicherung des Hochschulausbaus im Bundeshaushalt 1966 (Kap. 3102, Tit. 600) 530 Mio. statt 350 Mio. DM zu veranschlagen. Mit dem zweiten Antrag wurde u. a. eine Zusammenfassung der gesamten Forschungs- und Bildungsförderung des Bundes beim BMwF, eine engere Kooperation in den Forschungsorganisationen, eine Aufstockung der öffentlichen Mittel für die Forschung, die Erarbeitung eines »langfristigen Bildungsplanes« und eine Vereinheitlichung der Ausbildungsförderung beantragt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. Friedrich <name type="Person" role="Sprecher" ref="#RauFriedrich_1965-10-19">Rau</name> äußert Bedenken hinsichtlich des ersten Entschließungsantrages, weil es sich bei dem in dem Antrag genannten Finanzbedarf nicht um einen formellen Beschluß des Wissenschaftsrates handele. Der Wissenschaftsrat könne nur Empfehlungen zur Verwendung der in den Etats ausgewiesenen Mittel geben.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN011" type="comment">
+                     <p>Der 1957 gegründete Wissenschaftsrat hatte gemäß dem Verwaltungsabkommen vom 5.9.1964 die Aufgabe, auf der Grundlage der von Bund und Ländern »aufgestellten Pläne einen Gesamtplan für die Förderung der Wissenschaft zu erarbeiten«. Vgl. die Ausführungen von BMwF <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> am 10.2.1966; <bibl type="btp">
+                           <ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 751</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Professor Dr. Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> und Dr. Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> treten dieser Ansicht entgegen.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name> erklärt sich mit der Einbringung des Antrages auch unter haushaltsmäßigen Gesichtspunkten einverstanden.</p>
+            <p>Beschluß:</p>
+            <p>Die Fraktion stimmt den beiden Anträgen in der vorgelegten Form zu.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN012" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN010">Anm. 10</ref>. – Der erste Antrag der SPD-Fraktion wurde dem Haushaltsausschuß überwiesen, der zweite abgelehnt. <bibl type="btp">
+                           <ref type="external" target="05/19">BT Sten. Ber. 60</ref>, S. 804</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>c) Manfred <name type="Person" role="Sprecher" ref="#SchulteManfred_1965-10-19">Schulte</name> erläutert den Änderungsantrag der Fraktion, der zur Zweiten Beratung des Regierungsentwurfes und FDP-Entwurfes eines Gesetzes zur Änderung von Vorschriften des Bürgerlichen Gesetzbuches über die Einbringung von Sachen bei Gastwirten – <bibl type="btd">Drucksache <ref type="external" target="05/147">V/147</ref>
+                  <ref type="external" target="05/61">und V/61</ref>
+               </bibl> – eingebracht werden soll (Anlage 8).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN013" type="comment">
+                     <p>Die Gesetzentwürfe und der Änderungsantrag bezogen sich auf die Haftung von Gastwirten für die von ihren Gästen mitgebrachten Sachen. <bibl type="btp">
+                           <ref type="external" target="05/19">Ebd.</ref>, S. 805-807 und 812 (Anl. 5)</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Beschluß:</p>
+            <p>Die Fraktion stimmt der Einbringung des Antrages zu.</p>
+            <p>d) Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> teilt mit, daß der Antrag der Abgeordneten <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name>, <name type="Person" role="Erwaehnung" ref="#SchwabeWolfgang_1961-10-17">Schwabe</name>, <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> und der Fraktion der SPD betreffend Entwurf eines Tierschutzgesetzes (Drucksache V/182)<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN014" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN029">Nr. 133, Anm. 29</ref>.</p>
+                  </note>
+               </seg> von der Tagesordnung abgesetzt worden sei. Auf Frage Fritz <name type="Person" role="Sprecher" ref="#BuettnerFritz_1957-10-15">Büttners</name> erklärt Dr. <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name>, daß zunächst die insbesondere vom Lande Hessen vorgetragenen Bedenken hinsichtlich der verfassungsrechtlichen Zulässigkeit dieses Antrages geklärt werden sollten.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN015" type="comment">
+                     <p>Die 1. Lesung fand erst am 9.3.1966 statt; <bibl type="btp">
+                           <ref type="external" target="05/27">BT Sten. Ber. 61</ref>, S. 1230 f.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>e) Brigitte <name type="Person" role="Sprecher" ref="#FreyhBrigitte_1961-12-22">Freyh</name> beanstandet, daß in der letzten Zeit mehrere Fragestunden von der Tagesordnung abgesetzt worden seien und daß die von der Bundesregierung dann erteilten schriftlichen Antworten zu kurz und unzureichend ausfielen.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> begrüßt diesen Protest, weil die Fragestunde ein Instrument der Opposition sei, für dessen Anwendung die Fraktion aber selbst Sorge tragen müsse.</p>
+            <p>Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> erklärt, daß die Absetzung der Fragestunden, welche jeweils für Freitagvormittags vorgesehen waren, auf Wunsch der Fraktion erfolgt seien.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN016" type="comment">
+                     <p>In den letzten Sitzungswochen waren die Freitagssitzungen am 28.1.1966, 10.12.1965, 3.12. und 26.11.1965 ausgefallen. In diesem Zeitraum fand nur am 14.1.1966 eine Sitzung am Freitag statt. Nach dem Prot. der Sitzung des Ältestenrates am 8.2.1966 (<bibl type="item-in-archive">Parl. A., 5. WP, Ältestenrat, Bd. 1</bibl>) hatte <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> vorgeschlagen, die Fragestunde auf Freitag von 11 bis 12 Uhr zu legen; dem wurde jedoch widersprochen.</p>
+                  </note>
+               </seg> Nach der Geschäftsordnung sei es nicht möglich, diese Fragestunden des Freitages auf andere Sitzungstage zusätzlich zu verlegen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN017" type="comment">
+                     <p>Der entsprechende »§ 111 Mündliche Anfragen – Fragestunde« der GO schloß eine solche Regelung generell jedoch nicht aus, ebenso nicht die gültigen »Richtlinien für die Fragestunde« (beschlossen am 29.6.1960). Diese waren allerdings unklar. Denn sie bestimmten zunächst unter »3.« pauschal: »Jede Plenarsitzung beginnt mit einer Fragestunde«. Wenn es die Zahl der »eingegangenen Anfragen« erfordere, hieß es dann weiter »wird auch am Donnerstag jeder Plenarwoche eine Fragestunde angesetzt«, und der Präsident könne »auch in dritten Wochen am Mittwoch und Donnerstag jeweils eine Fragestunde ansetzen«. Siehe <bibl type="single-item">Amtliches Handbuch 5, S. 145-147</bibl>.</p>
+                  </note>
+               </seg> Einer Ausnahme von der Geschäftsordnung widersetzten sich die Regierungsparteien.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Punkt 3 der TO: Vorlagen aus den Arbeitskreisen.</p>
+            <p>a) Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> begründet die Kleine Anfrage betreffend die Einführung von datenverarbeitenden Anlagen im öffentlichen Dienst (Anlage 9).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN018" type="comment">
+                     <p>Vorgelegt vom AK Innenpolitik mit Datum 8.2.1966 (Anl. 9), eingebracht am gleichen Tage – <bibl type="btd">
+                           <ref type="external" target="05/268">BT Anl. 103, Drs. V/268</ref>
+                        </bibl> – und beantwortet vom BMI am 11.3.1966, <bibl type="btd">
+                           <ref type="external" target="05/449">Anl. 104, Drs. V/449</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Die Fraktion beschließt, die Vorlage einzubringen.</p>
+            <p>Die Buchstaben b und c der Ziff. 3 der TO wurden bereits bei Punkt 2 der TO (Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>) erledigt.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN019" type="comment">
+                     <p>Siehe oben, <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_SVP-1">Anfang TOP 2</ref> sowie <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN006">Anm. 6</ref>
+                        <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN007">und 7</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>b) Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> weist darauf hin, daß die Kleine Anfrage der Abgeordneten <name type="Person" role="Erwaehnung" ref="#BauerHannsheinz_1953-10-06">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#BalsHans_1953-10-06">Bals</name>, <name type="Person" role="Erwaehnung" ref="#FelderJosef_1957-10-15">Felder</name>, <name type="Person" role="Erwaehnung" ref="#HeroldKarl_1953-10-06">Herold</name> und Genossen betreffend praktische Auswirkung des Systems der Rechtsbehelfe im Bezug auf die Einberufung von Wehrpflichtigen der Fraktion vor der Einreichung nicht zur Kenntnis gebracht worden ist, und bittet, die Fraktion künftig von solchen Initiativen zu verständigen (Anl. 10).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN020" type="comment">
+                     <p>»Anl. 10« hs. von der Protokollantin <name type="Person" role="Erwaehnung" ref="#MaierIrene">Maier</name> ergänzt. Die Kleine Anfrage war in dieser Form schon am 28.1.1966 eingebracht worden; <bibl type="btd">
+                           <ref type="external" target="05/235">BT Anl. 102, Drs. V/235</ref>
+                        </bibl>. Bei der Anl. 10 handelt es sich um ein Exemplar von <bibl type="btd">
+                           <ref type="external" target="05/235">Drs. V/235</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-4">
+            <head>D.</head>
+            <p>Punkt 2 der TO: Bericht des Abg. Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>
+            </p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> berichtet über eine Konferenz sozialdemokratischer Politiker aus den Ländern, welche an den Genfer Abrüstungsverhandlungen beteiligt sind.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN021" type="comment">
+                     <p>Am 27.1.1966 war in Genf die Konferenz des Abrüstungsausschusses der 18 beteiligten Staaten (sog. Genfer Abrüstungskonferenz) wieder zusammengetreten. Vgl. <bibl type="series-item">AdG 1966, S. 12304</bibl>. – Nach <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 49/66 vom 8./2.1966 »Betr. Fraktionssitzung (Teil II]«</bibl> berichtete H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> der Fraktion über die aus diesem Anlaß stattfindende Tagung der beteiligten sozialdemokratischen Politiker: »Unter anderem hätten an dieser Konferenz der britische Abrüstungsminister Lord <name type="Person" role="Erwaehnung" ref="#ChalfontLordAlunGwynne-Jones">Chalfont</name> und die schwedische Delegierte Alva <name type="Person" role="Erwaehnung" ref="#MyrdalAlva">Myrdal</name> teilgenommen.</p>
+                     <p>Die Teilnehmer der Konferenz hätten Verständnis dafür gezeigt, daß die Frage der nuklearen Beteiligung im Rahmen der westlichen Allianz vor dem Abschluß eines Vertrages über die Nichtweitergabe von Atomwaffen gelöst werden müsse. Es sei aber auch zum Ausdruck gekommen, daß das Verlangen der Bundesregierung, ihre Unterschrift an Zugeständnisse in der deutschen Frage zu binden, die Gefahr einer Isolierung der Bundesrepublik auch im Westen beinhalte. Man habe auch nicht verstanden, warum die Bundesregierung sich jetzt immer auf die 1954 übernommene Verpflichtung zurückziehe, auf ihrem Gebiet keine Atomwaffen herzustellen und dadurch den Verdacht errege, als wolle sie sich an der Herstellung außerhalb ihres Territoriums beteiligen.</p>
+                     <p>Obwohl die in Osteuropa stationierten 750 Mittelstreckenraketen durch die strategische Atommacht der USA abgedeckt seien, könne psychologisch der Eindruck eines Ungleichgewichts entstehen. Verständnis habe für das deutsche Verlangen nach einem Veto-Recht für solche Fälle bestanden, daß sich eine Sonderstellung der Bundesrepublik auch innerhalb des westlichen Bündnisses ergebe. Das sei insbesondere der Fall, wenn atomare Waffen allein von deutschem Gebiet oder allein auf deutsches Gebiet abgeschossen würden. Alle Teilnehmer hätten es als wesentliches Hemmnis empfunden, daß am Genfer Konferenztisch nicht alle Atommächte versammelt seien. Die 1961 von <name type="Person" role="Erwaehnung" ref="#SorinWalerianAlexandrowitsch">Sorin</name> [zu der Zeit stellv. Außenminister der UdSSR] und <name type="Person" role="Erwaehnung" ref="#McCloyJohnJay">McCloy</name> [zu der Zeit Direktor der Abrüstungskommission der USA] ausgearbeiteten Prinzipien würden auch heute noch als nützliche Grundlage betrachtet. Sie sehen vor allem eine Abrüstung in mehreren Phasen vor, wobei jede Phase in sich abgeschlossen sein müsse, bevor man zur nächsten übergehe und dies durch entsprechende Kontrollen verifiziert werden müsse und wobei das Kräftegleichgewicht in allen Phasen nicht gestört werden dürfe. Man habe es als nützlich angesehen, das Abrüstungsproblem mit Teilmaßnahmen wie dem Teststopabkommen voranzutreiben, dessen Ausdehnung auch auf unterirdische Explosionen erstrebt werden müsse. Im Vordergrund der Bemühungen stehe jetzt das Projekt eines Non-Proliferation-Vertrages. Ferner habe man sich für eine Verminderung der vorhandenen nuklearen Waffen – wieder unter der Voraussetzung der Aufrechterhaltung des Gleichgewichts – ausgesprochen. Als weitere Teilmaßnahmen habe man ein internationales Abkommen zwischen den Staaten für den Waffenhandel angesehen. Ferner habe man sich für einen Austausch technischen Wissens in der Weltraumforschung, insbesondere zwischen den USA und der Sowjetunion, ausgesprochen und schließlich die Überzeugung zum Ausdruck gebracht, daß in allen Regierungen ein eigenes Amt sich mit der Ausarbeitung und Durchführung von Abrüstungsverträgen befassen müsse. In diesem Zusammenhang habe der Entschluß der Bundesregierung, einen Abrüstungsbeauftragten einzusetzen, Anerkennung gefunden; doch stehe die Bundesrepublik hinsichtlich der Ausstattung und personellen Besetzung noch weit hinter anderen Ländern, wie z. B. Großbritannien oder Schweden, zurück.«</p>
+                  </note>
+               </seg> Er gibt ferner eine Übersicht über den gegenwärtigen Stand der Untersuchungen im Verteidigungsausschuß zur Frage des Einsatzes von Starfightern bei der Bundeswehr (vgl. Anlage 11).<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN022" type="comment">
+                     <p>Der in Anl. 11 (<bibl type="series-item">»Die SPD-Fraktion teilt mit«; <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_FN021">siehe die vorige Anm.</ref>
+                        </bibl>) wiedergegebene Bericht enthält keine weitergehenden Informationen zur Starfighter-Krise. Der Verteidigungsausschuß befaßte sich am 9. und 10.2.1966 wieder mit der Starfighter-Krise. Vgl. <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 53/66 vom 9.2. und Nr. 63/66 vom 10.2.1966</bibl>.</p>
+                  </note>
+               </seg> Er schlägt der Fraktion vor, nunmehr alsbald eine Debatte im Plenum über diese Frage herbeizuführen. Eine solche Debatte, die von den bis jetzt erreichten Zwischenergebnissen ausgehen müsse, wäre unabhängig von den im Verteidigungsausschuß auch dann noch weiter zu führenden Untersuchungen.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN023" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-4">Nr. 135, TOP 5</ref>. Nach einer am 1.3.1966 eingebrachten Großen Anfrage der SPD-Fraktion »betr. Flugsicherheit des Starfighters F 104 G« – <bibl type="btd">
+                           <ref type="external" target="05/351">BT Anl. 103, Drs. V/351</ref>
+                        </bibl> – und einer weiteren der CDU/CSU und FDP betr. »Waffensystem Starfighter« – <bibl type="btd">
+                           <ref type="external" target="05/360">Drs. V/360</ref>
+                        </bibl> – debattierte das Plenum am 25.3.1966 über den Gesamtkomplex des Starfighter-Waffensystems; <bibl type="btp">
+                           <ref type="external" target="05/33">BT Sten. Ber. 61</ref>, S. 1510</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>An der anschließenden Diskussion über das Abrüstungsproblem beteiligen sich die Fraktionsmitglieder <name type="Person" role="Sprecher" ref="#Kahn-AckermannGeorg_1953-10-06">Kahn-Ackermann</name>, Dr. <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name>, Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>, Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>, Hermann <name type="Person" role="Sprecher" ref="#AhrensHermann_1965-10-19">Ahrens</name>, Helene <name type="Person" role="Sprecher" ref="#WesselHelene_1949-09-07">Wessel</name> und Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> und an der Diskussion über die Starfighter-Affäre Egon <name type="Person" role="Sprecher" ref="#FrankeEgon_1951-05-17">Franke</name>, Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>, Dr. <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name>, Max <name type="Person" role="Sprecher" ref="#SeidelMax_1953-10-06">Seidel</name> und Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> und Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name>.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-5">
+            <head>E.</head>
+            <p>Punkt 4 der TO: Die nächsten Termine</p>
+            <p>Dr. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> gibt die nächsten Termine für die Vorstands- und Fraktionssitzungen bekannt.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN024" type="comment">
+                     <p>Siehe oben.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-02-08-t1500_EP_div_SVP-6">
+            <head>F.</head>
+            <p>Punkt 5 der TO: Verschiedenes</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> weist darauf hin, daß es Bestrebungen gebe, welche eine Änderung des Gesetzes über den 17. Juni zum Inhalt hätten. Er bittet die Fraktion, ihre Vorstellungen über die künftige Gestaltung des 17. Juni zu äußern.<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN025" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-4">Nr. 135, TOP 5</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Egon <name type="Person" role="Sprecher" ref="#FrankeEgon_1951-05-17">Franke</name> teilt mit, daß in dem zuständigen Arbeitskreis beschlossen worden sei<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN026" type="comment">
+                     <p>D. h. wohl der AK I Außenpolitik und Gesamtdeutsche Fragen.</p>
+                  </note>
+               </seg>, keine Änderung der bestehenden Bestimmungen vorzuschlagen.</p>
+            <p>Die Fraktion ist mit diesem Vorschlag einverstanden.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> äußert sich sodann noch zur Diskussion über die Wahl eines Vorsitzenden der CDU und die Publizität, welche das um die Nachfolge Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> entstandene Tauziehen in der Presse und in der Öffentlichkeit erlangt habe<seg type="note">
+                  <note xml:id="spd-05_1966-02-08-t1500_EP_FN027" type="comment">
+                     <p>Der XIV. Bundesparteitag der CDU, auf dem ein neuer CDU-Vorsitzender gewählt wurde, fand vom 21.-23.3.1966 statt. Die offizielle Bekanntgabe der Kandidatur war für die Bundesvorstandssitzung der CDU am 16.2.1966 vorgesehen. Zu den Spekulationen, wer zum Nachfolger <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> gewählt werden sollte, vgl. die Berichte in <bibl type="series-item">»Der Spiegel« Nr. 6 vom 31.1., S. 15 f.; Nr. 7 vom 7.2., S. 22 f.; Nr. 8 vom 14.2. 1966, S. 15-17</bibl>.</p>
+                  </note>
+               </seg>. Er äußert die Meinung, daß es nicht Sache der SPD sein könne, eigene Vorschläge und Diskussionsbeiträge zu diesem Thema beizusteuern und damit dessen Publizität noch zu erhöhen. Schließlich gehe es um die Wahl des Vorsitzenden einer Partei und nicht um die Wahl des Bundespräsidenten durch das Volk.</p>
+            <p>Bonn, den 8. Februar 1966</p>
+            <p>Ma/F Irene <name type="Person" role="Erwaehnung" ref="#MaierIrene">Maier</name>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

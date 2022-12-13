@@ -1,273 +1,439 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1965-11-23-t1508_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1010/1</idno>
-							<objectName>[Nicht überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 23. November 1965</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>13 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1965-11-23"><time type="start" when="15:08:00"/><time type="end" when="18:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
-			<change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-05_1965-11-23-t1508_EP_SVP-1" corresp="#cdu-csu-05_1965-11-23-t1508_EP_div_SVP-1">A. TOP 1: Aussprache zur Regierungserklärung. – TOP 2: Fall <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>. – TOP 3: Bildung des Fraktionsältestenrats, Fragestunde des Bundestages. – TOP 4: Bericht aus dem Ältestenrat, Plenarplan, Strafrecht. – TOP 5: Aussprache zur Regierungserklärung. </item>
-					<item xml:id="cdu-csu-05_1965-11-23-t1508_EP_SVP-2" corresp="#cdu-csu-05_1965-11-23-t1508_EP_div_SVP-2">B. TOP 6: Bericht aus Arbeitskreis I (Strafrecht, Notstandsrecht, Öffentlicher Dienst u. a.). – TOP 7: Bericht aus Arbeitskreis II. – TOP 8: Bericht aus Arbeitskreis III (Bundeshaushalt). – TOP 9: Bericht aus Arbeitskreis V. – TOP 10: Bundeshaushalt. – TOP 11: Bericht aus Arbeitskreis IV. – TOP 12: Bericht aus Arbeitskreis VI (Wissenschaft, auswärtige Kulturpolitik u. a.).</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-05_1965-11-23-t1508_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Aussprache zur Regierungserklärung]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bringt zu Beginn der Sitzung die Hoffnung zum Ausdruck, daß es dem Bundeskanzler gesundheitlich bald wieder besser gehen möge und er nächste Woche wieder zur Verfügung stehe. Durch die Grippeerkrankung des Bundeskanzlers sei man in eine schwierige Situation geraten, da die Debatte über die Regierungserklärung<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN001" type="comment"><p>Regierungserklärung vom 10. 11. 1965.</p></note></seg> nur in seiner Anwesenheit stattfinden und der Termin seiner Reise nach USA nicht erneut verschoben werden könne. Hinzu komme, daß die erste Lesung des Haushaltssicherungsgesetzes am 3. 12. über die Bühne gehen müsse.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN002" type="comment"><p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p></note></seg> Deshalb sei man gezwungen gewesen, schnell zu handeln, so daß am Montag, am Dienstag und eventuell auch noch am Mittwoch über die Regierungserklärung debattiert werden müsse. An diesen Tagen solle auf jeden Fall aber auch das Haushaltssicherungsgesetz in erster Lesung behandelt werden.</p>
-				<p>Weiter habe der Vorstand in seiner gestrigen Sitzung sich mit dem Bericht des Außenministers zur Passierscheinfrage und mit der Komplettierung des Vorstandes befaßt.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN003" type="comment"><p>Fortgang siehe TOP 5.</p></note></seg></p>
-				<p>[2. Fall <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>]</p>
-				<p>Dann nimmt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> zum Fall <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> Stellung und verweist auf die verschiedenen Vorschläge zur Behandlung dieser Angelegenheit und die von der SPD eingereichten Fragen<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN004" type="comment"><p>Sten. Ber., 5. Sitz. am 24. 11. 1965, S. 45–49. Auch Kleine SPD-Anfrage betr. Personalpolitik im Auswärtigen Amt (Drs. V/113 vom 9. 12. 1965).</p></note></seg>. Da er selbst einige Tage nicht in Bonn anwesend war, habe er gebeten, bis zu seiner Rückkehr keinen Beschluß zu fassen, denn hier stellten sich eine Fülle von beamtenrechtlichen Fragen, die unabhängig von dem aktuellen Fall beantwortet werden müssen. In diesem Zusammenhang habe er <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> gebeten, eine Ausarbeitung herzustellen.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> habe zu dieser Angelegenheit ein Interview gegeben, das er sehr bedauere. Er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, kenne <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> nicht. Auch liege kein Antrag vor, ihn zu einem Angestellten der CDU/CSU-Fraktion zu machen.</p>
-				<p>[3. Bildung des Fraktionsältestenrats, Fragestunde des Bundestages]</p>
-				<p>§ 8 der Geschäftsordnung der Fraktion sehe vor, daß die Fraktion einen Fraktionsältestenrat bilde, bestehend aus drei Mitgliedern der Fraktion, dessen Aufgaben der Fraktionsvorstand beschließe. Dieser Ältestenrat werde durch die Fraktionsvollversammlung benannt nach den Wahlbestimmungen für den Vorstand. Er schlage vor, dieses Gremium für die Dauer der Legislaturperiode zu bilden und hierfür Minister <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> und <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> vorzusehen. Damit wäre das normale, satzungsmäßige Gremium gebildet, das von jedem Mitglied der Fraktion, das sich beschwert fühle, in Anspruch genommen werden könne.</p>
-				<p>Mit <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, <name type="Person" role="Erwaehnung" ref="#GuttenbergKarlTheodor_1957-10-15">von Guttenberg</name> und Minister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> habe ein Gespräch stattgefunden, und es werde gut sein, bei der morgigen Fragestunde daran zu denken, daß die Anfragen von der Opposition kommen. Von Zusatzfragen sollte man Abstand nehmen.</p>
-				<p>Außerdem sei in der Presse behauptet worden, daß ein Beamter des Auswärtigen Amtes Aussagen gemacht hätte mit »Folterschreien« usw. Diese Äußerungen würden zwar bestritten, haben aber im »Luxemburger Wort« zu einem Artikel geführt, den man nicht unbeantwortet lassen sollte. Der Bundesaußenminister sei gebeten, diese Sache richtigzustellen.</p>
-				<p>Die CDU/CSU-Bundestagsfraktion stimmt einstimmig der Erklärung ihres Vorsitzenden zu und wählt dann in geheimer Wahl <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> und <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> als Mitglieder des Fraktionsältestenrates. An der Abstimmung beteiligen sich 192 Abgeordnete. Für <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> stimmen 185 Mitglieder, ebenfalls für <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> kann 182 Stimmen auf sich vereinigen. Eine Stimme war ungültig. <name type="Person" role="Erwaehnung" ref="#WoernerManfred_1965-10-19">Wörner</name>, <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> und <name type="Person" role="Erwaehnung" ref="#HauserAlo_1965-10-19">Hauser</name> betätigten sich als Stimmzähler.</p>
-				<p>[4. Bericht aus dem Ältestenrat, Plenarplan, Strafrecht]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Beratungen im Ältestenrat und teilt der Fraktion den Ablauf der Plenarsitzungen mit. Darüber hinaus gibt er bekannt, daß die Ausschüsse zu Beginn der nächsten Woche konstituiert werden könnten. Über die Frage der Vorsitzenden wurden Gespräche geführt, die aber noch nicht endgültig abgeschlossen seien. Bis Einigkeit darüber herrsche, übernähmen die bisherigen Vorsitzenden bzw. die stellvertretenden Vorsitzenden die Leitung der Ausschüsse. Die eigene Kommission zur Besetzung der Ausschüsse tage morgen das letzte Mal.</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> berichtet über die Beratungen des Arbeitskreises I zur Strafrechtsreform.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN005" type="comment"><p>Entwurf eines Strafgesetzbuches d. Abg. Frau Dr. <name type="Person" role="Erwaehnung" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer-Nicolaus</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> u. a. (Drs. V/32 vom 11. 11. 1965).</p></note></seg> Dieser halte es für sehr ungünstig, wenn die Diskussion auf Januar verschoben würde. Die Sache beinhalte einen politischen Hintergrund, wenn das Sonderthema politisches Strafrecht gleichzeitig behandelt werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt bekannt, er habe selbstverständlich in der Ältestenratssitzung Vorbehalte angemeldet, eine Einigung sei aber nicht zustande gekommen. Die Fraktion werde sich vorbehalten, einen Antrag zur Geschäftsordnung am Donnerstag zu stellen. Dies geschehe dann aber im scharfen Gegensatz zur Haltung der SPD, so daß dann eine zweite Debatte über ein verwandtes Thema in der nächsten Plenarwoche erfolge. An sich bestehe für Donnerstag schon ein sehr umfangreiches Programm.</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> äußert, daß es nicht auf den Zeitpunkt ankomme, sondern auf die politische Frage, ob man den Entwurf einbringe und getrennt behandele oder zusammen mit der SPD einen Entwurf vorlege, bei dem man sich sehr auf problematischem Boden bewege. Gegen eine derartige Verbindung müsse er, <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name>, sich verwahren.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erklärt dazu, der Präsident hätte einer Verschiebung der Strafrechtsdebatte nur unter der Bedingung zugestimmt, wenn die SPD ihren Entwurf gleichzeitig vorlege.</p>
-				<p>[5. Aussprache zur Regierungserklärung]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erwartet von der Aussprache zur Regierungserklärung eine muntere Debatte, die man als solche auch brauche. Der Bundeskanzler und die Mitglieder der Regierung ständen bereit. Darüber hinaus sei es aber erforderlich, daß auch die Fraktion ihren Standpunkt deutlich zum Ausdruck bringe, konstruktiv spreche und jeden Angriff der Opposition sofort zurückschlage. Am Montag nach der Fragestunde werde er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, die Aussprache eröffnen, anschließend sprechen <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> (SPD), <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">Kühlmann-Stumm</name> (FDP) und <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> (CSU). Die weitere Reihenfolge würde sich dann ergeben. Bei der Debatte werde es darauf ankommen, einen geschlossenen und kampfkräftigen Eindruck zu hinterlassen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-05_1965-11-23-t1508_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[6. Bericht aus Arbeitskreis I: Strafrecht, Notstandsrecht, Öffentlicher Dienst u. a.]</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> führt aus, Arbeitskreis I sei in der Regierungserklärung nur zum Thema Strafrechtsreform<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN006" type="comment"><p>Entwurf eines Strafgesetzbuches d. Abg. Frau Dr. <name type="Person" role="Erwaehnung" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer-Nicolaus</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> u. a. (Drs. V/32 vom 11. 11. 1965).</p></note></seg> und Notstandsgesetzgebung angesprochen, da die Frage des öffentlichen Dienstes nicht erwähnt wurde. Dies bedauere der Arbeitskreis. In Anbetracht dieser Lage sollte der Bundesinnenminister die Gelegenheit wahrnehmen, hierzu noch etwas zu sagen.</p>
-				<p>Hinsichtlich des Geschäftsbereichs des Bundesjustizministers werde wahrscheinlich nun doch die Große Strafrechtsreform angesprochen, und sicher werde <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> die Gelegenheit benutzen, um persönliche Angriffe gegen den Bundesjustizminister zu richten. Von seiten des Arbeitskreises stelle man sich selbstverständlich hinter <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> und er, <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name>, würden zu dieser Sache als Redner vorgeschlagen. Weiter spiele das Unehelichenrecht eine Rolle, und er halte es für notwendig, dieses Thema aufzugreifen und den Bundesjustizminister zu bitten, hierzu eine entsprechende Erklärung abzugeben, weil der Gesetzgeber die Verpflichtung habe, dieses Problem in nächster Zeit einer Lösung zuzuführen.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN007" type="comment"><p>Gesetzentwurf über die rechtliche Stellung des unehelichen Kindes (Drs. V/2370 vom 7. 12. 1967).</p></note></seg></p>
-				<p>Ferner habe der Arbeitskreis die Verfassungsmäßigkeit des Haushaltssicherungsgesetzes geprüft und sich der Auffassung des Innenministers angeschlossen, daß aus verfassungsrechtlichen Gründen der Inhalt des Gesetzes nicht zu beanstanden sei.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN008" type="comment"><p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p></note></seg></p>
-				<p>Im Bereich des Innenministeriums lege man der Notstandsverfassung besondere Bedeutung bei, und der Arbeitskreis meine, man solle die Gelegenheit ergreifen, um die SPD auf dieses Thema anzusprechen. Die SPD hätte bereits zum Ausdruck gebracht, daß sie als Regierung die Dinge in Ordnung zu bringen gedenke. Nun sollte man sie fragen, ob sie diese Zusage auch aufrechterhalte. Der Innenminister beabsichtige, eine Vorlage erst dann einzubringen, wenn eine gewisse Abklärung vorher erfolgt sei. Eine inhaltliche Festlegung sollte also nicht erfolgen, sondern nur der Standpunkt der Opposition erforscht werden.</p>
-				<p>Dann stehe vermutlich auch der Fall <name type="Person" role="Erwaehnung" ref="#PätschWernerKurt">Pätsch</name> zur Diskussion an, der alle möglichen Fragen beinhalte, z. B. die Ablösung der alliierten Vorbehaltsrechte. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name>, <name type="Person" role="Erwaehnung" ref="#SuesterhennAdolf_1961-10-17">Süsterhenn</name> und <name type="Person" role="Erwaehnung" ref="#EvenBert_1957-10-15">Even</name> würden diese Fragen prüfen.</p>
-				<p>Das Urteil habe in Übereinstimmung mit dem Untersuchungsausschuß<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN009" type="comment"><p>SPD-Antrag betr. Einsetzung eines Untersuchungsausschusses – Telefon-Ausschuß – (Drs. IV/1544 vom 18. 10. 1963).</p></note></seg> festgestellt, daß es im Verfassungsschutzamt keine verfassungswidrigen Handlungen gegeben habe.</p>
-				<p>Bezüglich des Themas Beamtenbesoldung müsse man ein Wort an die Beamtenschaft richten. Hier mache der Arbeitskreis auf folgendes aufmerksam: Die Einsparungsmaßnahmen sollten in der vorgesehenen Größenordnung im Haushalt durchgeführt werden. Das bedeute aber nicht, daß man sich in allen Einzelfragen auf die gegenwärtigen Vorstellungen festlegen müsse. Der Arbeitskreis vertrete die Auffassung, daß es besser wäre, den erforderlichen Ausgleich durch eine generelle Aufschiebung der beamtenrechtlichen Regelung um neun Monate vorzusehen und punktuelle Maßnahmen nicht vorzunehmen. Damit würde die vom Bundeskanzler gegebene Zusicherung eingehalten. Das sei im Interesse des Vertrauens in gegebene Zusicherungen notwendig.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hält es ebenfalls für richtig, die SPD zum Problem der Notstandsverfassung zu fragen. Er sehe aber hierin eine Aufgabe der Regierung.</p>
-				<p>Zur Beamtenbesoldung handele es sich nicht um eine Frage der Verschiebung des Finanzvolumens, sondern darum, keinen Bereich von der Maßnahme auszuschließen. Er bitte die Fraktion, zu den gemachten Vorschlägen Stellung zu nehmen. Bei der Aussprache zur Regierungserklärung sollte aber keine Festlegung erfolgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> stellt klar, niemand verlange, die Beamten von der Sparmaßnahme auszunehmen. Auf dieser Grundlage scheine eine Verständigung möglich.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> entgegnet, es handele sich nicht um den Gesamtkomplex Beamte, sondern hier seien Unterschiede erforderlich, ob es die aktiven Beamten mit linearer Erhöhung betreffe oder die Versorgungsempfänger und die 131er. Nun wolle man den aktiven Beamten 100% geben und dafür die Verbesserungen für die 131er und die Versorgungsempfänger hinausschieben. Dann genügten aber nicht neun Monate. Wenn man hier einen Eingriff vornehme, könne man nicht mehr mit gutem Gewissen andere betroffene Gruppen zurückhalten. Mit der Veränderung von Gesetzesterminen greife man in vom Bundestag verabschiedete Gesetze ein. Ein solches Vorgehen wiege schwerer als gemachte Zusagen.</p>
-				<p>Nach Meinung des MdB <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> hielten sich die bisher angestellten Überlegungen im Rahmen der bereits gefaßten Beschlüsse. Das Finanzvolumen und die Umgruppierungen würden im gleichen Bereiche gehalten. Durch diesen Vorschlag könnten auch Härten vermieden werden, wie sie z. B. in der Regelung, die strukturelle Überleitung um zwei Jahre zurückzustellen, liegen. Dies würde die über 70 Jahre alten Leute treffen. In der Aussprache komme man um diese Frage nicht herum, weil anschließend das Fünfte Besoldungserhöhungsgesetz<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN010" type="comment"><p>Entwurf eines Fünften Gesetzes über die Erhöhung von Dienst- und Versorgungsbezügen (Drs. V/55 vom 26. 11. 1965).</p></note></seg> diskutiert werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> vertritt die Auffassung, das Finanzvolumen insgesamt nicht zu erweitern. Es sei doch nicht so, daß alleine die aktiven Beamten in den Genuß dieser Regelung kommen. Die 4. Novelle<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN011" type="comment"><p>Viertes Gesetz über die Erhöhung von Dienst- und Versorgungsbezügen (Viertes Besoldungserhöhungsgesetz) vom 13. 8. 1964, BGBl. I, S. 617.</p></note></seg>, die beamtenrechtlichen Vorschriften<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN012" type="comment"><p>Viertes Gesetz zur Änderung beamtenrechtlicher und besoldungsrechtlicher Vorschriften vom 31. 8. 1965, BGBl. I, S. 1024.</p></note></seg> und das BWGöD<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN013" type="comment"><p>Siebentes Gesetz zur Änderung des Gesetzes zur Regelung der Wiedergutmachung nationalsozialistischen Unrechts für Angehörige des öffentlichen Dienstes vom 9. 9. 1965, BGBl. I, S. 1210.</p></note></seg> würden am 1. Januar in Kraft treten. Die Regierungsvorlage sehe nun vor, gewisse Teile aus diesen Gesetzen herauszunehmen und sie erst in zwei Jahren in Kraft treten zu lassen. Es wäre wohl besser, diese Gesetze zum 1. 10. 1966 in Kraft treten zu lassen. An der Erhöhung des Fünften Besoldungserhöhungsgesetzes nähmen auch die anderen Personenkreise teil. Man wolle nicht, daß das Versprechen des Bundeskanzlers, das draußen stark zu Buche schlage, geändert werde. Politisch komme man am besten zurecht, wenn am Volumen nichts geändert werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> widerspricht dieser Auffassung, daß dieses Vorhaben im Rahmen der globalen Vorstellung bleibe. Hierin sehe er eine Verschiebung zu Lasten einer Gruppe und zugunsten einer anderen. Dieses ganze Konzept könne nur realisiert werden, wenn man in allen Gruppen gewisse Absprachen treffe. Man provoziere sonst gleiche Forderungen auf anderen Gebieten. Im übrigen sei im Haushaltsjahr 1967 noch ein Volumen von 270 Mio. DM zu berücksichtigen. Als aus wohlerwogenen Gründen beschlossen wurde, die Beamtenbesoldung auf den 1. 1. vorzuziehen, sei das Presseecho schon deshalb nicht gut gewesen, weil die Diäten der Bundestagsabgeordneten dadurch auch eine Aufbesserung erführen. Ein solches Vorgehen wirke ganz schlecht.</p>
-				<p><name type="Person" role="Sprecher" ref="#BergerUlrich_1957-10-15">Berger</name> nimmt Bezug auf die erste Aussprache über dieses Thema, in der eine materielle Änderung des Gesetzes verneint wurde. Bei den 131ern seien aber alle Verbesserungen, die über die Regierungsvorlage hinaus beschlossen wurden, um zwei Jahre verschoben. So sollte man nicht verfahren. Er halte dies für eine schlechte Sache, weil man einen Gegensatz zwischen aktiven Beamten und Versorgungsempfängern konstruiere. Die Besoldungserhöhung treffe auch die Versorgungsempfänger; deshalb auch das große Interesse. In der vorgeschlagenen Regelung für die 131er sehe er eine gerechte Sache, wenn das Haushaltsvolumen unverändert bleiben solle. Was die Diäten anbelange, könnte man hier vielleicht noch zu anderen Überlegungen kommen. Im übrigen liege für die Beamtenbesoldung eine Zusage für 1967 vor, die eventuell noch verschoben werden könne, wenn man jetzt die vorgesehenen Termine einhalte. Die Frage der laufenden Anpassung bestehe ja immer weiter. Gerade die Frage der Beamtenbesoldung und damit der Personalausgaben müßte anders gesehen werden als irgendwelche Sachausgaben. Die Betroffenen beziehen ihr gesamtes Einkommen aus dem Haushalt, und wenn feststehe, daß sie über 10% unter<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN014" type="comment"><p>Von der Bearbeiterin korrigiert aus: über.</p></note></seg> dem allgemeinen Niveau liegen, müßte man Verständnis dafür aufbringen, daß die 4% als erster Schritt zur Abtragung des Rückstandes auch erfüllt werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HuysLambert_1957-10-15">Huys</name> stellt den Antrag, die Diätenerhöhung der Abgeordneten erst in einem Jahr vorzunehmen.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN015" type="comment"><p>CDU/CSU-SPD-FDP-Gesetzentwurf zur Änderung und Ergänzung des Diätengesetzes 1964 (Drs. V/2526 vom 2. 2. 1968).</p></note></seg></p>
-				<p>[7. Bericht aus Arbeitskreis II]</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> erstattet einen Bericht über die Beratungen des Arbeitskreises II, der vor 14 Tagen eingehend über die Fragen Stabilität, Wachstum und Arbeitsmarktprobleme diskutiert habe. Als weniger erfreulich kennzeichne der Arbeitskreis die Situation, die sich daraus ergebe, daß zunächst <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> zur Regierungserklärung spreche und im zweiten Durchgang erst <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, während an dieser Stelle bereits der SPD-Wirtschaftsexperte, <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, zu Wort komme. Die Fraktion müsse ihre Aussprache ausrichten auf die Regierungserklärung, nicht auf die Rede des Abg. <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p>
-				<p>Im Vordergrund der Betrachtung stände besonders die Konjunkturpolitik im Zusammenhang mit der Währungsstabilität und einem künftigen Wachstum.</p>
-				<p>Zum Problem der Bundesbahn hätten besonders <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> und <name type="Person" role="Erwaehnung" ref="#LeukertEdmund_1953-10-06">Leukert</name> Stellung genommen, und die Arbeitsgruppe Wohnungsbau habe die sie betreffenden Themen diskutiert, so daß diese Problematik im Arbeitskreis nicht gesondert angesprochen zu werden brauchte.</p>
-				<p>Als Redner für das Plenum ständen zur Verfügung: <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name> für die Fragen der Investition, der Löhne und Preise, der Energiepolitik und für die Antworten auf <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, <name type="Person" role="Erwaehnung" ref="#SteinGustav_1961-10-17">Stein</name> für den Arbeitsmarkt, den Kapitalmarkt, die Vermögensbildung und den Sparprozeß, <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name> für Konjunkturpolitik und Haushalt und <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> für die Verkehrspolitik, der die Darstellungen über die Bundesbahn wieder zurechtrücken werde.</p>
-				<p>Zwar könnten bei der Bundesbahn Arbeitskräfte eingespart werden, wenn sich dies auch im Augenblick ohne entsprechende Vorbereitungen nicht durchführen lasse. Bei der Bundesbahn werde treu und brav gearbeitet und nicht etwa gefaulenzt.</p>
-				<p>Für Fragen der Agrarpolitik ständen <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#ReinhardCarl_1957-10-15">Reinhard</name> und <name type="Person" role="Erwaehnung" ref="#BewerungeKarl_1961-10-17">Bewerunge</name> bereit, für den Wohnungsbau <name type="Person" role="Erwaehnung" ref="#HesbergCarl_1953-10-06">Hesberg</name>, für den Außenhandel <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name>, für Fragen der EWG und Europa <name type="Person" role="Erwaehnung" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> und für Verbraucherfragen <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name>.</p>
-				<p>Hierzu wird das Wort nicht gewünscht.</p>
-				<p>[8. Bericht aus Arbeitskreis III: Bundeshaushalt]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> berichtet über die Beratungen des Arbeitskreises III, der sich ebenfalls mit den Fragen der Stabilität, des Wachstums und der Konjunkturpolitik beschäftigt habe. Im Mittelpunkt der Beratungen habe der Haushaltsausgleich gestanden, soweit die Regierungserklärung auf Steuer- und Finanzprobleme eingegangen sei. Dazu werde <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> sprechen.</p>
-				<p>In Anbetracht, daß bei der Aussprache zur Regierungserklärung das Haushaltssicherungsgesetz eingehend behandelt und die SPD dieses Gesetz angreifen werde, habe sich der Arbeitskreis auch mit dieser Problematik befaßt.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN016" type="comment"><p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p></note></seg> Es werde zu einer harten Debatte kommen, wobei die Minister wohl eingreifen müßten, besonders aber der Finanzminister. Auch von seiten der Fraktion sei ein Eingreifen sicherlich erforderlich. Als Redner stände <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> zur Verfügung.</p>
-				<p>Der Arbeitskreis empfehle der Fraktion, die Regierungserklärung und das Haushaltssicherungsgesetz ohne Modifikation in erster Lesung zu unterstützen. Draußen werde vielfach davon gesprochen, daß diese Dinge unpopulär seien. Aber noch viel unpopulärer wäre es, nicht einmal den Versuch zu unternehmen, noch vor Weihnachten den Haushalt 1966 zum Ausgleich zu bringen.</p>
-				<p>Ferner rate der Arbeitskreis, in drei Punkten mit der FDP unter Hinzuziehung des Finanzministers eine einheitliche Sprachregelung zu treffen, und zwar hinsichtlich des Art. 2 Abs. 2 HHSG – Zinssubventionen –, des Ausbildungsförderungsgesetzes – die FDP beabsichtige hier andere Änderungen –, der Beamtenbesoldung<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN017" type="comment"><p>Entwurf eines Fünften Gesetzes über die Erhöhung von Dienst- und Versorgungsbezügen (Drs. V/55 vom 26. 11. 1965).</p></note></seg> und bezüglich der Frage der Anhebung und der Sektsteuer. Diese Dinge hätten zu einer eingehenden Debatte im Arbeitskreis geführt, und namhafte Vertreter des Arbeitskreises hätten dieser Steueranhebung im wesentlichen aus zwei Gründen widersprochen: Erstens weil es unschön erscheine, nun doch im Rahmen des Sparprogramms die Steuern zu erhöhen, und weil befürchtet werden müsse, daß eine gewisse Verschiebung des Preisgefüges eintreten wird, die sich weiterwälzen werde. Demgegenüber vertrete die Mehrheit den Standpunkt, daß man das HHSG im Grundsatz nur voll bejahen könne oder Schiffbruch erleiden werde. Modifikationen bedeuteten den Anfang vom Ende. In den Punkten Nachversicherung, Berlinpräferenzen, Beseitigung der Ausweichmöglichkeiten in niedrigprozentigen Alkohol müßte also eine Abstimmung mit der FDP erfolgen.</p>
-				<p>Die Fragen einer Verschiebung innerhalb der einzelnen Haushalte gehöre in den Haushaltsausschuß, insgesamt müsse die Fraktion zum Haushaltssicherungsgesetz stehen. Dieses Gesetz bedeute aber nur einen Anfang und einen Behelf für das Jahr 1966. Hand in Hand müsse hiermit eine längerfristige Finanzpolitik gehen, die sofort in Angriff zu nehmen ist. Dieses Gesetz stelle nur eine Minimallösung dar, weil es nur eine Verschiebung der Ausgaben auf spätere Jahre vorsehe. Der Arbeitskreis werde über den Haushaltsausschuß dem Finanzminister weitere Sparmöglichkeiten vorschlagen. Darüber hinaus spreche sich der Arbeitskreis für die Vorlage einer Vorausschau über die Haushaltslage der nächsten Jahre aus, um erkennen zu können, welcher Spielraum für politische Entscheidungen überhaupt noch bestehe. Dabei sei die langfristige Sicherung von Währung und Haushalt das Ziel.</p>
-				<p>Die Frage der Mehrwertsteuer werde interfraktionell von der Koalition wieder eingebracht und von <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> begründet.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN018" type="comment"><p>CDU/CSU-FDP-Entwurf eines Umsatzsteuergesetzes – Nettoumsatzsteuer – (Drs. V/48 vom 24. 11. 1965).</p></note></seg> Für die Diskussion stehe obendrein noch <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name> zur Verfügung.</p>
-				<p>Was die Anträge der Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#DichgansHans_1961-10-17">Dichgans</name> zu § 96 GO anbelange<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN019" type="comment"><p>Antrag Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> und der Fraktion der CDU/CSU betr. Änderung der Geschäftsordnung des Deutschen Bundestages (Drs. V/114 vom 10. 12. 1965).</p></note></seg>, so seien sie noch nicht ganz spruchreif.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> greift die Bemerkung über die Wahlgeschenke auf. Hier sollte man darauf aufmerksam machen, daß die gleichen Leute, die außerhalb des Parlaments dieses Schlagwort gern gebrauchen, durch ihre eigenen Verbände das Parlament unter Druck gesetzt haben. Hätte das Parlament diesem Druck nachgegeben, würde es heute vor dem Zehnfachen an finanzieller Belastung stehen.</p>
-				<p>Sodann regt er an, auch über die sogenannte Haushaltsvorschau mit der FDP eine Sprachregelung herbeizuführen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> bemerkt, nicht alle, aber viele Abgeordnete hätten sich gegen eine Steuererhöhung ausgesprochen. Was ihn, Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, bei der ganzen Sache aber am tiefsten aufrege, sei die Tatsache, daß das Gesetzgebungsorgan eine Anzahl von Gesetzen geschaffen habe, durch die Rechtsverpflichtungen geschaffen wurden zugunsten dieser oder jener Bereiche. Die oberste Verpflichtung eines Schuldners liege doch darin, die Rechtsverpflichtungen einzuhalten, ehe er dazu übergehe, plötzlich Kürzungen vorzunehmen. Aus dieser Sicht heraus bezeichne er eine Steuererhöhung als harmlos. Man ziehe damit Kaufkraft vom Markt und setze sie wieder für die Erfüllung anderer Verpflichtungen ein. Ihm wäre es lieber, wenn diese übernommenen Verpflichtungen in den Vordergrund des Denkens gestellt worden wären, natürlich parallel mit der Sicherung der Währung. Man hätte aber prüfen können, ob nicht etwa durch eine Zulage zur Tabaksteuer die notwendigen Mittel hätten beschafft werden können.</p>
-				<p>Sicher entstände durch eine Steuererhöhung Ärger, der aber gegenüber dem Schwund an Vertrauen in die demokratische Ordnung verblasse, wenn das Parlament vor kurzem übernommene Verpflichtungen mir nichts, dir nichts streiche.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> erinnert an die Steuersenkung von 3,5 Mrd. DM im Jahre 1965. Sicher gebe es einen moralischen Bezug hinsichtlich der eingegangenen Verpflichtungen, der Erfüllung und der Abwägung dessen, was man tun könne, bevor man zu Kürzungen schreite. Hier gehe es aber um etwas anderes. Die Sekt- und Branntweinsteuer bringe 200 Mio. DM. An sich eine Lappalie, die nicht dazu dienen könne, die Einlösung irgendwelcher Verpflichtungen möglich zu machen. Sie diene allein dazu, einen Posten auszuwechseln im außerordentlichen Haushalt, nämlich die Inanspruchnahme des Kapitalmarkts zu verhindern. Ob das gelinge, sei eine andere Frage.</p>
-				<p>Die Problematik liege darin, ob die Mühe sich lohne, hier Konsumkaufkraft als Investitionskaufkraft auf den Bund zu übertragen. Daneben stehe das von <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> aufgeworfene Problem und die Frage, das Gleichgewicht zu Berlin nicht zu gefährden. Außerdem würden die Menschen in Dessertweine ausweichen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> argumentiert, wenn diese Erkenntnis richtig sei, müsse das, was die Bundesregierung vorgelegt habe, falsch oder wenigstens in seiner Wirkung sehr umstritten sein. Damit habe man das erste Politikum großen Ausmaßes. Wenn das Fernsehen sage, daß die Ausbildungshilfe nicht auch an Generaldirektoren ausgezahlt werden solle, komme man dem Ziel näher. Dann könne man sehen, wie weit diese Dinge gingen. Die Aussprache über diese Dinge sollte aber nicht in aller Öffentlichkeit ausgetragen werden. Wenn die Wirtschaft an das Versprechen appelliere, keine Steuererhöhungen vorzunehmen, dann zwinge sie damit die Fraktion, sich dagegen zu wehren, daß Gesetze, auf die ein gesetzlicher Anspruch bestehe, zurückgedreht werden und diese gesetzlichen Ansprüche aus den bekannten Gründen nicht mehr gewährt werden sollen. Er, <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>, sehe die Gefahr, wegen eines Betrages von 200 Mio. DM unglaubwürdig zu werden. Die Regierung müsse hier geziehen werden, daß sie eine Vorlage gemacht hat, die keiner sachlichen Prüfung standhält. Er sehe die politischen Folgen und warne davor.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> bemerkt, er habe diesen Teil der Diskussion kommen sehen. Jeder Teil der Fraktion müsse aber Opfer bringen. In der Tat sei es problematisch, diese Steuermaßnahme durchzuführen, sie sei aber im Kabinett beschlossen worden.</p>
-				<p>Er wolle noch darauf hinweisen, daß jede Steuererhöhung das Gesamtvolumen aufblähe. Dies solle aber doch im Prinzip heruntergedrückt werden aus allgemeinen konjunkturpolitischen Gründen. Wenn man jetzt vom Maßhalten predige, sollte der Bundesetat nicht erhöht werden.</p>
-				<p>Mit der FDP habe man bereits gesprochen und ihr zu verstehen gegeben, daß jeder in einem Punkt nachgeben müsse. Jede Gruppe müsse wissen, daß sie ihren speziellen Wunsch nicht durchsetzen könne, wenn nicht das Ganze fallen solle. Darüber müßte noch einmal hart mit der FDP gesprochen werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> führt zur Steuererhöhung aus, daß die heute früh vorgetragenen Bedenken noch beständen. Sicher wisse man, daß bereits Hortungskäufe von erheblichem Ausmaß getätigt wurden und einzelne Firmen sich mit großen Mengen Weingeist eindeckten. Sie hätten also für das ganze Jahr vorgesorgt und könnten so die kleinen Firmen ruinieren. Eine Nachversteuerung sei nicht möglich. Das führe dazu, daß der Schnaps statt teurer billiger werde, so daß der Zweck in keiner Weise erfüllt werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> kommt bei Überprüfung der Steuererhöhung zu dem Ergebnis, daß diese Sache schlecht sei. Die Fraktion sollte sich zu keiner Steuererhöhung bereitfinden, weil sich das sonst über Länder und Gemeinden ausbreite und gegenteilige Wirkungen erziele. Der FDP-Vorsitzende<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN020" type="comment"><p>Erich <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name>.</p></note></seg> habe sich erst heute wieder gegen Steuererhöhungen ausgesprochen. Man könne nicht in der ersten Lesung mit Steuererhöhungen kommen, weil die FDP das nicht mitmache. Außerdem wirke sich diese Maßnahme ausgesprochen mittelstandsfeindlich aus. Die kapitalkräftigsten Firmen hätten große Mengen gelagert, während die kleinen Firmen dazu nicht in der Lage seien. Ferner stärke man dadurch die Präferenz von Berlin und bringe somit die kleinen Betriebe in Gefahr.</p>
-				<p>Weiter wolle er noch mitteilen, daß der Vorschlag nicht aus dem Ministerium stamme, sondern plötzlich im Kabinett auftauchte.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> fragt, woher der Vorredner dies wisse.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> wendet sich dagegen, einzelne Dinge aus dem Gesamtkonzept herauszunehmen. Jeder trage gute Gründe vor, und wenn jeder seine guten Gründe durchsetzen wolle, werde aus der ganzen Sache nichts. Auch er halte es nicht für gut, die Monopolsteuer heraufzusetzen. Das Problem sei aber erkannt, so daß eine Nachversteuerung stattfinde, die verfassungsrechtlich möglich sei und auch durchgeführt werden könne.</p>
-				<p>Zu der aktuellen Frage der Berlinpräferenz müsse eine Entschließung verabschiedet werden, weil verhütet werden müsse, daß über Berlin die Steuererhöhung wieder abgefangen wird.</p>
-				<p>Für Wermut, Malaga und Portwein liege eine Vorlage im Finanzministerium. Wenn die Fraktion der Sache nicht zustimme, gefährde sie das ganze Programm.</p>
-				<p>[9. Bericht aus Arbeitskreis V]</p>
-				<p><name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> berichtet über die Beratungen des Arbeitskreises V, der zu den in der Regierungserklärung angesprochenen Fragen der Außenpolitik, der Europa-Krise, der NATO, der Auslandskulturarbeit und der deutschen Wiedervereinigung Stellung genommen habe.</p>
-				<p>Was die Europafrage anbelange, stehe man auf dem Boden der Römischen Verträge, auch hinsichtlich der NATO [bestehe] über das kollektive nukleare Waffensystem weithin Übereinstimmung. Weiter begrüße es der Arbeitskreis, daß die Auslandskulturarbeit in der Regierungserklärung sehr starke Berücksichtigung fand.</p>
-				<p>Der Hauptstoß der SPD werde wohl keine Sachfragen betreffen, sondern die differenzierten Äußerungen von CDU/CSU-Politikern in der vergangenen Zeit. Deshalb müsse die Fraktion eine große Geschlossenheit demonstrieren. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>, <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> und er, <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name>, ständen als Redner bereit.</p>
-				<p>[10. Bundeshaushalt]</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> gibt zur Einkommensteuer zu bedenken, daß diese etwas anders sei als ein Zuschlag zu einer Luxuskonsumsteuer. Die Einkommensteuer solle nicht erhöht werden. Sie, Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, sehe nicht ein, warum man nicht vorher alle Quellen ausschöpfe, um diese Verpflichtungen zu erfüllen, ehe man den Besitzstand angreife.</p>
-				<p><name type="Person" role="Sprecher" ref="#HorstmeierMartin_1965-10-19">Horstmeier</name> betont, es gehe nicht darum, ob die einzelnen Gruppen ein Opfer zu bringen haben oder nicht, sondern darum, ob die Fraktion sich logisch verhalte. Wenn man den Haushalt beschränke, könne man keine Steuern erhöhen. Da gebe es bei einer Detailfrage keine Ausnahme. Er halte eine Steuererhöhung für das unlogischste, was man sich denken könne.</p>
-				<p>Ferner spreche er sich dafür aus, wenigstens auf dem Gebiet der Steuerfrage die Wahlversprechen zu halten. Wenn es hier um eine Milliarde gehen würde, könnte er es verstehen, aber bei einem Betrag von 200 Millionen DM lohne es sich nicht, unglaubwürdig zu werden. Er betrachte es als Pflicht der Regierung, diese politische Entscheidung mit der Fraktion zu besprechen. Die Fraktion könne nicht einfach nachvollziehendes Organ sein, wie sie das fast täglich habe erleben können. Jetzt ständen keine personellen Dinge mehr zur Beratung an, und da müsse die Regierung die Fraktion zuerst informieren über das, was sie beabsichtige. Nur in einem solchen Falle könne sie ein Durchhalten der Fraktion erwarten.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> verweist auf die Ausführungen des Bundeskanzlers und <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzels</name> vor der Fraktion über die in Aussicht genommenen Maßnahmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HorstmeierMartin_1965-10-19">Horstmeier</name> entgegnet, daß es sich immer nur um allgemeine Ausführungen gehandelt habe und die angekündigte Einzeldiskussion noch ausstehe. Wenn die Fraktion heute generell zustimme, sei nichts mehr zu machen. Er, <name type="Person" role="Sprecher" ref="#HorstmeierMartin_1965-10-19">Horstmeier</name>, vertrete die Auffassung, sich heute erst einmal sachlich auseinanderzusetzen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> unterstreicht, daß es deutlich geworden sei, daß die Fraktion in der ersten Lesung, bevor dieses Gesetz dem Ausschuß<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN021" type="comment"><p>Haushaltsausschuß.</p></note></seg> überwiesen werde, zum Regierungsentwurf stehen sollte.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN022" type="comment"><p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p></note></seg> Das heiße nicht, daß man alles ohne weiteres annehme, über Einzeldinge könne noch gesprochen werden, vorausgesetzt allerdings, daß die FDP überhaupt mitmache. Die CDU/CSU könne nicht ins Gefecht gehen, wenn sie nicht wisse, wieweit die FDP folge und ob sie am Ende der ersten Lesung mit überweise. Wenn in diesen Dingen Klarheit bestehe, sollte das Ganze dem Haushaltsausschuß überwiesen werden. Sonst kämen andere Anträge, die auch etwas herausbrechen wollen, und dann sei die Regierung völlig blamiert. Wenn die Sache im Haushaltsausschuß liege, könne die Fraktion noch einmal zu Wort kommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> warnt vor Dramatisierungen und stellt die Frage, was man wohl sagen würde, wenn von »Demontage des Sozialen Wohnungsbaus« oder »der deutsche Mieter bleibt ohne Schutz« die Rede wäre. <name type="Person" role="Erwaehnung" ref="#ToussaintHans_1957-10-15">Toussaint</name> halte er für einen viel zu guten Rechner, als das er nicht wisse, daß die Fabriken für das Lagern von Waren mehr Zinslasten aufzubringen hätten, als die Steuer ausmachen würde. Er bitte noch einmal, die Sache nicht zu dramatisieren. Persönlich vertrete er die Meinung, daß man auch beim Wohnungsbau<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN023" type="comment"><p>Gesetz zur verstärkten Eigentumsbildung im Wohnungsbau und zur Sicherung der Zweckbestimmung von Sozialwohnungen (WoBauÄndG 1965) vom 24. 8. 1965, BGBl. I, S. 945.</p></note></seg> und beim Mutterschutz<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN024" type="comment"><p>Gesetz zur Änderung des Mutterschutzgesetzes und der Reichsversicherungsordnung vom 24. 8. 1965, BGBl. I, S. 912.</p></note></seg> zu anderen Wegen hätte kommen können. Hier habe man aber um des Gesamtpakets willen geschwiegen. Sicherlich werde man innerhalb der eigenen Sphäre einen internen Ausgleich im gleichen Volumen finden können. Es lohne sich wirklich nicht, wegen dieser 200 Mio. DM alles in Frage zu stellen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> unterstreicht den Zweck dieser Sitzung, die erste Lesung vorzubereiten. Selbstverständlich werde die Fraktion sich noch weiter zu dieser Problematik unterhalten.</p>
-				<p><name type="Person" role="Sprecher" ref="#StoossHeinrich_1961-10-17">Stooß</name> äußert sich vom Standpunkt der Landwirtschaft aus, die gern dem Vorschlag, Gruppeninteressen nicht in besonderer Weise herauszustellen, folge. Er müsse aber auf die Notwendigkeit hinweisen, daß die FDP auch zu den Problemen der Landwirtschaft stehe. Gegenüber der Landwirtschaft stehe der Bundeskanzler im Wort. Gerade das Anpassungsgesetz<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN025" type="comment"><p>Gesetz zur Förderung der Eingliederung der deutschen Landwirtschaft in den Gemeinsamen Markt (EWG-Anpassungsgesetz) vom 9. 9. 1965, BGBl. I, S. 1201.</p></note></seg> enthalte Versprechungen, die jetzt zurückgenommen werden sollen. Das führe sicherlich zu großen Auseinandersetzungen. Der deutsche Bauernverband wollte es ablehnen, überhaupt an diesen Versprechungen irgendwie zu rütteln. Wenn die FDP jetzt aber beabsichtige, daran zu rütteln, könne man als Agrarpolitiker der CDU/CSU nicht dazu sprechen. Hier müsse eine Absprache mit der FDP erfolgen.</p>
-				<p>[11. Bericht aus Arbeitskreis IV]</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> teilt mit, im Bereich des Arbeitskreises IV seien fünf Arbeitsgruppen gebildet worden, die sich mit den einzelnen Themen befaßten. Die erste Gruppe beriet die Themen Arbeitszeit, Automation, Ausbildungsförderung, Mitbestimmung und Eigentumsförderung. Diese Gruppe stehe unter der Leitung des Abg. <name type="Person" role="Erwaehnung" ref="#HaeusslerErwin_1953-10-06">Häussler</name>. Als Redner ständen hier bereit <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name>, <name type="Person" role="Erwaehnung" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin), <name type="Person" role="Erwaehnung" ref="#MuellerAdolf_1961-10-17">Müller</name> (Remscheid), <name type="Person" role="Erwaehnung" ref="#GeißlerHeiner_1965-10-19">Geißler</name>, <name type="Person" role="Erwaehnung" ref="#OrgaßGerhard_1965-10-19">Orgaß</name> und <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>.</p>
-				<p>Die zweite Gruppe befaßte sich unter <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> mit der Rentenversicherung.</p>
-				<p>Zu Lohnfortzahlung, Krankenversicherung und Mutterschutz hätten sich <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>, <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name> und <name type="Person" role="Erwaehnung" ref="#PortenJosef_1961-10-17">Porten</name> vorbereitet.</p>
-				<p>Eine vierte Gruppe beriet unter <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Maucher</name> und Frau <name type="Person" role="Erwaehnung" ref="#SchroederChrista_1961-10-17">Schroeder</name> die Themen Kriegsopfer, Heimkehrer, Häftlingshilfegesetz und Sozialhilfe.</p>
-				<p>Die fünfte Gruppe beschäftigte sich mit den Fragen der Vertriebenen und der Flüchtlinge. Hierzu werde <name type="Person" role="Erwaehnung" ref="#LeukertEdmund_1953-10-06">Leukert</name> das Wort ergreifen, <name type="Person" role="Erwaehnung" ref="#KuntscherErnst_1949-09-07">Kuntscher</name> zum Lastenausgleich und <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> zum Problem der Sowjetzonenflüchtlinge. Darüber hinaus bitte der Arbeitskreis <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> selbst, schon das Heimatrecht und die Grenzfragen anzusprechen.</p>
-				<p>Dann wolle er noch mitteilen, daß in der gestrigen Fernsehsendung die Arbeit der Flüchtlingsverbände wieder verächtlich gemacht wurde. Dahinter steckten die gleichen Leute, die empfehlen, sich mit den Realitäten abzufinden und auch damit, daß Berlin im Gebiet der Zone liege.</p>
-				<p>Dem Haushaltssicherungsgesetz habe der Arbeitskreis unter der Voraussetzung zugestimmt, daß dieses Gesetz als Ganzes, also auch mit den Steuererhöhungen, gesehen werde.<seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN026" type="comment"><p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p></note></seg> Im andern Falle fühle sich der Arbeitskreis nicht in der Lage, der Abänderung bereits beschlossener Gesetze zuzustimmen. Man könne nicht die ganze Fraktion dazu bewegen, zu einer Herabsetzung der Ausbildungszulage ja zu sagen und die Erhöhung der Sektsteuer zu verneinen. In dieser Beziehung warne er.</p>
-				<p>Zum Schluß wolle er noch vorschlagen, zu den Haushaltsausschußberatungen die Arbeitskreisvorsitzenden hinzuzuziehen, denn hier sei die Kenntnis der Materie notwendig.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> stellt keine weiteren Wortmeldungen fest.</p>
-				<p>[12. Bericht aus Arbeitskreis VI: Wissenschaft, auswärtige Kulturpolitik u. a.]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> referiert über die Beratungen des Arbeitskreises VI und verweist auf das Verhalten der SPD zu jeder Regierungserklärung, nämlich den Wahlkampf anzusprechen. Die Finanzierung des Wahlkampfes habe <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name> besonders behandelt, dieses Thema werde bestimmt kommen. Dazu müsse die Bundesregierung Stellung nehmen, denn sie stelle ein eigenes Verfassungsorgan dar und müsse die Bevölkerung informieren. Vielleicht sollte <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name><seg type="note"><note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN027" type="comment"><p>Von der Bearbeiterin korrigiert aus: von Eckhardt.</p></note></seg> hierzu sprechen.</p>
-				<p>Im Bereich der Wissenschaft und Forschung werde die SPD zwei Fragen anschneiden, nämlich die Kompetenzverteilung innerhalb der Bundesregierung und die Finanzierung, die einen ständigen Streitpunkt im Wahlkampf und in der Öffentlichkeit bilde. Der erste Komplex betreffe den Ausbau und Neubau von Universitäten. Die Aufforderung von 500 Mio. DM könne nicht erfüllt werden, aber es werde einen sichtbaren Fortschritt geben. Außerdem könne man es sich nicht dauernd von den Wissenschaftsorganisationen sagen lassen, daß dieses Gebiet außerhalb der Politik stehe. Das Parlament müsse eine gewisse Priorität geben, aber das Ganze müsse in die Finanzpolitik eingeordnet gesehen werden. Bei der Forschungsgemeinschaft und der Max-Planck-Gesellschaft würden die gemachten Versprechungen eingelöst.</p>
-				<p>Bezüglich der Gesundheitspolitik gestalte sich die Sache etwas schwieriger, weil hier nur eine schmale Zuständigkeit des Ministeriums vorliege. Zwei Dinge müßten herausgestellt werden, nämlich die Schaffung einer Bundeszentrale für gesundheitliche Aufklärung und dann ein Programm für Probleme der Medizin. Dort würden Dinge entdeckt, aber nicht entwickelt, weil der wirtschaftliche Nutzen dabei nicht herausschaue. So gingen Entwicklungen verloren, weil sie nicht wirtschaftlich sind. Hierin liege eine Staatsaufgabe, die man sich nicht entgehen lassen dürfe.</p>
-				<p>Bei den Jugendfragen lägen die Dinge etwas komplizierter. Hier werde es zu harten Auseinandersetzungen kommen. Wenn auch die Regierungserklärung davon spreche, den Familienlastenausgleich weiter auszubauen, erschöpfe sich die Familienpolitik doch nicht im Materiellen. Sicher werde man gefragt, was ein Jugendaustausch ausgerechnet mit Spanien solle. Der Arbeitskreis habe sich hier vorbereitet, ebenso wie zur Frage »Die Pinscher und der Staat«, die ebenfalls angesprochen werde.</p>
-				<p>Dann hoffe der Arbeitskreis, nicht zur »Formierten Gesellschaft« und zu dem, was sie bedeutet, gefragt zu werden. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> sollte zu dieser Sache etwas sagen.</p>
-				<p>Die auswärtige Kulturpolitik werde von <name type="Person" role="Erwaehnung" ref="#AckermannEduard">Kahn-Ackermann</name> aufgegriffen werden. Die größten Schäden, die sich aus der Kürzung ergeben, könnten für dieses Jahr vermieden werden. Es sei darüber hinaus noch einiges mehr geschehen, als man ursprünglich vorgesehen habe. Dies sei der einzige Punkt, wofür die Bundesregierung weiter Geld zur Verfügung stelle. Darauf müßte wohl der Finanzminister selber antworten.</p>
-				<p>Als Redner für Jugendfragen ständen <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name>, Frau <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, für Gesundheitsfragen <name type="Person" role="Erwaehnung" ref="#JungmannGerhard_1961-10-17">Jungmann</name>, für die Wissenschaftsforschung und Kulturpolitik <name type="Person" role="Erwaehnung" ref="#MartinBerthold_1957-10-15">Martin</name> bereit.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> verweist auf die Ausführungen des Vorredners über die Grenzen der Kulturpolitik. Wenn man zusammenstelle, was der Bundeskanzler alles zu fördern gedenke, könne man von seiten des Haushalts nur darum bitten, diese Dinge nicht zu stark zu unterstreichen, sonst komme sofort die Frage, wer das finanzieren solle. Bei der Auslandskulturarbeit habe der Bundeskanzler eine sehr weitherzige Erklärung abgegeben, die er, Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name>, begrüße, wenn sie finanziert werden solle. Dann müsse man prüfen, ob der Finanzminister überhaupt mitgewirkt habe. Er könne nur zur Zurückhaltung mahnen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> sieht in der Auslandskulturpolitik eine Form der auswärtigen Politik. Er anerkenne die Bemühungen des Haushaltsausschusses trotz der Schwierigkeiten des letzten Jahres, diesen Interessen gerecht zu werden. Aber es seien Kürzungen vorgenommen worden, die sich im Ausland nachteilig auswirken. Deshalb danke man dem Bundeskanzler, der der Auslandskulturpolitik besondere Bedeutung beimesse. Das müsse natürlich in Grenzen bleiben, aber gerade auf diesem Gebiet seien Kürzungen nicht angebracht.</p>
-				<p>Die in den letzten Wochen erfolgten Angriffe wegen der UNESCO habe <name type="Person" role="Erwaehnung" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> in Paris abgewehrt, wofür ihm Dank gebühre. Sollten diese Angriffe bei der Aussprache zur Regierungserklärung fortgesetzt werden, nehme man Anlaß, die Dinge klarzustellen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> bittet die Haushalts- und Kulturpolitiker, sich einmal zusammenzusetzen. Die Regierungserklärung sehe mehr Mittel für die auswärtige Kulturpolitik vor. Wenn die Mittel hierfür eine Kürzung erfahren, würden die in den letzten Jahren aufgebauten Einrichtungen in Gefahr geraten. Man denke nicht an Ausweitung, sondern an echte Konsolidierung. Er, Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name>, meine, daß man sich auf dieser Basis wohl verständigen könne. Wenn man jetzt nicht in eine bestimmte Größenordnung einsteige, laufe die Arbeit vieler Jahre wieder auseinander.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> steht diesen Dingen aufgeschlossen gegenüber. Er halte aber den Zeitpunkt, sich über diese Dinge groß zu verbreiten, für nicht richtig, vielmehr sollte man lieber die nächste Gelegenheit dazu benutzen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> unterstreicht, daß etwas besseres über auswärtige Kulturpolitik bisher nicht gesagt worden sei als in der Regierungserklärung. Das sollte bestehenbleiben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> bittet, von ihm nicht eine Art Rechtfertigungsrede zu erwarten, wenn er auch für die Bemerkung des Abg. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> dankbar sei. Das was sich vor einer etwas linksintellektuellen Sphäre abspiele, sei von einiger Bedeutung.</p>
-				<p>Wenn schon die deutschen Universitäten nicht mitmachten, wie solle dann der diplomatische Vertreter des Landes einen besseren Stand haben, ohne daß er etwas in Händen hat?</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1965-11-23-t1508_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1010/1</idno>
+                     <objectName>[Nicht überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 23. November 1965</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>13 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1965-11-23">
+               <time type="start" when="15:08:00"/>
+               <time type="end" when="18:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
+         <change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-05_1965-11-23-t1508_EP_SVP-1" corresp="#cdu-csu-05_1965-11-23-t1508_EP_div_SVP-1">A. TOP 1: Aussprache zur Regierungserklärung. – TOP 2: Fall <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>. – TOP 3: Bildung des Fraktionsältestenrats, Fragestunde des Bundestages. – TOP 4: Bericht aus dem Ältestenrat, Plenarplan, Strafrecht. – TOP 5: Aussprache zur Regierungserklärung. </item>
+               <item xml:id="cdu-csu-05_1965-11-23-t1508_EP_SVP-2" corresp="#cdu-csu-05_1965-11-23-t1508_EP_div_SVP-2">B. TOP 6: Bericht aus Arbeitskreis I (Strafrecht, Notstandsrecht, Öffentlicher Dienst u. a.). – TOP 7: Bericht aus Arbeitskreis II. – TOP 8: Bericht aus Arbeitskreis III (Bundeshaushalt). – TOP 9: Bericht aus Arbeitskreis V. – TOP 10: Bundeshaushalt. – TOP 11: Bericht aus Arbeitskreis IV. – TOP 12: Bericht aus Arbeitskreis VI (Wissenschaft, auswärtige Kulturpolitik u. a.).</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-05_1965-11-23-t1508_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Aussprache zur Regierungserklärung]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bringt zu Beginn der Sitzung die Hoffnung zum Ausdruck, daß es dem Bundeskanzler gesundheitlich bald wieder besser gehen möge und er nächste Woche wieder zur Verfügung stehe. Durch die Grippeerkrankung des Bundeskanzlers sei man in eine schwierige Situation geraten, da die Debatte über die Regierungserklärung<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN001" type="comment">
+                     <p>Regierungserklärung vom 10. 11. 1965.</p>
+                  </note>
+               </seg> nur in seiner Anwesenheit stattfinden und der Termin seiner Reise nach USA nicht erneut verschoben werden könne. Hinzu komme, daß die erste Lesung des Haushaltssicherungsgesetzes am 3. 12. über die Bühne gehen müsse.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN002" type="comment">
+                     <p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p>
+                  </note>
+               </seg> Deshalb sei man gezwungen gewesen, schnell zu handeln, so daß am Montag, am Dienstag und eventuell auch noch am Mittwoch über die Regierungserklärung debattiert werden müsse. An diesen Tagen solle auf jeden Fall aber auch das Haushaltssicherungsgesetz in erster Lesung behandelt werden.</p>
+            <p>Weiter habe der Vorstand in seiner gestrigen Sitzung sich mit dem Bericht des Außenministers zur Passierscheinfrage und mit der Komplettierung des Vorstandes befaßt.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN003" type="comment">
+                     <p>Fortgang siehe TOP 5.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>[2. Fall <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>]</p>
+            <p>Dann nimmt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> zum Fall <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> Stellung und verweist auf die verschiedenen Vorschläge zur Behandlung dieser Angelegenheit und die von der SPD eingereichten Fragen<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN004" type="comment">
+                     <p>Sten. Ber., 5. Sitz. am 24. 11. 1965, S. 45–49. Auch Kleine SPD-Anfrage betr. Personalpolitik im Auswärtigen Amt (Drs. V/113 vom 9. 12. 1965).</p>
+                  </note>
+               </seg>. Da er selbst einige Tage nicht in Bonn anwesend war, habe er gebeten, bis zu seiner Rückkehr keinen Beschluß zu fassen, denn hier stellten sich eine Fülle von beamtenrechtlichen Fragen, die unabhängig von dem aktuellen Fall beantwortet werden müssen. In diesem Zusammenhang habe er <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> gebeten, eine Ausarbeitung herzustellen.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> habe zu dieser Angelegenheit ein Interview gegeben, das er sehr bedauere. Er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, kenne <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> nicht. Auch liege kein Antrag vor, ihn zu einem Angestellten der CDU/CSU-Fraktion zu machen.</p>
+            <p>[3. Bildung des Fraktionsältestenrats, Fragestunde des Bundestages]</p>
+            <p>§ 8 der Geschäftsordnung der Fraktion sehe vor, daß die Fraktion einen Fraktionsältestenrat bilde, bestehend aus drei Mitgliedern der Fraktion, dessen Aufgaben der Fraktionsvorstand beschließe. Dieser Ältestenrat werde durch die Fraktionsvollversammlung benannt nach den Wahlbestimmungen für den Vorstand. Er schlage vor, dieses Gremium für die Dauer der Legislaturperiode zu bilden und hierfür Minister <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> und <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> vorzusehen. Damit wäre das normale, satzungsmäßige Gremium gebildet, das von jedem Mitglied der Fraktion, das sich beschwert fühle, in Anspruch genommen werden könne.</p>
+            <p>Mit <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, <name type="Person" role="Erwaehnung" ref="#GuttenbergKarlTheodor_1957-10-15">von Guttenberg</name> und Minister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> habe ein Gespräch stattgefunden, und es werde gut sein, bei der morgigen Fragestunde daran zu denken, daß die Anfragen von der Opposition kommen. Von Zusatzfragen sollte man Abstand nehmen.</p>
+            <p>Außerdem sei in der Presse behauptet worden, daß ein Beamter des Auswärtigen Amtes Aussagen gemacht hätte mit »Folterschreien« usw. Diese Äußerungen würden zwar bestritten, haben aber im »Luxemburger Wort« zu einem Artikel geführt, den man nicht unbeantwortet lassen sollte. Der Bundesaußenminister sei gebeten, diese Sache richtigzustellen.</p>
+            <p>Die CDU/CSU-Bundestagsfraktion stimmt einstimmig der Erklärung ihres Vorsitzenden zu und wählt dann in geheimer Wahl <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> und <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> als Mitglieder des Fraktionsältestenrates. An der Abstimmung beteiligen sich 192 Abgeordnete. Für <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> stimmen 185 Mitglieder, ebenfalls für <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name> kann 182 Stimmen auf sich vereinigen. Eine Stimme war ungültig. <name type="Person" role="Erwaehnung" ref="#WoernerManfred_1965-10-19">Wörner</name>, <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> und <name type="Person" role="Erwaehnung" ref="#HauserAlo_1965-10-19">Hauser</name> betätigten sich als Stimmzähler.</p>
+            <p>[4. Bericht aus dem Ältestenrat, Plenarplan, Strafrecht]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Beratungen im Ältestenrat und teilt der Fraktion den Ablauf der Plenarsitzungen mit. Darüber hinaus gibt er bekannt, daß die Ausschüsse zu Beginn der nächsten Woche konstituiert werden könnten. Über die Frage der Vorsitzenden wurden Gespräche geführt, die aber noch nicht endgültig abgeschlossen seien. Bis Einigkeit darüber herrsche, übernähmen die bisherigen Vorsitzenden bzw. die stellvertretenden Vorsitzenden die Leitung der Ausschüsse. Die eigene Kommission zur Besetzung der Ausschüsse tage morgen das letzte Mal.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> berichtet über die Beratungen des Arbeitskreises I zur Strafrechtsreform.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN005" type="comment">
+                     <p>Entwurf eines Strafgesetzbuches d. Abg. Frau Dr. <name type="Person" role="Erwaehnung" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer-Nicolaus</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> u. a. (Drs. V/32 vom 11. 11. 1965).</p>
+                  </note>
+               </seg> Dieser halte es für sehr ungünstig, wenn die Diskussion auf Januar verschoben würde. Die Sache beinhalte einen politischen Hintergrund, wenn das Sonderthema politisches Strafrecht gleichzeitig behandelt werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt bekannt, er habe selbstverständlich in der Ältestenratssitzung Vorbehalte angemeldet, eine Einigung sei aber nicht zustande gekommen. Die Fraktion werde sich vorbehalten, einen Antrag zur Geschäftsordnung am Donnerstag zu stellen. Dies geschehe dann aber im scharfen Gegensatz zur Haltung der SPD, so daß dann eine zweite Debatte über ein verwandtes Thema in der nächsten Plenarwoche erfolge. An sich bestehe für Donnerstag schon ein sehr umfangreiches Programm.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> äußert, daß es nicht auf den Zeitpunkt ankomme, sondern auf die politische Frage, ob man den Entwurf einbringe und getrennt behandele oder zusammen mit der SPD einen Entwurf vorlege, bei dem man sich sehr auf problematischem Boden bewege. Gegen eine derartige Verbindung müsse er, <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name>, sich verwahren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erklärt dazu, der Präsident hätte einer Verschiebung der Strafrechtsdebatte nur unter der Bedingung zugestimmt, wenn die SPD ihren Entwurf gleichzeitig vorlege.</p>
+            <p>[5. Aussprache zur Regierungserklärung]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erwartet von der Aussprache zur Regierungserklärung eine muntere Debatte, die man als solche auch brauche. Der Bundeskanzler und die Mitglieder der Regierung ständen bereit. Darüber hinaus sei es aber erforderlich, daß auch die Fraktion ihren Standpunkt deutlich zum Ausdruck bringe, konstruktiv spreche und jeden Angriff der Opposition sofort zurückschlage. Am Montag nach der Fragestunde werde er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, die Aussprache eröffnen, anschließend sprechen <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> (SPD), <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">Kühlmann-Stumm</name> (FDP) und <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> (CSU). Die weitere Reihenfolge würde sich dann ergeben. Bei der Debatte werde es darauf ankommen, einen geschlossenen und kampfkräftigen Eindruck zu hinterlassen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-05_1965-11-23-t1508_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[6. Bericht aus Arbeitskreis I: Strafrecht, Notstandsrecht, Öffentlicher Dienst u. a.]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> führt aus, Arbeitskreis I sei in der Regierungserklärung nur zum Thema Strafrechtsreform<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN006" type="comment">
+                     <p>Entwurf eines Strafgesetzbuches d. Abg. Frau Dr. <name type="Person" role="Erwaehnung" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer-Nicolaus</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> u. a. (Drs. V/32 vom 11. 11. 1965).</p>
+                  </note>
+               </seg> und Notstandsgesetzgebung angesprochen, da die Frage des öffentlichen Dienstes nicht erwähnt wurde. Dies bedauere der Arbeitskreis. In Anbetracht dieser Lage sollte der Bundesinnenminister die Gelegenheit wahrnehmen, hierzu noch etwas zu sagen.</p>
+            <p>Hinsichtlich des Geschäftsbereichs des Bundesjustizministers werde wahrscheinlich nun doch die Große Strafrechtsreform angesprochen, und sicher werde <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> die Gelegenheit benutzen, um persönliche Angriffe gegen den Bundesjustizminister zu richten. Von seiten des Arbeitskreises stelle man sich selbstverständlich hinter <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> und er, <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name>, würden zu dieser Sache als Redner vorgeschlagen. Weiter spiele das Unehelichenrecht eine Rolle, und er halte es für notwendig, dieses Thema aufzugreifen und den Bundesjustizminister zu bitten, hierzu eine entsprechende Erklärung abzugeben, weil der Gesetzgeber die Verpflichtung habe, dieses Problem in nächster Zeit einer Lösung zuzuführen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN007" type="comment">
+                     <p>Gesetzentwurf über die rechtliche Stellung des unehelichen Kindes (Drs. V/2370 vom 7. 12. 1967).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Ferner habe der Arbeitskreis die Verfassungsmäßigkeit des Haushaltssicherungsgesetzes geprüft und sich der Auffassung des Innenministers angeschlossen, daß aus verfassungsrechtlichen Gründen der Inhalt des Gesetzes nicht zu beanstanden sei.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN008" type="comment">
+                     <p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Im Bereich des Innenministeriums lege man der Notstandsverfassung besondere Bedeutung bei, und der Arbeitskreis meine, man solle die Gelegenheit ergreifen, um die SPD auf dieses Thema anzusprechen. Die SPD hätte bereits zum Ausdruck gebracht, daß sie als Regierung die Dinge in Ordnung zu bringen gedenke. Nun sollte man sie fragen, ob sie diese Zusage auch aufrechterhalte. Der Innenminister beabsichtige, eine Vorlage erst dann einzubringen, wenn eine gewisse Abklärung vorher erfolgt sei. Eine inhaltliche Festlegung sollte also nicht erfolgen, sondern nur der Standpunkt der Opposition erforscht werden.</p>
+            <p>Dann stehe vermutlich auch der Fall <name type="Person" role="Erwaehnung" ref="#PaetschWernerKurt">Pätsch</name> zur Diskussion an, der alle möglichen Fragen beinhalte, z. B. die Ablösung der alliierten Vorbehaltsrechte. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name>, <name type="Person" role="Erwaehnung" ref="#SuesterhennAdolf_1961-10-17">Süsterhenn</name> und <name type="Person" role="Erwaehnung" ref="#EvenBert_1957-10-15">Even</name> würden diese Fragen prüfen.</p>
+            <p>Das Urteil habe in Übereinstimmung mit dem Untersuchungsausschuß<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN009" type="comment">
+                     <p>SPD-Antrag betr. Einsetzung eines Untersuchungsausschusses – Telefon-Ausschuß – (Drs. IV/1544 vom 18. 10. 1963).</p>
+                  </note>
+               </seg> festgestellt, daß es im Verfassungsschutzamt keine verfassungswidrigen Handlungen gegeben habe.</p>
+            <p>Bezüglich des Themas Beamtenbesoldung müsse man ein Wort an die Beamtenschaft richten. Hier mache der Arbeitskreis auf folgendes aufmerksam: Die Einsparungsmaßnahmen sollten in der vorgesehenen Größenordnung im Haushalt durchgeführt werden. Das bedeute aber nicht, daß man sich in allen Einzelfragen auf die gegenwärtigen Vorstellungen festlegen müsse. Der Arbeitskreis vertrete die Auffassung, daß es besser wäre, den erforderlichen Ausgleich durch eine generelle Aufschiebung der beamtenrechtlichen Regelung um neun Monate vorzusehen und punktuelle Maßnahmen nicht vorzunehmen. Damit würde die vom Bundeskanzler gegebene Zusicherung eingehalten. Das sei im Interesse des Vertrauens in gegebene Zusicherungen notwendig.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hält es ebenfalls für richtig, die SPD zum Problem der Notstandsverfassung zu fragen. Er sehe aber hierin eine Aufgabe der Regierung.</p>
+            <p>Zur Beamtenbesoldung handele es sich nicht um eine Frage der Verschiebung des Finanzvolumens, sondern darum, keinen Bereich von der Maßnahme auszuschließen. Er bitte die Fraktion, zu den gemachten Vorschlägen Stellung zu nehmen. Bei der Aussprache zur Regierungserklärung sollte aber keine Festlegung erfolgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> stellt klar, niemand verlange, die Beamten von der Sparmaßnahme auszunehmen. Auf dieser Grundlage scheine eine Verständigung möglich.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> entgegnet, es handele sich nicht um den Gesamtkomplex Beamte, sondern hier seien Unterschiede erforderlich, ob es die aktiven Beamten mit linearer Erhöhung betreffe oder die Versorgungsempfänger und die 131er. Nun wolle man den aktiven Beamten 100% geben und dafür die Verbesserungen für die 131er und die Versorgungsempfänger hinausschieben. Dann genügten aber nicht neun Monate. Wenn man hier einen Eingriff vornehme, könne man nicht mehr mit gutem Gewissen andere betroffene Gruppen zurückhalten. Mit der Veränderung von Gesetzesterminen greife man in vom Bundestag verabschiedete Gesetze ein. Ein solches Vorgehen wiege schwerer als gemachte Zusagen.</p>
+            <p>Nach Meinung des MdB <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> hielten sich die bisher angestellten Überlegungen im Rahmen der bereits gefaßten Beschlüsse. Das Finanzvolumen und die Umgruppierungen würden im gleichen Bereiche gehalten. Durch diesen Vorschlag könnten auch Härten vermieden werden, wie sie z. B. in der Regelung, die strukturelle Überleitung um zwei Jahre zurückzustellen, liegen. Dies würde die über 70 Jahre alten Leute treffen. In der Aussprache komme man um diese Frage nicht herum, weil anschließend das Fünfte Besoldungserhöhungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN010" type="comment">
+                     <p>Entwurf eines Fünften Gesetzes über die Erhöhung von Dienst- und Versorgungsbezügen (Drs. V/55 vom 26. 11. 1965).</p>
+                  </note>
+               </seg> diskutiert werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> vertritt die Auffassung, das Finanzvolumen insgesamt nicht zu erweitern. Es sei doch nicht so, daß alleine die aktiven Beamten in den Genuß dieser Regelung kommen. Die 4. Novelle<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN011" type="comment">
+                     <p>Viertes Gesetz über die Erhöhung von Dienst- und Versorgungsbezügen (Viertes Besoldungserhöhungsgesetz) vom 13. 8. 1964, BGBl. I, S. 617.</p>
+                  </note>
+               </seg>, die beamtenrechtlichen Vorschriften<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN012" type="comment">
+                     <p>Viertes Gesetz zur Änderung beamtenrechtlicher und besoldungsrechtlicher Vorschriften vom 31. 8. 1965, BGBl. I, S. 1024.</p>
+                  </note>
+               </seg> und das BWGöD<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN013" type="comment">
+                     <p>Siebentes Gesetz zur Änderung des Gesetzes zur Regelung der Wiedergutmachung nationalsozialistischen Unrechts für Angehörige des öffentlichen Dienstes vom 9. 9. 1965, BGBl. I, S. 1210.</p>
+                  </note>
+               </seg> würden am 1. Januar in Kraft treten. Die Regierungsvorlage sehe nun vor, gewisse Teile aus diesen Gesetzen herauszunehmen und sie erst in zwei Jahren in Kraft treten zu lassen. Es wäre wohl besser, diese Gesetze zum 1. 10. 1966 in Kraft treten zu lassen. An der Erhöhung des Fünften Besoldungserhöhungsgesetzes nähmen auch die anderen Personenkreise teil. Man wolle nicht, daß das Versprechen des Bundeskanzlers, das draußen stark zu Buche schlage, geändert werde. Politisch komme man am besten zurecht, wenn am Volumen nichts geändert werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> widerspricht dieser Auffassung, daß dieses Vorhaben im Rahmen der globalen Vorstellung bleibe. Hierin sehe er eine Verschiebung zu Lasten einer Gruppe und zugunsten einer anderen. Dieses ganze Konzept könne nur realisiert werden, wenn man in allen Gruppen gewisse Absprachen treffe. Man provoziere sonst gleiche Forderungen auf anderen Gebieten. Im übrigen sei im Haushaltsjahr 1967 noch ein Volumen von 270 Mio. DM zu berücksichtigen. Als aus wohlerwogenen Gründen beschlossen wurde, die Beamtenbesoldung auf den 1. 1. vorzuziehen, sei das Presseecho schon deshalb nicht gut gewesen, weil die Diäten der Bundestagsabgeordneten dadurch auch eine Aufbesserung erführen. Ein solches Vorgehen wirke ganz schlecht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BergerUlrich_1957-10-15">Berger</name> nimmt Bezug auf die erste Aussprache über dieses Thema, in der eine materielle Änderung des Gesetzes verneint wurde. Bei den 131ern seien aber alle Verbesserungen, die über die Regierungsvorlage hinaus beschlossen wurden, um zwei Jahre verschoben. So sollte man nicht verfahren. Er halte dies für eine schlechte Sache, weil man einen Gegensatz zwischen aktiven Beamten und Versorgungsempfängern konstruiere. Die Besoldungserhöhung treffe auch die Versorgungsempfänger; deshalb auch das große Interesse. In der vorgeschlagenen Regelung für die 131er sehe er eine gerechte Sache, wenn das Haushaltsvolumen unverändert bleiben solle. Was die Diäten anbelange, könnte man hier vielleicht noch zu anderen Überlegungen kommen. Im übrigen liege für die Beamtenbesoldung eine Zusage für 1967 vor, die eventuell noch verschoben werden könne, wenn man jetzt die vorgesehenen Termine einhalte. Die Frage der laufenden Anpassung bestehe ja immer weiter. Gerade die Frage der Beamtenbesoldung und damit der Personalausgaben müßte anders gesehen werden als irgendwelche Sachausgaben. Die Betroffenen beziehen ihr gesamtes Einkommen aus dem Haushalt, und wenn feststehe, daß sie über 10% unter<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN014" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: über.</p>
+                  </note>
+               </seg> dem allgemeinen Niveau liegen, müßte man Verständnis dafür aufbringen, daß die 4% als erster Schritt zur Abtragung des Rückstandes auch erfüllt werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HuysLambert_1957-10-15">Huys</name> stellt den Antrag, die Diätenerhöhung der Abgeordneten erst in einem Jahr vorzunehmen.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN015" type="comment">
+                     <p>CDU/CSU-SPD-FDP-Gesetzentwurf zur Änderung und Ergänzung des Diätengesetzes 1964 (Drs. V/2526 vom 2. 2. 1968).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>[7. Bericht aus Arbeitskreis II]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> erstattet einen Bericht über die Beratungen des Arbeitskreises II, der vor 14 Tagen eingehend über die Fragen Stabilität, Wachstum und Arbeitsmarktprobleme diskutiert habe. Als weniger erfreulich kennzeichne der Arbeitskreis die Situation, die sich daraus ergebe, daß zunächst <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> zur Regierungserklärung spreche und im zweiten Durchgang erst <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, während an dieser Stelle bereits der SPD-Wirtschaftsexperte, <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, zu Wort komme. Die Fraktion müsse ihre Aussprache ausrichten auf die Regierungserklärung, nicht auf die Rede des Abg. <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p>
+            <p>Im Vordergrund der Betrachtung stände besonders die Konjunkturpolitik im Zusammenhang mit der Währungsstabilität und einem künftigen Wachstum.</p>
+            <p>Zum Problem der Bundesbahn hätten besonders <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> und <name type="Person" role="Erwaehnung" ref="#LeukertEdmund_1953-10-06">Leukert</name> Stellung genommen, und die Arbeitsgruppe Wohnungsbau habe die sie betreffenden Themen diskutiert, so daß diese Problematik im Arbeitskreis nicht gesondert angesprochen zu werden brauchte.</p>
+            <p>Als Redner für das Plenum ständen zur Verfügung: <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name> für die Fragen der Investition, der Löhne und Preise, der Energiepolitik und für die Antworten auf <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, <name type="Person" role="Erwaehnung" ref="#SteinGustav_1961-10-17">Stein</name> für den Arbeitsmarkt, den Kapitalmarkt, die Vermögensbildung und den Sparprozeß, <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name> für Konjunkturpolitik und Haushalt und <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> für die Verkehrspolitik, der die Darstellungen über die Bundesbahn wieder zurechtrücken werde.</p>
+            <p>Zwar könnten bei der Bundesbahn Arbeitskräfte eingespart werden, wenn sich dies auch im Augenblick ohne entsprechende Vorbereitungen nicht durchführen lasse. Bei der Bundesbahn werde treu und brav gearbeitet und nicht etwa gefaulenzt.</p>
+            <p>Für Fragen der Agrarpolitik ständen <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#BauerJosef_1912-03-15">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#ReinhardCarl_1957-10-15">Reinhard</name> und <name type="Person" role="Erwaehnung" ref="#BewerungeKarl_1961-10-17">Bewerunge</name> bereit, für den Wohnungsbau <name type="Person" role="Erwaehnung" ref="#HesbergCarl_1953-10-06">Hesberg</name>, für den Außenhandel <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name>, für Fragen der EWG und Europa <name type="Person" role="Erwaehnung" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> und für Verbraucherfragen <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name>.</p>
+            <p>Hierzu wird das Wort nicht gewünscht.</p>
+            <p>[8. Bericht aus Arbeitskreis III: Bundeshaushalt]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name> berichtet über die Beratungen des Arbeitskreises III, der sich ebenfalls mit den Fragen der Stabilität, des Wachstums und der Konjunkturpolitik beschäftigt habe. Im Mittelpunkt der Beratungen habe der Haushaltsausgleich gestanden, soweit die Regierungserklärung auf Steuer- und Finanzprobleme eingegangen sei. Dazu werde <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> sprechen.</p>
+            <p>In Anbetracht, daß bei der Aussprache zur Regierungserklärung das Haushaltssicherungsgesetz eingehend behandelt und die SPD dieses Gesetz angreifen werde, habe sich der Arbeitskreis auch mit dieser Problematik befaßt.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN016" type="comment">
+                     <p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p>
+                  </note>
+               </seg> Es werde zu einer harten Debatte kommen, wobei die Minister wohl eingreifen müßten, besonders aber der Finanzminister. Auch von seiten der Fraktion sei ein Eingreifen sicherlich erforderlich. Als Redner stände <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> zur Verfügung.</p>
+            <p>Der Arbeitskreis empfehle der Fraktion, die Regierungserklärung und das Haushaltssicherungsgesetz ohne Modifikation in erster Lesung zu unterstützen. Draußen werde vielfach davon gesprochen, daß diese Dinge unpopulär seien. Aber noch viel unpopulärer wäre es, nicht einmal den Versuch zu unternehmen, noch vor Weihnachten den Haushalt 1966 zum Ausgleich zu bringen.</p>
+            <p>Ferner rate der Arbeitskreis, in drei Punkten mit der FDP unter Hinzuziehung des Finanzministers eine einheitliche Sprachregelung zu treffen, und zwar hinsichtlich des Art. 2 Abs. 2 HHSG – Zinssubventionen –, des Ausbildungsförderungsgesetzes – die FDP beabsichtige hier andere Änderungen –, der Beamtenbesoldung<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN017" type="comment">
+                     <p>Entwurf eines Fünften Gesetzes über die Erhöhung von Dienst- und Versorgungsbezügen (Drs. V/55 vom 26. 11. 1965).</p>
+                  </note>
+               </seg> und bezüglich der Frage der Anhebung und der Sektsteuer. Diese Dinge hätten zu einer eingehenden Debatte im Arbeitskreis geführt, und namhafte Vertreter des Arbeitskreises hätten dieser Steueranhebung im wesentlichen aus zwei Gründen widersprochen: Erstens weil es unschön erscheine, nun doch im Rahmen des Sparprogramms die Steuern zu erhöhen, und weil befürchtet werden müsse, daß eine gewisse Verschiebung des Preisgefüges eintreten wird, die sich weiterwälzen werde. Demgegenüber vertrete die Mehrheit den Standpunkt, daß man das HHSG im Grundsatz nur voll bejahen könne oder Schiffbruch erleiden werde. Modifikationen bedeuteten den Anfang vom Ende. In den Punkten Nachversicherung, Berlinpräferenzen, Beseitigung der Ausweichmöglichkeiten in niedrigprozentigen Alkohol müßte also eine Abstimmung mit der FDP erfolgen.</p>
+            <p>Die Fragen einer Verschiebung innerhalb der einzelnen Haushalte gehöre in den Haushaltsausschuß, insgesamt müsse die Fraktion zum Haushaltssicherungsgesetz stehen. Dieses Gesetz bedeute aber nur einen Anfang und einen Behelf für das Jahr 1966. Hand in Hand müsse hiermit eine längerfristige Finanzpolitik gehen, die sofort in Angriff zu nehmen ist. Dieses Gesetz stelle nur eine Minimallösung dar, weil es nur eine Verschiebung der Ausgaben auf spätere Jahre vorsehe. Der Arbeitskreis werde über den Haushaltsausschuß dem Finanzminister weitere Sparmöglichkeiten vorschlagen. Darüber hinaus spreche sich der Arbeitskreis für die Vorlage einer Vorausschau über die Haushaltslage der nächsten Jahre aus, um erkennen zu können, welcher Spielraum für politische Entscheidungen überhaupt noch bestehe. Dabei sei die langfristige Sicherung von Währung und Haushalt das Ziel.</p>
+            <p>Die Frage der Mehrwertsteuer werde interfraktionell von der Koalition wieder eingebracht und von <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> begründet.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN018" type="comment">
+                     <p>CDU/CSU-FDP-Entwurf eines Umsatzsteuergesetzes – Nettoumsatzsteuer – (Drs. V/48 vom 24. 11. 1965).</p>
+                  </note>
+               </seg> Für die Diskussion stehe obendrein noch <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name> zur Verfügung.</p>
+            <p>Was die Anträge der Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#DichgansHans_1961-10-17">Dichgans</name> zu § 96 GO anbelange<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN019" type="comment">
+                     <p>Antrag Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> und der Fraktion der CDU/CSU betr. Änderung der Geschäftsordnung des Deutschen Bundestages (Drs. V/114 vom 10. 12. 1965).</p>
+                  </note>
+               </seg>, so seien sie noch nicht ganz spruchreif.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> greift die Bemerkung über die Wahlgeschenke auf. Hier sollte man darauf aufmerksam machen, daß die gleichen Leute, die außerhalb des Parlaments dieses Schlagwort gern gebrauchen, durch ihre eigenen Verbände das Parlament unter Druck gesetzt haben. Hätte das Parlament diesem Druck nachgegeben, würde es heute vor dem Zehnfachen an finanzieller Belastung stehen.</p>
+            <p>Sodann regt er an, auch über die sogenannte Haushaltsvorschau mit der FDP eine Sprachregelung herbeizuführen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> bemerkt, nicht alle, aber viele Abgeordnete hätten sich gegen eine Steuererhöhung ausgesprochen. Was ihn, Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, bei der ganzen Sache aber am tiefsten aufrege, sei die Tatsache, daß das Gesetzgebungsorgan eine Anzahl von Gesetzen geschaffen habe, durch die Rechtsverpflichtungen geschaffen wurden zugunsten dieser oder jener Bereiche. Die oberste Verpflichtung eines Schuldners liege doch darin, die Rechtsverpflichtungen einzuhalten, ehe er dazu übergehe, plötzlich Kürzungen vorzunehmen. Aus dieser Sicht heraus bezeichne er eine Steuererhöhung als harmlos. Man ziehe damit Kaufkraft vom Markt und setze sie wieder für die Erfüllung anderer Verpflichtungen ein. Ihm wäre es lieber, wenn diese übernommenen Verpflichtungen in den Vordergrund des Denkens gestellt worden wären, natürlich parallel mit der Sicherung der Währung. Man hätte aber prüfen können, ob nicht etwa durch eine Zulage zur Tabaksteuer die notwendigen Mittel hätten beschafft werden können.</p>
+            <p>Sicher entstände durch eine Steuererhöhung Ärger, der aber gegenüber dem Schwund an Vertrauen in die demokratische Ordnung verblasse, wenn das Parlament vor kurzem übernommene Verpflichtungen mir nichts, dir nichts streiche.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> erinnert an die Steuersenkung von 3,5 Mrd. DM im Jahre 1965. Sicher gebe es einen moralischen Bezug hinsichtlich der eingegangenen Verpflichtungen, der Erfüllung und der Abwägung dessen, was man tun könne, bevor man zu Kürzungen schreite. Hier gehe es aber um etwas anderes. Die Sekt- und Branntweinsteuer bringe 200 Mio. DM. An sich eine Lappalie, die nicht dazu dienen könne, die Einlösung irgendwelcher Verpflichtungen möglich zu machen. Sie diene allein dazu, einen Posten auszuwechseln im außerordentlichen Haushalt, nämlich die Inanspruchnahme des Kapitalmarkts zu verhindern. Ob das gelinge, sei eine andere Frage.</p>
+            <p>Die Problematik liege darin, ob die Mühe sich lohne, hier Konsumkaufkraft als Investitionskaufkraft auf den Bund zu übertragen. Daneben stehe das von <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> aufgeworfene Problem und die Frage, das Gleichgewicht zu Berlin nicht zu gefährden. Außerdem würden die Menschen in Dessertweine ausweichen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> argumentiert, wenn diese Erkenntnis richtig sei, müsse das, was die Bundesregierung vorgelegt habe, falsch oder wenigstens in seiner Wirkung sehr umstritten sein. Damit habe man das erste Politikum großen Ausmaßes. Wenn das Fernsehen sage, daß die Ausbildungshilfe nicht auch an Generaldirektoren ausgezahlt werden solle, komme man dem Ziel näher. Dann könne man sehen, wie weit diese Dinge gingen. Die Aussprache über diese Dinge sollte aber nicht in aller Öffentlichkeit ausgetragen werden. Wenn die Wirtschaft an das Versprechen appelliere, keine Steuererhöhungen vorzunehmen, dann zwinge sie damit die Fraktion, sich dagegen zu wehren, daß Gesetze, auf die ein gesetzlicher Anspruch bestehe, zurückgedreht werden und diese gesetzlichen Ansprüche aus den bekannten Gründen nicht mehr gewährt werden sollen. Er, <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>, sehe die Gefahr, wegen eines Betrages von 200 Mio. DM unglaubwürdig zu werden. Die Regierung müsse hier geziehen werden, daß sie eine Vorlage gemacht hat, die keiner sachlichen Prüfung standhält. Er sehe die politischen Folgen und warne davor.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> bemerkt, er habe diesen Teil der Diskussion kommen sehen. Jeder Teil der Fraktion müsse aber Opfer bringen. In der Tat sei es problematisch, diese Steuermaßnahme durchzuführen, sie sei aber im Kabinett beschlossen worden.</p>
+            <p>Er wolle noch darauf hinweisen, daß jede Steuererhöhung das Gesamtvolumen aufblähe. Dies solle aber doch im Prinzip heruntergedrückt werden aus allgemeinen konjunkturpolitischen Gründen. Wenn man jetzt vom Maßhalten predige, sollte der Bundesetat nicht erhöht werden.</p>
+            <p>Mit der FDP habe man bereits gesprochen und ihr zu verstehen gegeben, daß jeder in einem Punkt nachgeben müsse. Jede Gruppe müsse wissen, daß sie ihren speziellen Wunsch nicht durchsetzen könne, wenn nicht das Ganze fallen solle. Darüber müßte noch einmal hart mit der FDP gesprochen werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> führt zur Steuererhöhung aus, daß die heute früh vorgetragenen Bedenken noch beständen. Sicher wisse man, daß bereits Hortungskäufe von erheblichem Ausmaß getätigt wurden und einzelne Firmen sich mit großen Mengen Weingeist eindeckten. Sie hätten also für das ganze Jahr vorgesorgt und könnten so die kleinen Firmen ruinieren. Eine Nachversteuerung sei nicht möglich. Das führe dazu, daß der Schnaps statt teurer billiger werde, so daß der Zweck in keiner Weise erfüllt werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> kommt bei Überprüfung der Steuererhöhung zu dem Ergebnis, daß diese Sache schlecht sei. Die Fraktion sollte sich zu keiner Steuererhöhung bereitfinden, weil sich das sonst über Länder und Gemeinden ausbreite und gegenteilige Wirkungen erziele. Der FDP-Vorsitzende<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN020" type="comment">
+                     <p>Erich <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name>.</p>
+                  </note>
+               </seg> habe sich erst heute wieder gegen Steuererhöhungen ausgesprochen. Man könne nicht in der ersten Lesung mit Steuererhöhungen kommen, weil die FDP das nicht mitmache. Außerdem wirke sich diese Maßnahme ausgesprochen mittelstandsfeindlich aus. Die kapitalkräftigsten Firmen hätten große Mengen gelagert, während die kleinen Firmen dazu nicht in der Lage seien. Ferner stärke man dadurch die Präferenz von Berlin und bringe somit die kleinen Betriebe in Gefahr.</p>
+            <p>Weiter wolle er noch mitteilen, daß der Vorschlag nicht aus dem Ministerium stamme, sondern plötzlich im Kabinett auftauchte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> fragt, woher der Vorredner dies wisse.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> wendet sich dagegen, einzelne Dinge aus dem Gesamtkonzept herauszunehmen. Jeder trage gute Gründe vor, und wenn jeder seine guten Gründe durchsetzen wolle, werde aus der ganzen Sache nichts. Auch er halte es nicht für gut, die Monopolsteuer heraufzusetzen. Das Problem sei aber erkannt, so daß eine Nachversteuerung stattfinde, die verfassungsrechtlich möglich sei und auch durchgeführt werden könne.</p>
+            <p>Zu der aktuellen Frage der Berlinpräferenz müsse eine Entschließung verabschiedet werden, weil verhütet werden müsse, daß über Berlin die Steuererhöhung wieder abgefangen wird.</p>
+            <p>Für Wermut, Malaga und Portwein liege eine Vorlage im Finanzministerium. Wenn die Fraktion der Sache nicht zustimme, gefährde sie das ganze Programm.</p>
+            <p>[9. Bericht aus Arbeitskreis V]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> berichtet über die Beratungen des Arbeitskreises V, der zu den in der Regierungserklärung angesprochenen Fragen der Außenpolitik, der Europa-Krise, der NATO, der Auslandskulturarbeit und der deutschen Wiedervereinigung Stellung genommen habe.</p>
+            <p>Was die Europafrage anbelange, stehe man auf dem Boden der Römischen Verträge, auch hinsichtlich der NATO [bestehe] über das kollektive nukleare Waffensystem weithin Übereinstimmung. Weiter begrüße es der Arbeitskreis, daß die Auslandskulturarbeit in der Regierungserklärung sehr starke Berücksichtigung fand.</p>
+            <p>Der Hauptstoß der SPD werde wohl keine Sachfragen betreffen, sondern die differenzierten Äußerungen von CDU/CSU-Politikern in der vergangenen Zeit. Deshalb müsse die Fraktion eine große Geschlossenheit demonstrieren. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>, <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> und er, <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name>, ständen als Redner bereit.</p>
+            <p>[10. Bundeshaushalt]</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> gibt zur Einkommensteuer zu bedenken, daß diese etwas anders sei als ein Zuschlag zu einer Luxuskonsumsteuer. Die Einkommensteuer solle nicht erhöht werden. Sie, Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, sehe nicht ein, warum man nicht vorher alle Quellen ausschöpfe, um diese Verpflichtungen zu erfüllen, ehe man den Besitzstand angreife.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HorstmeierMartin_1965-10-19">Horstmeier</name> betont, es gehe nicht darum, ob die einzelnen Gruppen ein Opfer zu bringen haben oder nicht, sondern darum, ob die Fraktion sich logisch verhalte. Wenn man den Haushalt beschränke, könne man keine Steuern erhöhen. Da gebe es bei einer Detailfrage keine Ausnahme. Er halte eine Steuererhöhung für das unlogischste, was man sich denken könne.</p>
+            <p>Ferner spreche er sich dafür aus, wenigstens auf dem Gebiet der Steuerfrage die Wahlversprechen zu halten. Wenn es hier um eine Milliarde gehen würde, könnte er es verstehen, aber bei einem Betrag von 200 Millionen DM lohne es sich nicht, unglaubwürdig zu werden. Er betrachte es als Pflicht der Regierung, diese politische Entscheidung mit der Fraktion zu besprechen. Die Fraktion könne nicht einfach nachvollziehendes Organ sein, wie sie das fast täglich habe erleben können. Jetzt ständen keine personellen Dinge mehr zur Beratung an, und da müsse die Regierung die Fraktion zuerst informieren über das, was sie beabsichtige. Nur in einem solchen Falle könne sie ein Durchhalten der Fraktion erwarten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> verweist auf die Ausführungen des Bundeskanzlers und <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzels</name> vor der Fraktion über die in Aussicht genommenen Maßnahmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HorstmeierMartin_1965-10-19">Horstmeier</name> entgegnet, daß es sich immer nur um allgemeine Ausführungen gehandelt habe und die angekündigte Einzeldiskussion noch ausstehe. Wenn die Fraktion heute generell zustimme, sei nichts mehr zu machen. Er, <name type="Person" role="Sprecher" ref="#HorstmeierMartin_1965-10-19">Horstmeier</name>, vertrete die Auffassung, sich heute erst einmal sachlich auseinanderzusetzen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> unterstreicht, daß es deutlich geworden sei, daß die Fraktion in der ersten Lesung, bevor dieses Gesetz dem Ausschuß<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN021" type="comment">
+                     <p>Haushaltsausschuß.</p>
+                  </note>
+               </seg> überwiesen werde, zum Regierungsentwurf stehen sollte.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN022" type="comment">
+                     <p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p>
+                  </note>
+               </seg> Das heiße nicht, daß man alles ohne weiteres annehme, über Einzeldinge könne noch gesprochen werden, vorausgesetzt allerdings, daß die FDP überhaupt mitmache. Die CDU/CSU könne nicht ins Gefecht gehen, wenn sie nicht wisse, wieweit die FDP folge und ob sie am Ende der ersten Lesung mit überweise. Wenn in diesen Dingen Klarheit bestehe, sollte das Ganze dem Haushaltsausschuß überwiesen werden. Sonst kämen andere Anträge, die auch etwas herausbrechen wollen, und dann sei die Regierung völlig blamiert. Wenn die Sache im Haushaltsausschuß liege, könne die Fraktion noch einmal zu Wort kommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> warnt vor Dramatisierungen und stellt die Frage, was man wohl sagen würde, wenn von »Demontage des Sozialen Wohnungsbaus« oder »der deutsche Mieter bleibt ohne Schutz« die Rede wäre. <name type="Person" role="Erwaehnung" ref="#ToussaintHans_1957-10-15">Toussaint</name> halte er für einen viel zu guten Rechner, als das er nicht wisse, daß die Fabriken für das Lagern von Waren mehr Zinslasten aufzubringen hätten, als die Steuer ausmachen würde. Er bitte noch einmal, die Sache nicht zu dramatisieren. Persönlich vertrete er die Meinung, daß man auch beim Wohnungsbau<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN023" type="comment">
+                     <p>Gesetz zur verstärkten Eigentumsbildung im Wohnungsbau und zur Sicherung der Zweckbestimmung von Sozialwohnungen (WoBauÄndG 1965) vom 24. 8. 1965, BGBl. I, S. 945.</p>
+                  </note>
+               </seg> und beim Mutterschutz<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN024" type="comment">
+                     <p>Gesetz zur Änderung des Mutterschutzgesetzes und der Reichsversicherungsordnung vom 24. 8. 1965, BGBl. I, S. 912.</p>
+                  </note>
+               </seg> zu anderen Wegen hätte kommen können. Hier habe man aber um des Gesamtpakets willen geschwiegen. Sicherlich werde man innerhalb der eigenen Sphäre einen internen Ausgleich im gleichen Volumen finden können. Es lohne sich wirklich nicht, wegen dieser 200 Mio. DM alles in Frage zu stellen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> unterstreicht den Zweck dieser Sitzung, die erste Lesung vorzubereiten. Selbstverständlich werde die Fraktion sich noch weiter zu dieser Problematik unterhalten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StoossHeinrich_1961-10-17">Stooß</name> äußert sich vom Standpunkt der Landwirtschaft aus, die gern dem Vorschlag, Gruppeninteressen nicht in besonderer Weise herauszustellen, folge. Er müsse aber auf die Notwendigkeit hinweisen, daß die FDP auch zu den Problemen der Landwirtschaft stehe. Gegenüber der Landwirtschaft stehe der Bundeskanzler im Wort. Gerade das Anpassungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN025" type="comment">
+                     <p>Gesetz zur Förderung der Eingliederung der deutschen Landwirtschaft in den Gemeinsamen Markt (EWG-Anpassungsgesetz) vom 9. 9. 1965, BGBl. I, S. 1201.</p>
+                  </note>
+               </seg> enthalte Versprechungen, die jetzt zurückgenommen werden sollen. Das führe sicherlich zu großen Auseinandersetzungen. Der deutsche Bauernverband wollte es ablehnen, überhaupt an diesen Versprechungen irgendwie zu rütteln. Wenn die FDP jetzt aber beabsichtige, daran zu rütteln, könne man als Agrarpolitiker der CDU/CSU nicht dazu sprechen. Hier müsse eine Absprache mit der FDP erfolgen.</p>
+            <p>[11. Bericht aus Arbeitskreis IV]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> teilt mit, im Bereich des Arbeitskreises IV seien fünf Arbeitsgruppen gebildet worden, die sich mit den einzelnen Themen befaßten. Die erste Gruppe beriet die Themen Arbeitszeit, Automation, Ausbildungsförderung, Mitbestimmung und Eigentumsförderung. Diese Gruppe stehe unter der Leitung des Abg. <name type="Person" role="Erwaehnung" ref="#HaeusslerErwin_1953-10-06">Häussler</name>. Als Redner ständen hier bereit <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name>, <name type="Person" role="Erwaehnung" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin), <name type="Person" role="Erwaehnung" ref="#MuellerAdolf_1961-10-17">Müller</name> (Remscheid), <name type="Person" role="Erwaehnung" ref="#GeisslerHeiner_1965-10-19">Geißler</name>, <name type="Person" role="Erwaehnung" ref="#OrgassGerhard_1965-10-19">Orgaß</name> und <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>.</p>
+            <p>Die zweite Gruppe befaßte sich unter <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> mit der Rentenversicherung.</p>
+            <p>Zu Lohnfortzahlung, Krankenversicherung und Mutterschutz hätten sich <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>, <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name> und <name type="Person" role="Erwaehnung" ref="#PortenJosef_1961-10-17">Porten</name> vorbereitet.</p>
+            <p>Eine vierte Gruppe beriet unter <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Maucher</name> und Frau <name type="Person" role="Erwaehnung" ref="#SchroederChrista_1961-10-17">Schroeder</name> die Themen Kriegsopfer, Heimkehrer, Häftlingshilfegesetz und Sozialhilfe.</p>
+            <p>Die fünfte Gruppe beschäftigte sich mit den Fragen der Vertriebenen und der Flüchtlinge. Hierzu werde <name type="Person" role="Erwaehnung" ref="#LeukertEdmund_1953-10-06">Leukert</name> das Wort ergreifen, <name type="Person" role="Erwaehnung" ref="#KuntscherErnst_1949-09-07">Kuntscher</name> zum Lastenausgleich und <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> zum Problem der Sowjetzonenflüchtlinge. Darüber hinaus bitte der Arbeitskreis <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> selbst, schon das Heimatrecht und die Grenzfragen anzusprechen.</p>
+            <p>Dann wolle er noch mitteilen, daß in der gestrigen Fernsehsendung die Arbeit der Flüchtlingsverbände wieder verächtlich gemacht wurde. Dahinter steckten die gleichen Leute, die empfehlen, sich mit den Realitäten abzufinden und auch damit, daß Berlin im Gebiet der Zone liege.</p>
+            <p>Dem Haushaltssicherungsgesetz habe der Arbeitskreis unter der Voraussetzung zugestimmt, daß dieses Gesetz als Ganzes, also auch mit den Steuererhöhungen, gesehen werde.<seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN026" type="comment">
+                     <p>Gesetzentwurf zur Sicherung des Haushaltsausgleichs – Haushaltssicherungsgesetz – (Drs. V/58 vom 26. 11. 1965).</p>
+                  </note>
+               </seg> Im andern Falle fühle sich der Arbeitskreis nicht in der Lage, der Abänderung bereits beschlossener Gesetze zuzustimmen. Man könne nicht die ganze Fraktion dazu bewegen, zu einer Herabsetzung der Ausbildungszulage ja zu sagen und die Erhöhung der Sektsteuer zu verneinen. In dieser Beziehung warne er.</p>
+            <p>Zum Schluß wolle er noch vorschlagen, zu den Haushaltsausschußberatungen die Arbeitskreisvorsitzenden hinzuzuziehen, denn hier sei die Kenntnis der Materie notwendig.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> stellt keine weiteren Wortmeldungen fest.</p>
+            <p>[12. Bericht aus Arbeitskreis VI: Wissenschaft, auswärtige Kulturpolitik u. a.]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> referiert über die Beratungen des Arbeitskreises VI und verweist auf das Verhalten der SPD zu jeder Regierungserklärung, nämlich den Wahlkampf anzusprechen. Die Finanzierung des Wahlkampfes habe <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name> besonders behandelt, dieses Thema werde bestimmt kommen. Dazu müsse die Bundesregierung Stellung nehmen, denn sie stelle ein eigenes Verfassungsorgan dar und müsse die Bevölkerung informieren. Vielleicht sollte <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-05_1965-11-23-t1508_EP_FN027" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: von Eckhardt.</p>
+                  </note>
+               </seg> hierzu sprechen.</p>
+            <p>Im Bereich der Wissenschaft und Forschung werde die SPD zwei Fragen anschneiden, nämlich die Kompetenzverteilung innerhalb der Bundesregierung und die Finanzierung, die einen ständigen Streitpunkt im Wahlkampf und in der Öffentlichkeit bilde. Der erste Komplex betreffe den Ausbau und Neubau von Universitäten. Die Aufforderung von 500 Mio. DM könne nicht erfüllt werden, aber es werde einen sichtbaren Fortschritt geben. Außerdem könne man es sich nicht dauernd von den Wissenschaftsorganisationen sagen lassen, daß dieses Gebiet außerhalb der Politik stehe. Das Parlament müsse eine gewisse Priorität geben, aber das Ganze müsse in die Finanzpolitik eingeordnet gesehen werden. Bei der Forschungsgemeinschaft und der Max-Planck-Gesellschaft würden die gemachten Versprechungen eingelöst.</p>
+            <p>Bezüglich der Gesundheitspolitik gestalte sich die Sache etwas schwieriger, weil hier nur eine schmale Zuständigkeit des Ministeriums vorliege. Zwei Dinge müßten herausgestellt werden, nämlich die Schaffung einer Bundeszentrale für gesundheitliche Aufklärung und dann ein Programm für Probleme der Medizin. Dort würden Dinge entdeckt, aber nicht entwickelt, weil der wirtschaftliche Nutzen dabei nicht herausschaue. So gingen Entwicklungen verloren, weil sie nicht wirtschaftlich sind. Hierin liege eine Staatsaufgabe, die man sich nicht entgehen lassen dürfe.</p>
+            <p>Bei den Jugendfragen lägen die Dinge etwas komplizierter. Hier werde es zu harten Auseinandersetzungen kommen. Wenn auch die Regierungserklärung davon spreche, den Familienlastenausgleich weiter auszubauen, erschöpfe sich die Familienpolitik doch nicht im Materiellen. Sicher werde man gefragt, was ein Jugendaustausch ausgerechnet mit Spanien solle. Der Arbeitskreis habe sich hier vorbereitet, ebenso wie zur Frage »Die Pinscher und der Staat«, die ebenfalls angesprochen werde.</p>
+            <p>Dann hoffe der Arbeitskreis, nicht zur »Formierten Gesellschaft« und zu dem, was sie bedeutet, gefragt zu werden. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> sollte zu dieser Sache etwas sagen.</p>
+            <p>Die auswärtige Kulturpolitik werde von <name type="Person" role="Erwaehnung" ref="#AckermannEduard">Kahn-Ackermann</name> aufgegriffen werden. Die größten Schäden, die sich aus der Kürzung ergeben, könnten für dieses Jahr vermieden werden. Es sei darüber hinaus noch einiges mehr geschehen, als man ursprünglich vorgesehen habe. Dies sei der einzige Punkt, wofür die Bundesregierung weiter Geld zur Verfügung stelle. Darauf müßte wohl der Finanzminister selber antworten.</p>
+            <p>Als Redner für Jugendfragen ständen <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name>, Frau <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, für Gesundheitsfragen <name type="Person" role="Erwaehnung" ref="#JungmannGerhard_1961-10-17">Jungmann</name>, für die Wissenschaftsforschung und Kulturpolitik <name type="Person" role="Erwaehnung" ref="#MartinBerthold_1957-10-15">Martin</name> bereit.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> verweist auf die Ausführungen des Vorredners über die Grenzen der Kulturpolitik. Wenn man zusammenstelle, was der Bundeskanzler alles zu fördern gedenke, könne man von seiten des Haushalts nur darum bitten, diese Dinge nicht zu stark zu unterstreichen, sonst komme sofort die Frage, wer das finanzieren solle. Bei der Auslandskulturarbeit habe der Bundeskanzler eine sehr weitherzige Erklärung abgegeben, die er, Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name>, begrüße, wenn sie finanziert werden solle. Dann müsse man prüfen, ob der Finanzminister überhaupt mitgewirkt habe. Er könne nur zur Zurückhaltung mahnen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> sieht in der Auslandskulturpolitik eine Form der auswärtigen Politik. Er anerkenne die Bemühungen des Haushaltsausschusses trotz der Schwierigkeiten des letzten Jahres, diesen Interessen gerecht zu werden. Aber es seien Kürzungen vorgenommen worden, die sich im Ausland nachteilig auswirken. Deshalb danke man dem Bundeskanzler, der der Auslandskulturpolitik besondere Bedeutung beimesse. Das müsse natürlich in Grenzen bleiben, aber gerade auf diesem Gebiet seien Kürzungen nicht angebracht.</p>
+            <p>Die in den letzten Wochen erfolgten Angriffe wegen der UNESCO habe <name type="Person" role="Erwaehnung" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> in Paris abgewehrt, wofür ihm Dank gebühre. Sollten diese Angriffe bei der Aussprache zur Regierungserklärung fortgesetzt werden, nehme man Anlaß, die Dinge klarzustellen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> bittet die Haushalts- und Kulturpolitiker, sich einmal zusammenzusetzen. Die Regierungserklärung sehe mehr Mittel für die auswärtige Kulturpolitik vor. Wenn die Mittel hierfür eine Kürzung erfahren, würden die in den letzten Jahren aufgebauten Einrichtungen in Gefahr geraten. Man denke nicht an Ausweitung, sondern an echte Konsolidierung. Er, Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name>, meine, daß man sich auf dieser Basis wohl verständigen könne. Wenn man jetzt nicht in eine bestimmte Größenordnung einsteige, laufe die Arbeit vieler Jahre wieder auseinander.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> steht diesen Dingen aufgeschlossen gegenüber. Er halte aber den Zeitpunkt, sich über diese Dinge groß zu verbreiten, für nicht richtig, vielmehr sollte man lieber die nächste Gelegenheit dazu benutzen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> unterstreicht, daß etwas besseres über auswärtige Kulturpolitik bisher nicht gesagt worden sei als in der Regierungserklärung. Das sollte bestehenbleiben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> bittet, von ihm nicht eine Art Rechtfertigungsrede zu erwarten, wenn er auch für die Bemerkung des Abg. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> dankbar sei. Das was sich vor einer etwas linksintellektuellen Sphäre abspiele, sei von einiger Bedeutung.</p>
+            <p>Wenn schon die deutschen Universitäten nicht mitmachten, wie solle dann der diplomatische Vertreter des Landes einen besseren Stand haben, ohne daß er etwas in Händen hat?</p>
+         </div>
+      </body>
+   </text>
 </TEI>

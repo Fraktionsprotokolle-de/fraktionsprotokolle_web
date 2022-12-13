@@ -1,266 +1,421 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1968-10-15-t1610_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1966-1969</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/IV</title><author>Bettina Tüffers</author><pubPlace>Düsseldorf</pubPlace><date>2009</date>
-						<idno type="DNB">https://d-nb.info/98750584X</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, 103</idno>
-							<objectName>Protokoll über die Fraktionssitzung vom 15. Okt. 1968 im Bundeshaus in Bonn</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 15. Oktober 1968</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>6 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1968-10-15"><time type="start" when="16:10:00"/><time type="end" when="19:20:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#SchmidtHelmut_1953-10-06"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-08-18" who="#RabusSimon" status="final" n="3">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend von der Bundesregierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name>, <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name>, <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>, <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>. PStS: <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name>, <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf: [58]</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-1" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-1">A. Informationen.</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-2" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-2">B. Finanzreform.</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-3" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-3">C. Vorbereitung der Plenarsitzungen.</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-4" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-4">D. Kriegsopferversorgung (BE: <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>).</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-5" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-5">E. Kleine Anfrage betr. Nachschau Wiederholungsimpfung.</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-6" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-6">F. Änderung der Geschäftsordnung des Bundestages § 73 Abs. 4 (Teilnahme von Fraktionsassistenten an Ausschußsitzungen) (BE: <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name>).</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-7" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-7">G. Einladung an Bundesminister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> (BE: H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>).</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-8" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-8">H. Phantom (BE: <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name>).</item>
-					<item xml:id="spd-05_1968-10-15-t1610_EP_SVP-9" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-9">I. Nächste Termine.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Der <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Vorsitzende</name><seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN001" type="comment"><p>Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>].</p></note></seg> beglückwünscht Willy <name type="Person" role="Erwaehnung" ref="#MuellerWilly_1949-09-07">Müller</name> nachträglich zur Vollendung des 65. Lebensjahres.</p>
-				<p>[…]<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN002" type="comment"><p>Die an dieser Stelle in der Vorlage eingefügte TO entspricht dem Sitzungsverlauf und liegt dem Protokoll ein weiteres Mal separat bei.</p></note></seg></p>
-				<p>zu Pkt. 1</p>
-				<p>a) Bau von U-Booten durch die Howaldt-Werft<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN003" type="comment"><p>Es handelte sich um die Lieferung von U-Booten an Griechenland. Die Kieler Howaldtswerke – Deutsche Werft AG hatte im Oktober 1967 einen Vertrag mit der griechischen Marine über den Bau von Teilen für vier U-Boote geschlossen. Die Boote selbst sollten ursprünglich in Griechenland montiert werden. Während die Herstellung von U-Boot-Teilen nach dem WEU-Vertrag erlaubt war, bedurfte es zum Bau der kompletten Boote in Deutschland, wie aus technischen Gründen schließlich von der Werft gewünscht, einer Lockerung des Herstellungsverbots durch den WEU-Rat auf Antrag der Bundesregierung. Vgl. <bibl type="item-in-archive">Protokoll der Sitzung des Kreßbronner Kreises vom 15. Oktober 1968, ACDP, 01–226–A010</bibl> und <bibl type="series-item">AAPD 1968, Dok. 404</bibl>.</p></note></seg></p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#ApelHans_1965-10-19">Apel</name> fragt, ob der Bund den Bau von U-Booten durch die Howaldt-Werft genehmigt habe.</p>
-				<p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> antwortet, daß der Bundesregierung ein Genehmigungsantrag bislang noch nicht vorliege. Mit dem Bau der U-Boote sei noch nicht begonnen worden. Ausschlaggebend für die Prüfung eines Genehmigungsantrages sei ausschließlich das geltende Recht, insbesondere der WEU-Vertrag und das Kriegswaffengesetz.</p>
-				<p>b) Artikel in der »Debatte« Nr. 11 »Entwurf eines Städtebau- und Gemeindeentwicklungsgesetzes«<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN004" type="comment"><p>Vgl. <bibl type="series-item">»Erfolg für Lauritzen«, in: Die Debatte, Nr. 11/1968</bibl>.</p></note></seg></p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> bittet um Stellungnahme zu dem o. a. Artikel, in dem es heißt: »Abstriche, die im zähen Ringen der Koalitionspartner hingenommen werden mußten, entwerten dieses Gesetz nicht. Im Gegenteil, …«. Wolfgang <name type="Person" role="Sprecher" ref="#JansenWolfgang">Jansen</name> erklärt, dieser Artikel sei ohne Fühlungnahme mit der Pressestelle der Fraktion geschrieben worden.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> hält in Fällen, in denen die Fraktionsarbeit berührt wird, eine Zusammenarbeit zwischen den Pressestellen des Parteivorstandes und der Fraktion für notwendig.</p>
-				<p>c) Steuerreformkommission</p>
-				<p>Auf eine entsprechende Frage von Helmut <name type="Person" role="Sprecher" ref="#LendersHelmut_1965-10-19">Lenders</name> antwortet Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name>, mit dem Bundesminister der Finanzen<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN005" type="comment"><p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>.</p></note></seg> sei inzwischen eine Einigung über die Zusammensetzung der Steuerreformkommission erzielt worden.<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN006" type="comment"><p>Wenige Stunden zuvor hatte <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> in der Sitzung des Kreßbronner Kreises der von <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> vorgeschlagenen Zusammensetzung unter der Voraussetzung zugestimmt, daß auch der Wirtschaftswissenschaftler Helmut <name type="Person" role="Erwaehnung" ref="#MeinholdHelmut">Meinhold</name>, der Steuerberater Wilhelm <name type="Person" role="Erwaehnung" ref="#KöppenWilhelm">Köppen</name> und ein Vertreter der Zollbeamten in der Kommission vertreten seien. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> erklärte sich damit ebenso einverstanden wie mit der Bildung von drei Unterkommissionen, die zusätzliche Experten hinzuziehen konnten. Die Kommission trat am 17. Dezember 1968 zu ihrer ersten Sitzung zusammen. <bibl type="item-in-archive">Protokoll der Sitzung vom 15. Oktober 1968, ACDP, 01–226–A010</bibl>. Vgl. auch <ref type="internal" target="#spd-05_1968-09-23-t1700_EP">SPD-Fraktionssitzung am 23. September 1968, Anm. 20 u. 21</ref>.</p></note></seg></p>
-				<p>d) Differenzen zwischen dem Bundesverkehrsminister<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN007" type="comment"><p>Georg <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name>.</p></note></seg> und dem Bundeswirtschaftsminister<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN008" type="comment"><p>Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p></note></seg> bezüglich des Leber-Planes</p>
-				<p>Ludwig <name type="Person" role="Sprecher" ref="#FellermaierLudwig_1965-10-19">Fellermaier</name> bittet um Aufklärung über die vorstehend genannten Differenzen, die er als unerträglich für die SPD ansieht.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> verweist auf die Beratung des Tagesordnungspunktes 3.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-2">
-				<head>B.</head>
-				<p>zu Pkt. 2</p>
-				<p>Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name> berichtet ausführlich über den bisherigen Stand der Finanzreform (s. hierzu anliegende Synopse – Anlage 2).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN009" type="comment"><p>Liegt dem Protokoll bei.</p></note></seg></p>
-				<p>Er betont, daß die Abstimmungen im Finanz- und Rechtsausschuß als Probeabstimmungen gekennzeichnet waren. Ohne die Große Koalition seien die bisherigen Ergebnisse nicht möglich gewesen. Er hebt insbesondere hervor, die Parteitagsbeschlüsse der SPD seien nach dem bisherigen Stand der Beratungen zur Finanzreform durchgesetzt worden.<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN010" type="comment"><p>Vgl. die <bibl type="series-item">Entschließungen zur Finanzreform der Parteitage von Dortmund und Nürnberg, in: Kundgebungen und Entschliessungen 1966, S. 23–26 u. 1968, S. 12–16</bibl>.</p></note></seg></p>
-				<p>Alex <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> führt weiter aus, es sei zu bedauern, daß die kommunalen Spitzenverbände die Auffassungen der SPD, insbesondere zur Frage der Gewerbesteuer, nicht in dem gewünschten Maße unterstützt haben. Die SPD müsse die mancherorts in Erwägung gezogene Erhöhung der Mehrwertsteuer ablehnen, da sie vornehmlich für einkommenschwache Schichten zu unzumutbaren Mehrbelastungen führen würde. Nach seiner Auffassung müsse die Gewerbesteuerumlage, über deren Höhe bei den Beratungen des Ausführungsgesetzes entschieden werden soll, unter einem Satz von 40 % liegen. Die Beteiligung der Gemeinden an der Einkommensteuer müsse sich möglichst weit auf die Progressionszone erstrecken. Er erwarte, daß sich die Widerstände in der CDU/CSU gegen die aufgrund sozialdemokratischer Initiative zustandegekommenen Beschlüsse zur Gewerbesteuer – vorerst keine Gewerbesteuersenkung, unbefristete Gewerbesteuerumlage – verstärken würden.</p>
-				<p>Werner <name type="Person" role="Sprecher" ref="#JacobiWerner_1949-09-07">Jacobi</name> hält die vorgesehene Verankerung der Mitfinanzierungskompetenz des Bundes in Art. 104 a Abs. 3 GG (s. Ziff. 3 b der Synopse – Anlage 2) für nicht unbedenklich, da die Klausel »zur Wahrung der Einheitlichkeit der Lebensverhältnisse« sehr allgemeiner Natur sei.</p>
-				<p>Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name> weist darauf hin, daß diese Formulierung auch die Bereiche Wohnungs- und Städtebau decke.</p>
-				<p>Brigitte <name type="Person" role="Sprecher" ref="#FreyhBrigitte_1961-12-22">Freyh</name> hält eine baldige Initiative zum Ausbildungsförderungsgesetz für unumgänglich.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt dazu aus, daß die im Rahmen der mittelfristigen Finanzplanung verfügbaren Mittel zur Finanzierung des durch ein Ausbildungsförderungsgesetz entstehenden Aufwandes nicht ausreichen würden. Problematisch sei, welcher der vorliegenden Gesetzentwürfe zur Ausbildungsförderung als Beratungsgrundlage gewählt werden solle.</p>
-				<p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> betont, entscheidend seien drei Punkte:</p>
-				<p>a) keine Eingriffe in die kommunale Steuermasse,</p>
-				<p>b) Erhöhung der kommunalen Finanzmasse und</p>
-				<p>c) keine unvertretbare Erhöhung der Grundsteuer.</p>
-				<p>Gerhard <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name> wirft die Frage auf, wie die kommunale Finanzmasse auf die Dauer um 2 Mrd. DM erhöht werden könne. Er hält die Einführung einer Gemeindeeinkommensteuer als Personalsteuer für erforderlich.</p>
-				<p>Zu Differenzen zwischen den Auffassungen mancher Landesminister und Verbände einerseits sowie der SPD-Fraktion andererseits stellt Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> fest:</p>
-				<p>a) Die Auffassungen von SPD-Landesministern brauchen nicht unbedingt mit sozialdemokratischer Politik gleichzusetzen sein.</p>
-				<p>b) Das gilt ebenfalls für sozialdemokratische Verbandspolitiker.</p>
-				<p>c) Die SPD-Bundestagsfraktion ist von den Parteitagsbeschlüssen nicht abgewichen. Sofern während der Ausschußberatungen Fragen in dieser Richtung aufgeworfen werden sollten, muß die Fraktion Stätte der klärenden Beschlußfassung sein.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-3">
-				<head>C.</head>
-				<p>zu Pkt. 3</p>
-				<p>Manfred <name type="Person" role="Sprecher" ref="#SchulteManfred_1965-10-19">Schulte</name> berichtet über die Tagesordnung der nächsten Plenarsitzungen (s. Anlage 3).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN011" type="comment"><p>Liegt dem Protokoll bei.</p></note></seg></p>
-				<p>Er führt aus, die FDP habe eine Dringlichkeitsanfrage zur Strukturpolitik eingebracht, an die sich am Freitag eine Aktuelle Stunde anschließen solle.<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN012" type="comment"><p>Zur Dringlichen Anfrage des Abgeordneten <name type="Person" role="Erwaehnung" ref="#ErtlJosef_1961-10-17">Ertl</name> zur Studie des Bundeswirtschaftsministeriums und der sich anschließenden Aktuellen Stunde zur »Auffassung der Bundesregierung in der Frage der Agrarstrukturpolitik«, vgl. <bibl type="btp"><ref type="external" target="05/190">BT Sten. Ber. 68, S. 10271–10278</ref></bibl> u. <bibl type="btp"><ref type="external" target="05/190">BT Sten. Ber. 68, 10285–10296</ref></bibl>.</p></note></seg> Ziel der FDP sei es, die Kontroversen zwischen dem Bundesernährungsminister<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN013" type="comment"><p>Hermann <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>.</p></note></seg> und dem Bundeswirtschaftsminister<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN014" type="comment"><p>Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p></note></seg> bezüglich der regionalen Strukturpolitik, wie sie in der Studie des Bundeswirtschaftsministeriums »Vorschläge zur Intensivierung und Koordinierung der regionalen Strukturpolitik«<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN015" type="comment"><p><bibl type="item-in-archive">BA B 102/81489, 81491 u. 941444–941446</bibl>.</p></note></seg> zum Ausdruck gekommen sind, auszuschlachten.</p>
-				<p>Georg <name type="Person" role="Sprecher" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name> führt aus, in der Aktuellen Stunde solle betont werden, die Untersuchung des Bundeswirtschaftsministeriums diene der Gewinnung eines quantitativen Bildes der Abwanderungsbewegung im ländlichen Raum und, darauf aufbauend, als Grundlage für eine Strukturpolitik, die Ersatzarbeitsplätze für die freigesetzten Arbeitskräfte zur Verfügung stellen wolle.</p>
-				<p>Die Fraktion beschließt, daß in der Aktuellen Stunde Martin <name type="Person" role="Erwaehnung" ref="#SchmidtRMartin_1949-09-07">Schmidt</name>, Karl <name type="Person" role="Erwaehnung" ref="#RavensKarl_1961-10-17">Ravens</name> und Ludwig <name type="Person" role="Erwaehnung" ref="#FellermaierLudwig_1965-10-19">Fellermaier</name> zur Verfügung stehen sollen.</p>
-				<p>Georg <name type="Person" role="Sprecher" ref="#LeberGeorg_1957-10-15">Leber</name> betont, zwischen ihm und Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> gäbe es entgegen anders lautender Gerüchte keine Differenzen. Jedoch würden im Bundeswirtschaftsministerium Auffassungen vertreten, die gegen die Fraktionsbeschlüsse verstießen.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> bemerkt hierzu, der Inhalt der Studie des Bundeswirtschaftsministeriums zur regionalen Strukturpolitik stelle keine Korrektur zum Leber-Plan und den Koalitionsabsprachen, sondern eine ergänzende Maßnahme zum Agrarprogramm des Bundes-ernährungsministeriums dar.</p>
-				<p>Ludwig <name type="Person" role="Sprecher" ref="#FellermaierLudwig_1965-10-19">Fellermaier</name> und Hans <name type="Person" role="Sprecher" ref="#ApelHans_1965-10-19">Apel</name> vertreten demgegenüber die Auffassung, die Studie des Bundeswirtschaftsministeriums verstoße insbesondere bezüglich ihrer Vorschläge zur Befreiung von der Beförderungssteuer im ländlichen Raum gegen den Leber-Plan und unterstütze damit die Auffassungen der CDU.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> hält es für unumgänglich, daß eine Form gefunden wird, in der sich Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> von verschiedenen Äußerungen der Studie distanzieren kann.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-4">
-				<head>D.</head>
-				<p>zu Pkt. 4</p>
-				<p>Ernst <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> berichtet über seine Gespräche mit den Vertretern der Kriegsopferverbände, die folgende Ziele verfolgten:</p>
-				<p>a) Verdeutlichung dessen, was in der letzten Zeit für die Kriegsopfer von uns getan worden ist.</p>
-				<p>b) Information der Verbände darüber, daß die mittelfristige Finanzplanung für 1969 keine Erhöhung im Bereich der Kriegsopferversorgung zuläßt.</p>
-				<p>Der Fraktionsvorstand schlägt vor, den Entwurf eines Gesetzes zur Änderung des Bundesversorgungsgesetzes (s. Anlage 4)<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN016" type="comment"><p>Entwurf liegt dem Protokoll bei. Die SPD brachte den Antrag (<bibl type="btd"><ref type="external" target="05/3432">BT Anl. 124, Drs. V/3432</ref></bibl>) am 29. November 1968 ein, <bibl type="btp"><ref type="external" target="05/200">BT Sten. Ber. 68, S. 10785–10792</ref></bibl>.</p></note></seg> erst zu einem mit dem Koalitionspartner zu vereinbarenden Zeitpunkt einzubringen. So wird einstimmig beschlossen.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-5">
-				<head>E.</head>
-				<p>zu Pkt. 5</p>
-				<p>Eleonor<name type="Person" role="Sprecher" ref="#HubertElinor_1949-09-07">Hubert</name> berichtet, daß Käthe <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> diese Anfrage wünscht (s. Anlage 5).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN017" type="comment"><p>Der Entwurf der Kleinen Anfrage betr. Pflicht zur Nachschau bei der Wiederholungsimpfung liegt dem Protokoll bei. <bibl type="btd"><ref type="external" target="05/3362">BT Anl. 124, Drs. V/3362</ref></bibl>, Antwort des BMGes. <bibl type="btd"><ref type="external" target="05/3462">BT Anl. 124, Drs. V/3462</ref></bibl>.</p></note></seg> Die Fraktion stimmt der Kleinen Anfrage einstimmig zu.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-6">
-				<head>F.</head>
-				<p>zu Pkt. 6</p>
-				<p>Nach einem kurzen erläuternden Bericht von Martin <name type="Person" role="Sprecher" ref="#HirschMartin_1961-10-17">Hirsch</name> stimmt die Fraktion dem Antrag einstimmig zu (s. Anlage 6).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN018" type="comment"><p>Entwurf liegt dem Protokoll bei. <bibl type="btd"><ref type="external" target="05/3459">BT Anl. 124, Drs. V/3459</ref></bibl>. Der Antrag wurde ohne Aussprache an den Ausschuß für Wahlprüfung, Immunität und Geschäftsordnung überwiesen.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-7">
-				<head>G.</head>
-				<p>zu Pkt. 7</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt aus, Bundesverteidigungsminister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> habe sich grundsätzlich bereiterklärt, Anfang November der Fraktion zu einem Gespräch zur Verfügung zu stehen. Er schlägt eine gemeinsame Sitzung des Verteidigungs- und des Auswärtigen Ausschusses vor.<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN019" type="comment"><p>Eine solche Sitzung hat offensichtlich nicht stattgefunden. Auch eine im November geplante Sitzung dreier Fraktionsarbeitskreise mit <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> fiel aus, vgl. SPD-Fraktionssitzung am 12. November 1968, Anm. 8.</p></note></seg> Es werden hiergegen keine Bedenken erhoben.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-8">
-				<head>H.</head>
-				<p>zu Pkt. 8</p>
-				<p>Willi <name type="Person" role="Sprecher" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> berichtet, das Bundesverteidigungsministerium (BMVtdg) habe die Anschaffung von 88 Aufklärungsflugzeugen vom Typ F 4 Phantom beantragt (s. hierzu auch den sachlich informativen Teil des Rundschreibens von Hans <name type="Person" role="Erwaehnung" ref="#IvenHans_1957-10-15">Iven</name> vom 11. 10. 1968 – Anlage 7).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN020" type="comment"><p>Liegt dem Protokoll bei.</p></note></seg> Es sei nun zu entscheiden, ob diesem Antrag zuzustimmen [ist] oder ob stattdessen Starfighter F 104 angeschafft werden sollten. Als zweite Position umfasse der Antrag des BMVtg die Anschaffung von 50 Starfightern.</p>
-				<p>Die Phantom weise folgende Vorteile auf:</p>
-				<p>a) zwei Sitze</p>
-				<p>b) zwei Triebwerke} = größere Sicherheit</p>
-				<p>c) größeren Raum zur Aufnahme von Aufklärungsgeräten.</p>
-				<p>Ihre Nachteile seien:</p>
-				<p>a) teurer als Starfighter (Phantom 2 23 Mio. DM, umgerüsteter Starfighter zwischen 13–18 Mio. DM), jedoch Nachweisung der Finanzierung im Rüstungsplan,</p>
-				<p>b) durch Einführung eines neuen Typs Mehrbelastung für Logistik und</p>
-				<p>c) Erschwerung der Konsolidierung der Luftwaffe.</p>
-				<p>Der Starfighter weise folgende Vorteile auf:</p>
-				<p>a) wird bereits in Deutschland geflogen,</p>
-				<p>b) auch einschließlich Umbau wesentlich billiger als Phantom.</p>
-				<p>Nachteile des Starfighters seien:</p>
-				<p>a) Einmannflugzeug</p>
-				<p>b) ein Triebwerk } = größeres Sicherheitsrisiko</p>
-				<p>c) komplizierter Umbau.</p>
-				<p>Nach Abwägung aller Gesichtspunkte habe der Fraktionsvorstand mit 12 gegen 5 Stimmen für die Beschaffung der Phantom gestimmt,<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN021" type="comment"><p>Vgl. das <bibl type="item-in-archive">Protokoll der Vorstandssitzung vom 15. Oktober 1968, AdsD, SPD-BTF 5. WP, 230</bibl>.</p></note></seg> im Arbeitskreis VIII sei das Abstimmungsergebnis dagegen ungefähr umgekehrt.<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN022" type="comment"><p>Im Arbeitskreis Sicherheitsfragen stimmten drei Abgeordnete für den Kauf, fünf votierten dagegen, vier waren noch unentschlossen, vgl. ebd. Zur endgültigen Entscheidung im Verteidigungsausschuß vgl. <ref type="internal" target="#spd-05_1968-10-29-t1620_EP">SPD-Fraktionssitzung am 29. Oktober 1968 (Teil 1), mit Anm. 8</ref>.</p></note></seg></p>
-				<p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> führt aus, der Bundesaußenminister<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN023" type="comment"><p>Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>.</p></note></seg> vertrete die Auffassung, die Größe des Projektes würde den Devisenausgleich zwischen der Bundesrepublik Deutschland und den USA erleichtern.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#LendersHelmut_1965-10-19">Lenders</name> befürchtet, daß eine Entscheidung für die Phantom zwangsläufig über kurz oder lang zu einer Erhöhung des Verteidigungsetats führen müsse.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> erinnert daran, daß sich die Fraktion in der Vergangenheit geschworen habe, sich niemals mehr von politischen statt militärischen Gesichtspunkten bei Rüstungskäufen leiten zu lassen. Bei einer Anschaffung in der vorgesehenen Größenordnung betrage die Reserve lediglich 20 %. Das reiche keinesfalls aus. Es sei daher mit Nachforderungen zu rechnen. Eine Anschaffung der mit zwei Triebwerken ausgestatteten Phantom habe zur Folge, daß auch die Marine Flugzeuge mit zwei Triebwerken fordern werde. Er befürchte schwere Beeinträchtigungen für die deutsche Flugzeugindustrie, wenn die Phantom angeschafft werde.</p>
-				<p>Auf Fragen von Helmut <name type="Person" role="Sprecher" ref="#LendersHelmut_1965-10-19">Lenders</name> und Karl <name type="Person" role="Sprecher" ref="#RavensKarl_1961-10-17">Ravens</name> antwortet Willi <name type="Person" role="Sprecher" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name>, die Kosten der Anschaffung der Phantom seien durch die mittelfristige Finanzplanung gedeckt. Eine Erhöhung des Verteidigungsetats aus diesem Grunde sei daher nicht zu befürchten.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> betont, maßgeblich für die Entscheidung müßten verteidigungspolitische Gründe sein, insbesondere die höhere Überlebenschance bei der Phantom. Die Luftfahrtindustrie müsse sich endlich zur Kooperation bereitfinden.</p>
-				<p>In einer Zwischenbilanz der Diskussion weist Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> darauf hin, für die Phantom spreche, daß sie im Gegensatz zum Starfighter durch ihre Zweimannbesatzung nicht nur auf ein oder zwei Ziele programmiert und dadurch vielseitiger verwendbar sei. Ferner könne durch ihre Anschaffung zur Lösung des Problems der Offsetzahlungen an die USA beigetragen werden.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#IvenHans_1957-10-15">Iven</name> spricht sich aus den in seinem Rundschreiben vom 11. 10. 1968 bereits ausführlich dargelegten Gründen für die Anschaffung des Starfighters aus (vgl. Anlage 7).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN024" type="critical"><p>Korrigiert aus »Anlage 8«.</p></note></seg> Bruno <name type="Person" role="Sprecher" ref="#WiefelBruno_1965-10-19">Wiefel</name> wirft die Frage auf, ob der höhere Preis der Phantom durch ihre Vorteile gegenüber dem Starfighter tatsächlich gerechtfertigt sei.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#WellmannHans_1962-01-01">Wellmann</name> spricht sich insbesondere wegen ihrer größeren Reichweite für die Phantom aus. Er weist ebenso wie andere Diskussionsteilnehmer darauf hin, daß die in der Luftfahrtindustrie entstehende Lücke durch andere Projekte, wie beispielsweise den Airbus, geschlossen werden könnte.</p>
-				<p>Willi <name type="Person" role="Sprecher" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> verweisen abschließend darauf, daß in der Fraktion keine Beschlußfassung erfolgen solle, da damit nicht wenige Mitglieder der Fraktion überfordert seien. Sinn der Aussprache sei es vielmehr, die Fraktion über eine Anschaffung von solcher Bedeutung eingehend zu informieren (s. hierzu auch Erklärung unserer Pressestelle Nr. 473 vom 16. 10. 1968 – Anlage 8).<seg type="note"><note xml:id="spd-05_1968-10-15-t1610_EP_FN025" type="critical"><p>Korrigiert aus »Anlage 9«. Die Presseerklärung liegt dem Protokoll bei.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-9">
-				<head>I.</head>
-				<p>zu Pkt. 9</p>
-				<p>Nächste Termine sind Mittwoch, 16. 10. 1968, 14.00 Uhr Fraktion, Dienstag, 22. 10. 1968, 9.30 Uhr Vorstand und 16.00 Uhr Fraktion.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1968-10-15-t1610_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1966-1969</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/IV</title>
+                  <author>Bettina Tüffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2009</date>
+                  <idno type="DNB">https://d-nb.info/98750584X</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, 103</idno>
+                     <objectName>Protokoll über die Fraktionssitzung vom 15. Okt. 1968 im Bundeshaus in Bonn</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 15. Oktober 1968</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>6 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1968-10-15">
+               <time type="start" when="16:10:00"/>
+               <time type="end" when="19:20:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#SchmidtHelmut_1953-10-06"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-08-18" who="#RabusSimon" status="final" n="3">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend von der Bundesregierung:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name>, <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name>, <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>, <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>. PStS: <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name>, <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf: [58]</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-1" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-1">A. Informationen.</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-2" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-2">B. Finanzreform.</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-3" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-3">C. Vorbereitung der Plenarsitzungen.</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-4" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-4">D. Kriegsopferversorgung (BE: <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>).</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-5" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-5">E. Kleine Anfrage betr. Nachschau Wiederholungsimpfung.</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-6" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-6">F. Änderung der Geschäftsordnung des Bundestages § 73 Abs. 4 (Teilnahme von Fraktionsassistenten an Ausschußsitzungen) (BE: <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name>).</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-7" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-7">G. Einladung an Bundesminister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> (BE: H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>).</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-8" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-8">H. Phantom (BE: <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name>).</item>
+               <item xml:id="spd-05_1968-10-15-t1610_EP_SVP-9" corresp="#spd-05_1968-10-15-t1610_EP_div_SVP-9">I. Nächste Termine.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Der <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Vorsitzende</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN001" type="comment">
+                     <p>Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>].</p>
+                  </note>
+               </seg> beglückwünscht Willy <name type="Person" role="Erwaehnung" ref="#MuellerWilly_1949-09-07">Müller</name> nachträglich zur Vollendung des 65. Lebensjahres.</p>
+            <p>[…]<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN002" type="comment">
+                     <p>Die an dieser Stelle in der Vorlage eingefügte TO entspricht dem Sitzungsverlauf und liegt dem Protokoll ein weiteres Mal separat bei.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>zu Pkt. 1</p>
+            <p>a) Bau von U-Booten durch die Howaldt-Werft<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN003" type="comment">
+                     <p>Es handelte sich um die Lieferung von U-Booten an Griechenland. Die Kieler Howaldtswerke – Deutsche Werft AG hatte im Oktober 1967 einen Vertrag mit der griechischen Marine über den Bau von Teilen für vier U-Boote geschlossen. Die Boote selbst sollten ursprünglich in Griechenland montiert werden. Während die Herstellung von U-Boot-Teilen nach dem WEU-Vertrag erlaubt war, bedurfte es zum Bau der kompletten Boote in Deutschland, wie aus technischen Gründen schließlich von der Werft gewünscht, einer Lockerung des Herstellungsverbots durch den WEU-Rat auf Antrag der Bundesregierung. Vgl. <bibl type="item-in-archive">Protokoll der Sitzung des Kreßbronner Kreises vom 15. Oktober 1968, ACDP, 01–226–A010</bibl> und <bibl type="series-item">AAPD 1968, Dok. 404</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#ApelHans_1965-10-19">Apel</name> fragt, ob der Bund den Bau von U-Booten durch die Howaldt-Werft genehmigt habe.</p>
+            <p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> antwortet, daß der Bundesregierung ein Genehmigungsantrag bislang noch nicht vorliege. Mit dem Bau der U-Boote sei noch nicht begonnen worden. Ausschlaggebend für die Prüfung eines Genehmigungsantrages sei ausschließlich das geltende Recht, insbesondere der WEU-Vertrag und das Kriegswaffengesetz.</p>
+            <p>b) Artikel in der »Debatte« Nr. 11 »Entwurf eines Städtebau- und Gemeindeentwicklungsgesetzes«<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN004" type="comment">
+                     <p>Vgl. <bibl type="series-item">»Erfolg für Lauritzen«, in: Die Debatte, Nr. 11/1968</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> bittet um Stellungnahme zu dem o. a. Artikel, in dem es heißt: »Abstriche, die im zähen Ringen der Koalitionspartner hingenommen werden mußten, entwerten dieses Gesetz nicht. Im Gegenteil, …«. Wolfgang <name type="Person" role="Sprecher" ref="#JansenWolfgang">Jansen</name> erklärt, dieser Artikel sei ohne Fühlungnahme mit der Pressestelle der Fraktion geschrieben worden.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> hält in Fällen, in denen die Fraktionsarbeit berührt wird, eine Zusammenarbeit zwischen den Pressestellen des Parteivorstandes und der Fraktion für notwendig.</p>
+            <p>c) Steuerreformkommission</p>
+            <p>Auf eine entsprechende Frage von Helmut <name type="Person" role="Sprecher" ref="#LendersHelmut_1965-10-19">Lenders</name> antwortet Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name>, mit dem Bundesminister der Finanzen<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN005" type="comment">
+                     <p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>.</p>
+                  </note>
+               </seg> sei inzwischen eine Einigung über die Zusammensetzung der Steuerreformkommission erzielt worden.<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN006" type="comment">
+                     <p>Wenige Stunden zuvor hatte <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> in der Sitzung des Kreßbronner Kreises der von <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> vorgeschlagenen Zusammensetzung unter der Voraussetzung zugestimmt, daß auch der Wirtschaftswissenschaftler Helmut <name type="Person" role="Erwaehnung" ref="#MeinholdHelmut">Meinhold</name>, der Steuerberater Wilhelm <name type="Person" role="Erwaehnung" ref="#KoeppenWilhelm">Köppen</name> und ein Vertreter der Zollbeamten in der Kommission vertreten seien. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> erklärte sich damit ebenso einverstanden wie mit der Bildung von drei Unterkommissionen, die zusätzliche Experten hinzuziehen konnten. Die Kommission trat am 17. Dezember 1968 zu ihrer ersten Sitzung zusammen. <bibl type="item-in-archive">Protokoll der Sitzung vom 15. Oktober 1968, ACDP, 01–226–A010</bibl>. Vgl. auch <ref type="internal" target="#spd-05_1968-09-23-t1700_EP">SPD-Fraktionssitzung am 23. September 1968, Anm. 20 u. 21</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>d) Differenzen zwischen dem Bundesverkehrsminister<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN007" type="comment">
+                     <p>Georg <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name>.</p>
+                  </note>
+               </seg> und dem Bundeswirtschaftsminister<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN008" type="comment">
+                     <p>Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p>
+                  </note>
+               </seg> bezüglich des Leber-Planes</p>
+            <p>Ludwig <name type="Person" role="Sprecher" ref="#FellermaierLudwig_1965-10-19">Fellermaier</name> bittet um Aufklärung über die vorstehend genannten Differenzen, die er als unerträglich für die SPD ansieht.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> verweist auf die Beratung des Tagesordnungspunktes 3.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-2">
+            <head>B.</head>
+            <p>zu Pkt. 2</p>
+            <p>Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name> berichtet ausführlich über den bisherigen Stand der Finanzreform (s. hierzu anliegende Synopse – Anlage 2).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN009" type="comment">
+                     <p>Liegt dem Protokoll bei.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Er betont, daß die Abstimmungen im Finanz- und Rechtsausschuß als Probeabstimmungen gekennzeichnet waren. Ohne die Große Koalition seien die bisherigen Ergebnisse nicht möglich gewesen. Er hebt insbesondere hervor, die Parteitagsbeschlüsse der SPD seien nach dem bisherigen Stand der Beratungen zur Finanzreform durchgesetzt worden.<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN010" type="comment">
+                     <p>Vgl. die <bibl type="series-item">Entschließungen zur Finanzreform der Parteitage von Dortmund und Nürnberg, in: Kundgebungen und Entschliessungen 1966, S. 23–26 u. 1968, S. 12–16</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Alex <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> führt weiter aus, es sei zu bedauern, daß die kommunalen Spitzenverbände die Auffassungen der SPD, insbesondere zur Frage der Gewerbesteuer, nicht in dem gewünschten Maße unterstützt haben. Die SPD müsse die mancherorts in Erwägung gezogene Erhöhung der Mehrwertsteuer ablehnen, da sie vornehmlich für einkommenschwache Schichten zu unzumutbaren Mehrbelastungen führen würde. Nach seiner Auffassung müsse die Gewerbesteuerumlage, über deren Höhe bei den Beratungen des Ausführungsgesetzes entschieden werden soll, unter einem Satz von 40 % liegen. Die Beteiligung der Gemeinden an der Einkommensteuer müsse sich möglichst weit auf die Progressionszone erstrecken. Er erwarte, daß sich die Widerstände in der CDU/CSU gegen die aufgrund sozialdemokratischer Initiative zustandegekommenen Beschlüsse zur Gewerbesteuer – vorerst keine Gewerbesteuersenkung, unbefristete Gewerbesteuerumlage – verstärken würden.</p>
+            <p>Werner <name type="Person" role="Sprecher" ref="#JacobiWerner_1949-09-07">Jacobi</name> hält die vorgesehene Verankerung der Mitfinanzierungskompetenz des Bundes in Art. 104 a Abs. 3 GG (s. Ziff. 3 b der Synopse – Anlage 2) für nicht unbedenklich, da die Klausel »zur Wahrung der Einheitlichkeit der Lebensverhältnisse« sehr allgemeiner Natur sei.</p>
+            <p>Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name> weist darauf hin, daß diese Formulierung auch die Bereiche Wohnungs- und Städtebau decke.</p>
+            <p>Brigitte <name type="Person" role="Sprecher" ref="#FreyhBrigitte_1961-12-22">Freyh</name> hält eine baldige Initiative zum Ausbildungsförderungsgesetz für unumgänglich.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt dazu aus, daß die im Rahmen der mittelfristigen Finanzplanung verfügbaren Mittel zur Finanzierung des durch ein Ausbildungsförderungsgesetz entstehenden Aufwandes nicht ausreichen würden. Problematisch sei, welcher der vorliegenden Gesetzentwürfe zur Ausbildungsförderung als Beratungsgrundlage gewählt werden solle.</p>
+            <p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> betont, entscheidend seien drei Punkte:</p>
+            <p>a) keine Eingriffe in die kommunale Steuermasse,</p>
+            <p>b) Erhöhung der kommunalen Finanzmasse und</p>
+            <p>c) keine unvertretbare Erhöhung der Grundsteuer.</p>
+            <p>Gerhard <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name> wirft die Frage auf, wie die kommunale Finanzmasse auf die Dauer um 2 Mrd. DM erhöht werden könne. Er hält die Einführung einer Gemeindeeinkommensteuer als Personalsteuer für erforderlich.</p>
+            <p>Zu Differenzen zwischen den Auffassungen mancher Landesminister und Verbände einerseits sowie der SPD-Fraktion andererseits stellt Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> fest:</p>
+            <p>a) Die Auffassungen von SPD-Landesministern brauchen nicht unbedingt mit sozialdemokratischer Politik gleichzusetzen sein.</p>
+            <p>b) Das gilt ebenfalls für sozialdemokratische Verbandspolitiker.</p>
+            <p>c) Die SPD-Bundestagsfraktion ist von den Parteitagsbeschlüssen nicht abgewichen. Sofern während der Ausschußberatungen Fragen in dieser Richtung aufgeworfen werden sollten, muß die Fraktion Stätte der klärenden Beschlußfassung sein.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-3">
+            <head>C.</head>
+            <p>zu Pkt. 3</p>
+            <p>Manfred <name type="Person" role="Sprecher" ref="#SchulteManfred_1965-10-19">Schulte</name> berichtet über die Tagesordnung der nächsten Plenarsitzungen (s. Anlage 3).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN011" type="comment">
+                     <p>Liegt dem Protokoll bei.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Er führt aus, die FDP habe eine Dringlichkeitsanfrage zur Strukturpolitik eingebracht, an die sich am Freitag eine Aktuelle Stunde anschließen solle.<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN012" type="comment">
+                     <p>Zur Dringlichen Anfrage des Abgeordneten <name type="Person" role="Erwaehnung" ref="#ErtlJosef_1961-10-17">Ertl</name> zur Studie des Bundeswirtschaftsministeriums und der sich anschließenden Aktuellen Stunde zur »Auffassung der Bundesregierung in der Frage der Agrarstrukturpolitik«, vgl. <bibl type="btp">
+                           <ref type="external" target="05/190">BT Sten. Ber. 68, S. 10271–10278</ref>
+                        </bibl> u. <bibl type="btp">
+                           <ref type="external" target="05/190">BT Sten. Ber. 68, 10285–10296</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Ziel der FDP sei es, die Kontroversen zwischen dem Bundesernährungsminister<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN013" type="comment">
+                     <p>Hermann <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>.</p>
+                  </note>
+               </seg> und dem Bundeswirtschaftsminister<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN014" type="comment">
+                     <p>Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p>
+                  </note>
+               </seg> bezüglich der regionalen Strukturpolitik, wie sie in der Studie des Bundeswirtschaftsministeriums »Vorschläge zur Intensivierung und Koordinierung der regionalen Strukturpolitik«<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN015" type="comment">
+                     <p>
+                        <bibl type="item-in-archive">BA B 102/81489, 81491 u. 941444–941446</bibl>.</p>
+                  </note>
+               </seg> zum Ausdruck gekommen sind, auszuschlachten.</p>
+            <p>Georg <name type="Person" role="Sprecher" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name> führt aus, in der Aktuellen Stunde solle betont werden, die Untersuchung des Bundeswirtschaftsministeriums diene der Gewinnung eines quantitativen Bildes der Abwanderungsbewegung im ländlichen Raum und, darauf aufbauend, als Grundlage für eine Strukturpolitik, die Ersatzarbeitsplätze für die freigesetzten Arbeitskräfte zur Verfügung stellen wolle.</p>
+            <p>Die Fraktion beschließt, daß in der Aktuellen Stunde Martin <name type="Person" role="Erwaehnung" ref="#SchmidtRMartin_1949-09-07">Schmidt</name>, Karl <name type="Person" role="Erwaehnung" ref="#RavensKarl_1961-10-17">Ravens</name> und Ludwig <name type="Person" role="Erwaehnung" ref="#FellermaierLudwig_1965-10-19">Fellermaier</name> zur Verfügung stehen sollen.</p>
+            <p>Georg <name type="Person" role="Sprecher" ref="#LeberGeorg_1957-10-15">Leber</name> betont, zwischen ihm und Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> gäbe es entgegen anders lautender Gerüchte keine Differenzen. Jedoch würden im Bundeswirtschaftsministerium Auffassungen vertreten, die gegen die Fraktionsbeschlüsse verstießen.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> bemerkt hierzu, der Inhalt der Studie des Bundeswirtschaftsministeriums zur regionalen Strukturpolitik stelle keine Korrektur zum Leber-Plan und den Koalitionsabsprachen, sondern eine ergänzende Maßnahme zum Agrarprogramm des Bundes-ernährungsministeriums dar.</p>
+            <p>Ludwig <name type="Person" role="Sprecher" ref="#FellermaierLudwig_1965-10-19">Fellermaier</name> und Hans <name type="Person" role="Sprecher" ref="#ApelHans_1965-10-19">Apel</name> vertreten demgegenüber die Auffassung, die Studie des Bundeswirtschaftsministeriums verstoße insbesondere bezüglich ihrer Vorschläge zur Befreiung von der Beförderungssteuer im ländlichen Raum gegen den Leber-Plan und unterstütze damit die Auffassungen der CDU.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> hält es für unumgänglich, daß eine Form gefunden wird, in der sich Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> von verschiedenen Äußerungen der Studie distanzieren kann.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-4">
+            <head>D.</head>
+            <p>zu Pkt. 4</p>
+            <p>Ernst <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> berichtet über seine Gespräche mit den Vertretern der Kriegsopferverbände, die folgende Ziele verfolgten:</p>
+            <p>a) Verdeutlichung dessen, was in der letzten Zeit für die Kriegsopfer von uns getan worden ist.</p>
+            <p>b) Information der Verbände darüber, daß die mittelfristige Finanzplanung für 1969 keine Erhöhung im Bereich der Kriegsopferversorgung zuläßt.</p>
+            <p>Der Fraktionsvorstand schlägt vor, den Entwurf eines Gesetzes zur Änderung des Bundesversorgungsgesetzes (s. Anlage 4)<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN016" type="comment">
+                     <p>Entwurf liegt dem Protokoll bei. Die SPD brachte den Antrag (<bibl type="btd">
+                           <ref type="external" target="05/3432">BT Anl. 124, Drs. V/3432</ref>
+                        </bibl>) am 29. November 1968 ein, <bibl type="btp">
+                           <ref type="external" target="05/200">BT Sten. Ber. 68, S. 10785–10792</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> erst zu einem mit dem Koalitionspartner zu vereinbarenden Zeitpunkt einzubringen. So wird einstimmig beschlossen.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-5">
+            <head>E.</head>
+            <p>zu Pkt. 5</p>
+            <p>Eleonor<name type="Person" role="Sprecher" ref="#HubertElinor_1949-09-07">Hubert</name> berichtet, daß Käthe <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> diese Anfrage wünscht (s. Anlage 5).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN017" type="comment">
+                     <p>Der Entwurf der Kleinen Anfrage betr. Pflicht zur Nachschau bei der Wiederholungsimpfung liegt dem Protokoll bei. <bibl type="btd">
+                           <ref type="external" target="05/3362">BT Anl. 124, Drs. V/3362</ref>
+                        </bibl>, Antwort des BMGes. <bibl type="btd">
+                           <ref type="external" target="05/3462">BT Anl. 124, Drs. V/3462</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Die Fraktion stimmt der Kleinen Anfrage einstimmig zu.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-6">
+            <head>F.</head>
+            <p>zu Pkt. 6</p>
+            <p>Nach einem kurzen erläuternden Bericht von Martin <name type="Person" role="Sprecher" ref="#HirschMartin_1961-10-17">Hirsch</name> stimmt die Fraktion dem Antrag einstimmig zu (s. Anlage 6).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN018" type="comment">
+                     <p>Entwurf liegt dem Protokoll bei. <bibl type="btd">
+                           <ref type="external" target="05/3459">BT Anl. 124, Drs. V/3459</ref>
+                        </bibl>. Der Antrag wurde ohne Aussprache an den Ausschuß für Wahlprüfung, Immunität und Geschäftsordnung überwiesen.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-7">
+            <head>G.</head>
+            <p>zu Pkt. 7</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt aus, Bundesverteidigungsminister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> habe sich grundsätzlich bereiterklärt, Anfang November der Fraktion zu einem Gespräch zur Verfügung zu stehen. Er schlägt eine gemeinsame Sitzung des Verteidigungs- und des Auswärtigen Ausschusses vor.<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN019" type="comment">
+                     <p>Eine solche Sitzung hat offensichtlich nicht stattgefunden. Auch eine im November geplante Sitzung dreier Fraktionsarbeitskreise mit <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> fiel aus, vgl. SPD-Fraktionssitzung am 12. November 1968, Anm. 8.</p>
+                  </note>
+               </seg> Es werden hiergegen keine Bedenken erhoben.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-8">
+            <head>H.</head>
+            <p>zu Pkt. 8</p>
+            <p>Willi <name type="Person" role="Sprecher" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> berichtet, das Bundesverteidigungsministerium (BMVtdg) habe die Anschaffung von 88 Aufklärungsflugzeugen vom Typ F 4 Phantom beantragt (s. hierzu auch den sachlich informativen Teil des Rundschreibens von Hans <name type="Person" role="Erwaehnung" ref="#IvenHans_1957-10-15">Iven</name> vom 11. 10. 1968 – Anlage 7).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN020" type="comment">
+                     <p>Liegt dem Protokoll bei.</p>
+                  </note>
+               </seg> Es sei nun zu entscheiden, ob diesem Antrag zuzustimmen [ist] oder ob stattdessen Starfighter F 104 angeschafft werden sollten. Als zweite Position umfasse der Antrag des BMVtg die Anschaffung von 50 Starfightern.</p>
+            <p>Die Phantom weise folgende Vorteile auf:</p>
+            <p>a) zwei Sitze</p>
+            <p>b) zwei Triebwerke} = größere Sicherheit</p>
+            <p>c) größeren Raum zur Aufnahme von Aufklärungsgeräten.</p>
+            <p>Ihre Nachteile seien:</p>
+            <p>a) teurer als Starfighter (Phantom 2 23 Mio. DM, umgerüsteter Starfighter zwischen 13–18 Mio. DM), jedoch Nachweisung der Finanzierung im Rüstungsplan,</p>
+            <p>b) durch Einführung eines neuen Typs Mehrbelastung für Logistik und</p>
+            <p>c) Erschwerung der Konsolidierung der Luftwaffe.</p>
+            <p>Der Starfighter weise folgende Vorteile auf:</p>
+            <p>a) wird bereits in Deutschland geflogen,</p>
+            <p>b) auch einschließlich Umbau wesentlich billiger als Phantom.</p>
+            <p>Nachteile des Starfighters seien:</p>
+            <p>a) Einmannflugzeug</p>
+            <p>b) ein Triebwerk } = größeres Sicherheitsrisiko</p>
+            <p>c) komplizierter Umbau.</p>
+            <p>Nach Abwägung aller Gesichtspunkte habe der Fraktionsvorstand mit 12 gegen 5 Stimmen für die Beschaffung der Phantom gestimmt,<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN021" type="comment">
+                     <p>Vgl. das <bibl type="item-in-archive">Protokoll der Vorstandssitzung vom 15. Oktober 1968, AdsD, SPD-BTF 5. WP, 230</bibl>.</p>
+                  </note>
+               </seg> im Arbeitskreis VIII sei das Abstimmungsergebnis dagegen ungefähr umgekehrt.<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN022" type="comment">
+                     <p>Im Arbeitskreis Sicherheitsfragen stimmten drei Abgeordnete für den Kauf, fünf votierten dagegen, vier waren noch unentschlossen, vgl. ebd. Zur endgültigen Entscheidung im Verteidigungsausschuß vgl. <ref type="internal" target="#spd-05_1968-10-29-t1620_EP">SPD-Fraktionssitzung am 29. Oktober 1968 (Teil 1), mit Anm. 8</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> führt aus, der Bundesaußenminister<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN023" type="comment">
+                     <p>Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>.</p>
+                  </note>
+               </seg> vertrete die Auffassung, die Größe des Projektes würde den Devisenausgleich zwischen der Bundesrepublik Deutschland und den USA erleichtern.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#LendersHelmut_1965-10-19">Lenders</name> befürchtet, daß eine Entscheidung für die Phantom zwangsläufig über kurz oder lang zu einer Erhöhung des Verteidigungsetats führen müsse.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> erinnert daran, daß sich die Fraktion in der Vergangenheit geschworen habe, sich niemals mehr von politischen statt militärischen Gesichtspunkten bei Rüstungskäufen leiten zu lassen. Bei einer Anschaffung in der vorgesehenen Größenordnung betrage die Reserve lediglich 20 %. Das reiche keinesfalls aus. Es sei daher mit Nachforderungen zu rechnen. Eine Anschaffung der mit zwei Triebwerken ausgestatteten Phantom habe zur Folge, daß auch die Marine Flugzeuge mit zwei Triebwerken fordern werde. Er befürchte schwere Beeinträchtigungen für die deutsche Flugzeugindustrie, wenn die Phantom angeschafft werde.</p>
+            <p>Auf Fragen von Helmut <name type="Person" role="Sprecher" ref="#LendersHelmut_1965-10-19">Lenders</name> und Karl <name type="Person" role="Sprecher" ref="#RavensKarl_1961-10-17">Ravens</name> antwortet Willi <name type="Person" role="Sprecher" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name>, die Kosten der Anschaffung der Phantom seien durch die mittelfristige Finanzplanung gedeckt. Eine Erhöhung des Verteidigungsetats aus diesem Grunde sei daher nicht zu befürchten.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#SchillerKarl_1965-10-19">Schiller</name> betont, maßgeblich für die Entscheidung müßten verteidigungspolitische Gründe sein, insbesondere die höhere Überlebenschance bei der Phantom. Die Luftfahrtindustrie müsse sich endlich zur Kooperation bereitfinden.</p>
+            <p>In einer Zwischenbilanz der Diskussion weist Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> darauf hin, für die Phantom spreche, daß sie im Gegensatz zum Starfighter durch ihre Zweimannbesatzung nicht nur auf ein oder zwei Ziele programmiert und dadurch vielseitiger verwendbar sei. Ferner könne durch ihre Anschaffung zur Lösung des Problems der Offsetzahlungen an die USA beigetragen werden.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#IvenHans_1957-10-15">Iven</name> spricht sich aus den in seinem Rundschreiben vom 11. 10. 1968 bereits ausführlich dargelegten Gründen für die Anschaffung des Starfighters aus (vgl. Anlage 7).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN024" type="critical">
+                     <p>Korrigiert aus »Anlage 8«.</p>
+                  </note>
+               </seg> Bruno <name type="Person" role="Sprecher" ref="#WiefelBruno_1965-10-19">Wiefel</name> wirft die Frage auf, ob der höhere Preis der Phantom durch ihre Vorteile gegenüber dem Starfighter tatsächlich gerechtfertigt sei.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#WellmannHans_1962-01-01">Wellmann</name> spricht sich insbesondere wegen ihrer größeren Reichweite für die Phantom aus. Er weist ebenso wie andere Diskussionsteilnehmer darauf hin, daß die in der Luftfahrtindustrie entstehende Lücke durch andere Projekte, wie beispielsweise den Airbus, geschlossen werden könnte.</p>
+            <p>Willi <name type="Person" role="Sprecher" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> verweisen abschließend darauf, daß in der Fraktion keine Beschlußfassung erfolgen solle, da damit nicht wenige Mitglieder der Fraktion überfordert seien. Sinn der Aussprache sei es vielmehr, die Fraktion über eine Anschaffung von solcher Bedeutung eingehend zu informieren (s. hierzu auch Erklärung unserer Pressestelle Nr. 473 vom 16. 10. 1968 – Anlage 8).<seg type="note">
+                  <note xml:id="spd-05_1968-10-15-t1610_EP_FN025" type="critical">
+                     <p>Korrigiert aus »Anlage 9«. Die Presseerklärung liegt dem Protokoll bei.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-10-15-t1610_EP_div_SVP-9">
+            <head>I.</head>
+            <p>zu Pkt. 9</p>
+            <p>Nächste Termine sind Mittwoch, 16. 10. 1968, 14.00 Uhr Fraktion, Dienstag, 22. 10. 1968, 9.30 Uhr Vorstand und 16.00 Uhr Fraktion.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

@@ -1,500 +1,688 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1965-06-29-t1440_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1010/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 29. Juni 1965</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>15 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1965-06-29"><time type="start" when="14:40:00"/><time type="end" when="18:50:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-1" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-1">A. TOP 1: Bericht aus dem Ältestenrat.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-2" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-2">B. TOP 2: Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-3" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-3">C. TOP 3: Grundgesetz.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-4" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-4">D. TOP 4: Gedenken, Bilanz der Fraktionsarbeit.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-5" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-5">E. TOP 5: Entlastung des Vorstands und der Geschäftsführung.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-6" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-6">F. TOP 6: Deutschlandpolitik, Anfragen.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-7" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-7">G. TOP 7: Bundesvermögen.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-8" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-8">H. TOP 8: Notstandsrecht.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-9" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-9">I. TOP 9: Öffentlicher Dienst. Personenkreis gemäß Art. 131 GG.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-10" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-10">J. TOP 10: Nahrungs- und Genußmittel.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-11" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-11">K. TOP 11: Filme.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-12" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-12">L. TOP 12: Sozialversicherung. Hüttenknappschaftliche Pensionsversicherung.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-13" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-13">M. TOP 13: Lastenausgleich.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-14" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-14">N. TOP 14: Sozialversicherung.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-15" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-15">O. TOP 15: Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-16" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-16">P. TOP 16: Hochschulen.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-17" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-17">Q. TOP 17: Steuern und Abgaben. Personensteuern, Anfragen.</item>
-					<item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-18" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-18">R. TOP 18: Arbeit der Fraktion.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Bericht aus dem Ältestenrat]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erstattet einen Bericht aus dem Ältestenrat und teilt mit, daß die SPD keine Fristeinrede gegen die abschließende Beratung der VEBA-Privatisierung erheben werde.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN001" type="comment"><p>Antrag des Schatzministers auf Zustimmung des Deutschen Bundestages […] zur Veräußerung weiterer VEBA-Aktien […] (Drs. IV/3616 vom 19. 6. 1965).</p></note></seg></p>
-				<p>Hinsichtlich der Erhöhung der Krankenversicherungspflichtgrenze habe der Vorsitzende des Sozialpolitischen Ausschusses entgegen der ablehnenden Haltung des Plenums versucht, diese Frage wieder dadurch ins Gespräch zu bringen, daß er die alte Krankenversicherungsneuordnung auf die Tagesordnung seines Ausschusses setzte, um die Teile, die mit der Pflichtgrenze in Zusammenhang stehen, als separaten kleinen Teil verabschieden zu können.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN002" type="comment"><p>Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – d. Abg. <name type="Person" role="Erwaehnung" ref="#SchneiderGeorg_1953-10-06">Schneider</name> (Hamburg) u. a. (Drs. IV/3555 vom 15. 6. 1965) und FDP-Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – (Drs. IV/3579 vom 16. 6. 1965).</p></note></seg> Dieses geschäftsordnungsmäßig nicht anfechtbare Vorgehen bedeute im Grunde eine Umgehung einer klaren Entscheidung des Plenums in dieser Sache. Da das Gesetz seinerzeit aber in anderen Ausschüssen zur Mitberatung vorlag und ohne Berücksichtigung deren Stellungnahme keine Vorlage erarbeitet werden könne, liege also zur Stunde keine Drucksache vor und somit auch kein Antrag zur Geschäftsordnung.</p>
-				<p><name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> (Bielefeld) bedauert den Beschluß der Fraktion, die Frage der Erhöhung der Versicherungspflichtgrenze nicht mehr beraten zu können.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen]</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> bittet, da das Rechtsträger-Abwicklungsgesetz nicht mehr verabschiedet werden könne<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN003" type="comment"><p>Gesetzentwurf zur Regelung der Rechtsverhältnisse nicht mehr bestehender öffentlicher Rechtsträger – Rechtsträger-Abwicklungsgesetz – (Drs. IV/822 vom 7. 12. 1962).</p></note></seg>, von seiten der Fraktion zu der in der Regierungsvorlage angesprochenen Frage, daß für Gebietskörperschaften, die außerhalb der Grenze von 1937 lagen, keine Treuhänderschaft eingerichtet werde, keine Stellung zu beziehen, weder positiv noch negativ.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN004" type="comment"><p>Fortgang siehe TOP 15.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[3. Grundgesetz]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> kommt auf den Antrag zur Ergänzung des Artikels 5 des GG zu sprechen. Im Vorstand sei mit den Antragstellern dahingehend eine Einigung erzielt worden, daß von einer ersten Lesung im Plenum abgesehen werde, da eine ordnungsmäßige Behandlung dieser ernsten und das deutsche Volk bewegenden Fragen angesichts des Zeitdrucks nicht mehr gewährleistet ist. Im nächsten Bundestag werde die Beratung und Prüfung aller Aspekte dieses Problems fortgesetzt und eine erneute Vorlage eingebracht.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN005" type="comment"><p>Nicht ermittelt.</p></note></seg> In diesem Sinne wolle man auch eine Erklärung an die Öffentlichkeit geben.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SuesterhennAdolf_1961-10-17">Süsterhenn</name> erklärt sich mit dieser Resolution nur unter der Bedingung einverstanden, wenn die von <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> in seiner Rede vor der Universität Hamburg erhobenen beleidigenden Äußerungen gegen die Antragsteller zurückgenommen werden. Ihnen werde vorgeworfen, Eiferer zu sein, die gar nicht sähen, wie nahe sie auf diesem Gebiet den kommunistischen Vorstellungen schon gekommen seien. Draußen dürfe nicht der Schein entstehen, als sei diese Aktion aufgrund dieser Vorwürfe abgeblasen worden.</p>
-				<p>Darüber hinaus habe der Arbeitskreis VI beschlossen, eine Kommission zu bilden, die in Verbindung mit den interessierten Kreisen, den beiden Kirchen, der Aktion »Saubere Leinwand«, der Aktion »Sorge um Deutschland«, der Moralischen Aufrüstung, dieses Thema weiterbehandelt.</p>
-				<p><name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> führt aus, die Presse, die einen Vordruck seiner Rede erhalten habe, sei nur teilweise selber in der Veranstaltung gewesen und habe diesen Passus, den er, <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>, zwar im Vorentwurf nicht, aber vor der Akademie der Künste vorgetragen habe, veröffentlicht. Er habe dort die Meinung vertreten, daß man bei dieser ganzen Problematik über die Bestimmung der absoluten Wertsetzung sofort in den Sumpf der unbeschränkt auslegbaren Definitionen, mit denen man alles erlauben oder alles verbieten könne, gerate. Weiter habe er ausgeführt, daß von parlamentarischer Seite der Vorschlag komme, die Kunst an das Sittengesetz zu binden, andere hätten von der Treue zur Verfassung gesprochen, der die Kunst genügen müsse, wieder andere meinten, die natürliche Scham des Menschen sei ein verbindlicher Maßstab. Alle diese Formulierungen aber würden, wie immer sie auch gedrechselt sein mögen, schließlich auf das gesunde Volksempfinden hinauslaufen. Diese Alternative müsse hart und deutlich ausgesprochen werden. Er, <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>, stehe auf dem Standpunkt, entweder man bejahe die pluralistische Demokratie und Gesellschaft, dann müsse man auch die pluralistischen Aufgaben der Kunst anerkennen, oder aber man lehne die letztere ab, dann werde man auch die pluralistische Gesellschaft nicht länger wollen können. Wer sich dieses nicht klarmache, sei entweder ein Träumer oder ein Autokrat. Wer bezweifele denn, daß es auf kommunistischen Kinoleinwänden viel moralischer zugehe als auf denen der freien Welt? Wer habe jemals in Abrede gestellt, daß die deutsche Kunst von 1933 bis 1945 ein »Born des Edelmuts«, wenn auch des verlogenen, des provinziellen Kitsches war? Wer aber könnte leugnen, daß die Diktatoren, mit ihrem gesunden Volksempfinden oder ihrem sogenannten sozialistischen Realismus sich viel stärker an der Kulturproduktion beteiligen als die schöpferische Kraft des Künstlers. Die Spuren mögen einen schrecken. Dann habe er den Satz eingefügt, ob denn die Eiferer und Rufer nicht sähen, wie nahe sie mit dergestalteten Vorgängen an die Praxis der Diktatoren, seien sie links oder rechts, heranrücken. Er, <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>, bekenne sich zur Freiheit der Kunst, auch dann, wenn er die Kunst in einzelnen Werken und Richtungen ablehne. Mit Verboten zu arbeiten, in welcher Tarnung auch immer, lehne er ab. Zu diesen seinen Worten stehe er auch heute noch.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#SuesterhennAdolf_1961-10-17">Süsterhenn</name> spricht sich dafür aus, bei diesen Vorgängen von dem auszugehen, was der Presse mitgeteilt und dann veröffentlicht worden ist. Das stehe in der Öffentlichkeit, und danach werde die Fraktion beurteilt.</p>
-				<p><name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> erklärt, es liege ihm selbstverständlich fern, eine Mehrheit oder eine Minderheit der Fraktion etwa in Zusammenhang mit kommunistischen Vorstellungen oder kommunistischem Gedankengut zu bringen. Insofern distanziere er sich von seinen Äußerungen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> vertritt die Meinung, daß die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> eine große Unsicherheit auf dem Gebiet erkennen lassen. Heute sei der Maßstab, der durch die Judikatur festgelegt sei, nicht mehr das gesunde Volksempfinden, sondern der der modernen Kunst aufgeschlossene Mensch. Das verändere sofort die ganze Ausgangsbasis, von der aus die Antragstellung erfolgte, und deshalb erachte sie die Äußerungen als völlig ignorant. Auch sie vertrete die Meinung, daß es unwürdig sei, die Debatte über dieses Problem im letzten Moment stattfinden zu lassen, unter Zeitdruck, vielleicht vor leerem Haus. Einen großen Schritt vorwärts sehe sie darin, wenn diese Arbeitsgruppe gebildet werde, die weiterhin sich mit dieser Materie befasse.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> hält beide Fassungen der Rede für unmöglich und bezweifelt, daß der Verfasser den Willen und das Ziel der Christlich-Demokratischen Union überhaupt begriffen habe.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> spricht sich für den Vorschlag des Fraktionsvorsitzenden aus und schlägt vor, klar zum Ausdruck zu bringen, daß diese Fraktion eine freiheitliche Partei ist und zu bleiben gedenke, auch wenn sie nicht einem freiheitlichen Begriff ohne jede Bindung huldige. Man denke doch gar nicht daran, die Freiheitlichkeit des Grundgesetzes einzuschränken, sondern wolle einmal klarstellen, ob dieser Staat ein in christlicher Verantwortung freiheitlicher Rechtsstaat sei oder ob hier die Freiheit des Dschungels herrsche.</p>
-				<p><name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> sieht sich nur in der Lage, dieser Erklärung der Fraktion zuzustimmen, wenn auch die Bemerkung zurückgenommen werde, daß die Unterzeichner sich damit in die Nähe links- oder rechtsstehender Kreise begeben haben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> verweist darauf, daß diese Dinge an dem weltanschaulichen Fundament der Fraktion rüttelten und in der Kürze der Zeit nicht aus der Welt geschafft werden könnten. Man solle mit dem Erreichten, nämlich der Erklärung und der Bildung einer Arbeitsgruppe, zufrieden sein.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#JacobiMaria_1961-10-17">Jacobi</name> bittet diejenigen, die noch weitere Publikationen verbreiten wollen, sich auf ihre Aufgabe zu besinnen oder zumindest mit der Fraktionsführung Rücksprache zu nehmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> stimmt ebenfalls dem Vorschlag der Fraktionsführung zu, möchte aber die Formulierung »eine Gruppe von Abgeordneten« abgeändert wissen in »Mehrheit der Fraktion«.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bezeichnet die Tatsache, daß sich die ganze Fraktion dieses Anliegen zu eigen mache, als ausreichend.</p>
-				<p>Die Fraktion stimmt bei fünf Gegenstimmen und einigen Enthaltungen für die Erklärung der Fraktionsführung und die Einrichtung einer Arbeitsgruppe.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-4">
-				<head>D.</head>
-				<p>[4. Gedenken, Bilanz der Fraktionsarbeit]</p>
-				<p>Dann gedenkt die Fraktion des verstorbenen Friedrich Wilhelm <name type="Person" role="Erwaehnung" ref="#WillekeFriedrichWilhelm_1953-10-06">Willeke</name>, der 12 Jahre diesem Hause angehörte, und der anderen 18 Mitglieder, die in dieser Legislaturperiode heimgerufen wurden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hält einen Rückblick auf die Tätigkeit der Fraktion, die in den vier Jahren manche Stürme erlebte, sich aber am Schluß immer wieder zusammengefunden habe. Am Anfang der Legislaturperiode habe man sich daran gewöhnen müssen, nicht mehr die absolute Mehrheit zu besitzen, und der Verlust der acht Mandate ziehe sich wie ein schmerzlicher roter Faden durch die ganze Periode. Im Vordergrund stehe aber die gute Arbeit, die dieser Bundestag geleistet habe und die in nichts zurückstehe hinter der Arbeit früherer Bundestage. Es seien große Reformwerke verabschiedet worden, auf sozialpolitischem Gebiet erfolgten Verbesserungen, und außenpolitisch sei mehr getan worden, als nur die deutsche Position zu behaupten. Man könne sich sehen lassen mit dieser Arbeit, die Klarheit und Geschlossenheit der CDU/CSU-Fraktion zum Ausdruck bringe und die eine gute Ausgangslage für den Wahlkampf biete.</p>
-				<p>Das gute Ergebnis bei den Wahlen an der Saar zeige, daß mit einem gut geführten Wahlkampf noch etwas erreicht werden könne, und mit derselben Energie müsse das ganze Land bearbeitet werden. Es gebe keine Wunderwaffe mehr, es gebe nur diesen Wahlkampf, den Fleiß und die Geschlossenheit. Jeder müsse sich darum bemühen, daß die CDU/CSU wieder die absolute Mehrheit gewinne, denn man habe ja nun die Erfahrungen mit einer Koalition sammeln können und wisse, wie schwierig sich in einem solchen Falle die Arbeit gestalte.</p>
-				<p>Allen Fraktionsmitgliedern wolle er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, für die gute Mitarbeit danken. Wenn er jemanden verletzt haben sollte, was nicht seine Absicht gewesen sei, bitte er um Entschuldigung. Seine Absicht habe darin bestanden, in fairer Weise einen Gesamtwillen der Fraktion zu führen, hoffentlich in die richtige Richtung. Sein Dank erstrecke sich auch auf die Mitarbeiter dieser Fraktion, die in einer Zeit, in der alle Menschen über die fehlende Arbeitsmoral klagten, nicht ein einziges Mal in der ganzen Zeit seiner Amtsführung sich beschwerten, auch, wenn sie tagelang nicht vor 9, 10 Uhr das Haus verlassen konnten.</p>
-				<p>Auch den ausscheidenden Abgeordneten gehöre sein Dank, und er bitte sie, mit der Fraktion in Verbindung zu bleiben und auch aus der Distanz mit ihrem Rat und mit ihrem Besuch der Fraktion zur Seite zu stehen. Die Tür der Fraktion werde für jeden offen sein.</p>
-				<p>Nicht minder herzlich gelte seine Anerkennung dem in dieser Legislaturperiode ausgeschiedenen Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, der weiterhin mit seinem Rat und seiner Mitarbeit der Fraktion zur Verfügung stehe, und dem neuen Bundeskanzler <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> für seine gute Zusammenarbeit.</p>
-				<p>In den vergangenen vier Jahren sei die Fraktion 141mal zu Fraktionssitzungen, 155mal zu Vorstandssitzungen und 197mal zu Plenarsitzungen zusammengekommen.</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Arbeitskreis I</cell>
-						<cell>habe 86mal getagt,</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis II</cell>
-						<cell>habe 89mal getagt,</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis III</cell>
-						<cell>habe 97mal getagt,</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis IV</cell>
-						<cell>habe 97mal getagt,</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis V</cell>
-						<cell>habe 92mal und der 1963 gegründete</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis VI</cell>
-						<cell>49mal [getagt].</cell>
-					</row>
-				</table>
-				<p>Vom Bundestag konnten 426 Gesetzesvorlagen verabschiedet werden.</p>
-				<p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Herr Vorsitzender, mein verehrter junger Freund <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>, verehrte und liebe Kollegen! Es ist nach der Saarwahl auf der einen Seite nützlich und richtig, die Blicke einmal zurückzulenken auf demoskopische Umfragen und den Blick auf uns selbst zu richten und damit die Kraft zu finden für das, was uns bevorsteht. Wenn ich die letzten Landtagswahlen im ganzen an mir vorbeiziehen lasse, angefangen mit Niedersachsen, dann in Bremen, dann in Baden-Württemberg und jetzt an der Saar, dann, möchte ich sagen, ist das ein eindrucksvoller Beweis dafür, daß unsere Arbeit, wenn wir einig sind und wenn wir mit dem vollen Einsatz unserer Persönlichkeiten vor den Wähler treten, des Sieges gewiß sein kann. Denn gerade die letzten Saarwahlen haben ja gezeigt – im Gegensatz zu der Meinung einiger –, daß wir alles in kürzester Frist aufgeholt und überholt haben. Und so soll es auch bei der kommenden Bundestagswahl sein. Ich möchte mich nicht als leuchtendes Vorbild hinstellen, keinesfalls! Aber ich hoffe und erwarte von jedem einzelnen von Ihnen, daß er nach seinem Können alles tut, was überhaupt möglich ist, auch in einer vielleicht nicht so dankenswerten Kleinarbeit, um die Menschen, um die es geht, zu gewinnen. Ich bin mir dessen durchaus bewußt, die Wahlen gewinnt man nicht dadurch, daß ich und einige andere führende Persönlichkeiten der CDU/CSU in großen Massenversammlungen auftreten. Das gehört auch dazu. Aber die ganz treue Kleinarbeit im kleinsten Kreise, das ist die Quelle des Erfolgs. Ich glaube, so viel muß jeder einzelne mitbringen, den guten Willen und auch manchmal Bescheidenheit, um seine ganze Kraft einzusetzen.</p>
-				<p>Aber wenn ich zurückblicke, dann denke ich natürlich auch an die Arbeit dieser Fraktion. Und ohne Auftrag danke ich Ihnen nicht nur in meinem eigenen Namen, sondern auch im Namen der Bundesregierung für die gute Zusammenarbeit. Gute Zusammenarbeit heißt nicht, daß wir uns von Anfang an in allen Fragen einig gewesen sind. Das war die Fraktion nicht immer unter sich, und auch zwischen Regierung und unserer Fraktion gab es da und dort unterschiedliche Auffassungen, gab es Gegensätzlichkeiten. Aber es gab keinen Streit, und wir haben uns immer wieder zusammengefunden, und ich glaube, es ist doch mehr, was die CDU/CSU zusammenbindet, als nur das materielle Interesse, sondern wir sind schon von einem Geist getragen, und wir wollen ja auch einen Auftrag erfüllen und über das Primitive des Alltags hinausreichen und in die sittlichen Wurzeln unseres Daseins dann heruntergehen, und wenn wir dessen bewußt sind, und ich bin mir dessen bewußt, gerade in dieser unserer Zeit, dann glaube ich, finden wir auch den Weg und den sittlichen Standort für unser Tun. Ich sehe also voll Zuversicht der nächsten Bundestagswahl entgegen, aber immer unter der Voraussetzung, daß jeder einzelne bereit ist, bis zum Letzten einzustehen für das, was wir wollen.</p>
-				<p>Aber nun ein Wort an Sie, lieber Freund <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>! Ich glaube, eine absolute Tatsache, eine objektive Wahrheit ist die gute Zusammenarbeit zwischen der Fraktionsführung, ich schließe auch die anderen Herren ein, mit der Bundesregierung und insbesondere auch mit mir. Sie war in dieser ganzen Zeit sehr sehr eng und außerordentlich vertrauensvoll. Wir haben, wenn Sie wollen, manchen Sturm zusammen erlebt. Ich denke an den Kanzlerwechsel. Aber wenn manchmal meine staatsmännische Weisheit bestritten wird von draußen, in einem kann ich sie beweisen, nämlich daß ich erkannt habe, unser junger Freund <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> ist der richtige Mann an der Spitze der Fraktion (Beifall). In gewisser Hinsicht fühle ich mich mitverantwortlich, nicht als Förderer und Gönner, nein, sondern zuerst einmal mit einem kleinen Schuldbewußtsein, weil er aus der Regierung ausgetreten ist, aber ausgetreten, um einen Posten einzunehmen, den er, glaube ich, nicht nur voll ausfüllt, sondern auch so, daß er der berufene Vorsitzende dieser unserer Fraktion ist.</p>
-				<p>Ich gehöre zu denen, die schon 16 Jahre im Dienst stehen, ich habe manches in diesen 16 Jahren erlebt und habe manchen Freund hinscheiden sehen. Und ich sehe mit einer gewissen Trauer, daß ich dem einen oder anderen in der nächsten Legislaturperiode nicht mehr begegnen werde. Aber das ist unser Schicksal. Das ist nicht nur eine Frage der Generationen – das ist es auch –, hier spiegelt sich etwas wider von der Unendlichkeit unserer Aufgabe und unserer Arbeit. Wir reichen den Stafettenstab weiter, der eine früher, der andere später. Aber es kommt darauf an, daß wir im gleichen Geist und über die Generationen hinweg das hochhalten, was uns in der finstersten und düstersten Stunde Deutschlands miteinander verbunden hat. Wenn das bestehen bleibt, dann habe ich keine Sorge, und dann sehe ich nicht nur für unsere Partei, nicht nur für unsere Fraktion, sondern auch für unser deutsches Vaterland eine glückliche und gesicherte Zukunft voraus. Damit danke ich Ihnen, meine lieben Freunde, nochmals von ganzem Herzen, und so, wie Sie mein Vertrauen haben, so hoffe ich, wenn wir wieder zusammentreten nach gewonnener Wahl, daß ich auch weiterhin Ihres Vertrauens gewiß sein kann. Haben Sie herzlichen Dank.« (Beifall).</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-5">
-				<head>E.</head>
-				<p>[5. Entlastung des Vorstands und der Geschäftsführung]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> erstattet einen Bericht über die Kassenprüfung. Die Fraktion beschäftige laufend zwischen 45 und 50 Angestellte. Ein Angestellter mußte wegen Unredlichkeiten entlassen werden. Mit Rücksicht auf dessen Familie sei von einer Strafverfolgung Abstand genommen worden. An Büchern würden geführt ein Kassabuch, ein Amerikanisches Journal, ein laufendes Inventarverzeichnis und zur Gehaltsabrechnung Gehaltslisten sowie Gehaltskarten, wie sie auch die Bundestagsverwaltung benutze. Die Kassenbelege würden laufend numeriert und stimmten mit den Nummern des Kassenbuches überein. Die Buchführung sei ordnungsgemäß geführt und die Anregungen zur besseren Übersichtlichkeit bereits eingeführt. Die Buchungen stimmten mit den Unterlagen überein, und die Belege würden wiederholt stichprobenweise geprüft. Die Zahlungsanweisung erfolge durch <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, in Ausnahmefällen durch <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>.</p>
-				<p>Im Jahre 1964 habe die Fraktion Einnahmen in Höhe von 1 424 388 DM bezogen:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Überweisung durch die Amtskasse des Bundestages</cell>
-						<cell>1 291 000 DM</cell>
-					</row>
-					<row>
-						<cell>Fraktionsmitgliederbeiträge</cell>
-						<cell>78 150  DM</cell>
-					</row>
-					<row>
-						<cell>verschiedene Einnahmen</cell>
-						<cell>55 238 DM.</cell>
-					</row>
-				</table>
-				<p>Die Ausgaben beliefen sich auf 1 477 949 DM:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Gehälter</cell>
-						<cell>911 603 DM</cell>
-					</row>
-					<row>
-						<cell>Sozialversicherung</cell>
-						<cell>81 439 DM</cell>
-					</row>
-					<row>
-						<cell>allgemeine Unkosten</cell>
-						<cell>209 611 DM</cell>
-					</row>
-					<row>
-						<cell>Reisekosten</cell>
-						<cell>137 094 DM</cell>
-					</row>
-					<row>
-						<cell>Presse- und Büromaterial</cell>
-						<cell>87 458 DM</cell>
-					</row>
-					<row>
-						<cell>Steuern</cell>
-						<cell>4 932 DM</cell>
-					</row>
-					<row>
-						<cell>Ersatzkassen</cell>
-						<cell>1 587 DM</cell>
-					</row>
-					<row>
-						<cell>Darlehen</cell>
-						<cell>4 145 DM</cell>
-					</row>
-					<row>
-						<cell>Sozialfonds</cell>
-						<cell>40 077 DM.</cell>
-					</row>
-				</table>
-				<p>Die Mehrausgaben in Höhe von 53 561 DM wurden aus dem vorhandenen Kassenbestand gedeckt.</p>
-				<p>Die Aufteilung der allgemeinen Unkosten ergebe folgendes Bild:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Porto</cell>
-						<cell>12 000 DM</cell>
-					</row>
-					<row>
-						<cell>Porto der CSU-Landesgruppe</cell>
-						<cell>12 000 DM</cell>
-					</row>
-					<row>
-						<cell>Kulturpolitisches Büro</cell>
-						<cell>14 400 DM</cell>
-					</row>
-					<row>
-						<cell>Mittelstandsbüro</cell>
-						<cell>9 000 DM</cell>
-					</row>
-					<row>
-						<cell>Dokumentations-GmbH</cell>
-						<cell>6 000 DM</cell>
-					</row>
-					<row>
-						<cell>Komitee d’action</cell>
-						<cell>4 100 DM</cell>
-					</row>
-					<row>
-						<cell>Verwaltungsberufsgenossenschaft</cell>
-						<cell>2 145 DM</cell>
-					</row>
-					<row>
-						<cell>Parlamentarische Gesellschaft</cell>
-						<cell>3 000 DM</cell>
-					</row>
-					<row>
-						<cell>Präsente</cell>
-						<cell>8 540 DM</cell>
-					</row>
-					<row>
-						<cell>Blumen</cell>
-						<cell>9 400 DM</cell>
-					</row>
-					<row>
-						<cell>Größere Veranstaltungen der Fraktion</cell>
-						<cell>44 000 DM.</cell>
-					</row>
-				</table>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> schlägt einige Verbesserungen vor:</p>
-				<p>Die Buchhaltung mit einem perfekten bilanzsicheren Buchhalter zu besetzen – sei bereits erfolgt – und in Zukunft eine regelrechte doppelte Buchhaltung mit Eröffnungsbilanz und Schlußbilanz zu führen.</p>
-				<p>Weiter werde angeregt, in Anlehnung an die Buchhaltung der Verwaltung, die großen Beträge der Einnahmen und Ausgaben zu etatisieren, d. h. mit globalen Zahlen vor Beginn des Rechnungsjahres festzulegen, damit nach Abschluß des Rechnungsjahres verglichen werden könne zwischen Soll und Ist. Über den Rahmen einer normalen Geschäftsführung hinausgehende Ausgaben sollten durch Beschluß des Vorstandes schriftlich bestätigt werden. Diese Dinge seien notwendig, um absolute Ordnungsmäßigkeit auch für den Außenstehenden zu garantieren.</p>
-				<p>Insgesamt könne man bestätigen, daß die Rechnungsführung in Ordnung sei. Die Kassenprüfer empfählen der Fraktion, die vorbehaltlose Entlastung des Vorstandes und der Geschäftsführung für die Jahre 1962 bis 1964 einschließlich.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt einstimmige Entlastung fest.</p>
-				<p>Dann verweist er auf die Tätigkeit der Kommission zur Organisation der Fraktionsarbeit, die einige Vorschläge für den neuen Bundestag erarbeitet habe. Eine Erörterung der Anregungen solle später erfolgen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-6">
-				<head>F.</head>
-				<p>[6. Deutschlandpolitik, Anfragen]</p>
-				<p>Im Zusammenhang mit der Notstandsgesetzgebung kommt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> auf eine etwas merkwürdige Veranstaltung in Südhessen zu sprechen, die einen möglicherweise noch in diesen Tagen veranlassen werde, kommentatorisch tätig zu werden.</p>
-				<p>Bundesinnenminister <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> teilt mit, daß vor einigen Wochen in Mannheim eine sogenannte Arbeiterkonferenz aus höchsten Gewerkschaftskreisen stattgefunden habe, bei der auch 300 bis 400 prominente östliche Teilnehmer vertreten waren. Es sei nicht gelungen, dies rechtzeitig zu verhindern. Es habe nun eine zweite Veranstaltung stattgefunden, zu der Leute aus der Ostzone, vorwiegend vom FDGB-Vorstand, einreisten. Er, <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, habe sich mit dem Innenminister des Landes Hessen in Verbindung gesetzt und ihn gebeten, mit allen Mitteln, sowohl versammlungsrechtlichen wie nach dem Urteil des Bundesverfassungsgerichts, sich einzuschalten. Dieser habe sich aber offenbar aus südhessischen Gründen nicht in der Lage gesehen, diesem Treiben Einhalt zu gebieten. Auch die zweite, etwas schärfer formulierte Aufforderung sei ohne Einfluß geblieben. Die Veranstaltung habe stattgefunden. Diese Dinge seien seines Erachtens angetan, eine Kleine Anfrage einzubringen, denn man müsse sich doch nun die Frage stellen, ob in der Bundesrepublik die KPD fortgesetzt werden könne oder nicht.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hält es für sehr erstaunlich, daß der Innenminister des Landes Hessen nach einer schriftlichen Mahnung des Bundesinnenministers es nicht für nötig gefunden habe, dem Urteil von Karlsruhe Genüge zu verschaffen.</p>
-				<p>Arbeitskreis I werde gebeten, eine entsprechende Anfrage auszuarbeiten.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN006" type="comment"><p>Kleine Anfrage d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> u. a. betr. »Gesamtdeutsches Arbeitergespräch« in Offenbach am 26. 6. 1965 (Drs. IV/3700 vom 29. 6. 1965).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-7">
-				<head>G.</head>
-				<p>[7. Bundesvermögen]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> teilt der Fraktion die Empfehlung des Vorstandes mit, die Vorlage der Regierung auf weitere Privatisierung der VEBA in dieser Woche zu verabschieden.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN007" type="comment"><p>Antrag des Schatzministers auf Zustimmung des Deutschen Bundestages […] zur Veräußerung weiterer VEBA-Aktien […] (Drs. IV/3616 vom 19. 6. 1965).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> kommt auf die Beratungen des Arbeitskreises II in dieser Sache zu sprechen, der nach wie vor die Überzeugung vertrete, daß noch Differenzen zwischen dem Vorsitzenden des Besitzausschusses und den Mitgliedern des Arbeitskreises einerseits und dem Bundeschatzminister andererseits beständen. Die Fraktion solle alle Anstrengungen machen, diese Kluft zu überbrücken, damit nach außen ein Bild der Geschlossenheit bestehe. Mit einer Gegenstimme und einer Stimmenthaltung empfehle der Arbeitskreis, dem Antrag der Bundesregierung zuzustimmen.</p>
-				<p>Hinsichtlich der Verwendung des Erlöses aus der weiteren Privatisierung schlage der Arbeitskreis vor, diese Mittel nicht im Haushalt untergehen zu lassen, sondern sie in irgendeiner Form zugunsten der weiteren Eigentumsbildung zu nutzen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> gibt die Gründe bekannt, die ihn veranlassen, der Vorlage nicht zuzustimmen. Es erscheine im Interesse der Volksaktionäre und aus energiepolitischen Erwägungen geboten, den Mehrheitseinfluß des Bundes bei VEBA nicht aus der Hand zu geben. Dies beinhalte auch der Schriftliche Bericht des Schatzausschusses, dem der Bundestag in Berlin seine Zustimmung gegeben habe.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN008" type="comment"><p>Drs. IV/3248 vom 24. 3. 1965.</p></note></seg></p>
-				<p>Außerdem stehe er auf dem Standpunkt, daß die Vorlage der Regierung eine Veränderung der Geschäftsgrundlage gegenüber den Zeichnungsunterlagen darstelle. Es sei doch unmöglich, Zeichnungen zuzulassen unter bestimmten Voraussetzungen und dann zwischen Zeichnung und Verteilung einen wesentlichen Punkt dieser Voraussetzungen einseitig zu ändern.</p>
-				<p><name type="Person" role="Sprecher" ref="#MuellerAdolf_1961-10-17">Müller</name> (Remscheid) bezeichnet es bei dem dann nur noch verbleibenden Bundesanteil von 26% als schwierig, die Rechte der Kleinaktionäre wirksam zu vertreten. Das bisherige Verhalten der von der Bundesregierung entsandten Vertreter bei den bereits privatisierten Unternehmen sei nicht dazu angetan, das Anliegen der Bundesregierung zu unterstützen.</p>
-				<p>Ein weiterer Grund für seine ablehnende Haltung liege auf energiepolitischem Gebiet, denn die weitere Privatisierung bewirke die Stillegung einer Zeche.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> glaubt, daß die Beratungen im Arbeitskreis bereits zu einer Annäherung der Standpunkte geführt haben und daß die Ressentiments wegen der nicht richtigen Behandlung und vielleicht nicht rechtzeitigen Anhörung der Arbeitsgruppe »Eigentum« ausgestanden seien. Er bitte darum, doch nicht weiter ins Detail einer energiepolitischen Diskussion einzutreten. Für die Zeichner gelte nur das eine, nämlich, wie viele Aktien sie bekommen.</p>
-				<p>Bisher sei die Union führend in Fragen der Eigentumsbildung und Eigentumsstreuung gewesen, und man solle doch nun nicht ein Bild der Uneinigkeit bieten und in diesen wichtigen Fragen auseinanderfallen. Die Fraktion werde nicht gemessen nach möglicherweise vorhandenen sachlichen, vielleicht aber nur von Fachleuten verständlich zu machenden Unterschieden in den Auffassungen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DichgansHans_1961-10-17">Dichgans</name> vertritt die Meinung, die Beteiligung des Bundes bei der VEBA könne ruhig unter 51% gesetzt werden, da sich die energiepolitischen Anliegen wohl nicht mit dem Unterschied zwischen 26 und 51% steuern ließen.</p>
-				<p>Das tiefe Mißbehagen in dieser Sache liege doch darin, daß es ausgerechnet in der letzten Sitzung dieser Legislaturperiode noch zu tiefgreifenden Meinungsverschiedenheiten komme, und zwar ausgerechnet mit den Kollegen, die sich besondere Verdienste um die Privatisierung erworben haben. Das Schauspiel einer Kontroverse dürfe der Öffentlichkeit nicht geboten werden. Er schlage deshalb vor, sich zu einem Kompromiß zusammenzufinden, erstens die Gruppe 0 (Belegschaftsangehörige) sofort zu befriedigen, zweitens der Gruppe 1 eine Aktie und eine Option auf eine weitere Aktie einzuräumen, drittens das Ausgabeverfahren erst dann zu beenden, wenn auch über die Frage der Option entschieden sei, d. h., die Aktien würden vorerst nicht an der Börse notiert, und viertens, die weiteren Gruppen gingen leer aus.</p>
-				<p><name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> sieht in diesem Vorschlag einen konstruktiven Beitrag zur Vermittlung, wenn er auch die Option für etwas zu kompliziert erachte.</p>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> bezweifelt gerade den politischen Erfolg, wenn man ein Papier herausgebe, das die Erwartungen der Zeichner nicht erfülle.</p>
-				<p>Obwohl er gegen diese Vorlage stimme, sehe er ein, daß er als Vorsitzender nicht das Recht habe, gegen die Mehrheit der Fraktion eine Entscheidung zu verhindern. Er habe deshalb vorsorglich bereits ein Gespräch mit der Opposition geführt, ein weiteres werde folgen, zu dem mehrere Sachverständige eingeladen sind, damit entweder in der einen oder anderen Richtung eine Entscheidung falle.</p>
-				<p>Seine Sorge richte sich gegen die Zechenstillegung, und er wolle die Frage stellen, was man zu tun gedenke, um dies zu verhindern.</p>
-				<p>Eine weitere Schwierigkeit ergebe sich deshalb, daß die VEBA, so wie sie als Gebilde bestehe, eine reine Holdinggesellschaft sei und von sieben Damen und Herren, die von Finanzierung viel, aber von Unternehmensführung nicht unbedingt etwas verstehen, geleitet werde. Die Umgestaltung der Holdinggesellschaft in einen Konzern bedeute nicht nur rein rechtlich außergewöhnliche Schwierigkeiten, sondern werfe auch personelle Probleme auf, die gerade in diesem Fall nicht leicht zu lösen sein werden.</p>
-				<p>Hinsichtlich einer analogen Regelung der qualitativen Mitbestimmung hätte er, der Redner, gerne gewußt, ob die Zusage, ein Vorstandsmitglied aus der Arbeiterschaft zu berufen, bestehen bleibe und was mit dem Erlös der Privatisierung geschehe.</p>
-				<p>Die Überzeichnung von VEBA liege doch daran, daß es bei VW und Preussag gelungen sei, ein solides Papier zu schaffen. Diesen Erfolg solle man doch jetzt nicht wieder zunichte machen.</p>
-				<p>Bundesschatzminister Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> antwortet auf die einzelnen Fragen und teilt hinsichtlich des Sparwillens mit, daß es sich im einzelnen nicht untersuchen lasse, ob dieser sich nur verlagert habe, fest stehe aber, daß er durch diese Aktion eine weitere Deckung erfahren habe.</p>
-				<p>In bezug auf die Besetzung des Aufsichtsrates und des Vorstandes müsse eine Besserung erfolgen, und er, der Minister, lege größten Wert darauf, die Aufsichtsräte nicht mit fremden Persönlichkeiten zu besetzen, die nichts mit dem Anliegen der Volksaktionäre zu tun hätten.</p>
-				<p>Der Vorschlag des Abg. <name type="Person" role="Erwaehnung" ref="#DichgansHans_1961-10-17">Dichgans</name>, eine Absichtserklärung abzugeben, hielte der Prüfung nicht stand. In einem solchen Falle müßten neue Beschlüsse gefaßt werden.</p>
-				<p>Auch er vertrete die Auffassung, daß es politisch schlecht wäre, wenn es durch die Privatisierung zu einer Zechenstillegung komme. Wegen dieser Frage stehe man mit der Hibernia in Verbindung, die zur Zeit prüfe, was zur Verhinderung einer Stillegung getan werden könne.</p>
-				<p>Bezüglich der Bildung eines Vorstandes müßten noch Gespräche geführt werden. Übereinstimmung bestehe erst darin, den Vorstand jetzt noch zu bilden, und nicht, wie ursprünglich beabsichtigt, dessen Bildung auf später zu vertagen. Aber eines stehe fest, ob 51 oder 26%, im Interesse der Aktionäre habe man die Verpflichtung, alles zu tun, daß ein Vorstand möglichst rasch zustande komme, der das Unternehmen zum Wohle der Gesellschaft und der Aktionäre leite. Deshalb vertrete er die Meinung, daß die Bundesregierung nach wie vor das Recht habe, den Vorstand zu bilden, ob sie 51 oder nur 26% Anteile besitze, spiele keine Rolle.</p>
-				<p>Was die Frage der Verwendung des Erlöses anbelange, glaube er, daß der politische Effekt der Privatisierung einmal in der Privatisierung selbst und zum anderen in der Verwendung des Erlöses liege. Deshalb solle der Erlös nicht im Bundeshaushalt untergehen, sondern hier nur als durchlaufender Posten gelten und im übrigen nach Überlegung der Fraktion einer besonderen Verwendung zugeführt werden.</p>
-				<p>Er, Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name>, bitte die Fraktion, den politischen Erfolg der Privatisierung in den Vordergrund zu rücken und unter dem Gesichtspunkt des politischen Erfolges eine Einigung zu erzielen.</p>
-				<p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bezeichnet es als erforderlich, die Frage der Konzernbildung und die der personellen Besetzung zu lösen.</p>
-				<p>Was die energiepolitischen Bemerkungen anbelange, stehe doch fest, daß eine Zechenstillegung nicht bedeute, daß die Kohle nicht gebraucht werde. Diese Maßnahme treffe das Ruhrgebiet anders, als es dargestellt wurde. Gegenwärtig werde an einer ganz erheblichen Unterstützung zur Beseitigung der Schwierigkeiten beim Kohlenbergbau gearbeitet. Und so viel, wie die Bundesregierung gegenwärtig für diesen Wirtschaftszweig tue, habe sie für keinen anderen Wirtschaftszweig getan. Wenn sich einer nicht beklagen könne, dann sei es das Kohlenrevier.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> macht darauf aufmerksam, daß es eine gesetzliche Bestimmung gebe, die besage, daß Erlöse aus der Veräußerung von Bundesvermögen in den ordentlichen Haushalt gehören. Dieser Bestimmung müsse man Genüge tun. Der Bundestag könne aber selbstverständlich mit einem Gesetz nach einer anderen Lösung suchen. Da aber die Beratungen im Arbeitskreis ergaben, daß ein solches Gesetz in diesem Bundestag nicht mehr möglich sei, sei dieser Weg erfolglos. Ein weiterer Weg liege noch darin, daß der Bundesfinanzminister bei unabweisbaren Notwendigkeiten im Rahmen außerordentlicher Ausgaben etwas tun könne.</p>
-				<p>Der Begriff der unabweisbaren Ausgaben enthalte zwei Voraussetzungen, erstens, die unabweisbaren Ausgaben müßten konkretisiert werden, und zum anderen müßten in der Rangordnung der Aufgaben diese Geldmittel bejaht werden. Da bei der gegenwärtigen Haushaltslage ein Defizit von ungefähr 1 bis 2 Mrd. DM bestehe, könne die Rangfrage in diesem Augenblick nicht ohne weiteres entschieden werden. Er, <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name>, habe Verständnis dafür, die zur Verfügung stehenden Mittel nicht im Haushalt untergehen zu lassen. Man habe sich deshalb im Arbeitskreis verständigt, einen Antrag einzubringen, der die Bundesregierung ersuche, für außerplanmäßige Ausgaben einen Betrag von 25 Mio. DM vorzusehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> ergänzt die Ausführungen des Vorredners und verweist darauf, daß man sich in der Zwangslage befinde, das Geld erst einmal dem Bundesfinanzminister zur Verfügung stellen zu müssen. Arbeitskreis III empfehle deshalb, einen Antrag einzubringen, daß 25 Mio. DM als unabweisbare Ausgaben außerplanmäßig bei Kapitel 2 402, Titel 950 vorgesehen werden. Aus diesen Mitteln sollten Maßnahmen der Eigentumsbildung gefördert werden, insbesondere Anreize zum Erwerb von Wertpapieren.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> sieht in der Verwendung des Erlöses eine politische Entscheidung mit drei Lösungsmöglichkeiten:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Verwendung für Eigentumsbildung. Die vorgeschlagene Entschließung biete hier einen Anfang.</p></item>
-					<item><label>2.</label><p>Die Erlöse sollten für bundeseigene Unternehmen mit dem Ziel verwendet werden, diese Unternehmen für eine weitere Privatisierung zu fördern, also eine Kapitalausstattung.</p></item>
-					<item><label>3.</label><p>Verwendung für das deutsche Gemeinschaftswerk.</p></item>
-				</list>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt fest, daß die Fraktion den Entschließungsantrag gegen vier Stimmen bei einigen Enthaltungen annimmt.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN009" type="comment"><p>Nicht ermittelt.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-8">
-				<head>H.</head>
-				<p>[8. Notstandsrecht]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> trägt zur Frage des Schutzbaugesetzes vor, daß ursprünglich beabsichtigt war, jedem Bauherrn einen Zuschuß zur Errichtung von Schutzräumen in Höhe von einem Viertel der Kosten zu geben.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN010" type="comment"><p>Gesetzentwurf über bauliche Maßnahmen zum Schutz der Zivilbevölkerung (Drs. IV/896 vom 14. 1. 1963).</p></note></seg> Diese Bestimmung wurde dahingehend geändert, daß nur die Bauherrn etwas erhalten sollten, die im Sozialen Wohnungsbau bauen.</p>
-				<p>Ein neuer Kompromißvorschlag des Arbeitskreises I sehe nun vor, auch diejenigen einzubeziehen, die Vorteile aus dem Sozialen Wohnungsbau ausnützen könnten, sie aber nicht in Anspruch nehmen. SPD und FDP hätten sich bereits einverstanden erklärt.</p>
-				<p>Nach den Mitteilungen des MdB <name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name>, wonach auch Arbeitskreis III mit diesem Kompromiß einverstanden sei, erhebt sich in der Fraktion kein Widerspruch.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> kommt auf das Selbstschutzgesetz zu sprechen und teilt mit, die Koalition gehe dahin einig, alle Anträge der SPD geschlossen abzulehnen.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN011" type="comment"><p>Gesetzentwurf über den Selbstschutz der Zivilbevölkerung (Drs. IV/897 vom 14. 1. 1963).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> richtet ebenfalls die Bitte an die Fraktion, sich auf die Grundlage dieses Beschlusses zu stellen. Die SPD beabsichtige, den Zuschußsatz<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN012" type="comment"><p>Von der Bearbeiterin korrigiert aus: Zuschutzsatz.</p></note></seg> für die Anschaffung des Selbstschutzgeräts zu erhöhen, was einen Mehraufwand von 250 Mio. DM erfordere. Damit müßte notwendigerweise die Vorlage an den Haushaltsausschuß verwiesen werden, was bedeute, daß sie nicht mehr verabschiedet werden könne, weil sie nicht den Bestimmungen des § 96 GO entspreche.</p>
-				<p><name type="Person" role="Sprecher" ref="#HuebnerKarl_1952-02-01">Hübner</name> ergänzt die Ausführungen und verweist darauf, daß es sich bei den 250 Mio. DM um einen Vierjahresplan handele. Dies wolle er nur ordnungshalber mitteilen, damit später nicht der Vorwurf im Raum stehe, man hätte mit falschen Zahlen operiert.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-9">
-				<head>I.</head>
-				<p>[9. Öffentlicher Dienst. Personenkreis gemäß Art. 131 GG]</p>
-				<p><name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> verweist auf die Anregung des Haushaltsausschusses, die mit der Koalition erarbeiteten Verbesserungen in der Novelle zum G 131 erst zum 1. 1. 1966 in Kraft treten zu lassen.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN013" type="comment"><p>Entwurf eines Schlußgesetzes zum Gesetz zur Regelung der Rechtsverhältnisse der unter Artikel 131 des Grundgesetzes fallenden Personen (Drs. IV/1840 vom 17. 1. 1964).</p></note></seg> Wenn man so verfahre, bliebe noch die Frage der Waffen-SS offen. Ein Thema, das bereits des öfteren behandelt wurde und für die Angehörigen der Waffen-SS eine Versorgung vorsehe, soweit sie Dienst getan haben nach dem 1. 6. 1940. Die Zeit davor werde nicht geregelt.</p>
-				<p>Im NS-Abwicklungsgesetz<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN014" type="comment"><p>Gesetz zur Regelung der Verbindlichkeiten nationalsozialistischer Einrichtungen und der Rechtsverhältnisse an deren Vermögen vom 17. 3. 1965, BGBl. I, S. 79.</p></note></seg> sei für alle in der NSDAP Tätigen eine Regelung getroffen, und man habe in den drei Fraktionsvorständen die Möglichkeit erwogen, für die Angehörigen der ehemaligen Waffen-SS – nicht zu verwechseln mit den Totenkopfverbänden – auf dem Wege über eine Nachversicherung, also für die Jahre 1933 bis 1940 abzüglich des Wehrdienstes, eine Lösung zu finden. Wenn die Fraktion sich zu einem interfraktionellen Antrag entschließen könnte – die beiden anderen Fraktionen stimmten zu –, hätte man eine einigermaßen befriedigende Lösung und somit eine Vermischung des NS-Abwicklungsgesetzes und des G 131 vermieden.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN015" type="comment"><p>Änderungsantrag der Fraktionen der CDU/CSU, SPD, FDP zur zweiten Beratung des von der Bundesregierung eingebrachten Entwurfs eines Dritten Gesetzes zur Änderung beamtenrechtlicher und besoldungsrechtlicher Vorschriften, Sten. Ber., 195. Sitz. am 1. 7. 1965, S. 9980 f. (Umdr. 715).</p></note></seg></p>
-				<p>Ein weiterer Punkt, nämlich die Angleichung der Bezüge der Bundesbeamten an die wirtschaftliche Entwicklung, bedürfe noch einer Klärung. Wenn auch nach Verlautbarungen der Bundesregierung dieses Problem keine Rolle mehr spiele in diesem Bundestag, müsse man, um einer Regelung zum 1. 1. 1966 zustimmen zu können, das Vierte Änderungsgesetz<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN016" type="comment"><p>Entwurf eines Vierten Gesetzes zur Änderung beamtenrechtlicher und besoldungsrechtlicher Vorschriften (Drs. IV/3520 vom 10. 6. 1965).</p></note></seg> mit einer Neuordnung der Ortsklassen und einer Ausweitung des Kinderzuschlages bis zum 27. Lebensjahr zum 1. 7. in Kraft treten lassen. Das sei auch deshalb erforderlich, weil die Länder bereits diese Neuregelung zum 1. 1., zum Teil auch schon früher, beschlossen hätten, so daß für die Bundesbeamten Nachteile entständen, wenn das Vierte Änderungsgesetz erst zum 1. 1. 1966 in Kraft trete. Er bitte deshalb die Fraktion um Zustimmung für den Termin 1. 7. 1965.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> spricht sich dafür aus, bei diesen Gesetzen einen einheitlichen Inkraftsetzungstermin festzulegen. Man müsse auch an die Verwaltung denken, die diese Dinge arbeitsmäßig zu bewältigen hätte. Außerdem sollten auch die finanziellen Aufwendungen nicht außer acht gelassen werden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-10">
-				<head>J.</head>
-				<p>[10. Nahrungs- und Genußmittel]</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> teilt zur Frage des Mühlengesetzes mit, daß bei den Beratungen im Bundesrat Wünsche geäußert wurden, die in der Ausschußvorlage nicht berücksichtigt sind, und das Gesetz etwas leichter und praktischer gestalten.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN017" type="comment"><p>Entwurf eines Vierten Gesetzes zur Änderung des Mühlengesetzes (Drs. IV/3445 vom 19. 5. 1965).</p></note></seg> Arbeitskreis II stimme einem Änderungsantrag unter der Bedingung zu, wenn auch das Ernährungsministerium und die beiden anderen Fraktionen sich einverstanden erklärten.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN018" type="comment"><p>Änderungsantrag der Fraktionen der CDU/CSU, SPD, FDP zur zweiten Beratung des von der Bundesregierung eingebrachten Entwurfs eines Vierten Gesetzes zur Änderung des Mühlengesetzes, Sten. Ber., 194. Sitz. am 30. 6. 1965, S. 9910 (Umdr. 714).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-11">
-				<head>K.</head>
-				<p>[11. Filme]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> berichtet, daß zur Frage des Filmgesetzes das noch offenstehende Problem hinsichtlich der Mindereinnahmen mit dem Haushaltsausschuß einer Klärung bedürfe.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN019" type="comment"><p>Gesetzentwurf über Maßnahmen auf dem Gebiet der deutschen Filmwirtschaft d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#MartinBerthold_1957-10-15">Martin</name> u. a. und Fraktionen d. CDU/CSU und SPD (Drs. IV/1172 vom 29. 3. 1963).</p></note></seg> Es komme nun darauf an, dieses Problem auf die Tagesordnung zu bringen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> schlägt der Fraktion im Auftrag des Arbeitskreises I eine Änderung dahingehend vor, im § 6 Abs. 3 statt »Sittengesetz« »sittliche Ordnung« zu sagen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> erklärt, daß die SPD und FDP dieses Gesetz ablehnten, weil nach ihrer Auffassung der Standpunkt der Kirchen zu starke Berücksichtigung gefunden habe. Die SPD stelle nun ein besseres Gesetz in Aussicht. Trotzdem solle versucht werden, dieses Gesetz über die Bühne zu bringen, denn hier biete sich die Möglichkeit, etwas für die »Saubere Leinwand« zu tun.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-12">
-				<head>L.</head>
-				<p>[12. Sozialversicherung. Hüttenknappschaftliche Pensionsversicherung]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> setzt sich dafür ein, die Anträge der SPD zur Pensionsversicherung Saarland abzulehnen.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN020" type="comment"><p>SPD-Änderungsantrag zum Gesetzentwurf über Leistungsverbesserungen in der hüttenknappschaftlichen Pensionsversicherung im Saarland (Drs. IV/2884 vom 29. 12. 1964) und Gesetzentwurf zur Neuregelung des Rechts der hüttenknappschaftlichen Pensionsversicherung im Saarland d. Abg. <name type="Person" role="Erwaehnung" ref="#HussongRudolf_1961-10-17">Hussong</name> u. a. u. Fraktion der SPD (Drs. IV/3352 vom 4. 5. 1965).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-13">
-				<head>M.</head>
-				<p>[13. Lastenausgleich]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> legt dar, daß die Vorlage zur 18. Novelle zum LAG durch den Ausschuß<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN021" type="comment"><p>Ausschuß für den Lastenausgleich.</p></note></seg> eine Auswirkung von 8 Mrd. DM erfahren habe.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN022" type="comment"><p>Entwurf eines Achtzehnten Gesetzes zur Änderung des Lastenausgleichsgesetzes (Drs. IV/3383 vom 10. 5. 1965).</p></note></seg> Nach Meinung aller Sachverständigen ständen aber nur 5 Mrd. DM zur Verfügung, so daß sich die Koalition verständigen mußte, diese Vorlage auf 5 Mrd. DM zu redressieren. Dies solle nun auf dem Wege über die Anrechnung der Verzinsung, den Wegfall der Hausratsentschädigung, die nur scheinbar populär sei, und über die Bestimmung, daß das, was in den Wohnungsbau gehe, wieder zurückkomme, erreicht werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name> greift den Punkt Hausratsentschädigung heraus, der für die einheimischen Fliegergeschädigten in den Großstädten von Bedeutung sei, und bittet, diese Dinge neben dem Problem der Vertriebenen nicht ganz unberücksichtigt zu lassen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> kündigt einen Änderungsantrag an hinsichtlich des Stichtages für Vertriebene, die aus der sowjetisch besetzten Zone gekommen sind. Es handele sich hier um einen kleinen Kreis, so daß keine erheblichen finanziellen Aufwendungen zu erwarten seien. Hinzukomme, daß für einen gleich gelagerten Kreis in der jetzigen Novelle zum G 131 der Stichtag 31. 12. 1964 gewählt wurde.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN023" type="comment"><p>Entwurf eines Schlußgesetzes zum Gesetz zur Regelung der Rechtsverhältnisse der unter Artikel 131 des Grundgesetzes fallenden Personen (Drs. IV/1840 vom 17. 1. 1964).</p></note></seg> Es erscheine nun unter Berücksichtigung der Gesamtsituation zweckmäßig, diesen Termin nun auch in der 18. Novelle festzulegen. Das bewirke, daß der in der gleichen Situation befindliche Personenkreis auch gleich behandelt werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> spricht sich dagegen aus, da auf der einen Seite der Versuch unternommen werden müsse, zu redressieren. Bei dieser Lage gehe es nicht an, an anderer Stelle eine Ausweitung vorzunehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> glaubt, daß in diesem Punkt es zu einer Einigung zwischen den drei Fraktionen kommen könne und sich an diesen Antrag keine weiteren Ausweitungswünsche anschließen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KuntscherErnst_1949-09-07">Kuntscher</name> wendet sich gegen diesen Antrag und bittet, die Schwierigkeiten bei der 18. Novelle nicht noch durch eine Stichtagänderung zu vergrößern.</p>
-				<p>Was die Frage der Hausratsentschädigung anbelange, erfordere diese eine politische Entscheidung, SPD und FDP hätten wesentlich höhere Anträge zu dieser Materie gestellt. Er bitte die Fraktion dringend, ihren Standpunkt noch einmal zu überprüfen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt zu bedenken, ob die Beträge von etwa 300 bis 400 DM für die Fliegergeschädigten wirklich so positiv aufgenommen würden.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> hält die Vorlage des Ausschusses, die 8,4 Mrd. DM beinhalte, für unverantwortlich. Schon mit der 14. Novelle zum LAG sollte Schluß sein<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN024" type="comment"><p>Vierzehntes Gesetz zur Änderung des Lastenausgleichsgesetzes vom 26. 6. 1961, BGBl. I, S. 785.</p></note></seg>, jetzt liege bereits die 18. Novelle vor. Diese Handlung könne man nicht mit politischen Gründen rechtfertigen. Er, <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name>, bezweifele, daß die Fliegergeschädigten überhaupt ernsthaft mit einer Entschädigung rechneten. Das sei längst vergessen. Man solle sich doch vor Augen führen, daß man bereits mit dem zuletzt Gemachten in eine voll inflatorische Entwicklung hineingerate.</p>
-				<p><name type="Person" role="Sprecher" ref="#EichelbaumErnstTheodor_1957-10-15">Eichelbaum</name> verweist darauf, daß die Regierung selbst diesem Problem völlig ablehnend gegenüberstehe.</p>
-				<p>Bundesvertriebenenminister <name type="Person" role="Sprecher" ref="#LemmerErnst_1952-02-01">Lemmer</name> führt aus, im Kabinett operiere der FDP-Minister <name type="Person" role="Erwaehnung" ref="#DahlgruenRolf_1957-10-15">Dahlgrün</name> bremsend in diesen Dingen diametral im Gegensatz zu seiner Fraktion. Bei diesem unerträglichen Zustande könne man nur hoffen, zu einem Akkord zu kommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeukertEdmund_1953-10-06">Leukert</name> betont, daß von seiten der CSU der Wunsch nach einem Antrag laut werde, sowohl die Aufstockung der Hausratsentschädigung wie auch die Auszahlung der dritten Rate vorzunehmen. Hier gehe es nicht um Haushaltsmittel, sondern um das Aufkommen des Lastenausgleichsfonds.</p>
-				<p>Bezüglich des Antrages zur Stichtagänderung handele es sich um einen Bagatellantrag, der schätzungsweise 300 bis 400 Menschen erfasse und dem man nach seiner Meinung ruhig beitreten könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> gibt zu bedenken, daß der Fonds in jedem Fall nicht liquide sei, so daß eine Hausratsentschädigung, falls sie komme, erst in drei oder vier Jahren ausgezahlt werde. Es sei doch so, daß die vierte Hausratsrate nach liquiden Mitteln bedient werde, so daß die nach der 18. Novelle wirksam werdenden Leistungen zum Beispiel in der Hauptentschädigung halbiert werden müßten und so die Leistungen beträchtlich absinken. Bei dieser Sachlage müsse man sich doch fragen, wo der politische Effekt liege, wenn vielleicht eine zweijährige Wartezeit erforderlich sei. Ganz abgesehen davon hätten die Ausgleichsämter noch mit der 17. Novelle zu tun<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN025" type="comment"><p>Siebzehntes Gesetz zur Änderung des Lastenausgleichsgesetzes vom 4. 8. 1964, BGBl. I, S. 585.</p></note></seg>, so daß es auch arbeitsmäßig kaum zu schaffen sei.</p>
-				<p>Im Kabinett und in der Koalition bestehe Einigkeit, daß ein Volumen von 5 Mrd. DM noch tragbar erscheine. Nur die jeweiligen Grenzen bedürften noch einer Absteckung. Die Alternative sollte nicht heißen 8 Mrd. oder 5 Mrd. DM, sondern 5 Mrd. oder alternativ gar nichts, weil andernfalls die Vorlage im Haushaltsausschuß scheitern müßte. Auf diesen Boden sollte die Fraktion sich stellen und in der Abstimmung einig gehen. Sonst gehe der geringe Erfolg auch noch verloren.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> beendet die Diskussion um diesen Punkt mit der Bitte an den Haushaltsausschuß, eine vernünftige Vorlage auf der Grundlage 5 Mrd. DM zu finden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-14">
-				<head>N.</head>
-				<p>[14. Sozialversicherung]</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erstattet einen Bericht über die Beratungen der Kommission zur Pflichtversicherungsgrenze und verweist darauf, daß nach der Entscheidung des Präsidenten ohne ein Votum des Haushaltausschusses eine Plenardebatte nicht möglich sei.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN026" type="comment"><p>Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – d. Abg. <name type="Person" role="Erwaehnung" ref="#SchneiderGeorg_1953-10-06">Schneider</name> (Hamburg) u.a. (Drs. IV/3555 vom 15. 6. 1965) und FDP-Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – (Drs. IV/3579 vom 16. 6. 1965).</p></note></seg> Der Haushaltsausschuß solle gebeten werden, den Beschluß des Sozialpolitischen Ausschusses zu behandeln. Weiter stehe die Kommission auf dem Standpunkt, das Ergebnis der Beratungen abzuwarten und dann erst in eine erneute Diskussion einzutreten.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> spricht sich dafür aus, die politische Entscheidung über diese Dinge zurückzustellen, bis die Fraktion vollständig über die Auswirkungen dieses Problems unterrichtet werden könne. Das sei im Augenblick wegen der mangelnden Besetzung nicht möglich.</p>
-				<p>Die Fraktion tritt der Empfehlung der Kommission bei, erst das Ergebnis der Beratungen im Haushaltsausschuß abzuwarten.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-15">
-				<head>O.</head>
-				<p>[15. Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> bezeichnet es im Hinblick auf das Rechtsträger-Abwicklungsgesetz nicht für gut, dieses Problem in diesem Augenblick zu diskutieren, da es ein unangenehmes außenpolitisches Moment anspreche.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN027" type="comment"><p>Gesetzentwurf zur Regelung der Rechtsverhältnisse nicht mehr bestehender öffentlicher Rechtsträger – Rechtsträger-Abwicklungsgesetz – (Drs. IV/822 vom 7. 12. 1962).</p></note></seg> Er, Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, wolle versuchen, im Rahmen der Rechtsausschußsitzung eine Einigung zwischen den drei Fraktionen zu erzielen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> vertritt die Auffassung, daß die FDP nicht ungezügelt über die zwischen CDU und SPD getroffene Einigung in dieser Sache hinausgehen werde. Es bestehe Einigkeit darin, einen Unterschied zwischen den Körperschaften, die innerhalb und außerhalb des Reiches waren, zu machen. Auch die FDP wolle nicht den Wirkungsbereich der deutschen Gemeindeordnung herangezogen wissen, weil es sich sonst um großdeutsche Dinge handeln würde. Die Meinungen gingen hinsichtlich des vom Auswärtigen Amt vorgeschlagenen Genehmigungsverfahrens auseinander. Man wolle statt dessen lieber eine Treuhandverwaltung, wobei der Kompromiß Zustimmung finden würde, für diese Bereiche eine Treuhandverwaltung der Länder statt des Bundes einzurichten.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-16">
-				<head>P.</head>
-				<p>[16. Hochschulen]</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> kommt auf die Erhöhung der Studienförderung nach dem Honnefer Modell zu sprechen, die die Zustimmung des Partei- und des Fraktionsvorstandes gefunden habe. Die Fraktion werde gebeten, diesen Antrag zu übernehmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> ergänzt die Ausführungen und teilt mit, daß der Antrag generell gehalten sei und zum 1. 11. 1965 eine Erhöhung der Förderungsbeträge vorsehe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> macht darauf aufmerksam, daß wahrscheinlich der Antrag nicht mehr ausgedruckt werden könne.</p>
-				<p>Er bitte aber, daß <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> und <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> sich noch einmal mit dieser Sache befassen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-17">
-				<head>Q.</head>
-				<p>[17. Steuern und Abgaben. Personensteuern, Anfragen]</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> legt eine Kleine Anfrage vor, die sich mit der Besteuerung des Nutzwertes der Wohnung im eigenen Einfamilienhaus befasse. Obwohl diese Anfrage wegen der Schwierigkeit der Materie nicht das Plazet des Arbeitskreises III gefunden habe, bitte er die Fraktion, diese Anfrage zu starten und die Bundesregierung zu einer Äußerung zu bewegen. In England, Frankreich und den USA bestände bereits eine Vorschrift, den Mietwert der Wohnungen unbesteuert zu lassen.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> steht dieser Anregung nicht ablehnend gegenüber, hält aber die noch zur Verfügung stehende Zeit nicht für ausreichend, dieses Problem zu behandeln. Mit dieser Frage müsse sich der neue Bundestag beschäftigen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hat gegen eine Kleine Anfrage nichts einzuwenden.<seg type="note"><note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN028" type="comment"><p>Kleine Anfrage d. Abg. <name type="Person" role="Erwaehnung" ref="#MeisHans_1958-07-02">Meis</name> u. a. betr. die Besteuerung des Nutzungswerts der Wohnung im eigenen Einfamilienhaus (Drs. IV/3703 vom 30. 6. 1965).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-18">
-				<head>R.</head>
-				<p>[18. Arbeit der Fraktion]</p>
-				<p><name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> (Bielefeld) richtet zum Schluß der Sitzung die Bitte an die Fraktionsführung, von allen Presseverlautbarungen einen Abdruck zu erhalten, damit man wisse, wie die Fraktion zu politischen Vorgängen Stellung nehme. Es gehe nicht an, daß die Abgeordneten erst aus der Zeitung den Standpunkt der CDU erfahren müßten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> verspricht, dieser Bitte in Form von Briefen zu entsprechen; er könne aber nicht sicherstellen, daß die Abgeordneten diese Verlautbarungen vor der Presse erfahren.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1965-06-29-t1440_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1010/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 29. Juni 1965</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>15 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1965-06-29">
+               <time type="start" when="14:40:00"/>
+               <time type="end" when="18:50:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-1" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-1">A. TOP 1: Bericht aus dem Ältestenrat.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-2" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-2">B. TOP 2: Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-3" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-3">C. TOP 3: Grundgesetz.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-4" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-4">D. TOP 4: Gedenken, Bilanz der Fraktionsarbeit.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-5" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-5">E. TOP 5: Entlastung des Vorstands und der Geschäftsführung.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-6" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-6">F. TOP 6: Deutschlandpolitik, Anfragen.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-7" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-7">G. TOP 7: Bundesvermögen.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-8" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-8">H. TOP 8: Notstandsrecht.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-9" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-9">I. TOP 9: Öffentlicher Dienst. Personenkreis gemäß Art. 131 GG.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-10" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-10">J. TOP 10: Nahrungs- und Genußmittel.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-11" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-11">K. TOP 11: Filme.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-12" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-12">L. TOP 12: Sozialversicherung. Hüttenknappschaftliche Pensionsversicherung.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-13" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-13">M. TOP 13: Lastenausgleich.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-14" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-14">N. TOP 14: Sozialversicherung.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-15" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-15">O. TOP 15: Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-16" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-16">P. TOP 16: Hochschulen.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-17" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-17">Q. TOP 17: Steuern und Abgaben. Personensteuern, Anfragen.</item>
+               <item xml:id="cdu-csu-04_1965-06-29-t1440_EP_SVP-18" corresp="#cdu-csu-04_1965-06-29-t1440_EP_div_SVP-18">R. TOP 18: Arbeit der Fraktion.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Bericht aus dem Ältestenrat]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erstattet einen Bericht aus dem Ältestenrat und teilt mit, daß die SPD keine Fristeinrede gegen die abschließende Beratung der VEBA-Privatisierung erheben werde.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN001" type="comment">
+                     <p>Antrag des Schatzministers auf Zustimmung des Deutschen Bundestages […] zur Veräußerung weiterer VEBA-Aktien […] (Drs. IV/3616 vom 19. 6. 1965).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Hinsichtlich der Erhöhung der Krankenversicherungspflichtgrenze habe der Vorsitzende des Sozialpolitischen Ausschusses entgegen der ablehnenden Haltung des Plenums versucht, diese Frage wieder dadurch ins Gespräch zu bringen, daß er die alte Krankenversicherungsneuordnung auf die Tagesordnung seines Ausschusses setzte, um die Teile, die mit der Pflichtgrenze in Zusammenhang stehen, als separaten kleinen Teil verabschieden zu können.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN002" type="comment">
+                     <p>Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – d. Abg. <name type="Person" role="Erwaehnung" ref="#SchneiderGeorg_1953-10-06">Schneider</name> (Hamburg) u. a. (Drs. IV/3555 vom 15. 6. 1965) und FDP-Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – (Drs. IV/3579 vom 16. 6. 1965).</p>
+                  </note>
+               </seg> Dieses geschäftsordnungsmäßig nicht anfechtbare Vorgehen bedeute im Grunde eine Umgehung einer klaren Entscheidung des Plenums in dieser Sache. Da das Gesetz seinerzeit aber in anderen Ausschüssen zur Mitberatung vorlag und ohne Berücksichtigung deren Stellungnahme keine Vorlage erarbeitet werden könne, liege also zur Stunde keine Drucksache vor und somit auch kein Antrag zur Geschäftsordnung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> (Bielefeld) bedauert den Beschluß der Fraktion, die Frage der Erhöhung der Versicherungspflichtgrenze nicht mehr beraten zu können.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> bittet, da das Rechtsträger-Abwicklungsgesetz nicht mehr verabschiedet werden könne<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN003" type="comment">
+                     <p>Gesetzentwurf zur Regelung der Rechtsverhältnisse nicht mehr bestehender öffentlicher Rechtsträger – Rechtsträger-Abwicklungsgesetz – (Drs. IV/822 vom 7. 12. 1962).</p>
+                  </note>
+               </seg>, von seiten der Fraktion zu der in der Regierungsvorlage angesprochenen Frage, daß für Gebietskörperschaften, die außerhalb der Grenze von 1937 lagen, keine Treuhänderschaft eingerichtet werde, keine Stellung zu beziehen, weder positiv noch negativ.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN004" type="comment">
+                     <p>Fortgang siehe TOP 15.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[3. Grundgesetz]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> kommt auf den Antrag zur Ergänzung des Artikels 5 des GG zu sprechen. Im Vorstand sei mit den Antragstellern dahingehend eine Einigung erzielt worden, daß von einer ersten Lesung im Plenum abgesehen werde, da eine ordnungsmäßige Behandlung dieser ernsten und das deutsche Volk bewegenden Fragen angesichts des Zeitdrucks nicht mehr gewährleistet ist. Im nächsten Bundestag werde die Beratung und Prüfung aller Aspekte dieses Problems fortgesetzt und eine erneute Vorlage eingebracht.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN005" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg> In diesem Sinne wolle man auch eine Erklärung an die Öffentlichkeit geben.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SuesterhennAdolf_1961-10-17">Süsterhenn</name> erklärt sich mit dieser Resolution nur unter der Bedingung einverstanden, wenn die von <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> in seiner Rede vor der Universität Hamburg erhobenen beleidigenden Äußerungen gegen die Antragsteller zurückgenommen werden. Ihnen werde vorgeworfen, Eiferer zu sein, die gar nicht sähen, wie nahe sie auf diesem Gebiet den kommunistischen Vorstellungen schon gekommen seien. Draußen dürfe nicht der Schein entstehen, als sei diese Aktion aufgrund dieser Vorwürfe abgeblasen worden.</p>
+            <p>Darüber hinaus habe der Arbeitskreis VI beschlossen, eine Kommission zu bilden, die in Verbindung mit den interessierten Kreisen, den beiden Kirchen, der Aktion »Saubere Leinwand«, der Aktion »Sorge um Deutschland«, der Moralischen Aufrüstung, dieses Thema weiterbehandelt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> führt aus, die Presse, die einen Vordruck seiner Rede erhalten habe, sei nur teilweise selber in der Veranstaltung gewesen und habe diesen Passus, den er, <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>, zwar im Vorentwurf nicht, aber vor der Akademie der Künste vorgetragen habe, veröffentlicht. Er habe dort die Meinung vertreten, daß man bei dieser ganzen Problematik über die Bestimmung der absoluten Wertsetzung sofort in den Sumpf der unbeschränkt auslegbaren Definitionen, mit denen man alles erlauben oder alles verbieten könne, gerate. Weiter habe er ausgeführt, daß von parlamentarischer Seite der Vorschlag komme, die Kunst an das Sittengesetz zu binden, andere hätten von der Treue zur Verfassung gesprochen, der die Kunst genügen müsse, wieder andere meinten, die natürliche Scham des Menschen sei ein verbindlicher Maßstab. Alle diese Formulierungen aber würden, wie immer sie auch gedrechselt sein mögen, schließlich auf das gesunde Volksempfinden hinauslaufen. Diese Alternative müsse hart und deutlich ausgesprochen werden. Er, <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>, stehe auf dem Standpunkt, entweder man bejahe die pluralistische Demokratie und Gesellschaft, dann müsse man auch die pluralistischen Aufgaben der Kunst anerkennen, oder aber man lehne die letztere ab, dann werde man auch die pluralistische Gesellschaft nicht länger wollen können. Wer sich dieses nicht klarmache, sei entweder ein Träumer oder ein Autokrat. Wer bezweifele denn, daß es auf kommunistischen Kinoleinwänden viel moralischer zugehe als auf denen der freien Welt? Wer habe jemals in Abrede gestellt, daß die deutsche Kunst von 1933 bis 1945 ein »Born des Edelmuts«, wenn auch des verlogenen, des provinziellen Kitsches war? Wer aber könnte leugnen, daß die Diktatoren, mit ihrem gesunden Volksempfinden oder ihrem sogenannten sozialistischen Realismus sich viel stärker an der Kulturproduktion beteiligen als die schöpferische Kraft des Künstlers. Die Spuren mögen einen schrecken. Dann habe er den Satz eingefügt, ob denn die Eiferer und Rufer nicht sähen, wie nahe sie mit dergestalteten Vorgängen an die Praxis der Diktatoren, seien sie links oder rechts, heranrücken. Er, <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>, bekenne sich zur Freiheit der Kunst, auch dann, wenn er die Kunst in einzelnen Werken und Richtungen ablehne. Mit Verboten zu arbeiten, in welcher Tarnung auch immer, lehne er ab. Zu diesen seinen Worten stehe er auch heute noch.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#SuesterhennAdolf_1961-10-17">Süsterhenn</name> spricht sich dafür aus, bei diesen Vorgängen von dem auszugehen, was der Presse mitgeteilt und dann veröffentlicht worden ist. Das stehe in der Öffentlichkeit, und danach werde die Fraktion beurteilt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> erklärt, es liege ihm selbstverständlich fern, eine Mehrheit oder eine Minderheit der Fraktion etwa in Zusammenhang mit kommunistischen Vorstellungen oder kommunistischem Gedankengut zu bringen. Insofern distanziere er sich von seinen Äußerungen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> vertritt die Meinung, daß die Ausführungen des Abg. <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> eine große Unsicherheit auf dem Gebiet erkennen lassen. Heute sei der Maßstab, der durch die Judikatur festgelegt sei, nicht mehr das gesunde Volksempfinden, sondern der der modernen Kunst aufgeschlossene Mensch. Das verändere sofort die ganze Ausgangsbasis, von der aus die Antragstellung erfolgte, und deshalb erachte sie die Äußerungen als völlig ignorant. Auch sie vertrete die Meinung, daß es unwürdig sei, die Debatte über dieses Problem im letzten Moment stattfinden zu lassen, unter Zeitdruck, vielleicht vor leerem Haus. Einen großen Schritt vorwärts sehe sie darin, wenn diese Arbeitsgruppe gebildet werde, die weiterhin sich mit dieser Materie befasse.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> hält beide Fassungen der Rede für unmöglich und bezweifelt, daß der Verfasser den Willen und das Ziel der Christlich-Demokratischen Union überhaupt begriffen habe.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> spricht sich für den Vorschlag des Fraktionsvorsitzenden aus und schlägt vor, klar zum Ausdruck zu bringen, daß diese Fraktion eine freiheitliche Partei ist und zu bleiben gedenke, auch wenn sie nicht einem freiheitlichen Begriff ohne jede Bindung huldige. Man denke doch gar nicht daran, die Freiheitlichkeit des Grundgesetzes einzuschränken, sondern wolle einmal klarstellen, ob dieser Staat ein in christlicher Verantwortung freiheitlicher Rechtsstaat sei oder ob hier die Freiheit des Dschungels herrsche.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> sieht sich nur in der Lage, dieser Erklärung der Fraktion zuzustimmen, wenn auch die Bemerkung zurückgenommen werde, daß die Unterzeichner sich damit in die Nähe links- oder rechtsstehender Kreise begeben haben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> verweist darauf, daß diese Dinge an dem weltanschaulichen Fundament der Fraktion rüttelten und in der Kürze der Zeit nicht aus der Welt geschafft werden könnten. Man solle mit dem Erreichten, nämlich der Erklärung und der Bildung einer Arbeitsgruppe, zufrieden sein.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#JacobiMaria_1961-10-17">Jacobi</name> bittet diejenigen, die noch weitere Publikationen verbreiten wollen, sich auf ihre Aufgabe zu besinnen oder zumindest mit der Fraktionsführung Rücksprache zu nehmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> stimmt ebenfalls dem Vorschlag der Fraktionsführung zu, möchte aber die Formulierung »eine Gruppe von Abgeordneten« abgeändert wissen in »Mehrheit der Fraktion«.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> bezeichnet die Tatsache, daß sich die ganze Fraktion dieses Anliegen zu eigen mache, als ausreichend.</p>
+            <p>Die Fraktion stimmt bei fünf Gegenstimmen und einigen Enthaltungen für die Erklärung der Fraktionsführung und die Einrichtung einer Arbeitsgruppe.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-4">
+            <head>D.</head>
+            <p>[4. Gedenken, Bilanz der Fraktionsarbeit]</p>
+            <p>Dann gedenkt die Fraktion des verstorbenen Friedrich Wilhelm <name type="Person" role="Erwaehnung" ref="#WillekeFriedrichWilhelm_1953-10-06">Willeke</name>, der 12 Jahre diesem Hause angehörte, und der anderen 18 Mitglieder, die in dieser Legislaturperiode heimgerufen wurden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hält einen Rückblick auf die Tätigkeit der Fraktion, die in den vier Jahren manche Stürme erlebte, sich aber am Schluß immer wieder zusammengefunden habe. Am Anfang der Legislaturperiode habe man sich daran gewöhnen müssen, nicht mehr die absolute Mehrheit zu besitzen, und der Verlust der acht Mandate ziehe sich wie ein schmerzlicher roter Faden durch die ganze Periode. Im Vordergrund stehe aber die gute Arbeit, die dieser Bundestag geleistet habe und die in nichts zurückstehe hinter der Arbeit früherer Bundestage. Es seien große Reformwerke verabschiedet worden, auf sozialpolitischem Gebiet erfolgten Verbesserungen, und außenpolitisch sei mehr getan worden, als nur die deutsche Position zu behaupten. Man könne sich sehen lassen mit dieser Arbeit, die Klarheit und Geschlossenheit der CDU/CSU-Fraktion zum Ausdruck bringe und die eine gute Ausgangslage für den Wahlkampf biete.</p>
+            <p>Das gute Ergebnis bei den Wahlen an der Saar zeige, daß mit einem gut geführten Wahlkampf noch etwas erreicht werden könne, und mit derselben Energie müsse das ganze Land bearbeitet werden. Es gebe keine Wunderwaffe mehr, es gebe nur diesen Wahlkampf, den Fleiß und die Geschlossenheit. Jeder müsse sich darum bemühen, daß die CDU/CSU wieder die absolute Mehrheit gewinne, denn man habe ja nun die Erfahrungen mit einer Koalition sammeln können und wisse, wie schwierig sich in einem solchen Falle die Arbeit gestalte.</p>
+            <p>Allen Fraktionsmitgliedern wolle er, Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, für die gute Mitarbeit danken. Wenn er jemanden verletzt haben sollte, was nicht seine Absicht gewesen sei, bitte er um Entschuldigung. Seine Absicht habe darin bestanden, in fairer Weise einen Gesamtwillen der Fraktion zu führen, hoffentlich in die richtige Richtung. Sein Dank erstrecke sich auch auf die Mitarbeiter dieser Fraktion, die in einer Zeit, in der alle Menschen über die fehlende Arbeitsmoral klagten, nicht ein einziges Mal in der ganzen Zeit seiner Amtsführung sich beschwerten, auch, wenn sie tagelang nicht vor 9, 10 Uhr das Haus verlassen konnten.</p>
+            <p>Auch den ausscheidenden Abgeordneten gehöre sein Dank, und er bitte sie, mit der Fraktion in Verbindung zu bleiben und auch aus der Distanz mit ihrem Rat und mit ihrem Besuch der Fraktion zur Seite zu stehen. Die Tür der Fraktion werde für jeden offen sein.</p>
+            <p>Nicht minder herzlich gelte seine Anerkennung dem in dieser Legislaturperiode ausgeschiedenen Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, der weiterhin mit seinem Rat und seiner Mitarbeit der Fraktion zur Verfügung stehe, und dem neuen Bundeskanzler <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> für seine gute Zusammenarbeit.</p>
+            <p>In den vergangenen vier Jahren sei die Fraktion 141mal zu Fraktionssitzungen, 155mal zu Vorstandssitzungen und 197mal zu Plenarsitzungen zusammengekommen.</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Arbeitskreis I</cell>
+                  <cell>habe 86mal getagt,</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis II</cell>
+                  <cell>habe 89mal getagt,</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis III</cell>
+                  <cell>habe 97mal getagt,</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis IV</cell>
+                  <cell>habe 97mal getagt,</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis V</cell>
+                  <cell>habe 92mal und der 1963 gegründete</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis VI</cell>
+                  <cell>49mal [getagt].</cell>
+               </row>
+            </table>
+            <p>Vom Bundestag konnten 426 Gesetzesvorlagen verabschiedet werden.</p>
+            <p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Herr Vorsitzender, mein verehrter junger Freund <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>, verehrte und liebe Kollegen! Es ist nach der Saarwahl auf der einen Seite nützlich und richtig, die Blicke einmal zurückzulenken auf demoskopische Umfragen und den Blick auf uns selbst zu richten und damit die Kraft zu finden für das, was uns bevorsteht. Wenn ich die letzten Landtagswahlen im ganzen an mir vorbeiziehen lasse, angefangen mit Niedersachsen, dann in Bremen, dann in Baden-Württemberg und jetzt an der Saar, dann, möchte ich sagen, ist das ein eindrucksvoller Beweis dafür, daß unsere Arbeit, wenn wir einig sind und wenn wir mit dem vollen Einsatz unserer Persönlichkeiten vor den Wähler treten, des Sieges gewiß sein kann. Denn gerade die letzten Saarwahlen haben ja gezeigt – im Gegensatz zu der Meinung einiger –, daß wir alles in kürzester Frist aufgeholt und überholt haben. Und so soll es auch bei der kommenden Bundestagswahl sein. Ich möchte mich nicht als leuchtendes Vorbild hinstellen, keinesfalls! Aber ich hoffe und erwarte von jedem einzelnen von Ihnen, daß er nach seinem Können alles tut, was überhaupt möglich ist, auch in einer vielleicht nicht so dankenswerten Kleinarbeit, um die Menschen, um die es geht, zu gewinnen. Ich bin mir dessen durchaus bewußt, die Wahlen gewinnt man nicht dadurch, daß ich und einige andere führende Persönlichkeiten der CDU/CSU in großen Massenversammlungen auftreten. Das gehört auch dazu. Aber die ganz treue Kleinarbeit im kleinsten Kreise, das ist die Quelle des Erfolgs. Ich glaube, so viel muß jeder einzelne mitbringen, den guten Willen und auch manchmal Bescheidenheit, um seine ganze Kraft einzusetzen.</p>
+            <p>Aber wenn ich zurückblicke, dann denke ich natürlich auch an die Arbeit dieser Fraktion. Und ohne Auftrag danke ich Ihnen nicht nur in meinem eigenen Namen, sondern auch im Namen der Bundesregierung für die gute Zusammenarbeit. Gute Zusammenarbeit heißt nicht, daß wir uns von Anfang an in allen Fragen einig gewesen sind. Das war die Fraktion nicht immer unter sich, und auch zwischen Regierung und unserer Fraktion gab es da und dort unterschiedliche Auffassungen, gab es Gegensätzlichkeiten. Aber es gab keinen Streit, und wir haben uns immer wieder zusammengefunden, und ich glaube, es ist doch mehr, was die CDU/CSU zusammenbindet, als nur das materielle Interesse, sondern wir sind schon von einem Geist getragen, und wir wollen ja auch einen Auftrag erfüllen und über das Primitive des Alltags hinausreichen und in die sittlichen Wurzeln unseres Daseins dann heruntergehen, und wenn wir dessen bewußt sind, und ich bin mir dessen bewußt, gerade in dieser unserer Zeit, dann glaube ich, finden wir auch den Weg und den sittlichen Standort für unser Tun. Ich sehe also voll Zuversicht der nächsten Bundestagswahl entgegen, aber immer unter der Voraussetzung, daß jeder einzelne bereit ist, bis zum Letzten einzustehen für das, was wir wollen.</p>
+            <p>Aber nun ein Wort an Sie, lieber Freund <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>! Ich glaube, eine absolute Tatsache, eine objektive Wahrheit ist die gute Zusammenarbeit zwischen der Fraktionsführung, ich schließe auch die anderen Herren ein, mit der Bundesregierung und insbesondere auch mit mir. Sie war in dieser ganzen Zeit sehr sehr eng und außerordentlich vertrauensvoll. Wir haben, wenn Sie wollen, manchen Sturm zusammen erlebt. Ich denke an den Kanzlerwechsel. Aber wenn manchmal meine staatsmännische Weisheit bestritten wird von draußen, in einem kann ich sie beweisen, nämlich daß ich erkannt habe, unser junger Freund <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> ist der richtige Mann an der Spitze der Fraktion (Beifall). In gewisser Hinsicht fühle ich mich mitverantwortlich, nicht als Förderer und Gönner, nein, sondern zuerst einmal mit einem kleinen Schuldbewußtsein, weil er aus der Regierung ausgetreten ist, aber ausgetreten, um einen Posten einzunehmen, den er, glaube ich, nicht nur voll ausfüllt, sondern auch so, daß er der berufene Vorsitzende dieser unserer Fraktion ist.</p>
+            <p>Ich gehöre zu denen, die schon 16 Jahre im Dienst stehen, ich habe manches in diesen 16 Jahren erlebt und habe manchen Freund hinscheiden sehen. Und ich sehe mit einer gewissen Trauer, daß ich dem einen oder anderen in der nächsten Legislaturperiode nicht mehr begegnen werde. Aber das ist unser Schicksal. Das ist nicht nur eine Frage der Generationen – das ist es auch –, hier spiegelt sich etwas wider von der Unendlichkeit unserer Aufgabe und unserer Arbeit. Wir reichen den Stafettenstab weiter, der eine früher, der andere später. Aber es kommt darauf an, daß wir im gleichen Geist und über die Generationen hinweg das hochhalten, was uns in der finstersten und düstersten Stunde Deutschlands miteinander verbunden hat. Wenn das bestehen bleibt, dann habe ich keine Sorge, und dann sehe ich nicht nur für unsere Partei, nicht nur für unsere Fraktion, sondern auch für unser deutsches Vaterland eine glückliche und gesicherte Zukunft voraus. Damit danke ich Ihnen, meine lieben Freunde, nochmals von ganzem Herzen, und so, wie Sie mein Vertrauen haben, so hoffe ich, wenn wir wieder zusammentreten nach gewonnener Wahl, daß ich auch weiterhin Ihres Vertrauens gewiß sein kann. Haben Sie herzlichen Dank.« (Beifall).</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-5">
+            <head>E.</head>
+            <p>[5. Entlastung des Vorstands und der Geschäftsführung]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> erstattet einen Bericht über die Kassenprüfung. Die Fraktion beschäftige laufend zwischen 45 und 50 Angestellte. Ein Angestellter mußte wegen Unredlichkeiten entlassen werden. Mit Rücksicht auf dessen Familie sei von einer Strafverfolgung Abstand genommen worden. An Büchern würden geführt ein Kassabuch, ein Amerikanisches Journal, ein laufendes Inventarverzeichnis und zur Gehaltsabrechnung Gehaltslisten sowie Gehaltskarten, wie sie auch die Bundestagsverwaltung benutze. Die Kassenbelege würden laufend numeriert und stimmten mit den Nummern des Kassenbuches überein. Die Buchführung sei ordnungsgemäß geführt und die Anregungen zur besseren Übersichtlichkeit bereits eingeführt. Die Buchungen stimmten mit den Unterlagen überein, und die Belege würden wiederholt stichprobenweise geprüft. Die Zahlungsanweisung erfolge durch <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, in Ausnahmefällen durch <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>.</p>
+            <p>Im Jahre 1964 habe die Fraktion Einnahmen in Höhe von 1 424 388 DM bezogen:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Überweisung durch die Amtskasse des Bundestages</cell>
+                  <cell>1 291 000 DM</cell>
+               </row>
+               <row>
+                  <cell>Fraktionsmitgliederbeiträge</cell>
+                  <cell>78 150  DM</cell>
+               </row>
+               <row>
+                  <cell>verschiedene Einnahmen</cell>
+                  <cell>55 238 DM.</cell>
+               </row>
+            </table>
+            <p>Die Ausgaben beliefen sich auf 1 477 949 DM:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Gehälter</cell>
+                  <cell>911 603 DM</cell>
+               </row>
+               <row>
+                  <cell>Sozialversicherung</cell>
+                  <cell>81 439 DM</cell>
+               </row>
+               <row>
+                  <cell>allgemeine Unkosten</cell>
+                  <cell>209 611 DM</cell>
+               </row>
+               <row>
+                  <cell>Reisekosten</cell>
+                  <cell>137 094 DM</cell>
+               </row>
+               <row>
+                  <cell>Presse- und Büromaterial</cell>
+                  <cell>87 458 DM</cell>
+               </row>
+               <row>
+                  <cell>Steuern</cell>
+                  <cell>4 932 DM</cell>
+               </row>
+               <row>
+                  <cell>Ersatzkassen</cell>
+                  <cell>1 587 DM</cell>
+               </row>
+               <row>
+                  <cell>Darlehen</cell>
+                  <cell>4 145 DM</cell>
+               </row>
+               <row>
+                  <cell>Sozialfonds</cell>
+                  <cell>40 077 DM.</cell>
+               </row>
+            </table>
+            <p>Die Mehrausgaben in Höhe von 53 561 DM wurden aus dem vorhandenen Kassenbestand gedeckt.</p>
+            <p>Die Aufteilung der allgemeinen Unkosten ergebe folgendes Bild:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Porto</cell>
+                  <cell>12 000 DM</cell>
+               </row>
+               <row>
+                  <cell>Porto der CSU-Landesgruppe</cell>
+                  <cell>12 000 DM</cell>
+               </row>
+               <row>
+                  <cell>Kulturpolitisches Büro</cell>
+                  <cell>14 400 DM</cell>
+               </row>
+               <row>
+                  <cell>Mittelstandsbüro</cell>
+                  <cell>9 000 DM</cell>
+               </row>
+               <row>
+                  <cell>Dokumentations-GmbH</cell>
+                  <cell>6 000 DM</cell>
+               </row>
+               <row>
+                  <cell>Komitee d’action</cell>
+                  <cell>4 100 DM</cell>
+               </row>
+               <row>
+                  <cell>Verwaltungsberufsgenossenschaft</cell>
+                  <cell>2 145 DM</cell>
+               </row>
+               <row>
+                  <cell>Parlamentarische Gesellschaft</cell>
+                  <cell>3 000 DM</cell>
+               </row>
+               <row>
+                  <cell>Präsente</cell>
+                  <cell>8 540 DM</cell>
+               </row>
+               <row>
+                  <cell>Blumen</cell>
+                  <cell>9 400 DM</cell>
+               </row>
+               <row>
+                  <cell>Größere Veranstaltungen der Fraktion</cell>
+                  <cell>44 000 DM.</cell>
+               </row>
+            </table>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> schlägt einige Verbesserungen vor:</p>
+            <p>Die Buchhaltung mit einem perfekten bilanzsicheren Buchhalter zu besetzen – sei bereits erfolgt – und in Zukunft eine regelrechte doppelte Buchhaltung mit Eröffnungsbilanz und Schlußbilanz zu führen.</p>
+            <p>Weiter werde angeregt, in Anlehnung an die Buchhaltung der Verwaltung, die großen Beträge der Einnahmen und Ausgaben zu etatisieren, d. h. mit globalen Zahlen vor Beginn des Rechnungsjahres festzulegen, damit nach Abschluß des Rechnungsjahres verglichen werden könne zwischen Soll und Ist. Über den Rahmen einer normalen Geschäftsführung hinausgehende Ausgaben sollten durch Beschluß des Vorstandes schriftlich bestätigt werden. Diese Dinge seien notwendig, um absolute Ordnungsmäßigkeit auch für den Außenstehenden zu garantieren.</p>
+            <p>Insgesamt könne man bestätigen, daß die Rechnungsführung in Ordnung sei. Die Kassenprüfer empfählen der Fraktion, die vorbehaltlose Entlastung des Vorstandes und der Geschäftsführung für die Jahre 1962 bis 1964 einschließlich.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt einstimmige Entlastung fest.</p>
+            <p>Dann verweist er auf die Tätigkeit der Kommission zur Organisation der Fraktionsarbeit, die einige Vorschläge für den neuen Bundestag erarbeitet habe. Eine Erörterung der Anregungen solle später erfolgen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-6">
+            <head>F.</head>
+            <p>[6. Deutschlandpolitik, Anfragen]</p>
+            <p>Im Zusammenhang mit der Notstandsgesetzgebung kommt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> auf eine etwas merkwürdige Veranstaltung in Südhessen zu sprechen, die einen möglicherweise noch in diesen Tagen veranlassen werde, kommentatorisch tätig zu werden.</p>
+            <p>Bundesinnenminister <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> teilt mit, daß vor einigen Wochen in Mannheim eine sogenannte Arbeiterkonferenz aus höchsten Gewerkschaftskreisen stattgefunden habe, bei der auch 300 bis 400 prominente östliche Teilnehmer vertreten waren. Es sei nicht gelungen, dies rechtzeitig zu verhindern. Es habe nun eine zweite Veranstaltung stattgefunden, zu der Leute aus der Ostzone, vorwiegend vom FDGB-Vorstand, einreisten. Er, <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, habe sich mit dem Innenminister des Landes Hessen in Verbindung gesetzt und ihn gebeten, mit allen Mitteln, sowohl versammlungsrechtlichen wie nach dem Urteil des Bundesverfassungsgerichts, sich einzuschalten. Dieser habe sich aber offenbar aus südhessischen Gründen nicht in der Lage gesehen, diesem Treiben Einhalt zu gebieten. Auch die zweite, etwas schärfer formulierte Aufforderung sei ohne Einfluß geblieben. Die Veranstaltung habe stattgefunden. Diese Dinge seien seines Erachtens angetan, eine Kleine Anfrage einzubringen, denn man müsse sich doch nun die Frage stellen, ob in der Bundesrepublik die KPD fortgesetzt werden könne oder nicht.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hält es für sehr erstaunlich, daß der Innenminister des Landes Hessen nach einer schriftlichen Mahnung des Bundesinnenministers es nicht für nötig gefunden habe, dem Urteil von Karlsruhe Genüge zu verschaffen.</p>
+            <p>Arbeitskreis I werde gebeten, eine entsprechende Anfrage auszuarbeiten.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN006" type="comment">
+                     <p>Kleine Anfrage d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> u. a. betr. »Gesamtdeutsches Arbeitergespräch« in Offenbach am 26. 6. 1965 (Drs. IV/3700 vom 29. 6. 1965).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-7">
+            <head>G.</head>
+            <p>[7. Bundesvermögen]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> teilt der Fraktion die Empfehlung des Vorstandes mit, die Vorlage der Regierung auf weitere Privatisierung der VEBA in dieser Woche zu verabschieden.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN007" type="comment">
+                     <p>Antrag des Schatzministers auf Zustimmung des Deutschen Bundestages […] zur Veräußerung weiterer VEBA-Aktien […] (Drs. IV/3616 vom 19. 6. 1965).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> kommt auf die Beratungen des Arbeitskreises II in dieser Sache zu sprechen, der nach wie vor die Überzeugung vertrete, daß noch Differenzen zwischen dem Vorsitzenden des Besitzausschusses und den Mitgliedern des Arbeitskreises einerseits und dem Bundeschatzminister andererseits beständen. Die Fraktion solle alle Anstrengungen machen, diese Kluft zu überbrücken, damit nach außen ein Bild der Geschlossenheit bestehe. Mit einer Gegenstimme und einer Stimmenthaltung empfehle der Arbeitskreis, dem Antrag der Bundesregierung zuzustimmen.</p>
+            <p>Hinsichtlich der Verwendung des Erlöses aus der weiteren Privatisierung schlage der Arbeitskreis vor, diese Mittel nicht im Haushalt untergehen zu lassen, sondern sie in irgendeiner Form zugunsten der weiteren Eigentumsbildung zu nutzen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> gibt die Gründe bekannt, die ihn veranlassen, der Vorlage nicht zuzustimmen. Es erscheine im Interesse der Volksaktionäre und aus energiepolitischen Erwägungen geboten, den Mehrheitseinfluß des Bundes bei VEBA nicht aus der Hand zu geben. Dies beinhalte auch der Schriftliche Bericht des Schatzausschusses, dem der Bundestag in Berlin seine Zustimmung gegeben habe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN008" type="comment">
+                     <p>Drs. IV/3248 vom 24. 3. 1965.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Außerdem stehe er auf dem Standpunkt, daß die Vorlage der Regierung eine Veränderung der Geschäftsgrundlage gegenüber den Zeichnungsunterlagen darstelle. Es sei doch unmöglich, Zeichnungen zuzulassen unter bestimmten Voraussetzungen und dann zwischen Zeichnung und Verteilung einen wesentlichen Punkt dieser Voraussetzungen einseitig zu ändern.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuellerAdolf_1961-10-17">Müller</name> (Remscheid) bezeichnet es bei dem dann nur noch verbleibenden Bundesanteil von 26% als schwierig, die Rechte der Kleinaktionäre wirksam zu vertreten. Das bisherige Verhalten der von der Bundesregierung entsandten Vertreter bei den bereits privatisierten Unternehmen sei nicht dazu angetan, das Anliegen der Bundesregierung zu unterstützen.</p>
+            <p>Ein weiterer Grund für seine ablehnende Haltung liege auf energiepolitischem Gebiet, denn die weitere Privatisierung bewirke die Stillegung einer Zeche.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> glaubt, daß die Beratungen im Arbeitskreis bereits zu einer Annäherung der Standpunkte geführt haben und daß die Ressentiments wegen der nicht richtigen Behandlung und vielleicht nicht rechtzeitigen Anhörung der Arbeitsgruppe »Eigentum« ausgestanden seien. Er bitte darum, doch nicht weiter ins Detail einer energiepolitischen Diskussion einzutreten. Für die Zeichner gelte nur das eine, nämlich, wie viele Aktien sie bekommen.</p>
+            <p>Bisher sei die Union führend in Fragen der Eigentumsbildung und Eigentumsstreuung gewesen, und man solle doch nun nicht ein Bild der Uneinigkeit bieten und in diesen wichtigen Fragen auseinanderfallen. Die Fraktion werde nicht gemessen nach möglicherweise vorhandenen sachlichen, vielleicht aber nur von Fachleuten verständlich zu machenden Unterschieden in den Auffassungen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DichgansHans_1961-10-17">Dichgans</name> vertritt die Meinung, die Beteiligung des Bundes bei der VEBA könne ruhig unter 51% gesetzt werden, da sich die energiepolitischen Anliegen wohl nicht mit dem Unterschied zwischen 26 und 51% steuern ließen.</p>
+            <p>Das tiefe Mißbehagen in dieser Sache liege doch darin, daß es ausgerechnet in der letzten Sitzung dieser Legislaturperiode noch zu tiefgreifenden Meinungsverschiedenheiten komme, und zwar ausgerechnet mit den Kollegen, die sich besondere Verdienste um die Privatisierung erworben haben. Das Schauspiel einer Kontroverse dürfe der Öffentlichkeit nicht geboten werden. Er schlage deshalb vor, sich zu einem Kompromiß zusammenzufinden, erstens die Gruppe 0 (Belegschaftsangehörige) sofort zu befriedigen, zweitens der Gruppe 1 eine Aktie und eine Option auf eine weitere Aktie einzuräumen, drittens das Ausgabeverfahren erst dann zu beenden, wenn auch über die Frage der Option entschieden sei, d. h., die Aktien würden vorerst nicht an der Börse notiert, und viertens, die weiteren Gruppen gingen leer aus.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> sieht in diesem Vorschlag einen konstruktiven Beitrag zur Vermittlung, wenn er auch die Option für etwas zu kompliziert erachte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> bezweifelt gerade den politischen Erfolg, wenn man ein Papier herausgebe, das die Erwartungen der Zeichner nicht erfülle.</p>
+            <p>Obwohl er gegen diese Vorlage stimme, sehe er ein, daß er als Vorsitzender nicht das Recht habe, gegen die Mehrheit der Fraktion eine Entscheidung zu verhindern. Er habe deshalb vorsorglich bereits ein Gespräch mit der Opposition geführt, ein weiteres werde folgen, zu dem mehrere Sachverständige eingeladen sind, damit entweder in der einen oder anderen Richtung eine Entscheidung falle.</p>
+            <p>Seine Sorge richte sich gegen die Zechenstillegung, und er wolle die Frage stellen, was man zu tun gedenke, um dies zu verhindern.</p>
+            <p>Eine weitere Schwierigkeit ergebe sich deshalb, daß die VEBA, so wie sie als Gebilde bestehe, eine reine Holdinggesellschaft sei und von sieben Damen und Herren, die von Finanzierung viel, aber von Unternehmensführung nicht unbedingt etwas verstehen, geleitet werde. Die Umgestaltung der Holdinggesellschaft in einen Konzern bedeute nicht nur rein rechtlich außergewöhnliche Schwierigkeiten, sondern werfe auch personelle Probleme auf, die gerade in diesem Fall nicht leicht zu lösen sein werden.</p>
+            <p>Hinsichtlich einer analogen Regelung der qualitativen Mitbestimmung hätte er, der Redner, gerne gewußt, ob die Zusage, ein Vorstandsmitglied aus der Arbeiterschaft zu berufen, bestehen bleibe und was mit dem Erlös der Privatisierung geschehe.</p>
+            <p>Die Überzeichnung von VEBA liege doch daran, daß es bei VW und Preussag gelungen sei, ein solides Papier zu schaffen. Diesen Erfolg solle man doch jetzt nicht wieder zunichte machen.</p>
+            <p>Bundesschatzminister Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> antwortet auf die einzelnen Fragen und teilt hinsichtlich des Sparwillens mit, daß es sich im einzelnen nicht untersuchen lasse, ob dieser sich nur verlagert habe, fest stehe aber, daß er durch diese Aktion eine weitere Deckung erfahren habe.</p>
+            <p>In bezug auf die Besetzung des Aufsichtsrates und des Vorstandes müsse eine Besserung erfolgen, und er, der Minister, lege größten Wert darauf, die Aufsichtsräte nicht mit fremden Persönlichkeiten zu besetzen, die nichts mit dem Anliegen der Volksaktionäre zu tun hätten.</p>
+            <p>Der Vorschlag des Abg. <name type="Person" role="Erwaehnung" ref="#DichgansHans_1961-10-17">Dichgans</name>, eine Absichtserklärung abzugeben, hielte der Prüfung nicht stand. In einem solchen Falle müßten neue Beschlüsse gefaßt werden.</p>
+            <p>Auch er vertrete die Auffassung, daß es politisch schlecht wäre, wenn es durch die Privatisierung zu einer Zechenstillegung komme. Wegen dieser Frage stehe man mit der Hibernia in Verbindung, die zur Zeit prüfe, was zur Verhinderung einer Stillegung getan werden könne.</p>
+            <p>Bezüglich der Bildung eines Vorstandes müßten noch Gespräche geführt werden. Übereinstimmung bestehe erst darin, den Vorstand jetzt noch zu bilden, und nicht, wie ursprünglich beabsichtigt, dessen Bildung auf später zu vertagen. Aber eines stehe fest, ob 51 oder 26%, im Interesse der Aktionäre habe man die Verpflichtung, alles zu tun, daß ein Vorstand möglichst rasch zustande komme, der das Unternehmen zum Wohle der Gesellschaft und der Aktionäre leite. Deshalb vertrete er die Meinung, daß die Bundesregierung nach wie vor das Recht habe, den Vorstand zu bilden, ob sie 51 oder nur 26% Anteile besitze, spiele keine Rolle.</p>
+            <p>Was die Frage der Verwendung des Erlöses anbelange, glaube er, daß der politische Effekt der Privatisierung einmal in der Privatisierung selbst und zum anderen in der Verwendung des Erlöses liege. Deshalb solle der Erlös nicht im Bundeshaushalt untergehen, sondern hier nur als durchlaufender Posten gelten und im übrigen nach Überlegung der Fraktion einer besonderen Verwendung zugeführt werden.</p>
+            <p>Er, Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name>, bitte die Fraktion, den politischen Erfolg der Privatisierung in den Vordergrund zu rücken und unter dem Gesichtspunkt des politischen Erfolges eine Einigung zu erzielen.</p>
+            <p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bezeichnet es als erforderlich, die Frage der Konzernbildung und die der personellen Besetzung zu lösen.</p>
+            <p>Was die energiepolitischen Bemerkungen anbelange, stehe doch fest, daß eine Zechenstillegung nicht bedeute, daß die Kohle nicht gebraucht werde. Diese Maßnahme treffe das Ruhrgebiet anders, als es dargestellt wurde. Gegenwärtig werde an einer ganz erheblichen Unterstützung zur Beseitigung der Schwierigkeiten beim Kohlenbergbau gearbeitet. Und so viel, wie die Bundesregierung gegenwärtig für diesen Wirtschaftszweig tue, habe sie für keinen anderen Wirtschaftszweig getan. Wenn sich einer nicht beklagen könne, dann sei es das Kohlenrevier.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> macht darauf aufmerksam, daß es eine gesetzliche Bestimmung gebe, die besage, daß Erlöse aus der Veräußerung von Bundesvermögen in den ordentlichen Haushalt gehören. Dieser Bestimmung müsse man Genüge tun. Der Bundestag könne aber selbstverständlich mit einem Gesetz nach einer anderen Lösung suchen. Da aber die Beratungen im Arbeitskreis ergaben, daß ein solches Gesetz in diesem Bundestag nicht mehr möglich sei, sei dieser Weg erfolglos. Ein weiterer Weg liege noch darin, daß der Bundesfinanzminister bei unabweisbaren Notwendigkeiten im Rahmen außerordentlicher Ausgaben etwas tun könne.</p>
+            <p>Der Begriff der unabweisbaren Ausgaben enthalte zwei Voraussetzungen, erstens, die unabweisbaren Ausgaben müßten konkretisiert werden, und zum anderen müßten in der Rangordnung der Aufgaben diese Geldmittel bejaht werden. Da bei der gegenwärtigen Haushaltslage ein Defizit von ungefähr 1 bis 2 Mrd. DM bestehe, könne die Rangfrage in diesem Augenblick nicht ohne weiteres entschieden werden. Er, <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name>, habe Verständnis dafür, die zur Verfügung stehenden Mittel nicht im Haushalt untergehen zu lassen. Man habe sich deshalb im Arbeitskreis verständigt, einen Antrag einzubringen, der die Bundesregierung ersuche, für außerplanmäßige Ausgaben einen Betrag von 25 Mio. DM vorzusehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> ergänzt die Ausführungen des Vorredners und verweist darauf, daß man sich in der Zwangslage befinde, das Geld erst einmal dem Bundesfinanzminister zur Verfügung stellen zu müssen. Arbeitskreis III empfehle deshalb, einen Antrag einzubringen, daß 25 Mio. DM als unabweisbare Ausgaben außerplanmäßig bei Kapitel 2 402, Titel 950 vorgesehen werden. Aus diesen Mitteln sollten Maßnahmen der Eigentumsbildung gefördert werden, insbesondere Anreize zum Erwerb von Wertpapieren.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> sieht in der Verwendung des Erlöses eine politische Entscheidung mit drei Lösungsmöglichkeiten:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Verwendung für Eigentumsbildung. Die vorgeschlagene Entschließung biete hier einen Anfang.</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>Die Erlöse sollten für bundeseigene Unternehmen mit dem Ziel verwendet werden, diese Unternehmen für eine weitere Privatisierung zu fördern, also eine Kapitalausstattung.</p>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>Verwendung für das deutsche Gemeinschaftswerk.</p>
+               </item>
+            </list>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt fest, daß die Fraktion den Entschließungsantrag gegen vier Stimmen bei einigen Enthaltungen annimmt.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN009" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-8">
+            <head>H.</head>
+            <p>[8. Notstandsrecht]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> trägt zur Frage des Schutzbaugesetzes vor, daß ursprünglich beabsichtigt war, jedem Bauherrn einen Zuschuß zur Errichtung von Schutzräumen in Höhe von einem Viertel der Kosten zu geben.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN010" type="comment">
+                     <p>Gesetzentwurf über bauliche Maßnahmen zum Schutz der Zivilbevölkerung (Drs. IV/896 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> Diese Bestimmung wurde dahingehend geändert, daß nur die Bauherrn etwas erhalten sollten, die im Sozialen Wohnungsbau bauen.</p>
+            <p>Ein neuer Kompromißvorschlag des Arbeitskreises I sehe nun vor, auch diejenigen einzubeziehen, die Vorteile aus dem Sozialen Wohnungsbau ausnützen könnten, sie aber nicht in Anspruch nehmen. SPD und FDP hätten sich bereits einverstanden erklärt.</p>
+            <p>Nach den Mitteilungen des MdB <name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name>, wonach auch Arbeitskreis III mit diesem Kompromiß einverstanden sei, erhebt sich in der Fraktion kein Widerspruch.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> kommt auf das Selbstschutzgesetz zu sprechen und teilt mit, die Koalition gehe dahin einig, alle Anträge der SPD geschlossen abzulehnen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN011" type="comment">
+                     <p>Gesetzentwurf über den Selbstschutz der Zivilbevölkerung (Drs. IV/897 vom 14. 1. 1963).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> richtet ebenfalls die Bitte an die Fraktion, sich auf die Grundlage dieses Beschlusses zu stellen. Die SPD beabsichtige, den Zuschußsatz<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN012" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: Zuschutzsatz.</p>
+                  </note>
+               </seg> für die Anschaffung des Selbstschutzgeräts zu erhöhen, was einen Mehraufwand von 250 Mio. DM erfordere. Damit müßte notwendigerweise die Vorlage an den Haushaltsausschuß verwiesen werden, was bedeute, daß sie nicht mehr verabschiedet werden könne, weil sie nicht den Bestimmungen des § 96 GO entspreche.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HuebnerKarl_1952-02-01">Hübner</name> ergänzt die Ausführungen und verweist darauf, daß es sich bei den 250 Mio. DM um einen Vierjahresplan handele. Dies wolle er nur ordnungshalber mitteilen, damit später nicht der Vorwurf im Raum stehe, man hätte mit falschen Zahlen operiert.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-9">
+            <head>I.</head>
+            <p>[9. Öffentlicher Dienst. Personenkreis gemäß Art. 131 GG]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> verweist auf die Anregung des Haushaltsausschusses, die mit der Koalition erarbeiteten Verbesserungen in der Novelle zum G 131 erst zum 1. 1. 1966 in Kraft treten zu lassen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN013" type="comment">
+                     <p>Entwurf eines Schlußgesetzes zum Gesetz zur Regelung der Rechtsverhältnisse der unter Artikel 131 des Grundgesetzes fallenden Personen (Drs. IV/1840 vom 17. 1. 1964).</p>
+                  </note>
+               </seg> Wenn man so verfahre, bliebe noch die Frage der Waffen-SS offen. Ein Thema, das bereits des öfteren behandelt wurde und für die Angehörigen der Waffen-SS eine Versorgung vorsehe, soweit sie Dienst getan haben nach dem 1. 6. 1940. Die Zeit davor werde nicht geregelt.</p>
+            <p>Im NS-Abwicklungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN014" type="comment">
+                     <p>Gesetz zur Regelung der Verbindlichkeiten nationalsozialistischer Einrichtungen und der Rechtsverhältnisse an deren Vermögen vom 17. 3. 1965, BGBl. I, S. 79.</p>
+                  </note>
+               </seg> sei für alle in der NSDAP Tätigen eine Regelung getroffen, und man habe in den drei Fraktionsvorständen die Möglichkeit erwogen, für die Angehörigen der ehemaligen Waffen-SS – nicht zu verwechseln mit den Totenkopfverbänden – auf dem Wege über eine Nachversicherung, also für die Jahre 1933 bis 1940 abzüglich des Wehrdienstes, eine Lösung zu finden. Wenn die Fraktion sich zu einem interfraktionellen Antrag entschließen könnte – die beiden anderen Fraktionen stimmten zu –, hätte man eine einigermaßen befriedigende Lösung und somit eine Vermischung des NS-Abwicklungsgesetzes und des G 131 vermieden.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN015" type="comment">
+                     <p>Änderungsantrag der Fraktionen der CDU/CSU, SPD, FDP zur zweiten Beratung des von der Bundesregierung eingebrachten Entwurfs eines Dritten Gesetzes zur Änderung beamtenrechtlicher und besoldungsrechtlicher Vorschriften, Sten. Ber., 195. Sitz. am 1. 7. 1965, S. 9980 f. (Umdr. 715).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Ein weiterer Punkt, nämlich die Angleichung der Bezüge der Bundesbeamten an die wirtschaftliche Entwicklung, bedürfe noch einer Klärung. Wenn auch nach Verlautbarungen der Bundesregierung dieses Problem keine Rolle mehr spiele in diesem Bundestag, müsse man, um einer Regelung zum 1. 1. 1966 zustimmen zu können, das Vierte Änderungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN016" type="comment">
+                     <p>Entwurf eines Vierten Gesetzes zur Änderung beamtenrechtlicher und besoldungsrechtlicher Vorschriften (Drs. IV/3520 vom 10. 6. 1965).</p>
+                  </note>
+               </seg> mit einer Neuordnung der Ortsklassen und einer Ausweitung des Kinderzuschlages bis zum 27. Lebensjahr zum 1. 7. in Kraft treten lassen. Das sei auch deshalb erforderlich, weil die Länder bereits diese Neuregelung zum 1. 1., zum Teil auch schon früher, beschlossen hätten, so daß für die Bundesbeamten Nachteile entständen, wenn das Vierte Änderungsgesetz erst zum 1. 1. 1966 in Kraft trete. Er bitte deshalb die Fraktion um Zustimmung für den Termin 1. 7. 1965.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> spricht sich dafür aus, bei diesen Gesetzen einen einheitlichen Inkraftsetzungstermin festzulegen. Man müsse auch an die Verwaltung denken, die diese Dinge arbeitsmäßig zu bewältigen hätte. Außerdem sollten auch die finanziellen Aufwendungen nicht außer acht gelassen werden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-10">
+            <head>J.</head>
+            <p>[10. Nahrungs- und Genußmittel]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> teilt zur Frage des Mühlengesetzes mit, daß bei den Beratungen im Bundesrat Wünsche geäußert wurden, die in der Ausschußvorlage nicht berücksichtigt sind, und das Gesetz etwas leichter und praktischer gestalten.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN017" type="comment">
+                     <p>Entwurf eines Vierten Gesetzes zur Änderung des Mühlengesetzes (Drs. IV/3445 vom 19. 5. 1965).</p>
+                  </note>
+               </seg> Arbeitskreis II stimme einem Änderungsantrag unter der Bedingung zu, wenn auch das Ernährungsministerium und die beiden anderen Fraktionen sich einverstanden erklärten.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN018" type="comment">
+                     <p>Änderungsantrag der Fraktionen der CDU/CSU, SPD, FDP zur zweiten Beratung des von der Bundesregierung eingebrachten Entwurfs eines Vierten Gesetzes zur Änderung des Mühlengesetzes, Sten. Ber., 194. Sitz. am 30. 6. 1965, S. 9910 (Umdr. 714).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-11">
+            <head>K.</head>
+            <p>[11. Filme]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name> berichtet, daß zur Frage des Filmgesetzes das noch offenstehende Problem hinsichtlich der Mindereinnahmen mit dem Haushaltsausschuß einer Klärung bedürfe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN019" type="comment">
+                     <p>Gesetzentwurf über Maßnahmen auf dem Gebiet der deutschen Filmwirtschaft d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#MartinBerthold_1957-10-15">Martin</name> u. a. und Fraktionen d. CDU/CSU und SPD (Drs. IV/1172 vom 29. 3. 1963).</p>
+                  </note>
+               </seg> Es komme nun darauf an, dieses Problem auf die Tagesordnung zu bringen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> schlägt der Fraktion im Auftrag des Arbeitskreises I eine Änderung dahingehend vor, im § 6 Abs. 3 statt »Sittengesetz« »sittliche Ordnung« zu sagen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> erklärt, daß die SPD und FDP dieses Gesetz ablehnten, weil nach ihrer Auffassung der Standpunkt der Kirchen zu starke Berücksichtigung gefunden habe. Die SPD stelle nun ein besseres Gesetz in Aussicht. Trotzdem solle versucht werden, dieses Gesetz über die Bühne zu bringen, denn hier biete sich die Möglichkeit, etwas für die »Saubere Leinwand« zu tun.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-12">
+            <head>L.</head>
+            <p>[12. Sozialversicherung. Hüttenknappschaftliche Pensionsversicherung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> setzt sich dafür ein, die Anträge der SPD zur Pensionsversicherung Saarland abzulehnen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN020" type="comment">
+                     <p>SPD-Änderungsantrag zum Gesetzentwurf über Leistungsverbesserungen in der hüttenknappschaftlichen Pensionsversicherung im Saarland (Drs. IV/2884 vom 29. 12. 1964) und Gesetzentwurf zur Neuregelung des Rechts der hüttenknappschaftlichen Pensionsversicherung im Saarland d. Abg. <name type="Person" role="Erwaehnung" ref="#HussongRudolf_1961-10-17">Hussong</name> u. a. u. Fraktion der SPD (Drs. IV/3352 vom 4. 5. 1965).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-13">
+            <head>M.</head>
+            <p>[13. Lastenausgleich]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> legt dar, daß die Vorlage zur 18. Novelle zum LAG durch den Ausschuß<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN021" type="comment">
+                     <p>Ausschuß für den Lastenausgleich.</p>
+                  </note>
+               </seg> eine Auswirkung von 8 Mrd. DM erfahren habe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN022" type="comment">
+                     <p>Entwurf eines Achtzehnten Gesetzes zur Änderung des Lastenausgleichsgesetzes (Drs. IV/3383 vom 10. 5. 1965).</p>
+                  </note>
+               </seg> Nach Meinung aller Sachverständigen ständen aber nur 5 Mrd. DM zur Verfügung, so daß sich die Koalition verständigen mußte, diese Vorlage auf 5 Mrd. DM zu redressieren. Dies solle nun auf dem Wege über die Anrechnung der Verzinsung, den Wegfall der Hausratsentschädigung, die nur scheinbar populär sei, und über die Bestimmung, daß das, was in den Wohnungsbau gehe, wieder zurückkomme, erreicht werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name> greift den Punkt Hausratsentschädigung heraus, der für die einheimischen Fliegergeschädigten in den Großstädten von Bedeutung sei, und bittet, diese Dinge neben dem Problem der Vertriebenen nicht ganz unberücksichtigt zu lassen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> kündigt einen Änderungsantrag an hinsichtlich des Stichtages für Vertriebene, die aus der sowjetisch besetzten Zone gekommen sind. Es handele sich hier um einen kleinen Kreis, so daß keine erheblichen finanziellen Aufwendungen zu erwarten seien. Hinzukomme, daß für einen gleich gelagerten Kreis in der jetzigen Novelle zum G 131 der Stichtag 31. 12. 1964 gewählt wurde.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN023" type="comment">
+                     <p>Entwurf eines Schlußgesetzes zum Gesetz zur Regelung der Rechtsverhältnisse der unter Artikel 131 des Grundgesetzes fallenden Personen (Drs. IV/1840 vom 17. 1. 1964).</p>
+                  </note>
+               </seg> Es erscheine nun unter Berücksichtigung der Gesamtsituation zweckmäßig, diesen Termin nun auch in der 18. Novelle festzulegen. Das bewirke, daß der in der gleichen Situation befindliche Personenkreis auch gleich behandelt werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> spricht sich dagegen aus, da auf der einen Seite der Versuch unternommen werden müsse, zu redressieren. Bei dieser Lage gehe es nicht an, an anderer Stelle eine Ausweitung vorzunehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> glaubt, daß in diesem Punkt es zu einer Einigung zwischen den drei Fraktionen kommen könne und sich an diesen Antrag keine weiteren Ausweitungswünsche anschließen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuntscherErnst_1949-09-07">Kuntscher</name> wendet sich gegen diesen Antrag und bittet, die Schwierigkeiten bei der 18. Novelle nicht noch durch eine Stichtagänderung zu vergrößern.</p>
+            <p>Was die Frage der Hausratsentschädigung anbelange, erfordere diese eine politische Entscheidung, SPD und FDP hätten wesentlich höhere Anträge zu dieser Materie gestellt. Er bitte die Fraktion dringend, ihren Standpunkt noch einmal zu überprüfen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt zu bedenken, ob die Beträge von etwa 300 bis 400 DM für die Fliegergeschädigten wirklich so positiv aufgenommen würden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> hält die Vorlage des Ausschusses, die 8,4 Mrd. DM beinhalte, für unverantwortlich. Schon mit der 14. Novelle zum LAG sollte Schluß sein<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN024" type="comment">
+                     <p>Vierzehntes Gesetz zur Änderung des Lastenausgleichsgesetzes vom 26. 6. 1961, BGBl. I, S. 785.</p>
+                  </note>
+               </seg>, jetzt liege bereits die 18. Novelle vor. Diese Handlung könne man nicht mit politischen Gründen rechtfertigen. Er, <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name>, bezweifele, daß die Fliegergeschädigten überhaupt ernsthaft mit einer Entschädigung rechneten. Das sei längst vergessen. Man solle sich doch vor Augen führen, daß man bereits mit dem zuletzt Gemachten in eine voll inflatorische Entwicklung hineingerate.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EichelbaumErnstTheodor_1957-10-15">Eichelbaum</name> verweist darauf, daß die Regierung selbst diesem Problem völlig ablehnend gegenüberstehe.</p>
+            <p>Bundesvertriebenenminister <name type="Person" role="Sprecher" ref="#LemmerErnst_1952-02-01">Lemmer</name> führt aus, im Kabinett operiere der FDP-Minister <name type="Person" role="Erwaehnung" ref="#DahlgruenRolf_1957-10-15">Dahlgrün</name> bremsend in diesen Dingen diametral im Gegensatz zu seiner Fraktion. Bei diesem unerträglichen Zustande könne man nur hoffen, zu einem Akkord zu kommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeukertEdmund_1953-10-06">Leukert</name> betont, daß von seiten der CSU der Wunsch nach einem Antrag laut werde, sowohl die Aufstockung der Hausratsentschädigung wie auch die Auszahlung der dritten Rate vorzunehmen. Hier gehe es nicht um Haushaltsmittel, sondern um das Aufkommen des Lastenausgleichsfonds.</p>
+            <p>Bezüglich des Antrages zur Stichtagänderung handele es sich um einen Bagatellantrag, der schätzungsweise 300 bis 400 Menschen erfasse und dem man nach seiner Meinung ruhig beitreten könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> gibt zu bedenken, daß der Fonds in jedem Fall nicht liquide sei, so daß eine Hausratsentschädigung, falls sie komme, erst in drei oder vier Jahren ausgezahlt werde. Es sei doch so, daß die vierte Hausratsrate nach liquiden Mitteln bedient werde, so daß die nach der 18. Novelle wirksam werdenden Leistungen zum Beispiel in der Hauptentschädigung halbiert werden müßten und so die Leistungen beträchtlich absinken. Bei dieser Sachlage müsse man sich doch fragen, wo der politische Effekt liege, wenn vielleicht eine zweijährige Wartezeit erforderlich sei. Ganz abgesehen davon hätten die Ausgleichsämter noch mit der 17. Novelle zu tun<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN025" type="comment">
+                     <p>Siebzehntes Gesetz zur Änderung des Lastenausgleichsgesetzes vom 4. 8. 1964, BGBl. I, S. 585.</p>
+                  </note>
+               </seg>, so daß es auch arbeitsmäßig kaum zu schaffen sei.</p>
+            <p>Im Kabinett und in der Koalition bestehe Einigkeit, daß ein Volumen von 5 Mrd. DM noch tragbar erscheine. Nur die jeweiligen Grenzen bedürften noch einer Absteckung. Die Alternative sollte nicht heißen 8 Mrd. oder 5 Mrd. DM, sondern 5 Mrd. oder alternativ gar nichts, weil andernfalls die Vorlage im Haushaltsausschuß scheitern müßte. Auf diesen Boden sollte die Fraktion sich stellen und in der Abstimmung einig gehen. Sonst gehe der geringe Erfolg auch noch verloren.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> beendet die Diskussion um diesen Punkt mit der Bitte an den Haushaltsausschuß, eine vernünftige Vorlage auf der Grundlage 5 Mrd. DM zu finden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-14">
+            <head>N.</head>
+            <p>[14. Sozialversicherung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erstattet einen Bericht über die Beratungen der Kommission zur Pflichtversicherungsgrenze und verweist darauf, daß nach der Entscheidung des Präsidenten ohne ein Votum des Haushaltausschusses eine Plenardebatte nicht möglich sei.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN026" type="comment">
+                     <p>Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – d. Abg. <name type="Person" role="Erwaehnung" ref="#SchneiderGeorg_1953-10-06">Schneider</name> (Hamburg) u.a. (Drs. IV/3555 vom 15. 6. 1965) und FDP-Entwurf eines Fünften Gesetzes über Änderungen und Ergänzungen von Vorschriften des Zweiten Buches der Reichsversicherungsordnung – Drittes Einkommensgrenzengesetz – (Drs. IV/3579 vom 16. 6. 1965).</p>
+                  </note>
+               </seg> Der Haushaltsausschuß solle gebeten werden, den Beschluß des Sozialpolitischen Ausschusses zu behandeln. Weiter stehe die Kommission auf dem Standpunkt, das Ergebnis der Beratungen abzuwarten und dann erst in eine erneute Diskussion einzutreten.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> spricht sich dafür aus, die politische Entscheidung über diese Dinge zurückzustellen, bis die Fraktion vollständig über die Auswirkungen dieses Problems unterrichtet werden könne. Das sei im Augenblick wegen der mangelnden Besetzung nicht möglich.</p>
+            <p>Die Fraktion tritt der Empfehlung der Kommission bei, erst das Ergebnis der Beratungen im Haushaltsausschuß abzuwarten.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-15">
+            <head>O.</head>
+            <p>[15. Bundesvermögen. Ehemaliges Reichs- und preußisches Vermögen]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> bezeichnet es im Hinblick auf das Rechtsträger-Abwicklungsgesetz nicht für gut, dieses Problem in diesem Augenblick zu diskutieren, da es ein unangenehmes außenpolitisches Moment anspreche.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN027" type="comment">
+                     <p>Gesetzentwurf zur Regelung der Rechtsverhältnisse nicht mehr bestehender öffentlicher Rechtsträger – Rechtsträger-Abwicklungsgesetz – (Drs. IV/822 vom 7. 12. 1962).</p>
+                  </note>
+               </seg> Er, Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, wolle versuchen, im Rahmen der Rechtsausschußsitzung eine Einigung zwischen den drei Fraktionen zu erzielen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> vertritt die Auffassung, daß die FDP nicht ungezügelt über die zwischen CDU und SPD getroffene Einigung in dieser Sache hinausgehen werde. Es bestehe Einigkeit darin, einen Unterschied zwischen den Körperschaften, die innerhalb und außerhalb des Reiches waren, zu machen. Auch die FDP wolle nicht den Wirkungsbereich der deutschen Gemeindeordnung herangezogen wissen, weil es sich sonst um großdeutsche Dinge handeln würde. Die Meinungen gingen hinsichtlich des vom Auswärtigen Amt vorgeschlagenen Genehmigungsverfahrens auseinander. Man wolle statt dessen lieber eine Treuhandverwaltung, wobei der Kompromiß Zustimmung finden würde, für diese Bereiche eine Treuhandverwaltung der Länder statt des Bundes einzurichten.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-16">
+            <head>P.</head>
+            <p>[16. Hochschulen]</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> kommt auf die Erhöhung der Studienförderung nach dem Honnefer Modell zu sprechen, die die Zustimmung des Partei- und des Fraktionsvorstandes gefunden habe. Die Fraktion werde gebeten, diesen Antrag zu übernehmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> ergänzt die Ausführungen und teilt mit, daß der Antrag generell gehalten sei und zum 1. 11. 1965 eine Erhöhung der Förderungsbeträge vorsehe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> macht darauf aufmerksam, daß wahrscheinlich der Antrag nicht mehr ausgedruckt werden könne.</p>
+            <p>Er bitte aber, daß <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> und <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> sich noch einmal mit dieser Sache befassen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-17">
+            <head>Q.</head>
+            <p>[17. Steuern und Abgaben. Personensteuern, Anfragen]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> legt eine Kleine Anfrage vor, die sich mit der Besteuerung des Nutzwertes der Wohnung im eigenen Einfamilienhaus befasse. Obwohl diese Anfrage wegen der Schwierigkeit der Materie nicht das Plazet des Arbeitskreises III gefunden habe, bitte er die Fraktion, diese Anfrage zu starten und die Bundesregierung zu einer Äußerung zu bewegen. In England, Frankreich und den USA bestände bereits eine Vorschrift, den Mietwert der Wohnungen unbesteuert zu lassen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> steht dieser Anregung nicht ablehnend gegenüber, hält aber die noch zur Verfügung stehende Zeit nicht für ausreichend, dieses Problem zu behandeln. Mit dieser Frage müsse sich der neue Bundestag beschäftigen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> hat gegen eine Kleine Anfrage nichts einzuwenden.<seg type="note">
+                  <note xml:id="cdu-csu-04_1965-06-29-t1440_EP_FN028" type="comment">
+                     <p>Kleine Anfrage d. Abg. <name type="Person" role="Erwaehnung" ref="#MeisHans_1958-07-02">Meis</name> u. a. betr. die Besteuerung des Nutzungswerts der Wohnung im eigenen Einfamilienhaus (Drs. IV/3703 vom 30. 6. 1965).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1965-06-29-t1440_EP_div_SVP-18">
+            <head>R.</head>
+            <p>[18. Arbeit der Fraktion]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> (Bielefeld) richtet zum Schluß der Sitzung die Bitte an die Fraktionsführung, von allen Presseverlautbarungen einen Abdruck zu erhalten, damit man wisse, wie die Fraktion zu politischen Vorgängen Stellung nehme. Es gehe nicht an, daß die Abgeordneten erst aus der Zeitung den Standpunkt der CDU erfahren müßten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> verspricht, dieser Bitte in Form von Briefen zu entsprechen; er könne aber nicht sicherstellen, daß die Abgeordneten diese Verlautbarungen vor der Presse erfahren.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

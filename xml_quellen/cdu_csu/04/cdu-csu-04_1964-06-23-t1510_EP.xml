@@ -1,350 +1,498 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1964-06-23-t1510_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1009/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 23. Juni 1964</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>11 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1964-06-23"><time type="start" when="15:10:00"/><time type="end" when="18:15:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/><name type="Person" role="Sitzungsleitung" ref="#StruveDetlef_1949-09-07"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-1" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-1">A. TOP 1: Eröffnung.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-2" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-2">B. TOP 2: Fall <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name>.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-3" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-3">C. TOP 3: Bericht des Bundeskanzlers.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-4" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-4">D. TOP 4: Bericht aus dem Ältestenrat.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-5" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-5">E. TOP 5: Rechtspflege.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-6" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-6">F. TOP 6: Zollwesen.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-7" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-7">G. TOP 7: Rückerstattung.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-8" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-8">H. TOP 8: Öffentlicher Dienst. Besoldung.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-9" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-9">I. TOP 9: Rechtspflege. Verfassung und Verfahren der ordentlichen Gerichte.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-10" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-10">J. TOP 10: Öffentlicher Dienst. Besoldung.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-11" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-11">K. TOP 11: Grundgesetz.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-12" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-12">L. TOP 12: Bundesgebiet. Sondergebiete.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-13" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-13">M. TOP 13: Europäische Gemeinschaften.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-14" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-14">N. TOP 14: Maß- und Gewichtsgesetz, Wasserwirtschaft.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-15" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-15">O. TOP 15: Berlin.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-16" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-16">P. TOP 16: Bundestag. Wahlen durch den Bundestag.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-17" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-17">Q. TOP 17: Landwirtschaft. Bodennutzung.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-18" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-18">R. TOP 18: Landwirtschaft. Arbeits- und Sozialverhältnisse.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-19" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-19">S. TOP 19: Rückerstattung.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-20" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-20">T. TOP 20: Kriegsgefangene.</item>
-					<item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-21" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-21">U. TOP 21: Steuern und Abgaben.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Eröffnung]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt seiner Hoffnung Ausdruck, daß <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> die Fraktionssitzungen nach den Ferien wieder leiten wird. Sodann begrüßt er den wieder in den Bundestag eingetretenen <name type="Person" role="Erwaehnung" ref="#BeckerCurt_1957-10-15">Becker</name>.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Fall <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name>]</p>
-				<p>Im Fraktionsvorstand sei die Sache <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> zur Sprache gekommen. Die von der SPD gegen den früheren Bundeskanzler und gegen Verteidigungsminister <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> erhobenen Vorwürfe müsse man zurückweisen. Was <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> berichtet, werde sorgfältig geprüft. Hier sei nichts zu vertuschen. Erst wenn diese Prüfung abgeschlossen sei, werde man auf die Formalien und die anderen Dinge zurückkommen, die mit dem Stil der Sache zu tun haben. Aber der Bundestagspräsident und der Bundeskanzler hätten sich bereit gefunden, zu diesem Thema in dieser Woche vor dem Bundestag kurze Erklärungen abzugeben, die von den drei Fraktionen im gleichen Geiste unterstützt würden. Dies solle keinen Vorgriff auf das Ergebnis der Prüfung bedeuten, sondern klarmachen, daß das Gerede vom »Staat im Staate« ungerechtfertigt ist. Dieses Gerede müsse abgestellt werden. Die Wirkung im Ausland und auf lange Sicht in der Welt hänge davon ab, daß der Bundestag in dieser Sache eine gemeinsame Sprache redet. Außerdem müsse man darauf hinwirken, daß politische Debatten dort geführt werden, wo sie hingehören, nicht aber im Fernsehen oder in Illustrierten.</p>
-				<p>Er bitte, jetzt in der Fraktion Abstand von einer Debatte zu nehmen. Aber um 17.00 Uhr tage die Gruppe »Verteidigung«, und dort werde auch der frühere Kollege <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> dabei sein.</p>
-				<p>Schließlich beglückwünscht der Vorsitzende den Bundeskanzler und den Außenminister zu dem guten Ergebnis der Reise nach den Vereinigten Staaten.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[3. Bericht des Bundeskanzlers]</p>
-				<p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine lieben Freunde, ich möchte bei der Innenpolitik anfangen und zurückkommen auf den 16. Geburtstag der DM. Das muß uns verpflichten für die Haltung, die wir einzunehmen haben in dem letzten Jahr vor der Wahl. Die Bundesregierung hat den Haushalt mit 63,9 Mrd. DM verabschiedet, das bedeutet ein Mehr von 6% gegenüber dem Vorjahr; dabei können wir 1% als konjunkturunwirksam abstreichen.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN001" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1965 – Haushaltsgesetz 1965 – (Drs. IV/2500 vom 17.8.1964).</p></note></seg> Wir haben uns also streng an die von Brüssel ausgehenden Normen gehalten, daß kein Land über die zu erwartende Zuwachsrate des Sozialprodukts hinausgehen sollte. Die Ministerpräsidenten der Länder – mit Ausnahme von Berlin – haben mir versichert, daß auch sie diese Normen einhalten werden, und ich bin überzeugt, daß das nicht nur eine verbale Aussage war, sondern auch eingelöst wird. Anders liegen die Dinge vielleicht bei den Städten und Gemeinden, auf die wir keinen Einfluß und auch die Länder nur wenig Einfluß haben. Aber ich glaube, daß unsere Haltung verpflichtend sein wird.</p>
-				<p>Wir stehen vor einer schwierigen und gefahrvollen Situation rings um uns in Europa. Und Europa ist ein Gefahrenherd besonderer Art, was die Stabilität anbelangt, wenn wir dafür eintreten, die Stabilität zu erhalten. Denn würde es bei uns an Disziplin fehlen, dann fürchte ich, daß in den anderen Ländern dann überhaupt kein Maßstab gesetzt wird. Wir haben zwei Gründe: unser innerdeutsches Anliegen, die Stabilität zu wahren, aber auch eine europäische Verpflichtung, den anderen zu helfen und mit einem guten Beispiel zu wirken.</p>
-				<p>Wir schauen hier im Bundestag allzusehr auf die Vergangenheit. Wir sprechen immer von Nachholbedarf und glauben, es sei eine Sache globaler Gerechtigkeit, allen diesen Wünschen Rechnung zu tragen. Es wäre dringend notwendig, vorwärts zu schauen und zu überlegen, was wir jetzt zu tun haben, um vom nationalen Standpunkt aus oder von der europäischen oder atlantischen Gemeinschaft aus dafür zu sorgen, daß Stabilität, Ruhe und Sicherheit gewahrt bleiben.</p>
-				<p>Es wird sicher noch manche Anforderung an die Fraktion herantreten, und ich hoffe, daß Sie den Haushalt ebenso hart verteidigen wie 1964; dann wären wir uns einig.</p>
-				<p>Nun zu den letzten Reisen! Ich glaube, und es ist offenkundig, daß in der deutschen Öffentlichkeit hier Erwartungen gehegt wurden, die von Anfang an irreal waren. Es steht die These in der Welt: Wiedervereinigung durch Entspannung. Die Amerikaner sind über den Begriff Entspannung gar nicht so sehr entzückt. Sie sehen, daß das sehr schnell eine Grenze hat und daß sich, falls sie Gespräche zur Verständigung führen würden, der innere und feste Kern, die Deutschlandfrage, nicht aussparen läßt. Die Erklärung, die im Kommuniqué verlautbart wurde, wie der letzte Brief, den mir der Präsident vor dem Abflug noch übergeben hat, sind ein eindeutiges Zeugnis.</p>
-				<p>Im Zusammenhang mit dem Freundschaftsvertrag wurde von den Alliierten eine Demarche in Moskau unternommen. Wir haben auch durch <name type="Person" role="Erwaehnung" ref="#GroepperHorst">Groepper</name> unseren Standpunkt noch einmal erhärtet, und ich hoffe, daß noch eine gemeinsame Demarche erfolgen wird, die alle Fehldeutungen, Gefahren und Spekulationen entfernen wird.</p>
-				<p>Zum Besuch in Amerika: Ich habe einen nachdenklichen Präsidenten angetroffen, der sich seiner Verantwortung bewußt ist, aber auch der Gefahren. Im Vordergrund der politischen Situation steht Südvietnam. Beobachtungsflugzeuge halten das Gebiet unter Kontrolle, Flugzeuge wurden abgeschossen, und die amerikanische Luftflotte hat Befehl zurückzuschießen. Die Situation ist sehr ernst. Das ist ein Beweis, daß die Amerikaner treue Verbündete sind, die überall in der Welt, wo die Freiheit bedroht ist, sich unmittelbar angesprochen fühlen und zu handeln bereit sind. Das mag auch für unsere deutsche Frage doch eine Zuversicht geben, während dieser These Wiedervereinigung durch Entspannung eine dialektische Antithese entgegengesetzt wird: Entspannung durch Wiedervereinigung. Das deutsche Problem ist nicht auszusparen. Aber es wäre Illusion, die Wiedervereinigung frontal anzugehen, ohne daß zugleich über Sicherheit und Abrüstung gesprochen würde. Innerhalb dieser Pole liegt die politische Realität. Die Aussagen des Präsidenten sind klar, und seit Jahren ist keine so bestimmte Zusicherung gegeben worden wie jetzt.</p>
-				<p>Während unseres Aufenthalts in den USA ist dieses Freundschaftsabkommen<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN002" type="comment"><p>Vertrag über Freundschaft, gegenseitigen Beistand und Zusammenarbeit zwischen der Sowjetunion und der DDR.</p></note></seg> geschlossen worden. Ich bin weit davon entfernt, diese Maßnahme zu bagatellisieren, weil damit eine gewisse Verhärtung eingetreten ist. Eine sichtbare Aufwertung Pankows sollte erfolgen, vielleicht mit der Hoffnung, daß, wenn diese »Souveränität« der »DDR« nur immer wiederholt wird, doch eine Geneigtheit erzielt würde, nicht mehr diese strengen Maßstäbe anzuwenden, die wir besonders durchsetzen könnten. Sicher hat eine Rolle mitgespielt, daß <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> sich durch das Selbständigkeitsstreben der osteuropäischen Staaten bedrängt fühlt, aber vom Materiellen her sind keine Zusicherungen gegeben worden, die nicht auch schon im Warschauer Pakt ständen. Ich bin der Meinung, daß die Lage sich nicht verschlechtert hat, bei aller Besorgnis und Wachsamkeit. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> war zweifellos bemüht, die Weltöffentlichkeit und unsere westlichen Verbündeten zu alarmieren. Die Regierungen sind schon zwei Tage vorher unterrichtet worden. Man sieht, daß die beiden vertragsschließenden Parteien sich fest zusammenschließen wollen. Aber in Artikel 9 wurde deutlich, daß <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> es nicht darauf anlegen wollte, eine Verschärfung des Verhältnisses zur westlichen Welt herbeizuführen. Das Potsdamer Abkommen wird besonders erwähnt. Im Hinblick auf Berlin kann man, wenn man optimistisch sein will, sagen, daß das Ultimatum von 1958 etwas weggezogen worden ist, wenn auch die Partei West-Berlin als eigene politische Einheit betrachtet.</p>
-				<p>Das mag Folgen haben vielleicht auch bei der Passierscheinfrage. Denn jetzt kann sich der Senat von Berlin nicht mehr vom Votum und der Übereinstimmung mit der Bundesregierung lösen. Aber auch für den Osten wird es schwer sein, daß der Senat ausdrücklich der Zustimmung der Bundesregierung bedarf, nachdem sie es so dargestellt haben, als ob West-Berlin eine selbständige politische Einheit wäre. Wir werden also wachsam sein müssen.</p>
-				<p>Das waren die Gesprächsthemen und Ereignisse in Washington. Es war auch nur ein Tag.</p>
-				<p>Auch der vorhergehende Besuch in Kanada hat eine volle Übereinstimmung gebracht. Beim Besuch des französischen Staatschefs am 3. und 4. Juli werden die europäischen Fragen stark im Vordergrund stehen. Wir wissen, daß nicht nur zwischen den Sechs völlige Einigung über die politische Zusammenarbeit besteht, sondern daß auch – wie der Besuch <name type="Person" role="Erwaehnung" ref="#SharpMitchell">Scharfs</name> bewiesen hat – die Fragen zwischen EWG und EFTA einer Lösung bedürfen. Es wäre kühn, eine Voraussage wagen zu wollen, wie sich die Ereignisse vollziehen werden. Aber unser Standpunkt ist klar: Wir sind der Auffassung, daß allein aus der wirtschaftlichen Integration heraus eine politische Formierung Europas nur schwer möglich sein wird, da wir auch bei den wirtschaftlichen Verständigungen sehr bald auf Schwierigkeiten stoßen werden, aber niemand kann sagen, wie die Lösung sein wird. Aber ich freue mich auf diesen Besuch, und wir wollen alles tun, um die Freundschaft zwischen Frankreich und Deutschland zu erhalten als den Schlüssel zu jeder europäischen Lösung überhaupt. Dazu will ich noch nachtragen, daß man sich auch in Amerika sehr wünscht, daß diese Freundschaft ein Element sein wird, um sich in anderen Fragen im atlantischen Raum verständigen zu können. Das gilt für die NATO, für die MLF, auch das wurde berührt; die USA hoffen, daß es zum Ende des Jahres zu einem Vertragsentwurf kommt. Aber manche Hürden sind noch zu überwinden.</p>
-				<p>Das ist etwa die Quintessenz dieser Reise. Wer nüchtern diese Dinge betrachtet hat, muß diese Reise positiv bewerten, nur wer illusionistisch gewesen ist und geglaubt hat, daß nur noch das deutsche Problem in der Welt ist, dem ist eben nicht zu helfen.</p>
-				<p>Zum Fall <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> möchte ich mich nicht äußern. Ich halte diese Sache für ein Unglück und für einen schweren Schaden für das deutsche Ansehen. Gerade die Stimmen aus dem Ausland machen das sehr deutlich. Ich bin bestürzt, wie unsere deutsche Öffentlichkeit darauf reagiert. Die Dinge werden geprüft. Aber die Form, die Einseitigkeit und Zusammenballung des Negativen ist nicht im Interesse des deutschen Volkes.«</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> dankt für den Bericht und erteilt das Wort an</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, die fragt, ob es zutreffe, daß <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> für diesen Artikel ein Honorar erhalten habe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> weist darauf hin, daß man diese Fragen alle um 17.00 Uhr an <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> selbst richten könne. Soweit er unterrichtet sei, könne allerdings von einem Honorar nicht die Rede sein. Wegen des Ernstes der Sache sollte man um eine würdige Art der Erledigung besorgt sein.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine lieben Freunde, ich habe noch etwas auf dem Herzen. Ich höre, daß allenthalben mit einem gewissen Mißvergnügen bemerkt wurde, daß ich in bezug auf die Aussagen des Herrn <name type="Person" role="Erwaehnung" ref="#SeebohmHans-Christoph_1949-09-07">Seebohm</name> Abstand genommen habe. Sie können sich kaum vorstellen, wie diese Aussage die Öffentlichkeit im Ausland erregt hat. Ich glaube, daß allen Heimatvertriebenen der beste Dienst dadurch erwiesen wurde, daß wir nicht in einen Streit über das Heimatrecht eintreten, das ich ausdrücklich betont und bejaht habe in der [Bonner] Beethovenhalle und vor 5 000 Menschen in Berlin. Aber diese Aussage war geeignet, nicht nur in bezug auf die ČSR, sondern auch gegenüber anderen Staaten im Südosten wie auch bei unseren Freunden wieder etwas Mißtrauen aufkommen zu lassen.</p>
-				<p>Nehmen Sie mir bitte ab, das ist meine ehrliche Meinung, daß ich nicht zuletzt im Interesse der Vertriebenen hier Abstand genommen und hier eindeutig erklärt habe, daß wir aus dem Vertrag keine territorialen Rechte und Ansprüche geltend machen gegen die ČSSR. Das war notwendig, und ich wäre Ihnen dankbar, wenn dafür gesorgt würde, daß jetzt nicht die ›Soldatenzeitung‹ sich zum Sprecher der Flüchtlinge macht. Bei 10–12 Mio. Flüchtlingen, das muß man verstehen, werden hier mit dem Wort Heimat echte und tiefe Werte angesprochen. Das ist die Sprache, die man versteht und auch respektiert. Ich wäre dankbar, wenn das Thema damit begraben wäre.</p>
-				<p>Noch etwas Verwaltungsmäßiges: Sie wissen, daß ich meinen langjährigen und ältesten Mitarbeiter zum Bundesminister ernannt habe. Maßgebend war der Umstand, daß Herr <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> im Oktober das 70. Lebensjahr vollendet und dann hätte ausscheiden müssen. Das wäre in diesem Jahr unverantwortlich gewesen, und es wäre auch unzumutbar gewesen, Herrn <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> zuzumuten, im Angestelltenverhältnis weiterzuarbeiten. An der Funktion ändert sich gar nichts. Herr <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> nimmt seine alte Funktion wahr.</p>
-				<p>Zum anderen habe ich mitzuteilen, daß ich mich entschlossen habe, im Einvernehmen mit Herrn <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> ihn nicht mehr als Minister für Sonderaufgaben zu benennen, sondern als Bundesminister, der den Vorsitz im Verteidigungsrat führt. Er bekommt hier eine klare und festumrissene und außerordentlich wichtige Position. Ich bitte Sie um Ihre Zustimmung.«</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> dankt dem Bundeskanzler für seine Ausführungen zum Heimatrecht. Es sei deutlich geworden, daß das Heimatrecht für alle Vertriebenen gilt. Diese Vertretung des Heimatrechts durch den Bundeskanzler sei dankenswert.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-4">
-				<head>D.</head>
-				<p>[4. Bericht aus dem Ältestenrat]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erstattet einen Bericht aus dem Ältestenrat.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-5">
-				<head>E.</head>
-				<p>[5. Rechtspflege]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> berichtet über das Strafprozeßänderungsgesetz, bei dessen Behandlung wohl nur noch wenige Schwierigkeiten zu erwarten seien.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN003" type="comment"><p>Gesetzentwurf zur Änderung der Strafprozeßordnung und des Gerichtsverfassungsgesetzes (Drs. IV/178 vom 7.2.1962).</p></note></seg> Allerdings sei noch ein Änderungsantrag hinsichtlich der Haftgründe notwendig. Er halte es für untragbar, daß jemand, der mit lebenslangem Zuchthaus rechnen müsse, frei herumläuft und nach der Verhandlung wieder nach Hause gehen kann, bis er die Einberufung zum Strafantritt bekommt. Deshalb sollte man die Fassung der 2. Lesung wiederherstellen.</p>
-				<p>Auch bei den Gewohnheitsverbrechern sollte eine Erweiterung der Haftgründe vorgenommen werden. Zu diesem Zwecke empfehle sich ein Gruppenantrag.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt fest, daß die Fraktion mit diesem Vorgehen einverstanden ist.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-6">
-				<head>F.</head>
-				<p>[6. Zollwesen]</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> teilt mit, daß die Arbeitskreise II und III die konjunkturpolitische Debatte gemeinsam vorbereitet hätten.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN004" type="comment"><p>Neunundsechzigste Verordnung zur Änderung des Deutschen Zolltarifs 1963 – Konjunkturpolitische Zollsenkung – (Drs. IV/2313 vom 5.6.1964).</p></note></seg> Als Redner würden benannt <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name>, <name type="Person" role="Erwaehnung" ref="#SteinGustav_1961-10-17">Stein</name>, <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name> und <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name>. Bei den Beratungen sei zum Ausdruck gekommen, daß man die konjunktur- und preispolitische Debatte nicht künstlich anheizen, sondern möglichst beruhigend und versachlichend wirken sollte. Auch sollte auf die bereits getroffenen Maßnahmen der Bundesregierung und auf die wirtschaftliche Entwicklung im Vergleich zu den Nachbarstaaten hingewiesen werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SerresGuenther_1949-09-07">Serres</name> bezieht sich auf die von der Bundesregierung vorgelegte Kernliste der Ausnahmen und bittet um Verständnis, daß diese Liste noch in einzelnen Punkten ergänzt werden müsse. Er werde versuchen, darüber eine Verständigung mit der Bundesregierung herbeizuführen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> weist darauf hin, daß nach dieser ganztägigen Debatte auch klarwerden müsse, daß man bereit sei, diese Konjunkturpolitik zu unterstützen. Auch zur Abwehr des »heißen Geldes« werde man einiges sagen müssen. Die Fraktion möge bedenken, daß die Wirkung dieser Debatte auf die bevorstehenden Kommunalwahlen von großer Bedeutung sei.</p>
-				<p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> führt aus, daß seit der Vorlage des Wirtschaftsberichts im Dezember des vergangenen Jahres wesentliche Veränderungen in der Wirtschaft eingetreten seien.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN005" type="comment"><p>Bericht über die Wirtschaftsentwicklung im Jahre 1963 und die Aussichten für 1964 – Wirtschaftsbericht 1964 – (Drs. IV/1752 vom 11.12.1963).</p></note></seg> Im Dezember sei das Bild ruhig gewesen, dann sei die Aufwärtsentwicklung im Devisenabfluß wie im Export eingetreten, bei dem hauptsächlich die Drittländer betroffen gewesen seien. Auf dem Kapitalmarkt herrsche relative Ruhe, und auch die Preisbewegung sei wesentlich ruhiger, als die äußeren Zahlen das vermuten lassen. Das jährliche Ansteigen liege bei 1,3%. Das sei der Sachstand. Aber die Anzeichen wiesen darauf hin, daß man im Herbst mit einem Anwachsen zu rechnen habe, wenn man nicht eingreife. Dem Exportüberschuß von 3,9 Mrd. DM stehe ein Devisenabgang von 550 Mio. gegenüber. Jetzt komme es darauf an, das Angebot am Binnenmarkt anzureichern; deshalb werde diese Zollsenkung vorgeschlagen. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> habe nun eine Ausnahmeliste akzeptiert, für die er, der Minister, von Anfang an, eingetreten sei. Über einzelne Positionen könne man noch reden. Es sei aber mit dem Bundeskanzler abgesprochen, daß man nicht über eine Milliarde DM hinausgehen werde. Auf dieser Basis könnte man sich verständigen. Mit diesen Maßnahmen erziele man einen Preisdruck von 3,5% für diese Waren, was zwar nicht viel sei, aber wohl reichen werde, um die Konjunkturpolitik durchführen zu können.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> bittet den Wirtschaftsminister, die gleiche Bereitschaft zu zeigen, wie sie ihm gegenüber geübt worden sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> antwortet, daß man über 36 Mal über diese Sache verhandelt habe. Weiter habe man nicht zurückgehen können, als das jetzt geschehen sei, wenn man den konjunkturellen Effekt erzielen wolle.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> teilt mit, daß man im Ältestenrat zu der Feststellung gekommen ist, daß Änderungsanträge zu der von der Bundesregierung vorgeschlagenen Liste zurückgewiesen werden müßten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erläutert, daß die Sache zunächst in den Ausschuß<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN006" type="comment"><p>Außenhandelsausschuß.</p></note></seg> zurückverwiesen werde. Dann werde sie am Donnerstag als eilige Vorlage wieder ins Plenum kommen. Sollte sich bis dahin keine Einigung ergeben, dann sei über die Regierungsvorlage zu beraten, der die SPD zustimmen werde; was die FDP tue, das wisse man nicht.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-7">
-				<head>G.</head>
-				<p>[7. Rückerstattung]</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BoehmFranz_1953-10-06">Böhm</name> trägt vor, daß zwischen Bundesrückerstattungsgesetz noch ein Änderungsantrag notwendig sei [sic!].<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN007" type="comment"><p>Entwurf eines Dritten Gesetzes zur Änderung des Bundesrückerstattungsgesetzes (Drs. IV/1549 vom 21.10.1963).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> bemerkt dazu, daß die FDP diesen Antrag nicht mitmachen wolle. Da man ihr gegenüber im Wort sei, daß nur einvernehmlich gehandelt werde, müsse dieser Punkt zurückgestellt werden.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN008" type="comment"><p>Fortgang siehe TOP 19.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-8">
-				<head>H.</head>
-				<p>[8. Öffentlicher Dienst. Besoldung]</p>
-				<p><name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> berichtet über das Vierte Besoldungserhöhungsgesetz und trägt kurz den Inhalt vor.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN009" type="comment"><p>Entwurf eines Vierten Gesetzes über die Erhöhung von Dienst- und Versorgungsbezügen – Viertes Besoldungserhöhungsgesetz – (Drs. IV/2317 vom 5.6.1964).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BreseWilhelm_1949-09-07">Brese</name> teilt mit, daß er einen Antrag vorbereitet habe, die Regierungsvorlage wiederherzustellen.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN010" type="comment"><p>Änderungsantrag d. Abg. <name type="Person" role="Erwaehnung" ref="#BreseWilhelm_1949-09-07">Brese</name> zur zweiten Beratung des […] Vierten Besoldungserhöhungsgesetzes, Sten. Ber., 132. Sitz. am 24.6.1964, S. 6508 (Umdr. 494).</p></note></seg> Es liege ihm daran, die Erhöhungen rückgängig zu machen, die im Innenausschuß und im Haushaltsausschuß beschlossen worden sind, weil er eine Erhöhung um 178 Mio. DM für untragbar halte. Außerdem sei eine Deckung für diese Beträge nicht vorhanden.</p>
-				<p><name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> antwortet, daß es sich bei diesem Gesetz um ein Nachziehen der Beamtengehälter handele. Im übrigen hätten die Länder zu erkennen gegeben, daß sie der Regierungsvorlage nicht folgen würden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bittet <name type="Person" role="Erwaehnung" ref="#BreseWilhelm_1949-09-07">Brese</name>, seinen Antrag nicht zu stellen. Es sei sehr unschön, wenn man im Plenum gegeneinander plädieren müsse.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt als Fraktionsmeinung fest, daß nach den Vorschlägen der Ausschüsse verfahren werden solle.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-9">
-				<head>I.</head>
-				<p>[9. Rechtspflege. Verfassung und Verfahren der ordentlichen Gerichte]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> referiert über den Inhalt des Gesetzes über die Wertgrenzen, das eine Entlastung des BGH zum Ziele habe.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN011" type="comment"><p>Gesetzentwurf zur Änderung von Wertgrenzen in der Zivilgerichtsbarkeit (Drs. IV/1924 vom 13.2.1964).</p></note></seg> Nach gründlicher Beratung habe der Arbeitskreis I empfohlen, die Wertgrenze auf 15000 DM festzusetzen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt die Zustimmung der Fraktion fest.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-10">
-				<head>J.</head>
-				<p>[10. Öffentlicher Dienst. Besoldung]</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> erläutert den Inhalt des Gesetzes über die Tage- und Übernachtungsgelder der Beamten.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN012" type="comment"><p>SPD-Antrag betr. Ver­ordnung über die Höhe des Tage- und Übernachtungsgeldes und des Beschäftigungstagegeldes der Beamten (Drs. IV/1802 vom 2.1.1964).</p></note></seg> Die Fraktion stimmt der vorgesehenen Regelung zu.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-11">
-				<head>K.</head>
-				<p>[11. Grundgesetz]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> berichtet, daß für die Gesetze zur Änderung des Art. 118 GG als Redner <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> und <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> vorgesehen seien.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN013" type="comment"><p>CDU/CSU-Gesetzentwurf zur Neufassung des Art.118 GG (Drs. IV/1965 vom 21.2.1964).</p></note></seg> Zuerst müsse die Sache aber auf die Tagesordnung, außerdem müsse die Fraktion geschlossen anwesend sein.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-12">
-				<head>L.</head>
-				<p>[12. Bundesgebiet. Sondergebiete]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> trägt kurz vor, was der Sinn des Gesetzes über den Festlandsockel ist.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN014" type="comment"><p>Gesetzentwurf zur vorläufigen Regelung der Rechte am Festlandsockel (Drs. IV/2341 vom 10.6.1964).</p></note></seg> Die Fraktion erklärt sich einverstanden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-13">
-				<head>M.</head>
-				<p>[13. Europäische Gemeinschaften]</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#FurlerHans_1953-10-06">Furler</name> wendet sich den Europa-Anträgen der SPD zu<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN015" type="comment"><p>Gesetzentwurf über die Wahl der deutschen Mitglieder in das Europäische Parlament d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> u. Fraktion der SPD (Drs. IV/2338 vom 10.6.1964), Antrag Frau <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> u.a. u. Fraktion der SPD betr. Demokratisierung der europäischen Gemeinschaften (Drs. IV/2211 vom 28.4.1964) und Antrag Frau <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> u.a. u. Fraktion der SPD betr. Haushaltskontrolle der europäischen Organe (Drs. IV/2212 vom 28.4.1964).</p></note></seg>, deren Tendenz dahin laufe, die Wahlen zum Europaparlament in Zukunft durch eine allgemeine europäische Wahl erfolgen zu lassen. Dafür habe das Europaparlament ein Gesetz ausgearbeitet, das seit vier Jahren dem Ministerrat vorliege, ohne angenommen zu werden, weil dies von Frankreich blockiert werde. Es sei nicht abzusehen, wann die französische Regierung ihren Widerstand aufgeben werde. Nun schlage die SPD vor, wenigstens für Deutschland eine Art direkter Wahl vorzunehmen. Politisch halte er, Prof. <name type="Person" role="Sprecher" ref="#FurlerHans_1953-10-06">Furler</name>, dies für unmöglich, weil das Ziel der europäischen Direktwahl dadurch nicht erreicht werde. Man solle die Sache in den Ausschuß überweisen, im Grunde aber ablehnen.</p>
-				<p>Weitere Wortmeldungen erfolgen nicht. Es wird so verfahren.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-14">
-				<head>N.</head>
-				<p>[14. Maß- und Gewichtsgesetz, Wasserwirtschaft]</p>
-				<p>Sodann stellt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> fest, daß sich gegen das Gesetz über Maße und Gewichte und das Wasserhaushaltsgesetz keine Einwendungen erheben.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN016" type="comment"><p>Gesetzentwurf zur Änderung des Maß- und Gewichtsgesetzes d. Abg. <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name> u.a. u. Fraktion der CDU/CSU (Drs. IV/1862 vom 24.1.1964) und Entwurf eines Zweiten Gesetzes zur Änderung des Wasserhaushaltsgesetzes d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> u.a. (Drs. IV/1769 vom 18.12.1963).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-15">
-				<head>O.</head>
-				<p>[15. Berlin]</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> berichtet, daß das Berlinhilfegesetz mit Ausnahme der Regelung für den Spirituosenhandel im Finanzausschuß einmütig verabschiedet worden sei.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN017" type="comment"><p>Gesetzentwurf zur Änderung und Ergänzung des Gesetzes zur Förderung der Wirtschaft von Berlin und des Gesetzes über Steuererleichterungen und Arbeitnehmervergünstigungen in Berlin (Drs. IV/2267 vom 21.5.1964).</p></note></seg> Tatsächlich bedürfe diese Regelung einer anderen Lösung.</p>
-				<p><name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) teilt mit, daß Berliner Abgeordnete zwei Änderungsanträge stellen würden, deren Ziel es sei zu verhindern, daß wegen des Konsumbranntweins die gesamte Branntweinpräferenz zu Fall komme. Er bitte darum, diese Frage noch einmal eingehend zu prüfen. Dauernde Änderungen des Berlinhilfegesetzes würden auch das Vertrauen der westdeutschen Unternehmer zu den Investitionen in Berlin beeinflussen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> berichtet aus dem Vorstand der Fraktion, daß dieser empfohlen habe, dem Bericht des Ausschusses zu folgen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DichgansHans_1961-10-17">Dichgans</name> weist auf die Notwendigkeit hin, daß sich Investoren darauf verlassen können müssen, daß die Zusagen des Gesetzgebers auch eingehalten werden. Aber das bedeute noch nicht, daß man dieses Gesetz jetzt wieder verlängern müsse; dies sei doch eine gefährliche These. Denn dann müsse man 1969 das Gesetz wiederum verlängern, und niemand wisse, wie die Lage dann sein werde. Die Berlinhilfe, für die sicher jeder sei, werde um so besser sein, je sorgfältiger man die kritischen Fälle ausscheide. Deshalb sollte man den Vorschlägen des Ausschusses folgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> tritt dieser Auffassung bei. Die jetzige Regelung gefährde den Kornbrennerstand in seiner Existenz.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> trägt weitere Gründe dafür vor, warum die Regierungsvorlage wiederhergestellt werden sollte.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> bedauert, daß es zu dieser Diskussion gekommen sei. Es sei doch nicht Sinn der Berlinhilfe, daß bei der gegebenen Lage Konsumspirituosen in Westdeutschland nicht mehr hergestellt werden können. Man habe dieses Berlinhilfegesetz verabschiedet und verlängere es jetzt um fünf Jahre. Es beinhalte 30% bei der Einkommen- und Lohnsteuer, 75% Abschreibung im ersten Jahr, weitere Vorteile bei Darlehen und sonstige große Präferenzen. Und jetzt entfessele man eine solche Diskussion um die Herstellung von Schnaps. Das sei das Gegenteil von dem, was er sich unter Berlinhilfe vorstelle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> empfiehlt zu prüfen, ob es nicht besser wäre, die Ausschußvorlage zu übernehmen. Jede Gesamtdeutsche und Berlinpolitik werde auf die Dauer psychologisch und langfristig leichter, wenn Bedenken in der Praxis ernsthaft berücksichtigt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> erläutert noch einmal, daß es sich bei den vorliegenden Zahlen um geprüftes Material handele. Zwar habe sich der Gesamtdeutsche Ausschuß gegen die Vorschläge des Finanzausschusses gestellt, habe aber nicht das angeregt, was jetzt hier vorgeschlagen werde. Man sollte den Vorschlägen des Finanzausschusses nun auch Folge leisten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> erklärt, es sei den Berlinern nicht leichtgefallen, diese Sache aufzugreifen, da auch sie sehr wohl ein Gefühl dafür hätten, daß man den Berliner Gedanken nicht überstrapazieren dürfe. Es gehe aber darum, den Eindruck zu vermeiden, als ob für die Präferenzen keine Sicherheit bestehe. Wenn eine Änderung notwendig sei und das festgestellt würde, seien die Berliner die letzten, die dann Widerstand leisten würden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erinnert daran, daß der Bundeskanzler vom Haushalt 1965 gesprochen habe. Wenn nun eine solche Debatte entstehe, dann werde das für Berlin letztlich schädlich sein. Deshalb habe der Vorstand empfohlen, dem Ausschußantrag zu folgen.</p>
-				<p>Durch Abstimmung wird festgestellt, daß eine Mehrheit gegen die Berliner Stimmen für dieses Verfahren ist.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-16">
-				<head>P.</head>
-				<p>[16. Bundestag. Wahlen durch den Bundestag]</p>
-				<p>Sodann stellt er fest, daß eine Mehrheit sich dafür ausspricht, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> für den Postverwaltungsrat als Mitglied zu benennen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-17">
-				<head>Q.</head>
-				<p>[17. Landwirtschaft. Bodennutzung]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> führt sodann aus, daß der Zuckerrübenpreis eine Mehrheit im Plenum finden werde.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN018" type="comment"><p>Antrag <name type="Person" role="Erwaehnung" ref="#SanderHeinrich_1957-10-15">Sander</name> u.a. betr. Zuckerrübenpreis 1963/64 (Drs. IV/1416 vom 9.7.1963).</p></note></seg> Deshalb empfehle der Vorstand, im gleichen Umfang die Zuckersteuer zu senken, um den Verbraucher zu schonen. Das entspreche auch der Konjunkturpolitik der Bundesregierung. Gewiß passe das nicht in alle grundsätzlichen Auffassungen, die man vertrete, aber eine andere Möglichkeit zeichne sich nicht ab.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> erhebt Einwendungen gegen den Versuch, durch Senkung der Verbrauchsteuer die Ertragslage eines Wirtschaftszweiges zu verbessern. Verbrauchsteuersenkung bedeute doch, die Erleichterung an den Verbraucher weiterzugeben; das geschehe aber hier nicht. Er sehe ein, daß eine Preiserhöhung für Zucker gegenwärtig nicht in die Landschaft passe, aber das räume die Bedenken gegen das Verfahren nicht aus.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> antwortet, daß der Vorstand diese Sache sehr sorgsam erwogen habe.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> erläutert, man habe den eigenen Grundsätzen entsprechend beschlossen, diese Sache über die Preiserhöhung zu machen. Das würde bedeuten, daß der Verbraucher mit 6 Pfennig/Pfund belastet würde. Dies sei aber aus politischen Gründen nicht möglich. Durch die Senkung der Steuer werde diese Preiserhöhung nicht eintreten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> hält es sicher für nicht zweckvoll, hier Grundsätze zu predigen; deswegen werde er auch nicht mehr kandidieren. Er wolle aber noch darauf hinweisen, daß die Frage der Zuckerrüben regional sehr verschieden sei. Hauptsächlich kämen sie aus Niedersachsen, wo die Zuckerindustrie noch ziemlich rückständig sei, nicht aber in Süddeutschland.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> schließt diese Debatte mit der Feststellung, daß man natürlich kein sehr gutes Gefühl bei dieser Sache habe. Aber noch schlimmer wäre eine Steigerung der Zuckerpreise vor den Kommunalwahlen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-18">
-				<head>R.</head>
-				<p>[18. Landwirtschaft. Arbeits- und Sozialverhältnisse]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> greift dann das Thema Altershilfe der Landwirtschaft auf.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN019" type="comment"><p>SPD-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/1947 vom 18.2.1964) und CDU/CSU-FDP-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/2425 vom 25.6.1964).</p></note></seg> Hier gebe es Schwierigkeiten bei der Arbeitnehmerschaft. Es wäre wohl gut, eine Gruppe einzusetzen, die die anstehenden Fragen noch einmal erörtern könnte.</p>
-				<p><name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> unterstützt diesen Gedanken, da es sonst wirklich Schwierigkeiten geben werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> erklärt, er und seine Gruppe seien grundsätzlich nicht gegen die vorgeschlagene Lösung, aber die Systematik der ganzen Renten werde in Unordnung gebracht, weil dann das von <name type="Person" role="Erwaehnung" ref="#VarelmannFranz_1953-10-06">Varelmann</name> angeschnittene Problem und alles andere auch noch kommen werde. Auch er befürworte die Einsetzung einer Kommission.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> benennt als Mitglieder der Kommission <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>, <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#VarelmannFranz_1953-10-06">Varelmann</name> und sich selbst.</p>
-				<p>(<name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name> übernimmt den Vorsitz).</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-19">
-				<head>S.</head>
-				<p>[19. Rückerstattung]</p>
-				<p><name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> führt zum Bundesrückerstattungsgesetz aus, daß er nur einen Zwischenbericht geben könne, weil die Verhandlungen in der FDP noch nicht abgeschlossen seien.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN020" type="comment"><p>Entwurf eines Dritten Gesetzes zur Änderung des Bundesrückerstattungsgesetzes (Drs. IV/1549 vom 21.10.1963).</p></note></seg> Das Gesetz sei im Ausschuß<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN021" type="comment"><p>Ausschuß für Wiedergutmachung.</p></note></seg> recht umstritten, drei Punkte seien durch Kampf­abstimmung entschieden worden. Die Regierung habe ein Limit von 1,5 Mrd. DM für das Abschlußgesetz gesetzt gehabt. Dann habe die SPD die völlige Neueröffnung der Antragsfristen gefordert. Die Regierung ihrerseits habe einen Härtefonds von 400 Mio. DM vorgesehen gehabt und daß Vorauszahlungen gegeben werden sollten, nämlich 1000 DM für Schmuck und 4000 DM für Hausrat. Die Opposition und auch <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name> hätten diese Beträge für zu gering gehalten; es seien 2500 und 6000 DM vorgeschlagen worden. Dann wäre aber mit den 400 Mio. DM nicht mehr auszukommen gewesen. Dann sei vorgeschlagen worden, den Härtefonds zu verdoppeln, womit die Opposition einverstanden gewesen wäre.</p>
-				<p>Die Bundesregierung habe jedoch Bedenken gehabt, auf diese Basis einzutreten, und zwar aus rechtlichen Gründen. Wollte man zu einer Schlußregelung kommen, so bleibe das Risiko offen, daß es durch Urteil des Bundesverfassungsgerichts trotzdem zu einer Ausweitung kommen kann. Sicher hätte man die Schlußgesetzgebung auch kontrovers verabschieden können, jeder kenne aber die Schwierigkeit dieser Gesetzgebung in der Weltöffentlichkeit. Deshalb sei versucht worden, beim Bundeskanzler interfraktionell eine Einigung herbeizuführen. Eine solche habe sich auch abgezeichnet, sei aber wieder fraglich geworden, weil die FDP nicht bereit war, auf dieser Basis mitzumachen. Inzwischen habe sich die Bundesregierung bereit gefunden, nun 800 Mio. DM als Höchstgrenze festzulegen mit der Maßgabe, daß 1000 DM für Schmuck und 4000 DM für Hausrat gegeben werden sollen. Erst nach der Entscheidung des Bundesverfassungsgerichts solle dann die endgültige Höhe der Vorausleistungen festgelegt werden.</p>
-				<p>Offenbar sei die FDP-Fraktion falsch unterrichtet worden, insofern als bei ihr die Auffassung entstand, sie sei bei den Verhandlungen nicht vertreten gewesen. Anwesend seien aber <name type="Person" role="Erwaehnung" ref="#DahlgruenRolf_1957-10-15">Dahlgrün</name> als Finanzminister und auch <name type="Person" role="Erwaehnung" ref="#EmdeHansGeorg_1961-10-17">Emde</name> gewesen. Weiter habe noch vor zwei Uhr ein Gespräch stattgefunden, bei dem <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> anwesend gewesen ist. Offenbar wolle die FDP ein Gegengeschäft auf dem Gebiet der Heimkehrerentschädigung machen.</p>
-				<p>Inzwischen hole <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name> die Zustimmung der SPD-Fraktion ein. Hier sollte man dazu kommen, die Fraktionsführung zu ermächtigen, einen interfraktionellen Antrag zu unterschreiben, wenn ein Einvernehmen mit der FDP erzielt werden kann, und Handlungsfreiheit zu geben, wenn keine Einigung erzielt werden kann. Aber es sei zu hoffen, daß sich der Finanzminister in seiner Fraktion durchsetzen kann.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> teilt mit, daß in zwei von drei Koalitionsgesprächen in einer Fülle von Einzelpunkten ein Gesamteinvernehmen erzielt worden sei. Er bitte die Fraktion, den Vorstand zu bevollmächtigen, einen interfraktionellen Antrag zu unterschreiben. Versage sich die FDP, dann sei die Fraktionsführung frei und könne dann auch den Antrag der SPD ablehnen. Denn eine Abstimmung in dieser Frage gegen die FDP bedeute ein Aufreißen aller Maßnahmen hinsichtlich finanzwirksamer Gesetze, und damit könnte die FDP Parteipolitik betreiben.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-20">
-				<head>T.</head>
-				<p>[20. Kriegsgefangene]</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> trägt vor, daß sich der Bundestag seit 1963 mit dem 3. Änderungsgesetz zum Heimkehrerentschädigungsgesetz befasse, das ein Volumen von 37 Mio. DM habe.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN022" type="comment"><p>Entwurf eines Dritten Gesetzes zur Änderung des Kriegsgefangenenentschädigungsgesetzes (Drs. IV/997 vom 16.2.1963).</p></note></seg> Der Kriegsopferausschuß habe dieses Volumen kräftig auf 360 Mio. DM erhöht, der Haushaltsausschuß sei bei 37 Mio. DM geblieben. Dann habe man die Einigung versucht. In einem Koalitionsgespräch beim Bundeskanzler habe man sich dann auf ungefähr 200 Mio. DM verteilt auf vier Jahre geeinigt. Bei den Abstimmungen im Kriegsopferausschuß sei dann, wegen der schwachen Besetzung durch die CDU/CSU und weil die FDP mit der SPD stimmte, diese Summe auf drei Jahre verteilt worden. Arbeitskreis IV habe nun die ursprünglichen vier Jahre wiederherstellen wollen, und auch die FDP habe sich dazu bereit erklärt. Um 14.00 Uhr sei mitgeteilt worden, daß dieser Antrag bei der Antragsannahmestelle abgegeben worden sei, gegen 15.00 Uhr sei bekanntgeworden, daß die FDP diesen Antrag nicht mitunterschreibe. Bei dieser Lage frage er sich, ob man das Gesetz von der Tagesordnung absetzen oder eine Niederlage hinnehmen wolle.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erläutert die unterdessen eingetretene Entwicklung. Die SPD gehe darauf aus, das Finanzvolumen zu erweitern. Deshalb könne man ihrem Antrag auf Rücküberweisung nicht zustimmen. Der FDP habe man mit dürren Worten gesagt, was ein Koalitionspartner wert ist, der Vereinbarungen trifft unter dem Vorsitz des Bundeskanzlers und im Beisein des Finanzministers, des Fraktionsvorsitzenden, des Haushaltsexperten und des Heimkehrerexperten und der dann solche Abmachungen nicht einhalte. Die FDP-Führung habe darauf gesagt, daß sehe sie ein und sie werde diese Sache noch einmal zur Diskussion stellen. Die FDP habe auch gesagt, die CDU/CSU sei von der in der gleichen Koalitionsbesprechung vereinbarten Regelung des Bundesrückerstattungsgesetzes abgewichen<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN023" type="comment"><p>Entwurf eines Dritten Gesetzes zur Änderung des Bundesrückerstattungsgesetzes (Drs. IV/1549 vom 21.10.1963).</p></note></seg>, ohne die FDP zu beteiligen. Das sei nicht wahr, denn der Finanzminister und <name type="Person" role="Erwaehnung" ref="#EmdeHansGeorg_1961-10-17">Emde</name> seien ja dabeigewesen. Jetzt wünsche die FDP sofort ein Koalitionsgespräch wegen beider Fragen. Deshalb müsse jetzt die Fraktionsführung um die gleiche Vollmacht wie beim Bundesrückerstattungsgesetz bitten. Jede Überschreitung des Volumens von vier mal 50 Mio. DM werde unverändert abgelehnt, einer Rücküberweisung werde nur zugestimmt, wenn das Gesamtvolumen von 200 Mio. DM nicht in Frage gestellt werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> bezeichnet es als schrecklich, daß fast jede Woche eine neue Lage festzustellen sei und jede Woche ein neues Koalitionsergebnis; was da noch auf einen zukommen werde, na ja!</p>
-				<p><name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> weist darauf hin, daß eine Reihe von Abgeordneten dieser Fraktion Mitglieder des Heimkehrerverbandes seien. Wenn nicht alle Fraktionsmitglieder die Fraktionsmeinung unterstützen würden, dann sei das eine Gefahr.</p>
-				<p><name type="Person" role="Sprecher" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> hält die Unterrichtung des Haushaltsausschusses über diese Sachlage für notwendig. Im Haushaltsausschuß 1965 seien nur 40 Mio. DM für diesen Zweck eingesetzt. Noch am Morgen seien dort die Vertreter der FDP damit einverstanden gewesen, die gesamten Leistungen in vier Jahren zu erbringen. Peinlich sei allerdings, daß sich die FDP nicht vor ihren Finanzminister stellen wolle oder das immer der CDU/CSU überlasse.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-21">
-				<head>U.</head>
-				<p>[21. Steuern und Abgaben]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> referiert zum Steueränderungsgesetz, dessen allgemeine Tendenz man in der 1. Lesung begrüßen sollte, ohne auf Einzelheiten einzugehen.<seg type="note"><note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN024" type="comment"><p>Gesetzentwurf zur Änderung des Einkommensteuergesetzes, des Körperschaftsteuergesetzes, des Spar-Prämiengesetzes, des Wohnungsbau-Prämiengesetzes und anderer Gesetze – Steueränderungsgesetz 1964 – (Drs. IV/2400 vom 19.6.1964).</p></note></seg> Dann müsse innerhalb der Fraktion versucht werden, diese Einzelfragen in einer Klausurtagung abzuklären.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1964-06-23-t1510_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1009/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 23. Juni 1964</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>11 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1964-06-23">
+               <time type="start" when="15:10:00"/>
+               <time type="end" when="18:15:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/>
+            <name type="Person" role="Sitzungsleitung" ref="#StruveDetlef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-1" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-1">A. TOP 1: Eröffnung.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-2" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-2">B. TOP 2: Fall <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name>.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-3" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-3">C. TOP 3: Bericht des Bundeskanzlers.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-4" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-4">D. TOP 4: Bericht aus dem Ältestenrat.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-5" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-5">E. TOP 5: Rechtspflege.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-6" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-6">F. TOP 6: Zollwesen.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-7" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-7">G. TOP 7: Rückerstattung.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-8" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-8">H. TOP 8: Öffentlicher Dienst. Besoldung.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-9" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-9">I. TOP 9: Rechtspflege. Verfassung und Verfahren der ordentlichen Gerichte.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-10" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-10">J. TOP 10: Öffentlicher Dienst. Besoldung.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-11" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-11">K. TOP 11: Grundgesetz.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-12" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-12">L. TOP 12: Bundesgebiet. Sondergebiete.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-13" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-13">M. TOP 13: Europäische Gemeinschaften.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-14" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-14">N. TOP 14: Maß- und Gewichtsgesetz, Wasserwirtschaft.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-15" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-15">O. TOP 15: Berlin.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-16" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-16">P. TOP 16: Bundestag. Wahlen durch den Bundestag.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-17" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-17">Q. TOP 17: Landwirtschaft. Bodennutzung.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-18" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-18">R. TOP 18: Landwirtschaft. Arbeits- und Sozialverhältnisse.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-19" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-19">S. TOP 19: Rückerstattung.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-20" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-20">T. TOP 20: Kriegsgefangene.</item>
+               <item xml:id="cdu-csu-04_1964-06-23-t1510_EP_SVP-21" corresp="#cdu-csu-04_1964-06-23-t1510_EP_div_SVP-21">U. TOP 21: Steuern und Abgaben.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Eröffnung]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> gibt seiner Hoffnung Ausdruck, daß <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> die Fraktionssitzungen nach den Ferien wieder leiten wird. Sodann begrüßt er den wieder in den Bundestag eingetretenen <name type="Person" role="Erwaehnung" ref="#BeckerCurt_1957-10-15">Becker</name>.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Fall <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name>]</p>
+            <p>Im Fraktionsvorstand sei die Sache <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> zur Sprache gekommen. Die von der SPD gegen den früheren Bundeskanzler und gegen Verteidigungsminister <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> erhobenen Vorwürfe müsse man zurückweisen. Was <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> berichtet, werde sorgfältig geprüft. Hier sei nichts zu vertuschen. Erst wenn diese Prüfung abgeschlossen sei, werde man auf die Formalien und die anderen Dinge zurückkommen, die mit dem Stil der Sache zu tun haben. Aber der Bundestagspräsident und der Bundeskanzler hätten sich bereit gefunden, zu diesem Thema in dieser Woche vor dem Bundestag kurze Erklärungen abzugeben, die von den drei Fraktionen im gleichen Geiste unterstützt würden. Dies solle keinen Vorgriff auf das Ergebnis der Prüfung bedeuten, sondern klarmachen, daß das Gerede vom »Staat im Staate« ungerechtfertigt ist. Dieses Gerede müsse abgestellt werden. Die Wirkung im Ausland und auf lange Sicht in der Welt hänge davon ab, daß der Bundestag in dieser Sache eine gemeinsame Sprache redet. Außerdem müsse man darauf hinwirken, daß politische Debatten dort geführt werden, wo sie hingehören, nicht aber im Fernsehen oder in Illustrierten.</p>
+            <p>Er bitte, jetzt in der Fraktion Abstand von einer Debatte zu nehmen. Aber um 17.00 Uhr tage die Gruppe »Verteidigung«, und dort werde auch der frühere Kollege <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> dabei sein.</p>
+            <p>Schließlich beglückwünscht der Vorsitzende den Bundeskanzler und den Außenminister zu dem guten Ergebnis der Reise nach den Vereinigten Staaten.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[3. Bericht des Bundeskanzlers]</p>
+            <p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine lieben Freunde, ich möchte bei der Innenpolitik anfangen und zurückkommen auf den 16. Geburtstag der DM. Das muß uns verpflichten für die Haltung, die wir einzunehmen haben in dem letzten Jahr vor der Wahl. Die Bundesregierung hat den Haushalt mit 63,9 Mrd. DM verabschiedet, das bedeutet ein Mehr von 6% gegenüber dem Vorjahr; dabei können wir 1% als konjunkturunwirksam abstreichen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN001" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1965 – Haushaltsgesetz 1965 – (Drs. IV/2500 vom 17.8.1964).</p>
+                  </note>
+               </seg> Wir haben uns also streng an die von Brüssel ausgehenden Normen gehalten, daß kein Land über die zu erwartende Zuwachsrate des Sozialprodukts hinausgehen sollte. Die Ministerpräsidenten der Länder – mit Ausnahme von Berlin – haben mir versichert, daß auch sie diese Normen einhalten werden, und ich bin überzeugt, daß das nicht nur eine verbale Aussage war, sondern auch eingelöst wird. Anders liegen die Dinge vielleicht bei den Städten und Gemeinden, auf die wir keinen Einfluß und auch die Länder nur wenig Einfluß haben. Aber ich glaube, daß unsere Haltung verpflichtend sein wird.</p>
+            <p>Wir stehen vor einer schwierigen und gefahrvollen Situation rings um uns in Europa. Und Europa ist ein Gefahrenherd besonderer Art, was die Stabilität anbelangt, wenn wir dafür eintreten, die Stabilität zu erhalten. Denn würde es bei uns an Disziplin fehlen, dann fürchte ich, daß in den anderen Ländern dann überhaupt kein Maßstab gesetzt wird. Wir haben zwei Gründe: unser innerdeutsches Anliegen, die Stabilität zu wahren, aber auch eine europäische Verpflichtung, den anderen zu helfen und mit einem guten Beispiel zu wirken.</p>
+            <p>Wir schauen hier im Bundestag allzusehr auf die Vergangenheit. Wir sprechen immer von Nachholbedarf und glauben, es sei eine Sache globaler Gerechtigkeit, allen diesen Wünschen Rechnung zu tragen. Es wäre dringend notwendig, vorwärts zu schauen und zu überlegen, was wir jetzt zu tun haben, um vom nationalen Standpunkt aus oder von der europäischen oder atlantischen Gemeinschaft aus dafür zu sorgen, daß Stabilität, Ruhe und Sicherheit gewahrt bleiben.</p>
+            <p>Es wird sicher noch manche Anforderung an die Fraktion herantreten, und ich hoffe, daß Sie den Haushalt ebenso hart verteidigen wie 1964; dann wären wir uns einig.</p>
+            <p>Nun zu den letzten Reisen! Ich glaube, und es ist offenkundig, daß in der deutschen Öffentlichkeit hier Erwartungen gehegt wurden, die von Anfang an irreal waren. Es steht die These in der Welt: Wiedervereinigung durch Entspannung. Die Amerikaner sind über den Begriff Entspannung gar nicht so sehr entzückt. Sie sehen, daß das sehr schnell eine Grenze hat und daß sich, falls sie Gespräche zur Verständigung führen würden, der innere und feste Kern, die Deutschlandfrage, nicht aussparen läßt. Die Erklärung, die im Kommuniqué verlautbart wurde, wie der letzte Brief, den mir der Präsident vor dem Abflug noch übergeben hat, sind ein eindeutiges Zeugnis.</p>
+            <p>Im Zusammenhang mit dem Freundschaftsvertrag wurde von den Alliierten eine Demarche in Moskau unternommen. Wir haben auch durch <name type="Person" role="Erwaehnung" ref="#GroepperHorst">Groepper</name> unseren Standpunkt noch einmal erhärtet, und ich hoffe, daß noch eine gemeinsame Demarche erfolgen wird, die alle Fehldeutungen, Gefahren und Spekulationen entfernen wird.</p>
+            <p>Zum Besuch in Amerika: Ich habe einen nachdenklichen Präsidenten angetroffen, der sich seiner Verantwortung bewußt ist, aber auch der Gefahren. Im Vordergrund der politischen Situation steht Südvietnam. Beobachtungsflugzeuge halten das Gebiet unter Kontrolle, Flugzeuge wurden abgeschossen, und die amerikanische Luftflotte hat Befehl zurückzuschießen. Die Situation ist sehr ernst. Das ist ein Beweis, daß die Amerikaner treue Verbündete sind, die überall in der Welt, wo die Freiheit bedroht ist, sich unmittelbar angesprochen fühlen und zu handeln bereit sind. Das mag auch für unsere deutsche Frage doch eine Zuversicht geben, während dieser These Wiedervereinigung durch Entspannung eine dialektische Antithese entgegengesetzt wird: Entspannung durch Wiedervereinigung. Das deutsche Problem ist nicht auszusparen. Aber es wäre Illusion, die Wiedervereinigung frontal anzugehen, ohne daß zugleich über Sicherheit und Abrüstung gesprochen würde. Innerhalb dieser Pole liegt die politische Realität. Die Aussagen des Präsidenten sind klar, und seit Jahren ist keine so bestimmte Zusicherung gegeben worden wie jetzt.</p>
+            <p>Während unseres Aufenthalts in den USA ist dieses Freundschaftsabkommen<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN002" type="comment">
+                     <p>Vertrag über Freundschaft, gegenseitigen Beistand und Zusammenarbeit zwischen der Sowjetunion und der DDR.</p>
+                  </note>
+               </seg> geschlossen worden. Ich bin weit davon entfernt, diese Maßnahme zu bagatellisieren, weil damit eine gewisse Verhärtung eingetreten ist. Eine sichtbare Aufwertung Pankows sollte erfolgen, vielleicht mit der Hoffnung, daß, wenn diese »Souveränität« der »DDR« nur immer wiederholt wird, doch eine Geneigtheit erzielt würde, nicht mehr diese strengen Maßstäbe anzuwenden, die wir besonders durchsetzen könnten. Sicher hat eine Rolle mitgespielt, daß <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> sich durch das Selbständigkeitsstreben der osteuropäischen Staaten bedrängt fühlt, aber vom Materiellen her sind keine Zusicherungen gegeben worden, die nicht auch schon im Warschauer Pakt ständen. Ich bin der Meinung, daß die Lage sich nicht verschlechtert hat, bei aller Besorgnis und Wachsamkeit. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> war zweifellos bemüht, die Weltöffentlichkeit und unsere westlichen Verbündeten zu alarmieren. Die Regierungen sind schon zwei Tage vorher unterrichtet worden. Man sieht, daß die beiden vertragsschließenden Parteien sich fest zusammenschließen wollen. Aber in Artikel 9 wurde deutlich, daß <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> es nicht darauf anlegen wollte, eine Verschärfung des Verhältnisses zur westlichen Welt herbeizuführen. Das Potsdamer Abkommen wird besonders erwähnt. Im Hinblick auf Berlin kann man, wenn man optimistisch sein will, sagen, daß das Ultimatum von 1958 etwas weggezogen worden ist, wenn auch die Partei West-Berlin als eigene politische Einheit betrachtet.</p>
+            <p>Das mag Folgen haben vielleicht auch bei der Passierscheinfrage. Denn jetzt kann sich der Senat von Berlin nicht mehr vom Votum und der Übereinstimmung mit der Bundesregierung lösen. Aber auch für den Osten wird es schwer sein, daß der Senat ausdrücklich der Zustimmung der Bundesregierung bedarf, nachdem sie es so dargestellt haben, als ob West-Berlin eine selbständige politische Einheit wäre. Wir werden also wachsam sein müssen.</p>
+            <p>Das waren die Gesprächsthemen und Ereignisse in Washington. Es war auch nur ein Tag.</p>
+            <p>Auch der vorhergehende Besuch in Kanada hat eine volle Übereinstimmung gebracht. Beim Besuch des französischen Staatschefs am 3. und 4. Juli werden die europäischen Fragen stark im Vordergrund stehen. Wir wissen, daß nicht nur zwischen den Sechs völlige Einigung über die politische Zusammenarbeit besteht, sondern daß auch – wie der Besuch <name type="Person" role="Erwaehnung" ref="#SharpMitchell">Scharfs</name> bewiesen hat – die Fragen zwischen EWG und EFTA einer Lösung bedürfen. Es wäre kühn, eine Voraussage wagen zu wollen, wie sich die Ereignisse vollziehen werden. Aber unser Standpunkt ist klar: Wir sind der Auffassung, daß allein aus der wirtschaftlichen Integration heraus eine politische Formierung Europas nur schwer möglich sein wird, da wir auch bei den wirtschaftlichen Verständigungen sehr bald auf Schwierigkeiten stoßen werden, aber niemand kann sagen, wie die Lösung sein wird. Aber ich freue mich auf diesen Besuch, und wir wollen alles tun, um die Freundschaft zwischen Frankreich und Deutschland zu erhalten als den Schlüssel zu jeder europäischen Lösung überhaupt. Dazu will ich noch nachtragen, daß man sich auch in Amerika sehr wünscht, daß diese Freundschaft ein Element sein wird, um sich in anderen Fragen im atlantischen Raum verständigen zu können. Das gilt für die NATO, für die MLF, auch das wurde berührt; die USA hoffen, daß es zum Ende des Jahres zu einem Vertragsentwurf kommt. Aber manche Hürden sind noch zu überwinden.</p>
+            <p>Das ist etwa die Quintessenz dieser Reise. Wer nüchtern diese Dinge betrachtet hat, muß diese Reise positiv bewerten, nur wer illusionistisch gewesen ist und geglaubt hat, daß nur noch das deutsche Problem in der Welt ist, dem ist eben nicht zu helfen.</p>
+            <p>Zum Fall <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> möchte ich mich nicht äußern. Ich halte diese Sache für ein Unglück und für einen schweren Schaden für das deutsche Ansehen. Gerade die Stimmen aus dem Ausland machen das sehr deutlich. Ich bin bestürzt, wie unsere deutsche Öffentlichkeit darauf reagiert. Die Dinge werden geprüft. Aber die Form, die Einseitigkeit und Zusammenballung des Negativen ist nicht im Interesse des deutschen Volkes.«</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> dankt für den Bericht und erteilt das Wort an</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name>, die fragt, ob es zutreffe, daß <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> für diesen Artikel ein Honorar erhalten habe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> weist darauf hin, daß man diese Fragen alle um 17.00 Uhr an <name type="Person" role="Erwaehnung" ref="#HeyeHellmuthGuidoAlexander_1953-10-06">Heye</name> selbst richten könne. Soweit er unterrichtet sei, könne allerdings von einem Honorar nicht die Rede sein. Wegen des Ernstes der Sache sollte man um eine würdige Art der Erledigung besorgt sein.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine lieben Freunde, ich habe noch etwas auf dem Herzen. Ich höre, daß allenthalben mit einem gewissen Mißvergnügen bemerkt wurde, daß ich in bezug auf die Aussagen des Herrn <name type="Person" role="Erwaehnung" ref="#SeebohmHans-Christoph_1949-09-07">Seebohm</name> Abstand genommen habe. Sie können sich kaum vorstellen, wie diese Aussage die Öffentlichkeit im Ausland erregt hat. Ich glaube, daß allen Heimatvertriebenen der beste Dienst dadurch erwiesen wurde, daß wir nicht in einen Streit über das Heimatrecht eintreten, das ich ausdrücklich betont und bejaht habe in der [Bonner] Beethovenhalle und vor 5 000 Menschen in Berlin. Aber diese Aussage war geeignet, nicht nur in bezug auf die ČSR, sondern auch gegenüber anderen Staaten im Südosten wie auch bei unseren Freunden wieder etwas Mißtrauen aufkommen zu lassen.</p>
+            <p>Nehmen Sie mir bitte ab, das ist meine ehrliche Meinung, daß ich nicht zuletzt im Interesse der Vertriebenen hier Abstand genommen und hier eindeutig erklärt habe, daß wir aus dem Vertrag keine territorialen Rechte und Ansprüche geltend machen gegen die ČSSR. Das war notwendig, und ich wäre Ihnen dankbar, wenn dafür gesorgt würde, daß jetzt nicht die ›Soldatenzeitung‹ sich zum Sprecher der Flüchtlinge macht. Bei 10–12 Mio. Flüchtlingen, das muß man verstehen, werden hier mit dem Wort Heimat echte und tiefe Werte angesprochen. Das ist die Sprache, die man versteht und auch respektiert. Ich wäre dankbar, wenn das Thema damit begraben wäre.</p>
+            <p>Noch etwas Verwaltungsmäßiges: Sie wissen, daß ich meinen langjährigen und ältesten Mitarbeiter zum Bundesminister ernannt habe. Maßgebend war der Umstand, daß Herr <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> im Oktober das 70. Lebensjahr vollendet und dann hätte ausscheiden müssen. Das wäre in diesem Jahr unverantwortlich gewesen, und es wäre auch unzumutbar gewesen, Herrn <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> zuzumuten, im Angestelltenverhältnis weiterzuarbeiten. An der Funktion ändert sich gar nichts. Herr <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> nimmt seine alte Funktion wahr.</p>
+            <p>Zum anderen habe ich mitzuteilen, daß ich mich entschlossen habe, im Einvernehmen mit Herrn <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> ihn nicht mehr als Minister für Sonderaufgaben zu benennen, sondern als Bundesminister, der den Vorsitz im Verteidigungsrat führt. Er bekommt hier eine klare und festumrissene und außerordentlich wichtige Position. Ich bitte Sie um Ihre Zustimmung.«</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> dankt dem Bundeskanzler für seine Ausführungen zum Heimatrecht. Es sei deutlich geworden, daß das Heimatrecht für alle Vertriebenen gilt. Diese Vertretung des Heimatrechts durch den Bundeskanzler sei dankenswert.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-4">
+            <head>D.</head>
+            <p>[4. Bericht aus dem Ältestenrat]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erstattet einen Bericht aus dem Ältestenrat.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-5">
+            <head>E.</head>
+            <p>[5. Rechtspflege]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> berichtet über das Strafprozeßänderungsgesetz, bei dessen Behandlung wohl nur noch wenige Schwierigkeiten zu erwarten seien.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN003" type="comment">
+                     <p>Gesetzentwurf zur Änderung der Strafprozeßordnung und des Gerichtsverfassungsgesetzes (Drs. IV/178 vom 7.2.1962).</p>
+                  </note>
+               </seg> Allerdings sei noch ein Änderungsantrag hinsichtlich der Haftgründe notwendig. Er halte es für untragbar, daß jemand, der mit lebenslangem Zuchthaus rechnen müsse, frei herumläuft und nach der Verhandlung wieder nach Hause gehen kann, bis er die Einberufung zum Strafantritt bekommt. Deshalb sollte man die Fassung der 2. Lesung wiederherstellen.</p>
+            <p>Auch bei den Gewohnheitsverbrechern sollte eine Erweiterung der Haftgründe vorgenommen werden. Zu diesem Zwecke empfehle sich ein Gruppenantrag.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt fest, daß die Fraktion mit diesem Vorgehen einverstanden ist.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-6">
+            <head>F.</head>
+            <p>[6. Zollwesen]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> teilt mit, daß die Arbeitskreise II und III die konjunkturpolitische Debatte gemeinsam vorbereitet hätten.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN004" type="comment">
+                     <p>Neunundsechzigste Verordnung zur Änderung des Deutschen Zolltarifs 1963 – Konjunkturpolitische Zollsenkung – (Drs. IV/2313 vom 5.6.1964).</p>
+                  </note>
+               </seg> Als Redner würden benannt <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name>, <name type="Person" role="Erwaehnung" ref="#SteinGustav_1961-10-17">Stein</name>, <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name> und <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name>. Bei den Beratungen sei zum Ausdruck gekommen, daß man die konjunktur- und preispolitische Debatte nicht künstlich anheizen, sondern möglichst beruhigend und versachlichend wirken sollte. Auch sollte auf die bereits getroffenen Maßnahmen der Bundesregierung und auf die wirtschaftliche Entwicklung im Vergleich zu den Nachbarstaaten hingewiesen werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SerresGuenther_1949-09-07">Serres</name> bezieht sich auf die von der Bundesregierung vorgelegte Kernliste der Ausnahmen und bittet um Verständnis, daß diese Liste noch in einzelnen Punkten ergänzt werden müsse. Er werde versuchen, darüber eine Verständigung mit der Bundesregierung herbeizuführen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> weist darauf hin, daß nach dieser ganztägigen Debatte auch klarwerden müsse, daß man bereit sei, diese Konjunkturpolitik zu unterstützen. Auch zur Abwehr des »heißen Geldes« werde man einiges sagen müssen. Die Fraktion möge bedenken, daß die Wirkung dieser Debatte auf die bevorstehenden Kommunalwahlen von großer Bedeutung sei.</p>
+            <p>Bundeswirtschaftsminister <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> führt aus, daß seit der Vorlage des Wirtschaftsberichts im Dezember des vergangenen Jahres wesentliche Veränderungen in der Wirtschaft eingetreten seien.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN005" type="comment">
+                     <p>Bericht über die Wirtschaftsentwicklung im Jahre 1963 und die Aussichten für 1964 – Wirtschaftsbericht 1964 – (Drs. IV/1752 vom 11.12.1963).</p>
+                  </note>
+               </seg> Im Dezember sei das Bild ruhig gewesen, dann sei die Aufwärtsentwicklung im Devisenabfluß wie im Export eingetreten, bei dem hauptsächlich die Drittländer betroffen gewesen seien. Auf dem Kapitalmarkt herrsche relative Ruhe, und auch die Preisbewegung sei wesentlich ruhiger, als die äußeren Zahlen das vermuten lassen. Das jährliche Ansteigen liege bei 1,3%. Das sei der Sachstand. Aber die Anzeichen wiesen darauf hin, daß man im Herbst mit einem Anwachsen zu rechnen habe, wenn man nicht eingreife. Dem Exportüberschuß von 3,9 Mrd. DM stehe ein Devisenabgang von 550 Mio. gegenüber. Jetzt komme es darauf an, das Angebot am Binnenmarkt anzureichern; deshalb werde diese Zollsenkung vorgeschlagen. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> habe nun eine Ausnahmeliste akzeptiert, für die er, der Minister, von Anfang an, eingetreten sei. Über einzelne Positionen könne man noch reden. Es sei aber mit dem Bundeskanzler abgesprochen, daß man nicht über eine Milliarde DM hinausgehen werde. Auf dieser Basis könnte man sich verständigen. Mit diesen Maßnahmen erziele man einen Preisdruck von 3,5% für diese Waren, was zwar nicht viel sei, aber wohl reichen werde, um die Konjunkturpolitik durchführen zu können.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> bittet den Wirtschaftsminister, die gleiche Bereitschaft zu zeigen, wie sie ihm gegenüber geübt worden sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> antwortet, daß man über 36 Mal über diese Sache verhandelt habe. Weiter habe man nicht zurückgehen können, als das jetzt geschehen sei, wenn man den konjunkturellen Effekt erzielen wolle.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> teilt mit, daß man im Ältestenrat zu der Feststellung gekommen ist, daß Änderungsanträge zu der von der Bundesregierung vorgeschlagenen Liste zurückgewiesen werden müßten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erläutert, daß die Sache zunächst in den Ausschuß<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN006" type="comment">
+                     <p>Außenhandelsausschuß.</p>
+                  </note>
+               </seg> zurückverwiesen werde. Dann werde sie am Donnerstag als eilige Vorlage wieder ins Plenum kommen. Sollte sich bis dahin keine Einigung ergeben, dann sei über die Regierungsvorlage zu beraten, der die SPD zustimmen werde; was die FDP tue, das wisse man nicht.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-7">
+            <head>G.</head>
+            <p>[7. Rückerstattung]</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BoehmFranz_1953-10-06">Böhm</name> trägt vor, daß zwischen Bundesrückerstattungsgesetz noch ein Änderungsantrag notwendig sei [sic!].<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN007" type="comment">
+                     <p>Entwurf eines Dritten Gesetzes zur Änderung des Bundesrückerstattungsgesetzes (Drs. IV/1549 vom 21.10.1963).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> bemerkt dazu, daß die FDP diesen Antrag nicht mitmachen wolle. Da man ihr gegenüber im Wort sei, daß nur einvernehmlich gehandelt werde, müsse dieser Punkt zurückgestellt werden.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN008" type="comment">
+                     <p>Fortgang siehe TOP 19.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-8">
+            <head>H.</head>
+            <p>[8. Öffentlicher Dienst. Besoldung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> berichtet über das Vierte Besoldungserhöhungsgesetz und trägt kurz den Inhalt vor.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN009" type="comment">
+                     <p>Entwurf eines Vierten Gesetzes über die Erhöhung von Dienst- und Versorgungsbezügen – Viertes Besoldungserhöhungsgesetz – (Drs. IV/2317 vom 5.6.1964).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BreseWilhelm_1949-09-07">Brese</name> teilt mit, daß er einen Antrag vorbereitet habe, die Regierungsvorlage wiederherzustellen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN010" type="comment">
+                     <p>Änderungsantrag d. Abg. <name type="Person" role="Erwaehnung" ref="#BreseWilhelm_1949-09-07">Brese</name> zur zweiten Beratung des […] Vierten Besoldungserhöhungsgesetzes, Sten. Ber., 132. Sitz. am 24.6.1964, S. 6508 (Umdr. 494).</p>
+                  </note>
+               </seg> Es liege ihm daran, die Erhöhungen rückgängig zu machen, die im Innenausschuß und im Haushaltsausschuß beschlossen worden sind, weil er eine Erhöhung um 178 Mio. DM für untragbar halte. Außerdem sei eine Deckung für diese Beträge nicht vorhanden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Wagner</name> antwortet, daß es sich bei diesem Gesetz um ein Nachziehen der Beamtengehälter handele. Im übrigen hätten die Länder zu erkennen gegeben, daß sie der Regierungsvorlage nicht folgen würden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bittet <name type="Person" role="Erwaehnung" ref="#BreseWilhelm_1949-09-07">Brese</name>, seinen Antrag nicht zu stellen. Es sei sehr unschön, wenn man im Plenum gegeneinander plädieren müsse.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt als Fraktionsmeinung fest, daß nach den Vorschlägen der Ausschüsse verfahren werden solle.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-9">
+            <head>I.</head>
+            <p>[9. Rechtspflege. Verfassung und Verfahren der ordentlichen Gerichte]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> referiert über den Inhalt des Gesetzes über die Wertgrenzen, das eine Entlastung des BGH zum Ziele habe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN011" type="comment">
+                     <p>Gesetzentwurf zur Änderung von Wertgrenzen in der Zivilgerichtsbarkeit (Drs. IV/1924 vom 13.2.1964).</p>
+                  </note>
+               </seg> Nach gründlicher Beratung habe der Arbeitskreis I empfohlen, die Wertgrenze auf 15000 DM festzusetzen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt die Zustimmung der Fraktion fest.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-10">
+            <head>J.</head>
+            <p>[10. Öffentlicher Dienst. Besoldung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> erläutert den Inhalt des Gesetzes über die Tage- und Übernachtungsgelder der Beamten.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN012" type="comment">
+                     <p>SPD-Antrag betr. Ver­ordnung über die Höhe des Tage- und Übernachtungsgeldes und des Beschäftigungstagegeldes der Beamten (Drs. IV/1802 vom 2.1.1964).</p>
+                  </note>
+               </seg> Die Fraktion stimmt der vorgesehenen Regelung zu.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-11">
+            <head>K.</head>
+            <p>[11. Grundgesetz]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> berichtet, daß für die Gesetze zur Änderung des Art. 118 GG als Redner <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name> und <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> vorgesehen seien.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN013" type="comment">
+                     <p>CDU/CSU-Gesetzentwurf zur Neufassung des Art.118 GG (Drs. IV/1965 vom 21.2.1964).</p>
+                  </note>
+               </seg> Zuerst müsse die Sache aber auf die Tagesordnung, außerdem müsse die Fraktion geschlossen anwesend sein.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-12">
+            <head>L.</head>
+            <p>[12. Bundesgebiet. Sondergebiete]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> trägt kurz vor, was der Sinn des Gesetzes über den Festlandsockel ist.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN014" type="comment">
+                     <p>Gesetzentwurf zur vorläufigen Regelung der Rechte am Festlandsockel (Drs. IV/2341 vom 10.6.1964).</p>
+                  </note>
+               </seg> Die Fraktion erklärt sich einverstanden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-13">
+            <head>M.</head>
+            <p>[13. Europäische Gemeinschaften]</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#FurlerHans_1953-10-06">Furler</name> wendet sich den Europa-Anträgen der SPD zu<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN015" type="comment">
+                     <p>Gesetzentwurf über die Wahl der deutschen Mitglieder in das Europäische Parlament d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> u. Fraktion der SPD (Drs. IV/2338 vom 10.6.1964), Antrag Frau <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> u.a. u. Fraktion der SPD betr. Demokratisierung der europäischen Gemeinschaften (Drs. IV/2211 vom 28.4.1964) und Antrag Frau <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> u.a. u. Fraktion der SPD betr. Haushaltskontrolle der europäischen Organe (Drs. IV/2212 vom 28.4.1964).</p>
+                  </note>
+               </seg>, deren Tendenz dahin laufe, die Wahlen zum Europaparlament in Zukunft durch eine allgemeine europäische Wahl erfolgen zu lassen. Dafür habe das Europaparlament ein Gesetz ausgearbeitet, das seit vier Jahren dem Ministerrat vorliege, ohne angenommen zu werden, weil dies von Frankreich blockiert werde. Es sei nicht abzusehen, wann die französische Regierung ihren Widerstand aufgeben werde. Nun schlage die SPD vor, wenigstens für Deutschland eine Art direkter Wahl vorzunehmen. Politisch halte er, Prof. <name type="Person" role="Sprecher" ref="#FurlerHans_1953-10-06">Furler</name>, dies für unmöglich, weil das Ziel der europäischen Direktwahl dadurch nicht erreicht werde. Man solle die Sache in den Ausschuß überweisen, im Grunde aber ablehnen.</p>
+            <p>Weitere Wortmeldungen erfolgen nicht. Es wird so verfahren.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-14">
+            <head>N.</head>
+            <p>[14. Maß- und Gewichtsgesetz, Wasserwirtschaft]</p>
+            <p>Sodann stellt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> fest, daß sich gegen das Gesetz über Maße und Gewichte und das Wasserhaushaltsgesetz keine Einwendungen erheben.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN016" type="comment">
+                     <p>Gesetzentwurf zur Änderung des Maß- und Gewichtsgesetzes d. Abg. <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name> u.a. u. Fraktion der CDU/CSU (Drs. IV/1862 vom 24.1.1964) und Entwurf eines Zweiten Gesetzes zur Änderung des Wasserhaushaltsgesetzes d. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> u.a. (Drs. IV/1769 vom 18.12.1963).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-15">
+            <head>O.</head>
+            <p>[15. Berlin]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> berichtet, daß das Berlinhilfegesetz mit Ausnahme der Regelung für den Spirituosenhandel im Finanzausschuß einmütig verabschiedet worden sei.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN017" type="comment">
+                     <p>Gesetzentwurf zur Änderung und Ergänzung des Gesetzes zur Förderung der Wirtschaft von Berlin und des Gesetzes über Steuererleichterungen und Arbeitnehmervergünstigungen in Berlin (Drs. IV/2267 vom 21.5.1964).</p>
+                  </note>
+               </seg> Tatsächlich bedürfe diese Regelung einer anderen Lösung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) teilt mit, daß Berliner Abgeordnete zwei Änderungsanträge stellen würden, deren Ziel es sei zu verhindern, daß wegen des Konsumbranntweins die gesamte Branntweinpräferenz zu Fall komme. Er bitte darum, diese Frage noch einmal eingehend zu prüfen. Dauernde Änderungen des Berlinhilfegesetzes würden auch das Vertrauen der westdeutschen Unternehmer zu den Investitionen in Berlin beeinflussen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> berichtet aus dem Vorstand der Fraktion, daß dieser empfohlen habe, dem Bericht des Ausschusses zu folgen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DichgansHans_1961-10-17">Dichgans</name> weist auf die Notwendigkeit hin, daß sich Investoren darauf verlassen können müssen, daß die Zusagen des Gesetzgebers auch eingehalten werden. Aber das bedeute noch nicht, daß man dieses Gesetz jetzt wieder verlängern müsse; dies sei doch eine gefährliche These. Denn dann müsse man 1969 das Gesetz wiederum verlängern, und niemand wisse, wie die Lage dann sein werde. Die Berlinhilfe, für die sicher jeder sei, werde um so besser sein, je sorgfältiger man die kritischen Fälle ausscheide. Deshalb sollte man den Vorschlägen des Ausschusses folgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> tritt dieser Auffassung bei. Die jetzige Regelung gefährde den Kornbrennerstand in seiner Existenz.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> trägt weitere Gründe dafür vor, warum die Regierungsvorlage wiederhergestellt werden sollte.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> bedauert, daß es zu dieser Diskussion gekommen sei. Es sei doch nicht Sinn der Berlinhilfe, daß bei der gegebenen Lage Konsumspirituosen in Westdeutschland nicht mehr hergestellt werden können. Man habe dieses Berlinhilfegesetz verabschiedet und verlängere es jetzt um fünf Jahre. Es beinhalte 30% bei der Einkommen- und Lohnsteuer, 75% Abschreibung im ersten Jahr, weitere Vorteile bei Darlehen und sonstige große Präferenzen. Und jetzt entfessele man eine solche Diskussion um die Herstellung von Schnaps. Das sei das Gegenteil von dem, was er sich unter Berlinhilfe vorstelle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> empfiehlt zu prüfen, ob es nicht besser wäre, die Ausschußvorlage zu übernehmen. Jede Gesamtdeutsche und Berlinpolitik werde auf die Dauer psychologisch und langfristig leichter, wenn Bedenken in der Praxis ernsthaft berücksichtigt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> erläutert noch einmal, daß es sich bei den vorliegenden Zahlen um geprüftes Material handele. Zwar habe sich der Gesamtdeutsche Ausschuß gegen die Vorschläge des Finanzausschusses gestellt, habe aber nicht das angeregt, was jetzt hier vorgeschlagen werde. Man sollte den Vorschlägen des Finanzausschusses nun auch Folge leisten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> erklärt, es sei den Berlinern nicht leichtgefallen, diese Sache aufzugreifen, da auch sie sehr wohl ein Gefühl dafür hätten, daß man den Berliner Gedanken nicht überstrapazieren dürfe. Es gehe aber darum, den Eindruck zu vermeiden, als ob für die Präferenzen keine Sicherheit bestehe. Wenn eine Änderung notwendig sei und das festgestellt würde, seien die Berliner die letzten, die dann Widerstand leisten würden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erinnert daran, daß der Bundeskanzler vom Haushalt 1965 gesprochen habe. Wenn nun eine solche Debatte entstehe, dann werde das für Berlin letztlich schädlich sein. Deshalb habe der Vorstand empfohlen, dem Ausschußantrag zu folgen.</p>
+            <p>Durch Abstimmung wird festgestellt, daß eine Mehrheit gegen die Berliner Stimmen für dieses Verfahren ist.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-16">
+            <head>P.</head>
+            <p>[16. Bundestag. Wahlen durch den Bundestag]</p>
+            <p>Sodann stellt er fest, daß eine Mehrheit sich dafür ausspricht, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> für den Postverwaltungsrat als Mitglied zu benennen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-17">
+            <head>Q.</head>
+            <p>[17. Landwirtschaft. Bodennutzung]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> führt sodann aus, daß der Zuckerrübenpreis eine Mehrheit im Plenum finden werde.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN018" type="comment">
+                     <p>Antrag <name type="Person" role="Erwaehnung" ref="#SanderHeinrich_1957-10-15">Sander</name> u.a. betr. Zuckerrübenpreis 1963/64 (Drs. IV/1416 vom 9.7.1963).</p>
+                  </note>
+               </seg> Deshalb empfehle der Vorstand, im gleichen Umfang die Zuckersteuer zu senken, um den Verbraucher zu schonen. Das entspreche auch der Konjunkturpolitik der Bundesregierung. Gewiß passe das nicht in alle grundsätzlichen Auffassungen, die man vertrete, aber eine andere Möglichkeit zeichne sich nicht ab.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> erhebt Einwendungen gegen den Versuch, durch Senkung der Verbrauchsteuer die Ertragslage eines Wirtschaftszweiges zu verbessern. Verbrauchsteuersenkung bedeute doch, die Erleichterung an den Verbraucher weiterzugeben; das geschehe aber hier nicht. Er sehe ein, daß eine Preiserhöhung für Zucker gegenwärtig nicht in die Landschaft passe, aber das räume die Bedenken gegen das Verfahren nicht aus.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> antwortet, daß der Vorstand diese Sache sehr sorgsam erwogen habe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> erläutert, man habe den eigenen Grundsätzen entsprechend beschlossen, diese Sache über die Preiserhöhung zu machen. Das würde bedeuten, daß der Verbraucher mit 6 Pfennig/Pfund belastet würde. Dies sei aber aus politischen Gründen nicht möglich. Durch die Senkung der Steuer werde diese Preiserhöhung nicht eintreten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> hält es sicher für nicht zweckvoll, hier Grundsätze zu predigen; deswegen werde er auch nicht mehr kandidieren. Er wolle aber noch darauf hinweisen, daß die Frage der Zuckerrüben regional sehr verschieden sei. Hauptsächlich kämen sie aus Niedersachsen, wo die Zuckerindustrie noch ziemlich rückständig sei, nicht aber in Süddeutschland.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> schließt diese Debatte mit der Feststellung, daß man natürlich kein sehr gutes Gefühl bei dieser Sache habe. Aber noch schlimmer wäre eine Steigerung der Zuckerpreise vor den Kommunalwahlen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-18">
+            <head>R.</head>
+            <p>[18. Landwirtschaft. Arbeits- und Sozialverhältnisse]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> greift dann das Thema Altershilfe der Landwirtschaft auf.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN019" type="comment">
+                     <p>SPD-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/1947 vom 18.2.1964) und CDU/CSU-FDP-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/2425 vom 25.6.1964).</p>
+                  </note>
+               </seg> Hier gebe es Schwierigkeiten bei der Arbeitnehmerschaft. Es wäre wohl gut, eine Gruppe einzusetzen, die die anstehenden Fragen noch einmal erörtern könnte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> unterstützt diesen Gedanken, da es sonst wirklich Schwierigkeiten geben werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name> erklärt, er und seine Gruppe seien grundsätzlich nicht gegen die vorgeschlagene Lösung, aber die Systematik der ganzen Renten werde in Unordnung gebracht, weil dann das von <name type="Person" role="Erwaehnung" ref="#VarelmannFranz_1953-10-06">Varelmann</name> angeschnittene Problem und alles andere auch noch kommen werde. Auch er befürworte die Einsetzung einer Kommission.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> benennt als Mitglieder der Kommission <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>, <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#VarelmannFranz_1953-10-06">Varelmann</name> und sich selbst.</p>
+            <p>(<name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name> übernimmt den Vorsitz).</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-19">
+            <head>S.</head>
+            <p>[19. Rückerstattung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WindelenHeinrich_1957-09-28">Windelen</name> führt zum Bundesrückerstattungsgesetz aus, daß er nur einen Zwischenbericht geben könne, weil die Verhandlungen in der FDP noch nicht abgeschlossen seien.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN020" type="comment">
+                     <p>Entwurf eines Dritten Gesetzes zur Änderung des Bundesrückerstattungsgesetzes (Drs. IV/1549 vom 21.10.1963).</p>
+                  </note>
+               </seg> Das Gesetz sei im Ausschuß<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN021" type="comment">
+                     <p>Ausschuß für Wiedergutmachung.</p>
+                  </note>
+               </seg> recht umstritten, drei Punkte seien durch Kampf­abstimmung entschieden worden. Die Regierung habe ein Limit von 1,5 Mrd. DM für das Abschlußgesetz gesetzt gehabt. Dann habe die SPD die völlige Neueröffnung der Antragsfristen gefordert. Die Regierung ihrerseits habe einen Härtefonds von 400 Mio. DM vorgesehen gehabt und daß Vorauszahlungen gegeben werden sollten, nämlich 1000 DM für Schmuck und 4000 DM für Hausrat. Die Opposition und auch <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name> hätten diese Beträge für zu gering gehalten; es seien 2500 und 6000 DM vorgeschlagen worden. Dann wäre aber mit den 400 Mio. DM nicht mehr auszukommen gewesen. Dann sei vorgeschlagen worden, den Härtefonds zu verdoppeln, womit die Opposition einverstanden gewesen wäre.</p>
+            <p>Die Bundesregierung habe jedoch Bedenken gehabt, auf diese Basis einzutreten, und zwar aus rechtlichen Gründen. Wollte man zu einer Schlußregelung kommen, so bleibe das Risiko offen, daß es durch Urteil des Bundesverfassungsgerichts trotzdem zu einer Ausweitung kommen kann. Sicher hätte man die Schlußgesetzgebung auch kontrovers verabschieden können, jeder kenne aber die Schwierigkeit dieser Gesetzgebung in der Weltöffentlichkeit. Deshalb sei versucht worden, beim Bundeskanzler interfraktionell eine Einigung herbeizuführen. Eine solche habe sich auch abgezeichnet, sei aber wieder fraglich geworden, weil die FDP nicht bereit war, auf dieser Basis mitzumachen. Inzwischen habe sich die Bundesregierung bereit gefunden, nun 800 Mio. DM als Höchstgrenze festzulegen mit der Maßgabe, daß 1000 DM für Schmuck und 4000 DM für Hausrat gegeben werden sollen. Erst nach der Entscheidung des Bundesverfassungsgerichts solle dann die endgültige Höhe der Vorausleistungen festgelegt werden.</p>
+            <p>Offenbar sei die FDP-Fraktion falsch unterrichtet worden, insofern als bei ihr die Auffassung entstand, sie sei bei den Verhandlungen nicht vertreten gewesen. Anwesend seien aber <name type="Person" role="Erwaehnung" ref="#DahlgruenRolf_1957-10-15">Dahlgrün</name> als Finanzminister und auch <name type="Person" role="Erwaehnung" ref="#EmdeHansGeorg_1961-10-17">Emde</name> gewesen. Weiter habe noch vor zwei Uhr ein Gespräch stattgefunden, bei dem <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> anwesend gewesen ist. Offenbar wolle die FDP ein Gegengeschäft auf dem Gebiet der Heimkehrerentschädigung machen.</p>
+            <p>Inzwischen hole <name type="Person" role="Erwaehnung" ref="#HirschMartin_1961-10-17">Hirsch</name> die Zustimmung der SPD-Fraktion ein. Hier sollte man dazu kommen, die Fraktionsführung zu ermächtigen, einen interfraktionellen Antrag zu unterschreiben, wenn ein Einvernehmen mit der FDP erzielt werden kann, und Handlungsfreiheit zu geben, wenn keine Einigung erzielt werden kann. Aber es sei zu hoffen, daß sich der Finanzminister in seiner Fraktion durchsetzen kann.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> teilt mit, daß in zwei von drei Koalitionsgesprächen in einer Fülle von Einzelpunkten ein Gesamteinvernehmen erzielt worden sei. Er bitte die Fraktion, den Vorstand zu bevollmächtigen, einen interfraktionellen Antrag zu unterschreiben. Versage sich die FDP, dann sei die Fraktionsführung frei und könne dann auch den Antrag der SPD ablehnen. Denn eine Abstimmung in dieser Frage gegen die FDP bedeute ein Aufreißen aller Maßnahmen hinsichtlich finanzwirksamer Gesetze, und damit könnte die FDP Parteipolitik betreiben.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-20">
+            <head>T.</head>
+            <p>[20. Kriegsgefangene]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> trägt vor, daß sich der Bundestag seit 1963 mit dem 3. Änderungsgesetz zum Heimkehrerentschädigungsgesetz befasse, das ein Volumen von 37 Mio. DM habe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN022" type="comment">
+                     <p>Entwurf eines Dritten Gesetzes zur Änderung des Kriegsgefangenenentschädigungsgesetzes (Drs. IV/997 vom 16.2.1963).</p>
+                  </note>
+               </seg> Der Kriegsopferausschuß habe dieses Volumen kräftig auf 360 Mio. DM erhöht, der Haushaltsausschuß sei bei 37 Mio. DM geblieben. Dann habe man die Einigung versucht. In einem Koalitionsgespräch beim Bundeskanzler habe man sich dann auf ungefähr 200 Mio. DM verteilt auf vier Jahre geeinigt. Bei den Abstimmungen im Kriegsopferausschuß sei dann, wegen der schwachen Besetzung durch die CDU/CSU und weil die FDP mit der SPD stimmte, diese Summe auf drei Jahre verteilt worden. Arbeitskreis IV habe nun die ursprünglichen vier Jahre wiederherstellen wollen, und auch die FDP habe sich dazu bereit erklärt. Um 14.00 Uhr sei mitgeteilt worden, daß dieser Antrag bei der Antragsannahmestelle abgegeben worden sei, gegen 15.00 Uhr sei bekanntgeworden, daß die FDP diesen Antrag nicht mitunterschreibe. Bei dieser Lage frage er sich, ob man das Gesetz von der Tagesordnung absetzen oder eine Niederlage hinnehmen wolle.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erläutert die unterdessen eingetretene Entwicklung. Die SPD gehe darauf aus, das Finanzvolumen zu erweitern. Deshalb könne man ihrem Antrag auf Rücküberweisung nicht zustimmen. Der FDP habe man mit dürren Worten gesagt, was ein Koalitionspartner wert ist, der Vereinbarungen trifft unter dem Vorsitz des Bundeskanzlers und im Beisein des Finanzministers, des Fraktionsvorsitzenden, des Haushaltsexperten und des Heimkehrerexperten und der dann solche Abmachungen nicht einhalte. Die FDP-Führung habe darauf gesagt, daß sehe sie ein und sie werde diese Sache noch einmal zur Diskussion stellen. Die FDP habe auch gesagt, die CDU/CSU sei von der in der gleichen Koalitionsbesprechung vereinbarten Regelung des Bundesrückerstattungsgesetzes abgewichen<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN023" type="comment">
+                     <p>Entwurf eines Dritten Gesetzes zur Änderung des Bundesrückerstattungsgesetzes (Drs. IV/1549 vom 21.10.1963).</p>
+                  </note>
+               </seg>, ohne die FDP zu beteiligen. Das sei nicht wahr, denn der Finanzminister und <name type="Person" role="Erwaehnung" ref="#EmdeHansGeorg_1961-10-17">Emde</name> seien ja dabeigewesen. Jetzt wünsche die FDP sofort ein Koalitionsgespräch wegen beider Fragen. Deshalb müsse jetzt die Fraktionsführung um die gleiche Vollmacht wie beim Bundesrückerstattungsgesetz bitten. Jede Überschreitung des Volumens von vier mal 50 Mio. DM werde unverändert abgelehnt, einer Rücküberweisung werde nur zugestimmt, wenn das Gesamtvolumen von 200 Mio. DM nicht in Frage gestellt werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> bezeichnet es als schrecklich, daß fast jede Woche eine neue Lage festzustellen sei und jede Woche ein neues Koalitionsergebnis; was da noch auf einen zukommen werde, na ja!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> weist darauf hin, daß eine Reihe von Abgeordneten dieser Fraktion Mitglieder des Heimkehrerverbandes seien. Wenn nicht alle Fraktionsmitglieder die Fraktionsmeinung unterstützen würden, dann sei das eine Gefahr.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> hält die Unterrichtung des Haushaltsausschusses über diese Sachlage für notwendig. Im Haushaltsausschuß 1965 seien nur 40 Mio. DM für diesen Zweck eingesetzt. Noch am Morgen seien dort die Vertreter der FDP damit einverstanden gewesen, die gesamten Leistungen in vier Jahren zu erbringen. Peinlich sei allerdings, daß sich die FDP nicht vor ihren Finanzminister stellen wolle oder das immer der CDU/CSU überlasse.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-06-23-t1510_EP_div_SVP-21">
+            <head>U.</head>
+            <p>[21. Steuern und Abgaben]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> referiert zum Steueränderungsgesetz, dessen allgemeine Tendenz man in der 1. Lesung begrüßen sollte, ohne auf Einzelheiten einzugehen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-06-23-t1510_EP_FN024" type="comment">
+                     <p>Gesetzentwurf zur Änderung des Einkommensteuergesetzes, des Körperschaftsteuergesetzes, des Spar-Prämiengesetzes, des Wohnungsbau-Prämiengesetzes und anderer Gesetze – Steueränderungsgesetz 1964 – (Drs. IV/2400 vom 19.6.1964).</p>
+                  </note>
+               </seg> Dann müsse innerhalb der Fraktion versucht werden, diese Einzelfragen in einer Klausurtagung abzuklären.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

@@ -1,207 +1,290 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-06_1971-01-19-t1300_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Sitzung der Landesgruppe</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
-						<author>Andreas Zellhuber</author>
-						<author>Tim B. Peters</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2011</date>
-						<idno type="DNB">https://d-nb.info/101322325X</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
-							<idno>LG-Protokolle, 1971/1</idno>
-							<objectName>[Kein Titel überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 19. Januar 1971</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>4 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1971-01-19"><time type="start" when="13:00:00"/><time type="end" when="14:55:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/><idno type="sitzung"><idno type="wp">06</idno><idno type="Fraktion-Landesgruppe">CSU-LG</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-12-09" who="#RabusSimon" status="draft" n="3">Header und SVP fertig</change>
-			<change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-02-09" who="#RabusSimon" status="draft" n="5">Ref- und Bibl-Elemente</change>
-			<change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf: (483.)</head>
-				<list type="SVP">
-					<item xml:id="csu-lg-06_1971-01-19-t1300_EP_SVP-1" corresp="#csu-lg-06_1971-01-19-t1300_EP_div_SVP-1">A. TOP 1: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>; Politische Schwerpunkte 1971, Sitzungsrhythmus der Landesgruppe.</item>
-					<item xml:id="csu-lg-06_1971-01-19-t1300_EP_SVP-2" corresp="#csu-lg-06_1971-01-19-t1300_EP_div_SVP-2">B.  TOP 2: Arbeitsplanung der Landesgruppe für 1971, Beiträge der Abgeordneten für die Landesgruppe, Vereinigung der Freunde der CSU in Bonn, Besetzung der Bundestagsausschüsse und anderer Gremien; anschließend Diskussion.</item>
-					<item xml:id="csu-lg-06_1971-01-19-t1300_EP_SVP-3" corresp="#csu-lg-06_1971-01-19-t1300_EP_div_SVP-3">C. TOP 3: Analyse des Programmentwurfs der CDU durch Harlander, Stellungnahme des Abg. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>; anschließend Diskussion.</item>
-				</list>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#HarlanderFlorian">Harlander</name>, <name type="Person" role="Erwaehnung" ref="#HeublFranz">Heubl</name>.</p>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="csu-lg-06_1971-01-19-t1300_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Vor Eintritt in die Tagesordnung gedachte der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> des verstorbenen Mitglieds der Landesgruppe, Franz Xaver <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>. Der Vorsitzende würdigte seine Person und sein Wirken. Zu seinem Gedenken hatten sich die Teilnehmer der Sitzung von ihren Plätzen erhoben. Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> begrüßte als neues Mitglied der Landesgruppe Herrn Albert <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name> aus Regensburg. Er äußerte sich befriedigt darüber, daß ein Mittelstandspolitiker in den Bundestag nachgerückt ist. Er setzte sich in diesem Zusammenhang dafür ein, diesen Teil der Politik, der in letzter Zeit etwas vernachlässigt worden ist, wieder zu aktivieren.</p>
-				<p>Punkt 1 der Tagesordnung:</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> skizzierte die Schwerpunkte in der Politik im Jahre 1971. Die Innenpolitik werde durch eine Verunsicherung in der Wirtschafts- und Finanzpolitik gekennzeichnet. Die Verlautbarungen von Herrn <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> sind nichts anderes als die Bankrotterklärung dieser Bundesregierung.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN001" type="comment"><p>Bundesfinanzminister Alexander <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> (SPD) hatte in einem Interview mit dem Süddeutschen Rundfunk am 17. Januar 1971 die Notwendigkeit von Steuererhöhungen angedeutet. Vgl. <bibl type="series-item">»Woher nimmt Möller die Milliarden?«, Die Zeit, Nr. 4, 22. Januar 1971</bibl>; ferner <bibl type="series-item">Der Spiegel, Nr. 5, 25. Januar 1971, S. 21–23.</bibl></p></note></seg> Es ist die Aufgabe der Landesgruppe, in sachlicher und fundierter Weise der deutschen Öffentlichkeit klarzumachen, daß diese Bundesregierung die großen Hoffnungen, die in sie gesetzt worden sind, enttäuscht hat.</p>
-				<p>Im Mittelpunkt der Außenpolitik wird der Versuch der Bundesregierung stehen, ihre ostpolitischen Verträge durchzusetzen. Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> stellte fest, daß die Haltung der CSU in dieser Frage nie zweideutig war. Er richtete an die Mitglieder der Landesgruppe die eindringliche Bitte, irgendwelche Bedenken, falls solche bestehen sollten, sofort anzusprechen.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> unterrichtete die Mitglieder der Landesgruppe, daß Herr Bundestagsvizepräsident Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> aus dem Krankenhaus entlassen worden ist, sich aber vorerst noch schonen müsse. Dagegen ist Abg. <name type="Person" role="Erwaehnung" ref="#DaschValentin_1969-10-20">Dasch</name> noch im Krankenhaus. Der Vorsitzende ersuchte die Mitglieder, diesen erkrankten Kollegen möglichst oft zu besuchen. Der Vorsitzende begrüßte den Bayerischen Staatsminister für Bundesangelegenheiten, Herrn Dr. Franz <name type="Person" role="Erwaehnung" ref="#HeublFranz">Heubl</name>. Der Vorsitzende wies nochmals auf den Beschluß, der in der letzten Landesgruppe gefaßt worden ist, hin, wonach die Landesgruppensitzung künftig jeweils dienstags, in der Zeit zwischen 12.00 und 15.00 Uhr stattfinden werde.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN002" type="comment"><p>Zum Sitzungsrhythmus der Landesgruppe vgl. auch <bibl type="single-item">Einleitung, S. LXIV f.</bibl></p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-06_1971-01-19-t1300_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Punkt 2 der Tagesordnung:</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> gab bekannt, daß im Vorstand der Landesgruppe folgende Schwerpunkte für die künftige politische Arbeit der Landesgruppe festgelegt worden sind:</p>
-				<p>Arbeitsgruppe 1: innere Sicherheit, öffentlicher Dienst, Fragen der Gesundheitspolitik, Strafrecht, Eherecht, Bodenrecht – Eigentum, Hochschulrahmenrecht.</p>
-				<p>Arbeitsgruppe 2: Steuerrecht, Gemeindefinanzreform, Fragen der Landwirtschaft, Mittelstandspolitik (soziale Sicherheit, Öffnung der Sozialversicherung für Selbständige), Vermögensbildung, weiterer Ausbau des Verkehrsnetzes, Strukturpolitik, Mitbestimmung und Betriebsverfassung.</p>
-				<p>Zum letzten Thema drückte der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> seine ernsten Sorgen über die Entwicklung in der CDU aus, insbesondere im Hinblick auf den bevorstehenden Parteitag.</p>
-				<p>Arbeitsgruppe 3: Ostpolitik, Verhältnis Deutschland – Tschechoslowakei, europäische Integration, Verteidigung, Wehrgerechtigkeit, Änderung des Eides.</p>
-				<p>Arbeitsgruppe 4: Rundfunk und Fernsehen.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> ersuchte die Arbeitsgruppen, von sich aus Initiativen zu den genannten Themen zu erarbeiten und das Ergebnis dieser Arbeiten in die Landesgruppe einzubringen. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> ergänzte die Ausführungen des Vorsitzenden mit der Aufforderung an die Mitglieder der Landesgruppe, mitzuteilen, in welchen Bereichen sie mitarbeiten wollen.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> stellte den Antrag, den Landesgruppenbeitrag um 20 DM pro Monat zu erhöhen. Zur Begründung wies er darauf hin, daß die Sitzung der Landesgruppe jetzt immer am Dienstagmittag beginnen und hierbei jeweils ein Imbiß gereicht wird. Die Kosten hierfür kann die Landesgruppe nicht aufbringen. Außerdem soll in Zukunft der Beitrag für die Vereinigung der Freunde der CSU in Bonn direkt abgeführt werden.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#NiegelLorenz_1969-10-20">Niegel</name> vertrat die Auffassung, daß die Vereinigung der Freunde der CSU in Bonn bisher zu wenig an die Öffentlichkeit getreten sei. Eine Veranstaltung im Jahr wäre zu wenig. Er sprach sich dafür aus, die direkte Abführung des Beitrags für die Vereinigung mit der Auflage zu verbinden, daß sie in Zukunft mehrere Veranstaltungen im Jahr durchführt. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> erwiderte, daß in den nächsten 4 bis 6 Wochen eine Veranstaltung mit Staatsminister <name type="Person" role="Erwaehnung" ref="#StreiblMax">Streibl</name> vorgesehen ist.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> bat die Mitglieder der Landesgruppe, ihre Wünsche über die Besetzung von Ausschüssen des Deutschen Bundestages mitzuteilen. Er gab weiter bekannt, daß die bisherigen vom Abgeordneten <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name> wahrgenommenen Aufgaben wie folgt verteilt werden: »Abg. <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name> ist ordentliches Mitglied des Ausschusses für wirtschaftliche Zusammenarbeit und stellvertr. Mitglied im innerdeutschen Ausschuß. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> wird stellvertr. Mitglied im Verwaltungsrat der Deutschen Bundespost.«</p>
-				<p>Abg. Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name> stellte die Frage, ob es richtig ist, daß ein Beamter einer Institution deren Verwaltungsrat angehört. Abg. Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> bemerkte, daß nach seinen Erfahrungen vorläufige Regelungen meistens endgültig sind. Abg. <name type="Person" role="Sprecher" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> vertrat die Auffassung, daß die jetzige Regelung präjudizierend sein werde. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> wies darauf hin, daß am kommenden Donnerstag Sitzungen der Bundestagsausschüsse angesetzt sind und bis zu diesem Termin eine vorläufige Regelung getroffen sein muß.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> wies darauf hin, daß der Abgeordnete Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> nicht mehr im aktiven Postdienst tätig ist, sondern sich auf Grund seiner Mitgliedschaft im Deutschen Bundestag im Wartestand befindet. Abschließend billigte die Landesgruppe bei zwei Stimmenthaltungen die Nominierung des Abgeordneten Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> als stellvertr. Mitglied im Verwaltungsrat der Deutschen Bundespost.</p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-06_1971-01-19-t1300_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Punkt 3 der Tagesordnung:</p>
-				<p>Florian <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> von der CSU-Landesleitung in München nahm zum Programmentwurf der CDU Stellung.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN003" type="comment"><p>Vgl. <ref type="internal" target="#csu-lg-06_1970-05-07-t1030_EP_FN011">Dok. 469 a, Anm. 2.</ref></p></note></seg> Er bemerkte eingangs, daß die CSU gut beraten war, daß sie dem Programm oder den programmatischen Aussagen keine übersteigerte Bedeutung zugemessen hat. Einem Parteiprogramm kommt nicht mehr Bedeutung zu als einer Visitenkarte. Nicht zu übersehen ist allerdings die Tatsache, daß bei der jüngeren Generation hier ein Wandel eingetreten ist. Sodann zeigte Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> die gravierenden Unterschiede zwischen dem Programm der CSU und dem Programmentwurf der CDU auf.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN004" type="comment"><p>Das Grundsatzprogramm der CSU unter dem Titel »Leitsätze einer Politik für heute und morgen« wurde am 14. Dezember 1968 auf dem 28. Parteitag der CSU verabschiedet. Vgl. die Dokumentation: <bibl type="single-item">Siegfried <hi rendition="#smcap">Hergt</hi> (Hrsg.), Parteiprogramme, Opladen 1973, S. 191–201.</bibl></p></note></seg></p>
-				<p>Zum 1. Kapitel: Das Programm der CSU ist in entscheidenden Punkten sehr statisch, passiv, fast resignierend. Es erweckt den Eindruck, als sei man bereit, sich mit dem von den Kommunisten geschaffenen Status quo abzufinden. Es fehlt jeglicher Hinweis auf die anhaltende Bedrohung durch einen expansiven Kommunismus.</p>
-				<p>Zum 2. Kapitel: Hier wird der Gedanke des Föderalismus durch zunehmende zentralistische Tendenzen gefährdet. Abgelehnt werden müsse die Absicht, die berufliche Bildung einer »Bundesanstalt für Arbeit und berufliche Bildung« zuzuordnen.</p>
-				<p>Zum 3. Kapitel: Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> wies darauf hin, daß die Strukturpolitik bereits zur Gemeinschaftsaufgabe gemacht worden ist. Eine bessere Koordinierung ist nicht mehr möglich. Strukturpolitik könne nicht vom zentralistischen Tische aus gemacht werden. Im übrigen zeichne sich dieser Teil des Programms durch eine ganze Reihe von Leerformeln aus, die überhaupt nichts sagen; z. B.: »ausgewogene Einkommensverteilung, Vermögensbildung, ausgewogene Beteiligung der öffentlichen Hand an der gesamtwirtschaftlichen Kapitalbildung«.</p>
-				<p>Zum 4. Kapitel: Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> bezeichnete die Forderung nach Verbesserung der bundesstaatlichen Ordnung als fragwürdig. Was die Gesetzgebungsbefugnis auf dem Gebiet des Umweltschutzes betreffe, so muß darauf hingewiesen werden, daß hierbei die Objektnähe von besonderer Bedeutung ist.</p>
-				<p>Abschließend wies Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> darauf hin, daß es nunmehr zu überlegen gelte, in welcher Form die CSU Einfluß nehmen könne.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> dankte Herrn <name type="Person" role="Erwaehnung" ref="#HarlanderFlorian">Harlander</name> für seinen Bericht und bezeichnete die vorgenommenen Untersuchungen als notwendig. Er stellte die Frage, wie die CSU, nicht die Landesgruppe, auf das Programm der CDU Einfluß nehmen könne.</p>
-				<p>Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> stellte fest, daß der Programmentwurf in erheblichen Teilen von den Grundsätzen der CDU und der CSU abweiche. Das Programm bedeutet einen Rückfall in das Ahlener Programm.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN005" type="comment"><p>Das am 3. Februar 1947 vom Zonenausschuss der CDU für die britische Zone verabschiedete Ahlener Programm forderte eine teilweise Vergesellschaftung der Großindustrie und starke Mitbestimmungsrechte der Arbeitnehmer. Vgl. die Dokumentation: <bibl type="single-item"><hi rendition="#smcap">Konrad-Adenauer-Stiftung</hi> (Hrsg.), Christliche Demokratie in Deutschland, Melle 1978, S. 731–740.</bibl></p></note></seg> Die Zukunft der CDU liege nicht darin, die SPD links zu überholen. Ein Wähler, der diese Politik wünsche, wählt die SPD. Man erwartet von uns ein der modernen Industriemassengesellschaft von heute und morgen gerecht werdendes, leistungsorientiertes, auf Selbstverantwortung und Selbstbeteiligung aufgebautes gesellschaftspolitisches Konzept. Der Staat dürfe nicht zur Hebamme für alles gemacht werden. In der CDU bilden sich Bündnisse, die ausschließlich dem Zweck dienen, die Chancen der Aufstellung von Kanzlerkandidaten zu erhöhen. Mit diesem Programm hat die CDU keine Chance, im Bundestag die Mehrheit zu erringen. Dieses Programm bedeute weiter eine Rekonvaleszierung der FDP unter <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>. Im ersten Teil des Programms ist von der Politik, wie sie von <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> geprägt worden ist, überhaupt nichts mehr zu spüren.</p>
-				<p>Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> bezeichnete es als sinnlos, mit zwei Vertretern in einer Sitzung der CDU einen Änderungsversuch zu unternehmen. Weiter kritisierte er das Verhalten von Vertretern der Jungen Union. Diese sollten zunächst ihre eigenen Probleme lösen. Dies gelte sowohl für Hamburg als auch für München. Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> übte Kritik am Interview-Krieg innerhalb der CDU-Führungsspitze. Diese werde dadurch handlungsunfähig. Er wies weiter darauf hin, daß die Chancen für die Opposition derzeit gut wären, weil diese Regierung eine so miserable Politik mache; ihre Fehler sind so groß, über zahlreiche Sachprobleme ist sie zerstritten. Wenn die Opposition das gleiche tut wie die Regierung, dann wird sie nicht gewählt werden. Verschiedene Politiker in der CDU glauben, wenn sie sich gegen jemanden anderen äußern würden, kämen sie in der Öffentlichkeit an. Was <name type="Person" role="Erwaehnung" ref="#KohlHelmut_1976-12-14">Kohl</name> mache, ist gegen ihn selbst schädlich. Weite Kreise der CDU-Wähler blicken mit Hoffnung auf die CSU. Es komme darauf an, das Jein in der Ostpolitik zu beseitigen. In grundsätzlichen Fragen gibt es keinen Kompromiß. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> denke dasselbe, wage aber nicht, es offen zum Ausdruck zu bringen.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN006" type="comment"><p>Zur lavierenden Haltung des Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> vgl. insbesondere: <bibl type="item-in-archive">Moskauer Vertrag. Schriftwechsel, Gesprächsvermerke, Materialien, Bd. 1, 1971, BA, NL Rainer Barzel, Nr. 377.</bibl></p></note></seg></p>
-				<p>Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> bat die Herren Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HeublFranz">Heubl</name> und <name type="Person" role="Erwaehnung" ref="#HarlanderFlorian">Harlander</name> einen Brief an den CDU-Vorsitzenden zu entwerfen, in dem in 5 oder 6 Punkten auf die wesentlichen Bedenken gegen das CDU-Programm hingewiesen wird.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN007" type="comment"><p>Schreiben nicht ermittelt.</p></note></seg> In dem Brief ist zum Ausdruck zu bringen, daß dieses CDU-Programm nicht Gegenstand einer gemeinsamen Fraktionspolitik innerhalb der CDU/CSU-Fraktion sein könne, wenn die Fraktionsgemeinschaft aufrechterhalten bleiben soll. Er schloß seine Ausführungen mit dem Bemerken, daß die CDU über den Ausgang der nächsten Wahlen staunen würde, wenn es zur Bildung einer modernen Volkspartei, die ein ausgesprochenes leistungs- und freiheitlich orientiertes Konzept hat, kommen würde.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> stellte fest, daß die Landesgruppe im Augenblick noch nicht am Zuge ist. Dies werde erst dann der Fall sein, wenn das CDU-Programm zum Fraktionsprogramm gemacht werden soll.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#ZieglerErich_1963-04-01">Ziegler</name> bedauerte, daß auf Grund des Zeitdrucks, unter dem die Landesgruppensitzung stehe, dieses Problem nicht ausführlicher erörtert werden könnte. Er bat daher den Herrn Landesvorsitzenden in dem Brief an die CDU nicht auf Einzelheiten, sondern nur auf grundsätzliche Fragen einzugehen. Was die Schaffung einer »Bundesanstalt für Berufsbildung« betreffe, so vertrete er die Ansicht, daß die Überlegungen im CDU-Programmentwurf in diesem Punkt richtig sind. Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> erwiderte, daß die Vorschläge über die Berufsausbildung im CDU-Programm zu einer Aushöhlung der Selbstverwaltung durch die Industrie- und Handelskammern führe. Unterschied-liche Auffassungen bestehen auch in [der] Mitbestimmung.</p>
-				<p>Abg. Dr. <name type="Person" role="Sprecher" ref="#KleyGisbert_1969-10-20">Kley</name> sprach sich dafür aus, daß auf dem Parteitag der CDU führende Persönlichkeiten der CSU das Wort nehmen und zu den entscheidenden Punkten Stellung nehmen würden.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN008" type="comment"><p>Der 18. Bundesparteitag der CDU fand vom 25. bis 27. Januar 1971 in Düsseldorf statt.</p></note></seg> Eine derartige Maßnahme würde zweifellos Wirkungen zeigen. Abg. Dr. <name type="Person" role="Sprecher" ref="#KleyGisbert_1969-10-20">Kley</name> nahm sodann zu speziellen Fragen der Betriebsverfassung und Mitbestimmung im Programmentwurf der CDU Stellung. Zur Betriebsverfassung ist vom Standpunkt der CSU aus nichts zu sagen. Anders ist dies bei der Mitbestimmung im Aufsichtsrat. Hier ist die CDU im Gegensatz zur CSU den Vorschlägen der <name type="Person" role="Erwaehnung" ref="#BiedenkopfKurtH_1976-12-14">Biedenkopf</name>-Kommission<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN009" type="comment"><p>Vgl. <ref type="internal" target="#csu-lg-06_1970-01-08-t0900_EP_FN015">Dok. 458, Anm. 15.</ref></p></note></seg> vollinhaltlich gefolgt, einschließlich der paritätischen Besetzung des Aufsichtsratspräsidiums. Die <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>-Kommission hat in einer Reihe von Punkten den Entwurf der CSU abgeändert.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN010" type="comment"><p>Vgl. <ref type="internal" target="#csu-lg-06_1970-04-27-t1930_EP_FN012">Dok. 467, Anm. 12.</ref></p></note></seg> Dies gilt insbesondere für die Frage, wer leitender Angestellter ist. Dies soll von Betriebsrat und Unternehmer gemeinsam festgestellt werden. Ein weiterer Punkt ist die Abänderung des Paragraphen über die Tendenzbetriebe. Demnach unterliegen alle Zeitungen der Mitbestimmung. Abg. Dr. <name type="Person" role="Sprecher" ref="#KleyGisbert_1969-10-20">Kley</name> schlug vor, daß die Ergebnisse der <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>-Kommission in der Landesgruppe erörtert werden, sobald die Beratungen der <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>-Kommission abgeschlossen sind.</p>
-				<p>Abg. Dr. <name type="Person" role="Sprecher" ref="#BecherWalter_1965-10-19">Becher</name> wies darauf hin, daß im Programmentwurf der CDU im Kapitel Ostpolitik festgestellt wird, daß das Münchner Abkommen von 1938 als nicht mehr gültig angesehen wird. Dies könnte die SPD veranlassen, die Forderung zu erheben, wonach das Abkommen als von Anfang an ungültig zu betrachten ist. Abg. <name type="Person" role="Sprecher" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name> unterstützte die Ausführungen des Abgeordneten <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name> zur Frage der Einrichtung einer »Bundesanstalt für Arbeit und berufliche Bildung«. Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> stellte fest, daß vor 1969 Gegensätze zwischen CDU und CSU ausschließlich auf staatsrechtlichem Gebiet vorhanden waren, z. B. Bundesgrenzschutz, Bundespolizei. Derzeit gebe es jedoch in der Hauptsache Unterschiede in der Finanz- und Außenpolitik. Abg. <name type="Person" role="Sprecher" ref="#WeiglFranz_1961-10-17">Weigl</name> setzte sich dafür ein, daß ein Beschluß, wonach im Wege der Betriebsvereinbarung festgelegt wird, wer leitender Angestellter ist, von der CSU nicht hingenommen wird. Abg. Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name> kritisierte die Ansprache von Bundespräsident <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> zur Reichsgründungsfeier.<seg type="note"><note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN011" type="comment"><p>Vgl. die <bibl type="single-item">Fernsehansprache von Bundespräsident <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> zum 100. Jahrestag der Reichsgründung, 17. Januar 1971: »1871: Äußere Einheit ohne innere Freiheit«, abgedruckt in: Joachim <hi rendition="#smcap">Braun</hi>, Gustav Walter Heinemann. Der unbequeme Präsident, Karlsruhe 1972, S. 265–270.</bibl></p></note></seg> Diese Rede ist für jeden, der etwas historisch denkt, unmöglich. Er wies darauf hin, daß er in jeder Rede, die er halten werde, den Bundespräsidenten angreifen werde.</p>
-				<p>[Unterzeichnet: <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-06_1971-01-19-t1300_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Sitzung der Landesgruppe</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
+                  <author>Andreas Zellhuber</author>
+                  <author>Tim B. Peters</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2011</date>
+                  <idno type="DNB">https://d-nb.info/101322325X</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
+                     <idno>LG-Protokolle, 1971/1</idno>
+                     <objectName>[Kein Titel überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 19. Januar 1971</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>4 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1971-01-19">
+               <time type="start" when="13:00:00"/>
+               <time type="end" when="14:55:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">06</idno>
+               <idno type="Fraktion-Landesgruppe">CSU-LG</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-12-09" who="#RabusSimon" status="draft" n="3">Header und SVP fertig</change>
+         <change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-02-09" who="#RabusSimon" status="draft" n="5">Ref- und Bibl-Elemente</change>
+         <change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf: (483.)</head>
+            <list type="SVP">
+               <item xml:id="csu-lg-06_1971-01-19-t1300_EP_SVP-1" corresp="#csu-lg-06_1971-01-19-t1300_EP_div_SVP-1">A. TOP 1: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>; Politische Schwerpunkte 1971, Sitzungsrhythmus der Landesgruppe.</item>
+               <item xml:id="csu-lg-06_1971-01-19-t1300_EP_SVP-2" corresp="#csu-lg-06_1971-01-19-t1300_EP_div_SVP-2">B.  TOP 2: Arbeitsplanung der Landesgruppe für 1971, Beiträge der Abgeordneten für die Landesgruppe, Vereinigung der Freunde der CSU in Bonn, Besetzung der Bundestagsausschüsse und anderer Gremien; anschließend Diskussion.</item>
+               <item xml:id="csu-lg-06_1971-01-19-t1300_EP_SVP-3" corresp="#csu-lg-06_1971-01-19-t1300_EP_div_SVP-3">C. TOP 3: Analyse des Programmentwurfs der CDU durch Harlander, Stellungnahme des Abg. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>; anschließend Diskussion.</item>
+            </list>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#HarlanderFlorian">Harlander</name>, <name type="Person" role="Erwaehnung" ref="#HeublFranz">Heubl</name>.</p>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="csu-lg-06_1971-01-19-t1300_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Vor Eintritt in die Tagesordnung gedachte der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> des verstorbenen Mitglieds der Landesgruppe, Franz Xaver <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>. Der Vorsitzende würdigte seine Person und sein Wirken. Zu seinem Gedenken hatten sich die Teilnehmer der Sitzung von ihren Plätzen erhoben. Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> begrüßte als neues Mitglied der Landesgruppe Herrn Albert <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name> aus Regensburg. Er äußerte sich befriedigt darüber, daß ein Mittelstandspolitiker in den Bundestag nachgerückt ist. Er setzte sich in diesem Zusammenhang dafür ein, diesen Teil der Politik, der in letzter Zeit etwas vernachlässigt worden ist, wieder zu aktivieren.</p>
+            <p>Punkt 1 der Tagesordnung:</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> skizzierte die Schwerpunkte in der Politik im Jahre 1971. Die Innenpolitik werde durch eine Verunsicherung in der Wirtschafts- und Finanzpolitik gekennzeichnet. Die Verlautbarungen von Herrn <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> sind nichts anderes als die Bankrotterklärung dieser Bundesregierung.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN001" type="comment">
+                     <p>Bundesfinanzminister Alexander <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> (SPD) hatte in einem Interview mit dem Süddeutschen Rundfunk am 17. Januar 1971 die Notwendigkeit von Steuererhöhungen angedeutet. Vgl. <bibl type="series-item">»Woher nimmt Möller die Milliarden?«, Die Zeit, Nr. 4, 22. Januar 1971</bibl>; ferner <bibl type="series-item">Der Spiegel, Nr. 5, 25. Januar 1971, S. 21–23.</bibl>
+                     </p>
+                  </note>
+               </seg> Es ist die Aufgabe der Landesgruppe, in sachlicher und fundierter Weise der deutschen Öffentlichkeit klarzumachen, daß diese Bundesregierung die großen Hoffnungen, die in sie gesetzt worden sind, enttäuscht hat.</p>
+            <p>Im Mittelpunkt der Außenpolitik wird der Versuch der Bundesregierung stehen, ihre ostpolitischen Verträge durchzusetzen. Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> stellte fest, daß die Haltung der CSU in dieser Frage nie zweideutig war. Er richtete an die Mitglieder der Landesgruppe die eindringliche Bitte, irgendwelche Bedenken, falls solche bestehen sollten, sofort anzusprechen.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> unterrichtete die Mitglieder der Landesgruppe, daß Herr Bundestagsvizepräsident Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> aus dem Krankenhaus entlassen worden ist, sich aber vorerst noch schonen müsse. Dagegen ist Abg. <name type="Person" role="Erwaehnung" ref="#DaschValentin_1969-10-20">Dasch</name> noch im Krankenhaus. Der Vorsitzende ersuchte die Mitglieder, diesen erkrankten Kollegen möglichst oft zu besuchen. Der Vorsitzende begrüßte den Bayerischen Staatsminister für Bundesangelegenheiten, Herrn Dr. Franz <name type="Person" role="Erwaehnung" ref="#HeublFranz">Heubl</name>. Der Vorsitzende wies nochmals auf den Beschluß, der in der letzten Landesgruppe gefaßt worden ist, hin, wonach die Landesgruppensitzung künftig jeweils dienstags, in der Zeit zwischen 12.00 und 15.00 Uhr stattfinden werde.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN002" type="comment">
+                     <p>Zum Sitzungsrhythmus der Landesgruppe vgl. auch <bibl type="single-item">Einleitung, S. LXIV f.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-06_1971-01-19-t1300_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Punkt 2 der Tagesordnung:</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> gab bekannt, daß im Vorstand der Landesgruppe folgende Schwerpunkte für die künftige politische Arbeit der Landesgruppe festgelegt worden sind:</p>
+            <p>Arbeitsgruppe 1: innere Sicherheit, öffentlicher Dienst, Fragen der Gesundheitspolitik, Strafrecht, Eherecht, Bodenrecht – Eigentum, Hochschulrahmenrecht.</p>
+            <p>Arbeitsgruppe 2: Steuerrecht, Gemeindefinanzreform, Fragen der Landwirtschaft, Mittelstandspolitik (soziale Sicherheit, Öffnung der Sozialversicherung für Selbständige), Vermögensbildung, weiterer Ausbau des Verkehrsnetzes, Strukturpolitik, Mitbestimmung und Betriebsverfassung.</p>
+            <p>Zum letzten Thema drückte der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> seine ernsten Sorgen über die Entwicklung in der CDU aus, insbesondere im Hinblick auf den bevorstehenden Parteitag.</p>
+            <p>Arbeitsgruppe 3: Ostpolitik, Verhältnis Deutschland – Tschechoslowakei, europäische Integration, Verteidigung, Wehrgerechtigkeit, Änderung des Eides.</p>
+            <p>Arbeitsgruppe 4: Rundfunk und Fernsehen.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> ersuchte die Arbeitsgruppen, von sich aus Initiativen zu den genannten Themen zu erarbeiten und das Ergebnis dieser Arbeiten in die Landesgruppe einzubringen. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> ergänzte die Ausführungen des Vorsitzenden mit der Aufforderung an die Mitglieder der Landesgruppe, mitzuteilen, in welchen Bereichen sie mitarbeiten wollen.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> stellte den Antrag, den Landesgruppenbeitrag um 20 DM pro Monat zu erhöhen. Zur Begründung wies er darauf hin, daß die Sitzung der Landesgruppe jetzt immer am Dienstagmittag beginnen und hierbei jeweils ein Imbiß gereicht wird. Die Kosten hierfür kann die Landesgruppe nicht aufbringen. Außerdem soll in Zukunft der Beitrag für die Vereinigung der Freunde der CSU in Bonn direkt abgeführt werden.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#NiegelLorenz_1969-10-20">Niegel</name> vertrat die Auffassung, daß die Vereinigung der Freunde der CSU in Bonn bisher zu wenig an die Öffentlichkeit getreten sei. Eine Veranstaltung im Jahr wäre zu wenig. Er sprach sich dafür aus, die direkte Abführung des Beitrags für die Vereinigung mit der Auflage zu verbinden, daß sie in Zukunft mehrere Veranstaltungen im Jahr durchführt. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> erwiderte, daß in den nächsten 4 bis 6 Wochen eine Veranstaltung mit Staatsminister <name type="Person" role="Erwaehnung" ref="#StreiblMax">Streibl</name> vorgesehen ist.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> bat die Mitglieder der Landesgruppe, ihre Wünsche über die Besetzung von Ausschüssen des Deutschen Bundestages mitzuteilen. Er gab weiter bekannt, daß die bisherigen vom Abgeordneten <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name> wahrgenommenen Aufgaben wie folgt verteilt werden: »Abg. <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name> ist ordentliches Mitglied des Ausschusses für wirtschaftliche Zusammenarbeit und stellvertr. Mitglied im innerdeutschen Ausschuß. Abg. Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> wird stellvertr. Mitglied im Verwaltungsrat der Deutschen Bundespost.«</p>
+            <p>Abg. Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name> stellte die Frage, ob es richtig ist, daß ein Beamter einer Institution deren Verwaltungsrat angehört. Abg. Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> bemerkte, daß nach seinen Erfahrungen vorläufige Regelungen meistens endgültig sind. Abg. <name type="Person" role="Sprecher" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> vertrat die Auffassung, daß die jetzige Regelung präjudizierend sein werde. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> wies darauf hin, daß am kommenden Donnerstag Sitzungen der Bundestagsausschüsse angesetzt sind und bis zu diesem Termin eine vorläufige Regelung getroffen sein muß.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> wies darauf hin, daß der Abgeordnete Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> nicht mehr im aktiven Postdienst tätig ist, sondern sich auf Grund seiner Mitgliedschaft im Deutschen Bundestag im Wartestand befindet. Abschließend billigte die Landesgruppe bei zwei Stimmenthaltungen die Nominierung des Abgeordneten Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> als stellvertr. Mitglied im Verwaltungsrat der Deutschen Bundespost.</p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-06_1971-01-19-t1300_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Punkt 3 der Tagesordnung:</p>
+            <p>Florian <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> von der CSU-Landesleitung in München nahm zum Programmentwurf der CDU Stellung.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN003" type="comment">
+                     <p>Vgl. <ref type="internal" target="#csu-lg-06_1970-05-07-t1030_EP_FN011">Dok. 469 a, Anm. 2.</ref>
+                     </p>
+                  </note>
+               </seg> Er bemerkte eingangs, daß die CSU gut beraten war, daß sie dem Programm oder den programmatischen Aussagen keine übersteigerte Bedeutung zugemessen hat. Einem Parteiprogramm kommt nicht mehr Bedeutung zu als einer Visitenkarte. Nicht zu übersehen ist allerdings die Tatsache, daß bei der jüngeren Generation hier ein Wandel eingetreten ist. Sodann zeigte Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> die gravierenden Unterschiede zwischen dem Programm der CSU und dem Programmentwurf der CDU auf.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN004" type="comment">
+                     <p>Das Grundsatzprogramm der CSU unter dem Titel »Leitsätze einer Politik für heute und morgen« wurde am 14. Dezember 1968 auf dem 28. Parteitag der CSU verabschiedet. Vgl. die Dokumentation: <bibl type="single-item">Siegfried <hi rendition="#smcap">Hergt</hi> (Hrsg.), Parteiprogramme, Opladen 1973, S. 191–201.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zum 1. Kapitel: Das Programm der CSU ist in entscheidenden Punkten sehr statisch, passiv, fast resignierend. Es erweckt den Eindruck, als sei man bereit, sich mit dem von den Kommunisten geschaffenen Status quo abzufinden. Es fehlt jeglicher Hinweis auf die anhaltende Bedrohung durch einen expansiven Kommunismus.</p>
+            <p>Zum 2. Kapitel: Hier wird der Gedanke des Föderalismus durch zunehmende zentralistische Tendenzen gefährdet. Abgelehnt werden müsse die Absicht, die berufliche Bildung einer »Bundesanstalt für Arbeit und berufliche Bildung« zuzuordnen.</p>
+            <p>Zum 3. Kapitel: Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> wies darauf hin, daß die Strukturpolitik bereits zur Gemeinschaftsaufgabe gemacht worden ist. Eine bessere Koordinierung ist nicht mehr möglich. Strukturpolitik könne nicht vom zentralistischen Tische aus gemacht werden. Im übrigen zeichne sich dieser Teil des Programms durch eine ganze Reihe von Leerformeln aus, die überhaupt nichts sagen; z. B.: »ausgewogene Einkommensverteilung, Vermögensbildung, ausgewogene Beteiligung der öffentlichen Hand an der gesamtwirtschaftlichen Kapitalbildung«.</p>
+            <p>Zum 4. Kapitel: Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> bezeichnete die Forderung nach Verbesserung der bundesstaatlichen Ordnung als fragwürdig. Was die Gesetzgebungsbefugnis auf dem Gebiet des Umweltschutzes betreffe, so muß darauf hingewiesen werden, daß hierbei die Objektnähe von besonderer Bedeutung ist.</p>
+            <p>Abschließend wies Herr <name type="Person" role="Sprecher" ref="#HarlanderFlorian">Harlander</name> darauf hin, daß es nunmehr zu überlegen gelte, in welcher Form die CSU Einfluß nehmen könne.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> dankte Herrn <name type="Person" role="Erwaehnung" ref="#HarlanderFlorian">Harlander</name> für seinen Bericht und bezeichnete die vorgenommenen Untersuchungen als notwendig. Er stellte die Frage, wie die CSU, nicht die Landesgruppe, auf das Programm der CDU Einfluß nehmen könne.</p>
+            <p>Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> stellte fest, daß der Programmentwurf in erheblichen Teilen von den Grundsätzen der CDU und der CSU abweiche. Das Programm bedeutet einen Rückfall in das Ahlener Programm.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN005" type="comment">
+                     <p>Das am 3. Februar 1947 vom Zonenausschuss der CDU für die britische Zone verabschiedete Ahlener Programm forderte eine teilweise Vergesellschaftung der Großindustrie und starke Mitbestimmungsrechte der Arbeitnehmer. Vgl. die Dokumentation: <bibl type="single-item">
+                           <hi rendition="#smcap">Konrad-Adenauer-Stiftung</hi> (Hrsg.), Christliche Demokratie in Deutschland, Melle 1978, S. 731–740.</bibl>
+                     </p>
+                  </note>
+               </seg> Die Zukunft der CDU liege nicht darin, die SPD links zu überholen. Ein Wähler, der diese Politik wünsche, wählt die SPD. Man erwartet von uns ein der modernen Industriemassengesellschaft von heute und morgen gerecht werdendes, leistungsorientiertes, auf Selbstverantwortung und Selbstbeteiligung aufgebautes gesellschaftspolitisches Konzept. Der Staat dürfe nicht zur Hebamme für alles gemacht werden. In der CDU bilden sich Bündnisse, die ausschließlich dem Zweck dienen, die Chancen der Aufstellung von Kanzlerkandidaten zu erhöhen. Mit diesem Programm hat die CDU keine Chance, im Bundestag die Mehrheit zu erringen. Dieses Programm bedeute weiter eine Rekonvaleszierung der FDP unter <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>. Im ersten Teil des Programms ist von der Politik, wie sie von <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> geprägt worden ist, überhaupt nichts mehr zu spüren.</p>
+            <p>Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> bezeichnete es als sinnlos, mit zwei Vertretern in einer Sitzung der CDU einen Änderungsversuch zu unternehmen. Weiter kritisierte er das Verhalten von Vertretern der Jungen Union. Diese sollten zunächst ihre eigenen Probleme lösen. Dies gelte sowohl für Hamburg als auch für München. Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> übte Kritik am Interview-Krieg innerhalb der CDU-Führungsspitze. Diese werde dadurch handlungsunfähig. Er wies weiter darauf hin, daß die Chancen für die Opposition derzeit gut wären, weil diese Regierung eine so miserable Politik mache; ihre Fehler sind so groß, über zahlreiche Sachprobleme ist sie zerstritten. Wenn die Opposition das gleiche tut wie die Regierung, dann wird sie nicht gewählt werden. Verschiedene Politiker in der CDU glauben, wenn sie sich gegen jemanden anderen äußern würden, kämen sie in der Öffentlichkeit an. Was <name type="Person" role="Erwaehnung" ref="#KohlHelmut_1976-12-14">Kohl</name> mache, ist gegen ihn selbst schädlich. Weite Kreise der CDU-Wähler blicken mit Hoffnung auf die CSU. Es komme darauf an, das Jein in der Ostpolitik zu beseitigen. In grundsätzlichen Fragen gibt es keinen Kompromiß. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> denke dasselbe, wage aber nicht, es offen zum Ausdruck zu bringen.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN006" type="comment">
+                     <p>Zur lavierenden Haltung des Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> vgl. insbesondere: <bibl type="item-in-archive">Moskauer Vertrag. Schriftwechsel, Gesprächsvermerke, Materialien, Bd. 1, 1971, BA, NL Rainer Barzel, Nr. 377.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> bat die Herren Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HeublFranz">Heubl</name> und <name type="Person" role="Erwaehnung" ref="#HarlanderFlorian">Harlander</name> einen Brief an den CDU-Vorsitzenden zu entwerfen, in dem in 5 oder 6 Punkten auf die wesentlichen Bedenken gegen das CDU-Programm hingewiesen wird.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN007" type="comment">
+                     <p>Schreiben nicht ermittelt.</p>
+                  </note>
+               </seg> In dem Brief ist zum Ausdruck zu bringen, daß dieses CDU-Programm nicht Gegenstand einer gemeinsamen Fraktionspolitik innerhalb der CDU/CSU-Fraktion sein könne, wenn die Fraktionsgemeinschaft aufrechterhalten bleiben soll. Er schloß seine Ausführungen mit dem Bemerken, daß die CDU über den Ausgang der nächsten Wahlen staunen würde, wenn es zur Bildung einer modernen Volkspartei, die ein ausgesprochenes leistungs- und freiheitlich orientiertes Konzept hat, kommen würde.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> stellte fest, daß die Landesgruppe im Augenblick noch nicht am Zuge ist. Dies werde erst dann der Fall sein, wenn das CDU-Programm zum Fraktionsprogramm gemacht werden soll.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#ZieglerErich_1963-04-01">Ziegler</name> bedauerte, daß auf Grund des Zeitdrucks, unter dem die Landesgruppensitzung stehe, dieses Problem nicht ausführlicher erörtert werden könnte. Er bat daher den Herrn Landesvorsitzenden in dem Brief an die CDU nicht auf Einzelheiten, sondern nur auf grundsätzliche Fragen einzugehen. Was die Schaffung einer »Bundesanstalt für Berufsbildung« betreffe, so vertrete er die Ansicht, daß die Überlegungen im CDU-Programmentwurf in diesem Punkt richtig sind. Der <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Vorsitzende</name> erwiderte, daß die Vorschläge über die Berufsausbildung im CDU-Programm zu einer Aushöhlung der Selbstverwaltung durch die Industrie- und Handelskammern führe. Unterschied-liche Auffassungen bestehen auch in [der] Mitbestimmung.</p>
+            <p>Abg. Dr. <name type="Person" role="Sprecher" ref="#KleyGisbert_1969-10-20">Kley</name> sprach sich dafür aus, daß auf dem Parteitag der CDU führende Persönlichkeiten der CSU das Wort nehmen und zu den entscheidenden Punkten Stellung nehmen würden.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN008" type="comment">
+                     <p>Der 18. Bundesparteitag der CDU fand vom 25. bis 27. Januar 1971 in Düsseldorf statt.</p>
+                  </note>
+               </seg> Eine derartige Maßnahme würde zweifellos Wirkungen zeigen. Abg. Dr. <name type="Person" role="Sprecher" ref="#KleyGisbert_1969-10-20">Kley</name> nahm sodann zu speziellen Fragen der Betriebsverfassung und Mitbestimmung im Programmentwurf der CDU Stellung. Zur Betriebsverfassung ist vom Standpunkt der CSU aus nichts zu sagen. Anders ist dies bei der Mitbestimmung im Aufsichtsrat. Hier ist die CDU im Gegensatz zur CSU den Vorschlägen der <name type="Person" role="Erwaehnung" ref="#BiedenkopfKurtH_1976-12-14">Biedenkopf</name>-Kommission<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN009" type="comment">
+                     <p>Vgl. <ref type="internal" target="#csu-lg-06_1970-01-08-t0900_EP_FN015">Dok. 458, Anm. 15.</ref>
+                     </p>
+                  </note>
+               </seg> vollinhaltlich gefolgt, einschließlich der paritätischen Besetzung des Aufsichtsratspräsidiums. Die <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>-Kommission hat in einer Reihe von Punkten den Entwurf der CSU abgeändert.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN010" type="comment">
+                     <p>Vgl. <ref type="internal" target="#csu-lg-06_1970-04-27-t1930_EP_FN012">Dok. 467, Anm. 12.</ref>
+                     </p>
+                  </note>
+               </seg> Dies gilt insbesondere für die Frage, wer leitender Angestellter ist. Dies soll von Betriebsrat und Unternehmer gemeinsam festgestellt werden. Ein weiterer Punkt ist die Abänderung des Paragraphen über die Tendenzbetriebe. Demnach unterliegen alle Zeitungen der Mitbestimmung. Abg. Dr. <name type="Person" role="Sprecher" ref="#KleyGisbert_1969-10-20">Kley</name> schlug vor, daß die Ergebnisse der <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>-Kommission in der Landesgruppe erörtert werden, sobald die Beratungen der <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>-Kommission abgeschlossen sind.</p>
+            <p>Abg. Dr. <name type="Person" role="Sprecher" ref="#BecherWalter_1965-10-19">Becher</name> wies darauf hin, daß im Programmentwurf der CDU im Kapitel Ostpolitik festgestellt wird, daß das Münchner Abkommen von 1938 als nicht mehr gültig angesehen wird. Dies könnte die SPD veranlassen, die Forderung zu erheben, wonach das Abkommen als von Anfang an ungültig zu betrachten ist. Abg. <name type="Person" role="Sprecher" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name> unterstützte die Ausführungen des Abgeordneten <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name> zur Frage der Einrichtung einer »Bundesanstalt für Arbeit und berufliche Bildung«. Bundesminister a. D. Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> stellte fest, daß vor 1969 Gegensätze zwischen CDU und CSU ausschließlich auf staatsrechtlichem Gebiet vorhanden waren, z. B. Bundesgrenzschutz, Bundespolizei. Derzeit gebe es jedoch in der Hauptsache Unterschiede in der Finanz- und Außenpolitik. Abg. <name type="Person" role="Sprecher" ref="#WeiglFranz_1961-10-17">Weigl</name> setzte sich dafür ein, daß ein Beschluß, wonach im Wege der Betriebsvereinbarung festgelegt wird, wer leitender Angestellter ist, von der CSU nicht hingenommen wird. Abg. Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name> kritisierte die Ansprache von Bundespräsident <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> zur Reichsgründungsfeier.<seg type="note">
+                  <note xml:id="csu-lg-06_1971-01-19-t1300_EP_FN011" type="comment">
+                     <p>Vgl. die <bibl type="single-item">Fernsehansprache von Bundespräsident <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> zum 100. Jahrestag der Reichsgründung, 17. Januar 1971: »1871: Äußere Einheit ohne innere Freiheit«, abgedruckt in: Joachim <hi rendition="#smcap">Braun</hi>, Gustav Walter Heinemann. Der unbequeme Präsident, Karlsruhe 1972, S. 265–270.</bibl>
+                     </p>
+                  </note>
+               </seg> Diese Rede ist für jeden, der etwas historisch denkt, unmöglich. Er wies darauf hin, daß er in jeder Rede, die er halten werde, den Bundespräsidenten angreifen werde.</p>
+            <p>[Unterzeichnet: <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]</p>
+         </div>
+      </body>
+   </text>
 </TEI>

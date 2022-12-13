@@ -1,206 +1,413 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-09-30-t1115_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung in Berlin</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor><name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/></editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 30. September 1958 in Berlin (West)</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>10 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1958-09-30"><time type="start" when="11:15:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Berlin (West)</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1958-09-30-t1115_EP_SVP-1" corresp="cdu-csu-03_1958-09-30-t1115_EP_div_SVP-1">A. Bericht von Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> über die innen- und außenpolitische Lage mit anschließender Aussprache.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1958-09-30-t1115_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt die neu eingetretenen Mitglieder der Fraktion, die Herren <name type="Person" role="Erwaehnung" ref="#EpléeHermannA_1953-01-16">Eplée</name> und <name type="Person" role="Erwaehnung" ref="#MeisHans_1958-07-02">Meis</name>, und kündigt an, daß die Neuwahl des Vorstandes möglichst bald, spätestens Anfang Oktober, erfolgen soll.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN002" type="comment"><p>Siehe Nr. 82 v. 28. 10. 1958.</p></note></seg> Abg. <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name> sei mit der Vorbereitung der Wahl beauftragt. Für die notwendige Umbesetzung einzelner Ausschüsse sei eine Kommission aus den Fraktionsmitgliedern <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> und <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> unter Vorsitz von Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) gebildet worden.</p>
-				<p>Anschließend entwickelt sich eine Diskussion, ob für die Bundestagssitzung vom 1. Oktober Rundfunk- und Fernsehübertragung zugelassen werden soll, als deren Ergebnis festgestellt wird, daß man den Rundfunkanstalten freie Hand lassen will, wie sie verfahren wollen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt den aus dem Manöver zurückgekehrten Bundeskanzler<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN003" type="comment"><p><name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> war am 24. und 25. 9. 1958 Gast bei dem Manöver der Bundeswehr in Bergen-Hohne. Vgl. Besucherlisten Adenauer (StBKAH 04.09).</p></note></seg> und bringt seine Genugtuung über die Wahlsiege in Schleswig-Holstein und vorher in Nordrhein-Westfalen<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN004" type="comment"><p>Siehe Nr. 74 v. 29. 9. 1958, TOP 1. Nr. 72 v. 30. 6. 1958.</p></note></seg> zum Ausdruck. Über den Parteitag in Kiel<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN005" type="comment"><p>Vgl. Christlich-Demokratische Union Deutschlands, 8. Bundesparteitag Kiel 18.–21. September 1958, Hamburg o.J.</p></note></seg> freue er sich, weil er ein Parteitag der offenen Aussprache gewesen sei. Die Tagung jetzt in Berlin solle einen Beitrag zur Wiedervereinigung unseres getrennten Volkes leisten<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN001" type="comment"><p>Der Bundestag hielt die 41., 42. und 43. Sitzung v. 1. bis 3. 10. 1958 in Berlin ab. Vgl. Sten. Ber., S. 2391, 2429, 2455.</p></note></seg>.</p>
-				<p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Meine sehr geehrten Damen und Herren! Eben haben Sie falsch gelacht, und zwar, als Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> sagte, daß ich im Manöver gewesen bin. Sie scheinen nicht zu wissen, daß im Ernstfall der Bundeskanzler auch Oberbefehlshaber ist.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN006" type="comment"><p>Gemäß Art. 115 GG (Kommandogewalt im Verteidigungsfall).</p></note></seg> Vielleicht hat der eine oder andere das vergessen. Aber das ist eine ernste Verantwortung, die hoffentlich nie effektiv wird, die es aber werden kann, und darin liegt die Verpflichtung für mich, auch diesen Fragen meine Aufmerksamkeit zu widmen. Über den Parteitag hat Herr <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> schon gesprochen. Er war ausgezeichnet und hat eine große Einigkeit der Partei gezeigt trotz Meinungsverschiedenheiten, die zu leugnen falsch wäre. Solche Verschiedenheiten müssen vorhanden sein. Aber ich bin mir auf diesem Parteitag darüber klargeworden und, wenn möglich, noch bestärkt worden durch die Ausführungen, die Herr <name type="Person" role="Erwaehnung" ref="#JaspersKarl">Jaspers</name> jetzt gemacht hat, daß unsere große und sehr verantwortliche Partei sich mit den grundsätzlichen Fragen mehr beschäftigen muß.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN007" type="comment"><p>Der Philosoph Karl <name type="Person" role="Erwaehnung" ref="#JaspersKarl">Jaspers</name> hatte Irritationen in der CDU und der CSU dadurch ausgelöst, daß er die Berufung auf das Christentum als ausreichende Grundlage für eine politische Partei anzweifelte. Die beiden Parteien reagierten auf diese Aussage, indem sie auf dem CSU-Parteitag vom 11./12. 10. 1958 zwei Theologen zu Wort kommen ließen: den Protestanten Prof. D. theol. Walter <name type="Person" role="Erwaehnung" ref="#KünnethWalter">Künneth</name> und von der katholischen Seite Pater Oskar <name type="Person" role="Erwaehnung" ref="#SimmelOskar">Simmel</name> (SJ). Vgl. DUD Nr. 196 v. 13. 10. 1958, S. 1 f.; PPP Nachtrag zum 12. 10. 1958, S. 4 (AdsD).</p></note></seg> Schon seit 1 ½ Jahren habe ich bei Reden immer wieder darauf hingewiesen, daß wir über den Fragen des Tages nicht das Grundsätzliche vergessen dürfen. Ich habe mir vorgenommen, als Vorsitzender der CDU zu versuchen, in den nächsten Wochen das Grundsätzliche wieder einmal klar und faßbar herauszuarbeiten. Das ist nötig, damit wir unsere Einheit wahren, denn nur aus einer gemeinsamen Grundsatzauffassung können wir die Schwierigkeiten überwinden; auch müssen wir die Gemeinsamkeit bewahren des Eindrucks nach außen wegen.</p>
-				<p>Den Glückwünschen an Schleswig-Holstein schließe ich mich an. Es ist in Wahrheit ein großer Erfolg.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN008" type="comment"><p>Siehe Nr. 74 v. 29. 9. 1958, TOP 1.</p></note></seg> Viele von uns haben dazu beigetragen, und das war auch richtig, daß viele Abgeordnete hier mitgewirkt haben. Wir dürfen aber auch nicht vergessen, daß die Arbeit des Kabinetts <name type="Person" role="Erwaehnung" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> in den vier vergangenen Jahren außerordentlich große Erfolge hatte. Dafür wollen wir ihm und der CDU herzlich dankbar sein.</p>
-				<p>Nun stehen die Wahlen in Hessen, Bayern und Berlin<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN009" type="comment"><p>Wahltermine Hessen und Bayern 23. 11. 1958, Berlin 7. 12. 1958.</p></note></seg> bevor, und auf meinem Terminkalender steht Würzburg<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN010" type="comment"><p>Auftakt zum Wahlkampf in Bayern war der CSU-Parteitag vom 11./12. 10. 1958 in Würzburg. An die Landesversammlung schloß sich am Sonntag, den 12.10., um 15 Uhr eine Großkundgebung an, auf der <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> insbesondere die Außen- und Wehrpolitik der SPD angriff. Vgl. ACSP LVers 11./12. Okt. 1958, Nr. 1 und 4.</p></note></seg> und einiges andere mehr. Aber lassen Sie mich sagen, daß ich nicht auf dem Standpunkt stehe, daß man die ganzen Wahlen auf einen Termin legen soll; denn dann kommt der Bundestag und die Regierung überhaupt nicht mehr zum Arbeiten. Ein Jahr ist nötig, ehe eine Fraktion sich zusammenfindet. Wenn das Jahr vorbei ist, und es geht rasch vorbei, und es kommen dann die anderen Wahlen auf einen Haufen, dann geht auch das zweite Jahr verloren, weil alles nach den Wahlen orientiert würde. Dann sieht man schon wieder auf die Bundestagswahl. Aber so wie es jetzt ist, ist es auch nicht schön und nicht tragbar. Ich würde begrüßen, wenn sich die Länder – der Gedanke kommt nicht von mir – und der Bund auf denselben Tag einigen könnten. Dann hätten wir alles auf einmal und der Wille der Wähler käme klar zum Ausdruck.</p>
-				<p>Ich möchte ein Wort zu dem Manöver sagen und als ersten Eindruck wiedergeben, daß ich sehr angetan von der Freudigkeit, der Energie und Ausdauer, mit der alle Soldaten, auch die Mannschaften, bei der Sache waren. Und ich möchte hier auch betonen, daß man einmal sehen muß – ich habe es zum ersten Mal in diesem Umfang gesehen – welche Formen die Technisierung des Militärs mit sich bringt und wie ungeheuer schwer es deshalb ist, eine Wehrmacht neu aufzubauen. Daher stehe ich auf dem Standpunkt, nachdem unsere junge Wehrmacht schon eine schwere Probe gut bestanden hat, daß man zum weiteren Ausbau das Ministerium etwas mehr von bürokratischen Geschichten befreien muß, denn so kann man keine Wehrmacht aufbauen. Das halte ich für richtig und notwendig, bis der Aufbau beendet ist.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN011" type="comment"><p>Zu den Problemen beim Aufbau der Bundeswehr siehe Nr. 73 v. 8. 9. 1958.</p></note></seg> Ich war nicht der einzige, der tief beeindruckt war, auch die Generale befreundeter Länder. Vielleicht stiegen sogar dem einen oder anderen Erinnerungen auf, die ihn mit Sorge erfüllen.</p>
-				<p>Damit komme ich zu <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> und Frankreich. Dieser Besuch, der vor 14 Tagen stattfand<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN012" type="comment"><p>Besprechungen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> – <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> am 14. 9. 1958 in Colombey-les-deux-Eglises, im Privathaus des Generals, wo <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> auch übernachtete. Vgl. Adenauer, Erinnerungen 1955–1959, S. 424–436.</p></note></seg> , hat eine Vorgeschichte. Sie wissen, daß der englische Premier <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> sehr früh bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> war.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN013" type="comment"><p>Besuch <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillans</name> bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> am 29. und 30. 6. 1958. Vgl. AdG 1958, S. 7153.</p></note></seg> Er hatte mir gesagt, daß er zu ihm gehen würde, der ein alter Freund aus dem Kriege zu ihm sei, und Sie wissen, daß <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> dort gewesen ist.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN014" type="comment"><p>Besuch von US-Außenminister <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> am 5. 7. 1958. Vgl. AdG 1958, S. 7162.</p></note></seg> Was sollte der Bundeskanzler tun? Es waren da Fühlungnahmen bei mir, aber die Stellung des deutschen Bundeskanzlers war eine andere, weil er der Vertreter eines besiegten Volkes ist, das damals im Kampf gegen Frankreich stand, und daher glaube ich, daß es richtig war, sehr behutsam und taktvoll vorzugehen. Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> hat dann die Initiative ergriffen gegenüber Herrn <name type="Person" role="Erwaehnung" ref="#MaltzanVollrathFreiherrvon">von Maltzan</name><seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN015" type="comment"><p>Vollrath <name type="Person" role="Erwaehnung" ref="#MaltzanVollrathFreiherrvon">Frhr. von Maltzan</name>, 1955–1958 Botschafter in Paris.</p></note></seg> , indem er vorschlug, ich möchte bei meiner Rückkehr ihn in Colombey-les-deux-Eglises besuchen. So kam es zu dieser Begegnung. Ich war froh, daß ich ihn gerade dort aufgesucht habe, weil man von dem Mann, vom Menschen <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>, naturgemäß einen anderen und stärkeren Eindruck bekommt, wenn man ihn dort aufsucht, einen stärkeren, als etwa in Paris in seinem Amtssitz. Ich bin mit Vorurteilen hingefahren nach allen Presseberichten über <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>. Da hörte man, er sei taub; er hört aber so gut wie Sie und ich; und man hat ihn blind oder einen Nazi genannt. Sicher braucht er beim Lesen eine Brille. Das tun manche mit 67 Jahren, ohne daß man sagen würde, sie seien blind.</p>
-				<p>Nun will ich Ihnen die Umgebung schildern, nicht um ein Feuilleton zu geben, sondern damit Sie verstehen, wie der Wechsel bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> gekommen ist. Die Gegend dort ist sehr ernst, ungewöhnlich einsam, und Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> zeigte mir eine Stelle im Garten und sagte: »Hier können Sie sehen wer weiß wie weit, aber Sie sehen keine menschliche Behausung«. Das Haus hat einiges sehr Hübsches, es ist ein älteres Haus, das er vor 28 Jahren gekauft hat, und es hat unten einige schöne Räume im Stil der damaligen Zeit und im oberen Stockwerk einfach eingerichtete Zimmer, fernab von jedem Prunk. Das gilt überhaupt vom ganzen Haus. Weder am Haus noch in den Gesprächen war irgendein Anzeichen von Prunk oder Überheblichkeit oder Größenwahn zu spüren.</p>
-				<p>Ich bin selten so überrascht worden wie bei diesem Zusammensein, da ich fand, daß alle Zeitungsberichte nicht zutrafen, die ich gesehen hatte. Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> hat angefangen, den Sinn seiner Politik nach dem Zusammenbruch darzulegen und warum er sich dann von der Politik abgewandt habe. Die Gründe sind einfach. Er sagte mir, daß man in Frankreich, das verschiedentlich von Deutschland besiegt worden ist, von Revanchegelüsten Deutschlands überzeugt gewesen sei; aber er habe sich überzeugt, daß das neue Deutschland ein anderes Deutschland sei, und deswegen stehe der Zusammenarbeit und der Freundschaft zwischen den Völkern nichts im Wege. Er hat mir auch erklärt, daß er für die Wiedervereinigung Deutschlands in Frieden sei wie wir auch. Das hat er von sich heraus erklärt, nicht erst auf eine Frage, daß er die Berechtigung unseres nationalen Verlangens auf Wiedervereinigung anerkenne. Er hat sich auch zu Europa bekannt. Es ist kein Wort gefallen, daß die Befürchtungen zutreffen könnten, daß Frankreich fordere, der führende Staat in Europa werden zu müssen; kein Wort davon. Ich habe auch nicht den Eindruck bekommen, daß er etwas Derartiges erstrebt. In der großen Einsamkeit, das ist mein Eindruck, in der er 11 Jahre zugebracht hat<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN016" type="comment"><p>Zeitraum zwischen dem 20. 1. 1946 (Rücktritt des 2. Kabinetts <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>) und dem 1. 6. 1958 (Rückkehr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> an die Regierung).</p></note></seg> – er ist kein Jäger, raucht nicht, hat studiert, beobachtet und gelernt und in seiner ausgezeichneten Bibliothek gearbeitet – hat er offenbar beobachtet, wie sich die Welt geändert hat und seine Konsequenzen daraus gezogen. So bin ich mit der Überzeugung geschieden, daß wir alle – Herr <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> kam am Abend und wird mir das bestätigen –, daß wir alle, Franzosen und Deutsche, im großen Einvernehmen voneinander geschieden sind. Ich bin froh, daß ich dagewesen bin, nicht nur wegen der engen Nachbarschaft und nicht nur, weil unsere Länder maßgebend sind bei der europäischen Einigung, sondern weil durch diese Begegnung und durch das Kommuniqué<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN017" type="comment"><p>Vom 14. 9. 1958. Vgl. DzD III/4, S. 1578.</p></note></seg> , das z.T. von <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> selbst niedergeschrieben und zwar vorwiegend in den Sätzen mit wärmerem Ton, eine große Hoffnung Sowjetrußlands enttäuscht wurde. Das hat sich schon zwei Tage später gezeigt.</p>
-				<p>Wenn ich daran erinnern darf, wie <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> losging und Frankreich warnte<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN018" type="comment"><p>Vgl. Interview des Vors. des Ministerrats der UdSSR, <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>, mit der Prawda v. 22. 9. 1958, in: AdG 1958, S. 7302.</p></note></seg> , der wird sehen, wie groß die Enttäuschung Sowjetrußlands war. Denken Sie darüber nach, was aus Europa, aus Deutschland, aus der Wiedervereinigung geworden wäre, wenn Frankreich sich unter der Führung <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> den Russen zwar nicht angeschlossen, aber eine Annäherung an die russischen Vorstellungen begonnen hätte. Dann werden Sie sich klar sein, von welch eminenter Bedeutung es ist, daß alle Befürchtungen, die sich an diese Phase der Entwicklung Frankreichs geknüpft hatten, völlig unbegründet sind. Es ist letzten Endes auch diese Zusammenkunft ein Triumph für die Politik, die unsere Partei nun konsequent, so lange die Bundesregierung besteht, geführt hat: Aussöhnung und Vereinigung Europas und fester Anschluß an die westliche Welt. Der Weg von Straßburg bis Colombey, den ich mit dem Auto zurückgelegt habe, hat mich durch viele französische Dörfer geführt, und der deutsche Bundeskanzler mit dem deutschen Stander am Wagen wurde auf dem ganzen Weg von der Bevölkerung so außer-ordentlich freundlich, ja sogar enthusiastisch begrüßt, wie ich das nicht für möglich gehalten habe, und Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> hat mir seine Genugtuung darüber ausgesprochen. Auf der Rückfahrt war diese Begrüßung vielleicht noch einige Töne wärmer, als wenn man froh darüber sei – die Bevölkerung wußte ja, wie die Besprechung ausgegangen war –, daß das so gut gegangen war.</p>
-				<p>Nun war ja diese Abstimmung über die Verfassung in Frankreich<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN019" type="comment"><p>Volksabstimmung über die neue französische Verfassung am 28. 9. 1958 (in Algerien am 26., 27. und 28. 9. 1958). Gesamtergebnis: 67,7% Ja-Stimmen im Verhältnis zur Zahl der eingetragenen Wähler und 85,1% Ja-Stimmen im Verhältnis zur Zahl der gültigen Stimmen. Vgl. AdG 1958, S. 7315.</p></note></seg> , und diese Abstimmung übertrifft die kühnsten Erwartungen <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> selbst. Es war ein derartig großes Bekenntnis zu dieser Verfassung, wie das kein Mensch erwarten konnte. Man hat dabei gesehen, daß selbst von den Kommunisten ein erheblicher Prozentsatz für diese Verfassung gestimmt hat, und damit ist die Stellung <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> stärker noch geworden, und damit auch die künftige Stellung Frankreichs. Wenn Sie daran denken, daß der Durchschnitt der Lebensdauer eines französischen Kabinetts 4–5 Monate war, daß <name type="Person" role="Erwaehnung" ref="#MolletGuy">Mollet</name> darüber strahlte, daß er es auf 13 Monate gebracht hatte<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN020" type="comment"><p>Regierung Guy <name type="Person" role="Erwaehnung" ref="#MolletGuy">Mollet</name> vom 31. 1. 1956 bis 10. 6. 1957.</p></note></seg> , dann ist klar, daß infolge dieses ständigen Wechsels eine konsequente Politik nicht getrieben werden konnte, und daß daher Frankreich im Kräftespiel der Welt keine sehr große Rolle spielte. Das wird nun anders werden, wenn <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> Staatspräsident geworden ist, der dann so große Vollmachten in der Hand haben wird wie bisher niemand. Ich will darüber kein Kolleg halten, aber diese Verfassung gibt Möglichkeiten in der Hand eines tatkräftigen Staatsoberhauptes, die ganz außerordentlich wichtig sind. Für mich ist kein Zweifel, daß, wenn <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> den Rücken frei haben wird, dann das Gewicht Frankreichs stärker sein wird als bisher. Auch in Algier hat er noch mehr Stimmen erhalten als im Mutterlande und somit Recht behalten. Das ist ein guter Auftakt für die Lösung der Algierfrage, was es erleichtern könnte, diesen Gefahrenherd zu beseitigen.</p>
-				<p>Was folgt daraus für uns? Was folgt aus der Kräfteverschiebung, die sich zugunsten Frankreichs ergeben wird? Kreiden Sie mir bitte, was ich jetzt sage, nicht als militaristisch an: Diese Welt bleibt so hart, wie sie es ist, und in ihr zählt die Macht mehr als der gute Wille, und deswegen müssen wir unsere Wehrpolitik konsequent durchführen, bis die Abrüstung Wirklichkeit geworden ist. Im Volke ist die Wehrmacht schon lange akzeptiert, und ich höre von Herrn <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name><seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN021" type="comment"><p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, BMVtdg.</p></note></seg> , daß auch sozialdemokratische Bundestagsabgeordnete erklärt haben, daß sie sich damit abfinden müßten. So lange die Weltlage ist, wie sie ist, und so lange sie sich nicht in der Grundlage geändert hat, müssen wir auf dieser Politik der Wiederbewaffnung weitergehen, bis wir zur Abrüstung kommen. Ihnen dies zu sagen, gerade nach den Ereignissen in Frankreich, lag mir sehr am Herzen.</p>
-				<p>Ich habe davon gesprochen, daß nun wieder ein Jahr vergangen ist. Das letzte Jahr vor der nächsten Bundestagswahl ist wieder ein Jahr, in dem man keine übereilten Beschlüsse fassen darf. Es bleibt also nach den Landtagswahlen<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN022" type="comment"><p>Siehe Anm. 9.</p></note></seg> übrig die Zeit vom Beginn 1959 an, um die großen Gesetzeswerke in die Hand zu nehmen und im Bundestag und in den Ausschüssen in jeder irgendwie zu verantwortenden Beschleunigung weiterzutreiben, damit wir ein Jahr vor den Wahlen mit den Hauptanliegen wirklich fertig sind. Deshalb beginnt für den Bundestag eine sehr arbeitsreiche Zeit, und ich glaube, daß jetzt eine sehr intensive Zusammenarbeit stattfinden muß, um die ich Sie bitten möchte, damit wir in diesen beiden Jahren wirklich etwas leisten. Es werden schwere Arbeiten an die Fraktion herantreten, die vom einen so und vom anderen so angesehen werden, aber wenn wir uns bewußt bleiben, daß doch das Fundament unserer Arbeit ein gemeinsames weltanschauliches Fundament ist, dann werden wir dieser Schwierigkeit auch Herr werden, und damit werden wir der Verantwortung gerecht, die das deutsche Volk, der deutsche Wähler, am 15. 9. 1957 auf uns gelegt hat. Sie haben uns die Macht gegeben und gleichzeitig die Verantwortung; sie ist groß. Nur wenn wir alle gemeinsam arbeiten in der Partei, in der Fraktion und in der Regierung, dann werden wir dem Auftrag des Volkes gerecht. Wenn Sie sich vorstellen, wir hätten nicht die CDU/CSU, wie sähe es in Deutschland, in Europa und in der Welt aus, wie sähe es aus, wenn etwa die SPD die Führung gehabt hätte. Wir können froh und glücklich sein, aber ich wiederhole: Macht bedeutet Verantwortung.</p>
-				<p>Nun noch ein Wort zu den Landtagswahlen. Man glaubte, dort in Schleswig-Holstein annehmen zu können, daß der BHE nicht wiederkommen würde.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN023" type="comment"><p>Siehe Nr. 74 v. 29. 9. 1958, TOP 1.</p></note></seg> Nicht nur, weil es den meisten gut geht, sondern weil dort die prominentesten Mitglieder ausschieden. Es ist anders gekommen, und darauf müssen wir achten auch für die Zukunft. Mit der FDP ist es ähnlich gegangen. Sie ist gerade noch über die 5%-Klausel gekommen, und das wird ihr Mut gegeben haben, nun auch noch weiter am Leben zu bleiben. Ich gönne jedem sein Leben, aber ich wünsche, daß er ein vernünftiges Leben führt, und das möchte ich besonders gegenüber der FDP sagen. Ihr Schicksal liegt in ihrer eigenen Hand. Es sind Annäherungsversuche gemacht worden, die ich entgegengenommen habe. Für die zukünftigen Wahlgänge muß man jedenfalls damit rechnen, daß der BHE noch in Funktion ist, und muß vorsichtig taktieren und im übrigen hoffen, daß im Laufe der Zeit der BHE seine Aufgabe erfüllt hat.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN024" type="comment"><p>Zur Vertretung des GB/BHE in Regierungen und Parlamenten auf Bundesebene (bis 1955) und Landesebene (bis 1964/1966) vgl. Stöss, GB/BHE, S. 1448 f.</p></note></seg>
-				</p>
-				<p>Das Ergebnis der DP ist nicht überraschend. Es ist gekommen, wie man es angenommen hat. Aber man sollte nicht von Schleswig-Holstein auf Niedersachsen schließen.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN025" type="comment"><p>Erreichte Stimmenzahl in Schleswig-Holstein am 28. 9. 1958: 2,8%; erreichte Stimmenzahl in Niedersachsen am 19. 4. 1959: 12,3%. Vgl. AdG 1958, S. 7315; AdG 1959, S. 7663.</p></note></seg> Das macht notwendig, daß ich sobald wie möglich als Vorsitzender der CDU einige Herren aus Niedersachsen zu mir bitte, damit wir sine ira et studio die Politik überlegen, die einzuschlagen ist. Erlassen Sie mir bitte, darüber Näheres zu sagen. Ich muß mit den Herren dort selbst sprechen und mir schildern lassen, welch merkwürdige Dinge dort dauernd durcheinander gehen, und dann muß man die verschiedenen Ansichten auf einen Nenner bringen.</p>
-				<p>Nun schließe ich. Nach den Wahlen muß gearbeitet werden von der Fraktion und der Regierung, damit wir die zwei Jahre, die zur Verfügung stehen, auch wirklich gut ausnützen für unser Wohl und das des deutschen Volkes.«</p>
-				<p>Bundesminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> berichtet, daß sein während der Besprechungen des Bundeskanzlers mit Herrn <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> geführtes Gespräch mit dem französischen Außenminister<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN026" type="comment"><p>Maurice <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murville</name>.</p></note></seg> in gleich guter Atmosphäre verlaufen sei. Er betont, daß man Grund habe, die Konsolidierung Frankreichs zu begrüßen, da dies eine Frage auch der weiteren Einigung Europas sei. Das Abstimmungsergebnis in Frankreich bedeute nicht nur eine Niederlage der Kommunisten, sondern auch eine solche einer Reihe kleinerer aber einflußreicher Gruppen.</p>
-				<p>Sich der Nahost-Krise<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN027" type="comment"><p>Vgl. die Übersicht – Staatsstreich im Irak v. 14. 7. 1958 und im Zusammenhang damit militärische Intervention der USA im Libanon und Großbritanniens in Jordanien – in: AdG 1958, S. 7180–7191.</p></note></seg> zuwendend, bedauert der Minister, daß in diesem Zusammenhang die deutsche Presse teilweise in einer Weise reagiert habe, die nicht unbedingt deutschen Interessen entsprochen habe. Die amerikanische Regierung sei hinsichtlich dieser Länder im Wort gestanden. Niemand habe von der Bundesregierung erwartet, daß sie diese Entwicklung begrüßen würde, und es sei auch keine derartige Anforderung an die Bundesregierung gestellt worden. Man dürfe nicht vergessen, daß eine Gegenreaktion Israels zu befürchten gewesen sei, wenn es zu einer Einbeziehung dieser Gebiete in die arabische Union gekommen wäre. Weiter war zu befürchten, daß von Jordanien aus versucht wurde, die Entwicklung im Irak rückgängig zu machen. Der deutsche Einfluß habe dazu beigetragen, daß man diese Risiken erkannt habe, so daß man eine Ausbreitung der Krise verhindern konnte. Man müsse feststellen, daß der arabische Nationalismus eine Realität sei. Diese Länder wollten sich trotz aller Gegensätze zusammenschließen; der gemeinsame Haß gegen die Imperialisten und gegen Israel überbrücke die vorhandenen Spannungen. Die deutschen Möglichkeiten in diesem Bereich seien verhältnismäßig groß, weil Deutschland dort nicht politisch belastet sei. Das biete die Chance einer mäßigenden Einwirkung. Deswegen habe die Bundesregierung darauf gedrängt, die Dinge im Irak sich nicht selbst entwickeln zu lassen, sondern zur Anerkennung der neuen Regierung zu kommen. Wenige Tag später hätten dann auch die anderen Mächte sich der Anerkennung angeschlossen, und niemand habe es bereut.</p>
-				<p>Dadurch, daß die Sowjetunion es verstanden habe, sich als einziger Freund dieser Länder zu gerieren, habe sie dort einen ihr nicht zustehenden Einfluß gewonnen. Man könne ja annehmen, daß das kommunistische System diesen Völkern nicht konform sei. Es komme darauf an, diesen Einfluß zurückzudrängen, was bedeute, daß der Westen mehr als bisher zu einer gemeinsamen Nahost-Politik kommen müsse. Dabei müsse man die Hilfestellung freihalten von politischen Bedingungen. Eine Partnerschaft müsse angestrebt werden, weil man sonst auf Ablehnung stoße und die Gefahr vermehre.</p>
-				<p>Auf die Fernost-Krise<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN028" type="comment"><p>Vgl. die Übersicht – ab August 1958 Gefechtstätigkeit zwischen volks- und nationalchinesischen Streitkräften wegen der Formosa (heute: Taiwan) vorgelagerten Inseln, Manöver der 7. US-Flotte –, in: AdG 1958, S. 7272–7276, et passim.</p></note></seg> eingehend, stellt der Außenminister dar, daß die starke Aktivität im kommunistischen Raum von <name type="Person" role="Erwaehnung" ref="#MaoTse-Tung">Mao Tse-tung</name> ausgehe. Das sei auch im Bereich des Ideologischen festzustellen. Er warne davor, die Krise in der Formosa-Straße unter dem primitiven Aspekt zu sehen, als ob es sich dabei um ein legitimes Anliegen Rot-Chinas handele. Es stehe dem Deutschen schlecht an, hier irgendeinen Handel anzubieten. Man dürfe nicht vergessen, daß auch dort Menschen lebten, die um ihre Freiheit kämpfen. Die Tatsache, daß die USA nicht bereit sind, diese Inseln preiszugeben, sei auch für uns von erheblicher Bedeutung.</p>
-				<p>Es gehe hier weniger um diese Inseln, sondern vielmehr darum, ob das Wort des größten demokratischen Landes in der Welt noch gilt. Zöge sich Amerika zurück, so hätte nicht nur dieses Land das Gesicht verloren. Der Bundesregierung stehe es gerade in dieser Frage am wenigsten an, den praeceptor mundi zu spielen. Im übrigen habe sich gezeigt, daß auch die NATO zu einem politischen Instrument ausgebaut werden müsse. Wenn hinter dem Verteidigungswillen nicht eine gemeinsame Politik stehe, dann sei die Verteidigung praktisch nicht durchzuführen. Diese gemeinsame Erkenntnis aller Partner habe sich aus den Krisen ergeben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Meine sehr geehrten Damen und Herren! Glauben Sie nicht, daß ich nun von Wichtigem zu Unwichtigem überginge. Zu der Angelegenheit <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name><seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN029" type="comment"><p>Hans <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name>, 1951–1958 persönlicher Referent <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name>, war im Zuge staatsanwaltlicher Ermittlungen wegen passiver Bestechung im September 1958 in Untersuchungshaft genommen worden. Anlaß war ein Korruptionsverdacht gegen Bonner Beamte und Direktoren von Mercedes-Benz, die verschiedentlich Leihwagen zur Verfügung gestellt hatten. Zur Eröffnung des Hauptverfahrens gegen <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name> kam es schließlich jedoch nicht. Vgl. CDU-Bundesvorstand 1957–1961, S. 276–280, 282, 287, 328–330, 333, 335–337; Schwarz, Ära Adenauer 1957–1961, S. 204.</p></note></seg> ausführlich zu sprechen, bin ich nicht in der Lage, weil ich mir nicht den Vorwurf zuziehen darf, ich hätte den Versuch gemacht, in ein schwebendes Verfahren einzugreifen. Aber die Erklärung des Bundeskanzleramtes, daß nach sorgfältiger Prüfung kein Grund vorliege zu einem disziplinaren Vorgehen, besteht weiter. Es sind in der Tat – wenn neue Dinge aufkommen sollten, wird das nachgeprüft – keine neuen Tatbestände mehr aufgekommen, und die Verhaftung des <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name> ist für mich ein Rätsel.</p>
-				<p>Aber das ist nicht das Entscheidende – darüber werden wir in Bonn sprechen müssen –, sondern entscheidend ist, daß ganz systematisch der Anschein erweckt wird, als ob die Bundesregierung von oben bis unten korrupt wäre. Wenn Sie das genau verfolgen und prüfen, das ist so geschickt gemacht, daß es zu einer Anzeige wegen Beleidigung nicht reicht, aber Sie wissen ja, wie die Bevölkerung ist. Das geschieht systematisch. Ich muß mich beschränken, das kurz zu sagen, daß daran amtliche Stellen nicht unbeteiligt sind; ich hoffe, daß wir diese ganze Situation so klären, daß die ganze Bevölkerung sieht, was da eigentlich ist. Aber etwas will ich noch betonen: In welchen Ruf kommt denn unsere deutsche Industrie bei dieser Sache? Es gibt schwere Korruptionsfälle, aber anderswo, und ich wünschte, es würde die Staatsanwaltschaft ihre Kräfte dahin lenken, daß diese Korruptionsfälle endlich zur Aburteilung kommen. Mehr kann ich nicht sagen, das wäre nicht gut. Aber sobald diese Geschichte klar ist, wird es notwendig sein, in der Fraktion ein offenes Wort dazu zu reden.«</p>
-				<p><name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> betont, daß es dem Bundeskanzler gelungen sei, das gegen die Deutschen bestehende Mißtrauen zu beseitigen, was an dem Beispiel <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> deutlich werde. Gewisse Diskussionen in der deutschen Öffentlichkeit dienten jedoch diesem Zweck nicht. Er denke dabei an den Fall <name type="Person" role="Erwaehnung" ref="#EiseleHans">Eisele</name><seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN030" type="comment"><p>Dr. med. Hans <name type="Person" role="Erwaehnung" ref="#EiseleHans">Eisele</name>, als ehemaliger KZ-Arzt wegen Tötungsdelikten nach 1945 von Besatzungsgerichten zweimal zum Tode verurteilt (die Urteile wurden nicht vollstreckt), hatte sich der Justiz durch seine Flucht nach Ägypten entzogen. Ägypten gab dem Auslieferungsgesuch der Bundesrepublik wegen Verjährung der bis 1941 begangenen Straftaten nach ägyptischem Recht nicht statt. Vgl. SZ Nr. 244 v. 11./12. 10. 1958, S. 8; Sten. Ber., 56. Sitzung am 22. 1. 1959, S. 3050, 3058.</p></note></seg> , an gewisse Urteile bei Kriegsverbrechern und an deren Pensionen<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN031" type="comment"><p>Vgl. zu diesem Problem Sten. Ber., 56. Sitzung am 22. 1. 1959, S. 3057 ff., et passim.</p></note></seg> und an die Aufstellung von Kandidaten. Dazu solle man vom Standpunkt der CDU-Politik aus eine Abwehr finden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> bemerkt dazu, daß die CSU die sie betreffenden Sachen sicher selber regeln könne.</p>
-				<p>Bundesminister <name type="Person" role="Sprecher" ref="#LemmerErnst_1952-02-01">Lemmer</name> erinnert daran, daß auch für <name type="Person" role="Erwaehnung" ref="#HindenburgPaulvonBeneckendorffundvon">Hindenburg</name> einmal ein Wagen zur Verfügung gestellt worden sei. Es sei aber an der Zeit, darauf aufzupassen, daß die Autorität derer, die im Staate Verantwortung zu tragen haben, nicht von anderen heruntergerissen werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Ich bin Herrn <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> sehr dankbar. Ich kann nur den Kopf schütteln über das, was ich gehört habe über die Vorstellungen über den Beruf des Beamten und daß man neuerdings prüft, ob nicht Abgeordnete auch überprüft werden sollten und könnten. Während früher – ich bin zwei Jahre bei der Staatsanwaltschaft Köln tätig gewesen<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN032" type="comment"><p>Von 1901 bis 1903. Vgl. Schwarz, Adenauer 1876–1952, S. 106 f.</p></note></seg> – die Aufgabe der Staatsanwaltschaft so aufgefaßt wurde, daß sie bei Verdacht einzuschreiten hatte, scheint man nun nach dem Verdacht zu suchen. Das bringt eine Gefahr für jede Autorität mit sich, und ohne Autorität kann ein Volk nicht existieren. Ich spreche nicht von mir, aber als Demokrat. Wenn man den Glauben hat, berufen zu sein, aufzuzeigen, daß diese ganze Demokratie derartig korrupt ist, dann schließt das eine sehr große Gefahr in sich, und darauf müssen wir sehr aufpassen. Ich werde darüber weiter berichten.«</p>
-				<p>Mittagspause von 13.00 Uhr–15.45 Uhr</p>
-				<p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name></p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> berichtet aus dem Ältestenrat, daß eine Fernsehübertragung wegen der aus der Zone zu erwartenden Zuschauer nicht stattfinden werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> eröffnet dann die Aussprache über die Europäische Wirtschaftsgemeinschaft. Dazu trägt Bundesminister <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name> in kurzen Zügen die von ihm beabsichtigte Antwort vor.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN033" type="comment"><p>Vgl. Große FDP-Anfrage betr. Erfüllung des EWG-Vertrags: Drucksache III/371 v. 7. 5. 1958 und die Antwort, in: Sten. Ber., 42. Sitzung am 2. 10. 1958, S. 2434.</p></note></seg>
-				</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HeckBruno_1957-10-15">Heck</name> berichtet dann, daß die DP ihre Anträge Grundgesetzänderung (Bundeskultusministerium) zurückstellen will<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN034" type="comment"><p>Siehe Nr. 74 v. 29. 9. 1958, TOP 4 d.</p></note></seg> , und entwickelt in kurzen Zügen, welche Stellungnahme die Fraktion zu den übrigen kulturpolitischen Themen<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN035" type="comment"><p>Vgl. Antrag der Abg. <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> (SPD), Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name> (CDU/CSU) u. Gen. betr. Förderungsmaßnahmen für Europäische Hochschulen: Drucksache III/95 v. 18. 12. 1957; SPD-Antrag betr. Gesetzesvorlage über die Gewährung von Berufsausbildungs- und Erziehungsbeihilfen: Drucksache III/459 v. 19. 6. 1958.</p></note></seg> einnehmen wird. Als Rednerin wird unter Zustimmung der Fraktion Frau Abg. Dr. <name type="Person" role="Erwaehnung" ref="#MaxseinAgnesKatharina_1952-02-01">Maxsein</name> vorgeschlagen.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN036" type="comment"><p>Vgl. Sten. Ber., 43. Sitzung am 3. 10. 1958, S. 2457 ff.</p></note></seg>
-				</p>
-				<p>An der Aussprache beteiligen sich weiter Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Sprecher" ref="#VeharMax_1957-10-15">Vehar</name>, Dr. <name type="Person" role="Sprecher" ref="#HuysLambert_1957-10-15">Huys</name> und Dr. <name type="Person" role="Sprecher" ref="#KrollLudwig_1953-10-06">Kroll</name>.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> referiert über die Verhältnisse in der Zone.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN037" type="comment"><p>Vgl. die Erklärung <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradls</name> am 1. 10. 1958 im Bundestag, in: Sten. Ber., 41. Sitzung, S. 2406 ff.</p></note></seg> Der stark ansteigende Flüchtlingsstrom habe zu der Lage geführt, wie der Bundestag reagieren solle. Interfraktionelle Besprechungen hätten zu gemeinsamen Formulierungen in der Großen Anfrage geführt, und man sei auch zu einer gemeinsamen Entschließung gekommen. Darin sei gesagt, daß es keinen Weg über Pankow gebe, sondern daß die Welt auf diese Dinge hingewiesen werden müsse. Die Bundesregierung werde ersucht, die eingeleitete Vier-Mächte-Initiative<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN038" type="comment"><p>Drucksache III/502 v. 2. 7. 1958. »Der Antrag lautet: Der Bundestag wolle beschließen: Um die Wiederherstellung der deutschen Einheit zu fördern, wird die Bundesregierung beauftragt, sich bei den Vier Mächten, den USA, der UdSSR, dem Vereinigten Königreich und Frankreich dafür einzusetzen, daß auf einer künftigen internationalen Konferenz (Gipfelkonferenz) oder auch unabhängig davon ein Vier-Mächte-Gremium (mindestens im Range einer Botschafter-Konferenz) mit dem Auftrag gebildet wird, gemeinsame Vorschläge zur Lösung der deutschen Frage zu erarbeiten.« Der Antrag war eine Folge der außenpolitischen Debatte v. 25. 3. 1958. Vgl. Sten. Ber., 28. Sitzung vom 2. 7. 1958, S. 2177 ff. (Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>, Berichterstatter).</p></note></seg> weiter zu verfolgen.</p>
-				<p>Leider habe sich inzwischen eine erhebliche Komplikation ergeben, da in der SPD ein Antrag entwickelt worden sei, der auf die Schaffung einer neuartigen Institution hinauslaufe.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN039" type="comment"><p>SPD-Antrag betr. Schaffung eines Amtes für innerdeutsche Regelungen: Drucksache III/549 v. 29. 9. 1958. Vgl. Klotzbach, Staatspartei, S. 484 f.; Hölscher, SPD-Fraktion 1957–1961, S. 86 ff.</p></note></seg> Das gehe weit über das von <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> Angekündigte hinaus und berge die Gefahr in sich, daß der Anschein entstehe, als ob man auf einem Umweg doch zu Verhandlungen mit Pankow kommen könne. Man werde nun versuchen, die SPD zu überzeugen, daß sie damit der Sache der Wiedervereinigung keinen Dienst leiste, wenn sie an diesem Antrag festhalte. Der Antrag sei deswegen äußerst bedenklich, weil er auf der anderen Seite den Eindruck erwecken könnte, daß die deutsche Haltung sich doch aufweiche. Die Fraktion der SPD berate dieses Problem eben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet, daß im September bekannt geworden sei, daß die Frage der Zone und der Zonenflüchtlinge von der SPD auf die Tagesordnung gebracht werden soll. Man sei dann zu der gemeinsamen Anfrage und zu der gemeinsamen Entschließung gekommen<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN040" type="comment"><p>Siehe Nr. 74 v. 29. 9. 1958, TOP 4 a.</p></note></seg> , der man zustimmen könne. Wenn die SPD allerdings bei ihrer jetzt eingenommenen Haltung bleibe, dann werde man ihren Antrag ablehnen müssen.<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN041" type="comment"><p>SPD-Antrag betr. Schaffung eines Amtes für innerdeutsche Regelungen: Drucksache III/549 v. 29. 9. 1958. Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> machte in seiner Fraktion keinen Hehl daraus, daß das Amt in Konkurrenz zu dem von Ernst <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> (CDU) geführten Gesamtdeutschen Ministerium treten sollte. Aus <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehners</name> Sicht erfüllte das Ministerium seine Aufgaben nicht zufriedenstellend. Er wies dem geplanten Amt die Aufgabe zu, mit den Machthabern der SBZ zu verhandeln. Das Berlin-Ultimatum <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> v. 10. 11. 1958 entzog dem Plan der SPD die Diskussionsgrundlage. Vgl. Weber, C. Schmid, S. 609.</p></note></seg> Klarheit und Sauberkeit der Politik sei oberstes Gebot, mit dessen Erfüllung man auch der Zone besser diene.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> trägt dann den Wortlaut der Entschließung und den Inhalt des Antrages der SPD vor und bezeichnet die vorgeschlagene Koordinierung als diskussionsfähig<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN042" type="comment"><p>Das Amt für innerdeutsche Angelegenheiten sollte die Arbeit aller Dienststellen der Bundesrepublik, die mit innerdeutschen Regelungen (Interzonenhandel, Verkehr, Justiz, Post usw.) betraut sind, zusammenfassen und koordinieren. Vgl. Drucksache III/549 Ziffer 3 a.</p></note></seg> , wogegen der Vorschlag, daß mit allen an der deutschen Frage beteiligten deutschen Personen und Stellen Fühlung aufgenommen und Erörterungen geführt werden sollten<seg type="note"><note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN043" type="comment"><p>Das Amt sollte innerdeutsche Fragen mit allen beteiligten Stellen und Personen erörtern, Meinungsverschiedenheiten abklären und Vereinbarungen zur Regelung vorbereiten. Vgl. ebd., Ziffer 3 b.</p></note></seg> , nicht akzeptabel sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betont, daß man im Falle der Einbringung dieses Antrages der SPD klar Stellung nehmen müsse. Der Antrag sei gegen die Verfassung und deshalb unmöglich.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ZimmerAlois_1957-10-15">Zimmer</name> warnt davor, irgendwie eine Stellung einzunehmen, die das Vertrauen unserer Alliierten berühren könnte.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> bezeichnet die außenpolitischen Konsequenzen des SPD-Antrages als katastrophal nicht nur im Westen, sondern auch in Moskau. Die Annahme des Antrages wäre ein erster Schritt. Deswegen könne es nur ein kategorisches Nein geben.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> betont die Verpflichtung, jede Anregung zu prüfen, die eine Besserung der Verhältnisse nach sich ziehen könnte. Diesen Antrag aber betrachte er nicht als einen Fortschritt. Es wäre sicher peinlich, wenn über diesen Antrag der Bundestag auseinanderfallen sollte. Man könne aber trotzdem kein Opfer bringen, das die Situation auch noch verschlechtern werde; der SPD-Antrag müsse deshalb abgelehnt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#LemmerErnst_1952-02-01">Lemmer</name> erklärt, daß er persönlich gegen diesen Antrag sei, sei ja wohl ganz klar; ein gesamtdeutscher Minister würde ja dann überflüssig. Aber ernsthaft wolle er sagen, daß er ihn für grauenhaft und absurd halte und es traurig sei, ein solches Niveau deutscher Politik nach neun Jahren Demokratie zur Kenntnis nehmen zu müssen. Ihm komme es darauf an, die latente innere Krise im SED-Regime durch eine große und eindrucksvolle Initiative des Bundestages zu fördern und zu vertiefen, und deshalb solle der Bundestag und mit ihm das Volk einmal feierlicher als bisher seine Stimme gegen die Zustände in der Zone erheben, die beispiellos genannt werden müßten. Diesem Zweck diene der Versuch einer gemeinsamen Kundgebung des Deutschen Bundestages. Ihre gemeinsame Annahme bedeute auch, daß von der Opposition die Richtlinien der Politik der Bundesregierung anerkannt würden. Dies fühle die SPD. Da sie aber nicht wage, Nein zu sagen, versuche sie, sich jetzt aus ihrer Situation herauszumogeln, um gewisse Geister in ihren eigenen Reihen mit der Einbringung dieses Antrages zu beschwichtigen. Die CDU habe ihren guten Willen gezeigt und könne nun abwarten, ob die SPD diese Fragen zum Gegenstand des Streites machen will oder nicht. Gehe sie aber diesen Weg, dann werde man mit ihr abrechnen müssen wie noch nie.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt die Verhandlung mit der Feststellung, daß man sich in der Ablehnung des SPD-Antrages einig sei.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-09-30-t1115_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung in Berlin</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 30. September 1958 in Berlin (West)</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>10 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1958-09-30">
+               <time type="start" when="11:15:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Berlin (West)</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1958-09-30-t1115_EP_SVP-1" corresp="cdu-csu-03_1958-09-30-t1115_EP_div_SVP-1">A. Bericht von Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> über die innen- und außenpolitische Lage mit anschließender Aussprache.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1958-09-30-t1115_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt die neu eingetretenen Mitglieder der Fraktion, die Herren <name type="Person" role="Erwaehnung" ref="#EpleeHermannA_1953-01-16">Eplée</name> und <name type="Person" role="Erwaehnung" ref="#MeisHans_1958-07-02">Meis</name>, und kündigt an, daß die Neuwahl des Vorstandes möglichst bald, spätestens Anfang Oktober, erfolgen soll.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN002" type="comment">
+                     <p>Siehe Nr. 82 v. 28. 10. 1958.</p>
+                  </note>
+               </seg> Abg. <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name> sei mit der Vorbereitung der Wahl beauftragt. Für die notwendige Umbesetzung einzelner Ausschüsse sei eine Kommission aus den Fraktionsmitgliedern <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> und <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> unter Vorsitz von Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) gebildet worden.</p>
+            <p>Anschließend entwickelt sich eine Diskussion, ob für die Bundestagssitzung vom 1. Oktober Rundfunk- und Fernsehübertragung zugelassen werden soll, als deren Ergebnis festgestellt wird, daß man den Rundfunkanstalten freie Hand lassen will, wie sie verfahren wollen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt den aus dem Manöver zurückgekehrten Bundeskanzler<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN003" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> war am 24. und 25. 9. 1958 Gast bei dem Manöver der Bundeswehr in Bergen-Hohne. Vgl. Besucherlisten Adenauer (StBKAH 04.09).</p>
+                  </note>
+               </seg> und bringt seine Genugtuung über die Wahlsiege in Schleswig-Holstein und vorher in Nordrhein-Westfalen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN004" type="comment">
+                     <p>Siehe Nr. 74 v. 29. 9. 1958, TOP 1. Nr. 72 v. 30. 6. 1958.</p>
+                  </note>
+               </seg> zum Ausdruck. Über den Parteitag in Kiel<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN005" type="comment">
+                     <p>Vgl. Christlich-Demokratische Union Deutschlands, 8. Bundesparteitag Kiel 18.–21. September 1958, Hamburg o.J.</p>
+                  </note>
+               </seg> freue er sich, weil er ein Parteitag der offenen Aussprache gewesen sei. Die Tagung jetzt in Berlin solle einen Beitrag zur Wiedervereinigung unseres getrennten Volkes leisten<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN001" type="comment">
+                     <p>Der Bundestag hielt die 41., 42. und 43. Sitzung v. 1. bis 3. 10. 1958 in Berlin ab. Vgl. Sten. Ber., S. 2391, 2429, 2455.</p>
+                  </note>
+               </seg>.</p>
+            <p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Meine sehr geehrten Damen und Herren! Eben haben Sie falsch gelacht, und zwar, als Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> sagte, daß ich im Manöver gewesen bin. Sie scheinen nicht zu wissen, daß im Ernstfall der Bundeskanzler auch Oberbefehlshaber ist.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN006" type="comment">
+                     <p>Gemäß Art. 115 GG (Kommandogewalt im Verteidigungsfall).</p>
+                  </note>
+               </seg> Vielleicht hat der eine oder andere das vergessen. Aber das ist eine ernste Verantwortung, die hoffentlich nie effektiv wird, die es aber werden kann, und darin liegt die Verpflichtung für mich, auch diesen Fragen meine Aufmerksamkeit zu widmen. Über den Parteitag hat Herr <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> schon gesprochen. Er war ausgezeichnet und hat eine große Einigkeit der Partei gezeigt trotz Meinungsverschiedenheiten, die zu leugnen falsch wäre. Solche Verschiedenheiten müssen vorhanden sein. Aber ich bin mir auf diesem Parteitag darüber klargeworden und, wenn möglich, noch bestärkt worden durch die Ausführungen, die Herr <name type="Person" role="Erwaehnung" ref="#JaspersKarl">Jaspers</name> jetzt gemacht hat, daß unsere große und sehr verantwortliche Partei sich mit den grundsätzlichen Fragen mehr beschäftigen muß.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN007" type="comment">
+                     <p>Der Philosoph Karl <name type="Person" role="Erwaehnung" ref="#JaspersKarl">Jaspers</name> hatte Irritationen in der CDU und der CSU dadurch ausgelöst, daß er die Berufung auf das Christentum als ausreichende Grundlage für eine politische Partei anzweifelte. Die beiden Parteien reagierten auf diese Aussage, indem sie auf dem CSU-Parteitag vom 11./12. 10. 1958 zwei Theologen zu Wort kommen ließen: den Protestanten Prof. D. theol. Walter <name type="Person" role="Erwaehnung" ref="#KuennethWalter">Künneth</name> und von der katholischen Seite Pater Oskar <name type="Person" role="Erwaehnung" ref="#SimmelOskar">Simmel</name> (SJ). Vgl. DUD Nr. 196 v. 13. 10. 1958, S. 1 f.; PPP Nachtrag zum 12. 10. 1958, S. 4 (AdsD).</p>
+                  </note>
+               </seg> Schon seit 1 ½ Jahren habe ich bei Reden immer wieder darauf hingewiesen, daß wir über den Fragen des Tages nicht das Grundsätzliche vergessen dürfen. Ich habe mir vorgenommen, als Vorsitzender der CDU zu versuchen, in den nächsten Wochen das Grundsätzliche wieder einmal klar und faßbar herauszuarbeiten. Das ist nötig, damit wir unsere Einheit wahren, denn nur aus einer gemeinsamen Grundsatzauffassung können wir die Schwierigkeiten überwinden; auch müssen wir die Gemeinsamkeit bewahren des Eindrucks nach außen wegen.</p>
+            <p>Den Glückwünschen an Schleswig-Holstein schließe ich mich an. Es ist in Wahrheit ein großer Erfolg.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN008" type="comment">
+                     <p>Siehe Nr. 74 v. 29. 9. 1958, TOP 1.</p>
+                  </note>
+               </seg> Viele von uns haben dazu beigetragen, und das war auch richtig, daß viele Abgeordnete hier mitgewirkt haben. Wir dürfen aber auch nicht vergessen, daß die Arbeit des Kabinetts <name type="Person" role="Erwaehnung" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> in den vier vergangenen Jahren außerordentlich große Erfolge hatte. Dafür wollen wir ihm und der CDU herzlich dankbar sein.</p>
+            <p>Nun stehen die Wahlen in Hessen, Bayern und Berlin<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN009" type="comment">
+                     <p>Wahltermine Hessen und Bayern 23. 11. 1958, Berlin 7. 12. 1958.</p>
+                  </note>
+               </seg> bevor, und auf meinem Terminkalender steht Würzburg<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN010" type="comment">
+                     <p>Auftakt zum Wahlkampf in Bayern war der CSU-Parteitag vom 11./12. 10. 1958 in Würzburg. An die Landesversammlung schloß sich am Sonntag, den 12.10., um 15 Uhr eine Großkundgebung an, auf der <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> insbesondere die Außen- und Wehrpolitik der SPD angriff. Vgl. ACSP LVers 11./12. Okt. 1958, Nr. 1 und 4.</p>
+                  </note>
+               </seg> und einiges andere mehr. Aber lassen Sie mich sagen, daß ich nicht auf dem Standpunkt stehe, daß man die ganzen Wahlen auf einen Termin legen soll; denn dann kommt der Bundestag und die Regierung überhaupt nicht mehr zum Arbeiten. Ein Jahr ist nötig, ehe eine Fraktion sich zusammenfindet. Wenn das Jahr vorbei ist, und es geht rasch vorbei, und es kommen dann die anderen Wahlen auf einen Haufen, dann geht auch das zweite Jahr verloren, weil alles nach den Wahlen orientiert würde. Dann sieht man schon wieder auf die Bundestagswahl. Aber so wie es jetzt ist, ist es auch nicht schön und nicht tragbar. Ich würde begrüßen, wenn sich die Länder – der Gedanke kommt nicht von mir – und der Bund auf denselben Tag einigen könnten. Dann hätten wir alles auf einmal und der Wille der Wähler käme klar zum Ausdruck.</p>
+            <p>Ich möchte ein Wort zu dem Manöver sagen und als ersten Eindruck wiedergeben, daß ich sehr angetan von der Freudigkeit, der Energie und Ausdauer, mit der alle Soldaten, auch die Mannschaften, bei der Sache waren. Und ich möchte hier auch betonen, daß man einmal sehen muß – ich habe es zum ersten Mal in diesem Umfang gesehen – welche Formen die Technisierung des Militärs mit sich bringt und wie ungeheuer schwer es deshalb ist, eine Wehrmacht neu aufzubauen. Daher stehe ich auf dem Standpunkt, nachdem unsere junge Wehrmacht schon eine schwere Probe gut bestanden hat, daß man zum weiteren Ausbau das Ministerium etwas mehr von bürokratischen Geschichten befreien muß, denn so kann man keine Wehrmacht aufbauen. Das halte ich für richtig und notwendig, bis der Aufbau beendet ist.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN011" type="comment">
+                     <p>Zu den Problemen beim Aufbau der Bundeswehr siehe Nr. 73 v. 8. 9. 1958.</p>
+                  </note>
+               </seg> Ich war nicht der einzige, der tief beeindruckt war, auch die Generale befreundeter Länder. Vielleicht stiegen sogar dem einen oder anderen Erinnerungen auf, die ihn mit Sorge erfüllen.</p>
+            <p>Damit komme ich zu <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> und Frankreich. Dieser Besuch, der vor 14 Tagen stattfand<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN012" type="comment">
+                     <p>Besprechungen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> – <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> am 14. 9. 1958 in Colombey-les-deux-Eglises, im Privathaus des Generals, wo <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> auch übernachtete. Vgl. Adenauer, Erinnerungen 1955–1959, S. 424–436.</p>
+                  </note>
+               </seg> , hat eine Vorgeschichte. Sie wissen, daß der englische Premier <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> sehr früh bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> war.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN013" type="comment">
+                     <p>Besuch <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillans</name> bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> am 29. und 30. 6. 1958. Vgl. AdG 1958, S. 7153.</p>
+                  </note>
+               </seg> Er hatte mir gesagt, daß er zu ihm gehen würde, der ein alter Freund aus dem Kriege zu ihm sei, und Sie wissen, daß <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> dort gewesen ist.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN014" type="comment">
+                     <p>Besuch von US-Außenminister <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> am 5. 7. 1958. Vgl. AdG 1958, S. 7162.</p>
+                  </note>
+               </seg> Was sollte der Bundeskanzler tun? Es waren da Fühlungnahmen bei mir, aber die Stellung des deutschen Bundeskanzlers war eine andere, weil er der Vertreter eines besiegten Volkes ist, das damals im Kampf gegen Frankreich stand, und daher glaube ich, daß es richtig war, sehr behutsam und taktvoll vorzugehen. Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> hat dann die Initiative ergriffen gegenüber Herrn <name type="Person" role="Erwaehnung" ref="#MaltzanVollrathFreiherrvon">von Maltzan</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN015" type="comment">
+                     <p>Vollrath <name type="Person" role="Erwaehnung" ref="#MaltzanVollrathFreiherrvon">Frhr. von Maltzan</name>, 1955–1958 Botschafter in Paris.</p>
+                  </note>
+               </seg> , indem er vorschlug, ich möchte bei meiner Rückkehr ihn in Colombey-les-deux-Eglises besuchen. So kam es zu dieser Begegnung. Ich war froh, daß ich ihn gerade dort aufgesucht habe, weil man von dem Mann, vom Menschen <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>, naturgemäß einen anderen und stärkeren Eindruck bekommt, wenn man ihn dort aufsucht, einen stärkeren, als etwa in Paris in seinem Amtssitz. Ich bin mit Vorurteilen hingefahren nach allen Presseberichten über <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>. Da hörte man, er sei taub; er hört aber so gut wie Sie und ich; und man hat ihn blind oder einen Nazi genannt. Sicher braucht er beim Lesen eine Brille. Das tun manche mit 67 Jahren, ohne daß man sagen würde, sie seien blind.</p>
+            <p>Nun will ich Ihnen die Umgebung schildern, nicht um ein Feuilleton zu geben, sondern damit Sie verstehen, wie der Wechsel bei <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> gekommen ist. Die Gegend dort ist sehr ernst, ungewöhnlich einsam, und Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> zeigte mir eine Stelle im Garten und sagte: »Hier können Sie sehen wer weiß wie weit, aber Sie sehen keine menschliche Behausung«. Das Haus hat einiges sehr Hübsches, es ist ein älteres Haus, das er vor 28 Jahren gekauft hat, und es hat unten einige schöne Räume im Stil der damaligen Zeit und im oberen Stockwerk einfach eingerichtete Zimmer, fernab von jedem Prunk. Das gilt überhaupt vom ganzen Haus. Weder am Haus noch in den Gesprächen war irgendein Anzeichen von Prunk oder Überheblichkeit oder Größenwahn zu spüren.</p>
+            <p>Ich bin selten so überrascht worden wie bei diesem Zusammensein, da ich fand, daß alle Zeitungsberichte nicht zutrafen, die ich gesehen hatte. Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> hat angefangen, den Sinn seiner Politik nach dem Zusammenbruch darzulegen und warum er sich dann von der Politik abgewandt habe. Die Gründe sind einfach. Er sagte mir, daß man in Frankreich, das verschiedentlich von Deutschland besiegt worden ist, von Revanchegelüsten Deutschlands überzeugt gewesen sei; aber er habe sich überzeugt, daß das neue Deutschland ein anderes Deutschland sei, und deswegen stehe der Zusammenarbeit und der Freundschaft zwischen den Völkern nichts im Wege. Er hat mir auch erklärt, daß er für die Wiedervereinigung Deutschlands in Frieden sei wie wir auch. Das hat er von sich heraus erklärt, nicht erst auf eine Frage, daß er die Berechtigung unseres nationalen Verlangens auf Wiedervereinigung anerkenne. Er hat sich auch zu Europa bekannt. Es ist kein Wort gefallen, daß die Befürchtungen zutreffen könnten, daß Frankreich fordere, der führende Staat in Europa werden zu müssen; kein Wort davon. Ich habe auch nicht den Eindruck bekommen, daß er etwas Derartiges erstrebt. In der großen Einsamkeit, das ist mein Eindruck, in der er 11 Jahre zugebracht hat<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN016" type="comment">
+                     <p>Zeitraum zwischen dem 20. 1. 1946 (Rücktritt des 2. Kabinetts <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>) und dem 1. 6. 1958 (Rückkehr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> an die Regierung).</p>
+                  </note>
+               </seg> – er ist kein Jäger, raucht nicht, hat studiert, beobachtet und gelernt und in seiner ausgezeichneten Bibliothek gearbeitet – hat er offenbar beobachtet, wie sich die Welt geändert hat und seine Konsequenzen daraus gezogen. So bin ich mit der Überzeugung geschieden, daß wir alle – Herr <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> kam am Abend und wird mir das bestätigen –, daß wir alle, Franzosen und Deutsche, im großen Einvernehmen voneinander geschieden sind. Ich bin froh, daß ich dagewesen bin, nicht nur wegen der engen Nachbarschaft und nicht nur, weil unsere Länder maßgebend sind bei der europäischen Einigung, sondern weil durch diese Begegnung und durch das Kommuniqué<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN017" type="comment">
+                     <p>Vom 14. 9. 1958. Vgl. DzD III/4, S. 1578.</p>
+                  </note>
+               </seg> , das z.T. von <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> selbst niedergeschrieben und zwar vorwiegend in den Sätzen mit wärmerem Ton, eine große Hoffnung Sowjetrußlands enttäuscht wurde. Das hat sich schon zwei Tage später gezeigt.</p>
+            <p>Wenn ich daran erinnern darf, wie <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> losging und Frankreich warnte<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN018" type="comment">
+                     <p>Vgl. Interview des Vors. des Ministerrats der UdSSR, <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>, mit der Prawda v. 22. 9. 1958, in: AdG 1958, S. 7302.</p>
+                  </note>
+               </seg> , der wird sehen, wie groß die Enttäuschung Sowjetrußlands war. Denken Sie darüber nach, was aus Europa, aus Deutschland, aus der Wiedervereinigung geworden wäre, wenn Frankreich sich unter der Führung <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> den Russen zwar nicht angeschlossen, aber eine Annäherung an die russischen Vorstellungen begonnen hätte. Dann werden Sie sich klar sein, von welch eminenter Bedeutung es ist, daß alle Befürchtungen, die sich an diese Phase der Entwicklung Frankreichs geknüpft hatten, völlig unbegründet sind. Es ist letzten Endes auch diese Zusammenkunft ein Triumph für die Politik, die unsere Partei nun konsequent, so lange die Bundesregierung besteht, geführt hat: Aussöhnung und Vereinigung Europas und fester Anschluß an die westliche Welt. Der Weg von Straßburg bis Colombey, den ich mit dem Auto zurückgelegt habe, hat mich durch viele französische Dörfer geführt, und der deutsche Bundeskanzler mit dem deutschen Stander am Wagen wurde auf dem ganzen Weg von der Bevölkerung so außer-ordentlich freundlich, ja sogar enthusiastisch begrüßt, wie ich das nicht für möglich gehalten habe, und Herr <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> hat mir seine Genugtuung darüber ausgesprochen. Auf der Rückfahrt war diese Begrüßung vielleicht noch einige Töne wärmer, als wenn man froh darüber sei – die Bevölkerung wußte ja, wie die Besprechung ausgegangen war –, daß das so gut gegangen war.</p>
+            <p>Nun war ja diese Abstimmung über die Verfassung in Frankreich<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN019" type="comment">
+                     <p>Volksabstimmung über die neue französische Verfassung am 28. 9. 1958 (in Algerien am 26., 27. und 28. 9. 1958). Gesamtergebnis: 67,7% Ja-Stimmen im Verhältnis zur Zahl der eingetragenen Wähler und 85,1% Ja-Stimmen im Verhältnis zur Zahl der gültigen Stimmen. Vgl. AdG 1958, S. 7315.</p>
+                  </note>
+               </seg> , und diese Abstimmung übertrifft die kühnsten Erwartungen <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> selbst. Es war ein derartig großes Bekenntnis zu dieser Verfassung, wie das kein Mensch erwarten konnte. Man hat dabei gesehen, daß selbst von den Kommunisten ein erheblicher Prozentsatz für diese Verfassung gestimmt hat, und damit ist die Stellung <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulles</name> stärker noch geworden, und damit auch die künftige Stellung Frankreichs. Wenn Sie daran denken, daß der Durchschnitt der Lebensdauer eines französischen Kabinetts 4–5 Monate war, daß <name type="Person" role="Erwaehnung" ref="#MolletGuy">Mollet</name> darüber strahlte, daß er es auf 13 Monate gebracht hatte<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN020" type="comment">
+                     <p>Regierung Guy <name type="Person" role="Erwaehnung" ref="#MolletGuy">Mollet</name> vom 31. 1. 1956 bis 10. 6. 1957.</p>
+                  </note>
+               </seg> , dann ist klar, daß infolge dieses ständigen Wechsels eine konsequente Politik nicht getrieben werden konnte, und daß daher Frankreich im Kräftespiel der Welt keine sehr große Rolle spielte. Das wird nun anders werden, wenn <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> Staatspräsident geworden ist, der dann so große Vollmachten in der Hand haben wird wie bisher niemand. Ich will darüber kein Kolleg halten, aber diese Verfassung gibt Möglichkeiten in der Hand eines tatkräftigen Staatsoberhauptes, die ganz außerordentlich wichtig sind. Für mich ist kein Zweifel, daß, wenn <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> den Rücken frei haben wird, dann das Gewicht Frankreichs stärker sein wird als bisher. Auch in Algier hat er noch mehr Stimmen erhalten als im Mutterlande und somit Recht behalten. Das ist ein guter Auftakt für die Lösung der Algierfrage, was es erleichtern könnte, diesen Gefahrenherd zu beseitigen.</p>
+            <p>Was folgt daraus für uns? Was folgt aus der Kräfteverschiebung, die sich zugunsten Frankreichs ergeben wird? Kreiden Sie mir bitte, was ich jetzt sage, nicht als militaristisch an: Diese Welt bleibt so hart, wie sie es ist, und in ihr zählt die Macht mehr als der gute Wille, und deswegen müssen wir unsere Wehrpolitik konsequent durchführen, bis die Abrüstung Wirklichkeit geworden ist. Im Volke ist die Wehrmacht schon lange akzeptiert, und ich höre von Herrn <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN021" type="comment">
+                     <p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, BMVtdg.</p>
+                  </note>
+               </seg> , daß auch sozialdemokratische Bundestagsabgeordnete erklärt haben, daß sie sich damit abfinden müßten. So lange die Weltlage ist, wie sie ist, und so lange sie sich nicht in der Grundlage geändert hat, müssen wir auf dieser Politik der Wiederbewaffnung weitergehen, bis wir zur Abrüstung kommen. Ihnen dies zu sagen, gerade nach den Ereignissen in Frankreich, lag mir sehr am Herzen.</p>
+            <p>Ich habe davon gesprochen, daß nun wieder ein Jahr vergangen ist. Das letzte Jahr vor der nächsten Bundestagswahl ist wieder ein Jahr, in dem man keine übereilten Beschlüsse fassen darf. Es bleibt also nach den Landtagswahlen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN022" type="comment">
+                     <p>Siehe Anm. 9.</p>
+                  </note>
+               </seg> übrig die Zeit vom Beginn 1959 an, um die großen Gesetzeswerke in die Hand zu nehmen und im Bundestag und in den Ausschüssen in jeder irgendwie zu verantwortenden Beschleunigung weiterzutreiben, damit wir ein Jahr vor den Wahlen mit den Hauptanliegen wirklich fertig sind. Deshalb beginnt für den Bundestag eine sehr arbeitsreiche Zeit, und ich glaube, daß jetzt eine sehr intensive Zusammenarbeit stattfinden muß, um die ich Sie bitten möchte, damit wir in diesen beiden Jahren wirklich etwas leisten. Es werden schwere Arbeiten an die Fraktion herantreten, die vom einen so und vom anderen so angesehen werden, aber wenn wir uns bewußt bleiben, daß doch das Fundament unserer Arbeit ein gemeinsames weltanschauliches Fundament ist, dann werden wir dieser Schwierigkeit auch Herr werden, und damit werden wir der Verantwortung gerecht, die das deutsche Volk, der deutsche Wähler, am 15. 9. 1957 auf uns gelegt hat. Sie haben uns die Macht gegeben und gleichzeitig die Verantwortung; sie ist groß. Nur wenn wir alle gemeinsam arbeiten in der Partei, in der Fraktion und in der Regierung, dann werden wir dem Auftrag des Volkes gerecht. Wenn Sie sich vorstellen, wir hätten nicht die CDU/CSU, wie sähe es in Deutschland, in Europa und in der Welt aus, wie sähe es aus, wenn etwa die SPD die Führung gehabt hätte. Wir können froh und glücklich sein, aber ich wiederhole: Macht bedeutet Verantwortung.</p>
+            <p>Nun noch ein Wort zu den Landtagswahlen. Man glaubte, dort in Schleswig-Holstein annehmen zu können, daß der BHE nicht wiederkommen würde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN023" type="comment">
+                     <p>Siehe Nr. 74 v. 29. 9. 1958, TOP 1.</p>
+                  </note>
+               </seg> Nicht nur, weil es den meisten gut geht, sondern weil dort die prominentesten Mitglieder ausschieden. Es ist anders gekommen, und darauf müssen wir achten auch für die Zukunft. Mit der FDP ist es ähnlich gegangen. Sie ist gerade noch über die 5%-Klausel gekommen, und das wird ihr Mut gegeben haben, nun auch noch weiter am Leben zu bleiben. Ich gönne jedem sein Leben, aber ich wünsche, daß er ein vernünftiges Leben führt, und das möchte ich besonders gegenüber der FDP sagen. Ihr Schicksal liegt in ihrer eigenen Hand. Es sind Annäherungsversuche gemacht worden, die ich entgegengenommen habe. Für die zukünftigen Wahlgänge muß man jedenfalls damit rechnen, daß der BHE noch in Funktion ist, und muß vorsichtig taktieren und im übrigen hoffen, daß im Laufe der Zeit der BHE seine Aufgabe erfüllt hat.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN024" type="comment">
+                     <p>Zur Vertretung des GB/BHE in Regierungen und Parlamenten auf Bundesebene (bis 1955) und Landesebene (bis 1964/1966) vgl. Stöss, GB/BHE, S. 1448 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Das Ergebnis der DP ist nicht überraschend. Es ist gekommen, wie man es angenommen hat. Aber man sollte nicht von Schleswig-Holstein auf Niedersachsen schließen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN025" type="comment">
+                     <p>Erreichte Stimmenzahl in Schleswig-Holstein am 28. 9. 1958: 2,8%; erreichte Stimmenzahl in Niedersachsen am 19. 4. 1959: 12,3%. Vgl. AdG 1958, S. 7315; AdG 1959, S. 7663.</p>
+                  </note>
+               </seg> Das macht notwendig, daß ich sobald wie möglich als Vorsitzender der CDU einige Herren aus Niedersachsen zu mir bitte, damit wir sine ira et studio die Politik überlegen, die einzuschlagen ist. Erlassen Sie mir bitte, darüber Näheres zu sagen. Ich muß mit den Herren dort selbst sprechen und mir schildern lassen, welch merkwürdige Dinge dort dauernd durcheinander gehen, und dann muß man die verschiedenen Ansichten auf einen Nenner bringen.</p>
+            <p>Nun schließe ich. Nach den Wahlen muß gearbeitet werden von der Fraktion und der Regierung, damit wir die zwei Jahre, die zur Verfügung stehen, auch wirklich gut ausnützen für unser Wohl und das des deutschen Volkes.«</p>
+            <p>Bundesminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> berichtet, daß sein während der Besprechungen des Bundeskanzlers mit Herrn <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> geführtes Gespräch mit dem französischen Außenminister<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN026" type="comment">
+                     <p>Maurice <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murville</name>.</p>
+                  </note>
+               </seg> in gleich guter Atmosphäre verlaufen sei. Er betont, daß man Grund habe, die Konsolidierung Frankreichs zu begrüßen, da dies eine Frage auch der weiteren Einigung Europas sei. Das Abstimmungsergebnis in Frankreich bedeute nicht nur eine Niederlage der Kommunisten, sondern auch eine solche einer Reihe kleinerer aber einflußreicher Gruppen.</p>
+            <p>Sich der Nahost-Krise<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN027" type="comment">
+                     <p>Vgl. die Übersicht – Staatsstreich im Irak v. 14. 7. 1958 und im Zusammenhang damit militärische Intervention der USA im Libanon und Großbritanniens in Jordanien – in: AdG 1958, S. 7180–7191.</p>
+                  </note>
+               </seg> zuwendend, bedauert der Minister, daß in diesem Zusammenhang die deutsche Presse teilweise in einer Weise reagiert habe, die nicht unbedingt deutschen Interessen entsprochen habe. Die amerikanische Regierung sei hinsichtlich dieser Länder im Wort gestanden. Niemand habe von der Bundesregierung erwartet, daß sie diese Entwicklung begrüßen würde, und es sei auch keine derartige Anforderung an die Bundesregierung gestellt worden. Man dürfe nicht vergessen, daß eine Gegenreaktion Israels zu befürchten gewesen sei, wenn es zu einer Einbeziehung dieser Gebiete in die arabische Union gekommen wäre. Weiter war zu befürchten, daß von Jordanien aus versucht wurde, die Entwicklung im Irak rückgängig zu machen. Der deutsche Einfluß habe dazu beigetragen, daß man diese Risiken erkannt habe, so daß man eine Ausbreitung der Krise verhindern konnte. Man müsse feststellen, daß der arabische Nationalismus eine Realität sei. Diese Länder wollten sich trotz aller Gegensätze zusammenschließen; der gemeinsame Haß gegen die Imperialisten und gegen Israel überbrücke die vorhandenen Spannungen. Die deutschen Möglichkeiten in diesem Bereich seien verhältnismäßig groß, weil Deutschland dort nicht politisch belastet sei. Das biete die Chance einer mäßigenden Einwirkung. Deswegen habe die Bundesregierung darauf gedrängt, die Dinge im Irak sich nicht selbst entwickeln zu lassen, sondern zur Anerkennung der neuen Regierung zu kommen. Wenige Tag später hätten dann auch die anderen Mächte sich der Anerkennung angeschlossen, und niemand habe es bereut.</p>
+            <p>Dadurch, daß die Sowjetunion es verstanden habe, sich als einziger Freund dieser Länder zu gerieren, habe sie dort einen ihr nicht zustehenden Einfluß gewonnen. Man könne ja annehmen, daß das kommunistische System diesen Völkern nicht konform sei. Es komme darauf an, diesen Einfluß zurückzudrängen, was bedeute, daß der Westen mehr als bisher zu einer gemeinsamen Nahost-Politik kommen müsse. Dabei müsse man die Hilfestellung freihalten von politischen Bedingungen. Eine Partnerschaft müsse angestrebt werden, weil man sonst auf Ablehnung stoße und die Gefahr vermehre.</p>
+            <p>Auf die Fernost-Krise<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN028" type="comment">
+                     <p>Vgl. die Übersicht – ab August 1958 Gefechtstätigkeit zwischen volks- und nationalchinesischen Streitkräften wegen der Formosa (heute: Taiwan) vorgelagerten Inseln, Manöver der 7. US-Flotte –, in: AdG 1958, S. 7272–7276, et passim.</p>
+                  </note>
+               </seg> eingehend, stellt der Außenminister dar, daß die starke Aktivität im kommunistischen Raum von <name type="Person" role="Erwaehnung" ref="#MaoTse-Tung">Mao Tse-tung</name> ausgehe. Das sei auch im Bereich des Ideologischen festzustellen. Er warne davor, die Krise in der Formosa-Straße unter dem primitiven Aspekt zu sehen, als ob es sich dabei um ein legitimes Anliegen Rot-Chinas handele. Es stehe dem Deutschen schlecht an, hier irgendeinen Handel anzubieten. Man dürfe nicht vergessen, daß auch dort Menschen lebten, die um ihre Freiheit kämpfen. Die Tatsache, daß die USA nicht bereit sind, diese Inseln preiszugeben, sei auch für uns von erheblicher Bedeutung.</p>
+            <p>Es gehe hier weniger um diese Inseln, sondern vielmehr darum, ob das Wort des größten demokratischen Landes in der Welt noch gilt. Zöge sich Amerika zurück, so hätte nicht nur dieses Land das Gesicht verloren. Der Bundesregierung stehe es gerade in dieser Frage am wenigsten an, den praeceptor mundi zu spielen. Im übrigen habe sich gezeigt, daß auch die NATO zu einem politischen Instrument ausgebaut werden müsse. Wenn hinter dem Verteidigungswillen nicht eine gemeinsame Politik stehe, dann sei die Verteidigung praktisch nicht durchzuführen. Diese gemeinsame Erkenntnis aller Partner habe sich aus den Krisen ergeben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Meine sehr geehrten Damen und Herren! Glauben Sie nicht, daß ich nun von Wichtigem zu Unwichtigem überginge. Zu der Angelegenheit <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN029" type="comment">
+                     <p>Hans <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name>, 1951–1958 persönlicher Referent <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name>, war im Zuge staatsanwaltlicher Ermittlungen wegen passiver Bestechung im September 1958 in Untersuchungshaft genommen worden. Anlaß war ein Korruptionsverdacht gegen Bonner Beamte und Direktoren von Mercedes-Benz, die verschiedentlich Leihwagen zur Verfügung gestellt hatten. Zur Eröffnung des Hauptverfahrens gegen <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name> kam es schließlich jedoch nicht. Vgl. CDU-Bundesvorstand 1957–1961, S. 276–280, 282, 287, 328–330, 333, 335–337; Schwarz, Ära Adenauer 1957–1961, S. 204.</p>
+                  </note>
+               </seg> ausführlich zu sprechen, bin ich nicht in der Lage, weil ich mir nicht den Vorwurf zuziehen darf, ich hätte den Versuch gemacht, in ein schwebendes Verfahren einzugreifen. Aber die Erklärung des Bundeskanzleramtes, daß nach sorgfältiger Prüfung kein Grund vorliege zu einem disziplinaren Vorgehen, besteht weiter. Es sind in der Tat – wenn neue Dinge aufkommen sollten, wird das nachgeprüft – keine neuen Tatbestände mehr aufgekommen, und die Verhaftung des <name type="Person" role="Erwaehnung" ref="#KilbHans">Kilb</name> ist für mich ein Rätsel.</p>
+            <p>Aber das ist nicht das Entscheidende – darüber werden wir in Bonn sprechen müssen –, sondern entscheidend ist, daß ganz systematisch der Anschein erweckt wird, als ob die Bundesregierung von oben bis unten korrupt wäre. Wenn Sie das genau verfolgen und prüfen, das ist so geschickt gemacht, daß es zu einer Anzeige wegen Beleidigung nicht reicht, aber Sie wissen ja, wie die Bevölkerung ist. Das geschieht systematisch. Ich muß mich beschränken, das kurz zu sagen, daß daran amtliche Stellen nicht unbeteiligt sind; ich hoffe, daß wir diese ganze Situation so klären, daß die ganze Bevölkerung sieht, was da eigentlich ist. Aber etwas will ich noch betonen: In welchen Ruf kommt denn unsere deutsche Industrie bei dieser Sache? Es gibt schwere Korruptionsfälle, aber anderswo, und ich wünschte, es würde die Staatsanwaltschaft ihre Kräfte dahin lenken, daß diese Korruptionsfälle endlich zur Aburteilung kommen. Mehr kann ich nicht sagen, das wäre nicht gut. Aber sobald diese Geschichte klar ist, wird es notwendig sein, in der Fraktion ein offenes Wort dazu zu reden.«</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> betont, daß es dem Bundeskanzler gelungen sei, das gegen die Deutschen bestehende Mißtrauen zu beseitigen, was an dem Beispiel <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> deutlich werde. Gewisse Diskussionen in der deutschen Öffentlichkeit dienten jedoch diesem Zweck nicht. Er denke dabei an den Fall <name type="Person" role="Erwaehnung" ref="#EiseleHans">Eisele</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN030" type="comment">
+                     <p>Dr. med. Hans <name type="Person" role="Erwaehnung" ref="#EiseleHans">Eisele</name>, als ehemaliger KZ-Arzt wegen Tötungsdelikten nach 1945 von Besatzungsgerichten zweimal zum Tode verurteilt (die Urteile wurden nicht vollstreckt), hatte sich der Justiz durch seine Flucht nach Ägypten entzogen. Ägypten gab dem Auslieferungsgesuch der Bundesrepublik wegen Verjährung der bis 1941 begangenen Straftaten nach ägyptischem Recht nicht statt. Vgl. SZ Nr. 244 v. 11./12. 10. 1958, S. 8; Sten. Ber., 56. Sitzung am 22. 1. 1959, S. 3050, 3058.</p>
+                  </note>
+               </seg> , an gewisse Urteile bei Kriegsverbrechern und an deren Pensionen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN031" type="comment">
+                     <p>Vgl. zu diesem Problem Sten. Ber., 56. Sitzung am 22. 1. 1959, S. 3057 ff., et passim.</p>
+                  </note>
+               </seg> und an die Aufstellung von Kandidaten. Dazu solle man vom Standpunkt der CDU-Politik aus eine Abwehr finden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> bemerkt dazu, daß die CSU die sie betreffenden Sachen sicher selber regeln könne.</p>
+            <p>Bundesminister <name type="Person" role="Sprecher" ref="#LemmerErnst_1952-02-01">Lemmer</name> erinnert daran, daß auch für <name type="Person" role="Erwaehnung" ref="#HindenburgPaulvonBeneckendorffundvon">Hindenburg</name> einmal ein Wagen zur Verfügung gestellt worden sei. Es sei aber an der Zeit, darauf aufzupassen, daß die Autorität derer, die im Staate Verantwortung zu tragen haben, nicht von anderen heruntergerissen werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Ich bin Herrn <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> sehr dankbar. Ich kann nur den Kopf schütteln über das, was ich gehört habe über die Vorstellungen über den Beruf des Beamten und daß man neuerdings prüft, ob nicht Abgeordnete auch überprüft werden sollten und könnten. Während früher – ich bin zwei Jahre bei der Staatsanwaltschaft Köln tätig gewesen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN032" type="comment">
+                     <p>Von 1901 bis 1903. Vgl. Schwarz, Adenauer 1876–1952, S. 106 f.</p>
+                  </note>
+               </seg> – die Aufgabe der Staatsanwaltschaft so aufgefaßt wurde, daß sie bei Verdacht einzuschreiten hatte, scheint man nun nach dem Verdacht zu suchen. Das bringt eine Gefahr für jede Autorität mit sich, und ohne Autorität kann ein Volk nicht existieren. Ich spreche nicht von mir, aber als Demokrat. Wenn man den Glauben hat, berufen zu sein, aufzuzeigen, daß diese ganze Demokratie derartig korrupt ist, dann schließt das eine sehr große Gefahr in sich, und darauf müssen wir sehr aufpassen. Ich werde darüber weiter berichten.«</p>
+            <p>Mittagspause von 13.00 Uhr–15.45 Uhr</p>
+            <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> berichtet aus dem Ältestenrat, daß eine Fernsehübertragung wegen der aus der Zone zu erwartenden Zuschauer nicht stattfinden werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> eröffnet dann die Aussprache über die Europäische Wirtschaftsgemeinschaft. Dazu trägt Bundesminister <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name> in kurzen Zügen die von ihm beabsichtigte Antwort vor.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN033" type="comment">
+                     <p>Vgl. Große FDP-Anfrage betr. Erfüllung des EWG-Vertrags: Drucksache III/371 v. 7. 5. 1958 und die Antwort, in: Sten. Ber., 42. Sitzung am 2. 10. 1958, S. 2434.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HeckBruno_1957-10-15">Heck</name> berichtet dann, daß die DP ihre Anträge Grundgesetzänderung (Bundeskultusministerium) zurückstellen will<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN034" type="comment">
+                     <p>Siehe Nr. 74 v. 29. 9. 1958, TOP 4 d.</p>
+                  </note>
+               </seg> , und entwickelt in kurzen Zügen, welche Stellungnahme die Fraktion zu den übrigen kulturpolitischen Themen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN035" type="comment">
+                     <p>Vgl. Antrag der Abg. <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> (SPD), Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name> (CDU/CSU) u. Gen. betr. Förderungsmaßnahmen für Europäische Hochschulen: Drucksache III/95 v. 18. 12. 1957; SPD-Antrag betr. Gesetzesvorlage über die Gewährung von Berufsausbildungs- und Erziehungsbeihilfen: Drucksache III/459 v. 19. 6. 1958.</p>
+                  </note>
+               </seg> einnehmen wird. Als Rednerin wird unter Zustimmung der Fraktion Frau Abg. Dr. <name type="Person" role="Erwaehnung" ref="#MaxseinAgnesKatharina_1952-02-01">Maxsein</name> vorgeschlagen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN036" type="comment">
+                     <p>Vgl. Sten. Ber., 43. Sitzung am 3. 10. 1958, S. 2457 ff.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>An der Aussprache beteiligen sich weiter Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Sprecher" ref="#VeharMax_1957-10-15">Vehar</name>, Dr. <name type="Person" role="Sprecher" ref="#HuysLambert_1957-10-15">Huys</name> und Dr. <name type="Person" role="Sprecher" ref="#KrollLudwig_1953-10-06">Kroll</name>.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> referiert über die Verhältnisse in der Zone.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN037" type="comment">
+                     <p>Vgl. die Erklärung <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradls</name> am 1. 10. 1958 im Bundestag, in: Sten. Ber., 41. Sitzung, S. 2406 ff.</p>
+                  </note>
+               </seg> Der stark ansteigende Flüchtlingsstrom habe zu der Lage geführt, wie der Bundestag reagieren solle. Interfraktionelle Besprechungen hätten zu gemeinsamen Formulierungen in der Großen Anfrage geführt, und man sei auch zu einer gemeinsamen Entschließung gekommen. Darin sei gesagt, daß es keinen Weg über Pankow gebe, sondern daß die Welt auf diese Dinge hingewiesen werden müsse. Die Bundesregierung werde ersucht, die eingeleitete Vier-Mächte-Initiative<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN038" type="comment">
+                     <p>Drucksache III/502 v. 2. 7. 1958. »Der Antrag lautet: Der Bundestag wolle beschließen: Um die Wiederherstellung der deutschen Einheit zu fördern, wird die Bundesregierung beauftragt, sich bei den Vier Mächten, den USA, der UdSSR, dem Vereinigten Königreich und Frankreich dafür einzusetzen, daß auf einer künftigen internationalen Konferenz (Gipfelkonferenz) oder auch unabhängig davon ein Vier-Mächte-Gremium (mindestens im Range einer Botschafter-Konferenz) mit dem Auftrag gebildet wird, gemeinsame Vorschläge zur Lösung der deutschen Frage zu erarbeiten.« Der Antrag war eine Folge der außenpolitischen Debatte v. 25. 3. 1958. Vgl. Sten. Ber., 28. Sitzung vom 2. 7. 1958, S. 2177 ff. (Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>, Berichterstatter).</p>
+                  </note>
+               </seg> weiter zu verfolgen.</p>
+            <p>Leider habe sich inzwischen eine erhebliche Komplikation ergeben, da in der SPD ein Antrag entwickelt worden sei, der auf die Schaffung einer neuartigen Institution hinauslaufe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN039" type="comment">
+                     <p>SPD-Antrag betr. Schaffung eines Amtes für innerdeutsche Regelungen: Drucksache III/549 v. 29. 9. 1958. Vgl. Klotzbach, Staatspartei, S. 484 f.; Hölscher, SPD-Fraktion 1957–1961, S. 86 ff.</p>
+                  </note>
+               </seg> Das gehe weit über das von <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> Angekündigte hinaus und berge die Gefahr in sich, daß der Anschein entstehe, als ob man auf einem Umweg doch zu Verhandlungen mit Pankow kommen könne. Man werde nun versuchen, die SPD zu überzeugen, daß sie damit der Sache der Wiedervereinigung keinen Dienst leiste, wenn sie an diesem Antrag festhalte. Der Antrag sei deswegen äußerst bedenklich, weil er auf der anderen Seite den Eindruck erwecken könnte, daß die deutsche Haltung sich doch aufweiche. Die Fraktion der SPD berate dieses Problem eben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet, daß im September bekannt geworden sei, daß die Frage der Zone und der Zonenflüchtlinge von der SPD auf die Tagesordnung gebracht werden soll. Man sei dann zu der gemeinsamen Anfrage und zu der gemeinsamen Entschließung gekommen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN040" type="comment">
+                     <p>Siehe Nr. 74 v. 29. 9. 1958, TOP 4 a.</p>
+                  </note>
+               </seg> , der man zustimmen könne. Wenn die SPD allerdings bei ihrer jetzt eingenommenen Haltung bleibe, dann werde man ihren Antrag ablehnen müssen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN041" type="comment">
+                     <p>SPD-Antrag betr. Schaffung eines Amtes für innerdeutsche Regelungen: Drucksache III/549 v. 29. 9. 1958. Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> machte in seiner Fraktion keinen Hehl daraus, daß das Amt in Konkurrenz zu dem von Ernst <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> (CDU) geführten Gesamtdeutschen Ministerium treten sollte. Aus <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehners</name> Sicht erfüllte das Ministerium seine Aufgaben nicht zufriedenstellend. Er wies dem geplanten Amt die Aufgabe zu, mit den Machthabern der SBZ zu verhandeln. Das Berlin-Ultimatum <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> v. 10. 11. 1958 entzog dem Plan der SPD die Diskussionsgrundlage. Vgl. Weber, C. Schmid, S. 609.</p>
+                  </note>
+               </seg> Klarheit und Sauberkeit der Politik sei oberstes Gebot, mit dessen Erfüllung man auch der Zone besser diene.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> trägt dann den Wortlaut der Entschließung und den Inhalt des Antrages der SPD vor und bezeichnet die vorgeschlagene Koordinierung als diskussionsfähig<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN042" type="comment">
+                     <p>Das Amt für innerdeutsche Angelegenheiten sollte die Arbeit aller Dienststellen der Bundesrepublik, die mit innerdeutschen Regelungen (Interzonenhandel, Verkehr, Justiz, Post usw.) betraut sind, zusammenfassen und koordinieren. Vgl. Drucksache III/549 Ziffer 3 a.</p>
+                  </note>
+               </seg> , wogegen der Vorschlag, daß mit allen an der deutschen Frage beteiligten deutschen Personen und Stellen Fühlung aufgenommen und Erörterungen geführt werden sollten<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-09-30-t1115_EP_FN043" type="comment">
+                     <p>Das Amt sollte innerdeutsche Fragen mit allen beteiligten Stellen und Personen erörtern, Meinungsverschiedenheiten abklären und Vereinbarungen zur Regelung vorbereiten. Vgl. ebd., Ziffer 3 b.</p>
+                  </note>
+               </seg> , nicht akzeptabel sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betont, daß man im Falle der Einbringung dieses Antrages der SPD klar Stellung nehmen müsse. Der Antrag sei gegen die Verfassung und deshalb unmöglich.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ZimmerAlois_1957-10-15">Zimmer</name> warnt davor, irgendwie eine Stellung einzunehmen, die das Vertrauen unserer Alliierten berühren könnte.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> bezeichnet die außenpolitischen Konsequenzen des SPD-Antrages als katastrophal nicht nur im Westen, sondern auch in Moskau. Die Annahme des Antrages wäre ein erster Schritt. Deswegen könne es nur ein kategorisches Nein geben.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> betont die Verpflichtung, jede Anregung zu prüfen, die eine Besserung der Verhältnisse nach sich ziehen könnte. Diesen Antrag aber betrachte er nicht als einen Fortschritt. Es wäre sicher peinlich, wenn über diesen Antrag der Bundestag auseinanderfallen sollte. Man könne aber trotzdem kein Opfer bringen, das die Situation auch noch verschlechtern werde; der SPD-Antrag müsse deshalb abgelehnt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LemmerErnst_1952-02-01">Lemmer</name> erklärt, daß er persönlich gegen diesen Antrag sei, sei ja wohl ganz klar; ein gesamtdeutscher Minister würde ja dann überflüssig. Aber ernsthaft wolle er sagen, daß er ihn für grauenhaft und absurd halte und es traurig sei, ein solches Niveau deutscher Politik nach neun Jahren Demokratie zur Kenntnis nehmen zu müssen. Ihm komme es darauf an, die latente innere Krise im SED-Regime durch eine große und eindrucksvolle Initiative des Bundestages zu fördern und zu vertiefen, und deshalb solle der Bundestag und mit ihm das Volk einmal feierlicher als bisher seine Stimme gegen die Zustände in der Zone erheben, die beispiellos genannt werden müßten. Diesem Zweck diene der Versuch einer gemeinsamen Kundgebung des Deutschen Bundestages. Ihre gemeinsame Annahme bedeute auch, daß von der Opposition die Richtlinien der Politik der Bundesregierung anerkannt würden. Dies fühle die SPD. Da sie aber nicht wage, Nein zu sagen, versuche sie, sich jetzt aus ihrer Situation herauszumogeln, um gewisse Geister in ihren eigenen Reihen mit der Einbringung dieses Antrages zu beschwichtigen. Die CDU habe ihren guten Willen gezeigt und könne nun abwarten, ob die SPD diese Fragen zum Gegenstand des Streites machen will oder nicht. Gehe sie aber diesen Weg, dann werde man mit ihr abrechnen müssen wie noch nie.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt die Verhandlung mit der Feststellung, daß man sich in der Ablehnung des SPD-Antrages einig sei.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

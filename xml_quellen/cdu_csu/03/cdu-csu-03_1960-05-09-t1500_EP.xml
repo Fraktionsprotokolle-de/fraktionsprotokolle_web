@@ -1,210 +1,319 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1960-05-09-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1503/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 9. Mai 1960</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>4 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1960-05-09"><time type="start" when="15:00:00"/><time type="end" when="17:55:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Höcherl</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#Engelbrecht-GreveErnst_1953-10-06">Engelbrecht-Greve</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend Regierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1960-05-09-t1500_EP_SVP-1" corresp="#cdu-csu-03_1960-05-09-t1500_EP_div_SVP-1">A. TOP 1: Bericht zur Lage. – TOP 2: Plenum nächster Woche. – TOP 3: Gesetzentwurf über die Liquidation der Deutschen Reichsbank und der Deutschen Golddiskontbank. – TOP 4: Krankenversicherungsneuregelungsgesetz. – TOP 5: Kontrollausschuss Bundesausgleichsamt. – TOP 6: Weinmarktordnung. – TOP 7: Dauer der Plenarsitzung am Freitag, den 20. Mai 1960. – TOP 8: Änderung Gewerbesteuergesetz.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1960-05-09-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>a) Verlaufsprotokoll<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN001" type="comment"><p>Von dieser Vorstandssitzung sind sowohl das übliche Kurzprotokoll (masch. 2 S.) als auch ein Verlaufsprotokoll überliefert, von letzterem jedoch nur die erste Seite. Dementsprechend werden hier zu TOP 1 das Verlaufsprotokoll und zu TOP 2–8 das Kurzprotokoll abgedruckt. Das Verlaufsprotokoll trägt die Überschrift: »Protokoll der Vorstandssitzung der CDU/CSU-Fraktion vom 9. Mai 1960«.</p></note></seg></p>
-				<p>[1. Bericht zur Lage]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilte zu Beginn der Sitzung mit, daß in der Presse wiedergegebene Informationen, daß <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name> nicht Bundesvertriebenenminister werden könne<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN002" type="comment"><p>Anlaß war der Rücktritt von Bundesminister <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> am 4. 5. 1960. Zum Fall <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> siehe Nr. 172 v. 11. 1. 1960, TOP 1.</p></note></seg>, nicht von ihm stammten. Er habe dem Bundeskanzler erklärt, daß die Stimmung der Fraktion eindeutig für <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name> sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name> erklärte zu diesen Informationen, daß sich der Vertriebenenverband überhaupt noch nicht mit dieser Frage befaßt habe. Im Vertriebenenverband bestehe lediglich der Wunsch, daß das Ministerium erhalten bleibe.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> bedauerte, daß die Version aufgekommen sei, ein Sudetendeutscher könne nicht Vertriebenenminister werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilte mit, daß die Entscheidung über die Neubesetzung des Vertriebenenministeriums nicht vor der Gipfelkonferenz<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN003" type="comment"><p>Pariser Gipfelkonferenz v. 16./17. 5. 1960. Siehe AdG 1960, S. 8400–8407.</p></note></seg> zu erwarten sei.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN004" type="comment"><p>Nachfolger: Hans-Joachim <name type="Person" role="Erwaehnung" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> (ab 27. 10. 1960). Vgl. Datenhandbuch I, S. 1034.</p></note></seg></p>
-				<p>Der Vorstand erörterte dann die Nachfolge des verstorbenen stellvertretenden Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN005" type="comment"><p>Siehe Nr. 198 v. 3. 5. 1960.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> vertrat den Standpunkt, daß es ein evangelischer Abgeordneter sein müsse, der die Fraktionsarbeit aktiv unterstützen könne. Der Vorstand wurde von Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> aufgefordert, Vorschläge zu machen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN006" type="comment"><p>Nachfolger: Alfred <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> (ab 28. 6. 1960). Siehe Nr. 208.</p></note></seg></p>
-				<p>Anschließend erörterte der Vorstand die Tagesordnungen der Plenarsitzungen.</p>
-				<p>[...]</p>
-				<p>b) Kurzprotokoll der Fraktionsvorstandssitzung vom 9. 5. 1960, TOP 2–8<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN007" type="comment"><p>Zum Wechsel vom Verlaufsprotokoll zum Kurzprotokoll siehe Anm. 1.</p></note></seg></p>
-				<p>2. Plenum nächster Woche [18.–20. 5. 1960]</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> erläutert die in Punkt 2 der Tagesordnung enthaltenen Gesetzentwürfe und fügt hinzu, daß weiterhin noch die Große Anfrage der SPD Kulturarbeit im Ausland [Drucksache III/1555 v. 19. 1. 1960] und Steueränderung 1960 [Reg.-Entwurf f. Steueränderungsgesetz 1960: Drucksache III/1811 v. 30. 4. 1960} in der Plenarwoche beraten werden müssen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN008" type="comment"><p>Große SPD-Anfrage: Sten. Ber., 119. Sitzung am 23. 6. 1960, S. 6869–6895; Steueränderungsgesetz: 115. Sitzung am 19. 5. 1960, S. 6519–6548.</p></note></seg> Zu den einzelnen Vorlagen beschließt der Vorstand folgendes<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN009" type="comment"><p>Vgl. in den Sten. Berichten Kriegsopferversorgung: 114. Sitzung am 18. 5. 1960, S. 6492–6504; Bundesbaugesetz ebd., S. 6413–6442 und 116. Sitzung am 20. 5. 1960, S. 6634–6655; Abbau der Wohnungszwangswirtschaft: 117. Sitzung am 24. 5. 1960, S. 6697–6776; Jugendarbeitsschutzgesetz: 115. Sitzung am 19. 5. 1960, S. 6558–6613 und 116. Sitzung am 20. 5. 1960, S. 6623–6634; Handwerkerversicherung: 121. Sitzung am 29. 6. 1960, S. 6965–6995; Wehrpflichtnovelle: 120. Sitzung am 24. 6. 1960, S. 6931–6942; 6. Strafrechtsänderungsgesetz: 116. Sitzung am 20. 5. 1960, S. 6667; Rundfunkgesetz: 121. Sitzung am 29. 6. 1960, S. 7001–7029.</p></note></seg>:</p>
-				<p>Kriegsopferversorgung: unstrittig. [Reg.-Entwurf f. Erstes Neuordnungsgesetz: Drucksache III/1825 v. 6. 5. 1960]</p>
-				<p>Bundesbaugesetz und Abbau der Wohnungszwangswirtschaft: [Reg.-Entwurf: Drucksache III/1794 v. 12. 4. 1960 und Reg.-Entwurf: Drucksache III/1850 v. 13. 5. 1960]</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> gibt bekannt, daß die SPD-Fraktion an den Präsidenten einen Brief gerichtet habe, worin sie fordere, daß ihrer Fraktion für die Beratung des sozialen Mietrechts vor der 2. und 3. Lesung im Plenum genügend Zeit gegeben wird. Nach eingehender Diskussion im Vorstand, in der insbesondere die Frage beraten wird, ob eine Änderung der BGB-Bestimmungen erfolgen soll, beschließt der Vorstand, daß die 2. und 3. Lesung der Gesetzentwürfe auf alle Fälle in den Plenarsitzungen 18. bis 20. Mai erfolgen soll.</p>
-				<p>Jugendarbeitsschutzgesetz: [SPD-Entwurf: Drucksache III/31 (neu) v. 10. 12. 1957; Reg.-Entwurf: III/317 v. 3. 4. 1958]</p>
-				<p>Vorstand ist mit der 2. und 3. Lesung einverstanden, obwohl noch einige strittige Punkte in der Fraktion vorher geklärt werden müssen.</p>
-				<p>Handwerkerversicherung: [FDP-Entwurf: Drucksache III/634 v. 7. 11. 1958; CDU/CSU-Entwurf: Drucksache III/993 v. 10. 4. 1959]</p>
-				<p>Auf Vorschlag von <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> ist der Vorstand damit einverstanden, daß die 2. und 3. Lesung des Gesetzentwurfs erst in der Woche nach Pfingsten erfolgen soll.</p>
-				<p>Änderung Wehrpflichtgesetz: [Reg.-Entwurf: Drucksache III/1423 v. 24. 11. 1959]</p>
-				<p>Nach eingehender Beratung, in der Dr. <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> und Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> zu den strittigen Problemen des Entwurfs Stellung nehmen, beschließt der Vorstand wegen der Fülle des Arbeitsstoffes, die Verabschiedung den Entwurfs erst nach Pfingsten, jedenfalls aber noch vor der Sommerpause erfolgen zu lassen.</p>
-				<p>Sechstes Strafrechtsänderungsgesetz: [Schriftl. Ber. des Rechtsausschusses: Drucksache III/1746 v. 22. 3. 1960]</p>
-				<p>Vorstand ist mit der Verabschiedung einverstanden.</p>
-				<p>Rundfunkgesetz: [Reg.-Entwurf: Drucksache III/1434 v. 26. 11. 1959]</p>
-				<p>Im Hinblick darauf, daß die beteiligten Ausschüsse z.Zt. das Gesetz noch beraten, und wegen der dienstlichen Abwesenheit des Innenministers Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> beschließt der Vorstand, die Verabschiedung des Entwurfs erst nach Pfingsten durchzuführen.</p>
-				<p>3. Gesetzentwurf über die Liquidation der Deutschen Reichsbank und der Deutschen Golddiskontbank [Reg.-Entwurf: Drucksache III/1311 v. 21. 10. 1959; SPD-Gesetzentwurf: Drucksache III/1312 v. 22. 10. 1959]</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> gibt dem Vorstand davon Kenntnis, daß, wie Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> in einem Brief an die Fraktion mitteilte, die von Kollegen der Fraktion seinerzeit vorgetragenen Bedenken inzwischen ausgeräumt seien.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN010" type="comment"><p>Zweck des Schreibens war wahrscheinlich, der Vorlage bei der dritten Lesung zu einer Mehrheit zu verhelfen, die dann aber nicht zustande kam. Siehe Nr. 203 v. 20. 5. 1960 (<name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name>).</p></note></seg> Nach kurzer Diskussion ist der Vorstand der Meinung, den Gesetzentwurf in 2. und 3. Lesung vorzunehmen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN011" type="comment"><p>Vgl. Sten. Ber., 115. Sitzung am 19. 5. 1960, S. 6548–6558.</p></note></seg> Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> soll bei der Beratung in der Fraktion am Dienstag, 17. 5. 1960, teilnehmen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN012" type="comment"><p>Siehe Nr. 202 (kein Redebeitrag <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhards</name>, aber Billigung der Gesetzesvorlage).</p></note></seg></p>
-				<p>4. Krankenversicherungsneuregelungsgesetz [Reg.-Entwurf: Drucksache III/1540 v. 14. 1. 1960]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gibt bekannt, daß in der Fraktionssitzung am Dienstag keine konkreten Beschlüsse gefaßt werden sollen. Es sollen lediglich die strittigen Punkte zuerst einmal in der Fraktion beraten werden.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN013" type="comment"><p>Siehe Nr. 200 v. 10. 5. 1960.</p></note></seg></p>
-				<p>5. Kontrollausschuß Bundesausgleichsamt</p>
-				<p>Der Vorstand ist mit folgender Neubesetzung einverstanden:</p>
-				<p>Für den verstorbenen <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>
-					<name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name> als ordentliches Mitglied, für <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name> Herrn <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name> als stellv. Mitglied.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> erklärt sich bereit, seinen stellvertretenden Sitz abzugeben, damit der Weg frei gemacht werde für den Kollegen <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name>.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN014" type="comment"><p>Vgl. Sten. Ber., 123. Sitzung am 1. 7. 1960, S. 7152.</p></note></seg></p>
-				<p>6. Weinmarktordnung [Gesetzentwurf zur Überleitung des dt. Weinbaues in die EWG der Abg. <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> u. Gen.: Drucksache III/1870 – zu 1870 v. 12.5. und 5. 7. 1960]</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> und Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> setzen den Vorstand davon in Kenntnis, daß in den letzten Wochen interfraktionelle Besprechungen des Weinbauverbandes mit den großen Fraktionen durchgeführt worden seien mit dem Ziel, den Initiativentwurf betr. Weinbauordnung im Bundestag einzubringen. Die SPD ist nun mit einer Kleinen Anfrage vorgeprellt. [Drucksache III/1824 v. 5. 5. 1960] Der Vorstand beschließt, daß nunmehr die Fraktion von sich aus allein einen entsprechenden Gesetzentwurf einbringt.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN015" type="comment"><p>Vgl. Sten. Ber., 118. Sitzung am 22. 6. 1960, S. 6865.</p></note></seg></p>
-				<p>7. Dauer der Plenarsitzung Freitag, 20. 5. 1960</p>
-				<p>Auf Vorschlag von <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name>, der darauf hinweist, daß die zur Beratung anstehenden Gesetzentwürfe in den Plenartagen 18.–20.5. kaum erledigt werden könnten, daß ferner nach den Pfingstferien nur zwei Tagungswochen zur Verfügung stehen, in denen unter anderem das Rundfunkgesetz, das Wehrpflichtgesetz, 1. Lesung Ziviler Notstand, 2. und 3. Lesung Häftlingshilfegesetz, 2. und 3. Lesung Steueränderungsgesetz 1960 und weitere wichtige Vorlagen, darunter, wie bereits vom Präsidenten mitgeteilt, 27 Gesetzentwürfe verabschiedet werden müssen, beschließt der Vorstand, daß im Ältestenrat beantragt werden soll, die Plenarsitzung am Freitag, 20.5., ganztägig festzusetzen.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN016" type="comment"><p>Sitzungsdauer: 9.02 Uhr–15.00 Uhr. Vgl. Sten. Ber., 116. Sitzung, S. 6623–6670.</p></note></seg></p>
-				<p>8. Änderung Gewerbesteuergesetz [Keine Drucksache]</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> trägt den Wunsch der mittelständischen Kollegen vor, einen Initiativantrag zur Änderung des Gewerbesteuergesetzes einzubringen, in dem für gewerbliche Unternehmer ein Unternehmerfreibetrag eingeführt wird. Vorstand nimmt hiervon Kenntnis und überweist den Gegenstand dem zuständigen Arbeitskreis mit dem Ziel, daß der Fraktion ein Vorschlag unterbreitet wird.<seg type="note"><note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN017" type="comment"><p>Vgl. undatiertes handschriftliches Protokoll des AK III Nr. 34 nach dem 9.5. und vor dem 21. 6. 1960. Hintergrund: die Gewerbesteuer war in einem Jahr um 20 v. H. auf 1 Mrd. DM gestiegen (ACDP VIII-004-14/1). Zur erneuten Beratung über die Frage des Unternehmerfreibetrages siehe Nr. 230 v. 13. 12. 1960.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1960-05-09-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1503/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 9. Mai 1960</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>4 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1960-05-09">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="17:55:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Höcherl</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#Engelbrecht-GreveErnst_1953-10-06">Engelbrecht-Greve</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend Regierung:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1960-05-09-t1500_EP_SVP-1" corresp="#cdu-csu-03_1960-05-09-t1500_EP_div_SVP-1">A. TOP 1: Bericht zur Lage. – TOP 2: Plenum nächster Woche. – TOP 3: Gesetzentwurf über die Liquidation der Deutschen Reichsbank und der Deutschen Golddiskontbank. – TOP 4: Krankenversicherungsneuregelungsgesetz. – TOP 5: Kontrollausschuss Bundesausgleichsamt. – TOP 6: Weinmarktordnung. – TOP 7: Dauer der Plenarsitzung am Freitag, den 20. Mai 1960. – TOP 8: Änderung Gewerbesteuergesetz.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1960-05-09-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>a) Verlaufsprotokoll<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN001" type="comment">
+                     <p>Von dieser Vorstandssitzung sind sowohl das übliche Kurzprotokoll (masch. 2 S.) als auch ein Verlaufsprotokoll überliefert, von letzterem jedoch nur die erste Seite. Dementsprechend werden hier zu TOP 1 das Verlaufsprotokoll und zu TOP 2–8 das Kurzprotokoll abgedruckt. Das Verlaufsprotokoll trägt die Überschrift: »Protokoll der Vorstandssitzung der CDU/CSU-Fraktion vom 9. Mai 1960«.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>[1. Bericht zur Lage]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilte zu Beginn der Sitzung mit, daß in der Presse wiedergegebene Informationen, daß <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name> nicht Bundesvertriebenenminister werden könne<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN002" type="comment">
+                     <p>Anlaß war der Rücktritt von Bundesminister <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> am 4. 5. 1960. Zum Fall <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> siehe Nr. 172 v. 11. 1. 1960, TOP 1.</p>
+                  </note>
+               </seg>, nicht von ihm stammten. Er habe dem Bundeskanzler erklärt, daß die Stimmung der Fraktion eindeutig für <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name> sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name> erklärte zu diesen Informationen, daß sich der Vertriebenenverband überhaupt noch nicht mit dieser Frage befaßt habe. Im Vertriebenenverband bestehe lediglich der Wunsch, daß das Ministerium erhalten bleibe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> bedauerte, daß die Version aufgekommen sei, ein Sudetendeutscher könne nicht Vertriebenenminister werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilte mit, daß die Entscheidung über die Neubesetzung des Vertriebenenministeriums nicht vor der Gipfelkonferenz<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN003" type="comment">
+                     <p>Pariser Gipfelkonferenz v. 16./17. 5. 1960. Siehe AdG 1960, S. 8400–8407.</p>
+                  </note>
+               </seg> zu erwarten sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN004" type="comment">
+                     <p>Nachfolger: Hans-Joachim <name type="Person" role="Erwaehnung" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> (ab 27. 10. 1960). Vgl. Datenhandbuch I, S. 1034.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Vorstand erörterte dann die Nachfolge des verstorbenen stellvertretenden Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN005" type="comment">
+                     <p>Siehe Nr. 198 v. 3. 5. 1960.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> vertrat den Standpunkt, daß es ein evangelischer Abgeordneter sein müsse, der die Fraktionsarbeit aktiv unterstützen könne. Der Vorstand wurde von Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> aufgefordert, Vorschläge zu machen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN006" type="comment">
+                     <p>Nachfolger: Alfred <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> (ab 28. 6. 1960). Siehe Nr. 208.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Anschließend erörterte der Vorstand die Tagesordnungen der Plenarsitzungen.</p>
+            <p>[...]</p>
+            <p>b) Kurzprotokoll der Fraktionsvorstandssitzung vom 9. 5. 1960, TOP 2–8<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN007" type="comment">
+                     <p>Zum Wechsel vom Verlaufsprotokoll zum Kurzprotokoll siehe Anm. 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. Plenum nächster Woche [18.–20. 5. 1960]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> erläutert die in Punkt 2 der Tagesordnung enthaltenen Gesetzentwürfe und fügt hinzu, daß weiterhin noch die Große Anfrage der SPD Kulturarbeit im Ausland [Drucksache III/1555 v. 19. 1. 1960] und Steueränderung 1960 [Reg.-Entwurf f. Steueränderungsgesetz 1960: Drucksache III/1811 v. 30. 4. 1960} in der Plenarwoche beraten werden müssen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN008" type="comment">
+                     <p>Große SPD-Anfrage: Sten. Ber., 119. Sitzung am 23. 6. 1960, S. 6869–6895; Steueränderungsgesetz: 115. Sitzung am 19. 5. 1960, S. 6519–6548.</p>
+                  </note>
+               </seg> Zu den einzelnen Vorlagen beschließt der Vorstand folgendes<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN009" type="comment">
+                     <p>Vgl. in den Sten. Berichten Kriegsopferversorgung: 114. Sitzung am 18. 5. 1960, S. 6492–6504; Bundesbaugesetz ebd., S. 6413–6442 und 116. Sitzung am 20. 5. 1960, S. 6634–6655; Abbau der Wohnungszwangswirtschaft: 117. Sitzung am 24. 5. 1960, S. 6697–6776; Jugendarbeitsschutzgesetz: 115. Sitzung am 19. 5. 1960, S. 6558–6613 und 116. Sitzung am 20. 5. 1960, S. 6623–6634; Handwerkerversicherung: 121. Sitzung am 29. 6. 1960, S. 6965–6995; Wehrpflichtnovelle: 120. Sitzung am 24. 6. 1960, S. 6931–6942; 6. Strafrechtsänderungsgesetz: 116. Sitzung am 20. 5. 1960, S. 6667; Rundfunkgesetz: 121. Sitzung am 29. 6. 1960, S. 7001–7029.</p>
+                  </note>
+               </seg>:</p>
+            <p>Kriegsopferversorgung: unstrittig. [Reg.-Entwurf f. Erstes Neuordnungsgesetz: Drucksache III/1825 v. 6. 5. 1960]</p>
+            <p>Bundesbaugesetz und Abbau der Wohnungszwangswirtschaft: [Reg.-Entwurf: Drucksache III/1794 v. 12. 4. 1960 und Reg.-Entwurf: Drucksache III/1850 v. 13. 5. 1960]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> gibt bekannt, daß die SPD-Fraktion an den Präsidenten einen Brief gerichtet habe, worin sie fordere, daß ihrer Fraktion für die Beratung des sozialen Mietrechts vor der 2. und 3. Lesung im Plenum genügend Zeit gegeben wird. Nach eingehender Diskussion im Vorstand, in der insbesondere die Frage beraten wird, ob eine Änderung der BGB-Bestimmungen erfolgen soll, beschließt der Vorstand, daß die 2. und 3. Lesung der Gesetzentwürfe auf alle Fälle in den Plenarsitzungen 18. bis 20. Mai erfolgen soll.</p>
+            <p>Jugendarbeitsschutzgesetz: [SPD-Entwurf: Drucksache III/31 (neu) v. 10. 12. 1957; Reg.-Entwurf: III/317 v. 3. 4. 1958]</p>
+            <p>Vorstand ist mit der 2. und 3. Lesung einverstanden, obwohl noch einige strittige Punkte in der Fraktion vorher geklärt werden müssen.</p>
+            <p>Handwerkerversicherung: [FDP-Entwurf: Drucksache III/634 v. 7. 11. 1958; CDU/CSU-Entwurf: Drucksache III/993 v. 10. 4. 1959]</p>
+            <p>Auf Vorschlag von <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> ist der Vorstand damit einverstanden, daß die 2. und 3. Lesung des Gesetzentwurfs erst in der Woche nach Pfingsten erfolgen soll.</p>
+            <p>Änderung Wehrpflichtgesetz: [Reg.-Entwurf: Drucksache III/1423 v. 24. 11. 1959]</p>
+            <p>Nach eingehender Beratung, in der Dr. <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> und Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> zu den strittigen Problemen des Entwurfs Stellung nehmen, beschließt der Vorstand wegen der Fülle des Arbeitsstoffes, die Verabschiedung den Entwurfs erst nach Pfingsten, jedenfalls aber noch vor der Sommerpause erfolgen zu lassen.</p>
+            <p>Sechstes Strafrechtsänderungsgesetz: [Schriftl. Ber. des Rechtsausschusses: Drucksache III/1746 v. 22. 3. 1960]</p>
+            <p>Vorstand ist mit der Verabschiedung einverstanden.</p>
+            <p>Rundfunkgesetz: [Reg.-Entwurf: Drucksache III/1434 v. 26. 11. 1959]</p>
+            <p>Im Hinblick darauf, daß die beteiligten Ausschüsse z.Zt. das Gesetz noch beraten, und wegen der dienstlichen Abwesenheit des Innenministers Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> beschließt der Vorstand, die Verabschiedung des Entwurfs erst nach Pfingsten durchzuführen.</p>
+            <p>3. Gesetzentwurf über die Liquidation der Deutschen Reichsbank und der Deutschen Golddiskontbank [Reg.-Entwurf: Drucksache III/1311 v. 21. 10. 1959; SPD-Gesetzentwurf: Drucksache III/1312 v. 22. 10. 1959]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> gibt dem Vorstand davon Kenntnis, daß, wie Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> in einem Brief an die Fraktion mitteilte, die von Kollegen der Fraktion seinerzeit vorgetragenen Bedenken inzwischen ausgeräumt seien.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN010" type="comment">
+                     <p>Zweck des Schreibens war wahrscheinlich, der Vorlage bei der dritten Lesung zu einer Mehrheit zu verhelfen, die dann aber nicht zustande kam. Siehe Nr. 203 v. 20. 5. 1960 (<name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name>).</p>
+                  </note>
+               </seg> Nach kurzer Diskussion ist der Vorstand der Meinung, den Gesetzentwurf in 2. und 3. Lesung vorzunehmen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN011" type="comment">
+                     <p>Vgl. Sten. Ber., 115. Sitzung am 19. 5. 1960, S. 6548–6558.</p>
+                  </note>
+               </seg> Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> soll bei der Beratung in der Fraktion am Dienstag, 17. 5. 1960, teilnehmen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN012" type="comment">
+                     <p>Siehe Nr. 202 (kein Redebeitrag <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhards</name>, aber Billigung der Gesetzesvorlage).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. Krankenversicherungsneuregelungsgesetz [Reg.-Entwurf: Drucksache III/1540 v. 14. 1. 1960]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gibt bekannt, daß in der Fraktionssitzung am Dienstag keine konkreten Beschlüsse gefaßt werden sollen. Es sollen lediglich die strittigen Punkte zuerst einmal in der Fraktion beraten werden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN013" type="comment">
+                     <p>Siehe Nr. 200 v. 10. 5. 1960.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. Kontrollausschuß Bundesausgleichsamt</p>
+            <p>Der Vorstand ist mit folgender Neubesetzung einverstanden:</p>
+            <p>Für den verstorbenen <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>
+               <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name> als ordentliches Mitglied, für <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name> Herrn <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name> als stellv. Mitglied.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> erklärt sich bereit, seinen stellvertretenden Sitz abzugeben, damit der Weg frei gemacht werde für den Kollegen <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN014" type="comment">
+                     <p>Vgl. Sten. Ber., 123. Sitzung am 1. 7. 1960, S. 7152.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. Weinmarktordnung [Gesetzentwurf zur Überleitung des dt. Weinbaues in die EWG der Abg. <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> u. Gen.: Drucksache III/1870 – zu 1870 v. 12.5. und 5. 7. 1960]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> und Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> setzen den Vorstand davon in Kenntnis, daß in den letzten Wochen interfraktionelle Besprechungen des Weinbauverbandes mit den großen Fraktionen durchgeführt worden seien mit dem Ziel, den Initiativentwurf betr. Weinbauordnung im Bundestag einzubringen. Die SPD ist nun mit einer Kleinen Anfrage vorgeprellt. [Drucksache III/1824 v. 5. 5. 1960] Der Vorstand beschließt, daß nunmehr die Fraktion von sich aus allein einen entsprechenden Gesetzentwurf einbringt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN015" type="comment">
+                     <p>Vgl. Sten. Ber., 118. Sitzung am 22. 6. 1960, S. 6865.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>7. Dauer der Plenarsitzung Freitag, 20. 5. 1960</p>
+            <p>Auf Vorschlag von <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name>, der darauf hinweist, daß die zur Beratung anstehenden Gesetzentwürfe in den Plenartagen 18.–20.5. kaum erledigt werden könnten, daß ferner nach den Pfingstferien nur zwei Tagungswochen zur Verfügung stehen, in denen unter anderem das Rundfunkgesetz, das Wehrpflichtgesetz, 1. Lesung Ziviler Notstand, 2. und 3. Lesung Häftlingshilfegesetz, 2. und 3. Lesung Steueränderungsgesetz 1960 und weitere wichtige Vorlagen, darunter, wie bereits vom Präsidenten mitgeteilt, 27 Gesetzentwürfe verabschiedet werden müssen, beschließt der Vorstand, daß im Ältestenrat beantragt werden soll, die Plenarsitzung am Freitag, 20.5., ganztägig festzusetzen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN016" type="comment">
+                     <p>Sitzungsdauer: 9.02 Uhr–15.00 Uhr. Vgl. Sten. Ber., 116. Sitzung, S. 6623–6670.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. Änderung Gewerbesteuergesetz [Keine Drucksache]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> trägt den Wunsch der mittelständischen Kollegen vor, einen Initiativantrag zur Änderung des Gewerbesteuergesetzes einzubringen, in dem für gewerbliche Unternehmer ein Unternehmerfreibetrag eingeführt wird. Vorstand nimmt hiervon Kenntnis und überweist den Gegenstand dem zuständigen Arbeitskreis mit dem Ziel, daß der Fraktion ein Vorschlag unterbreitet wird.<seg type="note">
+                  <note xml:id="cdu-csu-03_1960-05-09-t1500_EP_FN017" type="comment">
+                     <p>Vgl. undatiertes handschriftliches Protokoll des AK III Nr. 34 nach dem 9.5. und vor dem 21. 6. 1960. Hintergrund: die Gewerbesteuer war in einem Jahr um 20 v. H. auf 1 Mrd. DM gestiegen (ACDP VIII-004-14/1). Zur erneuten Beratung über die Frage des Unternehmerfreibetrages siehe Nr. 230 v. 13. 12. 1960.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

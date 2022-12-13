@@ -1,284 +1,401 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-10-28-t1445_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 28. Oktober 1958</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>3 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1958-10-28"><time type="start" when="14:45:00"/><time type="end" when="18:45:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#PferdmengesRobert_1950-01-12"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1958-10-28-t1445_EP_SVP-1" corresp="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-1">A. Nachrufe, Bericht aus dem Ältestenrat.</item>
-					<item xml:id="cdu-csu-03_1958-10-28-t1445_EP_SVP-2" corresp="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-2">B. Wahl des Fraktionsvorsitzenden und der übrigen Führungsorgane der Fraktion.</item>
-					<item xml:id="cdu-csu-03_1958-10-28-t1445_EP_SVP-3" corresp="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-3">C. Aussprache über das Lebensmittelgesetz.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> widmet dem verstorbenen Präsidenten des Bundesverfassungsgerichtes, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#WintrichJosefMarquard">Wintrich</name> und dem verstorbenen früheren Präsidenten des Deutschen Bundestages, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#KoehlerErich_1949-09-07">Köhler</name> einen Nachruf. Die Fraktion ehrt die Toten in stillem Gedenken.</p>
-				<p>Sodann begrüßt der Fraktionsvorsitzende den neu eingetretenen Abgeordneten Dr. <name type="Person" role="Erwaehnung" ref="#SchwoererHermann_1958-10-21">Schwörer</name> als Nachfolger des verstorbenen Abgeordneten Dr. <name type="Person" role="Erwaehnung" ref="#WolffHerbert_1957-10-15">Wolff</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> erstattet einen Bericht über den Ältestenrat<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN001" type="comment"><p>Vgl. 23. Sitzung des Ältestenrates v. 28.10. 1958, 12.30 Uhr (Parl. Arch., Ältestenrat).</p></note></seg> und über den Ablauf der nächsten Arbeitswoche.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Sodann wird in die Wahl des Fraktionsvorsitzenden und der übrigen Führungsorgane der Fraktion eingetreten.<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN002" type="comment"><p>»Die Fraktion wählt ihren Vorsitzenden nach einer Bundestagsneuwahl für ein Jahr. Die zweite Wahl gilt für die weiteren drei Jahre.« Vgl. Krone, Tgb. 1945–1961, zum 28. 10. 1958, S. 316.</p></note></seg> Dr. <name type="Person" role="Sprecher" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name> übernimmt den Vorsitz. Als Wahlausschuß werden mit Zustimmung der Fraktion die Abg. <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#NiggemeyerMaria_1949-09-07">Niggemeyer</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name> und <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> bestellt. Die Wahl erfolgt mit verdeckten Stimmzetteln in einzelnen Wahlgängen. Sie erbringt folgendes Ergebnis:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Fraktionsvorsitzender:</cell>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name><seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN003" type="comment"><p>»Neun Stimmen haben sich bei meiner Wiederwahl enthalten; gegen mich stimmte niemand.« Vgl. ebd.</p></note></seg></cell>
-						<cell/>
-					</row>
-					<row>
-						<cell>Stellv. Fraktionsvorsitzender</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name></cell>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell><name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name></cell>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell><name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name></cell>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name></cell>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell><name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name></cell>
-						<cell/>
-					</row>
-					<row>
-						<cell>Arbeitskreisvorsitzende</cell>
-						<cell>AK I</cell>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>AK II</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name></cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>AK III</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name></cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>AK IV</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name></cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>AK V</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name></cell>
-					</row>
-				</table>
-				<p>Sechzehn von der Fraktion zu wählende Mitglieder des Vorstandes:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name></cell>
-						<cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln)</cell>
-					</row>
-					<row>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name></cell>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name></cell>
-					</row>
-					<row>
-						<cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name></cell>
-					</row>
-					<row>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name></cell>
-					</row>
-				</table>
-				<p>Während des Wahlganges werden einzelne Themen der Tagesordnung weiter beraten. Dabei fragt <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) an, ob die vor einem Jahr gegebene Anregung geprüft worden sei, inwieweit die Mitgliedschaft im Vorstand und in den europäischen Gremien sich miteinander vertrage.<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN004" type="comment"><p>Siehe zu dieser Streitfrage Nr.43 v. 25.2. 1958, TOP 6.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) erwidert darauf, dieses Thema werde erörtert werden im Zusammenhang mit der Ausschußbesetzung.</p>
-				<p><name type="Person" role="Sprecher" ref="#CillienAdolf_1953-10-06">Cillien</name> teilt aus den vorbereitenden Besprechungen zur Vorstandswahl mit, daß vorgeschlagen werde, den Abg. <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> zum kooptierten Mitglied des Vorstandes zu machen, da der Abg. <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> nun stellvertretender Vorsitzender werden solle. Anstelle des ausgeschiedenen Vorsitzenden des Vermittlungsausschusses sei der Abg. Dr. Otto <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> als dessen Nachfolger vorgesehen. Den Vorsitz im Ausschuß für Arbeit solle Abg. <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> übernehmen.</p>
-				<p>Diese Vorschläge werden von der Fraktion gebilligt.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Zum Lebensmittelgesetz<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN005" type="comment"><p>Siehe Nr.81 v. 27.10. 1958, TOP 6.</p></note></seg> berichtet der Vorsitzende des Arbeitskreises II, <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, daß es nicht gelungen sei, in den Arbeitskreisberatungen, die außerdem unter Zeitdruck gelitten hätten, zu einer Übereinstimmung zu gelangen. Es empfehle sich, so wesentliche Gesetze doch in eine längere Fraktionsberatung zu nehmen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name> trägt kurz den Inhalt des Gesetzes vor und empfiehlt die Annahme der Ausschußvorlage und die Annahme einiger eigener Änderungsanträge betreffend Kennzeichnung von Bestrahlung, von Fremdstoffresten, gewisse Behandlungsmethoden bei lebendem Geflügel und die Ausnahmen vom Gesetz.<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN006" type="comment"><p>Vgl. die Änderungsanträge der CDU/CSU-Fraktion (Umdrucke 170, 173 und 174) in: Sten. Ber., 47. Sitzung am 29.10. 1958, S. 2680ff.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> teilt mit, daß die Mehrheit des Arbeitskreises hinsichtlich der Kennzeichnungspflicht die Wiederherstellung der Regierungsvorlage empfehle und mit großer Mehrheit die vorgeschlagene Entschließung abgelehnt habe.<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN007" type="comment"><p>Die Entschließung hatte zum Ziel eine Gesamtreform des Lebensmittelrechts, eine schnelle Ahndung von Verstößen gegen das Lebensmittelgesetz, die Nichtanwendung von §153 StPO und die Vorlage eines Erfahrungsberichtes über die Importkontrolle der durch das Lebensmittelgesetz erfaßten Waren: Drucksache III/553 v. 8.10. 1958. Zur Annahme mit Änderungen vgl. Sten. Ber., 48. Sitzung am 6.11. 1958, S. 2715.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> empfiehlt, wenigstens den Abs.3 b der Entschließung<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN008" type="comment"><p>Ziffer 3 B: Empfehlung, im Interesse einer schnellen Ahndung von Verstößen den §153 StPO (Voraussetzungen für die Einstellung des Hauptverfahrens) tunlichst nicht anzuwenden.</p></note></seg> zu streichen und wird darin unterstützt von Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>.</p>
-				<p>Die Fraktion beschließt die Streichung der Ziff.3. Als Sprecher zu diesem Punkt wird Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> benannt.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> (Wasserburg) tritt dafür ein, entsprechend der Empfehlung des Arbeitskreises in den Strafvorschriften das Bußgeldverfahren wieder einzuführen und wird dabei von <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BesoldAnton_1949-09-07">Besold</name> und Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> unterstützt, welch letzterer dazu bemerkt, daß diese Frage allerdings nicht aus dem Handgelenk geregelt werden könne.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#EvenBert_1957-10-15">Even</name> (Düsseldorf) und Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> wenden sich aus rechtssystematischen und rechtspolitischen Gründen gegen die Aufnahme des Bußgeldverfahrens.</p>
-				<p>Es entwickelt sich dann eine Debatte über die Frage, ob die 2. Lesung überhaupt durchgeführt werden soll oder ob man nur die 2. Lesung durchführen und die 3. Lesung hinausschieben soll, an der sich <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name>, Frau <name type="Person" role="Erwaehnung" ref="#WelterEmmi_1954-01-04">Welter</name>, <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> und Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> beteiligen, die mit dem Ergebnis abschließt, daß die 2. Lesung durchgeführt, die 3. Lesung jedoch verschoben werden soll.<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN009" type="comment"><p>Vgl. 2. Beratung am 29.10. 1958 und 3. Beratung am 6.11. 1958, in: Sten. Ber., 47. Sitzung, S. 2628ff.; 48. Sitzung, S. 2714f.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> warnt nach dieser Abstimmung davor, in die weitere Erörterung des Gesetzes einzutreten. Es sei außerordentlich schwierig, die hier zu behandelnden Probleme befriedigend zu lösen, und es sei ungut, wenn in der Zeitung zu lesen sei, daß die CDU/CSU-Fraktion das Gesetz sabotieren wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> widerspricht dieser Argumentation mit der Ausführung, die Austragung von Meinungsverschiedenheiten müsse möglich sein, weil es sonst so weit komme, daß durch öffentliche Meinungsfeldzüge jede Diskussion abgewürgt werden könne. Die Folge sei, daß die Arbeit der Fraktion selbst ausgehöhlt und völlig in kleine Arbeitsgremien verlagert werde, was kein guter Stil sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> vertritt ebenfalls den Standpunkt, daß Kontroversen in der Fraktion auszutragen seien, die ja auch über die schwierigen Probleme informiert werden müsse.</p>
-				<p>Es entsteht dann eine Diskussion um die Kennzeichnungspflicht, bei der ein Teil der Redner die Wiederherstellung der Regierungsvorlage mit der Begründung fordert, daß das allgemeine Verbot der Beimischung von Fremdstoffen eine besondere Kennzeichnung unnötig mache, während die andere Gruppe auf der strikten Durchführung der Kennzeichnungspflicht als einem Essentiale des Gesetzes besteht. An dieser Debatte beteiligen sich MinDir. <name type="Person" role="Erwaehnung" ref="#ForschbachEdmund">Forschbach</name> (BMI), die Abg. <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Frau <name type="Person" role="Erwaehnung" ref="#WelterEmmi_1954-01-04">Welter</name>, Dr. Bert <name type="Person" role="Erwaehnung" ref="#EvenBert_1957-10-15">Even</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name>. Die Wiederherstellung der Regierungsvorlage wird schließlich gegen eine schwache Minderheit angenommen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> fragt unter Bezugnahme auf einen früher gefaßten Beschluß, was denn dieses Gesetz an Kosten bedeute.</p>
-				<p>MinDir. <name type="Person" role="Sprecher" ref="#ForschbachEdmund">Forschbach</name> (BMI) erwidert, daß unmittelbar dem Bund keine Kosten entständen. Die Durchführung des Gesetzes würde bei den Gemeinden und Ländern liegen und dort eine erhebliche Vermehrung der Nahrungsmitteluntersuchungsämter erforderlich machen, so daß die Kosten gegenüber dem bisherigen Zustand wohl verdoppelt würden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name> referiert kurz über Inhalt und Bedeutung der Rußland-Verträge.<seg type="note"><note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN010" type="comment"><p>Siehe Nr.81 v. 27.10. 1958, TOP 10.</p></note></seg> – Eine Aussprache zu diesem Thema findet nicht statt.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-10-28-t1445_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 28. Oktober 1958</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>3 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1958-10-28">
+               <time type="start" when="14:45:00"/>
+               <time type="end" when="18:45:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <name type="Person" role="Sitzungsleitung" ref="#PferdmengesRobert_1950-01-12"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1958-10-28-t1445_EP_SVP-1" corresp="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-1">A. Nachrufe, Bericht aus dem Ältestenrat.</item>
+               <item xml:id="cdu-csu-03_1958-10-28-t1445_EP_SVP-2" corresp="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-2">B. Wahl des Fraktionsvorsitzenden und der übrigen Führungsorgane der Fraktion.</item>
+               <item xml:id="cdu-csu-03_1958-10-28-t1445_EP_SVP-3" corresp="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-3">C. Aussprache über das Lebensmittelgesetz.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> widmet dem verstorbenen Präsidenten des Bundesverfassungsgerichtes, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#WintrichJosefMarquard">Wintrich</name> und dem verstorbenen früheren Präsidenten des Deutschen Bundestages, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#KoehlerErich_1949-09-07">Köhler</name> einen Nachruf. Die Fraktion ehrt die Toten in stillem Gedenken.</p>
+            <p>Sodann begrüßt der Fraktionsvorsitzende den neu eingetretenen Abgeordneten Dr. <name type="Person" role="Erwaehnung" ref="#SchwoererHermann_1958-10-21">Schwörer</name> als Nachfolger des verstorbenen Abgeordneten Dr. <name type="Person" role="Erwaehnung" ref="#WolffHerbert_1957-10-15">Wolff</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> erstattet einen Bericht über den Ältestenrat<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN001" type="comment">
+                     <p>Vgl. 23. Sitzung des Ältestenrates v. 28.10. 1958, 12.30 Uhr (Parl. Arch., Ältestenrat).</p>
+                  </note>
+               </seg> und über den Ablauf der nächsten Arbeitswoche.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Sodann wird in die Wahl des Fraktionsvorsitzenden und der übrigen Führungsorgane der Fraktion eingetreten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN002" type="comment">
+                     <p>»Die Fraktion wählt ihren Vorsitzenden nach einer Bundestagsneuwahl für ein Jahr. Die zweite Wahl gilt für die weiteren drei Jahre.« Vgl. Krone, Tgb. 1945–1961, zum 28. 10. 1958, S. 316.</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Sprecher" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name> übernimmt den Vorsitz. Als Wahlausschuß werden mit Zustimmung der Fraktion die Abg. <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#NiggemeyerMaria_1949-09-07">Niggemeyer</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name> und <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> bestellt. Die Wahl erfolgt mit verdeckten Stimmzetteln in einzelnen Wahlgängen. Sie erbringt folgendes Ergebnis:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Fraktionsvorsitzender:</cell>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN003" type="comment">
+                           <p>»Neun Stimmen haben sich bei meiner Wiederwahl enthalten; gegen mich stimmte niemand.« Vgl. ebd.</p>
+                        </note>
+                     </seg>
+                  </cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>Stellv. Fraktionsvorsitzender</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>
+                  </cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>
+                  </cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>
+                  </cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>
+                  </cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>
+                  </cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>Arbeitskreisvorsitzende</cell>
+                  <cell>AK I</cell>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>AK II</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>AK III</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>AK IV</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>AK V</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>
+                  </cell>
+               </row>
+            </table>
+            <p>Sechzehn von der Fraktion zu wählende Mitglieder des Vorstandes:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>
+                  </cell>
+                  <cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln)</cell>
+               </row>
+               <row>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>
+                  </cell>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>
+                  </cell>
+               </row>
+            </table>
+            <p>Während des Wahlganges werden einzelne Themen der Tagesordnung weiter beraten. Dabei fragt <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) an, ob die vor einem Jahr gegebene Anregung geprüft worden sei, inwieweit die Mitgliedschaft im Vorstand und in den europäischen Gremien sich miteinander vertrage.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN004" type="comment">
+                     <p>Siehe zu dieser Streitfrage Nr.43 v. 25.2. 1958, TOP 6.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) erwidert darauf, dieses Thema werde erörtert werden im Zusammenhang mit der Ausschußbesetzung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#CillienAdolf_1953-10-06">Cillien</name> teilt aus den vorbereitenden Besprechungen zur Vorstandswahl mit, daß vorgeschlagen werde, den Abg. <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> zum kooptierten Mitglied des Vorstandes zu machen, da der Abg. <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> nun stellvertretender Vorsitzender werden solle. Anstelle des ausgeschiedenen Vorsitzenden des Vermittlungsausschusses sei der Abg. Dr. Otto <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> als dessen Nachfolger vorgesehen. Den Vorsitz im Ausschuß für Arbeit solle Abg. <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> übernehmen.</p>
+            <p>Diese Vorschläge werden von der Fraktion gebilligt.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-10-28-t1445_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Zum Lebensmittelgesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN005" type="comment">
+                     <p>Siehe Nr.81 v. 27.10. 1958, TOP 6.</p>
+                  </note>
+               </seg> berichtet der Vorsitzende des Arbeitskreises II, <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, daß es nicht gelungen sei, in den Arbeitskreisberatungen, die außerdem unter Zeitdruck gelitten hätten, zu einer Übereinstimmung zu gelangen. Es empfehle sich, so wesentliche Gesetze doch in eine längere Fraktionsberatung zu nehmen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name> trägt kurz den Inhalt des Gesetzes vor und empfiehlt die Annahme der Ausschußvorlage und die Annahme einiger eigener Änderungsanträge betreffend Kennzeichnung von Bestrahlung, von Fremdstoffresten, gewisse Behandlungsmethoden bei lebendem Geflügel und die Ausnahmen vom Gesetz.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN006" type="comment">
+                     <p>Vgl. die Änderungsanträge der CDU/CSU-Fraktion (Umdrucke 170, 173 und 174) in: Sten. Ber., 47. Sitzung am 29.10. 1958, S. 2680ff.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> teilt mit, daß die Mehrheit des Arbeitskreises hinsichtlich der Kennzeichnungspflicht die Wiederherstellung der Regierungsvorlage empfehle und mit großer Mehrheit die vorgeschlagene Entschließung abgelehnt habe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN007" type="comment">
+                     <p>Die Entschließung hatte zum Ziel eine Gesamtreform des Lebensmittelrechts, eine schnelle Ahndung von Verstößen gegen das Lebensmittelgesetz, die Nichtanwendung von §153 StPO und die Vorlage eines Erfahrungsberichtes über die Importkontrolle der durch das Lebensmittelgesetz erfaßten Waren: Drucksache III/553 v. 8.10. 1958. Zur Annahme mit Änderungen vgl. Sten. Ber., 48. Sitzung am 6.11. 1958, S. 2715.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> empfiehlt, wenigstens den Abs.3 b der Entschließung<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN008" type="comment">
+                     <p>Ziffer 3 B: Empfehlung, im Interesse einer schnellen Ahndung von Verstößen den §153 StPO (Voraussetzungen für die Einstellung des Hauptverfahrens) tunlichst nicht anzuwenden.</p>
+                  </note>
+               </seg> zu streichen und wird darin unterstützt von Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>.</p>
+            <p>Die Fraktion beschließt die Streichung der Ziff.3. Als Sprecher zu diesem Punkt wird Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> benannt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> (Wasserburg) tritt dafür ein, entsprechend der Empfehlung des Arbeitskreises in den Strafvorschriften das Bußgeldverfahren wieder einzuführen und wird dabei von <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BesoldAnton_1949-09-07">Besold</name> und Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> unterstützt, welch letzterer dazu bemerkt, daß diese Frage allerdings nicht aus dem Handgelenk geregelt werden könne.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#EvenBert_1957-10-15">Even</name> (Düsseldorf) und Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> wenden sich aus rechtssystematischen und rechtspolitischen Gründen gegen die Aufnahme des Bußgeldverfahrens.</p>
+            <p>Es entwickelt sich dann eine Debatte über die Frage, ob die 2. Lesung überhaupt durchgeführt werden soll oder ob man nur die 2. Lesung durchführen und die 3. Lesung hinausschieben soll, an der sich <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name>, Frau <name type="Person" role="Erwaehnung" ref="#WelterEmmi_1954-01-04">Welter</name>, <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> und Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> beteiligen, die mit dem Ergebnis abschließt, daß die 2. Lesung durchgeführt, die 3. Lesung jedoch verschoben werden soll.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN009" type="comment">
+                     <p>Vgl. 2. Beratung am 29.10. 1958 und 3. Beratung am 6.11. 1958, in: Sten. Ber., 47. Sitzung, S. 2628ff.; 48. Sitzung, S. 2714f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> warnt nach dieser Abstimmung davor, in die weitere Erörterung des Gesetzes einzutreten. Es sei außerordentlich schwierig, die hier zu behandelnden Probleme befriedigend zu lösen, und es sei ungut, wenn in der Zeitung zu lesen sei, daß die CDU/CSU-Fraktion das Gesetz sabotieren wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> widerspricht dieser Argumentation mit der Ausführung, die Austragung von Meinungsverschiedenheiten müsse möglich sein, weil es sonst so weit komme, daß durch öffentliche Meinungsfeldzüge jede Diskussion abgewürgt werden könne. Die Folge sei, daß die Arbeit der Fraktion selbst ausgehöhlt und völlig in kleine Arbeitsgremien verlagert werde, was kein guter Stil sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> vertritt ebenfalls den Standpunkt, daß Kontroversen in der Fraktion auszutragen seien, die ja auch über die schwierigen Probleme informiert werden müsse.</p>
+            <p>Es entsteht dann eine Diskussion um die Kennzeichnungspflicht, bei der ein Teil der Redner die Wiederherstellung der Regierungsvorlage mit der Begründung fordert, daß das allgemeine Verbot der Beimischung von Fremdstoffen eine besondere Kennzeichnung unnötig mache, während die andere Gruppe auf der strikten Durchführung der Kennzeichnungspflicht als einem Essentiale des Gesetzes besteht. An dieser Debatte beteiligen sich MinDir. <name type="Person" role="Erwaehnung" ref="#ForschbachEdmund">Forschbach</name> (BMI), die Abg. <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Frau <name type="Person" role="Erwaehnung" ref="#WelterEmmi_1954-01-04">Welter</name>, Dr. Bert <name type="Person" role="Erwaehnung" ref="#EvenBert_1957-10-15">Even</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name>. Die Wiederherstellung der Regierungsvorlage wird schließlich gegen eine schwache Minderheit angenommen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> fragt unter Bezugnahme auf einen früher gefaßten Beschluß, was denn dieses Gesetz an Kosten bedeute.</p>
+            <p>MinDir. <name type="Person" role="Sprecher" ref="#ForschbachEdmund">Forschbach</name> (BMI) erwidert, daß unmittelbar dem Bund keine Kosten entständen. Die Durchführung des Gesetzes würde bei den Gemeinden und Ländern liegen und dort eine erhebliche Vermehrung der Nahrungsmitteluntersuchungsämter erforderlich machen, so daß die Kosten gegenüber dem bisherigen Zustand wohl verdoppelt würden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name> referiert kurz über Inhalt und Bedeutung der Rußland-Verträge.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-10-28-t1445_EP_FN010" type="comment">
+                     <p>Siehe Nr.81 v. 27.10. 1958, TOP 10.</p>
+                  </note>
+               </seg> – Eine Aussprache zu diesem Thema findet nicht statt.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

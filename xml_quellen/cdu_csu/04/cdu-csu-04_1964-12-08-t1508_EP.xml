@@ -1,286 +1,394 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1964-12-08-t1508_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1010/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 8. Dezember 1964</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>8 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1964-12-08"><time type="start" when="15:08:00"/><time type="end" when="17:40:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/><name type="Person" role="Sitzungsleitung" ref="#ArndgenJosef_1949-09-07"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-1" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-1">A. TOP 1: Fraktionsarbeit.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-2" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-2">B. TOP 2: Wahl eines neuen Wehrbeauftragten.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-3" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-3">C. TOP 3: Bundeshaushalt.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-4" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-4">D. TOP 4: Notstandsrecht.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-5" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-5">E. TOP 5: Bau- und Wohnungswesen.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-6" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-6">F. TOP 6: Bericht aus dem Ältestenrat, Plenarplan.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-7" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-7">G. TOP 7: Geschäftsordnung.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-8" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-8">H. TOP 8: Parteien.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-9" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-9">I. TOP 9: Europapolitik.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-10" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-10">J. TOP 10: Arbeit. Arbeitsrecht, Jugend.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-11" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-11">K. TOP 11: Geld und Kredit. Geld- und Währungswesen.</item>
-					<item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-12" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-12">L. TOP 12: Rechtspflege. Verjährungsfrist für NS-Verbrechen.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Fraktionsarbeit]</p>
-				<p>Nachdem Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> die neu in den Bundestag hinzugekommenen Abg. Frau <name type="Person" role="Erwaehnung" ref="#StommelMaria_1964-12-04">Stommel</name> und <name type="Person" role="Erwaehnung" ref="#ExnerKarl-Heinz_1964-11-30">Exner</name> begrüßt hat, kommt er auf die Fraktionsarbeit zu sprechen, deren wichtigster Teil in der zügigen Behandlung des Gesetzgebungsprogramms bestehe. Deshalb sollten jetzt auch keine grundsätzlichen Vorschläge für die Fraktionsarbeit und auch kein großes persönliches Revirement erfolgen. Nur zwei stellvertretende Vorsitzende sollten hinzugewählt werden. Dies solle möglichst in der kommenden Woche geschehen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Wahl eines neuen Wehrbeauftragten]</p>
-				<p>Dann berichtet er aus dem Vorstand, der sich mit der Neubesetzung des Amtes des Wehrbeauftragten befaßt habe. Diese Position müsse in dieser Woche wieder besetzt werden; das sei man den Soldaten wie dem Ansehen des Parlaments schuldig. Der Vorstand empfehle der Fraktion, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> für dieses Amt zu benennen. <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, der ein gestandener Mann und ein über seine Partei hinaus angesehener Parlamentarier und anerkannter Jurist sei, habe sich bereit erklärt, sich für dieses Amt zur Verfügung zu stellen. Die SPD und FDP seien von dem Vorschlag des Vorstandes unterrichtet. Sie tagten zur Stunde, und man habe keinen Anlaß anzunehmen, daß man einen negativen Bescheid bekommen werde. Es sei Pflicht der CDU/CSU als stärkster Fraktion, sich rechtzeitig und klar zu erklären.</p>
-				<p>Nachdem sich niemand mehr zu Wort meldet und auch kein weiterer Vorschlag erfolgt, stellt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> einstimmige Annahme der Empfehlung des Vorstandes fest. SPD und FDP würden sofort von dem Beschluß verständigt.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[3. Bundeshaushalt]</p>
-				<p>Weiter habe sich der Vorstand mit der Lage des Haushalts 1965 beschäftigt.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN001" type="comment"><p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1965 – Haushaltsgesetz 1965 – (Drs. IV/2500 vom 17. 8. 1964).</p></note></seg> Durch gewisse Beschlüsse, die zu einer schwierigen Situation geführt haben, fühle man sich nun veranlaßt zu sagen, daß nichts mehr kommen dürfe, was den Haushalt weiter belaste. Die Obleute der Ausschüsse würden im Januar zusammenkommen, um diese finanziellen Fragen zu erörtern.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-4">
-				<head>D.</head>
-				<p>[4. Notstandsrecht]</p>
-				<p>Nach dem Parteitag der SPD<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN002" type="comment"><p>SPD-Bundesparteitag 1964 in Karlsruhe.</p></note></seg> sei die Frage der Notstandsgesetze erneut auf die Tagesordnung gekommen.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN003" type="comment"><p>Gesetzentwurf zur Ergänzung des Grundgesetzes – Art. 115a – m – (Drs. IV/891 vom 11. 1. 1963).</p></note></seg> Der Vorstand habe sich dahingehend verständigt, an der bisherigen Politik festzuhalten. Bis Ende Januar solle eine abstimmungsreife Vorlage vorliegen. Über die anderen Fragen seien Ende Januar grundsätzliche Beschlüsse zu fassen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-5">
-				<head>E.</head>
-				<p>[5. Bau- und Wohnungswesen]</p>
-				<p>Zu den großen Leistungen der Wohnungsbaupolitik gehöre, daß 8,3 Mio. Wohnungen fertig geworden seien, mehr Wohnungen als vorhandene Haushalte. Außerdem stände mehr Wohnraum zur Verfügung als vor dem Kriege. Diese Politik wolle man mit Minister <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> fortsetzen und dafür Sorge tragen, die Wohnraumzwangswirtschaft abzubauen. Der ursprüngliche Termin für die Beseitigung der Zwangswirtschaft habe sich aber wegen der inneren Wanderungsbewegung in Deutschland um zwei Jahre verschoben. Das habe aber auch Konsequenzen insofern, daß die Mieten für Altbauwohnungen angehoben würden. Es sei erforderlich, die Öffentlichkeit zu informieren, daß weiter gebaut werde und 1965 mehr als 500 000 Wohnungen neu hinzukommen und kein Mieter auf die Straße gesetzt werden könne. Grundsätzlich solle die Fraktion der von der Bundesregierung vorgeschlagenen Änderung des Gesetzes über den Abbau der Wohnungszwangswirtschaft zustimmen und den Termin 31. 12. 1967 ins Auge fassen.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN004" type="comment"><p>Gesetzentwurf zur Änderung des Schlußtermins für den Abbau der Wohnungszwangswirtschaft und über weitere Maßnahmen auf dem Gebiete des Mietpreisrechts (Drs. IV/3199 vom 16. 3. 1965).</p></note></seg> Im Althausbesitz würden Mieterhöhungen bis zu 25% gebilligt. Die übrigen Einzelheiten würden in den Ausschüssen und in der Fraktion näher bestimmt und erörtert.</p>
-				<p>Einen besonderen Rang nehme die Frage der sozialen Wohnungen ein. Dort, wo noch nicht der Richtpreis gelte, solle die Kostenmiete bleiben.</p>
-				<p>Bundeswohnungsbauminister <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> hält es für ein erstaunliches Phänomen, daß trotz erhöhter Bauleistungen in der Öffentlichkeit Meinungen herrschten, wie sie in den schlimmsten Zeiten vielleicht möglich gewesen wären. Die Opposition spreche von völliger Konfusion. Hier werde ein politischer Kampf geführt und nicht um der Sache [willen] diskutiert.</p>
-				<p>Vor wenigen Wochen habe er, <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name>, vorgeschlagen, den Schlußtermin um zwei Jahre hinauszuschieben. Es gehe noch um 103 Kreise und Städte, und bei der Regelung dieser Fragen müßten auch die Miet- und Lastenbeihilfen besser geregelt werden. Draußen sei nun der Eindruck entstanden, als liege ein neuer <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>-Plan vor, die Sozialmieten anzuheben. Die Kostenmiete der 3,5 Mio. Sozialwohnungen bliebe gebunden. Die Richtsatzmiete von 300 000 Wohnungen werde zum 1. 1. 1966 auf kostendeckende Miete angepaßt. Diese Punkte hätten Verwirrung geschaffen, und er spreche sich dafür aus, dem Vorschlag der Bundesregierung zu folgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> hält es für erforderlich, in dieser Sache zusammenzustehen, um nicht die Gefahr heraufzubeschwören, eine gigantische Aufbauleistung im Wohnungsbau politisch zu verlieren. Er anerkenne die persönliche Leistung von <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, wenn er sich auch dafür ausspreche, über manche Dinge ein bißchen mehr im vorhinein zu beraten. Er äußere Bedenken gegen die Verlängerung um zwei Jahre, die man vielleicht in einer anderen Form hätte machen können. Auch vertrete er die Meinung, die Althausbesitzer nicht unter dieser Fristverlängerung leiden zu lassen, und erachte es für nicht gut, vor den Kommunalwahlen bekanntzugeben, was man mit den 3 Mio. Sozialwohnungen ab 1966 zu tun gedenke.</p>
-				<p>Die Fraktion solle diese Einzelheiten gründlicher erörtern, damit die Grundlage der »Brunnenvergiftung« beseitigt würde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> verweist auf die Haltung in der Agrarpolitik, wo man seine Forderungen klar zum Ausdruck bringe. So sollte man sich auch bei der Frage des sozialen Wohnungsbaus verhalten. Weiter solle man selbst und auch von seiten der Partei aufklärend wirken und überlegen, ob man nicht einmal die Dinge vor dem Fernsehschirm klarlege. Die Debatte um diese Frage brauche man nicht zu fürchten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name> sieht in der Verschiebung der Frist keine Schuld des Ministers. Schuld an diesem Umstand sei die Tatsache, daß in den wenigen Ballungszentren, in denen die Frist verlängert werde, die raumordnerische Zielsetzung leider durch die mangelnde Schlagkraft des Parlaments und die mangelhafte Koordinierung zwischen Bund und Ländern und wegen mangelnder Anstrengungen der Großstädte zu keinem befriedigenden Ergebnis geführt habe. Wenn diese Sache nicht gemeinsam mit Bund, Ländern und Kommunen angefaßt werde, stehe man in zwei Jahren in den Ballungskernen vor der gleichen Situation.</p>
-				<p>Hinsichtlich der sozialen Wohnungen müsse die Fraktion alles tun, um Klarheit zu schaffen, und stark herausstellen, daß die Wohn- und Mietbeihilfen verbessert werden und die einkommensschwachen Familien vor jeder Überforderung gesichert sind. Bisher habe man ohne Widerstand die Mieterhöhung von 3,5 Mio. Sozialwohnungen entgegengenommen. Es gebe noch 300 000 Wohnungen, deren Miete nicht mehr als 90 bis 110 DM betrage. Diese Mieten könnten bis zur Kostenmiete angehoben werden, davon falle nicht die Welt zusammen. Auch müsse klar gesagt werden, daß die Verschiebung des Termins und gewisse Mieterhöhungen keine Gefahr für die Menschen bedeuten.</p>
-				<p><name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> verweist darauf, daß die CDU/CSU kein »Bodenpersonal« habe, sondern eine Wählerpartei darstelle. Gegen die von der SPD, den Gewerkschaften, den Mieterverbänden und gemeinnützigen Wohnungsbaugesellschaften jede Woche in den Betrieben verteilten Flugblätter könne man kaum etwas ausrichten. Das sei die Realität. Von dem Wohnungsbauminister könne man nicht erwarten, daß er auch noch Aufklärungsarbeit im einzelnen betreibe. Deshalb sei von seiten der Bundesregierung eine Aufklärungskampagne vorgesehen. Aber gegen den Vorwurf, die Wähler gingen wegen des <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>-Planes verloren, wehre er sich. Daran hätten andere Gründe schuld.</p>
-				<p>Die Ministerkonferenz der Länder habe vor vier Wochen einstimmig die Verschiebung um zwei Jahre gefordert, wobei die Althausbesitzer auf der Strecke blieben. Das gehe nicht, und er, <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name>, wolle hier Klärung schaffen.</p>
-				<p><name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> schließt sich den Ausführungen des Vorredners dahingehend an, daß der organisatorische Unterbau in der CDU fehle. Man stelle zwar den Ministerien und auch dem Presse- und Informationsamt Gelder für die Öffentlichkeitsarbeit zur Verfügung, habe aber nicht immer den Eindruck, daß diese Mittel wirksam eingesetzt würden. Die Informationspolitik der Bundesregierung sollte einmal überprüft werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#NeumannErichPeter_1961-10-17">Neumann</name> hält es bei einem Vergleich mit den Aufwendungen der freien Wirtschaft für Werbezwecke für etwas naiv, wenn hier von den Aufstockungen gesprochen werde, die den einzelnen Ministerien für die Öffentlichkeitsarbeit zukommen. In der sogenannten Öffentlichkeitsarbeit der letzten Jahre sei der deutschen Bevölkerung niemals klargemacht worden, daß sie in einem der billigsten Länder der Welt lebe. Die Aufklärung müsse methodisch betrieben werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> greift diesen Punkt auf und schlägt vor, einige Gespräche über diese Dinge zu führen, wobei er besonders die hervorragende Aufklärungsarbeit des Wohnungsbauministers anerkenne.</p>
-				<p>Die Fraktion billigt einmütig diese Empfehlung.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-6">
-				<head>F.</head>
-				<p>[6. Bericht aus dem Ältestenrat, Plenarplan]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Sitzung des Ältestenrats. Dann gibt er den Ablauf der nächsten Plenarsitzungen bekannt und verweist auf eine Geschäftsordnungsdebatte am Schluß der heutigen Sitzung, bei der die Fraktion vollzählig anwesend sein müsse, um die Anschläge der SPD auf die Ausschußarbeit verhindern zu können.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HesbergCarl_1953-10-06">Hesberg</name> teilt zur Kulturdebatte mit, daß sich AK VI hierfür vorbereitet habe. Die Rede der SPD werde wohl eine neue Auflage der Vorwürfe von Karlsruhe bringen. Dem müsse man entgegentreten und die Leistungen der CDU/CSU auf kulturellem Sektor aufzeigen. Unter Umständen werde auch ein Landesminister das Wort ergreifen. Als Redner für das Plenum seien <name type="Person" role="Erwaehnung" ref="#MartinBerthold_1957-10-15">Martin</name>, Frau <name type="Person" role="Erwaehnung" ref="#GeisendoerferIngeborg_1953-10-06">Geisendörfer</name> und <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> bestimmt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> berichtet, daß <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> (SPD) zu diesem Thema sprechen werde. Man solle die Angriffe zurückweisen und darauf hinweisen, daß in der ersten Aufbauphase andere Prioritäten gegeben waren als jetzt in der zweiten. Die Opposition versuche doch nur, die CDU/CSU mürbe zu machen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> erörtert, daß bei der Behandlung der Verteidigungspolitik die FPD<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN005" type="comment"><p>Von der Bearbeiterin korrigiert aus: SPD.</p></note></seg> ihre Große Anfrage begründen werde.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN006" type="comment"><p>Große FDP-Anfrage betr. Lage in der Bundeswehr (Drs. IV/2426 vom 26. 6. 1964).</p></note></seg> Zum Bericht des Wehrbeauftragten werde erst <name type="Person" role="Erwaehnung" ref="#SeffrinRoland_1953-10-06">Seffrin</name> und dann der Minister Stellung nehmen.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN007" type="comment"><p>Fünfter Jahresbericht des Wehrbeauftragten für das Berichtsjahr 1963 […] (Drs. IV/2305 vom 4. 6. 1964).</p></note></seg> Außerdem ständen <name type="Person" role="Erwaehnung" ref="#AdornoEduard_1961-10-17">Adorno</name> und <name type="Person" role="Erwaehnung" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> bereit. Er selber, Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, beabsichtige, zum Thema »Staat im Staat« das Wort zu ergreifen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt die Zustimmung der Fraktion fest.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-7">
-				<head>G.</head>
-				<p>[7. Geschäftsordnung]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name>wendet sich dem Antrag Drucksache IV/2797 zu, der das Rederecht des Wehrbeauftragten regelt.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN008" type="comment"><p>Bericht des Ausschusses für Wahlprüfung, Immunität und Geschäftsordnung zum SPD-Antrag betr. Ergänzung der Geschäftsordnung – § 116 a – (Drs. IV/2403 vom 23. 6. 1964).</p></note></seg> Das Recht, den Wehrbeauftragten zu fragen, sollte ein Minderheitenrecht bleiben. Aber der Geschäftsordnungsausschuß habe beschlossen, ihn eventuell auch zu anderen Punkten herbeirufen zu können. Dadurch könnte der Wehrbeauftragte in eine politische Situation gebracht werden, die nicht gewünscht werde. Die Fraktion sollte sich dem vom Vorstand gebilligten Änderungsantrag, daß der Wehrbeauftragte nur von der Mehrheit des Hauses herbeigerufen werden könne, zubilligen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> erläutert, daß es hierbei um den § 116 c Abs. 2 gehe, ob eine Minderheit von 30 Mitgliedern des Bundestages die Herbeizitierung des Wehrbeauftragten verlangen können. Der Geschäftsordnungsausschuß bejahe dies einmütig, der Verteidigungsausschuß fast einmütig. Er, <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name>, wende sich gegen den Antrag <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, sehe aber einen Kompromiß darin, daß jedes Mitglied die Herbeirufung verlangen könne, damit der Wehrbeauftragte nach seiner Zuständigkeit berichte. Das Verlangen solle aber nur dann zulässig sein, wenn der Bericht des Wehrbeauftragten auf der Tagesordnung des Ausschusses stehe.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> führt aus, die FDP unterstütze den Antrag, und auch von der SPD sei es denkbar, daß sie mitmache. Bei dieser Lage schlage der Präsident vor, den Teil II des Ausschußberichts einfach zu streichen.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> erklärt, er beabsichtige nicht, über diese Frage eine Fraktionsdebatte heraufzubeschwören. Er vermöge aber nicht einzusehen, welchen Sinn der Abs. 2 überhaupt habe. Er sollte einfach gestrichen werden, denn man könne keinen Wehrbeauftragten reden lassen, der nicht anwesend sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> gibt zu bedenken, daß der Wehrbeauftragte ein Berichterstatter und kein Gutachter sei. Seine Aussagen sollten auf die Fragen zu seinem Bericht begrenzt bleiben. Im anderen Falle werde das Amt verfälscht, und das bringe Verwirrung.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> setzt sich noch einmal für die Streichung des Abs. 2 ein, da man den Wehrbeauftragten nur dann im Bundestag anwesend wissen wolle, wenn er gebraucht werde. Der Vorschlag <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> gebe diesem Anliegen mehr Sicherheit.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> kommt auf den Wunsch des Ausschusses zurück, der ein Minderheitenrecht wolle. Demgegenüber spreche er sich dafür aus, dies in einen Mehrheitsbeschluß umzuwandeln. Er, Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name>, stimme der Streichung zu, wenn er auch ihr Zustandekommen nicht für möglich halte. Wenn dies aber nicht erreicht werde, sollte man seinem Vorschlag folgen. Schon einmal habe es einen Wehrbeauftragten gegeben, der über seine Zuständigkeiten hinausgegangen sei. Über die Auslegung des § 2 könne sich Streit entwickeln, über den Begriff »die Mehrheit des Hauses« aber nicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> weist auf, daß bei der Streichung des Abs. 2 noch im § 6 des Gesetzes über den Wehrbeauftragten inhaltlich das Gleiche wie im Antrag <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> stehe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> spricht sich dafür aus, dem Vorschlag <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> zu folgen. Die beiden anderen Fraktionen befaßten sich bereits mit dieser Sache; die Zustimmung der FDP liege schon vor, während die SPD die Wahl in dieser Woche noch nicht vornehmen wolle. Die Fraktion ist damit einverstanden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-8">
-				<head>H.</head>
-				<p>[8. Parteien]</p>
-				<p>Dann beleuchtet Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> das Parteiengesetz, mit dem man im Wort stehe. Sollte es am folgenden Tag nicht zu einer Einigung im Gremium kommen, werde ein eigener Antrag notwendig. Es bestehe hierüber Einverständnis mit dem Koalitionspartner.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN009" type="comment"><p>CDU/CSU-FDP-Gesetzentwurf über die politischen Parteien – Parteiengesetz – (Drs. IV/2853 vom 17. 12. 1964).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-9">
-				<head>I.</head>
-				<p>[9. Europapolitik]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> trägt vor, nach Meinung der SPD solle die Europa- und die Europaagraranfrage nicht erörtert werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> kommt auf die Beratungen des AK II über dieses Thema zu sprechen. Wenn die SPD kein Interesse habe, die Frage der europäischen Agrarpolitik zu erörtern, sei das verständlich. Diese Frage müsse aber in den Rahmen der Europapolitik hineingestellt werden, denn nur so sei die Entscheidung der Regierung begründet und zu verstehen. Von der SPD erwarte man eine Reihe von Vorschlägen. Man könne aber in dieser Sache nur dem Standpunkt des Bundeskanzlers beitreten und müsse sich entscheiden zwischen wirtschaftlichen und sozialen Maßnahmen. Die Altershilfe sollte 150 DM betragen und mit Wirkung vom 1. 1. 1966 der Beitrag nicht um 2, sondern um 4 DM erhöht werden.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN010" type="comment"><p>SPD-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/1947 vom 18. 2. 1964) und CDU/CSU-FDP-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/2425 vom 25. 6. 1964).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> ergänzt die Ausführungen mit dem Hinweis, daß der AK II die Auffassung vertrete, auch vom Haushalt her über die Finanzierung der Sache zu sprechen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-10">
-				<head>J.</head>
-				<p>[10. Arbeit. Arbeitsrecht, Jugend]</p>
-				<p><name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) wendet sich dem Jugendarbeitsschutzgesetz zu. Die Änderung des § 10 Abs. 4 geschehe auf Veranlassung der SPD, wobei allerdings die Gefahr der Verfassungswidrigkeit bestehe.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN011" type="comment"><p>SPD-Entwurf eines Zweiten Gesetzes zur Änderung des Jugendarbeitsschutzgesetzes (Drs. IV/1346 vom 19. 6. 1963).</p></note></seg> Die Neufassung des Arbeitsministers räume diese Bedenken aus. Ursprünglich habe man die Meinung vertreten, Jugendliche sollten bis zum 18. Lebensjahr samstags nicht beschäftigt werden. Das Bundesarbeitsgericht habe aber eine andere Entscheidung getroffen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> unterstreicht, daß diese Sache auch vorher schon strittig gewesen sei. Auf der einen Seite sage man, es werde auf dem Gebiet der Ausbildung zu wenig getan, auf der anderen Seite nehme man Ausbildungsmöglichkeiten weg. Man sollte doch den Betrieben die Möglichkeit geben, die Ausbildungsmöglichkeiten auszunutzen.</p>
-				<p>Auf die Anregung des MdB <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin), die überbetrieblichen Ausbildungsmöglichkeiten nicht zu berühren, schlägt</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> vor, eine solche Erklärung im Plenum abzugeben.</p>
-				<p><name type="Person" role="Sprecher" ref="#HaaseLothar_1961-10-17">Haase</name> bittet um Aufklärung, ob durch diese Neuregelung die Arbeitszeit der Jugendlichen eingehalten werden könne.</p>
-				<p>Nachdem <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) dies bejaht, stimmt die Fraktion dem vorgeschlagenen Verfahren zu.</p>
-				<p><name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> macht darauf aufmerksam, daß die SPD beabsichtige, ein europäisches Jugendwerk zu schaffen, was aber zu Bedenken im Auswärtigen Ausschuß geführt habe.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN012" type="comment"><p>SPD-Antrag betr. europäisches Jugendwerk (Drs. IV/1855 vom 22. 1. 1964).</p></note></seg> Es sei zu einer Abstimmung gekommen, in der am 11. Juli dieser Vorschlag abgelehnt wurde, bei einer späteren Abstimmung im Jugendausschuß sei man dann noch einmal unterlegen. Jetzt müsse die Sache im Plenum geregelt werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> anerkennt die mangelnde Präsenz in den Ausschüssen als ein seit langem bekanntes Problem. In der Weihnachtspause werde eine Übersicht über die Gesetzgebung erstellt, die über die Lage in den Ausschüssen und die personelle Besetzung Auskunft gebe.</p>
-				<p><name type="Person" role="Sprecher" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> meint, der einzige kontroverse Punkt liege in der Änderung der Präambel, und deshalb sollte man das Wort »Europajugendwerk« nicht streichen. Die Streichung könnte in der SPD und bei der Öffentlichkeit dahingehend verstanden werden, als wende die CDU/CSU sich gegen die Gründung eines europäischen Jugendwerks. Im Plenum werde zwar das Gegenteil zum Ausdruck gebracht, die Jugendverbände hätten sich aber für die gegenwärtige Fassung auch der Präambel ausgesprochen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> führt aus, der Auswärtige Ausschuß habe sich in dieser Sache große Mühe gegeben und seine Gesichtspunkte auch dem Jugendausschuß mitgeteilt. Der Ausschuß habe die Meinung vertreten, den Satz über die Gründung eines europäischen Jugendwerks nicht aufzunehmen, um keine Entwertung des deutsch-französischen Jugendwerks eintreten zu lassen. Bei der derzeitigen starken Belastung des deutsch-französischen Verhältnisses sollte ein solcher Schritt unterbleiben und im Ministerrat des Europäischen Parlaments [sic!] die Schaffung eines europäischen Jugendwerks angestrebt werden. Damit würden ungünstige Reaktionen in Frankreich vermieden.</p>
-				<p><name type="Person" role="Sprecher" ref="#VogtKarl-Heinz_1957-10-15">Vogt</name> schließt sich den Ausführungen des Vorredners an. Von der SPD habe man keine Auskunft darüber erhalten können, welchen Umfang das europäische Jugendwerk einnehmen solle, ob es auf die Sechs, die WEU oder auf die anderen Staaten des Europarats beschränkt bleiben solle, oder ob nicht gar an einen Sprung über den Eisernen Vorhang gedacht sei. Er, <name type="Person" role="Sprecher" ref="#VogtKarl-Heinz_1957-10-15">Vogt</name>, spreche sich dafür aus, dem Vorschlag <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> zu folgen, dem auch <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> von der SPD seine Zustimmung gebe. Es sollte doch nicht übersehen werden, daß auf die Bundesregierung ein Wirbel zukomme, mit dem sie vielleicht nicht fertig werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> teilt mit, AK IV beabsichtige, den Antrag einfach als Abänderungsantrag, eventuell sogar als Koalitionsantrag zu stellen.</p>
-				<p>Gegen eine Gegenstimme wird dieser Vorschlag angenommen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-11">
-				<head>K.</head>
-				<p>[11. Geld und Kredit. Geld- und Währungswesen]</p>
-				<p>Das 4. Umstellungsergänzungsgesetz, das bei mehreren Stimmenthaltungen im AK [III] gebilligt wurde, soll ohne Begründung und ohne Debatte im Plenum über die Bühne gehen.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN013" type="comment"><p>CDU/CSU-SPD-FDP-Entwurf eines Vierten Umstellungsergänzungsgesetzes (Drs. IV/2808 vom 4. 12. 1964).</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-12">
-				<head>L.</head>
-				<p>[12. Rechtspflege. Verjährungsfrist für NS-Verbrechen]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> betont die Sorge angesichts der am 8. Mai abgelaufenen Verjährungsfrist für NS-Mordtaten. Für die übrigen Verbrechen sei die Verjährungsfrist bereits vor fünf Jahren eingetreten. Damals habe der Bundesrat eine Verlängerung der Verjährungsfrist abgelehnt, trotz beachtlicher Gründe, die dagegen sprachen. Er rate ab, die Frage der Verjährung schon jetzt endgültig zu entscheiden. Von seiten der SPD sei angeregt worden, nach außen zu bekunden, daß alles unternommen werde, die Schuldiggewordenen der gerechten Strafe zuzuführen. Im großen und ganzen sei bereits durch richterliche Handlung die Unterbrechung der Verjährung herbeigeführt. Darüber hinaus hätten die Justizminister der Länder die Zentrale Untersuchungsstelle in Ludwigsburg eingerichtet, so daß man annehmen dürfe, daß kaum noch Komplexe gefunden würden, die nicht untersucht seien. Nachdem die Bundesregierung die Entscheidung getroffen habe, ihrerseits keinen Antrag auf Unterbrechung der Verjährung einzubringen, habe man einen Antrag vorgelegt, der bezwecke, die laufende Überprüfung in Ludwigsburg zu verstärken. Wenn im großen und ganzen dieser Anregung bereits entsprochen wurde, scheine es doch zweckmäßig, daß der Bundestag als gegebene Stelle dazu einmal Stellung nehme. Die Bundesregierung habe dazu auch einen Aufruf an die Weltöffentlichkeit gerichtet, den man vom Bundestag her unterstützen sollte. Es sollte darauf hingewiesen werden, daß diese Taten schon heute mit Nachdruck verfolgt würden. Gewisse Komplexe sollten besonders betont und beleuchtet werden.</p>
-				<p>AK I habe sich mit dieser Sache eingehend befaßt, wenn auch über das von einer Reihe von Abgeordneten geforderte Ansinnen auf Verlängerung der Verjährungsfrist noch nicht entschieden worden ist. Der Fraktion werde darüber noch berichtet werden. Zunächst solle man aber dem Antrag wegen NS-Mordtaten beitreten und ihn ohne Überweisung im Plenum annehmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> informiert die Fraktion über die Haltung der FDP, die dieser Sache nicht beizutreten gedenke.</p>
-				<p><name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> stimmt dem Anliegen durchaus zu. Der wesentliche Gedanke liege doch darin, den Willen des Bundestages zum Ausdruck zu bringen, mit allen nur denkbaren Mitteln die Verfolgung dieser NS-Mordtaten zu sichern. Einer Auslegung des Antrages, als ob bis zum 1. März die Diskussion erledigt sei, könne man nicht zustimmen. Dieses Thema werde in den zuständigen Gremien weiter erörtert.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> pflichtet dem bei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WinterFriedrich_1956-03-06">Winter</name> erinnert, daß sich die CSU als Landesgruppe wie als Partei mehrfach in dem Sinne festgelegt habe, einer etwaigen Verlängerung der Verjährungsfrist nicht zuzustimmen, so daß man auch einem Antrag im März die Zustimmung verweigern müsse. Es handele sich nicht nur um eine Frage des Grundgesetzes, sondern auch um eine Frage der Menschenrechtscharta, die dem entgegenstehe.</p>
-				<p><name type="Person" role="Sprecher" ref="#BreseWilhelm_1949-09-07">Brese</name> betont, er könne dem Antrag nicht zustimmen, obwohl er durch das Dritte Reich selber gelitten habe; er bejahe aber den Beschluß der Bundesregierung, wegen rechtlicher Gründe die Frist nicht zu verlängern. Denn es sei wohl unmöglich, heute noch vom Gericht feststellen zu lassen, ob Befehlsnotstand vorlag oder ob aus verbrecherischen Trieben gehandelt wurde. Es habe in vielen Fällen wohl Befehlsnotstand vorgelegen. Man sollte doch alles tun, um diese Verfahren zu beenden. Diejenigen, die diese Gesetze gemacht und ausgearbeitet haben, könnten nicht erfaßt und bestraft werden, und er, <name type="Person" role="Sprecher" ref="#BreseWilhelm_1949-09-07">Brese</name>, könne sich schlecht vorstellen, daß diese Beamten nicht gewußt hätten, was sie mit diesen Gesetzen heraufbeschworen haben. Er betrachte es als scheinheilig, wenn jetzt der kleine Mann verfolgt werde. Auch in anderen Ländern lebten Verbrecher, die sich an Deutschen vergangen haben, ohne daß je von Prozessen die Rede war. Er denke an Dresden und Hildesheim. Es sollte doch alles getan werden, um unter diese Zeit einen Strich zu ziehen; das sage er, ohne je Nationalsozialist gewesen zu sein.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> meint, daß <name type="Person" role="Erwaehnung" ref="#BreseWilhelm_1949-09-07">Brese</name> gerade von seinem Gesichtspunkt aus in der Lage sein müsse, dem Gesetz zuzustimmen. Der Antrag unterstütze den Standpunkt der Bundesregierung.</p>
-				<p><name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> hält ebenfalls den Richter für überfordert, wenn er jetzt nach 20 Jahren Tatbestände aufklären müsse. Bei der Verlängerung der Verjährung gebe man doch der Zone und Moskau ein Mittel in die Hand, diese Sachen dauernd hochzuspielen. Wenn Nahum <name type="Person" role="Erwaehnung" ref="#GoldmannNahum">Goldmann</name> »Berge von Dokumenten« habe, wäre es doch seine Pflicht gewesen, diese Dokumente auf den Tisch zu legen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> stimmt dem Antrag zu, der eine gute Sache beinhalte. Durch die Annahme dieses Antrages dürfe aber nicht der Eindruck entstehen, als ob die Verlängerung der Verjährung damit erledigt wäre. Es erscheine ihm fraglich, daß alle Fälle bekannt seien.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> gibt dem Antrag <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> seine Zustimmung, hält aber den Vergleich zwischen KZ und Dresden für nicht angebracht. Es sei ihm nicht bekannt, daß irgendwer in Deutschland den Versuch unternommen habe, die Piloten von Coventry als Verbrecher vor Gericht zu stellen.</p>
-				<p>Auf seiner Reise nach Jerusalem sei ihm und <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> von zuständiger Stelle mitgeteilt worden, daß hier allein über 25 Mio. Dokumente lägen, die allmählich zusammengekommen seien. Es sei aber technisch unmöglich, alle diese Dokumente durchzuarbeiten. Mit dem 8. Mai tauche die Gefahr auf, daß bestimmte Verbrechen deshalb nicht verfolgt werden können, weil sie so grauenhaft waren, daß ihre Dokumentation noch nicht abgeschlossen ist und dann die Verjährungsfrist nicht zur Verfolgung ausreicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> neigt in seiner Meinung der Auffassung des Abg. <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name> zu. Er stelle aber an <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> die Frage, ob nicht zu befürchten sei, daß man mit der allzu starken Frage an die zuständige Stelle der SPD auf ein Glatteis folge. Am Schluß komme der Vorwurf, nicht genügend getan zu haben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> verweist auf die Worte die Antrages »in voller Anerkennung«, die gerade diesen Gesichtspunkt berücksichtigen.</p>
-				<p>Den Standpunkt der CSU habe man zur Kenntnis genommen. Man sollte sich zu einem späteren Zeitpunkt darüber unterhalten.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Fraktion mit Mehrheit die Einbringung dieses Antrages beschließt.<seg type="note"><note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN014" type="comment"><p>CDU/CSU-SPD-Antrag betr. Verfolgung von NS-Mordtaten (Drs. IV/2823 vom 8. 12. 1964).</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1964-12-08-t1508_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1010/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 8. Dezember 1964</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>8 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1964-12-08">
+               <time type="start" when="15:08:00"/>
+               <time type="end" when="17:40:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BarzelRainer_1957-10-15"/>
+            <name type="Person" role="Sitzungsleitung" ref="#ArndgenJosef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-1" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-1">A. TOP 1: Fraktionsarbeit.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-2" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-2">B. TOP 2: Wahl eines neuen Wehrbeauftragten.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-3" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-3">C. TOP 3: Bundeshaushalt.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-4" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-4">D. TOP 4: Notstandsrecht.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-5" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-5">E. TOP 5: Bau- und Wohnungswesen.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-6" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-6">F. TOP 6: Bericht aus dem Ältestenrat, Plenarplan.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-7" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-7">G. TOP 7: Geschäftsordnung.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-8" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-8">H. TOP 8: Parteien.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-9" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-9">I. TOP 9: Europapolitik.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-10" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-10">J. TOP 10: Arbeit. Arbeitsrecht, Jugend.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-11" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-11">K. TOP 11: Geld und Kredit. Geld- und Währungswesen.</item>
+               <item xml:id="cdu-csu-04_1964-12-08-t1508_EP_SVP-12" corresp="#cdu-csu-04_1964-12-08-t1508_EP_div_SVP-12">L. TOP 12: Rechtspflege. Verjährungsfrist für NS-Verbrechen.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Fraktionsarbeit]</p>
+            <p>Nachdem Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> die neu in den Bundestag hinzugekommenen Abg. Frau <name type="Person" role="Erwaehnung" ref="#StommelMaria_1964-12-04">Stommel</name> und <name type="Person" role="Erwaehnung" ref="#ExnerKarl-Heinz_1964-11-30">Exner</name> begrüßt hat, kommt er auf die Fraktionsarbeit zu sprechen, deren wichtigster Teil in der zügigen Behandlung des Gesetzgebungsprogramms bestehe. Deshalb sollten jetzt auch keine grundsätzlichen Vorschläge für die Fraktionsarbeit und auch kein großes persönliches Revirement erfolgen. Nur zwei stellvertretende Vorsitzende sollten hinzugewählt werden. Dies solle möglichst in der kommenden Woche geschehen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Wahl eines neuen Wehrbeauftragten]</p>
+            <p>Dann berichtet er aus dem Vorstand, der sich mit der Neubesetzung des Amtes des Wehrbeauftragten befaßt habe. Diese Position müsse in dieser Woche wieder besetzt werden; das sei man den Soldaten wie dem Ansehen des Parlaments schuldig. Der Vorstand empfehle der Fraktion, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> für dieses Amt zu benennen. <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, der ein gestandener Mann und ein über seine Partei hinaus angesehener Parlamentarier und anerkannter Jurist sei, habe sich bereit erklärt, sich für dieses Amt zur Verfügung zu stellen. Die SPD und FDP seien von dem Vorschlag des Vorstandes unterrichtet. Sie tagten zur Stunde, und man habe keinen Anlaß anzunehmen, daß man einen negativen Bescheid bekommen werde. Es sei Pflicht der CDU/CSU als stärkster Fraktion, sich rechtzeitig und klar zu erklären.</p>
+            <p>Nachdem sich niemand mehr zu Wort meldet und auch kein weiterer Vorschlag erfolgt, stellt Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> einstimmige Annahme der Empfehlung des Vorstandes fest. SPD und FDP würden sofort von dem Beschluß verständigt.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[3. Bundeshaushalt]</p>
+            <p>Weiter habe sich der Vorstand mit der Lage des Haushalts 1965 beschäftigt.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN001" type="comment">
+                     <p>Gesetzentwurf über die Feststellung des Bundeshaushaltsplans für das Rechnungsjahr 1965 – Haushaltsgesetz 1965 – (Drs. IV/2500 vom 17. 8. 1964).</p>
+                  </note>
+               </seg> Durch gewisse Beschlüsse, die zu einer schwierigen Situation geführt haben, fühle man sich nun veranlaßt zu sagen, daß nichts mehr kommen dürfe, was den Haushalt weiter belaste. Die Obleute der Ausschüsse würden im Januar zusammenkommen, um diese finanziellen Fragen zu erörtern.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-4">
+            <head>D.</head>
+            <p>[4. Notstandsrecht]</p>
+            <p>Nach dem Parteitag der SPD<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN002" type="comment">
+                     <p>SPD-Bundesparteitag 1964 in Karlsruhe.</p>
+                  </note>
+               </seg> sei die Frage der Notstandsgesetze erneut auf die Tagesordnung gekommen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN003" type="comment">
+                     <p>Gesetzentwurf zur Ergänzung des Grundgesetzes – Art. 115a – m – (Drs. IV/891 vom 11. 1. 1963).</p>
+                  </note>
+               </seg> Der Vorstand habe sich dahingehend verständigt, an der bisherigen Politik festzuhalten. Bis Ende Januar solle eine abstimmungsreife Vorlage vorliegen. Über die anderen Fragen seien Ende Januar grundsätzliche Beschlüsse zu fassen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-5">
+            <head>E.</head>
+            <p>[5. Bau- und Wohnungswesen]</p>
+            <p>Zu den großen Leistungen der Wohnungsbaupolitik gehöre, daß 8,3 Mio. Wohnungen fertig geworden seien, mehr Wohnungen als vorhandene Haushalte. Außerdem stände mehr Wohnraum zur Verfügung als vor dem Kriege. Diese Politik wolle man mit Minister <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> fortsetzen und dafür Sorge tragen, die Wohnraumzwangswirtschaft abzubauen. Der ursprüngliche Termin für die Beseitigung der Zwangswirtschaft habe sich aber wegen der inneren Wanderungsbewegung in Deutschland um zwei Jahre verschoben. Das habe aber auch Konsequenzen insofern, daß die Mieten für Altbauwohnungen angehoben würden. Es sei erforderlich, die Öffentlichkeit zu informieren, daß weiter gebaut werde und 1965 mehr als 500 000 Wohnungen neu hinzukommen und kein Mieter auf die Straße gesetzt werden könne. Grundsätzlich solle die Fraktion der von der Bundesregierung vorgeschlagenen Änderung des Gesetzes über den Abbau der Wohnungszwangswirtschaft zustimmen und den Termin 31. 12. 1967 ins Auge fassen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN004" type="comment">
+                     <p>Gesetzentwurf zur Änderung des Schlußtermins für den Abbau der Wohnungszwangswirtschaft und über weitere Maßnahmen auf dem Gebiete des Mietpreisrechts (Drs. IV/3199 vom 16. 3. 1965).</p>
+                  </note>
+               </seg> Im Althausbesitz würden Mieterhöhungen bis zu 25% gebilligt. Die übrigen Einzelheiten würden in den Ausschüssen und in der Fraktion näher bestimmt und erörtert.</p>
+            <p>Einen besonderen Rang nehme die Frage der sozialen Wohnungen ein. Dort, wo noch nicht der Richtpreis gelte, solle die Kostenmiete bleiben.</p>
+            <p>Bundeswohnungsbauminister <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> hält es für ein erstaunliches Phänomen, daß trotz erhöhter Bauleistungen in der Öffentlichkeit Meinungen herrschten, wie sie in den schlimmsten Zeiten vielleicht möglich gewesen wären. Die Opposition spreche von völliger Konfusion. Hier werde ein politischer Kampf geführt und nicht um der Sache [willen] diskutiert.</p>
+            <p>Vor wenigen Wochen habe er, <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name>, vorgeschlagen, den Schlußtermin um zwei Jahre hinauszuschieben. Es gehe noch um 103 Kreise und Städte, und bei der Regelung dieser Fragen müßten auch die Miet- und Lastenbeihilfen besser geregelt werden. Draußen sei nun der Eindruck entstanden, als liege ein neuer <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>-Plan vor, die Sozialmieten anzuheben. Die Kostenmiete der 3,5 Mio. Sozialwohnungen bliebe gebunden. Die Richtsatzmiete von 300 000 Wohnungen werde zum 1. 1. 1966 auf kostendeckende Miete angepaßt. Diese Punkte hätten Verwirrung geschaffen, und er spreche sich dafür aus, dem Vorschlag der Bundesregierung zu folgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> hält es für erforderlich, in dieser Sache zusammenzustehen, um nicht die Gefahr heraufzubeschwören, eine gigantische Aufbauleistung im Wohnungsbau politisch zu verlieren. Er anerkenne die persönliche Leistung von <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, wenn er sich auch dafür ausspreche, über manche Dinge ein bißchen mehr im vorhinein zu beraten. Er äußere Bedenken gegen die Verlängerung um zwei Jahre, die man vielleicht in einer anderen Form hätte machen können. Auch vertrete er die Meinung, die Althausbesitzer nicht unter dieser Fristverlängerung leiden zu lassen, und erachte es für nicht gut, vor den Kommunalwahlen bekanntzugeben, was man mit den 3 Mio. Sozialwohnungen ab 1966 zu tun gedenke.</p>
+            <p>Die Fraktion solle diese Einzelheiten gründlicher erörtern, damit die Grundlage der »Brunnenvergiftung« beseitigt würde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> verweist auf die Haltung in der Agrarpolitik, wo man seine Forderungen klar zum Ausdruck bringe. So sollte man sich auch bei der Frage des sozialen Wohnungsbaus verhalten. Weiter solle man selbst und auch von seiten der Partei aufklärend wirken und überlegen, ob man nicht einmal die Dinge vor dem Fernsehschirm klarlege. Die Debatte um diese Frage brauche man nicht zu fürchten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name> sieht in der Verschiebung der Frist keine Schuld des Ministers. Schuld an diesem Umstand sei die Tatsache, daß in den wenigen Ballungszentren, in denen die Frist verlängert werde, die raumordnerische Zielsetzung leider durch die mangelnde Schlagkraft des Parlaments und die mangelhafte Koordinierung zwischen Bund und Ländern und wegen mangelnder Anstrengungen der Großstädte zu keinem befriedigenden Ergebnis geführt habe. Wenn diese Sache nicht gemeinsam mit Bund, Ländern und Kommunen angefaßt werde, stehe man in zwei Jahren in den Ballungskernen vor der gleichen Situation.</p>
+            <p>Hinsichtlich der sozialen Wohnungen müsse die Fraktion alles tun, um Klarheit zu schaffen, und stark herausstellen, daß die Wohn- und Mietbeihilfen verbessert werden und die einkommensschwachen Familien vor jeder Überforderung gesichert sind. Bisher habe man ohne Widerstand die Mieterhöhung von 3,5 Mio. Sozialwohnungen entgegengenommen. Es gebe noch 300 000 Wohnungen, deren Miete nicht mehr als 90 bis 110 DM betrage. Diese Mieten könnten bis zur Kostenmiete angehoben werden, davon falle nicht die Welt zusammen. Auch müsse klar gesagt werden, daß die Verschiebung des Termins und gewisse Mieterhöhungen keine Gefahr für die Menschen bedeuten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> verweist darauf, daß die CDU/CSU kein »Bodenpersonal« habe, sondern eine Wählerpartei darstelle. Gegen die von der SPD, den Gewerkschaften, den Mieterverbänden und gemeinnützigen Wohnungsbaugesellschaften jede Woche in den Betrieben verteilten Flugblätter könne man kaum etwas ausrichten. Das sei die Realität. Von dem Wohnungsbauminister könne man nicht erwarten, daß er auch noch Aufklärungsarbeit im einzelnen betreibe. Deshalb sei von seiten der Bundesregierung eine Aufklärungskampagne vorgesehen. Aber gegen den Vorwurf, die Wähler gingen wegen des <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>-Planes verloren, wehre er sich. Daran hätten andere Gründe schuld.</p>
+            <p>Die Ministerkonferenz der Länder habe vor vier Wochen einstimmig die Verschiebung um zwei Jahre gefordert, wobei die Althausbesitzer auf der Strecke blieben. Das gehe nicht, und er, <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name>, wolle hier Klärung schaffen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> schließt sich den Ausführungen des Vorredners dahingehend an, daß der organisatorische Unterbau in der CDU fehle. Man stelle zwar den Ministerien und auch dem Presse- und Informationsamt Gelder für die Öffentlichkeitsarbeit zur Verfügung, habe aber nicht immer den Eindruck, daß diese Mittel wirksam eingesetzt würden. Die Informationspolitik der Bundesregierung sollte einmal überprüft werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NeumannErichPeter_1961-10-17">Neumann</name> hält es bei einem Vergleich mit den Aufwendungen der freien Wirtschaft für Werbezwecke für etwas naiv, wenn hier von den Aufstockungen gesprochen werde, die den einzelnen Ministerien für die Öffentlichkeitsarbeit zukommen. In der sogenannten Öffentlichkeitsarbeit der letzten Jahre sei der deutschen Bevölkerung niemals klargemacht worden, daß sie in einem der billigsten Länder der Welt lebe. Die Aufklärung müsse methodisch betrieben werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> greift diesen Punkt auf und schlägt vor, einige Gespräche über diese Dinge zu führen, wobei er besonders die hervorragende Aufklärungsarbeit des Wohnungsbauministers anerkenne.</p>
+            <p>Die Fraktion billigt einmütig diese Empfehlung.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-6">
+            <head>F.</head>
+            <p>[6. Bericht aus dem Ältestenrat, Plenarplan]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Sitzung des Ältestenrats. Dann gibt er den Ablauf der nächsten Plenarsitzungen bekannt und verweist auf eine Geschäftsordnungsdebatte am Schluß der heutigen Sitzung, bei der die Fraktion vollzählig anwesend sein müsse, um die Anschläge der SPD auf die Ausschußarbeit verhindern zu können.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HesbergCarl_1953-10-06">Hesberg</name> teilt zur Kulturdebatte mit, daß sich AK VI hierfür vorbereitet habe. Die Rede der SPD werde wohl eine neue Auflage der Vorwürfe von Karlsruhe bringen. Dem müsse man entgegentreten und die Leistungen der CDU/CSU auf kulturellem Sektor aufzeigen. Unter Umständen werde auch ein Landesminister das Wort ergreifen. Als Redner für das Plenum seien <name type="Person" role="Erwaehnung" ref="#MartinBerthold_1957-10-15">Martin</name>, Frau <name type="Person" role="Erwaehnung" ref="#GeisendoerferIngeborg_1953-10-06">Geisendörfer</name> und <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> bestimmt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> berichtet, daß <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> (SPD) zu diesem Thema sprechen werde. Man solle die Angriffe zurückweisen und darauf hinweisen, daß in der ersten Aufbauphase andere Prioritäten gegeben waren als jetzt in der zweiten. Die Opposition versuche doch nur, die CDU/CSU mürbe zu machen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> erörtert, daß bei der Behandlung der Verteidigungspolitik die FPD<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN005" type="comment">
+                     <p>Von der Bearbeiterin korrigiert aus: SPD.</p>
+                  </note>
+               </seg> ihre Große Anfrage begründen werde.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN006" type="comment">
+                     <p>Große FDP-Anfrage betr. Lage in der Bundeswehr (Drs. IV/2426 vom 26. 6. 1964).</p>
+                  </note>
+               </seg> Zum Bericht des Wehrbeauftragten werde erst <name type="Person" role="Erwaehnung" ref="#SeffrinRoland_1953-10-06">Seffrin</name> und dann der Minister Stellung nehmen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN007" type="comment">
+                     <p>Fünfter Jahresbericht des Wehrbeauftragten für das Berichtsjahr 1963 […] (Drs. IV/2305 vom 4. 6. 1964).</p>
+                  </note>
+               </seg> Außerdem ständen <name type="Person" role="Erwaehnung" ref="#AdornoEduard_1961-10-17">Adorno</name> und <name type="Person" role="Erwaehnung" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> bereit. Er selber, Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, beabsichtige, zum Thema »Staat im Staat« das Wort zu ergreifen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt die Zustimmung der Fraktion fest.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-7">
+            <head>G.</head>
+            <p>[7. Geschäftsordnung]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name>wendet sich dem Antrag Drucksache IV/2797 zu, der das Rederecht des Wehrbeauftragten regelt.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN008" type="comment">
+                     <p>Bericht des Ausschusses für Wahlprüfung, Immunität und Geschäftsordnung zum SPD-Antrag betr. Ergänzung der Geschäftsordnung – § 116 a – (Drs. IV/2403 vom 23. 6. 1964).</p>
+                  </note>
+               </seg> Das Recht, den Wehrbeauftragten zu fragen, sollte ein Minderheitenrecht bleiben. Aber der Geschäftsordnungsausschuß habe beschlossen, ihn eventuell auch zu anderen Punkten herbeirufen zu können. Dadurch könnte der Wehrbeauftragte in eine politische Situation gebracht werden, die nicht gewünscht werde. Die Fraktion sollte sich dem vom Vorstand gebilligten Änderungsantrag, daß der Wehrbeauftragte nur von der Mehrheit des Hauses herbeigerufen werden könne, zubilligen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> erläutert, daß es hierbei um den § 116 c Abs. 2 gehe, ob eine Minderheit von 30 Mitgliedern des Bundestages die Herbeizitierung des Wehrbeauftragten verlangen können. Der Geschäftsordnungsausschuß bejahe dies einmütig, der Verteidigungsausschuß fast einmütig. Er, <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name>, wende sich gegen den Antrag <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, sehe aber einen Kompromiß darin, daß jedes Mitglied die Herbeirufung verlangen könne, damit der Wehrbeauftragte nach seiner Zuständigkeit berichte. Das Verlangen solle aber nur dann zulässig sein, wenn der Bericht des Wehrbeauftragten auf der Tagesordnung des Ausschusses stehe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> führt aus, die FDP unterstütze den Antrag, und auch von der SPD sei es denkbar, daß sie mitmache. Bei dieser Lage schlage der Präsident vor, den Teil II des Ausschußberichts einfach zu streichen.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> erklärt, er beabsichtige nicht, über diese Frage eine Fraktionsdebatte heraufzubeschwören. Er vermöge aber nicht einzusehen, welchen Sinn der Abs. 2 überhaupt habe. Er sollte einfach gestrichen werden, denn man könne keinen Wehrbeauftragten reden lassen, der nicht anwesend sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MerkatzHans-Joachim_1949-09-07">von Merkatz</name> gibt zu bedenken, daß der Wehrbeauftragte ein Berichterstatter und kein Gutachter sei. Seine Aussagen sollten auf die Fragen zu seinem Bericht begrenzt bleiben. Im anderen Falle werde das Amt verfälscht, und das bringe Verwirrung.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> setzt sich noch einmal für die Streichung des Abs. 2 ein, da man den Wehrbeauftragten nur dann im Bundestag anwesend wissen wolle, wenn er gebraucht werde. Der Vorschlag <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> gebe diesem Anliegen mehr Sicherheit.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> kommt auf den Wunsch des Ausschusses zurück, der ein Minderheitenrecht wolle. Demgegenüber spreche er sich dafür aus, dies in einen Mehrheitsbeschluß umzuwandeln. Er, Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name>, stimme der Streichung zu, wenn er auch ihr Zustandekommen nicht für möglich halte. Wenn dies aber nicht erreicht werde, sollte man seinem Vorschlag folgen. Schon einmal habe es einen Wehrbeauftragten gegeben, der über seine Zuständigkeiten hinausgegangen sei. Über die Auslegung des § 2 könne sich Streit entwickeln, über den Begriff »die Mehrheit des Hauses« aber nicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> weist auf, daß bei der Streichung des Abs. 2 noch im § 6 des Gesetzes über den Wehrbeauftragten inhaltlich das Gleiche wie im Antrag <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> stehe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> spricht sich dafür aus, dem Vorschlag <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> zu folgen. Die beiden anderen Fraktionen befaßten sich bereits mit dieser Sache; die Zustimmung der FDP liege schon vor, während die SPD die Wahl in dieser Woche noch nicht vornehmen wolle. Die Fraktion ist damit einverstanden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-8">
+            <head>H.</head>
+            <p>[8. Parteien]</p>
+            <p>Dann beleuchtet Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> das Parteiengesetz, mit dem man im Wort stehe. Sollte es am folgenden Tag nicht zu einer Einigung im Gremium kommen, werde ein eigener Antrag notwendig. Es bestehe hierüber Einverständnis mit dem Koalitionspartner.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN009" type="comment">
+                     <p>CDU/CSU-FDP-Gesetzentwurf über die politischen Parteien – Parteiengesetz – (Drs. IV/2853 vom 17. 12. 1964).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-9">
+            <head>I.</head>
+            <p>[9. Europapolitik]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> trägt vor, nach Meinung der SPD solle die Europa- und die Europaagraranfrage nicht erörtert werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> kommt auf die Beratungen des AK II über dieses Thema zu sprechen. Wenn die SPD kein Interesse habe, die Frage der europäischen Agrarpolitik zu erörtern, sei das verständlich. Diese Frage müsse aber in den Rahmen der Europapolitik hineingestellt werden, denn nur so sei die Entscheidung der Regierung begründet und zu verstehen. Von der SPD erwarte man eine Reihe von Vorschlägen. Man könne aber in dieser Sache nur dem Standpunkt des Bundeskanzlers beitreten und müsse sich entscheiden zwischen wirtschaftlichen und sozialen Maßnahmen. Die Altershilfe sollte 150 DM betragen und mit Wirkung vom 1. 1. 1966 der Beitrag nicht um 2, sondern um 4 DM erhöht werden.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN010" type="comment">
+                     <p>SPD-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/1947 vom 18. 2. 1964) und CDU/CSU-FDP-Entwurf eines Dritten Gesetzes zur Änderung und Ergänzung des Gesetzes über eine Altershilfe für Landwirte (Drs. IV/2425 vom 25. 6. 1964).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> ergänzt die Ausführungen mit dem Hinweis, daß der AK II die Auffassung vertrete, auch vom Haushalt her über die Finanzierung der Sache zu sprechen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-10">
+            <head>J.</head>
+            <p>[10. Arbeit. Arbeitsrecht, Jugend]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) wendet sich dem Jugendarbeitsschutzgesetz zu. Die Änderung des § 10 Abs. 4 geschehe auf Veranlassung der SPD, wobei allerdings die Gefahr der Verfassungswidrigkeit bestehe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN011" type="comment">
+                     <p>SPD-Entwurf eines Zweiten Gesetzes zur Änderung des Jugendarbeitsschutzgesetzes (Drs. IV/1346 vom 19. 6. 1963).</p>
+                  </note>
+               </seg> Die Neufassung des Arbeitsministers räume diese Bedenken aus. Ursprünglich habe man die Meinung vertreten, Jugendliche sollten bis zum 18. Lebensjahr samstags nicht beschäftigt werden. Das Bundesarbeitsgericht habe aber eine andere Entscheidung getroffen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> unterstreicht, daß diese Sache auch vorher schon strittig gewesen sei. Auf der einen Seite sage man, es werde auf dem Gebiet der Ausbildung zu wenig getan, auf der anderen Seite nehme man Ausbildungsmöglichkeiten weg. Man sollte doch den Betrieben die Möglichkeit geben, die Ausbildungsmöglichkeiten auszunutzen.</p>
+            <p>Auf die Anregung des MdB <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin), die überbetrieblichen Ausbildungsmöglichkeiten nicht zu berühren, schlägt</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> vor, eine solche Erklärung im Plenum abzugeben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HaaseLothar_1961-10-17">Haase</name> bittet um Aufklärung, ob durch diese Neuregelung die Arbeitszeit der Jugendlichen eingehalten werden könne.</p>
+            <p>Nachdem <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin) dies bejaht, stimmt die Fraktion dem vorgeschlagenen Verfahren zu.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> macht darauf aufmerksam, daß die SPD beabsichtige, ein europäisches Jugendwerk zu schaffen, was aber zu Bedenken im Auswärtigen Ausschuß geführt habe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN012" type="comment">
+                     <p>SPD-Antrag betr. europäisches Jugendwerk (Drs. IV/1855 vom 22. 1. 1964).</p>
+                  </note>
+               </seg> Es sei zu einer Abstimmung gekommen, in der am 11. Juli dieser Vorschlag abgelehnt wurde, bei einer späteren Abstimmung im Jugendausschuß sei man dann noch einmal unterlegen. Jetzt müsse die Sache im Plenum geregelt werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> anerkennt die mangelnde Präsenz in den Ausschüssen als ein seit langem bekanntes Problem. In der Weihnachtspause werde eine Übersicht über die Gesetzgebung erstellt, die über die Lage in den Ausschüssen und die personelle Besetzung Auskunft gebe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> meint, der einzige kontroverse Punkt liege in der Änderung der Präambel, und deshalb sollte man das Wort »Europajugendwerk« nicht streichen. Die Streichung könnte in der SPD und bei der Öffentlichkeit dahingehend verstanden werden, als wende die CDU/CSU sich gegen die Gründung eines europäischen Jugendwerks. Im Plenum werde zwar das Gegenteil zum Ausdruck gebracht, die Jugendverbände hätten sich aber für die gegenwärtige Fassung auch der Präambel ausgesprochen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> führt aus, der Auswärtige Ausschuß habe sich in dieser Sache große Mühe gegeben und seine Gesichtspunkte auch dem Jugendausschuß mitgeteilt. Der Ausschuß habe die Meinung vertreten, den Satz über die Gründung eines europäischen Jugendwerks nicht aufzunehmen, um keine Entwertung des deutsch-französischen Jugendwerks eintreten zu lassen. Bei der derzeitigen starken Belastung des deutsch-französischen Verhältnisses sollte ein solcher Schritt unterbleiben und im Ministerrat des Europäischen Parlaments [sic!] die Schaffung eines europäischen Jugendwerks angestrebt werden. Damit würden ungünstige Reaktionen in Frankreich vermieden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#VogtKarl-Heinz_1957-10-15">Vogt</name> schließt sich den Ausführungen des Vorredners an. Von der SPD habe man keine Auskunft darüber erhalten können, welchen Umfang das europäische Jugendwerk einnehmen solle, ob es auf die Sechs, die WEU oder auf die anderen Staaten des Europarats beschränkt bleiben solle, oder ob nicht gar an einen Sprung über den Eisernen Vorhang gedacht sei. Er, <name type="Person" role="Sprecher" ref="#VogtKarl-Heinz_1957-10-15">Vogt</name>, spreche sich dafür aus, dem Vorschlag <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> zu folgen, dem auch <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> von der SPD seine Zustimmung gebe. Es sollte doch nicht übersehen werden, daß auf die Bundesregierung ein Wirbel zukomme, mit dem sie vielleicht nicht fertig werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> teilt mit, AK IV beabsichtige, den Antrag einfach als Abänderungsantrag, eventuell sogar als Koalitionsantrag zu stellen.</p>
+            <p>Gegen eine Gegenstimme wird dieser Vorschlag angenommen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-11">
+            <head>K.</head>
+            <p>[11. Geld und Kredit. Geld- und Währungswesen]</p>
+            <p>Das 4. Umstellungsergänzungsgesetz, das bei mehreren Stimmenthaltungen im AK [III] gebilligt wurde, soll ohne Begründung und ohne Debatte im Plenum über die Bühne gehen.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN013" type="comment">
+                     <p>CDU/CSU-SPD-FDP-Entwurf eines Vierten Umstellungsergänzungsgesetzes (Drs. IV/2808 vom 4. 12. 1964).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1964-12-08-t1508_EP_div_SVP-12">
+            <head>L.</head>
+            <p>[12. Rechtspflege. Verjährungsfrist für NS-Verbrechen]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> betont die Sorge angesichts der am 8. Mai abgelaufenen Verjährungsfrist für NS-Mordtaten. Für die übrigen Verbrechen sei die Verjährungsfrist bereits vor fünf Jahren eingetreten. Damals habe der Bundesrat eine Verlängerung der Verjährungsfrist abgelehnt, trotz beachtlicher Gründe, die dagegen sprachen. Er rate ab, die Frage der Verjährung schon jetzt endgültig zu entscheiden. Von seiten der SPD sei angeregt worden, nach außen zu bekunden, daß alles unternommen werde, die Schuldiggewordenen der gerechten Strafe zuzuführen. Im großen und ganzen sei bereits durch richterliche Handlung die Unterbrechung der Verjährung herbeigeführt. Darüber hinaus hätten die Justizminister der Länder die Zentrale Untersuchungsstelle in Ludwigsburg eingerichtet, so daß man annehmen dürfe, daß kaum noch Komplexe gefunden würden, die nicht untersucht seien. Nachdem die Bundesregierung die Entscheidung getroffen habe, ihrerseits keinen Antrag auf Unterbrechung der Verjährung einzubringen, habe man einen Antrag vorgelegt, der bezwecke, die laufende Überprüfung in Ludwigsburg zu verstärken. Wenn im großen und ganzen dieser Anregung bereits entsprochen wurde, scheine es doch zweckmäßig, daß der Bundestag als gegebene Stelle dazu einmal Stellung nehme. Die Bundesregierung habe dazu auch einen Aufruf an die Weltöffentlichkeit gerichtet, den man vom Bundestag her unterstützen sollte. Es sollte darauf hingewiesen werden, daß diese Taten schon heute mit Nachdruck verfolgt würden. Gewisse Komplexe sollten besonders betont und beleuchtet werden.</p>
+            <p>AK I habe sich mit dieser Sache eingehend befaßt, wenn auch über das von einer Reihe von Abgeordneten geforderte Ansinnen auf Verlängerung der Verjährungsfrist noch nicht entschieden worden ist. Der Fraktion werde darüber noch berichtet werden. Zunächst solle man aber dem Antrag wegen NS-Mordtaten beitreten und ihn ohne Überweisung im Plenum annehmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> informiert die Fraktion über die Haltung der FDP, die dieser Sache nicht beizutreten gedenke.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BendaErnst_1957-10-15">Benda</name> stimmt dem Anliegen durchaus zu. Der wesentliche Gedanke liege doch darin, den Willen des Bundestages zum Ausdruck zu bringen, mit allen nur denkbaren Mitteln die Verfolgung dieser NS-Mordtaten zu sichern. Einer Auslegung des Antrages, als ob bis zum 1. März die Diskussion erledigt sei, könne man nicht zustimmen. Dieses Thema werde in den zuständigen Gremien weiter erörtert.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> pflichtet dem bei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WinterFriedrich_1956-03-06">Winter</name> erinnert, daß sich die CSU als Landesgruppe wie als Partei mehrfach in dem Sinne festgelegt habe, einer etwaigen Verlängerung der Verjährungsfrist nicht zuzustimmen, so daß man auch einem Antrag im März die Zustimmung verweigern müsse. Es handele sich nicht nur um eine Frage des Grundgesetzes, sondern auch um eine Frage der Menschenrechtscharta, die dem entgegenstehe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BreseWilhelm_1949-09-07">Brese</name> betont, er könne dem Antrag nicht zustimmen, obwohl er durch das Dritte Reich selber gelitten habe; er bejahe aber den Beschluß der Bundesregierung, wegen rechtlicher Gründe die Frist nicht zu verlängern. Denn es sei wohl unmöglich, heute noch vom Gericht feststellen zu lassen, ob Befehlsnotstand vorlag oder ob aus verbrecherischen Trieben gehandelt wurde. Es habe in vielen Fällen wohl Befehlsnotstand vorgelegen. Man sollte doch alles tun, um diese Verfahren zu beenden. Diejenigen, die diese Gesetze gemacht und ausgearbeitet haben, könnten nicht erfaßt und bestraft werden, und er, <name type="Person" role="Sprecher" ref="#BreseWilhelm_1949-09-07">Brese</name>, könne sich schlecht vorstellen, daß diese Beamten nicht gewußt hätten, was sie mit diesen Gesetzen heraufbeschworen haben. Er betrachte es als scheinheilig, wenn jetzt der kleine Mann verfolgt werde. Auch in anderen Ländern lebten Verbrecher, die sich an Deutschen vergangen haben, ohne daß je von Prozessen die Rede war. Er denke an Dresden und Hildesheim. Es sollte doch alles getan werden, um unter diese Zeit einen Strich zu ziehen; das sage er, ohne je Nationalsozialist gewesen zu sein.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> meint, daß <name type="Person" role="Erwaehnung" ref="#BreseWilhelm_1949-09-07">Brese</name> gerade von seinem Gesichtspunkt aus in der Lage sein müsse, dem Gesetz zuzustimmen. Der Antrag unterstütze den Standpunkt der Bundesregierung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> hält ebenfalls den Richter für überfordert, wenn er jetzt nach 20 Jahren Tatbestände aufklären müsse. Bei der Verlängerung der Verjährung gebe man doch der Zone und Moskau ein Mittel in die Hand, diese Sachen dauernd hochzuspielen. Wenn Nahum <name type="Person" role="Erwaehnung" ref="#GoldmannNahum">Goldmann</name> »Berge von Dokumenten« habe, wäre es doch seine Pflicht gewesen, diese Dokumente auf den Tisch zu legen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> stimmt dem Antrag zu, der eine gute Sache beinhalte. Durch die Annahme dieses Antrages dürfe aber nicht der Eindruck entstehen, als ob die Verlängerung der Verjährung damit erledigt wäre. Es erscheine ihm fraglich, daß alle Fälle bekannt seien.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> gibt dem Antrag <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> seine Zustimmung, hält aber den Vergleich zwischen KZ und Dresden für nicht angebracht. Es sei ihm nicht bekannt, daß irgendwer in Deutschland den Versuch unternommen habe, die Piloten von Coventry als Verbrecher vor Gericht zu stellen.</p>
+            <p>Auf seiner Reise nach Jerusalem sei ihm und <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name> von zuständiger Stelle mitgeteilt worden, daß hier allein über 25 Mio. Dokumente lägen, die allmählich zusammengekommen seien. Es sei aber technisch unmöglich, alle diese Dokumente durchzuarbeiten. Mit dem 8. Mai tauche die Gefahr auf, daß bestimmte Verbrechen deshalb nicht verfolgt werden können, weil sie so grauenhaft waren, daß ihre Dokumentation noch nicht abgeschlossen ist und dann die Verjährungsfrist nicht zur Verfolgung ausreicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> neigt in seiner Meinung der Auffassung des Abg. <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name> zu. Er stelle aber an <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> die Frage, ob nicht zu befürchten sei, daß man mit der allzu starken Frage an die zuständige Stelle der SPD auf ein Glatteis folge. Am Schluß komme der Vorwurf, nicht genügend getan zu haben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> verweist auf die Worte die Antrages »in voller Anerkennung«, die gerade diesen Gesichtspunkt berücksichtigen.</p>
+            <p>Den Standpunkt der CSU habe man zur Kenntnis genommen. Man sollte sich zu einem späteren Zeitpunkt darüber unterhalten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Fraktion mit Mehrheit die Einbringung dieses Antrages beschließt.<seg type="note">
+                  <note xml:id="cdu-csu-04_1964-12-08-t1508_EP_FN014" type="comment">
+                     <p>CDU/CSU-SPD-Antrag betr. Verfolgung von NS-Mordtaten (Drs. IV/2823 vom 8. 12. 1964).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

@@ -1,224 +1,314 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1957-03-12-t1445_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1007/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 12. März 1957</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>7 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1957-03-12"><time type="start" when="14:45:00"/><time type="end" when="19:05:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1957-03-12-t1445_EP_SVP-1" corresp="#cdu-csu-02_1957-03-12-t1445_EP_div_SVP-1">A. TOP 1: Grundstücksverkehrsgesetz. – TOP 2: Moskaureise von Abgeordneten. – TOP 3: Wahltermin. – TOP 4: Kindergeldgesetz. – TOP 5: Große SPD-Anfrage betr. Sicherung des sozialen Wohnungsbaus. – TOP 6: <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>-Artikel. – TOP 7: Zweites Gesetz zur Änderung des Gesetzes zur Förderung des Bergarbeiterwohnungsbaus im Kohlenbergbau. – TOP 8: Haushalt 1957.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1957-03-12-t1445_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. [Grundstücksverkehrsgesetz, Drucksache II/3206 v. 14. 2. 1957]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt als Fraktionsmeinung fest, daß das Grundstücksverkehrsgesetz auch dem Ausschuß für Kommunalpolitik überwiesen werden solle.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN001" type="comment"><p>Die Überweisung an diesen Ausschuß war im Bundestag umstritten, fand aber doch eine Mehrheit. Vgl. Sten. Ber., 197. Sitz. am 14. 3. 1957, S. 11245.</p></note></seg></p>
-				<p>2. [Moskaureise von Abgeordneten]</p>
-				<p>Zur Moskaureise teilt der Redner mit, daß die FDP nicht mehr auf die Festsetzung des Reisetermins im gegenwärtigen Augenblick bestehe.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN002" type="comment"><p>Siehe Nr. 344, 3.</p></note></seg> Auch die SPD habe eine solche Erklärung abgegeben.</p>
-				<p>Die Fraktion billigt die Haltung der Fraktionsführung, die sich gegen eine Terminfestlegung ausgesprochen hatte.</p>
-				<p>3. [Wahltermin]</p>
-				<p>Sodann kündigt der Redner an, daß nach der Rückkehr des Bundeskanzlers aus dem Urlaub<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN003" type="comment"><p><name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> hielt sich vom 23. 2. bis 18. 3. 1957 in Cadenabbia auf. Vgl. Buchstab, S. 64 und Krone, Tagebücher 1945–1961, S. 248.</p></note></seg> nun auch die Frage des Wahltermins entschieden werden müsse. Fest stehe, daß die Gesetzgebungsarbeit etwa bis Ende Mai abgeschlossen sein müsse.</p>
-				<p>4. [Kindergeldgesetz]</p>
-				<p>Weiter teilt er mit, daß der Fraktionsvorstand empfohlen habe, zur Kindergeldgesetznovelle keinen eigenen Entwurf einzubringen, sondern den Entwurf der Bundesregierung abzuwarten.</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> bemerkt dazu, daß Arbeitskreis IV sich dieser Auffassung angeschlossen habe, aber darum bitte, daß nicht in der Zwischenzeit aus dem Kreise der Fraktion Anträge gestartet würden.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN004" type="comment"><p>Siehe Nr. 344, 1.</p></note></seg></p>
-				<p>5. [Große SPD-Anfrage betr. Sicherung des sozialen Wohnungsbaus, Drucksache II/3009 v. 13. 12. 1956]</p>
-				<p><name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> berichtet dann zur Großen Anfrage über den sozialen Wohnungsbau, daß dieser nicht, wie von der SPD behauptet, in einer Krise oder gar vor der Katastrophe stehe. Gewiß sei durch die Diskonterhöhung und durch die Rentenreform Kapitalmangel entstanden. Auf der anderen Seite habe aber der Kapitalmarkt auch gewisse Förderungen erfahren. Insgesamt stehe man vor einem neuen Rekordjahr im sozialen Wohnungsbau, wenn auch die gestellten Lohnforderungen und die eingetretenen Preissteigerungen sich auswirken würden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> wiederholt, daß er die seinerzeitigen kapitalmarktfördernden Maßnahmen nach wie vor für falsch halte und daß die gewonnenen Mittel zu einem großen Teil lediglich durch Umtausch aufgebracht worden seien. Es sei jetzt auch zu klären, inwieweit die Landwirtschaft an den aufzubringenden Mitteln beteiligt werden solle.</p>
-				<p>6. [<name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>-Artikel]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> teilt mit, daß in »Dagens Nyheter« ein Artikel über <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> erschienen sei, und verliest den Wortlaut des Artikels.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN005" type="comment"><p>In dem Artikel »›Sjökommandohuset‹ var rysk spionbas. Avslöjad under kriget« hatte »Dagens Nyheter« am 9. 3. 1957 <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> als Sowjetspion bezeichnet. In der folgenden Woche nahm die Zeitung die Beschuldigung wieder zurück. Vgl. auch Freudenhammer/Vater, S. 183–185 und Scholz, S. 161–163.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erblickt in dem Artikel eine Bestätigung von Meinungen, die man seit längeren gehört habe. Es empfehle sich jedoch, seitens der Fraktion nichts zu unternehmen, sondern abzuwarten, was weiter geschehen werde.</p>
-				<p>7. [Zweites Gesetz zur Änderung des Gesetzes zur Förderung des Bergarbeiterwohnungsbaus im Kohlenbergbau, Drucksache II/2356 v. 5. 5. 1956]</p>
-				<p><name type="Person" role="Sprecher" ref="#HarnischfegerJohann_1953-10-06">Harnischfeger</name> referiert zum Bergarbeiterwohnungsbau über die Entwicklung dieser gesetzgeberischen Maßnahme und legt dar, daß im Hinblick auf die inzwischen gültig gewordenen neuen Preise für Kohle eine gesetzliche Regelung der für den Wohnungsbau bestimmten Aufschläge notwendig sei. Der Ausschuß schlage vor, die aus der Kohlenabgabe gewonnenen Mittel in voller Höhe dem Bergarbeiterwohnungsbau zur Verfügung zu stellen; dieser einstimmigen Auffassung solle sich auch die Fraktion anschließen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BroennerJosef_1949-09-07">Brönner</name> räumt ein, daß gewiß Nordrhein-Westfalen viele Wohnungen brauche, aber man müsse endlich dahin kommen, daß es seinen Bedarf selber decke. Niemand wende sich gegen die Stärke der Förderung des Bergarbeiterwohnungsbaues; aber dann müsse man für die anderen Bundesgebiete auch einen entsprechenden Ausgleich suchen für die Lasten, die dort wegen der Frachten entstünden. Er könne nur die Hoffnung zum Ausdruck bringen, daß dieses Gesetz nicht noch ein viertes Mal vor den Bundestag komme.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN006" type="comment"><p>Das Bergarbeiter-Wohungsbaugesetz erreichte den Bundestag am 15. 10. 1959 ein viertes Mal durch den Antrag der CDU/CSU-Fraktion betr. drittes Änderungsgesetz (Drucksache III/1292).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> bemängelt, daß zu viele Wohnungen, die aus solchen Mitteln gebaut worden seien, zweckentfremdet wären. Es gehe nicht an, diese anderweitig besetzten Wohnungen einfach als fehlend zu bezeichnen und neue Wohnungen dafür zu bauen. Eine Auflockerung der Vollstreckungsschutzmaßnahmen sei hier notwendig.</p>
-				<p>Stücklen kündigt an, daß er zusammen mit Freunden einen Antrag einbringen werde, die Mittel für den Bergarbeiterwohnungsbau zur Hälfte auf die zur Verteilung kommenden Bundesmittel für Wohnungsbau anzurechnen. Es gehe nicht an, daß der Konsument in allen deutschen Ländern dem reichsten deutschen Bundesland den Bergarbeiterwohnungsbau über den sozialen Wohnungsbau hinaus finanziere.</p>
-				<p><name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> wendet sich gegen einen solchen Antrag. Wenn es auch zutreffe, daß die Kohlewirtschaft bisher falsche Zahlen über die Deckungslage angewendet habe, so komme man doch um die jetzt notwendige gesetzliche Regelung nicht herum.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name> warnt davor, es bei dieser Gelegenheit zu einer Debatte über den Mieterschutz kommen zu lassen; ähnliche Vorgänge hätten in England äußerst negative Auswirkungen gehabt. Dagegen sei der Antrag <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> auf Anrechnung der Mittel zu unterstützen, weil man damit zu einer gerechteren Verteilung der Mittel komme.</p>
-				<p><name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> weist darauf hin, daß eine solche Änderung des Gesetzes dieses sinnlos mache. Das führe notwendig zu einem Rückgang des normalen sozialen Wohnungsbaues, und an dieser Frage werde das ganze Gesetz scheitern.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schlägt vor, daß sich <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#CzajaHerbert_1953-10-06">Czaja</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> und <name type="Person" role="Erwaehnung" ref="#HarnischfegerJohann_1953-10-06">Harnischfeger</name> noch einmal zusammensetzen sollten, um eine Übereinstimmung der Meinung der Fraktion herbeizuführen.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN007" type="comment"><p>Der Bundestag verabschiedete das Gesetz am 14. 3. 1957 in der Ausschußfassung (vgl. Sten. Ber., 197. Sitz., S. 11243f.).</p></note></seg></p>
-				<p>8. [Haushalt 1957]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wendet sich dann der Bewilligung von Ausgaben über den Haushaltsansatz hinaus zu. Eine Erhöhung der Ausgaben sei notwendig für den Grünen Plan, im Zuge der Novelle zum Lastenausgleichsgesetz, im Rahmen der Besoldungsgesetzgebung und der Novelle zu Gesetz zu Art. 131 GG; auch für die Förderung der Wissenschaften und der Studenten werde man einen Betrag einsetzen müssen. Seit längerem seien Besprechungen mit dem Bundesfinanzminister über die hier vorhandenen Möglichkeiten durchgeführt, deren Ergebnis gewesen sei, daß man sich in allen wesentlichen Punkten mit ihm verständigt habe; die Mehrausgaben würden etwas mehr als 1 Mrd. DM ausmachen. Auch über die Deckung dieser Ausgaben sei eine Übereinstimmung erzielt worden. Als einziger Punkt sei ungeklärt geblieben die Novelle zum BVG!</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> erinnert daran, daß der Haushalt 1957 nur ausgeglichen habe vorgelegt werden können, indem man einen Rückgriff auf die vorhandenen Bestände gemacht habe. Auch müsse man sich darüber klar sein, daß die Beträge des außerordentlichen Haushalts nicht durch Anleihen gedeckt, sondern aus Kassenmitteln befriedigt werden müßten. Dadurch sei der Rückgriff auf etwa 3,3 Mrd. DM verstärkt gewesen. Diese Lage werde weiter verschärft durch die Anforderungen des Besoldungsgesetzes, durch die Veränderungen in Angestellten- und Arbeitertarifen und durch die beschleunigte Abwicklung der Wiedergutmachung. Letztere Aufwendungen seien für die Bundesbahn und für die Eingliederung der Saar notwendig, so daß man etwas mehr als 1 Mrd. DM über den Voranschlag hinauskomme. Gegen weitere Rückgriffe auf die Kassenbestände wehre sich vor allem der Bundesverteidigungsminister, da er eine Verzögerung bei der Durchführung des Aufbaues der Bundeswehr befürchte. Bei dieser Lage dürfe sich keiner dafür hergeben, Forderungen bei der Haushaltsberatung zu stellen, die in dem nun einmal gezogenen Rahmen nicht befriedigt werden können; sonst werde auch der Bundesverteidigungsminister gezwungen sein, nach Art. 113 GG sein Veto einzulegen, was bedeuten würde, daß die Opposition ihr Ziel erreichen und den Großangriff auf den Verteidigungshaushalt unternehmen könne.</p>
-				<p>Bundesfinanzminister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> schildert kurz die Kassenlage und verweist darauf, daß man nicht in eine Situation kommen dürfe, in der der Bund zahlungsunfähig würde. Er halte es für ausgeschlossen, daß mehr als der vereinbarte Betrag gegeben werden könne, was für das BVG 300 Mio. DM und nicht mehr ausmache.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LindrathHermann_1953-10-06">Lindrath</name> wendet sich gegen die Vorschläge zur Steuersenkung, die von verschiedenen Seiten gemacht worden seien. Man müsse bei der Einnahmeseite berücksichtigen, daß sich hier die Steuerreform noch stärker auswirken könne und daß die Frage der Ehegattenbesteuerung allein Mindereinnahmen von 150 Mio. DM bis Ende 1955 ausmachen werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> berichtet über die Verhandlungen, die auf Anregung des Fraktionsvorstandes<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN008" type="comment"><p>Siehe Nr. 339, 1.</p></note></seg> über das BVG stattgefunden hätten. Dabei hätten sich zwei Meinungen gezeigt. Für die Grundrente sei eine Erhöhung von ungefähr 10 % (78 Mio. DM) vorgesehen. Die Verbesserung der Familienversorgung nehme 20 Mio. DM, die Kinderzuschläge 54 Mio. DM in Anspruch. Ein beabsichtigter Sozialzuschlag für Schwerbeschädigte erfordere 17 Mio. DM, die Erhöhung des Kindergeldes 420 Mio. DM, die Erhöhung des Witwengeldes 69,2 Mio. DM, die Heiratsabfindung 19,4 Mio. DM, wozu noch weitere Einzelverbesserungen kämen, was insgesamt einen Mehrbetrag von 331 Mio. DM erforderlich mache. Der Bundesfinanzminister glaube, diese Mittel aufbringen zu können, wenn die Novelle erst ab 1. Mai in Kraft trete. Ein früherer Termin sei auch technisch nicht möglich. Diesem Vorschlag der Mehrheit der erwähnten Kommission solle man zustimmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt dar, daß die Fraktion jetzt vor der Frage stehe, ob sie bei diesen rund 300 Mio. DM verbleiben oder den Vorschlägen von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> folgen und entsprechende Mehraufwendungen machen wolle. Im letzteren Falle müßten an anderen Punkten Abstriche vorgenommen werden.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> stellt zunächst an Zahlen einen Vergleich zwischen der Unfallrente und der Grundrente dar. FDP, SPD und BHE hätten Forderungen aufgestellt, die zwischen 753 und 1 200 Mio. DM lägen. Es gelte drei Dinge abzuwehren: die Einheitsrente, die Vorstellung einer dynamischen Rente und die Berufsschadenrente.</p>
-				<p>Die Meinungsverschiedenheit im Kreise der Fraktion beziehe sich auf die Gestaltung der Grundrente.</p>
-				<p>Die Rednerin gibt dann einen Überblick über die neuen Zahlen, die sich bei der Grundrente ergeben, und wendet sich dann den Fragen der Alterszulagen, der Kinderzuschläge, Sozialzuschläge und des Kindergeldes zu. Dann stellt sie dar, wie sie die Ausgaben zu den einzelnen Positionen gestaltet sehen möchte, und kommt zu einem Endergebnis von rund 450 Mio. DM Mehrbedarf. Das sei das Minimum, auf dem es auch möglich sei, eine breite Einheit im Hause herzustellen. Wegen der 150 Mio. DM Differenz solle man sich nicht in die Gefahr begeben, daß etwa der Antrag der SPD [Drucksache II/3139 v. 30. 1. 1957] durchginge.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> wiederholt seine Feststellung, daß er über den vorgesehenen Rahmen nicht hinausgehen könne. Da man 1950 2,3 Mrd. DM, 1956 bereits 4 Mrd. DM für die Kriegsbeschädigten ausgegeben habe, seien hier die Leistungen mehr gestiegen als in allen anderen Fällen. Er habe auch Bedenken, ob es richtig sei, allzuviel Geld auszugeben, und ob man damit nicht unerfreuliche Wirkungen erzielen werde. Er glaube nicht, daß es nachteilig sein werde, wenn man mit den Anforderungen im Rahmen des Möglichen bleibe. Mit einer Verbesserung um 1,1 Mrd. in einem Haushaltsjahr (5. und 6. Novelle) könne man vor der Öffentlichkeit sehr wohl bestehen. Er persönlich empfehle, den Vorschlägen <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgens</name> zu folgen, weil er nicht wisse, wo er die 150 Mio. DM mehr hernehmen solle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> macht Vorschläge zur Frage Elternbeihilfe und der Grundrente und macht auf die politischen Schwierigkeiten aufmerksam, die entstehen müßten, wenn man zu weit hinter den Forderungen zurückbleibe. Es müsse doch möglich sein, durch die Festsetzung des Zeitpunktes des Inkrafttretens des Gesetzes zu einer für alle erträglichen Lösung zu kommen.</p>
-				<p>Josef <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> setzt sich für den Entwurf Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> ein. Angesichts der Millionen Kriegsopfer dürfe man diese Entscheidung nicht an 150 Mio. DM scheitern lassen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> bringt zum Ausdruck, daß er nicht sehe, wie die Mittel aufgebracht werden sollten. Immer neue Ausgaben könne die Wirtschaft nicht tragen, und auch die daraus entstehenden Folgen seien politisch zu bedenken.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> bittet den Bundesfinanzminister, jetzt mit sich reden zu lassen und nicht erst unter dem Druck der Opposition. Wenn man sich nicht einigen könne, werde sie selbst den verkürzten Entwurf nicht vertreten können und müsse das dann auch zum Ausdruck bringen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> bittet zu prüfen, ob man nicht zu Lasten der Grundrente eine Erhöhung der Ausgleichsrente durchführen könne. Man dürfe das Gewicht der Kriegsbeschädigtenorganisationen auf keinen Fall unterschätzen und solle sich auch überlegen, wie peinlich es wäre, ohne Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> in diese Auseinandersetzung gehen zu müssen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> appelliert an Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, es bei Aufwendungen von 330 Mio. DM bewenden zu lassen und die anderen Fragen noch zurückzustellen. Bei der 5. Novelle sei man von 170 Mio. auf 700 Mio. DM hinaufgegangen. Das dürfe doch nicht vergessen werden. Man müsse auch an die anderen Dinge denken, die noch zu tun seien, und eine Verbesserung der Kriegsopferversorgung könne nicht zu Lasten anderer berechtigter Wünsche erfolgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KraftWaldemar_1953-10-06">Kraft</name> spricht sich für eine Begrenzung auf 330 Mio. DM aus.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> erinnert an die 5. Novelle und sagt voraus, daß man unter dem Druck der übrigen Parteien auch dieses Mal wieder werde heraufgehen müssen, wenn man nicht von vorneherein vom Entwurf Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> ausgehen wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> bedauert, daß der Bundesfinanzminister selbst dazu beigetragen habe, wenn man ihm nicht recht glaube, daß er nichts mehr in der Kasse habe. Er, der Redner, müsse aber dieses Mal feststellen, daß die vom Bundesfinanzminister geschilderte Lage voll den Tatsachen entspreche. Die finanzielle Lage sei bis zum Äußersten angespannt, und die Fraktion habe es jetzt in der Hand, ob sie in eine Lage kommen wolle, in der der Verteidigungshaushalt vielleicht nicht mehr aufrecht erhalten werden könne. Das wolle er in aller Deutlichkeit gesagt haben.</p>
-				<p><name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> wendet sich gegen die Vorschläge von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> und bitte doch dringend, Maß zu halten.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> berichtet, daß man auch die Frage der Deckung ernsthaft geprüft habe, ohne einen Vorschlag machen zu können.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> weist einen Zwischenruf zurück, daß sie durch ihre Vorschläge persönlich glänzen wolle, und erinnert daran, wie sie im Ausschuß harten Widerstand geleistet habe, um überhöhten Forderungen entgegenzutreten. Wenn man jetzt die 100 Mio. DM nicht bewillige, dann werde sich der SPD-Entwurf durchsetzen. Davor wolle sie gewarnt haben. Sie bitte, über diese Frage abstimmen zu lassen. Nach ihrer Ansicht seien die 131er überdotiert. Die Tabaksteuer habe man leichten Herzens um 60 Mio. DM gesenkt, und sie wisse, was dahinterstecke. Wenn man ihren Vorschlägen nicht folgen wolle, dann sehe sie sich genötigt, aus der Arbeit im Kriegsopferausschuß auszuscheiden.</p>
-				<p>Bundesverteidigungsminister Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> wirft die Frage auf, ob durch die geplanten Mehrausgaben der Verteidigungshaushalt jetzt von neuem berührt werde. Mit dem Bundeskanzler, Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, dem Bundesfinanzminister und Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> habe eine wiederholte Aussprache darüber stattgefunden, daß weitere Ausgabenreste aus 1955/56 nicht mehr gestrichen werden könnten. Allerdings habe er – heftig gewarnt von seinem Staatssekretär – einem Zahlungsplan zugestimmt, durch den Mittel so lange flüssig gemacht werden könnten, bis [sie] zur Verwendung im Verteidigungshaushalt kommen müßten. Man müsse auch den finanziellen Konsequenzen der Verteidigungspolitik einmal ruhig ins Auge sehen, und zwar auch im Wahljahr.</p>
-				<p>Zunächst habe man der NATO versprochen, in drei Jahren 600 000 Mann aufzustellen. Dann habe man drei Jahre lang im Namen des Bundeskanzlers, des Bundesaußenministers und des Verteidigungsministers versprochen, 500 000 Mann aufzustellen. Als er, der Redner, im Oktober nach Paris habe gehen müssen, um die NATO zu überzeugen, daß die Pläne geändert werden müßten, sei er vor einer beinahe unlösbaren Aufgabe gestanden, daß dadurch entstandene Mißtrauen zu überwinden, weil man ja noch im September das Gegenteil feierlich versprochen hatte. Die Aufstellung von 500 000 Mann hätte eine Aufstellungssumme von rund 70 Mrd. DM gefordert. Die finanziellen Möglichkeiten und die Maßnahmen, die getroffen worden seien, hätten jedoch in einem schreienden Gegensatz zu dem gestanden, was die Regierung den Vertragspartnern zugesagt gehabt habe. Es sei eben unmöglich, in drei oder vier Jahren mit je 9 Mrd. DM eine Aufrüstung zu finanzieren, die 70 Mrd. DM koste. Als er, der Redner, dann das Amt übernommen habe, habe er sehen müssen, daß unabhängig von Fragen der Unterbringung, der Übungs- und Flugplätze und der Liefertermine bei Ausschöpfung aller finanziellen Möglichkeiten bis zum 1. 4. 1961 nicht mehr als 340 000 Mann aufgestellt werden könnten. Er habe diese Zahl bisher nicht genannt, sondern immer von 12 Divisionen gesprochen, weil das weitere Nennen von Zahlen Hochstapelei gewesen wäre. Jetzt seien 195 000 Mann Heer statt 350 000, 70 000 Mann Luftwaffe, 30 000 Mann Luftverteidigung, 23 000 Mann Landverteidigung und 20 000 Mann Marine vorgesehen. Das sei alles und das könne nur erreicht werden, wenn Preise und Löhne gleich blieben und wenn die neuen Waffen nicht außergewöhnlich mehr kosten würden als bisher.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> habe 2,8 Mrd. DM, er selbst 2,6 Mrd. DM, also insgesamt 5,4 Mrd. DM, aus den Ausgabenresten dem Bundesfinanzminister zur Deckung des Bundeshaushalts zur Verfügung gestellt. Die 340 000 Mann könnten nur aufgestellt werden, wenn im Haushalt 1957 die vorgesehenen 7,8 Mrd. DM bis zum letzten Pfennig vorhanden seien, wenn die 4 Mrd. DM Ausgabenrest erhalten blieben, wenn 1958 statt 9 Mrd. DM 10 Mrd. DM eingesetzt würden und 1959/60 11 Mrd. DM und wenn außerdem die 5,4 Mrd. DM, die zur Verfügung gestellt worden seien, wieder zurückgegeben würden.</p>
-				<p>Es gehe doch darum, ob man im Ausland und bei den Bundesgenossen das erschütterte Vertrauen wiedergewinne; und es sei unmöglich, von dem jetzt festgelegten Plan noch einmal abzuweichen. Als drittgrößter Industriestaat mit einem Exportüberschuß von 300 Mio. DM mit einer außerordentlich starken Golddeckung könne man es sich nicht leisten, mit dem Verteidigungsbeitrag auf der Stufe Italiens stehen zu bleiben. Er, der Redner, habe feierlich versichert, daß das jetzt Zugesagte auch gehalten werde. Zur Zeit komme er zwar mit den zur Verfügung stehenden Mitteln noch aus; aber die Aufstellung müsse beschleunigt werden, weil bis 1959 das Loch in der Verteidigungsorganisation gestopft werden müsse, das durch den Abzug britischer Truppen und durch das Engagement Frankreichs in Nordafrika entstehe. Es genüge nicht, in den Versammlungen Lippenbekenntnisse der Treue zu <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> abzulegen, »Heil Europa« und »Es lebe die NATO« zu schreien, aber dann in der Praxis das Gegenteil zu tun. Man solle einsehen, daß er von seinen Mitteln nichts mehr abgeben könne, weil das mit der Fortsetzung der eingeschlagenen Politik nicht zu vereinbaren sei. Schon habe er die Panzerbestellungen kürzen müssen, schon würden die Aufträge in Raten eingeteilt, und die Bestellung von Flugzeugen sei verschoben worden; aber was man versprochen habe zu tun, das müsse man in jedem Falle halten. Es gehe dabei um das Gesicht vor den Bundesgenossen und um die Stellung der Bundesrepublik.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> weist auf die Vertraulichkeit dieser Ausführungen hin, die doch klar sagten, daß eben aus dem Verteidigungshaushalt nichts mehr gegeben werden könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> anerkennt das Anliegen des Bundesfinanzministers, daß der Haushalt ausgeglichen sein müsse. Man müsse sich aber auch Gedanken darüber machen, ob nicht ein Umbau der Kriegsopferversorgung vorgenommen werden müsse. Er könne allerdings nicht verstehen, warum sich der Bundesfinanzminister nicht gegen die Senkung der Tabaksteuer ausgesprochen habe. Es gebe doch bedürftigere Leute als die Zigarettenfabrikanten. Hier liege eine bedauerliche Inkonsequenz des Bundesfinanzministers vor.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> gibt die Erklärung ab, daß das Äußerste, was er verantworten könne, dem Vorstand und der Fraktion bereits mitgeteilt sei. Wenn um nur 1 Mio. DM darüber hinausgegangen würde, werde er die Verantwortung dafür nicht tragen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> weist den Vorwurf zurück, daß für die 131er zuviel ausgegeben werde. Auch dieser Personenkreis dürfe nicht übersehen werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> wendet sich dagegen, das Milliardenbukett des Verteidigungshaushalts ins Feld zu führen, wenn es um 150 Mio. DM gehe. Jetzt sei doch die Frage, ob die einzelnen Ausschußmitglieder bei den Beratungen in dem Rahmen standhalten würden, der ihnen durch die Fraktion gegeben würde. Er halte es für besser, wenn man 120 Mio. DM mehr ausgebe und dafür Frieden habe.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> erklärt, daß er tatsächlich das Äußerste angegeben habe und daß kein Handeln möglich sei.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> teilt mit, daß FDP und FVP soeben beschlossen hätten, 450 Mio. DM als Minimum zu verlangen. Sie selbst bedauere, nun aus der Arbeit ausscheiden zu müssen, und sie bitte darum, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> zukünftig mit der Federführung in Kriegsopferfragen zu betrauen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bedauert diese Äußerung. Wenn es alle so machten, dann könne sich die Fraktion ja auflösen. Man solle auch an seine Verantwortung vor der Fraktion, vor der Partei denken. Bei der ersten Koalitionsverhandlung seien die Vertreter der Deutschen Partei und der FVP überhaupt nicht gewillt gewesen, etwas für die Kriegsopfer zu tun. Insofern überrasche ihn die eben gemachte Mitteilung. Er schlage vor, entsprechend dem Vorstandsbeschluß einen Antrag in Höhe von etwa 330 Mio. DM einzureichen. Dabei sollten diese Beträge so geordnet werden, daß den Hauptanliegen der Fraktion Rechnung getragen werde, insbesondere auch in der Richtung gezielter Maßnahmen.</p>
-				<p>Dieser Vorschlag wird gegen sechs Stimmen bei drei Enthaltungen mit großer Mehrheit angenommen.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN009" type="comment"><p>Siehe Nr. 344, 2.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet abschließend die Fraktionsmitglieder, die den Antrag Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> mit unterzeichnet hätten, nachzuprüfen, ob sie ihre Unterschrift aufrecht erhalten wollen oder nicht.<seg type="note"><note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN010" type="comment"><p>Von Unionsseite wurde kein zweiter Entwurf eingebracht, auch nicht von Frau <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1957-03-12-t1445_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1007/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 12. März 1957</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>7 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1957-03-12">
+               <time type="start" when="14:45:00"/>
+               <time type="end" when="19:05:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1957-03-12-t1445_EP_SVP-1" corresp="#cdu-csu-02_1957-03-12-t1445_EP_div_SVP-1">A. TOP 1: Grundstücksverkehrsgesetz. – TOP 2: Moskaureise von Abgeordneten. – TOP 3: Wahltermin. – TOP 4: Kindergeldgesetz. – TOP 5: Große SPD-Anfrage betr. Sicherung des sozialen Wohnungsbaus. – TOP 6: <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>-Artikel. – TOP 7: Zweites Gesetz zur Änderung des Gesetzes zur Förderung des Bergarbeiterwohnungsbaus im Kohlenbergbau. – TOP 8: Haushalt 1957.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1957-03-12-t1445_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. [Grundstücksverkehrsgesetz, Drucksache II/3206 v. 14. 2. 1957]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt als Fraktionsmeinung fest, daß das Grundstücksverkehrsgesetz auch dem Ausschuß für Kommunalpolitik überwiesen werden solle.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN001" type="comment">
+                     <p>Die Überweisung an diesen Ausschuß war im Bundestag umstritten, fand aber doch eine Mehrheit. Vgl. Sten. Ber., 197. Sitz. am 14. 3. 1957, S. 11245.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. [Moskaureise von Abgeordneten]</p>
+            <p>Zur Moskaureise teilt der Redner mit, daß die FDP nicht mehr auf die Festsetzung des Reisetermins im gegenwärtigen Augenblick bestehe.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN002" type="comment">
+                     <p>Siehe Nr. 344, 3.</p>
+                  </note>
+               </seg> Auch die SPD habe eine solche Erklärung abgegeben.</p>
+            <p>Die Fraktion billigt die Haltung der Fraktionsführung, die sich gegen eine Terminfestlegung ausgesprochen hatte.</p>
+            <p>3. [Wahltermin]</p>
+            <p>Sodann kündigt der Redner an, daß nach der Rückkehr des Bundeskanzlers aus dem Urlaub<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN003" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> hielt sich vom 23. 2. bis 18. 3. 1957 in Cadenabbia auf. Vgl. Buchstab, S. 64 und Krone, Tagebücher 1945–1961, S. 248.</p>
+                  </note>
+               </seg> nun auch die Frage des Wahltermins entschieden werden müsse. Fest stehe, daß die Gesetzgebungsarbeit etwa bis Ende Mai abgeschlossen sein müsse.</p>
+            <p>4. [Kindergeldgesetz]</p>
+            <p>Weiter teilt er mit, daß der Fraktionsvorstand empfohlen habe, zur Kindergeldgesetznovelle keinen eigenen Entwurf einzubringen, sondern den Entwurf der Bundesregierung abzuwarten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> bemerkt dazu, daß Arbeitskreis IV sich dieser Auffassung angeschlossen habe, aber darum bitte, daß nicht in der Zwischenzeit aus dem Kreise der Fraktion Anträge gestartet würden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN004" type="comment">
+                     <p>Siehe Nr. 344, 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. [Große SPD-Anfrage betr. Sicherung des sozialen Wohnungsbaus, Drucksache II/3009 v. 13. 12. 1956]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> berichtet dann zur Großen Anfrage über den sozialen Wohnungsbau, daß dieser nicht, wie von der SPD behauptet, in einer Krise oder gar vor der Katastrophe stehe. Gewiß sei durch die Diskonterhöhung und durch die Rentenreform Kapitalmangel entstanden. Auf der anderen Seite habe aber der Kapitalmarkt auch gewisse Förderungen erfahren. Insgesamt stehe man vor einem neuen Rekordjahr im sozialen Wohnungsbau, wenn auch die gestellten Lohnforderungen und die eingetretenen Preissteigerungen sich auswirken würden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> wiederholt, daß er die seinerzeitigen kapitalmarktfördernden Maßnahmen nach wie vor für falsch halte und daß die gewonnenen Mittel zu einem großen Teil lediglich durch Umtausch aufgebracht worden seien. Es sei jetzt auch zu klären, inwieweit die Landwirtschaft an den aufzubringenden Mitteln beteiligt werden solle.</p>
+            <p>6. [<name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>-Artikel]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> teilt mit, daß in »Dagens Nyheter« ein Artikel über <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> erschienen sei, und verliest den Wortlaut des Artikels.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN005" type="comment">
+                     <p>In dem Artikel »›Sjökommandohuset‹ var rysk spionbas. Avslöjad under kriget« hatte »Dagens Nyheter« am 9. 3. 1957 <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> als Sowjetspion bezeichnet. In der folgenden Woche nahm die Zeitung die Beschuldigung wieder zurück. Vgl. auch Freudenhammer/Vater, S. 183–185 und Scholz, S. 161–163.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erblickt in dem Artikel eine Bestätigung von Meinungen, die man seit längeren gehört habe. Es empfehle sich jedoch, seitens der Fraktion nichts zu unternehmen, sondern abzuwarten, was weiter geschehen werde.</p>
+            <p>7. [Zweites Gesetz zur Änderung des Gesetzes zur Förderung des Bergarbeiterwohnungsbaus im Kohlenbergbau, Drucksache II/2356 v. 5. 5. 1956]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HarnischfegerJohann_1953-10-06">Harnischfeger</name> referiert zum Bergarbeiterwohnungsbau über die Entwicklung dieser gesetzgeberischen Maßnahme und legt dar, daß im Hinblick auf die inzwischen gültig gewordenen neuen Preise für Kohle eine gesetzliche Regelung der für den Wohnungsbau bestimmten Aufschläge notwendig sei. Der Ausschuß schlage vor, die aus der Kohlenabgabe gewonnenen Mittel in voller Höhe dem Bergarbeiterwohnungsbau zur Verfügung zu stellen; dieser einstimmigen Auffassung solle sich auch die Fraktion anschließen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BroennerJosef_1949-09-07">Brönner</name> räumt ein, daß gewiß Nordrhein-Westfalen viele Wohnungen brauche, aber man müsse endlich dahin kommen, daß es seinen Bedarf selber decke. Niemand wende sich gegen die Stärke der Förderung des Bergarbeiterwohnungsbaues; aber dann müsse man für die anderen Bundesgebiete auch einen entsprechenden Ausgleich suchen für die Lasten, die dort wegen der Frachten entstünden. Er könne nur die Hoffnung zum Ausdruck bringen, daß dieses Gesetz nicht noch ein viertes Mal vor den Bundestag komme.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN006" type="comment">
+                     <p>Das Bergarbeiter-Wohungsbaugesetz erreichte den Bundestag am 15. 10. 1959 ein viertes Mal durch den Antrag der CDU/CSU-Fraktion betr. drittes Änderungsgesetz (Drucksache III/1292).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> bemängelt, daß zu viele Wohnungen, die aus solchen Mitteln gebaut worden seien, zweckentfremdet wären. Es gehe nicht an, diese anderweitig besetzten Wohnungen einfach als fehlend zu bezeichnen und neue Wohnungen dafür zu bauen. Eine Auflockerung der Vollstreckungsschutzmaßnahmen sei hier notwendig.</p>
+            <p>Stücklen kündigt an, daß er zusammen mit Freunden einen Antrag einbringen werde, die Mittel für den Bergarbeiterwohnungsbau zur Hälfte auf die zur Verteilung kommenden Bundesmittel für Wohnungsbau anzurechnen. Es gehe nicht an, daß der Konsument in allen deutschen Ländern dem reichsten deutschen Bundesland den Bergarbeiterwohnungsbau über den sozialen Wohnungsbau hinaus finanziere.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> wendet sich gegen einen solchen Antrag. Wenn es auch zutreffe, daß die Kohlewirtschaft bisher falsche Zahlen über die Deckungslage angewendet habe, so komme man doch um die jetzt notwendige gesetzliche Regelung nicht herum.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name> warnt davor, es bei dieser Gelegenheit zu einer Debatte über den Mieterschutz kommen zu lassen; ähnliche Vorgänge hätten in England äußerst negative Auswirkungen gehabt. Dagegen sei der Antrag <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> auf Anrechnung der Mittel zu unterstützen, weil man damit zu einer gerechteren Verteilung der Mittel komme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> weist darauf hin, daß eine solche Änderung des Gesetzes dieses sinnlos mache. Das führe notwendig zu einem Rückgang des normalen sozialen Wohnungsbaues, und an dieser Frage werde das ganze Gesetz scheitern.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schlägt vor, daß sich <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#CzajaHerbert_1953-10-06">Czaja</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> und <name type="Person" role="Erwaehnung" ref="#HarnischfegerJohann_1953-10-06">Harnischfeger</name> noch einmal zusammensetzen sollten, um eine Übereinstimmung der Meinung der Fraktion herbeizuführen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN007" type="comment">
+                     <p>Der Bundestag verabschiedete das Gesetz am 14. 3. 1957 in der Ausschußfassung (vgl. Sten. Ber., 197. Sitz., S. 11243f.).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. [Haushalt 1957]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wendet sich dann der Bewilligung von Ausgaben über den Haushaltsansatz hinaus zu. Eine Erhöhung der Ausgaben sei notwendig für den Grünen Plan, im Zuge der Novelle zum Lastenausgleichsgesetz, im Rahmen der Besoldungsgesetzgebung und der Novelle zu Gesetz zu Art. 131 GG; auch für die Förderung der Wissenschaften und der Studenten werde man einen Betrag einsetzen müssen. Seit längerem seien Besprechungen mit dem Bundesfinanzminister über die hier vorhandenen Möglichkeiten durchgeführt, deren Ergebnis gewesen sei, daß man sich in allen wesentlichen Punkten mit ihm verständigt habe; die Mehrausgaben würden etwas mehr als 1 Mrd. DM ausmachen. Auch über die Deckung dieser Ausgaben sei eine Übereinstimmung erzielt worden. Als einziger Punkt sei ungeklärt geblieben die Novelle zum BVG!</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> erinnert daran, daß der Haushalt 1957 nur ausgeglichen habe vorgelegt werden können, indem man einen Rückgriff auf die vorhandenen Bestände gemacht habe. Auch müsse man sich darüber klar sein, daß die Beträge des außerordentlichen Haushalts nicht durch Anleihen gedeckt, sondern aus Kassenmitteln befriedigt werden müßten. Dadurch sei der Rückgriff auf etwa 3,3 Mrd. DM verstärkt gewesen. Diese Lage werde weiter verschärft durch die Anforderungen des Besoldungsgesetzes, durch die Veränderungen in Angestellten- und Arbeitertarifen und durch die beschleunigte Abwicklung der Wiedergutmachung. Letztere Aufwendungen seien für die Bundesbahn und für die Eingliederung der Saar notwendig, so daß man etwas mehr als 1 Mrd. DM über den Voranschlag hinauskomme. Gegen weitere Rückgriffe auf die Kassenbestände wehre sich vor allem der Bundesverteidigungsminister, da er eine Verzögerung bei der Durchführung des Aufbaues der Bundeswehr befürchte. Bei dieser Lage dürfe sich keiner dafür hergeben, Forderungen bei der Haushaltsberatung zu stellen, die in dem nun einmal gezogenen Rahmen nicht befriedigt werden können; sonst werde auch der Bundesverteidigungsminister gezwungen sein, nach Art. 113 GG sein Veto einzulegen, was bedeuten würde, daß die Opposition ihr Ziel erreichen und den Großangriff auf den Verteidigungshaushalt unternehmen könne.</p>
+            <p>Bundesfinanzminister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> schildert kurz die Kassenlage und verweist darauf, daß man nicht in eine Situation kommen dürfe, in der der Bund zahlungsunfähig würde. Er halte es für ausgeschlossen, daß mehr als der vereinbarte Betrag gegeben werden könne, was für das BVG 300 Mio. DM und nicht mehr ausmache.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LindrathHermann_1953-10-06">Lindrath</name> wendet sich gegen die Vorschläge zur Steuersenkung, die von verschiedenen Seiten gemacht worden seien. Man müsse bei der Einnahmeseite berücksichtigen, daß sich hier die Steuerreform noch stärker auswirken könne und daß die Frage der Ehegattenbesteuerung allein Mindereinnahmen von 150 Mio. DM bis Ende 1955 ausmachen werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> berichtet über die Verhandlungen, die auf Anregung des Fraktionsvorstandes<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN008" type="comment">
+                     <p>Siehe Nr. 339, 1.</p>
+                  </note>
+               </seg> über das BVG stattgefunden hätten. Dabei hätten sich zwei Meinungen gezeigt. Für die Grundrente sei eine Erhöhung von ungefähr 10 % (78 Mio. DM) vorgesehen. Die Verbesserung der Familienversorgung nehme 20 Mio. DM, die Kinderzuschläge 54 Mio. DM in Anspruch. Ein beabsichtigter Sozialzuschlag für Schwerbeschädigte erfordere 17 Mio. DM, die Erhöhung des Kindergeldes 420 Mio. DM, die Erhöhung des Witwengeldes 69,2 Mio. DM, die Heiratsabfindung 19,4 Mio. DM, wozu noch weitere Einzelverbesserungen kämen, was insgesamt einen Mehrbetrag von 331 Mio. DM erforderlich mache. Der Bundesfinanzminister glaube, diese Mittel aufbringen zu können, wenn die Novelle erst ab 1. Mai in Kraft trete. Ein früherer Termin sei auch technisch nicht möglich. Diesem Vorschlag der Mehrheit der erwähnten Kommission solle man zustimmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt dar, daß die Fraktion jetzt vor der Frage stehe, ob sie bei diesen rund 300 Mio. DM verbleiben oder den Vorschlägen von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> folgen und entsprechende Mehraufwendungen machen wolle. Im letzteren Falle müßten an anderen Punkten Abstriche vorgenommen werden.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> stellt zunächst an Zahlen einen Vergleich zwischen der Unfallrente und der Grundrente dar. FDP, SPD und BHE hätten Forderungen aufgestellt, die zwischen 753 und 1 200 Mio. DM lägen. Es gelte drei Dinge abzuwehren: die Einheitsrente, die Vorstellung einer dynamischen Rente und die Berufsschadenrente.</p>
+            <p>Die Meinungsverschiedenheit im Kreise der Fraktion beziehe sich auf die Gestaltung der Grundrente.</p>
+            <p>Die Rednerin gibt dann einen Überblick über die neuen Zahlen, die sich bei der Grundrente ergeben, und wendet sich dann den Fragen der Alterszulagen, der Kinderzuschläge, Sozialzuschläge und des Kindergeldes zu. Dann stellt sie dar, wie sie die Ausgaben zu den einzelnen Positionen gestaltet sehen möchte, und kommt zu einem Endergebnis von rund 450 Mio. DM Mehrbedarf. Das sei das Minimum, auf dem es auch möglich sei, eine breite Einheit im Hause herzustellen. Wegen der 150 Mio. DM Differenz solle man sich nicht in die Gefahr begeben, daß etwa der Antrag der SPD [Drucksache II/3139 v. 30. 1. 1957] durchginge.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> wiederholt seine Feststellung, daß er über den vorgesehenen Rahmen nicht hinausgehen könne. Da man 1950 2,3 Mrd. DM, 1956 bereits 4 Mrd. DM für die Kriegsbeschädigten ausgegeben habe, seien hier die Leistungen mehr gestiegen als in allen anderen Fällen. Er habe auch Bedenken, ob es richtig sei, allzuviel Geld auszugeben, und ob man damit nicht unerfreuliche Wirkungen erzielen werde. Er glaube nicht, daß es nachteilig sein werde, wenn man mit den Anforderungen im Rahmen des Möglichen bleibe. Mit einer Verbesserung um 1,1 Mrd. in einem Haushaltsjahr (5. und 6. Novelle) könne man vor der Öffentlichkeit sehr wohl bestehen. Er persönlich empfehle, den Vorschlägen <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgens</name> zu folgen, weil er nicht wisse, wo er die 150 Mio. DM mehr hernehmen solle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> macht Vorschläge zur Frage Elternbeihilfe und der Grundrente und macht auf die politischen Schwierigkeiten aufmerksam, die entstehen müßten, wenn man zu weit hinter den Forderungen zurückbleibe. Es müsse doch möglich sein, durch die Festsetzung des Zeitpunktes des Inkrafttretens des Gesetzes zu einer für alle erträglichen Lösung zu kommen.</p>
+            <p>Josef <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> setzt sich für den Entwurf Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> ein. Angesichts der Millionen Kriegsopfer dürfe man diese Entscheidung nicht an 150 Mio. DM scheitern lassen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> bringt zum Ausdruck, daß er nicht sehe, wie die Mittel aufgebracht werden sollten. Immer neue Ausgaben könne die Wirtschaft nicht tragen, und auch die daraus entstehenden Folgen seien politisch zu bedenken.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> bittet den Bundesfinanzminister, jetzt mit sich reden zu lassen und nicht erst unter dem Druck der Opposition. Wenn man sich nicht einigen könne, werde sie selbst den verkürzten Entwurf nicht vertreten können und müsse das dann auch zum Ausdruck bringen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> bittet zu prüfen, ob man nicht zu Lasten der Grundrente eine Erhöhung der Ausgleichsrente durchführen könne. Man dürfe das Gewicht der Kriegsbeschädigtenorganisationen auf keinen Fall unterschätzen und solle sich auch überlegen, wie peinlich es wäre, ohne Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> in diese Auseinandersetzung gehen zu müssen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> appelliert an Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, es bei Aufwendungen von 330 Mio. DM bewenden zu lassen und die anderen Fragen noch zurückzustellen. Bei der 5. Novelle sei man von 170 Mio. auf 700 Mio. DM hinaufgegangen. Das dürfe doch nicht vergessen werden. Man müsse auch an die anderen Dinge denken, die noch zu tun seien, und eine Verbesserung der Kriegsopferversorgung könne nicht zu Lasten anderer berechtigter Wünsche erfolgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KraftWaldemar_1953-10-06">Kraft</name> spricht sich für eine Begrenzung auf 330 Mio. DM aus.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> erinnert an die 5. Novelle und sagt voraus, daß man unter dem Druck der übrigen Parteien auch dieses Mal wieder werde heraufgehen müssen, wenn man nicht von vorneherein vom Entwurf Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> ausgehen wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> bedauert, daß der Bundesfinanzminister selbst dazu beigetragen habe, wenn man ihm nicht recht glaube, daß er nichts mehr in der Kasse habe. Er, der Redner, müsse aber dieses Mal feststellen, daß die vom Bundesfinanzminister geschilderte Lage voll den Tatsachen entspreche. Die finanzielle Lage sei bis zum Äußersten angespannt, und die Fraktion habe es jetzt in der Hand, ob sie in eine Lage kommen wolle, in der der Verteidigungshaushalt vielleicht nicht mehr aufrecht erhalten werden könne. Das wolle er in aller Deutlichkeit gesagt haben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> wendet sich gegen die Vorschläge von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> und bitte doch dringend, Maß zu halten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> berichtet, daß man auch die Frage der Deckung ernsthaft geprüft habe, ohne einen Vorschlag machen zu können.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> weist einen Zwischenruf zurück, daß sie durch ihre Vorschläge persönlich glänzen wolle, und erinnert daran, wie sie im Ausschuß harten Widerstand geleistet habe, um überhöhten Forderungen entgegenzutreten. Wenn man jetzt die 100 Mio. DM nicht bewillige, dann werde sich der SPD-Entwurf durchsetzen. Davor wolle sie gewarnt haben. Sie bitte, über diese Frage abstimmen zu lassen. Nach ihrer Ansicht seien die 131er überdotiert. Die Tabaksteuer habe man leichten Herzens um 60 Mio. DM gesenkt, und sie wisse, was dahinterstecke. Wenn man ihren Vorschlägen nicht folgen wolle, dann sehe sie sich genötigt, aus der Arbeit im Kriegsopferausschuß auszuscheiden.</p>
+            <p>Bundesverteidigungsminister Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> wirft die Frage auf, ob durch die geplanten Mehrausgaben der Verteidigungshaushalt jetzt von neuem berührt werde. Mit dem Bundeskanzler, Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, dem Bundesfinanzminister und Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> habe eine wiederholte Aussprache darüber stattgefunden, daß weitere Ausgabenreste aus 1955/56 nicht mehr gestrichen werden könnten. Allerdings habe er – heftig gewarnt von seinem Staatssekretär – einem Zahlungsplan zugestimmt, durch den Mittel so lange flüssig gemacht werden könnten, bis [sie] zur Verwendung im Verteidigungshaushalt kommen müßten. Man müsse auch den finanziellen Konsequenzen der Verteidigungspolitik einmal ruhig ins Auge sehen, und zwar auch im Wahljahr.</p>
+            <p>Zunächst habe man der NATO versprochen, in drei Jahren 600 000 Mann aufzustellen. Dann habe man drei Jahre lang im Namen des Bundeskanzlers, des Bundesaußenministers und des Verteidigungsministers versprochen, 500 000 Mann aufzustellen. Als er, der Redner, im Oktober nach Paris habe gehen müssen, um die NATO zu überzeugen, daß die Pläne geändert werden müßten, sei er vor einer beinahe unlösbaren Aufgabe gestanden, daß dadurch entstandene Mißtrauen zu überwinden, weil man ja noch im September das Gegenteil feierlich versprochen hatte. Die Aufstellung von 500 000 Mann hätte eine Aufstellungssumme von rund 70 Mrd. DM gefordert. Die finanziellen Möglichkeiten und die Maßnahmen, die getroffen worden seien, hätten jedoch in einem schreienden Gegensatz zu dem gestanden, was die Regierung den Vertragspartnern zugesagt gehabt habe. Es sei eben unmöglich, in drei oder vier Jahren mit je 9 Mrd. DM eine Aufrüstung zu finanzieren, die 70 Mrd. DM koste. Als er, der Redner, dann das Amt übernommen habe, habe er sehen müssen, daß unabhängig von Fragen der Unterbringung, der Übungs- und Flugplätze und der Liefertermine bei Ausschöpfung aller finanziellen Möglichkeiten bis zum 1. 4. 1961 nicht mehr als 340 000 Mann aufgestellt werden könnten. Er habe diese Zahl bisher nicht genannt, sondern immer von 12 Divisionen gesprochen, weil das weitere Nennen von Zahlen Hochstapelei gewesen wäre. Jetzt seien 195 000 Mann Heer statt 350 000, 70 000 Mann Luftwaffe, 30 000 Mann Luftverteidigung, 23 000 Mann Landverteidigung und 20 000 Mann Marine vorgesehen. Das sei alles und das könne nur erreicht werden, wenn Preise und Löhne gleich blieben und wenn die neuen Waffen nicht außergewöhnlich mehr kosten würden als bisher.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> habe 2,8 Mrd. DM, er selbst 2,6 Mrd. DM, also insgesamt 5,4 Mrd. DM, aus den Ausgabenresten dem Bundesfinanzminister zur Deckung des Bundeshaushalts zur Verfügung gestellt. Die 340 000 Mann könnten nur aufgestellt werden, wenn im Haushalt 1957 die vorgesehenen 7,8 Mrd. DM bis zum letzten Pfennig vorhanden seien, wenn die 4 Mrd. DM Ausgabenrest erhalten blieben, wenn 1958 statt 9 Mrd. DM 10 Mrd. DM eingesetzt würden und 1959/60 11 Mrd. DM und wenn außerdem die 5,4 Mrd. DM, die zur Verfügung gestellt worden seien, wieder zurückgegeben würden.</p>
+            <p>Es gehe doch darum, ob man im Ausland und bei den Bundesgenossen das erschütterte Vertrauen wiedergewinne; und es sei unmöglich, von dem jetzt festgelegten Plan noch einmal abzuweichen. Als drittgrößter Industriestaat mit einem Exportüberschuß von 300 Mio. DM mit einer außerordentlich starken Golddeckung könne man es sich nicht leisten, mit dem Verteidigungsbeitrag auf der Stufe Italiens stehen zu bleiben. Er, der Redner, habe feierlich versichert, daß das jetzt Zugesagte auch gehalten werde. Zur Zeit komme er zwar mit den zur Verfügung stehenden Mitteln noch aus; aber die Aufstellung müsse beschleunigt werden, weil bis 1959 das Loch in der Verteidigungsorganisation gestopft werden müsse, das durch den Abzug britischer Truppen und durch das Engagement Frankreichs in Nordafrika entstehe. Es genüge nicht, in den Versammlungen Lippenbekenntnisse der Treue zu <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> abzulegen, »Heil Europa« und »Es lebe die NATO« zu schreien, aber dann in der Praxis das Gegenteil zu tun. Man solle einsehen, daß er von seinen Mitteln nichts mehr abgeben könne, weil das mit der Fortsetzung der eingeschlagenen Politik nicht zu vereinbaren sei. Schon habe er die Panzerbestellungen kürzen müssen, schon würden die Aufträge in Raten eingeteilt, und die Bestellung von Flugzeugen sei verschoben worden; aber was man versprochen habe zu tun, das müsse man in jedem Falle halten. Es gehe dabei um das Gesicht vor den Bundesgenossen und um die Stellung der Bundesrepublik.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> weist auf die Vertraulichkeit dieser Ausführungen hin, die doch klar sagten, daß eben aus dem Verteidigungshaushalt nichts mehr gegeben werden könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> anerkennt das Anliegen des Bundesfinanzministers, daß der Haushalt ausgeglichen sein müsse. Man müsse sich aber auch Gedanken darüber machen, ob nicht ein Umbau der Kriegsopferversorgung vorgenommen werden müsse. Er könne allerdings nicht verstehen, warum sich der Bundesfinanzminister nicht gegen die Senkung der Tabaksteuer ausgesprochen habe. Es gebe doch bedürftigere Leute als die Zigarettenfabrikanten. Hier liege eine bedauerliche Inkonsequenz des Bundesfinanzministers vor.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> gibt die Erklärung ab, daß das Äußerste, was er verantworten könne, dem Vorstand und der Fraktion bereits mitgeteilt sei. Wenn um nur 1 Mio. DM darüber hinausgegangen würde, werde er die Verantwortung dafür nicht tragen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> weist den Vorwurf zurück, daß für die 131er zuviel ausgegeben werde. Auch dieser Personenkreis dürfe nicht übersehen werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> wendet sich dagegen, das Milliardenbukett des Verteidigungshaushalts ins Feld zu führen, wenn es um 150 Mio. DM gehe. Jetzt sei doch die Frage, ob die einzelnen Ausschußmitglieder bei den Beratungen in dem Rahmen standhalten würden, der ihnen durch die Fraktion gegeben würde. Er halte es für besser, wenn man 120 Mio. DM mehr ausgebe und dafür Frieden habe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> erklärt, daß er tatsächlich das Äußerste angegeben habe und daß kein Handeln möglich sei.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> teilt mit, daß FDP und FVP soeben beschlossen hätten, 450 Mio. DM als Minimum zu verlangen. Sie selbst bedauere, nun aus der Arbeit ausscheiden zu müssen, und sie bitte darum, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> zukünftig mit der Federführung in Kriegsopferfragen zu betrauen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bedauert diese Äußerung. Wenn es alle so machten, dann könne sich die Fraktion ja auflösen. Man solle auch an seine Verantwortung vor der Fraktion, vor der Partei denken. Bei der ersten Koalitionsverhandlung seien die Vertreter der Deutschen Partei und der FVP überhaupt nicht gewillt gewesen, etwas für die Kriegsopfer zu tun. Insofern überrasche ihn die eben gemachte Mitteilung. Er schlage vor, entsprechend dem Vorstandsbeschluß einen Antrag in Höhe von etwa 330 Mio. DM einzureichen. Dabei sollten diese Beträge so geordnet werden, daß den Hauptanliegen der Fraktion Rechnung getragen werde, insbesondere auch in der Richtung gezielter Maßnahmen.</p>
+            <p>Dieser Vorschlag wird gegen sechs Stimmen bei drei Enthaltungen mit großer Mehrheit angenommen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN009" type="comment">
+                     <p>Siehe Nr. 344, 2.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet abschließend die Fraktionsmitglieder, die den Antrag Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> mit unterzeichnet hätten, nachzuprüfen, ob sie ihre Unterschrift aufrecht erhalten wollen oder nicht.<seg type="note">
+                  <note xml:id="cdu-csu-02_1957-03-12-t1445_EP_FN010" type="comment">
+                     <p>Von Unionsseite wurde kein zweiter Entwurf eingebracht, auch nicht von Frau <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

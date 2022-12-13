@@ -1,242 +1,271 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-04_1965-02-15-t0000_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Sitzung der Landesgruppe</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
-						<author>Andreas Zellhuber</author>
-						<author>Tim B. Peters</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2011</date>
-						<idno type="DNB">https://d-nb.info/101322325X</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
-							<idno>LG-Protokolle, 1965/4</idno>
-							<objectName>[Kein Titel überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 15. Februar 1965</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>3 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1965-02-15"><time type="start"/><time type="end"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#StraußFranzJosef_1949-09-07"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">CSU-LG</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-12-09" who="#RabusSimon" status="draft" n="3">Header und SVP fertig</change>
-			<change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-02-09" who="#RabusSimon" status="draft" n="5">Bibl- und Ref-Elemente</change>
-			<change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf: (395.)</head>
-				<list type="SVP">
-					<item xml:id="csu-lg-04_1965-02-15-t0000_EP_SVP-1" corresp="#csu-lg-04_1965-02-15-t0000_EP_div_SVP-1">A. TOP 1: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> über die Fraktionsvorstandssitzung; Nahost-Krise, Europapolitik, Aktienrechtsreform, Kartellgesetz, Besteuerung von Pensionen, Werbeverbot für die öffentlich-rechtlichen Rundfunk- und Fernsehanstalten, Mutterschutzgesetz, Heimkehrerentschädigungsgesetz. – TOP 2: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> über den Stand der Beratungen zur Notstandsgesetzgebung.</item>
-					<item xml:id="csu-lg-04_1965-02-15-t0000_EP_SVP-2" corresp="#csu-lg-04_1965-02-15-t0000_EP_div_SVP-2">B. TOP 3: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name> über den Bundeshaushalt 1965.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="csu-lg-04_1965-02-15-t0000_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> gibt den Bericht von der Fraktionsvorstandssitzung. Er schildert zunächst den letzten Stand der Nahost-Krise; <name type="Person" role="Erwaehnung" ref="#NasserGamalAbdel">Nasser</name> solle angedroht werden, die Wirtschaftshilfe für die VAR aufzukündigen, wenn der <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name>-Besuch stattfinde. Dabei sei noch ungewiß, ob diese Konsequenzen die laufenden oder die zukünftigen Geschäfte beträfen. Die Waffenlieferungen für Israel sollen eingestellt werden; das bestehende Abkommen soll durch Lieferung von Wirtschaftsgütern ausgefüllt werden, darüber müsse jedoch noch Übereinkunft mit Israel erzielt werden. Zur Europainitiative der Bundesregierung sei berichtet worden, daß die Gespräche im Gange seien und eine Außenministerkonferenz Anfang Mai stattfinde. Somit sei noch vor den Wahlen mit sichtbaren Erfolgen zu rechnen. Den britischen ANF-Vorschlag hat der Vorstand abgelehnt, da er gegenüber der MLF eine wesentliche Verschlechterung darstelle.</p>
-				<p>Bei der Aktienrechtsreform und der Kartellnovelle gebe es noch wesentliche strittige Punkte, so daß der Vorstand darüber eine erneute Erörterung anstellen wolle. Hinsichtlich der Initiative <name type="Person" role="Erwaehnung" ref="#MeisHans_1958-07-02">Meis</name> zur Freistellung der Pensionen von der Einkommensteuer habe der Fraktionsvorstand folgende Regelung befürwortet: 25% der Pensionsbezüge, maximal bis 2 400 DM steuerfrei, Erhöhung des Altersfreibetrags von 600 auf 720 DM und Gewährung des Altersfreibetrages bereits ab 65 Jahren anstelle von bisher 70. Über den Antrag zum UWG, betreffend Verbot von Werbesendungen für öffentliche Rundfunk- und Fernsehanstalten habe der Fraktionsvorstand beraten, dabei jedoch keine Einmütigkeit erzielt. Die Frage sei, ob dieser Gesetzesantrag als Koalitions- oder als Gruppenantrag laufen solle, der Vorstand habe sich für Gruppenantrag ausgesprochen. Bei der Novelle Mutterschutzgesetz habe die CSU den Standpunkt vertreten, daß man damit nicht den ersten Schritt zum staatlichen Gesundheitsdienst gehen solle; es sei keine Einigung erzielt worden, der Arbeitskreis IV werde sich nochmals mit diesem Thema befassen. Im Arbeitskreis II solle ein Initiativgesetz zum Weingesetz behan-delt werden. Zum Heimkehrerentschädigungsgesetz spreche der Vorstand die Bitte aus, die Unterschriften unter dem Gruppenantrag zurückzuziehen, um damit nicht eine 18. LAG-Novelle zu präjudizieren.</p>
-				<p>Unter Punkt 2 der Tagesordnung referiert Abg. Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> über den Stand der Beratungen bei den Notstandsgesetzen. Er vertritt die Ansicht, daß es politisch schlecht sei, wenn nicht wenigstens einzelne Teile des Notstandspaketes noch verabschiedet würden. Der Verabschiedung der Notstandsverfassung gibt er keine Chance, hält dies aber auch nicht für bedenklich, da die alliierten Vorbehalte im Notstandsfall ausreichende Handhabe böten.</p>
-				<p>Das Schutzbaugesetz sei in der zweiten Lesung des Ausschusses auf eine gänzlich neue Grundlage gestellt worden. Die Fraktionen seien darüber übereingekommen, die verstärkte Schutzbaupflicht in Gemeinden über 50 000 Einwohnern fallenzulassen; anstelle dessen wird der Innenminister ermächtigt, durch eine Rechtsverordnung in besonders gefährdeten Räumen eine solche verstärkte Schutzbaupflicht anzuordnen. Die Schutzbaupflicht beschränke sich demnach auf den Grundschutz bei Neubauten; damit fielen auch die Hauptbelastungen für den Bundeshaushalt aus dem Schutzbaugesetz weg. Durch Gewährung einer kräftigen Abschreibungsmöglichkeit wolle man den Schutzbaupflichtigen finanziell entgegenkommen. Bei Altbauten solle es nach wie vor keine Schutzbaupflicht geben, aber man wolle finanzielle Anreize schaffen, die die Althausbesitzer zur Einrichtung von Schutzräumen veranlassen könnten. Auch die Bestimmungen über die Errichtungspflicht von öffentlichen Schutzräumen seien geändert worden; der Bau erfolge nunmehr aufgrund einer Gesamtplanung des Bundesinnenministeriums. Im übrigen sei noch in der Diskussion, ob die steuerlichen Absetzungsmöglichkeiten für Schutzräume in Neubauten ausreichten oder ob man den Bauherren darüber hinaus finanzielle Förderungen geben solle; dafür dürften vor allem soziale Gesichtspunkte sprechen, weil ein minderbemittelter Bauherr aus der Absetzungsmöglichkeit keine allzu großen Vorteile ziehen könne. Außer dem Schutzbaugesetz dürften voraussichtlich folgende Gesetze noch verabschiedet werden: Selbstschutzgesetz, Zivildienstgesetz, Erkennungsmarkengesetz.</p>
-				<p>Frau Abg. <name type="Person" role="Sprecher" ref="#GeisendoerferIngeborg_1953-10-06">Geisendörfer</name> und Abg. <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> teilen mit, daß auch die Sicherstellungsgesetze im wesentlichen durchberaten seien, so daß auch mit deren Verabschiedung gerechnet werden könne. Vordringlich solle man das Wassersicherstellungsgesetz verabschieden, da dies am wichtigsten sei.</p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-04_1965-02-15-t0000_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Zu Punkt 3 der Tagesordnung referiert Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> über den Bundeshaushalt 1965. Er macht zunächst deutlich, auf welche Schwierigkeiten der Haushaltsausgleich in Einnahmen und Ausgaben an der Begrenzung von 63,9 Mrd. stoße. Bei der Regierungsvorlage sei ein Betrag von 1,25 Mrd. ungedeckt gewesen; der Haushaltsausschuß habe durch gezielte Kürzungen diesen Betrag um 300 Mio. vermindert. Dazu gekommen seien aber neue Anforderungen in Höhe von 2,4 Mrd. DM. Im einzelnen seien dies folgende Positionen:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Landwirtschaft</cell>
-						<cell>770 Mio. (ohne die lediglich Einnahmen mindernde Zuckersteuer)</cell>
-					</row>
-					<row>
-						<cell>Kindergeldgesetz</cell>
-						<cell>617 Mio.</cell>
-					</row>
-					<row>
-						<cell>Straßenbau</cell>
-						<cell>120 Mio.</cell>
-					</row>
-					<row>
-						<cell>Bundesbahn</cell>
-						<cell>400 Mio.</cell>
-					</row>
-					<row>
-						<cell>EWG-Garantiefonds</cell>
-						<cell>118 Mio.</cell>
-					</row>
-					<row>
-						<cell>Sowjetzonenrentner</cell>
-						<cell>100 Mio.</cell>
-					</row>
-					<row>
-						<cell>Berlinhilfe</cell>
-						<cell>78 Mio. (zuzüglich zu den angesetzten 2 Mrd. für Berlin)</cell>
-					</row>
-					<row>
-						<cell>Flüchtlingshilfegesetz</cell>
-						<cell>72,5 Mio.</cell>
-					</row>
-					<row>
-						<cell>Leistungsförderungsgesetz</cell>
-						<cell>50 Mio.</cell>
-					</row>
-					<row>
-						<cell>Israelabkommen</cell>
-						<cell>50 Mio.</cell>
-					</row>
-					<row>
-						<cell>17. Novelle Lastenausgleichsgesetz</cell>
-						<cell>48 Mio.</cell>
-					</row>
-					<row>
-						<cell>Grenzlandförderungsmittel</cell>
-						<cell>14 Mio. (zur Wiederherstellung des Vorjahresansatzes)</cell>
-					</row>
-					<row>
-						<cell>Bundeskanzleramt</cell>
-						<cell>5 Mio. (für Öffentlichkeitsarbeit zur Publizierung der Vermögensbildungsmöglichkeiten für Arbeitnehmer)</cell>
-					</row>
-					<row>
-						<cell>Deutschlandfunk – Deutsche Welle</cell>
-						<cell>15 Mio.</cell>
-					</row>
-				</table>
-				<p>Zwar seien die Einnahmeschätzungen um 377 Mio. nach oben korrigiert worden; jedoch könnten diese Mittel nicht für Ausgaben verwendet werden wegen der festgelegten Haushaltsbegrenzung. Man sei deshalb so verfahren, die Abführungspflicht der Bundespost um 260 Mio. zu kürzen; im übrigen sei der Anleihebedarf des außerordentlichen Haushaltes um 330 Mio. herabgesetzt worden.</p>
-				<p>Er wendet sich sodann der vom Haushaltsausschuß gesuchten Deckung des Mehrbedarfs zu. Zunächst seien 826 Mio. im Verteidigungshaushalt gestrichen worden, wodurch dieser von 19,2 Mrd. 1964 auf 18,4 Mrd. 1965 herabgedrückt worden sei. Sodann seien 750 Mio. im Sozialhaushalt eingespart worden, weil man anstatt barer Bundeszuschüsse für die Rentenversicherungsträger 750 Mio. Schuldbuchforderungen herausgeben wolle. In Anbetracht der Bundeszuschüsse in Höhe von insgesamt 8,4 Mrd. und in Anbetracht des Vermögens der Rentenversicherungsträger von 25 Mrd. könne dieses Verfahren verantwortet werden, ohne die Liquidität der Versicherungen zu gefährden; die FDP sei aber dagegen.</p>
-				<p>Des weiteren seien folgende Kürzungen vorgenommen worden: Im Wiedergutmachungsansatz 170 Mio., bei der Entwicklungshilfe 70 Mio., in der zivilen Verteidigung 60 Mio., bei EURATOM 10 Mio. und 280 Mio. kleinere Kürzungen. Trotz dieser Maßnahme betrage der Fehlbetrag 1,5 Mrd. (gegenüber einem ungedeckten Betrag von 1,25 Mrd. nach Regierungsentwurf). Das Haushaltsgesetz sehe daher eine 7%ige Globalkürzung und eine 20%ige Sperre für alle Baumaßnahmen außer Straßenbau vor. Damit werde die Lücke auf 290 Mio. verringert. Diesen Betrag hoffe man beim Haushaltsvollzug einsparen zu können.</p>
-				<p>Sodann befaßt sich der Referent mit der Finanzlage der Bundesbahn; er schätzt den jährlichen Zuschußbedarf der Bundesbahn auf 2,7 Mrd. 1965 würde der Bund 927 Mio. geben und dazu 400 Mio. Liquiditätshilfe. Der Ausgleich würde gefunden durch weitere 100 Mio. Öffa-Kredite, Darlehen von 750 Mio. und 850 Mio., die die Bundesbahn selbst am Kapitalmarkt aufbringe.</p>
-				<p>Der Referent befaßt sich anschließend mit Einzelpunkten, die in der 2. Lesung des Haushalts kontrovers diskutiert werden könnten:</p>
-				<p>a) Im Bundestagshaushalt Neubau eines Bürohochhauses mit Gesamtkosten von 48,5 Mio.; für 1965 seien aber lediglich 2 Mio. für vorbereitende Arbeiten und eine Bindungsermächtigung von 10 Mio. eingesetzt.</p>
-				<p>b) Der Reptilienfonds im Bundeskanzlerhaushalt, der 13 Mio. umfasse, zuzüglich 5 Mio. für Publikationsarbeiten (siehe oben). Die Mittel des Bundesnachrichtendienstes seien um 5 Mio. gekürzt worden.</p>
-				<p>c) Der Einzelplan des Bundesinnenministeriums; die SPD habe angekündigt, von den Parteimitteln 20 Mio. für Zwecke der Sportförderung abzuleiten. Diesem Antrag müßte widersprochen werden; dies sei um so leichter möglich, da die Sportmittel auf Initiative der CSU in diesem Jahr von 30 auf 37 Mio. erhöht worden seien. Bei der Studentenförderung sei zu gewärtigen, daß der Förderungsmeßbetrag heraufgesetzt werde, was den Bund belastet, da er nach dem Abkommen 50% dieser Mittel aufzubringen habe. Die Erhöhung sei aber nicht zwingend geboten.</p>
-				<p>d) Die Ansätze für die Frachthilfe bei der Grenzlandhilfe könnten gehalten werden, die Wünsche der oberbayerischen Pechkohle<seg type="note"><note xml:id="csu-lg-04_1965-02-15-t0000_EP_FN001" type="critical"><p>Vom Bearbeiter korrigiert aus »Pachtkohle«.</p></note></seg> befriedigt werden.</p>
-				<p>e) Im Landwirtschaftshaushalt sei ein Antrag auf Herabsetzung der Zinssätze für den Wegebau zu erwarten; dieser Antrag soll abgelehnt werden. Bei der sogenannten Vorfeldbereinigung hat der Haushaltsausschuß beschlossen, daß die 380 Mio. für Flächensubvention nur verteilt werden dürfen, nachdem der Agrarausschuß und der Haushaltsausschuß ihre Zustimmung zu den Richtlinien gegeben haben. Gegen dieses Verfahren wird von Mitgliedern der Landesgruppe Bedenken erhoben.</p>
-				<p>f) Entwicklungshilfe-Haushalt: Für 1965 seien insgesamt 865 Mio. vorgesehen, davon unter anderem 450 Mio. für die Kapitalhilfe und 100 Mio. für die technische Hilfe.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> schildert anschließend den geplanten Ablauf der Beratung und kündigt an, daß die SPD eine Generaldebatte in den Einzelplänen Bundeskanzleramt anzuschließen gedenke. Im übrigen teilt er mit, daß zum Haushalt ein Entschließungsantrag eingebracht werde, mit dem eine Verbesserung der Stellenpläne bei den Bundesbeamten angestrebt werde. Die Landesgruppensitzung wird geschlossen.</p>
-				<p>[Protokollant: <name type="Person" role="Erwaehnung" ref="#FugmannFriedrich">Fugmann</name>.]</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-04_1965-02-15-t0000_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Sitzung der Landesgruppe</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
+                  <author>Andreas Zellhuber</author>
+                  <author>Tim B. Peters</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2011</date>
+                  <idno type="DNB">https://d-nb.info/101322325X</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
+                     <idno>LG-Protokolle, 1965/4</idno>
+                     <objectName>[Kein Titel überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 15. Februar 1965</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>3 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1965-02-15">
+               <time type="start"/>
+               <time type="end"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#StraussFranzJosef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">CSU-LG</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-12-09" who="#RabusSimon" status="draft" n="3">Header und SVP fertig</change>
+         <change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-02-09" who="#RabusSimon" status="draft" n="5">Bibl- und Ref-Elemente</change>
+         <change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf: (395.)</head>
+            <list type="SVP">
+               <item xml:id="csu-lg-04_1965-02-15-t0000_EP_SVP-1" corresp="#csu-lg-04_1965-02-15-t0000_EP_div_SVP-1">A. TOP 1: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> über die Fraktionsvorstandssitzung; Nahost-Krise, Europapolitik, Aktienrechtsreform, Kartellgesetz, Besteuerung von Pensionen, Werbeverbot für die öffentlich-rechtlichen Rundfunk- und Fernsehanstalten, Mutterschutzgesetz, Heimkehrerentschädigungsgesetz. – TOP 2: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> über den Stand der Beratungen zur Notstandsgesetzgebung.</item>
+               <item xml:id="csu-lg-04_1965-02-15-t0000_EP_SVP-2" corresp="#csu-lg-04_1965-02-15-t0000_EP_div_SVP-2">B. TOP 3: Bericht des Abg. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name> über den Bundeshaushalt 1965.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="csu-lg-04_1965-02-15-t0000_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> gibt den Bericht von der Fraktionsvorstandssitzung. Er schildert zunächst den letzten Stand der Nahost-Krise; <name type="Person" role="Erwaehnung" ref="#NasserGamalAbdel">Nasser</name> solle angedroht werden, die Wirtschaftshilfe für die VAR aufzukündigen, wenn der <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name>-Besuch stattfinde. Dabei sei noch ungewiß, ob diese Konsequenzen die laufenden oder die zukünftigen Geschäfte beträfen. Die Waffenlieferungen für Israel sollen eingestellt werden; das bestehende Abkommen soll durch Lieferung von Wirtschaftsgütern ausgefüllt werden, darüber müsse jedoch noch Übereinkunft mit Israel erzielt werden. Zur Europainitiative der Bundesregierung sei berichtet worden, daß die Gespräche im Gange seien und eine Außenministerkonferenz Anfang Mai stattfinde. Somit sei noch vor den Wahlen mit sichtbaren Erfolgen zu rechnen. Den britischen ANF-Vorschlag hat der Vorstand abgelehnt, da er gegenüber der MLF eine wesentliche Verschlechterung darstelle.</p>
+            <p>Bei der Aktienrechtsreform und der Kartellnovelle gebe es noch wesentliche strittige Punkte, so daß der Vorstand darüber eine erneute Erörterung anstellen wolle. Hinsichtlich der Initiative <name type="Person" role="Erwaehnung" ref="#MeisHans_1958-07-02">Meis</name> zur Freistellung der Pensionen von der Einkommensteuer habe der Fraktionsvorstand folgende Regelung befürwortet: 25% der Pensionsbezüge, maximal bis 2 400 DM steuerfrei, Erhöhung des Altersfreibetrags von 600 auf 720 DM und Gewährung des Altersfreibetrages bereits ab 65 Jahren anstelle von bisher 70. Über den Antrag zum UWG, betreffend Verbot von Werbesendungen für öffentliche Rundfunk- und Fernsehanstalten habe der Fraktionsvorstand beraten, dabei jedoch keine Einmütigkeit erzielt. Die Frage sei, ob dieser Gesetzesantrag als Koalitions- oder als Gruppenantrag laufen solle, der Vorstand habe sich für Gruppenantrag ausgesprochen. Bei der Novelle Mutterschutzgesetz habe die CSU den Standpunkt vertreten, daß man damit nicht den ersten Schritt zum staatlichen Gesundheitsdienst gehen solle; es sei keine Einigung erzielt worden, der Arbeitskreis IV werde sich nochmals mit diesem Thema befassen. Im Arbeitskreis II solle ein Initiativgesetz zum Weingesetz behan-delt werden. Zum Heimkehrerentschädigungsgesetz spreche der Vorstand die Bitte aus, die Unterschriften unter dem Gruppenantrag zurückzuziehen, um damit nicht eine 18. LAG-Novelle zu präjudizieren.</p>
+            <p>Unter Punkt 2 der Tagesordnung referiert Abg. Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> über den Stand der Beratungen bei den Notstandsgesetzen. Er vertritt die Ansicht, daß es politisch schlecht sei, wenn nicht wenigstens einzelne Teile des Notstandspaketes noch verabschiedet würden. Der Verabschiedung der Notstandsverfassung gibt er keine Chance, hält dies aber auch nicht für bedenklich, da die alliierten Vorbehalte im Notstandsfall ausreichende Handhabe böten.</p>
+            <p>Das Schutzbaugesetz sei in der zweiten Lesung des Ausschusses auf eine gänzlich neue Grundlage gestellt worden. Die Fraktionen seien darüber übereingekommen, die verstärkte Schutzbaupflicht in Gemeinden über 50 000 Einwohnern fallenzulassen; anstelle dessen wird der Innenminister ermächtigt, durch eine Rechtsverordnung in besonders gefährdeten Räumen eine solche verstärkte Schutzbaupflicht anzuordnen. Die Schutzbaupflicht beschränke sich demnach auf den Grundschutz bei Neubauten; damit fielen auch die Hauptbelastungen für den Bundeshaushalt aus dem Schutzbaugesetz weg. Durch Gewährung einer kräftigen Abschreibungsmöglichkeit wolle man den Schutzbaupflichtigen finanziell entgegenkommen. Bei Altbauten solle es nach wie vor keine Schutzbaupflicht geben, aber man wolle finanzielle Anreize schaffen, die die Althausbesitzer zur Einrichtung von Schutzräumen veranlassen könnten. Auch die Bestimmungen über die Errichtungspflicht von öffentlichen Schutzräumen seien geändert worden; der Bau erfolge nunmehr aufgrund einer Gesamtplanung des Bundesinnenministeriums. Im übrigen sei noch in der Diskussion, ob die steuerlichen Absetzungsmöglichkeiten für Schutzräume in Neubauten ausreichten oder ob man den Bauherren darüber hinaus finanzielle Förderungen geben solle; dafür dürften vor allem soziale Gesichtspunkte sprechen, weil ein minderbemittelter Bauherr aus der Absetzungsmöglichkeit keine allzu großen Vorteile ziehen könne. Außer dem Schutzbaugesetz dürften voraussichtlich folgende Gesetze noch verabschiedet werden: Selbstschutzgesetz, Zivildienstgesetz, Erkennungsmarkengesetz.</p>
+            <p>Frau Abg. <name type="Person" role="Sprecher" ref="#GeisendoerferIngeborg_1953-10-06">Geisendörfer</name> und Abg. <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> teilen mit, daß auch die Sicherstellungsgesetze im wesentlichen durchberaten seien, so daß auch mit deren Verabschiedung gerechnet werden könne. Vordringlich solle man das Wassersicherstellungsgesetz verabschieden, da dies am wichtigsten sei.</p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-04_1965-02-15-t0000_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Zu Punkt 3 der Tagesordnung referiert Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> über den Bundeshaushalt 1965. Er macht zunächst deutlich, auf welche Schwierigkeiten der Haushaltsausgleich in Einnahmen und Ausgaben an der Begrenzung von 63,9 Mrd. stoße. Bei der Regierungsvorlage sei ein Betrag von 1,25 Mrd. ungedeckt gewesen; der Haushaltsausschuß habe durch gezielte Kürzungen diesen Betrag um 300 Mio. vermindert. Dazu gekommen seien aber neue Anforderungen in Höhe von 2,4 Mrd. DM. Im einzelnen seien dies folgende Positionen:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Landwirtschaft</cell>
+                  <cell>770 Mio. (ohne die lediglich Einnahmen mindernde Zuckersteuer)</cell>
+               </row>
+               <row>
+                  <cell>Kindergeldgesetz</cell>
+                  <cell>617 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Straßenbau</cell>
+                  <cell>120 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Bundesbahn</cell>
+                  <cell>400 Mio.</cell>
+               </row>
+               <row>
+                  <cell>EWG-Garantiefonds</cell>
+                  <cell>118 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Sowjetzonenrentner</cell>
+                  <cell>100 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Berlinhilfe</cell>
+                  <cell>78 Mio. (zuzüglich zu den angesetzten 2 Mrd. für Berlin)</cell>
+               </row>
+               <row>
+                  <cell>Flüchtlingshilfegesetz</cell>
+                  <cell>72,5 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Leistungsförderungsgesetz</cell>
+                  <cell>50 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Israelabkommen</cell>
+                  <cell>50 Mio.</cell>
+               </row>
+               <row>
+                  <cell>17. Novelle Lastenausgleichsgesetz</cell>
+                  <cell>48 Mio.</cell>
+               </row>
+               <row>
+                  <cell>Grenzlandförderungsmittel</cell>
+                  <cell>14 Mio. (zur Wiederherstellung des Vorjahresansatzes)</cell>
+               </row>
+               <row>
+                  <cell>Bundeskanzleramt</cell>
+                  <cell>5 Mio. (für Öffentlichkeitsarbeit zur Publizierung der Vermögensbildungsmöglichkeiten für Arbeitnehmer)</cell>
+               </row>
+               <row>
+                  <cell>Deutschlandfunk – Deutsche Welle</cell>
+                  <cell>15 Mio.</cell>
+               </row>
+            </table>
+            <p>Zwar seien die Einnahmeschätzungen um 377 Mio. nach oben korrigiert worden; jedoch könnten diese Mittel nicht für Ausgaben verwendet werden wegen der festgelegten Haushaltsbegrenzung. Man sei deshalb so verfahren, die Abführungspflicht der Bundespost um 260 Mio. zu kürzen; im übrigen sei der Anleihebedarf des außerordentlichen Haushaltes um 330 Mio. herabgesetzt worden.</p>
+            <p>Er wendet sich sodann der vom Haushaltsausschuß gesuchten Deckung des Mehrbedarfs zu. Zunächst seien 826 Mio. im Verteidigungshaushalt gestrichen worden, wodurch dieser von 19,2 Mrd. 1964 auf 18,4 Mrd. 1965 herabgedrückt worden sei. Sodann seien 750 Mio. im Sozialhaushalt eingespart worden, weil man anstatt barer Bundeszuschüsse für die Rentenversicherungsträger 750 Mio. Schuldbuchforderungen herausgeben wolle. In Anbetracht der Bundeszuschüsse in Höhe von insgesamt 8,4 Mrd. und in Anbetracht des Vermögens der Rentenversicherungsträger von 25 Mrd. könne dieses Verfahren verantwortet werden, ohne die Liquidität der Versicherungen zu gefährden; die FDP sei aber dagegen.</p>
+            <p>Des weiteren seien folgende Kürzungen vorgenommen worden: Im Wiedergutmachungsansatz 170 Mio., bei der Entwicklungshilfe 70 Mio., in der zivilen Verteidigung 60 Mio., bei EURATOM 10 Mio. und 280 Mio. kleinere Kürzungen. Trotz dieser Maßnahme betrage der Fehlbetrag 1,5 Mrd. (gegenüber einem ungedeckten Betrag von 1,25 Mrd. nach Regierungsentwurf). Das Haushaltsgesetz sehe daher eine 7%ige Globalkürzung und eine 20%ige Sperre für alle Baumaßnahmen außer Straßenbau vor. Damit werde die Lücke auf 290 Mio. verringert. Diesen Betrag hoffe man beim Haushaltsvollzug einsparen zu können.</p>
+            <p>Sodann befaßt sich der Referent mit der Finanzlage der Bundesbahn; er schätzt den jährlichen Zuschußbedarf der Bundesbahn auf 2,7 Mrd. 1965 würde der Bund 927 Mio. geben und dazu 400 Mio. Liquiditätshilfe. Der Ausgleich würde gefunden durch weitere 100 Mio. Öffa-Kredite, Darlehen von 750 Mio. und 850 Mio., die die Bundesbahn selbst am Kapitalmarkt aufbringe.</p>
+            <p>Der Referent befaßt sich anschließend mit Einzelpunkten, die in der 2. Lesung des Haushalts kontrovers diskutiert werden könnten:</p>
+            <p>a) Im Bundestagshaushalt Neubau eines Bürohochhauses mit Gesamtkosten von 48,5 Mio.; für 1965 seien aber lediglich 2 Mio. für vorbereitende Arbeiten und eine Bindungsermächtigung von 10 Mio. eingesetzt.</p>
+            <p>b) Der Reptilienfonds im Bundeskanzlerhaushalt, der 13 Mio. umfasse, zuzüglich 5 Mio. für Publikationsarbeiten (siehe oben). Die Mittel des Bundesnachrichtendienstes seien um 5 Mio. gekürzt worden.</p>
+            <p>c) Der Einzelplan des Bundesinnenministeriums; die SPD habe angekündigt, von den Parteimitteln 20 Mio. für Zwecke der Sportförderung abzuleiten. Diesem Antrag müßte widersprochen werden; dies sei um so leichter möglich, da die Sportmittel auf Initiative der CSU in diesem Jahr von 30 auf 37 Mio. erhöht worden seien. Bei der Studentenförderung sei zu gewärtigen, daß der Förderungsmeßbetrag heraufgesetzt werde, was den Bund belastet, da er nach dem Abkommen 50% dieser Mittel aufzubringen habe. Die Erhöhung sei aber nicht zwingend geboten.</p>
+            <p>d) Die Ansätze für die Frachthilfe bei der Grenzlandhilfe könnten gehalten werden, die Wünsche der oberbayerischen Pechkohle<seg type="note">
+                  <note xml:id="csu-lg-04_1965-02-15-t0000_EP_FN001" type="critical">
+                     <p>Vom Bearbeiter korrigiert aus »Pachtkohle«.</p>
+                  </note>
+               </seg> befriedigt werden.</p>
+            <p>e) Im Landwirtschaftshaushalt sei ein Antrag auf Herabsetzung der Zinssätze für den Wegebau zu erwarten; dieser Antrag soll abgelehnt werden. Bei der sogenannten Vorfeldbereinigung hat der Haushaltsausschuß beschlossen, daß die 380 Mio. für Flächensubvention nur verteilt werden dürfen, nachdem der Agrarausschuß und der Haushaltsausschuß ihre Zustimmung zu den Richtlinien gegeben haben. Gegen dieses Verfahren wird von Mitgliedern der Landesgruppe Bedenken erhoben.</p>
+            <p>f) Entwicklungshilfe-Haushalt: Für 1965 seien insgesamt 865 Mio. vorgesehen, davon unter anderem 450 Mio. für die Kapitalhilfe und 100 Mio. für die technische Hilfe.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#WagnerLeo_1961-10-17">Parlamentarische Geschäftsführer</name> schildert anschließend den geplanten Ablauf der Beratung und kündigt an, daß die SPD eine Generaldebatte in den Einzelplänen Bundeskanzleramt anzuschließen gedenke. Im übrigen teilt er mit, daß zum Haushalt ein Entschließungsantrag eingebracht werde, mit dem eine Verbesserung der Stellenpläne bei den Bundesbeamten angestrebt werde. Die Landesgruppensitzung wird geschlossen.</p>
+            <p>[Protokollant: <name type="Person" role="Erwaehnung" ref="#FugmannFriedrich">Fugmann</name>.]</p>
+         </div>
+      </body>
+   </text>
 </TEI>

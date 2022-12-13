@@ -1,198 +1,314 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-05-29-t1100_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1503/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 29. Mai 1961</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>4 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1961-05-29"><time type="start" when="11:00:00"/><time type="end" when="13:25:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name> (12.45 Uhr), Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln), <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend Regierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, <name type="Person" role="Erwaehnung" ref="#SchwarzWerner_1953-10-06">Schwarz</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1961-05-29-t1100_EP_SVP-1" corresp="#cdu-csu-03_1961-05-29-t1100_EP_div_SVP-1">A. Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>zur außen- und innenpolitische Lage. – Noch zu verabschiedende Gesetzentwürfe bis zum Ende der Legislaturperiode/ Künftige Arbeitsweise des Parlaments und der Fraktion. – Novelle zum Reichsjugendwohlfahrtsgesetz. – Vorlage zum Weinbaugesetz. – Frage nach einer außenpolitische Debatte noch in dieser Legislaturperiode.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1961-05-29-t1100_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Zu Beginn der Vorstandssitzung appellierte Fraktionsvorsitzender Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> an die Abgeordneten, auch in den letzten Wochen alle Anstrengungen zu unternehmen, daß das restliche Arbeitsprogramm ohne Schwierigkeiten verabschiedet werden könne. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bat, daß die Fraktion wie in den letzten Wochen, so auch in der Endrunde, bei Abstimmungen möglichst geschlossen bleiben sollte.</p>
-				<p>Anschließend gab Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> einen Bericht über die außen- und innenpolitische Lage. Der Kanzler berichtete zunächst über sein Gespräch mit den Reedern in Hamburg.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN001" type="comment"><p>Gespräch des Bundeskanzlers mit dem Reederverband am 28. 5. 1961. Vgl. Sten. Ber., 163. Sitzung am 16. 6. 1961, S. 9401.</p></note></seg> Er trat dafür ein, die Anliegen der deutschen Seeschiffahrt ernsthaft zu prüfen und nach Möglichkeiten zu suchen, wie die deutschen Werften konkurrenzfähig erhalten werden könnten.</p>
-				<p>Im Anschluß an seinen Bericht über die Kundgebung für die Jugend in Hamburg<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN002" type="comment"><p>Kundgebung der Jungen Union am Sonntag, den 28. 5. 1961 (StBKAH, Besucherlisten Adenauer 04.12).</p></note></seg> kritisierte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> die Berichterstattung der »Kölnischen Rundschau«.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN003" type="comment"><p>Vermutlich Bezugnahme auf den Artikel »Kanzler für ›möglichst starke Bewaffnung‹« in: »Kölnische Rundschau« Nr. 122 v. 29. 5. 1961, S. 1. Danach hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> am Vortag in Hamburg die nukleare Bewaffnung der NATO befürwortet, ohne welche die westliche Verteidigungsgemeinschaft wertlos sein würde. Es wäre daher auch ein Verbrechen, eine unzulänglich ausgerüstete Bundeswehr einem nuklear schwer bewaffneten Gegner gegenüberzustellen.</p></note></seg> Der Kanzler schlug vor, einmal mit dem Verleger <name type="Person" role="Erwaehnung" ref="#HeinenReinhold">Heinen</name> ein Gespräch über Möglichkeiten zur Verbesserung der Berichterstattung der Kölnischen Rundschau zu führen.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN004" type="comment"><p>Zu früherer Kritik von Seiten der CDU an der Berichterstattung dieser Zeitung siehe Nr. 22. v. 27. 11. 1957, TOP 3; Nr. 170 v. 8. 12. 1959 sowie Heidemeyer, CDU/CSU-Fraktion 1953–1957, Nr. 310 v. 13. 11. 1956, TOP 8.</p></note></seg></p>
-				<p>Anschließend nahm der Kanzler zu dem Wiener Treffen zwischen <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> und <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> Stellung.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN005" type="comment"><p>Treffen <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> – <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> in Wien am 3. und 4. 6. 1961. Vgl. DzD IV/6, S. 810–812.</p></note></seg>
-					<name type="Person" role="Erwaehnung" ref="#deGaulleCharles">De Gaulle</name>, so führte der Kanzler aus, habe gewisse Besorgnis wegen dieses Treffens geäußert. Das sei jedoch nicht berechtigt. Man brauche wegen <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedys</name> Haltung, insbesondere in der Berlin-Frage, keine Besorgnisse zu haben. In diesem Zusammenhang kritisierte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, daß insbesondere auch in Berlin ein gewisses Mißtrauen gegenüber diesem Treffen zu spüren sei. Man könne auch durch Flüstern Krisen schaffen. Richtiger sei es, <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedys</name> Position zu stärken, indem man Vertrauen zu ihm zeige.</p>
-				<p>Der Kanzler wandte sich dann dem Thema: »Sowjetzonenpropaganda in Rundfunk und Fernsehen« zu. Er bedauerte, daß wir dem nichts entgegenzusetzen hätten. Die Zone bestrahle große Teile der Bundesrepublik mit Rundfunk und Fernsehen. In diesem Zusammenhang setzte sich der Kanzler dafür ein, daß Deutsche Welle und Deutschland-Funk möglichst bald aktionsfähig würden.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN006" type="comment"><p>Rechtsgrundlage war das Gesetz über die Errichtung von Rundfunkanstalten des Bundesrechts vom 29. 11. 1960 (BGBl. I, S. 862). Nach Bildung der Aufsichtsgremien und Wahl der Intendanten konnten beide Bundesanstalten ihre Sendungen zum 1. 1. 1962 aufnehmen. Vgl. Bausch, S. 394–414, hier: S. 411.</p></note></seg> Nach den Wahlen sollte das gesamte Kapitel Rundfunk und Fernsehen neu angepackt werden.</p>
-				<p>Der Bundeskanzler nahm dann zum Wahlkampfverlauf Stellung. Er betonte, der Eindruck von den Versammlungen sei ausgezeichnet, obwohl Nürnberg<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN007" type="comment"><p>Kundgebung der Jungen Union am Sonntag, den 14. 5. 1961 (StBKAH, Besucherlisten Adenauer 04.12).</p></note></seg> und Hamburg<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN008" type="comment"><p>Am 28. 5. 1961. Siehe Anm. 2.</p></note></seg>, wo er bisher gesprochen habe, sozialdemokratische Hochburgen seien. Überall sei die wachsende Unzufriedenheit mit der Sozialdemokratie spürbar. Er werde auch bei den weiteren Veranstaltungen immer wieder darauf hinweisen, daß die SPD-Politik praktisch doch darauf hinauslaufe, die Bundesrepublik aus der NATO herauszulösen, was praktisch das Ende der NATO bedeuten würde.</p>
-				<p>Über sein Gespräch mit dem französischen Staatspräsidenten <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> berichtete der Kanzler: die Zusammenkunft unter vier Augen habe gute Früchte getragen.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN009" type="comment"><p>Am 20. 5. 1961 waren <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> zum ersten Mal am Sitz der Bundesregierung in Bonn zusammengetroffen. Vgl. AdG 1961, S. 9099 f.; Adenauer, Erinnerungen 1959–1963, S. 101–111.</p></note></seg> Beide Gesprächspartner seien sich darüber einig, daß die Algerien-Frage bald gelöst werden müsse<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN010" type="comment"><p>Die französisch-algerischen Gespräche von Evian hatten am 20. 5. 1961 begonnen. Vgl. AdG 1961, S. 9111 f.</p></note></seg>, damit Frankreich zur Ruhe komme und endlich wieder die Rolle in Europa und im atlantischen Bündnis spielen könne, zu der es berufen und verpflichtet sei.</p>
-				<p>Der Kanzler nahm dann zu Fragen der Politik der Vereinigten Staaten Stellung. Die Vorgänge in Kuba<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN011" type="comment"><p>Zur Kuba-Krise siehe Nr. 241 v. 21. 2. 1961, Anm. 4.</p></note></seg> seien eine große Niederlage gewesen für die Vereinigten Staaten. <name type="Person" role="Erwaehnung" ref="#CastroRuzFidel">Castro</name> habe über sowjetische Panzer und Flugzeuge verfügt. Deshalb habe kein allgemeiner Aufstand gegen <name type="Person" role="Erwaehnung" ref="#CastroRuzFidel">Castro</name> stattgefunden. Das könne man aber <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> nicht zur Last legen. Diese Vorgänge gingen zum großen Teil auf Fehler der früheren Administration zurück. Die Amerikaner hätten viel in das Kuba-Unternehmen investiert. Der Kanzler sprach von einem Betrag von 40 Mio. Dollar. Diese Schlappe müsse bald aufgehoben werden, damit die Vereinigten Staaten wieder die Führung in der westlichen Welt übernehmen könnten. <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> sei dazu bereit, insbesondere was eine Verbesserung der Zusammenarbeit in der NATO anbetreffe. Die jetzige Konstruktion ermutige nicht zu allzu geheimen Gesprächen im NATO-Rat. In diesem Zusammenhang wies der Kanzler auf gewisse Schwierigkeiten in Island und in der Türkei hin. Der Kanzler brachte die Hoffnung zum Ausdruck, daß es dem neuen NATO-Generalsekretär <name type="Person" role="Erwaehnung" ref="#StikkerDirkU">Stikker</name> gelingen möge, die NATO bald zu kräftigen.</p>
-				<p>Zum Verhältnis EWG und Großbritannien meinte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, die weitere Entwicklung könne man im Augenblick noch nicht absehen. Sowohl die Konservative Partei Großbritanniens als auch die Labour-Party seien in dieser Frage gespalten. Wenn die Konservativen sich in dieser Frage nicht einig seien, könne das sich negativ für die nächsten Unterhauswahlen auswirken. Schon aus diesem Grunde sei vorerst mit einer Klärung dieser Frage nicht zu rechnen. Eine bloße Assoziierung Großbritanniens an die EWG sei wenig sinnvoll, da das politische Ziel der EWG nicht angetastet werden dürfe. Wenn ein so großes Land wie Großbritannien nur wirtschaftlich dabei sei, dann sei das eher ein Ballast. Die europäische Integration müsse mit allem Nachdruck vorangetrieben werden. Der dänische Ministerpräsident, so führte der Kanzler weiter aus, habe ihm erklärt, Dänemark wünsche als Vollmitglied der EWG beizutreten. Das hänge aber von der Haltung Großbritanniens ab.</p>
-				<p>Der Kanzler ging dann noch einmal auf das Treffen <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-<name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name><seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN012" type="comment"><p>Siehe Anm. 5.</p></note></seg> ein. Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> teilte mit, daß bei seinem USA-Besuch<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN013" type="comment"><p>USA-Reise vom 11. bis 17. 4. 1961. Siehe Nr. 253 v. 19. 4. 1961.</p></note></seg> davon noch nicht die Rede gewesen sei. <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> habe ihm in einem Schreiben mitgeteilt, daß die Sowjets um ein solches Treffen gebeten hätten. Ursprünglich habe der Plan bestanden, <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> in die Sowjetunion einzuladen. Das habe <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> aber abgelehnt. Daß <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>
-					<name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> kennenlernen wolle, sei verständlich. Er sei sich darüber im klaren, so meinte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, daß die Sowjets eine andere Sprache sprächen und eine andere Moral hätten als wir. Wenn auch die Zeit von acht Stunden für die vertraulichen Gespräche etwas viel sei, so könne man doch volles Vertrauen zu <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> haben. Vielleicht sehe <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> bei diesen Gesprächen, daß <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> aus einem anderen Holz sei als sein Vorgänger. Einstweilen sei es aber weiterhin Aufgabe der westlichen Politik, weiter aufzurüsten und eines sowjetischen Angriffs gewärtig zu sein. Das Ziel der deutschen Politik müsse nach wie vor Frieden und kontrollierte Abrüstung sein. Die Wiedervereinigung könne nur bei einer allgemeinen Entspannung erreicht werden. In Berlin sei die Situation anders. Die Sowjets würden mit dem Westen nicht verhandeln, wenn sie den Glauben hätten, der Westen sei zu schwach zum Widerstand, und wenn sie der Auffassung wären, der Westen würde auseinanderfallen in der Berlin-Frage. Auch die Sowjetunion sei nicht in einer beneidenswerten Situation bei ihrer Nachbarschaft zu Rotchina. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> habe ihm, dem Kanzler, schon 1955 gesagt, wie sehr er die Gefahr Rotchinas sehe.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN014" type="comment"><p>Anläßlich der Gespräche <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in Moskau vom 9. bis 13. 9. 1955. Siehe Nr. 3 v. 9. 10. 1957, TOP 4.</p></note></seg></p>
-				<p>Der Kanzler ging zum Schluß kurz auf die Situation der Landwirtschaft ein, die zum Teil besorgniserregend sei. Hier müsse vor allen Dingen stärker aufklärend gewirkt werden.</p>
-				<p>Im Anschluß an die Ausführungen des Bundeskanzlers erörterte der Vorstand die Frage, welche Gesetzentwürfe bis zum Ende der Legislaturperiode noch verabschiedet werden müssen. Dabei setzte sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dafür ein, daß die neue Bundestagsfraktion zügiger arbeiten müsse als bisher. Große Vorlagen müßten früher und schneller behandelt werden, als es im 3. Bundestag der Fall gewesen sei. Über diese Dinge sollte der Vorstand nach Ende der Parlamentsarbeit noch im Juli eine Sitzung abhalten.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN015" type="comment"><p>Zur letzten Fraktionsvorstandssitzung in der 3. WP siehe Nr. 265 v. 26. 6. 1961.</p></note></seg></p>
-				<p>Der Bundeskanzler stellte die Frage zur Diskussion, ob die Arbeitsweise des Parlaments nicht zu überprüfen sei. Die Pausen seien jetzt zu groß. Der Betrieb sei in den letzten Jahren langsamer geworden, worunter auch die Arbeit der Regierung gelitten habe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> setzte sich dann dafür ein, daß der Vorstand keinen Beschluß fassen solle, eine Vorlage nicht mehr zu verabschieden. Es sollten jedoch nur noch solche Gesetzentwürfe erledigt werden, bei denen die Fraktion geschlossen sei. Auch müsse man die noch zu verabschiedenden Vorlagen von dem Gesichtspunkt betrachten, ob sie der Wahl dienten oder nicht. Bei dieser Gelegenheit kam es zu einer längeren Diskussion über die Novelle zum Reichsjugendwohlfahrtsgesetz. Dazu meinte Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, daß die Bedenken bei diesem Gesetz größer seien als beim Sozialhilfegesetz.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN016" type="comment"><p>Siehe Nr. 255 v. 2. 5. 1961.</p></note></seg></p>
-				<p>Minister Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> griff in die Diskussion ein und meinte, es bestünden bisher keine Einwände gegen die Verabschiedung der Novelle.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN017" type="comment"><p>Zur Verabschiedung der Vorlage vor Ende der 3. WP siehe ebd.</p></note></seg> Der zuständige Ausschuß für Familien- und Jugendfragen könne die Vorlage bei seiner dreitägigen Berlin-Sitzung verabschieden.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN018" type="comment"><p>In der 3. WP fanden 36 Ausschuß- und Unterausschußsitzungen in Berlin statt. Vgl. Datenhandbuch II, S. 1500; III, S. 3696.</p></note></seg></p>
-				<p>Anschließend wandten sich Frau Dr. <name type="Person" role="Sprecher" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> und <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> gegen die Verabschiedung der Novelle. Insbesondere Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> wies darauf hin, daß in der Öffentlichkeit große Bedenken bestünden. Es sei daher besser, dieses Gesetz in einer ruhigeren Atmosphäre nach der Wahl zu verabschieden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> dagegen vertrat den Standpunkt, daß diese Bedenken bisher nicht zu erkennen gewesen seien.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> hielt dem entgegen, daß die Frage nicht sei, ob, sondern wann die Vorlage verabschiedet werde.</p>
-				<p>Der Vorstand beschloß dann, noch einmal eine Besprechung in einem kleinen Kreis durchzuführen, bevor die endgültige Entscheidung falle.</p>
-				<p>Als nächstes Thema wurde die Vorlage zum Weinbaugesetz erörtert. <name type="Person" role="Sprecher" ref="#GibbertPaul_1949-09-07">Gibbert</name> berichtete dem Vorstand als Sachverständiger über die Lage im deutschen Weinbau. Er wies darauf hin, daß durch die großen Schwierigkeiten, insbesondere bei den kleinen Winzern, eine politisch gefährliche Situation auch in überwiegend CDU-freundlichen Gebieten entstehen könnte [Gesetzentwurf zur Überleitung des deutschen Weinbaues in die EWG der Abg. <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> u. Gen.: Drucksache III/1870, zu 1870].</p>
-				<p>Der Vorstand beschloß, eine Kommission mit <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> und <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name> einzusetzen, die diese Frage noch einmal erörtern solle.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN019" type="comment"><p>Die Vorlage wurde als »Gesetz über Maßnahmen auf dem Gebiete der Weinwirtschaft« am 30. 6. 1961 verabschiedet. Siehe Nr. 264 v. 20. 6. 1961.</p></note></seg></p>
-				<p>Schließlich behandelte der Vorstand noch die Frage, ob in dieser Legislaturperiode noch eine außenpolitische Debatte durchgeführt werden solle. Dabei vertrat der Bundeskanzler den Standpunkt, man sollte eine solche Debatte nicht mehr durchführen, da die SPD dabei zu allem ja sagen würde außer zur nuklearen Bewaffnung. Diese Chance solle man ihnen nicht geben.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN020" type="comment"><p>Während <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> mit Blick auf den Wahlkampf die SPD nach wie vor als außenpolitisch unzuverlässige Partei zu brandmarken versuchte, stellte Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> zum Abschluß der 3. WP am 30. 6. 1961 im Plenum die außenpolitischen Gemeinsamkeiten mit der SPD heraus. Vgl. Sten. Ber., 166. Sitzung, S. 9764 f.; Schwarz, Adenauer 1952–1967, S. 649.</p></note></seg></p>
-				<p>Der Vorstand schloß sich der Auffassung des Bundeskanzlers an.<seg type="note"><note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN021" type="comment"><p>Unter der letzten Zeile der Vorlage befindet sich links der Vermerk »6. Juni 1961. Dr. <name type="Person" role="Erwaehnung" ref="#AckermannEduard">A.[ckermann]</name>/<name type="Person" role="Erwaehnung" ref="#OhlendorfRuth">O.[hlendorf]</name>«.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-05-29-t1100_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1503/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 29. Mai 1961</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>4 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1961-05-29">
+               <time type="start" when="11:00:00"/>
+               <time type="end" when="13:25:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name> (12.45 Uhr), Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln), <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend Regierung:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, <name type="Person" role="Erwaehnung" ref="#SchwarzWerner_1953-10-06">Schwarz</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1961-05-29-t1100_EP_SVP-1" corresp="#cdu-csu-03_1961-05-29-t1100_EP_div_SVP-1">A. Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>zur außen- und innenpolitische Lage. – Noch zu verabschiedende Gesetzentwürfe bis zum Ende der Legislaturperiode/ Künftige Arbeitsweise des Parlaments und der Fraktion. – Novelle zum Reichsjugendwohlfahrtsgesetz. – Vorlage zum Weinbaugesetz. – Frage nach einer außenpolitische Debatte noch in dieser Legislaturperiode.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1961-05-29-t1100_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Zu Beginn der Vorstandssitzung appellierte Fraktionsvorsitzender Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> an die Abgeordneten, auch in den letzten Wochen alle Anstrengungen zu unternehmen, daß das restliche Arbeitsprogramm ohne Schwierigkeiten verabschiedet werden könne. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bat, daß die Fraktion wie in den letzten Wochen, so auch in der Endrunde, bei Abstimmungen möglichst geschlossen bleiben sollte.</p>
+            <p>Anschließend gab Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> einen Bericht über die außen- und innenpolitische Lage. Der Kanzler berichtete zunächst über sein Gespräch mit den Reedern in Hamburg.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN001" type="comment">
+                     <p>Gespräch des Bundeskanzlers mit dem Reederverband am 28. 5. 1961. Vgl. Sten. Ber., 163. Sitzung am 16. 6. 1961, S. 9401.</p>
+                  </note>
+               </seg> Er trat dafür ein, die Anliegen der deutschen Seeschiffahrt ernsthaft zu prüfen und nach Möglichkeiten zu suchen, wie die deutschen Werften konkurrenzfähig erhalten werden könnten.</p>
+            <p>Im Anschluß an seinen Bericht über die Kundgebung für die Jugend in Hamburg<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN002" type="comment">
+                     <p>Kundgebung der Jungen Union am Sonntag, den 28. 5. 1961 (StBKAH, Besucherlisten Adenauer 04.12).</p>
+                  </note>
+               </seg> kritisierte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> die Berichterstattung der »Kölnischen Rundschau«.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN003" type="comment">
+                     <p>Vermutlich Bezugnahme auf den Artikel »Kanzler für ›möglichst starke Bewaffnung‹« in: »Kölnische Rundschau« Nr. 122 v. 29. 5. 1961, S. 1. Danach hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> am Vortag in Hamburg die nukleare Bewaffnung der NATO befürwortet, ohne welche die westliche Verteidigungsgemeinschaft wertlos sein würde. Es wäre daher auch ein Verbrechen, eine unzulänglich ausgerüstete Bundeswehr einem nuklear schwer bewaffneten Gegner gegenüberzustellen.</p>
+                  </note>
+               </seg> Der Kanzler schlug vor, einmal mit dem Verleger <name type="Person" role="Erwaehnung" ref="#HeinenReinhold">Heinen</name> ein Gespräch über Möglichkeiten zur Verbesserung der Berichterstattung der Kölnischen Rundschau zu führen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN004" type="comment">
+                     <p>Zu früherer Kritik von Seiten der CDU an der Berichterstattung dieser Zeitung siehe Nr. 22. v. 27. 11. 1957, TOP 3; Nr. 170 v. 8. 12. 1959 sowie Heidemeyer, CDU/CSU-Fraktion 1953–1957, Nr. 310 v. 13. 11. 1956, TOP 8.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Anschließend nahm der Kanzler zu dem Wiener Treffen zwischen <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> und <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> Stellung.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN005" type="comment">
+                     <p>Treffen <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> – <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> in Wien am 3. und 4. 6. 1961. Vgl. DzD IV/6, S. 810–812.</p>
+                  </note>
+               </seg>
+               <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">De Gaulle</name>, so führte der Kanzler aus, habe gewisse Besorgnis wegen dieses Treffens geäußert. Das sei jedoch nicht berechtigt. Man brauche wegen <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedys</name> Haltung, insbesondere in der Berlin-Frage, keine Besorgnisse zu haben. In diesem Zusammenhang kritisierte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, daß insbesondere auch in Berlin ein gewisses Mißtrauen gegenüber diesem Treffen zu spüren sei. Man könne auch durch Flüstern Krisen schaffen. Richtiger sei es, <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedys</name> Position zu stärken, indem man Vertrauen zu ihm zeige.</p>
+            <p>Der Kanzler wandte sich dann dem Thema: »Sowjetzonenpropaganda in Rundfunk und Fernsehen« zu. Er bedauerte, daß wir dem nichts entgegenzusetzen hätten. Die Zone bestrahle große Teile der Bundesrepublik mit Rundfunk und Fernsehen. In diesem Zusammenhang setzte sich der Kanzler dafür ein, daß Deutsche Welle und Deutschland-Funk möglichst bald aktionsfähig würden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN006" type="comment">
+                     <p>Rechtsgrundlage war das Gesetz über die Errichtung von Rundfunkanstalten des Bundesrechts vom 29. 11. 1960 (BGBl. I, S. 862). Nach Bildung der Aufsichtsgremien und Wahl der Intendanten konnten beide Bundesanstalten ihre Sendungen zum 1. 1. 1962 aufnehmen. Vgl. Bausch, S. 394–414, hier: S. 411.</p>
+                  </note>
+               </seg> Nach den Wahlen sollte das gesamte Kapitel Rundfunk und Fernsehen neu angepackt werden.</p>
+            <p>Der Bundeskanzler nahm dann zum Wahlkampfverlauf Stellung. Er betonte, der Eindruck von den Versammlungen sei ausgezeichnet, obwohl Nürnberg<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN007" type="comment">
+                     <p>Kundgebung der Jungen Union am Sonntag, den 14. 5. 1961 (StBKAH, Besucherlisten Adenauer 04.12).</p>
+                  </note>
+               </seg> und Hamburg<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN008" type="comment">
+                     <p>Am 28. 5. 1961. Siehe Anm. 2.</p>
+                  </note>
+               </seg>, wo er bisher gesprochen habe, sozialdemokratische Hochburgen seien. Überall sei die wachsende Unzufriedenheit mit der Sozialdemokratie spürbar. Er werde auch bei den weiteren Veranstaltungen immer wieder darauf hinweisen, daß die SPD-Politik praktisch doch darauf hinauslaufe, die Bundesrepublik aus der NATO herauszulösen, was praktisch das Ende der NATO bedeuten würde.</p>
+            <p>Über sein Gespräch mit dem französischen Staatspräsidenten <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> berichtete der Kanzler: die Zusammenkunft unter vier Augen habe gute Früchte getragen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN009" type="comment">
+                     <p>Am 20. 5. 1961 waren <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> zum ersten Mal am Sitz der Bundesregierung in Bonn zusammengetroffen. Vgl. AdG 1961, S. 9099 f.; Adenauer, Erinnerungen 1959–1963, S. 101–111.</p>
+                  </note>
+               </seg> Beide Gesprächspartner seien sich darüber einig, daß die Algerien-Frage bald gelöst werden müsse<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN010" type="comment">
+                     <p>Die französisch-algerischen Gespräche von Evian hatten am 20. 5. 1961 begonnen. Vgl. AdG 1961, S. 9111 f.</p>
+                  </note>
+               </seg>, damit Frankreich zur Ruhe komme und endlich wieder die Rolle in Europa und im atlantischen Bündnis spielen könne, zu der es berufen und verpflichtet sei.</p>
+            <p>Der Kanzler nahm dann zu Fragen der Politik der Vereinigten Staaten Stellung. Die Vorgänge in Kuba<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN011" type="comment">
+                     <p>Zur Kuba-Krise siehe Nr. 241 v. 21. 2. 1961, Anm. 4.</p>
+                  </note>
+               </seg> seien eine große Niederlage gewesen für die Vereinigten Staaten. <name type="Person" role="Erwaehnung" ref="#CastroRuzFidel">Castro</name> habe über sowjetische Panzer und Flugzeuge verfügt. Deshalb habe kein allgemeiner Aufstand gegen <name type="Person" role="Erwaehnung" ref="#CastroRuzFidel">Castro</name> stattgefunden. Das könne man aber <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> nicht zur Last legen. Diese Vorgänge gingen zum großen Teil auf Fehler der früheren Administration zurück. Die Amerikaner hätten viel in das Kuba-Unternehmen investiert. Der Kanzler sprach von einem Betrag von 40 Mio. Dollar. Diese Schlappe müsse bald aufgehoben werden, damit die Vereinigten Staaten wieder die Führung in der westlichen Welt übernehmen könnten. <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> sei dazu bereit, insbesondere was eine Verbesserung der Zusammenarbeit in der NATO anbetreffe. Die jetzige Konstruktion ermutige nicht zu allzu geheimen Gesprächen im NATO-Rat. In diesem Zusammenhang wies der Kanzler auf gewisse Schwierigkeiten in Island und in der Türkei hin. Der Kanzler brachte die Hoffnung zum Ausdruck, daß es dem neuen NATO-Generalsekretär <name type="Person" role="Erwaehnung" ref="#StikkerDirkU">Stikker</name> gelingen möge, die NATO bald zu kräftigen.</p>
+            <p>Zum Verhältnis EWG und Großbritannien meinte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, die weitere Entwicklung könne man im Augenblick noch nicht absehen. Sowohl die Konservative Partei Großbritanniens als auch die Labour-Party seien in dieser Frage gespalten. Wenn die Konservativen sich in dieser Frage nicht einig seien, könne das sich negativ für die nächsten Unterhauswahlen auswirken. Schon aus diesem Grunde sei vorerst mit einer Klärung dieser Frage nicht zu rechnen. Eine bloße Assoziierung Großbritanniens an die EWG sei wenig sinnvoll, da das politische Ziel der EWG nicht angetastet werden dürfe. Wenn ein so großes Land wie Großbritannien nur wirtschaftlich dabei sei, dann sei das eher ein Ballast. Die europäische Integration müsse mit allem Nachdruck vorangetrieben werden. Der dänische Ministerpräsident, so führte der Kanzler weiter aus, habe ihm erklärt, Dänemark wünsche als Vollmitglied der EWG beizutreten. Das hänge aber von der Haltung Großbritanniens ab.</p>
+            <p>Der Kanzler ging dann noch einmal auf das Treffen <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-<name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN012" type="comment">
+                     <p>Siehe Anm. 5.</p>
+                  </note>
+               </seg> ein. Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> teilte mit, daß bei seinem USA-Besuch<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN013" type="comment">
+                     <p>USA-Reise vom 11. bis 17. 4. 1961. Siehe Nr. 253 v. 19. 4. 1961.</p>
+                  </note>
+               </seg> davon noch nicht die Rede gewesen sei. <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> habe ihm in einem Schreiben mitgeteilt, daß die Sowjets um ein solches Treffen gebeten hätten. Ursprünglich habe der Plan bestanden, <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> in die Sowjetunion einzuladen. Das habe <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> aber abgelehnt. Daß <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>
+               <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> kennenlernen wolle, sei verständlich. Er sei sich darüber im klaren, so meinte Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, daß die Sowjets eine andere Sprache sprächen und eine andere Moral hätten als wir. Wenn auch die Zeit von acht Stunden für die vertraulichen Gespräche etwas viel sei, so könne man doch volles Vertrauen zu <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> haben. Vielleicht sehe <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> bei diesen Gesprächen, daß <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> aus einem anderen Holz sei als sein Vorgänger. Einstweilen sei es aber weiterhin Aufgabe der westlichen Politik, weiter aufzurüsten und eines sowjetischen Angriffs gewärtig zu sein. Das Ziel der deutschen Politik müsse nach wie vor Frieden und kontrollierte Abrüstung sein. Die Wiedervereinigung könne nur bei einer allgemeinen Entspannung erreicht werden. In Berlin sei die Situation anders. Die Sowjets würden mit dem Westen nicht verhandeln, wenn sie den Glauben hätten, der Westen sei zu schwach zum Widerstand, und wenn sie der Auffassung wären, der Westen würde auseinanderfallen in der Berlin-Frage. Auch die Sowjetunion sei nicht in einer beneidenswerten Situation bei ihrer Nachbarschaft zu Rotchina. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> habe ihm, dem Kanzler, schon 1955 gesagt, wie sehr er die Gefahr Rotchinas sehe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN014" type="comment">
+                     <p>Anläßlich der Gespräche <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in Moskau vom 9. bis 13. 9. 1955. Siehe Nr. 3 v. 9. 10. 1957, TOP 4.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Kanzler ging zum Schluß kurz auf die Situation der Landwirtschaft ein, die zum Teil besorgniserregend sei. Hier müsse vor allen Dingen stärker aufklärend gewirkt werden.</p>
+            <p>Im Anschluß an die Ausführungen des Bundeskanzlers erörterte der Vorstand die Frage, welche Gesetzentwürfe bis zum Ende der Legislaturperiode noch verabschiedet werden müssen. Dabei setzte sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dafür ein, daß die neue Bundestagsfraktion zügiger arbeiten müsse als bisher. Große Vorlagen müßten früher und schneller behandelt werden, als es im 3. Bundestag der Fall gewesen sei. Über diese Dinge sollte der Vorstand nach Ende der Parlamentsarbeit noch im Juli eine Sitzung abhalten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN015" type="comment">
+                     <p>Zur letzten Fraktionsvorstandssitzung in der 3. WP siehe Nr. 265 v. 26. 6. 1961.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Bundeskanzler stellte die Frage zur Diskussion, ob die Arbeitsweise des Parlaments nicht zu überprüfen sei. Die Pausen seien jetzt zu groß. Der Betrieb sei in den letzten Jahren langsamer geworden, worunter auch die Arbeit der Regierung gelitten habe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> setzte sich dann dafür ein, daß der Vorstand keinen Beschluß fassen solle, eine Vorlage nicht mehr zu verabschieden. Es sollten jedoch nur noch solche Gesetzentwürfe erledigt werden, bei denen die Fraktion geschlossen sei. Auch müsse man die noch zu verabschiedenden Vorlagen von dem Gesichtspunkt betrachten, ob sie der Wahl dienten oder nicht. Bei dieser Gelegenheit kam es zu einer längeren Diskussion über die Novelle zum Reichsjugendwohlfahrtsgesetz. Dazu meinte Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, daß die Bedenken bei diesem Gesetz größer seien als beim Sozialhilfegesetz.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN016" type="comment">
+                     <p>Siehe Nr. 255 v. 2. 5. 1961.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Minister Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> griff in die Diskussion ein und meinte, es bestünden bisher keine Einwände gegen die Verabschiedung der Novelle.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN017" type="comment">
+                     <p>Zur Verabschiedung der Vorlage vor Ende der 3. WP siehe ebd.</p>
+                  </note>
+               </seg> Der zuständige Ausschuß für Familien- und Jugendfragen könne die Vorlage bei seiner dreitägigen Berlin-Sitzung verabschieden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN018" type="comment">
+                     <p>In der 3. WP fanden 36 Ausschuß- und Unterausschußsitzungen in Berlin statt. Vgl. Datenhandbuch II, S. 1500; III, S. 3696.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Anschließend wandten sich Frau Dr. <name type="Person" role="Sprecher" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> und <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> gegen die Verabschiedung der Novelle. Insbesondere Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> wies darauf hin, daß in der Öffentlichkeit große Bedenken bestünden. Es sei daher besser, dieses Gesetz in einer ruhigeren Atmosphäre nach der Wahl zu verabschieden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> dagegen vertrat den Standpunkt, daß diese Bedenken bisher nicht zu erkennen gewesen seien.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> hielt dem entgegen, daß die Frage nicht sei, ob, sondern wann die Vorlage verabschiedet werde.</p>
+            <p>Der Vorstand beschloß dann, noch einmal eine Besprechung in einem kleinen Kreis durchzuführen, bevor die endgültige Entscheidung falle.</p>
+            <p>Als nächstes Thema wurde die Vorlage zum Weinbaugesetz erörtert. <name type="Person" role="Sprecher" ref="#GibbertPaul_1949-09-07">Gibbert</name> berichtete dem Vorstand als Sachverständiger über die Lage im deutschen Weinbau. Er wies darauf hin, daß durch die großen Schwierigkeiten, insbesondere bei den kleinen Winzern, eine politisch gefährliche Situation auch in überwiegend CDU-freundlichen Gebieten entstehen könnte [Gesetzentwurf zur Überleitung des deutschen Weinbaues in die EWG der Abg. <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>, <name type="Person" role="Erwaehnung" ref="#DielJakob_1957-10-15">Diel</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> u. Gen.: Drucksache III/1870, zu 1870].</p>
+            <p>Der Vorstand beschloß, eine Kommission mit <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> und <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name> einzusetzen, die diese Frage noch einmal erörtern solle.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN019" type="comment">
+                     <p>Die Vorlage wurde als »Gesetz über Maßnahmen auf dem Gebiete der Weinwirtschaft« am 30. 6. 1961 verabschiedet. Siehe Nr. 264 v. 20. 6. 1961.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Schließlich behandelte der Vorstand noch die Frage, ob in dieser Legislaturperiode noch eine außenpolitische Debatte durchgeführt werden solle. Dabei vertrat der Bundeskanzler den Standpunkt, man sollte eine solche Debatte nicht mehr durchführen, da die SPD dabei zu allem ja sagen würde außer zur nuklearen Bewaffnung. Diese Chance solle man ihnen nicht geben.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN020" type="comment">
+                     <p>Während <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> mit Blick auf den Wahlkampf die SPD nach wie vor als außenpolitisch unzuverlässige Partei zu brandmarken versuchte, stellte Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> zum Abschluß der 3. WP am 30. 6. 1961 im Plenum die außenpolitischen Gemeinsamkeiten mit der SPD heraus. Vgl. Sten. Ber., 166. Sitzung, S. 9764 f.; Schwarz, Adenauer 1952–1967, S. 649.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Vorstand schloß sich der Auffassung des Bundeskanzlers an.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-05-29-t1100_EP_FN021" type="comment">
+                     <p>Unter der letzten Zeile der Vorlage befindet sich links der Vermerk »6. Juni 1961. Dr. <name type="Person" role="Erwaehnung" ref="#AckermannEduard">A.[ckermann]</name>/<name type="Person" role="Erwaehnung" ref="#OhlendorfRuth">O.[hlendorf]</name>«.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

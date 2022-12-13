@@ -1,176 +1,257 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-04-11-t1445_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 11. April 1961</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>2 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1961-04-11"><time type="start" when="14:45:00"/><time type="end" when="15:25:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1961-04-11-t1445_EP_SVP-1" corresp="#cdu-csu-03_1961-04-11-t1445_EP_div_SVP-1">A. Mitteilungen und Glückwünsche. – Bericht aus dem Ältestenrat. – Steueränderungsgesetz. – Sonntagsruhe.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1961-04-11-t1445_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gratuliert zunächst Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> zu ihrem 80. Geburtstag<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN001" type="comment"><p>Frau Dr. Helene <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, geb. 17. 3. 1881, seit 1949 MdB.</p></note></seg> und widmet ihrer in einem langen politischen Leben geleisteten Arbeit Worte des Dankes und der Anerkennung.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#WeberHelene_1949-09-07">Weber</name> dankt für die Glückwünsche der Fraktion und fordert die Fraktionsmitglieder auf, in gewohnter Geschlossenheit für das gemeinsame Ziel einer christlichen Politik einzutreten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> beglückwünscht sodann Bundesminister Dr. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> zu seiner Wahl als Vorsitzender der CSU und würdigt die Leistung des bisherigen Vorsitzenden Dr. <name type="Person" role="Erwaehnung" ref="#SeidelHanns">Seidel</name>.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN002" type="comment"><p>Ministerpräsident a.D. Dr. Hanns <name type="Person" role="Erwaehnung" ref="#SeidelHanns">Seidel</name> war wegen seines sich zunehmend verschlechternden Gesundheitszustandes zurückgetreten. Vgl. Strauß, Erinnerungen, S. 548.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet aus dem Ältestenrat über die Planung der nächsten Plenarwochen. Er weise dabei darauf hin, daß Gesetze, die vor Pfingsten nicht verabschiedet seien und dann in den Vermittlungsausschuß kämen, eine Plenarsitzung während der Ferien notwendig machen würden.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN003" type="comment"><p>Vgl. Sten. Ber., 167. Sitzung am 18. 8. 1961 und 168. Sitzung am 22. 8. 1961.</p></note></seg> Deswegen sei es nicht möglich, auf die Ausschußwochen vor Pfingsten zu verzichten. Eine davon falle mit dem Bundesparteitag zusammen.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN004" type="comment"><p>Vgl. CDU, 10. Bundesparteitag, Köln, 24. bis 27. 4. 1961, 1961.</p></note></seg> Während dieser Woche sei es notwendig, immer auf die vollständige Besetzung der Ausschüsse zu achten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> unterstreicht diese Notwendigkeit. Die Fraktion müsse Verständnis dafür haben, daß sie während des Parteitages ihren Verpflichtungen im Bundestag nachkommen müsse. Es sei sowieso fraglich, ob man das vorgesehene Pensum noch erledigen könne.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN005" type="comment"><p>Zum Appell an die Arbeitsdisziplin der Fraktion siehe Nr. 249 v. 10. 4. 1961.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> setzt sich dafür ein, das Steueränderungsgesetz<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN006" type="comment"><p>Steueränderungsgesetz 1961: Drucksache III/2573 v. 4. 3. 1961.</p></note></seg> nur an den Finanz- und Steuerausschuß zu überweisen.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN007" type="comment"><p>1. Beratung am 20. 4. 1961; Überweisung an den Finanzausschuß (f.) und an den Haushaltsausschuß. Vgl. 155. Sitzung am 20. 4. 1961, S. 8913–8925; 156. Sitzung am 21. 4. 1961, S. 8953.</p></note></seg></p>
-				<p>Er halte zwar die Form der Steueränderungsgesetze für falsch, weil sie ein ähnliches Sammelsurium darstellten wie in den 30er Jahren die Notverordnungen.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN008" type="comment"><p>Zur rechtlichen und politischen Bedeutung der Verordnungen nach Art. 48 RV vgl. Anschütz, Verfassung, S. 267–300; Bracher, Auflösung, S. 51–63.</p></note></seg> Er halte es für notwendig, Novellen zu den einzelnen Gesetzen zu machen, nicht aber Kopien der Notverordnungen. Man solle auch vermeiden, aus jeder Steuerfrage eine Mittelstandsfrage zu machen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, daß er den Grundgedanken des Vorredners zustimme. Die Überweisung des Gesetzes an andere Ausschüsse sei unmöglich, könne aber nur verhindert werden, wenn die ganze Fraktion zusammenhalte. Er sei überzeugt, daß die Fraktion bei allen Abstimmungen allein stehen werde. Die SPD werde nach ihrer Schlappe bei den Haushaltsberatungen<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN009" type="comment"><p>Im März 1961 waren mehrere zur dritten Beratung des Haushaltsgesetzes z.T. erneut eingebrachte Änderungsanträge der SPD abgelehnt worden: der Antrag, Darlehen zur Beschaffung von Wohnungen für rückkehrwillige Evakuierte bereitzustellen, dann der Antrag, Zuschüsse auf dem Gebiet des Bildungswesens, insbesondere der Studentenförderung, bereitzustellen sowie der Antrag, den neu eingefügten Leertitel für das Zweite Fernsehprogramm zu streichen. Vgl. Sten. Ber., 152. Sitzung am 16. 3. 1961, S. 8710 f. mit Umdruck 830; 153. Sitzung am 17. 3. 1961, S. 8795 mit den Umdrucken 831 und 832. Die Anträge betrafen die Einzelpläne 25 (BMWo), 04 (BK) und 06 (BMI). Vgl. Hölscher, SPD-Fraktion 1957–1961, S. 539.</p></note></seg> nun Schwierigkeiten machen, wo sie könne. Im übrigen könne jetzt an Gesetzen nur noch gemacht werden, was bisher vorgesehen sei, nicht mehr. Wenn die Fraktion diese Aufgaben in Geschlossenheit durchführe, habe man auch das Recht, dem Kabinett zu sagen, daß es einheitlicher wirken müsse. Dies werde er, Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, dem Bundeskanzler oder dem Vizekanzler in aller Deutlichkeit noch sagen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> setzt sich dafür ein, bei dem Steueränderungsgesetz wenigstens den Wirtschaftsausschuß mitzubeteiligen.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN010" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> war Vorsitzender des Arbeitskreises II: Wirtschaft, Landwirtschaft usw.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erwidert, dann könne die Forderung des Kommunalpolitischen Ausschusses nicht mehr zurückgewiesen werden, ebenfalls beteiligt zu werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> fügt hinzu, daß diese Vorlage von der CDU ausgehe. Es müsse also möglich sein, in diesen Fragen einen gangbaren Kompromiß zu finden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt seine Kompromißbereitschaft.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> regt an, die wesentlichen Fragen in gemeinsamen Arbeitskreissitzungen zu erörtern oder in der Fraktionssitzung abzuklären.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt fest, daß sich die Fraktion über die Prozedur einig sei.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN011" type="comment"><p>Die Vorlage wurde nur zwei Ausschüssen überwiesen; siehe Anm. 7.</p></note></seg></p>
-				<p>Dann wendet er sich dem Thema Sonntagsruhe zu und erwähnt, daß die SPD dazu einen Antrag einbringen wolle und wegen dieses Antrages auch an Fraktionsmitglieder herangetreten sei. Er wolle anregen, diesen Antrag nicht mitzuunterschreiben. Dieser Antrag sei nach dem Denken der CDU unvollständig. Jetzt liege diese Frage beim Bundesrat, durch diesen Antrag käme sie in den Bundestag; das sei aber vor den Wahlen nicht günstig.<seg type="note"><note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN012" type="comment"><p>Die SPD brachte keinen Antrag dazu ein. Zur diesbezüglichen Verordnung vom 7. 7. 1961 siehe Nr. 234 v. 17. 1. 1961, Anm. 11.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-04-11-t1445_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 11. April 1961</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>2 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1961-04-11">
+               <time type="start" when="14:45:00"/>
+               <time type="end" when="15:25:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1961-04-11-t1445_EP_SVP-1" corresp="#cdu-csu-03_1961-04-11-t1445_EP_div_SVP-1">A. Mitteilungen und Glückwünsche. – Bericht aus dem Ältestenrat. – Steueränderungsgesetz. – Sonntagsruhe.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1961-04-11-t1445_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gratuliert zunächst Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> zu ihrem 80. Geburtstag<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN001" type="comment">
+                     <p>Frau Dr. Helene <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, geb. 17. 3. 1881, seit 1949 MdB.</p>
+                  </note>
+               </seg> und widmet ihrer in einem langen politischen Leben geleisteten Arbeit Worte des Dankes und der Anerkennung.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#WeberHelene_1949-09-07">Weber</name> dankt für die Glückwünsche der Fraktion und fordert die Fraktionsmitglieder auf, in gewohnter Geschlossenheit für das gemeinsame Ziel einer christlichen Politik einzutreten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> beglückwünscht sodann Bundesminister Dr. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> zu seiner Wahl als Vorsitzender der CSU und würdigt die Leistung des bisherigen Vorsitzenden Dr. <name type="Person" role="Erwaehnung" ref="#SeidelHanns">Seidel</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN002" type="comment">
+                     <p>Ministerpräsident a.D. Dr. Hanns <name type="Person" role="Erwaehnung" ref="#SeidelHanns">Seidel</name> war wegen seines sich zunehmend verschlechternden Gesundheitszustandes zurückgetreten. Vgl. Strauß, Erinnerungen, S. 548.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet aus dem Ältestenrat über die Planung der nächsten Plenarwochen. Er weise dabei darauf hin, daß Gesetze, die vor Pfingsten nicht verabschiedet seien und dann in den Vermittlungsausschuß kämen, eine Plenarsitzung während der Ferien notwendig machen würden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN003" type="comment">
+                     <p>Vgl. Sten. Ber., 167. Sitzung am 18. 8. 1961 und 168. Sitzung am 22. 8. 1961.</p>
+                  </note>
+               </seg> Deswegen sei es nicht möglich, auf die Ausschußwochen vor Pfingsten zu verzichten. Eine davon falle mit dem Bundesparteitag zusammen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN004" type="comment">
+                     <p>Vgl. CDU, 10. Bundesparteitag, Köln, 24. bis 27. 4. 1961, 1961.</p>
+                  </note>
+               </seg> Während dieser Woche sei es notwendig, immer auf die vollständige Besetzung der Ausschüsse zu achten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> unterstreicht diese Notwendigkeit. Die Fraktion müsse Verständnis dafür haben, daß sie während des Parteitages ihren Verpflichtungen im Bundestag nachkommen müsse. Es sei sowieso fraglich, ob man das vorgesehene Pensum noch erledigen könne.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN005" type="comment">
+                     <p>Zum Appell an die Arbeitsdisziplin der Fraktion siehe Nr. 249 v. 10. 4. 1961.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> setzt sich dafür ein, das Steueränderungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN006" type="comment">
+                     <p>Steueränderungsgesetz 1961: Drucksache III/2573 v. 4. 3. 1961.</p>
+                  </note>
+               </seg> nur an den Finanz- und Steuerausschuß zu überweisen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN007" type="comment">
+                     <p>1. Beratung am 20. 4. 1961; Überweisung an den Finanzausschuß (f.) und an den Haushaltsausschuß. Vgl. 155. Sitzung am 20. 4. 1961, S. 8913–8925; 156. Sitzung am 21. 4. 1961, S. 8953.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Er halte zwar die Form der Steueränderungsgesetze für falsch, weil sie ein ähnliches Sammelsurium darstellten wie in den 30er Jahren die Notverordnungen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN008" type="comment">
+                     <p>Zur rechtlichen und politischen Bedeutung der Verordnungen nach Art. 48 RV vgl. Anschütz, Verfassung, S. 267–300; Bracher, Auflösung, S. 51–63.</p>
+                  </note>
+               </seg> Er halte es für notwendig, Novellen zu den einzelnen Gesetzen zu machen, nicht aber Kopien der Notverordnungen. Man solle auch vermeiden, aus jeder Steuerfrage eine Mittelstandsfrage zu machen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, daß er den Grundgedanken des Vorredners zustimme. Die Überweisung des Gesetzes an andere Ausschüsse sei unmöglich, könne aber nur verhindert werden, wenn die ganze Fraktion zusammenhalte. Er sei überzeugt, daß die Fraktion bei allen Abstimmungen allein stehen werde. Die SPD werde nach ihrer Schlappe bei den Haushaltsberatungen<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN009" type="comment">
+                     <p>Im März 1961 waren mehrere zur dritten Beratung des Haushaltsgesetzes z.T. erneut eingebrachte Änderungsanträge der SPD abgelehnt worden: der Antrag, Darlehen zur Beschaffung von Wohnungen für rückkehrwillige Evakuierte bereitzustellen, dann der Antrag, Zuschüsse auf dem Gebiet des Bildungswesens, insbesondere der Studentenförderung, bereitzustellen sowie der Antrag, den neu eingefügten Leertitel für das Zweite Fernsehprogramm zu streichen. Vgl. Sten. Ber., 152. Sitzung am 16. 3. 1961, S. 8710 f. mit Umdruck 830; 153. Sitzung am 17. 3. 1961, S. 8795 mit den Umdrucken 831 und 832. Die Anträge betrafen die Einzelpläne 25 (BMWo), 04 (BK) und 06 (BMI). Vgl. Hölscher, SPD-Fraktion 1957–1961, S. 539.</p>
+                  </note>
+               </seg> nun Schwierigkeiten machen, wo sie könne. Im übrigen könne jetzt an Gesetzen nur noch gemacht werden, was bisher vorgesehen sei, nicht mehr. Wenn die Fraktion diese Aufgaben in Geschlossenheit durchführe, habe man auch das Recht, dem Kabinett zu sagen, daß es einheitlicher wirken müsse. Dies werde er, Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, dem Bundeskanzler oder dem Vizekanzler in aller Deutlichkeit noch sagen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> setzt sich dafür ein, bei dem Steueränderungsgesetz wenigstens den Wirtschaftsausschuß mitzubeteiligen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN010" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> war Vorsitzender des Arbeitskreises II: Wirtschaft, Landwirtschaft usw.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> erwidert, dann könne die Forderung des Kommunalpolitischen Ausschusses nicht mehr zurückgewiesen werden, ebenfalls beteiligt zu werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> fügt hinzu, daß diese Vorlage von der CDU ausgehe. Es müsse also möglich sein, in diesen Fragen einen gangbaren Kompromiß zu finden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt seine Kompromißbereitschaft.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> regt an, die wesentlichen Fragen in gemeinsamen Arbeitskreissitzungen zu erörtern oder in der Fraktionssitzung abzuklären.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt fest, daß sich die Fraktion über die Prozedur einig sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN011" type="comment">
+                     <p>Die Vorlage wurde nur zwei Ausschüssen überwiesen; siehe Anm. 7.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dann wendet er sich dem Thema Sonntagsruhe zu und erwähnt, daß die SPD dazu einen Antrag einbringen wolle und wegen dieses Antrages auch an Fraktionsmitglieder herangetreten sei. Er wolle anregen, diesen Antrag nicht mitzuunterschreiben. Dieser Antrag sei nach dem Denken der CDU unvollständig. Jetzt liege diese Frage beim Bundesrat, durch diesen Antrag käme sie in den Bundestag; das sei aber vor den Wahlen nicht günstig.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-04-11-t1445_EP_FN012" type="comment">
+                     <p>Die SPD brachte keinen Antrag dazu ein. Zur diesbezüglichen Verordnung vom 7. 7. 1961 siehe Nr. 234 v. 17. 1. 1961, Anm. 11.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

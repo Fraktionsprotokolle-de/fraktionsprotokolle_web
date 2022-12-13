@@ -1,249 +1,421 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-05-25-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1503/2</idno>
-							<objectName>Protokoll der Vorstandssitzung der CDU/CSU-Fraktion vom 25. Mai 1959</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 25. Mai 1959</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>8 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1959-05-25"><time type="start" when="15:00:00"/><time type="end" when="19:15:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend vom Fraktionsvorstand:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, <name type="Person" role="Erwaehnung" ref="#Engelbrecht-GreveErnst_1953-10-06">Engelbrecht-Greve</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln), <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#KrollLudwig_1953-10-06">Kroll</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz).</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend von der Bundesregierung:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1959-05-25-t1500_EP_SVP-1" corresp="#cdu-csu-03_1959-05-25-t1500_EP_div_SVP-1">A. Verlaufsprotokoll. TOP 1: Bericht des Bundeskanzlers (Bundespräsidentenwahl und die Frage der Kanzlernachfolge; Außenpolitik) mit anschließender Diskussion. – TOP 2: Bundesversammlung. – TOP 3: Plenararbeit bis zu den Sommerferien. –– Kurzprotokoll. TOP 1: Bericht des Bundeskanzlers. – TOP 2: Bundesversammlung. – TOP 3: 2. und 3. Lesung Haushalt. – TOP 4: Plenararbeit bis zu den Sommerferien. – TOP 5: Termine. – TOP 6: Gesetzesinitiativen aus der Fraktion.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1959-05-25-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>a) Verlaufsprotokoll<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN001" type="comment"><p>Von dieser Vorstandssitzung sind sowohl das übliche Kurzprotokoll (masch. 3 S.) als auch das hier abgedruckte Verlaufsprotokoll überliefert. Das Verlaufsprotokoll trägt die Überschrift: »Protokoll der Vorstandssitzung der CDU/CSU-Fraktion vom 25. Mai 1959«. Im Kurzprotokoll lautet die Tagesordnung:</p>
-							<p>»1. Bericht des Bundeskanzlers</p>
-							<p>2. Bundesversammlung</p>
-							<p>3. 2. und 3. Lesung Haushalt</p>
-							<p>4. Plenararbeit bis zu den Sommerferien</p>
-							<p>5. Termine</p>
-							<p>6. Gesetzesinitiativen aus der Fraktion.«</p>
-							<p>Nach dem Verlaufsprotokoll ist aus dem Kurzprotokoll nur derjenige Teil abgedruckt, der inhaltlich nicht oder kaum durch das Verlaufsprotokoll abgedeckt wird.</p></note></seg></p>
-				<p>Im Mittelpunkt der Sitzung stand ein Bericht des Bundeskanzlers über die Bundespräsidentenwahl und die Frage der Kanzlernachfolge<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN002" type="comment"><p>Inzwischen hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> seinen Entschluß, für das Präsidentenamt zu kandidieren, in Frage gestellt und sich gegen <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> als seinen Nachfolger im Kanzleramt ausgesprochen. Zu der Entwicklung der sog. Präsidentschaftskrise ab dem 8. 4. 1959 (Beginn von <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> vierwöchigem Urlaub in Cadenabbia) bis zum 25. 5. 1959 vgl. Adenauer, Erinnerungen 1955–1959, S. 515–537; Krone, Tgb. 1945–1961, S. 349–358; Wagner, Bundespräsidentenwahl, S. 36–55; Schwarz, Adenauer 1952–1967, S. 517–519.</p></note></seg>, an den sich eine längere Diskussion anschloß.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN003" type="comment"><p>Zu dieser Fraktionsvorstandssitzung aus der Sicht des Bundeskanzlers vgl. Adenauer, Erinnerungen 1955–1959, S. 539 f.</p></note></seg></p>
-				<p>[1. Bericht des Bundeskanzlers]</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> berichtete zunächst über die Vorgeschichte seiner Nominierung, und zwar über die Unterredung, die er am 6. April mit Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und drei weiteren Herren des Vorstandes der CDU gehabt habe.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN004" type="comment"><p>Siehe Nr. 121 v. 6. 4. 1959, Anm. 9.</p></note></seg> In diesem Gespräch, so führte der Kanzler aus, hätten ihm die Herren nahegelegt, sich für das Amt des Bundespräsidenten als Kandidat aufstellen zu lassen. Er habe zunächst um Bedenkzeit gebeten, da es seine Absicht gewesen [sei]<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN005" type="comment"><p>Vom Bearbeiter ergänzt.</p></note></seg>, 1961 Bundeskanzler zu bleiben, den Wahlkampf für die CDU noch einmal durchzuführen und erst dann das Amt des Staatsoberhauptes zu übernehmen. Über diese Frage sollte am 22. Mai eine Besprechung mit dem Parteivorstand stattfinden.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN006" type="comment"><p>An diesem Tag fand keine Sitzung des Parteivorstandes statt. Hingegen suchte <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> den Bundeskanzler auf, um dessen Bitte abzuschlagen, auf seine Kandidatur als Nachfolger <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> im Kanzleramt zu verzichten. Vgl. Adenauer, Erinnerungen 1955–1959, S. 537; Wagner, Bundespräsidentenwahl, S. 55.</p></note></seg> Am 7. April, dem Tage also, an dem das sogenannte Wahlmännergremium zusammentrat<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN007" type="comment"><p>Siehe Nr. 122 v. 7. 4. 1959, Anm. 1–3.</p></note></seg>, habe er zunächst einen Vortrag über die Befugnisse des Bundespräsidenten gehalten. Er habe sich dann auf sein Zimmer zurückgezogen. Nach einiger Zeit, in der in diesem Wahlmännergremium eine Diskussion über seine Nominierung stattgefunden habe, sei dann Bundestagspräsident Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> zu ihm gekommen mit der Mitteilung, daß das Wahlmännergremium ihn einstimmig bitte, für das Amt des Bundespräsidenten zu kandidieren. Er habe sich die Sache dann ernsthaft durch den Kopf gehen lassen und zugestimmt. Bei seinem Entschluß habe er sich davon leiten lassen, daß [durch]<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN005a" type="comment"><p>Vom Bearbeiter ergänzt.</p></note></seg> die Nominierung von Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> und die fehlgeschlagene Nominierung von Bundeswirtschaftsminister <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> ein gewisser Schock entstanden sei.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN008" type="comment"><p>Siehe die Literaturhinweise in: Nr. 110 v. 16. 2. 1959, TOP 1.</p></note></seg> Er habe sich dann gesagt, daß es gut sei, wenn er die in 10 Jahren Regierungstätigkeit gesammelten Erfahrungen noch rechtzeitig auf seinen Nachfolger übertragen könne, um insbesondere die Kontinuität seiner Politik für die nächsten Jahre sicherzustellen. Der Entschluß sei ihm schwer gefallen. Angesichts der Verhältnisse in der Welt und der Diskussion um seine Nachfolge falle es ihm mit der Zeit noch schwerer, aus der aktiven Politik auszuscheiden.</p>
-				<p>Der Bundeskanzler berichtete dann über die Rechte des Bundespräsidenten, insbesondere über sein Recht, dem Parlament den Kanzler vorzuschlagen. Er wies darauf hin, daß das Parlament erst im zweiten Wahlgang einen eigenen Kandidaten vorschlagen könne, wenn der Kandidat des Bundespräsidenten abgelehnt sei.</p>
-				<p>Der Kanzler nahm dann zu der Diskussion in der Kanzlernachfolge in der Presse<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN009" type="comment"><p>Vgl. »Erhard überraschend bei Adenauer. Kommt es zur offenen Feldschlacht um die Kanzlernachfolge?«, in: »Die Welt« Nr. 117 v. 23. 5. 1959, S. 4. Zu dem Presseecho in zeitgenössischen Quellen vgl. Adenauer, Erinnerungen 1955–1959, S. 515–518; Krone, Tgb. 1945–1961, S. 357 f. und in der Literatur u. a. Wagner, Bundespräsidentenwahl, S. 39–42, 44 f.</p></note></seg> Stellung. Diese Diskussion habe ihn aufs Tiefste erschüttert. Sie habe der Partei sehr geschadet. Die Frage, wer Bundeskanzler werden solle, sei durch die Amtsstuben der einzelnen Ministerien durchdiskutiert worden, und auch in der Fraktion sei diese Frage schon lebhaft erörtert worden.</p>
-				<p>Wir alle stehen unter dem Gebot, dem Ganzen zu dienen, erklärt der Kanzler. Wenn ich Bundespräsident werde, werde ich nicht einfach jemanden vorschlagen, sondern nach vertraulicher Rücksprache mit der Fraktion die Wahl treffen. Wir müssen jetzt den Vorhang des Schweigens herunterlassen. Die Zänkerei muß aus den Amtsstuben und den Zeitungen verschwinden.</p>
-				<p>Der Bundeskanzler verwies dann auf seine Rundfunkrede, die er unmittelbar nach seiner Nominierung gehalten habe<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN010" type="comment"><p>Rundfunk- und Fernsehansprache des Bundeskanzlers v. 8. 4. 1959, in: DzD IV/1, S. 1325–1328, hier: S. 1327 f.</p></note></seg>, und auf den Briefwechsel, der sich daran mit Bundespräsident Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> geknüpft habe.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN011" type="comment"><p><name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> sah die Ausfüllung seines Amtes und seine persönliche Leistung durch Äußerungen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> bagatellisiert. Vgl. Heuss – Adenauer, Briefwechsel, in: Unserem Vaterland zugute, S. 273–283.</p></note></seg> Der Bundespräsident habe offensichtlich einige Sätze dieser Rede über das Amt des Bundespräsidenten mißverstanden. Die Angelegenheit sei aber inzwischen bereinigt.</p>
-				<p>Der Bundeskanzler wies dann darauf hin, daß der Bundespräsident nicht verpflichtet sei, Persönlichkeiten ohne weiteres zu Ministern zu ernennen, die der Bundeskanzler ihm vorschlage. Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> habe bei Ministervorschlägen, die er ihm gemacht habe, oft Bedenken erhoben, denen er dann auch Rechnung getragen habe.</p>
-				<p>Wenn ich Bundespräsident werde, so führte der Kanzler dann weiter aus, werde ich immer gemäß der Verfassung handeln, aber man muß doch die Meinungen austauschen.</p>
-				<p>Der Bundeskanzler schnitt dann die Frage der Zugehörigkeit des Bundespräsidenten zu einer politischen Partei an. Er wies darauf hin, daß Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> immer der FDP angehört habe und noch an der letzten Weihnachtsfeier der FDP teilgenommen habe. Ein erfahrener Bundespräsident könne jederzeit ein guter Berater der Partei sein, fügte der Kanzler hinzu.</p>
-				<p>Der Bundeskanzler habe die Verantwortung für die gesamte Politik. Dieser Grundsatz sei stärker in unserem Grundgesetz zum Ausdruck gebracht als in der Weimarer Verfassung. Der Kanzler könne nur durch ein konstruktives Mißtrauensvotum abgelöst werden und die Minister nicht durch ein bloßes Mißtrauen des Parlaments.</p>
-				<p>Die Außenpolitik, so führte der Bundeskanzler dann weiter aus, sei noch auf Jahre hinaus das wichtigste Gebiet. Deutschland sei in der Welt nicht überall beliebt. Die anderen Länder seien an uns nur interessiert, wenn sich ihre Interessen mit den unseren berührten. So habe ihm zum Beispiel der amerikanische Außenminister <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> bei seinem Besuch in Bonn erklärt, daß die Vereinigten Staaten größten Wert auf einen engen Zusammenschluß Europas legten.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN012" type="comment"><p>Besuch von Außenminister <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> in Bonn am 9. 5. 1959 auf dem Weg zur Genfer Außenministerkonferenz ab 11. 5. 1959. Vgl. AdG 1959, S. 7704.</p></note></seg> Der Kanzler wies dann, indem er auf die weltpolitische Lage zu sprechen kam, auf den Unterschied der sowjetischen Haltung bei der Genfer Konferenz im Jahre 1955<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN013" type="comment"><p>Konferenz der Regierungschefs der Großen Vier (Frankreich, Großbritannien, Sowjetunion und Vereinigte Staaten) vom 17. bis 23. 7. 1955 in Genf. Vgl. AdG 1955, S. 5263–5276.</p></note></seg> und heute hin. Damals seien die Sowjets gleichsam als Angeklagte in Genf erschienen, besonders wegen ihres Vorgehens in Korea.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN014" type="comment"><p>Nach dem Korea-Krieg 1950–1952. Zu seinen Auswirkungen auf die Bundesrepublik vgl. Schwarz, Ära Adenauer 1957–1963, S. 104–108, 119, et passim.</p></note></seg> Heute verlange <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> die Gipfelkonferenz. Der sowjetische Außenminister <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> trete jetzt in Genf mit einer fast lustig stimmenden Unverschämtheit auf. Der sowjetische Einfluß in der Welt und die Mutlosigkeit in der westlichen Welt hätten zugenommen, meinte der Kanzler, die Einigkeit in der freien Welt habe nachgelassen. Die Haltung der deutschen Delegation in Genf sei gut, aber die britische Haltung stärke die sowjetische Dreistigkeit. Auf lange Zeit hinaus würden wir uns in einem Zustand außenpolitischer Unsicherheit befinden. Der Verlust von John Foster <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> wiege in dieser Situation schwer.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN015" type="comment"><p><name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> starb am 24. 5. 1959. Zu der großen Übereinstimmung zwischen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> und gegenseitigen Wertschätzung vgl. Adenauer, Erinnerungen 1955–1959, S. 471–478.</p></note></seg> 1960 seien in den USA-Präsidentschaftswahlen und 1961 bei uns die Bundestagswahlen. Vorher würde auch in England gewählt. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> taktiere so, daß er nur ab[zu]warten brauche. Er warte auf eine Labour-Regierung. Unsere Opposition habe die Sowjets mit der Hoffnung erfüllt, daß, wenn sie an die Regierung kämen, sie, die Sowjets, anders mit Deutschland umgehen könnten. Das müsse man berücksichtigen für 1961. Wenn eine Regierungsbildung ohne die CDU/CSU möglich sei, dann stehe es schlecht um Deutschland. Daher müsse die Partei ein Bild größerer Geschlossenheit liefern. Wenn wir Meinungsverschiedenheiten hätten, stünden wir in der Gefahr, das Vertrauen der Wähler zu verlieren. Das Fortbestehen einer großen christlichen Partei in Deutschland sei auf Jahrzehnte hinaus wichtig. Die Einigkeit in der Partei sei das erste und größte Gebot.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwiderte dem Bundeskanzler, er habe gesagt, wenn er Bundespräsident werde, werde er sich mit der Fraktion über alle Fragen abstimmen. Er, der Kanzler, habe sowohl das Vorschlagsrecht des Bundespräsidenten als auch die Rolle der Fraktion betont. In der Öffentlichkeit, so fuhr Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> fort, ginge das Gerücht, der Kanzler dächte nicht mehr daran, zu seiner Kandidatur zu stehen. Darüber müsse der Vorstand jetzt diskutieren.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN016" type="comment"><p><name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> hatte bereits am Vormittag des 25.5. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> gedrängt, vor der Partei und in der Öffentlichkeit jeglichen Zweifel daran zu zerstreuen, daß er bei der Präsidentschaftskandidatur bleibe. Vgl. Krone, Tgb. 1945–1961, S. 357. In der Presse wurde von Vermutungen in eingeweihten Kreisen der CDU und von dementierten Informationen berichtet, daß <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> daran denke, auf seine Präsidentschaftskandidatur zu verzichten und im Kanzleramt zu bleiben. Vgl. »Der Streit um die Nachfolge verschärft sich. Denkt Adenauer an Verzicht auf die Kandidatur?«, in: FAZ Nr. 118 v. 25. 5. 1959, S. 1.</p></note></seg></p>
-				<p>In der anschließenden Diskussion wies <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> zunächst darauf hin, daß es wichtig sei, die Diskussion um die Kanzlernachfolge bald zu beenden. Wenn man weiter zögere, gehe die Pressediskussion weiter, was nur zum Schaden für die Partei, für den Bundeskanzler selbst und die beiden genannten Kandidaten sei.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> wies darauf hin, daß Bundespräsident <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> durch die Pressediskussion sehr verletzt worden sei.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN017" type="comment"><p>Dies erhellt u. a. aus dem in Anm. 10 genannten Briefwechsel.</p></note></seg> Eine schnelle Erledigung der Nachfolgefrage könne auch im Interesse von Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> nicht erfolgen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> vertrat dann den Standpunkt, daß vor dem 1. Juli über die Kanzlernachfolge nicht entschieden werden könne.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN018" type="comment"><p>Termin der Bundespräsidentenwahl.</p></note></seg> Der Beitrag dieser Vorstandssitzung müsse es sein, klar festzustellen, daß der Bundeskanzler von seiner Kandidatur nicht zurücktrete, damit dieses Gerücht in der Öffentlichkeit aufhöre. Das weitere solle zwischen dem Bundeskanzler und der Fraktion abgesprochen werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) betonte, daß es notwendig sei, daß der Kanzler ganz klar zu seinem Entschluß stehen müsse. Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> teilte mit, daß in der Presse Behauptungen aufgestellt würden, es sei ein Test bei 100 Abgeordneten der Fraktion über die Kanzlernachfolge durchgeführt worden.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN019" type="comment"><p>In den Zeitungen FAZ, Frankfurter Rundschau, SZ und Die Welt nicht ermittelt.</p></note></seg> Er bezweifle die Richtigkeit solcher Meldungen. Bevor etwas über die Kanzlernachfolge entschieden werde, müsse man mit den beiden Kandidaten auch über politische Fragen sprechen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> meinte, die Fraktion müsse sich provoziert fühlen angesichts der Nennung von bestimmten Mehrheiten durch die Presse.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betonte noch einmal, daß vor dem 1. Juli kein offizielles Gespräch über diese Frage geführt werden könne. Das schließe jedoch eine Diskussion in den eigenen Reihen nicht aus.</p>
-				<p>Auch <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> trat für eine schnelle Entscheidung ein. Wenn die Fraktion sich weiter so auseinandermanövriere, spiele sie damit der SPD direkt in die Hand.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betonte in seinem Diskussionsbeitrag, daß es notwendig sei, Klarheit zu schaffen.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN020" type="comment"><p>Vgl. rückblickend Gerstenmaier, Streit, S. 477 f. in Auseinandersetzung mit Adenauer, Erinnerungen 1955–1959, S. 490–551.</p></note></seg> Man müsse bedenken, daß der Bundeskanzler im ersten Wahlgang gewählt werden müsse. Zur Zeit gehe der Kredit des Kanzlers und einiger Parteifreunde dahin. Zur Kanzlernachfolge meinte der Bundestagspräsident, daß darüber ein formeller Beschluß in der Fraktion überhaupt nicht zu fassen sei. Diese Frage müsse intern mit dem Bundeskanzler geregelt werden. Eines aber sollte der Bundeskanzler hier und heute sagen, daß er an seiner Kandidatur festhalte, auch wenn die Frage der Kanzlernachfolge bis zum 1. Juli nicht glasklar ausgekämpft sei.</p>
-				<p>Darauf ergriff der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> noch einmal das Wort. Er bedauerte den Verlauf der Diskussion im Vorstand, die ihm die ganze Schwere seiner Verantwortung gezeigt habe. Er solle hier erklären, daß er an seiner Kandidatur festhalte, was immer auch geschehe. Das tue ich nie, erklärte der Kanzler. Er höre jetzt in dieser Sitzung, daß die Fraktion noch nie über das Problem der Kanzlernachfolge befragt worden sei. Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und Herr <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hätten aber gesagt, daß mehr als die Hälfte der Fraktion für einen bestimmten Kandidaten (<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>) sei. Er habe sich im Innern noch für keinen Kandidaten entschieden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> erwiderte dem Kanzler, er wolle seine Entscheidungsfreiheit nicht antasten. Es wäre nur schlecht, wenn die Öffentlichkeit den Eindruck habe, der Bundeskanzler träte von seiner Kandidatur zurück.</p>
-				<p><name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> erklärte dann, die CSU-Landesgruppe habe eine Debatte über die Kanzlernachfolge geführt und sich dabei eine Meinung gebildet. Dabei sei eine klare Mehrheit zustande gekommen. Im übrigen dürfe man Herrn Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und ihn nicht für so naiv halten, daß sie die Meinung der Fraktion nicht richtig abschätzen könnten. Auch <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> setzte sich für eine beschleunigte Erledigung dieses Kapitels ein. Er schlug vor, daß einer der Kandidaten dem anderen den Vortritt lassen sollte.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> warf in die Debatte ein, daß Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und Herr <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> ursprünglich für einen anderen Kandidaten eingetreten seien und jetzt eine Sinnesänderung vorgenommen hätten.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN021" type="comment"><p>Hintergrund dieser Aussage war der Meinungsumschwung, der sich in der CDU/CSU-Bundestagsfraktion in der ersten Maihälfte vollzog. Nach Abwägung des Für und Wider der Kandidaturen von <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> und <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> für die Kanzlernachfolge entschieden sich zunächst der Fraktionsvorstand und dann die Gesamtfraktion dafür, <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> zu unterstützen. Vgl. Wagner, Präsidentenwahl, S. 51–53.</p></note></seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellte nach dieser Diskussion fest, er glaube, daß es klar sei, daß der Kanzler kandidiere. Das solle man auch der Presse mitteilen. Es sollen in der Fraktion keine offiziellen Gespräche über die Kanzlernachfolge geführt werden. Das schließe aber nicht aus, daß der Vorstand sich darüber unterhalte, betonte Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> noch einmal.</p>
-				<p>[2. Bundesversammlung]</p>
-				<p>Anschließend wies Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> auf die Notwendigkeit hin, daß die Mehrheit für Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bei der geheimen Wahl in der Bundesversammlung gesichert werden müsse.</p>
-				<p>Zum Schluß dieser Diskussion erörterte der Vorstand die Frage des Stimmrechts der Berliner Abgeordneten in der Bundesversammlung.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN022" type="comment"><p>Zum Stimmrecht der Berliner siehe Nr. 118 v. 16. 3. 1959, TOP 2.</p></note></seg> Dabei vertrat der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> die Auffassung, daß man diese Sache auf sich beruhen lassen solle. Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> vertrat den Standpunkt, daß die Berliner stimmberechtigt seien, es sei denn, daß die Alliierten ein Vorbehaltsrecht geltend machten.</p>
-				<p>Auch die Frage des Ortes der Bundesversammlung wurde noch kurz erörtert.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN023" type="comment"><p>Die Wahl des Bundespräsidenten fand am 1. 7. 1959 in West-Berlin in der Ostpreußenhalle statt. Vgl. Datenhandbuch III, S. 3186.</p></note></seg> Der Bundeskanzler teilte dem Vorstand mit, daß Außenminister <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> ihm gesagt habe, die USA suchten alles zu vermeiden, was die Sowjets reizen könnte. <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> habe zwar nicht gesagt, daß die Vereinigten Staaten hoffen, daß wir genauso handelten. Er habe seine Bemerkung aber nicht ohne Grund gemacht. Von der Sache her habe Berlin nur den Schaden, wenn es der Tagungsort der Bundesversammlung sei. Die Diskussion mit den Sowjets würde dadurch nur verschärft, da[ß] man zur Zeit von ihnen nicht mehr erreichen könne, als den jetzigen Status von Berlin für eine lange Zeit zu behalten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betonte, er müsse etwas tun, um weder zu provozieren noch Defätismus zu zeigen. Der korrekte Ablauf der Bundesversammlung müsse sichergestellt sein. Er wolle die Frage noch weiter prüfen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> erklärte, es könnten auch große außenpolitische Auswirkungen davon ausgehen, wenn wir nicht nach Berlin gingen.</p>
-				<p>[3. Plenararbeit bis zu den Sommerferien]</p>
-				<p>Anschließend behandelte der Vorstand einzelne Vorlagen, die vom Kabinett verabschiedet worden sind.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN024" type="comment"><p>Siehe den folgenden Auszug aus dem Kurzprotokoll vom gleichen Datum.</p></note></seg> Zum Thema Ministerpension vertrat der Vorstand die Auffassung, daß dieser Entwurf erst nach der Verabschiedung der geplanten Kriegsopfernovelle behandelt werden könne. Zum Thema Parteiengesetz betonte Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name>, daß er Überlegungen anstelle, ob in den Entwurf nicht ein Passus aufgenommen werden sollte, der den Parteien gemeinnützigen Charakter zuschreibt. In diesem Zusammenhang berichtete Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> von einer Tagung der Landtagsfraktionsvorsitzenden der CDU in Berlin, die für eine staatliche Finanzierung der Parteien eingetreten sei. Zum Schluß der Sitzung wurde noch kurz das Kapitel Großhandelsumsatzsteuer für Lebensmittel behandelt. <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bedauerte, daß hier immer noch keine Regelung gefunden worden sei. Bundesfinanzminister <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> versprach, sich um diese Frage zu kümmern.</p>
-				<p>b) Kurzprotokoll<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN025" type="comment"><p>Zum Wechsel vom Verlaufsprotokoll zum Kurzprotokoll siehe Anm. 1.</p></note></seg></p>
-				<p>1. Bericht des Bundeskanzlers [siehe Verlaufsprotokoll]</p>
-				<p>2. Bundesversammlung [siehe Verlaufsprotokoll]</p>
-				<p>3. 2. und 3. Lesung Haushalt [Reg.-Entwurf f. Haushaltsgesetz 1959: Drucksache III/650 v. 1. 12. 1958]</p>
-				<p>Der Fraktionsvorstand kommt überein, daß in der nächsten Vorstandssitzung am Montag, dem 1. Juni 1959, der Finanzminister ein Gesamtbild über den Haushalt gibt.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN026" type="comment"><p>Siehe Nr. 127 v. 1. 6. 1959, TOP 1.</p></note></seg></p>
-				<p>4. Plenararbeit bis zu den Sommerferien</p>
-				<p>a) Saar-Eingliederungsgesetze [Reg.-Entwürfe: Drucksachen III/1006–1012 v. 17. 4. 1959; Drucksache III/1097 v. 13. 5. 1959; Drucksache III/1126 v. 29. 5. 1959; Drucksache III/1127 v. 30. 5. 1959]<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN027" type="comment"><p>Zum Inhalt der Vorlagen siehe Nr. 106 v. 28. 1. 1959, TOP 5.</p></note></seg>:</p>
-				<p>Der Vorstand ist übereinstimmend der Meinung, daß die vorliegenden Saareingliederungsgesetze in der Fassung der Regierungsvorlage verabschiedet werden sollen. Die Arbeitskreise sollen von diesem Beschluß in Kenntnis gesetzt werden. Dieser Beschluß des Vorstands schließt nicht aus, daß einige unwesentliche Punkte der Saargesetze eine Änderung erfahren. Der Vorstand ist der Meinung, daß die Saar-Gesetze noch vor dem 1. Juli 1959 vom Plenum verabschiedet werden sollen.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN028" type="comment"><p>Die Saar-Eingliederungsgesetze wurden bereits am 24. und 25. 6. 1959 verabschiedet. Vgl. Sten. Ber., 78. und 79. Sitzung, S. 4279–4300; 4315–4365.</p></note></seg></p>
-				<p>b) Kriegsopferversorgung [SPD-Antrag: Drucksache III/621 v. 5. 11. 1958; FDP-Gesetzentwurf f. Kriegsopferversorgungs-Neuordnungsgesetz: Drucksache III/962 v. 3. 4. 1959 – KOVNOG]:</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> berichtet über den Ablauf der bisherigen Beratungen und der Beratungen im Kabinett. Der Vorstand stellt fest, daß die Vorlage nicht mehr in 1. Lesung vor den Ferien behandelt werden kann, da der Bundesrat erst am 26. Juni 1959 im 1. Durchgang zu der Regierungsvorlage Stellung nimmt [Gesetzentwurf f. Kriegsopferversorgungs-Neuregelungsgesetz: Drucksache III/1239 v. 27. 8. 1959 –KOVNG].</p>
-				<p>c) Ministerpensionsgesetz [Reg.-Entwurf f. ÄndG zum Bundesministergesetz: Drucksache III/1131 v. 2. 6. 1959]:</p>
-				<p>Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> berichtet über die Vorlage und teilt mit, daß der Gesetzentwurf, wenn er vom Bundesrat nach dem 1. Durchgang an die Bundesregierung zurückkomme, vom Bundeskabinett erst später an den Bundestag weitergeleitet werde. Im Laufe der Diskussion wird an dem Gesetzentwurf Kritik geübt. Der Vorstand beschließt, daß der Gesetzentwurf erst dann eingereicht und behandelt werden soll, wenn der Gesetzentwurf zum Bundesversorgungsgesetz [siehe TOP 3 b] von den gesetzgebenden Körperschaften verabschiedet ist.</p>
-				<p>d) Getreidepreisgesetz [Reg.-Entwurf f. Getreidepreisgesetz 1959/60: Drucksache III/960 v. 26. 3. 1959]:</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> berichtet über die durchgeführten Ausschußberatungen und teilt mit, daß nicht damit zu rechnen sei, daß bei der 2. und 3. Lesung sich große Differenzen bei den Fraktionen ergeben.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN029" type="comment"><p>Nach einer Erklärung des Abg. <name type="Person" role="Erwaehnung" ref="#MuellerWilly_1949-09-07">Müller</name> (Worms) (SPD) wurde der Gesetzentwurf gegen die Stimmen der SPD-Fraktion bei einigen Stimmenthaltungen angenommen. Vgl. Sten. Ber., 70. Sitzung am 3. 6. 1959, S. 3682 f.</p></note></seg></p>
-				<p>e) Große Anfrage betr. Wirtschaftskonzentration [Große CDU/CSU-DP-Anfrage: Drucksache III/702 v. 4. 12. 1958]:</p>
-				<p>Der Vorstand ist der Meinung, daß die Große Anfrage bis nach den Sommerferien zurückgestellt werden solle<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN030" type="comment"><p>Vgl. die Behandlung der Anfrage, in: 82. Sitzung am 15. 10. 1959, S. 4419–4473.</p></note></seg>, da anzunehmen sei, daß die kommende Regierungserklärung sich mit diesem Fragenkomplex eingehend befassen wird.</p>
-				<p>f) Verwaltungsgerichtsordnung [Reg.-Entwurf f. VwGO: Drucksache III/55 v. 5. 12. 1957]:</p>
-				<p>Es besteht im Vorstand Übereinstimmung, daß der umfangreiche Gesetzentwurf erst nach den Sommerferien im Plenum verabschiedet wird.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN031" type="comment"><p>Zur Verabschiedung der Vorlage vgl. Sten. Ber., 94. Sitzung am 11. 12. 1959, S. 5187.</p></note></seg></p>
-				<p>g) Weinverträge mit Griechenland und Italien [Reg.-Entwürfe betr. bilaterale Abkommen über Untersuchung und Überwachung von Wein: Drucksache III/48 v. 30. 11. 1957 und III/223 v. 21. 2. 1958]:</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet, daß diese Verträge in den zuständigen Ausschüssen des Bundestages keine Mehrheit gefunden hätten und daher nunmehr überlegt werden müsse, was weiter mit diesen Verträgen geschehen soll. Der Vorstand beschließt, daß diese Verträge noch einmal in dem zuständigen Arbeitskreis behandelt werden, und daß vorher die Abg. Dr. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> und <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name> noch einmal eine Besprechung hierüber mit der Regierung durchführen sollen.</p>
-				<p>h) Fremdrentengesetz [Reg.-Entwurf f. Fremdrenten- und Auslandsrenten-Neuregelungsgesetz – FANG: Drucksache III/1109 v. 21. 5. 1959]:</p>
-				<p>Der Vorstand ist der Meinung, daß die 1. Lesung dieses Gesetzes noch vor den Ferien wenn möglich ohne Debatte erfolgen soll.<seg type="note"><note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN032" type="comment"><p>Zur 1. Beratung vgl. Sten. Ber., 76. Sitzung am 18. 6. 1959, S. 4203–4207.</p></note></seg></p>
-				<p>[5.] Termine</p>
-				<p>Diskussion Eigentumsbildung und Jugendarbeitsschutzgesetz vertagt.</p>
-				<p>6. Gesetzesinitiativen aus der Fraktion</p>
-				<p>a) Großhandelsumsatzsteuer für Lebensmittel [CDU/CSU-Entwurf f. 10. ÄndG zum Umsatzsteuergesetz: Drucksache III/515 v. 8. 7. 1958]:</p>
-				<p>Minister <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> wird noch einmal mit <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> wegen dieser Vorlage sprechen.</p>
-				<p>b) Große Anfrage betr. Schiffbarmachung Hochrhein zwischen Basel und Bodensee [Antrag <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, Dr. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name> u. Gen.: Drucksache III/1786 v. 8. 4. 1960]:</p>
-				<p>Der Vorstand bittet die Antragsteller aus grundsätzlichen Erwägungen – da regionale Verkehrsfragen bisher nie in Form von Großen Anfragen behandelt wurden – sie als Kleine Anfrage einzubringen.</p>
-				<p>c) Änderung des Jugendarbeitsschutzgesetzes [SPD-Entwurf: Drucksache III/31 (neu) v. 10. 12. 1957; Reg.-Entwurf: Drucksache III/317 v. 3. 4. 1958]:</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt den Inhalt eines Schreibens des CSU-Landesgruppen-Vorsitzenden <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> bekannt, worauf der Vorstand beschließt, daß die Angelegenheit noch einmal im Arbeitskreis I beraten wird. Auf Anregung von <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> soll auch der Arbeitskreis IV sich mit dieser Frage befassen, da diese Angelegenheit zu seinem Aufgabengebiet gehört.</p>
-				<p>d) Änderung der Rechtsverhältnisse der Polizei-Vollzugsbeamten [Reg.-Entwurf f. 3. ÄndG zum vorläufigen Bundespolizeibeamtengesetz v. 6. 8. 1953: Drucksache III/1231 v. 3. 8. 1959]:</p>
-				<p>Der von <name type="Person" role="Sprecher" ref="#KuehlthauWalter_1953-10-06">Kühlthau</name> angeregte Antrag wird dem Arbeitskreis I übergeben werden.</p>
-				<p>e) Änderung des Grundsteuergesetzes [noch kein Gesetzentwurf]:</p>
-				<p>Der von <name type="Person" role="Sprecher" ref="#KuehlthauWalter_1953-10-06">Kühlthau</name> gestellte Änderungsantrag zur Änderung des Gewerbesteuer- und Grundsteuerrechts soll dem Arbeitskreis III zur weiteren Bearbeitung übergeben werden.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-05-25-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1503/2</idno>
+                     <objectName>Protokoll der Vorstandssitzung der CDU/CSU-Fraktion vom 25. Mai 1959</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 25. Mai 1959</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>8 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1959-05-25">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="19:15:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend vom Fraktionsvorstand:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, <name type="Person" role="Erwaehnung" ref="#Engelbrecht-GreveErnst_1953-10-06">Engelbrecht-Greve</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln), <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#KrollLudwig_1953-10-06">Kroll</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz).</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend von der Bundesregierung:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1959-05-25-t1500_EP_SVP-1" corresp="#cdu-csu-03_1959-05-25-t1500_EP_div_SVP-1">A. Verlaufsprotokoll. TOP 1: Bericht des Bundeskanzlers (Bundespräsidentenwahl und die Frage der Kanzlernachfolge; Außenpolitik) mit anschließender Diskussion. – TOP 2: Bundesversammlung. – TOP 3: Plenararbeit bis zu den Sommerferien. –– Kurzprotokoll. TOP 1: Bericht des Bundeskanzlers. – TOP 2: Bundesversammlung. – TOP 3: 2. und 3. Lesung Haushalt. – TOP 4: Plenararbeit bis zu den Sommerferien. – TOP 5: Termine. – TOP 6: Gesetzesinitiativen aus der Fraktion.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1959-05-25-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>a) Verlaufsprotokoll<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN001" type="comment">
+                     <p>Von dieser Vorstandssitzung sind sowohl das übliche Kurzprotokoll (masch. 3 S.) als auch das hier abgedruckte Verlaufsprotokoll überliefert. Das Verlaufsprotokoll trägt die Überschrift: »Protokoll der Vorstandssitzung der CDU/CSU-Fraktion vom 25. Mai 1959«. Im Kurzprotokoll lautet die Tagesordnung:</p>
+                     <p>»1. Bericht des Bundeskanzlers</p>
+                     <p>2. Bundesversammlung</p>
+                     <p>3. 2. und 3. Lesung Haushalt</p>
+                     <p>4. Plenararbeit bis zu den Sommerferien</p>
+                     <p>5. Termine</p>
+                     <p>6. Gesetzesinitiativen aus der Fraktion.«</p>
+                     <p>Nach dem Verlaufsprotokoll ist aus dem Kurzprotokoll nur derjenige Teil abgedruckt, der inhaltlich nicht oder kaum durch das Verlaufsprotokoll abgedeckt wird.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Im Mittelpunkt der Sitzung stand ein Bericht des Bundeskanzlers über die Bundespräsidentenwahl und die Frage der Kanzlernachfolge<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN002" type="comment">
+                     <p>Inzwischen hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> seinen Entschluß, für das Präsidentenamt zu kandidieren, in Frage gestellt und sich gegen <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> als seinen Nachfolger im Kanzleramt ausgesprochen. Zu der Entwicklung der sog. Präsidentschaftskrise ab dem 8. 4. 1959 (Beginn von <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> vierwöchigem Urlaub in Cadenabbia) bis zum 25. 5. 1959 vgl. Adenauer, Erinnerungen 1955–1959, S. 515–537; Krone, Tgb. 1945–1961, S. 349–358; Wagner, Bundespräsidentenwahl, S. 36–55; Schwarz, Adenauer 1952–1967, S. 517–519.</p>
+                  </note>
+               </seg>, an den sich eine längere Diskussion anschloß.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN003" type="comment">
+                     <p>Zu dieser Fraktionsvorstandssitzung aus der Sicht des Bundeskanzlers vgl. Adenauer, Erinnerungen 1955–1959, S. 539 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>[1. Bericht des Bundeskanzlers]</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> berichtete zunächst über die Vorgeschichte seiner Nominierung, und zwar über die Unterredung, die er am 6. April mit Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und drei weiteren Herren des Vorstandes der CDU gehabt habe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN004" type="comment">
+                     <p>Siehe Nr. 121 v. 6. 4. 1959, Anm. 9.</p>
+                  </note>
+               </seg> In diesem Gespräch, so führte der Kanzler aus, hätten ihm die Herren nahegelegt, sich für das Amt des Bundespräsidenten als Kandidat aufstellen zu lassen. Er habe zunächst um Bedenkzeit gebeten, da es seine Absicht gewesen [sei]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN005" type="comment">
+                     <p>Vom Bearbeiter ergänzt.</p>
+                  </note>
+               </seg>, 1961 Bundeskanzler zu bleiben, den Wahlkampf für die CDU noch einmal durchzuführen und erst dann das Amt des Staatsoberhauptes zu übernehmen. Über diese Frage sollte am 22. Mai eine Besprechung mit dem Parteivorstand stattfinden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN006" type="comment">
+                     <p>An diesem Tag fand keine Sitzung des Parteivorstandes statt. Hingegen suchte <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> den Bundeskanzler auf, um dessen Bitte abzuschlagen, auf seine Kandidatur als Nachfolger <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> im Kanzleramt zu verzichten. Vgl. Adenauer, Erinnerungen 1955–1959, S. 537; Wagner, Bundespräsidentenwahl, S. 55.</p>
+                  </note>
+               </seg> Am 7. April, dem Tage also, an dem das sogenannte Wahlmännergremium zusammentrat<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN007" type="comment">
+                     <p>Siehe Nr. 122 v. 7. 4. 1959, Anm. 1–3.</p>
+                  </note>
+               </seg>, habe er zunächst einen Vortrag über die Befugnisse des Bundespräsidenten gehalten. Er habe sich dann auf sein Zimmer zurückgezogen. Nach einiger Zeit, in der in diesem Wahlmännergremium eine Diskussion über seine Nominierung stattgefunden habe, sei dann Bundestagspräsident Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> zu ihm gekommen mit der Mitteilung, daß das Wahlmännergremium ihn einstimmig bitte, für das Amt des Bundespräsidenten zu kandidieren. Er habe sich die Sache dann ernsthaft durch den Kopf gehen lassen und zugestimmt. Bei seinem Entschluß habe er sich davon leiten lassen, daß [durch]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN005a" type="comment">
+                     <p>Vom Bearbeiter ergänzt.</p>
+                  </note>
+               </seg> die Nominierung von Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> und die fehlgeschlagene Nominierung von Bundeswirtschaftsminister <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> ein gewisser Schock entstanden sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN008" type="comment">
+                     <p>Siehe die Literaturhinweise in: Nr. 110 v. 16. 2. 1959, TOP 1.</p>
+                  </note>
+               </seg> Er habe sich dann gesagt, daß es gut sei, wenn er die in 10 Jahren Regierungstätigkeit gesammelten Erfahrungen noch rechtzeitig auf seinen Nachfolger übertragen könne, um insbesondere die Kontinuität seiner Politik für die nächsten Jahre sicherzustellen. Der Entschluß sei ihm schwer gefallen. Angesichts der Verhältnisse in der Welt und der Diskussion um seine Nachfolge falle es ihm mit der Zeit noch schwerer, aus der aktiven Politik auszuscheiden.</p>
+            <p>Der Bundeskanzler berichtete dann über die Rechte des Bundespräsidenten, insbesondere über sein Recht, dem Parlament den Kanzler vorzuschlagen. Er wies darauf hin, daß das Parlament erst im zweiten Wahlgang einen eigenen Kandidaten vorschlagen könne, wenn der Kandidat des Bundespräsidenten abgelehnt sei.</p>
+            <p>Der Kanzler nahm dann zu der Diskussion in der Kanzlernachfolge in der Presse<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN009" type="comment">
+                     <p>Vgl. »Erhard überraschend bei Adenauer. Kommt es zur offenen Feldschlacht um die Kanzlernachfolge?«, in: »Die Welt« Nr. 117 v. 23. 5. 1959, S. 4. Zu dem Presseecho in zeitgenössischen Quellen vgl. Adenauer, Erinnerungen 1955–1959, S. 515–518; Krone, Tgb. 1945–1961, S. 357 f. und in der Literatur u. a. Wagner, Bundespräsidentenwahl, S. 39–42, 44 f.</p>
+                  </note>
+               </seg> Stellung. Diese Diskussion habe ihn aufs Tiefste erschüttert. Sie habe der Partei sehr geschadet. Die Frage, wer Bundeskanzler werden solle, sei durch die Amtsstuben der einzelnen Ministerien durchdiskutiert worden, und auch in der Fraktion sei diese Frage schon lebhaft erörtert worden.</p>
+            <p>Wir alle stehen unter dem Gebot, dem Ganzen zu dienen, erklärt der Kanzler. Wenn ich Bundespräsident werde, werde ich nicht einfach jemanden vorschlagen, sondern nach vertraulicher Rücksprache mit der Fraktion die Wahl treffen. Wir müssen jetzt den Vorhang des Schweigens herunterlassen. Die Zänkerei muß aus den Amtsstuben und den Zeitungen verschwinden.</p>
+            <p>Der Bundeskanzler verwies dann auf seine Rundfunkrede, die er unmittelbar nach seiner Nominierung gehalten habe<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN010" type="comment">
+                     <p>Rundfunk- und Fernsehansprache des Bundeskanzlers v. 8. 4. 1959, in: DzD IV/1, S. 1325–1328, hier: S. 1327 f.</p>
+                  </note>
+               </seg>, und auf den Briefwechsel, der sich daran mit Bundespräsident Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> geknüpft habe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN011" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> sah die Ausfüllung seines Amtes und seine persönliche Leistung durch Äußerungen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> bagatellisiert. Vgl. Heuss – Adenauer, Briefwechsel, in: Unserem Vaterland zugute, S. 273–283.</p>
+                  </note>
+               </seg> Der Bundespräsident habe offensichtlich einige Sätze dieser Rede über das Amt des Bundespräsidenten mißverstanden. Die Angelegenheit sei aber inzwischen bereinigt.</p>
+            <p>Der Bundeskanzler wies dann darauf hin, daß der Bundespräsident nicht verpflichtet sei, Persönlichkeiten ohne weiteres zu Ministern zu ernennen, die der Bundeskanzler ihm vorschlage. Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> habe bei Ministervorschlägen, die er ihm gemacht habe, oft Bedenken erhoben, denen er dann auch Rechnung getragen habe.</p>
+            <p>Wenn ich Bundespräsident werde, so führte der Kanzler dann weiter aus, werde ich immer gemäß der Verfassung handeln, aber man muß doch die Meinungen austauschen.</p>
+            <p>Der Bundeskanzler schnitt dann die Frage der Zugehörigkeit des Bundespräsidenten zu einer politischen Partei an. Er wies darauf hin, daß Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> immer der FDP angehört habe und noch an der letzten Weihnachtsfeier der FDP teilgenommen habe. Ein erfahrener Bundespräsident könne jederzeit ein guter Berater der Partei sein, fügte der Kanzler hinzu.</p>
+            <p>Der Bundeskanzler habe die Verantwortung für die gesamte Politik. Dieser Grundsatz sei stärker in unserem Grundgesetz zum Ausdruck gebracht als in der Weimarer Verfassung. Der Kanzler könne nur durch ein konstruktives Mißtrauensvotum abgelöst werden und die Minister nicht durch ein bloßes Mißtrauen des Parlaments.</p>
+            <p>Die Außenpolitik, so führte der Bundeskanzler dann weiter aus, sei noch auf Jahre hinaus das wichtigste Gebiet. Deutschland sei in der Welt nicht überall beliebt. Die anderen Länder seien an uns nur interessiert, wenn sich ihre Interessen mit den unseren berührten. So habe ihm zum Beispiel der amerikanische Außenminister <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> bei seinem Besuch in Bonn erklärt, daß die Vereinigten Staaten größten Wert auf einen engen Zusammenschluß Europas legten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN012" type="comment">
+                     <p>Besuch von Außenminister <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> in Bonn am 9. 5. 1959 auf dem Weg zur Genfer Außenministerkonferenz ab 11. 5. 1959. Vgl. AdG 1959, S. 7704.</p>
+                  </note>
+               </seg> Der Kanzler wies dann, indem er auf die weltpolitische Lage zu sprechen kam, auf den Unterschied der sowjetischen Haltung bei der Genfer Konferenz im Jahre 1955<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN013" type="comment">
+                     <p>Konferenz der Regierungschefs der Großen Vier (Frankreich, Großbritannien, Sowjetunion und Vereinigte Staaten) vom 17. bis 23. 7. 1955 in Genf. Vgl. AdG 1955, S. 5263–5276.</p>
+                  </note>
+               </seg> und heute hin. Damals seien die Sowjets gleichsam als Angeklagte in Genf erschienen, besonders wegen ihres Vorgehens in Korea.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN014" type="comment">
+                     <p>Nach dem Korea-Krieg 1950–1952. Zu seinen Auswirkungen auf die Bundesrepublik vgl. Schwarz, Ära Adenauer 1957–1963, S. 104–108, 119, et passim.</p>
+                  </note>
+               </seg> Heute verlange <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> die Gipfelkonferenz. Der sowjetische Außenminister <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> trete jetzt in Genf mit einer fast lustig stimmenden Unverschämtheit auf. Der sowjetische Einfluß in der Welt und die Mutlosigkeit in der westlichen Welt hätten zugenommen, meinte der Kanzler, die Einigkeit in der freien Welt habe nachgelassen. Die Haltung der deutschen Delegation in Genf sei gut, aber die britische Haltung stärke die sowjetische Dreistigkeit. Auf lange Zeit hinaus würden wir uns in einem Zustand außenpolitischer Unsicherheit befinden. Der Verlust von John Foster <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> wiege in dieser Situation schwer.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN015" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> starb am 24. 5. 1959. Zu der großen Übereinstimmung zwischen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> und gegenseitigen Wertschätzung vgl. Adenauer, Erinnerungen 1955–1959, S. 471–478.</p>
+                  </note>
+               </seg> 1960 seien in den USA-Präsidentschaftswahlen und 1961 bei uns die Bundestagswahlen. Vorher würde auch in England gewählt. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> taktiere so, daß er nur ab[zu]warten brauche. Er warte auf eine Labour-Regierung. Unsere Opposition habe die Sowjets mit der Hoffnung erfüllt, daß, wenn sie an die Regierung kämen, sie, die Sowjets, anders mit Deutschland umgehen könnten. Das müsse man berücksichtigen für 1961. Wenn eine Regierungsbildung ohne die CDU/CSU möglich sei, dann stehe es schlecht um Deutschland. Daher müsse die Partei ein Bild größerer Geschlossenheit liefern. Wenn wir Meinungsverschiedenheiten hätten, stünden wir in der Gefahr, das Vertrauen der Wähler zu verlieren. Das Fortbestehen einer großen christlichen Partei in Deutschland sei auf Jahrzehnte hinaus wichtig. Die Einigkeit in der Partei sei das erste und größte Gebot.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erwiderte dem Bundeskanzler, er habe gesagt, wenn er Bundespräsident werde, werde er sich mit der Fraktion über alle Fragen abstimmen. Er, der Kanzler, habe sowohl das Vorschlagsrecht des Bundespräsidenten als auch die Rolle der Fraktion betont. In der Öffentlichkeit, so fuhr Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> fort, ginge das Gerücht, der Kanzler dächte nicht mehr daran, zu seiner Kandidatur zu stehen. Darüber müsse der Vorstand jetzt diskutieren.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN016" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> hatte bereits am Vormittag des 25.5. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> gedrängt, vor der Partei und in der Öffentlichkeit jeglichen Zweifel daran zu zerstreuen, daß er bei der Präsidentschaftskandidatur bleibe. Vgl. Krone, Tgb. 1945–1961, S. 357. In der Presse wurde von Vermutungen in eingeweihten Kreisen der CDU und von dementierten Informationen berichtet, daß <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> daran denke, auf seine Präsidentschaftskandidatur zu verzichten und im Kanzleramt zu bleiben. Vgl. »Der Streit um die Nachfolge verschärft sich. Denkt Adenauer an Verzicht auf die Kandidatur?«, in: FAZ Nr. 118 v. 25. 5. 1959, S. 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der anschließenden Diskussion wies <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> zunächst darauf hin, daß es wichtig sei, die Diskussion um die Kanzlernachfolge bald zu beenden. Wenn man weiter zögere, gehe die Pressediskussion weiter, was nur zum Schaden für die Partei, für den Bundeskanzler selbst und die beiden genannten Kandidaten sei.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> wies darauf hin, daß Bundespräsident <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> durch die Pressediskussion sehr verletzt worden sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN017" type="comment">
+                     <p>Dies erhellt u. a. aus dem in Anm. 10 genannten Briefwechsel.</p>
+                  </note>
+               </seg> Eine schnelle Erledigung der Nachfolgefrage könne auch im Interesse von Prof. <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name> nicht erfolgen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> vertrat dann den Standpunkt, daß vor dem 1. Juli über die Kanzlernachfolge nicht entschieden werden könne.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN018" type="comment">
+                     <p>Termin der Bundespräsidentenwahl.</p>
+                  </note>
+               </seg> Der Beitrag dieser Vorstandssitzung müsse es sein, klar festzustellen, daß der Bundeskanzler von seiner Kandidatur nicht zurücktrete, damit dieses Gerücht in der Öffentlichkeit aufhöre. Das weitere solle zwischen dem Bundeskanzler und der Fraktion abgesprochen werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) betonte, daß es notwendig sei, daß der Kanzler ganz klar zu seinem Entschluß stehen müsse. Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> teilte mit, daß in der Presse Behauptungen aufgestellt würden, es sei ein Test bei 100 Abgeordneten der Fraktion über die Kanzlernachfolge durchgeführt worden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN019" type="comment">
+                     <p>In den Zeitungen FAZ, Frankfurter Rundschau, SZ und Die Welt nicht ermittelt.</p>
+                  </note>
+               </seg> Er bezweifle die Richtigkeit solcher Meldungen. Bevor etwas über die Kanzlernachfolge entschieden werde, müsse man mit den beiden Kandidaten auch über politische Fragen sprechen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> meinte, die Fraktion müsse sich provoziert fühlen angesichts der Nennung von bestimmten Mehrheiten durch die Presse.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betonte noch einmal, daß vor dem 1. Juli kein offizielles Gespräch über diese Frage geführt werden könne. Das schließe jedoch eine Diskussion in den eigenen Reihen nicht aus.</p>
+            <p>Auch <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> trat für eine schnelle Entscheidung ein. Wenn die Fraktion sich weiter so auseinandermanövriere, spiele sie damit der SPD direkt in die Hand.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betonte in seinem Diskussionsbeitrag, daß es notwendig sei, Klarheit zu schaffen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN020" type="comment">
+                     <p>Vgl. rückblickend Gerstenmaier, Streit, S. 477 f. in Auseinandersetzung mit Adenauer, Erinnerungen 1955–1959, S. 490–551.</p>
+                  </note>
+               </seg> Man müsse bedenken, daß der Bundeskanzler im ersten Wahlgang gewählt werden müsse. Zur Zeit gehe der Kredit des Kanzlers und einiger Parteifreunde dahin. Zur Kanzlernachfolge meinte der Bundestagspräsident, daß darüber ein formeller Beschluß in der Fraktion überhaupt nicht zu fassen sei. Diese Frage müsse intern mit dem Bundeskanzler geregelt werden. Eines aber sollte der Bundeskanzler hier und heute sagen, daß er an seiner Kandidatur festhalte, auch wenn die Frage der Kanzlernachfolge bis zum 1. Juli nicht glasklar ausgekämpft sei.</p>
+            <p>Darauf ergriff der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> noch einmal das Wort. Er bedauerte den Verlauf der Diskussion im Vorstand, die ihm die ganze Schwere seiner Verantwortung gezeigt habe. Er solle hier erklären, daß er an seiner Kandidatur festhalte, was immer auch geschehe. Das tue ich nie, erklärte der Kanzler. Er höre jetzt in dieser Sitzung, daß die Fraktion noch nie über das Problem der Kanzlernachfolge befragt worden sei. Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und Herr <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hätten aber gesagt, daß mehr als die Hälfte der Fraktion für einen bestimmten Kandidaten (<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>) sei. Er habe sich im Innern noch für keinen Kandidaten entschieden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> erwiderte dem Kanzler, er wolle seine Entscheidungsfreiheit nicht antasten. Es wäre nur schlecht, wenn die Öffentlichkeit den Eindruck habe, der Bundeskanzler träte von seiner Kandidatur zurück.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> erklärte dann, die CSU-Landesgruppe habe eine Debatte über die Kanzlernachfolge geführt und sich dabei eine Meinung gebildet. Dabei sei eine klare Mehrheit zustande gekommen. Im übrigen dürfe man Herrn Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und ihn nicht für so naiv halten, daß sie die Meinung der Fraktion nicht richtig abschätzen könnten. Auch <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> setzte sich für eine beschleunigte Erledigung dieses Kapitels ein. Er schlug vor, daß einer der Kandidaten dem anderen den Vortritt lassen sollte.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> warf in die Debatte ein, daß Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und Herr <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> ursprünglich für einen anderen Kandidaten eingetreten seien und jetzt eine Sinnesänderung vorgenommen hätten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN021" type="comment">
+                     <p>Hintergrund dieser Aussage war der Meinungsumschwung, der sich in der CDU/CSU-Bundestagsfraktion in der ersten Maihälfte vollzog. Nach Abwägung des Für und Wider der Kandidaturen von <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> und <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> für die Kanzlernachfolge entschieden sich zunächst der Fraktionsvorstand und dann die Gesamtfraktion dafür, <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> zu unterstützen. Vgl. Wagner, Präsidentenwahl, S. 51–53.</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellte nach dieser Diskussion fest, er glaube, daß es klar sei, daß der Kanzler kandidiere. Das solle man auch der Presse mitteilen. Es sollen in der Fraktion keine offiziellen Gespräche über die Kanzlernachfolge geführt werden. Das schließe aber nicht aus, daß der Vorstand sich darüber unterhalte, betonte Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> noch einmal.</p>
+            <p>[2. Bundesversammlung]</p>
+            <p>Anschließend wies Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> auf die Notwendigkeit hin, daß die Mehrheit für Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bei der geheimen Wahl in der Bundesversammlung gesichert werden müsse.</p>
+            <p>Zum Schluß dieser Diskussion erörterte der Vorstand die Frage des Stimmrechts der Berliner Abgeordneten in der Bundesversammlung.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN022" type="comment">
+                     <p>Zum Stimmrecht der Berliner siehe Nr. 118 v. 16. 3. 1959, TOP 2.</p>
+                  </note>
+               </seg> Dabei vertrat der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> die Auffassung, daß man diese Sache auf sich beruhen lassen solle. Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> vertrat den Standpunkt, daß die Berliner stimmberechtigt seien, es sei denn, daß die Alliierten ein Vorbehaltsrecht geltend machten.</p>
+            <p>Auch die Frage des Ortes der Bundesversammlung wurde noch kurz erörtert.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN023" type="comment">
+                     <p>Die Wahl des Bundespräsidenten fand am 1. 7. 1959 in West-Berlin in der Ostpreußenhalle statt. Vgl. Datenhandbuch III, S. 3186.</p>
+                  </note>
+               </seg> Der Bundeskanzler teilte dem Vorstand mit, daß Außenminister <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> ihm gesagt habe, die USA suchten alles zu vermeiden, was die Sowjets reizen könnte. <name type="Person" role="Erwaehnung" ref="#HerterChristian">Herter</name> habe zwar nicht gesagt, daß die Vereinigten Staaten hoffen, daß wir genauso handelten. Er habe seine Bemerkung aber nicht ohne Grund gemacht. Von der Sache her habe Berlin nur den Schaden, wenn es der Tagungsort der Bundesversammlung sei. Die Diskussion mit den Sowjets würde dadurch nur verschärft, da[ß] man zur Zeit von ihnen nicht mehr erreichen könne, als den jetzigen Status von Berlin für eine lange Zeit zu behalten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betonte, er müsse etwas tun, um weder zu provozieren noch Defätismus zu zeigen. Der korrekte Ablauf der Bundesversammlung müsse sichergestellt sein. Er wolle die Frage noch weiter prüfen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> erklärte, es könnten auch große außenpolitische Auswirkungen davon ausgehen, wenn wir nicht nach Berlin gingen.</p>
+            <p>[3. Plenararbeit bis zu den Sommerferien]</p>
+            <p>Anschließend behandelte der Vorstand einzelne Vorlagen, die vom Kabinett verabschiedet worden sind.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN024" type="comment">
+                     <p>Siehe den folgenden Auszug aus dem Kurzprotokoll vom gleichen Datum.</p>
+                  </note>
+               </seg> Zum Thema Ministerpension vertrat der Vorstand die Auffassung, daß dieser Entwurf erst nach der Verabschiedung der geplanten Kriegsopfernovelle behandelt werden könne. Zum Thema Parteiengesetz betonte Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name>, daß er Überlegungen anstelle, ob in den Entwurf nicht ein Passus aufgenommen werden sollte, der den Parteien gemeinnützigen Charakter zuschreibt. In diesem Zusammenhang berichtete Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> von einer Tagung der Landtagsfraktionsvorsitzenden der CDU in Berlin, die für eine staatliche Finanzierung der Parteien eingetreten sei. Zum Schluß der Sitzung wurde noch kurz das Kapitel Großhandelsumsatzsteuer für Lebensmittel behandelt. <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bedauerte, daß hier immer noch keine Regelung gefunden worden sei. Bundesfinanzminister <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> versprach, sich um diese Frage zu kümmern.</p>
+            <p>b) Kurzprotokoll<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN025" type="comment">
+                     <p>Zum Wechsel vom Verlaufsprotokoll zum Kurzprotokoll siehe Anm. 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>1. Bericht des Bundeskanzlers [siehe Verlaufsprotokoll]</p>
+            <p>2. Bundesversammlung [siehe Verlaufsprotokoll]</p>
+            <p>3. 2. und 3. Lesung Haushalt [Reg.-Entwurf f. Haushaltsgesetz 1959: Drucksache III/650 v. 1. 12. 1958]</p>
+            <p>Der Fraktionsvorstand kommt überein, daß in der nächsten Vorstandssitzung am Montag, dem 1. Juni 1959, der Finanzminister ein Gesamtbild über den Haushalt gibt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN026" type="comment">
+                     <p>Siehe Nr. 127 v. 1. 6. 1959, TOP 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. Plenararbeit bis zu den Sommerferien</p>
+            <p>a) Saar-Eingliederungsgesetze [Reg.-Entwürfe: Drucksachen III/1006–1012 v. 17. 4. 1959; Drucksache III/1097 v. 13. 5. 1959; Drucksache III/1126 v. 29. 5. 1959; Drucksache III/1127 v. 30. 5. 1959]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN027" type="comment">
+                     <p>Zum Inhalt der Vorlagen siehe Nr. 106 v. 28. 1. 1959, TOP 5.</p>
+                  </note>
+               </seg>:</p>
+            <p>Der Vorstand ist übereinstimmend der Meinung, daß die vorliegenden Saareingliederungsgesetze in der Fassung der Regierungsvorlage verabschiedet werden sollen. Die Arbeitskreise sollen von diesem Beschluß in Kenntnis gesetzt werden. Dieser Beschluß des Vorstands schließt nicht aus, daß einige unwesentliche Punkte der Saargesetze eine Änderung erfahren. Der Vorstand ist der Meinung, daß die Saar-Gesetze noch vor dem 1. Juli 1959 vom Plenum verabschiedet werden sollen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN028" type="comment">
+                     <p>Die Saar-Eingliederungsgesetze wurden bereits am 24. und 25. 6. 1959 verabschiedet. Vgl. Sten. Ber., 78. und 79. Sitzung, S. 4279–4300; 4315–4365.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>b) Kriegsopferversorgung [SPD-Antrag: Drucksache III/621 v. 5. 11. 1958; FDP-Gesetzentwurf f. Kriegsopferversorgungs-Neuordnungsgesetz: Drucksache III/962 v. 3. 4. 1959 – KOVNOG]:</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> berichtet über den Ablauf der bisherigen Beratungen und der Beratungen im Kabinett. Der Vorstand stellt fest, daß die Vorlage nicht mehr in 1. Lesung vor den Ferien behandelt werden kann, da der Bundesrat erst am 26. Juni 1959 im 1. Durchgang zu der Regierungsvorlage Stellung nimmt [Gesetzentwurf f. Kriegsopferversorgungs-Neuregelungsgesetz: Drucksache III/1239 v. 27. 8. 1959 –KOVNG].</p>
+            <p>c) Ministerpensionsgesetz [Reg.-Entwurf f. ÄndG zum Bundesministergesetz: Drucksache III/1131 v. 2. 6. 1959]:</p>
+            <p>Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> berichtet über die Vorlage und teilt mit, daß der Gesetzentwurf, wenn er vom Bundesrat nach dem 1. Durchgang an die Bundesregierung zurückkomme, vom Bundeskabinett erst später an den Bundestag weitergeleitet werde. Im Laufe der Diskussion wird an dem Gesetzentwurf Kritik geübt. Der Vorstand beschließt, daß der Gesetzentwurf erst dann eingereicht und behandelt werden soll, wenn der Gesetzentwurf zum Bundesversorgungsgesetz [siehe TOP 3 b] von den gesetzgebenden Körperschaften verabschiedet ist.</p>
+            <p>d) Getreidepreisgesetz [Reg.-Entwurf f. Getreidepreisgesetz 1959/60: Drucksache III/960 v. 26. 3. 1959]:</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> berichtet über die durchgeführten Ausschußberatungen und teilt mit, daß nicht damit zu rechnen sei, daß bei der 2. und 3. Lesung sich große Differenzen bei den Fraktionen ergeben.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN029" type="comment">
+                     <p>Nach einer Erklärung des Abg. <name type="Person" role="Erwaehnung" ref="#MuellerWilly_1949-09-07">Müller</name> (Worms) (SPD) wurde der Gesetzentwurf gegen die Stimmen der SPD-Fraktion bei einigen Stimmenthaltungen angenommen. Vgl. Sten. Ber., 70. Sitzung am 3. 6. 1959, S. 3682 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>e) Große Anfrage betr. Wirtschaftskonzentration [Große CDU/CSU-DP-Anfrage: Drucksache III/702 v. 4. 12. 1958]:</p>
+            <p>Der Vorstand ist der Meinung, daß die Große Anfrage bis nach den Sommerferien zurückgestellt werden solle<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN030" type="comment">
+                     <p>Vgl. die Behandlung der Anfrage, in: 82. Sitzung am 15. 10. 1959, S. 4419–4473.</p>
+                  </note>
+               </seg>, da anzunehmen sei, daß die kommende Regierungserklärung sich mit diesem Fragenkomplex eingehend befassen wird.</p>
+            <p>f) Verwaltungsgerichtsordnung [Reg.-Entwurf f. VwGO: Drucksache III/55 v. 5. 12. 1957]:</p>
+            <p>Es besteht im Vorstand Übereinstimmung, daß der umfangreiche Gesetzentwurf erst nach den Sommerferien im Plenum verabschiedet wird.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN031" type="comment">
+                     <p>Zur Verabschiedung der Vorlage vgl. Sten. Ber., 94. Sitzung am 11. 12. 1959, S. 5187.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>g) Weinverträge mit Griechenland und Italien [Reg.-Entwürfe betr. bilaterale Abkommen über Untersuchung und Überwachung von Wein: Drucksache III/48 v. 30. 11. 1957 und III/223 v. 21. 2. 1958]:</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet, daß diese Verträge in den zuständigen Ausschüssen des Bundestages keine Mehrheit gefunden hätten und daher nunmehr überlegt werden müsse, was weiter mit diesen Verträgen geschehen soll. Der Vorstand beschließt, daß diese Verträge noch einmal in dem zuständigen Arbeitskreis behandelt werden, und daß vorher die Abg. Dr. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> und <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name> noch einmal eine Besprechung hierüber mit der Regierung durchführen sollen.</p>
+            <p>h) Fremdrentengesetz [Reg.-Entwurf f. Fremdrenten- und Auslandsrenten-Neuregelungsgesetz – FANG: Drucksache III/1109 v. 21. 5. 1959]:</p>
+            <p>Der Vorstand ist der Meinung, daß die 1. Lesung dieses Gesetzes noch vor den Ferien wenn möglich ohne Debatte erfolgen soll.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-05-25-t1500_EP_FN032" type="comment">
+                     <p>Zur 1. Beratung vgl. Sten. Ber., 76. Sitzung am 18. 6. 1959, S. 4203–4207.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>[5.] Termine</p>
+            <p>Diskussion Eigentumsbildung und Jugendarbeitsschutzgesetz vertagt.</p>
+            <p>6. Gesetzesinitiativen aus der Fraktion</p>
+            <p>a) Großhandelsumsatzsteuer für Lebensmittel [CDU/CSU-Entwurf f. 10. ÄndG zum Umsatzsteuergesetz: Drucksache III/515 v. 8. 7. 1958]:</p>
+            <p>Minister <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> wird noch einmal mit <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> wegen dieser Vorlage sprechen.</p>
+            <p>b) Große Anfrage betr. Schiffbarmachung Hochrhein zwischen Basel und Bodensee [Antrag <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, Dr. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name> u. Gen.: Drucksache III/1786 v. 8. 4. 1960]:</p>
+            <p>Der Vorstand bittet die Antragsteller aus grundsätzlichen Erwägungen – da regionale Verkehrsfragen bisher nie in Form von Großen Anfragen behandelt wurden – sie als Kleine Anfrage einzubringen.</p>
+            <p>c) Änderung des Jugendarbeitsschutzgesetzes [SPD-Entwurf: Drucksache III/31 (neu) v. 10. 12. 1957; Reg.-Entwurf: Drucksache III/317 v. 3. 4. 1958]:</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt den Inhalt eines Schreibens des CSU-Landesgruppen-Vorsitzenden <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> bekannt, worauf der Vorstand beschließt, daß die Angelegenheit noch einmal im Arbeitskreis I beraten wird. Auf Anregung von <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> soll auch der Arbeitskreis IV sich mit dieser Frage befassen, da diese Angelegenheit zu seinem Aufgabengebiet gehört.</p>
+            <p>d) Änderung der Rechtsverhältnisse der Polizei-Vollzugsbeamten [Reg.-Entwurf f. 3. ÄndG zum vorläufigen Bundespolizeibeamtengesetz v. 6. 8. 1953: Drucksache III/1231 v. 3. 8. 1959]:</p>
+            <p>Der von <name type="Person" role="Sprecher" ref="#KuehlthauWalter_1953-10-06">Kühlthau</name> angeregte Antrag wird dem Arbeitskreis I übergeben werden.</p>
+            <p>e) Änderung des Grundsteuergesetzes [noch kein Gesetzentwurf]:</p>
+            <p>Der von <name type="Person" role="Sprecher" ref="#KuehlthauWalter_1953-10-06">Kühlthau</name> gestellte Änderungsantrag zur Änderung des Gewerbesteuer- und Grundsteuerrechts soll dem Arbeitskreis III zur weiteren Bearbeitung übergeben werden.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

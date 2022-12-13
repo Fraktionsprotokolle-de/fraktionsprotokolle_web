@@ -1,446 +1,593 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1955-09-13-t1515_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1007/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. September 1955</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>19 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1955-09-13"><time type="start" when="15:15:00"/><time type="end" when="19:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1955-09-13-t1515_EP_SVP-1" corresp="#cdu-csu-02_1955-09-13-t1515_EP_div_SVP-1">A. Internes aus der Fraktion. – TOP 1: Moskaureise. – TOP 2: Saarfrage. – TOP 3: Sozialversicherungs-Anpassungsgesetz. – TOP 4: Arbeitsweise des Bundestages. – TOP 5: Wirtschaftspolitische Lage. – TOP 6: Bundestagssitzung in Berlin. – TOP 7: Gesetzgebungsprogramm für die 2. Wahlperiode.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1955-09-13-t1515_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt die Fraktion zur ersten Sitzung der zweiten Halbzeit des Bundestages. Er gedenkt des verstorbenen Fraktionskollegen <name type="Person" role="Erwaehnung" ref="#SchulerFritz_1949-09-07">Schuler</name> und des in Kiel verstorbenen Ministers Dr. <name type="Person" role="Erwaehnung" ref="#PagelPaul">Pagel</name><seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN001" type="comment"><p>Siehe Nr. 184, 1.</p></note></seg> mit kurzem Nachruf und erinnert an die 41 Toten der Zeche Dahlbusch.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN002" type="comment"><p>Laut Bekanntgabe des Bundestagspräsidenten waren am 3. 8. 1955 bei einem Unglück auf der Zeche Dahlbusch 42 Bergleute umgekommen. Vgl. Sten. Ber., 101. Sitz. am 22. 9. 1955, S. 5619.</p></note></seg> Die Fraktion ehrt die Toten in stillem Gedenken. Sodann begrüßt Dr. Krone den als Nachfolger für <name type="Person" role="Erwaehnung" ref="#SchulerFritz_1949-09-07">Schuler</name> eingetretenen <name type="Person" role="Erwaehnung" ref="#LeibingChristian_1955-08-08">Leibing</name>.</p>
-				<p>1. Moskaureise</p>
-				<p>Zur Moskaureise berichtet Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, daß natürlich noch kein Urteil möglich sei. Aus der eingetretenen Flaute könne nicht ohne weiteres geschlossen werden, daß die Konferenz ohne Erfolg ausgehen werde. Diese Konferenz sei wohl am sorgfältigsten von allen Konferenzen vorbereitet worden und habe den Kanzler während seines ganzen Urlaubs beschäftigt. Er, Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, habe in Mürren den Standpunkt der Fraktion vorgebracht<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN003" type="comment"><p><name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> war nicht zum Kanzler in die Schweiz gereist, der dort intensive politische Gespräche geführt hatte, und hatte sich lediglich am 8. 8. 1955 mit <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Otto <name type="Person" role="Erwaehnung" ref="#LenzOtto_1953-10-06">Lenz</name>, <name type="Person" role="Erwaehnung" ref="#TillmannsRobert_1949-09-07">Tillmanns</name> und <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> zu diesem Thema ausgetauscht. Vgl. die Besucherliste Adenauers (StBKAH, 04.06) und Krone, Tagebücher 1945–1961, S. 186.</p></note></seg>, nach der Rückkehr des Kanzlers aus der Schweiz habe dann ein Gespräch mit den Fraktionsvorsitzenden stattgefunden<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN004" type="comment"><p>Siehe Nr. 183.</p></note></seg>, wobei herausgestellt worden sei, daß die Wiederherstellung normaler Beziehungen, aber auch der deutsche Wunsch nach der Wiedervereinigung und nach der Lösung der Kriegsgefangenenfrage Verhandlungsthema sein sollen. Diese Erweiterung der Themenstellung sei von Moskau angenommen und von sämtlichen Fraktionen gebilligt worden.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN005" type="comment"><p>In ihrer Note v. 12. 8. 1955 an die Sowjetunion hatte die Bundesregierung einige weitere Themen, darunter die Frage der Kriegsgefangenen, zur Behandlung in Moskau vorgeschlagen. In ihrer Antwort v. 19. d. M. hatte die Sowjetregierung pauschal zugestimmt, alle angeschnitten Fragen zu verhandeln. Vgl. DzD, Bd. III/1, S. 262–264 und 277f.</p></note></seg> Man sei sich auch einig darüber gewesen, daß eine Anerkennung der Regierung in Pankow nicht in Frage komme und daß deshalb die Herbeiführung echter diplomatischer Beziehungen unmöglich sei, wenn sie an diese Voraussetzungen geknüpft werde. Auch dürften die Verhandlungen nicht dazu führen, daß die Sowjets bei der folgenden Genfer Konferenz sagen könnten, die Frage der Wiedervereinigung und der Sicherheit sei bereits in Moskau behandelt worden. Man dürfe die vier Siegermächte nicht aus ihrer Verpflichtung zur Regelung dieser Fragen entlassen.</p>
-				<p>Die Kriegsgefangenenfrage sei uns ein echtes menschliches Problem und dürfe also nicht als politisches Handelsobjekt betrachtet werden.</p>
-				<p>Der Gesamtton dieser Verhandlungen der Fraktionsvorsitzenden sei erfreulich gewesen, wenn auch die Opposition nachher gesagt habe, daß man nicht in allen Punkten einig gewesen sei. Außer von Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> sei von keiner Seite verlangt worden, daß weitere Parlamentarier mit nach Moskau gehen sollten. Diese Regelung sei wohl richtig, ebenso wie es zweckmäßig erscheine, daß Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> sich nicht an der Reise beteiligt; schließlich gehe es um echte politische Fragen, denen gegenüber andere Dinge zweiten Ranges seien.</p>
-				<p>2. Saarfrage</p>
-				<p>Zur Saarfrage betont Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, daß die Fraktion in dieser Frage keine Stellung genommen habe. Dahingehende Pressemeldungen seien unrichtig. Dagegen seien Verlautbarungen der Bundespartei und eine Erklärung des Bundeskanzlers ergangen, über die die Meinungen auseinandergingen.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN006" type="comment"><p>Siehe Nr. 184, 2.</p></note></seg> Eine Erörterung hier in der Fraktion erscheine allerdings nicht richtig. Der Kanzler habe es wohl für seine Pflicht gehalten, sich zu äußern, weil er bei der Abstimmung von beiden Parteien in Anspruch genommen werde. Außerdem hätte er klarstellen wollen, worum es bei dieser Wahl gehe. Diese Äußerung habe gesamtpolitische Gründe auch im Zusammenhang mit der Moskaureise gehabt.</p>
-				<p>Er nehme nicht an, daß diese Frage Gegenstand der Diskussion im Bundestag werde. Es läßt sich aber noch nicht überblicken, ob das Thema nicht im Zusammenhang mit der Erörterung der Moskaureise auftauchen werde.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN007" type="comment"><p>Der Punkt wurde nicht angesprochen.</p></note></seg></p>
-				<p>3. Sozialversicherungs-Anpassungsgesetz [SPD-Entwurf, Drucksache II/1247 v. 9. 3. 1955, und CDU/CSU-, FDP-, DP-Entwurf, Drucksache II/1418 v. 25. 5. 1955]</p>
-				<p><name type="Person" role="Sprecher" ref="#SchuettlerJosef_1949-09-07">Schüttler</name> berichtet über die nach der Verabschiedung des Sozialversicherungs-Anpassungsgesetzes entstandenen Schwierigkeiten, da der Finanzminister das Gesetz bis jetzt zurückgehalten habe. Heute morgen habe nun das Wirtschaftskabinett beschlossen, es wie bisher beim 1. Kind bei der Witwenrentenregelung zu belassen und der Finanzminister habe der Regelung zugestimmt.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN008" type="comment"><p>Der Bundestag hatte das Gesetz in seiner 95. Sitz. am 7. 7. 1955 verabschiedet (vgl. Sten. Ber., S. 5389–5391). Zur Sitz. des Wirtschaftskabinett vgl. das Protokoll seiner 36. Sitz. am 13. 9. 1955 (Wirtschaftskabinett, S. 384f.).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> ergänzt diese Ausführungen durch die Bemerkung, daß es notwendig sei, diese erforderliche Novelle möglichst rasch durchzubringen und gleichzeitig eine Regelung auch für das Knappschaftsversicherungs-Anpassungsgesetz zu treffen, da dieser Punkt von allen Beteiligten bisher übersehen worden sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt die Zustimmung der Fraktion zu dieser Regelung fest.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN009" type="comment"><p>Das Sozialversicherungs-Anpassungsgesetz datierte nach Überwindung der genannten Schwierigkeiten v. 3. 10. 1955 (vgl. BGBl. I/1955, S. 653). Am 6. 10. 1955 brachten die Koalitionsfraktionen den Gesetzentwurf über die Änderung des Dritten Gesetzes zur Änderung des Sozialversicherungs-Anpassungsgesetzes ein, der die Änderung des Knappschaftsversicherungs-Anpassungsgesetzes beinhaltete (Drucksache II/1742).</p></note></seg></p>
-				<p>4. Arbeitsweise des Bundestages</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet sodann über die Vorschläge des Fraktionsvorstandes zur Arbeitsweise des Bundestages.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN010" type="comment"><p>Siehe Nr. 184, 7.</p></note></seg></p>
-				<p>a) Die 1. Lesung von Gesetzentwürfen soll nach Möglichkeit unterbleiben, so daß die Grundsatzerörterungen mit der 2. Lesung verbunden werden.</p>
-				<p>Es soll die Redezeitbeschränkung wieder eingeführt werden.</p>
-				<p>b) Der 3-Wochen-Turnus mit einem einheitlichen Typus der Arbeitswochen soll wiederhergestellt werden.</p>
-				<p>c) Die Rundfrage über die Einführung des 3- oder 4-Wochen-Turnus solle fortgesetzt werden; bis jetzt hätten sich über 50 % für den 3-Wochen-Turnus entschieden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name> weist auf die immer mehr um sich greifende gesetzliche Regelung auch der alltäglichsten Lebensvorgänge hin. Er beantrage, eine fraktionsinterne Kommission zu bilden, die einen Antrag zur Schaffung eines vorübergehenden Ausschusses ausarbeiten solle, dessen Aufgabe es sei, die Grenzen staatlicher, gesetzgeberischer Regelung zu finden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> anerkennt das Anliegen, bittet aber, diesen Antrag zurückzustellen, bis der Antrag Dr. <name type="Person" role="Erwaehnung" ref="#BergmeyerBernhardGerhard_1953-10-06">Bergmeyer</name> [Drucksache II/1383] über Verwaltungsvereinfachung behandelt sei.</p>
-				<p>Die Fraktion ist mit dieser Regelung einverstanden.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN011" type="comment"><p>Die Fraktion verständigte sich im weiteren darauf, den Antrag von <name type="Person" role="Erwaehnung" ref="#BergmeyerBernhardGerhard_1953-10-06">Bergmeyer</name> zu modifizieren und ihn als Fraktionsantrag einzubringen. Drucksache II/1383 (neu) v. 12. 10. 1955.</p></note></seg></p>
-				<p>5. Wirtschaftspolitische Lage</p>
-				<p>Sodann erteilt Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> das Wort an Sts. Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> zu folgendem Referat über die wirtschaftspolitische Lage.</p>
-				<p>»Der Herr Bundeskanzler veröffentlicht unter der Überschrift ›Wachstum im Gleichgewicht als Aufgabe‹ in der Berliner Zeitung ›Der Tag‹ einen Aufsatz, der sich mit der gegenwärtigen wirtschaftspolitischen Situation der Bundesrepublik befaßt.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN012" type="comment"><p>Vgl. den Abdruck des Artikels im Bulletin v. 13. 9. 1955 unter der Überschrift »Der Bundeskanzler zum Lohn-Preis-Problem«.</p></note></seg> Die von dem Herrn Bundeskanzler gewählte Überschrift ›Wachstum im Gleichgewicht als Aufgabe‹ kennzeichnet in größter Klarheit unsere Lage und weist den Weg, den die Wirtschaft der Bundesrepublik für die Zukunft gehen soll. Der Herr Bundeskanzler führt aus:</p>
-				<p>›Die unbestreitbaren Erfolge, wie sie augenblicklich an vielen Wirtschaftszahlen abzulesen sind, dürfen uns nicht in eine Stimmung versetzen und zu Erwartungen verleiten, die über das Maß dessen hinausgehen, was zu verwirklichen ist. Wir müssen uns vor einem stimmungsmäßigen Zustand hüten, in dem wir die materiellen Möglichkeiten überschätzen und uns zu übertriebenen Forderungen und Handlungen verleiten lassen, die das Gleichmaß des erwünschten Wachstums gefährden könnten. Darum sollten Arbeitgeber und Gewerkschaften in gemeinsamer Verantwortung das Lohnniveau finden, das den produktiven Möglichkeiten entspricht. Die Bundesregierung muß wünschen, daß sie dabei Rücksicht nehmen auf unsere außenwirtschaftlichen Beziehungen wie auch auf die breiten Bevölkerungsschichten, deren Einkommen nicht ohne weiteres vergrößert werden kann. Die Bundesregierung erwartet aber auch, daß die spekulativen Kräfte sich zurückhalten und daß über Preise, Kurse und Gewinne nach dem Grundsatz der sozialen Verantwortung vor dem Ganzen mit Umsicht und Vorsicht verfügt wird. Ich habe keinen Zweifel, daß an manchen Stellen die in letzter Zeit erzielten hohen Gewinne nicht genügend genutzt wurden, um die Preise zu senken.‹</p>
-				<p>In der Tat hat die gegenwärtige Hochkonjunktur, der wir uns seit einiger Zeit erfreuen, mehrere Seiten. Sie ist einerseits Ausdruck der gemeinsamen Bemühungen der Unternehmerschaft, der Arbeiter, der Verbraucher und nicht zuletzt auch der Wirtschaftspolitik der Bundesregierung, das Erbe, das uns der letzte Krieg hinterlassen hat, durch Mühe und Arbeit zu überwinden. Die Hochkonjunktur ist aber kein Fluch – das muß in aller Deutlichkeit gesagt werden – sondern sie ist, wenn die Zeichen der Zeit richtig verstanden werden, ein Segen.</p>
-				<p>Wir haben eine fortschreitende Steigerung der Produktion, die im Durchschnitt mehr als 100 % über den Produktionsergebnissen der Vorkriegszeit liegt. Die Einkommen sowohl der Arbeitnehmer wie auch der Selbständigen steigen laufend. Wir können stolz darauf sein, daß die Versorgung der Bevölkerung mit Konsumgütern heute besser denn je ist. Die Arbeitslosenziffern sind niedriger als zuvor.</p>
-				<p>Allerdings verbinden sich mit einer solchen Konjunktur auch Mängel und Schattenseiten des wirtschaftlichen Prozesses. Die Menschen fürchten, daß steigenden Löhnen steigende Preise und steigenden Preisen steigende Löhne folgen werden, und daß eine Spirale ohne Ende aus dieser Hochkonjunktur entsteht, eine Entwicklungsmöglichkeit, die auch die Hüter unserer Währung aufhorchen läßt. Wir leben also in der eigenartigen Situation, daß wir deshalb Sorgen haben, weil die Wirtschaft so außerordentlich floriert.</p>
-				<p>Das entscheidende Kriterium und wahrscheinlich die Ursache aller Sorgen ist die Lage auf dem Arbeitsmarkt. Zahlreiche Lohntarife sind gekündigt, und die Unternehmen sind dabei, sich gegenseitig die Arbeiter gegen hohe Prämienzahlung abzuwerben. Die vom Bundesminister für Wirtschaft schon vor einem Jahr erhobene Forderung, die deutschen Grenzen für den Zustrom auch ausländischer Arbeiter zu öffnen, zeigt sich heute in ihrer vollen Berechtigung. Wahrscheinlich würden wir weniger Sorgen haben, wenn man damals den Anregungen des Bundesministers für Wirtschaft gefolgt wäre.</p>
-				<p>Es ist schon richtig, wenn die Bank deutscher Länder in ihrem letzten Monatsbericht davon spricht, daß nicht das Preisniveau als solches in Bewegung geraten sei, sondern daß vielmehr das Preisklima, das die Haltung der wirtschaftenden Menschen und besonders der Verbraucher bestimmt, mit größter Sorgfalt beobachtet werden muß. Das Preisniveau ist im wesentlichen stabil, und der Vergleich der Preisentwicklung mit der Entwicklung der Löhne und Einkommen hält im großen und ganzen der Kritik stand; das gleiche kann man jedoch von dem Preisklima nicht behaupten. Das Preisklima hat sich ohne Zweifel verschlechtert. Die Hochkonjunktur ermöglicht die Durchsetzung höherer Preisforderungen und, was jedoch schlimmer ist, höhere Preisforderungen finden oft nur geringen Widerstand. Die Tatsache, daß der Absatz sich ständig ausweitet, und zwar in einem Maße, das die Verschätzungen übersteigt und über die bisherigen Erfahrungen hinausgeht, die weitere Tatsache, daß eine ähnliche Entwicklung bei großen Teilen des Einkommens festzustellen ist, hat vielfach zu der Einstellung geführt, daß einer solchen Entwicklung nicht mehr mit der Aufmerksamkeit begegnet wird, die notwendig wäre. Die weitere Folge ist, daß nicht mehr so scharf kalkuliert wird, daß der Wettbewerb mindestens tendenziell abnimmt und daß auch weite Schichten der Verbraucher, die an der Einkommensausweitung teilnehmen, bei ihren eigenen Einkäufen nicht mehr so genau rechnen. Die Gefahr einer Überhitzung der Konjunktur ist in einer solchen Lage in ihrem ganzen Ernst vorhanden. Diese Gefahr steigt in dem Maße, in dem der Preiswiderstand der Käufer abnimmt, d. h. Kostensteigerungen, seien sie bei den Materialkosten oder bei den Lohnkosten, mit leichter Hand hingenommen werden, weil die Aussicht besteht, diese gestiegenen Kosten auf den Abnehmer abzuwälzen.</p>
-				<p>Aus alledem ergibt sich, daß nicht die Konjunktur als solche eine Gefahr ist, sondern daß die Gefahr erst dadurch entsteht, daß die Möglichkeiten und die Wirkungen der Konjunktur falsch eingeschätzt werden. Es ist also der wirtschaftende Mensch, der hier in seinem Handeln zu beeinflussen ist, um die Gefahren abzuwenden, die dem Ganzen und damit dem Ergebnis unserer Aufbauarbeit nach diesem Kriege drohen. Das erste Ziel aber bei allen Überlegungen und Maßnahmen, die das Bundeswirtschaftsministerium trifft, ist: {Erhaltung der Konjunktur, aber Beseitigung ihrer Auswüchse}<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN013" type="comment"><p>Hervorhebungen im Original.</p></note></seg>. Die großen Aufgaben, die vor uns liegen, die Wiederaufrüstung, der Wohnungsbau, der Straßenbau und nicht zuletzt die Wiedervereinigung können nicht von einer schrumpfenden Wirtschaft, sondern nur von einer blühenden, d. h. wachsenden Volkswirtschaft gelöst werden. Würden wir also jetzt Mittel anwenden, die die Expansion der Wirtschaft drosseln, so würden damit wahrscheinlich viele Aufgaben, die uns die Zeit gestellt hat, nur schwer durchführbar sein. Unser wichtigstes Anliegen war es deshalb, die Gewerkschaften, die Unternehmerschaft und die Verbraucher zur Besonnenheit und {Mäßigung}13 aufzurufen.</p>
-				<p>Selbstverständlich hat auch die soziale Marktwirtschaft jene Mittel der Konjunkturbeeinflussung, die in der augenblicklichen Situation zu einer Beseitigung der Schattenseiten unserer Hochkonjunktur führen würden. Wir sind uns aber darüber klar, daß die verstärkte Anwendung dieser Mittel – es sind im wesentlichen die Instrumente der Notenbankpolitik – für die deutsche Volkswirtschaft und für viele Unternehmen eine Roßkur sein würde. Wir denken, wenn wir zunächst den anderen Weg der Beeinflussung der Menschen gegangen sind, um tiefgreifende Eingriffe in den Wirtschaftsprozeß zu vermeiden, auch daran, daß viele Unternehmen, vor allem jene Unternehmen, deren Finanzstruktur z. T. noch ungenügend ist, die ihre Investitionen unter Einsatz kurz- oder mittelfristiger Mittel durchgeführt haben, durch Kreditrestriktionen, die die zentrale Notenbank durchführen könnte, in ihrem Bestand gefährdet werden müßten. Ich darf Ihnen sagen, daß ich bei den Gesprächen mit den Gewerkschaften<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN014" type="comment"><p>Siehe Nr. 184, 4.</p></note></seg>, an denen auch Präsident Dr. <name type="Person" role="Erwaehnung" ref="#BernardKarl">Bernard</name> und Geheimrat Dr. <name type="Person" role="Erwaehnung" ref="#VockeWilhelm">Vocke</name> teilnahmen, den Eindruck erhielt, daß die Bank deutscher Länder den festen Willen hat, eine etwaige inflationistische Entwicklung mit ihren Mitteln im Keime abzutöten. Die Herren haben uns erklärt: Gegen Inflation gibt es nur Mittel deflationistischer Natur.</p>
-				<p>Der Bundeswirtschaftsminister geht allerdings davon aus, daß wir uns diese Mittel ersparen sollen und ersparen können, wenn Gewerkschaften, Unternehmerschaft und Verbraucher die Vernunft zeigen, die die augenblickliche Lage erfordert. Es scheint mir, daß die Wirtschaftspolitik der Bundesregierung – das ist die Wirtschaftspolitik der Koalition und damit Ihre Wirtschaftspolitik – in ihrer größten Bewährungsprobe seit der Korea-Krise steht. Daß es uns gelingen wird, den richtigen Weg zu gehen, dafür bestehen gute Aussichten, denn allenthalben wächst die Erkenntnis, daß Mäßigung und Vernunft aller am Wirtschaftsleben Beteiligten – also sowohl der Gewerkschaften wie der Unternehmerschaft als auch der Verbraucher – notwendig sind.</p>
-				<p>Zur Realität der Preise und Löhne, wie sie heute bestehen und sich in den letzten Jahren entwickelt haben, möchte ich Ihnen einige Zahlen nennen.</p>
-				<p>Selbstverständlich weiß ich, daß die Preisindizes nicht der Weisheit letzter Schluß sind und daß sie oft kritisiert werden. Immerhin geben sie doch, wenn man die Richtung der Preisentwicklung im Rahmen wirtschaftspolitischer Überlegungen erkennen will, zahlreiche und m. E. zutreffende Aufschlüsse. Die Lebenshaltungskosten, die vom Statistischen Bundesamt monatlich festgestellt werden, haben sich für die mittlere Verbrauchergruppe für die Familien mit vier Köpfen, davon zwei Erwachsenen von Juli 1954 auf Juli 1955 um 1,9 % erhöht, die Nominallöhne der Industriearbeiter vom II. Quartal 1954 zum II. Quartal 1955 um 5,7 %. Es ist eine Steigerung der Reallöhne vom II. Quartal 1954 zum II. Quartal 1955 um etwa 4,7 % erreicht worden.</p>
-				<p>Die Reallohnentwicklung seit 1950 läßt erkennen, daß auch die Industriearbeiter einen angemessenen Anteil an dem Aufstieg der deutschen Wirtschaft erhalten haben. Verglichen mit dem Jahresdurchschnitt 1950 ist das Verbraucherpreisniveau im II. Quartal 1955 um 9 % höher gewesen, dagegen überstiegen die Brutto-Stundenverdienste der Industriearbeiter den Stand von 1950 um 37 %, so daß sich eine Verbesserung der Reallöhne, bezogen auf die Arbeitsstunde, um fast 26 % ergeben hat. Das bedeutet, daß die Industriearbeiterschaft heute mit ihrem Einkommen rund 26 % mehr Güter kaufen kann als im Jahre 1950.</p>
-				<p>Die Daten der Lohn- und Preisindizes werden bekanntlich oft in der Öffentlichkeit als unrealistisch hingestellt, der Lebenshaltungsindex insbesondere auch deshalb, weil er auf dem Verbrauch von 1950 basiert. Anhaltspunkte für die tatsächliche Entwicklung der Einkommen und des Verbrauchs in Arbeitnehmerhaushalten liefern die Ergebnisse der Wirtschaftsrechnungserhebungen des Statistischen Bundesamtes. In rund 280 Arbeitnehmerhaushaltungen werden die tatsächlichen Ausgaben regelmäßig in der Weise festgestellt, daß die Haushaltungen, die sich zur genauen Durchführung über ihre Ausgaben verpflichtet haben, monatlich genau Unterlagen über ihren Aufwand liefern. Die hier erfaßten Familien bestehen aus vier Personen.</p>
-				<p>Die Entwicklung der Familieneinkommen von 1950 bis 1954 war wie folgt:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell/>
-						<cell>Durchschnittliches Arbeitseinkommen des Haushaltsvorstandes aus Hauptberuf (brutto)</cell>
-						<cell>Durchschnittliche Gesamteinnahmen der Haushaltungen</cell>
-						<cell>Durchschnittliche ausgabefähige Einnahmen (Gesamteinnahmen abzüglich gesetzliche Versicherungen und Steuern)</cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>DM</cell>
-						<cell>DM</cell>
-						<cell>DM</cell>
-					</row>
-					<row>
-						<cell>1950</cell>
-						<cell>303,58</cell>
-						<cell>342,82</cell>
-						<cell>305,08</cell>
-					</row>
-					<row>
-						<cell>1951</cell>
-						<cell>354,59</cell>
-						<cell>396,05</cell>
-						<cell>351,30</cell>
-					</row>
-					<row>
-						<cell>1952</cell>
-						<cell>391,90</cell>
-						<cell>442,76</cell>
-						<cell>391,22</cell>
-					</row>
-					<row>
-						<cell>1953</cell>
-						<cell>420,61</cell>
-						<cell>477,42</cell>
-						<cell>421,67</cell>
-					</row>
-					<row>
-						<cell>1954</cell>
-						<cell>444,59</cell>
-						<cell>505,36</cell>
-						<cell>447,86</cell>
-					</row>
-				</table>
-				<p>Hieraus ergibt sich, daß das durchschnittliche Arbeitseinkommen der Haushaltsvorstände von 303,58 DM im Jahre 1950 auf 444,59 DM im Jahre 1954, d. h. um 46,4 %, die durchschnittlichen Gesamteinnahmen der Haushaltungen (einschließlich Einkommen arbeitender Familienangehöriger, Renten usw.) von 342,82 DM im Jahre 1950 auf 505,36 DM im Jahre 1954, d. s. 47,4 %, gestiegen ist. Nach Abzug der Steuern und gesetzlichen Versicherungsbeiträge erreichten die ausgabefähigen Einnahmen der Haushaltungen im Jahre 1950 305,08 DM, im Jahre 1954 dagegen 447,86 DM. Auch hier liegt eine Steigerung um rund 46 % vor.</p>
-				<p>Aus den Aufschreibungen über die Ausgaben dieser Familien ergibt sich im Vergleich der Jahre 1950 und 1954 eine Erhöhung von 285,43 DM auf 426,33 DM, das sind rund 141 DM = ca. 49 %.</p>
-				<p>Werden die Preisveränderungen, wie sie sich im Preisindex für die Lebenshaltung niederschlagen, berücksichtigt, so zeigt sich, daß diese Familien im Durchschnitt real (d. h. quantitativ und qualitativ) ihre Lebenshaltung um 40,2 % verbessern konnten. Verglichen mit der Reallohnentwicklung, die, gemessen an den Stundenverdiensten der Industriearbeiter, eine Verbesserung um rund 23 % in der Zeit von 1950 bis 1954 ergab, wiesen die aus den Wirtschaftsrechnungen der Haushaltungen sich ergebenden Tatsachen eine noch günstigere Entwicklung aus, die im wesentlichen durch stärkere Erhöhung der Familieneinkommen verursacht worden ist. Selbst wenn man berücksichtigt, daß derartige statistische Erhebungen immer Fehlermöglichkeiten beinhalten, so kann man trotzdem den Schluß ziehen, daß die genannten Zahlen die Ausgaben- und Einnahmenentwicklung im großen und ganzen zutreffend wiedergeben.</p>
-				<p>In der Lohn-Preis-Diskussion wird hin und wieder mit dem Argument gearbeitet, das Lohnniveau in der Bundesrepublik sei im Vergleich zu dem anderer Länder gedrückt und setze die deutsche Industrie in den Stand, auf den Weltmärkten mit Dumpingpreisen zu konkurrieren. Auch von Gewerkschaftsseite wird diese Auffassung für den innerdeutschen Gebrauch gelegentlich vertreten.</p>
-				<p>Der internationale Vergleich zeigt aber, daß die Gewerkschaften bei ihrer bisherigen Lohnpolitik recht gut beraten waren. Nach den Berichten der Vereinten Nationen »Monthly Bulletin of Statistics« liegt die Bundesrepublik unter den folgenden 10 Ländern an der Spitze der Reallohnentwicklung. Um Mißverständnisse zu vermeiden, möchte ich ausdrücklich darauf aufmerksam machen, daß die von mir aufgeführten Ziffern nicht etwa zum Ausdruck bringen, wie der absolute Stand der Löhne und Prei-se in diesen Ländern ist, sondern daß hier die Entwicklung der Jahre 1950 bis 1954 dar-gestellt wird.</p>
-				<table rendition="#hidden">
-					<row>
-						<cell cols="4">Reallohnentwicklung von Mitte 1950 bis Mitte 1954 (1950 = 100)</cell>
-					</row>
-					<row>
-						<cell>Westdeutschland</cell>
-						<cell>123</cell>
-						<cell>Belgien</cell>
-						<cell>104</cell>
-					</row>
-					<row>
-						<cell>Schweden</cell>
-						<cell>120</cell>
-						<cell>Holland</cell>
-						<cell>104</cell>
-					</row>
-					<row>
-						<cell>Frankreich</cell>
-						<cell>122</cell>
-						<cell>England</cell>
-						<cell>104</cell>
-					</row>
-					<row>
-						<cell>USA</cell>
-						<cell>111</cell>
-						<cell>Italien</cell>
-						<cell>100</cell>
-					</row>
-					<row>
-						<cell>Australien</cell>
-						<cell>107</cell>
-						<cell>Schweiz</cell>
-						<cell>99</cell>
-					</row>
-				</table>
-				<p>Daß es für das Ausmaß der Verbesserung des Lebensstandards nicht allein auf die Nominallohnerhöhung ankommt, ergibt sich aus den gleichen Berichten. Welche negativen Folgen allzu starke Geld-Lohnsteigerungen haben können (nämlich Verlust von großen Teilen des Einkommens durch inflationäre Einflüsse), zeigt in der nachfolgenden Tabelle das Beispiel Australien und Frankreich. In diesen Ländern haben sich die Löhne nominal zwar erheblich erhöht, den Arbeitnehmern ist aber hiervon durch gleichzeitige Erhöhung der Preise ein relativ geringer Anteil zur echten Verbesserung der Lebenshaltung geblieben.</p>
-				<p>Veränderung der Löhne und Preise von Mitte 1950 bis Mitte 1954 (Mitte 1950 = 100 %)</p>
-				<table rendition="#hidden">
-					<row>
-						<cell cols="4">Erhöhung</cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>der Geldlöhne in %</cell>
-						<cell>der Preise der Lebenshaltung in %</cell>
-						<cell>der Reallöhnein %</cell>
-					</row>
-					<row>
-						<cell>Australien</cell>
-						<cell>61</cell>
-						<cell>51</cell>
-						<cell>+ 7</cell>
-					</row>
-					<row>
-						<cell>Frankreich</cell>
-						<cell>65</cell>
-						<cell>35</cell>
-						<cell>+ 22</cell>
-					</row>
-					<row>
-						<cell>Schweden</cell>
-						<cell>53</cell>
-						<cell>28</cell>
-						<cell>4-20</cell>
-					</row>
-					<row>
-						<cell>Westdeutschland<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN015" type="comment"><p>Der Reallohn in der Bundesrepublik hat sich seit Mitte 1954 noch verbessert. Anm. im Original.</p></note></seg></cell>
-						<cell>35</cell>
-						<cell>9</cell>
-						<cell>+ 23</cell>
-					</row>
-					<row>
-						<cell>England</cell>
-						<cell>29</cell>
-						<cell>24</cell>
-						<cell>+ 4</cell>
-					</row>
-					<row>
-						<cell>USA</cell>
-						<cell>24</cell>
-						<cell>12</cell>
-						<cell>+ 11</cell>
-					</row>
-					<row>
-						<cell>Belgien</cell>
-						<cell>17</cell>
-						<cell>13</cell>
-						<cell>+ 4</cell>
-					</row>
-					<row>
-						<cell>Italien</cell>
-						<cell>22</cell>
-						<cell>22</cell>
-						<cell>0</cell>
-					</row>
-					<row>
-						<cell>Holland</cell>
-						<cell>25</cell>
-						<cell>21</cell>
-						<cell>+4</cell>
-					</row>
-					<row>
-						<cell>Schweiz</cell>
-						<cell>7</cell>
-						<cell>8</cell>
-						<cell>-1</cell>
-					</row>
-				</table>
-				<p>Es zeigt sich also, daß die wirtschaftliche Entwicklung in der Bundesrepublik, obwohl wir die Folgen der großen Katastrophe, die der letzte Krieg über uns gebracht hat, zu überwinden hatten, für weite Schichten unserer Bevölkerung eine erhebliche Verbesserung ihrer Lebenshaltung ermöglichte. Selbstverständlich kann das nur ein Ausschnitt aus einer Entwicklung sein, die im Gleichmaß fortzusetzen Ziel unserer Wirtschaftspolitik bleiben muß.</p>
-				<p>Sicher werden die kommenden Monate an alle verantwortungsvollen Kräfte in der Bundesrepublik hohe Anforderungen stellen. Dabei haben wir, um einer Überhitzung der Konjunktur zu begegnen, bisher an folgende Maßnahmen gedacht:</p>
-				<p>a) Verzicht auf Erhöhung staatlich gebundener Preise</p>
-				<p>Der Bundeswirtschaftsminister will sich dafür einsetzen, daß bei den preisgebundenen Gütern und Leistungen in der nächsten Zeit keine Erhöhungen vorgenommen werden. Unsere Bemühungen, die Gewerkschaften und die Unternehmerschaft zu einer Lohnpolitik zu bewegen, die an den gesamtwirtschaftlichen Interessen orientiert ist, werden nach unserer Meinung nur dann Aussicht auf Erfolg haben und in der Öffentlichkeit die nötige Resonanz haben, wenn Parlament und Regierung bei den Preisen für Güter und Leistungen, bei denen sie über Höchst-, Fest- und Mindestpreise unmittelbaren Einfluß ausüben, die gleiche Mäßigung zeigen, die von den Gewerkschaften und der Unternehmerschaft erwartet wird. Sie werden verstehen, daß es für mich ein Gebot der Loyalität gegenüber den anderen Ressorts ist, hier nicht zu den Sorgen des Ernährungs- und des Wohnungsbauministers Stellung zu nehmen. Diese Probleme müßten gleichzeitig mit diesen Ressorts behandelt werden.</p>
-				<p>b) Preisherabsenkung durch Verbrauchsteuersenkung</p>
-				<p>Zucker, Zündhölzer, Salz, Tee und Kaffee sind mit erheblichen Verbrauchsteuern belastet. Die Käufer von Zucker zahlen in ihren Preisen jährlich 390 Mio. DM an Verbrauchsteuern. Die Belastung bei Zündhölzern beträgt 60 Mio. DM, bei Salz 40 Mio. DM, bei Tee 16 Mio. DM und bei Kaffee 330 Mio. DM jährlich. Da Zucker und Zündhölzer noch staatlichen Preisbindungen unterliegen, würde die notwendige Garantie gegeben sein, daß ein etwaiger Verzicht des Staates auf Steuern dem Verbraucher in Form von niedrigeren Preisen unmittelbar zugute kommt. Wir hoffen, daß der Herr Bundesfinanzminister unsere Anregungen unterstützt.</p>
-				<p>c) Zollsenkungen</p>
-				<p>Von der der Regierung gegebenen Möglichkeit, Zollvorlagen im Bundestag in kurzer Zeit zur Entscheidung zu bringen, wird in Zukunft stärker Gebrauch gemacht werden.</p>
-				<p>d) Liberalisierung des Außenhandels</p>
-				<p>Auch die Fortsetzung der bisher erfolgreich durchgeführten Politik der langfristigen Zollsenkungen und der Erhöhung des Liberalisierungsgrades scheint uns gerade in der gegenwärtigen Lage dringend erforderlich zu sein. Diese Politik hat im übrigen sicherlich mit dazu beigetragen, daß die gegenwärtigen Schwierigkeiten nicht noch ernsterer Natur geworden sind.</p>
-				<p>e) Ermöglichung von Direkteinfuhren durch Letztverbraucher</p>
-				<p>Die unter dem Namen Jedermann-Einfuhren auch in der Presse eingehend behandelten Einfuhrmöglichkeiten sind für uns ein Mittel unter zahlreichen, um eine Dämpfung der inländischen Konjunktur durch stärkere Förderung des Wettbewerbs mit dem Ausland zu ermöglichen. Daß hiervon starke Wirkungen ausgehen, wird von vielen Fachleuten bezweifelt. Wir sollten trotzdem nicht auf diese dem Verbraucher dienenden und psychologisch wirksamen Maßnahmen verzichten.</p>
-				<p>f) Kartellgesetz [Regierungsentwurf, Drucksache II/1158 v. 22. 1. 1955, Entwurf <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#SeidlFranz_1953-10-06">Seidl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und Gen., Drucksache II/1253 v. 11. 3. 1955, und Entwurf Prof. <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name>, <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> und Gen., Drucksache II/1269]</p>
-				<p>In der gegenwärtigen konjunkturellen Lage mit Verkäufermärkten in wichtigen Bereichen hat der Wettbewerb der Unternehmen untereinander abgenommen. Das baldige Inkrafttreten des Kartellgesetzes scheint mir für unsere wirtschaftliche Entwicklung von vorrangiger Bedeutung.</p>
-				<p>g) Einführung einer Vorschrift gegen Preisüberhöhung</p>
-				<p>Das Bundeswirtschaftsministerium verspricht sich nichts davon, wenn die Preispolizei überall herumschnüffelt und herumprüft und mehr Unruhe erzeugt als echte Wirkung. Wir sind aber der Auffassung, daß es gut wäre, wenn wir zur Unterstützung unserer Gespräche mit den verschiedenen Gruppen der Wirtschaft noch darauf hinweisen könnten, daß eine Vorschrift besteht, die Preisüberhöhungen in den Bereichen, in denen der Wettbewerb nicht oder nicht ausreichend wirksam ist, verhindern soll. Wir glauben, daß die Wirtschaft eine ausreichende Garantie in der Person des Bundeswirtschaftsministers hat, daß eine unvernünftige Anwendung einer solchen Vorschrift ausgeschlossen wird.</p>
-				<p>h) Aufruf an Gewerkschaften, Unternehmerschaft und Verbraucher</p>
-				<p>Wir haben die Gewerkschaften gebeten, ihre Lohnforderungen in den Grenzen zu halten, die die gesamtwirtschaftlichen Interessen erfordern. Wir wollen keineswegs einen Lohnstopp und ebensowenig einen Preisstopp, aber wir glauben, daß auch die Interessen der Arbeiterschaft besser gewahrt sind, wenn dafür gesorgt wird, daß die Lohnentwicklung sich dem Wachstum des Ganzen einordnet. Wir denken an die 15 Mio. Sparer, die über Guthaben in Höhe von etwa 17 Mrd. DM verfügen. Gerade die Sparer, die mit Recht auf die Stabilität des Geldes vertrauen, sitzen bei allen unseren Gesprächen als unsichtbare Gäste mit am Tisch. Niemandem wäre gedient, wenn durch Übermaß und Unvernunft – gleichgültig wie sie auch auftreten – das Ganze in Gefahr geriete. Wir halten es deshalb auch für richtig und durchführbar, daß die Unternehmen der Industrie, des Handels und des Handwerks in ihrer Preisbildung Zurückhaltung üben und alle Möglichkeiten ausschöpfen, die für Preissenkungen vorhanden sind. Die Hochkonjunktur hat den größten Teil der Unternehmen zu einer optimalen Ausnutzung der Kapazität gebracht. Das bedeutet Senkung der Kosten. Da außerdem die Steuern und die Kapitalkosten im Laufe der letzten 12 Monate herabgesetzt worden sind, sollte erwartet werden, daß Preissenkungen mehr als bisher dem Verbraucher zugute kommen. Im übrigen sind wir der Auffassung, daß eine solche Preispolitik auch privatwirtschaftlich außerordentlich vorteilhaft sein kann.</p>
-				<p>Eine wirkungsvolle Position haben aber auch in der gegenwärtigen Lage die Verbraucher. Gerade die Hausfrauen sind aufgefordert, bei ihren Einkäufen kritischer denn je zu sein. Wie fast übereinstimmend von Händlern in Arbeitervierteln berichtet wird, besteht gerade dort die Neigung, mit Vorliebe teure Waren zu kaufen. Unsere soziale Marktwirtschaft wird in ihrer Funktion gestört, wenn den rational handelnden Gruppen der Produktion und des Handels nicht ebenso aufgeweckte Verbraucher gegenüberstehen.</p>
-				<p>Dieses preispolitische Neun-Punkte-Programm erfordert jedoch ergänzende Maßnahmen. Einmal wird man die Aktivierung aller inländischen Arbeitsreserven ernsthaft prüfen müssen. Es sollte aber – was vielleicht wirkungsvoller wäre – auch die Freizügigkeit der Arbeitskräfte im europäischen Raum herbeigeführt werden. Wir sind der Auffassung, daß gerade diese Maßnahmen sehr dazu geeignet wären, die Schattenseiten unserer Hochkonjunktur zu beseitigen.</p>
-				<p>Wie bekannt ist, verzeichnen wir besonders im Investitionsgüterbereich eine ungewöhnlich große Ausweitung. Die Haltung der öffentlichen Hand bei der Vergabe von Bürgschaften und der Anlage zentralsteuerbarer Mittel wird in diesem Zusammenhang zu prüfen sein. Jedenfalls glaubt das Bundeswirtschaftsministerium, nur solche Investitionen im Augenblick als besonders förderungswürdig ansehen zu sollen, die echte Rationalisierungseffekte unmittelbar nach sich ziehen, wobei wir selbstverständlich in den Bereichen – wie z. B. in der mittelständischen Wirtschaft – alles tun wollen, um auch hier sicherzustellen, daß diese Zweige an der wirtschaftlichen Expansion voll teilnehmen.</p>
-				<p>Mit der Investitionspolitik der öffentlichen Hand steht in engem Zusammenhang der Fragenkreis, der sich aus der Vergabe der öffentlichen Aufträge, insbesondere der Bauaufträge, ergibt. Ich möchte dem Herrn Wohnungsbauminister nicht vorgreifen, aber ich glaube, daß wir auch hier durch eine zeitliche Streuung der Aufträge über das Jahr erreichen können, daß gerade in dem bauwirtschaftlichen Bereich, der mit zu den Motoren der gegenwärtigen Hochkonjunktur gehört, Überhitzungserscheinungen werden vermieden können.</p>
-				<p>Zusammenfassend darf ich zum Ausdruck bringen, wie wichtig uns insbesondere für die kommenden Monate die Einheit der Wirtschaftspolitik, die Gemeinsamkeit des Handelns aller wirtschaftspolitischen Instanzen von Parlament und Regierung sind, um den Aufschwung unserer Wirtschaft, die weitere Verbesserung der Lebenshaltung der Bevölkerung auch für die Zukunft zu gewährleisten.«</p>
-				<p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>, der wegen eines unaufschiebbaren Termins nicht länger anwesend sein kann, warnt davor, die oben genannten Zahlen in größerem Umfange publik werden zu lassen. Es komme immer darauf an, von welchem Ausgangspunkt man ausgehe, und man müsse bedenken, daß noch vor drei Jahren die deutschen Reallöhne an der untersten Stufe in ganz Europa lagen; sonst entstehe ein falsches Bild. Es sei notwendig, diese Probleme völlig aufzuklären, um zu vernünftigen Entschlüssen kommen zu können.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schlägt vor, das Referat des Arbeitsministeriums für eine spätere Sitzung zurückzustellen. Die Fraktion ist einverstanden.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN016" type="comment"><p>Siehe Nr. 188, 10.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> regt eine sofortige Diskussion des Referats des Sts. Dr. <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> an, da sonst die von diesem genannten Zahlen unwidersprochen bleiben könnten.</p>
-				<p>Sts. Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> betont, daß die von ihm mitgeteilten Zahlen eindeutig richtig seien. Sie stammten nicht aus deutschen Berechnungen, sondern aus dem Büro der UNO. Natürlich handele es sich nicht um absolute Ziffern, sondern um die Darstellung einer Entwicklung. Man solle doch die Erfolge der deutschen Wirtschaftspolitik nicht dadurch verkleinern, daß man darauf hinweise, daß es anderen Nationen besser gehe.</p>
-				<p><name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> regt an, diesen Zahlen die entsprechenden Zahlen aus 1938 gegenüberzustellen. Diese Ergänzung sei notwendig.</p>
-				<p><name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> erläutert an einem Beispiel aus seinem Wahlkreis, daß dort in der Bekleidungsindustrie die Löhne seit 1948 von 58 Pfg. stündlich für Männer auf etwa 116 Pfg. gestiegen seien. Niemand werde wohl sagen, daß diese 100 %-ige Steigerung zu übertriebenen Löhne geführt habe. Dieses Beispiel beweise, wie notwendig es sei, alle Zahlen in die richtige Relation zu bringen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> legt dar, daß sich die gesamte Lohn-Preis-Situation vom Ernährungsindex und vom Einkommen der Bevölkerung aus gesehen so darstelle, daß die reine Lohnkurve nach oben über die Lebenshaltungskosten-Kurve hinüber gehe. Diese Feststellung sei wohl unbestritten. Soweit die Kurve der Nahrungsmittelpreise in Betracht käme, lasse sie sich voll belegen. Im Juli sei nun das Landwirtschaftsgesetz verabschiedet und ein einstimmiger Beschluß gefaßt worden, nachdem das Landwirtschaftsministerium eine Aufstellung der Maßnahmen vorlegen solle, durch die die Lage der Landwirtschaft gebessert werden könne.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN017" type="comment"><p>Vgl. die 96. Sitz. des Bundestages am 8. 7. 1955 und den Entschließungsantrag der DP, Umdruck 470 v. 8. 7. 1955. Sten. Ber., S. 5433 und 5456.</p></note></seg> Dazu seien Vorschläge z. Zt. in der Beratung mit den anderen Ressorts. Sobald diese abgeschlossen seien, könne er darüber berichten.</p>
-				<p>Über die Frage der Milchpreiserhöhung sei schon im April mit den Ländern beraten worden. Der Milchpreis sei hinter allen übrigen landwirtschaftlichen Produkten zurückgeblieben. Dies mache eine Maßnahme erforderlich. Seit 1949 habe sich der Milchpreis nur um 4 Pfg. erhöht; aber man könne nicht länger an der Sache vorübergehen, nur weil sie unpopulär sei. Er wolle anerkennen, daß sich Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> die größte Mühe gegeben hätte, die Produktionskosten der Landwirtschaft von seiner Seite her günstiger zu gestalten; für die Preisermäßigung für landwirtschaftliche Produktionsmittel sei aber bisher nichts herausgekommen.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN018" type="comment"><p>Der Parlamentarische Bericht des BPA v. 14. 9. 1955 (BA, B 145/1905) kommentiert die Ausführungen <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübkes</name>: »Hierin war eine nicht überhörbare Kritik an dem Bundeswirtschaftsminister enthalten.«</p></note></seg></p>
-				<p>Nur in der Schlepperindustrie habe man darauf verzichtet, eine im November 1954 beabsichtigte Preiserhöhung durchzuführen. Es sei aber in der Landwirtschaft zu Lohnerhöhungen gekommen und solche seien auch weiterhin notwendig. Da die landwirtschaftliche Lohn-Situation zu etwa 40 % des Preises auf den Milchpreis einwirke, so bedeute das seit 1951 für den Liter Milch eine Erhöhung von 23 Pfg. Wenn man dazu die außergewöhnlichen Kosten für die Sanierung der Viehbestände nehme und diese auf 10 Jahre verteilt in Rechnung stelle, ergebe sich eine weitere Erhöhung um 1,4–1,7 Pfg. Diese tatsächlichen Belastungen durch neue Ausgaben seien bisher durch Preiserhöhungen nicht ausgeglichen. Die Absicht gehe dahin, bei der Erhöhung des Trinkmilchpreises diese in erster Linie dem Lieferanten der Trinkmilch zugute kommen zu lassen. Wenn man gleichzeitig eine Qualitätssteigerung dabei im Auge habe, so müsse man dafür bei der Milchpreiserhöhung einen Anreiz schaffen. Es sei beabsichtigt, für Milch erster Qualität 3 Pfg., für zweite Qualität 2 Pfg. und für dritte Qualität 1 Pfg. mehr zu nehmen.</p>
-				<p>Weder die politischen Parteien noch die Landwirtschaft, weder die Verbraucher noch der Handel wünschten ein Verschwinden der Milchmarktordnung. Diese sei 1930 zur Sicherstellung der hygienischen Bedürfnisse eingeführt worden und müsse auch heute aufrecht erhalten werden.</p>
-				<p>Von einer gewissen Lockerung der Bindung des Bauern und des Handels an die Molkerei erhoffe man sich die Beseitigung gewisser aufgetretener Schwierigkeiten. Diese Frage brauche aber jetzt nicht diskutiert werden.</p>
-				<p>Es sei bedauerlich, feststellen zu müssen, daß es jetzt sehr schwer sei, zwischen den beteiligten Gruppen Einverständnis herzustellen, sehr viel schwerer jedenfalls als zu den Zeiten, in denen es uns nicht so gut ging wie heute. Überall werde anerkannt, daß die Landwirtschaft eine Aufbesserung brauche, aber jeder wehre sich dagegen, die dazu notwendige Leistung zu erbringen; diese Aufbesserung solle weder zu Lasten der Verbraucher noch durch Subventionen bewirkt werden. Auch er vertrete allerdings den Standpunkt, daß heute Subventionen nicht angebracht seien; was solle denn geschehen, wenn einmal schlechte Zeiten wären?</p>
-				<p>Seiner Ansicht nach könne die Erhöhung des Milchpreises im Zusammenhang mit einer Senkung der Verbrauchsteuern durchgeführt werden. Dadurch könne man dem Verbraucher eine entsprechende Gegengabe machen, und er habe den Eindruck, daß der Bundesfinanzminister sich dieser Auffassung nicht verschließe. Damit erhalte man gegenüber den Gewerkschaften wie gegenüber der Verbraucherschaft ein politisches Instrument, mit dem man operieren könne. Selbst in der Opposition fände sich ja die Meinung, daß man diese gerechtfertigte Forderung der Landwirtschaft nicht ablehnen könne.</p>
-				<p>Den Gewerkschaften hätte er auseinandergesetzt, daß ja eine Milchpreiserhöhung nicht notwendig wäre, wenn man den Preisindex für landwirtschaftliche Produktionsmittel auf die allgemeine Preisstufe für landwirtschaftliche Produktion herabsetzen könne. Es handele sich hier um ineinander verzahnte Reaktionen. Wenn man in den Fabriken höhere Löhne wolle, müßten auch die Löhne in der Landwirtschaft auf dem Wege über den Preis entsprechend gestaltet werden können. Die Gespräche mit den Gewerkschaften seien in einer guten Tonart verlaufen, was ihn um so mehr freue, weil er auf jeden Fall einen Milchstreik in den Betrieben verhindern wolle, durch den die gesamte Arbeit der letzten Jahre vernichtet werden könnte. Er sähe tatsächlich einen Weg, zusammen mit der Senkung der Verbrauchsteuer hier zum Ziele zu kommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> führt zunächst aus, daß es im politischen Leben immer sehr gefährlich sei, wenn man an alten Schlagworten festhalte, ohne zu überlegen, ob sich die Verhältnisse nicht grundsätzlich geändert hätten. Von 1949 bis 1954/55 habe die Parole gegolten: Möglichst viele Arbeitsstellen schaffen, Wohnungen bauen, kurz Wirtschaft ankurbeln. Es sei zu überprüfen, ob diese Parole noch richtig sei.</p>
-				<p>Aus der Erkenntnis der gegebenen psychologischen Situation habe er in seinem Hause die Anweisung gegeben, wenn bei einem starken Anziehen der Baukosten Wünsche auf Erhöhung der Etatansätze kämen, diese grundsätzlich abzulehnen. Wenn sich zeige, daß die Baukosten stiegen, sei entweder sparsamer zu bauen oder der Bau zu strecken oder völlig zu unterlassen. Mit dieser Maßnahme glaube er bereits einen wirksamen Riegel gegen gewisse Entwicklungen vorgeschoben zu haben.</p>
-				<p>Nun habe die Produktion von Gütern ein solches Maß angenommen, daß die Kapazität bis an 100 % ausgeschöpft sei. Auf dem Arbeitsmarkt begännen sich Zustände zu entwickeln, die geradezu unerträglich seien. Er habe selbst schon beobachten können, wie sich die Betriebe gegenseitig die Kräfte abwerben, eine Erscheinung, die man nur mit großen Bedenken sehen könne. Dazu komme, daß bei vielen Leuten das Geld schon recht locker sitze und daß vielfach nicht mehr geprüft werde, ob der Preis der Ware auch angemessen sei. Dazu komme, daß im Hinblick auf die Gewinne, die in den Bilanzen erschienen, bei breiten Schichten der berechtigte Wunsch aufkäme, an dieser Entwicklung beteiligt zu werden. Leider habe man nicht erreicht, daß in der Zeit der Rationalisierung die Senkung der Produktionskosten auch zu einer Preissenkung geführt habe, der Lebenshaltungsindex sei auf gleicher Höhe geblieben.</p>
-				<p>Überall, auch in anderen Ländern, träten die gleichen Erscheinungen auf, und damit beginne etwas sehr gefährliches, die Anti-Inflations-Politik. Wenn man keine Maßnahme ergreife, könne die schleichende Inflation eintreten. So sei die Situation in England und es sei kennzeichnend, daß der Schatzkanzler die Vorlage eines Nachtragshaushalts für notwendig halte. Das zeige, welche Gefahr er sehe. Er habe diese Maßnahme damit begründet, daß man entweder die Konjunktur konsolidieren müsse, was ein Senken der Gewinne zur Folge habe, oder aber, daß man die überschüssige Kaufkraft durch erhöhte Steuern abschöpfen müsse.</p>
-				<p>Er, <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, ziehe daraus den Schluß, daß jener Gefahrenpunkt erreicht sei, wo das Vertrauen in die Stabilität der Verhältnisse, des Arbeitsmarktes, der allgemeinen Wirtschaft und der Währung zu sinken beginne. In dieser Situation habe sich die BdL sicherlich nicht leichtsinnig zu ihren Maßnahmen entschlossen, die eine Warnung gewesen seien. Zugleich habe dahinter der Wunsch gestanden, es möge die Kreditausweitung nicht mehr weitergehen, sondern abgebremst werden.</p>
-				<p>Durch das Kapitalmarktförderungsgesetz habe die gesamte Wirtschaft die Möglichkeit gehabt, durch Emissionen das eigene Kapital zu stärken. Obwohl Emissionen von 1 100 Mio. DM erfolgt seien, ließe sich aber eine Einschränkung der Kredite nicht nachweisen. Im Gegenteil seien die kurzfristigen Kredite von 1 600 Mio. auf jetzt 2 500 Mio. DM gestiegen. Es sei also keine Konsolidierung erfolgt, sondern neben der Erhöhung des Aktienkapitals sei eine verstärkte Inanspruchnahme des Kreditmarktes erfolgt.</p>
-				<p>Die ausgegebenen Bundesbürgschaften betrügen 4 500 Mio. DM. Davon seien 3 500 Mio. DM langfristig gegeben worden, und insbesondere im Ausland sei man stark engagiert: In Argentinien seien 910 Mio., in der Türkei 800 Mio., in Jugoslawien 300 Mio. und in Griechenland 200 Mio. DM verbürgte Gelder. Jeder wisse, daß die Verhältnisse in einem Teil dieser Länder nicht besonders stabil seien. Wenn es gar zu einer Weltkrise komme, könnten diese Bürgschaften, die ja in Anspruch genommen werden müßten, vielleicht zu einer unmittelbaren Gefahr nicht nur für den Haushalt, sondern für die ganzen Geldverhältnisse werden.</p>
-				<p>Gewiß sei die Wirtschaftspolitik der letzten Jahre richtig gewesen; heute aber sei die Wirtschaft voll beschäftigt, und damit sei das Verhältnis gegenüber früheren Jahren grundsätzlich verändert.</p>
-				<p>In den letzten Wochen habe nun die Presse Artikel über Steuersenkung geschrieben. Es sei gottseidank möglich gewesen, dahin Einfluß zu nehmen, daß man einsähe, daß man die Lohnbewegung nicht einfach abstoppen könne und solle, sondern daß alles in Maßen gehalten werden müsse, allerdings auch die wirtschaftliche Entwicklung. Das bedeute, daß man diese nicht weiter durch öffentliche Mittel vorwärtsbringen dürfe außer in den Gebieten, in denen das unbedingt notwendig sei. Aber auch eine größere Steuersenkung in Zeiten der Hochkonjunktur bedeute Gefahren, weil dadurch die Lage weiter erhitzt und das Geld um seinen Wert gebracht werden könne. Auf Grund dieser Erkenntnisse hätte sich schließlich auch die Presse anders eingestellt.</p>
-				<p>So sei nun die Frage, was denn geschehen könne, um den entstandenen Problemen zu begegnen. Gewisse steuerliche Maßnahmen müsse er vorschlagen. Zum 30. 9. wolle er die Ehegatten-Besteuerungsfrage dem Parlament vorlegen; auch dem Wunsch der Lohn- und Gehaltsempfänger, durch entsprechende Anwendung des Systems der Werbungskosten steuerlich den übrigen gleichgestellt zu werden, werde wohl entsprochen. Der damit eintretende Ausfall bedeute ungefähr 700 Mio. DM.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN019" type="comment"><p>Die Regierung brachte keinen entsprechenden Entwurf ein. Daraufhin stellte die Unionsfraktion den Antrag, diese und andere Änderungen des Einkommensteuergesetzes in Angriff zu nehmen. Drucksache II/1753 v. 11. 10. 1955.</p></note></seg></p>
-				<p>Er erwarte nicht, daß die geschätzte Steuererwartung überstiegen werde, was er aber sicher wisse, sei, daß er größere Ausgaben haben werde. Das BEG, das mit 1 500 Mio. DM kalkuliert sei, werde ungefähr 3 000 Mio. DM kosten.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN020" type="comment"><p>Siehe Nr. 154, Anm. 2.</p></note></seg> Dazu kämen die Kosten der Restitution mit etwa 1 500 Mio. DM und dazu kämen noch all die Erhöhungen, die schon in Vorbereitung seien.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN021" type="comment"><p>Siehe Nr. 127, 2.</p></note></seg></p>
-				<p>Wenn man die Gehaltsforderungen der Beamten, die 20 % Erhöhung verlangten, und die der Angestellten zusammenrechne, werde das jährlich eine weitere Belastung von 1 000 Mio. DM bringen. Damit entstehe die Gefahr, daß der Haushalt nicht in dem Maße gehalten werden könne, wie das vom währungspolitischen Standpunkt aus erforderlich sei.</p>
-				<p>Zu all dem käme als weiterer großer Druck die vor uns stehende Aufrüstung. Wenn in der Wirtschaft der Eindruck entstehen sollte, daß allein auf dem Baumarkt im nächsten Jahr weitere 5 000 Mio. DM ausgegeben werden müßten, könne man dort eine explosionsartige Entwicklung der Preise nach oben erwarten und dies bei einem Arbeitsmarkt ohne Arbeitskräfte, bei aller Ausschöpfung der Kapazität, so daß nur die Wahl möglich sei, die Rüstung unter Einschränkung der übrigen Positionen zu schaffen. Er wüßte heute nicht, wie er an diese Aufgaben herangehen solle, wenn er nicht bisher eine gewisse Thesaurierungspolitik getrieben hätte. Auch die BdL hätte ausgesprochen, daß diese Gelder ein gewisses Gegengewicht gegenüber der Aufblähung der Kredite bilden.</p>
-				<p>Wenn auch klar sei, daß der Finanzminister in einer solchen Situation keine Konjunkturpolitik zu machen habe, so wisse man doch, daß seine Handlungen konjunkturgestaltende Wirkung hätten. Aus diesen Überlegungen sei mit der Industrie über die steuerliche Behandlung von Abschreibungen gesprochen worden. Haushaltswirtschaftlich gebe es in dieser Frage wenige Widerstände, weil ja die Abschreibung nur eine Verschiebung der Fälligkeit der Steuern bedeutete. Wenn man aber Abschreibungen heute begünstige und damit einen Anreiz zu Investitionen gäbe, könne man schon konjunkturpolitische Schäden erzielen.</p>
-				<p>Die bevorstehende Besoldungsreform solle den jetzt erreichten Standpunkt legalisieren und festlegen. Der Beamte hätte wohl ein Recht, bei diesen Verhandlungen gehört zu werden. Die Regelung der Beamtenverhältnisse aber sei Sache des Gesetzgebers. Gleichzeitig werde man die Konsequenzen für Arbeiter und Angestellte mit ziehen. Etwaige Versuche, zu einer Arbeitszeitverkürzung im Öffentlichen Dienst zu kommen, kämen nicht in Frage. Der Beamte habe keine Arbeitszeit, sondern eine Dienstzeit, folglich könne man über dieses Thema nicht verhandeln.</p>
-				<p>Mit den Gewerkschaften geführte Verhandlungen seien recht vernünftig verlaufen. Er selbst habe zum Ausdruck gebracht, daß er keinen tariflosen Zustand wünsche. Was die Frage der Preissenkung anbelange, so habe er gesagt, daß sie wohl erreicht werden könne, wenn sie Teil eines Gesamtprogramms sei. Auch über Zollsenkungen könne man sprechen, wenn konkret gesagt werde, um welche Zölle es sich handele und in welchem Umfange gesenkt werden solle. Auch über eine Senkung der Verbrauchsteuern wolle er mit sich reden lassen unter der Voraussetzung, daß es Teil eines Gesamtprogramms sei. Eine Verbrauchsteuersenkung allein werde zu keinem Ziel führen. Auch dürfe eine Verbrauchsteuersenkung nicht den Zwischenstufen zugute kommen, sondern ganz allein dem Verbraucher. Dabei sei allerdings die Auswahl an Möglichkeiten nicht groß. Die größte Chance läge beim Zucker, während Zündhölzer und Salz nicht viel bringen werden.</p>
-				<p>Es gelte jetzt, Umdenken zu lernen, für kommende Zeiten vorzusorgen, die Subventionspolitik zu überprüfen und auf ein vernünftiges Maß zu bringen, die öffentlichen Ausgaben einzuschränken, das Rüstungsproblem auch nach der wirtschaftlichen Seite zu überlegen und zu verhindern, daß es zu einem schädlichen Konjunkturanreiz käme. An dem Tage, an dem die Rüstung zu laufen beginne, müsse man dafür sorgen, daß nicht gesagt werden könne, daß das Blut deutscher Soldaten umgemünzt werde in den Gewinn einzelner. Er denke an eine Übergewinnsteuer, durch die die Rüstungsgewinne in einem vernünftigen Maße gehalten werden könnten. Auch müsse eine Stabilisierung des Arbeitsmarktes betrieben werden, indem man die Investitionen so gestalte, daß aus ihnen für Zeiten sinkender Konjunktur Reserven zur Verfügung ständen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt die vom Bundesfinanzminister gemachten Versprechungen, die aber nicht so aufgefaßt werden dürften, daß er damit einer allgemeinen Steuerreform das Wort gesprochen habe. Dann eröffnet er die Aussprache.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> warnt zunächst vor jeder Überspitzung der Diskussion dieser Probleme. Man könne keine Psychose brauchen, weder in der Forderung übertriebener Preise noch in den Forderungen nach Einkommenserhöhungen. Es sei selbstverständlich, daß die Arbeitnehmerschaft bemüht sei, ihren Anteil am Sozialprodukt zu erhöhen. Bei rückläufiger Konjunktur sei die Aussicht auf Lohnerhöhung immer schlechter, bei steigender besser und so seien die jetzt angemeldeten Forderungen eigentlich selbstverständlich. Erfreulich sei, daß das jetzige Gespräch um Lohnerhöhung offensichtlich in einer besseren Atmosphäre als in früheren Jahren stattfinde. Man solle nicht vergessen, zu welchen Streiks es in den vergangenen Jahren gekommen sei.</p>
-				<p>Die Preisentwicklung gebe keine Veranlassung, in eine Panik oder in eine Katastrophenstimmung hineinzusteuern. Immerhin sei der Lebenshaltungskostenstand niedriger als etwa der Höchststand von 1951. Aber man müsse auch die allgemeine Preisbewegung näher betrachten, wenn man zu richtigen Schlußfolgerungen kommen wolle.</p>
-				<p>Wenn vom Bundesfinanzminister gesagt worden sei, daß es an Preissenkungen in der Industrie nichts Nennenswertes gegeben hätte und das Preisniveau stabil geblieben sei, so müsse man fragen, woher diese Erscheinung käme. An einzelnen Stellen seien ganz erhebliche Preiserhöhungen eingetreten, bei den Weltmarktpreisen, bei den Rohstoffpreisen, und diese Preiserhöhungen hätten von der Kostenpolitik aufgefangen werden müssen; beispielsweise sei der Rohkautschuk um 62 % teurer geworden. Die Preise für Fahrzeugreifen hätten sich aber nur um etwa 6 % erhöht. Ein düsteres Kapitel sei der Preis für Holz; aber auch hier sei bei einem Ansteigen des Schnittholzpreises um 23 % der Preis für Möbel z. B. nur um 2,7 % gestiegen. An diesen Beispielen zeige sich, daß in der Marktwirtschaft auch erhebliche Preiserhöhungen aufgefangen werden könnten. Wo übrigens namhafte Preiserhöhungen festzustellen seien, da handele es sich um Gebiete, die nicht im Bereich der freien Marktwirtschaft lägen (Posttarife, Kohlen- und Eisenpreise). Bei den Grundstoffen ergebe sich eine Erhöhung um 6,3 %, bei der Investitionsgüterindustrie um 2,5 %, bei der Konsumgüterindustrie zeige sich eine Stabilität ohne Steigerung.</p>
-				<p>Sehr bedenklich seien die Vorgänge in der Forstwirtschaft. Die Baustoffe wären um 12,5 % teurer geworden, die Bauhölzer um 31 %, Mauersteine dagegen nur um 7,4 %, Baukosten um 1,7 %, während Zement um 1 % zurückgegangen sei. Aber alle diese günstigen Momente hätten für den Gesamtindex die Zunahme der Holzpreise nicht korrigieren können. An dieser Entwicklung sei allerdings der Fiskus maßgeblich beteiligt, und er wolle hier den dringenden Wunsch äußern, daß Bund und Länder Verständnis für die konjunkturpolitischen Notwendigkeiten aufbrächten.</p>
-				<p>Nach Besprechung dieser Probleme im Arbeitskreis II wolle er folgende Vorschläge unterbreiten:</p>
-				<p>In der Vergabe öffentlicher Aufträge solle entsprechende Zurückhaltung geübt werden.</p>
-				<p>Die Kassenüberschüsse der öffentlichen Kassen sollten im Zentralbanksystem angelegt und damit währungspolitisch stabil gemacht werden. Im Gegensatz zu dieser Forderung aber finde man diese Gelder in Wirtschaftsbanken und Sparkassen, wo sie einer Erhöhung des Kreditvolumens dienbar seien.</p>
-				<p>Die vorgeschlagene Begünstigung gewisser Konsumgüter, das heißt die im Sommer vorgeschlagene Vergünstigung der Anschaffung von Familienhaushaltsgeräten, bedeute in der jetzigen Situation eine Konjunkturspitze, die bei der gegebenen Konjunktur widersinnig erscheine. Wenn auch dieses familienpolitische Anliegen nicht verkannt werde, so müsse man es doch in der Verflechtung mit dem konjunkturellen Ablauf sehen.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN022" type="comment"><p>Der Parlamentarische Bericht (siehe Anm. 18) kommentiert an dieser Stelle die Ausführungen <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwigs</name>: »Hiermit stieß er allerdings auf den Widerspruch der Fraktionsmehrheit.«</p></note></seg></p>
-				<p>Auf steuerlichem Gebiet solle man daran gehen, die bei der letzten Steuerreform übriggebliebenen Härten zu beseitigen; etwa in den Fällen, wo entgegen der ursprünglichen Absicht einer Steuersenkung eine effektive Steuererhöhung eingetreten sei.</p>
-				<p>Sich den laufenden Lohnverhandlungen zuwendend, legt Dr. Hellwig dar, daß bei dem herrschenden Grundsatz der Tarifautonomie der Tarifpartner die Einwirkungsmöglichkeiten des Staates gering seien. Eine zwangsweise Fortsetzung von Löhnen und Arbeitsbedingungen etwa könne nicht empfohlen werden. Dies setze aber voraus, daß die Sozialpartner soviel Selbstdisziplin und Verantwortung fühlten, daß sie nicht etwa ihren Frieden auf Kosten der Allgemeinheit machten. Die Versuchung sei groß, daß Arbeitgeber Löhne konzedieren, die zu weit gingen, weil man sie über den Preis abwälzen könne. Mit solchen Dingen lege man aber die Axt an den Stamm der Tarifhoheit der Sozialpartner.</p>
-				<p>Je stürmischer die wirtschaftliche Expansion sei, um so weniger Neigung bestehe natürlich für längerfristige Tarifabmachungen. So gehe es jetzt darum, Abmachungen mit Anpassungsklauseln zu entwickeln, und die Besprechungen darüber ließen erkennen, daß man auf beiden Seiten ernsthaft erwäge, ob man nicht zu einer elastischen, längerfristigen Tarifregelung kommen könne.</p>
-				<p>Zusammenfassend wolle er sagen, daß er keine Veranlassungen sehe, die augenblicklichen Vorgänge zu dramatisieren, wenn die Grenzen volkswirtschaftlicher und sozialer Verantwortung eingehalten würden. Entscheidend sei dabei, inwieweit die öffentliche Hand selbst sich dieser Verantwortung für die konjunkturpolitische Situation bewußt bleibe und noch stärker bewußt werde, als das bisher der Fall gewesen sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> wendet sich der Betrachtung des Arbeitsmarktes zu. Auch hier solle keine Panikstimmung geschaffen werden. Ende August hätte es 512 000 Arbeitslose in der Bundesrepublik, 117 000 in Berlin gegeben. Diese Zahl sei um 300 000 niedriger als die vergleichbare des Vorjahres. Die Zahl der arbeitslosen Frauen sei dabei größer als die der Männer. An offenen Arbeitsplätzen seien für Männer 153 000, für Frauen 90 000 vorhanden. Davon entfielen auf das Baugewerbe 45 000, auf Metall 23 000, auf Landwirtschaft 21 000 und auf Bergbau 12 000; das Gros komme also auf die Schwerarbeiterberufe. Bei den Arbeitslosen finde sich eine große Zahl nicht voll einsatzfähiger Personen. Bei den Frauen seien in der Hauswirtschaft 29 000, bei Textil 9 000, bei der Landwirtschaft 8 000 und bei Ernährung 7 000 Stellen offen. Hier seien die Schwierigkeiten noch größer als bei den Männern. Mehr als die Hälfte der arbeitslosen Frauen sei verheiratet.</p>
-				<p>Weiter werde die Einsatzfähigkeit der Arbeitslosen behindert durch die vorhandenen strukturellen Schwierigkeiten. Bei den Heimatvertriebenen sei zu beobachten, daß die Schwierigkeiten der Umsiedlung immer mehr zunähmen, weil sich an den Wohnorten vielfache Bindungen gebildet hätten. Regional seien die Arbeitslosen wie folgt verteilt: Berlin 117 000, Bayern 117 000, Niedersachen 98 000, Nordrhein-Westfalen 79 000, Hamburg 48 000, Hessen 42 000 und Baden-Württemberg 25 000.</p>
-				<p>Die größten Möglichkeiten zur Beschaffung der notwendigen Arbeitskräfte lägen in der Eingliederung von Personen in den Arbeitsprozeß, die bis jetzt nicht an ihm beteiligt gewesen seien; das führe allerdings zu einer weiteren Ausdehnung der Frauenarbeit. Eine gewisse Besserung der Lage könne auch erzielt werden, wenn man bescheidenere Ansprüche an die Arbeitskräfte stelle und wenn es zu einer größeren Bereitwilligkeit käme, auch ältere Arbeitskräfte zu beschäftigen. Dem Problem der Umschulung und auch der weiteren Umsiedlung müsse man Aufmerksamkeit zuwenden.</p>
-				<p>Die Heranziehung ausländischer Arbeitskräfte sei nicht so ganz einfach. Auch Italien habe keinen Überfluß an Fachkräften. Was man dort bekommen könne, seien Hilfskräfte und auch bei diesen habe man keine Garantie, daß sie dann dort blieben, wo man sie haben wolle. Auch sie würden sich einen anderen Arbeitsplatz suchen, wenn er vorteilhafter sei. Außerdem würden bestimmte Arbeitsplätze selbst für ausländische Arbeitskräfte nicht reizvoll genug sein. Die erwähnte Abwerbung von Arbeitskräften komme wohl örtlich vor, könne aber nicht generell festgestellt werden.</p>
-				<p>Da es für die Verwaltung keine Einwirkungsmöglichkeit auf diese Dinge gebe, müsse man an die Disziplin der Beteiligten appellieren. Wo das nicht helfe, müsse man wohl auch gegen den Arbeitsvertragsbruch sich zur Wehr setzen. Warnen wolle er vor jeder Einengung der Freizügigkeit. Eine gewisse vernünftige Fluktuation der Arbeitskräfte sei wertvoll, erfahrungsgemäß steige die Leistungsfähigkeit, wenn jemand mehr gesehen habe als nur einen Betrieb.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> vermißt eine soziologische Beleuchtung der besprochenen Probleme. Die heutige Situation stelle eine Gefahr für unsere gesamte Stabilität dar. Dabei seien die Reserven noch nicht ausgeschöpft, die in den mittleren und kleineren Betrieben vorhanden seien, die noch nicht soweit rationalisiert seien wie die Industrie, da sie nur wenig Möglichkeit hätten, steuerliche Vergünstigungen auszunutzen und günstige Kredite zu bekommen. Dadurch seien diese Betriebe zurückgefallen und könnten die üblich gewordenen Löhne nicht mehr bezahlen. Wenn man die hier vorhandenen Reserven ausnützen wolle, müsse man an die Rationalisierung dieser Betriebe herangehen. Dazu bedürfe es eines großzügigen Programms. Bei dessen Gestaltung solle man nicht übersehen, daß Mittelstand und Landwirtschaft etwa 60 % unserer Volkswirtschaft ausmachten.</p>
-				<p>Weiter wolle er sich für eine planmäßige Lenkung der öffentlichen Aufträge aussprechen. Hier müsse das kleine Gewerbe ebenso mit berücksichtigt werden wie die Industrie.</p>
-				<p>Für die bewußte Streuung neuer Industrien in schwach entwickelten Gebieten sei zu wenig geschehen. Auch hier ergäben sich noch Möglichkeiten.</p>
-				<p>Der Antrag auf Steuervergünstigung für Anschaffung von Haushaltsgeräten sei im Hinblick auf die mithelfenden Frauen eingebracht worden, auf die man mehr Rücksicht nehmen müsse, als das bisher der Fall gewesen sei. Überhaupt solle man der Wettbewerbsneutralität der Steuer mehr Aufmerksamkeit zuwenden; man habe sie zwar versprochen, aber noch zu wenig getan.</p>
-				<p>Wenn man nicht die soziologische Seite dieser Fragen beachte, werde sich die deutsche Wirtschaft zu Tode siegen. Man müsse dafür sorgen, daß die Struktur unseres Volkes gesund erhalten bleibe.</p>
-				<p><name type="Person" role="Sprecher" ref="#NaegelWilhelm_1949-09-07">Naegel</name> wendet sich ebenfalls gegen jede Dramatisierung der Vorgänge, bezeichnet aber weitere Investitionen für die Rationalisierung als dringend notwendig, wogegen eine weitere Expansion nicht durchgeführt werden solle. Auch wäre zu überlegen, ob nicht eine Konzentration der Kreditmittel im Haushalt möglich sei. Jetzt stelle die öffentliche Hand aus etwa 400 verschiedenen Quellen Kredite zur Verfügung. Auch sei auf diesem Gebiete unter den Ländern ein Wettbewerb entstanden, der sich teilweise ungünstig auswirke.</p>
-				<p>Er empfehle, das Thema Zölle ernsthaft zu behandeln. Das verspreche einige Erfolge. Entschieden wende er sich gegen eine Wiedereinführung des Preistreibereiparagraphen; es liege ja nicht am Handwerk und nicht am Einzelhandel, wenn sich diese Preisentwicklung bemerkbar mache. Deren Gründe lägen tiefer.</p>
-				<p>Dr. Karl <name type="Person" role="Sprecher" ref="#MuellerKarl_1949-09-07">Müller</name> bezieht sich auf die von Sts. Dr. <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> erwähnten Jedermann-Einfuhren; er befürchte von diesen Schwierigkeiten für die einheimische Wirtschaft, besonders für den Mittelstand. Gewisse Möglichkeiten, zu einer Befriedung zu kommen, sehe er auch in der Frage der 40-Stunden-Woche. Voll unterstütze er die Forderung <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmückers</name> nach Rationalisierung der mittleren und kleineren Betriebe. Er halte es auch für nötig, Abzahlungsgeschäfte zu überprüfen, ob dort nicht durch die Forderung einer Mindesthöhe der Anzahlung und der Raten ein gewisser Stop erzielt werden könne.</p>
-				<p>Zu dem von <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> zitierten notwendigen Gesamtplan schlage er vor, daß die Vorsitzenden der drei beteiligten Arbeitskreise beauftragt würden, eine kleine Studienkommission zu bilden, die diese Probleme prüfen, ihre politische und praktische Verwirklichung vorbereiten und dann der Fraktion über ihre Vorschläge berichten solle.</p>
-				<p><name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> erklärt sich im wesentlichen mit <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> einig. Natürlich trete in Zeiten der Hochkonjunktur die Forderung nach Steuersenkung auf. Dabei könne man aber in eine Währungsgefährdung geraten. Deshalb müsse man sich überlegen, wie weit eine Steuersenkung möglich sei. Eine solche sei sicher keine Bremse für die Konjunktur. Auch er sei für Beseitigung übriggebliebener Härten in der Steuergesetzgebung, gehe aber nicht soweit wie Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>. Eine Wiederaufnahme der Freibeträge für Flüchtlinge, eine Wiederherstellung der Ehegattenbesteuerung in der alten Form halte er nicht für angebracht. Er sei dafür, die mithelfende Ehefrau nicht anders zu stellen als unselbständig Arbeitende. Auch das Petitum der Werbungskosten für die Arbeitnehmer in unselbständiger Arbeit unterstütze er. Eine Erweiterung der Abschreibung auch für den Mittelstand werde zu einer Vermehrung der Aufträge bei der Investitionsgüterindustrie führen. Hier sei ein Dilemma, weil der an sich notwendigen Beschränkung der Abschreibungsmöglichkeiten das Bedürfnis nach Rationalisierung gegenüberstehe. Richtig sei, dem Mittelstand in der Kreditpolitik besser entgegenzukommen. Ihm aber eine gesonderte Abschreibungsmöglichkeit zu geben, gehe nicht an. Die angeschnittene Frage der Auftragssteuerung biete Hilfsmöglichkeiten für den Mittelstand, bei dem auch noch echte Wettbewerbsreserven vorhanden seien. Wenn der Wettbewerb als System heute etwas aus den Fugen geraten sei, könne man dem nur dadurch abhelfen, daß man echte vorhandene Reserven mobilisiere. Tue man das aber betont über die Rationalisierung, so entstehe wiederum das Dilemma, daß damit ein Konjunkturauftrieb verbunden sei.</p>
-				<p>Auch er billige den Vorschlag Dr. <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müllers</name>, eine Kommission zur Prüfung des Gesamtkomplexes zu bilden. Nur in einer einheitlichen, in sich abgeschlossenen Regelung könne ein brauchbares Mittel gefunden werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dankt allen Rednern für ihre Beiträge und stellt das Einverständnis der Fraktion mit der Bildung des vorgeschlagenen Ausschusses fest.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN023" type="comment"><p>Aus diesen Überlegungen entstand die sog. »Kuchenkommission«. Fortgang siehe Nr. 191, 2.</p></note></seg></p>
-				<p>6. [Bundestagssitzung in Berlin]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß der Ältestenrat vorschlägt, die Arbeitssitzung in Berlin in der Zeit vom 17. bis 20. 10. 1955 abzuhalten.<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN024" type="comment"><p>Siehe Nr. 184, Anm. 17 und vgl. das Kurzprotokoll der 77. Sitz. des Ältestenrates am 13. 9. 1955, 12.00 Uhr (Parl. Arch., Ältestenrat, 2. Wp.).</p></note></seg></p>
-				<p>7. [Gesetzgebungsprogramm für die 2. Wahlperiode]</p>
-				<p>Weiterhin bittet er die Arbeitskreisvorsitzenden, in den Arbeitskreisen zu prüfen, welche Gesetze in den nächsten zwei Jahren unbedingt noch erforderlich seien.</p>
-				<p>Er schließt die Sitzung mit dem Hinweis, daß demnächst eine Fraktionssitzung über das Thema Sozialreform stattfinden solle<seg type="note"><note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN025" type="comment"><p>Siehe Nr. 188, 10.</p></note></seg>, um 19.00 Uhr.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1955-09-13-t1515_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1007/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. September 1955</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>19 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1955-09-13">
+               <time type="start" when="15:15:00"/>
+               <time type="end" when="19:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1955-09-13-t1515_EP_SVP-1" corresp="#cdu-csu-02_1955-09-13-t1515_EP_div_SVP-1">A. Internes aus der Fraktion. – TOP 1: Moskaureise. – TOP 2: Saarfrage. – TOP 3: Sozialversicherungs-Anpassungsgesetz. – TOP 4: Arbeitsweise des Bundestages. – TOP 5: Wirtschaftspolitische Lage. – TOP 6: Bundestagssitzung in Berlin. – TOP 7: Gesetzgebungsprogramm für die 2. Wahlperiode.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1955-09-13-t1515_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt die Fraktion zur ersten Sitzung der zweiten Halbzeit des Bundestages. Er gedenkt des verstorbenen Fraktionskollegen <name type="Person" role="Erwaehnung" ref="#SchulerFritz_1949-09-07">Schuler</name> und des in Kiel verstorbenen Ministers Dr. <name type="Person" role="Erwaehnung" ref="#PagelPaul">Pagel</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN001" type="comment">
+                     <p>Siehe Nr. 184, 1.</p>
+                  </note>
+               </seg> mit kurzem Nachruf und erinnert an die 41 Toten der Zeche Dahlbusch.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN002" type="comment">
+                     <p>Laut Bekanntgabe des Bundestagspräsidenten waren am 3. 8. 1955 bei einem Unglück auf der Zeche Dahlbusch 42 Bergleute umgekommen. Vgl. Sten. Ber., 101. Sitz. am 22. 9. 1955, S. 5619.</p>
+                  </note>
+               </seg> Die Fraktion ehrt die Toten in stillem Gedenken. Sodann begrüßt Dr. Krone den als Nachfolger für <name type="Person" role="Erwaehnung" ref="#SchulerFritz_1949-09-07">Schuler</name> eingetretenen <name type="Person" role="Erwaehnung" ref="#LeibingChristian_1955-08-08">Leibing</name>.</p>
+            <p>1. Moskaureise</p>
+            <p>Zur Moskaureise berichtet Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, daß natürlich noch kein Urteil möglich sei. Aus der eingetretenen Flaute könne nicht ohne weiteres geschlossen werden, daß die Konferenz ohne Erfolg ausgehen werde. Diese Konferenz sei wohl am sorgfältigsten von allen Konferenzen vorbereitet worden und habe den Kanzler während seines ganzen Urlaubs beschäftigt. Er, Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, habe in Mürren den Standpunkt der Fraktion vorgebracht<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN003" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> war nicht zum Kanzler in die Schweiz gereist, der dort intensive politische Gespräche geführt hatte, und hatte sich lediglich am 8. 8. 1955 mit <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Otto <name type="Person" role="Erwaehnung" ref="#LenzOtto_1953-10-06">Lenz</name>, <name type="Person" role="Erwaehnung" ref="#TillmannsRobert_1949-09-07">Tillmanns</name> und <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> zu diesem Thema ausgetauscht. Vgl. die Besucherliste Adenauers (StBKAH, 04.06) und Krone, Tagebücher 1945–1961, S. 186.</p>
+                  </note>
+               </seg>, nach der Rückkehr des Kanzlers aus der Schweiz habe dann ein Gespräch mit den Fraktionsvorsitzenden stattgefunden<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN004" type="comment">
+                     <p>Siehe Nr. 183.</p>
+                  </note>
+               </seg>, wobei herausgestellt worden sei, daß die Wiederherstellung normaler Beziehungen, aber auch der deutsche Wunsch nach der Wiedervereinigung und nach der Lösung der Kriegsgefangenenfrage Verhandlungsthema sein sollen. Diese Erweiterung der Themenstellung sei von Moskau angenommen und von sämtlichen Fraktionen gebilligt worden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN005" type="comment">
+                     <p>In ihrer Note v. 12. 8. 1955 an die Sowjetunion hatte die Bundesregierung einige weitere Themen, darunter die Frage der Kriegsgefangenen, zur Behandlung in Moskau vorgeschlagen. In ihrer Antwort v. 19. d. M. hatte die Sowjetregierung pauschal zugestimmt, alle angeschnitten Fragen zu verhandeln. Vgl. DzD, Bd. III/1, S. 262–264 und 277f.</p>
+                  </note>
+               </seg> Man sei sich auch einig darüber gewesen, daß eine Anerkennung der Regierung in Pankow nicht in Frage komme und daß deshalb die Herbeiführung echter diplomatischer Beziehungen unmöglich sei, wenn sie an diese Voraussetzungen geknüpft werde. Auch dürften die Verhandlungen nicht dazu führen, daß die Sowjets bei der folgenden Genfer Konferenz sagen könnten, die Frage der Wiedervereinigung und der Sicherheit sei bereits in Moskau behandelt worden. Man dürfe die vier Siegermächte nicht aus ihrer Verpflichtung zur Regelung dieser Fragen entlassen.</p>
+            <p>Die Kriegsgefangenenfrage sei uns ein echtes menschliches Problem und dürfe also nicht als politisches Handelsobjekt betrachtet werden.</p>
+            <p>Der Gesamtton dieser Verhandlungen der Fraktionsvorsitzenden sei erfreulich gewesen, wenn auch die Opposition nachher gesagt habe, daß man nicht in allen Punkten einig gewesen sei. Außer von Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> sei von keiner Seite verlangt worden, daß weitere Parlamentarier mit nach Moskau gehen sollten. Diese Regelung sei wohl richtig, ebenso wie es zweckmäßig erscheine, daß Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> sich nicht an der Reise beteiligt; schließlich gehe es um echte politische Fragen, denen gegenüber andere Dinge zweiten Ranges seien.</p>
+            <p>2. Saarfrage</p>
+            <p>Zur Saarfrage betont Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, daß die Fraktion in dieser Frage keine Stellung genommen habe. Dahingehende Pressemeldungen seien unrichtig. Dagegen seien Verlautbarungen der Bundespartei und eine Erklärung des Bundeskanzlers ergangen, über die die Meinungen auseinandergingen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN006" type="comment">
+                     <p>Siehe Nr. 184, 2.</p>
+                  </note>
+               </seg> Eine Erörterung hier in der Fraktion erscheine allerdings nicht richtig. Der Kanzler habe es wohl für seine Pflicht gehalten, sich zu äußern, weil er bei der Abstimmung von beiden Parteien in Anspruch genommen werde. Außerdem hätte er klarstellen wollen, worum es bei dieser Wahl gehe. Diese Äußerung habe gesamtpolitische Gründe auch im Zusammenhang mit der Moskaureise gehabt.</p>
+            <p>Er nehme nicht an, daß diese Frage Gegenstand der Diskussion im Bundestag werde. Es läßt sich aber noch nicht überblicken, ob das Thema nicht im Zusammenhang mit der Erörterung der Moskaureise auftauchen werde.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN007" type="comment">
+                     <p>Der Punkt wurde nicht angesprochen.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3. Sozialversicherungs-Anpassungsgesetz [SPD-Entwurf, Drucksache II/1247 v. 9. 3. 1955, und CDU/CSU-, FDP-, DP-Entwurf, Drucksache II/1418 v. 25. 5. 1955]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchuettlerJosef_1949-09-07">Schüttler</name> berichtet über die nach der Verabschiedung des Sozialversicherungs-Anpassungsgesetzes entstandenen Schwierigkeiten, da der Finanzminister das Gesetz bis jetzt zurückgehalten habe. Heute morgen habe nun das Wirtschaftskabinett beschlossen, es wie bisher beim 1. Kind bei der Witwenrentenregelung zu belassen und der Finanzminister habe der Regelung zugestimmt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN008" type="comment">
+                     <p>Der Bundestag hatte das Gesetz in seiner 95. Sitz. am 7. 7. 1955 verabschiedet (vgl. Sten. Ber., S. 5389–5391). Zur Sitz. des Wirtschaftskabinett vgl. das Protokoll seiner 36. Sitz. am 13. 9. 1955 (Wirtschaftskabinett, S. 384f.).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> ergänzt diese Ausführungen durch die Bemerkung, daß es notwendig sei, diese erforderliche Novelle möglichst rasch durchzubringen und gleichzeitig eine Regelung auch für das Knappschaftsversicherungs-Anpassungsgesetz zu treffen, da dieser Punkt von allen Beteiligten bisher übersehen worden sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt die Zustimmung der Fraktion zu dieser Regelung fest.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN009" type="comment">
+                     <p>Das Sozialversicherungs-Anpassungsgesetz datierte nach Überwindung der genannten Schwierigkeiten v. 3. 10. 1955 (vgl. BGBl. I/1955, S. 653). Am 6. 10. 1955 brachten die Koalitionsfraktionen den Gesetzentwurf über die Änderung des Dritten Gesetzes zur Änderung des Sozialversicherungs-Anpassungsgesetzes ein, der die Änderung des Knappschaftsversicherungs-Anpassungsgesetzes beinhaltete (Drucksache II/1742).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. Arbeitsweise des Bundestages</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet sodann über die Vorschläge des Fraktionsvorstandes zur Arbeitsweise des Bundestages.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN010" type="comment">
+                     <p>Siehe Nr. 184, 7.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>a) Die 1. Lesung von Gesetzentwürfen soll nach Möglichkeit unterbleiben, so daß die Grundsatzerörterungen mit der 2. Lesung verbunden werden.</p>
+            <p>Es soll die Redezeitbeschränkung wieder eingeführt werden.</p>
+            <p>b) Der 3-Wochen-Turnus mit einem einheitlichen Typus der Arbeitswochen soll wiederhergestellt werden.</p>
+            <p>c) Die Rundfrage über die Einführung des 3- oder 4-Wochen-Turnus solle fortgesetzt werden; bis jetzt hätten sich über 50 % für den 3-Wochen-Turnus entschieden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name> weist auf die immer mehr um sich greifende gesetzliche Regelung auch der alltäglichsten Lebensvorgänge hin. Er beantrage, eine fraktionsinterne Kommission zu bilden, die einen Antrag zur Schaffung eines vorübergehenden Ausschusses ausarbeiten solle, dessen Aufgabe es sei, die Grenzen staatlicher, gesetzgeberischer Regelung zu finden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> anerkennt das Anliegen, bittet aber, diesen Antrag zurückzustellen, bis der Antrag Dr. <name type="Person" role="Erwaehnung" ref="#BergmeyerBernhardGerhard_1953-10-06">Bergmeyer</name> [Drucksache II/1383] über Verwaltungsvereinfachung behandelt sei.</p>
+            <p>Die Fraktion ist mit dieser Regelung einverstanden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN011" type="comment">
+                     <p>Die Fraktion verständigte sich im weiteren darauf, den Antrag von <name type="Person" role="Erwaehnung" ref="#BergmeyerBernhardGerhard_1953-10-06">Bergmeyer</name> zu modifizieren und ihn als Fraktionsantrag einzubringen. Drucksache II/1383 (neu) v. 12. 10. 1955.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. Wirtschaftspolitische Lage</p>
+            <p>Sodann erteilt Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> das Wort an Sts. Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> zu folgendem Referat über die wirtschaftspolitische Lage.</p>
+            <p>»Der Herr Bundeskanzler veröffentlicht unter der Überschrift ›Wachstum im Gleichgewicht als Aufgabe‹ in der Berliner Zeitung ›Der Tag‹ einen Aufsatz, der sich mit der gegenwärtigen wirtschaftspolitischen Situation der Bundesrepublik befaßt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN012" type="comment">
+                     <p>Vgl. den Abdruck des Artikels im Bulletin v. 13. 9. 1955 unter der Überschrift »Der Bundeskanzler zum Lohn-Preis-Problem«.</p>
+                  </note>
+               </seg> Die von dem Herrn Bundeskanzler gewählte Überschrift ›Wachstum im Gleichgewicht als Aufgabe‹ kennzeichnet in größter Klarheit unsere Lage und weist den Weg, den die Wirtschaft der Bundesrepublik für die Zukunft gehen soll. Der Herr Bundeskanzler führt aus:</p>
+            <p>›Die unbestreitbaren Erfolge, wie sie augenblicklich an vielen Wirtschaftszahlen abzulesen sind, dürfen uns nicht in eine Stimmung versetzen und zu Erwartungen verleiten, die über das Maß dessen hinausgehen, was zu verwirklichen ist. Wir müssen uns vor einem stimmungsmäßigen Zustand hüten, in dem wir die materiellen Möglichkeiten überschätzen und uns zu übertriebenen Forderungen und Handlungen verleiten lassen, die das Gleichmaß des erwünschten Wachstums gefährden könnten. Darum sollten Arbeitgeber und Gewerkschaften in gemeinsamer Verantwortung das Lohnniveau finden, das den produktiven Möglichkeiten entspricht. Die Bundesregierung muß wünschen, daß sie dabei Rücksicht nehmen auf unsere außenwirtschaftlichen Beziehungen wie auch auf die breiten Bevölkerungsschichten, deren Einkommen nicht ohne weiteres vergrößert werden kann. Die Bundesregierung erwartet aber auch, daß die spekulativen Kräfte sich zurückhalten und daß über Preise, Kurse und Gewinne nach dem Grundsatz der sozialen Verantwortung vor dem Ganzen mit Umsicht und Vorsicht verfügt wird. Ich habe keinen Zweifel, daß an manchen Stellen die in letzter Zeit erzielten hohen Gewinne nicht genügend genutzt wurden, um die Preise zu senken.‹</p>
+            <p>In der Tat hat die gegenwärtige Hochkonjunktur, der wir uns seit einiger Zeit erfreuen, mehrere Seiten. Sie ist einerseits Ausdruck der gemeinsamen Bemühungen der Unternehmerschaft, der Arbeiter, der Verbraucher und nicht zuletzt auch der Wirtschaftspolitik der Bundesregierung, das Erbe, das uns der letzte Krieg hinterlassen hat, durch Mühe und Arbeit zu überwinden. Die Hochkonjunktur ist aber kein Fluch – das muß in aller Deutlichkeit gesagt werden – sondern sie ist, wenn die Zeichen der Zeit richtig verstanden werden, ein Segen.</p>
+            <p>Wir haben eine fortschreitende Steigerung der Produktion, die im Durchschnitt mehr als 100 % über den Produktionsergebnissen der Vorkriegszeit liegt. Die Einkommen sowohl der Arbeitnehmer wie auch der Selbständigen steigen laufend. Wir können stolz darauf sein, daß die Versorgung der Bevölkerung mit Konsumgütern heute besser denn je ist. Die Arbeitslosenziffern sind niedriger als zuvor.</p>
+            <p>Allerdings verbinden sich mit einer solchen Konjunktur auch Mängel und Schattenseiten des wirtschaftlichen Prozesses. Die Menschen fürchten, daß steigenden Löhnen steigende Preise und steigenden Preisen steigende Löhne folgen werden, und daß eine Spirale ohne Ende aus dieser Hochkonjunktur entsteht, eine Entwicklungsmöglichkeit, die auch die Hüter unserer Währung aufhorchen läßt. Wir leben also in der eigenartigen Situation, daß wir deshalb Sorgen haben, weil die Wirtschaft so außerordentlich floriert.</p>
+            <p>Das entscheidende Kriterium und wahrscheinlich die Ursache aller Sorgen ist die Lage auf dem Arbeitsmarkt. Zahlreiche Lohntarife sind gekündigt, und die Unternehmen sind dabei, sich gegenseitig die Arbeiter gegen hohe Prämienzahlung abzuwerben. Die vom Bundesminister für Wirtschaft schon vor einem Jahr erhobene Forderung, die deutschen Grenzen für den Zustrom auch ausländischer Arbeiter zu öffnen, zeigt sich heute in ihrer vollen Berechtigung. Wahrscheinlich würden wir weniger Sorgen haben, wenn man damals den Anregungen des Bundesministers für Wirtschaft gefolgt wäre.</p>
+            <p>Es ist schon richtig, wenn die Bank deutscher Länder in ihrem letzten Monatsbericht davon spricht, daß nicht das Preisniveau als solches in Bewegung geraten sei, sondern daß vielmehr das Preisklima, das die Haltung der wirtschaftenden Menschen und besonders der Verbraucher bestimmt, mit größter Sorgfalt beobachtet werden muß. Das Preisniveau ist im wesentlichen stabil, und der Vergleich der Preisentwicklung mit der Entwicklung der Löhne und Einkommen hält im großen und ganzen der Kritik stand; das gleiche kann man jedoch von dem Preisklima nicht behaupten. Das Preisklima hat sich ohne Zweifel verschlechtert. Die Hochkonjunktur ermöglicht die Durchsetzung höherer Preisforderungen und, was jedoch schlimmer ist, höhere Preisforderungen finden oft nur geringen Widerstand. Die Tatsache, daß der Absatz sich ständig ausweitet, und zwar in einem Maße, das die Verschätzungen übersteigt und über die bisherigen Erfahrungen hinausgeht, die weitere Tatsache, daß eine ähnliche Entwicklung bei großen Teilen des Einkommens festzustellen ist, hat vielfach zu der Einstellung geführt, daß einer solchen Entwicklung nicht mehr mit der Aufmerksamkeit begegnet wird, die notwendig wäre. Die weitere Folge ist, daß nicht mehr so scharf kalkuliert wird, daß der Wettbewerb mindestens tendenziell abnimmt und daß auch weite Schichten der Verbraucher, die an der Einkommensausweitung teilnehmen, bei ihren eigenen Einkäufen nicht mehr so genau rechnen. Die Gefahr einer Überhitzung der Konjunktur ist in einer solchen Lage in ihrem ganzen Ernst vorhanden. Diese Gefahr steigt in dem Maße, in dem der Preiswiderstand der Käufer abnimmt, d. h. Kostensteigerungen, seien sie bei den Materialkosten oder bei den Lohnkosten, mit leichter Hand hingenommen werden, weil die Aussicht besteht, diese gestiegenen Kosten auf den Abnehmer abzuwälzen.</p>
+            <p>Aus alledem ergibt sich, daß nicht die Konjunktur als solche eine Gefahr ist, sondern daß die Gefahr erst dadurch entsteht, daß die Möglichkeiten und die Wirkungen der Konjunktur falsch eingeschätzt werden. Es ist also der wirtschaftende Mensch, der hier in seinem Handeln zu beeinflussen ist, um die Gefahren abzuwenden, die dem Ganzen und damit dem Ergebnis unserer Aufbauarbeit nach diesem Kriege drohen. Das erste Ziel aber bei allen Überlegungen und Maßnahmen, die das Bundeswirtschaftsministerium trifft, ist: {Erhaltung der Konjunktur, aber Beseitigung ihrer Auswüchse}<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN013" type="comment">
+                     <p>Hervorhebungen im Original.</p>
+                  </note>
+               </seg>. Die großen Aufgaben, die vor uns liegen, die Wiederaufrüstung, der Wohnungsbau, der Straßenbau und nicht zuletzt die Wiedervereinigung können nicht von einer schrumpfenden Wirtschaft, sondern nur von einer blühenden, d. h. wachsenden Volkswirtschaft gelöst werden. Würden wir also jetzt Mittel anwenden, die die Expansion der Wirtschaft drosseln, so würden damit wahrscheinlich viele Aufgaben, die uns die Zeit gestellt hat, nur schwer durchführbar sein. Unser wichtigstes Anliegen war es deshalb, die Gewerkschaften, die Unternehmerschaft und die Verbraucher zur Besonnenheit und {Mäßigung}13 aufzurufen.</p>
+            <p>Selbstverständlich hat auch die soziale Marktwirtschaft jene Mittel der Konjunkturbeeinflussung, die in der augenblicklichen Situation zu einer Beseitigung der Schattenseiten unserer Hochkonjunktur führen würden. Wir sind uns aber darüber klar, daß die verstärkte Anwendung dieser Mittel – es sind im wesentlichen die Instrumente der Notenbankpolitik – für die deutsche Volkswirtschaft und für viele Unternehmen eine Roßkur sein würde. Wir denken, wenn wir zunächst den anderen Weg der Beeinflussung der Menschen gegangen sind, um tiefgreifende Eingriffe in den Wirtschaftsprozeß zu vermeiden, auch daran, daß viele Unternehmen, vor allem jene Unternehmen, deren Finanzstruktur z. T. noch ungenügend ist, die ihre Investitionen unter Einsatz kurz- oder mittelfristiger Mittel durchgeführt haben, durch Kreditrestriktionen, die die zentrale Notenbank durchführen könnte, in ihrem Bestand gefährdet werden müßten. Ich darf Ihnen sagen, daß ich bei den Gesprächen mit den Gewerkschaften<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN014" type="comment">
+                     <p>Siehe Nr. 184, 4.</p>
+                  </note>
+               </seg>, an denen auch Präsident Dr. <name type="Person" role="Erwaehnung" ref="#BernardKarl">Bernard</name> und Geheimrat Dr. <name type="Person" role="Erwaehnung" ref="#VockeWilhelm">Vocke</name> teilnahmen, den Eindruck erhielt, daß die Bank deutscher Länder den festen Willen hat, eine etwaige inflationistische Entwicklung mit ihren Mitteln im Keime abzutöten. Die Herren haben uns erklärt: Gegen Inflation gibt es nur Mittel deflationistischer Natur.</p>
+            <p>Der Bundeswirtschaftsminister geht allerdings davon aus, daß wir uns diese Mittel ersparen sollen und ersparen können, wenn Gewerkschaften, Unternehmerschaft und Verbraucher die Vernunft zeigen, die die augenblickliche Lage erfordert. Es scheint mir, daß die Wirtschaftspolitik der Bundesregierung – das ist die Wirtschaftspolitik der Koalition und damit Ihre Wirtschaftspolitik – in ihrer größten Bewährungsprobe seit der Korea-Krise steht. Daß es uns gelingen wird, den richtigen Weg zu gehen, dafür bestehen gute Aussichten, denn allenthalben wächst die Erkenntnis, daß Mäßigung und Vernunft aller am Wirtschaftsleben Beteiligten – also sowohl der Gewerkschaften wie der Unternehmerschaft als auch der Verbraucher – notwendig sind.</p>
+            <p>Zur Realität der Preise und Löhne, wie sie heute bestehen und sich in den letzten Jahren entwickelt haben, möchte ich Ihnen einige Zahlen nennen.</p>
+            <p>Selbstverständlich weiß ich, daß die Preisindizes nicht der Weisheit letzter Schluß sind und daß sie oft kritisiert werden. Immerhin geben sie doch, wenn man die Richtung der Preisentwicklung im Rahmen wirtschaftspolitischer Überlegungen erkennen will, zahlreiche und m. E. zutreffende Aufschlüsse. Die Lebenshaltungskosten, die vom Statistischen Bundesamt monatlich festgestellt werden, haben sich für die mittlere Verbrauchergruppe für die Familien mit vier Köpfen, davon zwei Erwachsenen von Juli 1954 auf Juli 1955 um 1,9 % erhöht, die Nominallöhne der Industriearbeiter vom II. Quartal 1954 zum II. Quartal 1955 um 5,7 %. Es ist eine Steigerung der Reallöhne vom II. Quartal 1954 zum II. Quartal 1955 um etwa 4,7 % erreicht worden.</p>
+            <p>Die Reallohnentwicklung seit 1950 läßt erkennen, daß auch die Industriearbeiter einen angemessenen Anteil an dem Aufstieg der deutschen Wirtschaft erhalten haben. Verglichen mit dem Jahresdurchschnitt 1950 ist das Verbraucherpreisniveau im II. Quartal 1955 um 9 % höher gewesen, dagegen überstiegen die Brutto-Stundenverdienste der Industriearbeiter den Stand von 1950 um 37 %, so daß sich eine Verbesserung der Reallöhne, bezogen auf die Arbeitsstunde, um fast 26 % ergeben hat. Das bedeutet, daß die Industriearbeiterschaft heute mit ihrem Einkommen rund 26 % mehr Güter kaufen kann als im Jahre 1950.</p>
+            <p>Die Daten der Lohn- und Preisindizes werden bekanntlich oft in der Öffentlichkeit als unrealistisch hingestellt, der Lebenshaltungsindex insbesondere auch deshalb, weil er auf dem Verbrauch von 1950 basiert. Anhaltspunkte für die tatsächliche Entwicklung der Einkommen und des Verbrauchs in Arbeitnehmerhaushalten liefern die Ergebnisse der Wirtschaftsrechnungserhebungen des Statistischen Bundesamtes. In rund 280 Arbeitnehmerhaushaltungen werden die tatsächlichen Ausgaben regelmäßig in der Weise festgestellt, daß die Haushaltungen, die sich zur genauen Durchführung über ihre Ausgaben verpflichtet haben, monatlich genau Unterlagen über ihren Aufwand liefern. Die hier erfaßten Familien bestehen aus vier Personen.</p>
+            <p>Die Entwicklung der Familieneinkommen von 1950 bis 1954 war wie folgt:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell/>
+                  <cell>Durchschnittliches Arbeitseinkommen des Haushaltsvorstandes aus Hauptberuf (brutto)</cell>
+                  <cell>Durchschnittliche Gesamteinnahmen der Haushaltungen</cell>
+                  <cell>Durchschnittliche ausgabefähige Einnahmen (Gesamteinnahmen abzüglich gesetzliche Versicherungen und Steuern)</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>DM</cell>
+                  <cell>DM</cell>
+                  <cell>DM</cell>
+               </row>
+               <row>
+                  <cell>1950</cell>
+                  <cell>303,58</cell>
+                  <cell>342,82</cell>
+                  <cell>305,08</cell>
+               </row>
+               <row>
+                  <cell>1951</cell>
+                  <cell>354,59</cell>
+                  <cell>396,05</cell>
+                  <cell>351,30</cell>
+               </row>
+               <row>
+                  <cell>1952</cell>
+                  <cell>391,90</cell>
+                  <cell>442,76</cell>
+                  <cell>391,22</cell>
+               </row>
+               <row>
+                  <cell>1953</cell>
+                  <cell>420,61</cell>
+                  <cell>477,42</cell>
+                  <cell>421,67</cell>
+               </row>
+               <row>
+                  <cell>1954</cell>
+                  <cell>444,59</cell>
+                  <cell>505,36</cell>
+                  <cell>447,86</cell>
+               </row>
+            </table>
+            <p>Hieraus ergibt sich, daß das durchschnittliche Arbeitseinkommen der Haushaltsvorstände von 303,58 DM im Jahre 1950 auf 444,59 DM im Jahre 1954, d. h. um 46,4 %, die durchschnittlichen Gesamteinnahmen der Haushaltungen (einschließlich Einkommen arbeitender Familienangehöriger, Renten usw.) von 342,82 DM im Jahre 1950 auf 505,36 DM im Jahre 1954, d. s. 47,4 %, gestiegen ist. Nach Abzug der Steuern und gesetzlichen Versicherungsbeiträge erreichten die ausgabefähigen Einnahmen der Haushaltungen im Jahre 1950 305,08 DM, im Jahre 1954 dagegen 447,86 DM. Auch hier liegt eine Steigerung um rund 46 % vor.</p>
+            <p>Aus den Aufschreibungen über die Ausgaben dieser Familien ergibt sich im Vergleich der Jahre 1950 und 1954 eine Erhöhung von 285,43 DM auf 426,33 DM, das sind rund 141 DM = ca. 49 %.</p>
+            <p>Werden die Preisveränderungen, wie sie sich im Preisindex für die Lebenshaltung niederschlagen, berücksichtigt, so zeigt sich, daß diese Familien im Durchschnitt real (d. h. quantitativ und qualitativ) ihre Lebenshaltung um 40,2 % verbessern konnten. Verglichen mit der Reallohnentwicklung, die, gemessen an den Stundenverdiensten der Industriearbeiter, eine Verbesserung um rund 23 % in der Zeit von 1950 bis 1954 ergab, wiesen die aus den Wirtschaftsrechnungen der Haushaltungen sich ergebenden Tatsachen eine noch günstigere Entwicklung aus, die im wesentlichen durch stärkere Erhöhung der Familieneinkommen verursacht worden ist. Selbst wenn man berücksichtigt, daß derartige statistische Erhebungen immer Fehlermöglichkeiten beinhalten, so kann man trotzdem den Schluß ziehen, daß die genannten Zahlen die Ausgaben- und Einnahmenentwicklung im großen und ganzen zutreffend wiedergeben.</p>
+            <p>In der Lohn-Preis-Diskussion wird hin und wieder mit dem Argument gearbeitet, das Lohnniveau in der Bundesrepublik sei im Vergleich zu dem anderer Länder gedrückt und setze die deutsche Industrie in den Stand, auf den Weltmärkten mit Dumpingpreisen zu konkurrieren. Auch von Gewerkschaftsseite wird diese Auffassung für den innerdeutschen Gebrauch gelegentlich vertreten.</p>
+            <p>Der internationale Vergleich zeigt aber, daß die Gewerkschaften bei ihrer bisherigen Lohnpolitik recht gut beraten waren. Nach den Berichten der Vereinten Nationen »Monthly Bulletin of Statistics« liegt die Bundesrepublik unter den folgenden 10 Ländern an der Spitze der Reallohnentwicklung. Um Mißverständnisse zu vermeiden, möchte ich ausdrücklich darauf aufmerksam machen, daß die von mir aufgeführten Ziffern nicht etwa zum Ausdruck bringen, wie der absolute Stand der Löhne und Prei-se in diesen Ländern ist, sondern daß hier die Entwicklung der Jahre 1950 bis 1954 dar-gestellt wird.</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell cols="4">Reallohnentwicklung von Mitte 1950 bis Mitte 1954 (1950 = 100)</cell>
+               </row>
+               <row>
+                  <cell>Westdeutschland</cell>
+                  <cell>123</cell>
+                  <cell>Belgien</cell>
+                  <cell>104</cell>
+               </row>
+               <row>
+                  <cell>Schweden</cell>
+                  <cell>120</cell>
+                  <cell>Holland</cell>
+                  <cell>104</cell>
+               </row>
+               <row>
+                  <cell>Frankreich</cell>
+                  <cell>122</cell>
+                  <cell>England</cell>
+                  <cell>104</cell>
+               </row>
+               <row>
+                  <cell>USA</cell>
+                  <cell>111</cell>
+                  <cell>Italien</cell>
+                  <cell>100</cell>
+               </row>
+               <row>
+                  <cell>Australien</cell>
+                  <cell>107</cell>
+                  <cell>Schweiz</cell>
+                  <cell>99</cell>
+               </row>
+            </table>
+            <p>Daß es für das Ausmaß der Verbesserung des Lebensstandards nicht allein auf die Nominallohnerhöhung ankommt, ergibt sich aus den gleichen Berichten. Welche negativen Folgen allzu starke Geld-Lohnsteigerungen haben können (nämlich Verlust von großen Teilen des Einkommens durch inflationäre Einflüsse), zeigt in der nachfolgenden Tabelle das Beispiel Australien und Frankreich. In diesen Ländern haben sich die Löhne nominal zwar erheblich erhöht, den Arbeitnehmern ist aber hiervon durch gleichzeitige Erhöhung der Preise ein relativ geringer Anteil zur echten Verbesserung der Lebenshaltung geblieben.</p>
+            <p>Veränderung der Löhne und Preise von Mitte 1950 bis Mitte 1954 (Mitte 1950 = 100 %)</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell cols="4">Erhöhung</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>der Geldlöhne in %</cell>
+                  <cell>der Preise der Lebenshaltung in %</cell>
+                  <cell>der Reallöhnein %</cell>
+               </row>
+               <row>
+                  <cell>Australien</cell>
+                  <cell>61</cell>
+                  <cell>51</cell>
+                  <cell>+ 7</cell>
+               </row>
+               <row>
+                  <cell>Frankreich</cell>
+                  <cell>65</cell>
+                  <cell>35</cell>
+                  <cell>+ 22</cell>
+               </row>
+               <row>
+                  <cell>Schweden</cell>
+                  <cell>53</cell>
+                  <cell>28</cell>
+                  <cell>4-20</cell>
+               </row>
+               <row>
+                  <cell>Westdeutschland<seg type="note">
+                        <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN015" type="comment">
+                           <p>Der Reallohn in der Bundesrepublik hat sich seit Mitte 1954 noch verbessert. Anm. im Original.</p>
+                        </note>
+                     </seg>
+                  </cell>
+                  <cell>35</cell>
+                  <cell>9</cell>
+                  <cell>+ 23</cell>
+               </row>
+               <row>
+                  <cell>England</cell>
+                  <cell>29</cell>
+                  <cell>24</cell>
+                  <cell>+ 4</cell>
+               </row>
+               <row>
+                  <cell>USA</cell>
+                  <cell>24</cell>
+                  <cell>12</cell>
+                  <cell>+ 11</cell>
+               </row>
+               <row>
+                  <cell>Belgien</cell>
+                  <cell>17</cell>
+                  <cell>13</cell>
+                  <cell>+ 4</cell>
+               </row>
+               <row>
+                  <cell>Italien</cell>
+                  <cell>22</cell>
+                  <cell>22</cell>
+                  <cell>0</cell>
+               </row>
+               <row>
+                  <cell>Holland</cell>
+                  <cell>25</cell>
+                  <cell>21</cell>
+                  <cell>+4</cell>
+               </row>
+               <row>
+                  <cell>Schweiz</cell>
+                  <cell>7</cell>
+                  <cell>8</cell>
+                  <cell>-1</cell>
+               </row>
+            </table>
+            <p>Es zeigt sich also, daß die wirtschaftliche Entwicklung in der Bundesrepublik, obwohl wir die Folgen der großen Katastrophe, die der letzte Krieg über uns gebracht hat, zu überwinden hatten, für weite Schichten unserer Bevölkerung eine erhebliche Verbesserung ihrer Lebenshaltung ermöglichte. Selbstverständlich kann das nur ein Ausschnitt aus einer Entwicklung sein, die im Gleichmaß fortzusetzen Ziel unserer Wirtschaftspolitik bleiben muß.</p>
+            <p>Sicher werden die kommenden Monate an alle verantwortungsvollen Kräfte in der Bundesrepublik hohe Anforderungen stellen. Dabei haben wir, um einer Überhitzung der Konjunktur zu begegnen, bisher an folgende Maßnahmen gedacht:</p>
+            <p>a) Verzicht auf Erhöhung staatlich gebundener Preise</p>
+            <p>Der Bundeswirtschaftsminister will sich dafür einsetzen, daß bei den preisgebundenen Gütern und Leistungen in der nächsten Zeit keine Erhöhungen vorgenommen werden. Unsere Bemühungen, die Gewerkschaften und die Unternehmerschaft zu einer Lohnpolitik zu bewegen, die an den gesamtwirtschaftlichen Interessen orientiert ist, werden nach unserer Meinung nur dann Aussicht auf Erfolg haben und in der Öffentlichkeit die nötige Resonanz haben, wenn Parlament und Regierung bei den Preisen für Güter und Leistungen, bei denen sie über Höchst-, Fest- und Mindestpreise unmittelbaren Einfluß ausüben, die gleiche Mäßigung zeigen, die von den Gewerkschaften und der Unternehmerschaft erwartet wird. Sie werden verstehen, daß es für mich ein Gebot der Loyalität gegenüber den anderen Ressorts ist, hier nicht zu den Sorgen des Ernährungs- und des Wohnungsbauministers Stellung zu nehmen. Diese Probleme müßten gleichzeitig mit diesen Ressorts behandelt werden.</p>
+            <p>b) Preisherabsenkung durch Verbrauchsteuersenkung</p>
+            <p>Zucker, Zündhölzer, Salz, Tee und Kaffee sind mit erheblichen Verbrauchsteuern belastet. Die Käufer von Zucker zahlen in ihren Preisen jährlich 390 Mio. DM an Verbrauchsteuern. Die Belastung bei Zündhölzern beträgt 60 Mio. DM, bei Salz 40 Mio. DM, bei Tee 16 Mio. DM und bei Kaffee 330 Mio. DM jährlich. Da Zucker und Zündhölzer noch staatlichen Preisbindungen unterliegen, würde die notwendige Garantie gegeben sein, daß ein etwaiger Verzicht des Staates auf Steuern dem Verbraucher in Form von niedrigeren Preisen unmittelbar zugute kommt. Wir hoffen, daß der Herr Bundesfinanzminister unsere Anregungen unterstützt.</p>
+            <p>c) Zollsenkungen</p>
+            <p>Von der der Regierung gegebenen Möglichkeit, Zollvorlagen im Bundestag in kurzer Zeit zur Entscheidung zu bringen, wird in Zukunft stärker Gebrauch gemacht werden.</p>
+            <p>d) Liberalisierung des Außenhandels</p>
+            <p>Auch die Fortsetzung der bisher erfolgreich durchgeführten Politik der langfristigen Zollsenkungen und der Erhöhung des Liberalisierungsgrades scheint uns gerade in der gegenwärtigen Lage dringend erforderlich zu sein. Diese Politik hat im übrigen sicherlich mit dazu beigetragen, daß die gegenwärtigen Schwierigkeiten nicht noch ernsterer Natur geworden sind.</p>
+            <p>e) Ermöglichung von Direkteinfuhren durch Letztverbraucher</p>
+            <p>Die unter dem Namen Jedermann-Einfuhren auch in der Presse eingehend behandelten Einfuhrmöglichkeiten sind für uns ein Mittel unter zahlreichen, um eine Dämpfung der inländischen Konjunktur durch stärkere Förderung des Wettbewerbs mit dem Ausland zu ermöglichen. Daß hiervon starke Wirkungen ausgehen, wird von vielen Fachleuten bezweifelt. Wir sollten trotzdem nicht auf diese dem Verbraucher dienenden und psychologisch wirksamen Maßnahmen verzichten.</p>
+            <p>f) Kartellgesetz [Regierungsentwurf, Drucksache II/1158 v. 22. 1. 1955, Entwurf <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#SeidlFranz_1953-10-06">Seidl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und Gen., Drucksache II/1253 v. 11. 3. 1955, und Entwurf Prof. <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name>, <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> und Gen., Drucksache II/1269]</p>
+            <p>In der gegenwärtigen konjunkturellen Lage mit Verkäufermärkten in wichtigen Bereichen hat der Wettbewerb der Unternehmen untereinander abgenommen. Das baldige Inkrafttreten des Kartellgesetzes scheint mir für unsere wirtschaftliche Entwicklung von vorrangiger Bedeutung.</p>
+            <p>g) Einführung einer Vorschrift gegen Preisüberhöhung</p>
+            <p>Das Bundeswirtschaftsministerium verspricht sich nichts davon, wenn die Preispolizei überall herumschnüffelt und herumprüft und mehr Unruhe erzeugt als echte Wirkung. Wir sind aber der Auffassung, daß es gut wäre, wenn wir zur Unterstützung unserer Gespräche mit den verschiedenen Gruppen der Wirtschaft noch darauf hinweisen könnten, daß eine Vorschrift besteht, die Preisüberhöhungen in den Bereichen, in denen der Wettbewerb nicht oder nicht ausreichend wirksam ist, verhindern soll. Wir glauben, daß die Wirtschaft eine ausreichende Garantie in der Person des Bundeswirtschaftsministers hat, daß eine unvernünftige Anwendung einer solchen Vorschrift ausgeschlossen wird.</p>
+            <p>h) Aufruf an Gewerkschaften, Unternehmerschaft und Verbraucher</p>
+            <p>Wir haben die Gewerkschaften gebeten, ihre Lohnforderungen in den Grenzen zu halten, die die gesamtwirtschaftlichen Interessen erfordern. Wir wollen keineswegs einen Lohnstopp und ebensowenig einen Preisstopp, aber wir glauben, daß auch die Interessen der Arbeiterschaft besser gewahrt sind, wenn dafür gesorgt wird, daß die Lohnentwicklung sich dem Wachstum des Ganzen einordnet. Wir denken an die 15 Mio. Sparer, die über Guthaben in Höhe von etwa 17 Mrd. DM verfügen. Gerade die Sparer, die mit Recht auf die Stabilität des Geldes vertrauen, sitzen bei allen unseren Gesprächen als unsichtbare Gäste mit am Tisch. Niemandem wäre gedient, wenn durch Übermaß und Unvernunft – gleichgültig wie sie auch auftreten – das Ganze in Gefahr geriete. Wir halten es deshalb auch für richtig und durchführbar, daß die Unternehmen der Industrie, des Handels und des Handwerks in ihrer Preisbildung Zurückhaltung üben und alle Möglichkeiten ausschöpfen, die für Preissenkungen vorhanden sind. Die Hochkonjunktur hat den größten Teil der Unternehmen zu einer optimalen Ausnutzung der Kapazität gebracht. Das bedeutet Senkung der Kosten. Da außerdem die Steuern und die Kapitalkosten im Laufe der letzten 12 Monate herabgesetzt worden sind, sollte erwartet werden, daß Preissenkungen mehr als bisher dem Verbraucher zugute kommen. Im übrigen sind wir der Auffassung, daß eine solche Preispolitik auch privatwirtschaftlich außerordentlich vorteilhaft sein kann.</p>
+            <p>Eine wirkungsvolle Position haben aber auch in der gegenwärtigen Lage die Verbraucher. Gerade die Hausfrauen sind aufgefordert, bei ihren Einkäufen kritischer denn je zu sein. Wie fast übereinstimmend von Händlern in Arbeitervierteln berichtet wird, besteht gerade dort die Neigung, mit Vorliebe teure Waren zu kaufen. Unsere soziale Marktwirtschaft wird in ihrer Funktion gestört, wenn den rational handelnden Gruppen der Produktion und des Handels nicht ebenso aufgeweckte Verbraucher gegenüberstehen.</p>
+            <p>Dieses preispolitische Neun-Punkte-Programm erfordert jedoch ergänzende Maßnahmen. Einmal wird man die Aktivierung aller inländischen Arbeitsreserven ernsthaft prüfen müssen. Es sollte aber – was vielleicht wirkungsvoller wäre – auch die Freizügigkeit der Arbeitskräfte im europäischen Raum herbeigeführt werden. Wir sind der Auffassung, daß gerade diese Maßnahmen sehr dazu geeignet wären, die Schattenseiten unserer Hochkonjunktur zu beseitigen.</p>
+            <p>Wie bekannt ist, verzeichnen wir besonders im Investitionsgüterbereich eine ungewöhnlich große Ausweitung. Die Haltung der öffentlichen Hand bei der Vergabe von Bürgschaften und der Anlage zentralsteuerbarer Mittel wird in diesem Zusammenhang zu prüfen sein. Jedenfalls glaubt das Bundeswirtschaftsministerium, nur solche Investitionen im Augenblick als besonders förderungswürdig ansehen zu sollen, die echte Rationalisierungseffekte unmittelbar nach sich ziehen, wobei wir selbstverständlich in den Bereichen – wie z. B. in der mittelständischen Wirtschaft – alles tun wollen, um auch hier sicherzustellen, daß diese Zweige an der wirtschaftlichen Expansion voll teilnehmen.</p>
+            <p>Mit der Investitionspolitik der öffentlichen Hand steht in engem Zusammenhang der Fragenkreis, der sich aus der Vergabe der öffentlichen Aufträge, insbesondere der Bauaufträge, ergibt. Ich möchte dem Herrn Wohnungsbauminister nicht vorgreifen, aber ich glaube, daß wir auch hier durch eine zeitliche Streuung der Aufträge über das Jahr erreichen können, daß gerade in dem bauwirtschaftlichen Bereich, der mit zu den Motoren der gegenwärtigen Hochkonjunktur gehört, Überhitzungserscheinungen werden vermieden können.</p>
+            <p>Zusammenfassend darf ich zum Ausdruck bringen, wie wichtig uns insbesondere für die kommenden Monate die Einheit der Wirtschaftspolitik, die Gemeinsamkeit des Handelns aller wirtschaftspolitischen Instanzen von Parlament und Regierung sind, um den Aufschwung unserer Wirtschaft, die weitere Verbesserung der Lebenshaltung der Bevölkerung auch für die Zukunft zu gewährleisten.«</p>
+            <p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>, der wegen eines unaufschiebbaren Termins nicht länger anwesend sein kann, warnt davor, die oben genannten Zahlen in größerem Umfange publik werden zu lassen. Es komme immer darauf an, von welchem Ausgangspunkt man ausgehe, und man müsse bedenken, daß noch vor drei Jahren die deutschen Reallöhne an der untersten Stufe in ganz Europa lagen; sonst entstehe ein falsches Bild. Es sei notwendig, diese Probleme völlig aufzuklären, um zu vernünftigen Entschlüssen kommen zu können.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schlägt vor, das Referat des Arbeitsministeriums für eine spätere Sitzung zurückzustellen. Die Fraktion ist einverstanden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN016" type="comment">
+                     <p>Siehe Nr. 188, 10.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> regt eine sofortige Diskussion des Referats des Sts. Dr. <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> an, da sonst die von diesem genannten Zahlen unwidersprochen bleiben könnten.</p>
+            <p>Sts. Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> betont, daß die von ihm mitgeteilten Zahlen eindeutig richtig seien. Sie stammten nicht aus deutschen Berechnungen, sondern aus dem Büro der UNO. Natürlich handele es sich nicht um absolute Ziffern, sondern um die Darstellung einer Entwicklung. Man solle doch die Erfolge der deutschen Wirtschaftspolitik nicht dadurch verkleinern, daß man darauf hinweise, daß es anderen Nationen besser gehe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> regt an, diesen Zahlen die entsprechenden Zahlen aus 1938 gegenüberzustellen. Diese Ergänzung sei notwendig.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> erläutert an einem Beispiel aus seinem Wahlkreis, daß dort in der Bekleidungsindustrie die Löhne seit 1948 von 58 Pfg. stündlich für Männer auf etwa 116 Pfg. gestiegen seien. Niemand werde wohl sagen, daß diese 100 %-ige Steigerung zu übertriebenen Löhne geführt habe. Dieses Beispiel beweise, wie notwendig es sei, alle Zahlen in die richtige Relation zu bringen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> legt dar, daß sich die gesamte Lohn-Preis-Situation vom Ernährungsindex und vom Einkommen der Bevölkerung aus gesehen so darstelle, daß die reine Lohnkurve nach oben über die Lebenshaltungskosten-Kurve hinüber gehe. Diese Feststellung sei wohl unbestritten. Soweit die Kurve der Nahrungsmittelpreise in Betracht käme, lasse sie sich voll belegen. Im Juli sei nun das Landwirtschaftsgesetz verabschiedet und ein einstimmiger Beschluß gefaßt worden, nachdem das Landwirtschaftsministerium eine Aufstellung der Maßnahmen vorlegen solle, durch die die Lage der Landwirtschaft gebessert werden könne.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN017" type="comment">
+                     <p>Vgl. die 96. Sitz. des Bundestages am 8. 7. 1955 und den Entschließungsantrag der DP, Umdruck 470 v. 8. 7. 1955. Sten. Ber., S. 5433 und 5456.</p>
+                  </note>
+               </seg> Dazu seien Vorschläge z. Zt. in der Beratung mit den anderen Ressorts. Sobald diese abgeschlossen seien, könne er darüber berichten.</p>
+            <p>Über die Frage der Milchpreiserhöhung sei schon im April mit den Ländern beraten worden. Der Milchpreis sei hinter allen übrigen landwirtschaftlichen Produkten zurückgeblieben. Dies mache eine Maßnahme erforderlich. Seit 1949 habe sich der Milchpreis nur um 4 Pfg. erhöht; aber man könne nicht länger an der Sache vorübergehen, nur weil sie unpopulär sei. Er wolle anerkennen, daß sich Minister Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> die größte Mühe gegeben hätte, die Produktionskosten der Landwirtschaft von seiner Seite her günstiger zu gestalten; für die Preisermäßigung für landwirtschaftliche Produktionsmittel sei aber bisher nichts herausgekommen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN018" type="comment">
+                     <p>Der Parlamentarische Bericht des BPA v. 14. 9. 1955 (BA, B 145/1905) kommentiert die Ausführungen <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübkes</name>: »Hierin war eine nicht überhörbare Kritik an dem Bundeswirtschaftsminister enthalten.«</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Nur in der Schlepperindustrie habe man darauf verzichtet, eine im November 1954 beabsichtigte Preiserhöhung durchzuführen. Es sei aber in der Landwirtschaft zu Lohnerhöhungen gekommen und solche seien auch weiterhin notwendig. Da die landwirtschaftliche Lohn-Situation zu etwa 40 % des Preises auf den Milchpreis einwirke, so bedeute das seit 1951 für den Liter Milch eine Erhöhung von 23 Pfg. Wenn man dazu die außergewöhnlichen Kosten für die Sanierung der Viehbestände nehme und diese auf 10 Jahre verteilt in Rechnung stelle, ergebe sich eine weitere Erhöhung um 1,4–1,7 Pfg. Diese tatsächlichen Belastungen durch neue Ausgaben seien bisher durch Preiserhöhungen nicht ausgeglichen. Die Absicht gehe dahin, bei der Erhöhung des Trinkmilchpreises diese in erster Linie dem Lieferanten der Trinkmilch zugute kommen zu lassen. Wenn man gleichzeitig eine Qualitätssteigerung dabei im Auge habe, so müsse man dafür bei der Milchpreiserhöhung einen Anreiz schaffen. Es sei beabsichtigt, für Milch erster Qualität 3 Pfg., für zweite Qualität 2 Pfg. und für dritte Qualität 1 Pfg. mehr zu nehmen.</p>
+            <p>Weder die politischen Parteien noch die Landwirtschaft, weder die Verbraucher noch der Handel wünschten ein Verschwinden der Milchmarktordnung. Diese sei 1930 zur Sicherstellung der hygienischen Bedürfnisse eingeführt worden und müsse auch heute aufrecht erhalten werden.</p>
+            <p>Von einer gewissen Lockerung der Bindung des Bauern und des Handels an die Molkerei erhoffe man sich die Beseitigung gewisser aufgetretener Schwierigkeiten. Diese Frage brauche aber jetzt nicht diskutiert werden.</p>
+            <p>Es sei bedauerlich, feststellen zu müssen, daß es jetzt sehr schwer sei, zwischen den beteiligten Gruppen Einverständnis herzustellen, sehr viel schwerer jedenfalls als zu den Zeiten, in denen es uns nicht so gut ging wie heute. Überall werde anerkannt, daß die Landwirtschaft eine Aufbesserung brauche, aber jeder wehre sich dagegen, die dazu notwendige Leistung zu erbringen; diese Aufbesserung solle weder zu Lasten der Verbraucher noch durch Subventionen bewirkt werden. Auch er vertrete allerdings den Standpunkt, daß heute Subventionen nicht angebracht seien; was solle denn geschehen, wenn einmal schlechte Zeiten wären?</p>
+            <p>Seiner Ansicht nach könne die Erhöhung des Milchpreises im Zusammenhang mit einer Senkung der Verbrauchsteuern durchgeführt werden. Dadurch könne man dem Verbraucher eine entsprechende Gegengabe machen, und er habe den Eindruck, daß der Bundesfinanzminister sich dieser Auffassung nicht verschließe. Damit erhalte man gegenüber den Gewerkschaften wie gegenüber der Verbraucherschaft ein politisches Instrument, mit dem man operieren könne. Selbst in der Opposition fände sich ja die Meinung, daß man diese gerechtfertigte Forderung der Landwirtschaft nicht ablehnen könne.</p>
+            <p>Den Gewerkschaften hätte er auseinandergesetzt, daß ja eine Milchpreiserhöhung nicht notwendig wäre, wenn man den Preisindex für landwirtschaftliche Produktionsmittel auf die allgemeine Preisstufe für landwirtschaftliche Produktion herabsetzen könne. Es handele sich hier um ineinander verzahnte Reaktionen. Wenn man in den Fabriken höhere Löhne wolle, müßten auch die Löhne in der Landwirtschaft auf dem Wege über den Preis entsprechend gestaltet werden können. Die Gespräche mit den Gewerkschaften seien in einer guten Tonart verlaufen, was ihn um so mehr freue, weil er auf jeden Fall einen Milchstreik in den Betrieben verhindern wolle, durch den die gesamte Arbeit der letzten Jahre vernichtet werden könnte. Er sähe tatsächlich einen Weg, zusammen mit der Senkung der Verbrauchsteuer hier zum Ziele zu kommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> führt zunächst aus, daß es im politischen Leben immer sehr gefährlich sei, wenn man an alten Schlagworten festhalte, ohne zu überlegen, ob sich die Verhältnisse nicht grundsätzlich geändert hätten. Von 1949 bis 1954/55 habe die Parole gegolten: Möglichst viele Arbeitsstellen schaffen, Wohnungen bauen, kurz Wirtschaft ankurbeln. Es sei zu überprüfen, ob diese Parole noch richtig sei.</p>
+            <p>Aus der Erkenntnis der gegebenen psychologischen Situation habe er in seinem Hause die Anweisung gegeben, wenn bei einem starken Anziehen der Baukosten Wünsche auf Erhöhung der Etatansätze kämen, diese grundsätzlich abzulehnen. Wenn sich zeige, daß die Baukosten stiegen, sei entweder sparsamer zu bauen oder der Bau zu strecken oder völlig zu unterlassen. Mit dieser Maßnahme glaube er bereits einen wirksamen Riegel gegen gewisse Entwicklungen vorgeschoben zu haben.</p>
+            <p>Nun habe die Produktion von Gütern ein solches Maß angenommen, daß die Kapazität bis an 100 % ausgeschöpft sei. Auf dem Arbeitsmarkt begännen sich Zustände zu entwickeln, die geradezu unerträglich seien. Er habe selbst schon beobachten können, wie sich die Betriebe gegenseitig die Kräfte abwerben, eine Erscheinung, die man nur mit großen Bedenken sehen könne. Dazu komme, daß bei vielen Leuten das Geld schon recht locker sitze und daß vielfach nicht mehr geprüft werde, ob der Preis der Ware auch angemessen sei. Dazu komme, daß im Hinblick auf die Gewinne, die in den Bilanzen erschienen, bei breiten Schichten der berechtigte Wunsch aufkäme, an dieser Entwicklung beteiligt zu werden. Leider habe man nicht erreicht, daß in der Zeit der Rationalisierung die Senkung der Produktionskosten auch zu einer Preissenkung geführt habe, der Lebenshaltungsindex sei auf gleicher Höhe geblieben.</p>
+            <p>Überall, auch in anderen Ländern, träten die gleichen Erscheinungen auf, und damit beginne etwas sehr gefährliches, die Anti-Inflations-Politik. Wenn man keine Maßnahme ergreife, könne die schleichende Inflation eintreten. So sei die Situation in England und es sei kennzeichnend, daß der Schatzkanzler die Vorlage eines Nachtragshaushalts für notwendig halte. Das zeige, welche Gefahr er sehe. Er habe diese Maßnahme damit begründet, daß man entweder die Konjunktur konsolidieren müsse, was ein Senken der Gewinne zur Folge habe, oder aber, daß man die überschüssige Kaufkraft durch erhöhte Steuern abschöpfen müsse.</p>
+            <p>Er, <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, ziehe daraus den Schluß, daß jener Gefahrenpunkt erreicht sei, wo das Vertrauen in die Stabilität der Verhältnisse, des Arbeitsmarktes, der allgemeinen Wirtschaft und der Währung zu sinken beginne. In dieser Situation habe sich die BdL sicherlich nicht leichtsinnig zu ihren Maßnahmen entschlossen, die eine Warnung gewesen seien. Zugleich habe dahinter der Wunsch gestanden, es möge die Kreditausweitung nicht mehr weitergehen, sondern abgebremst werden.</p>
+            <p>Durch das Kapitalmarktförderungsgesetz habe die gesamte Wirtschaft die Möglichkeit gehabt, durch Emissionen das eigene Kapital zu stärken. Obwohl Emissionen von 1 100 Mio. DM erfolgt seien, ließe sich aber eine Einschränkung der Kredite nicht nachweisen. Im Gegenteil seien die kurzfristigen Kredite von 1 600 Mio. auf jetzt 2 500 Mio. DM gestiegen. Es sei also keine Konsolidierung erfolgt, sondern neben der Erhöhung des Aktienkapitals sei eine verstärkte Inanspruchnahme des Kreditmarktes erfolgt.</p>
+            <p>Die ausgegebenen Bundesbürgschaften betrügen 4 500 Mio. DM. Davon seien 3 500 Mio. DM langfristig gegeben worden, und insbesondere im Ausland sei man stark engagiert: In Argentinien seien 910 Mio., in der Türkei 800 Mio., in Jugoslawien 300 Mio. und in Griechenland 200 Mio. DM verbürgte Gelder. Jeder wisse, daß die Verhältnisse in einem Teil dieser Länder nicht besonders stabil seien. Wenn es gar zu einer Weltkrise komme, könnten diese Bürgschaften, die ja in Anspruch genommen werden müßten, vielleicht zu einer unmittelbaren Gefahr nicht nur für den Haushalt, sondern für die ganzen Geldverhältnisse werden.</p>
+            <p>Gewiß sei die Wirtschaftspolitik der letzten Jahre richtig gewesen; heute aber sei die Wirtschaft voll beschäftigt, und damit sei das Verhältnis gegenüber früheren Jahren grundsätzlich verändert.</p>
+            <p>In den letzten Wochen habe nun die Presse Artikel über Steuersenkung geschrieben. Es sei gottseidank möglich gewesen, dahin Einfluß zu nehmen, daß man einsähe, daß man die Lohnbewegung nicht einfach abstoppen könne und solle, sondern daß alles in Maßen gehalten werden müsse, allerdings auch die wirtschaftliche Entwicklung. Das bedeute, daß man diese nicht weiter durch öffentliche Mittel vorwärtsbringen dürfe außer in den Gebieten, in denen das unbedingt notwendig sei. Aber auch eine größere Steuersenkung in Zeiten der Hochkonjunktur bedeute Gefahren, weil dadurch die Lage weiter erhitzt und das Geld um seinen Wert gebracht werden könne. Auf Grund dieser Erkenntnisse hätte sich schließlich auch die Presse anders eingestellt.</p>
+            <p>So sei nun die Frage, was denn geschehen könne, um den entstandenen Problemen zu begegnen. Gewisse steuerliche Maßnahmen müsse er vorschlagen. Zum 30. 9. wolle er die Ehegatten-Besteuerungsfrage dem Parlament vorlegen; auch dem Wunsch der Lohn- und Gehaltsempfänger, durch entsprechende Anwendung des Systems der Werbungskosten steuerlich den übrigen gleichgestellt zu werden, werde wohl entsprochen. Der damit eintretende Ausfall bedeute ungefähr 700 Mio. DM.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN019" type="comment">
+                     <p>Die Regierung brachte keinen entsprechenden Entwurf ein. Daraufhin stellte die Unionsfraktion den Antrag, diese und andere Änderungen des Einkommensteuergesetzes in Angriff zu nehmen. Drucksache II/1753 v. 11. 10. 1955.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Er erwarte nicht, daß die geschätzte Steuererwartung überstiegen werde, was er aber sicher wisse, sei, daß er größere Ausgaben haben werde. Das BEG, das mit 1 500 Mio. DM kalkuliert sei, werde ungefähr 3 000 Mio. DM kosten.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN020" type="comment">
+                     <p>Siehe Nr. 154, Anm. 2.</p>
+                  </note>
+               </seg> Dazu kämen die Kosten der Restitution mit etwa 1 500 Mio. DM und dazu kämen noch all die Erhöhungen, die schon in Vorbereitung seien.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN021" type="comment">
+                     <p>Siehe Nr. 127, 2.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Wenn man die Gehaltsforderungen der Beamten, die 20 % Erhöhung verlangten, und die der Angestellten zusammenrechne, werde das jährlich eine weitere Belastung von 1 000 Mio. DM bringen. Damit entstehe die Gefahr, daß der Haushalt nicht in dem Maße gehalten werden könne, wie das vom währungspolitischen Standpunkt aus erforderlich sei.</p>
+            <p>Zu all dem käme als weiterer großer Druck die vor uns stehende Aufrüstung. Wenn in der Wirtschaft der Eindruck entstehen sollte, daß allein auf dem Baumarkt im nächsten Jahr weitere 5 000 Mio. DM ausgegeben werden müßten, könne man dort eine explosionsartige Entwicklung der Preise nach oben erwarten und dies bei einem Arbeitsmarkt ohne Arbeitskräfte, bei aller Ausschöpfung der Kapazität, so daß nur die Wahl möglich sei, die Rüstung unter Einschränkung der übrigen Positionen zu schaffen. Er wüßte heute nicht, wie er an diese Aufgaben herangehen solle, wenn er nicht bisher eine gewisse Thesaurierungspolitik getrieben hätte. Auch die BdL hätte ausgesprochen, daß diese Gelder ein gewisses Gegengewicht gegenüber der Aufblähung der Kredite bilden.</p>
+            <p>Wenn auch klar sei, daß der Finanzminister in einer solchen Situation keine Konjunkturpolitik zu machen habe, so wisse man doch, daß seine Handlungen konjunkturgestaltende Wirkung hätten. Aus diesen Überlegungen sei mit der Industrie über die steuerliche Behandlung von Abschreibungen gesprochen worden. Haushaltswirtschaftlich gebe es in dieser Frage wenige Widerstände, weil ja die Abschreibung nur eine Verschiebung der Fälligkeit der Steuern bedeutete. Wenn man aber Abschreibungen heute begünstige und damit einen Anreiz zu Investitionen gäbe, könne man schon konjunkturpolitische Schäden erzielen.</p>
+            <p>Die bevorstehende Besoldungsreform solle den jetzt erreichten Standpunkt legalisieren und festlegen. Der Beamte hätte wohl ein Recht, bei diesen Verhandlungen gehört zu werden. Die Regelung der Beamtenverhältnisse aber sei Sache des Gesetzgebers. Gleichzeitig werde man die Konsequenzen für Arbeiter und Angestellte mit ziehen. Etwaige Versuche, zu einer Arbeitszeitverkürzung im Öffentlichen Dienst zu kommen, kämen nicht in Frage. Der Beamte habe keine Arbeitszeit, sondern eine Dienstzeit, folglich könne man über dieses Thema nicht verhandeln.</p>
+            <p>Mit den Gewerkschaften geführte Verhandlungen seien recht vernünftig verlaufen. Er selbst habe zum Ausdruck gebracht, daß er keinen tariflosen Zustand wünsche. Was die Frage der Preissenkung anbelange, so habe er gesagt, daß sie wohl erreicht werden könne, wenn sie Teil eines Gesamtprogramms sei. Auch über Zollsenkungen könne man sprechen, wenn konkret gesagt werde, um welche Zölle es sich handele und in welchem Umfange gesenkt werden solle. Auch über eine Senkung der Verbrauchsteuern wolle er mit sich reden lassen unter der Voraussetzung, daß es Teil eines Gesamtprogramms sei. Eine Verbrauchsteuersenkung allein werde zu keinem Ziel führen. Auch dürfe eine Verbrauchsteuersenkung nicht den Zwischenstufen zugute kommen, sondern ganz allein dem Verbraucher. Dabei sei allerdings die Auswahl an Möglichkeiten nicht groß. Die größte Chance läge beim Zucker, während Zündhölzer und Salz nicht viel bringen werden.</p>
+            <p>Es gelte jetzt, Umdenken zu lernen, für kommende Zeiten vorzusorgen, die Subventionspolitik zu überprüfen und auf ein vernünftiges Maß zu bringen, die öffentlichen Ausgaben einzuschränken, das Rüstungsproblem auch nach der wirtschaftlichen Seite zu überlegen und zu verhindern, daß es zu einem schädlichen Konjunkturanreiz käme. An dem Tage, an dem die Rüstung zu laufen beginne, müsse man dafür sorgen, daß nicht gesagt werden könne, daß das Blut deutscher Soldaten umgemünzt werde in den Gewinn einzelner. Er denke an eine Übergewinnsteuer, durch die die Rüstungsgewinne in einem vernünftigen Maße gehalten werden könnten. Auch müsse eine Stabilisierung des Arbeitsmarktes betrieben werden, indem man die Investitionen so gestalte, daß aus ihnen für Zeiten sinkender Konjunktur Reserven zur Verfügung ständen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt die vom Bundesfinanzminister gemachten Versprechungen, die aber nicht so aufgefaßt werden dürften, daß er damit einer allgemeinen Steuerreform das Wort gesprochen habe. Dann eröffnet er die Aussprache.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> warnt zunächst vor jeder Überspitzung der Diskussion dieser Probleme. Man könne keine Psychose brauchen, weder in der Forderung übertriebener Preise noch in den Forderungen nach Einkommenserhöhungen. Es sei selbstverständlich, daß die Arbeitnehmerschaft bemüht sei, ihren Anteil am Sozialprodukt zu erhöhen. Bei rückläufiger Konjunktur sei die Aussicht auf Lohnerhöhung immer schlechter, bei steigender besser und so seien die jetzt angemeldeten Forderungen eigentlich selbstverständlich. Erfreulich sei, daß das jetzige Gespräch um Lohnerhöhung offensichtlich in einer besseren Atmosphäre als in früheren Jahren stattfinde. Man solle nicht vergessen, zu welchen Streiks es in den vergangenen Jahren gekommen sei.</p>
+            <p>Die Preisentwicklung gebe keine Veranlassung, in eine Panik oder in eine Katastrophenstimmung hineinzusteuern. Immerhin sei der Lebenshaltungskostenstand niedriger als etwa der Höchststand von 1951. Aber man müsse auch die allgemeine Preisbewegung näher betrachten, wenn man zu richtigen Schlußfolgerungen kommen wolle.</p>
+            <p>Wenn vom Bundesfinanzminister gesagt worden sei, daß es an Preissenkungen in der Industrie nichts Nennenswertes gegeben hätte und das Preisniveau stabil geblieben sei, so müsse man fragen, woher diese Erscheinung käme. An einzelnen Stellen seien ganz erhebliche Preiserhöhungen eingetreten, bei den Weltmarktpreisen, bei den Rohstoffpreisen, und diese Preiserhöhungen hätten von der Kostenpolitik aufgefangen werden müssen; beispielsweise sei der Rohkautschuk um 62 % teurer geworden. Die Preise für Fahrzeugreifen hätten sich aber nur um etwa 6 % erhöht. Ein düsteres Kapitel sei der Preis für Holz; aber auch hier sei bei einem Ansteigen des Schnittholzpreises um 23 % der Preis für Möbel z. B. nur um 2,7 % gestiegen. An diesen Beispielen zeige sich, daß in der Marktwirtschaft auch erhebliche Preiserhöhungen aufgefangen werden könnten. Wo übrigens namhafte Preiserhöhungen festzustellen seien, da handele es sich um Gebiete, die nicht im Bereich der freien Marktwirtschaft lägen (Posttarife, Kohlen- und Eisenpreise). Bei den Grundstoffen ergebe sich eine Erhöhung um 6,3 %, bei der Investitionsgüterindustrie um 2,5 %, bei der Konsumgüterindustrie zeige sich eine Stabilität ohne Steigerung.</p>
+            <p>Sehr bedenklich seien die Vorgänge in der Forstwirtschaft. Die Baustoffe wären um 12,5 % teurer geworden, die Bauhölzer um 31 %, Mauersteine dagegen nur um 7,4 %, Baukosten um 1,7 %, während Zement um 1 % zurückgegangen sei. Aber alle diese günstigen Momente hätten für den Gesamtindex die Zunahme der Holzpreise nicht korrigieren können. An dieser Entwicklung sei allerdings der Fiskus maßgeblich beteiligt, und er wolle hier den dringenden Wunsch äußern, daß Bund und Länder Verständnis für die konjunkturpolitischen Notwendigkeiten aufbrächten.</p>
+            <p>Nach Besprechung dieser Probleme im Arbeitskreis II wolle er folgende Vorschläge unterbreiten:</p>
+            <p>In der Vergabe öffentlicher Aufträge solle entsprechende Zurückhaltung geübt werden.</p>
+            <p>Die Kassenüberschüsse der öffentlichen Kassen sollten im Zentralbanksystem angelegt und damit währungspolitisch stabil gemacht werden. Im Gegensatz zu dieser Forderung aber finde man diese Gelder in Wirtschaftsbanken und Sparkassen, wo sie einer Erhöhung des Kreditvolumens dienbar seien.</p>
+            <p>Die vorgeschlagene Begünstigung gewisser Konsumgüter, das heißt die im Sommer vorgeschlagene Vergünstigung der Anschaffung von Familienhaushaltsgeräten, bedeute in der jetzigen Situation eine Konjunkturspitze, die bei der gegebenen Konjunktur widersinnig erscheine. Wenn auch dieses familienpolitische Anliegen nicht verkannt werde, so müsse man es doch in der Verflechtung mit dem konjunkturellen Ablauf sehen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN022" type="comment">
+                     <p>Der Parlamentarische Bericht (siehe Anm. 18) kommentiert an dieser Stelle die Ausführungen <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwigs</name>: »Hiermit stieß er allerdings auf den Widerspruch der Fraktionsmehrheit.«</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Auf steuerlichem Gebiet solle man daran gehen, die bei der letzten Steuerreform übriggebliebenen Härten zu beseitigen; etwa in den Fällen, wo entgegen der ursprünglichen Absicht einer Steuersenkung eine effektive Steuererhöhung eingetreten sei.</p>
+            <p>Sich den laufenden Lohnverhandlungen zuwendend, legt Dr. Hellwig dar, daß bei dem herrschenden Grundsatz der Tarifautonomie der Tarifpartner die Einwirkungsmöglichkeiten des Staates gering seien. Eine zwangsweise Fortsetzung von Löhnen und Arbeitsbedingungen etwa könne nicht empfohlen werden. Dies setze aber voraus, daß die Sozialpartner soviel Selbstdisziplin und Verantwortung fühlten, daß sie nicht etwa ihren Frieden auf Kosten der Allgemeinheit machten. Die Versuchung sei groß, daß Arbeitgeber Löhne konzedieren, die zu weit gingen, weil man sie über den Preis abwälzen könne. Mit solchen Dingen lege man aber die Axt an den Stamm der Tarifhoheit der Sozialpartner.</p>
+            <p>Je stürmischer die wirtschaftliche Expansion sei, um so weniger Neigung bestehe natürlich für längerfristige Tarifabmachungen. So gehe es jetzt darum, Abmachungen mit Anpassungsklauseln zu entwickeln, und die Besprechungen darüber ließen erkennen, daß man auf beiden Seiten ernsthaft erwäge, ob man nicht zu einer elastischen, längerfristigen Tarifregelung kommen könne.</p>
+            <p>Zusammenfassend wolle er sagen, daß er keine Veranlassungen sehe, die augenblicklichen Vorgänge zu dramatisieren, wenn die Grenzen volkswirtschaftlicher und sozialer Verantwortung eingehalten würden. Entscheidend sei dabei, inwieweit die öffentliche Hand selbst sich dieser Verantwortung für die konjunkturpolitische Situation bewußt bleibe und noch stärker bewußt werde, als das bisher der Fall gewesen sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> wendet sich der Betrachtung des Arbeitsmarktes zu. Auch hier solle keine Panikstimmung geschaffen werden. Ende August hätte es 512 000 Arbeitslose in der Bundesrepublik, 117 000 in Berlin gegeben. Diese Zahl sei um 300 000 niedriger als die vergleichbare des Vorjahres. Die Zahl der arbeitslosen Frauen sei dabei größer als die der Männer. An offenen Arbeitsplätzen seien für Männer 153 000, für Frauen 90 000 vorhanden. Davon entfielen auf das Baugewerbe 45 000, auf Metall 23 000, auf Landwirtschaft 21 000 und auf Bergbau 12 000; das Gros komme also auf die Schwerarbeiterberufe. Bei den Arbeitslosen finde sich eine große Zahl nicht voll einsatzfähiger Personen. Bei den Frauen seien in der Hauswirtschaft 29 000, bei Textil 9 000, bei der Landwirtschaft 8 000 und bei Ernährung 7 000 Stellen offen. Hier seien die Schwierigkeiten noch größer als bei den Männern. Mehr als die Hälfte der arbeitslosen Frauen sei verheiratet.</p>
+            <p>Weiter werde die Einsatzfähigkeit der Arbeitslosen behindert durch die vorhandenen strukturellen Schwierigkeiten. Bei den Heimatvertriebenen sei zu beobachten, daß die Schwierigkeiten der Umsiedlung immer mehr zunähmen, weil sich an den Wohnorten vielfache Bindungen gebildet hätten. Regional seien die Arbeitslosen wie folgt verteilt: Berlin 117 000, Bayern 117 000, Niedersachen 98 000, Nordrhein-Westfalen 79 000, Hamburg 48 000, Hessen 42 000 und Baden-Württemberg 25 000.</p>
+            <p>Die größten Möglichkeiten zur Beschaffung der notwendigen Arbeitskräfte lägen in der Eingliederung von Personen in den Arbeitsprozeß, die bis jetzt nicht an ihm beteiligt gewesen seien; das führe allerdings zu einer weiteren Ausdehnung der Frauenarbeit. Eine gewisse Besserung der Lage könne auch erzielt werden, wenn man bescheidenere Ansprüche an die Arbeitskräfte stelle und wenn es zu einer größeren Bereitwilligkeit käme, auch ältere Arbeitskräfte zu beschäftigen. Dem Problem der Umschulung und auch der weiteren Umsiedlung müsse man Aufmerksamkeit zuwenden.</p>
+            <p>Die Heranziehung ausländischer Arbeitskräfte sei nicht so ganz einfach. Auch Italien habe keinen Überfluß an Fachkräften. Was man dort bekommen könne, seien Hilfskräfte und auch bei diesen habe man keine Garantie, daß sie dann dort blieben, wo man sie haben wolle. Auch sie würden sich einen anderen Arbeitsplatz suchen, wenn er vorteilhafter sei. Außerdem würden bestimmte Arbeitsplätze selbst für ausländische Arbeitskräfte nicht reizvoll genug sein. Die erwähnte Abwerbung von Arbeitskräften komme wohl örtlich vor, könne aber nicht generell festgestellt werden.</p>
+            <p>Da es für die Verwaltung keine Einwirkungsmöglichkeit auf diese Dinge gebe, müsse man an die Disziplin der Beteiligten appellieren. Wo das nicht helfe, müsse man wohl auch gegen den Arbeitsvertragsbruch sich zur Wehr setzen. Warnen wolle er vor jeder Einengung der Freizügigkeit. Eine gewisse vernünftige Fluktuation der Arbeitskräfte sei wertvoll, erfahrungsgemäß steige die Leistungsfähigkeit, wenn jemand mehr gesehen habe als nur einen Betrieb.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> vermißt eine soziologische Beleuchtung der besprochenen Probleme. Die heutige Situation stelle eine Gefahr für unsere gesamte Stabilität dar. Dabei seien die Reserven noch nicht ausgeschöpft, die in den mittleren und kleineren Betrieben vorhanden seien, die noch nicht soweit rationalisiert seien wie die Industrie, da sie nur wenig Möglichkeit hätten, steuerliche Vergünstigungen auszunutzen und günstige Kredite zu bekommen. Dadurch seien diese Betriebe zurückgefallen und könnten die üblich gewordenen Löhne nicht mehr bezahlen. Wenn man die hier vorhandenen Reserven ausnützen wolle, müsse man an die Rationalisierung dieser Betriebe herangehen. Dazu bedürfe es eines großzügigen Programms. Bei dessen Gestaltung solle man nicht übersehen, daß Mittelstand und Landwirtschaft etwa 60 % unserer Volkswirtschaft ausmachten.</p>
+            <p>Weiter wolle er sich für eine planmäßige Lenkung der öffentlichen Aufträge aussprechen. Hier müsse das kleine Gewerbe ebenso mit berücksichtigt werden wie die Industrie.</p>
+            <p>Für die bewußte Streuung neuer Industrien in schwach entwickelten Gebieten sei zu wenig geschehen. Auch hier ergäben sich noch Möglichkeiten.</p>
+            <p>Der Antrag auf Steuervergünstigung für Anschaffung von Haushaltsgeräten sei im Hinblick auf die mithelfenden Frauen eingebracht worden, auf die man mehr Rücksicht nehmen müsse, als das bisher der Fall gewesen sei. Überhaupt solle man der Wettbewerbsneutralität der Steuer mehr Aufmerksamkeit zuwenden; man habe sie zwar versprochen, aber noch zu wenig getan.</p>
+            <p>Wenn man nicht die soziologische Seite dieser Fragen beachte, werde sich die deutsche Wirtschaft zu Tode siegen. Man müsse dafür sorgen, daß die Struktur unseres Volkes gesund erhalten bleibe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NaegelWilhelm_1949-09-07">Naegel</name> wendet sich ebenfalls gegen jede Dramatisierung der Vorgänge, bezeichnet aber weitere Investitionen für die Rationalisierung als dringend notwendig, wogegen eine weitere Expansion nicht durchgeführt werden solle. Auch wäre zu überlegen, ob nicht eine Konzentration der Kreditmittel im Haushalt möglich sei. Jetzt stelle die öffentliche Hand aus etwa 400 verschiedenen Quellen Kredite zur Verfügung. Auch sei auf diesem Gebiete unter den Ländern ein Wettbewerb entstanden, der sich teilweise ungünstig auswirke.</p>
+            <p>Er empfehle, das Thema Zölle ernsthaft zu behandeln. Das verspreche einige Erfolge. Entschieden wende er sich gegen eine Wiedereinführung des Preistreibereiparagraphen; es liege ja nicht am Handwerk und nicht am Einzelhandel, wenn sich diese Preisentwicklung bemerkbar mache. Deren Gründe lägen tiefer.</p>
+            <p>Dr. Karl <name type="Person" role="Sprecher" ref="#MuellerKarl_1949-09-07">Müller</name> bezieht sich auf die von Sts. Dr. <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> erwähnten Jedermann-Einfuhren; er befürchte von diesen Schwierigkeiten für die einheimische Wirtschaft, besonders für den Mittelstand. Gewisse Möglichkeiten, zu einer Befriedung zu kommen, sehe er auch in der Frage der 40-Stunden-Woche. Voll unterstütze er die Forderung <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmückers</name> nach Rationalisierung der mittleren und kleineren Betriebe. Er halte es auch für nötig, Abzahlungsgeschäfte zu überprüfen, ob dort nicht durch die Forderung einer Mindesthöhe der Anzahlung und der Raten ein gewisser Stop erzielt werden könne.</p>
+            <p>Zu dem von <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> zitierten notwendigen Gesamtplan schlage er vor, daß die Vorsitzenden der drei beteiligten Arbeitskreise beauftragt würden, eine kleine Studienkommission zu bilden, die diese Probleme prüfen, ihre politische und praktische Verwirklichung vorbereiten und dann der Fraktion über ihre Vorschläge berichten solle.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> erklärt sich im wesentlichen mit <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> einig. Natürlich trete in Zeiten der Hochkonjunktur die Forderung nach Steuersenkung auf. Dabei könne man aber in eine Währungsgefährdung geraten. Deshalb müsse man sich überlegen, wie weit eine Steuersenkung möglich sei. Eine solche sei sicher keine Bremse für die Konjunktur. Auch er sei für Beseitigung übriggebliebener Härten in der Steuergesetzgebung, gehe aber nicht soweit wie Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>. Eine Wiederaufnahme der Freibeträge für Flüchtlinge, eine Wiederherstellung der Ehegattenbesteuerung in der alten Form halte er nicht für angebracht. Er sei dafür, die mithelfende Ehefrau nicht anders zu stellen als unselbständig Arbeitende. Auch das Petitum der Werbungskosten für die Arbeitnehmer in unselbständiger Arbeit unterstütze er. Eine Erweiterung der Abschreibung auch für den Mittelstand werde zu einer Vermehrung der Aufträge bei der Investitionsgüterindustrie führen. Hier sei ein Dilemma, weil der an sich notwendigen Beschränkung der Abschreibungsmöglichkeiten das Bedürfnis nach Rationalisierung gegenüberstehe. Richtig sei, dem Mittelstand in der Kreditpolitik besser entgegenzukommen. Ihm aber eine gesonderte Abschreibungsmöglichkeit zu geben, gehe nicht an. Die angeschnittene Frage der Auftragssteuerung biete Hilfsmöglichkeiten für den Mittelstand, bei dem auch noch echte Wettbewerbsreserven vorhanden seien. Wenn der Wettbewerb als System heute etwas aus den Fugen geraten sei, könne man dem nur dadurch abhelfen, daß man echte vorhandene Reserven mobilisiere. Tue man das aber betont über die Rationalisierung, so entstehe wiederum das Dilemma, daß damit ein Konjunkturauftrieb verbunden sei.</p>
+            <p>Auch er billige den Vorschlag Dr. <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müllers</name>, eine Kommission zur Prüfung des Gesamtkomplexes zu bilden. Nur in einer einheitlichen, in sich abgeschlossenen Regelung könne ein brauchbares Mittel gefunden werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dankt allen Rednern für ihre Beiträge und stellt das Einverständnis der Fraktion mit der Bildung des vorgeschlagenen Ausschusses fest.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN023" type="comment">
+                     <p>Aus diesen Überlegungen entstand die sog. »Kuchenkommission«. Fortgang siehe Nr. 191, 2.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. [Bundestagssitzung in Berlin]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß der Ältestenrat vorschlägt, die Arbeitssitzung in Berlin in der Zeit vom 17. bis 20. 10. 1955 abzuhalten.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN024" type="comment">
+                     <p>Siehe Nr. 184, Anm. 17 und vgl. das Kurzprotokoll der 77. Sitz. des Ältestenrates am 13. 9. 1955, 12.00 Uhr (Parl. Arch., Ältestenrat, 2. Wp.).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>7. [Gesetzgebungsprogramm für die 2. Wahlperiode]</p>
+            <p>Weiterhin bittet er die Arbeitskreisvorsitzenden, in den Arbeitskreisen zu prüfen, welche Gesetze in den nächsten zwei Jahren unbedingt noch erforderlich seien.</p>
+            <p>Er schließt die Sitzung mit dem Hinweis, daß demnächst eine Fraktionssitzung über das Thema Sozialreform stattfinden solle<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-09-13-t1515_EP_FN025" type="comment">
+                     <p>Siehe Nr. 188, 10.</p>
+                  </note>
+               </seg>, um 19.00 Uhr.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

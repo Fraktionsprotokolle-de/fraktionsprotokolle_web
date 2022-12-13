@@ -1,248 +1,384 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-06-26-t0945_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1007/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 26. Juni 1956</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>12 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1956-06-26"><time type="start" when="09:45:00"/><time type="end" when="13:05:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#KunzeJohannes_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1956-06-26-t0945_EP_SVP-1" corresp="#cdu-csu-02_1956-06-26-t0945_EP_div_SVP-1">A. TOP 1: Verschiedenes. – TOP 2: Arbeitsprogramm des Plenums. – TOP 3: Finanz- und Steuerfragen. – TOP 4: Haushalt des Bundesministers für Arbeit. – TOP 5: Rentenreform. – TOP 6: Ansprache <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name>. – TOP 7: Außenpolitische Debatte.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1956-06-26-t0945_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. [Verschiedenes]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bedauert einleitend, daß Arbeitskreis V für sich tage, was dem Besuch der Fraktionssitzung abträglich sei.</p>
-				<p>Dann teilt er mit, daß im Kabinett die außenpolitische Debatte<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN001" type="comment"><p>Siehe Nr. 269, Anm. 13.</p></note></seg> und die Debatte zur Sozialversicherungsreform [Drucksache II/2437 v. 5.6.1956]<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN002" type="comment"><p>Der Bundesminister für Arbeit brachte die Rentenreform am 27.6.1956 im Bundestag ein. Vgl. Sten Ber., 154. Sitz., S. 8334–8339.</p></note></seg> vorbereitet werde.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN003" type="comment"><p>Am 19.6.1956 hatte das Kabinett die Einbringung der Rentenreform besprochen, am 26. d. M. die Regierungserklärung zur Außenpolitik. Vgl. die Protokolle der 140. und 141. Kabinettssitz., in: Kabinettsprotokolle 1956, S. 433f. und 442–454.</p></note></seg></p>
-				<p>Der Ausschuß für Verteidigung mußte am Vortage seine Beratungen frühzeitig abbrechen, weil von den CDU/CSU-Mitgliedern nur fünf anwesend waren.</p>
-				<p>Dann wendet sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> den Beziehungen zwischen CDU und CSU zu und dementiert nachdrücklich die Mitteilungen der FAZ, die jeder Grundlage entbehrten. Die Aussprache auf der Landesausschußsitzung der CSU in Bayreuth sei vom Geiste des Zusammenhalts getragen gewesen. Worauf es der CSU ankomme sei, daß von jetzt an die einheitliche Zusammenarbeit im Kabinett gewährleistet würde und somit die Voraussetzungen für einen erfolgreichen Wahlkampf erhalten bleiben. Dies sei auch der Wunsch der CDU.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN004" type="comment"><p>Siehe Nr. 274, 3.</p></note></seg></p>
-				<p>2. [Arbeitsprogramm des Plenums]</p>
-				<p>Rasner berichtet sodann über den Zeitplan für diese Woche; der für den gleichen Tag die Durchführung der Konjunkturdebatte, für Mittwoch die Rentenversicherungsgesetzgebung [Drucksache II/2437 v. 5.6.1956], die Altersversorgung Handwerk [CDU/CSU-Gesetzentwurf, Drucksache II/1479 v. 21.6.1955], [die Bereitstellung von Mitteln für] die Facharbeiter-Ansiedlung in den Zonengebieten [SPD-Antrag, Drucksache II/2222 v. 15.3.1956] und die Kapitalhilfe für Berlin [Drucksache II/2143 v. 29.2.1956] vorsieht. Am Donnerstag werde die Regierungserklärung zur Außenpolitik erfolgen. Dann werde der Haushalt [Drucksache II/1900 v. 2.12.1955] beraten. Am Freitag finde die außenpolitische Debatte statt.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN005" type="comment"><p>Das vorgestellte Programm wurde eingehalten mit Ausnahme der Behandlung des Facharbeiter-Wohnungsbaus und der Kredithilfe für Berlin, die erst am Donnerstag stattfand. Vgl. Sten. Ber., 153., 154., 155 und 156. Sitz. am 26., 27., 28., und 29.6.1956.</p></note></seg></p>
-				<p>Für die kommende Woche sei vorgesehen: Am Mittwoch die 2. Lesung des Wehrpflichtgesetzes [Drucksache II/2303 v. 12.4.1956], am Freitag dessen 3. Lesung. Der Sonnabend müsse für Plenarsitzung vorgesehen werden.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN006" type="comment"><p>Vgl. ebd., 157. und 159. Sitz. am 4. und 6./7.7.1956. Die 159. Sitz. wurde am Freitag begonnen und erst am Sonnabend um 3.43 Uhr beendet.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> regt an, das Gesetz über die Industrie- und Handelskammer [Antrag <name type="Person" role="Erwaehnung" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und Gen., Drucksache II/1964 v. 14.12.1955] noch vor den Ferien zu verabschieden. In der Fraktion sei in dieser Frage Übereinstimmung erzielt. Auch die Koalition sei einverstanden. Wenn das Gesetz über die Ferien liegenbleibe, müsse man neue Schwierigkeiten erwarten.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN007" type="comment"><p>Siehe Nr. 274, 5.</p></note></seg></p>
-				<p>3. [Finanz- und Steuerfragen]</p>
-				<p>Neuburger berichtet zu den Finanz- und Steuerfragen, daß der Finanz- und Steuerausschuß in erster Linie über die [CDU/CSU, DP, DA-]Steuervorlage [Drucksache II/2283 v. 11.4.1956] abgestimmt habe. Die Abstimmungen seien knapp gewesen, weil SPD, FDP und BHE gegen einen Teil der Vorlagen eingestellt seien. Bei den Verhandlungen sei auch der Bundesrat vertreten gewesen. Im wesentlichen gehe es um folgende Punkte: Der Bundesrat wünsche die Streichung des Notopfers Berlin<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN008" type="comment"><p>Siehe Nr. 265, 4.</p></note></seg>, während die CDU/CSU-Vorlage nur einen teilweisen Wegfall vorsehe, dafür aber eine durchgehende Tarifsenkung bringen werde. Summenmäßig seien die beiden Vorschläge in ihrer Auswirkung gleich. Da aber das Notopfer 100%ig auf die Bundeskasse falle, während die Einkommensteuersenkung zu 2/3 zu Lasten der Länder gehe, müsse noch ein Kompromiß gesucht werden, der dann möglich erscheine, wenn die [CDU/CSU, DP, DA-]Umsatzsteuervorlage [Drucksache II/2282 v. 11.4.1956] zurückgenommen werde.</p>
-				<p>Er, [der] Redner, habe einen Kompromißvorschlag gemacht, auf den aber der Bundesfinanzminister nicht eingegangen sei. Er habe vorgeschlagen, die Partner sollen sich in die auftretende Differenz von etwa 550 Mio. DM teilen, die bei Wegfall des Notopfers und bei Zurücknahme der Umsatzsteuervorlage entstünden.</p>
-				<p>Wenn die Länder auf ihren Vorlagen bestünden, sei das Inkrafttreten der Steuersenkung zum 1.10. gefährdet. Es sei also Aufgabe, hier eine Einigung zu suchen. Dabei werde auch diskutiert, inwieweit man auf die Gewerbesteuer ausweichen könne. Auf die Bereitschaft, die gezielten Maßnahmen zugunsten des Mittelstandes bei der Einkommensteuer zurückzustellen und eine entsprechende Entlastung bei der Gewerbesteuer zu suchen, hätten die Länder positiv reagiert. Aber der Versuch, auch die Umsatzsteuer mit 360 Mio. DM auf die Gewerbesteuer zu verlagern, sei gescheitert, weil dies von den Ländern nicht mitgemacht werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> bemerkt, daß er es sehr begrüßt hätte, wenn man zu einer Aufhebung des Notopfers Berlin gekommen wäre. Er bedauere, daß man offenbar aus Prestigegründen an der Umsatzsteuerfrage festhalte, obwohl damit zu rechnen sei, daß der Bundesrat gegen die differenzierte Umsatzsteuer stimmen werde. Es sei doch so: Nicht die Umsatzsteuer, sondern die Gewerbesteuer sei der Hauptanstoß beim gewerblichen Mittelstand, weil dieser in ihr eine zusätzliche Einkommensteuer sehe und Anstoß daran nehme, daß in den Gemeinden von Leuten über die Gewerbesteuer beschlossen würde, die selbst keine Steuern dieser Art zahlen. Wenn sich auch die Landgemeinden gegen eine Preisgrenze bei der Gewerbesteuer wendeten, so müsse doch darauf hingewiesen werden, daß diese nur zu einem lächerlichen Prozentsatz den Finanzbedarf der Gemeinden decke.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> widerspricht dieser Auffassung, daß die große Masse der kleinen und mittleren Gemeinden einen sehr beträchtlichen Ausfall erleiden würde. Die Vorlage sei nur durchführbar, wenn die Länder den Gemeinden den entsprechenden Ausfall ersetzten. Das könne er sich allerdings nicht vorstellen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bemerkt, daß er den Eindruck habe, die Steuerdebatte werde offensichtlich bis zur völligen Ermüdung der Beteiligten geführt, um auf diese Art und Weise die Meinung des Finanzministers durchzusetzen. Gewiß habe Dr. <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name> recht, daß der Wegfall des Notopfers Berlin eine große Vereinfachung bedeute. Das Ergebnis aber sei, daß bei den höchsten Einkommen damit eine Steuersenkung von über 7½% auftrete. Wenn man schon toleriert habe, daß bisher gewisse Wirtschaftsgruppen ständig Vergünstigungen erhielten, so könne das doch nicht weiter fortgesetzt werden. Bisher seien die mittleren und kleinen Einkommen übervorteilt worden. Jetzt müßten diese einmal zum Zuge kommen. Es komme darauf an, gleiche Wettbewerbsbedingungen herzustellen.</p>
-				<p>Er wundere sich über die eingetretenen Ergebnisse, da man sich in der vorigen Woche doch einig gewesen sei, den Vermittlungsausschuß nicht anzurufen.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN009" type="comment"><p>Siehe Nr. 269, 6.</p></note></seg> Wenn die Länder dies nun trotzdem täten, so offenbar auf den Druck des Finanzministers hin. Wenn dieser in einem solchen Sinne tätig sei, dann müsse er, [der] Redner, das für Wortbruch halten und könne nur bedauern, wenn er weiter so verfahre.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN010" type="comment"><p>Der Bundesrat beschloß am 20.7.1956, in der Frage des Notopfers Berlin den Vermittlungsausschuß anzurufen, und brachte zu dem Sachverhalt einen eigenen Gesetzentwurf ein. Vgl. Drucksachen II/2642 und II/2643 v. 20.7.1956.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> erklärt, nicht verstehen zu können, warum über die Umsatzsteuer überhaupt noch gesprochen werde. Es handele sich erwiesenermaßen um die Beseitigung einer Ungerechtigkeit, und bisher sei man sich in diesem Punkt immer einig gewesen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> meint, daß man offenbar auf Sachverständige in Steuerfragen überhaupt nicht mehr hören wolle. Da die Frage der Umsatzsteuer zu einem Politikum geworden sei, habe es wohl nicht mehr viel Sinn, dazu zu sprechen. Wenn man aber in der Steuergesetzgebung auf dem beschrittenen Weg weitergehe, solle man auch aufhören, von einer Vereinfachung der Steuergesetzgebung zu sprechen. Wenn die Entwicklung so weitergehe, sehe er für sich keinen Zweck mehr darin, im Finanz- und Steuerausschuß mitzuarbeiten, weil ständig Entscheidungen fielen, die man nicht verantworten könne.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet, nicht in Schärfe zu diskutieren. Die Fraktion habe sich in mehreren Sitzungen mit diesen Problemen befaßt und gegen ganz wenige Stimmen der Fraktionsvorlage zugestimmt. Diesen Beschluß umzustoßen, halte er für politisch nicht tragbar. Wenn man in der Frage der Umsatzsteuer umfalle, werde man von niemandem mehr ernst genommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> teilt vom Standpunkt der Arbeitnehmer aus mit, daß er sich wegen der damit verbundenen Bevorzugung der großen Einkommen entschieden gegen eine Streichung des Notopfers ausspreche.</p>
-				<p><name type="Person" role="Sprecher" ref="#FrieseHermann_1953-10-06">Friese</name> bedauert, daß, wenn von mittelständischen Interessen gesprochen werde, immer von verschiedenen Seiten gleich der Vorwurf der Interessenvertretung erhoben werde. Er bitte darum, daß man auch dem Mittelstand die Möglichkeit gebe, seine Anliegen so vorzubringen, wie das die anderen Wirtschaftsgruppen auch täten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt diese Diskussion mit der Bemerkung, daß ein Antrag auf Änderung des früheren Fraktionsbeschlusses nicht vorliege. Die Mitglieder des Steuerausschusses sollten also weiter im Sinne dieses Beschlusses verfahren.</p>
-				<p>4. [Haushalt des Bundesministers für Arbeit]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> weist zum Kindergeldgesetz auf einen Vorstoß von Dr. <name type="Person" role="Erwaehnung" ref="#SchildHeinrich_1953-10-06">Schild</name> (DP) im Haushaltsausschuß hin, der den Versuch gemacht habe, 100 Mio. DM im Haushalt bereitzustellen, um die Korrektur der Kindergeldgesetzgebung durchführen zu können. Das sei abgelehnt worden. Daß dieser Antrag aber gestellt werden konnte, sei dadurch möglich geworden, weil die Regierung den ihr erteilten Auftrag, spätestens drei Monate nach Vorliegen des 1. Jahresgeschäftsberichtes der Kindergeldkassen ein Korrekturgesetz vorzulegen<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN011" type="comment"><p>Vgl. den Entschließungsantrag der CDU/CSU-Fraktion (Umdruck 501 v. 14.12.1955, in: Sten. Ber., 120. Sitz. am 15.12.1955, S. 6429), der in der 3. Lesung des Kindergeldgesetzes angenommen worden war (vgl. ebd., S. 6414).</p></note></seg>, nicht erfüllt habe. Es empfehle sich, bei der 3. Lesung des Haushalts eine entsprechende Entschließung einzubringen.</p>
-				<p>Die Fraktion billigt den vorgeschlagenen Entschließungstext.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN012" type="comment"><p>Die CDU/CSU-Fraktion erinnerte die Regierung in ihrer Entschließung an den Auftrag, den ihr der Bundestag im Dezember gegeben hatte. Vgl. Umdruck 712 v. 28.6.1956, ebd., 155. Sitz. am 28.6.1956, S. 8499.</p></note></seg></p>
-				<p>5. [Rentenreform]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> bedauert sodann, daß bei der nun beginnenden Erörterung der Rentenreform wiederum durch die Steuerdebatte so viel Zeit in Anspruch genommen sei, daß man dieses mindestens ebenso wichtige Problem nicht in der gebührenden Breite behandeln könne. Auch sei es bedauerlich, daß der Bundesarbeitsminister durch eine Kabinettssitzung verhindert sei, selbst eine Einleitung dazu zu geben.</p>
-				<p>Arbeitskreis IV habe in verschiedenen Sitzungen die Diskussion vorbereitet; der Einladung an die übrigen Fraktionskollegen, an dieser Sitzung teilzunehmen, sei leider so gut wie nicht entsprochen worden.</p>
-				<p>Der Entwurf eines Gesetzes zur Neuregelung des Rechtes der Rentenversicherung der Arbeiter und der Angestellten [Drucksache II/2437 v. 5.6.1956] wolle die seit den letzten Jahrzehnten des vorigen Jahrhunderts geschaffene soziale Sicherung für die Alten und Invaliden, Witwen und Waisen entsprechend den gesellschaftlichen Erfordernissen und den wirtschaftlichen Gegebenheiten unserer Zeit neu gestalten. Dieses Ziel werde auf dreifache Weise erreicht:</p>
-				<p>a) umfassende Sicherung durch Erhöhung der Leistungen und Vermehrung der Leistungsarten unter Berücksichtigung der individuellen Lebensleistung,</p>
-				<p>b) der Wirtschaftsentwicklung entsprechende Sicherung durch Anpassung an die jeweiligen wirtschaftlichen Verhältnisse,</p>
-				<p>c) einheitliche Sicherung durch Wiederherstellung der Rechtseinheit, verbunden mit übersichtlicher Gestaltung des gesamten Rechtsgebietes.</p>
-				<p>Der Entwurf bringe eine entscheidende Verbesserung für die Stellung des Sozialleistungsempfängers im Gesellschaftsgefüge. Die bisherigen Leistungen seien anerkannter Weise heute ungenügend und entsprechen vor allem nicht den Vorstellungen, die über eine ausreichende Sicherung bei den heutigen Rentenbeziehern und bei der in abhängiger Arbeit tätigen Bevölkerung bestehen. Die angestrebte Verbesserung der Leistungen könne nicht lediglich durch eine schematische Erhöhung geschehen, vielmehr setze sie einen Umbau des gegenwärtigen Sicherungssystems voraus, wenn sie gesellschaftspolitisch sinnvoll und wirksam sein soll. Wesentlich sei das Abgehen von der bisherigen statischen Rentenformel und die Einführung einer gewissen Lohnbezogenheit der Rente für die Zukunft.</p>
-				<p>Im Gegensatz zu dem Entwurf der SPD [Drucksache II/2314 v. 18.4.1956] werde an den Vorschriften der RVO festgehalten, die lediglich nach den neuen Grundsätzen umgestaltet würde. Das Gleiche gelte auch für die Angestelltenversicherung.</p>
-				<p>Auch in Zukunft, so sei die Meinung von Arbeitskreis IV, solle man an der Selbständigkeit der Angestelltenversicherung festhalten, auch wenn eine Rechtsangleichung und eine Gleichgestaltung der Leistungen erfolge. Deswegen habe der Arbeitskreis vorgeschlagen, das Gesetz in zwei Gesetze aufzutrennen, eines für die Invaliden- und eines für die Angestelltenversicherung. Der 1. Abschnitt der Vorlage behandele die Aufgaben der Versicherung und den Kreis der versicherten Personen. Dabei stehe die Erhaltung, Besserung oder Wiederherstellung der Erwerbsfähigkeit der Versicherten und ihrer Angehörigen im Vordergrund. Dann erst komme die Gewährung der Renten im Falle der Invalidität und des Alters und die Versorgung der Hinterbliebenen sowie Maßnahmen zur Hebung der gesundheitlichen Verhältnisse der Bevölkerung.</p>
-				<p>Bei der Versicherungspflicht gehe man davon aus, daß alle beschäftigten Arbeitnehmer ohne Rücksicht auf die Höhe ihrer Einkünfte in die Versicherungspflicht einbezogen würden. Eine Pflichtgrenze bestehe nur noch insoweit, als künftig eine Beitragsbemessungsgrenze vorgesehen sei, die für das Jahr 1957 etwa bei 750 DM monatlich liegen werde.</p>
-				<p>Die Meinungen im Arbeitskreis zu diesem Punkt seien geteilt gewesen. Die SPD wolle die Pflichtgrenze überhaupt beseitigt wissen, während nach der eigenen Anschauung jene, die selbst in der Lage seien, für die Wechselfälle des Lebens Vorsorge zu treffen, nicht in die staatliche Zwangspflichtversicherung einbezogen werden sollten. Dagegen wiesen die Anhänger der Regierungsvorlage darauf hin, daß die Vergangenheit ja hinreichend gezeigt habe, daß weite Kreise dabei erheblich zu Schaden gekommen seien und man führe hier den Gedanken von der Solidarität der Arbeitnehmer an. Diejenigen, die für eine Pflichtgrenze gewesen seien, hätten keine konkreten Vorschläge für eine solche gemacht.</p>
-				<p>In Zukunft solle eine Weiterversicherung nur zulässig sein, wenn die Wartezeit für die Invalidenrente (60 Monate) erfüllt sei. Unbilligkeiten würden dadurch ausgeschlossen, daß eine Beitragserstattung vorgesehen sei, wenn die Berechtigung zur Weiterversicherung nicht gegeben sei. Auch hier weiche der Entwurf wesentlich vom Verlangen der SPD ab. Eine Anwartschaft werde es also nicht mehr geben. Die einzige Voraussetzung sei die Erfüllung der Wartezeiten.</p>
-				<p>Der 2. Abschnitt behandele die Leistungen aus der Versicherung, bei denen die sogenannte Rehabilitation im Vordergrund stehe.</p>
-				<p>Die Vorschriften über die Renten brächten die wesentlichsten Änderungen entgegen dem geltenden Recht. Dabei soll der Versicherungscharakter der Rentenversicherung, aus dem sich der Rechtsanspruch ihrer Mitglieder ergibt, erhalten bleiben und die in seinen Beiträgen ausgedrückte individuelle Leistung des Versicherten berücksichtigt werden. Die wesentlichste Neuerung sei die Unterscheidung zwischen Alters- und Invalidenrenten. Die Altersrente werde eine reine Beitragsrente mit Lohnbezogenheit sein. Bei der Invalidenrente solle dadurch geholfen werden, daß die Rente so bemessen werde, als ob der vorzeitig invalid gewordene bis zum 55. Lebensjahr Beiträge geleistet habe. Die dafür notwendigen Zuschüsse sollten dem Bundeshaushalt entnommen werden.</p>
-				<p>Man müsse sich klar sein, daß bei diesen Regelungen in Zukunft auch sehr niedrige Renten zustande kommen könnten. Dabei müsse man es wegen des Versicherungs-prinzips bewenden lassen und insoweit werde auch fernerhin die öffentliche Fürsorge einen Teil der regulären Sozialleistungen wie bisher erbringen müssen. Dagegen wolle die SPD das Prinzip der Mindestrente erhalten wissen.</p>
-				<p>Der §1260 stelle das Kernstück der künftigen Rentenbemessungsvorschriften dar. Die für den Versicherten maßgebende Rentenbemessungsgrundlage sei danach ein Vom-Hundert-Satz der allgemeinen Bemessungsgrundlage und zwar der Vom-Hundert-Satz, der dem Verhältnis entspreche, in dem während der gesamten Versicherungsdauer der Bruttoarbeitsentgelt zu dem durchschnittlichen Bruttoarbeitsentgelt aller Versicherten gestanden hat. Der durchschnittliche Bruttoarbeitsentgelt aller Versicherten wird für jedes Kalenderjahr durch Rechtsverordnung der Bundesregierung bestimmt.</p>
-				<p>Gewiß sei dies eine schwer verständliche Regelung und man werde dazu noch konkretere Einzelheiten erörtern müssen.</p>
-				<p>Die §§1276 bis 1279 regelten die Anpassung der laufenden Renten an die wirtschaftliche Entwicklung. Es solle sichergestellt werden, daß das Mißverhältnis, das bisher zwischen dem Lebensstandard der Rentner und dem der erwerbstätigen Bevölkerung bestanden hat und das nunmehr beseitigt wird, in Zukunft nicht wieder entsteht.</p>
-				<p>Die Frage, ob die jeweiligen Änderungen der Rentenversicherungsgesetze dem Parlament Vorbehalten oder der Regierung übertragen werden sollen, werde vom Arbeitskreis IV dahin beantwortet, daß man diese Sache dem parlamentarischen Streit entziehen solle.</p>
-				<p>Die §§1382 bis 1384 befaßten sich mit der Aufbringung der Mittel. Der Beitragssatz für die pflichtversicherten Personen werde auf 14 v. H. des Bruttoarbeitsentgelts der Versicherten festgesetzt. Arbeitgeber und Versicherte würden mit je einem zusätzlichen Beitragsprozent belastet. Die Beiträge zur Arbeitslosenversicherung würden um 1% gesenkt. Darüber hinaus müßten auch noch die Bundesmittel zum Einsatz kommen, um die Zuschüsse für die Invaliditätssicherung leisten zu können.</p>
-				<p>Durch die Abwendung vom bisherigen Kapitaldeckungsverfahren und die Einführung des Abschnittdeckungsverfahrens sei die Regierung verpflichtet, für die vorgesehenen Zeiträume jeweils versicherungsmathematische Bilanzen aufzustellen und demnach die Deckung bereitzustellen. Natürlich werde dabei die Kapitalansammlung bei den Versicherungsträgern verringert; wenn sich aber herausstelle, daß die Versicherungsträger nicht hinreichend Mittel für die Leistungen des nächsten Jahres hätten, solle der Bund mit Haushaltsmitteln einspringen.</p>
-				<p>Mit diesen Regelungen seien natürlich mancherlei Probleme verbunden, die noch ausdiskutiert werden müßten. Auch die Regierung habe die Notwendigkeit einer solchen Diskussion schon eingeräumt.</p>
-				<p>Die Anpassung der bereits laufenden Renten erfolge nach den dem Entwurf beiliegenden Tabellen durch Anwendung gewisser Faktoren.</p>
-				<p>Die Altersversorgung des Handwerks bleibe bis zu einer Neuregelung nach dem geltenden Recht erhalten.</p>
-				<p>Es sei bedauerlich, daß über die so wesentliche Frage der Altersversorgung der Selbständigen ein Referentenentwurf an die Öffentlichkeit gekommen sei. Man werde sich bemühen müssen, in dieser Frage zu gemeinsamen Auffassungen zu kommen. In der Frage der Altersgrenzen wünsche der Bundesrat für weibliche Versicherte 60 Jahre; die Bundesregierung lehne das ab und auch der Arbeitskreis IV empfehle gleichmäßige Behandlung der Versicherten.</p>
-				<p>Eine Bemerkung sei noch angebracht über die vorgesehene Abfindung für Witwen im Falle der Wiederverheiratung, die in Höhe von fünf Jahreswitwenrenten vorgesehen sei. Hier empfehle es sich, eine Angleichung an das BVG herbeizuführen. Diese Vorschrift werde gegen die sogenannten Onkelehen wirken, wenn man auch daran festhalten müsse, daß fehlende Moral nicht durch Sozialversicherungsgesetze ersetzt werden könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#KunzeJohannes_1949-09-07">Kunze</name> dankt <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> und seinen Mitarbeitern für die umfangreiche bereits geleistete Arbeit und begrüßt den unterdessen eingetroffenen Bundesarbeitsminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> weist darauf hin, daß der Regierungsentwurf wohl sehr grundsätzlich angegriffen werde. Die Opposition wende sich gegen ihn, weil sie eine allgemeine Volksversorgung anstrebe, während der Entwurf das Versicherungsprinzip wieder herstelle. Aber auch von anderer Seite seien grundsätzliche Wirtschafts- und Kapitalansammlungsgründe vorhanden, aus denen Bedenken resultierten. Diese seien enthalten in der Flut von Gutachten, die zu dieser Vorlage bereits eingelaufen seien. Man sage, daß eine derartig große Finanzmasse, die in den Konsum hineinkomme, wirtschaftliche Störungen hervorrufe. Auch werde befürchtet, daß die Art und Weise der Rentenformel und die Anpassung der Renten an die Entwicklung des allgemeinen Volkseinkommens den Sparwillen eindämmen und damit die notwendige Kapitalbildung verhindern werde. Dies werde sich auch auf die weitgehende Finanzierung der Wohnungsbauten durch die Rentenversicherungsträger ungünstig auswirken, so sage man. Man solle diesen Ausführungen nicht folgen, sondern die dafür vorhandenen Gegenargumente darstellen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> fordert, daß man sich mit solchen Einwänden ernsthaft auseinandersetzen müsse. Wenn die Bundesregierung selbst sage, daß sie mit einer durchschnittlichen 2%igen Abwertung rechne, dann werde man sich damit in der Öffentlichkeit nicht ohne weiteres abfinden. Minister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> habe dies unterstrichen und auch <name type="Person" role="Erwaehnung" ref="#RöpkeWilhelm">Röpke</name> habe auf die Gefahr einer solchen Entwicklung hingewiesen. Wenn man dies nun gesetzlich regele, werde man die an sich schon vorhandene Tendenz noch steigern. Auch mit dem Problem des Konten- und des Versicherungssparens müsse man sich ernsthaft auseinandersetzen. Wenn man nicht den Sparern und denen, die Lebensversicherungen abschließen, einen entsprechenden Ausgleich gebe, befürchte er, daß ein Teil der Fraktion der Vorlage nicht zustimmen könne. Aber schon jetzt wolle er sich dagegen wenden, wenn man das evtl. als Interessenstandpunkt diffamieren wolle. Die Regierung setze sich mit Nachdruck gegen inflatorische Entwicklungen ein. Sie könne es auch in dieser Sache nicht unterlassen, diesen Gesichtspunkt zu berücksichtigen und müsse versuchen, einen Ausweg zu finden.</p>
-				<p>Da die Invalidität im wesentlichen durch Staatszuschüsse gedeckt werden solle, entstehe die Frage, wie man dies vor dem Grundgesetz verantworten wolle, da diese Vorsorge nur für 80% der Bevölkerung geschaffen sei. Hier scheine der Gleichheitssatz verletzt zu sein.</p>
-				<p>Die Frage der Selbständigen, so führt der Redner ironisch aus, sei ja nun leicht zu lösen. Man müsse dem Nachwuchs der Selbständigen nur empfehlen, wenigstens fünf Jahre zu kleben. Dies sei eine ganz unerwartete Wendung, die das bevorstehende Gesetz über die Altersversorgung des Handwerks fast überflüssig mache.</p>
-				<p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name> stellt dar, daß dieses Problem nun seit einigen Jahren erörtert werde. Bei dieser Sachlage wundere er sich, daß man jetzt noch einmal in die Grundsatzdebatte einsteige. Man sei sich doch klargeworden, daß man in der Zukunft für das Risiko der Alters- und Invalidenrenten zweierlei Rechtsgrundlagen schaffen wolle. Als die Rentenversicherung geschaffen worden sei, sei man davon ausgegangen, daß man durch einen Grundbetrag der Renten einen gewissen Ausgleich geben wollte, wenn jemand vorzeitig invalid wurde. Das höre nun auf. Die Altersrente sei eine reine Beitragsrente, und für diesen Teil gebe der Staat auch keine Zuschüsse mehr. Als 1912 die Angestelltenversicherung neu geschaffen worden sei, habe man geglaubt, daß dieser Versichertenkreis staatliche Zuschüsse nicht notwendig habe. Man habe die Angestellten für nicht so schutzbedürftig gehalten wie die gewerblichen Arbeiter. Deshalb habe man bei ihnen eine andere Grundregelung geschaffen: Man gebe aus den Beiträgen einen sehr hohen Grundbetrag, um auch denen, die nur wenige Beitragsjahre hätten, eine ausreichende Rente zu sichern. Diese Konzeptionen seien heute nicht mehr zu halten. Gewisse Gruppen der gewerblichen Arbeiter seien in ihrem Einkommen über einen großen Teil der Angestellten hinausgewachsen, was aber bei der bisherigen Regelung eine Benachteiligung bei der Rentenerrechnung bedeute. Für beide Gruppen falle in Zukunft bei der Altersrente der Grundbetrag weg. Dafür würden die Steigerungsbeträge mit 1,5% der Jahresarbeitsverdienste berechnet, für die Beiträge gezahlt wurden. Weiter sei vorgesehen, die Jahresarbeitsverdienste auch der vergangenen Zeiten den neuen Verhältnissen anzupassen, da man bisher nur von den Markbeträgen ausgegangen sei, ohne auf die ganz anderen Kaufkraftverhältnisse Rücksicht zu nehmen. Hier schaffe also der Gesetzentwurf eine ganz neue Ordnung. Man bleibe nicht mehr beim Anwartschafts- und Deckungsverfahren. Dadurch werde erzielt, daß die jetzt im Erwerbsleben Stehenden einen Teil ihres Einkommens für diejenigen abgäben, die vor ihnen durch ihre Arbeit die Voraussetzungen für die Wirtschaftsentwicklung gegeben hätten: Das sei die Solidarität der Generation.</p>
-				<p>Die Gefahr einer inflatorischen Auswirkung könne er nicht sehen. Die jetzt im Erwerbsleben Stehenden müßten zugunsten der Generation vor ihnen auf einen Teil ihres Einkommens verzichten. Dadurch werde lediglich eine Konsummöglichkeit für die Alten geschaffen, die sonst für die Erwerbstätigen vorhanden wäre. Er sehe keine währungspolitischen Gefahren, ebenso wenig, wie er einen Verstoß gegen den Gleichheitssatz erkennen könne.</p>
-				<p>Man könne auch nicht sagen, daß die Selbständigen schlechter dastünden. Wenn man den Beitrag eines 40 Jahre im Erwerbsleben stehenden Arbeitnehmers kapitalisiere, dann ergebe das eine Summe von 30000 DM. Der Selbständige werde sich immer überlegen, ob er diese Summe zugunsten seiner späteren Versorgung seiner eigenen Verfügung entziehen oder sie lieber zur Sicherung seiner Existenzgrundlage im Betriebe werde arbeiten lassen.</p>
-				<p>Auch eine Gefährdung der Lebensversicherungen sehe er nicht. Sterbe ein Lebensversicherter, dann bekämen seine Hinterbliebenen den Versicherungsbetrag als Erbschaft. Wenn ein in der Rentenversicherung Stehender sterbe, bekämen seine Hinterbliebenen, wenn sie nicht Witwen oder Waisen seien, keinen Pfennig der einbezahlten Beträge zurück.</p>
-				<p>Bei diesen Regelungen gehe es darum, dafür zu sorgen, daß niemand von dem erarbeiteten Lebensstandard heruntergehen müsse, wenn das Alter oder frühe Invalidität weitere Erwerbstätigkeit unmöglich mache.</p>
-				<p>In einem Teil der westeuropäischen Länder habe man eine Volksversorgung eingeführt. Diesen Weg wolle man hier nicht gehen, sondern jeder solle die Möglichkeit haben, aufgrund seiner Leistung im Arbeitsleben sich eine entsprechend hohe Rente zu sichern. Es handele sich um eine Art Zwangssparbewegung für das Alter, und niemand könne in Zukunft die Allgemeinheit in Anspruch nehmen, wenn er selbst nicht die entsprechende Vorsorge getroffen habe, so wie das jetzt der Fall sei.</p>
-				<p>Bei der Invalidenrente sei zu bedenken, daß die privaten Versicherungen die schlechten Risiken ausschlössen. Hier aber gehe es darum, den ohne Schuld in Not Kommenden so zu stellen, daß er noch leben könne. Man gebe ihm eine höhere Rente, als ihm nach der Beitragsleistung zustehe. Dies sei eine Leistung der Versichertengemeinschaft, und wenn man die dadurch entstehenden Lasten nur den Versicherten aufbürden wolle, dann wäre der Sozialversicherungsbeitrag eine Art zweite Steuer. Auch hier müsse man schon aus innerem Empfinden den Vorschlägen der Regierung folgen.</p>
-				<p>Die Invalidenrente werde gegeben, wenn über 50% der Erwerbsfähigkeit verlorengegangen sei. Hier sei eine Gleichstellung mit der Angestelltenrente erfolgt. Die Rente solle dann eine Zuschußrente für den Lebensunterhalt sein, wenn der volle Lohn nicht mehr erzielt werden könnte. Die voll Arbeitsunfähigen sollten so gestellt werden, als ob sie bis zum 55. Lebensjahr Beiträge gezahlt hätten. Diejenigen, die aber noch einen Teil ihrer Arbeitskraft hätten, sollten den Steigerungsbetrag nur in 2/3 der Höhe bekommen wie der Vollinvalide.</p>
-				<p>Wenn man das Gesetz in der vorgeschlagenen Form annehme, werde man damit 80% unseres Volkes die Angst vor der Not im Alter genommen haben, und das würden die Menschen zu danken wissen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> schlägt vor, daß zum Ausdruck gebracht werden solle, daß in bezug auf die Pflichtversicherung aller Arbeitnehmer verschiedene Meinungen in der Fraktion vorhanden seien. Auch auf die volkswirtschaftlichen Bedenken solle man ernsthaft eingehen. Wenn in den jüngsten Verhandlungen gesagt worden sei, daß die Bank deutscher Länder ihr ursprüngliches Gutachten durch ein positives ersetzt habe, so müsse er feststellen, daß er ein solches bis jetzt nicht habe finden können.</p>
-				<p><name type="Person" role="Sprecher" ref="#KunzeJohannes_1949-09-07">Kunze</name> stellt fest, daß <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> seitens der Fraktion als Hauptredner für die Debatte vor-geschlagen wird.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN013" type="comment"><p>Vgl. ebd., 154. Sitz. am 27.6.1956, S. 8334–8385.</p></note></seg></p>
-				<p>6. [Ansprache <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name>]</p>
-				<p>Die Fraktion begrüßt den eintretenden Ministerpräsidenten <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> mit lang anhaltendem Beifall.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> richtet Grußworte an ihn, der der Fraktion kein Fremder sei. Ebenso wie in Stuttgart niemand mehr Beifall bekommen habe wie <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name><seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN014" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> hatte am 28.4.1956 auf dem Parteitag der CDU gesprochen. Vgl. CDU Deutschlands: 6. Bundesparteitag, S. 104f.</p></note></seg>, werde er auch die Aufmerksamkeit und die Zustimmung der Fraktion genießen. <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> spreche die deutsche Sprache wie alle hier Anwesenden. Er sei geboren in einem Schicksalsland, das beiden Völkern viel Sorgen in der europäischen Politik gemacht habe, das aber auch zur Überwindung des Trennenden beitrage.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN015" type="comment"><p>Robert <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> war 1886 in Luxemburg geboren worden.</p></note></seg></p>
-				<p>Gleiches christliches Verantwortungsbewußtsein bewege ihn wie die Mitglieder der Fraktion. Man schätze <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> als einen wirklich großen Europäer und es sei der Wunsch, daß er mit dazu beitragen könne, daß die großen Ziele beider Völker erreicht werden könnten, nämlich europäisches Verantwortungsbewußtsein vor den großen Schicksalsfragen der Welt. In dieser Gemeinschaft solle auch das deutsche Volk mit seiner Sorge um seine Wiedervereinigung eingeschlossen werden. Man wisse, daß man in <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> auch einen Anwalt dieser Sache habe.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchumanRobert">Schuman</name>: »Ich freue mich, daß ich in letzter Minute diese Einladung erhalten habe. Es ist für mich überaus wertvoll, daß ich hierher nach Bonn kommen und mich<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN016" type="comment"><p>Vom Bearbeiter korrigiert aus: mit.</p></note></seg> aussprechen konnte über die speziell Frankreich angehenden Fragen. Aber diese Fragen gehen nicht nur uns Franzosen an. Der Sinn für die Solidarität und die Verknüpfung der Nationen hat sich so entwickelt, daß wir tagtäglich erfahren, daß es keine speziellen Nationalfragen mehr gibt, daß sich alle Dinge über die Grenzen hinaus auswirken und daß wir sie in Gemeinschaft lösen können und müssen.</p>
-				<p>Hier erscheint die Frage der Wiedervereinigung Deutschlands geradezu als Gegenstück zur algerischen Frage, wozu wir uns gründlich ausgesprochen haben – in Deutschland tut man ja alles gründlich und bei uns in Frankreich manchmal ein bißchen zu wenig gründlich. Immer mehr aber wird von den Franzosen erkannt, und zwar nicht nur von den Offiziellen, sondern auch im Volk, daß die Frage der Wiedervereinigung eine gesamteuropäische Frage ist, an der wir alle ein Interesse haben, daß wir zu einer Lösung gelangen können. Diese Frage ist für uns auch ein Kriterium der Gesinnung anderer Leute, besonders im Osten. Gerade an ihrer Einstellung zu dieser Frage kann man ihre tatsächliche Gesinnung erkennen. Wir können nicht annehmen, daß Ernst besteht bei den Vorschlägen, die gemacht werden, sei es über Abrüstung oder Festigung des Friedens oder was immer, wenn nicht Ernst gemacht wird mit der Frage der Wiedervereinigung Deutschlands. Hier ist der Test für Europa und für den guten Willen und den Friedenswillen aller.</p>
-				<p>Ich freue mich, daß ich mich mit Ihnen hier zusammenfinde. Ich weiß nicht nur, daß wir weltanschaulich dieselben Ziele verfolgen und den gleichen Weg gehen, sondern auch in vielen anderen Beziehungen. Ich habe nicht nur als Zuschauer, sondern auch als Politiker das Zustandekommen des deutschen Bundestages erlebt. Ziemlich nahe habe ich erlebt, wie im Parlamentarischen Rat die Besprechungen gingen, als das Grundgesetz ausgearbeitet wurde. Ich habe das verfolgt mit Sorge, aber auch mit Freude, als Sie das Werk zustande brachten unter der Leitung Ihres großen Bundeskanzlers Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>. Sie haben da ein Werk in einigen Monaten zustande gebracht, das in anderen Ländern nicht in einer Generation gelingt, und das in einer Situation, als alles zu Boden lag. Man vergißt zu leicht – die Interessenten vergessen zu leicht -, welches der Dienst ist, der geleistet wurde und mit wie großer Verantwortung der Weg vorgezeichnet wurde für das Kommende, für den Wiederaufbau Deutschlands. Das haben Sie in 5-6 Jahren geleistet. Ich muß meine Bewunderung aussprechen für alle, die daran mitgearbeitet haben, und ich bin beruhigt über die zukünftige Entwicklung. Deshalb ist es auch notwendig, daß meine Landsleute und Europa immer wieder das Empfinden haben, daß sie hier Richtlinien finden auch für unsere künftige Europapolitik. Nicht nur für die Wiedervereinigung, auch für alle die anderen Fragen, nicht nur für die Frage Ost und West, sondern auch für Sozialprobleme, für das Herausfinden eines neues Status für die überseeischen Gebiete, überall sollen und müssen Sie mitsprechen, und nicht aus egoistischen Gründen, obwohl ich solche nicht ausschließen möchte, weil sie in der Natur des Menschen liegen, aber auf allen Gebieten können Sie Ihre Erfahrung mit in diese Gemeinschaft einbringen, und wir brauchen Sie. Dadurch findet sich auch der Sinn für dauernde Zusammenarbeit und für wachsendes Vertrauen, das sich mehr und mehr aufbauen muß. Gerade so wie Sie Ihr Parlament aufgebaut haben, werden wir auch gemeinsam eine neue Welt schaffen müssen und diese nicht nur für uns, sondern auch für die anderen.</p>
-				<p>Diese Worte kommen mir aus dem Herzen und aus meiner inneren Überzeugung. Ich darf Ihnen versichern, daß dies nicht nur mein Standpunkt ist. Dieser Standpunkt besteht mehr und mehr in Frankreich, das sich früher so sehr abgeschlossen hat und seine Leute immer so wenig auf Reisen schickte. Heute sucht Frankreich den Kontakt und ist froh über jede Berührungsmöglichkeit. Jugend, Gelehrte und Handarbeiter pflegen in gleicher Weise den Austausch. Das ist neu in unserem Leben und das wird auch eine Garantie sei für die Zukunft. Gegenseitige Achtung und Überzeugung vom guten Willen des Anderen werden helfen, im Dienste der Menschheit große Aufgaben zu lösen.«</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dankt für diese einfachen und schlichten Worte, aus denen zu fühlen gewesen sei, daß sie aus dem Herzen und nicht aus dem Intellekt gekommen seien. Er sei dankbar für die ausgesprochene Anerkennung. <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> könne versichert sein, daß im Geiste der Verbundenheit der europäischen Völker auch das Schicksal des französischen Volkes aufmerksam beobachtet werde. Solche Sorgen seien heute Sorgen der Menschheit überhaupt. In dieser Verbundenheit mit dem Gast, mit seiner Heimat und seinem Lande, wolle man in der Arbeit weitergehen und versuchen, das Beste für die beiden Völker zu leisten.</p>
-				<p>7. [Außenpolitische Debatte]</p>
-				<p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> berichtet über die Besprechungen im Arbeitskreis V zur außenpolitischen Debatte. Man müsse einmal in aller Klarheit die Außenpolitik der Bundesrepublik wieder darstellen. Man müsse darauf hinweisen, daß in der Deutschlandpolitik der Sowjetunion sich bisher nichts geändert hat, ja, daß diese mit aller Schroffheit zu ihrem Ausgangspunkt zurückgekehrt sei. Die letzten Erklärungen <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> und der Agentur TASS<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN017" type="comment"><p>Als Reaktion auf eine Pressekonferenz des Bundeskanzlers zu den Äußerungen des ersten Parteisekretärs der KPdSU (siehe Nr. 274,4) hatte die sowjetische Nachrichtenagentur in einer Meldung v. 21.6.1956 unter anderem geschrieben: »Außerdem kann man die Tatsache nicht übersehen, daß auf dem Territorium Deutschlands zwei selbständige Staaten existieren und sich entwickeln. Unter diesen Bedingungen gibt es keinen anderen realen Weg zur Vereinigung Deutschlands, als den direkter Verhandlungen zwischen der Deutschen Demokratischen Republik und der Deutschen Bundesrepublik.« Vgl. DzD III/2, S. 487f.</p></note></seg> hätten gezeigt, daß die Sowjetunion auf dem Standpunkt stehe, daß ein Gespräch über die Wiedervereinigung Deutschlands mit ihr nicht geführt werden könne, sondern nur mit der DDR, mit Pankow. Letztes Ziel sei also, die DDR als gleichberechtigten Faktor anerkannt zu wissen. Jeder Versuch unsererseits, diesem Verlangen nachzugeben, bedeute eine Gefahr. Wenn heute andere Parteien von diesem Grundsatz abwichen, so erleichterten sie damit der russischen Politik ihre Arbeit. Das müsse mit aller Eindeutigkeit gesagt werden.</p>
-				<p>Zur Frage der Aufnahme diplomatischer Beziehungen zu den Satelliten stehe Arbeitskreis V auf dem Standpunkt, daß mindestens z. Zt. keinerlei Voraussetzungen dafür vorhanden seien, weil dies geradezu eine Aufforderung für die anderen Staaten bedeute, auch die DDR anzuerkennen. Das werde deren Position stärken. Vielleicht ergäbe sich einmal diese Möglichkeit, wenn jene Staaten sich nicht mehr als Satellitenstaaten fühlten, sondern eine eigene Politik machen könnten. Soweit sei die Entwicklung aber noch nicht.</p>
-				<p>Auch zum Heimatrecht der Vertriebenen und Flüchtlinge werde man ein Wort sagen müssen.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN018" type="comment"><p>Hierzu lag der Antrag des GB/BHE betr. Rechtsanspruch auf die deutschen Vertreibungsgebiete (Drucksache II/2406 v. 28.5.1956) vor.</p></note></seg> Man dürfe nicht dabei stehen bleiben zu sagen, man sehe keine Chance zu verhandeln, sondern man werde alles begrüßen, was der Bundeskanzler und der Außenminister täten, um in Zusammenarbeit mit den Westmächten, die Frage der Wiedervereinigung voranzutreiben. Eine diesbezügliche Initiative der Bundesregierung werde man unterstützen.</p>
-				<p>Als Redner schlage der Arbeitskreis V <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>; Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>, <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> und <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name> vor.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN019" type="comment"><p>In der Debatte sprachen nur <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Manteuffel-Szoege</name> und <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> sowie <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> zur Abstimmung. Vgl. Sten. Ber., 156. Sitz. am 29.6.1956, S. 8508–8563.</p></note></seg></p>
-				<p>Wichtig sei noch, die außenpolitische Linie auch mit den Koalitionsfraktionen abzustimmen, um hier eine einheitliche Stellungnahme zu erzielen. In Einheit und Klarheit müsse die Außenpolitik demonstriert werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#HaaslerHorst_1953-10-06">Haasler</name> weist auf die Äußerungen <name type="Person" role="Erwaehnung" ref="#SeibothFrank_1953-10-06">Seiboths</name> hin, die im Auslande Beunruhigung erweckt hätten, weil von ihm der Standpunkt vertreten worden sei, daß Deutschland territoriale Ansprüche habe, die über die Grenzen von 1937 hinausgingen.<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN020" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SeibothFrank_1953-10-06">Seiboth</name>, ein ostpolitischer Exponent des BHE, forderte ab 1956 ein weit ausgelegtes Selbstbestimmungsrecht für alle »Deutschen«, z.B. auch für die Südtiroler. Vgl. Neumann, S. 173–184.</p></note></seg> Derartige Gedankengänge, die das deutsche Volk in der Welt nur isolieren könnten, seien auch nicht im Interesse der Heimatvertriebenen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt die Debatte mit der Ankündigung ab, daß nach der Regierungserklärung eine Fraktionssitzung zum Thema Außenpolitik stattfinden werde<seg type="note"><note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN021" type="comment"><p>Siehe Nr. 277.</p></note></seg> und schließt die Sitzung um 13.05 Uhr.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-06-26-t0945_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1007/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 26. Juni 1956</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>12 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1956-06-26">
+               <time type="start" when="09:45:00"/>
+               <time type="end" when="13:05:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <name type="Person" role="Sitzungsleitung" ref="#KunzeJohannes_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1956-06-26-t0945_EP_SVP-1" corresp="#cdu-csu-02_1956-06-26-t0945_EP_div_SVP-1">A. TOP 1: Verschiedenes. – TOP 2: Arbeitsprogramm des Plenums. – TOP 3: Finanz- und Steuerfragen. – TOP 4: Haushalt des Bundesministers für Arbeit. – TOP 5: Rentenreform. – TOP 6: Ansprache <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name>. – TOP 7: Außenpolitische Debatte.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1956-06-26-t0945_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. [Verschiedenes]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bedauert einleitend, daß Arbeitskreis V für sich tage, was dem Besuch der Fraktionssitzung abträglich sei.</p>
+            <p>Dann teilt er mit, daß im Kabinett die außenpolitische Debatte<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN001" type="comment">
+                     <p>Siehe Nr. 269, Anm. 13.</p>
+                  </note>
+               </seg> und die Debatte zur Sozialversicherungsreform [Drucksache II/2437 v. 5.6.1956]<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN002" type="comment">
+                     <p>Der Bundesminister für Arbeit brachte die Rentenreform am 27.6.1956 im Bundestag ein. Vgl. Sten Ber., 154. Sitz., S. 8334–8339.</p>
+                  </note>
+               </seg> vorbereitet werde.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN003" type="comment">
+                     <p>Am 19.6.1956 hatte das Kabinett die Einbringung der Rentenreform besprochen, am 26. d. M. die Regierungserklärung zur Außenpolitik. Vgl. die Protokolle der 140. und 141. Kabinettssitz., in: Kabinettsprotokolle 1956, S. 433f. und 442–454.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Ausschuß für Verteidigung mußte am Vortage seine Beratungen frühzeitig abbrechen, weil von den CDU/CSU-Mitgliedern nur fünf anwesend waren.</p>
+            <p>Dann wendet sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> den Beziehungen zwischen CDU und CSU zu und dementiert nachdrücklich die Mitteilungen der FAZ, die jeder Grundlage entbehrten. Die Aussprache auf der Landesausschußsitzung der CSU in Bayreuth sei vom Geiste des Zusammenhalts getragen gewesen. Worauf es der CSU ankomme sei, daß von jetzt an die einheitliche Zusammenarbeit im Kabinett gewährleistet würde und somit die Voraussetzungen für einen erfolgreichen Wahlkampf erhalten bleiben. Dies sei auch der Wunsch der CDU.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN004" type="comment">
+                     <p>Siehe Nr. 274, 3.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. [Arbeitsprogramm des Plenums]</p>
+            <p>Rasner berichtet sodann über den Zeitplan für diese Woche; der für den gleichen Tag die Durchführung der Konjunkturdebatte, für Mittwoch die Rentenversicherungsgesetzgebung [Drucksache II/2437 v. 5.6.1956], die Altersversorgung Handwerk [CDU/CSU-Gesetzentwurf, Drucksache II/1479 v. 21.6.1955], [die Bereitstellung von Mitteln für] die Facharbeiter-Ansiedlung in den Zonengebieten [SPD-Antrag, Drucksache II/2222 v. 15.3.1956] und die Kapitalhilfe für Berlin [Drucksache II/2143 v. 29.2.1956] vorsieht. Am Donnerstag werde die Regierungserklärung zur Außenpolitik erfolgen. Dann werde der Haushalt [Drucksache II/1900 v. 2.12.1955] beraten. Am Freitag finde die außenpolitische Debatte statt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN005" type="comment">
+                     <p>Das vorgestellte Programm wurde eingehalten mit Ausnahme der Behandlung des Facharbeiter-Wohnungsbaus und der Kredithilfe für Berlin, die erst am Donnerstag stattfand. Vgl. Sten. Ber., 153., 154., 155 und 156. Sitz. am 26., 27., 28., und 29.6.1956.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Für die kommende Woche sei vorgesehen: Am Mittwoch die 2. Lesung des Wehrpflichtgesetzes [Drucksache II/2303 v. 12.4.1956], am Freitag dessen 3. Lesung. Der Sonnabend müsse für Plenarsitzung vorgesehen werden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN006" type="comment">
+                     <p>Vgl. ebd., 157. und 159. Sitz. am 4. und 6./7.7.1956. Die 159. Sitz. wurde am Freitag begonnen und erst am Sonnabend um 3.43 Uhr beendet.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> regt an, das Gesetz über die Industrie- und Handelskammer [Antrag <name type="Person" role="Erwaehnung" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und Gen., Drucksache II/1964 v. 14.12.1955] noch vor den Ferien zu verabschieden. In der Fraktion sei in dieser Frage Übereinstimmung erzielt. Auch die Koalition sei einverstanden. Wenn das Gesetz über die Ferien liegenbleibe, müsse man neue Schwierigkeiten erwarten.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN007" type="comment">
+                     <p>Siehe Nr. 274, 5.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3. [Finanz- und Steuerfragen]</p>
+            <p>Neuburger berichtet zu den Finanz- und Steuerfragen, daß der Finanz- und Steuerausschuß in erster Linie über die [CDU/CSU, DP, DA-]Steuervorlage [Drucksache II/2283 v. 11.4.1956] abgestimmt habe. Die Abstimmungen seien knapp gewesen, weil SPD, FDP und BHE gegen einen Teil der Vorlagen eingestellt seien. Bei den Verhandlungen sei auch der Bundesrat vertreten gewesen. Im wesentlichen gehe es um folgende Punkte: Der Bundesrat wünsche die Streichung des Notopfers Berlin<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN008" type="comment">
+                     <p>Siehe Nr. 265, 4.</p>
+                  </note>
+               </seg>, während die CDU/CSU-Vorlage nur einen teilweisen Wegfall vorsehe, dafür aber eine durchgehende Tarifsenkung bringen werde. Summenmäßig seien die beiden Vorschläge in ihrer Auswirkung gleich. Da aber das Notopfer 100%ig auf die Bundeskasse falle, während die Einkommensteuersenkung zu 2/3 zu Lasten der Länder gehe, müsse noch ein Kompromiß gesucht werden, der dann möglich erscheine, wenn die [CDU/CSU, DP, DA-]Umsatzsteuervorlage [Drucksache II/2282 v. 11.4.1956] zurückgenommen werde.</p>
+            <p>Er, [der] Redner, habe einen Kompromißvorschlag gemacht, auf den aber der Bundesfinanzminister nicht eingegangen sei. Er habe vorgeschlagen, die Partner sollen sich in die auftretende Differenz von etwa 550 Mio. DM teilen, die bei Wegfall des Notopfers und bei Zurücknahme der Umsatzsteuervorlage entstünden.</p>
+            <p>Wenn die Länder auf ihren Vorlagen bestünden, sei das Inkrafttreten der Steuersenkung zum 1.10. gefährdet. Es sei also Aufgabe, hier eine Einigung zu suchen. Dabei werde auch diskutiert, inwieweit man auf die Gewerbesteuer ausweichen könne. Auf die Bereitschaft, die gezielten Maßnahmen zugunsten des Mittelstandes bei der Einkommensteuer zurückzustellen und eine entsprechende Entlastung bei der Gewerbesteuer zu suchen, hätten die Länder positiv reagiert. Aber der Versuch, auch die Umsatzsteuer mit 360 Mio. DM auf die Gewerbesteuer zu verlagern, sei gescheitert, weil dies von den Ländern nicht mitgemacht werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> bemerkt, daß er es sehr begrüßt hätte, wenn man zu einer Aufhebung des Notopfers Berlin gekommen wäre. Er bedauere, daß man offenbar aus Prestigegründen an der Umsatzsteuerfrage festhalte, obwohl damit zu rechnen sei, daß der Bundesrat gegen die differenzierte Umsatzsteuer stimmen werde. Es sei doch so: Nicht die Umsatzsteuer, sondern die Gewerbesteuer sei der Hauptanstoß beim gewerblichen Mittelstand, weil dieser in ihr eine zusätzliche Einkommensteuer sehe und Anstoß daran nehme, daß in den Gemeinden von Leuten über die Gewerbesteuer beschlossen würde, die selbst keine Steuern dieser Art zahlen. Wenn sich auch die Landgemeinden gegen eine Preisgrenze bei der Gewerbesteuer wendeten, so müsse doch darauf hingewiesen werden, daß diese nur zu einem lächerlichen Prozentsatz den Finanzbedarf der Gemeinden decke.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> widerspricht dieser Auffassung, daß die große Masse der kleinen und mittleren Gemeinden einen sehr beträchtlichen Ausfall erleiden würde. Die Vorlage sei nur durchführbar, wenn die Länder den Gemeinden den entsprechenden Ausfall ersetzten. Das könne er sich allerdings nicht vorstellen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bemerkt, daß er den Eindruck habe, die Steuerdebatte werde offensichtlich bis zur völligen Ermüdung der Beteiligten geführt, um auf diese Art und Weise die Meinung des Finanzministers durchzusetzen. Gewiß habe Dr. <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name> recht, daß der Wegfall des Notopfers Berlin eine große Vereinfachung bedeute. Das Ergebnis aber sei, daß bei den höchsten Einkommen damit eine Steuersenkung von über 7½% auftrete. Wenn man schon toleriert habe, daß bisher gewisse Wirtschaftsgruppen ständig Vergünstigungen erhielten, so könne das doch nicht weiter fortgesetzt werden. Bisher seien die mittleren und kleinen Einkommen übervorteilt worden. Jetzt müßten diese einmal zum Zuge kommen. Es komme darauf an, gleiche Wettbewerbsbedingungen herzustellen.</p>
+            <p>Er wundere sich über die eingetretenen Ergebnisse, da man sich in der vorigen Woche doch einig gewesen sei, den Vermittlungsausschuß nicht anzurufen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN009" type="comment">
+                     <p>Siehe Nr. 269, 6.</p>
+                  </note>
+               </seg> Wenn die Länder dies nun trotzdem täten, so offenbar auf den Druck des Finanzministers hin. Wenn dieser in einem solchen Sinne tätig sei, dann müsse er, [der] Redner, das für Wortbruch halten und könne nur bedauern, wenn er weiter so verfahre.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN010" type="comment">
+                     <p>Der Bundesrat beschloß am 20.7.1956, in der Frage des Notopfers Berlin den Vermittlungsausschuß anzurufen, und brachte zu dem Sachverhalt einen eigenen Gesetzentwurf ein. Vgl. Drucksachen II/2642 und II/2643 v. 20.7.1956.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> erklärt, nicht verstehen zu können, warum über die Umsatzsteuer überhaupt noch gesprochen werde. Es handele sich erwiesenermaßen um die Beseitigung einer Ungerechtigkeit, und bisher sei man sich in diesem Punkt immer einig gewesen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KrammigKarl_1953-10-06">Krammig</name> meint, daß man offenbar auf Sachverständige in Steuerfragen überhaupt nicht mehr hören wolle. Da die Frage der Umsatzsteuer zu einem Politikum geworden sei, habe es wohl nicht mehr viel Sinn, dazu zu sprechen. Wenn man aber in der Steuergesetzgebung auf dem beschrittenen Weg weitergehe, solle man auch aufhören, von einer Vereinfachung der Steuergesetzgebung zu sprechen. Wenn die Entwicklung so weitergehe, sehe er für sich keinen Zweck mehr darin, im Finanz- und Steuerausschuß mitzuarbeiten, weil ständig Entscheidungen fielen, die man nicht verantworten könne.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet, nicht in Schärfe zu diskutieren. Die Fraktion habe sich in mehreren Sitzungen mit diesen Problemen befaßt und gegen ganz wenige Stimmen der Fraktionsvorlage zugestimmt. Diesen Beschluß umzustoßen, halte er für politisch nicht tragbar. Wenn man in der Frage der Umsatzsteuer umfalle, werde man von niemandem mehr ernst genommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> teilt vom Standpunkt der Arbeitnehmer aus mit, daß er sich wegen der damit verbundenen Bevorzugung der großen Einkommen entschieden gegen eine Streichung des Notopfers ausspreche.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#FrieseHermann_1953-10-06">Friese</name> bedauert, daß, wenn von mittelständischen Interessen gesprochen werde, immer von verschiedenen Seiten gleich der Vorwurf der Interessenvertretung erhoben werde. Er bitte darum, daß man auch dem Mittelstand die Möglichkeit gebe, seine Anliegen so vorzubringen, wie das die anderen Wirtschaftsgruppen auch täten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt diese Diskussion mit der Bemerkung, daß ein Antrag auf Änderung des früheren Fraktionsbeschlusses nicht vorliege. Die Mitglieder des Steuerausschusses sollten also weiter im Sinne dieses Beschlusses verfahren.</p>
+            <p>4. [Haushalt des Bundesministers für Arbeit]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> weist zum Kindergeldgesetz auf einen Vorstoß von Dr. <name type="Person" role="Erwaehnung" ref="#SchildHeinrich_1953-10-06">Schild</name> (DP) im Haushaltsausschuß hin, der den Versuch gemacht habe, 100 Mio. DM im Haushalt bereitzustellen, um die Korrektur der Kindergeldgesetzgebung durchführen zu können. Das sei abgelehnt worden. Daß dieser Antrag aber gestellt werden konnte, sei dadurch möglich geworden, weil die Regierung den ihr erteilten Auftrag, spätestens drei Monate nach Vorliegen des 1. Jahresgeschäftsberichtes der Kindergeldkassen ein Korrekturgesetz vorzulegen<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN011" type="comment">
+                     <p>Vgl. den Entschließungsantrag der CDU/CSU-Fraktion (Umdruck 501 v. 14.12.1955, in: Sten. Ber., 120. Sitz. am 15.12.1955, S. 6429), der in der 3. Lesung des Kindergeldgesetzes angenommen worden war (vgl. ebd., S. 6414).</p>
+                  </note>
+               </seg>, nicht erfüllt habe. Es empfehle sich, bei der 3. Lesung des Haushalts eine entsprechende Entschließung einzubringen.</p>
+            <p>Die Fraktion billigt den vorgeschlagenen Entschließungstext.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN012" type="comment">
+                     <p>Die CDU/CSU-Fraktion erinnerte die Regierung in ihrer Entschließung an den Auftrag, den ihr der Bundestag im Dezember gegeben hatte. Vgl. Umdruck 712 v. 28.6.1956, ebd., 155. Sitz. am 28.6.1956, S. 8499.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. [Rentenreform]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> bedauert sodann, daß bei der nun beginnenden Erörterung der Rentenreform wiederum durch die Steuerdebatte so viel Zeit in Anspruch genommen sei, daß man dieses mindestens ebenso wichtige Problem nicht in der gebührenden Breite behandeln könne. Auch sei es bedauerlich, daß der Bundesarbeitsminister durch eine Kabinettssitzung verhindert sei, selbst eine Einleitung dazu zu geben.</p>
+            <p>Arbeitskreis IV habe in verschiedenen Sitzungen die Diskussion vorbereitet; der Einladung an die übrigen Fraktionskollegen, an dieser Sitzung teilzunehmen, sei leider so gut wie nicht entsprochen worden.</p>
+            <p>Der Entwurf eines Gesetzes zur Neuregelung des Rechtes der Rentenversicherung der Arbeiter und der Angestellten [Drucksache II/2437 v. 5.6.1956] wolle die seit den letzten Jahrzehnten des vorigen Jahrhunderts geschaffene soziale Sicherung für die Alten und Invaliden, Witwen und Waisen entsprechend den gesellschaftlichen Erfordernissen und den wirtschaftlichen Gegebenheiten unserer Zeit neu gestalten. Dieses Ziel werde auf dreifache Weise erreicht:</p>
+            <p>a) umfassende Sicherung durch Erhöhung der Leistungen und Vermehrung der Leistungsarten unter Berücksichtigung der individuellen Lebensleistung,</p>
+            <p>b) der Wirtschaftsentwicklung entsprechende Sicherung durch Anpassung an die jeweiligen wirtschaftlichen Verhältnisse,</p>
+            <p>c) einheitliche Sicherung durch Wiederherstellung der Rechtseinheit, verbunden mit übersichtlicher Gestaltung des gesamten Rechtsgebietes.</p>
+            <p>Der Entwurf bringe eine entscheidende Verbesserung für die Stellung des Sozialleistungsempfängers im Gesellschaftsgefüge. Die bisherigen Leistungen seien anerkannter Weise heute ungenügend und entsprechen vor allem nicht den Vorstellungen, die über eine ausreichende Sicherung bei den heutigen Rentenbeziehern und bei der in abhängiger Arbeit tätigen Bevölkerung bestehen. Die angestrebte Verbesserung der Leistungen könne nicht lediglich durch eine schematische Erhöhung geschehen, vielmehr setze sie einen Umbau des gegenwärtigen Sicherungssystems voraus, wenn sie gesellschaftspolitisch sinnvoll und wirksam sein soll. Wesentlich sei das Abgehen von der bisherigen statischen Rentenformel und die Einführung einer gewissen Lohnbezogenheit der Rente für die Zukunft.</p>
+            <p>Im Gegensatz zu dem Entwurf der SPD [Drucksache II/2314 v. 18.4.1956] werde an den Vorschriften der RVO festgehalten, die lediglich nach den neuen Grundsätzen umgestaltet würde. Das Gleiche gelte auch für die Angestelltenversicherung.</p>
+            <p>Auch in Zukunft, so sei die Meinung von Arbeitskreis IV, solle man an der Selbständigkeit der Angestelltenversicherung festhalten, auch wenn eine Rechtsangleichung und eine Gleichgestaltung der Leistungen erfolge. Deswegen habe der Arbeitskreis vorgeschlagen, das Gesetz in zwei Gesetze aufzutrennen, eines für die Invaliden- und eines für die Angestelltenversicherung. Der 1. Abschnitt der Vorlage behandele die Aufgaben der Versicherung und den Kreis der versicherten Personen. Dabei stehe die Erhaltung, Besserung oder Wiederherstellung der Erwerbsfähigkeit der Versicherten und ihrer Angehörigen im Vordergrund. Dann erst komme die Gewährung der Renten im Falle der Invalidität und des Alters und die Versorgung der Hinterbliebenen sowie Maßnahmen zur Hebung der gesundheitlichen Verhältnisse der Bevölkerung.</p>
+            <p>Bei der Versicherungspflicht gehe man davon aus, daß alle beschäftigten Arbeitnehmer ohne Rücksicht auf die Höhe ihrer Einkünfte in die Versicherungspflicht einbezogen würden. Eine Pflichtgrenze bestehe nur noch insoweit, als künftig eine Beitragsbemessungsgrenze vorgesehen sei, die für das Jahr 1957 etwa bei 750 DM monatlich liegen werde.</p>
+            <p>Die Meinungen im Arbeitskreis zu diesem Punkt seien geteilt gewesen. Die SPD wolle die Pflichtgrenze überhaupt beseitigt wissen, während nach der eigenen Anschauung jene, die selbst in der Lage seien, für die Wechselfälle des Lebens Vorsorge zu treffen, nicht in die staatliche Zwangspflichtversicherung einbezogen werden sollten. Dagegen wiesen die Anhänger der Regierungsvorlage darauf hin, daß die Vergangenheit ja hinreichend gezeigt habe, daß weite Kreise dabei erheblich zu Schaden gekommen seien und man führe hier den Gedanken von der Solidarität der Arbeitnehmer an. Diejenigen, die für eine Pflichtgrenze gewesen seien, hätten keine konkreten Vorschläge für eine solche gemacht.</p>
+            <p>In Zukunft solle eine Weiterversicherung nur zulässig sein, wenn die Wartezeit für die Invalidenrente (60 Monate) erfüllt sei. Unbilligkeiten würden dadurch ausgeschlossen, daß eine Beitragserstattung vorgesehen sei, wenn die Berechtigung zur Weiterversicherung nicht gegeben sei. Auch hier weiche der Entwurf wesentlich vom Verlangen der SPD ab. Eine Anwartschaft werde es also nicht mehr geben. Die einzige Voraussetzung sei die Erfüllung der Wartezeiten.</p>
+            <p>Der 2. Abschnitt behandele die Leistungen aus der Versicherung, bei denen die sogenannte Rehabilitation im Vordergrund stehe.</p>
+            <p>Die Vorschriften über die Renten brächten die wesentlichsten Änderungen entgegen dem geltenden Recht. Dabei soll der Versicherungscharakter der Rentenversicherung, aus dem sich der Rechtsanspruch ihrer Mitglieder ergibt, erhalten bleiben und die in seinen Beiträgen ausgedrückte individuelle Leistung des Versicherten berücksichtigt werden. Die wesentlichste Neuerung sei die Unterscheidung zwischen Alters- und Invalidenrenten. Die Altersrente werde eine reine Beitragsrente mit Lohnbezogenheit sein. Bei der Invalidenrente solle dadurch geholfen werden, daß die Rente so bemessen werde, als ob der vorzeitig invalid gewordene bis zum 55. Lebensjahr Beiträge geleistet habe. Die dafür notwendigen Zuschüsse sollten dem Bundeshaushalt entnommen werden.</p>
+            <p>Man müsse sich klar sein, daß bei diesen Regelungen in Zukunft auch sehr niedrige Renten zustande kommen könnten. Dabei müsse man es wegen des Versicherungs-prinzips bewenden lassen und insoweit werde auch fernerhin die öffentliche Fürsorge einen Teil der regulären Sozialleistungen wie bisher erbringen müssen. Dagegen wolle die SPD das Prinzip der Mindestrente erhalten wissen.</p>
+            <p>Der §1260 stelle das Kernstück der künftigen Rentenbemessungsvorschriften dar. Die für den Versicherten maßgebende Rentenbemessungsgrundlage sei danach ein Vom-Hundert-Satz der allgemeinen Bemessungsgrundlage und zwar der Vom-Hundert-Satz, der dem Verhältnis entspreche, in dem während der gesamten Versicherungsdauer der Bruttoarbeitsentgelt zu dem durchschnittlichen Bruttoarbeitsentgelt aller Versicherten gestanden hat. Der durchschnittliche Bruttoarbeitsentgelt aller Versicherten wird für jedes Kalenderjahr durch Rechtsverordnung der Bundesregierung bestimmt.</p>
+            <p>Gewiß sei dies eine schwer verständliche Regelung und man werde dazu noch konkretere Einzelheiten erörtern müssen.</p>
+            <p>Die §§1276 bis 1279 regelten die Anpassung der laufenden Renten an die wirtschaftliche Entwicklung. Es solle sichergestellt werden, daß das Mißverhältnis, das bisher zwischen dem Lebensstandard der Rentner und dem der erwerbstätigen Bevölkerung bestanden hat und das nunmehr beseitigt wird, in Zukunft nicht wieder entsteht.</p>
+            <p>Die Frage, ob die jeweiligen Änderungen der Rentenversicherungsgesetze dem Parlament Vorbehalten oder der Regierung übertragen werden sollen, werde vom Arbeitskreis IV dahin beantwortet, daß man diese Sache dem parlamentarischen Streit entziehen solle.</p>
+            <p>Die §§1382 bis 1384 befaßten sich mit der Aufbringung der Mittel. Der Beitragssatz für die pflichtversicherten Personen werde auf 14 v. H. des Bruttoarbeitsentgelts der Versicherten festgesetzt. Arbeitgeber und Versicherte würden mit je einem zusätzlichen Beitragsprozent belastet. Die Beiträge zur Arbeitslosenversicherung würden um 1% gesenkt. Darüber hinaus müßten auch noch die Bundesmittel zum Einsatz kommen, um die Zuschüsse für die Invaliditätssicherung leisten zu können.</p>
+            <p>Durch die Abwendung vom bisherigen Kapitaldeckungsverfahren und die Einführung des Abschnittdeckungsverfahrens sei die Regierung verpflichtet, für die vorgesehenen Zeiträume jeweils versicherungsmathematische Bilanzen aufzustellen und demnach die Deckung bereitzustellen. Natürlich werde dabei die Kapitalansammlung bei den Versicherungsträgern verringert; wenn sich aber herausstelle, daß die Versicherungsträger nicht hinreichend Mittel für die Leistungen des nächsten Jahres hätten, solle der Bund mit Haushaltsmitteln einspringen.</p>
+            <p>Mit diesen Regelungen seien natürlich mancherlei Probleme verbunden, die noch ausdiskutiert werden müßten. Auch die Regierung habe die Notwendigkeit einer solchen Diskussion schon eingeräumt.</p>
+            <p>Die Anpassung der bereits laufenden Renten erfolge nach den dem Entwurf beiliegenden Tabellen durch Anwendung gewisser Faktoren.</p>
+            <p>Die Altersversorgung des Handwerks bleibe bis zu einer Neuregelung nach dem geltenden Recht erhalten.</p>
+            <p>Es sei bedauerlich, daß über die so wesentliche Frage der Altersversorgung der Selbständigen ein Referentenentwurf an die Öffentlichkeit gekommen sei. Man werde sich bemühen müssen, in dieser Frage zu gemeinsamen Auffassungen zu kommen. In der Frage der Altersgrenzen wünsche der Bundesrat für weibliche Versicherte 60 Jahre; die Bundesregierung lehne das ab und auch der Arbeitskreis IV empfehle gleichmäßige Behandlung der Versicherten.</p>
+            <p>Eine Bemerkung sei noch angebracht über die vorgesehene Abfindung für Witwen im Falle der Wiederverheiratung, die in Höhe von fünf Jahreswitwenrenten vorgesehen sei. Hier empfehle es sich, eine Angleichung an das BVG herbeizuführen. Diese Vorschrift werde gegen die sogenannten Onkelehen wirken, wenn man auch daran festhalten müsse, daß fehlende Moral nicht durch Sozialversicherungsgesetze ersetzt werden könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KunzeJohannes_1949-09-07">Kunze</name> dankt <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> und seinen Mitarbeitern für die umfangreiche bereits geleistete Arbeit und begrüßt den unterdessen eingetroffenen Bundesarbeitsminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> weist darauf hin, daß der Regierungsentwurf wohl sehr grundsätzlich angegriffen werde. Die Opposition wende sich gegen ihn, weil sie eine allgemeine Volksversorgung anstrebe, während der Entwurf das Versicherungsprinzip wieder herstelle. Aber auch von anderer Seite seien grundsätzliche Wirtschafts- und Kapitalansammlungsgründe vorhanden, aus denen Bedenken resultierten. Diese seien enthalten in der Flut von Gutachten, die zu dieser Vorlage bereits eingelaufen seien. Man sage, daß eine derartig große Finanzmasse, die in den Konsum hineinkomme, wirtschaftliche Störungen hervorrufe. Auch werde befürchtet, daß die Art und Weise der Rentenformel und die Anpassung der Renten an die Entwicklung des allgemeinen Volkseinkommens den Sparwillen eindämmen und damit die notwendige Kapitalbildung verhindern werde. Dies werde sich auch auf die weitgehende Finanzierung der Wohnungsbauten durch die Rentenversicherungsträger ungünstig auswirken, so sage man. Man solle diesen Ausführungen nicht folgen, sondern die dafür vorhandenen Gegenargumente darstellen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> fordert, daß man sich mit solchen Einwänden ernsthaft auseinandersetzen müsse. Wenn die Bundesregierung selbst sage, daß sie mit einer durchschnittlichen 2%igen Abwertung rechne, dann werde man sich damit in der Öffentlichkeit nicht ohne weiteres abfinden. Minister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> habe dies unterstrichen und auch <name type="Person" role="Erwaehnung" ref="#RoepkeWilhelm">Röpke</name> habe auf die Gefahr einer solchen Entwicklung hingewiesen. Wenn man dies nun gesetzlich regele, werde man die an sich schon vorhandene Tendenz noch steigern. Auch mit dem Problem des Konten- und des Versicherungssparens müsse man sich ernsthaft auseinandersetzen. Wenn man nicht den Sparern und denen, die Lebensversicherungen abschließen, einen entsprechenden Ausgleich gebe, befürchte er, daß ein Teil der Fraktion der Vorlage nicht zustimmen könne. Aber schon jetzt wolle er sich dagegen wenden, wenn man das evtl. als Interessenstandpunkt diffamieren wolle. Die Regierung setze sich mit Nachdruck gegen inflatorische Entwicklungen ein. Sie könne es auch in dieser Sache nicht unterlassen, diesen Gesichtspunkt zu berücksichtigen und müsse versuchen, einen Ausweg zu finden.</p>
+            <p>Da die Invalidität im wesentlichen durch Staatszuschüsse gedeckt werden solle, entstehe die Frage, wie man dies vor dem Grundgesetz verantworten wolle, da diese Vorsorge nur für 80% der Bevölkerung geschaffen sei. Hier scheine der Gleichheitssatz verletzt zu sein.</p>
+            <p>Die Frage der Selbständigen, so führt der Redner ironisch aus, sei ja nun leicht zu lösen. Man müsse dem Nachwuchs der Selbständigen nur empfehlen, wenigstens fünf Jahre zu kleben. Dies sei eine ganz unerwartete Wendung, die das bevorstehende Gesetz über die Altersversorgung des Handwerks fast überflüssig mache.</p>
+            <p>Bundesarbeitsminister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name> stellt dar, daß dieses Problem nun seit einigen Jahren erörtert werde. Bei dieser Sachlage wundere er sich, daß man jetzt noch einmal in die Grundsatzdebatte einsteige. Man sei sich doch klargeworden, daß man in der Zukunft für das Risiko der Alters- und Invalidenrenten zweierlei Rechtsgrundlagen schaffen wolle. Als die Rentenversicherung geschaffen worden sei, sei man davon ausgegangen, daß man durch einen Grundbetrag der Renten einen gewissen Ausgleich geben wollte, wenn jemand vorzeitig invalid wurde. Das höre nun auf. Die Altersrente sei eine reine Beitragsrente, und für diesen Teil gebe der Staat auch keine Zuschüsse mehr. Als 1912 die Angestelltenversicherung neu geschaffen worden sei, habe man geglaubt, daß dieser Versichertenkreis staatliche Zuschüsse nicht notwendig habe. Man habe die Angestellten für nicht so schutzbedürftig gehalten wie die gewerblichen Arbeiter. Deshalb habe man bei ihnen eine andere Grundregelung geschaffen: Man gebe aus den Beiträgen einen sehr hohen Grundbetrag, um auch denen, die nur wenige Beitragsjahre hätten, eine ausreichende Rente zu sichern. Diese Konzeptionen seien heute nicht mehr zu halten. Gewisse Gruppen der gewerblichen Arbeiter seien in ihrem Einkommen über einen großen Teil der Angestellten hinausgewachsen, was aber bei der bisherigen Regelung eine Benachteiligung bei der Rentenerrechnung bedeute. Für beide Gruppen falle in Zukunft bei der Altersrente der Grundbetrag weg. Dafür würden die Steigerungsbeträge mit 1,5% der Jahresarbeitsverdienste berechnet, für die Beiträge gezahlt wurden. Weiter sei vorgesehen, die Jahresarbeitsverdienste auch der vergangenen Zeiten den neuen Verhältnissen anzupassen, da man bisher nur von den Markbeträgen ausgegangen sei, ohne auf die ganz anderen Kaufkraftverhältnisse Rücksicht zu nehmen. Hier schaffe also der Gesetzentwurf eine ganz neue Ordnung. Man bleibe nicht mehr beim Anwartschafts- und Deckungsverfahren. Dadurch werde erzielt, daß die jetzt im Erwerbsleben Stehenden einen Teil ihres Einkommens für diejenigen abgäben, die vor ihnen durch ihre Arbeit die Voraussetzungen für die Wirtschaftsentwicklung gegeben hätten: Das sei die Solidarität der Generation.</p>
+            <p>Die Gefahr einer inflatorischen Auswirkung könne er nicht sehen. Die jetzt im Erwerbsleben Stehenden müßten zugunsten der Generation vor ihnen auf einen Teil ihres Einkommens verzichten. Dadurch werde lediglich eine Konsummöglichkeit für die Alten geschaffen, die sonst für die Erwerbstätigen vorhanden wäre. Er sehe keine währungspolitischen Gefahren, ebenso wenig, wie er einen Verstoß gegen den Gleichheitssatz erkennen könne.</p>
+            <p>Man könne auch nicht sagen, daß die Selbständigen schlechter dastünden. Wenn man den Beitrag eines 40 Jahre im Erwerbsleben stehenden Arbeitnehmers kapitalisiere, dann ergebe das eine Summe von 30000 DM. Der Selbständige werde sich immer überlegen, ob er diese Summe zugunsten seiner späteren Versorgung seiner eigenen Verfügung entziehen oder sie lieber zur Sicherung seiner Existenzgrundlage im Betriebe werde arbeiten lassen.</p>
+            <p>Auch eine Gefährdung der Lebensversicherungen sehe er nicht. Sterbe ein Lebensversicherter, dann bekämen seine Hinterbliebenen den Versicherungsbetrag als Erbschaft. Wenn ein in der Rentenversicherung Stehender sterbe, bekämen seine Hinterbliebenen, wenn sie nicht Witwen oder Waisen seien, keinen Pfennig der einbezahlten Beträge zurück.</p>
+            <p>Bei diesen Regelungen gehe es darum, dafür zu sorgen, daß niemand von dem erarbeiteten Lebensstandard heruntergehen müsse, wenn das Alter oder frühe Invalidität weitere Erwerbstätigkeit unmöglich mache.</p>
+            <p>In einem Teil der westeuropäischen Länder habe man eine Volksversorgung eingeführt. Diesen Weg wolle man hier nicht gehen, sondern jeder solle die Möglichkeit haben, aufgrund seiner Leistung im Arbeitsleben sich eine entsprechend hohe Rente zu sichern. Es handele sich um eine Art Zwangssparbewegung für das Alter, und niemand könne in Zukunft die Allgemeinheit in Anspruch nehmen, wenn er selbst nicht die entsprechende Vorsorge getroffen habe, so wie das jetzt der Fall sei.</p>
+            <p>Bei der Invalidenrente sei zu bedenken, daß die privaten Versicherungen die schlechten Risiken ausschlössen. Hier aber gehe es darum, den ohne Schuld in Not Kommenden so zu stellen, daß er noch leben könne. Man gebe ihm eine höhere Rente, als ihm nach der Beitragsleistung zustehe. Dies sei eine Leistung der Versichertengemeinschaft, und wenn man die dadurch entstehenden Lasten nur den Versicherten aufbürden wolle, dann wäre der Sozialversicherungsbeitrag eine Art zweite Steuer. Auch hier müsse man schon aus innerem Empfinden den Vorschlägen der Regierung folgen.</p>
+            <p>Die Invalidenrente werde gegeben, wenn über 50% der Erwerbsfähigkeit verlorengegangen sei. Hier sei eine Gleichstellung mit der Angestelltenrente erfolgt. Die Rente solle dann eine Zuschußrente für den Lebensunterhalt sein, wenn der volle Lohn nicht mehr erzielt werden könnte. Die voll Arbeitsunfähigen sollten so gestellt werden, als ob sie bis zum 55. Lebensjahr Beiträge gezahlt hätten. Diejenigen, die aber noch einen Teil ihrer Arbeitskraft hätten, sollten den Steigerungsbetrag nur in 2/3 der Höhe bekommen wie der Vollinvalide.</p>
+            <p>Wenn man das Gesetz in der vorgeschlagenen Form annehme, werde man damit 80% unseres Volkes die Angst vor der Not im Alter genommen haben, und das würden die Menschen zu danken wissen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> schlägt vor, daß zum Ausdruck gebracht werden solle, daß in bezug auf die Pflichtversicherung aller Arbeitnehmer verschiedene Meinungen in der Fraktion vorhanden seien. Auch auf die volkswirtschaftlichen Bedenken solle man ernsthaft eingehen. Wenn in den jüngsten Verhandlungen gesagt worden sei, daß die Bank deutscher Länder ihr ursprüngliches Gutachten durch ein positives ersetzt habe, so müsse er feststellen, daß er ein solches bis jetzt nicht habe finden können.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KunzeJohannes_1949-09-07">Kunze</name> stellt fest, daß <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name> seitens der Fraktion als Hauptredner für die Debatte vor-geschlagen wird.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN013" type="comment">
+                     <p>Vgl. ebd., 154. Sitz. am 27.6.1956, S. 8334–8385.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. [Ansprache <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name>]</p>
+            <p>Die Fraktion begrüßt den eintretenden Ministerpräsidenten <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> mit lang anhaltendem Beifall.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> richtet Grußworte an ihn, der der Fraktion kein Fremder sei. Ebenso wie in Stuttgart niemand mehr Beifall bekommen habe wie <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN014" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> hatte am 28.4.1956 auf dem Parteitag der CDU gesprochen. Vgl. CDU Deutschlands: 6. Bundesparteitag, S. 104f.</p>
+                  </note>
+               </seg>, werde er auch die Aufmerksamkeit und die Zustimmung der Fraktion genießen. <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> spreche die deutsche Sprache wie alle hier Anwesenden. Er sei geboren in einem Schicksalsland, das beiden Völkern viel Sorgen in der europäischen Politik gemacht habe, das aber auch zur Überwindung des Trennenden beitrage.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN015" type="comment">
+                     <p>Robert <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> war 1886 in Luxemburg geboren worden.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gleiches christliches Verantwortungsbewußtsein bewege ihn wie die Mitglieder der Fraktion. Man schätze <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> als einen wirklich großen Europäer und es sei der Wunsch, daß er mit dazu beitragen könne, daß die großen Ziele beider Völker erreicht werden könnten, nämlich europäisches Verantwortungsbewußtsein vor den großen Schicksalsfragen der Welt. In dieser Gemeinschaft solle auch das deutsche Volk mit seiner Sorge um seine Wiedervereinigung eingeschlossen werden. Man wisse, daß man in <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> auch einen Anwalt dieser Sache habe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchumanRobert">Schuman</name>: »Ich freue mich, daß ich in letzter Minute diese Einladung erhalten habe. Es ist für mich überaus wertvoll, daß ich hierher nach Bonn kommen und mich<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN016" type="comment">
+                     <p>Vom Bearbeiter korrigiert aus: mit.</p>
+                  </note>
+               </seg> aussprechen konnte über die speziell Frankreich angehenden Fragen. Aber diese Fragen gehen nicht nur uns Franzosen an. Der Sinn für die Solidarität und die Verknüpfung der Nationen hat sich so entwickelt, daß wir tagtäglich erfahren, daß es keine speziellen Nationalfragen mehr gibt, daß sich alle Dinge über die Grenzen hinaus auswirken und daß wir sie in Gemeinschaft lösen können und müssen.</p>
+            <p>Hier erscheint die Frage der Wiedervereinigung Deutschlands geradezu als Gegenstück zur algerischen Frage, wozu wir uns gründlich ausgesprochen haben – in Deutschland tut man ja alles gründlich und bei uns in Frankreich manchmal ein bißchen zu wenig gründlich. Immer mehr aber wird von den Franzosen erkannt, und zwar nicht nur von den Offiziellen, sondern auch im Volk, daß die Frage der Wiedervereinigung eine gesamteuropäische Frage ist, an der wir alle ein Interesse haben, daß wir zu einer Lösung gelangen können. Diese Frage ist für uns auch ein Kriterium der Gesinnung anderer Leute, besonders im Osten. Gerade an ihrer Einstellung zu dieser Frage kann man ihre tatsächliche Gesinnung erkennen. Wir können nicht annehmen, daß Ernst besteht bei den Vorschlägen, die gemacht werden, sei es über Abrüstung oder Festigung des Friedens oder was immer, wenn nicht Ernst gemacht wird mit der Frage der Wiedervereinigung Deutschlands. Hier ist der Test für Europa und für den guten Willen und den Friedenswillen aller.</p>
+            <p>Ich freue mich, daß ich mich mit Ihnen hier zusammenfinde. Ich weiß nicht nur, daß wir weltanschaulich dieselben Ziele verfolgen und den gleichen Weg gehen, sondern auch in vielen anderen Beziehungen. Ich habe nicht nur als Zuschauer, sondern auch als Politiker das Zustandekommen des deutschen Bundestages erlebt. Ziemlich nahe habe ich erlebt, wie im Parlamentarischen Rat die Besprechungen gingen, als das Grundgesetz ausgearbeitet wurde. Ich habe das verfolgt mit Sorge, aber auch mit Freude, als Sie das Werk zustande brachten unter der Leitung Ihres großen Bundeskanzlers Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>. Sie haben da ein Werk in einigen Monaten zustande gebracht, das in anderen Ländern nicht in einer Generation gelingt, und das in einer Situation, als alles zu Boden lag. Man vergißt zu leicht – die Interessenten vergessen zu leicht -, welches der Dienst ist, der geleistet wurde und mit wie großer Verantwortung der Weg vorgezeichnet wurde für das Kommende, für den Wiederaufbau Deutschlands. Das haben Sie in 5-6 Jahren geleistet. Ich muß meine Bewunderung aussprechen für alle, die daran mitgearbeitet haben, und ich bin beruhigt über die zukünftige Entwicklung. Deshalb ist es auch notwendig, daß meine Landsleute und Europa immer wieder das Empfinden haben, daß sie hier Richtlinien finden auch für unsere künftige Europapolitik. Nicht nur für die Wiedervereinigung, auch für alle die anderen Fragen, nicht nur für die Frage Ost und West, sondern auch für Sozialprobleme, für das Herausfinden eines neues Status für die überseeischen Gebiete, überall sollen und müssen Sie mitsprechen, und nicht aus egoistischen Gründen, obwohl ich solche nicht ausschließen möchte, weil sie in der Natur des Menschen liegen, aber auf allen Gebieten können Sie Ihre Erfahrung mit in diese Gemeinschaft einbringen, und wir brauchen Sie. Dadurch findet sich auch der Sinn für dauernde Zusammenarbeit und für wachsendes Vertrauen, das sich mehr und mehr aufbauen muß. Gerade so wie Sie Ihr Parlament aufgebaut haben, werden wir auch gemeinsam eine neue Welt schaffen müssen und diese nicht nur für uns, sondern auch für die anderen.</p>
+            <p>Diese Worte kommen mir aus dem Herzen und aus meiner inneren Überzeugung. Ich darf Ihnen versichern, daß dies nicht nur mein Standpunkt ist. Dieser Standpunkt besteht mehr und mehr in Frankreich, das sich früher so sehr abgeschlossen hat und seine Leute immer so wenig auf Reisen schickte. Heute sucht Frankreich den Kontakt und ist froh über jede Berührungsmöglichkeit. Jugend, Gelehrte und Handarbeiter pflegen in gleicher Weise den Austausch. Das ist neu in unserem Leben und das wird auch eine Garantie sei für die Zukunft. Gegenseitige Achtung und Überzeugung vom guten Willen des Anderen werden helfen, im Dienste der Menschheit große Aufgaben zu lösen.«</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dankt für diese einfachen und schlichten Worte, aus denen zu fühlen gewesen sei, daß sie aus dem Herzen und nicht aus dem Intellekt gekommen seien. Er sei dankbar für die ausgesprochene Anerkennung. <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> könne versichert sein, daß im Geiste der Verbundenheit der europäischen Völker auch das Schicksal des französischen Volkes aufmerksam beobachtet werde. Solche Sorgen seien heute Sorgen der Menschheit überhaupt. In dieser Verbundenheit mit dem Gast, mit seiner Heimat und seinem Lande, wolle man in der Arbeit weitergehen und versuchen, das Beste für die beiden Völker zu leisten.</p>
+            <p>7. [Außenpolitische Debatte]</p>
+            <p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> berichtet über die Besprechungen im Arbeitskreis V zur außenpolitischen Debatte. Man müsse einmal in aller Klarheit die Außenpolitik der Bundesrepublik wieder darstellen. Man müsse darauf hinweisen, daß in der Deutschlandpolitik der Sowjetunion sich bisher nichts geändert hat, ja, daß diese mit aller Schroffheit zu ihrem Ausgangspunkt zurückgekehrt sei. Die letzten Erklärungen <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> und der Agentur TASS<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN017" type="comment">
+                     <p>Als Reaktion auf eine Pressekonferenz des Bundeskanzlers zu den Äußerungen des ersten Parteisekretärs der KPdSU (siehe Nr. 274,4) hatte die sowjetische Nachrichtenagentur in einer Meldung v. 21.6.1956 unter anderem geschrieben: »Außerdem kann man die Tatsache nicht übersehen, daß auf dem Territorium Deutschlands zwei selbständige Staaten existieren und sich entwickeln. Unter diesen Bedingungen gibt es keinen anderen realen Weg zur Vereinigung Deutschlands, als den direkter Verhandlungen zwischen der Deutschen Demokratischen Republik und der Deutschen Bundesrepublik.« Vgl. DzD III/2, S. 487f.</p>
+                  </note>
+               </seg> hätten gezeigt, daß die Sowjetunion auf dem Standpunkt stehe, daß ein Gespräch über die Wiedervereinigung Deutschlands mit ihr nicht geführt werden könne, sondern nur mit der DDR, mit Pankow. Letztes Ziel sei also, die DDR als gleichberechtigten Faktor anerkannt zu wissen. Jeder Versuch unsererseits, diesem Verlangen nachzugeben, bedeute eine Gefahr. Wenn heute andere Parteien von diesem Grundsatz abwichen, so erleichterten sie damit der russischen Politik ihre Arbeit. Das müsse mit aller Eindeutigkeit gesagt werden.</p>
+            <p>Zur Frage der Aufnahme diplomatischer Beziehungen zu den Satelliten stehe Arbeitskreis V auf dem Standpunkt, daß mindestens z. Zt. keinerlei Voraussetzungen dafür vorhanden seien, weil dies geradezu eine Aufforderung für die anderen Staaten bedeute, auch die DDR anzuerkennen. Das werde deren Position stärken. Vielleicht ergäbe sich einmal diese Möglichkeit, wenn jene Staaten sich nicht mehr als Satellitenstaaten fühlten, sondern eine eigene Politik machen könnten. Soweit sei die Entwicklung aber noch nicht.</p>
+            <p>Auch zum Heimatrecht der Vertriebenen und Flüchtlinge werde man ein Wort sagen müssen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN018" type="comment">
+                     <p>Hierzu lag der Antrag des GB/BHE betr. Rechtsanspruch auf die deutschen Vertreibungsgebiete (Drucksache II/2406 v. 28.5.1956) vor.</p>
+                  </note>
+               </seg> Man dürfe nicht dabei stehen bleiben zu sagen, man sehe keine Chance zu verhandeln, sondern man werde alles begrüßen, was der Bundeskanzler und der Außenminister täten, um in Zusammenarbeit mit den Westmächten, die Frage der Wiedervereinigung voranzutreiben. Eine diesbezügliche Initiative der Bundesregierung werde man unterstützen.</p>
+            <p>Als Redner schlage der Arbeitskreis V <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>; Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>, <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> und <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name> vor.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN019" type="comment">
+                     <p>In der Debatte sprachen nur <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Manteuffel-Szoege</name> und <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> sowie <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> zur Abstimmung. Vgl. Sten. Ber., 156. Sitz. am 29.6.1956, S. 8508–8563.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Wichtig sei noch, die außenpolitische Linie auch mit den Koalitionsfraktionen abzustimmen, um hier eine einheitliche Stellungnahme zu erzielen. In Einheit und Klarheit müsse die Außenpolitik demonstriert werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HaaslerHorst_1953-10-06">Haasler</name> weist auf die Äußerungen <name type="Person" role="Erwaehnung" ref="#SeibothFrank_1953-10-06">Seiboths</name> hin, die im Auslande Beunruhigung erweckt hätten, weil von ihm der Standpunkt vertreten worden sei, daß Deutschland territoriale Ansprüche habe, die über die Grenzen von 1937 hinausgingen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN020" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SeibothFrank_1953-10-06">Seiboth</name>, ein ostpolitischer Exponent des BHE, forderte ab 1956 ein weit ausgelegtes Selbstbestimmungsrecht für alle »Deutschen«, z.B. auch für die Südtiroler. Vgl. Neumann, S. 173–184.</p>
+                  </note>
+               </seg> Derartige Gedankengänge, die das deutsche Volk in der Welt nur isolieren könnten, seien auch nicht im Interesse der Heimatvertriebenen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schließt die Debatte mit der Ankündigung ab, daß nach der Regierungserklärung eine Fraktionssitzung zum Thema Außenpolitik stattfinden werde<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-06-26-t0945_EP_FN021" type="comment">
+                     <p>Siehe Nr. 277.</p>
+                  </note>
+               </seg> und schließt die Sitzung um 13.05 Uhr.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

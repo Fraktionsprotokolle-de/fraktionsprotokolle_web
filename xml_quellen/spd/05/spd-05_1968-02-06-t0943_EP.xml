@@ -1,264 +1,567 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1968-02-06-t0943_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1966-1969</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/IV</title><author>Bettina Tüffers</author><pubPlace>Düsseldorf</pubPlace><date>2009</date>
-						<idno type="DNB">https://d-nb.info/98750584X</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, 84</idno>
-							<objectName>Protokoll über die Sitzung der SPD-Bundestagsfraktion am 6. 2. 1968</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 6. Februar 1968</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>11 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1968-02-06"><time type="start" when="09:43:00"/><time type="end" when="12:38:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#SchmidtHelmut_1953-10-06"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-08-18" who="#RabusSimon" status="final" n="3">Vereinheitlichung XML</change>
-			<change when="2021-11-09" who="#HindenburgBarbara" status="draft" n="4">Group-Element gelöscht; Archivtitel verschoben; NOCH KEINE NAMEN BEI DER Anwesenheitsliste ausgezeichnet</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend von der Bundesregierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, <name type="Person" role="Erwaehnung" ref="#WischnewskiHans-Juergen_1957-10-15">Wischnewski</name>. PStS: <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name>, <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf: (39 a.)</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1968-02-06-t0943_EP_SVP-1" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-1">A. Informationen.</item>
-					<item xml:id="spd-05_1968-02-06-t0943_EP_SVP-2" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-2">B. Vorbereitung der Plenarsitzungen.</item>
-					<item xml:id="spd-05_1968-02-06-t0943_EP_SVP-3" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-3">C. EWG-Agrarfinanzierung. - Vorlagen aus den Arbeitskreisen (Antrag <name type="Person" role="Erwaehnung" ref="#HaageHermann_1957-10-15">Haage</name> und Genossen betr. Werksverkehr).</item>
-					<item xml:id="spd-05_1968-02-06-t0943_EP_SVP-4" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-4">D. Ausschußumbesetzungen. - Nächste Termine. - Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> eröffnet die Sitzung um 9.43 Uhr.</p>
-				<p>Er begrüßt die nach langer Krankheit wieder genesene Ilse <name type="Person" role="Erwaehnung" ref="#ElsnerIlse_1961-10-17">Elsner</name> und spricht Geburtstagsglückwünsche aus. Als neuer Mitarbeiter wird Edgar <name type="Person" role="Erwaehnung" ref="#HirtEdgar">Hirt</name> der Fraktion vorgestellt; er soll für Egon <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name> arbeiten.</p>
-				<p>Vor Eintritt in die Tagesordnung teilt Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> mit, daß unsere Parteifreunde in Baden-Württemberg ihn gebeten haben, die Fraktion nochmals um Rednermeldungen für den Landtagswahlkampf zu bitten.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN001" type="comment"><p>In Baden-Württemberg fanden am 28. April 1968 Landtagswahlen statt.</p></note></seg> Bisher hätten sich nicht viele Abgeordnete hierfür gemeldet.</p>
-				<p>Punkt 1 der TO – Informationsstunde</p>
-				<p>Hans-Jürgen <name type="Person" role="Sprecher" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name> fragt, was es mit dem Umbau des Plenarsaales auf sich habe und was die Tieferlegung der Regierungsbank für einen Sinn haben soll.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> antwortet darauf, daß die Regierung nicht so über dem Parlament thronen soll und die Verminderung der Abgeordnetenplätze auf 300 dem Vorbild des englischen Unterhauses entspricht.</p>
-				<p>August <name type="Person" role="Sprecher" ref="#BerlinAugust_1949-09-07">Berlin</name> macht darauf aufmerksam, daß Heinz <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name> in der letzten Sitzung über den Umbau berichtet hat und der Bundestagsvorstand keine Zustimmung zu dem Umbau geben kann, ehe die Fraktionen hierzu ihre Stellungnahme abgegeben haben. Der Bundestagspräsident müßte hierzu aufgefordert werden.</p>
-				<p>Bei dieser Gelegenheit weist Hannsheinz <name type="Person" role="Sprecher" ref="#BauerHannsheinz_1953-10-06">Bauer</name> darauf hin, was von seiten der Fraktionsführung getan werden kann, um den Bundestagspräsidenten künftig daran zu hindern, Erklärungen in der Öffentlichkeit abzugeben, die dann den Ältestenrat vor vollendete Tatsachen stellen. Auch hat sich der Bundestagspräsident nicht an vom Geschäftsordnungsausschuß gefaßte Beschlüsse gehalten.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> stimmt dem zu, weist aber darauf hin, daß er in der gestrigen Vorstandssitzung gebeten wurde, einen persönlichen Beitrag zur Verbesserung des Verhältnisses mit dem Bundestagspräsidenten zu leisten.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN002" type="comment"><p>Ein Protokoll der Sitzung ist nicht überliefert.</p></note></seg></p>
-				<p>Fritz <name type="Person" role="Sprecher" ref="#BuettnerFritz_1957-10-15">Büttner</name> weist zusätzlich darauf hin, daß die Frage der Unterbringung der Stenographen auch noch nicht geklärt sei.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name> hat nichts gegen eine organisatorische und optische Veränderung des Plenarsaales, doch wendet er sich gegen eine Verringerung der Abgeordnetensitze, die zu einem falschen Bild in der Öffentlichkeit führen würde.</p>
-				<p>Edith <name type="Person" role="Sprecher" ref="#KrappeEdith_1957-10-15">Krappe</name> unterstützt den Antrag, daß der Fraktionsvorstand sich eingehend mit den Umbauplänen befassen sollte.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> erklärt, daß der Fraktionsvorstand und die Fraktion sich mit den Umbauplänen eingehend beschäftigen wird und diese Angelegenheit ein ordentlicher Tagesordnungspunkt bei einer der nächsten Fraktionssitzungen sein wird, um eine Entscheidung der Fraktion herbeizuführen.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN003" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1968-02-13-t0940_EP">SPD-Fraktionssitzung am 13. Februar 1968</ref>.</p></note></seg></p>
-				<p>Adolf <name type="Person" role="Sprecher" ref="#ArndtAdolf_1949-09-07">Arndt</name> fragt, was die Bundesregierung zu tun gedenke, um die Erregung in der Öffentlichkeit über die Entführung der Südkoreaner zu dämpfen.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN004" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1967-11-07-t1640_EP">SPD-Fraktionssitzung am 7. November 1967, Anm. 4</ref>.</p></note></seg> Die bisherigen Auskünfte der Bundesregierung sind nicht ausreichend. Er fragt, warum es die Bundesregierung bisher unterlassen hat, vor dem Bundestag eine Erklärung abzugeben zu folgenden Punkten:</p>
-				<p>1. Die Tätigkeit der Geheimdienstagenten Südkoreas in der BRD sei eine nach deutschen Gesetzen mit Zuchthaus zu bestrafende Handlung gewesen.</p>
-				<p>2. Der deutsche Geheimdienst war an dieser Entführung nicht beteiligt.</p>
-				<p>3. Die Bundesregierung besteht auf unverzüglicher Rückführung der entführten Südkoreaner.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> gibt zur Information bekannt, daß sich der Fraktionsvorstand am gestrigen Abend mit dem gleichen Thema beschäftigt habe.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN005" type="comment"><p>Ein Protokoll der Sitzung ist nicht überliefert</p><p>.</p></note></seg> Die Unzufriedenheit im Lande ist sehr groß. Wegen der geäußerten Beteiligung des deutschen Nachrichtendienstes sollte sich das Kontrollmännergremium mit dieser Frage befassen.</p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> hat keine Bedenken, sich im Sinne der Frage von Adolf <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> im Parlament zu äußern.</p>
-				<p>Zu Frage 1 fühlt er sich nicht zuständig, zudem hat die Bundesanwaltschaft festgestellt, daß keine strafbare Handlung nachgewiesen werden kann.</p>
-				<p>Zu Frage 2: für die Nachrichtendienste ist er ebenfalls nicht zuständig, befürwortet aber gründliche Klarstellung.</p>
-				<p>Die Frage 3 fällt in seine Zuständigkeit. Die Frage ist, wie bringt man die entführten Koreaner nach Deutschland zurück? Es ist sehr frühzeitig und sehr deutlich der koreanischen Regierung die Haltung der Bundesregierung zur Kenntnis gebracht worden. Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> selbst hat am Sonnabend die Anordnung gegeben, daß der deutsche Botschafter in Seoul dorthin wieder zurückkehrt.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN006" type="comment"><p>Botschafter <name type="Person" role="Erwaehnung" ref="#FerringFranz">Ferring</name>, der sich in Bonn aufhielt, erhielt von Staatssekretär <name type="Person" role="Erwaehnung" ref="#DuckwitzGeorgFerdinand">Duckwitz</name> am 1. Februar 1968 die Anweisung, wieder nach Südkorea zurückzukehren.</p></note></seg> Er hält es für zweckmäßig, daß der deutsche Botschafter bei den Berufungsverhandlungen, die die Verurteilten angestrengt haben, an seinem Platz ist. Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hat gegen eine Erklärung im Bundestag nichts einzuwenden, doch macht er darauf aufmerksam, daß das ein mühsames Geschäft ist und er im Interesse der Verurteilten vor dem Parlament nicht alles sagen kann.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> weist darauf hin, daß im Fraktionsvorstand schon Kritik an der Qualität des deutschen Botschafters zum Ausdruck gebracht wurde.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN007" type="comment"><p>Läßt sich über die Vorstandsprotokolle nicht nachweisen.</p></note></seg></p>
-				<p>Adolf <name type="Person" role="Sprecher" ref="#ArndtAdolf_1949-09-07">Arndt</name> spricht sich dafür aus, sich auf diplomatischem Wege weiter um einen Erfolg zu bemühen. Dennoch sollte die Bundesregierung eine Erklärung vor dem Bundestag abgeben.</p>
-				<p>Gustav <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> spricht sich ebenfalls für die Rückkehr des Botschafters nach Seoul aus und weist darauf hin, daß die Ermittlungen der Bundesanwaltschaft sich erstrecken mußten auf die nach Deutschland eingeflogenen südkoreanischen Geheimdienstagenten und auf die Angehörigen der südkoreanischen Botschaft. Diese Ermittlungen haben nichts Griffiges zutage gebracht und besonders keine deutsche Beteiligung. Die Rückkehr des deutschen Botschafters nach Seoul hält <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> auch deshalb für erforderlich, weil in Südkorea behauptet wurde, der deutsche Geheimdienst habe eine Rolle mitgespielt. Wenn der Botschafter dorthin nicht zurückkehren würde, könnte dies als ein deutsches Eingeständnis hierfür ausgelegt werden.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt aus, daß es hierbei nicht um die Frage der Auswechslung des Botschafters geht, sondern darum, daß man sein Mißfallen Südkorea gegenüber zum Ausdruck bringt, indem der deutsche Botschafter vorerst nicht nach Seoul zurückkehrt.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> fragt nach den Hintergründen der dpa-Falschmeldung und der französischen Reaktion aus Anlaß der Rede von Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in Ravensburg.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN008" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hatte am 3. Februar in einer Rede auf dem Landesparteitag der SPD in Ravensburg u. a. das deutsch-französische Verhältnis angesprochen: »Wenn unser Nachbar Frankreich seine gewissermaßen traditionelle Weltmission mit der großräumigen Strategie einer Rundum-Verteidigung verknüpft, so ist das seine Sache. Man wird hier nur bedauern können, daß sich unser Nachbarland, weit über sich hinauswachsend, mit diesen Ansprüchen und Zielen weiter von Europa entfernt.« Und weiter: Er hoffe, daß die Verankerung der Aussöhnung und Freundschaft zwischen beiden Ländern schon so stark sei, daß »auch unvernünftige Regierungen nicht mehr in der Lage sein werden, daran etwas zu ändern«, vgl. <bibl type="series-item">Bulletin, Nr. 17 vom 8. Februar 1968, S. 129</bibl>. Die falsche Wiedergabe einer Passage durch dpa (dpa hatte geschrieben: »Die tiefverwurzelte deutsch-französische Freundschaft vor allem im jungen Volk wird am Ende stärker sein als die starren uneuropäischen Gedanken eines machtbesessenen Regierungschefs«) führte in den folgenden Tagen zu Spannungen zwischen beiden Ländern. Vgl. <bibl type="series-item">»Verwirrung über Äußerungen Brandts zur Europa-Politik«, FAZ vom 5. Februar 1968</bibl>, <bibl type="series-item">»Trübung der Beziehung zu Paris befürchtet«, Süddeutsche Zeitung vom 6. Februar 1968, »Falscher Bericht – echte Entrüstung?«, Süddeutsche Zeitung vom 7. Februar 1968</bibl>; <bibl type="series-item">AAPD 1968, Dok. 46</bibl> und <bibl type="series-item">Europa-Archiv 1968, Z 44</bibl>.</p></note></seg> Er hat selbst an dem Parteitag teilgenommen und kann bestätigen, daß die dpa-Meldung falsch ist. Gerade Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hat in der Vergangenheit alles getan, um in dem schwierigen deutsch-französischen Verhältnis kein Porzellan zu zerschlagen.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> stellt zusätzlich die Frage, wie sich Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> zu den zitierten Äußerungen <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murvilles</name> über ihn stellt<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN009" type="comment"><p>Nicht ermittelt.</p></note></seg> und was die Ausladung von Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und anderen Deutschen von einem Frühstück, das der französische Staatspräsident gegeben hat,<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN010" type="comment"><p>Bundespräsident <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> besuchte anläßlich der Wiedereröffnung des restaurierten Palais Beauharnais als Amtssitz des deutschen Botschafters vom 3. bis 5. Februar Paris. Als Reaktion auf die dpa-Meldung (vgl. Anm. 8) wurde ein Staatsbankett zu Ehren <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübkes</name> zu einem informellen Essen nur für den Bundespräsidenten und seine engste Umgebung herabgestuft; Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und Kurt <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, die <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> auf dem Besuch begleiteten, wurden ausgeladen. Vgl. dazu die <bibl type="series-item">Darstellung Botschafter <name type="Person" role="Erwaehnung" ref="#KlaiberManfred">Klaibers</name> an Außenminister <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> vom 4. Februar, AAPD 1968, Dok. 46</bibl>.</p></note></seg> bedeutet.</p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> führt aus:</p>
-				<p>»Ich habe vorwiegend mich mit der Lage vor dem Wahlkampf befaßt, einige außenpolitische Passagen darin gehalten. Auf Frankreich bezogen, hieß das, was dort gesagt worden ist, mit dieser keineswegs neuen Formel: Wenn wir nach Paris gehen, kann nicht darüberstehen als Motto ›Feigheit vor dem Freund‹. Das heißt auf gut deutsch: Offene Unterhaltung über die anstehenden europäischen Fragen, Ansprechung der Meinungsverschiedenheiten. Ich habe aus meiner Sicht und in meiner Sprache – und das ist das stärkste, was man über das Verhältnis zwischen den beiden Nachbarvölkern sagen kann – auch nicht zum ersten Mal gesagt: ›Ich hoffe, die Aussöhnung und die Freundschaft ist zumal in den Herzen der jungen Generation so stark verankert, daß auch unvernünftige Regierungen das nicht mehr würden zerstören können.‹ So weist es das Tonband aus. Wenn sich jemand den Schuh anzieht, kann ich nichts dafür. Drittens habe ich gesagt, ich habe den Eindruck oder ich fürchte oder ich bedauere, daß Frankreich sich mit dem Konzept der Rundum-Verteidigung übernimmt und von Europa entfernt. Hier ist für mich das Interessante in der Pariser Reaktion, daß aus der Reaktion klar wird, wie unrecht diejenigen hatten, die eine Äußerung des Generals <name type="Person" role="Erwaehnung" ref="#AilleretCharles">Ailleret</name><seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN011" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1967-12-05-t1645_EP">SPD-Fraktionssitzung am 5. Dezember 1967, Anm. 22</ref>.</p></note></seg> nicht für eine offizielle Äußerung gehalten haben. Aus der Reaktion ergibt sich die Deckung zwischen dem, was gesagt wurde und was jetzt kommentiert wird.</p>
-				<p>Als ich dann die Geschichte hörte, am Sonntag, als das anlief, da fiel es mir sehr schwer, nicht an eine Provokation zu glauben. In Wirklichkeit scheint es sich eher, jedenfalls für das, was sich am Sonntag abgespielt hat, um eine Kette von Unzulänglichkeiten zu handeln, auch technischer Art. Das beginnt damit, daß dpa am Sonnabendnachmittag etwas gesendet hat, ich am Sonnabend um ½ 8 Uhr wieder in Bonn war, aber erst Sonntagmittag um 12.00 Uhr von dieser Meldung unterrichtet worden bin. Selbst ein Anruf Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehners</name> aus Paris Sonntagfrüh, den habe ich noch ganz […] Ich habe gesagt, ›ich habe ein paar kritische Bemerkungen gemacht‹ und wußte nicht, daß er sich auf einen Text stützt, den ich gar nicht kannte. Ich bin spazieren gegangen und mittags sagte man: ›Da ist das und das im Gange‹. Da hat es lange gedauert, bis wir aus Ravensburg, wo das Band liegengeblieben war, das nach Bonn gebracht haben. Da das etwas lange dauerte, hat man auf eine primitive Art und Weise über Telefon das Band überspielt, bis man anfangen konnte zu schreiben. Das war alles nicht der Technik des 20. Jahrhunderts entsprechend.</p>
-				<p>Da kommt hinzu, was dpa alles kann! Die können, wenn es darauf ankommt, <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> stürzen lassen. Die können, wenn es darauf ankommt, hier eine Riesengeschichte ingang setzen lassen und können mit einer Dreistigkeit, für die es kein Beispiel gibt, den SPD-Vorsitzenden und Bundesaußenminister noch am Sonntag trotz der eindeutigen Dementis zum Lügner erklären. Das haben sie nämlich gemacht.</p>
-				<p>Hinterher stellt sich heraus: Der Redakteur von dpa aus Stuttgart hat – wie es jetzt heißt – einen Autounfall gehabt und man hält es nicht für ausgeschlossen, daß er gesundheitlich dadurch nicht gut beieinander war. Jedenfalls, seine Behauptung noch am Sonntagnachmittag, die also gegengehalten wurde gegen meine Feststellung – da hatten wir den Text schon –, hat dpa von Hamburg noch erneut herausgegeben: Der Korrespondent bleibt bei seiner Feststellung, und er habe Notizen, er habe Zeugen aus den Reihen der Delegierten des Parteitages. Inzwischen kennt man seine Notizen. Es steht auch in seinen Notizen dieses nicht drin, was er gemeldet hat. Und jetzt geht es weiter: Dann legt die SPD nach ihrem Tonband den ganzen Text vor und dann zögert dpa immer noch. Als sich dann dpa im Laufe des gestrigen Tages zusätzlich durch ein Band, von dem ich nicht wußte, daß es es gibt, des Südwestfunks überzeugt, da endlich entschuldigt sich dpa. Das heißt, die Mitteilung ›Nehmt bitte zur Kenntnis, das war nicht so‹, die wird nicht geglaubt, sondern man setzt dagegen. Das heißt ja im Grunde: ›Der lügt, der läßt seine Pressestelle jetzt etwas Falsches sagen‹. Und auch unser Band – da liegt doch der Soupçon drin – ›vielleicht haben die mit dem Band etwas gemacht‹. Die Meldung: ›Wir haben uns aufgrund des Südwestfunkbandes überzeugt, es stimmt so, wie die es herausgegeben haben, Wort für Wort‹, das ist nicht schön. Und trotz des Bedauerns der Chefredaktion von dpa ist dies ein ernster Vorgang.</p>
-				<p>Ich bin selbst lange genug Journalist gewesen und gehöre in der Regel nicht zu denen, die allzu strenge Maßstäbe anlegen und zu schnell ärgerlich sind. Aber es geht darum, ob hier in diesem Staat die Tassen im Schrank bleiben oder ob zumal eine Agentur, von der AFP, Reuters u. a. abschreiben, verrückt spielen kann anstelle derer, die politisch agieren in diesem Land.</p>
-				<p>Jetzt will ich nicht untersuchen, wer dann an der Sache gedreht hat in Deutschland oder anderswo. Daß gedreht wird, das sieht man auch an andere Fällen, z. B. an einem herausgespielten Bericht der Botschaft in Washington vom Wochenende, nachzulesen in der Welt am Sonntag<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN012" type="comment"><p><bibl type="series-item">»USA über Bonns Ostpolitik besorgt«, Welt am Sonntag, Nr. 5 vom 4. Februar 1968</bibl>. Vgl. auch den <bibl type="series-item">Bericht von Botschafter <name type="Person" role="Erwaehnung" ref="#KnappsteinKarlHeinrich">Knappstein</name>, Washington, an das AA vom 30. Januar 1968, AAPD 1968, Dok. 37, S. 37 ff</bibl>.</p></note></seg>, über angebliche amerikanische Reaktionen zur deutschen Ostpolitik, widerlegt in einem Interview gegen dpa durch das State Department in Washington. Ich will jetzt weitere Fälle nicht nennen.</p>
-				<p>Daß es Leute gibt, die einen bequemeren Außenminister lieber hätten, kann ich mir denken, aber denen kann ich nicht helfen. Wer mich kennt, was die Sache angeht, der weiß, daß ich in den vergangenen Jahren – lange bevor ich Außenminister wurde – zur deutsch-französischen Zusammenarbeit gelegentlich Standpunkte bezogen habe, die auch in der Partei nicht allgemeine Zustimmung gefunden haben. Es gilt sogar für Äußerungen über bestimmte Positionen der <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulleschen</name> Politik, die kritisiert worden sind, was ich verstanden habe. Doch hat man dazu die Meinungen ausgetauscht. Ich habe dazu nichts abzustreiten. Ich weiß auch heute – und habe es immer gewußt – um den besonderen Rang, den diese Zusammenarbeit und dieses Verhältnis einnehmen muß, weiß vor allen Dingen – vielleicht noch besser als früher – um den Primat der Nachbarschaft, der für dieses Verhältnis gilt, und wir haben ja auch in den acht Punkten vor Bildung dieser Regierung mit darin gehabt, daß wir dieses Verhältnis entlasten möchten.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN013" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1967-04-11-t1500_WZ">SPD-Fraktionssitzung am 11. April 1967 (Teil 3), Anm. 19</ref>.</p></note></seg> Das ist dann bis zu einem gewissen Teil geschehen. Wir haben in der Ostpolitik eine gute Fühlung gehabt und manche Dinge zusammen entwickeln können, auch auf verschiedenen Gebieten die bilaterale Zusammenarbeit mit neu belebt und ganz gut entwickelt. Im Laufe aber des ganzen Jahres – es ist ein gutes Jahr – hat sich leider nichts daran ändern lassen, daß in der Frage des Atlantischen Bündnisses und vor allem in der Frage der europäischen Zusammenarbeit und Einigung wir nicht übereinstimmten, Bonn und Paris.</p>
-				<p>Aber wir haben uns auf beiden Seiten gesagt – ich hoffe, immer auf beiden –, daß gerade, wenn es in wichtigen Fragen keine Übereinstimmung gibt, und da man so sehr aufeinander angewiesen ist, es gut ist, wenn man sich regelmäßig sieht und versucht, um unnötige Spannungen herumzukommen. Ich habe auch in diesen Wochen – Karl <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> hat das freundlicherweise anklingen lassen –, auch noch in der vergangenen Woche, in den Gesprächen mit meinen englischen Kollegen<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN014" type="comment"><p>Der britische Außenminister <name type="Person" role="Erwaehnung" ref="#BrownGeorgeAlfred">Brown</name> hielt sich am 19. Januar zu Gesprächen mit <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in Bonn auf. Thema der Gespräche waren der Beitritt Großbritanniens zur EWG, der Krieg in Vietnam, der Atomwaffensperrvertrag und die Ostpolitik der Bundesregierung.</p></note></seg> und am Donnerstag/ Freitag mit den Italienern<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN015" type="comment"><p>Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> und Außenminister <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hielten sich vom 1. bis 3. Februar zu einem offiziellen Besuch in Italien auf.</p></note></seg>, sie immer gebeten, bei allem auch zu bedenken, was über aktuelle Streitfragen hinaus daran hängt, ob wir das deutsch-französische Verhältnis heil durch eine schwierige Periode hindurchbringen.</p>
-				<p>Ich möchte heute dazu nicht mehr sagen. Die Fragen, die Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>] gestellt hat, die möchte ich lieber etwas später, heute im Laufe des Tages, beantworten; wir treffen uns im Laufe des Vormittags beim Bundeskanzler. Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> hat ein längeres Gespräch mit dem französischen Außenminister gehabt<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN016" type="comment"><p><name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> war als Stellvertreter des Bundesaußenministers am 4. und 5. Februar zu Gesprächen von <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murville</name> empfangen worden, vgl. <bibl type="series-item">AdG 1968, S. 13723</bibl>.</p></note></seg> und ich denke, ich sollte die Berichterstattung darüber abwarten, bevor ich mich äußere. Ich sage Euch nur eins, und das in vollem Ernst: Ich sehe unsere Rolle so, als Bundesregierung und als Sozialdemokrat in der Bundesregierung: Wir sind zuverlässige Partner, aber wir sind keine Satelliten.«</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> weist darauf hin, daß eine Dringlichkeitsfrage für die nächste Fragestunde zu diesem Thema eingereicht worden ist.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN017" type="comment"><p>Die Dringliche Anfrage wurde von Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>] selbst gestellt. Er bat <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> darum, den Wortlaut seiner Rede in Ravensburg bekanntzugeben.<bibl type="btp"><ref type="external" target="05/151">BT Sten. Ber. 66, S. 7774 ff</ref></bibl>.</p></note></seg> Er bittet um politische und psychologische Unterstützung unserer Abgeordneten für den Außenminister bei den Zusatzfragen. Die Art und Weise, in der die Presse im gesamten Bereich ob links oder rechts über die politischen Führungen berichtet, könne von der Partei nicht länger geduldet werden.</p>
-				<p>Rudolf <name type="Person" role="Sprecher" ref="#KaffkaRudolf_1961-10-17">Kaffka</name> fragt nach dem Stand der Gemeindefinanzreform, vor allen Dingen nach dem vom Kabinett verabschiedeten Entwurf.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN018" type="comment"><p>Das Kabinett hatte am 31. Januar das Programm für die Gemeindefinanzreform verabschiedet, das den Gemeinden u. a. Mehreinnahmen aus der letzten Erhöhung der Mineralölsteuer, die Erhöhung der Grundsteuer und des Anteils am Gesamtsteueraufkommen versprach; zudem sollte die den Kommunen zustehende Gewerbesteuer erst zum Januar 1972 gesenkt werden, vgl. <bibl type="series-item">»Das Kabinett verspricht den Gemeinden bessere Steueranteile«, FAZ vom 1. Februar 1968</bibl>.</p></note></seg> Nachdem in der Öffentlichkeit schon vieles bekanntgeworden sei, müsse die Frage gestellt werden, ob [und] wann die Parlamentarier hierüber unterrichtet würden.</p>
-				<p>Zur Sachlage sagt Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>:</p>
-				<p>»Das Problem ist nicht als nebensächliches, sondern praktisch mit als Hauptproblem in der vom Parteivorstand eingesetzten <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name>-Kommission<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN019" type="comment"><p>Die »Kommission Finanzreform« unter dem Vorsitz des hessischen Ministerpräsidenten Georg August <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name> tagte seit Sommer 1966 monatlich. Ihr gehörten führende SPD-Bundes- und Landespolitiker an.</p></note></seg> kontinuierlich behandelt worden. Die <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name>-Kommission hat dann vor Weihnachten eine Unterkommission eingesetzt, die sich speziell mit den Gemeindefinanzen befaßte. Diese Unterkommission hat die kommunalen Spitzenverbände zugezogen. Wir haben dann, bevor es im Kabinett zur Beratung kam, verschiedene Sitzungen gehabt und haben Grundsätze festgelegt, ohne die Fraktion zu binden. Die Fraktion ist frei. Dann hat das Kabinett nochmals zurückverwiesen und hat vorgeschlagen – und das ist durchgeführt worden –, daß vor ungefähr 14 Tagen die kommunalen Spitzenverbände mit Vertretern der Fraktionen, der Finanzminister, geladen wurden<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN020" type="comment"><p>Vgl. <bibl type="series-item">»Annäherung im Streit um die Gemeindefinanzen«, FAZ vom 29. Januar 1968</bibl>.</p></note></seg>, und da ist das Problem noch einmal in extenso behandelt worden und dann ist es zu der bekannten Beschlußfassung im Kabinett gekommen. Zur Sache: Am Mittwoch, also morgen, wird sich das Präsidium mit den Ministerpräsidenten und den führenden Genossen der kommunalen Spitzenverbände beim Parteivorstand treffen, um das Problem noch einmal mit aller Gründlichkeit zu beraten. Wir können praktisch jetzt noch nichts in die Fraktion bringen, weil wir noch keine Vorlagen haben.</p>
-				<p>Am 8. Februar wird der Bundeskanzler mit den Ministerpräsidenten sprechen.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN021" type="comment"><p>Zum<bibl type="series-item"> Gespräch <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesingers</name> mit den Minsterpräsidenten siehe »Annäherung in der Finanzreform«, FAZ vom 9. Februar 1968</bibl>.</p></note></seg> Erst wenn diese Besprechung zu Ende ist und noch eine weitere, wird das Finanzministerium nach meinen Informationen beauftragt werden, die endgültigen Gesetzesentwürfe auszuarbeiten.</p>
-				<p>Ich habe vollstes Verständnis für die Unruhe, muß aber auf eines aufmerksam machen: Es ist nicht so, daß alle kommunalen Spitzenverbände unruhig sind, das ist der Städtetag. Ich will das jetzt nicht qualifizieren, aber bei all den Anhörungsterminen, bei denen ich zugegen war und wo ich die Fraktion nicht ins Wort gebracht habe, sondern für die Fraktion immer nur von dem Grundsatz ausgegangen bin: wir wollen eine qualitative und quantitative Verbesserung der Gemeindefinanzen haben, wurde klar, daß der Gemeindetag als Spitzenverband, der Städtebund und der Landkreistag eine andere Stellung einnehmen als der Städtetag zu diesen Fragen. Und hier liegt eine Diskrepanz, die wir morgen zu überbrücken versuchen. Ob das gelingt, bleibt abzuwarten. Aber es wäre verfrüht, heute schon sagen zu wollen, wie das auslaufen wird.«</p>
-				<p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> führt aus:</p>
-				<p>»Das, was das Kabinett beschlossen hat, ist eine Verhandlungsgrundlage für das Gespräch des Bundeskanzlers, des Bundesfinanzministers<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN022" type="comment"><p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>.</p></note></seg> unter unserer Beteiligung am kommenden Donnerstag. Das ist schon eine in unserem Sinne modifizierte Form der Vorlage, die <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> zunächst im Kabinett eingebracht hat, aber sie ist in dieser Form ausdrücklich eine Verhandlungsgrundlage und nicht als endgültige Stellungnahme des Kabinetts bezeichnet worden. Wenn es nützlich und notwendig für die weitere Entwicklung der Sache sein sollte, würde die Fraktion zur Stellungnahme herangezogen werden.«</p>
-				<p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> weist darauf hin, daß der vorliegende Entwurf eine gute Grundlage für Städtetag, Gemeindetag und Landkreistag darstellt. Was den Städtetag anbetrifft, so gibt es hier unterschiedliche Meinungen zwischen den großen und mittelgroßen Städten.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#BardensHans_1965-10-19">Bardens</name> hat Bedenken, daß die Einwirkungsmöglichkeiten der Fraktion zu stark eingeschränkt werden, weil sie erst Stellung nehmen soll, wenn die Regierungsvorlagen vorliegen. Die Fraktion sollte sehr früh eine Haltung zu dieser Frage festlegen.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidts</name> Sorge ist, daß aus dieser Finanzreform nicht viel herauskommen wird. Er wendet sich dagegen, daß die Fraktionen schon frühzeitig in die Meinungsbildung des Kabinetts eingeschaltet werden. Das führt zur Lähmung der Regierungstätigkeit. Die Partei hat sich eingeschaltet durch die <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name>-Kommission. Die Fraktion muß die Freiheit besitzen, daß sie das Kontrollorgan ist gegenüber der Regierung und daß das Parlament das Gesetzgebungsorgan ist, das von den Vorlagen der Regierung abweichen kann.</p>
-				<p>Joachim <name type="Person" role="Sprecher" ref="#RaffertJoachim_1965-10-19">Raffert</name>: Alex <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> hat Anfang des Jahres eine Zusammenfassung zu diesem Thema gegeben. <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name> fragt, ob dies immer noch die Leitlinie für uns ist.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>: Ohne jede Einschränkung.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#ApelHans_1965-10-19">Apel</name> berichtet darüber, daß unter den Mitgliedern der Partei eine große Unruhe über die Tätigkeit der Studenten, der NPD u. a. herrscht. Man erwartet eine Stellungnahme des Parteivorstandes oder der Fraktion zu diesen Fragen.</p>
-				<p>Hans <name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> wirft ein, ob man sich dabei auch gegen die Vietnam-Demonstrationen wenden wolle.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt aus, daß wir innenpolitisch und psychologisch in der BRD an einem Punkte sind, wo Maß und Führung von der Bundesregierung verlangt werden müssen, von niemand sonst. Darüber hat gestern abend auch der Fraktionsvorstand lange diskutiert.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN023" type="comment"><p>Ein Protokoll dieser Sitzung ist nicht überliefert.</p></note></seg> Diese Probleme kann man nicht den kleinen Länderregierungen in Kiel, Bremen und Berlin überlassen. Es handelt sich um ein geistig-politisches Führungsproblem. Er hält aber nichts davon, daß hier durch eine Erklärung der Fraktion etwas erreicht werden könnte. Der Fraktionsvorstand ist der Meinung, daß die Bundesregierung bei der Erklärung über die Lage der Nation hierzu ausreichend Stellung nehmen sollte und die Fraktion dann in der Debatte ihre Stellungnahme vortragen kann. Hierzu ist nötig, daß in der Fraktion geistige Vorarbeit geleistet wird, eine befriedigende Analyse über die Gründe dieser ganzen Erscheinung. Man sollte einen Kreis von Genossen bitten, sich im Laufe der nächsten drei Wochen zusammenzusetzen, um das für die Gesamtfraktion vorzubereiten.</p>
-				<p>Franz <name type="Person" role="Sprecher" ref="#MarxFranz_1949-09-07">Marx</name> fragt, ob die Bundesregierung sich auch mit den Vorfällen befassen wird, die sich aus Anlaß der Veranstaltung der Aktion 1968 kürzlich in München abgespielt haben.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN024" type="comment"><p>Gemeint ist die zu Beginn des Jahres 1968 gegründete »Demokratische Aktion 31. Januar 1968«, die u. a. gegen Rechtsradikalismus und Notstandsgesetzgebung eintrat. Bei einer Kundgebung am 31. Januar im Deutschen Museum in München kam es zu Auseinandersetzungen zwischen den Teilnehmern der Aktion und NPD-Anhängern, bei denen ein NPD-Mitglied einen Herzanfall erlitt und starb. Vgl. <bibl type="series-item">»Rechtsradikale stören Kundgebung«, Süddeutsche Zeitung vom 1. Februar 1968</bibl>.</p></note></seg></p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> erklärt, daß sich die Fraktion mit den Dingen befassen muß, die nicht nur auf seiten der Rechten, sondern auch auf seiten der Linken in den letzten Wochen vorgefallen sind. Es gibt gemeinsame Ursachen für die extremistische Entwicklung auf beiden Seiten, darauf muß die Fraktion ihr Augenmerk richten. Die Debatte hierüber soll zu einem späteren Zeitpunkt in der Fraktion erfolgen.</p>
-				<p>Der Fraktionsvorstand ist sich klar darüber geworden, daß die Fraktion es nötig hat, in 14 Tagen eine allgemeine Aussprache über die innenpolitische Lage in der Bundesrepublik zu führen. Voraussetzung dafür ist, daß ihr eine Analyse vorgetragen wird, aus der hervorgeht, was sich an Zielsetzungen aus sozialdemokratischer Sicht daraus ergibt.</p>
-				<p>Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> fragt, welche Gründe die Bundesregierung hatte, in ihrem Bericht über die radikalen politischen Kräfte neuerdings die Studenten zu erwähnen. Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> schlägt vor, daß auch auf diese Frage in der Gesamtheit zurückgekommen wird.</p>
-				<p>Auf Zuruf werden die Genossen <name type="Person" role="Erwaehnung" ref="#TallertHarry_1965-10-19">Tallert</name>, <name type="Person" role="Erwaehnung" ref="#MeineckeRolf_1965-10-19">Meinecke</name>, <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name>, <name type="Person" role="Erwaehnung" ref="#RohdeHelmut_1957-10-15">Rohde</name>, <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>, Günther <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>, <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name>, <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name>, <name type="Person" role="Erwaehnung" ref="#BrueckAlwin_1965-10-19">Brück</name>, <name type="Person" role="Erwaehnung" ref="#MatthoeferHans_1961-10-17">Matthöfer</name>, <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name>, <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name><seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN025" type="comment"><p>Korrigiert aus »Schöttler«. Vgl. auch die Liste in <bibl type="series-item">Informationen, Nr. 53 vom 6. Februar 1968</bibl>, in der <name type="Person" role="Erwaehnung" ref="#RengerAnnemarie_1953-10-06">Renger</name> fehlt. Die Bundestagsdebatte fand am 14. März statt.</p></note></seg> und Annemarie <name type="Person" role="Erwaehnung" ref="#RengerAnnemarie_1953-10-06">Renger</name> sowie 2 Assistenten mit der Ausarbeitung der o. a. Analyse beauftragt. In zwei bis drei Wochen soll die Arbeitsgruppe ein entsprechendes Papier erarbeiten. Die Diskussion soll die Vorbereitung sein für die Debatte im Plenum über die Lage der Nation, die unmittelbar vor dem Parteitag geführt werden wird.</p>
-				<p>Damit ist die Informationsstunde beendet.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Punkt 2 der TO – Vorbereitung der Plenarsitzungen</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Nach der Fragestunde – am 7. 2. 1968 – wird Punkt 2 der Tagesordnung<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN026" type="comment"><p>TO BT liegt dem Protokoll bei.</p></note></seg> – Strafverfahrensrecht, Große Anfrage der FDP<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN027" type="comment"><p><bibl type="btd"><ref type="external" target="05/2408">BT Anl. 117, Drs. V/2408</ref></bibl>, <bibl type="btp"><ref type="external" target="05/152">BT Sten. Ber. 66, S. 7786–7806</ref></bibl>.</p></note></seg>, behandelt. Redner für die SPD ist <name type="Person" role="Erwaehnung" ref="#Mueller-EmmertAdolf_1961-10-17">Müller-Emmert</name>. <name type="Person" role="Sprecher" ref="#HirschMartin_1961-10-17">Hirsch</name> und <name type="Person" role="Sprecher" ref="#Mueller-EmmertAdolf_1961-10-17">Müller-Emmert</name> geben einen kurzen Bericht über die Haltung der Fraktion während der Debatte. Die Fraktion erhebt keine Einwendungen.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Es folgt Punkt 3 der Tagesordnung – Große Anfrage der SPD zur Wissenschaftsförderung<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN028" type="comment"><p><bibl type="btd"><ref type="external" target="05/2132">BT Anl. 115, Drs. V/2132</ref></bibl>; Entwurf liegt dem Protokoll bei.</p></note></seg>, verbunden mit der Großen Anfrage der CDU zu Schwerpunktaufgaben in Wissenschaft und Forschung.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN029" type="comment"><p><bibl type="btd"><ref type="external" target="05/2476">BT Anl. 118, Drs. V/2476</ref></bibl>, <bibl type="btp"><ref type="external" target="05/152">BT Sten. Ber. 66, S. 7808–7839</ref></bibl>.</p></note></seg> Zur Begründung ist <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name> vorgesehen, als Redner <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>, <name type="Person" role="Erwaehnung" ref="#LiedtkeKarl_1965-10-19">Liedtke</name> und <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> weist darauf hin, daß in der Debatte im Herbst darüber Einigkeit bestand, die übriggebliebenen Fragen jetzt erst zu behandeln. Die Tendenz der Fraktion ist niedergelegt in dem Antrag, der der Fraktion zur Billigung vorliegt.</p>
-				<p>Keine Einwendungen der Fraktion.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Punkt 4 der Tagesordnung – Beratung des von der CDU eingebrachten Entwurfs zur Änderung des Grundgesetzes – Drucksache V/2280 –. Ulrich <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name> sollte dazu sprechen.</p>
-				<p>Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> führt aus, daß die frühere Meinung der Fraktion war, keine Verfassungsänderung vorzunehmen. Aber eine bessere Zusammenarbeit zwischen Bund und Ländern ist notwendig. Als Alternative: eine stärkere Konzentrierung beim Bundeswissenschaftsministerium. Die Fraktion ist damit einverstanden.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Der Entwurf soll an den Rechtsausschuß federführend, an den Kulturausschuß mitberatend überwiesen werden.</p>
-				<p>Punkt 5 der Tagesordnung – 1. Beratung des von allen drei Fraktionen eingebrachten Entwurfs zur Änderung und Ergänzung des Diätengesetzes.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN030" type="comment"><p><bibl type="btd"><ref type="external" target="05/2526">BT Anl. 118, Drs. V/2526</ref></bibl>; Der Entwurf wurde zur weiteren Beratung an den Bundestagsvorstand überwiesen, <bibl type="btp"><ref type="external" target="05/152">BT Sten. Ber. 66, S. 7840–7843</ref></bibl>.</p></note></seg> Die Begründung wird der Bundestagspräsident<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN031" type="comment"><p>Eugen <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>.</p></note></seg> oder der Abgeordnete <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> von der CDU übernehmen. Der Fraktionsvorstand schlägt vor, daß versucht werden soll, daß in jedem Falle nur eine Begründung abgegeben werden soll, nicht von den einzelnen Fraktionen begründet wird.</p>
-				<p>Wendelin <name type="Person" role="Sprecher" ref="#EndersWendelin_1967-05-09">Enders</name> trägt einen Änderungsantrag zu § 10 a des Diätengesetzes vor, der die Härten des Stichtages vermeiden soll.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> weist darauf hin, daß es morgen um die erste Lesung geht und man sich mit Änderungsfragen im Ausschuß befassen wird.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Die Tagesordnung für Donnerstag, 8. 2. 1968, sieht nur eine Fragestunde vor. Es folgt – am 9. 2. 1968 – Beratung des von der FDP eingebrachten Neugliederungsgesetzes und Änderung des Grundgesetzes (SPD-Entwurf) sowie Antrag der FDP betr. Volksbegehren. (V/2410, 2470, 2411) Zur Begründung wird Gen. <name type="Person" role="Erwaehnung" ref="#HaarErnst_1965-10-19">Haar</name> vorgeschlagen, für die Debatte Hermann <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> und zum Volksbegehren Gerh. <name type="Person" role="Erwaehnung" ref="#ReischlGerhard_1961-10-17">Reischl</name>. Die Fraktion ist einverstanden.</p>
-				<p>Zu Punkt 7 der Tagesordnung – Förderung mittelständischer Gewerbetreibender, Antrag der CDU – Drucksache V/2489 –. Die CDU will kurz begründen.</p>
-				<p>Der zuständige Arbeitskreis unserer Fraktion hat bisher noch nicht mitgeteilt, ob darüber eine Debatte geführt werden sollte.</p>
-				<p>Walter <name type="Person" role="Sprecher" ref="#SchmidtWalter_1961-10-17">Schmidt</name> möchte die Aufmerksamkeit darauf lenken, daß die Fraktion in den letzten zwei Jahren für die Sache der Mittelschichtengruppe verhältnismäßig passiv gewesen ist. Man müßte mit Anträgen in diesem Jahr kommen und nicht erst vor der Bundestagswahl.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> richtet die Aufforderung an den Arbeitskreis Wirtschaft, sich damit zu befassen.</p>
-				<p>Klaus Dieter <name type="Person" role="Sprecher" ref="#ArndtKlausDieter_1965-10-19">Arndt</name> unterstützt <name type="Person" role="Erwaehnung" ref="#SchmidtWalter_1961-10-17">Schmidt</name> sehr nachdrücklich und meint, daß die Schlacht um die Mittelschichten im Jahre 1968 geschlagen wird.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> faßt die Ausführungen von <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name> so auf, daß der Bundeswirtschaftsminister<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN032" type="comment"><p>Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p></note></seg> und der Parlamentarische Staatssekretär<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN033" type="comment"><p>Klaus Dieter <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name>.</p></note></seg> als Mitglieder der Fraktion den Arbeitskreis mit Initiativen unterstützen werden.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> teilt mit, daß Karl <name type="Person" role="Erwaehnung" ref="#ReglingKarl_1953-10-06">Regling</name>, wenn es erforderlich ist, in der Diskussion dazu sprechen wird.</p>
-				<p>Punkt 8 der Tagesordnung – SPD-Antrag betr. Vorlage eines Betriebsärztegesetzes.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN034" type="comment"><p>Der Antrag, <bibl type="btp"><ref type="external" target="05/2500">BT Anl. 118, Drs. V/2500</ref></bibl>, wurde erst in der Sitzung vom 16. Februar behandelt, da in der Sitzung vom 9. Februar auf Antrag der Koalitionsfraktionen eine Aktuelle Stunde zu den Studentenunruhen eingeschoben wurde.</p></note></seg> Horst <name type="Person" role="Erwaehnung" ref="#SchmidtHorst_1961-10-17">Schmidt</name> wird zur Begründung sprechen.</p>
-				<p>Punkt 9 bis Punkt 15 der Tagesordnung<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN035" type="comment"><p>Es handelte sich um die Beratung von Berichten, Entscheidungen zu EWG-Verordnungen etc. Vgl. <bibl type="btd"><ref type="external" target="05/2004">Drs. V/2004</ref></bibl>, <bibl type="btd"><ref type="external" target="05/2241">2241</ref></bibl>, <bibl type="btd"><ref type="external" target="05/2283">2283</ref></bibl>, <bibl type="btd"><ref type="external" target="05/2111">2111</ref></bibl>, <bibl type="btd"><ref type="external" target="05/2350">2350</ref></bibl> u. <bibl type="btd"><ref type="external" target="05/2502">2502</ref></bibl>, <bibl type="btd"><ref type="external" target="05/2359">2359</ref></bibl> u. <bibl type="btd"><ref type="external" target="05/2510">2510</ref></bibl>, <bibl type="btd"><ref type="external" target="05/1893">1893</ref></bibl> u. <bibl type="btd"><ref type="external" target="05/2514">2514</ref></bibl>. <bibl type="btp"><ref type="external" target="05/152">BT Sten. Ber. 66, S. 7806 ff</ref></bibl>.</p></note></seg> sollen ohne Debatten erledigt werden. Das ist mit den Arbeitskreisen abgestimmt.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmidtRMartin_1949-09-07">Schmidt</name> (Gellersen) wendet sich gegen die Flut von Anträgen aus dem Europäischen Parlament, die im Ausschuß behandelt werden müssen. Er schlägt vor, daß diese Anträge im Ältestenrat etwas stärker gesiebt werden.</p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> weist zum Punkt 13 der Tagesordnung – Bundeskriminalamt – hin auf die Auseinandersetzungen zwischen dem Innenminister Nordrhein-Westfalen<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN036" type="comment"><p>Willy <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name>.</p></note></seg> und der Kriminalpolizei.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN037" type="comment"><p><bibl type="btd"><ref type="external" target="05/2350">BT Anl. 117, Drs. V/2350</ref></bibl>, <bibl type="btd"><ref type="external" target="05/2502">BT Anl. 118, Drs. V/2502</ref></bibl>.</p></note></seg></p>
-				<p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> meint dazu, daß es sich bei den Beratungen nur um Ergänzungen handelt und man keine Schlacht im falschen Saal schlagen sollte.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> weist darauf hin, daß am 14. Februar 1968 die Debatte über den Leber-Plan stattfindet.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN038" type="comment"><p>Die Debatte fand bereits am 13. Februar statt, <bibl type="btp"><ref type="external" target="05/155">BT Sten. Ber. 66, S. 7947–8008</ref></bibl>.</p></note></seg> Die Arbeitskreise sollen die Debatte vorbereiten und am Dienstag nächster Woche in der Fraktion vortragen.</p>
-				<p>Stefan <name type="Person" role="Sprecher" ref="#SeifrizHansStefan_1961-10-17">Seifriz</name> erklärt, daß die CDU keine lange Debatte führen will und regt an, daß die Sitzung des Arbeitskreises nicht heute, sondern erst morgen erfolgen soll.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> trägt vom Fraktionsvorstand zwei Bitten vor: daß man in der Debatte davon ausgehen sollte, daß die Debatte über den Leber-Plan eine Angelegenheit politischen Gewichts für die SPD ist und die Sprecher der SPD auch ihrerseits keine Fachdebatte führen sollten.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> weist darauf hin, daß am 14. Februar 1968 die Debatte über das Jahresgutachten<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN039" type="comment"><p>»Jahresgutachten 1967 des Sachverständigenrats zur Begutachtung der gesamtwirtschaftlichen Entwicklung«, <bibl type="btd"><ref type="external" target="05/2310">BT Anl. 116, Drs. V/2310</ref></bibl>, <bibl type="btp"><ref type="external" target="05/156">BT Sten. Ber. 66, S. 8033–8072</ref></bibl>.</p></note></seg> und am 16. Februar 1968 über die Landwirtschaft<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN040" type="comment"><p>Landwirtschaftsminister <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> erstattete den Grünen Bericht, <bibl type="btd"><ref type="external" target="05/2540">BT Anl. 118, Drs. V/2540</ref></bibl>, am 16. Februar 1968, vgl. <bibl type="btp"><ref type="external" target="05/157">BT Sten. Ber. 66, S. 8105–8117</ref></bibl>. Gemäß einer interfraktionellen Vereinbarung wurde die Debatte jedoch auf die Woche des 11. März verschoben.</p></note></seg> stattfindet. Vom 4.–8. März 1968 tagen die Ausschüsse in Berlin. An diesen Tagen ist Präsenzpflicht.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-3">
-				<p>Zu Punkt 3 der TO – EWG-Agrarfinanzierung sind die gemachten Ausführungen im Wortlaut in der Anlage beigefügt.<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN041" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1968-02-06-t0943_WZ">SPD-Fraktionssitzung am 6. Februar 1968 (Teil 2)</ref>.</p></note></seg></p>
-				<p>Die Punkte 4 der TO – Erweiterung der Befugnisse des Petitionsausschusses<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN042" type="comment"><p>Entwurf liegt dem Protokoll bei. Wurde als <bibl type="btd"><ref type="external" target="05/2640">BT Anl. 119, Drs. V/2640</ref></bibl> am 27. November 1968 eingebracht und an die Ausschüsse überwiesen, <bibl type="btp"><ref type="external" target="05/198">BT Sten. Ber. 68, S. 10694</ref></bibl>.</p></note></seg> und 6 – Kleine Anfrage <name type="Person" role="Erwaehnung" ref="#BauerHannsheinz_1953-10-06">Bauer</name> (Würzburg) und Genossen betr. Rauschgifte und Drogen<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN043" type="comment"><p>Entwurf liegt dem Protokoll bei. <bibl type="btd"><ref type="external" target="05/2576">BT Anl. 118, Drs. V/2576</ref></bibl>. Antwort des BMI: <bibl type="btd"><ref type="external" target="05/2789">BT Anl. 118, Drs. V/2789</ref></bibl>.</p></note></seg> – der TO werden zurückgestellt.</p>
-				<p>Gegen Punkt 5 der TO – Antrag <name type="Person" role="Erwaehnung" ref="#HaageHermann_1957-10-15">Haage</name> und Genossen betr. Werkverkehr<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN044" type="comment"><p>Entwurf liegt dem Protokoll bei. Die 1. Lesung (<bibl type="btd"><ref type="external" target="05/2556">BT Anl. 118, Drs. V/2556</ref></bibl>) fand am 13. Februar 1968 in Verbindung mit der Debatte zum Leber-Plan statt, <bibl type="btp"><ref type="external" target="05/155">BT Sten. Ber. 66, S. 7947–8009</ref></bibl>.</p></note></seg> bestehen keine Bedenken.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-4">
-				<p>Zu Punkt 8 der TO – Ausschußumbesetzungen</p>
-				<p>Die Fraktion ist mit der Ausschußumbesetzung im Verteidigungsausschuß<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN045" type="comment"><p>Tausch zwischen dem ordentlichen Mitglied <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name> und dem stellvertretenden Mitglied Paul <name type="Person" role="Erwaehnung" ref="#NeumannPaul_1965-10-19">Neumann</name>. Vgl. TO.</p></note></seg> einverstanden.</p>
-				<p>Punkt 9 der TO – Nächste Termine</p>
-				<p>Montag, 12. 2., 20.00 Uhr Vorstand; Dienstag, 13. 2., 9.30 Uhr Fraktion.</p>
-				<p>Punkt 10 der TO – Verschiedenes</p>
-				<p><name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> bittet zu den Rationalisierungsvorschlägen des DGB<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN046" type="comment"><p>Vgl. <ref type="external" target="#spd-05_1968-02-13-t0940_EP">SPD-Fraktionssitzung am 13. Februar 1968 mit Anm. 16</ref>.</p></note></seg> um eine Unterstützung der Fraktion.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> schlägt vor, zuerst den Text vorzulegen und dann die Fraktion um eine Beschlußfassung zu bitten.</p>
-				<p>Des weiteren bittet er, die Frage des Bildungsurlaubs<seg type="note"><note xml:id="spd-05_1968-02-06-t0943_EP_FN047" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1968-03-12-t0930_EP">SPD-Fraktionssitzung am 12. März 1968, TOP 8</ref>.</p></note></seg> zu behandeln. Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>] hält eine Diskussion über dieses Thema zum jetzigen Zeitpunkt nicht für fair. Es sollte dazu erst ein Papier vorgelegt werden und der Punkt auf die Tagesordnung einer der nächsten Fraktionssitzungen gesetzt werden. Die Frage des Bildungsurlaubs, die von einigen Genossen auch im Zusammenhang mit der Gestaltung des 17. Juni gesehen wird, sollte vom AK Innenpolitik, AK Sozialpolitik und der Arbeitsgruppe gesamtdeutsche und Berliner Fragen behandelt werden. Den Vorsitz sollte Egon <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name> übernehmen.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1968-02-06-t0943_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1966-1969</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/IV</title>
+                  <author>Bettina Tüffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2009</date>
+                  <idno type="DNB">https://d-nb.info/98750584X</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, 84</idno>
+                     <objectName>Protokoll über die Sitzung der SPD-Bundestagsfraktion am 6. 2. 1968</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 6. Februar 1968</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>11 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1968-02-06">
+               <time type="start" when="09:43:00"/>
+               <time type="end" when="12:38:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#SchmidtHelmut_1953-10-06"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-08-18" who="#RabusSimon" status="final" n="3">Vereinheitlichung XML</change>
+         <change when="2021-11-09" who="#HindenburgBarbara" status="draft" n="4">Group-Element gelöscht; Archivtitel verschoben; NOCH KEINE NAMEN BEI DER Anwesenheitsliste ausgezeichnet</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend von der Bundesregierung:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>, <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, <name type="Person" role="Erwaehnung" ref="#WischnewskiHans-Juergen_1957-10-15">Wischnewski</name>. PStS: <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name>, <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>, <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf: (39 a.)</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1968-02-06-t0943_EP_SVP-1" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-1">A. Informationen.</item>
+               <item xml:id="spd-05_1968-02-06-t0943_EP_SVP-2" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-2">B. Vorbereitung der Plenarsitzungen.</item>
+               <item xml:id="spd-05_1968-02-06-t0943_EP_SVP-3" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-3">C. EWG-Agrarfinanzierung. - Vorlagen aus den Arbeitskreisen (Antrag <name type="Person" role="Erwaehnung" ref="#HaageHermann_1957-10-15">Haage</name> und Genossen betr. Werksverkehr).</item>
+               <item xml:id="spd-05_1968-02-06-t0943_EP_SVP-4" corresp="#spd-05_1968-02-06-t0943_EP_div_SVP-4">D. Ausschußumbesetzungen. - Nächste Termine. - Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> eröffnet die Sitzung um 9.43 Uhr.</p>
+            <p>Er begrüßt die nach langer Krankheit wieder genesene Ilse <name type="Person" role="Erwaehnung" ref="#ElsnerIlse_1961-10-17">Elsner</name> und spricht Geburtstagsglückwünsche aus. Als neuer Mitarbeiter wird Edgar <name type="Person" role="Erwaehnung" ref="#HirtEdgar">Hirt</name> der Fraktion vorgestellt; er soll für Egon <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name> arbeiten.</p>
+            <p>Vor Eintritt in die Tagesordnung teilt Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> mit, daß unsere Parteifreunde in Baden-Württemberg ihn gebeten haben, die Fraktion nochmals um Rednermeldungen für den Landtagswahlkampf zu bitten.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN001" type="comment">
+                     <p>In Baden-Württemberg fanden am 28. April 1968 Landtagswahlen statt.</p>
+                  </note>
+               </seg> Bisher hätten sich nicht viele Abgeordnete hierfür gemeldet.</p>
+            <p>Punkt 1 der TO – Informationsstunde</p>
+            <p>Hans-Jürgen <name type="Person" role="Sprecher" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name> fragt, was es mit dem Umbau des Plenarsaales auf sich habe und was die Tieferlegung der Regierungsbank für einen Sinn haben soll.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> antwortet darauf, daß die Regierung nicht so über dem Parlament thronen soll und die Verminderung der Abgeordnetenplätze auf 300 dem Vorbild des englischen Unterhauses entspricht.</p>
+            <p>August <name type="Person" role="Sprecher" ref="#BerlinAugust_1949-09-07">Berlin</name> macht darauf aufmerksam, daß Heinz <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name> in der letzten Sitzung über den Umbau berichtet hat und der Bundestagsvorstand keine Zustimmung zu dem Umbau geben kann, ehe die Fraktionen hierzu ihre Stellungnahme abgegeben haben. Der Bundestagspräsident müßte hierzu aufgefordert werden.</p>
+            <p>Bei dieser Gelegenheit weist Hannsheinz <name type="Person" role="Sprecher" ref="#BauerHannsheinz_1953-10-06">Bauer</name> darauf hin, was von seiten der Fraktionsführung getan werden kann, um den Bundestagspräsidenten künftig daran zu hindern, Erklärungen in der Öffentlichkeit abzugeben, die dann den Ältestenrat vor vollendete Tatsachen stellen. Auch hat sich der Bundestagspräsident nicht an vom Geschäftsordnungsausschuß gefaßte Beschlüsse gehalten.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> stimmt dem zu, weist aber darauf hin, daß er in der gestrigen Vorstandssitzung gebeten wurde, einen persönlichen Beitrag zur Verbesserung des Verhältnisses mit dem Bundestagspräsidenten zu leisten.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN002" type="comment">
+                     <p>Ein Protokoll der Sitzung ist nicht überliefert.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Fritz <name type="Person" role="Sprecher" ref="#BuettnerFritz_1957-10-15">Büttner</name> weist zusätzlich darauf hin, daß die Frage der Unterbringung der Stenographen auch noch nicht geklärt sei.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name> hat nichts gegen eine organisatorische und optische Veränderung des Plenarsaales, doch wendet er sich gegen eine Verringerung der Abgeordnetensitze, die zu einem falschen Bild in der Öffentlichkeit führen würde.</p>
+            <p>Edith <name type="Person" role="Sprecher" ref="#KrappeEdith_1957-10-15">Krappe</name> unterstützt den Antrag, daß der Fraktionsvorstand sich eingehend mit den Umbauplänen befassen sollte.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> erklärt, daß der Fraktionsvorstand und die Fraktion sich mit den Umbauplänen eingehend beschäftigen wird und diese Angelegenheit ein ordentlicher Tagesordnungspunkt bei einer der nächsten Fraktionssitzungen sein wird, um eine Entscheidung der Fraktion herbeizuführen.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN003" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1968-02-13-t0940_EP">SPD-Fraktionssitzung am 13. Februar 1968</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Adolf <name type="Person" role="Sprecher" ref="#ArndtAdolf_1949-09-07">Arndt</name> fragt, was die Bundesregierung zu tun gedenke, um die Erregung in der Öffentlichkeit über die Entführung der Südkoreaner zu dämpfen.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN004" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1967-11-07-t1640_EP">SPD-Fraktionssitzung am 7. November 1967, Anm. 4</ref>.</p>
+                  </note>
+               </seg> Die bisherigen Auskünfte der Bundesregierung sind nicht ausreichend. Er fragt, warum es die Bundesregierung bisher unterlassen hat, vor dem Bundestag eine Erklärung abzugeben zu folgenden Punkten:</p>
+            <p>1. Die Tätigkeit der Geheimdienstagenten Südkoreas in der BRD sei eine nach deutschen Gesetzen mit Zuchthaus zu bestrafende Handlung gewesen.</p>
+            <p>2. Der deutsche Geheimdienst war an dieser Entführung nicht beteiligt.</p>
+            <p>3. Die Bundesregierung besteht auf unverzüglicher Rückführung der entführten Südkoreaner.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> gibt zur Information bekannt, daß sich der Fraktionsvorstand am gestrigen Abend mit dem gleichen Thema beschäftigt habe.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN005" type="comment">
+                     <p>Ein Protokoll der Sitzung ist nicht überliefert</p>
+                     <p>.</p>
+                  </note>
+               </seg> Die Unzufriedenheit im Lande ist sehr groß. Wegen der geäußerten Beteiligung des deutschen Nachrichtendienstes sollte sich das Kontrollmännergremium mit dieser Frage befassen.</p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> hat keine Bedenken, sich im Sinne der Frage von Adolf <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> im Parlament zu äußern.</p>
+            <p>Zu Frage 1 fühlt er sich nicht zuständig, zudem hat die Bundesanwaltschaft festgestellt, daß keine strafbare Handlung nachgewiesen werden kann.</p>
+            <p>Zu Frage 2: für die Nachrichtendienste ist er ebenfalls nicht zuständig, befürwortet aber gründliche Klarstellung.</p>
+            <p>Die Frage 3 fällt in seine Zuständigkeit. Die Frage ist, wie bringt man die entführten Koreaner nach Deutschland zurück? Es ist sehr frühzeitig und sehr deutlich der koreanischen Regierung die Haltung der Bundesregierung zur Kenntnis gebracht worden. Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> selbst hat am Sonnabend die Anordnung gegeben, daß der deutsche Botschafter in Seoul dorthin wieder zurückkehrt.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN006" type="comment">
+                     <p>Botschafter <name type="Person" role="Erwaehnung" ref="#FerringFranz">Ferring</name>, der sich in Bonn aufhielt, erhielt von Staatssekretär <name type="Person" role="Erwaehnung" ref="#DuckwitzGeorgFerdinand">Duckwitz</name> am 1. Februar 1968 die Anweisung, wieder nach Südkorea zurückzukehren.</p>
+                  </note>
+               </seg> Er hält es für zweckmäßig, daß der deutsche Botschafter bei den Berufungsverhandlungen, die die Verurteilten angestrengt haben, an seinem Platz ist. Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hat gegen eine Erklärung im Bundestag nichts einzuwenden, doch macht er darauf aufmerksam, daß das ein mühsames Geschäft ist und er im Interesse der Verurteilten vor dem Parlament nicht alles sagen kann.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> weist darauf hin, daß im Fraktionsvorstand schon Kritik an der Qualität des deutschen Botschafters zum Ausdruck gebracht wurde.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN007" type="comment">
+                     <p>Läßt sich über die Vorstandsprotokolle nicht nachweisen.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Adolf <name type="Person" role="Sprecher" ref="#ArndtAdolf_1949-09-07">Arndt</name> spricht sich dafür aus, sich auf diplomatischem Wege weiter um einen Erfolg zu bemühen. Dennoch sollte die Bundesregierung eine Erklärung vor dem Bundestag abgeben.</p>
+            <p>Gustav <name type="Person" role="Sprecher" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> spricht sich ebenfalls für die Rückkehr des Botschafters nach Seoul aus und weist darauf hin, daß die Ermittlungen der Bundesanwaltschaft sich erstrecken mußten auf die nach Deutschland eingeflogenen südkoreanischen Geheimdienstagenten und auf die Angehörigen der südkoreanischen Botschaft. Diese Ermittlungen haben nichts Griffiges zutage gebracht und besonders keine deutsche Beteiligung. Die Rückkehr des deutschen Botschafters nach Seoul hält <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> auch deshalb für erforderlich, weil in Südkorea behauptet wurde, der deutsche Geheimdienst habe eine Rolle mitgespielt. Wenn der Botschafter dorthin nicht zurückkehren würde, könnte dies als ein deutsches Eingeständnis hierfür ausgelegt werden.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt aus, daß es hierbei nicht um die Frage der Auswechslung des Botschafters geht, sondern darum, daß man sein Mißfallen Südkorea gegenüber zum Ausdruck bringt, indem der deutsche Botschafter vorerst nicht nach Seoul zurückkehrt.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> fragt nach den Hintergründen der dpa-Falschmeldung und der französischen Reaktion aus Anlaß der Rede von Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in Ravensburg.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN008" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hatte am 3. Februar in einer Rede auf dem Landesparteitag der SPD in Ravensburg u. a. das deutsch-französische Verhältnis angesprochen: »Wenn unser Nachbar Frankreich seine gewissermaßen traditionelle Weltmission mit der großräumigen Strategie einer Rundum-Verteidigung verknüpft, so ist das seine Sache. Man wird hier nur bedauern können, daß sich unser Nachbarland, weit über sich hinauswachsend, mit diesen Ansprüchen und Zielen weiter von Europa entfernt.« Und weiter: Er hoffe, daß die Verankerung der Aussöhnung und Freundschaft zwischen beiden Ländern schon so stark sei, daß »auch unvernünftige Regierungen nicht mehr in der Lage sein werden, daran etwas zu ändern«, vgl. <bibl type="series-item">Bulletin, Nr. 17 vom 8. Februar 1968, S. 129</bibl>. Die falsche Wiedergabe einer Passage durch dpa (dpa hatte geschrieben: »Die tiefverwurzelte deutsch-französische Freundschaft vor allem im jungen Volk wird am Ende stärker sein als die starren uneuropäischen Gedanken eines machtbesessenen Regierungschefs«) führte in den folgenden Tagen zu Spannungen zwischen beiden Ländern. Vgl. <bibl type="series-item">»Verwirrung über Äußerungen Brandts zur Europa-Politik«, FAZ vom 5. Februar 1968</bibl>, <bibl type="series-item">»Trübung der Beziehung zu Paris befürchtet«, Süddeutsche Zeitung vom 6. Februar 1968, »Falscher Bericht – echte Entrüstung?«, Süddeutsche Zeitung vom 7. Februar 1968</bibl>; <bibl type="series-item">AAPD 1968, Dok. 46</bibl> und <bibl type="series-item">Europa-Archiv 1968, Z 44</bibl>.</p>
+                  </note>
+               </seg> Er hat selbst an dem Parteitag teilgenommen und kann bestätigen, daß die dpa-Meldung falsch ist. Gerade Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hat in der Vergangenheit alles getan, um in dem schwierigen deutsch-französischen Verhältnis kein Porzellan zu zerschlagen.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> stellt zusätzlich die Frage, wie sich Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> zu den zitierten Äußerungen <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murvilles</name> über ihn stellt<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN009" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg> und was die Ausladung von Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und anderen Deutschen von einem Frühstück, das der französische Staatspräsident gegeben hat,<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN010" type="comment">
+                     <p>Bundespräsident <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> besuchte anläßlich der Wiedereröffnung des restaurierten Palais Beauharnais als Amtssitz des deutschen Botschafters vom 3. bis 5. Februar Paris. Als Reaktion auf die dpa-Meldung (vgl. Anm. 8) wurde ein Staatsbankett zu Ehren <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübkes</name> zu einem informellen Essen nur für den Bundespräsidenten und seine engste Umgebung herabgestuft; Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und Kurt <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, die <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name> auf dem Besuch begleiteten, wurden ausgeladen. Vgl. dazu die <bibl type="series-item">Darstellung Botschafter <name type="Person" role="Erwaehnung" ref="#KlaiberManfred">Klaibers</name> an Außenminister <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> vom 4. Februar, AAPD 1968, Dok. 46</bibl>.</p>
+                  </note>
+               </seg> bedeutet.</p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> führt aus:</p>
+            <p>»Ich habe vorwiegend mich mit der Lage vor dem Wahlkampf befaßt, einige außenpolitische Passagen darin gehalten. Auf Frankreich bezogen, hieß das, was dort gesagt worden ist, mit dieser keineswegs neuen Formel: Wenn wir nach Paris gehen, kann nicht darüberstehen als Motto ›Feigheit vor dem Freund‹. Das heißt auf gut deutsch: Offene Unterhaltung über die anstehenden europäischen Fragen, Ansprechung der Meinungsverschiedenheiten. Ich habe aus meiner Sicht und in meiner Sprache – und das ist das stärkste, was man über das Verhältnis zwischen den beiden Nachbarvölkern sagen kann – auch nicht zum ersten Mal gesagt: ›Ich hoffe, die Aussöhnung und die Freundschaft ist zumal in den Herzen der jungen Generation so stark verankert, daß auch unvernünftige Regierungen das nicht mehr würden zerstören können.‹ So weist es das Tonband aus. Wenn sich jemand den Schuh anzieht, kann ich nichts dafür. Drittens habe ich gesagt, ich habe den Eindruck oder ich fürchte oder ich bedauere, daß Frankreich sich mit dem Konzept der Rundum-Verteidigung übernimmt und von Europa entfernt. Hier ist für mich das Interessante in der Pariser Reaktion, daß aus der Reaktion klar wird, wie unrecht diejenigen hatten, die eine Äußerung des Generals <name type="Person" role="Erwaehnung" ref="#AilleretCharles">Ailleret</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN011" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1967-12-05-t1645_EP">SPD-Fraktionssitzung am 5. Dezember 1967, Anm. 22</ref>.</p>
+                  </note>
+               </seg> nicht für eine offizielle Äußerung gehalten haben. Aus der Reaktion ergibt sich die Deckung zwischen dem, was gesagt wurde und was jetzt kommentiert wird.</p>
+            <p>Als ich dann die Geschichte hörte, am Sonntag, als das anlief, da fiel es mir sehr schwer, nicht an eine Provokation zu glauben. In Wirklichkeit scheint es sich eher, jedenfalls für das, was sich am Sonntag abgespielt hat, um eine Kette von Unzulänglichkeiten zu handeln, auch technischer Art. Das beginnt damit, daß dpa am Sonnabendnachmittag etwas gesendet hat, ich am Sonnabend um ½ 8 Uhr wieder in Bonn war, aber erst Sonntagmittag um 12.00 Uhr von dieser Meldung unterrichtet worden bin. Selbst ein Anruf Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehners</name> aus Paris Sonntagfrüh, den habe ich noch ganz […] Ich habe gesagt, ›ich habe ein paar kritische Bemerkungen gemacht‹ und wußte nicht, daß er sich auf einen Text stützt, den ich gar nicht kannte. Ich bin spazieren gegangen und mittags sagte man: ›Da ist das und das im Gange‹. Da hat es lange gedauert, bis wir aus Ravensburg, wo das Band liegengeblieben war, das nach Bonn gebracht haben. Da das etwas lange dauerte, hat man auf eine primitive Art und Weise über Telefon das Band überspielt, bis man anfangen konnte zu schreiben. Das war alles nicht der Technik des 20. Jahrhunderts entsprechend.</p>
+            <p>Da kommt hinzu, was dpa alles kann! Die können, wenn es darauf ankommt, <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> stürzen lassen. Die können, wenn es darauf ankommt, hier eine Riesengeschichte ingang setzen lassen und können mit einer Dreistigkeit, für die es kein Beispiel gibt, den SPD-Vorsitzenden und Bundesaußenminister noch am Sonntag trotz der eindeutigen Dementis zum Lügner erklären. Das haben sie nämlich gemacht.</p>
+            <p>Hinterher stellt sich heraus: Der Redakteur von dpa aus Stuttgart hat – wie es jetzt heißt – einen Autounfall gehabt und man hält es nicht für ausgeschlossen, daß er gesundheitlich dadurch nicht gut beieinander war. Jedenfalls, seine Behauptung noch am Sonntagnachmittag, die also gegengehalten wurde gegen meine Feststellung – da hatten wir den Text schon –, hat dpa von Hamburg noch erneut herausgegeben: Der Korrespondent bleibt bei seiner Feststellung, und er habe Notizen, er habe Zeugen aus den Reihen der Delegierten des Parteitages. Inzwischen kennt man seine Notizen. Es steht auch in seinen Notizen dieses nicht drin, was er gemeldet hat. Und jetzt geht es weiter: Dann legt die SPD nach ihrem Tonband den ganzen Text vor und dann zögert dpa immer noch. Als sich dann dpa im Laufe des gestrigen Tages zusätzlich durch ein Band, von dem ich nicht wußte, daß es es gibt, des Südwestfunks überzeugt, da endlich entschuldigt sich dpa. Das heißt, die Mitteilung ›Nehmt bitte zur Kenntnis, das war nicht so‹, die wird nicht geglaubt, sondern man setzt dagegen. Das heißt ja im Grunde: ›Der lügt, der läßt seine Pressestelle jetzt etwas Falsches sagen‹. Und auch unser Band – da liegt doch der Soupçon drin – ›vielleicht haben die mit dem Band etwas gemacht‹. Die Meldung: ›Wir haben uns aufgrund des Südwestfunkbandes überzeugt, es stimmt so, wie die es herausgegeben haben, Wort für Wort‹, das ist nicht schön. Und trotz des Bedauerns der Chefredaktion von dpa ist dies ein ernster Vorgang.</p>
+            <p>Ich bin selbst lange genug Journalist gewesen und gehöre in der Regel nicht zu denen, die allzu strenge Maßstäbe anlegen und zu schnell ärgerlich sind. Aber es geht darum, ob hier in diesem Staat die Tassen im Schrank bleiben oder ob zumal eine Agentur, von der AFP, Reuters u. a. abschreiben, verrückt spielen kann anstelle derer, die politisch agieren in diesem Land.</p>
+            <p>Jetzt will ich nicht untersuchen, wer dann an der Sache gedreht hat in Deutschland oder anderswo. Daß gedreht wird, das sieht man auch an andere Fällen, z. B. an einem herausgespielten Bericht der Botschaft in Washington vom Wochenende, nachzulesen in der Welt am Sonntag<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN012" type="comment">
+                     <p>
+                        <bibl type="series-item">»USA über Bonns Ostpolitik besorgt«, Welt am Sonntag, Nr. 5 vom 4. Februar 1968</bibl>. Vgl. auch den <bibl type="series-item">Bericht von Botschafter <name type="Person" role="Erwaehnung" ref="#KnappsteinKarlHeinrich">Knappstein</name>, Washington, an das AA vom 30. Januar 1968, AAPD 1968, Dok. 37, S. 37 ff</bibl>.</p>
+                  </note>
+               </seg>, über angebliche amerikanische Reaktionen zur deutschen Ostpolitik, widerlegt in einem Interview gegen dpa durch das State Department in Washington. Ich will jetzt weitere Fälle nicht nennen.</p>
+            <p>Daß es Leute gibt, die einen bequemeren Außenminister lieber hätten, kann ich mir denken, aber denen kann ich nicht helfen. Wer mich kennt, was die Sache angeht, der weiß, daß ich in den vergangenen Jahren – lange bevor ich Außenminister wurde – zur deutsch-französischen Zusammenarbeit gelegentlich Standpunkte bezogen habe, die auch in der Partei nicht allgemeine Zustimmung gefunden haben. Es gilt sogar für Äußerungen über bestimmte Positionen der <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulleschen</name> Politik, die kritisiert worden sind, was ich verstanden habe. Doch hat man dazu die Meinungen ausgetauscht. Ich habe dazu nichts abzustreiten. Ich weiß auch heute – und habe es immer gewußt – um den besonderen Rang, den diese Zusammenarbeit und dieses Verhältnis einnehmen muß, weiß vor allen Dingen – vielleicht noch besser als früher – um den Primat der Nachbarschaft, der für dieses Verhältnis gilt, und wir haben ja auch in den acht Punkten vor Bildung dieser Regierung mit darin gehabt, daß wir dieses Verhältnis entlasten möchten.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN013" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1967-04-11-t1500_WZ">SPD-Fraktionssitzung am 11. April 1967 (Teil 3), Anm. 19</ref>.</p>
+                  </note>
+               </seg> Das ist dann bis zu einem gewissen Teil geschehen. Wir haben in der Ostpolitik eine gute Fühlung gehabt und manche Dinge zusammen entwickeln können, auch auf verschiedenen Gebieten die bilaterale Zusammenarbeit mit neu belebt und ganz gut entwickelt. Im Laufe aber des ganzen Jahres – es ist ein gutes Jahr – hat sich leider nichts daran ändern lassen, daß in der Frage des Atlantischen Bündnisses und vor allem in der Frage der europäischen Zusammenarbeit und Einigung wir nicht übereinstimmten, Bonn und Paris.</p>
+            <p>Aber wir haben uns auf beiden Seiten gesagt – ich hoffe, immer auf beiden –, daß gerade, wenn es in wichtigen Fragen keine Übereinstimmung gibt, und da man so sehr aufeinander angewiesen ist, es gut ist, wenn man sich regelmäßig sieht und versucht, um unnötige Spannungen herumzukommen. Ich habe auch in diesen Wochen – Karl <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> hat das freundlicherweise anklingen lassen –, auch noch in der vergangenen Woche, in den Gesprächen mit meinen englischen Kollegen<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN014" type="comment">
+                     <p>Der britische Außenminister <name type="Person" role="Erwaehnung" ref="#BrownGeorgeAlfred">Brown</name> hielt sich am 19. Januar zu Gesprächen mit <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in Bonn auf. Thema der Gespräche waren der Beitritt Großbritanniens zur EWG, der Krieg in Vietnam, der Atomwaffensperrvertrag und die Ostpolitik der Bundesregierung.</p>
+                  </note>
+               </seg> und am Donnerstag/ Freitag mit den Italienern<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN015" type="comment">
+                     <p>Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> und Außenminister <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hielten sich vom 1. bis 3. Februar zu einem offiziellen Besuch in Italien auf.</p>
+                  </note>
+               </seg>, sie immer gebeten, bei allem auch zu bedenken, was über aktuelle Streitfragen hinaus daran hängt, ob wir das deutsch-französische Verhältnis heil durch eine schwierige Periode hindurchbringen.</p>
+            <p>Ich möchte heute dazu nicht mehr sagen. Die Fragen, die Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>] gestellt hat, die möchte ich lieber etwas später, heute im Laufe des Tages, beantworten; wir treffen uns im Laufe des Vormittags beim Bundeskanzler. Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> hat ein längeres Gespräch mit dem französischen Außenminister gehabt<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN016" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> war als Stellvertreter des Bundesaußenministers am 4. und 5. Februar zu Gesprächen von <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murville</name> empfangen worden, vgl. <bibl type="series-item">AdG 1968, S. 13723</bibl>.</p>
+                  </note>
+               </seg> und ich denke, ich sollte die Berichterstattung darüber abwarten, bevor ich mich äußere. Ich sage Euch nur eins, und das in vollem Ernst: Ich sehe unsere Rolle so, als Bundesregierung und als Sozialdemokrat in der Bundesregierung: Wir sind zuverlässige Partner, aber wir sind keine Satelliten.«</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> weist darauf hin, daß eine Dringlichkeitsfrage für die nächste Fragestunde zu diesem Thema eingereicht worden ist.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN017" type="comment">
+                     <p>Die Dringliche Anfrage wurde von Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>] selbst gestellt. Er bat <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> darum, den Wortlaut seiner Rede in Ravensburg bekanntzugeben.<bibl type="btp">
+                           <ref type="external" target="05/151">BT Sten. Ber. 66, S. 7774 ff</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Er bittet um politische und psychologische Unterstützung unserer Abgeordneten für den Außenminister bei den Zusatzfragen. Die Art und Weise, in der die Presse im gesamten Bereich ob links oder rechts über die politischen Führungen berichtet, könne von der Partei nicht länger geduldet werden.</p>
+            <p>Rudolf <name type="Person" role="Sprecher" ref="#KaffkaRudolf_1961-10-17">Kaffka</name> fragt nach dem Stand der Gemeindefinanzreform, vor allen Dingen nach dem vom Kabinett verabschiedeten Entwurf.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN018" type="comment">
+                     <p>Das Kabinett hatte am 31. Januar das Programm für die Gemeindefinanzreform verabschiedet, das den Gemeinden u. a. Mehreinnahmen aus der letzten Erhöhung der Mineralölsteuer, die Erhöhung der Grundsteuer und des Anteils am Gesamtsteueraufkommen versprach; zudem sollte die den Kommunen zustehende Gewerbesteuer erst zum Januar 1972 gesenkt werden, vgl. <bibl type="series-item">»Das Kabinett verspricht den Gemeinden bessere Steueranteile«, FAZ vom 1. Februar 1968</bibl>.</p>
+                  </note>
+               </seg> Nachdem in der Öffentlichkeit schon vieles bekanntgeworden sei, müsse die Frage gestellt werden, ob [und] wann die Parlamentarier hierüber unterrichtet würden.</p>
+            <p>Zur Sachlage sagt Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>:</p>
+            <p>»Das Problem ist nicht als nebensächliches, sondern praktisch mit als Hauptproblem in der vom Parteivorstand eingesetzten <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name>-Kommission<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN019" type="comment">
+                     <p>Die »Kommission Finanzreform« unter dem Vorsitz des hessischen Ministerpräsidenten Georg August <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name> tagte seit Sommer 1966 monatlich. Ihr gehörten führende SPD-Bundes- und Landespolitiker an.</p>
+                  </note>
+               </seg> kontinuierlich behandelt worden. Die <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name>-Kommission hat dann vor Weihnachten eine Unterkommission eingesetzt, die sich speziell mit den Gemeindefinanzen befaßte. Diese Unterkommission hat die kommunalen Spitzenverbände zugezogen. Wir haben dann, bevor es im Kabinett zur Beratung kam, verschiedene Sitzungen gehabt und haben Grundsätze festgelegt, ohne die Fraktion zu binden. Die Fraktion ist frei. Dann hat das Kabinett nochmals zurückverwiesen und hat vorgeschlagen – und das ist durchgeführt worden –, daß vor ungefähr 14 Tagen die kommunalen Spitzenverbände mit Vertretern der Fraktionen, der Finanzminister, geladen wurden<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN020" type="comment">
+                     <p>Vgl. <bibl type="series-item">»Annäherung im Streit um die Gemeindefinanzen«, FAZ vom 29. Januar 1968</bibl>.</p>
+                  </note>
+               </seg>, und da ist das Problem noch einmal in extenso behandelt worden und dann ist es zu der bekannten Beschlußfassung im Kabinett gekommen. Zur Sache: Am Mittwoch, also morgen, wird sich das Präsidium mit den Ministerpräsidenten und den führenden Genossen der kommunalen Spitzenverbände beim Parteivorstand treffen, um das Problem noch einmal mit aller Gründlichkeit zu beraten. Wir können praktisch jetzt noch nichts in die Fraktion bringen, weil wir noch keine Vorlagen haben.</p>
+            <p>Am 8. Februar wird der Bundeskanzler mit den Ministerpräsidenten sprechen.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN021" type="comment">
+                     <p>Zum<bibl type="series-item"> Gespräch <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesingers</name> mit den Minsterpräsidenten siehe »Annäherung in der Finanzreform«, FAZ vom 9. Februar 1968</bibl>.</p>
+                  </note>
+               </seg> Erst wenn diese Besprechung zu Ende ist und noch eine weitere, wird das Finanzministerium nach meinen Informationen beauftragt werden, die endgültigen Gesetzesentwürfe auszuarbeiten.</p>
+            <p>Ich habe vollstes Verständnis für die Unruhe, muß aber auf eines aufmerksam machen: Es ist nicht so, daß alle kommunalen Spitzenverbände unruhig sind, das ist der Städtetag. Ich will das jetzt nicht qualifizieren, aber bei all den Anhörungsterminen, bei denen ich zugegen war und wo ich die Fraktion nicht ins Wort gebracht habe, sondern für die Fraktion immer nur von dem Grundsatz ausgegangen bin: wir wollen eine qualitative und quantitative Verbesserung der Gemeindefinanzen haben, wurde klar, daß der Gemeindetag als Spitzenverband, der Städtebund und der Landkreistag eine andere Stellung einnehmen als der Städtetag zu diesen Fragen. Und hier liegt eine Diskrepanz, die wir morgen zu überbrücken versuchen. Ob das gelingt, bleibt abzuwarten. Aber es wäre verfrüht, heute schon sagen zu wollen, wie das auslaufen wird.«</p>
+            <p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> führt aus:</p>
+            <p>»Das, was das Kabinett beschlossen hat, ist eine Verhandlungsgrundlage für das Gespräch des Bundeskanzlers, des Bundesfinanzministers<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN022" type="comment">
+                     <p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>.</p>
+                  </note>
+               </seg> unter unserer Beteiligung am kommenden Donnerstag. Das ist schon eine in unserem Sinne modifizierte Form der Vorlage, die <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> zunächst im Kabinett eingebracht hat, aber sie ist in dieser Form ausdrücklich eine Verhandlungsgrundlage und nicht als endgültige Stellungnahme des Kabinetts bezeichnet worden. Wenn es nützlich und notwendig für die weitere Entwicklung der Sache sein sollte, würde die Fraktion zur Stellungnahme herangezogen werden.«</p>
+            <p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> weist darauf hin, daß der vorliegende Entwurf eine gute Grundlage für Städtetag, Gemeindetag und Landkreistag darstellt. Was den Städtetag anbetrifft, so gibt es hier unterschiedliche Meinungen zwischen den großen und mittelgroßen Städten.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#BardensHans_1965-10-19">Bardens</name> hat Bedenken, daß die Einwirkungsmöglichkeiten der Fraktion zu stark eingeschränkt werden, weil sie erst Stellung nehmen soll, wenn die Regierungsvorlagen vorliegen. Die Fraktion sollte sehr früh eine Haltung zu dieser Frage festlegen.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidts</name> Sorge ist, daß aus dieser Finanzreform nicht viel herauskommen wird. Er wendet sich dagegen, daß die Fraktionen schon frühzeitig in die Meinungsbildung des Kabinetts eingeschaltet werden. Das führt zur Lähmung der Regierungstätigkeit. Die Partei hat sich eingeschaltet durch die <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name>-Kommission. Die Fraktion muß die Freiheit besitzen, daß sie das Kontrollorgan ist gegenüber der Regierung und daß das Parlament das Gesetzgebungsorgan ist, das von den Vorlagen der Regierung abweichen kann.</p>
+            <p>Joachim <name type="Person" role="Sprecher" ref="#RaffertJoachim_1965-10-19">Raffert</name>: Alex <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name> hat Anfang des Jahres eine Zusammenfassung zu diesem Thema gegeben. <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name> fragt, ob dies immer noch die Leitlinie für uns ist.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>: Ohne jede Einschränkung.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#ApelHans_1965-10-19">Apel</name> berichtet darüber, daß unter den Mitgliedern der Partei eine große Unruhe über die Tätigkeit der Studenten, der NPD u. a. herrscht. Man erwartet eine Stellungnahme des Parteivorstandes oder der Fraktion zu diesen Fragen.</p>
+            <p>Hans <name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> wirft ein, ob man sich dabei auch gegen die Vietnam-Demonstrationen wenden wolle.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> führt aus, daß wir innenpolitisch und psychologisch in der BRD an einem Punkte sind, wo Maß und Führung von der Bundesregierung verlangt werden müssen, von niemand sonst. Darüber hat gestern abend auch der Fraktionsvorstand lange diskutiert.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN023" type="comment">
+                     <p>Ein Protokoll dieser Sitzung ist nicht überliefert.</p>
+                  </note>
+               </seg> Diese Probleme kann man nicht den kleinen Länderregierungen in Kiel, Bremen und Berlin überlassen. Es handelt sich um ein geistig-politisches Führungsproblem. Er hält aber nichts davon, daß hier durch eine Erklärung der Fraktion etwas erreicht werden könnte. Der Fraktionsvorstand ist der Meinung, daß die Bundesregierung bei der Erklärung über die Lage der Nation hierzu ausreichend Stellung nehmen sollte und die Fraktion dann in der Debatte ihre Stellungnahme vortragen kann. Hierzu ist nötig, daß in der Fraktion geistige Vorarbeit geleistet wird, eine befriedigende Analyse über die Gründe dieser ganzen Erscheinung. Man sollte einen Kreis von Genossen bitten, sich im Laufe der nächsten drei Wochen zusammenzusetzen, um das für die Gesamtfraktion vorzubereiten.</p>
+            <p>Franz <name type="Person" role="Sprecher" ref="#MarxFranz_1949-09-07">Marx</name> fragt, ob die Bundesregierung sich auch mit den Vorfällen befassen wird, die sich aus Anlaß der Veranstaltung der Aktion 1968 kürzlich in München abgespielt haben.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN024" type="comment">
+                     <p>Gemeint ist die zu Beginn des Jahres 1968 gegründete »Demokratische Aktion 31. Januar 1968«, die u. a. gegen Rechtsradikalismus und Notstandsgesetzgebung eintrat. Bei einer Kundgebung am 31. Januar im Deutschen Museum in München kam es zu Auseinandersetzungen zwischen den Teilnehmern der Aktion und NPD-Anhängern, bei denen ein NPD-Mitglied einen Herzanfall erlitt und starb. Vgl. <bibl type="series-item">»Rechtsradikale stören Kundgebung«, Süddeutsche Zeitung vom 1. Februar 1968</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> erklärt, daß sich die Fraktion mit den Dingen befassen muß, die nicht nur auf seiten der Rechten, sondern auch auf seiten der Linken in den letzten Wochen vorgefallen sind. Es gibt gemeinsame Ursachen für die extremistische Entwicklung auf beiden Seiten, darauf muß die Fraktion ihr Augenmerk richten. Die Debatte hierüber soll zu einem späteren Zeitpunkt in der Fraktion erfolgen.</p>
+            <p>Der Fraktionsvorstand ist sich klar darüber geworden, daß die Fraktion es nötig hat, in 14 Tagen eine allgemeine Aussprache über die innenpolitische Lage in der Bundesrepublik zu führen. Voraussetzung dafür ist, daß ihr eine Analyse vorgetragen wird, aus der hervorgeht, was sich an Zielsetzungen aus sozialdemokratischer Sicht daraus ergibt.</p>
+            <p>Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> fragt, welche Gründe die Bundesregierung hatte, in ihrem Bericht über die radikalen politischen Kräfte neuerdings die Studenten zu erwähnen. Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> schlägt vor, daß auch auf diese Frage in der Gesamtheit zurückgekommen wird.</p>
+            <p>Auf Zuruf werden die Genossen <name type="Person" role="Erwaehnung" ref="#TallertHarry_1965-10-19">Tallert</name>, <name type="Person" role="Erwaehnung" ref="#MeineckeRolf_1965-10-19">Meinecke</name>, <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name>, <name type="Person" role="Erwaehnung" ref="#RohdeHelmut_1957-10-15">Rohde</name>, <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>, Günther <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>, <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name>, <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name>, <name type="Person" role="Erwaehnung" ref="#BrueckAlwin_1965-10-19">Brück</name>, <name type="Person" role="Erwaehnung" ref="#MatthoeferHans_1961-10-17">Matthöfer</name>, <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name>, <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN025" type="comment">
+                     <p>Korrigiert aus »Schöttler«. Vgl. auch die Liste in <bibl type="series-item">Informationen, Nr. 53 vom 6. Februar 1968</bibl>, in der <name type="Person" role="Erwaehnung" ref="#RengerAnnemarie_1953-10-06">Renger</name> fehlt. Die Bundestagsdebatte fand am 14. März statt.</p>
+                  </note>
+               </seg> und Annemarie <name type="Person" role="Erwaehnung" ref="#RengerAnnemarie_1953-10-06">Renger</name> sowie 2 Assistenten mit der Ausarbeitung der o. a. Analyse beauftragt. In zwei bis drei Wochen soll die Arbeitsgruppe ein entsprechendes Papier erarbeiten. Die Diskussion soll die Vorbereitung sein für die Debatte im Plenum über die Lage der Nation, die unmittelbar vor dem Parteitag geführt werden wird.</p>
+            <p>Damit ist die Informationsstunde beendet.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Punkt 2 der TO – Vorbereitung der Plenarsitzungen</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Nach der Fragestunde – am 7. 2. 1968 – wird Punkt 2 der Tagesordnung<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN026" type="comment">
+                     <p>TO BT liegt dem Protokoll bei.</p>
+                  </note>
+               </seg> – Strafverfahrensrecht, Große Anfrage der FDP<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN027" type="comment">
+                     <p>
+                        <bibl type="btd">
+                           <ref type="external" target="05/2408">BT Anl. 117, Drs. V/2408</ref>
+                        </bibl>, <bibl type="btp">
+                           <ref type="external" target="05/152">BT Sten. Ber. 66, S. 7786–7806</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>, behandelt. Redner für die SPD ist <name type="Person" role="Erwaehnung" ref="#Mueller-EmmertAdolf_1961-10-17">Müller-Emmert</name>. <name type="Person" role="Sprecher" ref="#HirschMartin_1961-10-17">Hirsch</name> und <name type="Person" role="Sprecher" ref="#Mueller-EmmertAdolf_1961-10-17">Müller-Emmert</name> geben einen kurzen Bericht über die Haltung der Fraktion während der Debatte. Die Fraktion erhebt keine Einwendungen.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Es folgt Punkt 3 der Tagesordnung – Große Anfrage der SPD zur Wissenschaftsförderung<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN028" type="comment">
+                     <p>
+                        <bibl type="btd">
+                           <ref type="external" target="05/2132">BT Anl. 115, Drs. V/2132</ref>
+                        </bibl>; Entwurf liegt dem Protokoll bei.</p>
+                  </note>
+               </seg>, verbunden mit der Großen Anfrage der CDU zu Schwerpunktaufgaben in Wissenschaft und Forschung.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN029" type="comment">
+                     <p>
+                        <bibl type="btd">
+                           <ref type="external" target="05/2476">BT Anl. 118, Drs. V/2476</ref>
+                        </bibl>, <bibl type="btp">
+                           <ref type="external" target="05/152">BT Sten. Ber. 66, S. 7808–7839</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Zur Begründung ist <name type="Person" role="Erwaehnung" ref="#RaffertJoachim_1965-10-19">Raffert</name> vorgesehen, als Redner <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name>, <name type="Person" role="Erwaehnung" ref="#LiedtkeKarl_1965-10-19">Liedtke</name> und <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> weist darauf hin, daß in der Debatte im Herbst darüber Einigkeit bestand, die übriggebliebenen Fragen jetzt erst zu behandeln. Die Tendenz der Fraktion ist niedergelegt in dem Antrag, der der Fraktion zur Billigung vorliegt.</p>
+            <p>Keine Einwendungen der Fraktion.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Punkt 4 der Tagesordnung – Beratung des von der CDU eingebrachten Entwurfs zur Änderung des Grundgesetzes – Drucksache V/2280 –. Ulrich <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name> sollte dazu sprechen.</p>
+            <p>Ulrich <name type="Person" role="Sprecher" ref="#LohmarUlrich_1957-10-15">Lohmar</name> führt aus, daß die frühere Meinung der Fraktion war, keine Verfassungsänderung vorzunehmen. Aber eine bessere Zusammenarbeit zwischen Bund und Ländern ist notwendig. Als Alternative: eine stärkere Konzentrierung beim Bundeswissenschaftsministerium. Die Fraktion ist damit einverstanden.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Der Entwurf soll an den Rechtsausschuß federführend, an den Kulturausschuß mitberatend überwiesen werden.</p>
+            <p>Punkt 5 der Tagesordnung – 1. Beratung des von allen drei Fraktionen eingebrachten Entwurfs zur Änderung und Ergänzung des Diätengesetzes.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN030" type="comment">
+                     <p>
+                        <bibl type="btd">
+                           <ref type="external" target="05/2526">BT Anl. 118, Drs. V/2526</ref>
+                        </bibl>; Der Entwurf wurde zur weiteren Beratung an den Bundestagsvorstand überwiesen, <bibl type="btp">
+                           <ref type="external" target="05/152">BT Sten. Ber. 66, S. 7840–7843</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Die Begründung wird der Bundestagspräsident<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN031" type="comment">
+                     <p>Eugen <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>.</p>
+                  </note>
+               </seg> oder der Abgeordnete <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> von der CDU übernehmen. Der Fraktionsvorstand schlägt vor, daß versucht werden soll, daß in jedem Falle nur eine Begründung abgegeben werden soll, nicht von den einzelnen Fraktionen begründet wird.</p>
+            <p>Wendelin <name type="Person" role="Sprecher" ref="#EndersWendelin_1967-05-09">Enders</name> trägt einen Änderungsantrag zu § 10 a des Diätengesetzes vor, der die Härten des Stichtages vermeiden soll.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> weist darauf hin, daß es morgen um die erste Lesung geht und man sich mit Änderungsfragen im Ausschuß befassen wird.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name>: Die Tagesordnung für Donnerstag, 8. 2. 1968, sieht nur eine Fragestunde vor. Es folgt – am 9. 2. 1968 – Beratung des von der FDP eingebrachten Neugliederungsgesetzes und Änderung des Grundgesetzes (SPD-Entwurf) sowie Antrag der FDP betr. Volksbegehren. (V/2410, 2470, 2411) Zur Begründung wird Gen. <name type="Person" role="Erwaehnung" ref="#HaarErnst_1965-10-19">Haar</name> vorgeschlagen, für die Debatte Hermann <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> und zum Volksbegehren Gerh. <name type="Person" role="Erwaehnung" ref="#ReischlGerhard_1961-10-17">Reischl</name>. Die Fraktion ist einverstanden.</p>
+            <p>Zu Punkt 7 der Tagesordnung – Förderung mittelständischer Gewerbetreibender, Antrag der CDU – Drucksache V/2489 –. Die CDU will kurz begründen.</p>
+            <p>Der zuständige Arbeitskreis unserer Fraktion hat bisher noch nicht mitgeteilt, ob darüber eine Debatte geführt werden sollte.</p>
+            <p>Walter <name type="Person" role="Sprecher" ref="#SchmidtWalter_1961-10-17">Schmidt</name> möchte die Aufmerksamkeit darauf lenken, daß die Fraktion in den letzten zwei Jahren für die Sache der Mittelschichtengruppe verhältnismäßig passiv gewesen ist. Man müßte mit Anträgen in diesem Jahr kommen und nicht erst vor der Bundestagswahl.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> richtet die Aufforderung an den Arbeitskreis Wirtschaft, sich damit zu befassen.</p>
+            <p>Klaus Dieter <name type="Person" role="Sprecher" ref="#ArndtKlausDieter_1965-10-19">Arndt</name> unterstützt <name type="Person" role="Erwaehnung" ref="#SchmidtWalter_1961-10-17">Schmidt</name> sehr nachdrücklich und meint, daß die Schlacht um die Mittelschichten im Jahre 1968 geschlagen wird.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> faßt die Ausführungen von <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name> so auf, daß der Bundeswirtschaftsminister<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN032" type="comment">
+                     <p>Karl <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>.</p>
+                  </note>
+               </seg> und der Parlamentarische Staatssekretär<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN033" type="comment">
+                     <p>Klaus Dieter <name type="Person" role="Erwaehnung" ref="#ArndtKlausDieter_1965-10-19">Arndt</name>.</p>
+                  </note>
+               </seg> als Mitglieder der Fraktion den Arbeitskreis mit Initiativen unterstützen werden.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> teilt mit, daß Karl <name type="Person" role="Erwaehnung" ref="#ReglingKarl_1953-10-06">Regling</name>, wenn es erforderlich ist, in der Diskussion dazu sprechen wird.</p>
+            <p>Punkt 8 der Tagesordnung – SPD-Antrag betr. Vorlage eines Betriebsärztegesetzes.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN034" type="comment">
+                     <p>Der Antrag, <bibl type="btp">
+                           <ref type="external" target="05/2500">BT Anl. 118, Drs. V/2500</ref>
+                        </bibl>, wurde erst in der Sitzung vom 16. Februar behandelt, da in der Sitzung vom 9. Februar auf Antrag der Koalitionsfraktionen eine Aktuelle Stunde zu den Studentenunruhen eingeschoben wurde.</p>
+                  </note>
+               </seg> Horst <name type="Person" role="Erwaehnung" ref="#SchmidtHorst_1961-10-17">Schmidt</name> wird zur Begründung sprechen.</p>
+            <p>Punkt 9 bis Punkt 15 der Tagesordnung<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN035" type="comment">
+                     <p>Es handelte sich um die Beratung von Berichten, Entscheidungen zu EWG-Verordnungen etc. Vgl. <bibl type="btd">
+                           <ref type="external" target="05/2004">Drs. V/2004</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/2241">2241</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/2283">2283</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/2111">2111</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/2350">2350</ref>
+                        </bibl> u. <bibl type="btd">
+                           <ref type="external" target="05/2502">2502</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/2359">2359</ref>
+                        </bibl> u. <bibl type="btd">
+                           <ref type="external" target="05/2510">2510</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/1893">1893</ref>
+                        </bibl> u. <bibl type="btd">
+                           <ref type="external" target="05/2514">2514</ref>
+                        </bibl>. <bibl type="btp">
+                           <ref type="external" target="05/152">BT Sten. Ber. 66, S. 7806 ff</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> sollen ohne Debatten erledigt werden. Das ist mit den Arbeitskreisen abgestimmt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmidtRMartin_1949-09-07">Schmidt</name> (Gellersen) wendet sich gegen die Flut von Anträgen aus dem Europäischen Parlament, die im Ausschuß behandelt werden müssen. Er schlägt vor, daß diese Anträge im Ältestenrat etwas stärker gesiebt werden.</p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> weist zum Punkt 13 der Tagesordnung – Bundeskriminalamt – hin auf die Auseinandersetzungen zwischen dem Innenminister Nordrhein-Westfalen<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN036" type="comment">
+                     <p>Willy <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name>.</p>
+                  </note>
+               </seg> und der Kriminalpolizei.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN037" type="comment">
+                     <p>
+                        <bibl type="btd">
+                           <ref type="external" target="05/2350">BT Anl. 117, Drs. V/2350</ref>
+                        </bibl>, <bibl type="btd">
+                           <ref type="external" target="05/2502">BT Anl. 118, Drs. V/2502</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Hermann <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> meint dazu, daß es sich bei den Beratungen nur um Ergänzungen handelt und man keine Schlacht im falschen Saal schlagen sollte.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> weist darauf hin, daß am 14. Februar 1968 die Debatte über den Leber-Plan stattfindet.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN038" type="comment">
+                     <p>Die Debatte fand bereits am 13. Februar statt, <bibl type="btp">
+                           <ref type="external" target="05/155">BT Sten. Ber. 66, S. 7947–8008</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Die Arbeitskreise sollen die Debatte vorbereiten und am Dienstag nächster Woche in der Fraktion vortragen.</p>
+            <p>Stefan <name type="Person" role="Sprecher" ref="#SeifrizHansStefan_1961-10-17">Seifriz</name> erklärt, daß die CDU keine lange Debatte führen will und regt an, daß die Sitzung des Arbeitskreises nicht heute, sondern erst morgen erfolgen soll.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> trägt vom Fraktionsvorstand zwei Bitten vor: daß man in der Debatte davon ausgehen sollte, daß die Debatte über den Leber-Plan eine Angelegenheit politischen Gewichts für die SPD ist und die Sprecher der SPD auch ihrerseits keine Fachdebatte führen sollten.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#WienandKarl_1953-10-06">Wienand</name> weist darauf hin, daß am 14. Februar 1968 die Debatte über das Jahresgutachten<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN039" type="comment">
+                     <p>»Jahresgutachten 1967 des Sachverständigenrats zur Begutachtung der gesamtwirtschaftlichen Entwicklung«, <bibl type="btd">
+                           <ref type="external" target="05/2310">BT Anl. 116, Drs. V/2310</ref>
+                        </bibl>, <bibl type="btp">
+                           <ref type="external" target="05/156">BT Sten. Ber. 66, S. 8033–8072</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> und am 16. Februar 1968 über die Landwirtschaft<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN040" type="comment">
+                     <p>Landwirtschaftsminister <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> erstattete den Grünen Bericht, <bibl type="btd">
+                           <ref type="external" target="05/2540">BT Anl. 118, Drs. V/2540</ref>
+                        </bibl>, am 16. Februar 1968, vgl. <bibl type="btp">
+                           <ref type="external" target="05/157">BT Sten. Ber. 66, S. 8105–8117</ref>
+                        </bibl>. Gemäß einer interfraktionellen Vereinbarung wurde die Debatte jedoch auf die Woche des 11. März verschoben.</p>
+                  </note>
+               </seg> stattfindet. Vom 4.–8. März 1968 tagen die Ausschüsse in Berlin. An diesen Tagen ist Präsenzpflicht.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-3">
+            <p>Zu Punkt 3 der TO – EWG-Agrarfinanzierung sind die gemachten Ausführungen im Wortlaut in der Anlage beigefügt.<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN041" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1968-02-06-t0943_WZ">SPD-Fraktionssitzung am 6. Februar 1968 (Teil 2)</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Punkte 4 der TO – Erweiterung der Befugnisse des Petitionsausschusses<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN042" type="comment">
+                     <p>Entwurf liegt dem Protokoll bei. Wurde als <bibl type="btd">
+                           <ref type="external" target="05/2640">BT Anl. 119, Drs. V/2640</ref>
+                        </bibl> am 27. November 1968 eingebracht und an die Ausschüsse überwiesen, <bibl type="btp">
+                           <ref type="external" target="05/198">BT Sten. Ber. 68, S. 10694</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> und 6 – Kleine Anfrage <name type="Person" role="Erwaehnung" ref="#BauerHannsheinz_1953-10-06">Bauer</name> (Würzburg) und Genossen betr. Rauschgifte und Drogen<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN043" type="comment">
+                     <p>Entwurf liegt dem Protokoll bei. <bibl type="btd">
+                           <ref type="external" target="05/2576">BT Anl. 118, Drs. V/2576</ref>
+                        </bibl>. Antwort des BMI: <bibl type="btd">
+                           <ref type="external" target="05/2789">BT Anl. 118, Drs. V/2789</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> – der TO werden zurückgestellt.</p>
+            <p>Gegen Punkt 5 der TO – Antrag <name type="Person" role="Erwaehnung" ref="#HaageHermann_1957-10-15">Haage</name> und Genossen betr. Werkverkehr<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN044" type="comment">
+                     <p>Entwurf liegt dem Protokoll bei. Die 1. Lesung (<bibl type="btd">
+                           <ref type="external" target="05/2556">BT Anl. 118, Drs. V/2556</ref>
+                        </bibl>) fand am 13. Februar 1968 in Verbindung mit der Debatte zum Leber-Plan statt, <bibl type="btp">
+                           <ref type="external" target="05/155">BT Sten. Ber. 66, S. 7947–8009</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> bestehen keine Bedenken.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1968-02-06-t0943_EP_div_SVP-4">
+            <p>Zu Punkt 8 der TO – Ausschußumbesetzungen</p>
+            <p>Die Fraktion ist mit der Ausschußumbesetzung im Verteidigungsausschuß<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN045" type="comment">
+                     <p>Tausch zwischen dem ordentlichen Mitglied <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name> und dem stellvertretenden Mitglied Paul <name type="Person" role="Erwaehnung" ref="#NeumannPaul_1965-10-19">Neumann</name>. Vgl. TO.</p>
+                  </note>
+               </seg> einverstanden.</p>
+            <p>Punkt 9 der TO – Nächste Termine</p>
+            <p>Montag, 12. 2., 20.00 Uhr Vorstand; Dienstag, 13. 2., 9.30 Uhr Fraktion.</p>
+            <p>Punkt 10 der TO – Verschiedenes</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> bittet zu den Rationalisierungsvorschlägen des DGB<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN046" type="comment">
+                     <p>Vgl. <ref type="external" target="#spd-05_1968-02-13-t0940_EP">SPD-Fraktionssitzung am 13. Februar 1968 mit Anm. 16</ref>.</p>
+                  </note>
+               </seg> um eine Unterstützung der Fraktion.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> schlägt vor, zuerst den Text vorzulegen und dann die Fraktion um eine Beschlußfassung zu bitten.</p>
+            <p>Des weiteren bittet er, die Frage des Bildungsurlaubs<seg type="note">
+                  <note xml:id="spd-05_1968-02-06-t0943_EP_FN047" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1968-03-12-t0930_EP">SPD-Fraktionssitzung am 12. März 1968, TOP 8</ref>.</p>
+                  </note>
+               </seg> zu behandeln. Helmut [<name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>] hält eine Diskussion über dieses Thema zum jetzigen Zeitpunkt nicht für fair. Es sollte dazu erst ein Papier vorgelegt werden und der Punkt auf die Tagesordnung einer der nächsten Fraktionssitzungen gesetzt werden. Die Frage des Bildungsurlaubs, die von einigen Genossen auch im Zusammenhang mit der Gestaltung des 17. Juni gesehen wird, sollte vom AK Innenpolitik, AK Sozialpolitik und der Arbeitsgruppe gesamtdeutsche und Berliner Fragen behandelt werden. Den Vorsitz sollte Egon <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name> übernehmen.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

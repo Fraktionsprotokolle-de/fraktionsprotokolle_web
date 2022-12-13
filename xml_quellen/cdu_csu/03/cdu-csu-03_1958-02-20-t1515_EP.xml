@@ -1,203 +1,318 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-02-20-t1515_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1007/4</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 20. Februar 1958</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>6 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1958-02-20"><time type="start" when="15:15:00"/><time type="end" when="18:25:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#StruveDetlef_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">2</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-1" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-1"> A. Arbeit in der Fraktion.</item>
-					<item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-2" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-2"> B. Besprechung der anstehenden Bundestagsdebatte über Verteidigungspolitik.</item>
-					<item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-3" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-3"> C. Bericht über die Ostasienreise einer Gruppe von Abgeordneten.</item>
-					<item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-4" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-4"> D. Arbeit in der Fraktion, Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. Nach Glückwünschen an <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name> zum 60. Geburtstag verliest Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> die Rednerliste der letzten Debatte in der Fraktion und kündigt einen im Vorstand durchberatenen Bericht von <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name> zur Schaffung eines neuen Arbeitsrhythmus an.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN001" type="comment"><p>Siehe TOP 4 in diesem Protokoll.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-2">
-				<head>B.</head>
-				<p>2. <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> kündigt für die nächste Woche drei Plenarsitzungen an.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN002" type="comment"><p>Vgl. Sten. Ber., 13., 14. und 15. Sitzung am 26., 27. und 28. 2. 1958.</p></note></seg> Nach der anschließenden arbeitsfreien Woche Anfang März folgen drei Arbeitswochen vor der Osterpause.</p>
-				<p>Voraussichtlich in der letzten Märzwoche wird eine Verteidigungsdebatte stattfinden.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN003" type="comment"><p>Vgl. Sten. Ber., 21. Sitzung am 25. 3. 1958.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> empfiehlt die Verbindung der Großen Anfrage der SPD zu den Verteidigungslasten<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN004" type="comment"><p>Große SPD-Anfrage betr. Finanzielle Verpflichtungen aus dem Verteidigungshaushalt (Einzelplan 14) und ihre kassenmäßige Erfüllung: Drucksache III/195 v. 13. 2. 1958.</p></note></seg> mit der 1. Lesung des Haushaltes.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> äußert die Vermutung, daß diese Verteidigungsdebatte mit Sicherheit sich zu einer großen außenpolitischen Debatte entwickeln wird. Dazu sollten wir die Frage nach der Sicherheitspolitik und die Frage nach der Haltung gegenüber Pankow unbedingt an die SPD stellen. Die SPD beabsichtige, im Zusammenhang mit dem <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN005" type="comment"><p>Zum <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan siehe Nr. 32 v. 15. 1. 1958.</p></note></seg> scharfe Angriffe gegen die Bundesregierung zu richten. Die Fraktion einigte sich, erst Berichte zum <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan und zur allgemeinen außenpolitischen Lage zu hören.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN006" type="comment"><p>Für diese Fraktionssitzung war ursprünglich eine Aussprache über die Rede vorgesehen, die Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> vor dem Landesparteitag der CDU Württembergs in Stuttgart am 1. 2. 1958 gehalten hatte. In dieser Rede hatte sich <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> eingehend sowohl mit <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> als auch mit <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemanns</name> Bundestagsrede v. 23. 1. 1958 auseinandergesetzt. Vgl. Gerstenmaier, Streit, S. 437; Abdruck der Rede <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaiers</name> unter dem Titel »Antwort an die Herren Dr. Dehler und Dr. Heinemann«, Bonn 1958. Nach den Reden von Bundesaußenminister <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> und Bundesverteidigungsminister <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> blieb in dieser Fraktionssitzung jedoch für eine weitere Aussprache keine Zeit mehr. Vgl. Parl. Bericht Nr. 18-57/58 vom 21. 2. 1958, Bl. 66 (BA, B 145/1909).</p></note></seg></p>
-				<p>Bundesaußenminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> führt aus: Obwohl die innere Haltung Ägyptens zum Moskauer Bemühen, im Nahen Osten Einfluß zu gewinnen, noch nicht genügend klar ist, beurteilt der Außenminister die Entwicklung mit dem Zusammenschluß Ägyptens und Syriens, Jordaniens und des Irak<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN007" type="comment"><p>Am 1. 2. 1958 wurde in Kairo die Vereinigte Arabische Republik proklamiert, die aus dem Zusammenschluß von Ägypten und Syrien gebildet wurde. Am 14. 2. 1958 unterzeichneten König <name type="Person" role="Erwaehnung" ref="#HusseinIbinTalal">Hussein</name> von Jordanien und König <name type="Person" role="Erwaehnung" ref="#FaisalII">Feisal</name> von Irak einen Vertrag über den Zusammenschluß der beiden Staaten zur Arabischen Föderation. Vgl. AdG 1958, S. 6882, 6893.</p></note></seg> positiv. Die Spitze gegen Israel ist nicht zu übersehen. Nach wie vor sind unsere Beziehungen zu diesem Raum gut und dürften nach den Volksabstimmungen durch Anerkennung der Zusammenschlüsse<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN008" type="comment"><p>Ebenfalls im Februar 1958 bestätigten Volksabstimmungen in Ägypten und Syrien den Zusammenschluß beider Länder zur Vereinigten Arabischen Republik, und Gamal Abdel <name type="Person" role="Erwaehnung" ref="#NasserGamalAbdel">Nasser</name> wurde zum Präsidenten gewählt. Vgl. AdG 1958, S. 6909.</p></note></seg> sich kaum ändern.</p>
-				<p>Die angekündigte Gipfelkonferenz<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN009" type="comment"><p>Die UdSSR hatte in der Zeit vom 8. bis 10. 1. 1958 den Regierungen der NATO-Mitgliedstaaten sowie den übrigen Mitgliedstaaten der UNO Noten mit Vorschlägen für eine internationale Verständigung übermittelt, die auf einer Konferenz der führenden Staatsmänner behandelt werden sollten. Nach einem längeren Schriftwechsel zwischen den angesprochenen Westmächten und der Sowjetunion blieb die Gipfelkonferenz im Stadium der Planung stecken. Vgl. AdG 1958, S. 6836, et passim.</p></note></seg> läßt uns ständigen Kontakt mit unseren Verbündeten halten. Die Konferenz muß in einer behutsamen und schweigenden Weise vorbereitet werden. Abseits von Propaganda sollten wir uns bemühen, die Vorschläge des Westens zusammenzufassen und in eine verständliche Form zu bringen. Auf keinen Fall sollten wir uns durch ständige Analysierung der Sowjetvorschläge und der tausend Pläne und Plänchen selbst daran hindern, unsere eigenen Gedanken zur Entwicklung zu bringen. Mit Nachdruck vertrat der Minister den Standpunkt, daß keine Konferenz ohne das Thema deutsche Wiedervereinigung stattfinden dürfe. Sehr deutlich verweist er auf die neuerlich zu beobachtende Neigung in Kreisen der Opposition, in Fragen der Entspannung an der Frage der Wiedervereinigung vorbeizukommen. In diesen Zusammenhang gehört auch der neugefaßte <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan, dessen neues Element in der Kontrolle des »atomfreien« Raumes besteht. Das <name type="Person" role="Erwaehnung" ref="#GomulkaWladyslaw">Gomulka</name>-Interview in der »Times« sagt klar, »das kommunistische System in der Sowjetzone muß erhalten bleiben«<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN010" type="comment"><p>Vgl. The Times Nr. 54078 vom 18. 2. 1958, S. 8: »Polish place in Soviet camp defined. Mr. Gomulka on birth of Rapacki plan. Aims reviewed in statement to ›The Times‹».</p></note></seg>; der Plan würde also den Status quo zementieren, dagegen würde er den Austritt aus der Bundesrepublik aus der NATO und den Abzug der amerikanischen Truppen aus Europa bringen, wie wir aus einschlägigen Gesprächen mit den Amerikanern wissen. Man müsse die Opposition nachdrücklich fragen, ob sie dies in Kauf nehmen will. Die Zusammenarbeit der Verbündeten bei der Vorbereitung der Konferenz beruht auf einer vollkommenen Übereinstimmung, und gerade sie betonen, daß es ohne Wiedervereinigung nicht geht. Ohne sorgfältigste Vorbereitung wäre die Konferenz zum Scheitern verurteilt. Wir werden alle Möglichkeiten ausnützen. Über das Prozedere zu sprechen, ist allerdings noch nicht möglich.</p>
-				<p>Bundesverteidigungsminister Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> berichtet in Stichworten über Stand und Aufbau der Bundeswehr und die Auswirkung des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN011" type="comment"><p>Vgl. die Einschätzung dieser Ausführungen als »eine geradezu brillante« und »große« Rede, in: Parl. Bericht Nr. 18-57/58 vom 21. 2. 1958, Bl. 66 f. (BA, B 145/1909).</p></note></seg> Die Angriffe der SPD zielten nunmehr nicht nur auf das Ideelle, sondern ebensosehr auf das rein Materielle. Für den Aufbau der Bundeswehr muß man vom 1. 1. 1956 bis 1. 4. 1961 bzw. bei Marine und Luftwaffe 62 und 63 jährlich mit etwa 10 Mrd. Mark rechnen. Was in den ersten Jahren unter der Grenze blieb, muß später wieder eingefügt werden. Die Verteidigungskosten für ein isoliertes Deutschland wären viel höher. Vergleichsweise hat Schweden eben sein Rüstungsbudget von 2,3 auf 2,8 Mrd. Kronen erhöhen müssen, das wären bei uns entsprechend 15 Mrd. Mark nur für Unterhalt und Modernisierung. Der Minister warnt vor der Vorstellung, eine 500000-Mann-Armee könne in drei Jahren aufgestellt werden. Jetzt gilt als Fahrplan die Aufstellung von 340000 Mann in 63 Monaten. Dies aber sei die Grenze des Möglichen in unserem eigenen Interesse. Wir können unseren politischen Einfluß nicht von unserem militärischen Gewicht trennen. Zum 1. 4. 1961 werden wir also 323000 Mann mit Dienstzeit von einem Jahr bis Lebenszeit und etwa 30000 Kürzerdienende in 74 Regimentern haben. Die Luftwaffe wird 65000 Mann umfassen, die Marine 25000 Mann mit Schwerpunkt Ostsee und eine Territorialverteidigung mit 15–20000 Mann und nochmals 20000 Reservisten. Es gibt unter keinen Umständen mehr die Möglichkeit einer Verlängerung der Planungsfristen oder eine Verminderung der Kosten. Wir müssen das Maß unserer Ansprüche an die Verbündeten mit dem Maß unserer Pflichten verbinden.</p>
-				<p>Heute haben wir 130000 Mann in sieben Divisionen des Heeres im Aufbau, von denen drei am 1. 7. 1957, zwei am 1. 1. 1958 [der] NATO unterstellt wurden und eine Gebirgsdivision am 1.4. unterstellt wird. Zur Zahlung von Stationierungskosten sind wir nicht mehr in der Lage, wenn wir nicht eines Tages ohne Engländer, ohne Waffen und ohne Geld dastehen wollen.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN012" type="comment"><p><name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> hatte bereits am 11. 2. 1958 im Arbeitskreis V seine Gründe für die Ablehnung der britischen Forderung nach einem deutschen Beitrag zu den Stationierungskosten dargelegt. Vgl. Parl. Bericht, ebd., Bl. 68.</p></note></seg> Scharf weist Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> den »schizophrenen« Gedankengang der Opposition zurück, daß unsere Interessen um so besser gewahrt würden, je schwächer wir wären. Wir hätten früher eine gemeinsame Außenpolitik in gewissen Fundamenten gehabt, jetzt gebe es auch keine gemeinsamen Fundamente mehr. Die Lösung der Opposition heiße Potsdam, was sie erhielte, hieße Jalta und landen würde sie in Sibirien. Vom Bündnisverzicht sei sie gekommen, mit dem Gedanken des Verzichts auf freie Wahlen habe sie fortgefahren, und jetzt beginne sie, den Verzicht auf die Ablehnung Pankows genießbar zu machen.</p>
-				<p>Wir dürfen nicht die Verbündeten der Verpflichtung entledigen, immer wieder die deutsche Frage auf die Tagesordnung zu bringen. Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> stellt in diesem Zusammenhang vier harte Fragen, die wir durchdenken müßten:</p>
-				<p>1. Wären wir bereit, auf unser militärisches Bündnis zu verzichten, wenn wir dafür Moskaus Zustimmung zu einer tragbaren Wiedervereinigung bekommen?</p>
-				<p>2. Wären wir bereit, auf politische und wirtschaftliche europäische Integration zu verzichten?</p>
-				<p>3. Wären wir bereit, die Oder-Neiße-Linie anzuerkennen?</p>
-				<p>4. Wie stark muß Deutschland militärisch sein, um seine Bündnislosigkeit zu verteidigen?</p>
-				<p>Das Territorialangebot, das im <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan steht, ist unmöglich ohne Ungarn, Rumänien und Bulgarien. Wo ist die sowjetische Einhaltung gesichert? Die Kontrolle müßte jenseits der Grenzen der atomfreien Zone liegen, und wie soll diese Kontrolle sein? Nur eine absolute und totale Kontrolle kann einigermaßen Sicherheit bieten. Der <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan verfolge keinen anderen Zweck, als aus Mitteleuropa ein militärisches Vakuum zu machen, die Entwicklung der Bundeswehr an der Nahtstelle ihrer Entwicklung zur modernen Bewaffnung zu schwächen. Wie aber sind die sowjetischen Absichten? Koexistenz kann unmittelbare Kriegsvorbereitung sein. Solange wir darüber nicht volle Klarheit haben, dürfen wir unsere Methode nicht ändern, sondern in der Taktik noch wendiger, in der Sache noch härter sein als bisher.</p>
-				<p>In der Debatte verweist <name type="Person" role="Sprecher" ref="#HuebnerKarl_1952-02-01">Hübner</name> auf Aussprüche <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> im Bundestag, mit denen seine Angriffe sofort unschädlich gemacht werden können. Geradezu eine Waffenfundgrube stelle der FDP-Landesparteitag 1953 in Köln dar.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN013" type="comment"><p>Das Programm des ordentlichen Landesparteitages der FDP in Köln v. 14./15. 11. 1953 sah u. a. vor ein Politisches Referat von Dr. <name type="Person" role="Erwaehnung" ref="#MiddelhauveFriedrich_1949-09-07">Middelhauve</name>, ein Referat von Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> »FDP als dritte Kraft« sowie vier Grundsatzreferate über a) Staatspolitik, b) Wirtschaftspolitik, c) Sozialpolitik und d) Kulturpolitik. Vgl. Rundschreiben Nr.A 45/53 v. 29. 10. 1953 (FDP-Landesverband Nordrhein-Westfalen, Düsseldorf).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#EichelbaumErnstTheodor_1957-10-15">Eichelbaum</name> bemängelt nicht die minutiöse Materialvorbereitung, sondern die unterlassene scharfe Erwiderung.</p>
-				<p>Bundesinnenminister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> kehrt wieder zum Thema der letzten Fraktionsdebatte zurück.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN014" type="comment"><p>Siehe Nr. 38 v. 11. 2. 1958, TOP 3.</p></note></seg> Zur Erwerbung der erforderlichen Sicherheit in der Vorbereitung und in der Reaktion auf Überraschungen empfiehlt er die Herausschälung der entscheidenden Punkte und den Mut zur Vereinfachung. Die beste Truppe der Partei sei die Bundestagsfraktion. Das Beste, übersichtlich zusammengestellt, müsse von hier Woche für Woche ins Land getragen werden. Bei uns würde oft zuviel gearbeitet, aber nicht genügend auf das politische Bedürfnis ausgerichtet. In Wahrheit stehen wir Deutschen in der Wiedervereinigungsfrage vor einer Mauer, die wir mit bloßen Fäusten nicht bezwingen können. Darum versuchen jetzt zahlreiche Deutsche, sich gegenseitig die Köpfe einzuschlagen und die Schuldfrage zu klären, anstatt darüber nachzudenken, wie wir morgen besser arbeiten können als bisher.</p>
-				<p><name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>: Ohne die <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name>- und <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>-Angriffe<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN015" type="comment"><p>Ebd.</p></note></seg> hätte die CDU die außenpolitische Debatte gewonnen. Das Material zur Erwiderung sei dagewesen. Wir müssen aber die Kräfte bis zum Schluß zusammenhalten, dürfen aber die erste Zuständigkeit der Regierung nicht verwischen. Viele Fragen kann man nicht dem politischen Gegner, sondern nur der geschichtlichen Stunde beantworten. Der Gegner tut so, als gebe es in absehbarer Zeit überhaupt eine Möglichkeit zu einer vernünftigen Wiedervereinigung. Er sagt, wenn wir uns so schwach machen, daß wir überhaupt keine Rolle spielen, dann können wir die Wiedervereinigung bekommen. Aber wir können uns nicht so schwach machen, daß wir uninteressant werden. Die Frage des Preises im Ernstfall kann man nicht vorwegnehmen. Wir müssen uns die bisherige Politik fortsetzen und mit den Freunden überlegen, was wir erreichen wollen und voraussichtlich können. Die bisherige Zusammenarbeit vor einzelnen Konferenzen ist unzureichend. Die größte Schwäche des Westens war immer die weite Kluft zwischen den Auffassungen. Die deutsche Frage muß unbedingt auf die Tagesordnung gesetzt werden. Das mindeste müßte entsprechend der Londoner Abrüstungsformel<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN016" type="comment"><p>Anfang 1957 beantworteten die Regierungschefs der drei Westmächte die Abrüstungsbotschaft der Regierung der UdSSR vom 17. 11. 1956, indem sie Abrüstungsverhandlungen im Rahmen der UNO als den am meisten erfolgversprechenden Weg empfahlen. Nach Beratungen in der UN-Versammlung und der UN-Abrüstungskonferenz sowie nach bilateralen Kontakten zwischen den Großmächten kam es im April in London zu Abrüstungsvorschlägen im Unterausschuß der UN-Abrüstungskommission. Da auch neue Vorschläge nicht zu einem Konsens zwischen USA und UdSSR führten, wurden die Abrüstungsverhandlungen im September 1957 vertagt. Vgl. AdG 1957, S. 6190, 6404 Ziffer 1 und 2, 6624 Ziffer 1–3.</p></note></seg> lauten: Vorberatungen ja, Entscheidungen nicht ohne deutsche Frage.</p>
-				<p><name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> fordert einen Apparat, der was kann, warnt aber vor einer allzu raschen Reaktion auf eintretende internationale Ereignisse. Wir müssen den Eindruck machen, daß alles aufs Gewissenhafteste geprüft wird. Gründlichste Beschäftigung mit den Problemen unter uns, strengste Solidarität nach draußen gelte für die Arbeit.</p>
-				<p><name type="Person" role="Sprecher" ref="#GontrumWilhelm_1953-10-06">Gontrum</name> sieht die Hauptschwierigkeiten in der Form der Reaktion. Nicht immer gleich Nein sagen. <name type="Person" role="Sprecher" ref="#GontrumWilhelm_1953-10-06">Gontrum</name> fordert eine deutliche Antwort auf <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemanns</name> Vorwürfe.</p>
-				<p><name type="Person" role="Sprecher" ref="#NellenPeter_1949-09-07">Nellen</name> bedauert die rasche Ablehnung des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes. So rasch könne man doch die zahlreichen Probleme gar nicht durchdenken, daß jetzt schon eine Ablehnung fertig sein kann. <name type="Person" role="Sprecher" ref="#NellenPeter_1949-09-07">Nellen</name> fragt nach Bereitschaft und Möglichkeit zum intensiven Studium des Planes und bittet daher, die Sitzungen des außenpolitischen Arbeitskreises so zu legen, daß sie mit anderen nicht kollidieren.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-3">
-				<head>C.</head>
-				<p>3. <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name>: In einem kurzen Bericht über die Ostasienreise einer Gruppe von Abgeordneten stellte der Redner besonders heraus, daß China heute ein durch und durch kommunistischer Staat sei, daß die jungen asiatischen Nationen nicht die Zeit hätten, sich zu konsolidieren. In dem Zusammenhang werde die Rolle von Formosa zur Testfrage für die Anwesenheit Amerikas in Ostasien. Die einzige Armee im Fernost mit 650000 Mann gut ausgebildet, gut bewaffnet. 14 Millionen Auslandschinesen, in deren Hand die gesamte Wirtschaft Süd-Ost-Asiens liegt, müßten nach Formosas Fall ihren Frieden mit Rotchina machen. Bemerkenswert sei die ausgezeichnete Landreform <name type="Person" role="Erwaehnung" ref="#TschiangKai-Schek">Tschiang Kai-scheks</name>.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-4">
-				<head>D.</head>
-				<p>4. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gibt das Eintreffen des polnischen Aide-memoire bekannt<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN017" type="comment"><p>Das polnische Außenministerium übermittelte einer Anzahl von Regierungen am 14. und 15. 2. 1958 Noten und ein Memorandum über die Durchführung des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes. Abdruck des Memorandums in: AdG 1958, S. 6897.</p></note></seg> und vermutet, daß es uns nur in direkte Gespräche mit Warschau und Moskau verwickeln soll.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> berichtet über die Arbeit der zum Studium eines neuen Arbeitsrhythmus eingesetzten Gruppe. Am Beispiel der letzten Woche, in der fünf Arbeitskreise ihre Sitzungen am gleichen Tage zur selben Stunde angesetzt hatten<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN018" type="comment"><p>Siehe Nr. 38 v. 11. 2. 1958, TOP 3.</p></note></seg>, tut er dar, daß es den Abgeordneten unmöglich ist, sich über die wesentlichen Themen der verschiedenen Gebiete ausreichend zu informieren. Damit entfällt auch ihre ausreichende Mitwirkung an der Willensbildung der Fraktion, denn diese ist nur in den Arbeitskreisen möglich. Es muß gewährleistet sein, daß die Abgeordneten mindestens an den Beratungen der Arbeitskreise über wichtige Grundsatzfragen teilnehmen können. Dies scheint nur durch die Einbeziehung der dritten Arbeitswoche ausschließlich für Zwecke der Fraktion möglich zu sein.</p>
-				<p>In den arbeitsfreien Wochen werden oft Erklärungen von der Fraktionsführung abgegeben, ohne daß die Abgeordneten anders als durch die Presse davon erfahren. Es wird angeregt, daß die Fraktionsmitglieder auch von diesen Nachrichten und Erklärungen während der freien Woche Mitteilung erhalten und daß wichtiges Material von der Fraktion zugestellt wird, in mehrfachen Exemplaren an die Einzelnen gegeben werde, damit sie die Möglichkeit haben, sie auch an wichtige Persönlichkeiten in ihrem Wahlkreis weiterzugeben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt die Vorschläge zur Diskussion.</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> gibt zu bedenken, daß seit Jahr und Tag die Abstimmung der Arbeitskreissitzungen eine der großen Sorgen ist. Der gemachte Vorschlag ist ernstlich zu erwägen, aber die dritte Woche wird auch von verschiedenen Ausschüssen belegt. Es erhebt sich also die Frage, ob es wirklich so geht. Dann verweist er auf die früher geübte Praxis der Informierung der Fraktion durch 10-Minuten-Berichte der Arbeitskreisvorsitzenden bei den Fraktionssitzungen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bezweifelt aus Zeitgründen die Zweckmäßigkeit dieser geübten Praxis und betont, daß die dritte Woche ausdrücklich für die Fraktionen reserviert sei und nur mit Genehmigung des Präsidenten ausnahmsweise von Ausschüssen beansprucht werden dürfe<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN019" type="comment"><p>Siehe Nr. 39 v. 20. 2. 1958, TOP 2.</p></note></seg>, und unterstützt die Vorschläge des Abg. <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>. Auch <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> tritt für sie ein und empfiehlt für die Information der Fraktion, den wöchentlichen Lagebericht an die ganze Fraktion zu verteilen. Eine weitere Stellungnahme oder ein Beschluß zu diesem Thema erfolgt nicht.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name>: Das 2. Lebensmittelgesetz enthalte das Verbot der Beimischung von Fremdstoffen, deren gesundheitliche Unbedenklichkeit nicht nachgewiesen ist.<seg type="note"><note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN020" type="comment"><p>Vgl. dazu die entsprechenden Gesetzentwürfe der SPD-Fraktion: Drucksache III/29 v. 28. 11. 1957, und der Regierung: Drucksache III/316 v. 3. 4. 1958.</p></note></seg> Bei eingeführten Lebensmitteln muß die zweckmäßige Form der Kontrolle gefunden werden. Die bekannten Nitritfälle beruhen auf mangelnder Gesetzestreue und ungenügender Überwachungsmöglichkeit. Bei der Stichprobenüberwachung ist eben eine gewisse Dichte erforderlich. Die Diskussion wurde auf später verschoben.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-02-20-t1515_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1007/4</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 20. Februar 1958</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>6 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1958-02-20">
+               <time type="start" when="15:15:00"/>
+               <time type="end" when="18:25:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <name type="Person" role="Sitzungsleitung" ref="#StruveDetlef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">2</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-1" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-1"> A. Arbeit in der Fraktion.</item>
+               <item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-2" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-2"> B. Besprechung der anstehenden Bundestagsdebatte über Verteidigungspolitik.</item>
+               <item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-3" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-3"> C. Bericht über die Ostasienreise einer Gruppe von Abgeordneten.</item>
+               <item xml:id="cdu-csu-03_1958-02-20-t1515_EP_SVP-4" corresp="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-4"> D. Arbeit in der Fraktion, Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. Nach Glückwünschen an <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name> zum 60. Geburtstag verliest Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> die Rednerliste der letzten Debatte in der Fraktion und kündigt einen im Vorstand durchberatenen Bericht von <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name> zur Schaffung eines neuen Arbeitsrhythmus an.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN001" type="comment">
+                     <p>Siehe TOP 4 in diesem Protokoll.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-2">
+            <head>B.</head>
+            <p>2. <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> kündigt für die nächste Woche drei Plenarsitzungen an.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN002" type="comment">
+                     <p>Vgl. Sten. Ber., 13., 14. und 15. Sitzung am 26., 27. und 28. 2. 1958.</p>
+                  </note>
+               </seg> Nach der anschließenden arbeitsfreien Woche Anfang März folgen drei Arbeitswochen vor der Osterpause.</p>
+            <p>Voraussichtlich in der letzten Märzwoche wird eine Verteidigungsdebatte stattfinden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN003" type="comment">
+                     <p>Vgl. Sten. Ber., 21. Sitzung am 25. 3. 1958.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> empfiehlt die Verbindung der Großen Anfrage der SPD zu den Verteidigungslasten<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN004" type="comment">
+                     <p>Große SPD-Anfrage betr. Finanzielle Verpflichtungen aus dem Verteidigungshaushalt (Einzelplan 14) und ihre kassenmäßige Erfüllung: Drucksache III/195 v. 13. 2. 1958.</p>
+                  </note>
+               </seg> mit der 1. Lesung des Haushaltes.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> äußert die Vermutung, daß diese Verteidigungsdebatte mit Sicherheit sich zu einer großen außenpolitischen Debatte entwickeln wird. Dazu sollten wir die Frage nach der Sicherheitspolitik und die Frage nach der Haltung gegenüber Pankow unbedingt an die SPD stellen. Die SPD beabsichtige, im Zusammenhang mit dem <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN005" type="comment">
+                     <p>Zum <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan siehe Nr. 32 v. 15. 1. 1958.</p>
+                  </note>
+               </seg> scharfe Angriffe gegen die Bundesregierung zu richten. Die Fraktion einigte sich, erst Berichte zum <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan und zur allgemeinen außenpolitischen Lage zu hören.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN006" type="comment">
+                     <p>Für diese Fraktionssitzung war ursprünglich eine Aussprache über die Rede vorgesehen, die Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> vor dem Landesparteitag der CDU Württembergs in Stuttgart am 1. 2. 1958 gehalten hatte. In dieser Rede hatte sich <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> eingehend sowohl mit <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> als auch mit <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemanns</name> Bundestagsrede v. 23. 1. 1958 auseinandergesetzt. Vgl. Gerstenmaier, Streit, S. 437; Abdruck der Rede <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaiers</name> unter dem Titel »Antwort an die Herren Dr. Dehler und Dr. Heinemann«, Bonn 1958. Nach den Reden von Bundesaußenminister <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> und Bundesverteidigungsminister <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> blieb in dieser Fraktionssitzung jedoch für eine weitere Aussprache keine Zeit mehr. Vgl. Parl. Bericht Nr. 18-57/58 vom 21. 2. 1958, Bl. 66 (BA, B 145/1909).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bundesaußenminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> führt aus: Obwohl die innere Haltung Ägyptens zum Moskauer Bemühen, im Nahen Osten Einfluß zu gewinnen, noch nicht genügend klar ist, beurteilt der Außenminister die Entwicklung mit dem Zusammenschluß Ägyptens und Syriens, Jordaniens und des Irak<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN007" type="comment">
+                     <p>Am 1. 2. 1958 wurde in Kairo die Vereinigte Arabische Republik proklamiert, die aus dem Zusammenschluß von Ägypten und Syrien gebildet wurde. Am 14. 2. 1958 unterzeichneten König <name type="Person" role="Erwaehnung" ref="#HusseinIbinTalal">Hussein</name> von Jordanien und König <name type="Person" role="Erwaehnung" ref="#FaisalII">Feisal</name> von Irak einen Vertrag über den Zusammenschluß der beiden Staaten zur Arabischen Föderation. Vgl. AdG 1958, S. 6882, 6893.</p>
+                  </note>
+               </seg> positiv. Die Spitze gegen Israel ist nicht zu übersehen. Nach wie vor sind unsere Beziehungen zu diesem Raum gut und dürften nach den Volksabstimmungen durch Anerkennung der Zusammenschlüsse<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN008" type="comment">
+                     <p>Ebenfalls im Februar 1958 bestätigten Volksabstimmungen in Ägypten und Syrien den Zusammenschluß beider Länder zur Vereinigten Arabischen Republik, und Gamal Abdel <name type="Person" role="Erwaehnung" ref="#NasserGamalAbdel">Nasser</name> wurde zum Präsidenten gewählt. Vgl. AdG 1958, S. 6909.</p>
+                  </note>
+               </seg> sich kaum ändern.</p>
+            <p>Die angekündigte Gipfelkonferenz<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN009" type="comment">
+                     <p>Die UdSSR hatte in der Zeit vom 8. bis 10. 1. 1958 den Regierungen der NATO-Mitgliedstaaten sowie den übrigen Mitgliedstaaten der UNO Noten mit Vorschlägen für eine internationale Verständigung übermittelt, die auf einer Konferenz der führenden Staatsmänner behandelt werden sollten. Nach einem längeren Schriftwechsel zwischen den angesprochenen Westmächten und der Sowjetunion blieb die Gipfelkonferenz im Stadium der Planung stecken. Vgl. AdG 1958, S. 6836, et passim.</p>
+                  </note>
+               </seg> läßt uns ständigen Kontakt mit unseren Verbündeten halten. Die Konferenz muß in einer behutsamen und schweigenden Weise vorbereitet werden. Abseits von Propaganda sollten wir uns bemühen, die Vorschläge des Westens zusammenzufassen und in eine verständliche Form zu bringen. Auf keinen Fall sollten wir uns durch ständige Analysierung der Sowjetvorschläge und der tausend Pläne und Plänchen selbst daran hindern, unsere eigenen Gedanken zur Entwicklung zu bringen. Mit Nachdruck vertrat der Minister den Standpunkt, daß keine Konferenz ohne das Thema deutsche Wiedervereinigung stattfinden dürfe. Sehr deutlich verweist er auf die neuerlich zu beobachtende Neigung in Kreisen der Opposition, in Fragen der Entspannung an der Frage der Wiedervereinigung vorbeizukommen. In diesen Zusammenhang gehört auch der neugefaßte <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan, dessen neues Element in der Kontrolle des »atomfreien« Raumes besteht. Das <name type="Person" role="Erwaehnung" ref="#GomulkaWladyslaw">Gomulka</name>-Interview in der »Times« sagt klar, »das kommunistische System in der Sowjetzone muß erhalten bleiben«<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN010" type="comment">
+                     <p>Vgl. The Times Nr. 54078 vom 18. 2. 1958, S. 8: »Polish place in Soviet camp defined. Mr. Gomulka on birth of Rapacki plan. Aims reviewed in statement to ›The Times‹».</p>
+                  </note>
+               </seg>; der Plan würde also den Status quo zementieren, dagegen würde er den Austritt aus der Bundesrepublik aus der NATO und den Abzug der amerikanischen Truppen aus Europa bringen, wie wir aus einschlägigen Gesprächen mit den Amerikanern wissen. Man müsse die Opposition nachdrücklich fragen, ob sie dies in Kauf nehmen will. Die Zusammenarbeit der Verbündeten bei der Vorbereitung der Konferenz beruht auf einer vollkommenen Übereinstimmung, und gerade sie betonen, daß es ohne Wiedervereinigung nicht geht. Ohne sorgfältigste Vorbereitung wäre die Konferenz zum Scheitern verurteilt. Wir werden alle Möglichkeiten ausnützen. Über das Prozedere zu sprechen, ist allerdings noch nicht möglich.</p>
+            <p>Bundesverteidigungsminister Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> berichtet in Stichworten über Stand und Aufbau der Bundeswehr und die Auswirkung des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN011" type="comment">
+                     <p>Vgl. die Einschätzung dieser Ausführungen als »eine geradezu brillante« und »große« Rede, in: Parl. Bericht Nr. 18-57/58 vom 21. 2. 1958, Bl. 66 f. (BA, B 145/1909).</p>
+                  </note>
+               </seg> Die Angriffe der SPD zielten nunmehr nicht nur auf das Ideelle, sondern ebensosehr auf das rein Materielle. Für den Aufbau der Bundeswehr muß man vom 1. 1. 1956 bis 1. 4. 1961 bzw. bei Marine und Luftwaffe 62 und 63 jährlich mit etwa 10 Mrd. Mark rechnen. Was in den ersten Jahren unter der Grenze blieb, muß später wieder eingefügt werden. Die Verteidigungskosten für ein isoliertes Deutschland wären viel höher. Vergleichsweise hat Schweden eben sein Rüstungsbudget von 2,3 auf 2,8 Mrd. Kronen erhöhen müssen, das wären bei uns entsprechend 15 Mrd. Mark nur für Unterhalt und Modernisierung. Der Minister warnt vor der Vorstellung, eine 500000-Mann-Armee könne in drei Jahren aufgestellt werden. Jetzt gilt als Fahrplan die Aufstellung von 340000 Mann in 63 Monaten. Dies aber sei die Grenze des Möglichen in unserem eigenen Interesse. Wir können unseren politischen Einfluß nicht von unserem militärischen Gewicht trennen. Zum 1. 4. 1961 werden wir also 323000 Mann mit Dienstzeit von einem Jahr bis Lebenszeit und etwa 30000 Kürzerdienende in 74 Regimentern haben. Die Luftwaffe wird 65000 Mann umfassen, die Marine 25000 Mann mit Schwerpunkt Ostsee und eine Territorialverteidigung mit 15–20000 Mann und nochmals 20000 Reservisten. Es gibt unter keinen Umständen mehr die Möglichkeit einer Verlängerung der Planungsfristen oder eine Verminderung der Kosten. Wir müssen das Maß unserer Ansprüche an die Verbündeten mit dem Maß unserer Pflichten verbinden.</p>
+            <p>Heute haben wir 130000 Mann in sieben Divisionen des Heeres im Aufbau, von denen drei am 1. 7. 1957, zwei am 1. 1. 1958 [der] NATO unterstellt wurden und eine Gebirgsdivision am 1.4. unterstellt wird. Zur Zahlung von Stationierungskosten sind wir nicht mehr in der Lage, wenn wir nicht eines Tages ohne Engländer, ohne Waffen und ohne Geld dastehen wollen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN012" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> hatte bereits am 11. 2. 1958 im Arbeitskreis V seine Gründe für die Ablehnung der britischen Forderung nach einem deutschen Beitrag zu den Stationierungskosten dargelegt. Vgl. Parl. Bericht, ebd., Bl. 68.</p>
+                  </note>
+               </seg> Scharf weist Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> den »schizophrenen« Gedankengang der Opposition zurück, daß unsere Interessen um so besser gewahrt würden, je schwächer wir wären. Wir hätten früher eine gemeinsame Außenpolitik in gewissen Fundamenten gehabt, jetzt gebe es auch keine gemeinsamen Fundamente mehr. Die Lösung der Opposition heiße Potsdam, was sie erhielte, hieße Jalta und landen würde sie in Sibirien. Vom Bündnisverzicht sei sie gekommen, mit dem Gedanken des Verzichts auf freie Wahlen habe sie fortgefahren, und jetzt beginne sie, den Verzicht auf die Ablehnung Pankows genießbar zu machen.</p>
+            <p>Wir dürfen nicht die Verbündeten der Verpflichtung entledigen, immer wieder die deutsche Frage auf die Tagesordnung zu bringen. Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> stellt in diesem Zusammenhang vier harte Fragen, die wir durchdenken müßten:</p>
+            <p>1. Wären wir bereit, auf unser militärisches Bündnis zu verzichten, wenn wir dafür Moskaus Zustimmung zu einer tragbaren Wiedervereinigung bekommen?</p>
+            <p>2. Wären wir bereit, auf politische und wirtschaftliche europäische Integration zu verzichten?</p>
+            <p>3. Wären wir bereit, die Oder-Neiße-Linie anzuerkennen?</p>
+            <p>4. Wie stark muß Deutschland militärisch sein, um seine Bündnislosigkeit zu verteidigen?</p>
+            <p>Das Territorialangebot, das im <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan steht, ist unmöglich ohne Ungarn, Rumänien und Bulgarien. Wo ist die sowjetische Einhaltung gesichert? Die Kontrolle müßte jenseits der Grenzen der atomfreien Zone liegen, und wie soll diese Kontrolle sein? Nur eine absolute und totale Kontrolle kann einigermaßen Sicherheit bieten. Der <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan verfolge keinen anderen Zweck, als aus Mitteleuropa ein militärisches Vakuum zu machen, die Entwicklung der Bundeswehr an der Nahtstelle ihrer Entwicklung zur modernen Bewaffnung zu schwächen. Wie aber sind die sowjetischen Absichten? Koexistenz kann unmittelbare Kriegsvorbereitung sein. Solange wir darüber nicht volle Klarheit haben, dürfen wir unsere Methode nicht ändern, sondern in der Taktik noch wendiger, in der Sache noch härter sein als bisher.</p>
+            <p>In der Debatte verweist <name type="Person" role="Sprecher" ref="#HuebnerKarl_1952-02-01">Hübner</name> auf Aussprüche <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> im Bundestag, mit denen seine Angriffe sofort unschädlich gemacht werden können. Geradezu eine Waffenfundgrube stelle der FDP-Landesparteitag 1953 in Köln dar.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN013" type="comment">
+                     <p>Das Programm des ordentlichen Landesparteitages der FDP in Köln v. 14./15. 11. 1953 sah u. a. vor ein Politisches Referat von Dr. <name type="Person" role="Erwaehnung" ref="#MiddelhauveFriedrich_1949-09-07">Middelhauve</name>, ein Referat von Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> »FDP als dritte Kraft« sowie vier Grundsatzreferate über a) Staatspolitik, b) Wirtschaftspolitik, c) Sozialpolitik und d) Kulturpolitik. Vgl. Rundschreiben Nr.A 45/53 v. 29. 10. 1953 (FDP-Landesverband Nordrhein-Westfalen, Düsseldorf).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EichelbaumErnstTheodor_1957-10-15">Eichelbaum</name> bemängelt nicht die minutiöse Materialvorbereitung, sondern die unterlassene scharfe Erwiderung.</p>
+            <p>Bundesinnenminister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> kehrt wieder zum Thema der letzten Fraktionsdebatte zurück.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN014" type="comment">
+                     <p>Siehe Nr. 38 v. 11. 2. 1958, TOP 3.</p>
+                  </note>
+               </seg> Zur Erwerbung der erforderlichen Sicherheit in der Vorbereitung und in der Reaktion auf Überraschungen empfiehlt er die Herausschälung der entscheidenden Punkte und den Mut zur Vereinfachung. Die beste Truppe der Partei sei die Bundestagsfraktion. Das Beste, übersichtlich zusammengestellt, müsse von hier Woche für Woche ins Land getragen werden. Bei uns würde oft zuviel gearbeitet, aber nicht genügend auf das politische Bedürfnis ausgerichtet. In Wahrheit stehen wir Deutschen in der Wiedervereinigungsfrage vor einer Mauer, die wir mit bloßen Fäusten nicht bezwingen können. Darum versuchen jetzt zahlreiche Deutsche, sich gegenseitig die Köpfe einzuschlagen und die Schuldfrage zu klären, anstatt darüber nachzudenken, wie wir morgen besser arbeiten können als bisher.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>: Ohne die <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name>- und <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name>-Angriffe<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN015" type="comment">
+                     <p>Ebd.</p>
+                  </note>
+               </seg> hätte die CDU die außenpolitische Debatte gewonnen. Das Material zur Erwiderung sei dagewesen. Wir müssen aber die Kräfte bis zum Schluß zusammenhalten, dürfen aber die erste Zuständigkeit der Regierung nicht verwischen. Viele Fragen kann man nicht dem politischen Gegner, sondern nur der geschichtlichen Stunde beantworten. Der Gegner tut so, als gebe es in absehbarer Zeit überhaupt eine Möglichkeit zu einer vernünftigen Wiedervereinigung. Er sagt, wenn wir uns so schwach machen, daß wir überhaupt keine Rolle spielen, dann können wir die Wiedervereinigung bekommen. Aber wir können uns nicht so schwach machen, daß wir uninteressant werden. Die Frage des Preises im Ernstfall kann man nicht vorwegnehmen. Wir müssen uns die bisherige Politik fortsetzen und mit den Freunden überlegen, was wir erreichen wollen und voraussichtlich können. Die bisherige Zusammenarbeit vor einzelnen Konferenzen ist unzureichend. Die größte Schwäche des Westens war immer die weite Kluft zwischen den Auffassungen. Die deutsche Frage muß unbedingt auf die Tagesordnung gesetzt werden. Das mindeste müßte entsprechend der Londoner Abrüstungsformel<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN016" type="comment">
+                     <p>Anfang 1957 beantworteten die Regierungschefs der drei Westmächte die Abrüstungsbotschaft der Regierung der UdSSR vom 17. 11. 1956, indem sie Abrüstungsverhandlungen im Rahmen der UNO als den am meisten erfolgversprechenden Weg empfahlen. Nach Beratungen in der UN-Versammlung und der UN-Abrüstungskonferenz sowie nach bilateralen Kontakten zwischen den Großmächten kam es im April in London zu Abrüstungsvorschlägen im Unterausschuß der UN-Abrüstungskommission. Da auch neue Vorschläge nicht zu einem Konsens zwischen USA und UdSSR führten, wurden die Abrüstungsverhandlungen im September 1957 vertagt. Vgl. AdG 1957, S. 6190, 6404 Ziffer 1 und 2, 6624 Ziffer 1–3.</p>
+                  </note>
+               </seg> lauten: Vorberatungen ja, Entscheidungen nicht ohne deutsche Frage.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> fordert einen Apparat, der was kann, warnt aber vor einer allzu raschen Reaktion auf eintretende internationale Ereignisse. Wir müssen den Eindruck machen, daß alles aufs Gewissenhafteste geprüft wird. Gründlichste Beschäftigung mit den Problemen unter uns, strengste Solidarität nach draußen gelte für die Arbeit.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GontrumWilhelm_1953-10-06">Gontrum</name> sieht die Hauptschwierigkeiten in der Form der Reaktion. Nicht immer gleich Nein sagen. <name type="Person" role="Sprecher" ref="#GontrumWilhelm_1953-10-06">Gontrum</name> fordert eine deutliche Antwort auf <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemanns</name> Vorwürfe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NellenPeter_1949-09-07">Nellen</name> bedauert die rasche Ablehnung des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes. So rasch könne man doch die zahlreichen Probleme gar nicht durchdenken, daß jetzt schon eine Ablehnung fertig sein kann. <name type="Person" role="Sprecher" ref="#NellenPeter_1949-09-07">Nellen</name> fragt nach Bereitschaft und Möglichkeit zum intensiven Studium des Planes und bittet daher, die Sitzungen des außenpolitischen Arbeitskreises so zu legen, daß sie mit anderen nicht kollidieren.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-3">
+            <head>C.</head>
+            <p>3. <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name>: In einem kurzen Bericht über die Ostasienreise einer Gruppe von Abgeordneten stellte der Redner besonders heraus, daß China heute ein durch und durch kommunistischer Staat sei, daß die jungen asiatischen Nationen nicht die Zeit hätten, sich zu konsolidieren. In dem Zusammenhang werde die Rolle von Formosa zur Testfrage für die Anwesenheit Amerikas in Ostasien. Die einzige Armee im Fernost mit 650000 Mann gut ausgebildet, gut bewaffnet. 14 Millionen Auslandschinesen, in deren Hand die gesamte Wirtschaft Süd-Ost-Asiens liegt, müßten nach Formosas Fall ihren Frieden mit Rotchina machen. Bemerkenswert sei die ausgezeichnete Landreform <name type="Person" role="Erwaehnung" ref="#TschiangKai-Schek">Tschiang Kai-scheks</name>.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-02-20-t1515_EP_div_SVP-4">
+            <head>D.</head>
+            <p>4. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gibt das Eintreffen des polnischen Aide-memoire bekannt<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN017" type="comment">
+                     <p>Das polnische Außenministerium übermittelte einer Anzahl von Regierungen am 14. und 15. 2. 1958 Noten und ein Memorandum über die Durchführung des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes. Abdruck des Memorandums in: AdG 1958, S. 6897.</p>
+                  </note>
+               </seg> und vermutet, daß es uns nur in direkte Gespräche mit Warschau und Moskau verwickeln soll.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> berichtet über die Arbeit der zum Studium eines neuen Arbeitsrhythmus eingesetzten Gruppe. Am Beispiel der letzten Woche, in der fünf Arbeitskreise ihre Sitzungen am gleichen Tage zur selben Stunde angesetzt hatten<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN018" type="comment">
+                     <p>Siehe Nr. 38 v. 11. 2. 1958, TOP 3.</p>
+                  </note>
+               </seg>, tut er dar, daß es den Abgeordneten unmöglich ist, sich über die wesentlichen Themen der verschiedenen Gebiete ausreichend zu informieren. Damit entfällt auch ihre ausreichende Mitwirkung an der Willensbildung der Fraktion, denn diese ist nur in den Arbeitskreisen möglich. Es muß gewährleistet sein, daß die Abgeordneten mindestens an den Beratungen der Arbeitskreise über wichtige Grundsatzfragen teilnehmen können. Dies scheint nur durch die Einbeziehung der dritten Arbeitswoche ausschließlich für Zwecke der Fraktion möglich zu sein.</p>
+            <p>In den arbeitsfreien Wochen werden oft Erklärungen von der Fraktionsführung abgegeben, ohne daß die Abgeordneten anders als durch die Presse davon erfahren. Es wird angeregt, daß die Fraktionsmitglieder auch von diesen Nachrichten und Erklärungen während der freien Woche Mitteilung erhalten und daß wichtiges Material von der Fraktion zugestellt wird, in mehrfachen Exemplaren an die Einzelnen gegeben werde, damit sie die Möglichkeit haben, sie auch an wichtige Persönlichkeiten in ihrem Wahlkreis weiterzugeben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt die Vorschläge zur Diskussion.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> gibt zu bedenken, daß seit Jahr und Tag die Abstimmung der Arbeitskreissitzungen eine der großen Sorgen ist. Der gemachte Vorschlag ist ernstlich zu erwägen, aber die dritte Woche wird auch von verschiedenen Ausschüssen belegt. Es erhebt sich also die Frage, ob es wirklich so geht. Dann verweist er auf die früher geübte Praxis der Informierung der Fraktion durch 10-Minuten-Berichte der Arbeitskreisvorsitzenden bei den Fraktionssitzungen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bezweifelt aus Zeitgründen die Zweckmäßigkeit dieser geübten Praxis und betont, daß die dritte Woche ausdrücklich für die Fraktionen reserviert sei und nur mit Genehmigung des Präsidenten ausnahmsweise von Ausschüssen beansprucht werden dürfe<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN019" type="comment">
+                     <p>Siehe Nr. 39 v. 20. 2. 1958, TOP 2.</p>
+                  </note>
+               </seg>, und unterstützt die Vorschläge des Abg. <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>. Auch <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> tritt für sie ein und empfiehlt für die Information der Fraktion, den wöchentlichen Lagebericht an die ganze Fraktion zu verteilen. Eine weitere Stellungnahme oder ein Beschluß zu diesem Thema erfolgt nicht.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name>: Das 2. Lebensmittelgesetz enthalte das Verbot der Beimischung von Fremdstoffen, deren gesundheitliche Unbedenklichkeit nicht nachgewiesen ist.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-02-20-t1515_EP_FN020" type="comment">
+                     <p>Vgl. dazu die entsprechenden Gesetzentwürfe der SPD-Fraktion: Drucksache III/29 v. 28. 11. 1957, und der Regierung: Drucksache III/316 v. 3. 4. 1958.</p>
+                  </note>
+               </seg> Bei eingeführten Lebensmitteln muß die zweckmäßige Form der Kontrolle gefunden werden. Die bekannten Nitritfälle beruhen auf mangelnder Gesetzestreue und ungenügender Überwachungsmöglichkeit. Bei der Stichprobenüberwachung ist eben eine gewisse Dichte erforderlich. Die Diskussion wurde auf später verschoben.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

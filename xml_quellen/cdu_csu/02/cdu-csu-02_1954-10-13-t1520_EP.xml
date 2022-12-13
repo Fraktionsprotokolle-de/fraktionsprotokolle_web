@@ -1,260 +1,409 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1954-10-13-t1520_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1006/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. Oktober 1954</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>8 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1954-10-13"><time type="start" when="15:20:00"/><time type="end" when="18:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1954-10-13-t1520_EP_SVP-1" corresp="#cdu-csu-02_1954-10-13-t1520_EP_div_SVP-1">A. TOP 1: Familienausgleichskassen. – TOP 2: Finanz- und Steuerreform. – TOP 3: Gewährung von Mehrbeträgen an Altrentner. – TOP 4: Geschäftsraummietengesetz. – TOP 5: Bergarbeiterwohnungsbau. – TOP 6: Küstenplan. – TOP 7: Weihnachtsbeihilfen. – TOP 8: Bundesversorgungsgesetz. – TOP 9: Bundesentschädigungsgesetz. – TOP 10: Einbeziehung der Spessartgebiete in das Sanierungsprogramm.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1954-10-13-t1520_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. Familienausgleichskassen [SPD-Gesetzentwurf, Drucksache II/318 v. 10. 3. 1954, und CDU/CSU-Gesetzentwurf, Drucksache II/319 v. 11. 3. 1954]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> teilt mit, daß die Beratungen der Dreizehner-Kommission über die Familienausgleichskassen zu einer Verständigung über § 11 geführt hätten.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN001" type="comment"><p>Siehe Nr. 87, 2, Anm. 23.</p></note></seg> Die von der Fraktion gebilligten anderen Anträge seien zur 3.Lesung eingereicht, und es seien dabei die Forderungen des Mittelstandes noch berücksichtigt worden.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN002" type="comment"><p>Siehe ebd.</p></note></seg> Außerdem seien die Anträge zur Angleichung der übrigen Sozialgesetze an die Familienausgleichsgesetzgebung eingereicht [CDU/CSU-Gesetzentwurf, Drucksache II/876 v. 8. 10. 1954], Er schlage der Fraktion folgende Entschließung für das Plenum vor:</p>
-				<p>»Der Bundestag wolle beschließen: Die Bundesregierung wird ersucht, in eine beschleunigte Prüfung darüber einzutreten, in welcher Weise Familien mit drei und mehr Kindern, die vom Familienausgleichskassengesetz nicht erfaßt werden konnten und von den noch zu verabschiedenden Gesetzen nicht erfaßt werden, die Leistungen nach dem Familienausgleichskassengesetz ebenfalls gewährt werden können, und bis zum 1. 4. 1955 über das Ergebnis der Prüfung zu berichten, bzw. entsprechende Entwürfe vorzulegen.«<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN003" type="comment"><p>Umdruck 179 v. 13. 10. 1954. Sten. Ber., 48. Sitz. am 14. 10. 1954, S. 2381.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bringt im Namen der Fraktion seine Befriedigung darüber zum Ausdruck, daß es gelungen sei, in dieser grundsätzlichen Frage eine Einigung zu erzielen.</p>
-				<p>(Großer Beifall!)</p>
-				<p>2. Finanz[- und Steuerreform [Drucksachen II/480 bzw. II/481 v. 29. 4. 1954]</p>
-				<p><name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> berichtet über die Gesetze zur Finanzreform und über das Einkommensteuergesetz.</p>
-				<p>Zur Finanzreform sei beschlossen, die Kraftfahrzeugsteuer-, Erbschaft-, Vermögen-, Versicherung- und Wechselsteuer zu Bundessteuern zu deklarieren. Als Ausgleich sei vorgesehen, daß nunmehr 30% Bundesanteil und 70% Länderanteil sein solle. Die CDU habe zu diesem Punkt Abänderungsantrag in bezug auf die Kraftfahrzeugsteuer und Vermögensteuer gestellt, die sie als Landessteuer behandelt wissen wolle.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN004" type="comment"><p><name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hatte diesen Antrag in der 33. Sitz. des Ausschusses für Finanz- und Steuerfragen am 8. 10. 1954 gestellt. Vgl. Parl. Arch., 19. Ausschuß.</p></note></seg></p>
-				<p>Die Überlegungen des Ausschusses seien gewesen, daß man die Kraftfahrzeugsteuer in die Mineralölsteuer überführen müsse. Der Verwaltungsaufwand für das bisherige Zulassungsverfahren könne mit einem Federstrich auf die Mineralölsteuer verlagert werden. Bei der Erbschaft- und Vermögensteuer handele es sich um Substanzsteuern, die auf die Dauer nicht bestehen könnten. Diese drei Steuern müßten in Bälde in ein besseres Verhältnis gebracht werden. Dafür sei Voraussetzung, daß der Bund die Zuständigkeit haben müsse. Es bestehe die Tendenz, die Steuerhoheit mit dem Steuerberechtigten zu identifizieren. Das mache die Zuteilung gewisser Steuerquellen an den Bund ebenso wie an die Länder notwendig. Da müsse möglichst von Gemeinschaftssteuern abgesehen werden. Dieser Weg sei nur möglich und ein Ziel nur erkennbar, wenn man den Ländern die Einkommen- und Körperschaftsteuern gebe und die anderen Steuern zu Bundessteuern deklariere.</p>
-				<p>Dann folgten Ausführungen über einzelne §§ des Einkommensteuergesetzes, besonders zu den §§ 4, 7 b und c, 10 e und zur Frage der Haushaltbesteuerung. Dann wandte sich <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> dem Tarif zu und erläuterte, daß der Regierungsvorlage im Gegensatz zu bisher der logarithmische Tarif zugrunde liege, der eine lineare Steigerung vorsehe, beginnend mit einem Freibetrag von 900 DM und endend bei einem Plafond von 55%. Diese lineare Steigerung bringe mit sich, daß gewisse Gruppen, und zwar die Ledigen mit einem Einkommen von 3–6 000 DM, etwas schlechter gestellt sein würden als bisher. Die dazu gestellten Abänderungsanträge habe er dadurch abzufangen versucht, daß er vorgeschlagen habe, den Tarif um 500 Mio. DM zu senken und alle anderen Anträge ausfallen zu lassen. Als Deckungsvorschlag habe er auf die Einwendungen des Bundesfinanzministers vorgeschlagen, den Beginn der Steuerreform auf den 1. 1. 1955 zu verschieben. Der Ausschuß habe sich darauf geeinigt.</p>
-				<p>Dann wandte sich <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> einigen anderen erörterten Deckungsvorschlägen zu und behandelte deren Auswirkungen.</p>
-				<p>Zur Finanzreform teilte er mit, daß die Einführung einer neuen Bundessteuer, nämlich der Ergänzungsabgabe, vorgesehen sei, und daß der Ausschuß diese neue Steuer angenommen habe. Allerdings werde die FDP sich gegen diese Steuer aussprechen. Der Bundesfinanzminister beabsichtige, auf diese neue Steuerquelle im kommenden Haushaltsjahr mit 1,5% zurückzugreifen; das heiße, daß der einzelne auf seine bisherige Einkommensteuer 1,5% zusätzlich zu zahlen haben werde.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BoehmFranz_1953-10-06">Böhm</name>: Sowohl Finanz- wie Steuerreform seien ein groß konzipiertes Unterfangen gewesen, die sehr wesentlich für die Arbeit der Fraktion hätten sein sollen. Nun sei ein großer Teil hier sich nicht im klaren darüber, was aus dieser ursprünglichen Konzeption in Wirklichkeit geworden sei. Er halte es für notwendig, daß von den Beteiligten dazu in einzelnen Vorträgen Stellung genommen werde, die auch den Nichtfachmitgliedern der Fraktion verständlich seien. Er wolle gerne hören, was aus der Absicht geworden sei, das geltende Steuersystem von den historischen Zuwüchsen der letzten Jahrzehnte zu befreien und wieweit durch die Steuerreform die beabsichtigte Initialzündungswirkung erzielt werde. Er bitte darum, daß dieser Überblick gegeben werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> erwidert, daß von Regierungsseite wie von den interessierten Kreisen seit Jahren die organische Steuerreform verlangt worden sei und daß man sie auch angekündigt habe. Wenn man sich an die Erklärungen des Bundesfinanzministers aus früheren Jahren erinnere, dann habe die eingehende Untersuchung ergeben, daß das bisherige Steuersystem, soweit es sich in direkte und indirekte Steuern aufteile, und das Verhältnis von direkten zu indirekten Steuern so sei, daß man am besten nichts daran ändere. Mit dieser Erkenntnis sei das Gespräch über die große Steuerreform zu Ende gewesen.</p>
-				<p>Man habe sich dann dem Gebiet der direkten Steuern zugewendet und sei daran gegangen, die vielen auf diesem Sektor vorhandenen Vergünstigungen aus dem Gesetz herauszunehmen. Hier habe man gewisse Vereinfachungen vorwiegend durch Pauschalierungen gefunden. Dieses Prinzip der Vereinfachung habe jedoch mit Rücksicht auf den sozialen Wohnungsbau durchbrochen werden müssen, da sich der Bundesfinanzminister nicht bereit erklären konnte, den sozialen Wohnungsbau durch Zurverfügungstellung eines unrentierlichen Betrages zu subventionieren. Das habe zur Wiedereinführung von § 7 c geführt. Auch habe man in § 10 zur Sicherstellung der alten Menschen einen Altersfreibetrag eingeführt.</p>
-				<p>Was die Auswirkung auf die Wirtschaft anbelangt, so bedaure er, daß es bei der Aufhebung des gespaltenen Körperschaftsteuersatzes blieb, da hier ein maßgeblicher Motor der Wirtschaft ausgeschaltet werde und der Verschuldung der Wirtschaft nicht Einhalt geboten werde. So sei die Initialzündung auf den Sektor der Betriebe beschränkt. Allerdings werde durch die Senkung des Tarifs um rund 500 Mio. DM dieser Betrag zur Belebung der Wirtschaft auf dem Weg über den Konsum frei. Damit dürfte auch diesem Prinzip entsprochen sein.</p>
-				<p><name type="Person" role="Sprecher" ref="#CillienAdolf_1953-10-06">Cillien</name> schließt die Aussprache über diesen Punkt mit der Bitte, den Fraktionsmitgliedern entsprechendes Material zugänglich zu machen und die Sache im Arbeitskreis weiter zu behandeln.</p>
-				<p>3. Gewährung von Mehrbeträgen an Altrentner [Gesetzentwurf der Koalitionsfraktionen, Drucksache II/820 v. 16. 9. 1954]</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> berichtet über die Beratungen des Gesetzes zur Gewährung von Mehrbeträgen an Altrentner. Der sozialpolitische Ausschuß habe beschlossen<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN005" type="comment"><p>Vgl. den mündlichen Bericht des Ausschusses, Drucksache II/879 o. D. (11. 10. 1954).</p></note></seg>, den Kreis derjenigen, die den Mehrbetrag bekommen sollen, erheblich zu erweitern. Lebhafte Diskussionen habe es dabei um die Prozentsätze gegeben. Doch seien die ursprünglichen Vorschläge beibehalten worden. Entgegen der bestehenden Absicht habe man den Mindestbetrag nicht eingeführt, da er eine Mehrbelastung von rund 128 Mio. DM gebracht hätte.</p>
-				<p>Zur Aufbringung der Mittel war ursprünglich vorgesehen, 1% von der Arbeitslosenversicherung auf die Rentenversicherung zu verlagern, dabei sei es auch geblieben. Der Ausschuß für Arbeit habe sich ebenfalls damit einverstanden erklärt. Man müsse damit rechnen, daß im Plenum von SPD und FDP beantragt werde, daß der Bund die Kosten übernehmen solle.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN006" type="comment"><p>Die FDP-Fraktion brachte einen entsprechenden Entschließungsantrag ein (Umdruck 184 v. 14. 10. 1954), der mit Mehrheit abgelehnt wurde. Vgl. Sten. Ber., 48. Sitz. am 14. 10. 1954, S. 2372 und 2383.</p></note></seg></p>
-				<p>Weiter sei dafür gesorgt worden, daß im Dezember in einem vereinfachten Verfahren ein Vorschuß gezahlt werden könne. Die jetzt erforderlichen Aufwendungen betrügen 826 Mio. DM, von denen 156 Mio. auf den Bund fielen. Damit sei die Kapazität erschöpft. Es sei notwendig, das Gesetz ohne Änderungsanträge durchzubringen, weil sonst im Dezember keine Auszahlungen vorgenommen werden können.</p>
-				<p>4. Geschäftsraummietengesetz [SPD-Gesetzentwurf, Drucksache II/814 v. 14. 9. 1954]</p>
-				<p>Dr. Karl <name type="Person" role="Sprecher" ref="#MuellerKarl_1949-09-07">Müller</name> berichtet zu dem Antrag der SPD auf Änderung des Geschäftsraummietengesetzes, daß es sich bei diesem Antrag um reine Agitation handele. Man versuche, sich im Hinblick auf die bevorstehenden Wahlen beim Mittelstand anzubiedern. Der Arbeitskreis II habe mit allen Stimmen beschlossen, sich für die Ablehnung des Antrags auszusprechen.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN007" type="comment"><p>Der Arbeitskreis hatte keinen Beschluß gefaßt. In einer interfraktionellen Besprechung war am 8. 10. 1954 die Ablehnung des Antrags beschlossen worden. Zugleich sollte jedoch ein Entschließungsantrag zu dem Gesetz eingebracht werden (Umdruck 275 v. 6. 12. 1954. Sten. Ber., 58. Sitz. am 8. 12. 1954, S. 2989 f.). Vgl. die Sitzungsprotokolle in: ACDP, I-077–031/2.</p></note></seg> Im Plenum solle Dr. <name type="Person" role="Erwaehnung" ref="#HesbergCarl_1953-10-06">Hesberg</name> sprechen.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN008" type="comment"><p>Vgl. die 1. Lesung des Gesetzes am 15. 10. 1954. Sten. Ber., 49. Sitz., S. 2409.</p></note></seg> Es sei vorgesehen, im Ausschuß einen Antrag zu stellen, daß, wenn im sozialen Wohnungsbau größere Mengen an Wohnungen geschaffen würden, dann dort für Unterkunft des kleinen Mittelständlers zu sorgen sei.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN009" type="comment"><p>In der gemeinsamen Sitz. der Ausschüsse für Wiederaufbau und Wohnungswesen und für Bau- und Bodenrecht am 10. 9. 1954 zum Zweiten Wohnungsbaugesetz hatte <name type="Person" role="Erwaehnung" ref="#SchildHeinrich_1953-10-06">Schild</name> (DP) eine stärkere Berücksichtigung des Mittelstandes in den Bestimmungen des Gesetzes gefordert, was jedoch den sofortigen Widerstand der SPD-Vertreter hervorgerufen hatte. Weitere Initiativen wurden nicht ermittelt. Parl. Arch., 33. Ausschuß.</p></note></seg></p>
-				<p>5. Bergarbeiterwohnungsbau [Drucksache II/657 v. 1. 7. 1954]</p>
-				<p><name type="Person" role="Sprecher" ref="#HarnischfegerJohann_1953-10-06">Harnischfeger</name> berichtet zu dem Gesetz über den Bergarbeiterwohnungsbau, daß dieses Gesetz zum 31. Oktober ablaufe. Als man damals pro Tonne Steinkohle 2 DM und pro Tonne Braunkohle 1 DM zur Finanzierung des Wohnungsbaus erhoben habe, hätten im Bergbau 92 000 Wohnungen gefehlt. Bis zum 31. 12. 1953 seien 88 000 Wohnungen gebaut worden. Doch sei durch Neueinstellungen, durch Familienzusammenführung und durch Eheschließungen eine große Zahl neuer Wohnungssuchender dazugekommen, so daß nun doch noch 65 000 Wohnungen notwendig seien. Da in diesem Jahre noch mit der Fertigstellung von 25 000 Wohnungen zu rechnen sei, werde also ein Bedarf von 40 000 Wohnungen übrigbleiben.</p>
-				<p>Aus diesen Gründen sei die Bundesregierung gezwungen gewesen, die Änderung des Bergarbeiterwohnungsbaugesetzes vorzulegen. Im Ausschuß sei man sich über die Notwendigkeit klargeworden, habe jedoch die Änderung der Sätze auf 1 DM und 50 Pfg. beschlossen.</p>
-				<p>Auch habe man eine stärkere Förderung des Eigenheimbaus und der Kleinsiedlung für notwendig gehalten und wolle einen gewissen Prozentsatz für die Finanzierung von Aufschließungskosten aufwenden.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN010" type="comment"><p>Vgl. den mündlichen Bericht des Ausschusses für Wiederaufbau und Wohnungswesen, Drucksache II/817 v. 15. 9. 1954.</p></note></seg> Er bittet die Fraktion, das Gesetz in dieser Form zu unterstützen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BroennerJosef_1949-09-07">Brönner</name> vertritt die Meinung, daß man dem Gesetz nicht zustimmen solle. Seinerzeit sei gesagt worden, der notwendige Wohnungsbau könne in drei Jahren durchgeführt werden, habe [man] als Begründung die Kohlennot angeführt und erklärt, daß man mit 92 000 zusätzlichen Wohnungen zufrieden sei. Nun seien die Wohnungen gebaut, Kohlennot sei auch nicht mehr, es habe sogar Feierschichten gegeben. Die Wohnungsnot, auf die man sich jetzt berufe, gäbe es in allen Ländern. Nordrhein-Westfalen bekomme ja seinen Anteil an den 500 Mio. DM des Bundes für den Wohnungsbau auch schon auf Grund eines Schlüssels, der auf der Wohnungsnot aufgebaut sei. Außerdem habe man den Hausbrand im Preis erhöht, und damit habe der Kohlenbergbau 190–200 Mio. DM mehr eingenommen. Dieses Geld könne man doch verwenden. Auch kämen noch 40–45 Mio. DM darlehensweise von der Montanunion; das sei doch auch Geld. Wenn man noch bedenke, daß Nordrhein-Westfalen außerdem die 1 000 Mio. DM Investitionshilfe bekommen habe, dann sollte man doch meinen, daß es seinen Wohnungsbau ebenso selbst finanzieren könne wie die anderen Länder auch.</p>
-				<p>Süddeutschland habe durch die Frachten viel höhere Preise für Kohle als Nordrhein-Westfalen und solle nun auch noch zu diesem erhöhten Preis die Kohlenabgabe zahlen. Die Bundesbahn solle auch noch einmal 10 Mio. DM geben; dabei habe sie selbst 45 000 Wohnungssuchende beschäftigt, und dies alles während die »Bonner Rundschau« am 8. 10. zu berichten weiß, daß in Nordrhein-Westfalen 640 Mio. DM an Baumitteln eingefroren lägen und nicht hinausgegeben würden.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN011" type="comment"><p>»640 Millionen Baumittel ›eingefroren‹«. »Bonner Rundschau« v. 8. 10. 1954.</p></note></seg> Angeblich kämen die Bewilligungsstellen mit der Verteilung nicht voran, und dann schreie man gleichzeitig nach Geld für den Wohnungsbau. So sollte Nordrhein-Westfalen imstande sein, seinen Wohnungsbau genauso zu lösen, wie die anderen Länder und es nicht nötig haben, auf die Pfennige der kleinen Leute zurückzugreifen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeukertEdmund_1953-10-06">Leukert</name> weist darauf hin, daß <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name> sich bei den Beratungen nicht habe durchsetzen können. Auch werden die 40 000 Wohnungen nicht nur in Nordrhein-Westfalen, sondern überall, wo Bergbau sei, benötigt. Er empfehle der Fraktion, dem Gesetz zuzustimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> betont ebenfalls, daß es sich nicht um ein Gesetz zugunsten Nordrhein-Westfalens handele. Im übrigen werde die Kohlenabgabe wahrscheinlich im Laufe der nächsten Zeit abgebaut werden, um im internationalen Wettbewerb bestehen zu können. Dadurch, daß die Kohle ins Grüne wachse, seien erhebliche Aufwendungen notwendig. Auch er empfehle Annahme.</p>
-				<p><name type="Person" role="Sprecher" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> weist darauf hin, daß man Wert darauf legen müsse, daß die im Bergbau beschäftigten Menschen eine vernünftige Wohnung hätten, sonst werde man keinen Nachwuchs an Arbeitskräften haben, und das werde sich später bitter rächen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> dankt <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name> für die achtenswerte und sachliche Weise seiner Argumentation und stellt fest, daß die Fraktion der Ansicht sei, daß man dem Gesetz zustimmen solle.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN012" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name> äußerte auch im Bundestagsplenum seine Bedenken gegen das Gesetz, das schließlich gegen eine Stimme angenommen wurde. Vgl. Sten. Ber., 49. Sitz. am 15. 10. 1954, S. 2405–2408.</p></note></seg></p>
-				<p>6. Küstenplan [Antrag <name type="Person" role="Erwaehnung" ref="#DannemannRobert_1949-09-07">Dannemann</name>, <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1953-10-06">Müller</name> (Wehdel), Dr. <name type="Person" role="Erwaehnung" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Erwaehnung" ref="#PetersGeorg_1949-09-07">Peters</name> und Gen., Drucksache II/736 v. 15. 7. 1954]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> berichtet dann zum Küstenplan und gibt eine Darstellung der Verhältnisse an der Nordseeküste, die im Zusammenhang mit der holländischen Katastrophe<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN013" type="comment"><p>Anfang Februar 1953 hatte eine verheerende Sturmflut weite Küstenteile West- und Nordeuropas überschwemmt. Aufgrund von Dammbrüchen waren die Niederlande und Belgien besonders schwer betroffen gewesen. Vgl. FAZ v. 2. 2. 1953.</p></note></seg> Beunruhigung ausgelöst hätten. Er bittet die Fraktion um Zustimmung zu der Vorlage.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt das Einverständnis der Fraktion fest.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN014" type="comment"><p>Der Bundestag überwies den Antrag am 15. 10. 1954 an den Haushaltsausschuß und den Ausschuß für Ernährung, Landwirtschaft und Forsten. Vgl. Sten. Ber., 49. Sitz., S. 2416.</p></note></seg></p>
-				<p>7. Weihnachtsbeihilfen [GB/BHE-Gesetzentwurf, Drucksache II/798 v. 9. 9. 1954, DP-Antrag, Drucksache II/805 v. 11. 9. 1954 (am 12. 10. 1954 zurückgezogen) und SPD-Antrag, Drucksache II/845 v. 25. 9. 1954]</p>
-				<p><name type="Person" role="Sprecher" ref="#SchuettlerJosef_1949-09-07">Schüttler</name> berichtet über die Beratungen der Arbeitskreise II und IV über die Weihnachtsbeihilfen. Der Antrag der SPD werde ca. 600 Mio. DM kosten; diese seien nicht aufzubringen. Die Regierung habe bereits vor vier Wochen die Länder davon verständigt, daß sie eine gleiche Regelung wie im vorigen Jahr beabsichtige. Die Zuwendungen sollten nicht nur die Fürsorgeberechtigten bekommen, sondern alle, die nicht 110% des Fürsorgesatzes erreichen. Das bedeute für den Bund 65 Mio. für Länder und Gemeinden 80 Mio. DM.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN015" type="comment"><p>Erlaß »Weihnachtsbeihilfe 1954« v. 2. 9. 1954. GMBl. 5/1954, S. 441.</p></note></seg> Der Arbeitskreis habe sich hinter diesen Vorschlag der Regierung gestellt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt fest, daß die Fraktion dem zustimme.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN016" type="comment"><p>Vgl. Sten. Ber., 60. Sitz. am 10. 12. 1954, S. 3092–3095.</p></note></seg></p>
-				<p>Zum Thema Lastenausgleich [GB/BHE-Gesetzentwurf, Drucksache II/344 v. 18. 3. 1954, und CDU/CSU-Gesetzentwurf, Drucksache II/571 v. 4. 6. 1954] findet keine Beratung statt.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN017" type="comment"><p>Vgl. ebd., 49. Sitz. am 15. 10. 1954, S. 2421f.</p></note></seg></p>
-				<p>8. Bundesversorgungsgesetz [SPD-Gesetzentwurf Drucksache II/793 v. 2. 9. 1954]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> wendet sich dann der Vorlage zum Bundesversorgungsgesetz zu. Hier seien bei der verschiedenen Art der Forderungen die Schwierigkeiten sehr groß. Es sei dem Herrn Bundeskanzler mehrfach dargelegt worden, daß wenigstens innerhalb der Koalition Ordnung geschaffen werden müsse, doch sei die beantragte Koalitionsbesprechung nicht zustande gekommen. Morgen finde im Kabinett dazu eine Erörterung statt. Es sei aber zweifelhaft, ob es zu einer Einigung kommen könne.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN018" type="comment"><p>Nach Koalitionsbesprechungen am 10. und 11. 11. 1954 fand die erste Behandlung des Themas im Kabinett am 12. 11. 1954 statt, wurde hier aber nicht abgeschlossen. Vgl. Kabinettsprotokolle 1954, S. 511f.</p></note></seg></p>
-				<p>Der Arbeitskreis schlage vor, wenn es zu keiner Einigung komme, den Punkt noch einmal von der Tagesordnung abzusetzen. Jedenfalls müsse aber auch von der CDU ein Antrag zu dieser Sache gestellt werden, was natürlich schon wegen der Fristen außerordentlich schwer sei.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN019" type="comment"><p>Die 1. Lesung der verschiedenen Anträge zur Verbesserung der Kriegsopferversorgung wurde nicht verschoben und fand am 15. 10. 1954 statt. Vgl. Sten. Ber., 49. Sitz., S. 2422–2439.</p></note></seg></p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> weist darauf hin, daß es soweit nur habe kommen können, weil die Regierung ihrerseits nicht dem Antrag der Fraktion entsprochen habe und keine Vorlage zur Erhöhung der Grundrenten vorgelegt habe. Nichts, gar nichts sei auf diesen Antrag hin vom Bundesminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> unternommen worden; jetzt seien die Folgen da.</p>
-				<p>Sie halte es für notwendig, daß die CDU/CSU nun selbst noch mit Vorschlägen auftrete. Bis jetzt sei sie der Fraktion und der Regierung gegenüber loyal geblieben, aber nun müsse etwas geschehen.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN020" type="comment"><p>Die CDU/CSU-Fraktion brachte geschlossen keinen Antrag mehr ein. Lediglich Frau <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Maucher</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> und Gen. legten am 14. 10. 1954 einen Entwurf zur Änderung des Bundesversorgungsgesetzes vor (Drucksache II/887).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> zählt auf, welche Summen durch die vorliegenden Anträge insgesamt zur Debatte stünden:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Familienausgleichskassen:</cell>
-						<cell>450 Mio. DM</cell>
-					</row>
-					<row>
-						<cell>Mehrbeträge in der Rentenversicherung:</cell>
-						<cell>826 Mio. DM</cell>
-					</row>
-					<row>
-						<cell>Anträge der FDP, BHE und SPD:</cell>
-						<cell>885 Mio. DM</cell>
-					</row>
-					<row>
-						<cell>Antrag der SPD (13. Monatsrente):</cell>
-						<cell>500 Mio. DM</cell>
-					</row>
-					<row>
-						<cell>Antrag der SPD (Weihnachtsbeihilfe):</cell>
-						<cell>530 Mio. DM</cell>
-					</row>
-					<row>
-						<cell>Aufbesserung der Unterhaltshilfe:</cell>
-						<cell><hi rendition="#u">300 Mio. DM</hi></cell>
-					</row>
-					<row>
-						<cell/>
-						<cell>3 500 Mio. DM [sic!]</cell>
-					</row>
-				</table>
-				<p>Wenn man abziehe, was aus anderen Quellen gezahlt werde, fielen immer noch 2 000 Mio. DM auf den Bund.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> greift den Gedanken <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horns</name> auf, daß er zur Frage des Bundesversorgungsgesetzes nicht schweigen könne. Er habe dem Bundeskanzler mitgeteilt, daß diese Dinge in der Koalition besprochen werden sollen.</p>
-				<p>Auch der Plan von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> koste rund 650 Mio. DM. Zwar werde durch einen gewissen Auslauf ein Teil der Kosten wieder herauskommen, aber wenn man einen solchen Antrag stelle, werde man nicht wieder zurückkönnen. Gewiß habe Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> recht, daß Bundesminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> nichts getan habe, und die Fraktion, nachdem sie auf Initiative verzichtete, stehe nun vor der peinlichen Aufgabe, diese Untätigkeit des Arbeitsministers auszugleichen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> erläutert, daß nach dem Kriegsopfergesetz ein Teil der Renten bei steigendem Einkommen wegfalle. Bis jetzt seien 35 000 Kriegsopfer noch nicht in Arbeit. Wenn man diesen Arbeit gäbe, werde weitere Ausgleichsrente wegfallen.</p>
-				<p>Bei der zweiten Novelle, deren Kosten mit 400 Mio. DM veranschlagt waren, habe in Wirklichkeit kein Pfennig aufgewendet werden müssen, weil die Arbeitsleistung der Kriegsopfer die Aufwendung vollständig wettgemacht habe. Bald werde man auf diese Arbeitskräfte in der Industrie angewiesen sein.</p>
-				<p>Der Kriegsopferetat sei ein sterbender Etat, allein 110 000 Waisenkinder wüchsen im nächsten Jahre aus der Rentenversorgung heraus. Eine weitere Entlastung bringe das natürliche Ende der Versorgung für die Veteranen des Ersten und Zweiten Krieges.</p>
-				<p>Sie sei überzeugt, daß in 2–3 Jahren die jetzige Erhöhung voll ausgeglichen sein werde, die auch keine 644 Mio. DM betrage, weil durch die Eingliederung in den Arbeitsprozeß Ausgleichsrenten wegfielen. Allerdings liege ein Risiko in den 450 000 noch nicht bearbeiteten Rentenanträgen, so daß nicht mit absoluter Sicherheit die finanziellen Auswirkungen angegeben werden könnten. Sie halte jedoch den Voranschlag des Arbeitsministers für überhöht.</p>
-				<p>Sie wolle nichts über die Wirkung sagen, die es haben werde, wenn man die alten Soldaten gegenüber den neuen vernachlässige. Man solle nicht übersehen, daß die Kriegsopfer – auch die SPD-Mitglieder der Kriegsopferverbände – den Wehrbeitrag bejahten.</p>
-				<p>Sie wolle keine überhöhten Forderungen stellen, sondern beschränke sich auf das sachliche Minimum, das soziale Befriedung gewährleiste. Dies müsse aber geschehen, da es nicht würdig sei, wenn vier oder fünf Parteien das Schicksal der Kriegsopfer zu ihrem parteipolitischem Spiel mißbrauchten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BartramWalter_1952-05-13">Bartram</name> unterstreicht die politische Bedeutung dieses Gesetzes. Wenn es nicht ginge, mit der Koalition zu konkreten Abmachungen zu kommen, müsse unbedingt versucht werden, die Mehrheit für die Vorschläge von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> zu sichern.</p>
-				<p>Maucher bringt seine Überzeugung zum Ausdruck, daß Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> nur das Dringendste fordere. Es sei damals ein schwerer Fehler gewesen, daß man den Vorsitz im Kriegsopferausschuß dem BHE überlassen habe. <name type="Person" role="Erwaehnung" ref="#PetersenHelmut_1953-10-06">Petersen</name> hielte es nicht einmal für notwendig, mit der CDU über diese Dinge zu verhandeln. Die Regierungserklärung und der Fraktionsvorsitzende hätten sich positiv mit der Frage der Kriegsopfer beschäftigt. Es sei nun notwendig, daß die Fraktion auch etwas tue und nicht nur den anderen Parteien das Feld überlasse. Er bitte deshalb dringend, mit einem eigenen Vorschlag ins Plenum zu gehen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schlägt vor, morgen eine Aussprache im kleinen Kreis mit Minister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> durchzuführen. Es sei dringend notwendig, am Freitag nicht nur zu schweigen und sich darauf zu beschränken, dann in den Ausschüssen die Anträge der anderen Fraktionen zu unterstützen. Man sollte auch noch einmal eine Fraktionssitzung zu diesem Thema abhalten. Er stelle das Einverständnis der Fraktion dazu fest.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN021" type="comment"><p>Am folgenden Tag fand in der Fraktion eine Aussprache zu diesem Thema im Beisein von Bundesminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> statt. Siehe Nr. 91, 2.</p></note></seg></p>
-				<p>Die Punkte:</p>
-				<p>Inanspruchnahme der Einkommensteuer [Drucksache II/201 v. 23. 12. 1953],</p>
-				<p>Investitionshilfe [FDP-Anfrage, Drucksache II/602 v. 11. 6. 1954, und Antrag <name type="Person" role="Erwaehnung" ref="#RaestrupBernhard_1949-09-07">Raestrup</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Josef <name type="Person" role="Erwaehnung" ref="#SpiesJosef_1949-09-07">Spies</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und Gen., Drucksache II/676 v. 7. 7. 1954],</p>
-				<p>Wirtschaftsplan des ERP-Sondervermögens [Drucksache II/653 v. 30. 6. 1954] lösen keine Aussprache aus. Es wird beschlossen, diese Anträge den zuständigen Ausschüssen zu überweisen.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN022" type="comment"><p>Vgl. Sten. Ber., 49. Sitz. am 15. 10. 1954, S. 2439f. und 2442–2450 sowie 51. Sitz. am 21. 10. 1954, S. 2554, in der der Bundestag den Antrag betr. das ERP-Vermögen in der Fassung des Ausschusses annahm.</p></note></seg></p>
-				<p>9. Bundesentschädigungsgesetz [SPD-Änderungsantrag, Drucksache II/811 v. 14. 9. 1954]</p>
-				<p>Prof. Böhm führt zu dem Antrag auf Änderung des Bundesentschädigungsgesetzes aus, daß nach Behandlung der Frage im Arbeitskreis I Zustimmung und Überweisung an den Ausschuß vorgeschlagen werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bittet Dr. <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name>, eventuelle Angriffe des »Abgeordneten« Dr. <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> zu beantworten. An sich werde es ja nachgerade peinlich, daß diese Materie noch nicht geregelt sei, und es diene auch nicht dem Ansehen Deutschlands im Ausland, wie diese Sache gehandhabt werde. Man müsse rasch und endgültig zu einem Abschluß kommen. Hier liege eine sittliche Verpflichtung vor, nicht nur zu reden, sondern auch zu handeln.<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN023" type="comment"><p>Die Novelle zur Änderung des Bundesergänzungsgesetzes zur Entschädigung für Opfer der nationalsozialistischen Verfolgung, die eine Fristverlängerung für die Anmeldung von Schäden bis zum 1. 10. 1955 vorsah, wurde am 15. 10. 1954 in 1., 2. und 3. Lesung einstimmig angenommen. Vgl. ebd., 49. Sitz., S. 2450–2455.</p></note></seg></p>
-				<p>10. Einbeziehung der Spessartgebiete in das Sanierungsprogramm [GB/BHE-Antrag, Drucksache II/572 v. 4. 6. 1954]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> beantragt, den Antrag des BHE auf Einbeziehung der Spessartgebiete in das Sanierungsprogramm auf Grund der Ergebnisse der Beratungen im Ausschuß für Grenzlandfragen der Regierung als Material zu überweisen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt die Zustimmung der Fraktion fest<seg type="note"><note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN024" type="comment"><p>Vgl. ebd., 52. Sitz. am 22. 10. 1954, S. 2568–2573.</p></note></seg> und schließt die Sitzung um 18.30 Uhr.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1954-10-13-t1520_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1006/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. Oktober 1954</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>8 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1954-10-13">
+               <time type="start" when="15:20:00"/>
+               <time type="end" when="18:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1954-10-13-t1520_EP_SVP-1" corresp="#cdu-csu-02_1954-10-13-t1520_EP_div_SVP-1">A. TOP 1: Familienausgleichskassen. – TOP 2: Finanz- und Steuerreform. – TOP 3: Gewährung von Mehrbeträgen an Altrentner. – TOP 4: Geschäftsraummietengesetz. – TOP 5: Bergarbeiterwohnungsbau. – TOP 6: Küstenplan. – TOP 7: Weihnachtsbeihilfen. – TOP 8: Bundesversorgungsgesetz. – TOP 9: Bundesentschädigungsgesetz. – TOP 10: Einbeziehung der Spessartgebiete in das Sanierungsprogramm.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1954-10-13-t1520_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. Familienausgleichskassen [SPD-Gesetzentwurf, Drucksache II/318 v. 10. 3. 1954, und CDU/CSU-Gesetzentwurf, Drucksache II/319 v. 11. 3. 1954]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> teilt mit, daß die Beratungen der Dreizehner-Kommission über die Familienausgleichskassen zu einer Verständigung über § 11 geführt hätten.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN001" type="comment">
+                     <p>Siehe Nr. 87, 2, Anm. 23.</p>
+                  </note>
+               </seg> Die von der Fraktion gebilligten anderen Anträge seien zur 3.Lesung eingereicht, und es seien dabei die Forderungen des Mittelstandes noch berücksichtigt worden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN002" type="comment">
+                     <p>Siehe ebd.</p>
+                  </note>
+               </seg> Außerdem seien die Anträge zur Angleichung der übrigen Sozialgesetze an die Familienausgleichsgesetzgebung eingereicht [CDU/CSU-Gesetzentwurf, Drucksache II/876 v. 8. 10. 1954], Er schlage der Fraktion folgende Entschließung für das Plenum vor:</p>
+            <p>»Der Bundestag wolle beschließen: Die Bundesregierung wird ersucht, in eine beschleunigte Prüfung darüber einzutreten, in welcher Weise Familien mit drei und mehr Kindern, die vom Familienausgleichskassengesetz nicht erfaßt werden konnten und von den noch zu verabschiedenden Gesetzen nicht erfaßt werden, die Leistungen nach dem Familienausgleichskassengesetz ebenfalls gewährt werden können, und bis zum 1. 4. 1955 über das Ergebnis der Prüfung zu berichten, bzw. entsprechende Entwürfe vorzulegen.«<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN003" type="comment">
+                     <p>Umdruck 179 v. 13. 10. 1954. Sten. Ber., 48. Sitz. am 14. 10. 1954, S. 2381.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bringt im Namen der Fraktion seine Befriedigung darüber zum Ausdruck, daß es gelungen sei, in dieser grundsätzlichen Frage eine Einigung zu erzielen.</p>
+            <p>(Großer Beifall!)</p>
+            <p>2. Finanz[- und Steuerreform [Drucksachen II/480 bzw. II/481 v. 29. 4. 1954]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> berichtet über die Gesetze zur Finanzreform und über das Einkommensteuergesetz.</p>
+            <p>Zur Finanzreform sei beschlossen, die Kraftfahrzeugsteuer-, Erbschaft-, Vermögen-, Versicherung- und Wechselsteuer zu Bundessteuern zu deklarieren. Als Ausgleich sei vorgesehen, daß nunmehr 30% Bundesanteil und 70% Länderanteil sein solle. Die CDU habe zu diesem Punkt Abänderungsantrag in bezug auf die Kraftfahrzeugsteuer und Vermögensteuer gestellt, die sie als Landessteuer behandelt wissen wolle.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN004" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hatte diesen Antrag in der 33. Sitz. des Ausschusses für Finanz- und Steuerfragen am 8. 10. 1954 gestellt. Vgl. Parl. Arch., 19. Ausschuß.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Überlegungen des Ausschusses seien gewesen, daß man die Kraftfahrzeugsteuer in die Mineralölsteuer überführen müsse. Der Verwaltungsaufwand für das bisherige Zulassungsverfahren könne mit einem Federstrich auf die Mineralölsteuer verlagert werden. Bei der Erbschaft- und Vermögensteuer handele es sich um Substanzsteuern, die auf die Dauer nicht bestehen könnten. Diese drei Steuern müßten in Bälde in ein besseres Verhältnis gebracht werden. Dafür sei Voraussetzung, daß der Bund die Zuständigkeit haben müsse. Es bestehe die Tendenz, die Steuerhoheit mit dem Steuerberechtigten zu identifizieren. Das mache die Zuteilung gewisser Steuerquellen an den Bund ebenso wie an die Länder notwendig. Da müsse möglichst von Gemeinschaftssteuern abgesehen werden. Dieser Weg sei nur möglich und ein Ziel nur erkennbar, wenn man den Ländern die Einkommen- und Körperschaftsteuern gebe und die anderen Steuern zu Bundessteuern deklariere.</p>
+            <p>Dann folgten Ausführungen über einzelne §§ des Einkommensteuergesetzes, besonders zu den §§ 4, 7 b und c, 10 e und zur Frage der Haushaltbesteuerung. Dann wandte sich <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> dem Tarif zu und erläuterte, daß der Regierungsvorlage im Gegensatz zu bisher der logarithmische Tarif zugrunde liege, der eine lineare Steigerung vorsehe, beginnend mit einem Freibetrag von 900 DM und endend bei einem Plafond von 55%. Diese lineare Steigerung bringe mit sich, daß gewisse Gruppen, und zwar die Ledigen mit einem Einkommen von 3–6 000 DM, etwas schlechter gestellt sein würden als bisher. Die dazu gestellten Abänderungsanträge habe er dadurch abzufangen versucht, daß er vorgeschlagen habe, den Tarif um 500 Mio. DM zu senken und alle anderen Anträge ausfallen zu lassen. Als Deckungsvorschlag habe er auf die Einwendungen des Bundesfinanzministers vorgeschlagen, den Beginn der Steuerreform auf den 1. 1. 1955 zu verschieben. Der Ausschuß habe sich darauf geeinigt.</p>
+            <p>Dann wandte sich <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> einigen anderen erörterten Deckungsvorschlägen zu und behandelte deren Auswirkungen.</p>
+            <p>Zur Finanzreform teilte er mit, daß die Einführung einer neuen Bundessteuer, nämlich der Ergänzungsabgabe, vorgesehen sei, und daß der Ausschuß diese neue Steuer angenommen habe. Allerdings werde die FDP sich gegen diese Steuer aussprechen. Der Bundesfinanzminister beabsichtige, auf diese neue Steuerquelle im kommenden Haushaltsjahr mit 1,5% zurückzugreifen; das heiße, daß der einzelne auf seine bisherige Einkommensteuer 1,5% zusätzlich zu zahlen haben werde.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BoehmFranz_1953-10-06">Böhm</name>: Sowohl Finanz- wie Steuerreform seien ein groß konzipiertes Unterfangen gewesen, die sehr wesentlich für die Arbeit der Fraktion hätten sein sollen. Nun sei ein großer Teil hier sich nicht im klaren darüber, was aus dieser ursprünglichen Konzeption in Wirklichkeit geworden sei. Er halte es für notwendig, daß von den Beteiligten dazu in einzelnen Vorträgen Stellung genommen werde, die auch den Nichtfachmitgliedern der Fraktion verständlich seien. Er wolle gerne hören, was aus der Absicht geworden sei, das geltende Steuersystem von den historischen Zuwüchsen der letzten Jahrzehnte zu befreien und wieweit durch die Steuerreform die beabsichtigte Initialzündungswirkung erzielt werde. Er bitte darum, daß dieser Überblick gegeben werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> erwidert, daß von Regierungsseite wie von den interessierten Kreisen seit Jahren die organische Steuerreform verlangt worden sei und daß man sie auch angekündigt habe. Wenn man sich an die Erklärungen des Bundesfinanzministers aus früheren Jahren erinnere, dann habe die eingehende Untersuchung ergeben, daß das bisherige Steuersystem, soweit es sich in direkte und indirekte Steuern aufteile, und das Verhältnis von direkten zu indirekten Steuern so sei, daß man am besten nichts daran ändere. Mit dieser Erkenntnis sei das Gespräch über die große Steuerreform zu Ende gewesen.</p>
+            <p>Man habe sich dann dem Gebiet der direkten Steuern zugewendet und sei daran gegangen, die vielen auf diesem Sektor vorhandenen Vergünstigungen aus dem Gesetz herauszunehmen. Hier habe man gewisse Vereinfachungen vorwiegend durch Pauschalierungen gefunden. Dieses Prinzip der Vereinfachung habe jedoch mit Rücksicht auf den sozialen Wohnungsbau durchbrochen werden müssen, da sich der Bundesfinanzminister nicht bereit erklären konnte, den sozialen Wohnungsbau durch Zurverfügungstellung eines unrentierlichen Betrages zu subventionieren. Das habe zur Wiedereinführung von § 7 c geführt. Auch habe man in § 10 zur Sicherstellung der alten Menschen einen Altersfreibetrag eingeführt.</p>
+            <p>Was die Auswirkung auf die Wirtschaft anbelangt, so bedaure er, daß es bei der Aufhebung des gespaltenen Körperschaftsteuersatzes blieb, da hier ein maßgeblicher Motor der Wirtschaft ausgeschaltet werde und der Verschuldung der Wirtschaft nicht Einhalt geboten werde. So sei die Initialzündung auf den Sektor der Betriebe beschränkt. Allerdings werde durch die Senkung des Tarifs um rund 500 Mio. DM dieser Betrag zur Belebung der Wirtschaft auf dem Weg über den Konsum frei. Damit dürfte auch diesem Prinzip entsprochen sein.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#CillienAdolf_1953-10-06">Cillien</name> schließt die Aussprache über diesen Punkt mit der Bitte, den Fraktionsmitgliedern entsprechendes Material zugänglich zu machen und die Sache im Arbeitskreis weiter zu behandeln.</p>
+            <p>3. Gewährung von Mehrbeträgen an Altrentner [Gesetzentwurf der Koalitionsfraktionen, Drucksache II/820 v. 16. 9. 1954]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> berichtet über die Beratungen des Gesetzes zur Gewährung von Mehrbeträgen an Altrentner. Der sozialpolitische Ausschuß habe beschlossen<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN005" type="comment">
+                     <p>Vgl. den mündlichen Bericht des Ausschusses, Drucksache II/879 o. D. (11. 10. 1954).</p>
+                  </note>
+               </seg>, den Kreis derjenigen, die den Mehrbetrag bekommen sollen, erheblich zu erweitern. Lebhafte Diskussionen habe es dabei um die Prozentsätze gegeben. Doch seien die ursprünglichen Vorschläge beibehalten worden. Entgegen der bestehenden Absicht habe man den Mindestbetrag nicht eingeführt, da er eine Mehrbelastung von rund 128 Mio. DM gebracht hätte.</p>
+            <p>Zur Aufbringung der Mittel war ursprünglich vorgesehen, 1% von der Arbeitslosenversicherung auf die Rentenversicherung zu verlagern, dabei sei es auch geblieben. Der Ausschuß für Arbeit habe sich ebenfalls damit einverstanden erklärt. Man müsse damit rechnen, daß im Plenum von SPD und FDP beantragt werde, daß der Bund die Kosten übernehmen solle.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN006" type="comment">
+                     <p>Die FDP-Fraktion brachte einen entsprechenden Entschließungsantrag ein (Umdruck 184 v. 14. 10. 1954), der mit Mehrheit abgelehnt wurde. Vgl. Sten. Ber., 48. Sitz. am 14. 10. 1954, S. 2372 und 2383.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Weiter sei dafür gesorgt worden, daß im Dezember in einem vereinfachten Verfahren ein Vorschuß gezahlt werden könne. Die jetzt erforderlichen Aufwendungen betrügen 826 Mio. DM, von denen 156 Mio. auf den Bund fielen. Damit sei die Kapazität erschöpft. Es sei notwendig, das Gesetz ohne Änderungsanträge durchzubringen, weil sonst im Dezember keine Auszahlungen vorgenommen werden können.</p>
+            <p>4. Geschäftsraummietengesetz [SPD-Gesetzentwurf, Drucksache II/814 v. 14. 9. 1954]</p>
+            <p>Dr. Karl <name type="Person" role="Sprecher" ref="#MuellerKarl_1949-09-07">Müller</name> berichtet zu dem Antrag der SPD auf Änderung des Geschäftsraummietengesetzes, daß es sich bei diesem Antrag um reine Agitation handele. Man versuche, sich im Hinblick auf die bevorstehenden Wahlen beim Mittelstand anzubiedern. Der Arbeitskreis II habe mit allen Stimmen beschlossen, sich für die Ablehnung des Antrags auszusprechen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN007" type="comment">
+                     <p>Der Arbeitskreis hatte keinen Beschluß gefaßt. In einer interfraktionellen Besprechung war am 8. 10. 1954 die Ablehnung des Antrags beschlossen worden. Zugleich sollte jedoch ein Entschließungsantrag zu dem Gesetz eingebracht werden (Umdruck 275 v. 6. 12. 1954. Sten. Ber., 58. Sitz. am 8. 12. 1954, S. 2989 f.). Vgl. die Sitzungsprotokolle in: ACDP, I-077–031/2.</p>
+                  </note>
+               </seg> Im Plenum solle Dr. <name type="Person" role="Erwaehnung" ref="#HesbergCarl_1953-10-06">Hesberg</name> sprechen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN008" type="comment">
+                     <p>Vgl. die 1. Lesung des Gesetzes am 15. 10. 1954. Sten. Ber., 49. Sitz., S. 2409.</p>
+                  </note>
+               </seg> Es sei vorgesehen, im Ausschuß einen Antrag zu stellen, daß, wenn im sozialen Wohnungsbau größere Mengen an Wohnungen geschaffen würden, dann dort für Unterkunft des kleinen Mittelständlers zu sorgen sei.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN009" type="comment">
+                     <p>In der gemeinsamen Sitz. der Ausschüsse für Wiederaufbau und Wohnungswesen und für Bau- und Bodenrecht am 10. 9. 1954 zum Zweiten Wohnungsbaugesetz hatte <name type="Person" role="Erwaehnung" ref="#SchildHeinrich_1953-10-06">Schild</name> (DP) eine stärkere Berücksichtigung des Mittelstandes in den Bestimmungen des Gesetzes gefordert, was jedoch den sofortigen Widerstand der SPD-Vertreter hervorgerufen hatte. Weitere Initiativen wurden nicht ermittelt. Parl. Arch., 33. Ausschuß.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. Bergarbeiterwohnungsbau [Drucksache II/657 v. 1. 7. 1954]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HarnischfegerJohann_1953-10-06">Harnischfeger</name> berichtet zu dem Gesetz über den Bergarbeiterwohnungsbau, daß dieses Gesetz zum 31. Oktober ablaufe. Als man damals pro Tonne Steinkohle 2 DM und pro Tonne Braunkohle 1 DM zur Finanzierung des Wohnungsbaus erhoben habe, hätten im Bergbau 92 000 Wohnungen gefehlt. Bis zum 31. 12. 1953 seien 88 000 Wohnungen gebaut worden. Doch sei durch Neueinstellungen, durch Familienzusammenführung und durch Eheschließungen eine große Zahl neuer Wohnungssuchender dazugekommen, so daß nun doch noch 65 000 Wohnungen notwendig seien. Da in diesem Jahre noch mit der Fertigstellung von 25 000 Wohnungen zu rechnen sei, werde also ein Bedarf von 40 000 Wohnungen übrigbleiben.</p>
+            <p>Aus diesen Gründen sei die Bundesregierung gezwungen gewesen, die Änderung des Bergarbeiterwohnungsbaugesetzes vorzulegen. Im Ausschuß sei man sich über die Notwendigkeit klargeworden, habe jedoch die Änderung der Sätze auf 1 DM und 50 Pfg. beschlossen.</p>
+            <p>Auch habe man eine stärkere Förderung des Eigenheimbaus und der Kleinsiedlung für notwendig gehalten und wolle einen gewissen Prozentsatz für die Finanzierung von Aufschließungskosten aufwenden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN010" type="comment">
+                     <p>Vgl. den mündlichen Bericht des Ausschusses für Wiederaufbau und Wohnungswesen, Drucksache II/817 v. 15. 9. 1954.</p>
+                  </note>
+               </seg> Er bittet die Fraktion, das Gesetz in dieser Form zu unterstützen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BroennerJosef_1949-09-07">Brönner</name> vertritt die Meinung, daß man dem Gesetz nicht zustimmen solle. Seinerzeit sei gesagt worden, der notwendige Wohnungsbau könne in drei Jahren durchgeführt werden, habe [man] als Begründung die Kohlennot angeführt und erklärt, daß man mit 92 000 zusätzlichen Wohnungen zufrieden sei. Nun seien die Wohnungen gebaut, Kohlennot sei auch nicht mehr, es habe sogar Feierschichten gegeben. Die Wohnungsnot, auf die man sich jetzt berufe, gäbe es in allen Ländern. Nordrhein-Westfalen bekomme ja seinen Anteil an den 500 Mio. DM des Bundes für den Wohnungsbau auch schon auf Grund eines Schlüssels, der auf der Wohnungsnot aufgebaut sei. Außerdem habe man den Hausbrand im Preis erhöht, und damit habe der Kohlenbergbau 190–200 Mio. DM mehr eingenommen. Dieses Geld könne man doch verwenden. Auch kämen noch 40–45 Mio. DM darlehensweise von der Montanunion; das sei doch auch Geld. Wenn man noch bedenke, daß Nordrhein-Westfalen außerdem die 1 000 Mio. DM Investitionshilfe bekommen habe, dann sollte man doch meinen, daß es seinen Wohnungsbau ebenso selbst finanzieren könne wie die anderen Länder auch.</p>
+            <p>Süddeutschland habe durch die Frachten viel höhere Preise für Kohle als Nordrhein-Westfalen und solle nun auch noch zu diesem erhöhten Preis die Kohlenabgabe zahlen. Die Bundesbahn solle auch noch einmal 10 Mio. DM geben; dabei habe sie selbst 45 000 Wohnungssuchende beschäftigt, und dies alles während die »Bonner Rundschau« am 8. 10. zu berichten weiß, daß in Nordrhein-Westfalen 640 Mio. DM an Baumitteln eingefroren lägen und nicht hinausgegeben würden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN011" type="comment">
+                     <p>»640 Millionen Baumittel ›eingefroren‹«. »Bonner Rundschau« v. 8. 10. 1954.</p>
+                  </note>
+               </seg> Angeblich kämen die Bewilligungsstellen mit der Verteilung nicht voran, und dann schreie man gleichzeitig nach Geld für den Wohnungsbau. So sollte Nordrhein-Westfalen imstande sein, seinen Wohnungsbau genauso zu lösen, wie die anderen Länder und es nicht nötig haben, auf die Pfennige der kleinen Leute zurückzugreifen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeukertEdmund_1953-10-06">Leukert</name> weist darauf hin, daß <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name> sich bei den Beratungen nicht habe durchsetzen können. Auch werden die 40 000 Wohnungen nicht nur in Nordrhein-Westfalen, sondern überall, wo Bergbau sei, benötigt. Er empfehle der Fraktion, dem Gesetz zuzustimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> betont ebenfalls, daß es sich nicht um ein Gesetz zugunsten Nordrhein-Westfalens handele. Im übrigen werde die Kohlenabgabe wahrscheinlich im Laufe der nächsten Zeit abgebaut werden, um im internationalen Wettbewerb bestehen zu können. Dadurch, daß die Kohle ins Grüne wachse, seien erhebliche Aufwendungen notwendig. Auch er empfehle Annahme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> weist darauf hin, daß man Wert darauf legen müsse, daß die im Bergbau beschäftigten Menschen eine vernünftige Wohnung hätten, sonst werde man keinen Nachwuchs an Arbeitskräften haben, und das werde sich später bitter rächen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> dankt <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name> für die achtenswerte und sachliche Weise seiner Argumentation und stellt fest, daß die Fraktion der Ansicht sei, daß man dem Gesetz zustimmen solle.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN012" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name> äußerte auch im Bundestagsplenum seine Bedenken gegen das Gesetz, das schließlich gegen eine Stimme angenommen wurde. Vgl. Sten. Ber., 49. Sitz. am 15. 10. 1954, S. 2405–2408.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. Küstenplan [Antrag <name type="Person" role="Erwaehnung" ref="#DannemannRobert_1949-09-07">Dannemann</name>, <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1953-10-06">Müller</name> (Wehdel), Dr. <name type="Person" role="Erwaehnung" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Erwaehnung" ref="#PetersGeorg_1949-09-07">Peters</name> und Gen., Drucksache II/736 v. 15. 7. 1954]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> berichtet dann zum Küstenplan und gibt eine Darstellung der Verhältnisse an der Nordseeküste, die im Zusammenhang mit der holländischen Katastrophe<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN013" type="comment">
+                     <p>Anfang Februar 1953 hatte eine verheerende Sturmflut weite Küstenteile West- und Nordeuropas überschwemmt. Aufgrund von Dammbrüchen waren die Niederlande und Belgien besonders schwer betroffen gewesen. Vgl. FAZ v. 2. 2. 1953.</p>
+                  </note>
+               </seg> Beunruhigung ausgelöst hätten. Er bittet die Fraktion um Zustimmung zu der Vorlage.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt das Einverständnis der Fraktion fest.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN014" type="comment">
+                     <p>Der Bundestag überwies den Antrag am 15. 10. 1954 an den Haushaltsausschuß und den Ausschuß für Ernährung, Landwirtschaft und Forsten. Vgl. Sten. Ber., 49. Sitz., S. 2416.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>7. Weihnachtsbeihilfen [GB/BHE-Gesetzentwurf, Drucksache II/798 v. 9. 9. 1954, DP-Antrag, Drucksache II/805 v. 11. 9. 1954 (am 12. 10. 1954 zurückgezogen) und SPD-Antrag, Drucksache II/845 v. 25. 9. 1954]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchuettlerJosef_1949-09-07">Schüttler</name> berichtet über die Beratungen der Arbeitskreise II und IV über die Weihnachtsbeihilfen. Der Antrag der SPD werde ca. 600 Mio. DM kosten; diese seien nicht aufzubringen. Die Regierung habe bereits vor vier Wochen die Länder davon verständigt, daß sie eine gleiche Regelung wie im vorigen Jahr beabsichtige. Die Zuwendungen sollten nicht nur die Fürsorgeberechtigten bekommen, sondern alle, die nicht 110% des Fürsorgesatzes erreichen. Das bedeute für den Bund 65 Mio. für Länder und Gemeinden 80 Mio. DM.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN015" type="comment">
+                     <p>Erlaß »Weihnachtsbeihilfe 1954« v. 2. 9. 1954. GMBl. 5/1954, S. 441.</p>
+                  </note>
+               </seg> Der Arbeitskreis habe sich hinter diesen Vorschlag der Regierung gestellt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt fest, daß die Fraktion dem zustimme.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN016" type="comment">
+                     <p>Vgl. Sten. Ber., 60. Sitz. am 10. 12. 1954, S. 3092–3095.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zum Thema Lastenausgleich [GB/BHE-Gesetzentwurf, Drucksache II/344 v. 18. 3. 1954, und CDU/CSU-Gesetzentwurf, Drucksache II/571 v. 4. 6. 1954] findet keine Beratung statt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN017" type="comment">
+                     <p>Vgl. ebd., 49. Sitz. am 15. 10. 1954, S. 2421f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. Bundesversorgungsgesetz [SPD-Gesetzentwurf Drucksache II/793 v. 2. 9. 1954]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> wendet sich dann der Vorlage zum Bundesversorgungsgesetz zu. Hier seien bei der verschiedenen Art der Forderungen die Schwierigkeiten sehr groß. Es sei dem Herrn Bundeskanzler mehrfach dargelegt worden, daß wenigstens innerhalb der Koalition Ordnung geschaffen werden müsse, doch sei die beantragte Koalitionsbesprechung nicht zustande gekommen. Morgen finde im Kabinett dazu eine Erörterung statt. Es sei aber zweifelhaft, ob es zu einer Einigung kommen könne.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN018" type="comment">
+                     <p>Nach Koalitionsbesprechungen am 10. und 11. 11. 1954 fand die erste Behandlung des Themas im Kabinett am 12. 11. 1954 statt, wurde hier aber nicht abgeschlossen. Vgl. Kabinettsprotokolle 1954, S. 511f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Arbeitskreis schlage vor, wenn es zu keiner Einigung komme, den Punkt noch einmal von der Tagesordnung abzusetzen. Jedenfalls müsse aber auch von der CDU ein Antrag zu dieser Sache gestellt werden, was natürlich schon wegen der Fristen außerordentlich schwer sei.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN019" type="comment">
+                     <p>Die 1. Lesung der verschiedenen Anträge zur Verbesserung der Kriegsopferversorgung wurde nicht verschoben und fand am 15. 10. 1954 statt. Vgl. Sten. Ber., 49. Sitz., S. 2422–2439.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> weist darauf hin, daß es soweit nur habe kommen können, weil die Regierung ihrerseits nicht dem Antrag der Fraktion entsprochen habe und keine Vorlage zur Erhöhung der Grundrenten vorgelegt habe. Nichts, gar nichts sei auf diesen Antrag hin vom Bundesminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> unternommen worden; jetzt seien die Folgen da.</p>
+            <p>Sie halte es für notwendig, daß die CDU/CSU nun selbst noch mit Vorschlägen auftrete. Bis jetzt sei sie der Fraktion und der Regierung gegenüber loyal geblieben, aber nun müsse etwas geschehen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN020" type="comment">
+                     <p>Die CDU/CSU-Fraktion brachte geschlossen keinen Antrag mehr ein. Lediglich Frau <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Maucher</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> und Gen. legten am 14. 10. 1954 einen Entwurf zur Änderung des Bundesversorgungsgesetzes vor (Drucksache II/887).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> zählt auf, welche Summen durch die vorliegenden Anträge insgesamt zur Debatte stünden:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Familienausgleichskassen:</cell>
+                  <cell>450 Mio. DM</cell>
+               </row>
+               <row>
+                  <cell>Mehrbeträge in der Rentenversicherung:</cell>
+                  <cell>826 Mio. DM</cell>
+               </row>
+               <row>
+                  <cell>Anträge der FDP, BHE und SPD:</cell>
+                  <cell>885 Mio. DM</cell>
+               </row>
+               <row>
+                  <cell>Antrag der SPD (13. Monatsrente):</cell>
+                  <cell>500 Mio. DM</cell>
+               </row>
+               <row>
+                  <cell>Antrag der SPD (Weihnachtsbeihilfe):</cell>
+                  <cell>530 Mio. DM</cell>
+               </row>
+               <row>
+                  <cell>Aufbesserung der Unterhaltshilfe:</cell>
+                  <cell>
+                     <hi rendition="#u">300 Mio. DM</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>3 500 Mio. DM [sic!]</cell>
+               </row>
+            </table>
+            <p>Wenn man abziehe, was aus anderen Quellen gezahlt werde, fielen immer noch 2 000 Mio. DM auf den Bund.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> greift den Gedanken <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horns</name> auf, daß er zur Frage des Bundesversorgungsgesetzes nicht schweigen könne. Er habe dem Bundeskanzler mitgeteilt, daß diese Dinge in der Koalition besprochen werden sollen.</p>
+            <p>Auch der Plan von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> koste rund 650 Mio. DM. Zwar werde durch einen gewissen Auslauf ein Teil der Kosten wieder herauskommen, aber wenn man einen solchen Antrag stelle, werde man nicht wieder zurückkönnen. Gewiß habe Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> recht, daß Bundesminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> nichts getan habe, und die Fraktion, nachdem sie auf Initiative verzichtete, stehe nun vor der peinlichen Aufgabe, diese Untätigkeit des Arbeitsministers auszugleichen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> erläutert, daß nach dem Kriegsopfergesetz ein Teil der Renten bei steigendem Einkommen wegfalle. Bis jetzt seien 35 000 Kriegsopfer noch nicht in Arbeit. Wenn man diesen Arbeit gäbe, werde weitere Ausgleichsrente wegfallen.</p>
+            <p>Bei der zweiten Novelle, deren Kosten mit 400 Mio. DM veranschlagt waren, habe in Wirklichkeit kein Pfennig aufgewendet werden müssen, weil die Arbeitsleistung der Kriegsopfer die Aufwendung vollständig wettgemacht habe. Bald werde man auf diese Arbeitskräfte in der Industrie angewiesen sein.</p>
+            <p>Der Kriegsopferetat sei ein sterbender Etat, allein 110 000 Waisenkinder wüchsen im nächsten Jahre aus der Rentenversorgung heraus. Eine weitere Entlastung bringe das natürliche Ende der Versorgung für die Veteranen des Ersten und Zweiten Krieges.</p>
+            <p>Sie sei überzeugt, daß in 2–3 Jahren die jetzige Erhöhung voll ausgeglichen sein werde, die auch keine 644 Mio. DM betrage, weil durch die Eingliederung in den Arbeitsprozeß Ausgleichsrenten wegfielen. Allerdings liege ein Risiko in den 450 000 noch nicht bearbeiteten Rentenanträgen, so daß nicht mit absoluter Sicherheit die finanziellen Auswirkungen angegeben werden könnten. Sie halte jedoch den Voranschlag des Arbeitsministers für überhöht.</p>
+            <p>Sie wolle nichts über die Wirkung sagen, die es haben werde, wenn man die alten Soldaten gegenüber den neuen vernachlässige. Man solle nicht übersehen, daß die Kriegsopfer – auch die SPD-Mitglieder der Kriegsopferverbände – den Wehrbeitrag bejahten.</p>
+            <p>Sie wolle keine überhöhten Forderungen stellen, sondern beschränke sich auf das sachliche Minimum, das soziale Befriedung gewährleiste. Dies müsse aber geschehen, da es nicht würdig sei, wenn vier oder fünf Parteien das Schicksal der Kriegsopfer zu ihrem parteipolitischem Spiel mißbrauchten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BartramWalter_1952-05-13">Bartram</name> unterstreicht die politische Bedeutung dieses Gesetzes. Wenn es nicht ginge, mit der Koalition zu konkreten Abmachungen zu kommen, müsse unbedingt versucht werden, die Mehrheit für die Vorschläge von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> zu sichern.</p>
+            <p>Maucher bringt seine Überzeugung zum Ausdruck, daß Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> nur das Dringendste fordere. Es sei damals ein schwerer Fehler gewesen, daß man den Vorsitz im Kriegsopferausschuß dem BHE überlassen habe. <name type="Person" role="Erwaehnung" ref="#PetersenHelmut_1953-10-06">Petersen</name> hielte es nicht einmal für notwendig, mit der CDU über diese Dinge zu verhandeln. Die Regierungserklärung und der Fraktionsvorsitzende hätten sich positiv mit der Frage der Kriegsopfer beschäftigt. Es sei nun notwendig, daß die Fraktion auch etwas tue und nicht nur den anderen Parteien das Feld überlasse. Er bitte deshalb dringend, mit einem eigenen Vorschlag ins Plenum zu gehen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schlägt vor, morgen eine Aussprache im kleinen Kreis mit Minister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> durchzuführen. Es sei dringend notwendig, am Freitag nicht nur zu schweigen und sich darauf zu beschränken, dann in den Ausschüssen die Anträge der anderen Fraktionen zu unterstützen. Man sollte auch noch einmal eine Fraktionssitzung zu diesem Thema abhalten. Er stelle das Einverständnis der Fraktion dazu fest.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN021" type="comment">
+                     <p>Am folgenden Tag fand in der Fraktion eine Aussprache zu diesem Thema im Beisein von Bundesminister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> statt. Siehe Nr. 91, 2.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Punkte:</p>
+            <p>Inanspruchnahme der Einkommensteuer [Drucksache II/201 v. 23. 12. 1953],</p>
+            <p>Investitionshilfe [FDP-Anfrage, Drucksache II/602 v. 11. 6. 1954, und Antrag <name type="Person" role="Erwaehnung" ref="#RaestrupBernhard_1949-09-07">Raestrup</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Josef <name type="Person" role="Erwaehnung" ref="#SpiesJosef_1949-09-07">Spies</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und Gen., Drucksache II/676 v. 7. 7. 1954],</p>
+            <p>Wirtschaftsplan des ERP-Sondervermögens [Drucksache II/653 v. 30. 6. 1954] lösen keine Aussprache aus. Es wird beschlossen, diese Anträge den zuständigen Ausschüssen zu überweisen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN022" type="comment">
+                     <p>Vgl. Sten. Ber., 49. Sitz. am 15. 10. 1954, S. 2439f. und 2442–2450 sowie 51. Sitz. am 21. 10. 1954, S. 2554, in der der Bundestag den Antrag betr. das ERP-Vermögen in der Fassung des Ausschusses annahm.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>9. Bundesentschädigungsgesetz [SPD-Änderungsantrag, Drucksache II/811 v. 14. 9. 1954]</p>
+            <p>Prof. Böhm führt zu dem Antrag auf Änderung des Bundesentschädigungsgesetzes aus, daß nach Behandlung der Frage im Arbeitskreis I Zustimmung und Überweisung an den Ausschuß vorgeschlagen werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bittet Dr. <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name>, eventuelle Angriffe des »Abgeordneten« Dr. <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> zu beantworten. An sich werde es ja nachgerade peinlich, daß diese Materie noch nicht geregelt sei, und es diene auch nicht dem Ansehen Deutschlands im Ausland, wie diese Sache gehandhabt werde. Man müsse rasch und endgültig zu einem Abschluß kommen. Hier liege eine sittliche Verpflichtung vor, nicht nur zu reden, sondern auch zu handeln.<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN023" type="comment">
+                     <p>Die Novelle zur Änderung des Bundesergänzungsgesetzes zur Entschädigung für Opfer der nationalsozialistischen Verfolgung, die eine Fristverlängerung für die Anmeldung von Schäden bis zum 1. 10. 1955 vorsah, wurde am 15. 10. 1954 in 1., 2. und 3. Lesung einstimmig angenommen. Vgl. ebd., 49. Sitz., S. 2450–2455.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>10. Einbeziehung der Spessartgebiete in das Sanierungsprogramm [GB/BHE-Antrag, Drucksache II/572 v. 4. 6. 1954]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> beantragt, den Antrag des BHE auf Einbeziehung der Spessartgebiete in das Sanierungsprogramm auf Grund der Ergebnisse der Beratungen im Ausschuß für Grenzlandfragen der Regierung als Material zu überweisen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt die Zustimmung der Fraktion fest<seg type="note">
+                  <note xml:id="cdu-csu-02_1954-10-13-t1520_EP_FN024" type="comment">
+                     <p>Vgl. ebd., 52. Sitz. am 22. 10. 1954, S. 2568–2573.</p>
+                  </note>
+               </seg> und schließt die Sitzung um 18.30 Uhr.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

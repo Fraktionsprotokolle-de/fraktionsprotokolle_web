@@ -1,531 +1,967 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?> <?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="gruene-11_1987-05-05-t0000_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die Grünen im Bundestag. Sitzungsprotokolle und Anlagen. 1987–1990.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 14/II, 2 Halbbände.</title>
-						<author>Wolfgang Hölscher</author>
-						<author>Paul Kraatz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2015</date>
-						<idno type="DNB">https://d-nb.info/108115022X</idno>
-						<idno type="DNB">https://d-nb.info/1096231913</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv Grünes Gedächtnis (AGG)</institution>
-							<idno>B.II.1, 2135</idno>
-							<objectName>Protokoll der Fraktionssitzung vom 05. 05. 1987</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Ediertes Protokoll einer Fraktionssitzung der Grünen am 5. Mai 1987</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>16 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1987-05-05"><time type="start"/><time type="end"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#NN_Genderunbekannt"/><idno type="sitzung"><idno type="wp">11</idno><idno type="Fraktion-Landesgruppe">Grüne</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-12-06" who="#JuengerkesSven" status="draft" n="3">&lt;group> aufgelöst.</change>
-			<change when="2022-05-27" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt, front vereinheitlicht</change>
-			<change when="2022-06-14" who="#WeistenhoeferSimon" status="draft" n="5">Sitzungsverlauf (Inhalt)</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="gruene-11_1987-05-05-t0000_EP_SVP-1" corresp="#gruene-11_1987-05-05-t0000_EP_div_SVP-1">A. TOP 1: Mitteilungen und Berichte. – TOP (erg.): Angelika <name type="Person" role="Sprecher" ref="#BeerAngelika_1987-02-18">Beer</name>; Besprechung der Resolution zur Unterstützung der Hasselbach-Blockade. – TOP 3:  Laufende parlamentarische Woche. –TOP 2: Schwerpunktthema: Politische Auswertung der Bundesdelegiertenkonferenz vom 01.–03. 05. 1987 in Duisburg. – Fortsetzung TOP 3: Laufende parlamentarische Woche. – TOP (erg.): Antrag Angelika <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name>; <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>/<name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name> zum Thema Mittelstreckenraketen. Volkszählungsdebatte.</item>
-				</list>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Abgeordnete: <name type="Person" role="Erwaehnung" ref="#Beck-OberdorfBeckMarieluise_1983-03-29">Beck-Oberdorf</name>, <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name>, <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermann</name>, <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>, <name type="Person" role="Erwaehnung" ref="#HaefnerGerald_1987-02-18">Häfner</name>, <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name>, <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>, <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>, <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>, <name type="Person" role="Erwaehnung" ref="#RustBaerbel_1987-02-18">Rust</name>, <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name>, <name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>, <name type="Person" role="Erwaehnung" ref="#SellinPeter_1987-02-18">Sellin</name>, <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>, <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name>, <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>, <name type="Person" role="Erwaehnung" ref="#VollmerAntje_1983-03-29">Vollmer</name>, <name type="Person" role="Erwaehnung" ref="#VolmerLudger_1985-04-10">Volmer</name>, <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name> [u.a.]<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN001" type="comment"><p>Eine Anwesenheitsliste liegt für diese Fraktionssitzung nicht vor. Die Anwesenheit wurde daher gemäß Protokoll erfasst und ist unvollständig.</p></note></seg></p>
-				<p>Fraktionsmitarbeiterinnen und Fraktionsmitarbeiter: <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>, <name type="Person" role="Erwaehnung" ref="#VogtRoland_1983-03-29">Vogt</name></p>
-				<p>Gäste: Christian <name type="Person" role="Erwaehnung" ref="#SchmidtChristian_1985-03-22">Schmidt</name> (Sprecher des Bundesvorstands der Partei DIE GRÜNEN)</p>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-1">
-				<head>A.</head>
-				<p>TOP 1: Mitteilungen und Berichte</p>
-				<p>Christa <name type="Person" role="Sprecher" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> berichtet vom FraVo:</p>
-				<p>Vorstandsprotokolle – sollten spätestens mittwochs, möglichst schon dienstags vor der Fraktionssitzung vorliegen.</p>
-				<p>Gentechnologie – soll auf Bitte des AK VII Schwerpunktthema der Sitzung am 19. Mai sein. Da der Termin mit der <name type="Person" role="Erwaehnung" ref="#GorbatschowMichailSergejewitsch">Gorbatschow</name>-Debatte zusammenfällt, sind der 2. Juni bzw. der 23. Juni mögliche Ausweichtermine.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN002" type="comment"><p>Zur Behandlung des Schwerpunktthemas »Gorbatschow« am 16. Juni 1987 vgl. Dok. 23. – Zur Behandlung des Schwerpunktthemas »Gentechnologie« am 29. September 1987 vgl. Dok. 31.</p></note></seg></p>
-				<p>TOP-Ergänzungspunkt: Angelika <name type="Person" role="Sprecher" ref="#BeerAngelika_1987-02-18">Beer</name> – Besprechung der Resolution zur Unterstützung der Hasselbach-Blockade<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN003" type="comment"><p>Zur Blockade des amerikanischen Cruise-Missile-Depots in Hasselbach am 28. Mai 1987 vgl. den Artikel »Raketenbasis Hasselbach: Alle Zufahrten blockiert«; »taz«, 29. Mai 1987, S. 1 f.</p></note></seg></p>
-				<p>TOP 3: (vorgezogen) Laufende parlamentarische Woche</p>
-				<p>Hubert <name type="Person" role="Sprecher" ref="#KleinertHubert_1983-03-29">Kleinert</name> stellt den Ablauf der parlamentarischen Woche dar:</p>
-				<p>Mittwoch, 6. 5.:</p>
-				<p>1. Debatte über das Jahresgutachten des Sachverständigenrates</p>
-				<p>Redezeit der GRÜNEN: 30 Minuten. Auf Beschluß des AK I sollen Halo <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name> und Eckard <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name> zum Jahresgutachten Stellung nehmen.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN004" type="comment"><p>Am 6. Mai 1987 beriet der Bundestag das »Jahresgutachten 1986/87 des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung«. Vgl. BT Drs. 10/6562; BT Plenarprotokoll 11/9, S. 457–509; zu den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name> und <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name> vgl. S. 475–478 und S. 493–495.</p></note></seg> Willi <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name> beantragt 5 Minuten Redezeit, um den Gesetzesentwurf der GRÜNEN zum Überstundenabbau<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN005" type="comment"><p>Zum Gesetzentwurf zum Überstundenabbau vom 2. April 1987 vgl. BT Drs. 11/136.</p></note></seg> vorzustellen.</p>
-				<p>Abstimmungsergebnis:</p>
-				<p>Ja: überwältigende Mehrheit.</p>
-				<p>Nein : 3.</p>
-				<p>Enthaltung : 4.</p>
-				<p>Beschluß: Willi <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name> erhält 5 Minuten Redezeit.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN006" type="comment"><p>Zur Rede des Abg. <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name> am 6. Mai 1987 vgl. BT Plenarprotokoll 11/9, S. 503.</p></note></seg></p>
-				<p>2. Aufruf der Gesetzentwürfe der GRÜNEN zur Problematik der Wiedergutmachung<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN007" type="comment"><p>Gesetzentwurf zur Regelung einer angemessenen Versorgung für alle Opfer nationalsozialistischer Verfolgung in der Zeit von 1933 bis 1945; Antrag »Entschädigung für Zwangsarbeit während der Nazi-Zeit«; Antrag »Nichtigkeitserklärung des Gesetzes zur Verhütung erbkranken Nachwuchses vom 14. Juli 1933 und der nach diesem Gesetz ergangenen Entscheidungen«. Vgl. BT Drs. 11/141, 11/142, 11/143.</p></note></seg>, die ohne Debatte an die Ausschüsse überwiesen werden. Geschäftsführerbesprechung nach dem Hearing: vier Vorlagen sollen an den Ausschuß für Bildung ... überwiesen werden.</p>
-				<p>Donnerstag, 7. 5.:</p>
-				<p>1. (9.00 Uhr) Erklärung der Bundesregierung zum Stand der Abrüstungsgespräche<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN008" type="comment"><p>Am 7. Mai 1987 gab Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KohlHelmut_1976-12-14">Kohl</name> im Bundestag eine Regierungserklärung zum Stand der Abrüstungsgespräche mit der UdSSR ab. In diesem Zusammenhang wurden auch mehrere Anträge zur Frage der Abrüstung der nuklearen Mittelstreckenraketen in Europa behandelt. Vgl. BT Plenarprotokoll 11/10 S. 524–565.</p></note></seg></p>
-				<p>2. 1. Beratung der Gesetzesvorlage der Bundesregierung zum Kapitalschutzabkommen<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN009" type="comment"><p>Der Bundestag behandelte am 7. Mai 1987 in erster Beratung das Ratifizierungsgesetz zum Vertrag vom 30. April 1986 zwischen der Bundesrepublik und Ungarn über die Förderung und den gegenseitigen Schutz von Kapitalanlagen. Vgl. BT Drs. 11/26; BT Plenarprotokoll 11/10, S. 565 f.</p></note></seg></p>
-				<p>3. Fragestunde</p>
-				<p>4. (15.00 Uhr) Aktuelle Stunde der SPD zur Kriegswaffenexport-Politik der Bundesregierung in Länder des Nahen und Mittleren Ostens; Beiträge der GRÜNEN von Uschi <name type="Person" role="Erwaehnung" ref="#Eid-SimonEidUrsula_1985-04-17">Eid</name> und Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN010" type="comment"><p>Zur Aktuellen Stunde am 7. Mai 1987 vgl. BT Plenarprotokoll 11/10, S. 589–602.</p></note></seg></p>
-				<p>5. (16.00 Uhr) Volkszählungsdebatte</p>
-				<p>Zwei Lesungen des Gesetzentwurfs der GRÜNEN zur Aufhebung des Volkszählungsgesetzes.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN011" type="comment"><p>Zum Gesetzentwurf vom 14. April 1987 betr. »Aufhebung des Volkszählungsgesetzes 1987« vgl. BT Drs. 11/170.</p></note></seg> In beiden Lesungen erhalten die GRÜNEN mindestens 10 Minuten Redezeit. Der Gesetzentwurf muß noch in der Fraktion verabschiedet werden. Hubert <name type="Person" role="Sprecher" ref="#KleinertHubert_1983-03-29">Kleinert</name> schlägt vor für den 1. Redebeitrag: Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name>; für den 2. Redebeitrag: Thomas <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name>.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN012" type="comment"><p>Zur ersten und zweiten – und damit nach Ablehnung letzten – Beratung des Gesetzentwurfs am 7. Mai 1987 und den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name> und <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name> vgl. BT Plenarprotokoll 11/10, S. 602–621.</p></note></seg></p>
-				<p>Freitag, der 8. 5.:</p>
-				<p>1. Erste Beratung eines Gesetzes über die Rente für »Trümmerfrauen«. Redezeit der GRÜNEN: 7 Minuten. Rednerin: Trude <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name><seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN013" type="comment"><p>Zur ersten Beratung des von der Bundesregierung eingebrachten Kindererziehungsleistungs-Gesetzes im Bundestag am 8. Mai 1987 vgl. BT Plenarprotokoll 11/11, S. 635–649.</p></note></seg></p>
-				<p>2. Gesetzentwurf zur Verlängerung des Arbeitslosengeldes. Redner: Willi <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name><seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN014" type="comment"><p>Zur ersten Beratung des von der Bundesregierung eingebrachten Gesetzentwurfs im Bundestag am 8. Mai 1987 vgl. BT Plenarprotokoll 11/11, S. 649–662.</p></note></seg></p>
-				<p>3. Bundesversorgungsgesetz. Rednerin: Trude <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name><seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN015" type="comment"><p>Zur ersten Beratung des von der Bundesregierung eingebrachten Gesetzentwurfs im Bundestag am 8. Mai 1987 vgl. BT Plenarprotokoll 11/11, S. 662–670.</p></note></seg></p>
-				<p>4. Aktuelle Stunde der GRÜNEN zu den neuesten Hinweisen auf einen alarmierenden Anstieg bei der Verseuchung von Grund- und Trinkwasser durch den Einsatz von Pflanzenschutzmitteln. Rednerinnen: Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> und Dora <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name>.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN016" type="comment"><p>Zur Aktuellen Stunde am 8. Mai 1987 betr. »Neueste Hinweise auf einen alarmierenden Anstieg bei der Verseuchung von Grund- und Trinkwasser durch den Einsatz von Pflanzenschutzmitteln« vgl. BT Plenarprotokoll 11/11, S. 671–685; zur den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> und <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name> vgl. S. 671 f und S. 676.</p></note></seg></p>
-				<p>TOP 2: Schwerpunktthema: Politische Auswertung der Bundesdelegiertenkonferenz vom 01.–03. 05. 1987 in Duisburg<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN017" type="comment"><p>Vgl. dazu Anlage A. – Zur 9. ordentlichen Bundesversammlung der GRÜNEN vgl. auch AAG, B.II.1., 2289.</p></note></seg></p>
-				<p>Peter <name type="Person" role="Sprecher" ref="#SellinPeter_1987-02-18">Sellin</name> stellt sein Papier »Politische Einschätzung der Lage der Grünen im Frühjahr 87« als Diskussionsgrundlage vor.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN018" type="comment"><p>Vgl. hier Anlage B.</p></note></seg></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>S. [<name type="Person" role="Sprecher" ref="#SellinPeter_1987-02-18">Sellin</name>] wertet die BuVo-Wahl als Orientierungswahl;<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN019" type="comment"><p>Auf dem Bundesparteitag vom 1. bis 3. Mai 1987 wurden Jutta <name type="Person" role="Erwaehnung" ref="#DitfurthJutta">Ditfurth</name>, Regina <name type="Person" role="Erwaehnung" ref="#MichalikRegina">Michalik</name> und Christian <name type="Person" role="Erwaehnung" ref="#SchmidtChristian_1985-03-22">Schmidt</name> zu Sprecherinnen bzw. zum Sprecher des Bundesvorstands der GRÜNEN gewählt. Diese Wahl wurde allgemein als Niederlage des »Realoflügels« der Partei interpretiert. Vgl. dazu etwa den Artikel »Bombardieren, Boykottierten, Ignorieren? Reaktionen auf das Ergebnis der Bundesvorstandswahl bei den Grünen«; »taz«, 4. Mai 1987, S. 5.</p></note></seg> hier sind beide Hauptströmungen gegeneinander angetreten (»Hahnenkämpfe«). Allerdings war kein politisch-strategisches Dilemma der GRÜNEN festzustellen.</p></item>
-					<item><label>–</label>
-						<p>Notwendigkeit für die Zukunft sind differenziertere politische Konzeptionen in beiden Strömungen; dies zeigt der Vorwurf Helmut <name type="Person" role="Erwaehnung" ref="#WiesenthalHelmut">Wiesenthals</name> eines »Antiintellektualismus« der GRÜNEN und der Mangel an inhaltlichen Diskussionen auf der BDK.</p></item>
-					<item><label>–</label>
-						<p>S. [<name type="Person" role="Sprecher" ref="#SellinPeter_1987-02-18">Sellin</name>] fordert eine Diskussionskultur, z. B. beim Entgiftungsprogramm; hier reicht es nicht, den Umbau der Industriegesellschaft zu fordern, sondern es müssen konkrete strategische Lösungen gefunden werden (nicht Umwelt oder Arbeitsplätze). Ebenso im Bereich Neue Technologien: hier reicht die rein ablehnende Haltung nicht aus.</p></item>
-					<item><label>–</label>
-						<p>Schlußfolgerung: Nicht in der Oppositionskultur verharren, sondern Richtungen bestimmen. Dies zeigen auch die Wähleranalysen mit einem sinkenden Anteil von Jungwählern/innen bei den GRÜNEN. Der direkte Gegensatz zur Politik der CDU/ CSU und deren Fortschrittsgläubigkeit muß aufgezeigt werden; dies ist von den neuen BuVo-Sprechern nicht aufgenommen worden.</p></item>
-				</list>
-				<p>Wilhelm <name type="Person" role="Sprecher" ref="#KnabeWilhelm_1987-02-18">Knabe</name> kritisiert, daß die GRÜNEN wohl vergessen haben, daß sie als Bündnis entstanden und groß geworden sind. Es zeigt sich eine Tendenz der einzelnen Strömungen zur herrschenden Meinung und birgt die Gefahr der Isolierung in sich.</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>K. [<name type="Person" role="Sprecher" ref="#KnabeWilhelm_1987-02-18">Knabe</name>] wertet den Versuch der BDK positiv, für die Bewegung (Basis, Anti-AKW) positive Unterstützung durchzusetzen. Allerdings hat der neue BuVo keine Anregungen gegeben (Beisp. L. <name type="Person" role="Erwaehnung" ref="#BeckmannLukas">Beckmann</name>).</p></item>
-					<item><label>–</label>
-						<p>Lob an Eckhard <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>, er hat das Interesse der Arbeitnehmer an der Stahldiskussion geweckt.</p></item>
-					<item><label>–</label>
-						<p>K. [<name type="Person" role="Sprecher" ref="#KnabeWilhelm_1987-02-18">Knabe</name>] wertet die Aufnahme der »Mütter« in die BAG Frauen positiv: haben ein Lebensrecht in der Partei erhalten.</p></item>
-					<item><label>–</label>
-						<p>Leider spielten ökologische Fragen auf der BDK eine geringe Rolle, doch gerade sie dürfen nicht vergessen werden, denn sonst sind die GRÜNEN überflüssig.</p></item>
-				</list>
-				<p>Udo <name type="Person" role="Sprecher" ref="#KnappUdo">Knapp</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Es ist richtig, daß inhaltliche Auseinandersetzungen auf der BDK nicht geführt worden sind. Gegensätze sind da, werden aber nicht ausgetragen. Es existiert keine »Mitte« bei den GRÜNEN, der Streit muß sowohl inhaltlich als auch personell geführt werden. Die Vertreter der Kritik am Sozialismus und am Kapitalismus sind den »Realos« schlichtweg überlegen.</p></item>
-					<item><label>–</label>
-						<p>Entscheidend für den Ausgang der BuVo-Wahl war, daß die realpolitischen Kräfte nicht fähig waren, so oft zu antworten wie etwa Christian <name type="Person" role="Erwaehnung" ref="#SchmidtChristian_1985-03-22">Schmidt</name>, etwa zur Frage der Vergesellschaftung. Der Streit ist auf der BDK nicht ausdiskutiert worden. Mehr Streit, mehr Auseinandersetzungen sind notwendig.</p></item>
-				</list>
-				<p>Roland <name type="Person" role="Sprecher" ref="#VogtRoland_1983-03-29">Vogt</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Nach einem Rückblick auf Offenbach<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN020" type="comment"><p>Gemeint ist wahrscheinlich die Bundesdelegiertenkonferenz der GRÜNEN vom 2. bis 4. Oktober 1981 in Offenbach, eventuell aber auch die Bundesdelegiertenkonferenz der GRÜNEN vom 12. bis 15. Dezember 1985 in Offenburg.</p></note></seg> und andere Beschlüsse (z. B. § 218) stellt sich heute nur die Frage: Wer gewinnt?</p></item>
-					<item><label>–</label>
-						<p>Tendenz zur Primitivierung der GRÜNEN (hier Realos, dort Fundis); differenzierte Positionen passen nicht mehr in dieses Bild. Beispielhaft dafür ist die fehlende Reaktion der GRÜNEN auf die Ankündigung der Staatssekretärin im Bundesverteidigungsministerium, Agnes <name type="Person" role="Erwaehnung" ref="#HuerlandHuerland-BueningAgnes_1972-12-13">Hürland</name>, die Bundeswehr solle bis 1990 für Frauen geöffnet werden,<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN021" type="comment"><p>Zu dem Vorschlag der Parlamentarischen Staatssekretärin im Bundesministerium der Verteidigung, <name type="Person" role="Erwaehnung" ref="#HuerlandHuerland-BueningAgnes_1972-12-13">Hürland-Büning</name>, vgl. den Artikel »Frauen in die Bundeswehr?«; »taz«, 4. Mai 1987, S. 9.</p></note></seg> wie auch die Diskussion um die Umrüstung der Pershing II auf Pershing I b. Es besteht zwar ein Konsens bei den GRÜNEN in dieser Frage, doch können die Positionen nicht effektiv nach außen gebracht werden.</p></item>
-					<item><label>–</label>
-						<p>»Das Primitivraster darf kein Gesetz des Handelns werden«.</p></item>
-				</list>
-				<p>Antje <name type="Person" role="Sprecher" ref="#VollmerAntje_1983-03-29">Vollmer</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>ist nicht der Meinung von Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>, daß »Duisburg in die Annalen der GRÜNEN eingehen« wird. Die GRÜNEN treten vielmehr auf der Stelle, da immer eine Seite Satisfaktion braucht. Die BuVo-Wahl basierte auf einem undemokratischen Wahlverfahren und ist putschistisch durchgesetzt worden. Die »Fundis« sind auf einem ratlosen Punkt angelangt, denn sie sind nicht mehr in der Minderheit (»regierende underdogs«). Die BuVo-Wahl war ein »richtig dicker Sieg« der »Fundis«, der für die GRÜNEN erhebliche Folgen haben wird.</p></item>
-					<item><label>–</label>
-						<p>Antje [<name type="Person" role="Sprecher" ref="#VollmerAntje_1983-03-29">Vollmer</name>] sieht für die Zukunft zwei Hauptaufgaben: die Strategien für die 90er Jahre müssen eingeleitet werden und es wird ein Wettstreit zwischen der Organisation auf Landesebene und Bundesebene entstehen. Zur Position der Unabhängigen: es gibt kein Programm, sie müssen aus der Basis heraus entstehen. »Fundis« und »Realos« sind Erben der 70er Jahre, der Auseinandersetzung zwischen Rechten und Linken.</p></item>
-					<item><label>–</label>
-						<p>Die Mütterdebatte erweist sich als Beispiel einer konkret am Ort organisierten unabhängigen Strömung mit kulturrevolutionärem Charakter.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN022" type="comment"><p>Auf der Bundesdelegiertenkonferenz vom 1. bis 3. Mai 1987 in Duisburg wurde die Einrichtung einer eigenständigen Arbeitsgruppe »Mütterpolitik« innerhalb der BAG »Frauen« beschlossen. Dieser Schritt wurde ebenso wie ein damit in Zusammenhang stehendes »Müttermanifest« auf dem Parteitag heftig diskutiert, da viele Delegierten dies als Annäherung an konservative Positionen deuteten. Vgl. dazu Anlage A. Vgl. ferner den Artikel »Flucht in den Kompromiß«; »taz«, 4. Mai 1987, S. 5.</p></note></seg> Antje [<name type="Person" role="Sprecher" ref="#VollmerAntje_1983-03-29">Vollmer</name>] begrüßt, daß Regina <name type="Person" role="Erwaehnung" ref="#MichalikRegina">Michalik</name> in den BuVo gewählt worden ist.</p></item>
-				</list>
-				<p>Waltraud <name type="Person" role="Sprecher" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>hätte sich eine andere Art der Auseinandersetzung in Duisburg gewünscht. Der Parteitag war größtenteils durch Rechenschaftsberichte der BuVo-Leute geprägt. Die Argumentation erweckte den Eindruck, als ob die GRÜNEN nach Hessen<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN023" type="comment"><p>Zum Wahlausgang in Hessen vgl. Dok. 19, TOP 4 und bes. Anm. 10.</p></note></seg> wieder bei Null anfangen würden.</p></item>
-					<item><label>–</label>
-						<p>Wichtig für eine weitere Strategie ist, daß Hessen gezeigt hat, daß es angesichts der Machtverhältnisse in der BRD unglaublich schwer ist, den Ausstieg zu beginnen. »Nur radikale Sprüche, aber keine radikale Politik«. Die BDK war durch eine Verdrängungsleistung charakterisiert, weil diese Probleme nicht aufgenommen worden sind.</p></item>
-					<item><label>–</label>
-						<p>Zur Zeit gibt es zwei Positionen: z. B. Thomas <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermanns</name> Forderung nach einer Bewußtseinsänderung bei den Menschen. Dies ist ein Avantgarde-Anspruch, obwohl kaum Konzeptionen bestehen. Auf der anderen Seite die Position, der sich Waltraud [<name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>] zurechnet, nämlich gestaltend in die Politik einzugreifen, auch mit Hilfe eines Bündnisses. Sie vergleicht die jetzige Situation mit der Uneinigkeit der Linken vor der faschistischen Machtübernahme.</p></item>
-					<item><label>–</label>
-						<p>Angesichts bestehender Probleme (Arbeitslosigkeit, Armut) ist eine Polarisierung bei den GRÜNEN zynisch, denn hier besteht kein Bewußtseinsproblem, sondern ein konkretes Problem der Machtverhältnisse, die nur mit Hilfe eines Bündnisses geändert werden können.</p></item>
-					<item><label>–</label>
-						<p>Der neue BuVo spiegelt die Verhältnisse der Partei nicht wider; Waltraud [<name type="Person" role="Sprecher" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>] fordert eine Diskussion der Sachthemen und eine Zusammenarbeit ohne ideologischen Ballast.</p></item>
-				</list>
-				<p>Willi <name type="Person" role="Sprecher" ref="#HossWilli_1983-03-29">Hoss</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>hat den Parteitag »zur Kenntnis genommen«; das Ergebnis hat deprimiert. Die Polarisierung zwischen BuVo und Bundestagsfraktion hat sich durch das Wahlergebnis gezeigt: Die Fraktion muß sich auf eine neue Linie einstellen. Sowohl die »Fundamentalo« als auch die »Realo«-Strömung sind zu sehr auf die SPD fixiert. Die »Fundis« wollen nicht zur grünen SPD werden, die GRÜNEN sollen vielmehr zur geläuterten sozialistischen Partei werden. Die reinen »Koalos« sind rein auf die SPD fixiert.</p></item>
-					<item><label>–</label>
-						<p>Eine Änderung läßt sich nur über eine »Mitte« erreichen, deren Hauptanliegen die Auseinandersetzung mit der großen ökologischen Krise ist, die auch eine gesellschaftliche Krise ist. Eine neue Mehrheit über das reine Spektrum rot-grün hinaus bedeutet die Öffnung gegenüber allen vorhandenen Strömungen, also die Aufnahme sowohl sozialistischer, marxistischer Strömungen wie auch christlicher und liberaler radikaldemokratischer Wertvorstellungen, etwa in der Form einer Annäherung an die Christlichen Sozialausschüsse.</p></item>
-				</list>
-				<p>Charlotte <name type="Person" role="Sprecher" ref="#GarbeCharlotte_1987-02-18">Garbe</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>sie bedauert, daß es nicht möglich war, vor der BDK eine Pressekonferenz zur Verseuchung des Wassers abzuhalten, und ist besorgt, daß es vielen GRÜNEN an politischem Fingerspitzengefühl mangelt. Eine Annäherung an die Bürger sei notwendig, da sich in der Resonanz auf die GRÜNEN ein starkes Stadt-Land-Gefälle zeigt.</p></item>
-					<item><label>–</label>
-						<p>zum Thema Basisdemokratie bei den GRÜNEN: der größte Schreck war, daß die Kreisverbände keine Voten für die Vorstandswahl hatten. »Jede extreme Politik schlägt ins Gegenteil um.«</p></item>
-				</list>
-				<p>Alfred <name type="Person" role="Sprecher" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>es gibt zwei Kulturen bei den GRÜNEN: eine »bunte« und eine homogene Gruppe, die einen großen Feindbildbedarf hat. Sachthemen werden unverhältnismäßig aufgeblasen, es geht um die Demonstration von Machtkämpfen. Der Feindbildbedarf ist so groß, daß es im Grunde keinen Anspruch geben dürfte, eine qualitativ andere Politik zu machen. »Die Grünen wären gar nicht hier, wenn die Wähler wüßten, wie es in der Partei aussieht.«</p></item>
-					<item><label>–</label>
-						<p>Neues Denken ist schwer auszumachen. Es wird viel mehr Energie gegen andere Menschen mobilisiert als für Sachthemen.</p></item>
-					<item><label>–</label>
-						<p>Die Konsequenz der BDK sollte eine fruchtbare Arbeitsteilung sein; die Bundestagsfraktion soll sich einer Kontrolle durch den BuVo verweigern, sie ist allein den Wählern(/innen) auf Kreis- und Landesebene verantwortlich.</p></item>
-					<item><label>–</label>
-						<p>Die GRÜNEN waren Profiteure von Defiziten anderer Parteien, deshalb können sie nicht besser sein als die alten Parteien.</p></item>
-				</list>
-				<p>Trude <name type="Person" role="Sprecher" ref="#UnruhGertrud_1987-02-18">Unruh</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Lob an alle: U. [<name type="Person" role="Sprecher" ref="#UnruhGertrud_1987-02-18">Unruh</name>] hat den Eindruck eines offenen Umgehens aller miteinander als Ergebnis der »ersten hundert Tage«;</p></item>
-					<item><label>–</label>
-						<p>zu Hessen-Wahlergebnis: das wenige, was geleistet werden konnte, ist jetzt weg »verwallmannt«;<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN024" type="comment"><p>In Hessen regierte seit dem 24. April 1987 eine CDU-FDP-Koalition unter Ministerpräsident <name type="Person" role="Erwaehnung" ref="#WallmannWalter_1972-12-13">Wallmann</name>.</p></note></seg></p></item>
-					<item><label>–</label>
-						<p>BDK: Gefahr einer Spaltung der GRÜNEN, die BuVo-Wahl war eine Orientierungswahl; Konsequenz muß sein, daß die GRÜNEN sich nach außen so darstellen, daß sie auch gewählt werden können. Die GRÜNEN müssen auf Wählerfang, nicht auf »Wählerschreck« gehen.</p></item>
-				</list>
-				<p>Thomas <name type="Person" role="Sprecher" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>registriert Stimmen aus allen Lagern, daß es zur Zeit zwei Parteien in der grünen Partei gibt.</p></item>
-					<item><label>–</label>
-						<p>Die GRÜNEN geben zum einen ein gutes Beispiel, (s. Lob von Trude <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name> über die Offenheit), daher ist keine Selbstanklage gerechtfertigt, denn Politikbereiche werden auch positiv besetzt.</p></item>
-					<item><label>–</label>
-						<p>Parallele zu 1981 durch das Ausscheiden einiger prominenter <hi rendition="#smcap">Grüner</hi><seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN025" type="comment"><p>Anfang 1981 setzte sich eine Reihe von Gründungsmitgliedern der GRÜNEN, etwa die Gruppe um Herbert <name type="Person" role="Erwaehnung" ref="#GruhlHerbert_1969-10-20">Gruhl</name> (Grüne Aktion Zukunft) und Gisela <name type="Person" role="Erwaehnung" ref="#SchöttlerGisela">Schöttler</name>, von der Partei ab.</p></note></seg>, dennoch keine Krisenstimmung, denn der Zulauf findet in allen Bundesländern statt. Trotz aller Gegensätze ist ein Minimalkonsens vorhanden, die GRÜNEN sind immer noch eine Alternative zu den Altparteien. Allerdings erfolgt die Formulierung der Ziele meist auf den Dissens und nicht auf den Konsens hin.</p></item>
-					<item><label>–</label>
-						<p>er bedauert, daß die BuVo-Sprecher aus einer Richtung kommen und begrüßt als Ergebnis der BDK, daß die BAG Frauen eingerichtet werden konnte. Der Parteitag strahlte eine gewisse Gelassenheit aus, allerdings keine Trägheit der Delegierten.</p></item>
-					<item><label>–</label>
-						<p>Die Stimmungsmache vor der BDK war auf die Forderung ausgerichtet, der BuVo müsse die Partei widerspiegeln; das Ergebnis ist – entgegen einiger Vorwürfe – nicht undemokratisch zustandegekommen.</p></item>
-					<item><label>–</label>
-						<p>fordert, daß vorhandene Gemeinsamkeiten besser herausgestellt werden müssen und begrüßt einen offenen Streit, allerdings nicht im Sinne von »Abrechnungen« innerhalb der Fraktion.</p></item>
-				</list>
-				<p>Christa <name type="Person" role="Sprecher" ref="#VennegertsChrista_1987-02-18">Vennegerts</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>zum Ergebnis der BDK: Gewinner und Verlierer hat es nicht gegeben, doch die Einseitigkeit hat sich durchgesetzt; die Strömungsvielfalt der Partei sollte sich im BuVo widerspiegeln.</p></item>
-					<item><label>–</label>
-						<p>Für die Zukunft fordert sie eine konsequent inhaltliche Politik, auch auf den BDK’s. Die Armut an inhaltlichen Aussagen auf diesem Parteitag war beschämend und erstarrte in einer Konzentration auf sich selbst, anstelle einer Diskussion der Programmatik und der inhaltlichen Arbeit.</p></item>
-					<item><label>–</label>
-						<p>Der gegenwärtige Dissens zwischen »Realos« und »Fundis« liegt in dem Weg, der zu den gemeinsamen Zielen führen soll. »Wir brauchen nicht bescheiden zu sein, wir haben inhaltlich noch viel zu bieten.«</p></item>
-				</list>
-				<p>Halo <name type="Person" role="Sprecher" ref="#SaiboldHannelore_1987-02-18">Saibold</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>sieht in der Gründung der GRÜNEN einen historischen Kompromiß zwischen rechts und links. Allerdings wurde viel von den ursprünglichen Zielen verraten, etwa die Basisdemokratie. Statt dessen herrschen Taktieren und Manipulation der eigenen Mitglieder vor. »Wir brauchen eine Streitkultur.«</p></item>
-					<item><label>–</label>
-						<p>zum Ergebnis der BDK: es ging um Personen und Richtungen; erschreckend war die Mütterdebatte; die Polarisierung ist das größte Problem. Wichtig ist es, aufeinander zuzugehen.</p></item>
-					<item><label>–</label>
-						<p>sie hat das Gefühl, daß zur Zeit blockiert wird und keine Veränderungen angestrebt werden und hegt die Hoffnung auf die »Mitte«, die das Beste aus beiden Seiten (Flügeln) herausholen soll, d. h. Bewußtseinsveränderung und Veränderung der Machtverhältnisse.</p></item>
-				</list>
-				<p>Gerald <name type="Person" role="Sprecher" ref="#HaefnerGerald_1987-02-18">Häfner</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>zum Ergebnis der BDK: man muß mit einigen Mythen aufräumen. Die Behauptung der Presse über Aufspaltung der GRÜNEN in »Realos« und »Fundis« ist falsch, vielmehr existieren wechselnde Mehrheiten. Das »Fundi«-Lager ist auf der BDK geschlossener aufgetreten, dagegen ist jede Lagerbildung absolut suspekt. Die GRÜNEN rutschen in Fraktionszwangsverhältnisse. Vergleich zu 1979, als die GRÜNEN als Partei neuen Stils aufgetreten sind und sich im BuVo alle Flügel repräsentierten. Die Menschen achten zunehmend auf die Glaubwürdigkeit und das Auftreten der GRÜNEN, wie am Beispiel der Sprecherwahl und der Forderung Jutta <name type="Person" role="Erwaehnung" ref="#DitfurthJutta">Ditfurths</name> nach Minderheitenschutz deutlich wurde.</p></item>
-					<item><label>–</label>
-						<p>er konstatiert einen erschreckenden Verfall der politischen Kultur und fordert eine neue Debatte über die Struktur der Partei. Viele haben sich aus der Partei zurückgezogen wegen des Stils, mit dem in der Partei mit Menschen umgegangen wird. Der jetzige Zustand ist keine Durchgangsetappe, sondern ein historischer Wendepunkt.</p></item>
-				</list>
-				<p>Bärbel <name type="Person" role="Sprecher" ref="#RustBaerbel_1987-02-18">Rust</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Die GRÜNEN beschränken sich zur Zeit darauf, ihre Ansprüche zu formulieren. Sie sollen sich selbst die Frage stellen, welche Fehler gemacht worden sind.</p></item>
-					<item><label>–</label>
-						<p>Sie fordert eine Reformpolitik, wie sich am Beispiel Hessens gezeigt habe, hatte zum Teil die Forderung nach Ministerposten Vorrang vor den inhaltlichen Auseinandersetzungen und Forderungen. Notwendig sei eine kritische Kenntnisnahme: Wie setzen wir Reformpolitik in die Praxis um?</p></item>
-					<item><label>–</label>
-						<p>zur politischen »Mitte«: es gibt keine neue homogene politische Strömung; vielmehr dürfen innerhalb der einzelnen Strömungen bestimmte Fragen nicht mehr gestellt werden. Die GRÜNEN können jedoch nur existieren, weil sie sich aus vielen verschiedenen Strömungen zusammensetzen, d. h. über die »Realo-« und »Fundi«-Position hinaus.</p></item>
-				</list>
-				<p>Ludger <name type="Person" role="Sprecher" ref="#VolmerLudger_1985-04-10">Volmer</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Frage des Verhältnisses von Mehrheit, Herrschaft und Hegemonie, das heißt des Umgangs mit der Mehrheit, wurde zumeist zugunsten von Herrschaft und nicht zugunsten von Hegemonie verwandt.</p></item>
-					<item><label>–</label>
-						<p>zur Politik des alten BuVo: am Beispiel des Umbauprogramms wurde der Umschlag von der Hegemonie in blinde Herrschaft deutlich. Ziel ist vielmehr eine mehr hegemoniale Konstruktion und die Integration berechtigter Anliegen von Minderheiten.</p></item>
-					<item><label>–</label>
-						<p>zur Zeit herrsche eine Tendenz vor mit dem Versuch, die Geschichte abzukürzen und durch Taktieren die Plausibilität der eigenen Politik durchzusetzen. Allerdings leiden sämtliche Strategieansätze unter Plausibilitätsmangel. Die Strategie des »Querdenkens« dient zur Zeit als Legitimation. Provokative Thesen können erkenntnisleitend sein, sind jedoch nur in Maßen zu genießen.</p></item>
-					<item><label>–</label>
-						<p>Die Mehrheit des BuVo soll ihre Macht für Hegemonie und nicht für Herrschaft einsetzen.</p></item>
-					<item><label>–</label>
-						<p>zur allgemeinen Strategie: es sollen Gespräche auch mit den konservativen Parteien geführt werden, aber ohne Abstriche zu machen.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN026" type="comment"><p>Zur Korrektur dieser Stelle des Protokolls vgl. das Schreiben des Abg. <name type="Person" role="Erwaehnung" ref="#VolmerLudger_1985-04-10">Volmer</name> vom 21. Mai 1987; hier Anlage C.</p></note></seg></p></item>
-					<item><label>–</label>
-						<p>Haltung zur SPD: früher gab es zwei verschiedene Sichtweisen, d.h. Zusammenarbeit mit oder Warnung vor der SPD. Hessens Scheitern biete eine Chance, denn die Integrationskraft der SPD hat nachgelassen.</p></item>
-				</list>
-				<p>Thomas <name type="Person" role="Sprecher" ref="#EbermannThomas_1987-02-18">Ebermann</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>zur BDK: den BuVo kann man ganz einfach entdämonisieren. Das Wahlergebnis läßt sich wie folgt aufschlüsseln:</p></item>
-					<item><label>–</label>
-						<p>nach Nürnberg<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN027" type="comment"><p>Gemeint ist die Bundesdelegiertenkonferenz der GRÜNEN vom 26. bis 28. September 1986 in Nürnberg.</p></note></seg> wurde die Schwäche des fundamentalistischen Flügels übertrieben;</p></item>
-					<item><label>–</label>
-						<p>Ökosozialisten etc. haben einen Anteil von etwa 40 Prozent innerhalb der Partei;</p></item>
-					<item><label>–</label>
-						<p>das Personalangebot der Realos liefert einen weiteren Grund für das BuVo-Wahlergebnis u[nd] z[war] durch die Mißachtung der Parteifunktion gegenüber der parlamentarischen Funktion, wie auch der Spott auf den Bundeshauptausschuß und die Relativierung der Bedeutung der Bundesparteitage in der »Realo«-Fraktion;</p></item>
-					<item><label>–</label>
-						<p>ebenso herrschte eine große Verärgerung über die Alleingänge oder Egozentrik von hohen Mandatsträgern;</p></item>
-					<item><label>–</label>
-						<p>es bestand der Wunsch, ein Gegengewicht zu schaffen und objektive, neue Beschlüsse des Inhalts der »Realo«-Linie zu fassen;</p></item>
-					<item><label>–</label>
-						<p>der Vorstoß Lukas <name type="Person" role="Erwaehnung" ref="#BeckmannLukas">Beckmanns</name> im Hinblick auf eine Bündnisofferte an die CDU/ CSU;<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN028" type="comment"><p>Zu den entsprechenden Überlegungen des scheidenden Vorstandssprechers der Grünen, <name type="Person" role="Erwaehnung" ref="#BeckmannLukas">Beckmann</name>, vgl. den Artikel »Grünes Liebäugeln mit dem ›C‹ der CDU«; »taz«, 23. April 1987, S. 4.</p></note></seg> der Wunsch nach Regierungspartnerschaft hat sich verselbständigt und ist eine vollkommen andere politische Botschaft als die bisherige »Realo«-Linie. Es gibt jedoch keine dramatische politische Verschiebung in der Partei. Ausschlaggebend für das Wahlergebnis waren weiterhin</p></item>
-					<item><label>–</label>
-						<p>der Wahlmodus; so haben etwa die Hamburger Delegierten für den Modus »Zwei Stimmen für drei Plätze« plädiert.</p></item>
-					<item><label>–</label>
-						<p>Der neue BuVo ist kein entwerteter Vorstand, da er mit deutlicher Mehrheit gewählt wurde. Die A-priori-Feststellung, der BuVo müsse nun geschwächt werden, ist ungerechtfertigt.</p></item>
-					<item><label>–</label>
-						<p>zur Position der »Mitte«: Th. E. [<name type="Person" role="Sprecher" ref="#EbermannThomas_1987-02-18">Ebermann</name>] wäre froh, wenn es eine gäbe. Die Mittelgruppe soll nicht homogen sein, sondern soll sowohl gegen den einen als auch gegen den anderen Flügel vorgehen können. Sie soll auch kritisierbar sein, wenn sie sich einseitig zeigt.</p></item>
-					<item><label>–</label>
-						<p>weitere Zielsetzung: für die grüne Partei ist das Ziel auf lange Sicht die Stabilität des Pluralismus und nicht der Sieg einer Seite. Eine politische Mehrheit für rot-grün existiert gegenwärtig nicht, das Motivationstal muß durchgestanden werden. Deshalb ist es notwendig, aufeinander zuzugehen. Die Konzentration soll sich auf die politisch inhaltliche Arbeit konzentrieren und nicht auf Wahlergebnisse. Notwendig ist ein Kompromiß zwischen Realos, Fundis, Ökosozialisten und der Mittelgruppe; also nicht nur Harmonie beschwören, sondern den politischen Gegenstand in den Mittelpunkt stellen.</p></item>
-				</list>
-				<p>Hubert <name type="Person" role="Sprecher" ref="#KleinertHubert_1983-03-29">Kleinert</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Gründe für das Ergebnis der BDK:</p></item>
-					<item><label>–</label>
-						<p>Hessen-Ergebnis: die Niederlage von rot-grün bewirkte eine Orientierungslosigkeit und den Verlust des Hoffnungsträgers »rot-grün«. Die »Fundis« bieten nunmehr einen sicheren Hafen.</p></item>
-					<item><label>–</label>
-						<p>reale Schwächen der Nicht-Fundi-Kandidaten durch Geringschätzung der Partei? Die Bundesversammlung hält sich nicht mehr an die Organisationsstruktur. Eine gewisse Professionalität ist notwendig; die Organisationsstruktur ist dem Stand der Partei nicht mehr angemessen.</p></item>
-					<item><label>–</label>
-						<p>auf der Bundesversammlung herrschte ein großes Bedürfnis nach Vereinfachung vor – der Transport einfacher Weltbilder funktioniert nach wie vor. Die Exponenten aller Richtungen tragen die Verantwortung, dieses Bedürfnis nicht nur zum eigenen Vorteil auszunutzen.</p></item>
-					<item><label>–</label>
-						<p>zum Wahlverfahren: das Problem war, daß gleichzeitig über die BuVo-Kandidaten abgestimmt wurde und nicht nacheinander, sowie der späte Termin.</p></item>
-					<item><label>–</label>
-						<p>Das Hessen-Ergebnis war maßgeblich für das Ergebnis der BuVo-Wahl. Der Vorschlag Thomas <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermanns</name>, den BuVo im Zweifelsfall einfach abzuwählen, ist vorsichtig zu werten.</p></item>
-					<item><label>–</label>
-						<p>Es wird einen Hang geben, die eigenen politischen Positionen nur aufgrund der errungenen Posten durchzusetzen und es werden mehr Fronten zwischen diesem BuVo und der Bundestagsfraktion aufbrechen.</p></item>
-					<item><label>–</label>
-						<p>zur Zukunft der GRÜNEN: Die Zäsur des Hessen-Ergebnisses erweist sich wichtiger als die BDK, weil Hessen als rot-grüne machtpolitische Alternative nun wegfällt.</p></item>
-					<item><label>–</label>
-						<p>Notwendig ist es, einen Minimalkonsens zwischen den Lagern herzustellen, der gegenwärtig nicht vorhanden ist.</p>
-						<p>Eckpunkte grüner Politik sind für die Zukunft:</p></item>
-					<item><label>–</label>
-						<p>die Verständigung über Strukturfragen innerhalb der Partei, also die Professionalismusfrage,</p></item>
-					<item><label>–</label>
-						<p>sowie die inhaltliche Problematik, d. h. außenpolitisch die Abrüstungsdebatte, innenpolitisch die Frage des Sozialismus in der Wirtschaftspolitik.</p></item>
-					<item><label>–</label>
-						<p>Schlußfolgerung: Die GRÜNEN bleiben mittelfristig nur ein politischer Faktor in der BRD, wenn keiner den anderen »raushaut«.</p></item>
-				</list>
-				<p>Eckhard <name type="Person" role="Sprecher" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>sieht das Wahlergebnis als ausgesprochen schlecht an. Es hat jedoch friedensstiftende Wirkung gehabt. Die neuen BuVo-Sprecher sind keine Repräsentanten der politischen Programmatik des Parteitags. Allerdings soll jetzt keine Gegenposition gegen den BuVo gebildet werden. Wichtig sind eine blockübergreifende Politik und eine Aufweichung der Strömungen. E. S. [<name type="Person" role="Sprecher" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>] plädiert gegen ein Bastionsdenken und für eine Kooperation mit dem neuen BuVo.</p></item>
-				</list>
-				<p>(Aufgrund des Wechsels der Protokollanten/in fehlen die Beiträge von H. <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> und O. <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name>.)</p>
-				<p>Marieluise <name type="Person" role="Sprecher" ref="#Beck-OberdorfBeckMarieluise_1983-03-29">Beck-Oberdorf</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Ich weiß nicht mehr, wo ich mich heute einordnen soll. Die Fädenzieher verbergen sich ... Die Mütterdiskussion wird beispielsweise benützt, um damit Politik zu machen, anstatt dazu beizutragen, strategische Grundfragen zu erörtern (Beisp. <name type="Person" role="Erwaehnung" ref="#BahroRudolf">Bahro</name> gegen Umbauprogramm, Mindesteinkommen).</p></item>
-					<item><label>–</label>
-						<p>Die spannenden politischen Fragen sind rausgefallen, das muß sich ändern.</p></item>
-				</list>
-				<p>Christian <name type="Person" role="Sprecher" ref="#SchmidtChristian_1985-03-22">Schmidt</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Die Mitte bei den GRÜNEN ist »rechts von den GRÜNEN« anzusiedeln. Weitere Aufgaben sind:</p></item>
-					<item><label>–</label>
-						<p>die parlamentarischen Perspektiven für die neunziger Jahre;</p></item>
-					<item><label>–</label>
-						<p>das Umbauprogramm handlungsrelevant machen;</p></item>
-					<item><label>–</label>
-						<p>die ökologische Konversion und basisdemokratischer Umbau;</p></item>
-					<item><label>–</label>
-						<p>der ökolibertäre Ansatz der Staatskritik;</p></item>
-					<item><label>–</label>
-						<p>Umgangsformen verbessern;</p></item>
-					<item><label>–</label>
-						<p>Gesamtinteresse der Partei.</p></item>
-				</list>
-				<p>TOP 3: Laufende parlamentarische Woche</p>
-				<p>3. Zu verabschiedende Vorlagen:</p>
-				<p>Angenommen und im Bundestag eingereicht werden sollen folgende Anträge:</p>
-				<p>3.1. Antrag »Schutz der Nordsee«<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN029" type="comment"><p>Zu dem Antrag »Schutz der Nordsee« vom 7. Mai 1987 vgl. BT Drs. 11/247.</p></note></seg></p>
-				<p>3.2. Antrag »Maßnahmen gegen Luftverschmutzung«<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN030" type="comment"><p>Zu dem Entschließungsantrag »Maßnahmen gegen Luftverschmutzung« vom 25. Juni 1987 vgl. BT Drs. 11/560. Vgl. dazu auch die Große Anfrage der GRÜNEN »Maßnahmen gegen Luftverschmutzung« vom 20. Mai 1987 BT Drs. 11/305.</p></note></seg></p>
-				<p>3.3. Antrag »Baustop für WAA-Wackersdorf«<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN031" type="comment"><p>Zu dem Antrag »Baustopp für die Wiederaufarbeitungsanlage bei Wackersdorf« vom 11. Mai 1987 vgl. BT Drs. 11/260.</p></note></seg></p>
-				<p>3.4. Antrag »Programm zur Verminderung der Schadstoffemissionen bei einer Stromversorgung ohne Atomenergie«<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN032" type="comment"><p>Zu dem Antrag »Programm zur Verminderung der Schadstoffemissionen bei einer Stromversorgung ohne Atomenergie« vom 20. Mai 1987 vgl. BT Drs. 11/306.</p></note></seg></p>
-				<p>3.5. Antrag »Gestaltung der technischen Entwicklung; TFA-Abschätzung und -bewertung«<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN033" type="comment"><p>Zu dem Antrag »Gestaltung der technischen Entwicklung; Technikfolgen-Abschätzung und -Bewertung« vom 5. Mai 1987 vgl. BT Drs. 11/220.</p></note></seg></p>
-				<p>3.6. Gesetzentwurf Volkszählung<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN034" type="comment"><p>Vgl. dazu oben Anm. 11 und 12.</p></note></seg></p>
-				<p>zusätzliche Anträge:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Antrag auf Einrichtung einer Enquetekommission wird im Bundestag eingereicht. (1 Enthaltung)<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN035" type="comment"><p>Gemäß der Empfehlung des Ausschusses für Jugend, Familie, Frauen und Gesundheit wurde am 8. Mai 1987 vom Bundestag eine Enquete-Kommission »Gefahren von AIDS und wirksame Wege zu ihrer Eindämmung« eingesetzt. Die GRÜNEN legten in diesem Zusammenhang noch einen eigenen Antrag vor, in dem die Aufgaben dieser Enquete-Kommission anders definiert wurden. Der Antrag wurde vom Bundestag aber abgelehnt. Vgl. BT Drs. 11/244 neu, 11/248; BT Plenarprotokoll 11/11, S. 670 f.</p></note></seg></p></item>
-					<item><label>–</label>
-						<p>Gesetzentwurf zur Kennzeichnung der Milchprodukte wird an den Umwelt-AK zurücküberwiesen.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN036" type="comment"><p>Der Entwurf des Antrags ist dem Protokoll beigefügt. Vgl. AGG, B.II.1, 2135. – Der Antrag »Kennzeichnung von Milch, Milchprodukten und Säuglingsnahrung mit Werten radioaktiver Belastung und Ausweitung des Meßstellennetzes« wurde schließlich am 16. Juni 1987 im Bundestag eingebracht. Vgl. BT Drs. 11/486.</p></note></seg></p></item>
-				</list>
-				<p>TOP-Ergänzungspunkt</p>
-				<p>Antrag Angelika <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name> – <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>/<name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name> zum Thema Mittelstreckenraketen:</p>
-				<p>1. Grundlage entsprechend der bereits zweimal getroffenen Entscheidungen der Fraktion<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN037" type="comment"><p>Vgl. dazu bereits Dok. 19, TOP 5 a.</p></note></seg> wird der Antrag <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name> angenommen mit 18 gegen 16 Stimmen.</p>
-				<p>2. Aus der BDK-Resolution <name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>, <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> wurde der Satz</p>
-				<list type="undefined">
-					<item><p>DIE GRÜNEN halten an ihrem Grundsatz einseitiger Abrüstungsschritte fest, die in eine mehrseitige Abrüstungsdynamik münden können. Diese Strategie schließt jedoch die vertragliche Vereinbarung zwei aus.</p></item>
-				</list>
-				<p>mit 28 Stimmen angenommen.</p>
-				<p>3. Die Aufforderung einer zusätzlichen Forderung, die den Umbau der Pershing II betrifft, wurde mit 14 zu 13 Stimmen abgelehnt.</p>
-				<p>4. Der Gesamtantrag wurde mit 21 : 8 : 5 Stimmen angenommen.</p>
-				<p>Den Redebeitrag teilen sich Otto <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name> (15 Minuten) und Alfred <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name> (9 Minuten).<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN038" type="comment"><p>Zum Antrag »Abrüstung nuklearer Mittelstreckenraketen in Europa« vom 6. Mai 1987 vgl. BT Drs. 11/230. – Der Antrag wurde am 7. Mai 1987 im Zusammenhang mit der Regierungserklärung von Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KohlHelmut_1976-12-14">Kohl</name> zur Abrüstungsproblematik behandelt. Zu den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name> und <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name> vgl. BT Plenarprotokoll 11/10, S. 539–542 und 558–560.</p></note></seg></p>
-				<p>Der Antrag Thomas <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermanns</name>, das Abstimmungsergebnis der Friedensbewegung und dem BuVo mitzuteilen, wurde nicht beschlossen.</p>
-				<p>Der Antrag, den jetzt zurücküberwiesenen KA-Antrag<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN039" type="comment"><p>Zu dem Antrag des Koordinierungsausschusses der BAG Frieden vgl. Dok. 19, Anlage C.</p></note></seg> im Juni in den Bundestag einzubringen (<name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>), wurde mit großer Mehrheit abgelehnt. Der Antrag soll erst in einer Fraktionssitzung beraten werden (A. <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name>).<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN040" type="comment"><p>Zur Abrüstungsthematik vgl. weiter Dok. 22, TOP 4.</p></note></seg></p>
-				<p>Volkszählungsdebatte:</p>
-				<p>Als Redner werden Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name> und Thomas <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name> benannt.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN041" type="comment"><p>Vgl. oben Anm. 12.</p></note></seg></p>
-				<p>Alle übrigen TOPs wurden nicht behandelt.</p>
-				<p>Protokollant/in Brigitte <name type="Person" role="Erwaehnung" ref="#NN_weiblich">Lausch</name><seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN042" type="comment"><p>Eine Mitarbeiterin mit diesem Namen konnte in der Fraktion nicht nachgewiesen werden.</p></note></seg>, Udo <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name></p>
-			</div>
-			<div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Anlage A</p>
-				<p>[Mai 1987]: Pressemitteilung des Bundesvorstands der Partei DIE GRÜNEN zur Bundesdelegiertenkonferenz vom 1. bis 3. Mai 1987 in Duisburg. AGG, B.II.1, 2135.</p>
-				<p>Wenn wir einmal, von sonstigen Diskussionen unbelastet, Bilanz ziehen, sieht es ausgezeichnet für DIE GRÜNEN aus:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>blendende Wahlergebnisse;</p></item>
-					<item><label>–</label>
-						<p>Mitgliederzahlen soeben erstmalig über 40 000;</p></item>
-					<item><label>–</label>
-						<p>den sozialen Bewegungen, von denen wir leben, geht es besser denn je.</p></item>
-				</list>
-				<p>Das wirft die Frage auf, handelt es sich bei der vielbeschworenen »Krise« der GRÜNEN nicht vielmehr um eine eingebildete Krankheit, diagnostiziert von eingebildeten Ärzten? Wir meinen, vieles spricht dafür!</p>
-				<p>Dieser Bundesvorstand wird von der Partei getragen – das zeigen z. B. die Reaktionen noch auf der Bundesversammlung, die ein Großteil der Presse bereitwillig unterschlug. Wir werden diese »Unterschlagungen« genauso gelassen zu tragen wissen, wie diese Bundesversammlung konstruktiv zu Ende gebracht werden konnte trotz des hochgeblasenen Krisengeschwätzes in den Wochen zuvor. Diese Partei hat über alle tatsächlichen Meinungsverschiedenheiten hinweg einen breiten Fundus an Gemeinsamkeiten.</p>
-				<p>Bei der Bundesvorstandswahl handelte es sich nicht um eine »Lagerwahl«, sondern um eine Orientierungswahl. Das heißt, es wurden Personen gewählt, die im Falle des Sprechergremiums z. B. auch von realpolitisch-orientierten Delegierten mitgewählt wurden. Insbesondere aber wurden auch Personen gewählt, die für bestimmte inhaltliche Schwerpunkte der GRÜNEN stehen und die Partei programmatisch repräsentieren. Über die Verteilung der Strömungen werden in den Medien falsche und durchsichtige Zahlenspiele angestellt. Wir werden gern immer wieder über Abstimmungsergebnisse berichten und sie möglicherweise mit 6 : 5, 7 : 4, 8 : 3, 9 : 2, 10 : 1 und oft genug mit 11 : 0 (falls niemand fehlt) überraschen können.</p>
-				<p>Es ist ein Bundesvorstand gewählt worden, der fähig ist, sich der gesellschaftlichen Realität und den kommenden sozialen Auseinandersetzungen zu stellen. Der Bundesvorstand wird eine politische Scharnierfunktion ausfüllen zwischen der Bundestagsfraktion und den sozialen Bewegungen.</p>
-				<p>Unsere Absicht ist es, offensiv die Kriminalisierungsstrategien des Staates gegen soziale Bewegungen und GRÜNE zu unterlaufen, wie wir es am Beispiel der Bundeskonferenz der Anti-Atom-Initiativen in Nürnberg im Januar dieses Jahres und jetzt z. B. an der Kooperation mit dem breiten Volkszählungswiderstand praktizieren. Unsere Aufgabe ist es, sozialen Widerstand zu stärken, gesellschaftliche Gegenmacht aufzubauen und so den notwendigen politischen Druck für gesellschaftliche Veränderungen zu entfalten, die sich auch in substantiellen parlamentarischen Reformen ausdrücken.</p>
-				<p>Damit stehen wir in solidarischer Beziehung mit allen Menschen, die in den GRÜNEN oder in den sozialen Bewegungen gegen soziales Elend und Naturzerstörung, gegen Ausländerhaß und Frauendiskriminierung und für eine solidarische Beziehung mit den Ländern der sog. Dritten Welt kämpfen.</p>
-				<p>Der Bundesvorstand der GRÜNEN ruft alle Mitglieder der GRÜNEN auf, sich offensiv, inhaltsbezogen und konfliktfreudig mit Alltagsstrukturen und Alltagsbewußtsein auseinander[zu]setzen! Das heißt, statt Koalitionsangebote an die parlamentarische Vertretung konservativ/reaktionären Denkens ist die inhaltsbezogene Auseinandersetzung mit wertkonservativen Vorstellungen angesagt.</p>
-				<p>Während der Papst Teufel und Finsternis predigt und die Menschen in Angst und Abhängigkeit versetzen will, kämpfen wir gegen Duckmäusertum und obrigkeitsstaatliches Denken. Die Bedrohung von Menschen durch Armut und Erniedrigung und die Zerstörung der Natur darf nicht durch Abstumpfung und Resignation zum Normalzustand werden. Die Bundesversammlung der GRÜNEN hat im übrigen nicht nur Personen gekürt – neben dem Bundesvorstand das Schiedsgericht und die Rechnungsprüfung – sondern auch zu wichtigen Inhalten eindeutig Stellung bezogen.</p>
-				<p>Ich möchte im Folgenden die Wichtigsten kurz umreißen:</p>
-				<p>Mit der Einrichtung einer eigenständigen Arbeitsgruppe »Mütterpolitik« innerhalb der BAG Frauen haben die GRÜNEN das Anliegen einer Gruppe von Müttern aufgegriffen; die notwendigen organisatorischen und finanziellen Voraussetzungen zu einer inhaltlichen Auseinandersetzung um diesen Aspekt von Frauenpolitik sind ihnen zugesprochen worden. Damit verbunden ist eine Aufforderung an beide Gruppen von Frauen, aufeinander zuzugehen, um den Streit um Inhalte konstruktiv zu führen.</p>
-				<p>Die inhaltlichen Positionen wie sie im Müttermanifest skizziert sind, wurden keinesfalls bestätigt, sondern von der Müttergruppe selbst relativiert.</p>
-				<p>In der Entscheidung, ob DIE GRÜNEN eine Stiftung gründen bzw. als grünnah anerkennen sollen, hat die Bundesversammlung Besonnenheit gezeigt. Die GRÜNE Basis läßt sich diese Entscheidung nicht von irgend jemanden aus der Hand nehmen, weder von GRÜNEN Funktionsträger/innen, Gremien oder Stiftungsinitiativen außer[halb] der GRÜNEN: Ein Sonderparteitag im September wird hierüber entscheiden unter der Voraussetzung, daß entscheidungsfähige Modelle zur Struktur und zur inhaltlichen Konzeption vorliegen. Bis dahin soll die Diskussion mit den sozialen Bewegungen auch im Rahmen eines Workshops geführt werden. Die bestehenden Initiativen werden bis dahin gleiches Recht auf organisatorische Unterstützung durch DIE GRÜNEN [haben].</p>
-				<p>In der Frage des Volkszählungsboykotts stehen DIE GRÜNEN einstimmig auf der Seite der VoBo-Bewegung. Wir rufen zum Boykott auf und solidarisieren uns mit allen von staatlichen Gewalt- und Zwangsmaßnahmen Betroffenen.</p>
-				<p>In der Stahlstadt Duisburg blieben DIE GRÜNEN auch auf die Krise der Stahlindustrie keine Antwort schuldig: Wir unterstützen die Forderung der IG Metall nach konzerninternen Beschäftigungsgesellschaften sowie die Einrichtung von regionalen Entwicklungsfonds. Statt Verstaatlichung fordern wir Vergesellschaftung sowie ein öffentliches Sonderprogramm zum Umbau der Stahlindustrie.</p>
-				<p>Das brennende Thema Gesundheitspolitik ist in der Presse leider völlig untergegangen. GRÜNE Gesundheitspolitik setzt an den Wurzeln von Krankheit an, wie Umweltzerstörung. Die Pläne der Koalition vom März ’83 zur Strukturreform der Krankenversicherung sowie das SPD-Konzept lehnen wir ab. Die gesellschaftlichen Ursachen gilt es [zu] bekämpfen; die Rechte der Patient/innen nach optimaler Versorgung, vollständiger Aufklärung und freier Entscheidung müssen gestärkt werden. Langfristiges Ziel ist eine einheitlich gesetzliche Krankenversicherung, in der alle Menschen eigenständige Mitglieder sind – auch beispielsweise Strafgefangene, Flüchtlinge, Ehefrauen ... Es geht um eine Stärkung der Betroffenen und eine Entmachtung der finanziellen Nutznießer des Gesundheitssystems, insbesondere der Pharmaindustrie.</p>
-				<p>Die Bundesversammlung hat weiter zum Ausdruck gebracht, wenn die BRD eine Null-Lösung bei Mittelstreckenraketen wolle, müsse sie jetzt unverzüglich mit dem Abzug der Raketen beginnen. Nur durch eine solche Maßnahme kann tatsächlich eine Null-Lösung in Gang gebracht werden. Sie wird derzeit in erster Linie durch die europäische[n] NATO-Staaten verhindert. Nachdem die Sowjets nun zur Null-Lösung bereit sind, würde ein Abzug der Raketen aus der BRD nicht nur zu entsprechenden sowjetischen Antworten führen, sondern auch in den anderen westeuropäischen NATO-Staaten eine weitere Ablehnung der Null-Lösung politisch unmöglich machen. Nur durch einen unabhängigen, einseitigen Abzug der Raketen aus der BRD kann also eine mehrseitige Abrüstung, eine Null-Lösung in Europa bewirkt werden, nicht nur durch Appelle an USA und Sowjetunion, denen keine eigenen Taten folgen.</p>
-			</div>
-			<div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Anlage B</p>
-				<p>[April 1987]: Veröffentlichung des Abgeordneten Peter Sellin (Auszüge). AGG, B.II.1, 2135.<seg type="note"><note xml:id="gruene-11_1987-05-05-t0000_EP_FN043" type="comment"><p>Veröffentlicht in: Stachlige Argumente. Mitgliederzeitschrift der AL-Berlin (1987).</p></note></seg></p>
-				<p>Politische Einschätzung der Lage der Grünen im Frühjahr 87</p>
-				<p>Nach der Hessenwahl am 5. 4. 87 treten die beiden sich gegenseitig bedingenden Strömungen (Fundis und Realos) in »alten ausgetretenen Mustern« der Medienpolitik im Vorfeld der Bundesdelegiertenversammlung am 1. 5.–3. 5. 87 gegeneinander an. Die einen orientieren in altbekannter Manier auf die »Beschwörung« der Fähigkeiten außerparlamentarischer Bewegungen, die anderen »beschwören« die »einzig« realistische Politik in der rot-grünen Bündnisperspektive.</p>
-				<p>Bei dieser kurzschlüssigen Polarisierung der formierten Meinungsäußerungen geht der Blick für die politischen Unfähigkeiten in allen Gruppen der Grünen / Alternativen Partei verloren. Es werden platte »Wahrheiten« verkauft, hinausposaunt.</p>
-				<p>Ich habe den Konstituierungsprozeß der neuen Bundestagsfraktion der Grünen seit Ende Januar 87 als beteiligter MdB miterlebt. Die politischen »Hahnenkämpfe« bei der Sprecher/innen-Wahl sind politischer Ausdruck für das Zuschütten der inhaltlichen Fragestellungen für das notwendige weitere und tiefere Eingreifen in die Innen- und Außenpolitik der Bundesrepublik.</p>
-				<p>Es gab bis heute keine politische Gesamtdebatte über das Selbstverständnis und den politischen Handlungskatalog von Vorhaben der neuen Bundestagsfraktion, auch nicht in dem Arbeitskreis, dem ich angehöre. Personalentscheidungen nach politischer Strömungscoleur gingen vor inhaltliche Entscheidungsvorbereitungsdebatten, die erst die politische strategische Orientierung und Arbeitsfähigkeit der Fraktion hätten hervorbringen können.</p>
-				<p>Die getroffenen Personalentscheidungen hinterließen auf vielen Ebenen Frustrationen, Verhärtungen und entwickelten keine politische Aufbruchstimmung der Gesamtfraktion. Die grüne Bundestagsfraktion »igelte« sich in den Verhältnissen ein und schrieb selbst die Verkrustungen zwischen dem Fundi- und Realoselbstverständnis fest.</p>
-				<p>Die Hessenwahl zwingt meines Erachtens beide »Lager« verspätet in die Notwendigkeit, über politische Perspektiven völlig neu zu diskutieren. Es ist nicht mit Bündnisoptionen, egal welcher Art, getan, um politische Entscheidungen innerhalb des grün-alternativen Spektrums der Partei durchzusetzen.</p>
-				<p>Meines Erachtens geht es darum, welche politischen Konzeptionen gestaltenwollender Art und Weise legen die Grünen vor, um meinungsbildend in den Prozeß des sich bereits vollziehenden Umbaus der Industriegesellschaft (z. B. Kohle und Stahl) einzugreifen. Das Entgiftungsprogramm in Bezug auf die Chemieindustrie ist keine ausreichende konzeptionelle Antwort auf die ökologischen, sozialen Folgen des geforderten Wandels zu einer »sanften Chemie«. Für einzelne Stoffgruppen und Produktlinien müssen Alternativen entworfen werden, um den ökologisch erforderlichen Umbau und die qualitativen Veränderungen unter den Arbeitnehmern durchsetzen zu können.</p>
-				<p>Die Oppositionskultur der außerparlamentarischen Bewegungen ist wichtig für das Aufwerfen von Fragestellungen und von aktivem Widerstand gegen strukturell gewalttätige Entwicklungen. Die Antworten aus der Mitte der Oppositionsbewegungen sind meist verkürzte Antworten, die jedoch in ihrer Plausibilität den Widerstand zu formieren vermögen. Den Oppositionsbewegungen fehlt für sich genommen das Entwickeln von konzeptionellen Lösungen, die der komplizierten, heterogenen Industriegesellschaft gerecht werden.</p>
-				<p>[…]</p>
-				<p>Unsere politische Aufgabe (exemplarisch hier angerissen) besteht also jenseits von politischen Bündnisdebatten im parlamentarischen und außerparlamentarischen Raum darin, »Meinungsführerschaften« in direkter Auseinandersetzung mit dem »modernen« konservativen Lager der CDU / CSU zu suchen. Der »Spätkapitalismus« und der »<name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>-Imperialismus« (Rüstungsexport, Airbus) muß mit der »Menschenrechtspolitik« von <name type="Person" role="Erwaehnung" ref="#GeißlerHeiner_1965-10-19">Geißler</name> (vgl. Gewaltdebatte im Bundestag am 2. 4. 78) konfrontiert werden.</p>
-				<p>Die Forschungs- und Entwicklungspolitik sowie die Wirtschaftspolitik der CDU sind geprägt von einem ungebrochenen Fortschrittsoptimismus, der bisher politische Fortschrittskritiker in die Defensive zu drängen versteht. Diesem politischen Selbstverständnis der »modernen« Konservativen muß eine eigene Konzeption des politischen Gestaltungswillens offensiv entgegengesetzt werden. Solcher Gestaltungswille ist im Fundilager der Grünen politisch nicht feststellbar, da ihre Aussagen auf plakative Kritik reduziert sind und keine Konzeptionen erarbeitet werden, die geeignet sind, um auf politische Durchsetzung orientiert zu werden.</p>
-				<p>[…]</p>
-				<p>Es würde Fundis und Realos gut anstehen, die Auseinandersetzung über politische Konzeptionen zu suchen als über die für einige Jahre irrelevante Addition von rot und grün. Mehrheitsfähigkeit entsteht nur, wenn politisch tragfähige Antworten für die Mehrheit der Bevölkerung ausgearbeitet sind und beginnen ideologisch zu greifen. Dieser schwierige Weg führt nur über die Auseinandersetzung mit den Konservativen alter Coleur. Die politische Auseinandersetzung mit den Sozialdemokraten genießt innerhalb der Grünen von daher einen viel zu großen Stellenwert. Die Sozialliberale Koalition liegt auf Bundesebene vier Jahre zurück. Ihre Fehler werden heute seitens der CDU zum großen Teil fortgesetzt. Dabei ist es den Konservativen gelungen, wirtschaftspolitisch den konjunkturellen Aufschwung für sich zu nutzen und ihre ideologischen Grundsätze in der Bevölkerung breiter zu verankern. Aus diesem Grunde ver-lange ich die politische Orientierung auf die politische Auseinandersetzung in allen Feldern der Politik mit der politischen Praxis der CDU/CSU.</p>
-			</div>
-			<div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-4">
-				<head>D.</head>
-				<p>Anlage C</p>
-				<p>21. Mai 1987: Schreiben des Abgeordneten Ludger Volmer an die Geschäftsführung der Fraktion. AGG, B.II.1, 2135.</p>
-				<p>Betr.: Änderung des Protokolls der Fraktionssitzung zum Tagesordnungspunkt Hessenwahl</p>
-				<p>Liebe Leute,</p>
-				<p>normalerweise bin ich überhaupt nicht pingelig, was Protokolle angeht. Da es sich in diesem Falle aber um wichtige politische Positionsbestimmungen handelt, bitte ich das Protokoll an dem Punkt, wo mein Redebeitrag auf der Fraktionssitzung referiert wird, zu ändern.</p>
-				<p>Zwei Aspekte sind mir wichtig:</p>
-				<p>1. Ich habe nicht nur den alten Bundesvorstand kritisiert, sondern gleichzeitig dem jetzt amtierenden Fraktionsvorstand Selbstherrlichkeit und Rücksichtslosigkeit vorgeworfen.</p>
-				<p>2. Ich habe mich ausdrücklich dagegen erklärt, mit konservativen Parteien den Dialog aufzunehmen. Statt dessen habe ich gefordert, Gespräche mit konservativen gesellschaftlichen Gruppierungen (wie z. B. den Kolping-Gruppen oder Evangelischen Arbeiter- und Handwerkervereinen) Gespräche zu führen.</p>
-				<p>V. [<name type="Person" role="Erwaehnung" ref="#VolmerLudger_1985-04-10">Volmer</name>]</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="gruene-11_1987-05-05-t0000_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die Grünen im Bundestag. Sitzungsprotokolle und Anlagen. 1987–1990.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 14/II, 2 Halbbände.</title>
+                  <author>Wolfgang Hölscher</author>
+                  <author>Paul Kraatz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2015</date>
+                  <idno type="DNB">https://d-nb.info/108115022X</idno>
+                  <idno type="DNB">https://d-nb.info/1096231913</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv Grünes Gedächtnis (AGG)</institution>
+                     <idno>B.II.1, 2135</idno>
+                     <objectName>Protokoll der Fraktionssitzung vom 05. 05. 1987</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Ediertes Protokoll einer Fraktionssitzung der Grünen am 5. Mai 1987</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>16 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1987-05-05">
+               <time type="start"/>
+               <time type="end"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#NN_Genderunbekannt"/>
+            <idno type="sitzung">
+               <idno type="wp">11</idno>
+               <idno type="Fraktion-Landesgruppe">Grüne</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-12-06" who="#JuengerkesSven" status="draft" n="3">&lt;group&gt; aufgelöst.</change>
+         <change when="2022-05-27" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt, front vereinheitlicht</change>
+         <change when="2022-06-14" who="#WeistenhoeferSimon" status="draft" n="5">Sitzungsverlauf (Inhalt)</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="gruene-11_1987-05-05-t0000_EP_SVP-1" corresp="#gruene-11_1987-05-05-t0000_EP_div_SVP-1">A. TOP 1: Mitteilungen und Berichte. – TOP (erg.): Angelika <name type="Person" role="Sprecher" ref="#BeerAngelika_1987-02-18">Beer</name>; Besprechung der Resolution zur Unterstützung der Hasselbach-Blockade. – TOP 3:  Laufende parlamentarische Woche. –TOP 2: Schwerpunktthema: Politische Auswertung der Bundesdelegiertenkonferenz vom 01.–03. 05. 1987 in Duisburg. – Fortsetzung TOP 3: Laufende parlamentarische Woche. – TOP (erg.): Antrag Angelika <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name>; <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>/<name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name> zum Thema Mittelstreckenraketen. Volkszählungsdebatte.</item>
+            </list>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Abgeordnete: <name type="Person" role="Erwaehnung" ref="#Beck-OberdorfBeckMarieluise_1983-03-29">Beck-Oberdorf</name>, <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name>, <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermann</name>, <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>, <name type="Person" role="Erwaehnung" ref="#HaefnerGerald_1987-02-18">Häfner</name>, <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name>, <name type="Person" role="Erwaehnung" ref="#KleinertHubert_1983-03-29">Kleinert</name>, <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>, <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>, <name type="Person" role="Erwaehnung" ref="#RustBaerbel_1987-02-18">Rust</name>, <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name>, <name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>, <name type="Person" role="Erwaehnung" ref="#SellinPeter_1987-02-18">Sellin</name>, <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>, <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name>, <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>, <name type="Person" role="Erwaehnung" ref="#VollmerAntje_1983-03-29">Vollmer</name>, <name type="Person" role="Erwaehnung" ref="#VolmerLudger_1985-04-10">Volmer</name>, <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name> [u.a.]<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN001" type="comment">
+                     <p>Eine Anwesenheitsliste liegt für diese Fraktionssitzung nicht vor. Die Anwesenheit wurde daher gemäß Protokoll erfasst und ist unvollständig.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Fraktionsmitarbeiterinnen und Fraktionsmitarbeiter: <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>, <name type="Person" role="Erwaehnung" ref="#VogtRoland_1983-03-29">Vogt</name>
+            </p>
+            <p>Gäste: Christian <name type="Person" role="Erwaehnung" ref="#SchmidtChristian_1985-03-22">Schmidt</name> (Sprecher des Bundesvorstands der Partei DIE GRÜNEN)</p>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-1">
+            <head>A.</head>
+            <p>TOP 1: Mitteilungen und Berichte</p>
+            <p>Christa <name type="Person" role="Sprecher" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> berichtet vom FraVo:</p>
+            <p>Vorstandsprotokolle – sollten spätestens mittwochs, möglichst schon dienstags vor der Fraktionssitzung vorliegen.</p>
+            <p>Gentechnologie – soll auf Bitte des AK VII Schwerpunktthema der Sitzung am 19. Mai sein. Da der Termin mit der <name type="Person" role="Erwaehnung" ref="#GorbatschowMichailSergejewitsch">Gorbatschow</name>-Debatte zusammenfällt, sind der 2. Juni bzw. der 23. Juni mögliche Ausweichtermine.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN002" type="comment">
+                     <p>Zur Behandlung des Schwerpunktthemas »Gorbatschow« am 16. Juni 1987 vgl. Dok. 23. – Zur Behandlung des Schwerpunktthemas »Gentechnologie« am 29. September 1987 vgl. Dok. 31.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>TOP-Ergänzungspunkt: Angelika <name type="Person" role="Sprecher" ref="#BeerAngelika_1987-02-18">Beer</name> – Besprechung der Resolution zur Unterstützung der Hasselbach-Blockade<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN003" type="comment">
+                     <p>Zur Blockade des amerikanischen Cruise-Missile-Depots in Hasselbach am 28. Mai 1987 vgl. den Artikel »Raketenbasis Hasselbach: Alle Zufahrten blockiert«; »taz«, 29. Mai 1987, S. 1 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>TOP 3: (vorgezogen) Laufende parlamentarische Woche</p>
+            <p>Hubert <name type="Person" role="Sprecher" ref="#KleinertHubert_1983-03-29">Kleinert</name> stellt den Ablauf der parlamentarischen Woche dar:</p>
+            <p>Mittwoch, 6. 5.:</p>
+            <p>1. Debatte über das Jahresgutachten des Sachverständigenrates</p>
+            <p>Redezeit der GRÜNEN: 30 Minuten. Auf Beschluß des AK I sollen Halo <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name> und Eckard <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name> zum Jahresgutachten Stellung nehmen.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN004" type="comment">
+                     <p>Am 6. Mai 1987 beriet der Bundestag das »Jahresgutachten 1986/87 des Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung«. Vgl. BT Drs. 10/6562; BT Plenarprotokoll 11/9, S. 457–509; zu den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name> und <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name> vgl. S. 475–478 und S. 493–495.</p>
+                  </note>
+               </seg> Willi <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name> beantragt 5 Minuten Redezeit, um den Gesetzesentwurf der GRÜNEN zum Überstundenabbau<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN005" type="comment">
+                     <p>Zum Gesetzentwurf zum Überstundenabbau vom 2. April 1987 vgl. BT Drs. 11/136.</p>
+                  </note>
+               </seg> vorzustellen.</p>
+            <p>Abstimmungsergebnis:</p>
+            <p>Ja: überwältigende Mehrheit.</p>
+            <p>Nein : 3.</p>
+            <p>Enthaltung : 4.</p>
+            <p>Beschluß: Willi <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name> erhält 5 Minuten Redezeit.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN006" type="comment">
+                     <p>Zur Rede des Abg. <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name> am 6. Mai 1987 vgl. BT Plenarprotokoll 11/9, S. 503.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. Aufruf der Gesetzentwürfe der GRÜNEN zur Problematik der Wiedergutmachung<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN007" type="comment">
+                     <p>Gesetzentwurf zur Regelung einer angemessenen Versorgung für alle Opfer nationalsozialistischer Verfolgung in der Zeit von 1933 bis 1945; Antrag »Entschädigung für Zwangsarbeit während der Nazi-Zeit«; Antrag »Nichtigkeitserklärung des Gesetzes zur Verhütung erbkranken Nachwuchses vom 14. Juli 1933 und der nach diesem Gesetz ergangenen Entscheidungen«. Vgl. BT Drs. 11/141, 11/142, 11/143.</p>
+                  </note>
+               </seg>, die ohne Debatte an die Ausschüsse überwiesen werden. Geschäftsführerbesprechung nach dem Hearing: vier Vorlagen sollen an den Ausschuß für Bildung ... überwiesen werden.</p>
+            <p>Donnerstag, 7. 5.:</p>
+            <p>1. (9.00 Uhr) Erklärung der Bundesregierung zum Stand der Abrüstungsgespräche<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN008" type="comment">
+                     <p>Am 7. Mai 1987 gab Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KohlHelmut_1976-12-14">Kohl</name> im Bundestag eine Regierungserklärung zum Stand der Abrüstungsgespräche mit der UdSSR ab. In diesem Zusammenhang wurden auch mehrere Anträge zur Frage der Abrüstung der nuklearen Mittelstreckenraketen in Europa behandelt. Vgl. BT Plenarprotokoll 11/10 S. 524–565.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. 1. Beratung der Gesetzesvorlage der Bundesregierung zum Kapitalschutzabkommen<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN009" type="comment">
+                     <p>Der Bundestag behandelte am 7. Mai 1987 in erster Beratung das Ratifizierungsgesetz zum Vertrag vom 30. April 1986 zwischen der Bundesrepublik und Ungarn über die Förderung und den gegenseitigen Schutz von Kapitalanlagen. Vgl. BT Drs. 11/26; BT Plenarprotokoll 11/10, S. 565 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3. Fragestunde</p>
+            <p>4. (15.00 Uhr) Aktuelle Stunde der SPD zur Kriegswaffenexport-Politik der Bundesregierung in Länder des Nahen und Mittleren Ostens; Beiträge der GRÜNEN von Uschi <name type="Person" role="Erwaehnung" ref="#Eid-SimonEidUrsula_1985-04-17">Eid</name> und Helmut <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN010" type="comment">
+                     <p>Zur Aktuellen Stunde am 7. Mai 1987 vgl. BT Plenarprotokoll 11/10, S. 589–602.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. (16.00 Uhr) Volkszählungsdebatte</p>
+            <p>Zwei Lesungen des Gesetzentwurfs der GRÜNEN zur Aufhebung des Volkszählungsgesetzes.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN011" type="comment">
+                     <p>Zum Gesetzentwurf vom 14. April 1987 betr. »Aufhebung des Volkszählungsgesetzes 1987« vgl. BT Drs. 11/170.</p>
+                  </note>
+               </seg> In beiden Lesungen erhalten die GRÜNEN mindestens 10 Minuten Redezeit. Der Gesetzentwurf muß noch in der Fraktion verabschiedet werden. Hubert <name type="Person" role="Sprecher" ref="#KleinertHubert_1983-03-29">Kleinert</name> schlägt vor für den 1. Redebeitrag: Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name>; für den 2. Redebeitrag: Thomas <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name>.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN012" type="comment">
+                     <p>Zur ersten und zweiten – und damit nach Ablehnung letzten – Beratung des Gesetzentwurfs am 7. Mai 1987 und den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name> und <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name> vgl. BT Plenarprotokoll 11/10, S. 602–621.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Freitag, der 8. 5.:</p>
+            <p>1. Erste Beratung eines Gesetzes über die Rente für »Trümmerfrauen«. Redezeit der GRÜNEN: 7 Minuten. Rednerin: Trude <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name>
+               <seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN013" type="comment">
+                     <p>Zur ersten Beratung des von der Bundesregierung eingebrachten Kindererziehungsleistungs-Gesetzes im Bundestag am 8. Mai 1987 vgl. BT Plenarprotokoll 11/11, S. 635–649.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. Gesetzentwurf zur Verlängerung des Arbeitslosengeldes. Redner: Willi <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name>
+               <seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN014" type="comment">
+                     <p>Zur ersten Beratung des von der Bundesregierung eingebrachten Gesetzentwurfs im Bundestag am 8. Mai 1987 vgl. BT Plenarprotokoll 11/11, S. 649–662.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3. Bundesversorgungsgesetz. Rednerin: Trude <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name>
+               <seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN015" type="comment">
+                     <p>Zur ersten Beratung des von der Bundesregierung eingebrachten Gesetzentwurfs im Bundestag am 8. Mai 1987 vgl. BT Plenarprotokoll 11/11, S. 662–670.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. Aktuelle Stunde der GRÜNEN zu den neuesten Hinweisen auf einen alarmierenden Anstieg bei der Verseuchung von Grund- und Trinkwasser durch den Einsatz von Pflanzenschutzmitteln. Rednerinnen: Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> und Dora <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name>.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN016" type="comment">
+                     <p>Zur Aktuellen Stunde am 8. Mai 1987 betr. »Neueste Hinweise auf einen alarmierenden Anstieg bei der Verseuchung von Grund- und Trinkwasser durch den Einsatz von Pflanzenschutzmitteln« vgl. BT Plenarprotokoll 11/11, S. 671–685; zur den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> und <name type="Person" role="Erwaehnung" ref="#FlinnerDora_1987-02-18">Flinner</name> vgl. S. 671 f und S. 676.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>TOP 2: Schwerpunktthema: Politische Auswertung der Bundesdelegiertenkonferenz vom 01.–03. 05. 1987 in Duisburg<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN017" type="comment">
+                     <p>Vgl. dazu Anlage A. – Zur 9. ordentlichen Bundesversammlung der GRÜNEN vgl. auch AAG, B.II.1., 2289.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Peter <name type="Person" role="Sprecher" ref="#SellinPeter_1987-02-18">Sellin</name> stellt sein Papier »Politische Einschätzung der Lage der Grünen im Frühjahr 87« als Diskussionsgrundlage vor.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN018" type="comment">
+                     <p>Vgl. hier Anlage B.</p>
+                  </note>
+               </seg>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>S. [<name type="Person" role="Sprecher" ref="#SellinPeter_1987-02-18">Sellin</name>] wertet die BuVo-Wahl als Orientierungswahl;<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN019" type="comment">
+                           <p>Auf dem Bundesparteitag vom 1. bis 3. Mai 1987 wurden Jutta <name type="Person" role="Erwaehnung" ref="#DitfurthJutta">Ditfurth</name>, Regina <name type="Person" role="Erwaehnung" ref="#MichalikRegina">Michalik</name> und Christian <name type="Person" role="Erwaehnung" ref="#SchmidtChristian_1985-03-22">Schmidt</name> zu Sprecherinnen bzw. zum Sprecher des Bundesvorstands der GRÜNEN gewählt. Diese Wahl wurde allgemein als Niederlage des »Realoflügels« der Partei interpretiert. Vgl. dazu etwa den Artikel »Bombardieren, Boykottierten, Ignorieren? Reaktionen auf das Ergebnis der Bundesvorstandswahl bei den Grünen«; »taz«, 4. Mai 1987, S. 5.</p>
+                        </note>
+                     </seg> hier sind beide Hauptströmungen gegeneinander angetreten (»Hahnenkämpfe«). Allerdings war kein politisch-strategisches Dilemma der GRÜNEN festzustellen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Notwendigkeit für die Zukunft sind differenziertere politische Konzeptionen in beiden Strömungen; dies zeigt der Vorwurf Helmut <name type="Person" role="Erwaehnung" ref="#WiesenthalHelmut">Wiesenthals</name> eines »Antiintellektualismus« der GRÜNEN und der Mangel an inhaltlichen Diskussionen auf der BDK.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>S. [<name type="Person" role="Sprecher" ref="#SellinPeter_1987-02-18">Sellin</name>] fordert eine Diskussionskultur, z. B. beim Entgiftungsprogramm; hier reicht es nicht, den Umbau der Industriegesellschaft zu fordern, sondern es müssen konkrete strategische Lösungen gefunden werden (nicht Umwelt oder Arbeitsplätze). Ebenso im Bereich Neue Technologien: hier reicht die rein ablehnende Haltung nicht aus.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Schlußfolgerung: Nicht in der Oppositionskultur verharren, sondern Richtungen bestimmen. Dies zeigen auch die Wähleranalysen mit einem sinkenden Anteil von Jungwählern/innen bei den GRÜNEN. Der direkte Gegensatz zur Politik der CDU/ CSU und deren Fortschrittsgläubigkeit muß aufgezeigt werden; dies ist von den neuen BuVo-Sprechern nicht aufgenommen worden.</p>
+               </item>
+            </list>
+            <p>Wilhelm <name type="Person" role="Sprecher" ref="#KnabeWilhelm_1987-02-18">Knabe</name> kritisiert, daß die GRÜNEN wohl vergessen haben, daß sie als Bündnis entstanden und groß geworden sind. Es zeigt sich eine Tendenz der einzelnen Strömungen zur herrschenden Meinung und birgt die Gefahr der Isolierung in sich.</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>K. [<name type="Person" role="Sprecher" ref="#KnabeWilhelm_1987-02-18">Knabe</name>] wertet den Versuch der BDK positiv, für die Bewegung (Basis, Anti-AKW) positive Unterstützung durchzusetzen. Allerdings hat der neue BuVo keine Anregungen gegeben (Beisp. L. <name type="Person" role="Erwaehnung" ref="#BeckmannLukas">Beckmann</name>).</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Lob an Eckhard <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>, er hat das Interesse der Arbeitnehmer an der Stahldiskussion geweckt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>K. [<name type="Person" role="Sprecher" ref="#KnabeWilhelm_1987-02-18">Knabe</name>] wertet die Aufnahme der »Mütter« in die BAG Frauen positiv: haben ein Lebensrecht in der Partei erhalten.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Leider spielten ökologische Fragen auf der BDK eine geringe Rolle, doch gerade sie dürfen nicht vergessen werden, denn sonst sind die GRÜNEN überflüssig.</p>
+               </item>
+            </list>
+            <p>Udo <name type="Person" role="Sprecher" ref="#KnappUdo">Knapp</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Es ist richtig, daß inhaltliche Auseinandersetzungen auf der BDK nicht geführt worden sind. Gegensätze sind da, werden aber nicht ausgetragen. Es existiert keine »Mitte« bei den GRÜNEN, der Streit muß sowohl inhaltlich als auch personell geführt werden. Die Vertreter der Kritik am Sozialismus und am Kapitalismus sind den »Realos« schlichtweg überlegen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Entscheidend für den Ausgang der BuVo-Wahl war, daß die realpolitischen Kräfte nicht fähig waren, so oft zu antworten wie etwa Christian <name type="Person" role="Erwaehnung" ref="#SchmidtChristian_1985-03-22">Schmidt</name>, etwa zur Frage der Vergesellschaftung. Der Streit ist auf der BDK nicht ausdiskutiert worden. Mehr Streit, mehr Auseinandersetzungen sind notwendig.</p>
+               </item>
+            </list>
+            <p>Roland <name type="Person" role="Sprecher" ref="#VogtRoland_1983-03-29">Vogt</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Nach einem Rückblick auf Offenbach<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN020" type="comment">
+                           <p>Gemeint ist wahrscheinlich die Bundesdelegiertenkonferenz der GRÜNEN vom 2. bis 4. Oktober 1981 in Offenbach, eventuell aber auch die Bundesdelegiertenkonferenz der GRÜNEN vom 12. bis 15. Dezember 1985 in Offenburg.</p>
+                        </note>
+                     </seg> und andere Beschlüsse (z. B. § 218) stellt sich heute nur die Frage: Wer gewinnt?</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Tendenz zur Primitivierung der GRÜNEN (hier Realos, dort Fundis); differenzierte Positionen passen nicht mehr in dieses Bild. Beispielhaft dafür ist die fehlende Reaktion der GRÜNEN auf die Ankündigung der Staatssekretärin im Bundesverteidigungsministerium, Agnes <name type="Person" role="Erwaehnung" ref="#HuerlandHuerland-BueningAgnes_1972-12-13">Hürland</name>, die Bundeswehr solle bis 1990 für Frauen geöffnet werden,<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN021" type="comment">
+                           <p>Zu dem Vorschlag der Parlamentarischen Staatssekretärin im Bundesministerium der Verteidigung, <name type="Person" role="Erwaehnung" ref="#HuerlandHuerland-BueningAgnes_1972-12-13">Hürland-Büning</name>, vgl. den Artikel »Frauen in die Bundeswehr?«; »taz«, 4. Mai 1987, S. 9.</p>
+                        </note>
+                     </seg> wie auch die Diskussion um die Umrüstung der Pershing II auf Pershing I b. Es besteht zwar ein Konsens bei den GRÜNEN in dieser Frage, doch können die Positionen nicht effektiv nach außen gebracht werden.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>»Das Primitivraster darf kein Gesetz des Handelns werden«.</p>
+               </item>
+            </list>
+            <p>Antje <name type="Person" role="Sprecher" ref="#VollmerAntje_1983-03-29">Vollmer</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>ist nicht der Meinung von Christa <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>, daß »Duisburg in die Annalen der GRÜNEN eingehen« wird. Die GRÜNEN treten vielmehr auf der Stelle, da immer eine Seite Satisfaktion braucht. Die BuVo-Wahl basierte auf einem undemokratischen Wahlverfahren und ist putschistisch durchgesetzt worden. Die »Fundis« sind auf einem ratlosen Punkt angelangt, denn sie sind nicht mehr in der Minderheit (»regierende underdogs«). Die BuVo-Wahl war ein »richtig dicker Sieg« der »Fundis«, der für die GRÜNEN erhebliche Folgen haben wird.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Antje [<name type="Person" role="Sprecher" ref="#VollmerAntje_1983-03-29">Vollmer</name>] sieht für die Zukunft zwei Hauptaufgaben: die Strategien für die 90er Jahre müssen eingeleitet werden und es wird ein Wettstreit zwischen der Organisation auf Landesebene und Bundesebene entstehen. Zur Position der Unabhängigen: es gibt kein Programm, sie müssen aus der Basis heraus entstehen. »Fundis« und »Realos« sind Erben der 70er Jahre, der Auseinandersetzung zwischen Rechten und Linken.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die Mütterdebatte erweist sich als Beispiel einer konkret am Ort organisierten unabhängigen Strömung mit kulturrevolutionärem Charakter.<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN022" type="comment">
+                           <p>Auf der Bundesdelegiertenkonferenz vom 1. bis 3. Mai 1987 in Duisburg wurde die Einrichtung einer eigenständigen Arbeitsgruppe »Mütterpolitik« innerhalb der BAG »Frauen« beschlossen. Dieser Schritt wurde ebenso wie ein damit in Zusammenhang stehendes »Müttermanifest« auf dem Parteitag heftig diskutiert, da viele Delegierten dies als Annäherung an konservative Positionen deuteten. Vgl. dazu Anlage A. Vgl. ferner den Artikel »Flucht in den Kompromiß«; »taz«, 4. Mai 1987, S. 5.</p>
+                        </note>
+                     </seg> Antje [<name type="Person" role="Sprecher" ref="#VollmerAntje_1983-03-29">Vollmer</name>] begrüßt, daß Regina <name type="Person" role="Erwaehnung" ref="#MichalikRegina">Michalik</name> in den BuVo gewählt worden ist.</p>
+               </item>
+            </list>
+            <p>Waltraud <name type="Person" role="Sprecher" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>hätte sich eine andere Art der Auseinandersetzung in Duisburg gewünscht. Der Parteitag war größtenteils durch Rechenschaftsberichte der BuVo-Leute geprägt. Die Argumentation erweckte den Eindruck, als ob die GRÜNEN nach Hessen<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN023" type="comment">
+                           <p>Zum Wahlausgang in Hessen vgl. Dok. 19, TOP 4 und bes. Anm. 10.</p>
+                        </note>
+                     </seg> wieder bei Null anfangen würden.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Wichtig für eine weitere Strategie ist, daß Hessen gezeigt hat, daß es angesichts der Machtverhältnisse in der BRD unglaublich schwer ist, den Ausstieg zu beginnen. »Nur radikale Sprüche, aber keine radikale Politik«. Die BDK war durch eine Verdrängungsleistung charakterisiert, weil diese Probleme nicht aufgenommen worden sind.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Zur Zeit gibt es zwei Positionen: z. B. Thomas <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermanns</name> Forderung nach einer Bewußtseinsänderung bei den Menschen. Dies ist ein Avantgarde-Anspruch, obwohl kaum Konzeptionen bestehen. Auf der anderen Seite die Position, der sich Waltraud [<name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>] zurechnet, nämlich gestaltend in die Politik einzugreifen, auch mit Hilfe eines Bündnisses. Sie vergleicht die jetzige Situation mit der Uneinigkeit der Linken vor der faschistischen Machtübernahme.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Angesichts bestehender Probleme (Arbeitslosigkeit, Armut) ist eine Polarisierung bei den GRÜNEN zynisch, denn hier besteht kein Bewußtseinsproblem, sondern ein konkretes Problem der Machtverhältnisse, die nur mit Hilfe eines Bündnisses geändert werden können.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Der neue BuVo spiegelt die Verhältnisse der Partei nicht wider; Waltraud [<name type="Person" role="Sprecher" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>] fordert eine Diskussion der Sachthemen und eine Zusammenarbeit ohne ideologischen Ballast.</p>
+               </item>
+            </list>
+            <p>Willi <name type="Person" role="Sprecher" ref="#HossWilli_1983-03-29">Hoss</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>hat den Parteitag »zur Kenntnis genommen«; das Ergebnis hat deprimiert. Die Polarisierung zwischen BuVo und Bundestagsfraktion hat sich durch das Wahlergebnis gezeigt: Die Fraktion muß sich auf eine neue Linie einstellen. Sowohl die »Fundamentalo« als auch die »Realo«-Strömung sind zu sehr auf die SPD fixiert. Die »Fundis« wollen nicht zur grünen SPD werden, die GRÜNEN sollen vielmehr zur geläuterten sozialistischen Partei werden. Die reinen »Koalos« sind rein auf die SPD fixiert.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Eine Änderung läßt sich nur über eine »Mitte« erreichen, deren Hauptanliegen die Auseinandersetzung mit der großen ökologischen Krise ist, die auch eine gesellschaftliche Krise ist. Eine neue Mehrheit über das reine Spektrum rot-grün hinaus bedeutet die Öffnung gegenüber allen vorhandenen Strömungen, also die Aufnahme sowohl sozialistischer, marxistischer Strömungen wie auch christlicher und liberaler radikaldemokratischer Wertvorstellungen, etwa in der Form einer Annäherung an die Christlichen Sozialausschüsse.</p>
+               </item>
+            </list>
+            <p>Charlotte <name type="Person" role="Sprecher" ref="#GarbeCharlotte_1987-02-18">Garbe</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>sie bedauert, daß es nicht möglich war, vor der BDK eine Pressekonferenz zur Verseuchung des Wassers abzuhalten, und ist besorgt, daß es vielen GRÜNEN an politischem Fingerspitzengefühl mangelt. Eine Annäherung an die Bürger sei notwendig, da sich in der Resonanz auf die GRÜNEN ein starkes Stadt-Land-Gefälle zeigt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zum Thema Basisdemokratie bei den GRÜNEN: der größte Schreck war, daß die Kreisverbände keine Voten für die Vorstandswahl hatten. »Jede extreme Politik schlägt ins Gegenteil um.«</p>
+               </item>
+            </list>
+            <p>Alfred <name type="Person" role="Sprecher" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>es gibt zwei Kulturen bei den GRÜNEN: eine »bunte« und eine homogene Gruppe, die einen großen Feindbildbedarf hat. Sachthemen werden unverhältnismäßig aufgeblasen, es geht um die Demonstration von Machtkämpfen. Der Feindbildbedarf ist so groß, daß es im Grunde keinen Anspruch geben dürfte, eine qualitativ andere Politik zu machen. »Die Grünen wären gar nicht hier, wenn die Wähler wüßten, wie es in der Partei aussieht.«</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Neues Denken ist schwer auszumachen. Es wird viel mehr Energie gegen andere Menschen mobilisiert als für Sachthemen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die Konsequenz der BDK sollte eine fruchtbare Arbeitsteilung sein; die Bundestagsfraktion soll sich einer Kontrolle durch den BuVo verweigern, sie ist allein den Wählern(/innen) auf Kreis- und Landesebene verantwortlich.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die GRÜNEN waren Profiteure von Defiziten anderer Parteien, deshalb können sie nicht besser sein als die alten Parteien.</p>
+               </item>
+            </list>
+            <p>Trude <name type="Person" role="Sprecher" ref="#UnruhGertrud_1987-02-18">Unruh</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Lob an alle: U. [<name type="Person" role="Sprecher" ref="#UnruhGertrud_1987-02-18">Unruh</name>] hat den Eindruck eines offenen Umgehens aller miteinander als Ergebnis der »ersten hundert Tage«;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zu Hessen-Wahlergebnis: das wenige, was geleistet werden konnte, ist jetzt weg »verwallmannt«;<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN024" type="comment">
+                           <p>In Hessen regierte seit dem 24. April 1987 eine CDU-FDP-Koalition unter Ministerpräsident <name type="Person" role="Erwaehnung" ref="#WallmannWalter_1972-12-13">Wallmann</name>.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>BDK: Gefahr einer Spaltung der GRÜNEN, die BuVo-Wahl war eine Orientierungswahl; Konsequenz muß sein, daß die GRÜNEN sich nach außen so darstellen, daß sie auch gewählt werden können. Die GRÜNEN müssen auf Wählerfang, nicht auf »Wählerschreck« gehen.</p>
+               </item>
+            </list>
+            <p>Thomas <name type="Person" role="Sprecher" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>registriert Stimmen aus allen Lagern, daß es zur Zeit zwei Parteien in der grünen Partei gibt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die GRÜNEN geben zum einen ein gutes Beispiel, (s. Lob von Trude <name type="Person" role="Erwaehnung" ref="#UnruhGertrud_1987-02-18">Unruh</name> über die Offenheit), daher ist keine Selbstanklage gerechtfertigt, denn Politikbereiche werden auch positiv besetzt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Parallele zu 1981 durch das Ausscheiden einiger prominenter <hi rendition="#smcap">Grüner</hi>
+                     <seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN025" type="comment">
+                           <p>Anfang 1981 setzte sich eine Reihe von Gründungsmitgliedern der GRÜNEN, etwa die Gruppe um Herbert <name type="Person" role="Erwaehnung" ref="#GruhlHerbert_1969-10-20">Gruhl</name> (Grüne Aktion Zukunft) und Gisela <name type="Person" role="Erwaehnung" ref="#SchoettlerGisela">Schöttler</name>, von der Partei ab.</p>
+                        </note>
+                     </seg>, dennoch keine Krisenstimmung, denn der Zulauf findet in allen Bundesländern statt. Trotz aller Gegensätze ist ein Minimalkonsens vorhanden, die GRÜNEN sind immer noch eine Alternative zu den Altparteien. Allerdings erfolgt die Formulierung der Ziele meist auf den Dissens und nicht auf den Konsens hin.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>er bedauert, daß die BuVo-Sprecher aus einer Richtung kommen und begrüßt als Ergebnis der BDK, daß die BAG Frauen eingerichtet werden konnte. Der Parteitag strahlte eine gewisse Gelassenheit aus, allerdings keine Trägheit der Delegierten.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die Stimmungsmache vor der BDK war auf die Forderung ausgerichtet, der BuVo müsse die Partei widerspiegeln; das Ergebnis ist – entgegen einiger Vorwürfe – nicht undemokratisch zustandegekommen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>fordert, daß vorhandene Gemeinsamkeiten besser herausgestellt werden müssen und begrüßt einen offenen Streit, allerdings nicht im Sinne von »Abrechnungen« innerhalb der Fraktion.</p>
+               </item>
+            </list>
+            <p>Christa <name type="Person" role="Sprecher" ref="#VennegertsChrista_1987-02-18">Vennegerts</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>zum Ergebnis der BDK: Gewinner und Verlierer hat es nicht gegeben, doch die Einseitigkeit hat sich durchgesetzt; die Strömungsvielfalt der Partei sollte sich im BuVo widerspiegeln.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Für die Zukunft fordert sie eine konsequent inhaltliche Politik, auch auf den BDK’s. Die Armut an inhaltlichen Aussagen auf diesem Parteitag war beschämend und erstarrte in einer Konzentration auf sich selbst, anstelle einer Diskussion der Programmatik und der inhaltlichen Arbeit.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Der gegenwärtige Dissens zwischen »Realos« und »Fundis« liegt in dem Weg, der zu den gemeinsamen Zielen führen soll. »Wir brauchen nicht bescheiden zu sein, wir haben inhaltlich noch viel zu bieten.«</p>
+               </item>
+            </list>
+            <p>Halo <name type="Person" role="Sprecher" ref="#SaiboldHannelore_1987-02-18">Saibold</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>sieht in der Gründung der GRÜNEN einen historischen Kompromiß zwischen rechts und links. Allerdings wurde viel von den ursprünglichen Zielen verraten, etwa die Basisdemokratie. Statt dessen herrschen Taktieren und Manipulation der eigenen Mitglieder vor. »Wir brauchen eine Streitkultur.«</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zum Ergebnis der BDK: es ging um Personen und Richtungen; erschreckend war die Mütterdebatte; die Polarisierung ist das größte Problem. Wichtig ist es, aufeinander zuzugehen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>sie hat das Gefühl, daß zur Zeit blockiert wird und keine Veränderungen angestrebt werden und hegt die Hoffnung auf die »Mitte«, die das Beste aus beiden Seiten (Flügeln) herausholen soll, d. h. Bewußtseinsveränderung und Veränderung der Machtverhältnisse.</p>
+               </item>
+            </list>
+            <p>Gerald <name type="Person" role="Sprecher" ref="#HaefnerGerald_1987-02-18">Häfner</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>zum Ergebnis der BDK: man muß mit einigen Mythen aufräumen. Die Behauptung der Presse über Aufspaltung der GRÜNEN in »Realos« und »Fundis« ist falsch, vielmehr existieren wechselnde Mehrheiten. Das »Fundi«-Lager ist auf der BDK geschlossener aufgetreten, dagegen ist jede Lagerbildung absolut suspekt. Die GRÜNEN rutschen in Fraktionszwangsverhältnisse. Vergleich zu 1979, als die GRÜNEN als Partei neuen Stils aufgetreten sind und sich im BuVo alle Flügel repräsentierten. Die Menschen achten zunehmend auf die Glaubwürdigkeit und das Auftreten der GRÜNEN, wie am Beispiel der Sprecherwahl und der Forderung Jutta <name type="Person" role="Erwaehnung" ref="#DitfurthJutta">Ditfurths</name> nach Minderheitenschutz deutlich wurde.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>er konstatiert einen erschreckenden Verfall der politischen Kultur und fordert eine neue Debatte über die Struktur der Partei. Viele haben sich aus der Partei zurückgezogen wegen des Stils, mit dem in der Partei mit Menschen umgegangen wird. Der jetzige Zustand ist keine Durchgangsetappe, sondern ein historischer Wendepunkt.</p>
+               </item>
+            </list>
+            <p>Bärbel <name type="Person" role="Sprecher" ref="#RustBaerbel_1987-02-18">Rust</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Die GRÜNEN beschränken sich zur Zeit darauf, ihre Ansprüche zu formulieren. Sie sollen sich selbst die Frage stellen, welche Fehler gemacht worden sind.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Sie fordert eine Reformpolitik, wie sich am Beispiel Hessens gezeigt habe, hatte zum Teil die Forderung nach Ministerposten Vorrang vor den inhaltlichen Auseinandersetzungen und Forderungen. Notwendig sei eine kritische Kenntnisnahme: Wie setzen wir Reformpolitik in die Praxis um?</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zur politischen »Mitte«: es gibt keine neue homogene politische Strömung; vielmehr dürfen innerhalb der einzelnen Strömungen bestimmte Fragen nicht mehr gestellt werden. Die GRÜNEN können jedoch nur existieren, weil sie sich aus vielen verschiedenen Strömungen zusammensetzen, d. h. über die »Realo-« und »Fundi«-Position hinaus.</p>
+               </item>
+            </list>
+            <p>Ludger <name type="Person" role="Sprecher" ref="#VolmerLudger_1985-04-10">Volmer</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Frage des Verhältnisses von Mehrheit, Herrschaft und Hegemonie, das heißt des Umgangs mit der Mehrheit, wurde zumeist zugunsten von Herrschaft und nicht zugunsten von Hegemonie verwandt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zur Politik des alten BuVo: am Beispiel des Umbauprogramms wurde der Umschlag von der Hegemonie in blinde Herrschaft deutlich. Ziel ist vielmehr eine mehr hegemoniale Konstruktion und die Integration berechtigter Anliegen von Minderheiten.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zur Zeit herrsche eine Tendenz vor mit dem Versuch, die Geschichte abzukürzen und durch Taktieren die Plausibilität der eigenen Politik durchzusetzen. Allerdings leiden sämtliche Strategieansätze unter Plausibilitätsmangel. Die Strategie des »Querdenkens« dient zur Zeit als Legitimation. Provokative Thesen können erkenntnisleitend sein, sind jedoch nur in Maßen zu genießen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die Mehrheit des BuVo soll ihre Macht für Hegemonie und nicht für Herrschaft einsetzen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zur allgemeinen Strategie: es sollen Gespräche auch mit den konservativen Parteien geführt werden, aber ohne Abstriche zu machen.<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN026" type="comment">
+                           <p>Zur Korrektur dieser Stelle des Protokolls vgl. das Schreiben des Abg. <name type="Person" role="Erwaehnung" ref="#VolmerLudger_1985-04-10">Volmer</name> vom 21. Mai 1987; hier Anlage C.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Haltung zur SPD: früher gab es zwei verschiedene Sichtweisen, d.h. Zusammenarbeit mit oder Warnung vor der SPD. Hessens Scheitern biete eine Chance, denn die Integrationskraft der SPD hat nachgelassen.</p>
+               </item>
+            </list>
+            <p>Thomas <name type="Person" role="Sprecher" ref="#EbermannThomas_1987-02-18">Ebermann</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>zur BDK: den BuVo kann man ganz einfach entdämonisieren. Das Wahlergebnis läßt sich wie folgt aufschlüsseln:</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>nach Nürnberg<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN027" type="comment">
+                           <p>Gemeint ist die Bundesdelegiertenkonferenz der GRÜNEN vom 26. bis 28. September 1986 in Nürnberg.</p>
+                        </note>
+                     </seg> wurde die Schwäche des fundamentalistischen Flügels übertrieben;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Ökosozialisten etc. haben einen Anteil von etwa 40 Prozent innerhalb der Partei;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>das Personalangebot der Realos liefert einen weiteren Grund für das BuVo-Wahlergebnis u[nd] z[war] durch die Mißachtung der Parteifunktion gegenüber der parlamentarischen Funktion, wie auch der Spott auf den Bundeshauptausschuß und die Relativierung der Bedeutung der Bundesparteitage in der »Realo«-Fraktion;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>ebenso herrschte eine große Verärgerung über die Alleingänge oder Egozentrik von hohen Mandatsträgern;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>es bestand der Wunsch, ein Gegengewicht zu schaffen und objektive, neue Beschlüsse des Inhalts der »Realo«-Linie zu fassen;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>der Vorstoß Lukas <name type="Person" role="Erwaehnung" ref="#BeckmannLukas">Beckmanns</name> im Hinblick auf eine Bündnisofferte an die CDU/ CSU;<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN028" type="comment">
+                           <p>Zu den entsprechenden Überlegungen des scheidenden Vorstandssprechers der Grünen, <name type="Person" role="Erwaehnung" ref="#BeckmannLukas">Beckmann</name>, vgl. den Artikel »Grünes Liebäugeln mit dem ›C‹ der CDU«; »taz«, 23. April 1987, S. 4.</p>
+                        </note>
+                     </seg> der Wunsch nach Regierungspartnerschaft hat sich verselbständigt und ist eine vollkommen andere politische Botschaft als die bisherige »Realo«-Linie. Es gibt jedoch keine dramatische politische Verschiebung in der Partei. Ausschlaggebend für das Wahlergebnis waren weiterhin</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>der Wahlmodus; so haben etwa die Hamburger Delegierten für den Modus »Zwei Stimmen für drei Plätze« plädiert.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Der neue BuVo ist kein entwerteter Vorstand, da er mit deutlicher Mehrheit gewählt wurde. Die A-priori-Feststellung, der BuVo müsse nun geschwächt werden, ist ungerechtfertigt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zur Position der »Mitte«: Th. E. [<name type="Person" role="Sprecher" ref="#EbermannThomas_1987-02-18">Ebermann</name>] wäre froh, wenn es eine gäbe. Die Mittelgruppe soll nicht homogen sein, sondern soll sowohl gegen den einen als auch gegen den anderen Flügel vorgehen können. Sie soll auch kritisierbar sein, wenn sie sich einseitig zeigt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>weitere Zielsetzung: für die grüne Partei ist das Ziel auf lange Sicht die Stabilität des Pluralismus und nicht der Sieg einer Seite. Eine politische Mehrheit für rot-grün existiert gegenwärtig nicht, das Motivationstal muß durchgestanden werden. Deshalb ist es notwendig, aufeinander zuzugehen. Die Konzentration soll sich auf die politisch inhaltliche Arbeit konzentrieren und nicht auf Wahlergebnisse. Notwendig ist ein Kompromiß zwischen Realos, Fundis, Ökosozialisten und der Mittelgruppe; also nicht nur Harmonie beschwören, sondern den politischen Gegenstand in den Mittelpunkt stellen.</p>
+               </item>
+            </list>
+            <p>Hubert <name type="Person" role="Sprecher" ref="#KleinertHubert_1983-03-29">Kleinert</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Gründe für das Ergebnis der BDK:</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Hessen-Ergebnis: die Niederlage von rot-grün bewirkte eine Orientierungslosigkeit und den Verlust des Hoffnungsträgers »rot-grün«. Die »Fundis« bieten nunmehr einen sicheren Hafen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>reale Schwächen der Nicht-Fundi-Kandidaten durch Geringschätzung der Partei? Die Bundesversammlung hält sich nicht mehr an die Organisationsstruktur. Eine gewisse Professionalität ist notwendig; die Organisationsstruktur ist dem Stand der Partei nicht mehr angemessen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>auf der Bundesversammlung herrschte ein großes Bedürfnis nach Vereinfachung vor – der Transport einfacher Weltbilder funktioniert nach wie vor. Die Exponenten aller Richtungen tragen die Verantwortung, dieses Bedürfnis nicht nur zum eigenen Vorteil auszunutzen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zum Wahlverfahren: das Problem war, daß gleichzeitig über die BuVo-Kandidaten abgestimmt wurde und nicht nacheinander, sowie der späte Termin.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Das Hessen-Ergebnis war maßgeblich für das Ergebnis der BuVo-Wahl. Der Vorschlag Thomas <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermanns</name>, den BuVo im Zweifelsfall einfach abzuwählen, ist vorsichtig zu werten.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Es wird einen Hang geben, die eigenen politischen Positionen nur aufgrund der errungenen Posten durchzusetzen und es werden mehr Fronten zwischen diesem BuVo und der Bundestagsfraktion aufbrechen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>zur Zukunft der GRÜNEN: Die Zäsur des Hessen-Ergebnisses erweist sich wichtiger als die BDK, weil Hessen als rot-grüne machtpolitische Alternative nun wegfällt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Notwendig ist es, einen Minimalkonsens zwischen den Lagern herzustellen, der gegenwärtig nicht vorhanden ist.</p>
+                  <p>Eckpunkte grüner Politik sind für die Zukunft:</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>die Verständigung über Strukturfragen innerhalb der Partei, also die Professionalismusfrage,</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>sowie die inhaltliche Problematik, d. h. außenpolitisch die Abrüstungsdebatte, innenpolitisch die Frage des Sozialismus in der Wirtschaftspolitik.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Schlußfolgerung: Die GRÜNEN bleiben mittelfristig nur ein politischer Faktor in der BRD, wenn keiner den anderen »raushaut«.</p>
+               </item>
+            </list>
+            <p>Eckhard <name type="Person" role="Sprecher" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>sieht das Wahlergebnis als ausgesprochen schlecht an. Es hat jedoch friedensstiftende Wirkung gehabt. Die neuen BuVo-Sprecher sind keine Repräsentanten der politischen Programmatik des Parteitags. Allerdings soll jetzt keine Gegenposition gegen den BuVo gebildet werden. Wichtig sind eine blockübergreifende Politik und eine Aufweichung der Strömungen. E. S. [<name type="Person" role="Sprecher" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>] plädiert gegen ein Bastionsdenken und für eine Kooperation mit dem neuen BuVo.</p>
+               </item>
+            </list>
+            <p>(Aufgrund des Wechsels der Protokollanten/in fehlen die Beiträge von H. <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> und O. <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name>.)</p>
+            <p>Marieluise <name type="Person" role="Sprecher" ref="#Beck-OberdorfBeckMarieluise_1983-03-29">Beck-Oberdorf</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Ich weiß nicht mehr, wo ich mich heute einordnen soll. Die Fädenzieher verbergen sich ... Die Mütterdiskussion wird beispielsweise benützt, um damit Politik zu machen, anstatt dazu beizutragen, strategische Grundfragen zu erörtern (Beisp. <name type="Person" role="Erwaehnung" ref="#BahroRudolf">Bahro</name> gegen Umbauprogramm, Mindesteinkommen).</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die spannenden politischen Fragen sind rausgefallen, das muß sich ändern.</p>
+               </item>
+            </list>
+            <p>Christian <name type="Person" role="Sprecher" ref="#SchmidtChristian_1985-03-22">Schmidt</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Die Mitte bei den GRÜNEN ist »rechts von den GRÜNEN« anzusiedeln. Weitere Aufgaben sind:</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>die parlamentarischen Perspektiven für die neunziger Jahre;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>das Umbauprogramm handlungsrelevant machen;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>die ökologische Konversion und basisdemokratischer Umbau;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>der ökolibertäre Ansatz der Staatskritik;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Umgangsformen verbessern;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Gesamtinteresse der Partei.</p>
+               </item>
+            </list>
+            <p>TOP 3: Laufende parlamentarische Woche</p>
+            <p>3. Zu verabschiedende Vorlagen:</p>
+            <p>Angenommen und im Bundestag eingereicht werden sollen folgende Anträge:</p>
+            <p>3.1. Antrag »Schutz der Nordsee«<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN029" type="comment">
+                     <p>Zu dem Antrag »Schutz der Nordsee« vom 7. Mai 1987 vgl. BT Drs. 11/247.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3.2. Antrag »Maßnahmen gegen Luftverschmutzung«<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN030" type="comment">
+                     <p>Zu dem Entschließungsantrag »Maßnahmen gegen Luftverschmutzung« vom 25. Juni 1987 vgl. BT Drs. 11/560. Vgl. dazu auch die Große Anfrage der GRÜNEN »Maßnahmen gegen Luftverschmutzung« vom 20. Mai 1987 BT Drs. 11/305.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3.3. Antrag »Baustop für WAA-Wackersdorf«<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN031" type="comment">
+                     <p>Zu dem Antrag »Baustopp für die Wiederaufarbeitungsanlage bei Wackersdorf« vom 11. Mai 1987 vgl. BT Drs. 11/260.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3.4. Antrag »Programm zur Verminderung der Schadstoffemissionen bei einer Stromversorgung ohne Atomenergie«<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN032" type="comment">
+                     <p>Zu dem Antrag »Programm zur Verminderung der Schadstoffemissionen bei einer Stromversorgung ohne Atomenergie« vom 20. Mai 1987 vgl. BT Drs. 11/306.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3.5. Antrag »Gestaltung der technischen Entwicklung; TFA-Abschätzung und -bewertung«<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN033" type="comment">
+                     <p>Zu dem Antrag »Gestaltung der technischen Entwicklung; Technikfolgen-Abschätzung und -Bewertung« vom 5. Mai 1987 vgl. BT Drs. 11/220.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3.6. Gesetzentwurf Volkszählung<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN034" type="comment">
+                     <p>Vgl. dazu oben Anm. 11 und 12.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>zusätzliche Anträge:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Antrag auf Einrichtung einer Enquetekommission wird im Bundestag eingereicht. (1 Enthaltung)<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN035" type="comment">
+                           <p>Gemäß der Empfehlung des Ausschusses für Jugend, Familie, Frauen und Gesundheit wurde am 8. Mai 1987 vom Bundestag eine Enquete-Kommission »Gefahren von AIDS und wirksame Wege zu ihrer Eindämmung« eingesetzt. Die GRÜNEN legten in diesem Zusammenhang noch einen eigenen Antrag vor, in dem die Aufgaben dieser Enquete-Kommission anders definiert wurden. Der Antrag wurde vom Bundestag aber abgelehnt. Vgl. BT Drs. 11/244 neu, 11/248; BT Plenarprotokoll 11/11, S. 670 f.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Gesetzentwurf zur Kennzeichnung der Milchprodukte wird an den Umwelt-AK zurücküberwiesen.<seg type="note">
+                        <note xml:id="gruene-11_1987-05-05-t0000_EP_FN036" type="comment">
+                           <p>Der Entwurf des Antrags ist dem Protokoll beigefügt. Vgl. AGG, B.II.1, 2135. – Der Antrag »Kennzeichnung von Milch, Milchprodukten und Säuglingsnahrung mit Werten radioaktiver Belastung und Ausweitung des Meßstellennetzes« wurde schließlich am 16. Juni 1987 im Bundestag eingebracht. Vgl. BT Drs. 11/486.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+            </list>
+            <p>TOP-Ergänzungspunkt</p>
+            <p>Antrag Angelika <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name> – <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name>/<name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name> zum Thema Mittelstreckenraketen:</p>
+            <p>1. Grundlage entsprechend der bereits zweimal getroffenen Entscheidungen der Fraktion<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN037" type="comment">
+                     <p>Vgl. dazu bereits Dok. 19, TOP 5 a.</p>
+                  </note>
+               </seg> wird der Antrag <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name> angenommen mit 18 gegen 16 Stimmen.</p>
+            <p>2. Aus der BDK-Resolution <name type="Person" role="Erwaehnung" ref="#SchoppeWaltraud_1983-03-29">Schoppe</name>, <name type="Person" role="Erwaehnung" ref="#VennegertsChrista_1987-02-18">Vennegerts</name> wurde der Satz</p>
+            <list type="undefined">
+               <item>
+                  <p>DIE GRÜNEN halten an ihrem Grundsatz einseitiger Abrüstungsschritte fest, die in eine mehrseitige Abrüstungsdynamik münden können. Diese Strategie schließt jedoch die vertragliche Vereinbarung zwei aus.</p>
+               </item>
+            </list>
+            <p>mit 28 Stimmen angenommen.</p>
+            <p>3. Die Aufforderung einer zusätzlichen Forderung, die den Umbau der Pershing II betrifft, wurde mit 14 zu 13 Stimmen abgelehnt.</p>
+            <p>4. Der Gesamtantrag wurde mit 21 : 8 : 5 Stimmen angenommen.</p>
+            <p>Den Redebeitrag teilen sich Otto <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name> (15 Minuten) und Alfred <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name> (9 Minuten).<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN038" type="comment">
+                     <p>Zum Antrag »Abrüstung nuklearer Mittelstreckenraketen in Europa« vom 6. Mai 1987 vgl. BT Drs. 11/230. – Der Antrag wurde am 7. Mai 1987 im Zusammenhang mit der Regierungserklärung von Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KohlHelmut_1976-12-14">Kohl</name> zur Abrüstungsproblematik behandelt. Zu den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#SchilyOtto_1983-03-29">Schily</name> und <name type="Person" role="Erwaehnung" ref="#MechtersheimerAlfred_1987-02-18">Mechtersheimer</name> vgl. BT Plenarprotokoll 11/10, S. 539–542 und 558–560.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Antrag Thomas <name type="Person" role="Erwaehnung" ref="#EbermannThomas_1987-02-18">Ebermanns</name>, das Abstimmungsergebnis der Friedensbewegung und dem BuVo mitzuteilen, wurde nicht beschlossen.</p>
+            <p>Der Antrag, den jetzt zurücküberwiesenen KA-Antrag<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN039" type="comment">
+                     <p>Zu dem Antrag des Koordinierungsausschusses der BAG Frieden vgl. Dok. 19, Anlage C.</p>
+                  </note>
+               </seg> im Juni in den Bundestag einzubringen (<name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name>), wurde mit großer Mehrheit abgelehnt. Der Antrag soll erst in einer Fraktionssitzung beraten werden (A. <name type="Person" role="Erwaehnung" ref="#BeerAngelika_1987-02-18">Beer</name>).<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN040" type="comment">
+                     <p>Zur Abrüstungsthematik vgl. weiter Dok. 22, TOP 4.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Volkszählungsdebatte:</p>
+            <p>Als Redner werden Regula <name type="Person" role="Erwaehnung" ref="#Schmidt-BottRegula_1987-02-18">Schmidt-Bott</name> und Thomas <name type="Person" role="Erwaehnung" ref="#WueppesahlThomas_1987-02-18">Wüppesahl</name> benannt.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN041" type="comment">
+                     <p>Vgl. oben Anm. 12.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Alle übrigen TOPs wurden nicht behandelt.</p>
+            <p>Protokollant/in Brigitte <name type="Person" role="Erwaehnung" ref="#NN_weiblich">Lausch</name>
+               <seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN042" type="comment">
+                     <p>Eine Mitarbeiterin mit diesem Namen konnte in der Fraktion nicht nachgewiesen werden.</p>
+                  </note>
+               </seg>, Udo <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>
+            </p>
+         </div>
+         <div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Anlage A</p>
+            <p>[Mai 1987]: Pressemitteilung des Bundesvorstands der Partei DIE GRÜNEN zur Bundesdelegiertenkonferenz vom 1. bis 3. Mai 1987 in Duisburg. AGG, B.II.1, 2135.</p>
+            <p>Wenn wir einmal, von sonstigen Diskussionen unbelastet, Bilanz ziehen, sieht es ausgezeichnet für DIE GRÜNEN aus:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>blendende Wahlergebnisse;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Mitgliederzahlen soeben erstmalig über 40 000;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>den sozialen Bewegungen, von denen wir leben, geht es besser denn je.</p>
+               </item>
+            </list>
+            <p>Das wirft die Frage auf, handelt es sich bei der vielbeschworenen »Krise« der GRÜNEN nicht vielmehr um eine eingebildete Krankheit, diagnostiziert von eingebildeten Ärzten? Wir meinen, vieles spricht dafür!</p>
+            <p>Dieser Bundesvorstand wird von der Partei getragen – das zeigen z. B. die Reaktionen noch auf der Bundesversammlung, die ein Großteil der Presse bereitwillig unterschlug. Wir werden diese »Unterschlagungen« genauso gelassen zu tragen wissen, wie diese Bundesversammlung konstruktiv zu Ende gebracht werden konnte trotz des hochgeblasenen Krisengeschwätzes in den Wochen zuvor. Diese Partei hat über alle tatsächlichen Meinungsverschiedenheiten hinweg einen breiten Fundus an Gemeinsamkeiten.</p>
+            <p>Bei der Bundesvorstandswahl handelte es sich nicht um eine »Lagerwahl«, sondern um eine Orientierungswahl. Das heißt, es wurden Personen gewählt, die im Falle des Sprechergremiums z. B. auch von realpolitisch-orientierten Delegierten mitgewählt wurden. Insbesondere aber wurden auch Personen gewählt, die für bestimmte inhaltliche Schwerpunkte der GRÜNEN stehen und die Partei programmatisch repräsentieren. Über die Verteilung der Strömungen werden in den Medien falsche und durchsichtige Zahlenspiele angestellt. Wir werden gern immer wieder über Abstimmungsergebnisse berichten und sie möglicherweise mit 6 : 5, 7 : 4, 8 : 3, 9 : 2, 10 : 1 und oft genug mit 11 : 0 (falls niemand fehlt) überraschen können.</p>
+            <p>Es ist ein Bundesvorstand gewählt worden, der fähig ist, sich der gesellschaftlichen Realität und den kommenden sozialen Auseinandersetzungen zu stellen. Der Bundesvorstand wird eine politische Scharnierfunktion ausfüllen zwischen der Bundestagsfraktion und den sozialen Bewegungen.</p>
+            <p>Unsere Absicht ist es, offensiv die Kriminalisierungsstrategien des Staates gegen soziale Bewegungen und GRÜNE zu unterlaufen, wie wir es am Beispiel der Bundeskonferenz der Anti-Atom-Initiativen in Nürnberg im Januar dieses Jahres und jetzt z. B. an der Kooperation mit dem breiten Volkszählungswiderstand praktizieren. Unsere Aufgabe ist es, sozialen Widerstand zu stärken, gesellschaftliche Gegenmacht aufzubauen und so den notwendigen politischen Druck für gesellschaftliche Veränderungen zu entfalten, die sich auch in substantiellen parlamentarischen Reformen ausdrücken.</p>
+            <p>Damit stehen wir in solidarischer Beziehung mit allen Menschen, die in den GRÜNEN oder in den sozialen Bewegungen gegen soziales Elend und Naturzerstörung, gegen Ausländerhaß und Frauendiskriminierung und für eine solidarische Beziehung mit den Ländern der sog. Dritten Welt kämpfen.</p>
+            <p>Der Bundesvorstand der GRÜNEN ruft alle Mitglieder der GRÜNEN auf, sich offensiv, inhaltsbezogen und konfliktfreudig mit Alltagsstrukturen und Alltagsbewußtsein auseinander[zu]setzen! Das heißt, statt Koalitionsangebote an die parlamentarische Vertretung konservativ/reaktionären Denkens ist die inhaltsbezogene Auseinandersetzung mit wertkonservativen Vorstellungen angesagt.</p>
+            <p>Während der Papst Teufel und Finsternis predigt und die Menschen in Angst und Abhängigkeit versetzen will, kämpfen wir gegen Duckmäusertum und obrigkeitsstaatliches Denken. Die Bedrohung von Menschen durch Armut und Erniedrigung und die Zerstörung der Natur darf nicht durch Abstumpfung und Resignation zum Normalzustand werden. Die Bundesversammlung der GRÜNEN hat im übrigen nicht nur Personen gekürt – neben dem Bundesvorstand das Schiedsgericht und die Rechnungsprüfung – sondern auch zu wichtigen Inhalten eindeutig Stellung bezogen.</p>
+            <p>Ich möchte im Folgenden die Wichtigsten kurz umreißen:</p>
+            <p>Mit der Einrichtung einer eigenständigen Arbeitsgruppe »Mütterpolitik« innerhalb der BAG Frauen haben die GRÜNEN das Anliegen einer Gruppe von Müttern aufgegriffen; die notwendigen organisatorischen und finanziellen Voraussetzungen zu einer inhaltlichen Auseinandersetzung um diesen Aspekt von Frauenpolitik sind ihnen zugesprochen worden. Damit verbunden ist eine Aufforderung an beide Gruppen von Frauen, aufeinander zuzugehen, um den Streit um Inhalte konstruktiv zu führen.</p>
+            <p>Die inhaltlichen Positionen wie sie im Müttermanifest skizziert sind, wurden keinesfalls bestätigt, sondern von der Müttergruppe selbst relativiert.</p>
+            <p>In der Entscheidung, ob DIE GRÜNEN eine Stiftung gründen bzw. als grünnah anerkennen sollen, hat die Bundesversammlung Besonnenheit gezeigt. Die GRÜNE Basis läßt sich diese Entscheidung nicht von irgend jemanden aus der Hand nehmen, weder von GRÜNEN Funktionsträger/innen, Gremien oder Stiftungsinitiativen außer[halb] der GRÜNEN: Ein Sonderparteitag im September wird hierüber entscheiden unter der Voraussetzung, daß entscheidungsfähige Modelle zur Struktur und zur inhaltlichen Konzeption vorliegen. Bis dahin soll die Diskussion mit den sozialen Bewegungen auch im Rahmen eines Workshops geführt werden. Die bestehenden Initiativen werden bis dahin gleiches Recht auf organisatorische Unterstützung durch DIE GRÜNEN [haben].</p>
+            <p>In der Frage des Volkszählungsboykotts stehen DIE GRÜNEN einstimmig auf der Seite der VoBo-Bewegung. Wir rufen zum Boykott auf und solidarisieren uns mit allen von staatlichen Gewalt- und Zwangsmaßnahmen Betroffenen.</p>
+            <p>In der Stahlstadt Duisburg blieben DIE GRÜNEN auch auf die Krise der Stahlindustrie keine Antwort schuldig: Wir unterstützen die Forderung der IG Metall nach konzerninternen Beschäftigungsgesellschaften sowie die Einrichtung von regionalen Entwicklungsfonds. Statt Verstaatlichung fordern wir Vergesellschaftung sowie ein öffentliches Sonderprogramm zum Umbau der Stahlindustrie.</p>
+            <p>Das brennende Thema Gesundheitspolitik ist in der Presse leider völlig untergegangen. GRÜNE Gesundheitspolitik setzt an den Wurzeln von Krankheit an, wie Umweltzerstörung. Die Pläne der Koalition vom März ’83 zur Strukturreform der Krankenversicherung sowie das SPD-Konzept lehnen wir ab. Die gesellschaftlichen Ursachen gilt es [zu] bekämpfen; die Rechte der Patient/innen nach optimaler Versorgung, vollständiger Aufklärung und freier Entscheidung müssen gestärkt werden. Langfristiges Ziel ist eine einheitlich gesetzliche Krankenversicherung, in der alle Menschen eigenständige Mitglieder sind – auch beispielsweise Strafgefangene, Flüchtlinge, Ehefrauen ... Es geht um eine Stärkung der Betroffenen und eine Entmachtung der finanziellen Nutznießer des Gesundheitssystems, insbesondere der Pharmaindustrie.</p>
+            <p>Die Bundesversammlung hat weiter zum Ausdruck gebracht, wenn die BRD eine Null-Lösung bei Mittelstreckenraketen wolle, müsse sie jetzt unverzüglich mit dem Abzug der Raketen beginnen. Nur durch eine solche Maßnahme kann tatsächlich eine Null-Lösung in Gang gebracht werden. Sie wird derzeit in erster Linie durch die europäische[n] NATO-Staaten verhindert. Nachdem die Sowjets nun zur Null-Lösung bereit sind, würde ein Abzug der Raketen aus der BRD nicht nur zu entsprechenden sowjetischen Antworten führen, sondern auch in den anderen westeuropäischen NATO-Staaten eine weitere Ablehnung der Null-Lösung politisch unmöglich machen. Nur durch einen unabhängigen, einseitigen Abzug der Raketen aus der BRD kann also eine mehrseitige Abrüstung, eine Null-Lösung in Europa bewirkt werden, nicht nur durch Appelle an USA und Sowjetunion, denen keine eigenen Taten folgen.</p>
+         </div>
+         <div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Anlage B</p>
+            <p>[April 1987]: Veröffentlichung des Abgeordneten Peter Sellin (Auszüge). AGG, B.II.1, 2135.<seg type="note">
+                  <note xml:id="gruene-11_1987-05-05-t0000_EP_FN043" type="comment">
+                     <p>Veröffentlicht in: Stachlige Argumente. Mitgliederzeitschrift der AL-Berlin (1987).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Politische Einschätzung der Lage der Grünen im Frühjahr 87</p>
+            <p>Nach der Hessenwahl am 5. 4. 87 treten die beiden sich gegenseitig bedingenden Strömungen (Fundis und Realos) in »alten ausgetretenen Mustern« der Medienpolitik im Vorfeld der Bundesdelegiertenversammlung am 1. 5.–3. 5. 87 gegeneinander an. Die einen orientieren in altbekannter Manier auf die »Beschwörung« der Fähigkeiten außerparlamentarischer Bewegungen, die anderen »beschwören« die »einzig« realistische Politik in der rot-grünen Bündnisperspektive.</p>
+            <p>Bei dieser kurzschlüssigen Polarisierung der formierten Meinungsäußerungen geht der Blick für die politischen Unfähigkeiten in allen Gruppen der Grünen / Alternativen Partei verloren. Es werden platte »Wahrheiten« verkauft, hinausposaunt.</p>
+            <p>Ich habe den Konstituierungsprozeß der neuen Bundestagsfraktion der Grünen seit Ende Januar 87 als beteiligter MdB miterlebt. Die politischen »Hahnenkämpfe« bei der Sprecher/innen-Wahl sind politischer Ausdruck für das Zuschütten der inhaltlichen Fragestellungen für das notwendige weitere und tiefere Eingreifen in die Innen- und Außenpolitik der Bundesrepublik.</p>
+            <p>Es gab bis heute keine politische Gesamtdebatte über das Selbstverständnis und den politischen Handlungskatalog von Vorhaben der neuen Bundestagsfraktion, auch nicht in dem Arbeitskreis, dem ich angehöre. Personalentscheidungen nach politischer Strömungscoleur gingen vor inhaltliche Entscheidungsvorbereitungsdebatten, die erst die politische strategische Orientierung und Arbeitsfähigkeit der Fraktion hätten hervorbringen können.</p>
+            <p>Die getroffenen Personalentscheidungen hinterließen auf vielen Ebenen Frustrationen, Verhärtungen und entwickelten keine politische Aufbruchstimmung der Gesamtfraktion. Die grüne Bundestagsfraktion »igelte« sich in den Verhältnissen ein und schrieb selbst die Verkrustungen zwischen dem Fundi- und Realoselbstverständnis fest.</p>
+            <p>Die Hessenwahl zwingt meines Erachtens beide »Lager« verspätet in die Notwendigkeit, über politische Perspektiven völlig neu zu diskutieren. Es ist nicht mit Bündnisoptionen, egal welcher Art, getan, um politische Entscheidungen innerhalb des grün-alternativen Spektrums der Partei durchzusetzen.</p>
+            <p>Meines Erachtens geht es darum, welche politischen Konzeptionen gestaltenwollender Art und Weise legen die Grünen vor, um meinungsbildend in den Prozeß des sich bereits vollziehenden Umbaus der Industriegesellschaft (z. B. Kohle und Stahl) einzugreifen. Das Entgiftungsprogramm in Bezug auf die Chemieindustrie ist keine ausreichende konzeptionelle Antwort auf die ökologischen, sozialen Folgen des geforderten Wandels zu einer »sanften Chemie«. Für einzelne Stoffgruppen und Produktlinien müssen Alternativen entworfen werden, um den ökologisch erforderlichen Umbau und die qualitativen Veränderungen unter den Arbeitnehmern durchsetzen zu können.</p>
+            <p>Die Oppositionskultur der außerparlamentarischen Bewegungen ist wichtig für das Aufwerfen von Fragestellungen und von aktivem Widerstand gegen strukturell gewalttätige Entwicklungen. Die Antworten aus der Mitte der Oppositionsbewegungen sind meist verkürzte Antworten, die jedoch in ihrer Plausibilität den Widerstand zu formieren vermögen. Den Oppositionsbewegungen fehlt für sich genommen das Entwickeln von konzeptionellen Lösungen, die der komplizierten, heterogenen Industriegesellschaft gerecht werden.</p>
+            <p>[…]</p>
+            <p>Unsere politische Aufgabe (exemplarisch hier angerissen) besteht also jenseits von politischen Bündnisdebatten im parlamentarischen und außerparlamentarischen Raum darin, »Meinungsführerschaften« in direkter Auseinandersetzung mit dem »modernen« konservativen Lager der CDU / CSU zu suchen. Der »Spätkapitalismus« und der »<name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>-Imperialismus« (Rüstungsexport, Airbus) muß mit der »Menschenrechtspolitik« von <name type="Person" role="Erwaehnung" ref="#GeisslerHeiner_1965-10-19">Geißler</name> (vgl. Gewaltdebatte im Bundestag am 2. 4. 78) konfrontiert werden.</p>
+            <p>Die Forschungs- und Entwicklungspolitik sowie die Wirtschaftspolitik der CDU sind geprägt von einem ungebrochenen Fortschrittsoptimismus, der bisher politische Fortschrittskritiker in die Defensive zu drängen versteht. Diesem politischen Selbstverständnis der »modernen« Konservativen muß eine eigene Konzeption des politischen Gestaltungswillens offensiv entgegengesetzt werden. Solcher Gestaltungswille ist im Fundilager der Grünen politisch nicht feststellbar, da ihre Aussagen auf plakative Kritik reduziert sind und keine Konzeptionen erarbeitet werden, die geeignet sind, um auf politische Durchsetzung orientiert zu werden.</p>
+            <p>[…]</p>
+            <p>Es würde Fundis und Realos gut anstehen, die Auseinandersetzung über politische Konzeptionen zu suchen als über die für einige Jahre irrelevante Addition von rot und grün. Mehrheitsfähigkeit entsteht nur, wenn politisch tragfähige Antworten für die Mehrheit der Bevölkerung ausgearbeitet sind und beginnen ideologisch zu greifen. Dieser schwierige Weg führt nur über die Auseinandersetzung mit den Konservativen alter Coleur. Die politische Auseinandersetzung mit den Sozialdemokraten genießt innerhalb der Grünen von daher einen viel zu großen Stellenwert. Die Sozialliberale Koalition liegt auf Bundesebene vier Jahre zurück. Ihre Fehler werden heute seitens der CDU zum großen Teil fortgesetzt. Dabei ist es den Konservativen gelungen, wirtschaftspolitisch den konjunkturellen Aufschwung für sich zu nutzen und ihre ideologischen Grundsätze in der Bevölkerung breiter zu verankern. Aus diesem Grunde ver-lange ich die politische Orientierung auf die politische Auseinandersetzung in allen Feldern der Politik mit der politischen Praxis der CDU/CSU.</p>
+         </div>
+         <div type="SVP" xml:id="gruene-11_1987-05-05-t0000_EP_div_SVP-4">
+            <head>D.</head>
+            <p>Anlage C</p>
+            <p>21. Mai 1987: Schreiben des Abgeordneten Ludger Volmer an die Geschäftsführung der Fraktion. AGG, B.II.1, 2135.</p>
+            <p>Betr.: Änderung des Protokolls der Fraktionssitzung zum Tagesordnungspunkt Hessenwahl</p>
+            <p>Liebe Leute,</p>
+            <p>normalerweise bin ich überhaupt nicht pingelig, was Protokolle angeht. Da es sich in diesem Falle aber um wichtige politische Positionsbestimmungen handelt, bitte ich das Protokoll an dem Punkt, wo mein Redebeitrag auf der Fraktionssitzung referiert wird, zu ändern.</p>
+            <p>Zwei Aspekte sind mir wichtig:</p>
+            <p>1. Ich habe nicht nur den alten Bundesvorstand kritisiert, sondern gleichzeitig dem jetzt amtierenden Fraktionsvorstand Selbstherrlichkeit und Rücksichtslosigkeit vorgeworfen.</p>
+            <p>2. Ich habe mich ausdrücklich dagegen erklärt, mit konservativen Parteien den Dialog aufzunehmen. Statt dessen habe ich gefordert, Gespräche mit konservativen gesellschaftlichen Gruppierungen (wie z. B. den Kolping-Gruppen oder Evangelischen Arbeiter- und Handwerkervereinen) Gespräche zu führen.</p>
+            <p>V. [<name type="Person" role="Erwaehnung" ref="#VolmerLudger_1985-04-10">Volmer</name>]</p>
+         </div>
+      </body>
+   </text>
 </TEI>

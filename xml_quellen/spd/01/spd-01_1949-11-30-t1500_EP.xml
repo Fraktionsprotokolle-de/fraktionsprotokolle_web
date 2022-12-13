@@ -1,188 +1,433 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-01_1949-11-30-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeberPetra"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#JuengerkesSven"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte (OCR, anschließend manueller Korrekturdurchgang) und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1957. (2 Halbbände).</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/I</title><author>Petra Weber</author><pubPlace>Düsseldorf</pubPlace><date>1993</date><idno type="DNB">https://d-nb.info/930107160</idno><idno type="DNB">https://d-nb.info/930109627</idno></bibl></note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 1. WP, 1, Ord. 13.9.1949–11.12.1951</idno>
-							<objectName>Protokoll: Sitzung der SPD-Fraktion am 30. November 1949, 15.00 Uhr</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 30. November 1949</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1949-11-30"><time type="start" when="15:00:00"/><time type="end"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#OllenhauerErich_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-07-22" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-01" who="#JuengerkesSven" status="draft" n="3">SVP und Namen ergänzt.</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-01_1949-11-30-t1500_EP_SVP-1" corresp="#spd-01_1949-11-30-t1500_EP_div_SVP-1">A.: Bericht über die öffentlichen Reaktionen auf das Petersberger Abkommen, das Ruhrstatut und den Ausschluss von Kurt <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> aus den Plenarsitzungen. – Entnazifizierung. – Arbeitslosenhilfe. – Finanzerung der Ministerien. – Verfassungs des <name type="Organisation" ref="#BRH">Rechnungshofs</name>. – Steuerreform. – Geschäftsordnung des Bundestags. – Hochseefischerei. – Bundeshauptstadt.</item>
-					<item xml:id="spd-01_1949-11-30-t1500_EP_SVP-2" corresp="#"/>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-01_1949-11-30-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Der Genosse <name type="Person" role="Sprecher" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> berichtet über die Verhandlungen der letzten Tage. Er weist auf den Widerhall hin, den unsere Haltung in der Öffentlichkeit gefunden hat.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN001" type="comment"><p>Zum Versuch, die Öffentlichkeit für <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> Haltung zu mobilisieren, <ref type="internal" target="#spd-01_1949-11-25-t0900_EP">vgl. Nr. 22</ref>. Im <bibl type="series-item"><name type="Organisation" ref="#Vorw">»Neuen Vorwärts«</name> vom 3.12.1949</bibl> ist die <quote>»Rede von einer Protestwelle in ganz Deutschland«</quote> gegen den Ausschluß <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers.</name>
-								<quote>»In Großstädten und Dörfern«</quote> hätten <quote>»Hunderttausende mit der Sozialdemokratie Protest gegen die Willkürherrschaft der bürgerlich-kapitalistischen Mehrheit im Bundestag erhoben.«</quote> Weiter wird von zahlreichen Proteststreiks in Großbetrieben berichtet. Zu den Protestkundgebungen gegen den Ausschluß <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> vgl. auch:<bibl type="series-item">
-									<name type="Organisation" ref="#NZ">»Neue Zeitung«</name> vom 28.11.1949</bibl>.</p></note></seg> Sorge bereitet die Stellungnahme der Gewerkschaften.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN002" type="comment"><p>Der <name type="Organisation" ref="#DGB">DGB-Vorstand</name> hatte sich auf Ersuchen des BMWi vom 26.10.1949 am 21.11.1949 in einer Stellungnahme zum Ruhrstatut und zu Gesetz Nr. 75 für ein bedingtes Ja zum Beitritt der Bundesregierung zur Ruhrbehörde ausgesprochen. Voraussetzung für einen Beitritt der Bundesregierung sollte eine gesamteuropäische Neuordnung der Kohle-, Eisen- und Stahlindustrie, die Mitbestimmung der Arbeitnehmer in der Montanindustrie und die Beteiligung der Gewerkschaften an der Mitarbeit in der Ruhrbehörde sein. Die Stellungnahme ist abgedr., in: <bibl type="single-item"><hi rendition="#smcap">Lademacher</hi>/ <hi rendition="#smcap">Mühlhausen</hi>, S. 454–457</bibl>.</p></note></seg> Das um so mehr, weil vorher Unterhaltungen mit den Gewerkschaften stattgefunden haben.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN003" type="comment"><p>In einem Brief an Kuno <name type="Person" role="Erwaehnung" ref="#BrandelKuno">Brandel</name>, Mitglied des Hauptvorstands der <name type="Organisation" ref="#IGM">IG Metall</name>, vom 3.12.1949 berichtet der gewerkschaftspolitische Referent beim Parteivorstand Siggi <name type="Person" role="Erwaehnung" ref="#NeumannSiggi">Neumann</name> von einer Pressekonferenz des <name type="Organisation" ref="#DGB">DGB</name> am 24.11., in der sich <name type="Person" role="Erwaehnung" ref="#AgartzViktor">Agartz</name> und <name type="Person" role="Erwaehnung" ref="#GrosseFranz">Grosse</name> noch ausdrücklich zur Resolution der Gewerkschaften in der britischen Besatzungszone vom 7.1.1949, die das Ruhrstatut eindeutig ablehnte, bekannt hätten. »Wenige Stunden später«, so <name type="Person" role="Erwaehnung" ref="#NeumannSiggi">Neumann</name>, »erfolgte von <name type="Person" role="Erwaehnung" ref="#BöcklerHans">Böckler</name>-<name type="Person" role="Erwaehnung" ref="#KarlAlbin">Albin</name> Karl-Hoff eine Wendung von 180 Grad, die ihresgleichen nur in Kominternwendungen hat.« <bibl type="item-in-archive">PV-Akten, Alter Bestand, 02050 (Org. IG-Metall), AdsD</bibl>. Vgl. auch Protokoll der PV-Sitzung der SPD am 5./6.1.1950, in: <bibl type="single-item"><hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 531</bibl>.</p></note></seg></p>
-				<p>Genosse <name type="Person" role="Sprecher" ref="#BoehmJohannes_1949-09-07">Böhm</name> erklärt, daß die Denkschrift auf Wunsch und Anfrage des Wirtschaftsministeriums angefertigt sei.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN004" type="comment"><p>Vgl. Anm. 2.</p></note></seg> Nach Bekanntgabe des Abkommens vom Petersberg habe ein Sturm auf die Pressestelle der Gewerkschaft eingesetzt. Daraufhin gab der Bundesvorstand die Presseverlautbarung heraus, daß die Mitarbeit in der Ruhrbehörde für richtig gehalten würde.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN005" type="comment"><p>Erklärung des DGB-Vorstandes vom 24.11.1949, abgedr., in: <bibl type="single-item"><hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 472</bibl>. Von <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> war in der Bundestagssitzung am 24./25.11.1949 diese Presseerklärung des DGB-Vorstandes als <name type="Organisation" ref="#UPI">United Press</name> Agenturmeldung verlesen worden, um den Widerstand der SPD-Fraktion gegen das Petersberger Abkommen zu brechen.<bibl type="btp"><ref type="external" target="01/18"> BT Sten. Ber. 1, S. 501</ref></bibl>.</p></note></seg></p>
-				<p>Nach den Ausführungen von <name type="Person" role="Erwaehnung" ref="#BoehmJohannes_1949-09-07">Böhm</name> wurde die Beratung unterbrochen und der Generalsekretär der <name type="Organisation" ref="#Labour">Britischen Arbeiterpartei </name>Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name><seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN006" type="comment"><p>Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name> (1902–1963), 1923–1925 Sekretär der Bargoed Labour Party, 1937–1940 Propaganda Officer der Labour Party, 1940–44 Leiter der Research Division der Labour Party, 1944–1961 Generalsekretär der Labour-Party.</p></note></seg> begrüßt. Nachdem er der Fraktion kurz die Stellung der englischen Arbeiterpartei dargelegt hatte, dankte ihm <name type="Person" role="Sprecher" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> für den Besuch in Deutschland.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN007" type="comment"><p>Nachdem der <name type="Organisation" ref="#SPDVorstand">SPD-Vorstand</name> bereits im Juli 1949 der Labour-Party eine Demontagedenkschrift übermittelt hatte (<bibl type="series-item">vgl. <name type="Organisation" ref="#Vorw">»Neuer Vorwärts«</name> vom 3.9.1949</bibl>), hatte die Labour-Party Anfang Nov. den Wunsch nach einer Aussprache über die Demontagefrage geäußert. <bibl type="series-item">Vgl. <name type="Organisation" ref="#Vorw">»Neuer Vorwärts«</name> vom 19.11.1949</bibl>. Bereits am 29.11.1949 hatte eine Besprechung zwischen einer Delegation der britischen Labour-Party unter Führung Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name> und dem Parteivorstand und den Fraktionsvorsitzenden der SPD stattgefunden, bei der die Ablehnung des Petersberger Abkommens durch die SPD-Fraktion auf scharfe Kritik bei Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name> gestoßen war, der die Haltung der SPD-Fraktion als <quote>»entirely false position«</quote> bezeichnet hatte. <bibl type="single-item">Vgl. <hi rendition="#smcap">Steininger</hi>, Deutschland, S. 120</bibl>; vgl. auch Vermerk <name type="Person" role="Erwaehnung" ref="#ReuterErnst">Reuters</name> vom 1.12.1949 über den Besuch der Labour-Delegation für <name type="Person" role="Erwaehnung" ref="#BöcklerHans">Böckler,</name> in: <bibl type="single-item"><hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 484 f.</bibl></p></note></seg> Anschließend wurde die Beratung fortgesetzt.</p>
-				<p>Genosse <name type="Person" role="Sprecher" ref="#BruenenEberhard_1949-09-07">Brünen</name> erklärt, daß der Vorstand des <name type="Organisation" ref="#DGB">Deutschen Gewerkschaftsbundes </name>anscheinend nicht unterrichtet gewesen sei.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN008" type="comment"><p>Der Gesamtvorstand des DGB war über die Stellungnahme des DGB zum Ruhrstatut und die Presseerklärung des geschäftsführenden DGB-Vorstandes vom 24.11.1949 nicht informiert. Er hatte das Verhalten des geschäftsführenden Bundesvorstandes erst auf der Vorstandssitzung am 19.12.1949 gebilligt. Vgl. Protokoll der DGB-Vorstandssitzung, in: <bibl type="single-item"><hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 514–516</bibl>. Auch Siggi <name type="Person" role="Erwaehnung" ref="#NeumannSiggi">Neumann</name> hatte in dem in Anm. 3 erwähnten Brief an Kuno <name type="Person" role="Erwaehnung" ref="#BrandelKuno">Brandel</name> moniert, daß der Stellungnahme der Gewerkschaften <quote>»jede Aktivlegitimation«</quote> gefehlt habe, »<quote>da ohne den großen Bundesvorstand eine Änderung in der Haltung gar nicht möglich ist, es sei denn wir akzeptieren das Führerprinzip […]</quote>«.</p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#WoennerMax_1949-09-07">Wönner</name> unterstreicht das Peinliche der Situation. Der Deutsche Gewerkschaftsbund sollte einem Pressedruck nicht nachgeben. Die Erklärung von heute habe neue Schwierigkeiten geschaffen.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN009" type="comment"><p>Als Mitglied des geschäftsführenden Bundesvorstandes des DGB hatte <name type="Person" role="Erwaehnung" ref="#BoehmJohannes_1949-09-07">Böhm</name> am 30.11.1949 sich in einem Interview mit <name type="Organisation" ref="#dpa">dpa</name> gegen die Kommentare gewandt, wonach der DGB die Politik der Bundesregierung hinsichtlich des Ruhrstatuts nicht billige und nochmals den Beitritt der Bundesrepublik in die Ruhrbehörde verteidigt. <bibl type="series-item">Vgl. <name type="Organisation" ref="#StN">»Stuttgarter Nachrichten«</name> vom 1.12.1949</bibl>.</p></note></seg> Die bis jetzt für die Ruhrbehörde genannten Persönlichkeiten stimmten sehr bedenklich.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN010" type="comment"><p>Von Regierungsseite war als Mitglied der Ruhrbehörde Vizekanzler Franz <name type="Person" role="Erwaehnung" ref="#BluecherFranz_1949-09-07">Blücher</name> (FDP) vorgeschlagen worden. Von Gewerkschaftsseite war zunächst Otto <name type="Person" role="Erwaehnung" ref="#StraßmannErnstKarlOtto">Straßmann,</name> Mitglied der kaufmännischen Angestelltengewerkschaft in der <name type="Organisation" ref="#UGO">UGO</name>, genannt worden, die Wahl fiel dann aber am 23.1.1950 auf Heinz <name type="Person" role="Erwaehnung" ref="#PotthoffHeinz">Potthoff.</name> Vgl.<bibl type="single-item">
-									<hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 514</bibl>; <bibl type="single-item"><hi rendition="#smcap">Köpper</hi>, S. 72</bibl>.</p></note></seg> Nicht alle Gewerkschaften billigten das, was gesagt sei.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN011" type="comment"><p>Die Proteste gegen die Zustimmung des Bundesvorstandes des DGB zum Petersberger Abkommen scheinen nicht zahlreich gewesen zu sein. Vgl. Protokoll der DGB-Vorstandssitzung am 19.12.1949, in: <bibl type="single-item"><hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 515 f.</bibl></p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#SchoettleErwin_1949-09-07">Schoettle</name> meint, daß die Gewerkschaften sich einen offenen Bruch mit der SPD nicht leisten können. Bei den Gewerkschaften herrscht vielfach die Vorstellung, sie könnten mit allem Politik machen. Die Gewerkschaftsmitglieder würden dieser Entwicklung nicht ruhig Zusehen. Die Mitteilungen <name type="Person" role="Erwaehnung" ref="#BoehmJohannes_1949-09-07">Böhms</name> befriedigen nicht.</p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#MarxFranz_1949-09-07">Marx</name> betont, daß es sich um die bisher unpopulärste Entscheidung des Bundesvorstandes handelt. Die Politik <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> sei eindeutig gegen die Arbeiter gerichtet. Künftig sei eine engere Verbindung mit der Fraktion erforderlich. Man dürfe nicht vergessen, daß die Partei die Grund-Organisation<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN012" type="critical"><p>Handschriftlich verbessert aus: »Premier-Organisation«.</p></note></seg> sei.</p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#MeitmannKarl_1949-09-07">Meitmann</name> sagt, daß in der Verlautbarung der Regierung mit keinem Wort die Gewerkschaften als Vertreter der Wirtschaft erwähnt würden.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN013" type="comment"><p>Vermutlich ist das Petersberger Abkommen gemeint, das in <bibl type="series-item"><name type="Organisation" ref="#Welt">»Der Welt«</name> vom 25.11.1949</bibl> erstmals abgedruckt worden war. In späteren Stellungnahmen zum Petersberger Abkommen hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> die zustimmende Haltung der Gewerkschaften betont. Vgl. <bibl type="series-item"><name type="Organisation" ref="#Welt">»Die Welt«</name> vom 26.11.1949</bibl>.</p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#LuetkensGerhard_1949-09-07">Lütkens</name> spricht von der Felonie<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN014" type="comment"><p>»Felonie«: handschriftlich eingefügt.</p></note></seg> des Bundeskanzlers. Er habe ausgeführt, daß wir nicht dem Ruhrstatut beigetreten seien.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN015" type="comment"><p><name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> hatte in seiner Regierungserklärung zum Petersberger Abkommen erklärt, daß nach Art. 2 des Ruhrstatuts vom 28.12.1948 die Bundesrepublik bereits Mitglied der Ruhrbehörde sei und durch das Petersberger Abkommen nur noch das Stimmrecht in der Ruhrbehörde erhalten habe. Durch die Entsendung eines stimmberechtigten Vertreters in die Ruhrbehörde sei die Bundesrepublik nicht Vertragspartner des Londoner Abkommens geworden. <bibl type="btp"><ref type="external" target="01/18">BT Sten. Ber. 1, S. 473</ref></bibl>.</p></note></seg> Das sei eine Irreführung. Die Gewerkschaft müsse ihre Haltung nachprüfen.</p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> weist zum Schluß der Debatte darauf hin, daß die heutige Meldung des Gewerkschaftsbundes dementiert werden müsse.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN016" type="comment"><p>Vgl. Anm. 9. Die Kontroverse mit den Gewerkschaften über das Ruhrstatut versuchte die SPD dadurch vor der Öffentlichkeit abzuschwächen, daß sie die Verurteilung des Ruhrstatuts durch Gewerkschaften und SPD betonte und nur die Wege einer Revision des Ruhrstatuts, die die Gewerkschaften von innen und die SPD von außen zu erzielen hofften, als verschieden ausgab. Vgl. z. B. <bibl type="series-item">Alfons Montag, Gewerkschaften und Ruhrstatut, in: <name type="Organisation" ref="#FR">»Frankfurter Rundschau«</name> vom 2.12.1949</bibl>; vgl. auch <bibl type="single-item">Sicherheit und Ruhrkontrolle. Hrsg. vom PV der SPD, o.O. o.J., S. 4 f</bibl>.</p></note></seg></p>
-				<p>Zur Tagesordnung der Plenarsitzung wird zu Punkt 1 der Genosse <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> sprechen.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN017" type="comment"><p>Als TOP 1 der Plenarsitzung am 1.12.1949 war die <bibl type="btd">Interpellation der Abg. <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name> (FDP) und Gen. betr. »Abschluß der Entnazifizierung« (<ref type="external" target="01/172">BT Anl. 1, Drs. I/172</ref>)</bibl> vorgesehen, die aber auf Beschluß des Ältestenrats von der Tagesordnung abgesetzt wurde. <bibl type="btp"><ref type="external" target="01/19">BT Sten, Ber. 1, S. 530</ref></bibl>. Eine Behandlung der Interpellation im Bundestag erfolgte nicht mehr.</p></note></seg> Er weist darauf hin, daß durch die Entscheidung eine trübe Lage entstanden sei.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN018" type="comment"><p>Gemeint ist vermutlich die Entscheidung der Justizminister der Länder vom 5./6.11.1949 in Rothenburg und das Schreiben von <name type="Organisation" ref="#BMJ">BMJ</name>
-								<name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> vom 15.11. an den Rechts- und Verfassungsausschuß, in dem die Zuständigkeit des Bundes in der Entnazifizierungsfrage verneint wurde. <ref type="internal" target="#spd-01_1949-11-02-t1500_EP">Vgl. Nr. 14</ref> Anm. 11. Die FDP hatte in ihrer Interpellation (vgl. Anm. 17) die Bundesregierung um Auskunft gebeten, ob sie sich für zuständig zum Erlaß eines Gesetzes zum Abschluß der Entnazifizierung erkläre.</p></note></seg> Wir könnten aber nicht mehr das Steckenpferd der juristischen Entscheidung dabei reiten. Wir müssen vor allen Dingen an die Jugend dabei denken.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN019" type="comment"><p><name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> hatte sich wiederholt für einen Abschluß der Entnazifizierung ausgesprochen, da einem nicht unerheblichen Teil der Jugend der Weg in die <quote>»volle staatsbürgerliche Gleichberechtigung«</quote> freigemacht werden müsse. Vgl. <bibl type="single-item"><hi rendition="#smcap">Soell</hi>, Erler, Bd. 1, S. 144</bibl>.</p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#ArnholzOtto_1949-09-07">Arnholz</name> erklärt, daß Unbelastete stets einen Vorzug haben müssen.</p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#SchoettleErwin_1949-09-07">Schoettle</name> weist darauf hin, daß auch die Haltung der Parteigenossen nicht immer eindeutig sei.</p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#LoebePaul_1949-09-07">Löbe</name> ist dafür, daß der Antrag einem Ausschuß überwiesen wird.</p>
-				<p>Zu Punkt 2 weist Gen. <name type="Person" role="Sprecher" ref="#SchroederLouise_1949-09-07">Schroeder</name> darauf hin, daß den Antragstellern klargemacht werden müsse, daß es so nicht gehe.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN020" type="comment"><p>Auf Punkt 2 der Tagesordnung stand die Beratung des Gesetzentwurfes zum Schutze der Jugend in der Öffentlichkeit (<ref type="internal" target="#spd-01_1949-11-23-t0001_EP">vgl. Nr. 19</ref>, Anm. 4), der abermals von der Tagesordnung abgesetzt wurde. Zum Fortgang <ref type="internal" target="#spd-01_1950-10-12-t0000_EP">vgl. Nr. 74</ref>.</p></note></seg></p>
-				<p>Zu den Punkten 9–10 soll eventuell der Gen. <name type="Person" role="Erwaehnung" ref="#LeddinBruno_1949-09-07">Leddin</name> reden.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN021" type="comment"><p>Zu Punkt 9: <bibl type="btd">»Mündlicher Bericht des Ausschusses für Arbeit über den Antrag der Zentrumsfraktion betr. Arbeitsvermittlung und Arbeitslosenhilfe für Heimkehrer« (<ref type="external" target="01/90">Drs. I/90</ref>)</bibl> fand keine Aussprache statt. <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 558</ref></bibl>. Zu Punkt 10:<bibl type="btd"> »Mündlicher Bericht des Ausschusses für Kriegsopfer- und Kriegsgefangenenfragen über den Antrag der SPD betr. einheitliche Regelung der Heimkehrerbetreuung« (<ref type="external" target="01/191">Drs. I/191</ref>)</bibl> (<ref type="internal" target="#spd-01_1949-10-18-t1500_EP">vgl. Nr. 11</ref>) betonte <name type="Person" role="Erwaehnung" ref="#LeddinBruno_1949-09-07">Leddin</name> die dringende Notwendigkeit einer einheitlichen gesetzlichen Regelung des Versorgungsrechts für die Kriegsheimkehrer. <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 559 f</ref></bibl>. Der Antrag wurde, ergänzt durch einen Abänderungsantrag, vom Bundestag angenommen.<bibl type="btp"><ref type="external" target="01/19"> Ebd., S. 565</ref></bibl>.</p></note></seg></p>
-				<p>Zu Punkt 13 wird der Gen. <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> sprechen. Der Änderung der Geschäftsordnung</p>
-				<p>wollen wir zustimmen.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN022" type="comment"><p>Punkt 13 der Tagesordnung, der Antrag der BP betr. »§103 der vorläufigen Geschäftsordnung« (<ref type="internal" target="#spd-01_1949-11-23-t0001_EP">vgl. Nr. 19</ref>, Anm. 5) wurde auf Antrag <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndts</name> wegen Zeitmangels zurückgestellt. <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 566</ref></bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-01-25-t1815">vgl. Nr. 36</ref>.</p></note></seg></p>
-				<p>Die Punkte 14–16 sollen von den Genossinnen <name type="Person" role="Erwaehnung" ref="#NadigFrieda_1949-09-07">Nadig</name> und <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name> vertreten werden.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN023" type="comment"><p><bibl type="btd">Anträge der SPD betr. »Gleichberechtigung der Frauen« und betr. »Frauen im öffentlichen Dienst bei der Bundesverwaltung« (<ref type="internal" target="#spd-01_1949-11-09-t1500_EP">vgl. Nr. 16</ref>) </bibl>und <bibl type="btd">Antrag der KPD betr. »Rechtliche Gleichstellung der Frauen« (<ref type="external" target="01/206">BT Anl. 1, Drs. I/206</ref>)</bibl>. Begründung der Anträge durch <name type="Person" role="Erwaehnung" ref="#NadigFrieda_1949-09-07">Nadig</name> und <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name>, <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 566–568</ref></bibl>. Der Antrag betr. »Gleichberechtigung der Frauen« wurde am 2.12.1949 angenommen (ebd., S. 631), der zweite Antrag nach Überweisung an den Ausschuß für innere Angelegenheiten in leicht geänderter Form am 16.2.1950. <bibl type="btp"><ref type="external" target="01/39">BT Sten. Ber. 2, S. 1310–1313</ref></bibl>. Vgl. auch <bibl type="single-item"><hi rendition="#smcap">Reich-Hilweg</hi>, S. 30–34</bibl>.</p></note></seg></p>
-				<p>Zu Punkt 17 wird der Genosse <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> sprechen<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN024" type="comment"><p><bibl type="btd">Antrag der Fraktion der SPD betr. »Einsetzung eines Ausschusses zur Überwachung der Grundsätze bei der Auftragsvergebung für Bauten und Einrichtungen im Raume Bonns«. <ref type="internal" target="#spd-01_1949-11-15-t1100_EP">Vgl. Nr. 18</ref>. </bibl><name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> begründete den Antrag in der Plenarsitzung am 2.12.1949 vor allem mit der fehlenden öffentlichen Ausschreibung beim Ausbau Bonns zur Bundeshauptstadt. <bibl type="btp"><ref type="external" target="01/21">BT Sten. Ber. 1, S. 644 f.</ref></bibl> Am 9.12. wurde der Antrag dem Rechts- und Verfassungsausschuß überwiesen. <bibl type="btp"><ref type="external" target="01/22">BT Sten. Ber. 1, S. 687–692</ref></bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-01-19-t1500_EP">vgl. Nr. 34</ref>.</p></note></seg>,</p>
-				<p>zu Punkt 19 der Genosse <name type="Person" role="Erwaehnung" ref="#EichlerWilli_1949-09-07">Eichler</name>,</p>
-				<p>zu Punkt 20 der Genosse <name type="Person" role="Erwaehnung" ref="#PohleKurt_1949-09-07">Pohle.</name></p>
-				<p>Wenn der Antrag 21 nicht zurückgezogen wird, soll dazu Gen. <name type="Person" role="Erwaehnung" ref="#KlabundeErich_1949-09-07">Klabunde</name> reden.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN025" type="comment"><p>Als Tagesordnungspunkte 19–21 waren vorgesehen: <bibl type="btd">Antrag der Abg. <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> (KPD) und Gen. betr. »Wahrung der Pressefreiheit gegenüber Zeitungsverboten der britischen Dienststellen« (<ref type="external" target="01/1208">BT Anl. 1 Drs. I/208</ref>)</bibl>, betr. <bibl type="btd">»Einmalige Winterbeihilfe für Erwerbslose« <ref type="external" target="01/209">(ebd., Drs. I/209)</ref> und Antrag der FDP-Fraktion betr. »Förderung des Wohnungsbaues« (<ref type="external" target="01/214">Drs. I/214</ref>)</bibl>. <bibl type="item-in-archive">Vgl. Tagesordnung der 19. Sitzung des Deutschen Bundestages, Parl. Arch.</bibl> Die Anträge wurden von der Tagesordnung abgesetzt bzw. ohne Aussprache an die zuständigen Ausschüsse überwiesen.</p></note></seg></p>
-				<p>Zur ersten Lesung des Haushaltsgesetzes wird Gen. <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name> sprechen.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN026" type="comment"><p>Am 2.12.1949 wurde in 1. Lesung der Gesetzentwurf über die <bibl type="btd">»vorläufige Aufstellung und Ausführung des Bundeshaushaltsplans und über die vorläufige Rechnungsprüfung sowie über die vorläufige Haushaltsführung im Rechnungsjahr 1949« (<ref type="external" target="01/223">BT Anl. 1, Drs. I/223</ref>)</bibl> beraten, zu der <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name> die Stellungnahme der SPD-Fraktion abgab. <bibl type="btd"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 598–602</ref></bibl>.</p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#SteinhoersterWilli_1949-09-07">Steinhörster</name> weist auf die Wichtigkeit dieser Beratung hin.</p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#SeuffertWalter_1949-09-07">Seuffert</name> ergänzt, daß die Übergangsvorschriften der Ministerien nicht beachtet seien.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN027" type="comment"><p>Vgl. Nr. 7. Gemeint sind vermutlich die Empfehlungen des Finanzausschusses der Ministerpräsidenten vom 1.8.1949, die auch einen detaillierten Plan für den Aufbau der Bundesministerien enthielten. Vgl. <bibl type="single-item">Akten zur Vorgeschichte, Bd. 5, S. 961 f.</bibl>
-								<name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name> warf in der 1. Beratung des Haushaltsgesetzentwurfs der Bundesregierung vor, die Empfehlungen des Finanzausschusses der Ministerpräsidenten mißachtet zu haben, indem sie entgegen dessen Vorschlag statt acht dreizehn Bundesministerien geschaffen habe. <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 598–601</ref></bibl>.</p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#BrillHermannLouis_1949-09-07">Brill</name> betont, daß die Verfassung des <name type="Organisation" ref="#BRH">Rechnungshofes</name> bedenklich sei.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN028" type="comment"><p>Durch Gesetz des Wirtschaftsrats vom 3.11.1948 war ein Rechnungshof als oberste Behörde für die Verwaltung des Vereinigten Wirtschaftsgebietes errichtet worden, der bis zum 31.3.1950 die Aufgaben und Befugnisse des noch nicht bestehenden Bundesrechnungshofes übernahm. Ein Bundesrechnungshofgesetz wurde erst am 27.1.1950 verabschiedet. Vgl. <bibl type="single-item"><hi rendition="#smcap">Gilles</hi>, S. 80–87</bibl>. Zu der Beeinträchtigung der Arbeit des vorläufigen Rechnungshofes durch Schwierigkeiten beim Aufbau der Finanzkontrollbehörden und der zunächst noch uneinheitlichen Prüfungsbasis vgl. ebd. S. 131–135.</p></note></seg></p>
-				<p>Zu Punkt 23 macht <name type="Person" role="Sprecher" ref="#SeuffertWalter_1949-09-07">Seuffert</name> Vorschläge zur Steuerreform.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN029" type="comment"><p>Am 2.12.1949 wurde in 1. Lesung der <bibl type="btd">Gesetzentwurf des <name type="Organisation" ref="#DZP">Zentrums</name> zur »Änderung des Einkommensteuergesetzes« (<ref type="external" target="01/238">BT Anl. 1, Drs. I/238</ref>)</bibl> behandelt. Der Antrag wurde auf Beschluß des Ältestenrats ohne Aussprache im Bundestag als Material zu dem von der Bundesregierung vorbereiteten Gesetzentwurf zur Änderung des Einkommensteuergesetzes an den Ausschuß für Finanz- und Steuerfragen überwiesen.<bibl type="btp">
-									<ref type="internal" target="01/19">BT Sten. Ber 1, S. 607–610</ref></bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-01-10-t1500_EP">vgl. Nr. 30</ref>.</p></note></seg></p>
-				<p>Gen. <name type="Person" role="Sprecher" ref="#GreveOttoHeinrich_1949-09-07">Greve</name> weist darauf hin, daß diese Frage einer sorgfältigen Behandlung bedürfe. Die Stellungnahme der Experten soll abgewartet werden.</p>
-				<p>Zu den Fragen über Hochseefischerei soll der Gen. <name type="Person" role="Erwaehnung" ref="#PetersGeorg_1949-09-07">Peters</name> reden.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN030" type="comment"><p>Die 1. Beratung des von der <bibl type="btd"><name type="Organisation" ref="#DP">DP</name> eingebrachten Entwurfs eines »Notgesetzes für die deutsche Hochseefischerei« (<ref type="external" target="01/221">BT Anl. 1, Drs. I/221</ref>)</bibl> in Verbindung mit den Anträgen der<bibl type="btd"> DP betr. »Wiederaufbau der deutschen Hochseefischerei« (<ref type="external" target="01/218">ebd., Drs. I/218</ref>)</bibl> und betr. <bibl type="btd">»Notlage der kleinen Hochsee- und Küstenfischerei« (<ref type="external" target="01/220">ebd., Drs. I/220</ref>)</bibl> fand am 2.12.1949 ohne Aussprache im Bundestag statt. <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 610 f.</ref></bibl></p></note></seg></p>
-				<p>Wenn bei Punkt 29 und 30 eine Aussprache stattfindet, wird <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> als Redner vorgesehen.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN031" type="comment"><p>Anträge der<bibl type="btd">
-									<name type="Organisation" ref="#BP">BP</name> und CSU betr. »Biersteuergesetzgebung«. <ref type="external" target="01/212">BT Anl. 1, Drs. I/212</ref> und <ref type="external" target="01/213">213</ref></bibl>. Vgl. Tagesordnung der 19. Sitzung des Deutschen Bundestages, Parl. Arch. Die Beratung der Anträge wurde vertagt.</p></note></seg></p>
-				<p>Der Antrag <name type="Person" role="Erwaehnung" ref="#BrillHermannLouis_1949-09-07">Brill</name> betr. Einrichtung eines Sonderhaushaltes für die Bundeshauptstadt wird abgelehnt, weil eine klare Aufteilung der Kosten doch nicht zu erreichen sein würde. Für den Aufsichtsrat der STEG soll <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> vorgeschlagen werden.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN032" type="comment"><p>Die <name type="Organisation" ref="#STEG">Staatliche Erfassungsgesellschaft für öffentliches Gut GmbH (STEG)</name> war auf Beschluß des Direktoriums des Süddeutschen Länderrats vom 29.8.1946 am 14.7.1947 gegründet worden. Aufgabe der STEG war beschlagnahmtes deutsches Rüstungsgut sowie überflüssige Bestände der amerikanischen Armee der deutschen Wirtschaft zur Wiederbelebung zuzuführen. Vgl. <bibl type="single-item"><hi rendition="#smcap">Vogel</hi>, Bd. 2, S. 55–71</bibl>. In der Ältestenratssitzung am 25.11.1949 war beschlossen worden, die bisherigen Vertreter des ehemaligen Wirtschaftsrats im Aufsichtsrat der STEG durch drei Bundestagsabgeordnete zu ersetzen. <bibl type="item-in-archive">Vgl. Kurzprotokoll der Ältestenratssitzung, Parl. Arch.</bibl></p></note></seg> Bei den steuerfreien Beträgen für Weihnachtsgratifikation soll die Fraktion als Höchstbetrag DM 300 vorschlagen.<seg type="note"><note xml:id="spd-01_1949-11-30-t1500_EP_FN033" type="comment"><p>Am 21.11.1949 hatte die FDP-Fraktion einen Antrag betr. »Steuerfreiheit für Weihnachtszuwendungen« im Bundestag eingebracht, nach dem Weihnachtszuwendungen bis zur Höhe eines Monatseinkommens steuerfrei bleiben sollten. <bibl type="btd"><ref type="external" target="01/217">BT Anl. 1, Drs. I/217</ref></bibl>. In der Plenarsitzung am 2.12. 1949 änderte der Antragsteller <name type="Person" role="Erwaehnung" ref="#MiddelhauveFriedrich_1949-09-07">Middelhauve</name> (FDP) den Antrag nach dem Vorbild eines Antrags der SPD im bayerischen Landtag auf einen Steuerfreibetrag von 300 DM ab. Der Antrag wurde in der abgeänderten Form einstimmig vom Plenum angenommen. <bibl type="btp"><ref type="external" target="01/19">BT Sten. Ber. 1, S. 614–616</ref></bibl>. Der Bundesrat lehnte den Antrag am 19.12.1949 ab. <bibl type="brp">Vgl. BR-Sitzungsberichte, Bd. 1, S. 106 und S. 133</bibl>.</p></note></seg></p>
-				<p><name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-01_1949-11-30-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeberPetra"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#JuengerkesSven"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte (OCR, anschließend manueller Korrekturdurchgang) und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1957. (2 Halbbände).</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/I</title>
+                  <author>Petra Weber</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930107160</idno>
+                  <idno type="DNB">https://d-nb.info/930109627</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 1. WP, 1, Ord. 13.9.1949–11.12.1951</idno>
+                     <objectName>Protokoll: Sitzung der SPD-Fraktion am 30. November 1949, 15.00 Uhr</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 30. November 1949</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1949-11-30">
+               <time type="start" when="15:00:00"/>
+               <time type="end"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#OllenhauerErich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-07-22" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-01" who="#JuengerkesSven" status="draft" n="3">SVP und Namen ergänzt.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-01_1949-11-30-t1500_EP_SVP-1" corresp="#spd-01_1949-11-30-t1500_EP_div_SVP-1">A.: Bericht über die öffentlichen Reaktionen auf das Petersberger Abkommen, das Ruhrstatut und den Ausschluss von Kurt <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> aus den Plenarsitzungen. – Entnazifizierung. – Arbeitslosenhilfe. – Finanzerung der Ministerien. – Verfassungs des <name type="Organisation" ref="#BRH">Rechnungshofs</name>. – Steuerreform. – Geschäftsordnung des Bundestags. – Hochseefischerei. – Bundeshauptstadt.</item>
+               <item xml:id="spd-01_1949-11-30-t1500_EP_SVP-2" corresp="#"/>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-01_1949-11-30-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Der Genosse <name type="Person" role="Sprecher" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> berichtet über die Verhandlungen der letzten Tage. Er weist auf den Widerhall hin, den unsere Haltung in der Öffentlichkeit gefunden hat.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN001" type="comment">
+                     <p>Zum Versuch, die Öffentlichkeit für <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> Haltung zu mobilisieren, <ref type="internal" target="#spd-01_1949-11-25-t0900_EP">vgl. Nr. 22</ref>. Im <bibl type="series-item">
+                           <name type="Organisation" ref="#Vorw">»Neuen Vorwärts«</name> vom 3.12.1949</bibl> ist die <quote>»Rede von einer Protestwelle in ganz Deutschland«</quote> gegen den Ausschluß <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers.</name>
+                        <quote>»In Großstädten und Dörfern«</quote> hätten <quote>»Hunderttausende mit der Sozialdemokratie Protest gegen die Willkürherrschaft der bürgerlich-kapitalistischen Mehrheit im Bundestag erhoben.«</quote> Weiter wird von zahlreichen Proteststreiks in Großbetrieben berichtet. Zu den Protestkundgebungen gegen den Ausschluß <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> vgl. auch:<bibl type="series-item">
+                           <name type="Organisation" ref="#NZ">»Neue Zeitung«</name> vom 28.11.1949</bibl>.</p>
+                  </note>
+               </seg> Sorge bereitet die Stellungnahme der Gewerkschaften.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN002" type="comment">
+                     <p>Der <name type="Organisation" ref="#DGB">DGB-Vorstand</name> hatte sich auf Ersuchen des BMWi vom 26.10.1949 am 21.11.1949 in einer Stellungnahme zum Ruhrstatut und zu Gesetz Nr. 75 für ein bedingtes Ja zum Beitritt der Bundesregierung zur Ruhrbehörde ausgesprochen. Voraussetzung für einen Beitritt der Bundesregierung sollte eine gesamteuropäische Neuordnung der Kohle-, Eisen- und Stahlindustrie, die Mitbestimmung der Arbeitnehmer in der Montanindustrie und die Beteiligung der Gewerkschaften an der Mitarbeit in der Ruhrbehörde sein. Die Stellungnahme ist abgedr., in: <bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/ <hi rendition="#smcap">Mühlhausen</hi>, S. 454–457</bibl>.</p>
+                  </note>
+               </seg> Das um so mehr, weil vorher Unterhaltungen mit den Gewerkschaften stattgefunden haben.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN003" type="comment">
+                     <p>In einem Brief an Kuno <name type="Person" role="Erwaehnung" ref="#BrandelKuno">Brandel</name>, Mitglied des Hauptvorstands der <name type="Organisation" ref="#IGM">IG Metall</name>, vom 3.12.1949 berichtet der gewerkschaftspolitische Referent beim Parteivorstand Siggi <name type="Person" role="Erwaehnung" ref="#NeumannSiggi">Neumann</name> von einer Pressekonferenz des <name type="Organisation" ref="#DGB">DGB</name> am 24.11., in der sich <name type="Person" role="Erwaehnung" ref="#AgartzViktor">Agartz</name> und <name type="Person" role="Erwaehnung" ref="#GrosseFranz">Grosse</name> noch ausdrücklich zur Resolution der Gewerkschaften in der britischen Besatzungszone vom 7.1.1949, die das Ruhrstatut eindeutig ablehnte, bekannt hätten. »Wenige Stunden später«, so <name type="Person" role="Erwaehnung" ref="#NeumannSiggi">Neumann</name>, »erfolgte von <name type="Person" role="Erwaehnung" ref="#BoecklerHans">Böckler</name>-<name type="Person" role="Erwaehnung" ref="#KarlAlbin">Albin</name> Karl-Hoff eine Wendung von 180 Grad, die ihresgleichen nur in Kominternwendungen hat.« <bibl type="item-in-archive">PV-Akten, Alter Bestand, 02050 (Org. IG-Metall), AdsD</bibl>. Vgl. auch Protokoll der PV-Sitzung der SPD am 5./6.1.1950, in: <bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 531</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Genosse <name type="Person" role="Sprecher" ref="#BoehmJohannes_1949-09-07">Böhm</name> erklärt, daß die Denkschrift auf Wunsch und Anfrage des Wirtschaftsministeriums angefertigt sei.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN004" type="comment">
+                     <p>Vgl. Anm. 2.</p>
+                  </note>
+               </seg> Nach Bekanntgabe des Abkommens vom Petersberg habe ein Sturm auf die Pressestelle der Gewerkschaft eingesetzt. Daraufhin gab der Bundesvorstand die Presseverlautbarung heraus, daß die Mitarbeit in der Ruhrbehörde für richtig gehalten würde.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN005" type="comment">
+                     <p>Erklärung des DGB-Vorstandes vom 24.11.1949, abgedr., in: <bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 472</bibl>. Von <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> war in der Bundestagssitzung am 24./25.11.1949 diese Presseerklärung des DGB-Vorstandes als <name type="Organisation" ref="#UPI">United Press</name> Agenturmeldung verlesen worden, um den Widerstand der SPD-Fraktion gegen das Petersberger Abkommen zu brechen.<bibl type="btp">
+                           <ref type="external" target="01/18"> BT Sten. Ber. 1, S. 501</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Nach den Ausführungen von <name type="Person" role="Erwaehnung" ref="#BoehmJohannes_1949-09-07">Böhm</name> wurde die Beratung unterbrochen und der Generalsekretär der <name type="Organisation" ref="#Labour">Britischen Arbeiterpartei </name>Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name>
+               <seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN006" type="comment">
+                     <p>Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name> (1902–1963), 1923–1925 Sekretär der Bargoed Labour Party, 1937–1940 Propaganda Officer der Labour Party, 1940–44 Leiter der Research Division der Labour Party, 1944–1961 Generalsekretär der Labour-Party.</p>
+                  </note>
+               </seg> begrüßt. Nachdem er der Fraktion kurz die Stellung der englischen Arbeiterpartei dargelegt hatte, dankte ihm <name type="Person" role="Sprecher" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> für den Besuch in Deutschland.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN007" type="comment">
+                     <p>Nachdem der <name type="Organisation" ref="#SPDVorstand">SPD-Vorstand</name> bereits im Juli 1949 der Labour-Party eine Demontagedenkschrift übermittelt hatte (<bibl type="series-item">vgl. <name type="Organisation" ref="#Vorw">»Neuer Vorwärts«</name> vom 3.9.1949</bibl>), hatte die Labour-Party Anfang Nov. den Wunsch nach einer Aussprache über die Demontagefrage geäußert. <bibl type="series-item">Vgl. <name type="Organisation" ref="#Vorw">»Neuer Vorwärts«</name> vom 19.11.1949</bibl>. Bereits am 29.11.1949 hatte eine Besprechung zwischen einer Delegation der britischen Labour-Party unter Führung Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name> und dem Parteivorstand und den Fraktionsvorsitzenden der SPD stattgefunden, bei der die Ablehnung des Petersberger Abkommens durch die SPD-Fraktion auf scharfe Kritik bei Morgan <name type="Person" role="Erwaehnung" ref="#PhillipsMorganWalter">Phillips</name> gestoßen war, der die Haltung der SPD-Fraktion als <quote>»entirely false position«</quote> bezeichnet hatte. <bibl type="single-item">Vgl. <hi rendition="#smcap">Steininger</hi>, Deutschland, S. 120</bibl>; vgl. auch Vermerk <name type="Person" role="Erwaehnung" ref="#ReuterErnst">Reuters</name> vom 1.12.1949 über den Besuch der Labour-Delegation für <name type="Person" role="Erwaehnung" ref="#BoecklerHans">Böckler,</name> in: <bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 484 f.</bibl>
+                     </p>
+                  </note>
+               </seg> Anschließend wurde die Beratung fortgesetzt.</p>
+            <p>Genosse <name type="Person" role="Sprecher" ref="#BruenenEberhard_1949-09-07">Brünen</name> erklärt, daß der Vorstand des <name type="Organisation" ref="#DGB">Deutschen Gewerkschaftsbundes </name>anscheinend nicht unterrichtet gewesen sei.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN008" type="comment">
+                     <p>Der Gesamtvorstand des DGB war über die Stellungnahme des DGB zum Ruhrstatut und die Presseerklärung des geschäftsführenden DGB-Vorstandes vom 24.11.1949 nicht informiert. Er hatte das Verhalten des geschäftsführenden Bundesvorstandes erst auf der Vorstandssitzung am 19.12.1949 gebilligt. Vgl. Protokoll der DGB-Vorstandssitzung, in: <bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 514–516</bibl>. Auch Siggi <name type="Person" role="Erwaehnung" ref="#NeumannSiggi">Neumann</name> hatte in dem in Anm. 3 erwähnten Brief an Kuno <name type="Person" role="Erwaehnung" ref="#BrandelKuno">Brandel</name> moniert, daß der Stellungnahme der Gewerkschaften <quote>»jede Aktivlegitimation«</quote> gefehlt habe, »<quote>da ohne den großen Bundesvorstand eine Änderung in der Haltung gar nicht möglich ist, es sei denn wir akzeptieren das Führerprinzip […]</quote>«.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#WoennerMax_1949-09-07">Wönner</name> unterstreicht das Peinliche der Situation. Der Deutsche Gewerkschaftsbund sollte einem Pressedruck nicht nachgeben. Die Erklärung von heute habe neue Schwierigkeiten geschaffen.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN009" type="comment">
+                     <p>Als Mitglied des geschäftsführenden Bundesvorstandes des DGB hatte <name type="Person" role="Erwaehnung" ref="#BoehmJohannes_1949-09-07">Böhm</name> am 30.11.1949 sich in einem Interview mit <name type="Organisation" ref="#dpa">dpa</name> gegen die Kommentare gewandt, wonach der DGB die Politik der Bundesregierung hinsichtlich des Ruhrstatuts nicht billige und nochmals den Beitritt der Bundesrepublik in die Ruhrbehörde verteidigt. <bibl type="series-item">Vgl. <name type="Organisation" ref="#StN">»Stuttgarter Nachrichten«</name> vom 1.12.1949</bibl>.</p>
+                  </note>
+               </seg> Die bis jetzt für die Ruhrbehörde genannten Persönlichkeiten stimmten sehr bedenklich.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN010" type="comment">
+                     <p>Von Regierungsseite war als Mitglied der Ruhrbehörde Vizekanzler Franz <name type="Person" role="Erwaehnung" ref="#BluecherFranz_1949-09-07">Blücher</name> (FDP) vorgeschlagen worden. Von Gewerkschaftsseite war zunächst Otto <name type="Person" role="Erwaehnung" ref="#StrassmannErnstKarlOtto">Straßmann,</name> Mitglied der kaufmännischen Angestelltengewerkschaft in der <name type="Organisation" ref="#UGO">UGO</name>, genannt worden, die Wahl fiel dann aber am 23.1.1950 auf Heinz <name type="Person" role="Erwaehnung" ref="#PotthoffHeinz">Potthoff.</name> Vgl.<bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 514</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Köpper</hi>, S. 72</bibl>.</p>
+                  </note>
+               </seg> Nicht alle Gewerkschaften billigten das, was gesagt sei.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN011" type="comment">
+                     <p>Die Proteste gegen die Zustimmung des Bundesvorstandes des DGB zum Petersberger Abkommen scheinen nicht zahlreich gewesen zu sein. Vgl. Protokoll der DGB-Vorstandssitzung am 19.12.1949, in: <bibl type="single-item">
+                           <hi rendition="#smcap">Lademacher</hi>/<hi rendition="#smcap">Mühlhausen</hi>, S. 515 f.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#SchoettleErwin_1949-09-07">Schoettle</name> meint, daß die Gewerkschaften sich einen offenen Bruch mit der SPD nicht leisten können. Bei den Gewerkschaften herrscht vielfach die Vorstellung, sie könnten mit allem Politik machen. Die Gewerkschaftsmitglieder würden dieser Entwicklung nicht ruhig Zusehen. Die Mitteilungen <name type="Person" role="Erwaehnung" ref="#BoehmJohannes_1949-09-07">Böhms</name> befriedigen nicht.</p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#MarxFranz_1949-09-07">Marx</name> betont, daß es sich um die bisher unpopulärste Entscheidung des Bundesvorstandes handelt. Die Politik <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> sei eindeutig gegen die Arbeiter gerichtet. Künftig sei eine engere Verbindung mit der Fraktion erforderlich. Man dürfe nicht vergessen, daß die Partei die Grund-Organisation<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN012" type="critical">
+                     <p>Handschriftlich verbessert aus: »Premier-Organisation«.</p>
+                  </note>
+               </seg> sei.</p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#MeitmannKarl_1949-09-07">Meitmann</name> sagt, daß in der Verlautbarung der Regierung mit keinem Wort die Gewerkschaften als Vertreter der Wirtschaft erwähnt würden.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN013" type="comment">
+                     <p>Vermutlich ist das Petersberger Abkommen gemeint, das in <bibl type="series-item">
+                           <name type="Organisation" ref="#Welt">»Der Welt«</name> vom 25.11.1949</bibl> erstmals abgedruckt worden war. In späteren Stellungnahmen zum Petersberger Abkommen hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> die zustimmende Haltung der Gewerkschaften betont. Vgl. <bibl type="series-item">
+                           <name type="Organisation" ref="#Welt">»Die Welt«</name> vom 26.11.1949</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#LuetkensGerhard_1949-09-07">Lütkens</name> spricht von der Felonie<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN014" type="comment">
+                     <p>»Felonie«: handschriftlich eingefügt.</p>
+                  </note>
+               </seg> des Bundeskanzlers. Er habe ausgeführt, daß wir nicht dem Ruhrstatut beigetreten seien.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN015" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> hatte in seiner Regierungserklärung zum Petersberger Abkommen erklärt, daß nach Art. 2 des Ruhrstatuts vom 28.12.1948 die Bundesrepublik bereits Mitglied der Ruhrbehörde sei und durch das Petersberger Abkommen nur noch das Stimmrecht in der Ruhrbehörde erhalten habe. Durch die Entsendung eines stimmberechtigten Vertreters in die Ruhrbehörde sei die Bundesrepublik nicht Vertragspartner des Londoner Abkommens geworden. <bibl type="btp">
+                           <ref type="external" target="01/18">BT Sten. Ber. 1, S. 473</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Das sei eine Irreführung. Die Gewerkschaft müsse ihre Haltung nachprüfen.</p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> weist zum Schluß der Debatte darauf hin, daß die heutige Meldung des Gewerkschaftsbundes dementiert werden müsse.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN016" type="comment">
+                     <p>Vgl. Anm. 9. Die Kontroverse mit den Gewerkschaften über das Ruhrstatut versuchte die SPD dadurch vor der Öffentlichkeit abzuschwächen, daß sie die Verurteilung des Ruhrstatuts durch Gewerkschaften und SPD betonte und nur die Wege einer Revision des Ruhrstatuts, die die Gewerkschaften von innen und die SPD von außen zu erzielen hofften, als verschieden ausgab. Vgl. z. B. <bibl type="series-item">Alfons Montag, Gewerkschaften und Ruhrstatut, in: <name type="Organisation" ref="#FR">»Frankfurter Rundschau«</name> vom 2.12.1949</bibl>; vgl. auch <bibl type="single-item">Sicherheit und Ruhrkontrolle. Hrsg. vom PV der SPD, o.O. o.J., S. 4 f</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zur Tagesordnung der Plenarsitzung wird zu Punkt 1 der Genosse <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> sprechen.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN017" type="comment">
+                     <p>Als TOP 1 der Plenarsitzung am 1.12.1949 war die <bibl type="btd">Interpellation der Abg. <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name> (FDP) und Gen. betr. »Abschluß der Entnazifizierung« (<ref type="external" target="01/172">BT Anl. 1, Drs. I/172</ref>)</bibl> vorgesehen, die aber auf Beschluß des Ältestenrats von der Tagesordnung abgesetzt wurde. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten, Ber. 1, S. 530</ref>
+                        </bibl>. Eine Behandlung der Interpellation im Bundestag erfolgte nicht mehr.</p>
+                  </note>
+               </seg> Er weist darauf hin, daß durch die Entscheidung eine trübe Lage entstanden sei.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN018" type="comment">
+                     <p>Gemeint ist vermutlich die Entscheidung der Justizminister der Länder vom 5./6.11.1949 in Rothenburg und das Schreiben von <name type="Organisation" ref="#BMJ">BMJ</name>
+                        <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> vom 15.11. an den Rechts- und Verfassungsausschuß, in dem die Zuständigkeit des Bundes in der Entnazifizierungsfrage verneint wurde. <ref type="internal" target="#spd-01_1949-11-02-t1500_EP">Vgl. Nr. 14</ref> Anm. 11. Die FDP hatte in ihrer Interpellation (vgl. Anm. 17) die Bundesregierung um Auskunft gebeten, ob sie sich für zuständig zum Erlaß eines Gesetzes zum Abschluß der Entnazifizierung erkläre.</p>
+                  </note>
+               </seg> Wir könnten aber nicht mehr das Steckenpferd der juristischen Entscheidung dabei reiten. Wir müssen vor allen Dingen an die Jugend dabei denken.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN019" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> hatte sich wiederholt für einen Abschluß der Entnazifizierung ausgesprochen, da einem nicht unerheblichen Teil der Jugend der Weg in die <quote>»volle staatsbürgerliche Gleichberechtigung«</quote> freigemacht werden müsse. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Soell</hi>, Erler, Bd. 1, S. 144</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#ArnholzOtto_1949-09-07">Arnholz</name> erklärt, daß Unbelastete stets einen Vorzug haben müssen.</p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#SchoettleErwin_1949-09-07">Schoettle</name> weist darauf hin, daß auch die Haltung der Parteigenossen nicht immer eindeutig sei.</p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#LoebePaul_1949-09-07">Löbe</name> ist dafür, daß der Antrag einem Ausschuß überwiesen wird.</p>
+            <p>Zu Punkt 2 weist Gen. <name type="Person" role="Sprecher" ref="#SchroederLouise_1949-09-07">Schroeder</name> darauf hin, daß den Antragstellern klargemacht werden müsse, daß es so nicht gehe.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN020" type="comment">
+                     <p>Auf Punkt 2 der Tagesordnung stand die Beratung des Gesetzentwurfes zum Schutze der Jugend in der Öffentlichkeit (<ref type="internal" target="#spd-01_1949-11-23-t0001_EP">vgl. Nr. 19</ref>, Anm. 4), der abermals von der Tagesordnung abgesetzt wurde. Zum Fortgang <ref type="internal" target="#spd-01_1950-10-12-t0000_EP">vgl. Nr. 74</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu den Punkten 9–10 soll eventuell der Gen. <name type="Person" role="Erwaehnung" ref="#LeddinBruno_1949-09-07">Leddin</name> reden.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN021" type="comment">
+                     <p>Zu Punkt 9: <bibl type="btd">»Mündlicher Bericht des Ausschusses für Arbeit über den Antrag der Zentrumsfraktion betr. Arbeitsvermittlung und Arbeitslosenhilfe für Heimkehrer« (<ref type="external" target="01/90">Drs. I/90</ref>)</bibl> fand keine Aussprache statt. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 558</ref>
+                        </bibl>. Zu Punkt 10:<bibl type="btd"> »Mündlicher Bericht des Ausschusses für Kriegsopfer- und Kriegsgefangenenfragen über den Antrag der SPD betr. einheitliche Regelung der Heimkehrerbetreuung« (<ref type="external" target="01/191">Drs. I/191</ref>)</bibl> (<ref type="internal" target="#spd-01_1949-10-18-t1500_EP">vgl. Nr. 11</ref>) betonte <name type="Person" role="Erwaehnung" ref="#LeddinBruno_1949-09-07">Leddin</name> die dringende Notwendigkeit einer einheitlichen gesetzlichen Regelung des Versorgungsrechts für die Kriegsheimkehrer. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 559 f</ref>
+                        </bibl>. Der Antrag wurde, ergänzt durch einen Abänderungsantrag, vom Bundestag angenommen.<bibl type="btp">
+                           <ref type="external" target="01/19"> Ebd., S. 565</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu Punkt 13 wird der Gen. <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> sprechen. Der Änderung der Geschäftsordnung</p>
+            <p>wollen wir zustimmen.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN022" type="comment">
+                     <p>Punkt 13 der Tagesordnung, der Antrag der BP betr. »§103 der vorläufigen Geschäftsordnung« (<ref type="internal" target="#spd-01_1949-11-23-t0001_EP">vgl. Nr. 19</ref>, Anm. 5) wurde auf Antrag <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndts</name> wegen Zeitmangels zurückgestellt. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 566</ref>
+                        </bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-01-25-t1815">vgl. Nr. 36</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Punkte 14–16 sollen von den Genossinnen <name type="Person" role="Erwaehnung" ref="#NadigFrieda_1949-09-07">Nadig</name> und <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name> vertreten werden.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN023" type="comment">
+                     <p>
+                        <bibl type="btd">Anträge der SPD betr. »Gleichberechtigung der Frauen« und betr. »Frauen im öffentlichen Dienst bei der Bundesverwaltung« (<ref type="internal" target="#spd-01_1949-11-09-t1500_EP">vgl. Nr. 16</ref>) </bibl>und <bibl type="btd">Antrag der KPD betr. »Rechtliche Gleichstellung der Frauen« (<ref type="external" target="01/206">BT Anl. 1, Drs. I/206</ref>)</bibl>. Begründung der Anträge durch <name type="Person" role="Erwaehnung" ref="#NadigFrieda_1949-09-07">Nadig</name> und <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name>, <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 566–568</ref>
+                        </bibl>. Der Antrag betr. »Gleichberechtigung der Frauen« wurde am 2.12.1949 angenommen (ebd., S. 631), der zweite Antrag nach Überweisung an den Ausschuß für innere Angelegenheiten in leicht geänderter Form am 16.2.1950. <bibl type="btp">
+                           <ref type="external" target="01/39">BT Sten. Ber. 2, S. 1310–1313</ref>
+                        </bibl>. Vgl. auch <bibl type="single-item">
+                           <hi rendition="#smcap">Reich-Hilweg</hi>, S. 30–34</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu Punkt 17 wird der Genosse <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> sprechen<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN024" type="comment">
+                     <p>
+                        <bibl type="btd">Antrag der Fraktion der SPD betr. »Einsetzung eines Ausschusses zur Überwachung der Grundsätze bei der Auftragsvergebung für Bauten und Einrichtungen im Raume Bonns«. <ref type="internal" target="#spd-01_1949-11-15-t1100_EP">Vgl. Nr. 18</ref>. </bibl>
+                        <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> begründete den Antrag in der Plenarsitzung am 2.12.1949 vor allem mit der fehlenden öffentlichen Ausschreibung beim Ausbau Bonns zur Bundeshauptstadt. <bibl type="btp">
+                           <ref type="external" target="01/21">BT Sten. Ber. 1, S. 644 f.</ref>
+                        </bibl> Am 9.12. wurde der Antrag dem Rechts- und Verfassungsausschuß überwiesen. <bibl type="btp">
+                           <ref type="external" target="01/22">BT Sten. Ber. 1, S. 687–692</ref>
+                        </bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-01-19-t1500_EP">vgl. Nr. 34</ref>.</p>
+                  </note>
+               </seg>,</p>
+            <p>zu Punkt 19 der Genosse <name type="Person" role="Erwaehnung" ref="#EichlerWilli_1949-09-07">Eichler</name>,</p>
+            <p>zu Punkt 20 der Genosse <name type="Person" role="Erwaehnung" ref="#PohleKurt_1949-09-07">Pohle.</name>
+            </p>
+            <p>Wenn der Antrag 21 nicht zurückgezogen wird, soll dazu Gen. <name type="Person" role="Erwaehnung" ref="#KlabundeErich_1949-09-07">Klabunde</name> reden.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN025" type="comment">
+                     <p>Als Tagesordnungspunkte 19–21 waren vorgesehen: <bibl type="btd">Antrag der Abg. <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> (KPD) und Gen. betr. »Wahrung der Pressefreiheit gegenüber Zeitungsverboten der britischen Dienststellen« (<ref type="external" target="01/1208">BT Anl. 1 Drs. I/208</ref>)</bibl>, betr. <bibl type="btd">»Einmalige Winterbeihilfe für Erwerbslose« <ref type="external" target="01/209">(ebd., Drs. I/209)</ref> und Antrag der FDP-Fraktion betr. »Förderung des Wohnungsbaues« (<ref type="external" target="01/214">Drs. I/214</ref>)</bibl>. <bibl type="item-in-archive">Vgl. Tagesordnung der 19. Sitzung des Deutschen Bundestages, Parl. Arch.</bibl> Die Anträge wurden von der Tagesordnung abgesetzt bzw. ohne Aussprache an die zuständigen Ausschüsse überwiesen.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zur ersten Lesung des Haushaltsgesetzes wird Gen. <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name> sprechen.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN026" type="comment">
+                     <p>Am 2.12.1949 wurde in 1. Lesung der Gesetzentwurf über die <bibl type="btd">»vorläufige Aufstellung und Ausführung des Bundeshaushaltsplans und über die vorläufige Rechnungsprüfung sowie über die vorläufige Haushaltsführung im Rechnungsjahr 1949« (<ref type="external" target="01/223">BT Anl. 1, Drs. I/223</ref>)</bibl> beraten, zu der <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name> die Stellungnahme der SPD-Fraktion abgab. <bibl type="btd">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 598–602</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#SteinhoersterWilli_1949-09-07">Steinhörster</name> weist auf die Wichtigkeit dieser Beratung hin.</p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#SeuffertWalter_1949-09-07">Seuffert</name> ergänzt, daß die Übergangsvorschriften der Ministerien nicht beachtet seien.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN027" type="comment">
+                     <p>Vgl. Nr. 7. Gemeint sind vermutlich die Empfehlungen des Finanzausschusses der Ministerpräsidenten vom 1.8.1949, die auch einen detaillierten Plan für den Aufbau der Bundesministerien enthielten. Vgl. <bibl type="single-item">Akten zur Vorgeschichte, Bd. 5, S. 961 f.</bibl>
+                        <name type="Person" role="Erwaehnung" ref="#SchoettleErwin_1949-09-07">Schoettle</name> warf in der 1. Beratung des Haushaltsgesetzentwurfs der Bundesregierung vor, die Empfehlungen des Finanzausschusses der Ministerpräsidenten mißachtet zu haben, indem sie entgegen dessen Vorschlag statt acht dreizehn Bundesministerien geschaffen habe. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 598–601</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#BrillHermannLouis_1949-09-07">Brill</name> betont, daß die Verfassung des <name type="Organisation" ref="#BRH">Rechnungshofes</name> bedenklich sei.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN028" type="comment">
+                     <p>Durch Gesetz des Wirtschaftsrats vom 3.11.1948 war ein Rechnungshof als oberste Behörde für die Verwaltung des Vereinigten Wirtschaftsgebietes errichtet worden, der bis zum 31.3.1950 die Aufgaben und Befugnisse des noch nicht bestehenden Bundesrechnungshofes übernahm. Ein Bundesrechnungshofgesetz wurde erst am 27.1.1950 verabschiedet. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Gilles</hi>, S. 80–87</bibl>. Zu der Beeinträchtigung der Arbeit des vorläufigen Rechnungshofes durch Schwierigkeiten beim Aufbau der Finanzkontrollbehörden und der zunächst noch uneinheitlichen Prüfungsbasis vgl. ebd. S. 131–135.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu Punkt 23 macht <name type="Person" role="Sprecher" ref="#SeuffertWalter_1949-09-07">Seuffert</name> Vorschläge zur Steuerreform.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN029" type="comment">
+                     <p>Am 2.12.1949 wurde in 1. Lesung der <bibl type="btd">Gesetzentwurf des <name type="Organisation" ref="#DZP">Zentrums</name> zur »Änderung des Einkommensteuergesetzes« (<ref type="external" target="01/238">BT Anl. 1, Drs. I/238</ref>)</bibl> behandelt. Der Antrag wurde auf Beschluß des Ältestenrats ohne Aussprache im Bundestag als Material zu dem von der Bundesregierung vorbereiteten Gesetzentwurf zur Änderung des Einkommensteuergesetzes an den Ausschuß für Finanz- und Steuerfragen überwiesen.<bibl type="btp">
+                           <ref type="internal" target="01/19">BT Sten. Ber 1, S. 607–610</ref>
+                        </bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-01-10-t1500_EP">vgl. Nr. 30</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Gen. <name type="Person" role="Sprecher" ref="#GreveOttoHeinrich_1949-09-07">Greve</name> weist darauf hin, daß diese Frage einer sorgfältigen Behandlung bedürfe. Die Stellungnahme der Experten soll abgewartet werden.</p>
+            <p>Zu den Fragen über Hochseefischerei soll der Gen. <name type="Person" role="Erwaehnung" ref="#PetersGeorg_1949-09-07">Peters</name> reden.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN030" type="comment">
+                     <p>Die 1. Beratung des von der <bibl type="btd">
+                           <name type="Organisation" ref="#DP">DP</name> eingebrachten Entwurfs eines »Notgesetzes für die deutsche Hochseefischerei« (<ref type="external" target="01/221">BT Anl. 1, Drs. I/221</ref>)</bibl> in Verbindung mit den Anträgen der<bibl type="btd"> DP betr. »Wiederaufbau der deutschen Hochseefischerei« (<ref type="external" target="01/218">ebd., Drs. I/218</ref>)</bibl> und betr. <bibl type="btd">»Notlage der kleinen Hochsee- und Küstenfischerei« (<ref type="external" target="01/220">ebd., Drs. I/220</ref>)</bibl> fand am 2.12.1949 ohne Aussprache im Bundestag statt. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 610 f.</ref>
+                        </bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>Wenn bei Punkt 29 und 30 eine Aussprache stattfindet, wird <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> als Redner vorgesehen.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN031" type="comment">
+                     <p>Anträge der<bibl type="btd">
+                           <name type="Organisation" ref="#BP">BP</name> und CSU betr. »Biersteuergesetzgebung«. <ref type="external" target="01/212">BT Anl. 1, Drs. I/212</ref> und <ref type="external" target="01/213">213</ref>
+                        </bibl>. Vgl. Tagesordnung der 19. Sitzung des Deutschen Bundestages, Parl. Arch. Die Beratung der Anträge wurde vertagt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Antrag <name type="Person" role="Erwaehnung" ref="#BrillHermannLouis_1949-09-07">Brill</name> betr. Einrichtung eines Sonderhaushaltes für die Bundeshauptstadt wird abgelehnt, weil eine klare Aufteilung der Kosten doch nicht zu erreichen sein würde. Für den Aufsichtsrat der STEG soll <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> vorgeschlagen werden.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN032" type="comment">
+                     <p>Die <name type="Organisation" ref="#STEG">Staatliche Erfassungsgesellschaft für öffentliches Gut GmbH (STEG)</name> war auf Beschluß des Direktoriums des Süddeutschen Länderrats vom 29.8.1946 am 14.7.1947 gegründet worden. Aufgabe der STEG war beschlagnahmtes deutsches Rüstungsgut sowie überflüssige Bestände der amerikanischen Armee der deutschen Wirtschaft zur Wiederbelebung zuzuführen. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Vogel</hi>, Bd. 2, S. 55–71</bibl>. In der Ältestenratssitzung am 25.11.1949 war beschlossen worden, die bisherigen Vertreter des ehemaligen Wirtschaftsrats im Aufsichtsrat der STEG durch drei Bundestagsabgeordnete zu ersetzen. <bibl type="item-in-archive">Vgl. Kurzprotokoll der Ältestenratssitzung, Parl. Arch.</bibl>
+                     </p>
+                  </note>
+               </seg> Bei den steuerfreien Beträgen für Weihnachtsgratifikation soll die Fraktion als Höchstbetrag DM 300 vorschlagen.<seg type="note">
+                  <note xml:id="spd-01_1949-11-30-t1500_EP_FN033" type="comment">
+                     <p>Am 21.11.1949 hatte die FDP-Fraktion einen Antrag betr. »Steuerfreiheit für Weihnachtszuwendungen« im Bundestag eingebracht, nach dem Weihnachtszuwendungen bis zur Höhe eines Monatseinkommens steuerfrei bleiben sollten. <bibl type="btd">
+                           <ref type="external" target="01/217">BT Anl. 1, Drs. I/217</ref>
+                        </bibl>. In der Plenarsitzung am 2.12. 1949 änderte der Antragsteller <name type="Person" role="Erwaehnung" ref="#MiddelhauveFriedrich_1949-09-07">Middelhauve</name> (FDP) den Antrag nach dem Vorbild eines Antrags der SPD im bayerischen Landtag auf einen Steuerfreibetrag von 300 DM ab. Der Antrag wurde in der abgeänderten Form einstimmig vom Plenum angenommen. <bibl type="btp">
+                           <ref type="external" target="01/19">BT Sten. Ber. 1, S. 614–616</ref>
+                        </bibl>. Der Bundesrat lehnte den Antrag am 19.12.1949 ab. <bibl type="brp">Vgl. BR-Sitzungsberichte, Bd. 1, S. 106 und S. 133</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

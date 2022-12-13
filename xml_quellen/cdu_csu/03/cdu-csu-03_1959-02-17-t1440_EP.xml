@@ -1,183 +1,318 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-02-17-t1440_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 17. Februar 1959</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>4 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1959-02-17"><time type="start" when="14:40:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1959-02-17-t1440_EP_SVP-1" corresp="#cdu-csu-03_1959-02-17-t1440_EP_div_SVP-1">A. TOP 1: Bericht aus dem Fraktionsvorstand. – TOP 2: Vorlage zum Kindergeldgesetz. – TOP 3: Bundesrechtsanwaltsordnung. – TOP 4: Rede des <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Bundeskanzlers</name> vor der Fraktion.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1959-02-17-t1440_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet aus dem Vorstand, daß dort der Bericht des Bundeskanzlers über den Besuch des amerikanischen Außenministers <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name><seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN001" type="comment"><p>Siehe Nr. 110 v. 16. 2. 1959, TOP 1.</p></note></seg> Hauptgegenstand der Verhandlung gewesen sei. Der Bundeskanzler habe weiter auch über die Frage der Bundespräsidentenwahl<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN002" type="comment"><p>Siehe ebd.</p></note></seg> gesprochen und werde zu beiden Themen in dieser Sitzung der Fraktion sprechen</p>
-				<p>Von dem Vorsitzenden der FDP-Fraktion<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN003" type="comment"><p>Erich <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> ab 1957. Vgl. Datenhandbuch I, S. 986.</p></note></seg> sei angeregt worden, eine außenpolitische Debatte auf der Grundlage einer vereinbarten Linie, etwa in dem Sinn der in Berlin durchgeführten Debatte<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN004" type="comment"><p>Gemeint sind wohl die 41. und 42. Sitzung des Bundestages in Berlin am 1. und 2. 10. 1958. Vgl. die Behandlung der Großen CDU/CSU-SPD-FDP-DP-Anfrage betr. Flüchtlingsfragen und Zonenverhältnisse (Drucksache III/546) am 1. 10. 1958, S. 2394–2426 sowie der Großen FDP-Anfrage betr. Erfüllung des EWG-Vertrags (Drucksache III/371) am 2. 10. 1958, S. 2429–2450.</p></note></seg> anzusetzen. Ich habe die Meinung vertreten, daß eine solche Manifestation wohl nicht möglich sei und er stelle fest, daß die Fraktion der gleichen Ansicht sei.</p>
-				<p>Was die Altersversorgung der Abgeordneten anbelange, so beziehe er sich auf die in der Fraktion geführten Verhandlungen. Natürlich bleibe es den Initiatoren dieses Entwurfs überlassen, ein solches Gesetz einzubringen, was aber bisher noch nicht der Fall sei.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN005" type="comment"><p>Vgl. später Gesetzentwurf der Abg. <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> (Frankfurt), <name type="Person" role="Erwaehnung" ref="#KuehnWalther_1949-09-07">Kühn</name> (Bonn), <name type="Person" role="Erwaehnung" ref="#SchneiderLudwig_1949-09-07">Schneider</name> (Lollar) u. Gen.: Drucksache III/1444 v. 2. 12. 1959.</p></note></seg></p>
-				<p>Für die Neuwahl der Mitglieder zu den europäischen Gremien werde Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) die Vorbereitung der Vorschläge übernehmen. Dabei sei der Vorstand der Meinung, daß an der Quotierung der verschiedenen Berufsstände festgehalten werden solle.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN006" type="comment"><p>CDU/CSU-SPD-FDP-DP-Antrag betr. Wahl der Mitglieder des Europäischen Parlaments: Drucksache III/888 v. 24. 2. 1959.</p></note></seg></p>
-				<p>Die Wahl des Wehrbeauftragten sei nun wohl entsprechend dem Vorschlag des Verteidigungsausschusses sichergestellt. Auch diejenigen, die grundsätzlich Bedenken gegen die Institution als solche hätten, seien gebeten, zum Zustandekommen einer möglichst einheitlichen Wahl beizutragen.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN007" type="comment"><p>Der Bundestag wählte General a.D. Helmuth <name type="Person" role="Erwaehnung" ref="#GrolmanHelmuthvon">von Grolman</name> am 19. 2. 1959 zum ersten Wehrbeauftragten der Bundesrepublik. Vgl. Sten. Ber., 62. Sitzung, S. 3346.</p></note></seg></p>
-				<p>Der Beitritt der Fraktionsmitglieder zu der neu ins Leben tretenden Deutsch-Französischen Parlamentarier-Vereinigung<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN008" type="comment"><p>Siehe Nr. 110 v. 16. 2. 1959, TOP 1.</p></note></seg> werde von seiten des Vorstandes besonders empfohlen, da auch auf französischer Seite ein sehr starkes Interesse an der Sache zu erkennen sei.</p>
-				<p>2. <name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> berichtet über die Vorlage zum Kindergeldgesetz<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN009" type="comment"><p>Reg.-Entwurf f. 2. ÄndG zu den Kindergeldgesetzen: Drucksache III/666 v. 21. 11. 1958 in Verbindung mit den Drucksachen III/799 v. 20. 1. 1959 und III/803 v. 21. 1. 1959.</p></note></seg>, dessen Annahme von Arbeitskreis IV empfohlen werde.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN010" type="comment"><p>Diesbezügliches Protokoll nicht in den Akten des AK IV (ACDP VIII-005-001/3).</p></note></seg></p>
-				<p>Die Fraktion ist damit einverstanden.</p>
-				<p>3. Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) berichtet über die nach Abschluß der Ausschußarbeiten vorliegende Fassung der Bundesrechtsanwaltsordnung<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN011" type="comment"><p>Vgl. Schriftl. Bericht des BT-Rechtsausschusses: Drucksache III/778 v. 12. 1. 1959.</p></note></seg> und bittet die Fraktion, entsprechend dem Ausschußbericht der Vorlage zuzustimmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> und Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> und <name type="Person" role="Sprecher" ref="#DemmelmeierHans_1953-10-06">Demmelmeier</name> tragen, unterstützt von <name type="Person" role="Sprecher" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Änderungsanträge vor und kündigen deren Einbringung im Plenum an.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN012" type="comment"><p>Vgl. die Änderungsanträge in Sten. Ber., 61. Sitzung am 18. 2. 1959: Anlage 11 – Umdruck 221 (CDU/CSU), Anlage 12 – Umdruck 222 (CDU/CSU, FDP, DP); 62. Sitzung am 19. 2. 1959: Anlage 3 – Umdruck 223 (CDU/CSU, FDP).</p></note></seg></p>
-				<p>4. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt den unterdessen erschienenen Bundeskanzler und erteilt diesem das Wort zu dem angekündigten Referat. (Seite 89 bis 101 werden hier eingefügt.)<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN013" type="comment"><p>Nicht bei der Vorlage. Statt dessen folgt hier die Aufzeichnung von Justin <name type="Person" role="Erwaehnung" ref="#HammJustin">Hamm</name>, BPA, zu TOP 4 (Parl. Bericht Nr. 28-58/59 v. 18. 2. 1959, masch., 3 S., Stempel »VS-Vertraulich«, in: BA, B 145/1910).</p></note></seg></p>
-				<p>Rede des Bundeskanzlers vor der CDU/CSU-Fraktion des Bundestages am 17. 2. 1959</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> nahm vor der CDU/CSU-Fraktion Stellung zu den gegenwärtigen außenpolitischen Problemen. In diesem Zusammenhang bezeichnete er die Nachrichten über <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> als zu pessimistisch. Dieser würde in kurzer Zeit seine Amtsgeschäfte wieder aufnehmen.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN014" type="comment"><p>Zum Gesundheitszustand des US-Außenministers siehe Nr. 110 v. 16. 2. 1959, Anm. 8.</p></note></seg></p>
-				<p>Der Bundeskanzler betont seine völlige Übereinstimmung mit den Auffassungen von <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name>.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN015" type="comment"><p>Zu der festen Position von <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> gegenüber der UdSSR siehe ebd., Anm. 6.</p></note></seg> Im gegenwärtigen Moment lege die amerikanische Öffentlichkeit das Zeugnis einer klugen politischen Haltung ab, da sie die Erkrankung von <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> nicht zur Störung seiner Politik ausnutze. Die Nachricht über die Reise von <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> sei sehr überraschend gekommen.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN016" type="comment"><p>Besuch des britischen Premiers zusammen mit Außenminister <name type="Person" role="Erwaehnung" ref="#LloydSelwyn">Selwyn Lloyd</name> in der UdSSR vom 21.2. bis 3. 3. 1959. Vgl. AdG 1959, S. 7586 –7588.</p></note></seg> Dieser werde aber am 12./13. 3. 1959 in Bonn über seine Reiseergebnisse berichten.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN017" type="comment"><p>Besuch von <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und <name type="Person" role="Erwaehnung" ref="#LloydSelwyn">Selwyn Lloyd</name> in Bonn am 12. und 13. 3. 1959, um <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> die Ergebnisse ihrer Moskau-Reise mitzuteilen und die britische Haltung zur Berlin- und Deutschlandfrage sowie zur Abrüstungsproblematik zu erläutern. Vgl. AdG 1959, S. 7603.</p></note></seg> Bei der bevorstehenden Konferenz sei ein schwieriger Punkt die Terminfrage. Man müsse zuerst einmal den 27. 5. 1959 wegbringen.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN018" type="comment"><p>In der Note der UdSSR an die Bundesrepublik Deutschland vom 27. 11. 1958 hatte die UdSSR für eine Neuregelung der Besatzungsverhältnisse in Berlin eine Frist von einem halben Jahr genannt. Am 19. 3. 1959 erklärte <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> auf einer Pressekonferenz im Hinblick auf die für den 11. 5. 1959 vorgesehene Außenministerkonferenz, daß er an dem am 27. 5. 1959 auslaufenden Berlin-Ultimatum nicht streng festzuhalten gedachte. Damit war ein erstes Hauptziel der westlichen Konferenzstrategie erreicht. Vgl. DzD IV/1, S. 191; AdG 1959, S. 7613; Schwarz, Bundesrepublik 1957–1963, S. 88.</p></note></seg> Bei einer Verbindung des Berlin- und gesamten Deutschlandproblems in einer Konferenz könne man nicht unter dem Druck einer Terminierung beraten. Nach seiner Auffassung würde die Konferenz sehr lang dauern.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN019" type="comment"><p>Die zweite Phase der Außenministerkonferenz endete am 5. 8. 1959. Siehe ebd.</p></note></seg> Sie würde im weiteren Verlauf von Außenminister-Stellvertretern geführt werden. In dem kommenden gefährlichen Abschnitt müsse man in voller Übereinstimmung mit den Westmächten hineingehen. Sorge mache ihm hierbei nur die öffentliche Meinung in Großbritannien. Er hoffe, daß Großbritannien so fest bleibe wie es jetzt sei.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN020" type="comment"><p>Zu <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillans</name> Vorstellungen und zur Skepsis <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in bezug auf die britische Position in der Deutschland- und Berlin-Frage vgl. Adenauer, Erinnerungen 1955–1959, S. 480–482; Schwarz, Bundesrepublik 1957–1963, S. 84 f.</p></note></seg> Der Bundeskanzler wandte sich gegen eine Darstellung von »Newsweek«. Diese Zeitung hatte gemeldet, daß die Bundesregierung bereit sei, die Oder-Neiße-Linie anzuerkennen. Der Bundeskanzler wandte sich mit vier Punkten gegen diese Darstellung:</p>
-				<p>1. Grenzen würden erst durch einen Friedensvertrag hergestellt;</p>
-				<p>2. Deutschland verzichte auf jede gewaltsame Grenzänderung;</p>
-				<p>3. Dessen ungeachtet fordere Deutschland die Anerkennung des Heimatrechtes;</p>
-				<p>3. Bei einer allgemeinen Entspannung würden auch die grenzpolitischen Gegensätze gemildert werden.</p>
-				<p>Zu dem »Times«-Bericht über eine etwaige Anerkennung von P[ankow durch den W]esten sagte er, daß die Westmächte in Berlin [...]igkeit<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN021" type="comment"><p>Vorlage an dieser Stelle unvollständig.</p></note></seg> ihre Position halten würden.</p>
-				<p>Die Bundesrepublik verfolge eine Wiedervereinigung in Freiheit. Sie würde dem Osten hierbei anbieten, daß sich hieraus kein Zuwachs an Kriegspotential ergeben solle. Von Deutschland aus könne man nicht verstehen, wie sich die öffentliche Meinung in Großbritannien gegenüber Deutschland verschlechtert habe. Das Los Deutschlands wäre auch das Los Großbritanniens. Wenn die Freiheit in Europa zugrunde gehe, dann gehe sie auch in England zugrunde. Keiner wolle Großbritannien vom Gemeinsamen Markt fernhalten. Man müsse allerdings dazu sagen, daß sich Großbritannien hierum auch sehr spät gekümmert hat. Man solle sich durch solche Verstimmungen nicht von der großen Linie abhalten lassen. Er sei in Sorge wegen der vielen Disengagement-Pläne. In den deutschen räumlichen Verhältnissen brächten sie keine Lösung, weil die Sowjetunion z.Zt. mit Leitbomben das deutsche Gebiet erledigen könnte. Bei einer einseitigen Abrüstung würde man so von der Sowjetunion abhängig. Ein Ausscheiden der Bundesrepublik aus der NATO sei für diese kritisch. Eine Auflösung der NATO würde die USA von Europa wegbringen. Der Bundeskanzler schilderte die östliche Spionagetätigkeit auf dem Boden der Bundesrepublik und betonte die verschiedenen vertraglichen Bindungen, in denen bereits die Bundesrepublik durch Rüstungsbeschränkungen ihre friedliche Absicht zum Ausdruck gebracht habe. Allerdings sei die russische mit der europäischen Wirtschaft zusammen die erste Wirtschaftsmacht der Welt. In einer solchen Situation wie der jetzigen könne die Bundesregierung nicht alles sagen. Für sie gelte allerdings die Parole: keine Konzession ohne Gegenkonzession. Ziel und Richtung der deutschen Politik sei klar und fest. Der Weg könne veränderlich sein. Bei den kommenden schweren Monaten hoffe er auf Ruhe im deutschen Volk. Die deutsche Sache sei nicht weltentscheidend. Auch ohne Deutschland würde die Spannung zwischen Ost und West anhalten, allerdings liege Deutschland an der Berührungsstelle der ost-westlichen Gegensätze. Der Schlüssel zur Lösung der Weltprobleme bestehe in der kontrollierten Abrüstung. Rußland habe schwere Sorgen und es habe Angst vor den USA. Die Angst vor Deutschland sei allerdings nur propagandistisch aufzufassen, wie es aus dem <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>-Interview mit W. <name type="Person" role="Sprecher" ref="#LippmannWalter">Lippmann</name> hervorgehe.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN022" type="comment"><p>Siehe Nr. 100 v. 13. 1. 1959, TOP 5, Anm. 19.</p></note></seg> Die Sowjetunion habe kein Verständnis für eine kontrollierte Abrüstung, aber nur eine solche könne eine Lösung der deutschen Frage mit sich bringen. Im Verlauf seiner Rede hatte sich der Bundeskanzler über den Begriff der Flexibilität lustig gemacht. Anhand von Zitaten wies er eine Meinungsabweichung von <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> bis Prof. Dr. Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> und <name type="Person" role="Erwaehnung" ref="#KalbitzerHellmut_1949-09-07">Kalbitzer</name> bei der SPD nach. Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> fügte nach der Rede des Bundeskanzlers hinzu, das deutsche Volk würde es in dieser Situation nicht aushalten, wenn die Regierung gar nichts sage. Er forderte die im Saale anwesenden Pressevertreter auf, diese Rede entsprechend auszuwerten. Er schloß mit einem Bekenntnis zu Berlin und zum Bundeskanzler. Die Fraktion antwortete mit lang anhaltendem Beifall.</p>
-				<p>2. Verschiedenes</p>
-				<p>In seiner Rede vor der CDU/CSU-Fraktion am 17. 2. 1 959 berührte der Bundeskanzler auch das Problem der Bundespräsidentenkandidatur. Diese sei nicht nur Sache der Fraktion. Er habe in der vorigen Woche mit Ministerpräsident Dr. <name type="Person" role="Erwaehnung" ref="#SeidelHanns">Seidel</name> über diese Frage gesprochen<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN023" type="comment"><p>Gespräch <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer – Seidel</name> vom 6. 2. 1959. Vgl. Besucherlisten Adenauer (StBKAH 04.10).</p></note></seg> und es müsse ein kleines Gremium zwischen CDU und CSU gebildet werden. Das Ziel sei, eine geschlossene und einheitliche Abstimmung zu erreichen. Man müsse sich überlegen, mit welcher Partei Fühlung aufgenommen werden könnte. Die FDP habe immer wechselnde Stimmungen, man müsse ihr gegenüber eine abwartende Haltung einnehmen.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN024" type="comment"><p>Zu dem Bemühen der FDP, eine Entscheidung in dieser Frage möglichst spät zu treffen, vgl. Wengst, FDP-Bundesvorstand 1954–1960, S. 417 f., 437 f., 440 f., 445.</p></note></seg> Man solle über etwaige Kandidaten wenig sprechen. Dann sagte er, sein Nachbar zur Linken sei nie Kandidat gewesen.<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN025" type="comment"><p>Vgl. die Erklärung <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krones</name> als Fraktionsvorsitzender in: Nr. 112 v. 23. 2. 1959, TOP 1.</p></note></seg> Dieser Nachbar war Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>. [...]<seg type="note"><note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN026" type="comment"><p>Es folgt ein Bericht von J. <name type="Person" role="Erwaehnung" ref="#HammJustin">Hamm</name> über eine Sitzung des Unterausschusses Eigentum.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-02-17-t1440_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 17. Februar 1959</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>4 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1959-02-17">
+               <time type="start" when="14:40:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1959-02-17-t1440_EP_SVP-1" corresp="#cdu-csu-03_1959-02-17-t1440_EP_div_SVP-1">A. TOP 1: Bericht aus dem Fraktionsvorstand. – TOP 2: Vorlage zum Kindergeldgesetz. – TOP 3: Bundesrechtsanwaltsordnung. – TOP 4: Rede des <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Bundeskanzlers</name> vor der Fraktion.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1959-02-17-t1440_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet aus dem Vorstand, daß dort der Bericht des Bundeskanzlers über den Besuch des amerikanischen Außenministers <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN001" type="comment">
+                     <p>Siehe Nr. 110 v. 16. 2. 1959, TOP 1.</p>
+                  </note>
+               </seg> Hauptgegenstand der Verhandlung gewesen sei. Der Bundeskanzler habe weiter auch über die Frage der Bundespräsidentenwahl<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN002" type="comment">
+                     <p>Siehe ebd.</p>
+                  </note>
+               </seg> gesprochen und werde zu beiden Themen in dieser Sitzung der Fraktion sprechen</p>
+            <p>Von dem Vorsitzenden der FDP-Fraktion<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN003" type="comment">
+                     <p>Erich <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> ab 1957. Vgl. Datenhandbuch I, S. 986.</p>
+                  </note>
+               </seg> sei angeregt worden, eine außenpolitische Debatte auf der Grundlage einer vereinbarten Linie, etwa in dem Sinn der in Berlin durchgeführten Debatte<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN004" type="comment">
+                     <p>Gemeint sind wohl die 41. und 42. Sitzung des Bundestages in Berlin am 1. und 2. 10. 1958. Vgl. die Behandlung der Großen CDU/CSU-SPD-FDP-DP-Anfrage betr. Flüchtlingsfragen und Zonenverhältnisse (Drucksache III/546) am 1. 10. 1958, S. 2394–2426 sowie der Großen FDP-Anfrage betr. Erfüllung des EWG-Vertrags (Drucksache III/371) am 2. 10. 1958, S. 2429–2450.</p>
+                  </note>
+               </seg> anzusetzen. Ich habe die Meinung vertreten, daß eine solche Manifestation wohl nicht möglich sei und er stelle fest, daß die Fraktion der gleichen Ansicht sei.</p>
+            <p>Was die Altersversorgung der Abgeordneten anbelange, so beziehe er sich auf die in der Fraktion geführten Verhandlungen. Natürlich bleibe es den Initiatoren dieses Entwurfs überlassen, ein solches Gesetz einzubringen, was aber bisher noch nicht der Fall sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN005" type="comment">
+                     <p>Vgl. später Gesetzentwurf der Abg. <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> (Frankfurt), <name type="Person" role="Erwaehnung" ref="#KuehnWalther_1949-09-07">Kühn</name> (Bonn), <name type="Person" role="Erwaehnung" ref="#SchneiderLudwig_1949-09-07">Schneider</name> (Lollar) u. Gen.: Drucksache III/1444 v. 2. 12. 1959.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Für die Neuwahl der Mitglieder zu den europäischen Gremien werde Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) die Vorbereitung der Vorschläge übernehmen. Dabei sei der Vorstand der Meinung, daß an der Quotierung der verschiedenen Berufsstände festgehalten werden solle.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN006" type="comment">
+                     <p>CDU/CSU-SPD-FDP-DP-Antrag betr. Wahl der Mitglieder des Europäischen Parlaments: Drucksache III/888 v. 24. 2. 1959.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Wahl des Wehrbeauftragten sei nun wohl entsprechend dem Vorschlag des Verteidigungsausschusses sichergestellt. Auch diejenigen, die grundsätzlich Bedenken gegen die Institution als solche hätten, seien gebeten, zum Zustandekommen einer möglichst einheitlichen Wahl beizutragen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN007" type="comment">
+                     <p>Der Bundestag wählte General a.D. Helmuth <name type="Person" role="Erwaehnung" ref="#GrolmanHelmuthvon">von Grolman</name> am 19. 2. 1959 zum ersten Wehrbeauftragten der Bundesrepublik. Vgl. Sten. Ber., 62. Sitzung, S. 3346.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Beitritt der Fraktionsmitglieder zu der neu ins Leben tretenden Deutsch-Französischen Parlamentarier-Vereinigung<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN008" type="comment">
+                     <p>Siehe Nr. 110 v. 16. 2. 1959, TOP 1.</p>
+                  </note>
+               </seg> werde von seiten des Vorstandes besonders empfohlen, da auch auf französischer Seite ein sehr starkes Interesse an der Sache zu erkennen sei.</p>
+            <p>2. <name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> berichtet über die Vorlage zum Kindergeldgesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN009" type="comment">
+                     <p>Reg.-Entwurf f. 2. ÄndG zu den Kindergeldgesetzen: Drucksache III/666 v. 21. 11. 1958 in Verbindung mit den Drucksachen III/799 v. 20. 1. 1959 und III/803 v. 21. 1. 1959.</p>
+                  </note>
+               </seg>, dessen Annahme von Arbeitskreis IV empfohlen werde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN010" type="comment">
+                     <p>Diesbezügliches Protokoll nicht in den Akten des AK IV (ACDP VIII-005-001/3).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Fraktion ist damit einverstanden.</p>
+            <p>3. Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) berichtet über die nach Abschluß der Ausschußarbeiten vorliegende Fassung der Bundesrechtsanwaltsordnung<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN011" type="comment">
+                     <p>Vgl. Schriftl. Bericht des BT-Rechtsausschusses: Drucksache III/778 v. 12. 1. 1959.</p>
+                  </note>
+               </seg> und bittet die Fraktion, entsprechend dem Ausschußbericht der Vorlage zuzustimmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> und Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> und <name type="Person" role="Sprecher" ref="#DemmelmeierHans_1953-10-06">Demmelmeier</name> tragen, unterstützt von <name type="Person" role="Sprecher" ref="#UnertlFranzXaver_1953-10-06">Unertl</name>, Änderungsanträge vor und kündigen deren Einbringung im Plenum an.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN012" type="comment">
+                     <p>Vgl. die Änderungsanträge in Sten. Ber., 61. Sitzung am 18. 2. 1959: Anlage 11 – Umdruck 221 (CDU/CSU), Anlage 12 – Umdruck 222 (CDU/CSU, FDP, DP); 62. Sitzung am 19. 2. 1959: Anlage 3 – Umdruck 223 (CDU/CSU, FDP).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> begrüßt den unterdessen erschienenen Bundeskanzler und erteilt diesem das Wort zu dem angekündigten Referat. (Seite 89 bis 101 werden hier eingefügt.)<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN013" type="comment">
+                     <p>Nicht bei der Vorlage. Statt dessen folgt hier die Aufzeichnung von Justin <name type="Person" role="Erwaehnung" ref="#HammJustin">Hamm</name>, BPA, zu TOP 4 (Parl. Bericht Nr. 28-58/59 v. 18. 2. 1959, masch., 3 S., Stempel »VS-Vertraulich«, in: BA, B 145/1910).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Rede des Bundeskanzlers vor der CDU/CSU-Fraktion des Bundestages am 17. 2. 1959</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> nahm vor der CDU/CSU-Fraktion Stellung zu den gegenwärtigen außenpolitischen Problemen. In diesem Zusammenhang bezeichnete er die Nachrichten über <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> als zu pessimistisch. Dieser würde in kurzer Zeit seine Amtsgeschäfte wieder aufnehmen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN014" type="comment">
+                     <p>Zum Gesundheitszustand des US-Außenministers siehe Nr. 110 v. 16. 2. 1959, Anm. 8.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Bundeskanzler betont seine völlige Übereinstimmung mit den Auffassungen von <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN015" type="comment">
+                     <p>Zu der festen Position von <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> gegenüber der UdSSR siehe ebd., Anm. 6.</p>
+                  </note>
+               </seg> Im gegenwärtigen Moment lege die amerikanische Öffentlichkeit das Zeugnis einer klugen politischen Haltung ab, da sie die Erkrankung von <name type="Person" role="Erwaehnung" ref="#DullesJohnFoster">Dulles</name> nicht zur Störung seiner Politik ausnutze. Die Nachricht über die Reise von <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> sei sehr überraschend gekommen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN016" type="comment">
+                     <p>Besuch des britischen Premiers zusammen mit Außenminister <name type="Person" role="Erwaehnung" ref="#LloydSelwyn">Selwyn Lloyd</name> in der UdSSR vom 21.2. bis 3. 3. 1959. Vgl. AdG 1959, S. 7586 –7588.</p>
+                  </note>
+               </seg> Dieser werde aber am 12./13. 3. 1959 in Bonn über seine Reiseergebnisse berichten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN017" type="comment">
+                     <p>Besuch von <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und <name type="Person" role="Erwaehnung" ref="#LloydSelwyn">Selwyn Lloyd</name> in Bonn am 12. und 13. 3. 1959, um <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> die Ergebnisse ihrer Moskau-Reise mitzuteilen und die britische Haltung zur Berlin- und Deutschlandfrage sowie zur Abrüstungsproblematik zu erläutern. Vgl. AdG 1959, S. 7603.</p>
+                  </note>
+               </seg> Bei der bevorstehenden Konferenz sei ein schwieriger Punkt die Terminfrage. Man müsse zuerst einmal den 27. 5. 1959 wegbringen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN018" type="comment">
+                     <p>In der Note der UdSSR an die Bundesrepublik Deutschland vom 27. 11. 1958 hatte die UdSSR für eine Neuregelung der Besatzungsverhältnisse in Berlin eine Frist von einem halben Jahr genannt. Am 19. 3. 1959 erklärte <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> auf einer Pressekonferenz im Hinblick auf die für den 11. 5. 1959 vorgesehene Außenministerkonferenz, daß er an dem am 27. 5. 1959 auslaufenden Berlin-Ultimatum nicht streng festzuhalten gedachte. Damit war ein erstes Hauptziel der westlichen Konferenzstrategie erreicht. Vgl. DzD IV/1, S. 191; AdG 1959, S. 7613; Schwarz, Bundesrepublik 1957–1963, S. 88.</p>
+                  </note>
+               </seg> Bei einer Verbindung des Berlin- und gesamten Deutschlandproblems in einer Konferenz könne man nicht unter dem Druck einer Terminierung beraten. Nach seiner Auffassung würde die Konferenz sehr lang dauern.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN019" type="comment">
+                     <p>Die zweite Phase der Außenministerkonferenz endete am 5. 8. 1959. Siehe ebd.</p>
+                  </note>
+               </seg> Sie würde im weiteren Verlauf von Außenminister-Stellvertretern geführt werden. In dem kommenden gefährlichen Abschnitt müsse man in voller Übereinstimmung mit den Westmächten hineingehen. Sorge mache ihm hierbei nur die öffentliche Meinung in Großbritannien. Er hoffe, daß Großbritannien so fest bleibe wie es jetzt sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN020" type="comment">
+                     <p>Zu <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillans</name> Vorstellungen und zur Skepsis <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in bezug auf die britische Position in der Deutschland- und Berlin-Frage vgl. Adenauer, Erinnerungen 1955–1959, S. 480–482; Schwarz, Bundesrepublik 1957–1963, S. 84 f.</p>
+                  </note>
+               </seg> Der Bundeskanzler wandte sich gegen eine Darstellung von »Newsweek«. Diese Zeitung hatte gemeldet, daß die Bundesregierung bereit sei, die Oder-Neiße-Linie anzuerkennen. Der Bundeskanzler wandte sich mit vier Punkten gegen diese Darstellung:</p>
+            <p>1. Grenzen würden erst durch einen Friedensvertrag hergestellt;</p>
+            <p>2. Deutschland verzichte auf jede gewaltsame Grenzänderung;</p>
+            <p>3. Dessen ungeachtet fordere Deutschland die Anerkennung des Heimatrechtes;</p>
+            <p>3. Bei einer allgemeinen Entspannung würden auch die grenzpolitischen Gegensätze gemildert werden.</p>
+            <p>Zu dem »Times«-Bericht über eine etwaige Anerkennung von P[ankow durch den W]esten sagte er, daß die Westmächte in Berlin [...]igkeit<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN021" type="comment">
+                     <p>Vorlage an dieser Stelle unvollständig.</p>
+                  </note>
+               </seg> ihre Position halten würden.</p>
+            <p>Die Bundesrepublik verfolge eine Wiedervereinigung in Freiheit. Sie würde dem Osten hierbei anbieten, daß sich hieraus kein Zuwachs an Kriegspotential ergeben solle. Von Deutschland aus könne man nicht verstehen, wie sich die öffentliche Meinung in Großbritannien gegenüber Deutschland verschlechtert habe. Das Los Deutschlands wäre auch das Los Großbritanniens. Wenn die Freiheit in Europa zugrunde gehe, dann gehe sie auch in England zugrunde. Keiner wolle Großbritannien vom Gemeinsamen Markt fernhalten. Man müsse allerdings dazu sagen, daß sich Großbritannien hierum auch sehr spät gekümmert hat. Man solle sich durch solche Verstimmungen nicht von der großen Linie abhalten lassen. Er sei in Sorge wegen der vielen Disengagement-Pläne. In den deutschen räumlichen Verhältnissen brächten sie keine Lösung, weil die Sowjetunion z.Zt. mit Leitbomben das deutsche Gebiet erledigen könnte. Bei einer einseitigen Abrüstung würde man so von der Sowjetunion abhängig. Ein Ausscheiden der Bundesrepublik aus der NATO sei für diese kritisch. Eine Auflösung der NATO würde die USA von Europa wegbringen. Der Bundeskanzler schilderte die östliche Spionagetätigkeit auf dem Boden der Bundesrepublik und betonte die verschiedenen vertraglichen Bindungen, in denen bereits die Bundesrepublik durch Rüstungsbeschränkungen ihre friedliche Absicht zum Ausdruck gebracht habe. Allerdings sei die russische mit der europäischen Wirtschaft zusammen die erste Wirtschaftsmacht der Welt. In einer solchen Situation wie der jetzigen könne die Bundesregierung nicht alles sagen. Für sie gelte allerdings die Parole: keine Konzession ohne Gegenkonzession. Ziel und Richtung der deutschen Politik sei klar und fest. Der Weg könne veränderlich sein. Bei den kommenden schweren Monaten hoffe er auf Ruhe im deutschen Volk. Die deutsche Sache sei nicht weltentscheidend. Auch ohne Deutschland würde die Spannung zwischen Ost und West anhalten, allerdings liege Deutschland an der Berührungsstelle der ost-westlichen Gegensätze. Der Schlüssel zur Lösung der Weltprobleme bestehe in der kontrollierten Abrüstung. Rußland habe schwere Sorgen und es habe Angst vor den USA. Die Angst vor Deutschland sei allerdings nur propagandistisch aufzufassen, wie es aus dem <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>-Interview mit W. <name type="Person" role="Sprecher" ref="#LippmannWalter">Lippmann</name> hervorgehe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN022" type="comment">
+                     <p>Siehe Nr. 100 v. 13. 1. 1959, TOP 5, Anm. 19.</p>
+                  </note>
+               </seg> Die Sowjetunion habe kein Verständnis für eine kontrollierte Abrüstung, aber nur eine solche könne eine Lösung der deutschen Frage mit sich bringen. Im Verlauf seiner Rede hatte sich der Bundeskanzler über den Begriff der Flexibilität lustig gemacht. Anhand von Zitaten wies er eine Meinungsabweichung von <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> bis Prof. Dr. Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> und <name type="Person" role="Erwaehnung" ref="#KalbitzerHellmut_1949-09-07">Kalbitzer</name> bei der SPD nach. Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> fügte nach der Rede des Bundeskanzlers hinzu, das deutsche Volk würde es in dieser Situation nicht aushalten, wenn die Regierung gar nichts sage. Er forderte die im Saale anwesenden Pressevertreter auf, diese Rede entsprechend auszuwerten. Er schloß mit einem Bekenntnis zu Berlin und zum Bundeskanzler. Die Fraktion antwortete mit lang anhaltendem Beifall.</p>
+            <p>2. Verschiedenes</p>
+            <p>In seiner Rede vor der CDU/CSU-Fraktion am 17. 2. 1 959 berührte der Bundeskanzler auch das Problem der Bundespräsidentenkandidatur. Diese sei nicht nur Sache der Fraktion. Er habe in der vorigen Woche mit Ministerpräsident Dr. <name type="Person" role="Erwaehnung" ref="#SeidelHanns">Seidel</name> über diese Frage gesprochen<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN023" type="comment">
+                     <p>Gespräch <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer – Seidel</name> vom 6. 2. 1959. Vgl. Besucherlisten Adenauer (StBKAH 04.10).</p>
+                  </note>
+               </seg> und es müsse ein kleines Gremium zwischen CDU und CSU gebildet werden. Das Ziel sei, eine geschlossene und einheitliche Abstimmung zu erreichen. Man müsse sich überlegen, mit welcher Partei Fühlung aufgenommen werden könnte. Die FDP habe immer wechselnde Stimmungen, man müsse ihr gegenüber eine abwartende Haltung einnehmen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN024" type="comment">
+                     <p>Zu dem Bemühen der FDP, eine Entscheidung in dieser Frage möglichst spät zu treffen, vgl. Wengst, FDP-Bundesvorstand 1954–1960, S. 417 f., 437 f., 440 f., 445.</p>
+                  </note>
+               </seg> Man solle über etwaige Kandidaten wenig sprechen. Dann sagte er, sein Nachbar zur Linken sei nie Kandidat gewesen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN025" type="comment">
+                     <p>Vgl. die Erklärung <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krones</name> als Fraktionsvorsitzender in: Nr. 112 v. 23. 2. 1959, TOP 1.</p>
+                  </note>
+               </seg> Dieser Nachbar war Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>. [...]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-02-17-t1440_EP_FN026" type="comment">
+                     <p>Es folgt ein Bericht von J. <name type="Person" role="Erwaehnung" ref="#HammJustin">Hamm</name> über eine Sitzung des Unterausschusses Eigentum.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

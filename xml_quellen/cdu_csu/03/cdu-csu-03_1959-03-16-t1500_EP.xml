@@ -1,250 +1,450 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-03-16-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1503/2</idno>
-							<objectName>Protokoll der Vorstandssitzung vom 16. März 1959</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 16. März 1959</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>10 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1959-03-16"><time type="start" when="15:00:00"/><time type="end" when="20:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#Engelbrecht-GreveErnst_1953-10-06">Engelbrecht-Greve</name>, <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#KrollLudwig_1953-10-06">Kroll</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name> (ab 16.30 Uhr), Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend Regierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Staatssekretär <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1959-03-16-t1500_EP_SVP-1" corresp="#cdu-csu-03_1959-03-16-t1500_EP_div_SVP-1">A. Verlaufsprotokoll. TOP 1: Gesetzentwurf über das Zollkontingent 1959 für feste Brennstoffe. – TOP 2: Bericht von Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> über die Sitzung des Parteivorstandes vom 11. März 1959. – TOP 3: Stimmrecht der Berliner. – TOP 4: Moskaureise einer Bundestagsdelegation. – TOP 5: Bericht des <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Bundeskanzlers</name> über die politische Lage. –– Kurzprotokoll. TOP 3: Tagesordnung Plenum. – TOP 4: Wahl der Bundesversammlung und des Bundespräsidenten. – TOP 5: Plenarwoche 8.–10. April 1959. – TOP 6: Finanzgesetze Berlin.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1959-03-16-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>a) Verlaufsprotokoll<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN001" type="comment"><p>Von dieser Vorstandssitzung sind sowohl das übliche Kurzprotokoll (masch. 2 S.) als auch das hier abgedruckte Verlaufsprotokoll überliefert. Das Verlaufsprotokoll trägt die Überschrift: »Protokoll der Vorstandssitzung vom 16. März 1959«. Im Kurzprotokoll lautet die Tagesordnung abweichend:</p>
-							<p>»1. Bericht zur Lage</p>
-							<p>2. Zollkontingent für feste Brennstoffe</p>
-							<p>3. Tagesordnung Plenum: Handwerkergesetz, Sparprämiengesetz</p>
-							<p>4. Wahl der Bundesversammlung. Ruhebezüge des Bundespräsidenten</p>
-							<p>5. Plenarwoche 8.–10. April 1959</p>
-							<p>7. Finanzgesetze Berlin.«</p>
-							<p>Nach dem Verlaufsprotokoll wird von dem Kurzprotokoll nur derjenige Teil abgedruckt, der inhaltlich nicht oder kaum durch das Verlaufsprotokoll abgedeckt ist.</p></note></seg></p>
-				<p>I. Gesetzentwurf über das Zollkontingent 1959 für feste Brennstoffe [CDU/CSU-Gesetzentwurf: Drucksache III/937 v. 17. 3. 1959]</p>
-				<p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> teilt mit, daß zwischen den Ministerien im wesentlichen eine Einigung über eine Vorlage erzielt worden ist.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> bittet um Klärung der Frage, wie die Beratungen im Bundestag gestaltet werden sollen, ob der Entwurf von der Regierung oder aus Gründen der Zeitersparnis von der Fraktion kommen soll. Wenn die Fraktion einen Initiativgesetzentwurf einbringe, könne die 1. Lesung noch am Freitag, dem 20. März, stattfinden.</p>
-				<p>Der Vorstand vertrat einhellig die Meinung, daß die Fraktion den Entwurf einreichen soll.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN002" type="comment"><p>Vgl. die 1. Beratung des von der CDU/CSU eingebrachten Gesetzentwurfs in Sten. Ber., 67. Sitzung am 19. 3. 1959, S. 3554 f.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> schlug jedoch vor, mit den Ausschußberatungen erst nach Ostern zu beginnen. Diesem Vorschlag stimmte der Vorstand zu.</p>
-				<p>II. Bericht von Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> über die Sitzung des Parteivorstandes vom 11. März 1959<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN003" type="comment"><p>Vgl. CDU-Bundesvorstand 1957–1961, Sitzung v. 11. 3. 1959, S. 348–384.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wies darauf hin, daß der Parteivorstand den Vorschlag der CSU für nicht ausreichend genug gehalten habe, lediglich ein Gremium von Vertretern der Bundestagsfraktion und der Landtagsfraktionen als Vorschlagsgremium einzuberufen, sondern den Wunsch geäußert habe, daß auch Vertreter der Partei dem Gremium angehören sollten.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN004" type="comment"><p>Vgl. die Beratungen über die Bildung und Zusammensetzung eines geeigneten Gremiums ebd., S. 359–376. Das Gremium sollte etwa 50 Personen umfassen. Vgl. ebd., S. 371, 373.</p></note></seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betonte, daß die offizielle Nominierung eines Kandidaten durch die große CDU/CSU-Fraktion der Bundesversammlung erfolgen müsse, so daß die Funktion dieses Gremiums tatsächlich nur beratender Natur sei. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> drückte den Wunsch aus, daß es möglichst noch vor dem 9. April, also vor dem Urlaubsbeginn des Bundeskanzlers, zusammentreten werde, und dann auch zu einem Ergebnis komme.</p>
-				<p>In der anschließenden Diskussion vertraten Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) und <name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> die Auffassung, daß die Fraktion die in das Gremium zu entsendenden Mitglieder offiziell legitimieren müsse. Im übrigen müsse die Fraktion in diesem Gremium stärker beteiligt werden. Im Verlaufe der Diskussion machte der Bundesinnenminister [Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>] den Vorschlag, den gesamten Vorstand der Bundestagsfraktion zu beauftragen, in diesem vorbereitenden Gremium mitzuwirken. Dieser Vorschlag wurde jedoch von der Mehrheit des Vorstandes nicht gutgeheißen. Man einigte sich darauf, der Fraktion vorzuschlagen, 12 weitere Mitglieder der Fraktion in das Gremium zu entsenden.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> und Minister <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> meinten, daß man es beim Vorschlag des Parteivorstandes belassen solle.</p>
-				<p>Auch der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> schaltete sich in die Diskussion ein und bat den Vorstand, einen Vorschlag zu machen, den er dann dem Parteivorstand mitteilen wolle.</p>
-				<p>Die Diskussion endete mit dem Auftrag an Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, der Fraktion die Meinung des Vorstandes vorzutragen und vorzuschlagen, 12 weitere Mitglieder in das Gremium zu wählen.</p>
-				<p>III. Stimmrecht der Berliner<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN005" type="comment"><p>Die Rechte Berlins und seiner Bewohner ergaben sich aus dem besonderen Status der Stadt. Für diesen war maßgebend das Genehmigungsschreiben der Militärgouverneure zum Grundgesetz v. 12. 5. 1949 (Vorbehalt der Drei Mächte). Vgl. Handbuch des Besatzungsrechts, Bd. 2, § 100, S. 22 f.</p></note></seg></p>
-				<p>Zu Beginn dieses Punktes der Tagesordnung wies Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> darauf hin, daß die SPD die Erörterung dieses Problems bei der Behandlung des Gesetzes über die Bundesversammlung [Reg.-Entwurf über die Wahl der Bundesversammlung und den Bundespräsidenten: Drucksache III/358 v. 30. 4. 1958] anschneiden wolle.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN006" type="comment"><p>Vgl. Hölscher, SPD-Fraktion 1957–1961, Fraktionssitzung v. 17. 3. 1959, TOP 5 a, S. 227: »[...] Ausgehend von der Auffassung, daß die Stimmberechtigung der Berliner für uns selbstverständlich sei, sollten wir dem Gesetz zustimmen. Dabei könnten wir es durchaus darauf ankommen lassen, daß in Berlin beantragt wird, die Berliner nicht für stimmberechtigt zu erklären.«</p></note></seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> sprach sich persönlich aus politischen Gründen gegen das Stimmrecht der Berliner aus.</p>
-				<p>Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> berichtete dann über die Erstellung eines Gutachtens zu dieser Frage, aus dem eindeutig hervorgeht, daß die Berliner nicht voll stimmberechtigt sein könnten.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN007" type="comment"><p>Nicht ermittelt. Minister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> als der für Verfassungsfragen zuständige Bundesminister erhob in einem Schreiben vom 25. 6. 1959 an Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> Bedenken gegen dessen Absicht, keinen Unterschied zwischen den westdeutschen und Berliner Stimmen zu machen. Vgl. Wortlaut des Schreibens in: AdG 1959, S. 7821.</p></note></seg> Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> empfahl, diese Frage noch etwas hinauszuzögern.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> nahm dann zur Rechtslage Stellung. Er zitierte zunächst Art. 23 und 144 GG<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN008" type="comment"><p>Vgl. Art. 23 GG a.F. betr. die Bundesländer, darunter »Groß-Berlin«, und Art. 144 GG betr. Ratifizierung des Grundgesetzes; Berliner Vertreter im Bundestag und Bundesrat.</p></note></seg> und verwies auf eine Entscheidung des Bundesverfassungsgerichtes von 1957, in der Berlin eindeutig als Land der Bundesrepublik bezeichnet wurde.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN009" type="comment"><p>Vgl. BVerfGE 7, S. 1(–17) v. 21. 5. 1957: »Berlin ist ein Land der Bundesrepublik. Das Grundgesetz gilt grundsätzlich auch in Berlin. Soweit der Vorbehalt der Drei Mächte reicht und aufrechterhalten wird, unterliegt allerdings die Anwendung des Grundgesetzes in Berlin Einschränkungen. Soweit der Vorbehalt der Drei Mächte nicht entgegensteht, müssen aus der grundsätzlichen Geltung des Grundgesetzes für Berlin alle Folgerungen gezogen werden.« Der Bundestagspräsident hatte daher zu prüfen, ob sich der Vorbehalt der Drei Mächte auch auf die Bundesversammlung erstreckte und ob er aufrecht erhalten wurde. Vgl. Protokoll der 3. Bundesversammlung v. 1. 7. 1959, in: Sten. Ber., Bd. 44, S. 3 f. (<name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>).</p></note></seg> Bei der Bundesversammlung 1954 habe Präsident Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name> die Stimmen der Berliner nicht gesondert gezählt.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN010" type="comment"><p>1949 hatten sich die Berliner Delegierten in der Bundesversammlung nicht an der Wahl des Bundespräsidenten beteiligt. 1954, bei der Wiederwahl von <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name>, stimmten die Berliner Abgeordneten mit ab. Jedoch ließ Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name> die Stimmzettel in eine gesonderte Urne werfen. Nun, bei der anstehenden Präsidentenwahl 1959, wollte <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> überhaupt keinen Unterschied zwischen westdeutschen und Berliner Stimmen machen. Vgl. Wagner, Bundespräsidentenwahl, S. 90 f.; »Der Spiegel« Nr. 14 v. 1. 4. 1959, S. 14.</p></note></seg> Die Abstimmung wäre nach seiner Auffassung anfechtbar gewesen. Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> berichtete dann über ein Gespräch mit dem Regierenden Bürgermeister von Berlin, Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, und dem Berliner Senator <name type="Person" role="Erwaehnung" ref="#KleinGuenter_1961-10-17">Klein</name> über die Frage des Stimmrechts der Berliner. Während sich <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in dieser Unterredung zurückgehalten habe, hat Senator <name type="Person" role="Erwaehnung" ref="#KleinGuenter_1961-10-17">Klein</name> erklärt, Berlin würde notfalls das Bundesverfassungsgericht anrufen, wenn die Berliner nicht mitstimmen würden. Er habe jedoch hinzugefügt, wenn es jedoch zu einem eindeutigen Ergebnis bei der Wahl käme, könne man auf diesen Schritt verzichten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> betonte in der Diskussion, daß das Vorgehen von Präsident Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name> bei der Bundesversammlung von 1954 kein Recht schaffe. Es sei seine persönliche Auffassung gewesen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> machte dann auf den Ernst der Lage aufmerksam und betonte, daß wir zum Zeitpunkt der Bundesversammlung zwischen einem Außenminister- und einem Gipfeltreffen sein würden.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN011" type="comment"><p>Zweite Genfer Außenministerkonferenz, 1. Konferenzphase v. 11.5.–20. 6. 1959, 2. Konferenzphase v. 13.7.–5. 8. 1959. Eine west-östliche Gipfelkonferenz war als Folge der Außenministerkonferenz geplant, fand aber verkleinert als westliche Gipfelkonferenz erst vom 19. bis 21. 12. 1959 in Paris statt. Vgl. AdG 1959, S. 7608, 8125.</p></note></seg> Ob es dann sinnvoll sei, die Sache so auf die Spitze zu treiben, wie die SPD es wolle, sei zweifelhaft. Eine unnötige Provokation der Sowjets müsse unter allen Umständen vermieden werden. Auch müsse die Haltung der westlichen Alliierten in dieser Frage berücksichtigt werden. Seit der Luftbrücke<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN012" type="comment"><p>Versorgung West-Berlins einschließlich der dort stationierten Truppen der westlichen Alliierten auf dem Luftweg vom 26. 6. 1948 bis 12. 5. 1949 als Folge der sowjetischen Blockade der Zufahrtswege nach West-Berlin. Vgl. AdG 1948/49, S. 1550, 1919.</p></note></seg> seien eine Reihe von Fehlern gemacht worden, die die heutige Situation mit heraufbeschworen hätten. Zum Beispiel hätten die Alliierten nicht mehr die Zufahrtswege nach Berlin patrouilliert und die Wachhäuser unterhalten. So konnte der Eindruck entstehen, daß die Zufahrtsstraßen als Straßen der sogenannten DDR angesehen wurden. Auch der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> plädierte dafür, die Frage des Stimmrechts der Berliner zunächst noch etwas zurückzustellen. Auch <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> und Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> meinten, daß den Berlinern nicht daran gelegen sei, die Lage zu verschärfen. Daher würden sie dafür eintreten, nichts zu unternehmen, was als Provokation gegenüber dem Osten aufgefaßt werden könnte.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> griff noch einmal in die Debatte ein und betonte, daß diese Frage hochpolitischen Charakter annehmen könne. Der Status von Berlin müsse unter allen Umständen erhalten bleiben. Wenn die Alliierten erklärten, daß in dieser Frage noch Besatzungsrecht herrsche, dann müßten wir das respektieren.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betonte, daß sich die Sache sehr erleichtern würde, wenn sich die Alliierten von sich aus einschalten würden.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN013" type="comment"><p>Vgl. Protokoll der 3. Bundesversammlung 1959 v. 1. 7. 1959, in: Sten. Ber., Bd. 44, S. 4 (<name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>): »Es steht fest, auch in diesem Augenblick steht fest, daß die Drei Mächte nach wie vor die oberste Gewalt in Berlin ausüben. Ich hätte es demgemäß als meine Pflicht angesehen, Bedenken der Drei Mächte jederzeit zu respektieren. Solche Bedenken sind jedoch bis zur Eröffnung der Bundesversammlung nicht geltend gemacht worden. Ich halte mich deshalb in Übereinstimmung mit der zitierten Entscheidung des Bundesverfassungsgerichtes für verpflichtet, das Stimmrecht der Berliner Mitglieder der Bundesversammlung uneingeschränkt anzuerkennen. (Allgemeiner Beifall.)«</p></note></seg> Das würde jede deutsche Partei verstehen. Man dürfe nur nicht versuchen, mit rein juristischen Argumenten die Sache zu erledigen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betonte, daß wir die Alliierten so stark wie möglich an Berlin binden müßten. Daher müßten Pläne, wie es heiße, wie der von <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> als unbegreiflich bezeichnet werden, die West-Berlin einfach zu einem Teil der Bundesrepublik machen wollten, wenn Ost-Berlin von der Zone übernommen würde. Damit wäre Berlin stark gefährdet. Man müsse Berlin alle Hilfe angedeihen lassen, aber nicht in dieser Frage des Stimmrechts.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> erinnerte daran, daß vor den Berliner Wahlen im Dezember vergangenen Jahres<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN014" type="comment"><p>Wahlen zum Abgeordnetenhaus von West-Berlin v. 7. 12. 1958. Vgl. AdG 1958, S. 7434.</p></note></seg> der britische Botschafter <name type="Person" role="Erwaehnung" ref="#SteelChristopher">Steel</name> in Berlin gewesen sei und im Auftrage der drei Westmächte darum gebeten habe, die Frage des Berliner Stimmrechts aus der Diskussion herauszulassen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> betonte dann, daß unser größtes Aktivum in der Auseinandersetzung mit den Sowjets die Einheit der Alliierten sei. Die englische Bevölkerung sei nicht immer in der deutschen Frage auf unserer Seite im Gegensatz zu ihrer Regierung. Wenn wir einen Anlaß geben zu sagen, die Deutschen provozieren, dann besteht die Gefahr, daß auch die britische Regierung umfällt. Sie stehe vor Wahlen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> berichtet dann über ein antideutsches Pamphlet, das von einer großen britischen Wohlfahrtsorganisation verbreitet werde und für das acht Millionen Unterschriften gesammelt werden sollen.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN015" type="comment"><p>Nicht ermittelt.</p></note></seg></p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> machte noch einmal auf den Ernst der Lage aufmerksam und betonte, daß dieses Risiko vermieden werden müsse.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> meinte, es sei nicht gut, in dieser Frage ein Votum der Alliierten herbeizuführen, weil wir dann für lange Zeit festgelegt würden. Man sollte vielmehr versuchen, mit der SPD zu sprechen und ihr klarmachen, was auf dem Spiele stehe und dann die Angelegenheit so handhaben wie im Bundestag.</p>
-				<p>Der Vorstand einigt sich darauf, daß diese Frage im Bundestag zunächst nicht behandelt werden sollte.</p>
-				<p>IV. Moskaureise einer Bundestagsdelegation</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet über den Brief des FDP-Fraktionsvorsitzenden Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> an den Bundestagspräsidenten und an die Fraktionen, die Frage der Moskaureise einer Bundestagsdelegation bald im Ältestenrat zu diskutieren.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN016" type="comment"><p>Die Frage, ob die 1956 vom Obersten Sowjet ausgesprochene Einladung an den Bundestag noch gelte, wurde durch den Abg. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> (FDP) wieder aufgeworfen. Dieser hatte in einem Brief die SPD beschuldigt, diese habe durch die Entsendung der Abg. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> und <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> nach Moskau (vom 11. bis 18. 3. 1959) eine frühere Vereinbarung gebrochen, entweder eine Delegation aller Fraktionen nach Moskau zu entsenden oder überhaupt nicht zu fahren. Die SPD-Fraktion wies diesen Vorwurf zurück. Vgl. PPP v. 17. 3. 1959 (52), S. 2 f. und zuvor Nr. 53 v. 14. 4. 1958, TOP 12.</p></note></seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß er durch einen Sprecher der Fraktion habe erklären lassen, daß die Fraktion den Zeitpunkt für eine solche Reise für denkbar ungeeignet halte.</p>
-				<p>Der Vorstand stimmte ihm in dieser Meinung zu und sprach sich ebenfalls gegen eine Reise in diesem Zeitpunkt aus.</p>
-				<p>V. Bericht des Bundeskanzlers über die politische Lage</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> berichtete zunächst über sein Gespräch mit dem britische Premierminister <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name>.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN017" type="comment"><p>Siehe Nr. 111 v. 17. 2. 1959, TOP 4.</p></note></seg> Dabei führte er im einzelnen aus:</p>
-				<p><name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> stehe auf dem Standpunkt, daß er uns allen mit seiner Moskaureise einen Dienst getan habe. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> meinte, daß die Briten zu wenig Kenntnis von der Mentalität der Sowjets gehabt hätten.</p>
-				<p>In der Diskussion habe die Frage des sogenannten Disengagements eine große Rolle gespielt.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN018" type="comment"><p>Zu <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> Bedenken gegen britische Pläne für ein Auseinanderrücken der beiden großen Blöcke siehe ebd.; vgl. Adenauer, Erinnerungen 1955–1959, S. 480 f.</p></note></seg> Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> verwies in diesem Zusammenhang auf die Ausführungen der Londoner diplomatischen Korrespondenz, die kurz vor dem <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name>-Besuch eine Definition des Begriffes »Disengagement« gegeben habe. Darin sei lediglich von einer Zone begrenzter Rüstung die Rede und keineswegs von einem völligen Auseinanderrücken der Machtblöcke. Dieser Formulierung, so betonte der Kanzler wörtlich, konnten wir zustimmen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> betonte dann, daß <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> im Verlaufe des Gespräches gesagt habe, es sei besser, daß er und seine Begleiter hier säßen als Herr <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name>.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN019" type="comment"><p>Aneurin <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name>, außenpolitischer Sprecher der Labour Party, damals Oppositionspartei.</p></note></seg></p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> ging dann auf die allgemeine politische Situation ein. Er betonte zunächst, daß die jetzige Verhärtung in der internationalen Politik keine Zufälligkeit sei. Er führte dafür mehrere Gründe an:</p>
-				<p>1. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> habe im Kampf um <name type="Person" role="Erwaehnung" ref="#StalinJosefWissarionowitsch">Stalins</name> Nachfolge gesiegt. Er könne jetzt versuchen, weiter nach Westen vorzugehen, weil er daran von innen nicht gehindert werde. Berlin sei ihm ein Dorn im Auge. Durch seinen Friedensvertragsvorschlag<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN020" type="comment"><p>Sowjetischer Friedensvertragsentwurf v. 10. 1. 1959. Siehe Nr. 99 v. 12. 1. 1959, TOP 1.</p></note></seg> versuche er, Westdeutschlands Verbindungen zum Westen zu zerschlagen. Deutschland solle neutralisiert und einer ständigen Kontrolle unterworfen werden. Auf dem wirtschaftlichen Sektor dürfe keine Diskriminierung Rußlands mehr erfolgen. Die westliche Integration würde vollkommen aufhören. Als einziger Schutz gegen die Expansionspläne der Sowjets auf wirtschaftspolitischem Gebiet sei aber unsere Zugehörigkeit zum westeuropäischen Markt.</p>
-				<p>2. Die nukleare Aufrüstung der Sowjetunion sei so weit fortgeschritten, daß die Sowjets glaubten, sich nunmehr mit Amerika messen zu können.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> betonte, die Entwicklung gehe nicht auf einen heißen Krieg hinaus. Dieser Meinung seien auch <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>. Die Sowjets wollten den heißen Krieg nicht wegen des Mitleids an der Menschheit willen vermeiden, sondern wegen ihrer grundsätzlichen ideologischen Einstellung. Sie gingen von der Voraussetzung aus, daß die Zukunft in der Welt dem Kommunismus unter russischer Führung gehöre. Deshalb ziele der Kommunismus nicht darauf ab, die Welt zu zerstören. Er wolle vielmehr Menschen beherrschen, die produzieren könnten.</p>
-				<p>Wenn es den Sowjets gelinge, durch die Berlin-Frage die Verhältnisse zu verändern, könnte der russische Kommunismus in ganz Westeuropa einen entscheidenden Einfluß gewinnen. Wenn die Bundesrepublik aus der NATO ausgeschieden ist, könnten sich auch die alliierten Truppen in Europa nicht mehr halten. Dann würde auch Rußlands wirtschaftlicher Einfluß in Europa wachsen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> machte in diesem Zusammenhang darauf aufmerksam, daß im Bereich der EWG 164 Millionen Menschen wohnen und das Ausfuhrpotential der EWG fast so groß sei wie das der USA. Wenn es dem Kreml gelinge, die EWG-Staaten in seine Macht zu bringen, würde die Sowjetunion die stärkste Wirtschaftsmacht auf der ganzen Welt werden. Dann sei es eine Kleinigkeit für sie, die Wirtschaft der Vereinigten Staaten auf den Kopf zu stellen.</p>
-				<p>Wenn man wisse, so betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> weiter, daß <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> die Welt beherrschen will und dann den Aufweichungsprozeß bei der deutschen Sozialdemokratie sieht, dann sei es klar, daß <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> nächstes Ziel die Bundesrepublik sei.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN021" type="comment"><p>Zu <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> sehr skeptischer Einschätzung der Lage in diesen Monaten siehe Nr. 111 v. 17. 2. 1959, TOP 4; vgl. Adenauer, Erinnerungen 1955–1959, S. 478–482.</p></note></seg> Er rechnet zumindest damit, daß, wenn die SPD 1961 an die Regierung komme, sie sich zumindest zunächst wirtschaftlich zum Ostblock hin orientiere. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> wiederholte seine Auffassung, daß die Sowjets nur die Macht über die ganze Welt bekommen könnten, wenn es keinen Krieg gäbe. Wenn sie das Potential Westeuropas in ihr Hand bekämen, würden sie auch eine bessere Position gegenüber Rot-China erhalten. Wörtlich sagte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>: »Der Vorstoß gegen Berlin ist der erste Schritt auf dem Wege zur Eroberung Westeuropas«. Die Einigkeit der freien Völker sei der beste Schutz gegen diese Aggression. Wir allein könnte in dieser Auseinandersetzung nichts ausrichten. Deshalb sei es gut, daß die Vereinigten Staaten eine so harte Sprache führten, um das Schlimmste zu vermeiden. Die beste Möglichkeit, zu einer Lösung zu kommen, stehe in dem festen und harten Auftreten der Vereinigten Staaten.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> fuhr fort, wir sind uns aber im Westen darüber einig, daß mit der Sowjetunion verhandelt werden muß. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> erträgt es aber nicht, daß Entscheidungen auf einer Außenministerkonferenz fallen, bei der er nicht beteiligt ist. Deshalb strebe er eine Gipfelkonferenz an.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN022" type="comment"><p>Siehe Anm. 11.</p></note></seg></p>
-				<p>Zum Thema Gipfelkonferenz vertrat der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> folgenden Standpunkt:</p>
-				<p>Bei einem Gipfeltreffen könne man nicht in ein oder zwei Wochen alles erledigen. Eine solche Konferenz müsse lange dauern und mehrmals unterbrochen werden. In der Zwischenzeit müßten Vertreter einer niederen Stufe das nächste Treffen vorbereiten. Das Ziel solcher Konferenzen müsse es sein, eine Stabilisierung für einige Jahre zu erreichen. Wenn <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> eine Gipfelkonferenz bekomme, habe er auch innenpolitisch einen Erfolg, weil er dann praktisch die Geschicke der Welt mitbestimmen könne. Wir müssen an das Problem Gipfelkonferenz herangehen, erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>. Aber unter ultimativem Druck könne man nicht verhandeln. Auch der Termin 27. August oder 27. September ist ein Ultimatum. Auch der britische Premierminister <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> sei überzeugt, daß man den Weg so einschlagen müsse. Ich hoffe, so betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, daß er in London nicht umgestimmt wird. Als Termine für die Ost-West-Konferenzen nannte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>: eine Ost-West-Außenministerkonferenz für Mai und das Gipfeltreffen für August.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN023" type="comment"><p>Siehe ebd.</p></note></seg></p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> befaßte sich dann mit der Rede des SPD-Vorsitzenden <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> in Fürth.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN024" type="comment"><p><name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> hatte in seiner Rede am 14. 3. 1959 in Fürth b. Nürnberg u. a. gesagt, »er und seine Partei würden der Sache des deutschen Volkes nicht dienen, wenn sie in der Endphase einer verfehlten Außenpolitik einen ›Burgfrieden‹ mit der Bundesregierung schließen würden«. Vgl. »Die alte Masche: Verdächtigungen«, in: SPD-Pressedienst P/IV/62 v. 16. 3. 1959, S. 5.</p></note></seg> Wenn <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> von der Endphase einer verfehlten Außenpolitik gesprochen habe, dann könne es keine Gemeinsamkeit mehr geben. Welch teuflische Ermutigung für die Sowjets steckt in solchen Äußerungen, erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>. Alle diese Äußerungen würden von der SED aufgegriffen und gegen uns ausgewertet.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> kritisierte dann das Gespräch <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauers</name> mit <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name><seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN025" type="comment"><p>Die knapp zweistündige Unterredung fand am 9. 3. 1959 in der Botschaft der UdSSR in Ost-Berlin statt. Vgl. Hölscher, SPD-Fraktion 1957–1961, S. 221 f.; AdG 1959, S. 7602.</p></note></seg>, vor allen Dingen die Art, wie es stattgefunden habe. Die Reisen von SPD-Leuten nach Moskau und die Forderungen weiter SPD-Kreise, er nannte z. B. die Kölner SPD, mit Pankow zu verhandeln, machte nicht nur den Russen Mut, sondern entmutige auch unsere Freunde. Die Regierungskoalition dürfe daher keine Schwäche zeigen in den nächsten Jahren. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> kritisierte die Passivität von Teilen der CDU gegenüber der SPD. Er schlug vor, insbesondere in Niedersachsen und Rheinland-Pfalz eine Versammlungswelle zu starten. In diesem Zusammenhang kritisierte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> auch die mangelnde Berichterstattung in Presse, Rundfunk und Fernsehen.</p>
-				<p>Abschließend betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, es hänge alles davon ab, wie wir Deutsche uns in den nächsten Monaten verhalten. Es hänge entscheidend von uns ab, ob die Freiheit in Europa gewahrt bleibe. Vor allem dürfe kein Nachgeben gegenüber der SPD erfolgen. Wenn die SPD jetzt von der Endphase einer verfehlten Außenpolitik spreche, dann bedeute das im Grunde genommen nichts anderes, als daß sie eine Politik nach Osten hin machen wolle.</p>
-				<p>In der Diskussion um die Ausführungen des Kanzlers vertrat zunächst Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> den Standpunkt, daß es für die Propaganda schwer sein werde, den Standpunkt des Kanzlers, eine Stabilisierung der Verhältnisse auf Jahre hinaus zu erreichen, zu vertreten und gleichzeitig die Wiedervereinigung zu propagieren. Die These des Kanzlers, den Status quo beizubehalten, bringe diese Gefahr mit sich. Wir könnten dann nur noch eine Scheinoffensive für die Wiedervereinigung führen. Man müsse die Frage stellen, ob es nicht noch eine Möglichkeit über den Status quo hinaus gebe.</p>
-				<p>Darauf erwiderte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, wir könnten es nicht erreichen, daß die Wiedervereinigung in den nächsten Jahren zustande komme. Zunächst kommt es jetzt darauf an, Berlin zu retten. Das könnten wir nur erreichen über eine Beibehaltung des Status quo. Im Zuge der Verhandlungen könne man versuchen, mehr Freiheit für die Zone herauszubekommen. Die Deutschlandfrage bleibe jedenfalls Gegenstand von Verhandlungen auf einem Gipfeltreffen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> meinte dazu, wenn die Ausführungen des Bundeskanzler bedeuten, daß der Status quo für viele Jahre das einzige sei, das zu erreichen wäre, dann stünde für die CDU/CSU als Partei viel auf dem Spiel. Dann müßten wir zugeben, daß das, was wir in den vergangen Jahren gesagt haben, nicht mehr stimmt. Zum Beispiel, daß unsere Politik zur Wiedervereinigung führen werde.</p>
-				<p>Darauf erwiderte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und er hätten in der Auffassung übereingestimmt, daß bei den kommenden Verhandlungen dafür gesorgt werden müsse, daß die Menschen in der Zone nicht die Hoffnung verlieren. <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> habe ihn gefragt, wie sich das deutsche Volk damit abfinden werde. Darauf habe er geantwortet: Niemand werde Pankow de jure anerkennen wollen. Es sei aber etwas anderes, zu prüfen, wie wir das Schicksal der Menschen in der Zone bessern könnten. Man habe nicht wissen können, daß die Sowjetunion sich so schnell zur nuklearen Weltmacht entwickeln werde. Nunmehr sei eine Wiedervereinigung ohne eine nukleare Abrüstung nicht zu erreichen. Daher müßten wir versuchen, auf diesem Gebiete weiterzukommen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> gab zu bedenken, daß wir nicht so verhandeln dürften, als wenn wir nur in der Frage des Status quo Erfolg hätten. Auch für die Sowjets sei Berlin eine gefährliche Sache. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> brauche Frieden, die Zone sei eine ökonomische Belastung für die Sowjets. Wir müßten in die Verhandlungen gehen, als ob wir eine Chance hätten.</p>
-				<p>Dazu erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, die Sowjets wüßten, daß bei einer Änderung der bestehenden Verhältnisse sich auch die Satelliten losmachen würden, besonders die Polen. Wenn wir überhaupt zu erfolgversprechenden Verhandlungen über eine allgemeine kontrollierte Abrüstung kommen, dann werde sich alles ändern. Dann könnten wir auch die persönlichen Verbindungen zwischen der Zone und uns bessern und mehr Freiheit für die Zone erwarten.</p>
-				<p>[Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellte zu der Diskussion fest, es sei viel erreicht, wenn wir Berlin freihalten könnten. Wenn wir die Beibehaltung des Status quo erreichen, sei viel gewonnen. Aber wir müßten auch die Hoffnung und den Willen aufrechterhalten, daß es weiter gehe.]<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN026" type="comment"><p>Absatz in der Vorlage handschriftlich durchgestrichen.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> griff noch einmal in die Diskussion ein und erklärte, der Kanzler habe eine wichtige Modifikation seiner bisherigen Thesen vorgenommen. Bisher hätten wir das militärische Übergewicht gegenüber dem Ostblock gewollt. Das hätten wir nicht, sondern nur noch das Gleichgewicht des Schreckens. Das sei das, was <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name>, <name type="Person" role="Erwaehnung" ref="#AchesonDeanG">Acheson</name> und <name type="Person" role="Erwaehnung" ref="#TrumanHarryS">Truman</name> immer gesagt hätten, die Politik des Containments, des Eindämmens der sowjetischen Gefahr. Daß man die Sowjets aus ihren eroberten Stellungen werfen könnte, wäre zwar erstrebenswert gewesen, könnte aber nicht erreicht werden. Die Frage sei nun, wie eine Politik der Wiedervereinigung bei einem Gleichgewicht des Schreckens real und aktiv möglich sei. Die sozialdemokratische These sei auch durch den modifizierten Standpunkt des Kanzlers keineswegs bestätigt. Bei Verwirklichung der sozialdemokratischen Thesen hätten wir weder ein militärisches Übergewicht noch das Gleichgewicht des Schreckens.</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> griff noch einmal in die Debatte ein und erklärte, man müsse sich daran erinnern, daß bei unserer Besetzung im Jahre 1945 von den Alliierten die härtesten Forderungen gekommen seien, so z. B. die Internationalisierung der Ruhr<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN027" type="comment"><p>Vgl. Steininger, Die Ruhrfrage 1945/46, passim.</p></note></seg> und der Morgenthauplan.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN028" type="comment"><p>Zu diesem Konzept eines »Karthago-Friedens« für Deutschland vgl. Schwarz, Vom Reich zur Bundesrepublik, S. 40, 58 f., 92 f., 98 f., et passim.</p></note></seg> Davon müsse man ausgehen und sehen, wie sich die Sache entwickelt habe. Wenn wir die Freiheit nicht gerettet hätten, wäre auch keine Möglichkeit für die Erlangung der Freiheit für die 17 Millionen Menschen der Sowjetzone gewesen. Ich bin nicht so pessimistisch für die Wiedervereinigung, erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>. Wir müssen nur dafür sorgen, daß eine freiheitliche Substanz in der Zone erhalten bleibt. Berlin muß gerettet werden, weil auch dann die Hoffnung bei den Menschen in der Zone wächst, daß auch sie einmal frei werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> bittet darum, bei den Erörterungen draußen das Wort Status quo nicht zu benutzen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> meint, daß man es auch nicht offiziell in unsere Politik aufnehmen solle, da sonst die neutrale Welt den Eindruck haben könnte, Bonn wolle den Status quo aufrechterhalten. Dann würde die Lust zur Anerkennung Pankows in diesen Staaten wachsen. <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> forderte, die Sowjets mehr durch Gegenvorschläge in Verlegenheit zu bringen.</p>
-				<p>Dazu bemerkte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, wir wollen die Sowjets nicht in Verlegenheit bringen, sondern mit ihnen verhandeln. Wenn von Status quo geredet werde, so bedeute das nicht die Anerkennung des Status quo; auch die Sowjets müßten Zugeständnisse machen, vor allem keine weiteren Erpressungen mehr vorzunehmen. Der Friede in der Welt hänge von einer allgemeinen Entspannung ab. Dann erst könne man weitersehen. Es sei schon viel gewonnen, wenn man das freie Hin- und Herreisen in Deutschland und mehr Freiheit für die Kirchen in der Zone erreiche.</p>
-				<p>Die übrigen Punkte der Tagesordnung der Vorstandssitzung wurden nur kurz gestreift<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN029" type="comment"><p>Siehe dazu den folgenden Auszug aus dem Kurzprotokoll vom selben Datum.</p></note></seg> und noch einmal zur weiteren Behandlung an die zuständigen Arbeitskreise überwiesen. Zu einer Diskussion kam es lediglich über die Frage der Neuregelung der Ruhegehaltsbezüge des Bundespräsidenten. Dabei vertrat der Vorstand mit Mehrheit die Auffassung, daß diese Frage nicht in aller Breite diskutiert werden könne, sondern man der vorgeschlagenen Lösung ohne große Diskussion zustimmen sollte. <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> bemerkte jedoch, daß das jetzige Verfahren stillos sei. Diese Frage hätte wesentlich früher in Angriff genommen werden müssen.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN030" type="comment"><p>Siehe ebd.</p></note></seg></p>
-				<p>b) Auszug aus dem Kurzprotokoll</p>
-				<p>3.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN031" type="comment"><p>Vgl. die abweichende Tagesordnung lt. Kurzprotokoll in Anm. 1.</p></note></seg> Tagesordnung Plenum</p>
-				<p>Handwerkerversicherungsgesetz: [FDP-Entwurf: Drucksache III/634 v. 7. 11. 1957; Reg.-Entwurf als CDU/CSU-Entwurf f. Handwerkerversicherungsgesetz – HVG: Drucksache III/993 v. 10. 4. 1959]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> weist darauf hin, daß der vom Arbeitsministerium formulierte Gesetzentwurf erst vor wenigen Stunden ihm übergeben worden sei. Der Entwurf bedürfe noch einer eingehenden Beratung. Er schlägt vor, diesen Entwurf in dieser Woche noch nicht einzubringen.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN032" type="comment"><p>Der Regierungsentwurf wurde am 22. 4. 1959 als CDU/CSU-Fraktionsantrag eingebracht. Siehe Nr. 95 v. 10. 12. 1958, TOP 4; vgl. Sten. Ber., 69. Sitzung, S. 3658.</p></note></seg> Er bittet, im Ältestenrat darauf hinzuwirken, daß auch die Behandlung des FDP-Entwurfs diese Woche noch nicht erfolgt.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN033" type="comment"><p>Der FDP-Fraktionsantrag wurde am 8. 4. 1959 eingebracht. Vgl. Sten. Ber., 68. Sitzung, S. 3595.</p></note></seg></p>
-				<p>Sparprämiengesetz: [Reg.-Entwurf: Drucksache III/263 v. 7. 3. 1958]</p>
-				<p>Die Ausschußvorlage soll noch einmal in den Arbeitskreisen II und III beraten werden<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN034" type="comment"><p>Zuletzt beraten am 27. 1. 1959. Vgl. Protokoll über die Sitzung des AK II von diesem Datum, TOP 1 (ACDP VIII-003-001/1).</p></note></seg> mit dem Ziel, eine Verständigung in der Frage der Begrenzung der Bezugsberechtigten herbeizuführen.</p>
-				<p>4. Wahl der Bundesversammlung und des Bundespräsidenten<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN035" type="comment"><p>Siehe TOP 3 des vorausgehenden Verlaufsprotokolls vom selben Tag.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gibt bekannt, daß die SPD-Fraktion mit der Verabschiedung des Gesetzentwurfs eine Entscheidung über das Stimmrecht der Berliner herbeiführen wolle. Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> und der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> erklären, daß auf Grund der Rechtslage, aber auch wegen der derzeitigen außenpolitischen Situation die Frage des Berliner Stimmrechts nicht erörtert werden könne. Es wird auf die Erklärungen sowohl der Russen als auch des Botschafters <name type="Person" role="Erwaehnung" ref="#SteelChristopher">Steel</name> hingewiesen; auch das bisherige Verfahren bei den Abstimmungen im Jahre 1949 und 1954 lasse erkennen, daß die Berliner Abgeordneten in der Bundesversammlung kein echtes Stimmrecht gehabt hätten. Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> ist der Meinung, daß die Verabschiedung des Gesetzentwurfes sowieso nicht eilbedürftig sei. Der Vorstand beschließt, daß der Gesetzentwurf nur dann in dieser Woche verabschiedet werden soll, wenn die Frage des Stimmrechts der Berliner nicht berührt würde.</p>
-				<p>Ruhebezüge des Bundespräsidenten: [CDU/CSU-SPD-FDP-DP-Entwurf f. ÄndG zum Gesetz über die Ruhebezüge des Bundespräsidenten: Drucksache III/939 v. 17. 3. 1959]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet über den Werdegang der diesbezüglichen Besprechungen. Es soll ein interfraktioneller Antrag eingebracht werden, der mittlerweile mit den zuständigen Stellen besprochen worden sei. Die Vorlage sieht vor, daß als Ruhegehaltsbezüge des Bundespräsidenten 2/3 des Amtsgehalts und 1/3 der Aufwandsentschädigung gewährt werden sollen. Im Vorstand wird diese Regelung nach den verschiedenen Seiten hin diskutiert. Es wird festgehalten, daß der vorliegende Entwurf in den kommenden Ausschußberatungen noch eingehend geprüft und gegebenenfalls geändert werden soll.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN036" type="comment"><p>Der interfraktionelle Gesetzentwurf v. 17. 3. 1959 bezweckte die Gewährung eines Ehrensolds in Höhe des Amtsgehalts. Vgl. die o.a. Drucksache III/939.</p></note></seg></p>
-				<p>5. Plenarwoche 8.–10. April 1959</p>
-				<p><name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> gibt einen kurzen Überblick über den anstehenden Stoff. Er schlägt vor, eine bzw. zwei Plenarsitzungen in der Woche vom 6. bis 11. April ausfallen zu lassen<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN037" type="comment"><p>In diesem Zeitraum trat der Bundestag nur am 8. 4. 1959 zusammen, danach erst wieder am 22. 4. 1959. Vgl. Sten. Ber., 68. und 69. Sitzung, S. 3583 ff., 3643 ff.</p></note></seg> im Hinblick auf die bevorstehenden Landtagswahlen in Niedersachsen und Rheinland-Pfalz.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN038" type="comment"><p>Landtagswahlen in beiden Ländern am 19. 4. 1959.</p></note></seg> Der Vorstand ist mit diesem Vorschlag einverstanden.</p>
-				<p>6. Finanzgesetze Berlin [CDU/CSU-SPD-FDP-DP-Entwurf f. 5. ÄndG zum Gesetz zur Förderung der Wirtschaft von Berlin (West): Drucksache III/935 v. 17. 3. 1959]</p>
-				<p>Minister <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> trägt das Ergebnis der Besprechungen in verschiedenen Gremien wegen der Finanzhilfe für Berlin vor. Nach eingehender Diskussion ist der Vorstand aus politischen Gründen mit der Vorlage einverstanden. Der Gesetzentwurf soll nach Möglichkeit in dieser Woche in drei Lesungen verabschiedet werden.<seg type="note"><note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN039" type="comment"><p>Die Vorlage wurde am 19. 3. 1959 einstimmig angenommen. Vgl. Sten. Ber., 67. Sitzung, S. 3574. Das fünfte Berlinhilfegesetz mit seinen umsatzsteuerlichen Präferenzen verlängerte die am 31. 12. 1959 auslaufende Frist bis zum 31. 12. 1964. Vgl. Gesetz v. 25. 3. 1959 (BGBl. I, S. 160).</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-03-16-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1503/2</idno>
+                     <objectName>Protokoll der Vorstandssitzung vom 16. März 1959</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 16. März 1959</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>10 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1959-03-16">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="20:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#BleylerHildegard_1953-10-06">Bleyler</name>, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#Engelbrecht-GreveErnst_1953-10-06">Engelbrecht-Greve</name>, <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#KrollLudwig_1953-10-06">Kroll</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name> (ab 16.30 Uhr), Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend Regierung:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Staatssekretär <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1959-03-16-t1500_EP_SVP-1" corresp="#cdu-csu-03_1959-03-16-t1500_EP_div_SVP-1">A. Verlaufsprotokoll. TOP 1: Gesetzentwurf über das Zollkontingent 1959 für feste Brennstoffe. – TOP 2: Bericht von Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> über die Sitzung des Parteivorstandes vom 11. März 1959. – TOP 3: Stimmrecht der Berliner. – TOP 4: Moskaureise einer Bundestagsdelegation. – TOP 5: Bericht des <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Bundeskanzlers</name> über die politische Lage. –– Kurzprotokoll. TOP 3: Tagesordnung Plenum. – TOP 4: Wahl der Bundesversammlung und des Bundespräsidenten. – TOP 5: Plenarwoche 8.–10. April 1959. – TOP 6: Finanzgesetze Berlin.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1959-03-16-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>a) Verlaufsprotokoll<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN001" type="comment">
+                     <p>Von dieser Vorstandssitzung sind sowohl das übliche Kurzprotokoll (masch. 2 S.) als auch das hier abgedruckte Verlaufsprotokoll überliefert. Das Verlaufsprotokoll trägt die Überschrift: »Protokoll der Vorstandssitzung vom 16. März 1959«. Im Kurzprotokoll lautet die Tagesordnung abweichend:</p>
+                     <p>»1. Bericht zur Lage</p>
+                     <p>2. Zollkontingent für feste Brennstoffe</p>
+                     <p>3. Tagesordnung Plenum: Handwerkergesetz, Sparprämiengesetz</p>
+                     <p>4. Wahl der Bundesversammlung. Ruhebezüge des Bundespräsidenten</p>
+                     <p>5. Plenarwoche 8.–10. April 1959</p>
+                     <p>7. Finanzgesetze Berlin.«</p>
+                     <p>Nach dem Verlaufsprotokoll wird von dem Kurzprotokoll nur derjenige Teil abgedruckt, der inhaltlich nicht oder kaum durch das Verlaufsprotokoll abgedeckt ist.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>I. Gesetzentwurf über das Zollkontingent 1959 für feste Brennstoffe [CDU/CSU-Gesetzentwurf: Drucksache III/937 v. 17. 3. 1959]</p>
+            <p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> teilt mit, daß zwischen den Ministerien im wesentlichen eine Einigung über eine Vorlage erzielt worden ist.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> bittet um Klärung der Frage, wie die Beratungen im Bundestag gestaltet werden sollen, ob der Entwurf von der Regierung oder aus Gründen der Zeitersparnis von der Fraktion kommen soll. Wenn die Fraktion einen Initiativgesetzentwurf einbringe, könne die 1. Lesung noch am Freitag, dem 20. März, stattfinden.</p>
+            <p>Der Vorstand vertrat einhellig die Meinung, daß die Fraktion den Entwurf einreichen soll.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN002" type="comment">
+                     <p>Vgl. die 1. Beratung des von der CDU/CSU eingebrachten Gesetzentwurfs in Sten. Ber., 67. Sitzung am 19. 3. 1959, S. 3554 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> schlug jedoch vor, mit den Ausschußberatungen erst nach Ostern zu beginnen. Diesem Vorschlag stimmte der Vorstand zu.</p>
+            <p>II. Bericht von Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> über die Sitzung des Parteivorstandes vom 11. März 1959<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN003" type="comment">
+                     <p>Vgl. CDU-Bundesvorstand 1957–1961, Sitzung v. 11. 3. 1959, S. 348–384.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wies darauf hin, daß der Parteivorstand den Vorschlag der CSU für nicht ausreichend genug gehalten habe, lediglich ein Gremium von Vertretern der Bundestagsfraktion und der Landtagsfraktionen als Vorschlagsgremium einzuberufen, sondern den Wunsch geäußert habe, daß auch Vertreter der Partei dem Gremium angehören sollten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN004" type="comment">
+                     <p>Vgl. die Beratungen über die Bildung und Zusammensetzung eines geeigneten Gremiums ebd., S. 359–376. Das Gremium sollte etwa 50 Personen umfassen. Vgl. ebd., S. 371, 373.</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betonte, daß die offizielle Nominierung eines Kandidaten durch die große CDU/CSU-Fraktion der Bundesversammlung erfolgen müsse, so daß die Funktion dieses Gremiums tatsächlich nur beratender Natur sei. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> drückte den Wunsch aus, daß es möglichst noch vor dem 9. April, also vor dem Urlaubsbeginn des Bundeskanzlers, zusammentreten werde, und dann auch zu einem Ergebnis komme.</p>
+            <p>In der anschließenden Diskussion vertraten Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) und <name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> die Auffassung, daß die Fraktion die in das Gremium zu entsendenden Mitglieder offiziell legitimieren müsse. Im übrigen müsse die Fraktion in diesem Gremium stärker beteiligt werden. Im Verlaufe der Diskussion machte der Bundesinnenminister [Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>] den Vorschlag, den gesamten Vorstand der Bundestagsfraktion zu beauftragen, in diesem vorbereitenden Gremium mitzuwirken. Dieser Vorschlag wurde jedoch von der Mehrheit des Vorstandes nicht gutgeheißen. Man einigte sich darauf, der Fraktion vorzuschlagen, 12 weitere Mitglieder der Fraktion in das Gremium zu entsenden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> und Minister <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> meinten, daß man es beim Vorschlag des Parteivorstandes belassen solle.</p>
+            <p>Auch der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> schaltete sich in die Diskussion ein und bat den Vorstand, einen Vorschlag zu machen, den er dann dem Parteivorstand mitteilen wolle.</p>
+            <p>Die Diskussion endete mit dem Auftrag an Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, der Fraktion die Meinung des Vorstandes vorzutragen und vorzuschlagen, 12 weitere Mitglieder in das Gremium zu wählen.</p>
+            <p>III. Stimmrecht der Berliner<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN005" type="comment">
+                     <p>Die Rechte Berlins und seiner Bewohner ergaben sich aus dem besonderen Status der Stadt. Für diesen war maßgebend das Genehmigungsschreiben der Militärgouverneure zum Grundgesetz v. 12. 5. 1949 (Vorbehalt der Drei Mächte). Vgl. Handbuch des Besatzungsrechts, Bd. 2, § 100, S. 22 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu Beginn dieses Punktes der Tagesordnung wies Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> darauf hin, daß die SPD die Erörterung dieses Problems bei der Behandlung des Gesetzes über die Bundesversammlung [Reg.-Entwurf über die Wahl der Bundesversammlung und den Bundespräsidenten: Drucksache III/358 v. 30. 4. 1958] anschneiden wolle.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN006" type="comment">
+                     <p>Vgl. Hölscher, SPD-Fraktion 1957–1961, Fraktionssitzung v. 17. 3. 1959, TOP 5 a, S. 227: »[...] Ausgehend von der Auffassung, daß die Stimmberechtigung der Berliner für uns selbstverständlich sei, sollten wir dem Gesetz zustimmen. Dabei könnten wir es durchaus darauf ankommen lassen, daß in Berlin beantragt wird, die Berliner nicht für stimmberechtigt zu erklären.«</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> sprach sich persönlich aus politischen Gründen gegen das Stimmrecht der Berliner aus.</p>
+            <p>Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> berichtete dann über die Erstellung eines Gutachtens zu dieser Frage, aus dem eindeutig hervorgeht, daß die Berliner nicht voll stimmberechtigt sein könnten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN007" type="comment">
+                     <p>Nicht ermittelt. Minister <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> als der für Verfassungsfragen zuständige Bundesminister erhob in einem Schreiben vom 25. 6. 1959 an Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> Bedenken gegen dessen Absicht, keinen Unterschied zwischen den westdeutschen und Berliner Stimmen zu machen. Vgl. Wortlaut des Schreibens in: AdG 1959, S. 7821.</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> empfahl, diese Frage noch etwas hinauszuzögern.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> nahm dann zur Rechtslage Stellung. Er zitierte zunächst Art. 23 und 144 GG<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN008" type="comment">
+                     <p>Vgl. Art. 23 GG a.F. betr. die Bundesländer, darunter »Groß-Berlin«, und Art. 144 GG betr. Ratifizierung des Grundgesetzes; Berliner Vertreter im Bundestag und Bundesrat.</p>
+                  </note>
+               </seg> und verwies auf eine Entscheidung des Bundesverfassungsgerichtes von 1957, in der Berlin eindeutig als Land der Bundesrepublik bezeichnet wurde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN009" type="comment">
+                     <p>Vgl. BVerfGE 7, S. 1(–17) v. 21. 5. 1957: »Berlin ist ein Land der Bundesrepublik. Das Grundgesetz gilt grundsätzlich auch in Berlin. Soweit der Vorbehalt der Drei Mächte reicht und aufrechterhalten wird, unterliegt allerdings die Anwendung des Grundgesetzes in Berlin Einschränkungen. Soweit der Vorbehalt der Drei Mächte nicht entgegensteht, müssen aus der grundsätzlichen Geltung des Grundgesetzes für Berlin alle Folgerungen gezogen werden.« Der Bundestagspräsident hatte daher zu prüfen, ob sich der Vorbehalt der Drei Mächte auch auf die Bundesversammlung erstreckte und ob er aufrecht erhalten wurde. Vgl. Protokoll der 3. Bundesversammlung v. 1. 7. 1959, in: Sten. Ber., Bd. 44, S. 3 f. (<name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>).</p>
+                  </note>
+               </seg> Bei der Bundesversammlung 1954 habe Präsident Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name> die Stimmen der Berliner nicht gesondert gezählt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN010" type="comment">
+                     <p>1949 hatten sich die Berliner Delegierten in der Bundesversammlung nicht an der Wahl des Bundespräsidenten beteiligt. 1954, bei der Wiederwahl von <name type="Person" role="Erwaehnung" ref="#HeussTheodor_1949-09-07">Heuss</name>, stimmten die Berliner Abgeordneten mit ab. Jedoch ließ Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name> die Stimmzettel in eine gesonderte Urne werfen. Nun, bei der anstehenden Präsidentenwahl 1959, wollte <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> überhaupt keinen Unterschied zwischen westdeutschen und Berliner Stimmen machen. Vgl. Wagner, Bundespräsidentenwahl, S. 90 f.; »Der Spiegel« Nr. 14 v. 1. 4. 1959, S. 14.</p>
+                  </note>
+               </seg> Die Abstimmung wäre nach seiner Auffassung anfechtbar gewesen. Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> berichtete dann über ein Gespräch mit dem Regierenden Bürgermeister von Berlin, Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, und dem Berliner Senator <name type="Person" role="Erwaehnung" ref="#KleinGuenter_1961-10-17">Klein</name> über die Frage des Stimmrechts der Berliner. Während sich <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in dieser Unterredung zurückgehalten habe, hat Senator <name type="Person" role="Erwaehnung" ref="#KleinGuenter_1961-10-17">Klein</name> erklärt, Berlin würde notfalls das Bundesverfassungsgericht anrufen, wenn die Berliner nicht mitstimmen würden. Er habe jedoch hinzugefügt, wenn es jedoch zu einem eindeutigen Ergebnis bei der Wahl käme, könne man auf diesen Schritt verzichten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> betonte in der Diskussion, daß das Vorgehen von Präsident Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name> bei der Bundesversammlung von 1954 kein Recht schaffe. Es sei seine persönliche Auffassung gewesen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> machte dann auf den Ernst der Lage aufmerksam und betonte, daß wir zum Zeitpunkt der Bundesversammlung zwischen einem Außenminister- und einem Gipfeltreffen sein würden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN011" type="comment">
+                     <p>Zweite Genfer Außenministerkonferenz, 1. Konferenzphase v. 11.5.–20. 6. 1959, 2. Konferenzphase v. 13.7.–5. 8. 1959. Eine west-östliche Gipfelkonferenz war als Folge der Außenministerkonferenz geplant, fand aber verkleinert als westliche Gipfelkonferenz erst vom 19. bis 21. 12. 1959 in Paris statt. Vgl. AdG 1959, S. 7608, 8125.</p>
+                  </note>
+               </seg> Ob es dann sinnvoll sei, die Sache so auf die Spitze zu treiben, wie die SPD es wolle, sei zweifelhaft. Eine unnötige Provokation der Sowjets müsse unter allen Umständen vermieden werden. Auch müsse die Haltung der westlichen Alliierten in dieser Frage berücksichtigt werden. Seit der Luftbrücke<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN012" type="comment">
+                     <p>Versorgung West-Berlins einschließlich der dort stationierten Truppen der westlichen Alliierten auf dem Luftweg vom 26. 6. 1948 bis 12. 5. 1949 als Folge der sowjetischen Blockade der Zufahrtswege nach West-Berlin. Vgl. AdG 1948/49, S. 1550, 1919.</p>
+                  </note>
+               </seg> seien eine Reihe von Fehlern gemacht worden, die die heutige Situation mit heraufbeschworen hätten. Zum Beispiel hätten die Alliierten nicht mehr die Zufahrtswege nach Berlin patrouilliert und die Wachhäuser unterhalten. So konnte der Eindruck entstehen, daß die Zufahrtsstraßen als Straßen der sogenannten DDR angesehen wurden. Auch der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> plädierte dafür, die Frage des Stimmrechts der Berliner zunächst noch etwas zurückzustellen. Auch <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> und Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> meinten, daß den Berlinern nicht daran gelegen sei, die Lage zu verschärfen. Daher würden sie dafür eintreten, nichts zu unternehmen, was als Provokation gegenüber dem Osten aufgefaßt werden könnte.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> griff noch einmal in die Debatte ein und betonte, daß diese Frage hochpolitischen Charakter annehmen könne. Der Status von Berlin müsse unter allen Umständen erhalten bleiben. Wenn die Alliierten erklärten, daß in dieser Frage noch Besatzungsrecht herrsche, dann müßten wir das respektieren.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betonte, daß sich die Sache sehr erleichtern würde, wenn sich die Alliierten von sich aus einschalten würden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN013" type="comment">
+                     <p>Vgl. Protokoll der 3. Bundesversammlung 1959 v. 1. 7. 1959, in: Sten. Ber., Bd. 44, S. 4 (<name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>): »Es steht fest, auch in diesem Augenblick steht fest, daß die Drei Mächte nach wie vor die oberste Gewalt in Berlin ausüben. Ich hätte es demgemäß als meine Pflicht angesehen, Bedenken der Drei Mächte jederzeit zu respektieren. Solche Bedenken sind jedoch bis zur Eröffnung der Bundesversammlung nicht geltend gemacht worden. Ich halte mich deshalb in Übereinstimmung mit der zitierten Entscheidung des Bundesverfassungsgerichtes für verpflichtet, das Stimmrecht der Berliner Mitglieder der Bundesversammlung uneingeschränkt anzuerkennen. (Allgemeiner Beifall.)«</p>
+                  </note>
+               </seg> Das würde jede deutsche Partei verstehen. Man dürfe nur nicht versuchen, mit rein juristischen Argumenten die Sache zu erledigen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> betonte, daß wir die Alliierten so stark wie möglich an Berlin binden müßten. Daher müßten Pläne, wie es heiße, wie der von <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> als unbegreiflich bezeichnet werden, die West-Berlin einfach zu einem Teil der Bundesrepublik machen wollten, wenn Ost-Berlin von der Zone übernommen würde. Damit wäre Berlin stark gefährdet. Man müsse Berlin alle Hilfe angedeihen lassen, aber nicht in dieser Frage des Stimmrechts.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> erinnerte daran, daß vor den Berliner Wahlen im Dezember vergangenen Jahres<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN014" type="comment">
+                     <p>Wahlen zum Abgeordnetenhaus von West-Berlin v. 7. 12. 1958. Vgl. AdG 1958, S. 7434.</p>
+                  </note>
+               </seg> der britische Botschafter <name type="Person" role="Erwaehnung" ref="#SteelChristopher">Steel</name> in Berlin gewesen sei und im Auftrage der drei Westmächte darum gebeten habe, die Frage des Berliner Stimmrechts aus der Diskussion herauszulassen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> betonte dann, daß unser größtes Aktivum in der Auseinandersetzung mit den Sowjets die Einheit der Alliierten sei. Die englische Bevölkerung sei nicht immer in der deutschen Frage auf unserer Seite im Gegensatz zu ihrer Regierung. Wenn wir einen Anlaß geben zu sagen, die Deutschen provozieren, dann besteht die Gefahr, daß auch die britische Regierung umfällt. Sie stehe vor Wahlen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> berichtet dann über ein antideutsches Pamphlet, das von einer großen britischen Wohlfahrtsorganisation verbreitet werde und für das acht Millionen Unterschriften gesammelt werden sollen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN015" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> machte noch einmal auf den Ernst der Lage aufmerksam und betonte, daß dieses Risiko vermieden werden müsse.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> meinte, es sei nicht gut, in dieser Frage ein Votum der Alliierten herbeizuführen, weil wir dann für lange Zeit festgelegt würden. Man sollte vielmehr versuchen, mit der SPD zu sprechen und ihr klarmachen, was auf dem Spiele stehe und dann die Angelegenheit so handhaben wie im Bundestag.</p>
+            <p>Der Vorstand einigt sich darauf, daß diese Frage im Bundestag zunächst nicht behandelt werden sollte.</p>
+            <p>IV. Moskaureise einer Bundestagsdelegation</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet über den Brief des FDP-Fraktionsvorsitzenden Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> an den Bundestagspräsidenten und an die Fraktionen, die Frage der Moskaureise einer Bundestagsdelegation bald im Ältestenrat zu diskutieren.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN016" type="comment">
+                     <p>Die Frage, ob die 1956 vom Obersten Sowjet ausgesprochene Einladung an den Bundestag noch gelte, wurde durch den Abg. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> (FDP) wieder aufgeworfen. Dieser hatte in einem Brief die SPD beschuldigt, diese habe durch die Entsendung der Abg. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> und <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> nach Moskau (vom 11. bis 18. 3. 1959) eine frühere Vereinbarung gebrochen, entweder eine Delegation aller Fraktionen nach Moskau zu entsenden oder überhaupt nicht zu fahren. Die SPD-Fraktion wies diesen Vorwurf zurück. Vgl. PPP v. 17. 3. 1959 (52), S. 2 f. und zuvor Nr. 53 v. 14. 4. 1958, TOP 12.</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß er durch einen Sprecher der Fraktion habe erklären lassen, daß die Fraktion den Zeitpunkt für eine solche Reise für denkbar ungeeignet halte.</p>
+            <p>Der Vorstand stimmte ihm in dieser Meinung zu und sprach sich ebenfalls gegen eine Reise in diesem Zeitpunkt aus.</p>
+            <p>V. Bericht des Bundeskanzlers über die politische Lage</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> berichtete zunächst über sein Gespräch mit dem britische Premierminister <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN017" type="comment">
+                     <p>Siehe Nr. 111 v. 17. 2. 1959, TOP 4.</p>
+                  </note>
+               </seg> Dabei führte er im einzelnen aus:</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> stehe auf dem Standpunkt, daß er uns allen mit seiner Moskaureise einen Dienst getan habe. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> meinte, daß die Briten zu wenig Kenntnis von der Mentalität der Sowjets gehabt hätten.</p>
+            <p>In der Diskussion habe die Frage des sogenannten Disengagements eine große Rolle gespielt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN018" type="comment">
+                     <p>Zu <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> Bedenken gegen britische Pläne für ein Auseinanderrücken der beiden großen Blöcke siehe ebd.; vgl. Adenauer, Erinnerungen 1955–1959, S. 480 f.</p>
+                  </note>
+               </seg> Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> verwies in diesem Zusammenhang auf die Ausführungen der Londoner diplomatischen Korrespondenz, die kurz vor dem <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name>-Besuch eine Definition des Begriffes »Disengagement« gegeben habe. Darin sei lediglich von einer Zone begrenzter Rüstung die Rede und keineswegs von einem völligen Auseinanderrücken der Machtblöcke. Dieser Formulierung, so betonte der Kanzler wörtlich, konnten wir zustimmen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> betonte dann, daß <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> im Verlaufe des Gespräches gesagt habe, es sei besser, daß er und seine Begleiter hier säßen als Herr <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN019" type="comment">
+                     <p>Aneurin <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name>, außenpolitischer Sprecher der Labour Party, damals Oppositionspartei.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> ging dann auf die allgemeine politische Situation ein. Er betonte zunächst, daß die jetzige Verhärtung in der internationalen Politik keine Zufälligkeit sei. Er führte dafür mehrere Gründe an:</p>
+            <p>1. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> habe im Kampf um <name type="Person" role="Erwaehnung" ref="#StalinJosefWissarionowitsch">Stalins</name> Nachfolge gesiegt. Er könne jetzt versuchen, weiter nach Westen vorzugehen, weil er daran von innen nicht gehindert werde. Berlin sei ihm ein Dorn im Auge. Durch seinen Friedensvertragsvorschlag<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN020" type="comment">
+                     <p>Sowjetischer Friedensvertragsentwurf v. 10. 1. 1959. Siehe Nr. 99 v. 12. 1. 1959, TOP 1.</p>
+                  </note>
+               </seg> versuche er, Westdeutschlands Verbindungen zum Westen zu zerschlagen. Deutschland solle neutralisiert und einer ständigen Kontrolle unterworfen werden. Auf dem wirtschaftlichen Sektor dürfe keine Diskriminierung Rußlands mehr erfolgen. Die westliche Integration würde vollkommen aufhören. Als einziger Schutz gegen die Expansionspläne der Sowjets auf wirtschaftspolitischem Gebiet sei aber unsere Zugehörigkeit zum westeuropäischen Markt.</p>
+            <p>2. Die nukleare Aufrüstung der Sowjetunion sei so weit fortgeschritten, daß die Sowjets glaubten, sich nunmehr mit Amerika messen zu können.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> betonte, die Entwicklung gehe nicht auf einen heißen Krieg hinaus. Dieser Meinung seien auch <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>. Die Sowjets wollten den heißen Krieg nicht wegen des Mitleids an der Menschheit willen vermeiden, sondern wegen ihrer grundsätzlichen ideologischen Einstellung. Sie gingen von der Voraussetzung aus, daß die Zukunft in der Welt dem Kommunismus unter russischer Führung gehöre. Deshalb ziele der Kommunismus nicht darauf ab, die Welt zu zerstören. Er wolle vielmehr Menschen beherrschen, die produzieren könnten.</p>
+            <p>Wenn es den Sowjets gelinge, durch die Berlin-Frage die Verhältnisse zu verändern, könnte der russische Kommunismus in ganz Westeuropa einen entscheidenden Einfluß gewinnen. Wenn die Bundesrepublik aus der NATO ausgeschieden ist, könnten sich auch die alliierten Truppen in Europa nicht mehr halten. Dann würde auch Rußlands wirtschaftlicher Einfluß in Europa wachsen. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> machte in diesem Zusammenhang darauf aufmerksam, daß im Bereich der EWG 164 Millionen Menschen wohnen und das Ausfuhrpotential der EWG fast so groß sei wie das der USA. Wenn es dem Kreml gelinge, die EWG-Staaten in seine Macht zu bringen, würde die Sowjetunion die stärkste Wirtschaftsmacht auf der ganzen Welt werden. Dann sei es eine Kleinigkeit für sie, die Wirtschaft der Vereinigten Staaten auf den Kopf zu stellen.</p>
+            <p>Wenn man wisse, so betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> weiter, daß <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> die Welt beherrschen will und dann den Aufweichungsprozeß bei der deutschen Sozialdemokratie sieht, dann sei es klar, daß <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> nächstes Ziel die Bundesrepublik sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN021" type="comment">
+                     <p>Zu <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> sehr skeptischer Einschätzung der Lage in diesen Monaten siehe Nr. 111 v. 17. 2. 1959, TOP 4; vgl. Adenauer, Erinnerungen 1955–1959, S. 478–482.</p>
+                  </note>
+               </seg> Er rechnet zumindest damit, daß, wenn die SPD 1961 an die Regierung komme, sie sich zumindest zunächst wirtschaftlich zum Ostblock hin orientiere. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> wiederholte seine Auffassung, daß die Sowjets nur die Macht über die ganze Welt bekommen könnten, wenn es keinen Krieg gäbe. Wenn sie das Potential Westeuropas in ihr Hand bekämen, würden sie auch eine bessere Position gegenüber Rot-China erhalten. Wörtlich sagte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>: »Der Vorstoß gegen Berlin ist der erste Schritt auf dem Wege zur Eroberung Westeuropas«. Die Einigkeit der freien Völker sei der beste Schutz gegen diese Aggression. Wir allein könnte in dieser Auseinandersetzung nichts ausrichten. Deshalb sei es gut, daß die Vereinigten Staaten eine so harte Sprache führten, um das Schlimmste zu vermeiden. Die beste Möglichkeit, zu einer Lösung zu kommen, stehe in dem festen und harten Auftreten der Vereinigten Staaten.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> fuhr fort, wir sind uns aber im Westen darüber einig, daß mit der Sowjetunion verhandelt werden muß. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> erträgt es aber nicht, daß Entscheidungen auf einer Außenministerkonferenz fallen, bei der er nicht beteiligt ist. Deshalb strebe er eine Gipfelkonferenz an.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN022" type="comment">
+                     <p>Siehe Anm. 11.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zum Thema Gipfelkonferenz vertrat der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> folgenden Standpunkt:</p>
+            <p>Bei einem Gipfeltreffen könne man nicht in ein oder zwei Wochen alles erledigen. Eine solche Konferenz müsse lange dauern und mehrmals unterbrochen werden. In der Zwischenzeit müßten Vertreter einer niederen Stufe das nächste Treffen vorbereiten. Das Ziel solcher Konferenzen müsse es sein, eine Stabilisierung für einige Jahre zu erreichen. Wenn <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> eine Gipfelkonferenz bekomme, habe er auch innenpolitisch einen Erfolg, weil er dann praktisch die Geschicke der Welt mitbestimmen könne. Wir müssen an das Problem Gipfelkonferenz herangehen, erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>. Aber unter ultimativem Druck könne man nicht verhandeln. Auch der Termin 27. August oder 27. September ist ein Ultimatum. Auch der britische Premierminister <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> sei überzeugt, daß man den Weg so einschlagen müsse. Ich hoffe, so betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, daß er in London nicht umgestimmt wird. Als Termine für die Ost-West-Konferenzen nannte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>: eine Ost-West-Außenministerkonferenz für Mai und das Gipfeltreffen für August.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN023" type="comment">
+                     <p>Siehe ebd.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> befaßte sich dann mit der Rede des SPD-Vorsitzenden <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> in Fürth.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN024" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> hatte in seiner Rede am 14. 3. 1959 in Fürth b. Nürnberg u. a. gesagt, »er und seine Partei würden der Sache des deutschen Volkes nicht dienen, wenn sie in der Endphase einer verfehlten Außenpolitik einen ›Burgfrieden‹ mit der Bundesregierung schließen würden«. Vgl. »Die alte Masche: Verdächtigungen«, in: SPD-Pressedienst P/IV/62 v. 16. 3. 1959, S. 5.</p>
+                  </note>
+               </seg> Wenn <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> von der Endphase einer verfehlten Außenpolitik gesprochen habe, dann könne es keine Gemeinsamkeit mehr geben. Welch teuflische Ermutigung für die Sowjets steckt in solchen Äußerungen, erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>. Alle diese Äußerungen würden von der SED aufgegriffen und gegen uns ausgewertet.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> kritisierte dann das Gespräch <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauers</name> mit <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN025" type="comment">
+                     <p>Die knapp zweistündige Unterredung fand am 9. 3. 1959 in der Botschaft der UdSSR in Ost-Berlin statt. Vgl. Hölscher, SPD-Fraktion 1957–1961, S. 221 f.; AdG 1959, S. 7602.</p>
+                  </note>
+               </seg>, vor allen Dingen die Art, wie es stattgefunden habe. Die Reisen von SPD-Leuten nach Moskau und die Forderungen weiter SPD-Kreise, er nannte z. B. die Kölner SPD, mit Pankow zu verhandeln, machte nicht nur den Russen Mut, sondern entmutige auch unsere Freunde. Die Regierungskoalition dürfe daher keine Schwäche zeigen in den nächsten Jahren. Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> kritisierte die Passivität von Teilen der CDU gegenüber der SPD. Er schlug vor, insbesondere in Niedersachsen und Rheinland-Pfalz eine Versammlungswelle zu starten. In diesem Zusammenhang kritisierte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> auch die mangelnde Berichterstattung in Presse, Rundfunk und Fernsehen.</p>
+            <p>Abschließend betonte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, es hänge alles davon ab, wie wir Deutsche uns in den nächsten Monaten verhalten. Es hänge entscheidend von uns ab, ob die Freiheit in Europa gewahrt bleibe. Vor allem dürfe kein Nachgeben gegenüber der SPD erfolgen. Wenn die SPD jetzt von der Endphase einer verfehlten Außenpolitik spreche, dann bedeute das im Grunde genommen nichts anderes, als daß sie eine Politik nach Osten hin machen wolle.</p>
+            <p>In der Diskussion um die Ausführungen des Kanzlers vertrat zunächst Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> den Standpunkt, daß es für die Propaganda schwer sein werde, den Standpunkt des Kanzlers, eine Stabilisierung der Verhältnisse auf Jahre hinaus zu erreichen, zu vertreten und gleichzeitig die Wiedervereinigung zu propagieren. Die These des Kanzlers, den Status quo beizubehalten, bringe diese Gefahr mit sich. Wir könnten dann nur noch eine Scheinoffensive für die Wiedervereinigung führen. Man müsse die Frage stellen, ob es nicht noch eine Möglichkeit über den Status quo hinaus gebe.</p>
+            <p>Darauf erwiderte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, wir könnten es nicht erreichen, daß die Wiedervereinigung in den nächsten Jahren zustande komme. Zunächst kommt es jetzt darauf an, Berlin zu retten. Das könnten wir nur erreichen über eine Beibehaltung des Status quo. Im Zuge der Verhandlungen könne man versuchen, mehr Freiheit für die Zone herauszubekommen. Die Deutschlandfrage bleibe jedenfalls Gegenstand von Verhandlungen auf einem Gipfeltreffen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> meinte dazu, wenn die Ausführungen des Bundeskanzler bedeuten, daß der Status quo für viele Jahre das einzige sei, das zu erreichen wäre, dann stünde für die CDU/CSU als Partei viel auf dem Spiel. Dann müßten wir zugeben, daß das, was wir in den vergangen Jahren gesagt haben, nicht mehr stimmt. Zum Beispiel, daß unsere Politik zur Wiedervereinigung führen werde.</p>
+            <p>Darauf erwiderte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und er hätten in der Auffassung übereingestimmt, daß bei den kommenden Verhandlungen dafür gesorgt werden müsse, daß die Menschen in der Zone nicht die Hoffnung verlieren. <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> habe ihn gefragt, wie sich das deutsche Volk damit abfinden werde. Darauf habe er geantwortet: Niemand werde Pankow de jure anerkennen wollen. Es sei aber etwas anderes, zu prüfen, wie wir das Schicksal der Menschen in der Zone bessern könnten. Man habe nicht wissen können, daß die Sowjetunion sich so schnell zur nuklearen Weltmacht entwickeln werde. Nunmehr sei eine Wiedervereinigung ohne eine nukleare Abrüstung nicht zu erreichen. Daher müßten wir versuchen, auf diesem Gebiete weiterzukommen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> gab zu bedenken, daß wir nicht so verhandeln dürften, als wenn wir nur in der Frage des Status quo Erfolg hätten. Auch für die Sowjets sei Berlin eine gefährliche Sache. <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> brauche Frieden, die Zone sei eine ökonomische Belastung für die Sowjets. Wir müßten in die Verhandlungen gehen, als ob wir eine Chance hätten.</p>
+            <p>Dazu erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, die Sowjets wüßten, daß bei einer Änderung der bestehenden Verhältnisse sich auch die Satelliten losmachen würden, besonders die Polen. Wenn wir überhaupt zu erfolgversprechenden Verhandlungen über eine allgemeine kontrollierte Abrüstung kommen, dann werde sich alles ändern. Dann könnten wir auch die persönlichen Verbindungen zwischen der Zone und uns bessern und mehr Freiheit für die Zone erwarten.</p>
+            <p>[Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellte zu der Diskussion fest, es sei viel erreicht, wenn wir Berlin freihalten könnten. Wenn wir die Beibehaltung des Status quo erreichen, sei viel gewonnen. Aber wir müßten auch die Hoffnung und den Willen aufrechterhalten, daß es weiter gehe.]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN026" type="comment">
+                     <p>Absatz in der Vorlage handschriftlich durchgestrichen.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> griff noch einmal in die Diskussion ein und erklärte, der Kanzler habe eine wichtige Modifikation seiner bisherigen Thesen vorgenommen. Bisher hätten wir das militärische Übergewicht gegenüber dem Ostblock gewollt. Das hätten wir nicht, sondern nur noch das Gleichgewicht des Schreckens. Das sei das, was <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name>, <name type="Person" role="Erwaehnung" ref="#AchesonDeanG">Acheson</name> und <name type="Person" role="Erwaehnung" ref="#TrumanHarryS">Truman</name> immer gesagt hätten, die Politik des Containments, des Eindämmens der sowjetischen Gefahr. Daß man die Sowjets aus ihren eroberten Stellungen werfen könnte, wäre zwar erstrebenswert gewesen, könnte aber nicht erreicht werden. Die Frage sei nun, wie eine Politik der Wiedervereinigung bei einem Gleichgewicht des Schreckens real und aktiv möglich sei. Die sozialdemokratische These sei auch durch den modifizierten Standpunkt des Kanzlers keineswegs bestätigt. Bei Verwirklichung der sozialdemokratischen Thesen hätten wir weder ein militärisches Übergewicht noch das Gleichgewicht des Schreckens.</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name> griff noch einmal in die Debatte ein und erklärte, man müsse sich daran erinnern, daß bei unserer Besetzung im Jahre 1945 von den Alliierten die härtesten Forderungen gekommen seien, so z. B. die Internationalisierung der Ruhr<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN027" type="comment">
+                     <p>Vgl. Steininger, Die Ruhrfrage 1945/46, passim.</p>
+                  </note>
+               </seg> und der Morgenthauplan.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN028" type="comment">
+                     <p>Zu diesem Konzept eines »Karthago-Friedens« für Deutschland vgl. Schwarz, Vom Reich zur Bundesrepublik, S. 40, 58 f., 92 f., 98 f., et passim.</p>
+                  </note>
+               </seg> Davon müsse man ausgehen und sehen, wie sich die Sache entwickelt habe. Wenn wir die Freiheit nicht gerettet hätten, wäre auch keine Möglichkeit für die Erlangung der Freiheit für die 17 Millionen Menschen der Sowjetzone gewesen. Ich bin nicht so pessimistisch für die Wiedervereinigung, erklärte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>. Wir müssen nur dafür sorgen, daß eine freiheitliche Substanz in der Zone erhalten bleibt. Berlin muß gerettet werden, weil auch dann die Hoffnung bei den Menschen in der Zone wächst, daß auch sie einmal frei werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> bittet darum, bei den Erörterungen draußen das Wort Status quo nicht zu benutzen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> meint, daß man es auch nicht offiziell in unsere Politik aufnehmen solle, da sonst die neutrale Welt den Eindruck haben könnte, Bonn wolle den Status quo aufrechterhalten. Dann würde die Lust zur Anerkennung Pankows in diesen Staaten wachsen. <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> forderte, die Sowjets mehr durch Gegenvorschläge in Verlegenheit zu bringen.</p>
+            <p>Dazu bemerkte der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Kanzler</name>, wir wollen die Sowjets nicht in Verlegenheit bringen, sondern mit ihnen verhandeln. Wenn von Status quo geredet werde, so bedeute das nicht die Anerkennung des Status quo; auch die Sowjets müßten Zugeständnisse machen, vor allem keine weiteren Erpressungen mehr vorzunehmen. Der Friede in der Welt hänge von einer allgemeinen Entspannung ab. Dann erst könne man weitersehen. Es sei schon viel gewonnen, wenn man das freie Hin- und Herreisen in Deutschland und mehr Freiheit für die Kirchen in der Zone erreiche.</p>
+            <p>Die übrigen Punkte der Tagesordnung der Vorstandssitzung wurden nur kurz gestreift<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN029" type="comment">
+                     <p>Siehe dazu den folgenden Auszug aus dem Kurzprotokoll vom selben Datum.</p>
+                  </note>
+               </seg> und noch einmal zur weiteren Behandlung an die zuständigen Arbeitskreise überwiesen. Zu einer Diskussion kam es lediglich über die Frage der Neuregelung der Ruhegehaltsbezüge des Bundespräsidenten. Dabei vertrat der Vorstand mit Mehrheit die Auffassung, daß diese Frage nicht in aller Breite diskutiert werden könne, sondern man der vorgeschlagenen Lösung ohne große Diskussion zustimmen sollte. <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> bemerkte jedoch, daß das jetzige Verfahren stillos sei. Diese Frage hätte wesentlich früher in Angriff genommen werden müssen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN030" type="comment">
+                     <p>Siehe ebd.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>b) Auszug aus dem Kurzprotokoll</p>
+            <p>3.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN031" type="comment">
+                     <p>Vgl. die abweichende Tagesordnung lt. Kurzprotokoll in Anm. 1.</p>
+                  </note>
+               </seg> Tagesordnung Plenum</p>
+            <p>Handwerkerversicherungsgesetz: [FDP-Entwurf: Drucksache III/634 v. 7. 11. 1957; Reg.-Entwurf als CDU/CSU-Entwurf f. Handwerkerversicherungsgesetz – HVG: Drucksache III/993 v. 10. 4. 1959]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> weist darauf hin, daß der vom Arbeitsministerium formulierte Gesetzentwurf erst vor wenigen Stunden ihm übergeben worden sei. Der Entwurf bedürfe noch einer eingehenden Beratung. Er schlägt vor, diesen Entwurf in dieser Woche noch nicht einzubringen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN032" type="comment">
+                     <p>Der Regierungsentwurf wurde am 22. 4. 1959 als CDU/CSU-Fraktionsantrag eingebracht. Siehe Nr. 95 v. 10. 12. 1958, TOP 4; vgl. Sten. Ber., 69. Sitzung, S. 3658.</p>
+                  </note>
+               </seg> Er bittet, im Ältestenrat darauf hinzuwirken, daß auch die Behandlung des FDP-Entwurfs diese Woche noch nicht erfolgt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN033" type="comment">
+                     <p>Der FDP-Fraktionsantrag wurde am 8. 4. 1959 eingebracht. Vgl. Sten. Ber., 68. Sitzung, S. 3595.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Sparprämiengesetz: [Reg.-Entwurf: Drucksache III/263 v. 7. 3. 1958]</p>
+            <p>Die Ausschußvorlage soll noch einmal in den Arbeitskreisen II und III beraten werden<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN034" type="comment">
+                     <p>Zuletzt beraten am 27. 1. 1959. Vgl. Protokoll über die Sitzung des AK II von diesem Datum, TOP 1 (ACDP VIII-003-001/1).</p>
+                  </note>
+               </seg> mit dem Ziel, eine Verständigung in der Frage der Begrenzung der Bezugsberechtigten herbeizuführen.</p>
+            <p>4. Wahl der Bundesversammlung und des Bundespräsidenten<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN035" type="comment">
+                     <p>Siehe TOP 3 des vorausgehenden Verlaufsprotokolls vom selben Tag.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> gibt bekannt, daß die SPD-Fraktion mit der Verabschiedung des Gesetzentwurfs eine Entscheidung über das Stimmrecht der Berliner herbeiführen wolle. Minister Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> und der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> erklären, daß auf Grund der Rechtslage, aber auch wegen der derzeitigen außenpolitischen Situation die Frage des Berliner Stimmrechts nicht erörtert werden könne. Es wird auf die Erklärungen sowohl der Russen als auch des Botschafters <name type="Person" role="Erwaehnung" ref="#SteelChristopher">Steel</name> hingewiesen; auch das bisherige Verfahren bei den Abstimmungen im Jahre 1949 und 1954 lasse erkennen, daß die Berliner Abgeordneten in der Bundesversammlung kein echtes Stimmrecht gehabt hätten. Dr. <name type="Person" role="Sprecher" ref="#SchroederGerhard_1949-09-07">Schröder</name> ist der Meinung, daß die Verabschiedung des Gesetzentwurfes sowieso nicht eilbedürftig sei. Der Vorstand beschließt, daß der Gesetzentwurf nur dann in dieser Woche verabschiedet werden soll, wenn die Frage des Stimmrechts der Berliner nicht berührt würde.</p>
+            <p>Ruhebezüge des Bundespräsidenten: [CDU/CSU-SPD-FDP-DP-Entwurf f. ÄndG zum Gesetz über die Ruhebezüge des Bundespräsidenten: Drucksache III/939 v. 17. 3. 1959]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet über den Werdegang der diesbezüglichen Besprechungen. Es soll ein interfraktioneller Antrag eingebracht werden, der mittlerweile mit den zuständigen Stellen besprochen worden sei. Die Vorlage sieht vor, daß als Ruhegehaltsbezüge des Bundespräsidenten 2/3 des Amtsgehalts und 1/3 der Aufwandsentschädigung gewährt werden sollen. Im Vorstand wird diese Regelung nach den verschiedenen Seiten hin diskutiert. Es wird festgehalten, daß der vorliegende Entwurf in den kommenden Ausschußberatungen noch eingehend geprüft und gegebenenfalls geändert werden soll.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN036" type="comment">
+                     <p>Der interfraktionelle Gesetzentwurf v. 17. 3. 1959 bezweckte die Gewährung eines Ehrensolds in Höhe des Amtsgehalts. Vgl. die o.a. Drucksache III/939.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. Plenarwoche 8.–10. April 1959</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RoesingJosef_1954-01-14">Rösing</name> gibt einen kurzen Überblick über den anstehenden Stoff. Er schlägt vor, eine bzw. zwei Plenarsitzungen in der Woche vom 6. bis 11. April ausfallen zu lassen<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN037" type="comment">
+                     <p>In diesem Zeitraum trat der Bundestag nur am 8. 4. 1959 zusammen, danach erst wieder am 22. 4. 1959. Vgl. Sten. Ber., 68. und 69. Sitzung, S. 3583 ff., 3643 ff.</p>
+                  </note>
+               </seg> im Hinblick auf die bevorstehenden Landtagswahlen in Niedersachsen und Rheinland-Pfalz.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN038" type="comment">
+                     <p>Landtagswahlen in beiden Ländern am 19. 4. 1959.</p>
+                  </note>
+               </seg> Der Vorstand ist mit diesem Vorschlag einverstanden.</p>
+            <p>6. Finanzgesetze Berlin [CDU/CSU-SPD-FDP-DP-Entwurf f. 5. ÄndG zum Gesetz zur Förderung der Wirtschaft von Berlin (West): Drucksache III/935 v. 17. 3. 1959]</p>
+            <p>Minister <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> trägt das Ergebnis der Besprechungen in verschiedenen Gremien wegen der Finanzhilfe für Berlin vor. Nach eingehender Diskussion ist der Vorstand aus politischen Gründen mit der Vorlage einverstanden. Der Gesetzentwurf soll nach Möglichkeit in dieser Woche in drei Lesungen verabschiedet werden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-03-16-t1500_EP_FN039" type="comment">
+                     <p>Die Vorlage wurde am 19. 3. 1959 einstimmig angenommen. Vgl. Sten. Ber., 67. Sitzung, S. 3574. Das fünfte Berlinhilfegesetz mit seinen umsatzsteuerlichen Präferenzen verlängerte die am 31. 12. 1959 auslaufende Frist bis zum 31. 12. 1964. Vgl. Gesetz v. 25. 3. 1959 (BGBl. I, S. 160).</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

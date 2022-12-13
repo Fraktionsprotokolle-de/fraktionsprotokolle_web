@@ -1,211 +1,512 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-01-25-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title><author>Heinrich Potthoff</author><pubPlace>Düsseldorf</pubPlace><date>1993</date>
-						<idno type="DNB">https://d-nb.info/930888952</idno>
-						<idno type="DNB">https://d-nb.info/930907760</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 12)</idno>
-							<objectName>Kurzprotokoll der Sitzung der SPD-Fraktion im Bundestag vom Dienstag, 25. Januar 1966, 15 Uhr</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 25. Januar 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>9 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-01-25"><time type="start" when="15:00:00"/><time type="end"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1966-01-25-t1500_EP_SVP-1" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-1">A. Internes aus der Fraktion. TOP 1: Politische Information. – Berichte von Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> und Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, jeweils mit anschließender Diskussion.</item>
-					<item xml:id="spd-05_1966-01-25-t1500_EP_SVP-2" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-2">B. TOP 2: Vorbereitung der Plenarsitzungen.</item>
-					<item xml:id="spd-05_1966-01-25-t1500_EP_SVP-3" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-3">C. TOP 3: Vorlagen aus den Arbeitskreisen.</item>
-					<item xml:id="spd-05_1966-01-25-t1500_EP_SVP-4" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-4">D. TOP 4: Nächste Termine. – TOP 5: Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Tagesordnung s. Anlage.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN001" type="critical"><p>Die TO liegt nicht bei. Ein Exemplar der TO befindet sich in <bibl type="item-in-archive">»5. Legislaturperiode V/I. Fraktion. Protokolle u. Tgo I 19.10.65-27.4.67«</bibl>. Sie deckt sich mit der des Prot.</p></note></seg></p>
-				<p>Die Sitzung steht unter dem Vorsitz von Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name>. Er unterrichtet die Fraktion zunächst über den Gesundheitszustand von Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> anhand des ärztlichen Bulletins und Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name> gibt ergänzende Informationen nach seinem persönlichen Besuch bei F. <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>.</p>
-				<p>Nach weiteren Mitteilungen über Krankheitsfälle und Geburtstage sowie die Wahl des Genossen <name type="Person" role="Erwaehnung" ref="#MetzgerGuenther_1969-10-20">Metzger</name> zum Vizepräsidenten im Europäischen Parlament<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN002" type="comment"><p>Die Wahl Ludwig <name type="Person" role="Erwaehnung" ref="#MetzgerLudwig_1953-10-06">Metzgers</name> erfolgte nicht bei der Januartagung des Europäischen Parlaments, sondern erst bei seiner Tagung vom 7.-11.3.1966. Vgl. <bibl type="series-item">AdG 1966, S. 12483</bibl>. – Zu den Mitteilungen über <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> Krankenhausaufenthalt und <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möllers</name> Besuch am 23.1. vgl. <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 29/66 vom 25.1.1966</bibl>.</p></note></seg> wird behandelt:</p>
-				<p>Punkt 1 der TO »Politische Information«</p>
-				<p>a) Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> berichtet über Aspekte der Deutschlandpolitik.</p>
-				<p>In Anknüpfung an die Erklärung Staatssekretär <name type="Person" role="Erwaehnung" ref="#HaseKarl-Günthervon">von Hases</name>, der Bundeskanzler werde im Februar die Fraktionsvorsitzenden (und einige andere) zu ersten Gesprächen über Voraussetzungen und Möglichkeiten für die Deutschlandpolitik einladen,<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN003" type="comment"><p><name type="Person" role="Erwaehnung" ref="#HaseKarl-Günthervon">von Hase</name> hatte diese Erklärung in einer Pressekonferenz vom 2.1.1966 abgegeben; <bibl type="series-item">Dokumente zur Deutschlandpolitik IV, 12, 1. Hbd., S. 146 f.</bibl> – <name type="Person" role="Erwaehnung" ref="#HaseKarl-Günthervon">Hase</name> hatte »im Namen der Bundesregierung« zuvor den »Gedanken eines Wiedervereinigungskabinetts«, den <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> ins Spiel gebracht hatte, abgelehnt. Auszug in <bibl type="series-item">Bulletin Nr. 3 vom 28.1.1966</bibl>; vgl. <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN020">Nr. 134, Anm. 20</ref>.</p></note></seg> betont <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, daß diese Gespräche zwar vertraulich sein sollen und damit der Geheimhaltung unterliegen,<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN004" type="comment"><p>Am 1.2.1966 fand ein erstes Gespräch des Bundeskanzlers mit den Fraktionsvors. statt. Vgl. <bibl type="item-in-archive">»Sitzung des Präsidiums am 5.2.1965«, AdsD, Präsidium v. 5. Nov. 1965 b. Juni 1966</bibl>. Das erste offizielle Deutschlandgespräch des Bundeskanzlers mit den Vertretern der im Bundestag vertretenen Parteien fand am 21.4.1966 statt. Vgl. <ref type="internal" target="#spd-05_1966-04-26-t1500_EP_SVP-1">Nr. 144, TOP 1</ref>.</p></note></seg> daß aber die SPD mit dazu beitragen will und muß, die Vertrauensbasis für die Öffentlichkeit und die Bevölkerung vorzubereiten, auf der eine parlamentarische Diskussion der Deutschlandfrage und der Deutschlandpolitik erst möglich sein wird. In diesem Zusammenhang sei das Interview des Bundesvertriebenenministers Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> im »Spiegel«<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN005" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_SVP-1">Nr. 134, TOP 1</ref>.</p></note></seg> zu begrüßen. Über die mit dem zwischen Ost-Berlin und Moskau abgeschlossenen Handelsabkommen<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN006" type="comment"><p>Zu dem am 3.12.1965 zwischen der UdSSR und der DDR abgeschlossenen langfristigen Handelsabkommen für die Jahre 1966-1970 vgl. <bibl type="series-item">»Neues Deutschland« Nr. 333 vom 4.12.1965: »Programm fester Kooperation«</bibl>. Die wesentlichen Angaben werden referiert in <bibl type="series-item">AdG 1965, S. 12219 f.</bibl></p></note></seg> zusammenhängenden Fragen habe der Gesamtdeutsche Ausschuß/BT Informationen und Berichte erhalten vom Bundesminister,<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN007" type="comment"><p>D. h. vom zuständigen BMG <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> (FDP).</p></note></seg> von W. <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> sowie von den Professoren <name type="Person" role="Erwaehnung" ref="#GleitzeBruno">Gleitze</name><seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN008" type="comment"><p>Bruno <name type="Person" role="Erwaehnung" ref="#GleitzeBruno">Gleitze</name> (1904-1986), Professor für Wirtschaftswissenschaften, von 1945-1948 Präsident der Verwaltung für Statistik in der sowjetischen Besatzungszone und Vizepräsident der Deutschen Zentralfinanzverwaltung, Direktor des Wirtschaftswissenschaftlichen Instituts der Gewerkschaften, seit 1952 Mitgl. des Forschungsbeirats für Fragen der Wiedervereinigung beim BMG.</p></note></seg> und <name type="Person" role="Erwaehnung" ref="#ThalheimKarlChristian">Thalheim</name>,<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN009" type="comment"><p>Karl C. <name type="Person" role="Erwaehnung" ref="#ThalheimKarlChristian">Thalheim</name> (geb. 1900), Professor für Volkswirtschaftslehre an der Freien Universität Berlin und Direktor der Wirtschaftswissenschaftlichen Abteilung des Osteuropa-Instituts, ebenfalls Mitgl. des Forschungsbeirates beim Gesamtdeutschen Ministerium. – Die Berichte dürften in der Ausschußsitzung am 19.1.1966 in Berlin erstattet worden sein.</p></note></seg> deren Inhalt nach Möglichkeit auch an die Fraktion weitergegeben werden sollte.</p>
-				<p>Zu den Verhandlungen in Luxemburg über die EWG-Krise<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN010" type="comment"><p>Die am 18.1.1966 vertagten Verhandlungen des Ministerrates der EWG wurden am 28./29.1. fortgesetzt; siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN028">Nr. 134, Anm. 28</ref>. Sie führten zu »Vereinbarungen« vom 29.1., in denen die abweichenden Auffassungen zur Frage der Mehrheitsentscheidungen festgestellt und Modalitäten für die Zusammenarbeit zwischen der Kommission und dem Ministerrat umrissen wurden. Mit dem so erreichten Kompromiß nahm Frankreich seine Mitarbeit in den Organen der EWG wieder auf; <bibl type="series-item">Europa-Archiv 1966, D 85 f.</bibl>; vgl. dazu <bibl type="single-item">Rainer <hi rendition="#smcap">Hellmann</hi>, Schlußakt einer Krise? Die europäischen Institutionen nach Luxemburg, in: Europa-Archiv 1966, S. 259-268</bibl>; vgl. weiter unten TOP 1 c.</p></note></seg> betont <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, die vorhandenen Schwierigkeiten dürften nicht den Vorwand liefern, daß wegen des Verhaltens der Bundesrepublik von anderer, nämlich französischer Seite die EWG gefährdet werde. Vielmehr müßten alle fünf Partner zusammenhalten, um die EWG zu retten, die das einzige konstruktive Ergebnis der Nachkriegszeit und der Keim für eine weitere politische Entwicklung in Europa sei.</p>
-				<p>Abschließend wird von H. <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> auf die schriftliche Kampagne der Ostermarschierer<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN011" type="comment"><p>Gemeint sein dürfte die sog. »Kampagne für Abrüstung«; <bibl type="single-item"><hi rendition="#smcap">Krohn</hi>, S. 190</bibl>; <bibl type="single-item"><hi rendition="#smcap">Otto</hi>, Ostermarsch, S. 147-156</bibl>.</p></note></seg> hingewiesen; die Fraktionsmitglieder sollten sich weder zustimmend noch ablehnend dazu äußern und immer wieder darauf hinweisen, daß die SPD initiativ ein Abrüstungsamt gefordert hat, was schließlich zur Einrichtung einer entsprechenden Stelle im Auswärtigen Amt geführt habe.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN012" type="comment"><p>Siehe <ref type="internal" target="#spd-04_1965-01-12-t1500_EP_FN020">Nr. 100, Anm. 20</ref> und <ref type="internal" target="#spd-04_1965-01-19-t1510_EP">Nr. 101, TOP 1</ref>; <bibl type="single-item"><hi rendition="#smcap">Wilker</hi>, Sicherheitspolitik, S. 190-193</bibl>.</p></note></seg></p>
-				<p>In der Diskussion fordert Helene <name type="Person" role="Sprecher" ref="#WesselHelene_1949-09-07">Wessel</name> die Überprüfung der <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name>-Doktrin, um zu einem besseren Verhältnis mit den Ostblockstaaten zu gelangen. Man müsse ihnen gegenüber einen Unterschied zwischen »Politik und Weltanschauung« machen, was dann erlaube, diplomatische Beziehungen aufzunehmen.</p>
-				<p>b) Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> unterrichtet die Fraktion anschließend über die Notstandsgesetzgebung.</p>
-				<p>In dem auf Wunsch von Bundesinnenminister <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> zustande gekommenen Gespräch<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN013" type="comment"><p><name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, der zuständige neue BMI im zweiten Kabinett <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, bemühte sich von Beginn an um eine Verständigung mit der SPD-Opposition über die Notstandsgesetzgebung. Über das Gespräch mit <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> hatte H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> schon in der »Sitzung des Parteivorstandes am 21.1.1966«, berichtet; <bibl type="item-in-archive">AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>. Zuvor hatte <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> schon entsprechende Gespräche mit den Vertretern der anderen Fraktionen geführt, so am 11.1.1966 mit <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">Kühlmann-Stumm</name> »und weiteren führenden Mitgliedern der FDP«. Vgl. <bibl type="series-item">Bulletin Nr. 6 vom 13.1.1966, S. 42</bibl>.</p></note></seg> mit Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> sei – abgesehen von der Erörterung des Vietnam-Krieges (keine Beteiligung deutscher Soldaten, aber humanitäre Hilfe)<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN014" type="comment"><p>Vgl. dazu H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidts</name> Bericht vor dem Parteivorstand am 21.1.1966; <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 31/66 vom 25.1.1966</bibl> sowie <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN035">Nr. 133, TOP 5, bes. Anm. 35</ref>.</p></note></seg> – die Notstandsgesetzgebung das eigentliche Thema gewesen. <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> wünsche, in der ersten Hälfte der laufenden Wahlperiode die Notstandsgesetzgebung zu verabschieden; er sei sehr erbittert gewesen über die Beschränkungen, die durch die Koalition im Rahmen des Haushaltssicherungs-Gesetzes an den zivilen Notstandsgesetzen vorgenommen worden sind.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN015" type="comment"><p>Bei der Beratung des Haushaltssicherungsgesetzes im Haushaltsausschuß war auf Antrag des CDU-Abgeordneten Albert <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> von der Ausschußmehrheit am 6.12.1965 beschlossen worden, das Inkrafttreten der sog. einfachen Notstandsgesetze auf den 1.1.1968 zu verschieben, um so Einsparungen von insgesamt 210 Mio. DM für das Haushaltsjahr 1966 zu erzielen. Sie bezogen sich ausdrücklich auf das Selbstschutzgesetz, das Schutzbaugesetz und das Gesetz über den Zivilschutz. Die übrigen einfachen Notstandsgesetze, d. h. die vier Sicherstellungsgesetze galten »ohnehin«, wie es im Bericht des Haushaltsausschusses hieß, »nur nach Maßgabe der im Haushaltsplan bewilligten Mittel«. Der betr. Art. 16 a wurde vom Plenum in 2. Lesung bei »zahlreichen Gegenstimmen« angenommen. Siehe <bibl type="btd"><ref type="external" target="04/84">BT Anl. 101, Drs. IV/84</ref></bibl>; <bibl type="btp"><ref type="external" target="05/12">BT Sten. Ber. 60</ref>, S. 439 (Abstimmung) und S. 441 (</bibl><name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name><bibl type="btd">)</bibl>.</p></note></seg></p>
-				<p>Der Minister wolle eine neue Vorlage zur Ergänzung des Grundgesetzes erst dann dem Kabinett vorlegen, wenn er mit einer entsprechenden Mehrheit im Bundestag und Bundesrat rechnen könne. Zur weiteren Vorbereitung wolle der Minister ausgedehnte Vorgespräche (auf der Basis der im Rechtsausschuß in der vierten Wahlperiode erzielten Einigung<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN016" type="comment"><p>Gemeint war die Gesetzesvorlage in der Fassung des Schriftlichen Berichts des Rechtsausschusses vom 31.5.1965 – <bibl type="btd"><ref type="external" target="04/3494">BT Anl. 99, Drs. IV/3494</ref></bibl> – abgedr. auch bei <bibl type="single-item"><hi rendition="#smcap">Benda</hi>, Notstandsverfassung, S. 147-158</bibl>; <bibl type="single-item"><hi rendition="#smcap">Schäfer</hi>, Notstandsgesetze, S. 163-171</bibl>. – Zum Stand am Ende der 4. WP vgl. <ref type="internal" target="#spd-04_1965-05-26-t0830_EP">Nr. 115</ref>
-								<ref type="internal" target="#spd-04_1965-06-14-t1600_EP">und 116</ref>.</p></note></seg>) führen mit einer Kommission, in der alle Fraktionen vertreten sein sollen.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN017" type="comment"><p>Als Ergebnis dieser Sondierungsgespräche wurde eine »Zwölferkommission« gebildet, die ab März 1966 über die Notstandsgesetzgebung beriet. Ihr gehörten folgende Abgeordnete an: von der Fraktion der CDU/CSU Ernst <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name>, Bert <name type="Person" role="Erwaehnung" ref="#EvenBert_1957-10-15">Even</name>, Fritz <name type="Person" role="Erwaehnung" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> und Hans <name type="Person" role="Erwaehnung" ref="#WilhelmiHans-Herbert">Wilhelmi</name>, von der SPD <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>, H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> und von der FDP Hermann <name type="Person" role="Erwaehnung" ref="#BusseHermann_1961-10-17">Busse</name>, Thomas <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> und Wolfram <name type="Person" role="Erwaehnung" ref="#DornWolfram_1961-10-17">Dorn</name>. Bundesrat und Länder wurden durch die Innenminister von Baden-Württemberg, Hans <name type="Person" role="Erwaehnung" ref="#FilbingerHans">Filbinger</name> (CDU), und von Niedersachsen, Otto <name type="Person" role="Erwaehnung" ref="#BennemannOtto">Bennemann</name> (SPD), vertreten. Siehe <bibl type="btp"><ref type="external" target="05/44">BT Sten. Ber. 61</ref>, S. 2079 und 2081</bibl> (Mitteilungen <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> und <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>); ferner <bibl type="single-item"><hi rendition="#smcap">Schneider</hi>, Demokratie, S. 160</bibl>.</p></note></seg></p>
-				<p>Der Minister scheine für diese Gespräche weitgehend freie Hand zu haben; Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und er hätten dem Minister noch einmal die für die SPD unabdingbaren vier Punkte der Saarbrücker Entschließung<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN018" type="comment"><p>Zu dieser Entschließung von Parteivorstand, Parteirat und Kontrollkommission vom 29.5.1965 vgl. <ref type="internal" target="#spd-04_1965-05-26-t0830_EP">Nr. 115</ref> und <ref type="internal" target="#spd-04_1965-06-14-t1600_EP_FN006">Nr. 116, TOP 2, bes. Anm. 6</ref>. Sie umfaßte insgesamt 12 Punkte.</p></note></seg> vorgetragen:</p>
-				<p>1. Die alliierten Vorbehaltsrechte müssen in ihrer Gesamtheit abgelöst werden; das bedeute eine rechtsstaatliche gesetzliche Regelung zur Kontrolle des Post- und Fernmeldewesens durch ein innerdeutsches Ausführungsgesetz zu Artikel 10 GG.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN019" type="comment"><p>Vgl. <ref type="internal" target="#spd-04_1965-05-26-t0830_EP_FN007">Nr. 115, bes. Anm. 7</ref>.</p></note></seg></p>
-				<p>2. Die Sicherung der Pressefreiheit auch im Notstand.</p>
-				<p>3. Die Sicherung der grundgesetzlichen Rechte der Arbeitnehmer auch im Not stand.</p>
-				<p>4. Es darf keinen Reichsstatthalterparagraphen geben, d. h. keine Übertragung des Weisungsrechts der Bundesregierung an die Länder auf Dritte.</p>
-				<p>Im übrigen habe <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> Verständnis für die bisherige Haltung der Gewerkschaften aufgrund deren früherer Erfahrung gezeigt.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN020" type="comment"><p>Vgl. <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lückes</name> Äußerungen in einem Spiegelgespräch in <bibl type="series-item">»Der Spiegel« Nr. 20 vom 9.5.1966, S. 68</bibl>, er verstehe die »Sorge« der Gewerkschaften, »die aus der deutschen Geschichte erklärt wird. Sie möchten nicht, daß die Demokratie Schaden erleidet.« <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> führte seit Februar 1966 auch informelle Gespräche wegen der Notstandsgesetzgebung mit Gewerkschaftern, so am 3.2. mit dem Vors. der ÖTV Heinz <name type="Person" role="Erwaehnung" ref="#KlunckerHeinz">Kluncker</name>, am 4.2. mit Vertretern Christlicher Gewerkschaften, am 7.2. mit dem DAG-Vors. Rolf <name type="Person" role="Erwaehnung" ref="#SpaethenRolf">Spaethen</name> und dem Vorstandsmitgl. Heinz <name type="Person" role="Erwaehnung" ref="#GrohejurthHeinz">Grohejurth</name>, am 8.2. mit dem Gschf. Vorstand der GDP (Gewerkschaft der Polizei) und abschließend am 28.2.1966 mit einer Delegation des DGB – aus Ludwig <name type="Person" role="Erwaehnung" ref="#RosenbergLudwig">Rosenberg</name>, Bernhard <name type="Person" role="Erwaehnung" ref="#TackeBernhard">Tacke</name>, Otto <name type="Person" role="Erwaehnung" ref="#BrennerOtto">Brenner</name>, Heinz <name type="Person" role="Erwaehnung" ref="#KlunckerHeinz">Kluncker</name> und Wilhelm <name type="Person" role="Erwaehnung" ref="#GefellerWilhelm">Gefeller</name>. <bibl type="series-item">Bulletin Nr. 17 vom 8.2., S. 129, Nr. 18 vom 9.2., S. 136, Nr. 19 vom 11.2., S. 145 und Nr. 29 vom 2.3.1966, S. 224</bibl>.</p></note></seg> An den künftigen Vorgesprächen soll nach Vorschlag der SPD auch je ein SPD- und CDU-Innenminister der Länder teilnehmen.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN021" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN017">Anm. 17</ref>.</p></note></seg> Weiter habe die SPD bei <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> klargestellt, daß sie nicht bereit sei, ihm und der Regierung Hilfe zu leisten bei erneuten Attacken aus deren eigenen Reihen, wie sie sich beim Haushaltssicherungs-Gesetz gezeigt hätten.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN022" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN015">Anm. 15</ref> sowie die Darstellung in <bibl type="single-item">Jahrbuch SPD 1964/65, S. 68</bibl>.</p></note></seg> Um hierin sicherzugehen, sollten ggf. die Koalitionsfraktionen in einer durch die SPD initiierten Bundestagsdebatte ihre jetzige Haltung zu den Notstandsgesetzen darlegen müssen.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN023" type="comment"><p>Eine solche Debatte fand am 26.5.1966 anläßlich der 2. Lesung des Haushaltsentwurfs für das BMI statt; zu der vorhergehenden Beratung in der SPD-Fraktion siehe <ref type="internal" target="#spd-05_1966-05-26-t0835_EP">Nr. 150</ref>.</p></note></seg></p>
-				<p>Im Zusammenhang mit den Vietnam-Fragen schlägt Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> vor, daß die BRD Militärhilfe, sei es in Form von Waffenlieferungen oder als Ausbildungshilfe, auf Partner des Nordatlantikvertrages bzw. von der NATO gedeckte Territorien beschränken sollte; er schlägt vor, dies zu einer öffentlichen Forderung der SPD zu machen.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN024" type="comment"><p>Der Parteivorstand verabschiedete am 19.2.1966 eine Entschließung »Zur Frage der Militärhilfe an andere Staaten«. Darin wurde zwar anerkannt »daß es erforderlich sein kann, den hilfebedürftigen Nationen in Afrika und Lateinamerika […] auch militärische Unterstützung zu geben«. Unter dem Gesichtspunkt der Lage des geteilten Deutschland müsse die Bundesrepublik jedoch jeden Anschein einer »militärischen Einflußnahme auf dritte Länder« vermeiden. Die Formel der BReg, Militärhilfe nicht in »Spannungsgebiete« zu leiten, sei unzureichend und insofern »falsch«, als auch im NATO-Bereich »Spannungsgebiete« entstehen könnten. Die Bundesrepublik müsse vielmehr »militärische Hilfen« und den Verkauf von »Waffen und Ausrüstung« auf die Mitgliedstaaten der NATO beschränken. Auch die private Ausfuhr von Waffen habe sich nach diesen Grundsätzen zu richten. Prot. der »Sitzung des Parteivorstandes am 18. und 19.2.1966«, <bibl type="item-in-archive">AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>; die »Entschließung« ist abgedr. in <bibl type="single-item">Jahrbuch SPD 1966/67, S. 313-315</bibl>.</p></note></seg></p>
-				<p>In der Diskussion fordert Hans <name type="Person" role="Sprecher" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name> für die weiteren Notstandsgespräche die Berücksichtigung der Forderung <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> aus der Debatte über die Regierungserklärung, daß die SPD einer Notstandsverfassung nur zustimme, wenn sonstige bestimmte Prioritäten in der allgemeinen Politik Berücksichtigung finden.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN025" type="comment"><p><name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> hatte in seiner Plenarrede am 29.11.1965 u. a. erklärt, auch die Entscheidung über die Verfassungsbestimmungen über den Notstand hänge »vom Gesamtkurs der Politik« ab. Darüber könne »nur im Zusammenhang mit den allgemeinen politischen Prioritäten und unter Beachtung der von der Regierung bisher zu diesem Thema nicht angepackten, in der letzten Legislaturperiode offen gebliebenen Fragen – alliierte Vorbehaltsrechte auf dem Gebiete des Post- und Fernmeldewesens, einwandfreier Schutz der Pressefreiheit, rechtliche Sicherung der Arbeitnehmer – ernsthaft gesprochen werden.« <bibl type="btp"><ref type="external" target="05/07">BT Sten. Ber. 60</ref>, S. 100</bibl>.</p></note></seg> Im übrigen dürfe die finanzielle Belastung der Gemeinden durch die einfache Notstandsgesetzgebung<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN026" type="comment"><p>Der gesamte jährliche Kostenaufwand durch diese einfachen Notstandsgesetze betrug nach Berechnungen der Schweizerischen Prognos AG 8,3 Mrd. DM; siehe <bibl type="single-item">Vereinigung Deutscher Wissenschaftler, Kostenschätzung für die Notstandsgesetzgebung der Bundesrepublik Deutschland. Untersuchung im Auftrag der Vereinigung Deutscher Wissenschaftler e. V. durch die Prognos AG Basel/Schweiz, Frankfurt/M. 1966</bibl>. – Zu den Kosten für die Gemeinden vgl. <bibl type="single-item">Was kosten die Notstandsgesetze? Kostentabelle für Gemeindegrößen ab 5 000 Einwohner, in: »Blätter für deutsche und internationale Politik«, H. 3, 1967, S. 266 ff.</bibl>; <bibl type="single-item">Hermann <hi rendition="#smcap">Fischer</hi>, Mit den Notstandsgesetzen leben, in: »Die demokratische Gemeinde«, Nr. 3, 1963, S. 173-177</bibl>.</p></note></seg> auch bei den weiteren Gesprächen nicht außer Acht gelassen werden. Franz <name type="Person" role="Sprecher" ref="#MarxFranz_1949-09-07">Marx</name> stellt fest, daß sich die kritische Haltung der Öffentlichkeit an der Notstandsgesetzgebung nicht gemildert habe und daß die CDU vor weiteren Gesprächen zu der Saarbrücker SPD-Entschließung<unclear reason="Fußnotenzeichen-ohne-Fußnotentext">18</unclear> Stellung nehmen müsse. Er halte es für falsch, im Bundestag initiativ durch die SPD eine Debatte zu führen über die einschränkenden Bestimmungen des Haushaltssicherungs-Gesetzes für die Notstandsgesetze, die von der CDU-Parlamentsfraktion entgegen dem Willen der Regierung beschlossen worden sind.<unclear reason="Fußnotenzeichen-ohne-Fußnotentext">15</unclear> Genosse <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name> schließt sich dieser Auffassung an.</p>
-				<p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> hält es für notwendig, daß in dem Schreiben des amtierenden Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name><seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN027" type="comment"><p>Unter den am 3.11.1965 gewählten vier stellv. Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name>, <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> war keine Rangfolge festgelegt worden. Siehe <ref type="internal" target="#spd-05_1965-10-20-t1400_EP">Nr. 125</ref>. – Schon vor der Erkrankung <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> leitete <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> in dessen Abwesenheit die Fraktionssitzungen.</p></note></seg> an den Bundesminister <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> die Doppelzüngigkeit der Regierungspolitik offenzulegen sei;<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN028" type="comment"><p>Das Schreiben ließ sich nicht nachweisen.</p></note></seg> daß die Verfassungsergänzung nicht wieder in die Nähe des nächsten Wahlkampfes rücken dürfe und daß ein konkreter Zeitplan gefordert werde. Ferner fehle s. E. eine Verklammerung der einfachen Notstandsgesetze mit den beabsichtigten Verfassungsergänzungen. Genosse <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-V[ockenhausen]</name> stimmt dem zu und weist darauf hin, daß das Sicherstellungsgesetz<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN029" type="comment"><p>Der Singular ist mißverständlich, denn es handelte sich um vier Sicherstellungsgesetze: das Wirtschafts-, das Ernährungs-, das Verkehrs- und das Wassersicherstellungsgesetz. Vgl. <ref type="internal" target="#spd-04_1965-06-14-t1600_EP_FN014">Nr. 116, Anm. 14</ref> und <ref type="internal" target="#spd-04_1965-06-22-t1610_EP">117, TOP 1</ref>.</p></note></seg> z. B. so weitgehende Ermächtigungen enthalte, daß es in eine Verfassungsergänzung einzubeziehen sei.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN030" type="comment"><p>In den Sicherstellungsgesetzen waren weitreichende Vollmachten für die BReg vorgesehen, durch Verordnungen Kontrollen, Preise, Beschlagnahmen u. a. zu verfügen. Auch die Voraussetzungen waren weit gefaßt. So hieß es im Wirtschaftssicherstellungsgesetz, es gehe darum, die »für Zwecke der Verteidigung, insbesondere zur Deckung des Bedarfs der Zivilbevölkerung und der Streitkräfte erforderliche Versorgung mit Gütern und Leistungen« (§ 1) zu sichern bzw. »eine Gefährdung der Versorgung zu beheben oder zu verhindern« (§ 2). Schon bei der Verabschiedung der Sicherstellungsgesetze hatte die SPD-Fraktion die Auffassung vertreten, wegen der weitreichenden Ermächtigungen sei eine Zweidrittelmehrheit erforderlich. Vgl. <ref type="internal" target="#spd-04_1965-06-22-t1610_EP">Nr. 117, TOP 1</ref>.</p></note></seg></p>
-				<p>Von den Genossen <name type="Person" role="Sprecher" ref="#HaageHermann_1957-10-15">Haage</name>, <name type="Person" role="Sprecher" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> und Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> werden ergänzend die rechtlichen Aspekte der einfachen Notstandsgesetze, insbesondere der Sicherstellungsgesetze, behandelt. Zu der Frage, ob die SPD initiativ im Bundestag eine Debatte über die Einschränkung der Zivilschutzbestimmungen durch das Haushaltssicherungs-Gesetz herbeiführen soll, äußern sich die Genossen <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-V[ockenhausen]</name>, <name type="Person" role="Sprecher" ref="#JacobiWerner_1949-09-07">Jacobi</name>, <name type="Person" role="Sprecher" ref="#RaffertJoachim_1965-10-19">Raffert</name>, <name type="Person" role="Sprecher" ref="#SeidelMax_1953-10-06">Seidel</name> und <name type="Person" role="Sprecher" ref="#SeibertPhilipp_1961-10-17">Seibert</name>, wobei Bedenken gegenüber einer solchen Debatte überwiegen und empfohlen wird, diese Frage im Fraktionsvorstand oder in einem anderen kleinen Gremium nochmals zu überlegen.</p>
-				<p>Die Genossen <name type="Person" role="Sprecher" ref="#MichelsWilhelm_1961-10-17">Michels</name> und <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name> äußern sich über die Funktion des beabsichtigten <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>-Gesprächskreises und wünschen eine ständige Unterrichtung der Fraktion, die durch diese Gespräche nicht vorweg gebunden werden sollte.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN031" type="comment"><p>Eine ausführliche Berichterstattung erfolgte erst in der Fraktionssitzung vom 26.5.1966; siehe <ref type="internal" target="#spd-05_1966-05-26-t0835_EP">Nr. 150</ref>.</p></note></seg></p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> äußert sich abschließend zur Diskussion: Die finanzielle Belastung der Gemeinden aus den Notstandsgesetzen sollte eventuell einer derjenigen Punkte sein, bei denen sich eine Verbindung zwischen der Reform der Finanzverfassung und der Beratung der Notstandsverfassung ergeben, worauf vor allem Hans <name type="Person" role="Erwaehnung" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name> hingewiesen hatte. Für die bevorstehenden Gespräche mit <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> wolle die SPD keine neuen zusätzlichen Bedingungen einführen, sondern auf der Erfüllung der Saarbrücker Entschließung bestehen. Ein Junktim zwischen einer Großen Koalition und der Zustimmung der SPD zur Notstandsverfassung sei nicht gegeben.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN032" type="comment"><p>Vgl. dazu auch das Spiegel-Gespräch mit <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> in <bibl type="series-item">»Der Spiegel« Nr. 8 vom 14.2.1966, S. 20-30, bes. S. 21</bibl>. Zu dem vom »Spiegel« geäußerten Verdacht, »die SPD wolle die Fragen, zu deren Lösung ihre Zustimmung kraft Grundgesetz nötig ist, benutzen, um sich in die Regierung mit einschreiben zu lassen«, äußerte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> u. a.: »Sie haben sich einer feinen List bedient, indem sie plötzlich den Begriff ›Große Koalition‹ ins Spiel brachten, so als sei ich oder die SPD es, die darauf losgingen. Wenn Sie meine Auffassung so auslegen, würden sie mich sehr mißverstehen«. Auf die nachfolgende Bemerkung des »Spiegel«, die SPD könne »an notwendige Grundgesetzänderungen schwerlich die Bedingung« einer Regierungsbeteiligung knüpfen, antwortete er: »Es ist klar, daß wir eine solche Bedingung schwerlich stellen können. Das ist auch nicht unsere Position«.</p></note></seg> Entscheidend für die künftigen Debatten wird sein, erstens die Doppelzüngigkeit der Regierung aufzuzeigen hinsichtlich ihrer Äußerungen vom Juni und Dezember 1965 (Gerhard <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>),<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN033" type="comment"><p>Gemeint sein dürften die Versuche von Regierung und Koalitionsparteien vom Juni 1965, der SPD die Verantwortung für das Scheitern der Notstandsverfassung anzulasten. Vgl. <bibl type="single-item"><hi rendition="#smcap">Schneider</hi>, Demokratie, S. 143 f.</bibl> – Im Dezember 1965 gab <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> dann in einem Interview mit der Monatszeitung »Mann in der Zeit« zu verstehen, er sei überzeugt, daß die SPD »unter bestimmten Voraussetzungen« mittun würde und sich ein »Weg finden« lasse, den sie mitgehe. Nach <bibl type="series-item">Bulletin Nr. 200 vom 23.12.1965, S. 1614</bibl>.</p></note></seg> zweitens die unveränderte Position der SPD zu verdeutlichen, drittens eine Meinungsäußerung der anderen zur Saarbrücker SPD-Entschließung zu erhalten.</p>
-				<p>c) Die Vorsitzende der Sozialistischen Fraktion im Europäischen Parlament, Käte <name type="Person" role="Sprecher" ref="#StrobelKaete_1949-09-07">Strobel</name>, berichtet sodann über den Stand der EWG-Krise<unclear reason="Fußnotenzeichen-ohne-Fußnotentext">10</unclear> (zugleich Vorberatung der Plenardebatte<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN034" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN028">Nr. 134, Anm. 28</ref>.</p></note></seg>) :</p>
-				<p>Nach einer kurzen Replik auf die Vorgeschichte der EWG-Krise unterrichtet sie die Fraktion darüber, daß inzwischen zwar einige technische Beschlüsse im schriftlichen Verfahren erledigt werden konnten, daß aber seit dem Fernbleiben Frankreichs vom Verhandlungstisch wichtigere Entscheidungen unterblieben sind, zu denen besonders die <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-Runde, die gemeinsame Handelspolitik, insbesondere gegenüber den Ostblockstaaten, die Finanzierung der Agrarpolitik etc. gehören. Für die künftige Weiterarbeit der EWG hat Frankreich inzwischen 10 Punkte als Bedingung genannt.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN035" type="comment"><p>Bei der außerordentlichen Tagung des Ministerrates der EWG am 17./18.1.1966 hatte die französische Delegation unter Außenminister <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murville</name> am 18.1. ein »Aide memoire« mit 10 Punkten vorgelegt, in denen Bedingungen für die künftige Arbeit in der EWG formuliert wurden. Zusätzlich wurde noch der »Entwurf eines Zeitplanes« für die weiteren Beratungen und Entscheidungen, u. a. für eine Neubesetzung der EWG-Kommission, vorgelegt. Text in deutscher Übersetzung in <bibl type="series-item">AdG 1966, S. 12285</bibl>. – Die Ausführungen von <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> geben im wesentlichen die Punkte 1 und 2 wieder. Vgl. auch ihre Stellungnahme für die Sozialdemokratische Fraktion bei der Tagung des Europäischen Parlaments vom 18.-21.1.1966, in <bibl type="series-item">AdG 1966, S. 12232</bibl>, und ihre Plenarrede im Bundestag am 27.1.1966, <bibl type="btp"><ref type="external" target="05/17">BT Sten. Ber. 60</ref>, S. 676-679</bibl>.</p></note></seg> Durch die Forderung, daß die Kommission sich künftig mit den Regierungen einzeln besprechen solle vor der Ausarbeitung von Kommissionsvorschlägen und der geforderten Einschränkung der Durchführungsbefugnisse der Kommission, müßte das Gemeinschaftsinteresse in Gefahr geraten. Eine große Gefährdung der Befugnisse des Europäischen Parlamentes sei darin zu erblicken, daß die Kommission ihre Vorlagen vor der offiziellen Zustellung an den Ministerrat nicht mehr dem Parlament oder der Öffentlichkeit bekanntgeben dürfte. Die Forderung Frankreichs nach einem Vetorecht für lebensnotwendige Fragen eines Mitgliedstaates seien eine Aushöhlung des Vertrages. Die Vermittlungsvorschläge des belgischen Außenministers <name type="Person" role="Erwaehnung" ref="#SpaakPaul-Henri">Spaak</name> auch für die weitere Terminierung seien erfolgversprechend. Die Fusionen der drei Gemeinschaften sollten alsbald ratifiziert werden; hierzu habe <name type="Person" role="Erwaehnung" ref="#SpaakPaul-Henri">Spaak</name> ein rollierendes System für die Bestellung der Präsidenten und Vizepräsidenten vorgeschlagen.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN036" type="comment"><p>Zum Zusammenhang vgl. den in <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN010">Anm. 10</ref> zit. <bibl type="single-item">Aufsatz von Hellmann in Europa-Archiv 1966, bes. S. 267 f.</bibl> – Eine Vermittlerrolle <name type="Person" role="Erwaehnung" ref="#SpaakPaul-Henri">Spaaks</name> wird darin allerdings nicht erwähnt.</p></note></seg> Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>befaßte sich sodann mit dem Problem der rechtlichen Position der übrigen fünf Vertragsstaaten, wenn Frankreich weiterhin den Beschlüssen fernbleiben sollte. Eine gewisse Durststrecke für die fünf Staaten sei eventuell durchzustehen, wobei man alles versuchen müsse, Frankreich zurückzuholen, in dem man in Einzelheiten nicht starr zu sein brauche, aber im Grundsätzlichen nicht nachgeben dürfe.</p>
-				<p>An der ausführlichen Diskussion beteiligen sich die Genossen <name type="Person" role="Sprecher" ref="#MichelsWilhelm_1961-10-17">Michels</name>, Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>, <name type="Person" role="Sprecher" ref="#MetzgerGuenther_1969-10-20">Metzger</name>, <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name>, <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name>, die übereinstimmend vor einer Haltung warnen, welche der Bundesrepublik den Schwarzen Peter am Scheitern der EWG zuschieben könnte.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN037" type="comment"><p>Die Äußerungen spielen darauf an, daß die Bundesrepublik zum einen als exportorientiertes Land ein besonderes Interesse an der Durchsetzung von Mehrheitsentscheidungen in der Handelspolitik (<name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-Runde) hatte, zum anderen bei den Agrarpreisen – wegen der deutschen Milchsubventionen – das Mehrheitsprinzip nicht gelten lassen wollte. Vgl. dazu <bibl type="single-item">Rainer Hellmann in Europa-Archiv 1966 (oben <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN010">Anm. 10</ref>), S. 263</bibl>; ferner den Hinweis von <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> in ihrer Plenarrede vom 27.1.1966, in Straßburg gäbe es Tendenzen, die »Bundesrepublik zu isolieren« und ihr mit der Formel, »der Schlüssel liegt jetzt in Bonn«, die Verantwortung zuzuschieben; <bibl type="btp"><ref type="external" target="05/17">BT Sten. Ber. 60</ref>, S. 678</bibl>.</p></note></seg></p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> vertritt die Auffassung, daß die Bundesrepublik außenpolitisch auf Frankreich angewiesen ist und daß man ihm im EWG-Konflikt die Möglichkeit zur Wahrung des Gesichts (z. B. keine Verzögerung der Fusion, rollierender Vorsitz etc.) geben müßte. Die dritte Phase des EGW-Vertrages müsse nicht unbedingt zum vorgesehenen Zeitpunkt beginnen, insoweit sei der Vertrag flexibel in seiner Auslegung. Zu prüfen sei die Frage, ob eine deutsch-französische Zusammenarbeit außerhalb des EWG-Vertrages zu verstärken sei. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> warnt vor allem vor einer Schwächung des Europäischen Parlamentes, zu der es keine stille Duldung des Deutschen Bundestages oder der SPD-Fraktion im Bundestag geben dürfe. Genosse <name type="Person" role="Sprecher" ref="#MetzgerGuenther_1969-10-20">Metzger</name> spricht Frankreich das Recht ab, die Vorteile, d. h. Leistungen des EWG-Vertrages zu beanspruchen, falls es »als Rechtsbrecher« die Vertragsbestimmungen verletzt und z. B. seinen Beschluß und Beitrag zum EWG-Etat verweigert. Demgegenüber warnt Käte <name type="Person" role="Sprecher" ref="#StrobelKaete_1949-09-07">Strobel</name> vor einem Wunschdenken mit der Feststellung, daß die Agrarfinanzierung nicht der Hebel zur Beseitigung der EWG-Krise sei, da <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> nicht fiskalisch denke. Eine Verschiebung des Beginns der dritten Phase sollte in der Plenardebatte nicht erörtert werden.</p>
-				<p>Abschließend faßt Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> die Diskussion zusammen mit ergänzenden Hinweisen auf die Haltung <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröders</name> und die Rolle einiger Efta-Länder und warnt schließlich vor einer »Spekulation à la Baisse der EWG«.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN038" type="comment"><p>Vgl. <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> ähnliche Ausführungen im Plenum am 27.1.1966 in <bibl type="btp"><ref type="external" target="05/17">BT Sten. Ber. 60</ref>, S. 694</bibl>.</p></note></seg> Die Plenardebatte soll auf zwei Gleisen geführt werden:</p>
-				<p>1. Die Kommissionspräsidentschaft und der Termin für Fusionierung soll kein Dogma für uns sein,</p>
-				<p>2. das deutsch-französische Verhältnis ist z. Zt. so schlecht, daß Auswirkungen auf die Deutschlandpolitik zu befürchten sind.</p>
-				<p>Als Sprecher der Fraktion für die Plenardebatte werden vorgeschlagen: Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, Genosse <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name>, Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN039" type="comment"><p>Neben <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> – vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN035">Anm. 35</ref> – sprachen für die SPD-Fraktion <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name> und <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>. <bibl type="btp"><ref type="external" target="05/17">Ebd.</ref>, S. 688-690 und 693-695</bibl>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Zu Punkt 2 der TO »Vorbereitung der Plenarsitzungen«</p>
-				<p>Genosse <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> berichtet über den Unfallverhütungsbericht der Bundesregierung.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN040" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN027">Nr. 134, TOP 2, bes. Anm. 27</ref>.</p></note></seg> Dazu empfiehlt der Arbeitskreis Sozialpolitik einen Antrag, wonach der Bericht in einer besseren Fassung neu vorzulegen ist. Die Fraktion stimmt zu.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN041" type="comment"><p>Der am 26.1.1966 eingebrachte »Entschließungsantrag«, die BReg solle eine »Neufassung« vorlegen, wurde in der Plenarsitzung vom gleichen Tag abgelehnt. <bibl type="btp"><ref type="external" target="05/16">BT Sten. Ber. 60</ref>, S. 644 und 647 (Anl. 2)</bibl>.</p></note></seg></p>
-				<p>Als Redner für die Plenardebatte werden vorgeschlagen: Genosse <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, <name type="Person" role="Erwaehnung" ref="#BehrendtWalter_1957-10-15">Behrendt</name>, Horst <name type="Person" role="Erwaehnung" ref="#SchmidtHorst_1961-10-17">Schmidt</name>, <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, eventuell noch H. <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN042" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN027">Nr. 134, Anm. 27</ref>.</p></note></seg></p>
-				<p>Genosse <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> gibt eine Vorschau auf die weiteren Plenartermine und wichtigsten Beratungsthemen.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Zu Punkt 3 der TO »Vorlagen aus den Arbeiskreisen« (s. Anl.)<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN043" type="comment"><p>Es handelte sich um den nachfolgenden Antrag und die Kleinen Anfragen a, b und c.</p></note></seg></p>
-				<p>a) Genosse <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> begründet den Antrag betr. Bericht der Bundesregierung über die Lage der Jugend und über die Bestrebungen auf dem Gebiet der Jugendhilfe, dem die Fraktion zustimmt.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN044" type="comment"><p>Der beiliegende, auf den 25.1.1966 datierte Antrag der Abgeordneten »<name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> und Fraktion der SPD« wurde statt von <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> jedoch von »<name type="Person" role="Erwaehnung" ref="#WestphalHeinz_1965-10-19">Westphal</name> und Genossen« unterzeichnet und am gleichen Tag eingebracht (<bibl type="btd"><ref type="external" target="5/219">BT Anl. 102, Drs. V/219</ref></bibl>), später jedoch zurückgezogen. Vgl. <ref type="internal" target="#spd-05_1966-02-15-t1500_EP_SVP-2">Nr. 137, TOP 2/10</ref>.</p></note></seg></p>
-				<p>b) Genosse <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> berichtet über eine Kleine Anfrage betr. Bundeskriminalamt, der die Fraktion zustimmt.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN045" type="comment"><p>Die am 25.1.1966 eingebrachte Kleine Anfrage bezog sich u. a. auf die Stellenbesetzung und die Praxis der Datenerfassung und -verarbeitung; <bibl type="btd"><ref type="external" target="05/22">BT Anl. 102, Drs. V/22</ref></bibl>. Beantwortet wurde sie vom BMI am 23.2. 1966; <bibl type="btd"><ref type="external" target="05/337">BT Anl. 103, Drs. V/337</ref></bibl>.</p></note></seg></p>
-				<p>c) Genosse <name type="Person" role="Sprecher" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name> berichtet über eine Kleine Anfrage betr. Veba-Aktie, der die Fraktion zustimmt.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN046" type="comment"><p>Die Kleine Anfrage, eingebracht am 25.1.1966, betraf den Rückkauf von VEBA-Aktien auf Rechnung des Bundes; <bibl type="btd"><ref type="external" target="05/220">BT Anl. 102, Drs. V/220</ref></bibl>. Antwort des BMSchatz vom 3.2.1966 in <bibl type="btd"><ref type="external" target="05/265">Anl. 103, Drs. V/265</ref></bibl>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-4">
-				<head>D.</head>
-				<p>Punkt 4 der TO »Nächste Termine«<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN047" type="comment"><p>Die nächste Fraktionssitzung war am 8.2.1966.</p></note></seg></p>
-				<p>Keine Einwendungen der Fraktion.</p>
-				<p>Punkt 5 der TO »Verschiedenes«</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> gibt die Information, daß der CDU/CSU-Fraktionsvorstand eine Kommission betreffend den 17.Juni beschlossen habe.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN048" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_SVP-6">Nr. 136, TOP 5</ref>.</p></note></seg> Das Ergebnis der Beratungen werde die SPD abwarten.</p>
-				<p>Genosse <name type="Person" role="Erwaehnung" ref="#TallertHarry_1965-10-19">Tallert</name><seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN049" type="comment"><p>Im Or. versehentlich »Tappert«. Die SPD-Fraktion hatte schon am 25.11.1965 eine Kleine Anfrage nach der »Tauglichkeit« der F 104 G (Starfighter) eingebracht; siehe <ref type="internal" target="#spd-05_1965-11-25-t1030_EP_FN031">Nr. 130, Anm. 31</ref>. – Diese Anfrage war vom BMVtdg<name type="Person" role="Erwaehnung" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> am 16.12.1965 – <bibl type="btd"><ref type="external" target="05/129">BT Anl. 101, Drs. V/129</ref></bibl> – dahin beantwortet worden, »aus Gründen der Sicherheit« sehe er sich nicht in der Lage, sie »schriftlich erschöpfend zu behandeln, weil ihre Antwort veröffentlicht würde«. Er sei jedoch bereit, »im Verteidigungsausschuß über den Sachstand zu berichten«. – <name type="Person" role="Erwaehnung" ref="#TallertHarry_1965-10-19">Tallerts</name> Vorstoß dürfte mit durch die Titelgeschichte <bibl type="series-item">»Starfighter« in »Der Spiegel« Nr. 5 vom 24.1.1966, S. 21-36</bibl>, bedingt sein, die den gesamten Komplex der Unfallserie der F 104 G aufgriff.</p></note></seg> fordert, daß die SPD initiativ das Problem der Starfighter-Abstürze aufgreift und diese Debatte zur Rechtfertigung des Genossen <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name> nutze.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN050" type="comment"><p><name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name> hatte bereits im Januar 1965 massive Vorwürfe in bezug auf das »Starfighter-Programm« erhoben und die F 104 G als allenfalls »bedingt einsatzfähig« bezeichnet. Siehe <ref type="internal" target="#spd-04_1965-01-26-t1500_EP">Nr. 102, TOP 1</ref>.</p></note></seg> Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> gibt (unter Hinweis auf den Aufsatz von L. <name type="Person" role="Erwaehnung" ref="#RühlLothar">Rühl</name> in der Welt<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN051" type="comment"><p>Lothar <name type="Person" role="Erwaehnung" ref="#RühlLothar">Rühl</name> (geb. 1927), Journalist und Publizist, ab 1949 bei Agence France Press, 1954-1959 beim »Spiegel«, 1960-1964 Leiter des Nachrichtenbüros des Springer-Auslandsdienstes in Paris, seit 1964 militärischer und politischer Korrespondent der »Welt«. Ein Aufsatz oder Artikel von <name type="Person" role="Erwaehnung" ref="#RühlLothar">Rühl</name> zur Starfighter-Krise ließ sich in der »Welt« vom Januar 1966 nicht finden. Nur ein »W. H.-E.« gezeichneter Artikel <bibl type="series-item">»Starfighter« in »Die Welt« vom 13.1.1966</bibl> befaßte sich mit dem Thema.</p></note></seg>) dazu sachliche Informationen über den Stand der Untersuchungen im Verteidigungsausschuß, die noch andauern und vor deren Abschluß eine Plenardebatte nicht geführt werden sollte.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN052" type="comment"><p>Der Verteidigungsausschuß hatte sich u. a. am 12.1. und 14.1. aus Anlaß der Kleinen Anfrage der SPD – vgl. <ref type="internal" target="#spd-05_1965-11-25-t1030_EP_FN031">Nr. 130, Anm. 31</ref> – mit der Starfighter-Krise befaßt. Der Inspekteur der Luftwaffe, Generalleutnant Werner <name type="Person" role="Erwaehnung" ref="#PanitzkiWerner">Panitzki</name>, erstattete dazu einen Bericht und schlug gleichzeitig eine Reihe von Maßnahmen, besonders auf dem personellen Sektor vor, die von der Luftwaffe »zur Verbesserung der Lage« für erforderlich gehalten wurden. Ergänzende Berichte gaben Staatssekretär Karl <name type="Person" role="Erwaehnung" ref="#GumbelKarl">Gumbel</name> vom BMVtdg und General <name type="Person" role="Erwaehnung" ref="#SteinhoffJohannes">Steinhoff</name>. Der Ausschuß setzte seine Beratungen am 27. und 28.1.1966 fort. <bibl type="series-item">Bulletin Nr. 7 vom 15.1., S. 54 f.</bibl> und <bibl type="series-item">Nr. 13 vom 28.1. 1966, S. 99</bibl>; <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 10./66 vom 12.1.</bibl> und <bibl type="series-item">Nr. 14/66 vom 14.1.1966</bibl>. Vgl. auch das Interview mit <name type="Person" role="Erwaehnung" ref="#PanitzkiWerner">Panitzki</name> in <bibl type="series-item">»Der Spiegel« Nr. 5 vom 24.1.1966, S. 24</bibl>; ferner <bibl type="series-item">ebd., S. 29 und 30</bibl> sowie <bibl type="single-item"><hi rendition="#smcap">Hildebrand</hi>, Erhard, S. 213</bibl>.</p></note></seg> Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> äußert die Auffassung, daß in geeigneter Form der Öffentlichkeit zu zeigen sei, daß sich die SPD mit dieser Frage beschäftige; es wird vereinbart, die Erörterung des Themas durch die Fraktion in die Fraktionspressemitteilung aufzunehmen.<seg type="note"><note xml:id="spd-05_1966-01-25-t1500_EP_FN053" type="comment"><p>Siehe <bibl
-									type="series-item">»Die SPD-Fraktion teilt mit« Nr. 32/66 vom 25.1.1966 »Betr. Starfighter-Debatte im Bundestag«</bibl>. Der Text lautete: »Die Sozialdemokratische Bundestagsfraktion hat sich gestern abend durch ihren stellvertretenden Vorsitzenden Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> informieren lassen über den Stand der vom Verteidigungsausschuß des Deutschen Bundestages angestellten Untersuchungen der Unfallursachen beim Starfighter. Die Erörterungen des Verteidigungsausschusses sind noch nicht zum Abschluß gekommen. Nachdem auf sozialdemokratischen Antrag neben den Fachleuten des Bundesverteidigungsministeriums bisher schon Vertreter der deutschen Luftfahrtindustrie sowie der im Stabe des Nato-Kommandos Aircent als Chef des Stabes tätige deutsche General <name type="Person" role="Erwaehnung" ref="#SteinhoffJohannes">Steinhoff</name> gehört worden waren, werden demnächst, ebenfalls auf sozialdemokratische Initiative, Kommandeure, Piloten und Wartungspersonal von Starfighter-Geschwadern vor dem Ausschuß ihre Aussagen machen. Die Sozialdemokratische Bundestagsfraktion hat die Erwartung ausgesprochen, daß die Untersuchung der Unfallergebnisse mit allem Nachdruck vorangetrieben wird. Sie teilt die tiefe Beunruhigung, welche die öffentliche Meinung in Deutschland hinsichtlich des Starfighter-Problems erfaßt hat. Die Sorgen betreffen sowohl das Leben und die Gesundheit der Starfighter-Piloten, Leben und Gesundheit der von Unglücksfällen getroffenen zivilen Bürger als auch die Einsatzfähigkeit der Luftwaffe. Die Sozialdemokratische Bundestagsfraktion will davon absehen, sich vor Beendigung der Untersuchungen des Verteidigungsausschusses im einzelnen zur Sache zu äußern. Sie hält es auch für verfrüht, eine abschließende Wertung vorzunehmen. Sie geht jedoch davon aus, daß nach Beendigung der Untersuchungen des Verteidigungsausschusses eine Debatte des Plenums des Deutschen Bundestages über dieses bisher folgenreichste Problem der Bundeswehr unerläßlich ist. Die vorgestern durch den Bundesverteidigungsminister bekanntgegebene Beauftragung des Brigadegenerals <name type="Person" role="Erwaehnung" ref="#HrabakDietrichAdolf">Hrabak</name> mit der Koordinierung aller zur Beseitigung von Unfallursachen geeigneten Maßnahmen erscheint nützlich; daß eine solche Beauftragung zu einem so späten Zeitpunkt erfolgt, muß allerdings Befremden hervorrufen. Die Sozialdemokraten werden im Verteidigungsausschuß beantragen, daß General <name type="Person" role="Erwaehnung" ref="#HrabakDietrichAdolf">Hrabak</name> zu allen weiteren, das Starfighter-Problem betreffenden Sitzungen des Verteidigungsausschusses zugezogen wird, damit sichergestellt ist, daß ihm auch nicht der kleinste Hinweis entgehen kann.«</p></note></seg></p>
-				<p>F. d. Prot.: gez. <name type="Person" role="Erwaehnung" ref="#ListHerta">List.</name></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-01-25-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title>
+                  <author>Heinrich Potthoff</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930888952</idno>
+                  <idno type="DNB">https://d-nb.info/930907760</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 12)</idno>
+                     <objectName>Kurzprotokoll der Sitzung der SPD-Fraktion im Bundestag vom Dienstag, 25. Januar 1966, 15 Uhr</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 25. Januar 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>9 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-01-25">
+               <time type="start" when="15:00:00"/>
+               <time type="end"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1966-01-25-t1500_EP_SVP-1" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-1">A. Internes aus der Fraktion. TOP 1: Politische Information. – Berichte von Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> und Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, jeweils mit anschließender Diskussion.</item>
+               <item xml:id="spd-05_1966-01-25-t1500_EP_SVP-2" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-2">B. TOP 2: Vorbereitung der Plenarsitzungen.</item>
+               <item xml:id="spd-05_1966-01-25-t1500_EP_SVP-3" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-3">C. TOP 3: Vorlagen aus den Arbeitskreisen.</item>
+               <item xml:id="spd-05_1966-01-25-t1500_EP_SVP-4" corresp="#spd-05_1966-01-25-t1500_EP_div_SVP-4">D. TOP 4: Nächste Termine. – TOP 5: Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Tagesordnung s. Anlage.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN001" type="critical">
+                     <p>Die TO liegt nicht bei. Ein Exemplar der TO befindet sich in <bibl type="item-in-archive">»5. Legislaturperiode V/I. Fraktion. Protokolle u. Tgo I 19.10.65-27.4.67«</bibl>. Sie deckt sich mit der des Prot.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Sitzung steht unter dem Vorsitz von Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name>. Er unterrichtet die Fraktion zunächst über den Gesundheitszustand von Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> anhand des ärztlichen Bulletins und Alex <name type="Person" role="Sprecher" ref="#MoellerAlex_1961-10-17">Möller</name> gibt ergänzende Informationen nach seinem persönlichen Besuch bei F. <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>.</p>
+            <p>Nach weiteren Mitteilungen über Krankheitsfälle und Geburtstage sowie die Wahl des Genossen <name type="Person" role="Erwaehnung" ref="#MetzgerGuenther_1969-10-20">Metzger</name> zum Vizepräsidenten im Europäischen Parlament<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN002" type="comment">
+                     <p>Die Wahl Ludwig <name type="Person" role="Erwaehnung" ref="#MetzgerLudwig_1953-10-06">Metzgers</name> erfolgte nicht bei der Januartagung des Europäischen Parlaments, sondern erst bei seiner Tagung vom 7.-11.3.1966. Vgl. <bibl type="series-item">AdG 1966, S. 12483</bibl>. – Zu den Mitteilungen über <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> Krankenhausaufenthalt und <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möllers</name> Besuch am 23.1. vgl. <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 29/66 vom 25.1.1966</bibl>.</p>
+                  </note>
+               </seg> wird behandelt:</p>
+            <p>Punkt 1 der TO »Politische Information«</p>
+            <p>a) Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> berichtet über Aspekte der Deutschlandpolitik.</p>
+            <p>In Anknüpfung an die Erklärung Staatssekretär <name type="Person" role="Erwaehnung" ref="#HaseKarl-Guenthervon">von Hases</name>, der Bundeskanzler werde im Februar die Fraktionsvorsitzenden (und einige andere) zu ersten Gesprächen über Voraussetzungen und Möglichkeiten für die Deutschlandpolitik einladen,<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN003" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#HaseKarl-Guenthervon">von Hase</name> hatte diese Erklärung in einer Pressekonferenz vom 2.1.1966 abgegeben; <bibl type="series-item">Dokumente zur Deutschlandpolitik IV, 12, 1. Hbd., S. 146 f.</bibl> – <name type="Person" role="Erwaehnung" ref="#HaseKarl-Guenthervon">Hase</name> hatte »im Namen der Bundesregierung« zuvor den »Gedanken eines Wiedervereinigungskabinetts«, den <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> ins Spiel gebracht hatte, abgelehnt. Auszug in <bibl type="series-item">Bulletin Nr. 3 vom 28.1.1966</bibl>; vgl. <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN020">Nr. 134, Anm. 20</ref>.</p>
+                  </note>
+               </seg> betont <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, daß diese Gespräche zwar vertraulich sein sollen und damit der Geheimhaltung unterliegen,<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN004" type="comment">
+                     <p>Am 1.2.1966 fand ein erstes Gespräch des Bundeskanzlers mit den Fraktionsvors. statt. Vgl. <bibl type="item-in-archive">»Sitzung des Präsidiums am 5.2.1965«, AdsD, Präsidium v. 5. Nov. 1965 b. Juni 1966</bibl>. Das erste offizielle Deutschlandgespräch des Bundeskanzlers mit den Vertretern der im Bundestag vertretenen Parteien fand am 21.4.1966 statt. Vgl. <ref type="internal" target="#spd-05_1966-04-26-t1500_EP_SVP-1">Nr. 144, TOP 1</ref>.</p>
+                  </note>
+               </seg> daß aber die SPD mit dazu beitragen will und muß, die Vertrauensbasis für die Öffentlichkeit und die Bevölkerung vorzubereiten, auf der eine parlamentarische Diskussion der Deutschlandfrage und der Deutschlandpolitik erst möglich sein wird. In diesem Zusammenhang sei das Interview des Bundesvertriebenenministers Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> im »Spiegel«<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN005" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_SVP-1">Nr. 134, TOP 1</ref>.</p>
+                  </note>
+               </seg> zu begrüßen. Über die mit dem zwischen Ost-Berlin und Moskau abgeschlossenen Handelsabkommen<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN006" type="comment">
+                     <p>Zu dem am 3.12.1965 zwischen der UdSSR und der DDR abgeschlossenen langfristigen Handelsabkommen für die Jahre 1966-1970 vgl. <bibl type="series-item">»Neues Deutschland« Nr. 333 vom 4.12.1965: »Programm fester Kooperation«</bibl>. Die wesentlichen Angaben werden referiert in <bibl type="series-item">AdG 1965, S. 12219 f.</bibl>
+                     </p>
+                  </note>
+               </seg> zusammenhängenden Fragen habe der Gesamtdeutsche Ausschuß/BT Informationen und Berichte erhalten vom Bundesminister,<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN007" type="comment">
+                     <p>D. h. vom zuständigen BMG <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> (FDP).</p>
+                  </note>
+               </seg> von W. <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> sowie von den Professoren <name type="Person" role="Erwaehnung" ref="#GleitzeBruno">Gleitze</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN008" type="comment">
+                     <p>Bruno <name type="Person" role="Erwaehnung" ref="#GleitzeBruno">Gleitze</name> (1904-1986), Professor für Wirtschaftswissenschaften, von 1945-1948 Präsident der Verwaltung für Statistik in der sowjetischen Besatzungszone und Vizepräsident der Deutschen Zentralfinanzverwaltung, Direktor des Wirtschaftswissenschaftlichen Instituts der Gewerkschaften, seit 1952 Mitgl. des Forschungsbeirats für Fragen der Wiedervereinigung beim BMG.</p>
+                  </note>
+               </seg> und <name type="Person" role="Erwaehnung" ref="#ThalheimKarlChristian">Thalheim</name>,<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN009" type="comment">
+                     <p>Karl C. <name type="Person" role="Erwaehnung" ref="#ThalheimKarlChristian">Thalheim</name> (geb. 1900), Professor für Volkswirtschaftslehre an der Freien Universität Berlin und Direktor der Wirtschaftswissenschaftlichen Abteilung des Osteuropa-Instituts, ebenfalls Mitgl. des Forschungsbeirates beim Gesamtdeutschen Ministerium. – Die Berichte dürften in der Ausschußsitzung am 19.1.1966 in Berlin erstattet worden sein.</p>
+                  </note>
+               </seg> deren Inhalt nach Möglichkeit auch an die Fraktion weitergegeben werden sollte.</p>
+            <p>Zu den Verhandlungen in Luxemburg über die EWG-Krise<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN010" type="comment">
+                     <p>Die am 18.1.1966 vertagten Verhandlungen des Ministerrates der EWG wurden am 28./29.1. fortgesetzt; siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN028">Nr. 134, Anm. 28</ref>. Sie führten zu »Vereinbarungen« vom 29.1., in denen die abweichenden Auffassungen zur Frage der Mehrheitsentscheidungen festgestellt und Modalitäten für die Zusammenarbeit zwischen der Kommission und dem Ministerrat umrissen wurden. Mit dem so erreichten Kompromiß nahm Frankreich seine Mitarbeit in den Organen der EWG wieder auf; <bibl type="series-item">Europa-Archiv 1966, D 85 f.</bibl>; vgl. dazu <bibl type="single-item">Rainer <hi rendition="#smcap">Hellmann</hi>, Schlußakt einer Krise? Die europäischen Institutionen nach Luxemburg, in: Europa-Archiv 1966, S. 259-268</bibl>; vgl. weiter unten TOP 1 c.</p>
+                  </note>
+               </seg> betont <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, die vorhandenen Schwierigkeiten dürften nicht den Vorwand liefern, daß wegen des Verhaltens der Bundesrepublik von anderer, nämlich französischer Seite die EWG gefährdet werde. Vielmehr müßten alle fünf Partner zusammenhalten, um die EWG zu retten, die das einzige konstruktive Ergebnis der Nachkriegszeit und der Keim für eine weitere politische Entwicklung in Europa sei.</p>
+            <p>Abschließend wird von H. <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> auf die schriftliche Kampagne der Ostermarschierer<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN011" type="comment">
+                     <p>Gemeint sein dürfte die sog. »Kampagne für Abrüstung«; <bibl type="single-item">
+                           <hi rendition="#smcap">Krohn</hi>, S. 190</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Otto</hi>, Ostermarsch, S. 147-156</bibl>.</p>
+                  </note>
+               </seg> hingewiesen; die Fraktionsmitglieder sollten sich weder zustimmend noch ablehnend dazu äußern und immer wieder darauf hinweisen, daß die SPD initiativ ein Abrüstungsamt gefordert hat, was schließlich zur Einrichtung einer entsprechenden Stelle im Auswärtigen Amt geführt habe.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN012" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-04_1965-01-12-t1500_EP_FN020">Nr. 100, Anm. 20</ref> und <ref type="internal" target="#spd-04_1965-01-19-t1510_EP">Nr. 101, TOP 1</ref>; <bibl type="single-item">
+                           <hi rendition="#smcap">Wilker</hi>, Sicherheitspolitik, S. 190-193</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der Diskussion fordert Helene <name type="Person" role="Sprecher" ref="#WesselHelene_1949-09-07">Wessel</name> die Überprüfung der <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name>-Doktrin, um zu einem besseren Verhältnis mit den Ostblockstaaten zu gelangen. Man müsse ihnen gegenüber einen Unterschied zwischen »Politik und Weltanschauung« machen, was dann erlaube, diplomatische Beziehungen aufzunehmen.</p>
+            <p>b) Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> unterrichtet die Fraktion anschließend über die Notstandsgesetzgebung.</p>
+            <p>In dem auf Wunsch von Bundesinnenminister <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> zustande gekommenen Gespräch<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN013" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, der zuständige neue BMI im zweiten Kabinett <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, bemühte sich von Beginn an um eine Verständigung mit der SPD-Opposition über die Notstandsgesetzgebung. Über das Gespräch mit <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> hatte H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> schon in der »Sitzung des Parteivorstandes am 21.1.1966«, berichtet; <bibl type="item-in-archive">AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>. Zuvor hatte <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> schon entsprechende Gespräche mit den Vertretern der anderen Fraktionen geführt, so am 11.1.1966 mit <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">Kühlmann-Stumm</name> »und weiteren führenden Mitgliedern der FDP«. Vgl. <bibl type="series-item">Bulletin Nr. 6 vom 13.1.1966, S. 42</bibl>.</p>
+                  </note>
+               </seg> mit Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> sei – abgesehen von der Erörterung des Vietnam-Krieges (keine Beteiligung deutscher Soldaten, aber humanitäre Hilfe)<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN014" type="comment">
+                     <p>Vgl. dazu H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidts</name> Bericht vor dem Parteivorstand am 21.1.1966; <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 31/66 vom 25.1.1966</bibl> sowie <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN035">Nr. 133, TOP 5, bes. Anm. 35</ref>.</p>
+                  </note>
+               </seg> – die Notstandsgesetzgebung das eigentliche Thema gewesen. <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> wünsche, in der ersten Hälfte der laufenden Wahlperiode die Notstandsgesetzgebung zu verabschieden; er sei sehr erbittert gewesen über die Beschränkungen, die durch die Koalition im Rahmen des Haushaltssicherungs-Gesetzes an den zivilen Notstandsgesetzen vorgenommen worden sind.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN015" type="comment">
+                     <p>Bei der Beratung des Haushaltssicherungsgesetzes im Haushaltsausschuß war auf Antrag des CDU-Abgeordneten Albert <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> von der Ausschußmehrheit am 6.12.1965 beschlossen worden, das Inkrafttreten der sog. einfachen Notstandsgesetze auf den 1.1.1968 zu verschieben, um so Einsparungen von insgesamt 210 Mio. DM für das Haushaltsjahr 1966 zu erzielen. Sie bezogen sich ausdrücklich auf das Selbstschutzgesetz, das Schutzbaugesetz und das Gesetz über den Zivilschutz. Die übrigen einfachen Notstandsgesetze, d. h. die vier Sicherstellungsgesetze galten »ohnehin«, wie es im Bericht des Haushaltsausschusses hieß, »nur nach Maßgabe der im Haushaltsplan bewilligten Mittel«. Der betr. Art. 16 a wurde vom Plenum in 2. Lesung bei »zahlreichen Gegenstimmen« angenommen. Siehe <bibl type="btd">
+                           <ref type="external" target="04/84">BT Anl. 101, Drs. IV/84</ref>
+                        </bibl>; <bibl type="btp">
+                           <ref type="external" target="05/12">BT Sten. Ber. 60</ref>, S. 439 (Abstimmung) und S. 441 (</bibl>
+                        <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name>
+                        <bibl type="btd">)</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Minister wolle eine neue Vorlage zur Ergänzung des Grundgesetzes erst dann dem Kabinett vorlegen, wenn er mit einer entsprechenden Mehrheit im Bundestag und Bundesrat rechnen könne. Zur weiteren Vorbereitung wolle der Minister ausgedehnte Vorgespräche (auf der Basis der im Rechtsausschuß in der vierten Wahlperiode erzielten Einigung<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN016" type="comment">
+                     <p>Gemeint war die Gesetzesvorlage in der Fassung des Schriftlichen Berichts des Rechtsausschusses vom 31.5.1965 – <bibl type="btd">
+                           <ref type="external" target="04/3494">BT Anl. 99, Drs. IV/3494</ref>
+                        </bibl> – abgedr. auch bei <bibl type="single-item">
+                           <hi rendition="#smcap">Benda</hi>, Notstandsverfassung, S. 147-158</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Schäfer</hi>, Notstandsgesetze, S. 163-171</bibl>. – Zum Stand am Ende der 4. WP vgl. <ref type="internal" target="#spd-04_1965-05-26-t0830_EP">Nr. 115</ref>
+                        <ref type="internal" target="#spd-04_1965-06-14-t1600_EP">und 116</ref>.</p>
+                  </note>
+               </seg>) führen mit einer Kommission, in der alle Fraktionen vertreten sein sollen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN017" type="comment">
+                     <p>Als Ergebnis dieser Sondierungsgespräche wurde eine »Zwölferkommission« gebildet, die ab März 1966 über die Notstandsgesetzgebung beriet. Ihr gehörten folgende Abgeordnete an: von der Fraktion der CDU/CSU Ernst <name type="Person" role="Erwaehnung" ref="#BendaErnst_1957-10-15">Benda</name>, Bert <name type="Person" role="Erwaehnung" ref="#EvenBert_1957-10-15">Even</name>, Fritz <name type="Person" role="Erwaehnung" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> und Hans <name type="Person" role="Erwaehnung" ref="#WilhelmiHans-Herbert">Wilhelmi</name>, von der SPD <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>, H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> und von der FDP Hermann <name type="Person" role="Erwaehnung" ref="#BusseHermann_1961-10-17">Busse</name>, Thomas <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> und Wolfram <name type="Person" role="Erwaehnung" ref="#DornWolfram_1961-10-17">Dorn</name>. Bundesrat und Länder wurden durch die Innenminister von Baden-Württemberg, Hans <name type="Person" role="Erwaehnung" ref="#FilbingerHans">Filbinger</name> (CDU), und von Niedersachsen, Otto <name type="Person" role="Erwaehnung" ref="#BennemannOtto">Bennemann</name> (SPD), vertreten. Siehe <bibl type="btp">
+                           <ref type="external" target="05/44">BT Sten. Ber. 61</ref>, S. 2079 und 2081</bibl> (Mitteilungen <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> und <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>); ferner <bibl type="single-item">
+                           <hi rendition="#smcap">Schneider</hi>, Demokratie, S. 160</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Minister scheine für diese Gespräche weitgehend freie Hand zu haben; Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> und er hätten dem Minister noch einmal die für die SPD unabdingbaren vier Punkte der Saarbrücker Entschließung<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN018" type="comment">
+                     <p>Zu dieser Entschließung von Parteivorstand, Parteirat und Kontrollkommission vom 29.5.1965 vgl. <ref type="internal" target="#spd-04_1965-05-26-t0830_EP">Nr. 115</ref> und <ref type="internal" target="#spd-04_1965-06-14-t1600_EP_FN006">Nr. 116, TOP 2, bes. Anm. 6</ref>. Sie umfaßte insgesamt 12 Punkte.</p>
+                  </note>
+               </seg> vorgetragen:</p>
+            <p>1. Die alliierten Vorbehaltsrechte müssen in ihrer Gesamtheit abgelöst werden; das bedeute eine rechtsstaatliche gesetzliche Regelung zur Kontrolle des Post- und Fernmeldewesens durch ein innerdeutsches Ausführungsgesetz zu Artikel 10 GG.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN019" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-04_1965-05-26-t0830_EP_FN007">Nr. 115, bes. Anm. 7</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>2. Die Sicherung der Pressefreiheit auch im Notstand.</p>
+            <p>3. Die Sicherung der grundgesetzlichen Rechte der Arbeitnehmer auch im Not stand.</p>
+            <p>4. Es darf keinen Reichsstatthalterparagraphen geben, d. h. keine Übertragung des Weisungsrechts der Bundesregierung an die Länder auf Dritte.</p>
+            <p>Im übrigen habe <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> Verständnis für die bisherige Haltung der Gewerkschaften aufgrund deren früherer Erfahrung gezeigt.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN020" type="comment">
+                     <p>Vgl. <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lückes</name> Äußerungen in einem Spiegelgespräch in <bibl type="series-item">»Der Spiegel« Nr. 20 vom 9.5.1966, S. 68</bibl>, er verstehe die »Sorge« der Gewerkschaften, »die aus der deutschen Geschichte erklärt wird. Sie möchten nicht, daß die Demokratie Schaden erleidet.« <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> führte seit Februar 1966 auch informelle Gespräche wegen der Notstandsgesetzgebung mit Gewerkschaftern, so am 3.2. mit dem Vors. der ÖTV Heinz <name type="Person" role="Erwaehnung" ref="#KlunckerHeinz">Kluncker</name>, am 4.2. mit Vertretern Christlicher Gewerkschaften, am 7.2. mit dem DAG-Vors. Rolf <name type="Person" role="Erwaehnung" ref="#SpaethenRolf">Spaethen</name> und dem Vorstandsmitgl. Heinz <name type="Person" role="Erwaehnung" ref="#GrohejurthHeinz">Grohejurth</name>, am 8.2. mit dem Gschf. Vorstand der GDP (Gewerkschaft der Polizei) und abschließend am 28.2.1966 mit einer Delegation des DGB – aus Ludwig <name type="Person" role="Erwaehnung" ref="#RosenbergLudwig">Rosenberg</name>, Bernhard <name type="Person" role="Erwaehnung" ref="#TackeBernhard">Tacke</name>, Otto <name type="Person" role="Erwaehnung" ref="#BrennerOtto">Brenner</name>, Heinz <name type="Person" role="Erwaehnung" ref="#KlunckerHeinz">Kluncker</name> und Wilhelm <name type="Person" role="Erwaehnung" ref="#GefellerWilhelm">Gefeller</name>. <bibl type="series-item">Bulletin Nr. 17 vom 8.2., S. 129, Nr. 18 vom 9.2., S. 136, Nr. 19 vom 11.2., S. 145 und Nr. 29 vom 2.3.1966, S. 224</bibl>.</p>
+                  </note>
+               </seg> An den künftigen Vorgesprächen soll nach Vorschlag der SPD auch je ein SPD- und CDU-Innenminister der Länder teilnehmen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN021" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN017">Anm. 17</ref>.</p>
+                  </note>
+               </seg> Weiter habe die SPD bei <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> klargestellt, daß sie nicht bereit sei, ihm und der Regierung Hilfe zu leisten bei erneuten Attacken aus deren eigenen Reihen, wie sie sich beim Haushaltssicherungs-Gesetz gezeigt hätten.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN022" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN015">Anm. 15</ref> sowie die Darstellung in <bibl type="single-item">Jahrbuch SPD 1964/65, S. 68</bibl>.</p>
+                  </note>
+               </seg> Um hierin sicherzugehen, sollten ggf. die Koalitionsfraktionen in einer durch die SPD initiierten Bundestagsdebatte ihre jetzige Haltung zu den Notstandsgesetzen darlegen müssen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN023" type="comment">
+                     <p>Eine solche Debatte fand am 26.5.1966 anläßlich der 2. Lesung des Haushaltsentwurfs für das BMI statt; zu der vorhergehenden Beratung in der SPD-Fraktion siehe <ref type="internal" target="#spd-05_1966-05-26-t0835_EP">Nr. 150</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Im Zusammenhang mit den Vietnam-Fragen schlägt Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> vor, daß die BRD Militärhilfe, sei es in Form von Waffenlieferungen oder als Ausbildungshilfe, auf Partner des Nordatlantikvertrages bzw. von der NATO gedeckte Territorien beschränken sollte; er schlägt vor, dies zu einer öffentlichen Forderung der SPD zu machen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN024" type="comment">
+                     <p>Der Parteivorstand verabschiedete am 19.2.1966 eine Entschließung »Zur Frage der Militärhilfe an andere Staaten«. Darin wurde zwar anerkannt »daß es erforderlich sein kann, den hilfebedürftigen Nationen in Afrika und Lateinamerika […] auch militärische Unterstützung zu geben«. Unter dem Gesichtspunkt der Lage des geteilten Deutschland müsse die Bundesrepublik jedoch jeden Anschein einer »militärischen Einflußnahme auf dritte Länder« vermeiden. Die Formel der BReg, Militärhilfe nicht in »Spannungsgebiete« zu leiten, sei unzureichend und insofern »falsch«, als auch im NATO-Bereich »Spannungsgebiete« entstehen könnten. Die Bundesrepublik müsse vielmehr »militärische Hilfen« und den Verkauf von »Waffen und Ausrüstung« auf die Mitgliedstaaten der NATO beschränken. Auch die private Ausfuhr von Waffen habe sich nach diesen Grundsätzen zu richten. Prot. der »Sitzung des Parteivorstandes am 18. und 19.2.1966«, <bibl type="item-in-archive">AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>; die »Entschließung« ist abgedr. in <bibl type="single-item">Jahrbuch SPD 1966/67, S. 313-315</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der Diskussion fordert Hans <name type="Person" role="Sprecher" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name> für die weiteren Notstandsgespräche die Berücksichtigung der Forderung <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> aus der Debatte über die Regierungserklärung, daß die SPD einer Notstandsverfassung nur zustimme, wenn sonstige bestimmte Prioritäten in der allgemeinen Politik Berücksichtigung finden.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN025" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> hatte in seiner Plenarrede am 29.11.1965 u. a. erklärt, auch die Entscheidung über die Verfassungsbestimmungen über den Notstand hänge »vom Gesamtkurs der Politik« ab. Darüber könne »nur im Zusammenhang mit den allgemeinen politischen Prioritäten und unter Beachtung der von der Regierung bisher zu diesem Thema nicht angepackten, in der letzten Legislaturperiode offen gebliebenen Fragen – alliierte Vorbehaltsrechte auf dem Gebiete des Post- und Fernmeldewesens, einwandfreier Schutz der Pressefreiheit, rechtliche Sicherung der Arbeitnehmer – ernsthaft gesprochen werden.« <bibl type="btp">
+                           <ref type="external" target="05/07">BT Sten. Ber. 60</ref>, S. 100</bibl>.</p>
+                  </note>
+               </seg> Im übrigen dürfe die finanzielle Belastung der Gemeinden durch die einfache Notstandsgesetzgebung<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN026" type="comment">
+                     <p>Der gesamte jährliche Kostenaufwand durch diese einfachen Notstandsgesetze betrug nach Berechnungen der Schweizerischen Prognos AG 8,3 Mrd. DM; siehe <bibl type="single-item">Vereinigung Deutscher Wissenschaftler, Kostenschätzung für die Notstandsgesetzgebung der Bundesrepublik Deutschland. Untersuchung im Auftrag der Vereinigung Deutscher Wissenschaftler e. V. durch die Prognos AG Basel/Schweiz, Frankfurt/M. 1966</bibl>. – Zu den Kosten für die Gemeinden vgl. <bibl type="single-item">Was kosten die Notstandsgesetze? Kostentabelle für Gemeindegrößen ab 5 000 Einwohner, in: »Blätter für deutsche und internationale Politik«, H. 3, 1967, S. 266 ff.</bibl>; <bibl type="single-item">Hermann <hi rendition="#smcap">Fischer</hi>, Mit den Notstandsgesetzen leben, in: »Die demokratische Gemeinde«, Nr. 3, 1963, S. 173-177</bibl>.</p>
+                  </note>
+               </seg> auch bei den weiteren Gesprächen nicht außer Acht gelassen werden. Franz <name type="Person" role="Sprecher" ref="#MarxFranz_1949-09-07">Marx</name> stellt fest, daß sich die kritische Haltung der Öffentlichkeit an der Notstandsgesetzgebung nicht gemildert habe und daß die CDU vor weiteren Gesprächen zu der Saarbrücker SPD-Entschließung<unclear reason="Fußnotenzeichen-ohne-Fußnotentext">18</unclear> Stellung nehmen müsse. Er halte es für falsch, im Bundestag initiativ durch die SPD eine Debatte zu führen über die einschränkenden Bestimmungen des Haushaltssicherungs-Gesetzes für die Notstandsgesetze, die von der CDU-Parlamentsfraktion entgegen dem Willen der Regierung beschlossen worden sind.<unclear reason="Fußnotenzeichen-ohne-Fußnotentext">15</unclear> Genosse <name type="Person" role="Sprecher" ref="#GeigerHans_1954-01-01">Geiger</name> schließt sich dieser Auffassung an.</p>
+            <p>Gerhard <name type="Person" role="Sprecher" ref="#JahnGerhard_1957-10-15">Jahn</name> hält es für notwendig, daß in dem Schreiben des amtierenden Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN027" type="comment">
+                     <p>Unter den am 3.11.1965 gewählten vier stellv. Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#MoellerAlex_1961-10-17">Möller</name>, <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name>, H. <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> war keine Rangfolge festgelegt worden. Siehe <ref type="internal" target="#spd-05_1965-10-20-t1400_EP">Nr. 125</ref>. – Schon vor der Erkrankung <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> leitete <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> in dessen Abwesenheit die Fraktionssitzungen.</p>
+                  </note>
+               </seg> an den Bundesminister <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> die Doppelzüngigkeit der Regierungspolitik offenzulegen sei;<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN028" type="comment">
+                     <p>Das Schreiben ließ sich nicht nachweisen.</p>
+                  </note>
+               </seg> daß die Verfassungsergänzung nicht wieder in die Nähe des nächsten Wahlkampfes rücken dürfe und daß ein konkreter Zeitplan gefordert werde. Ferner fehle s. E. eine Verklammerung der einfachen Notstandsgesetze mit den beabsichtigten Verfassungsergänzungen. Genosse <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-V[ockenhausen]</name> stimmt dem zu und weist darauf hin, daß das Sicherstellungsgesetz<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN029" type="comment">
+                     <p>Der Singular ist mißverständlich, denn es handelte sich um vier Sicherstellungsgesetze: das Wirtschafts-, das Ernährungs-, das Verkehrs- und das Wassersicherstellungsgesetz. Vgl. <ref type="internal" target="#spd-04_1965-06-14-t1600_EP_FN014">Nr. 116, Anm. 14</ref> und <ref type="internal" target="#spd-04_1965-06-22-t1610_EP">117, TOP 1</ref>.</p>
+                  </note>
+               </seg> z. B. so weitgehende Ermächtigungen enthalte, daß es in eine Verfassungsergänzung einzubeziehen sei.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN030" type="comment">
+                     <p>In den Sicherstellungsgesetzen waren weitreichende Vollmachten für die BReg vorgesehen, durch Verordnungen Kontrollen, Preise, Beschlagnahmen u. a. zu verfügen. Auch die Voraussetzungen waren weit gefaßt. So hieß es im Wirtschaftssicherstellungsgesetz, es gehe darum, die »für Zwecke der Verteidigung, insbesondere zur Deckung des Bedarfs der Zivilbevölkerung und der Streitkräfte erforderliche Versorgung mit Gütern und Leistungen« (§ 1) zu sichern bzw. »eine Gefährdung der Versorgung zu beheben oder zu verhindern« (§ 2). Schon bei der Verabschiedung der Sicherstellungsgesetze hatte die SPD-Fraktion die Auffassung vertreten, wegen der weitreichenden Ermächtigungen sei eine Zweidrittelmehrheit erforderlich. Vgl. <ref type="internal" target="#spd-04_1965-06-22-t1610_EP">Nr. 117, TOP 1</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Von den Genossen <name type="Person" role="Sprecher" ref="#HaageHermann_1957-10-15">Haage</name>, <name type="Person" role="Sprecher" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> und Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> werden ergänzend die rechtlichen Aspekte der einfachen Notstandsgesetze, insbesondere der Sicherstellungsgesetze, behandelt. Zu der Frage, ob die SPD initiativ im Bundestag eine Debatte über die Einschränkung der Zivilschutzbestimmungen durch das Haushaltssicherungs-Gesetz herbeiführen soll, äußern sich die Genossen <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-V[ockenhausen]</name>, <name type="Person" role="Sprecher" ref="#JacobiWerner_1949-09-07">Jacobi</name>, <name type="Person" role="Sprecher" ref="#RaffertJoachim_1965-10-19">Raffert</name>, <name type="Person" role="Sprecher" ref="#SeidelMax_1953-10-06">Seidel</name> und <name type="Person" role="Sprecher" ref="#SeibertPhilipp_1961-10-17">Seibert</name>, wobei Bedenken gegenüber einer solchen Debatte überwiegen und empfohlen wird, diese Frage im Fraktionsvorstand oder in einem anderen kleinen Gremium nochmals zu überlegen.</p>
+            <p>Die Genossen <name type="Person" role="Sprecher" ref="#MichelsWilhelm_1961-10-17">Michels</name> und <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name> äußern sich über die Funktion des beabsichtigten <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>-Gesprächskreises und wünschen eine ständige Unterrichtung der Fraktion, die durch diese Gespräche nicht vorweg gebunden werden sollte.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN031" type="comment">
+                     <p>Eine ausführliche Berichterstattung erfolgte erst in der Fraktionssitzung vom 26.5.1966; siehe <ref type="internal" target="#spd-05_1966-05-26-t0835_EP">Nr. 150</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> äußert sich abschließend zur Diskussion: Die finanzielle Belastung der Gemeinden aus den Notstandsgesetzen sollte eventuell einer derjenigen Punkte sein, bei denen sich eine Verbindung zwischen der Reform der Finanzverfassung und der Beratung der Notstandsverfassung ergeben, worauf vor allem Hans <name type="Person" role="Erwaehnung" ref="#HermsdorfHans_1953-10-06">Hermsdorf</name> hingewiesen hatte. Für die bevorstehenden Gespräche mit <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> wolle die SPD keine neuen zusätzlichen Bedingungen einführen, sondern auf der Erfüllung der Saarbrücker Entschließung bestehen. Ein Junktim zwischen einer Großen Koalition und der Zustimmung der SPD zur Notstandsverfassung sei nicht gegeben.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN032" type="comment">
+                     <p>Vgl. dazu auch das Spiegel-Gespräch mit <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> in <bibl type="series-item">»Der Spiegel« Nr. 8 vom 14.2.1966, S. 20-30, bes. S. 21</bibl>. Zu dem vom »Spiegel« geäußerten Verdacht, »die SPD wolle die Fragen, zu deren Lösung ihre Zustimmung kraft Grundgesetz nötig ist, benutzen, um sich in die Regierung mit einschreiben zu lassen«, äußerte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> u. a.: »Sie haben sich einer feinen List bedient, indem sie plötzlich den Begriff ›Große Koalition‹ ins Spiel brachten, so als sei ich oder die SPD es, die darauf losgingen. Wenn Sie meine Auffassung so auslegen, würden sie mich sehr mißverstehen«. Auf die nachfolgende Bemerkung des »Spiegel«, die SPD könne »an notwendige Grundgesetzänderungen schwerlich die Bedingung« einer Regierungsbeteiligung knüpfen, antwortete er: »Es ist klar, daß wir eine solche Bedingung schwerlich stellen können. Das ist auch nicht unsere Position«.</p>
+                  </note>
+               </seg> Entscheidend für die künftigen Debatten wird sein, erstens die Doppelzüngigkeit der Regierung aufzuzeigen hinsichtlich ihrer Äußerungen vom Juni und Dezember 1965 (Gerhard <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>),<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN033" type="comment">
+                     <p>Gemeint sein dürften die Versuche von Regierung und Koalitionsparteien vom Juni 1965, der SPD die Verantwortung für das Scheitern der Notstandsverfassung anzulasten. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Schneider</hi>, Demokratie, S. 143 f.</bibl> – Im Dezember 1965 gab <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> dann in einem Interview mit der Monatszeitung »Mann in der Zeit« zu verstehen, er sei überzeugt, daß die SPD »unter bestimmten Voraussetzungen« mittun würde und sich ein »Weg finden« lasse, den sie mitgehe. Nach <bibl type="series-item">Bulletin Nr. 200 vom 23.12.1965, S. 1614</bibl>.</p>
+                  </note>
+               </seg> zweitens die unveränderte Position der SPD zu verdeutlichen, drittens eine Meinungsäußerung der anderen zur Saarbrücker SPD-Entschließung zu erhalten.</p>
+            <p>c) Die Vorsitzende der Sozialistischen Fraktion im Europäischen Parlament, Käte <name type="Person" role="Sprecher" ref="#StrobelKaete_1949-09-07">Strobel</name>, berichtet sodann über den Stand der EWG-Krise<unclear reason="Fußnotenzeichen-ohne-Fußnotentext">10</unclear> (zugleich Vorberatung der Plenardebatte<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN034" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN028">Nr. 134, Anm. 28</ref>.</p>
+                  </note>
+               </seg>) :</p>
+            <p>Nach einer kurzen Replik auf die Vorgeschichte der EWG-Krise unterrichtet sie die Fraktion darüber, daß inzwischen zwar einige technische Beschlüsse im schriftlichen Verfahren erledigt werden konnten, daß aber seit dem Fernbleiben Frankreichs vom Verhandlungstisch wichtigere Entscheidungen unterblieben sind, zu denen besonders die <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-Runde, die gemeinsame Handelspolitik, insbesondere gegenüber den Ostblockstaaten, die Finanzierung der Agrarpolitik etc. gehören. Für die künftige Weiterarbeit der EWG hat Frankreich inzwischen 10 Punkte als Bedingung genannt.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN035" type="comment">
+                     <p>Bei der außerordentlichen Tagung des Ministerrates der EWG am 17./18.1.1966 hatte die französische Delegation unter Außenminister <name type="Person" role="Erwaehnung" ref="#CouvedeMurvilleMaurice">Couve de Murville</name> am 18.1. ein »Aide memoire« mit 10 Punkten vorgelegt, in denen Bedingungen für die künftige Arbeit in der EWG formuliert wurden. Zusätzlich wurde noch der »Entwurf eines Zeitplanes« für die weiteren Beratungen und Entscheidungen, u. a. für eine Neubesetzung der EWG-Kommission, vorgelegt. Text in deutscher Übersetzung in <bibl type="series-item">AdG 1966, S. 12285</bibl>. – Die Ausführungen von <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> geben im wesentlichen die Punkte 1 und 2 wieder. Vgl. auch ihre Stellungnahme für die Sozialdemokratische Fraktion bei der Tagung des Europäischen Parlaments vom 18.-21.1.1966, in <bibl type="series-item">AdG 1966, S. 12232</bibl>, und ihre Plenarrede im Bundestag am 27.1.1966, <bibl type="btp">
+                           <ref type="external" target="05/17">BT Sten. Ber. 60</ref>, S. 676-679</bibl>.</p>
+                  </note>
+               </seg> Durch die Forderung, daß die Kommission sich künftig mit den Regierungen einzeln besprechen solle vor der Ausarbeitung von Kommissionsvorschlägen und der geforderten Einschränkung der Durchführungsbefugnisse der Kommission, müßte das Gemeinschaftsinteresse in Gefahr geraten. Eine große Gefährdung der Befugnisse des Europäischen Parlamentes sei darin zu erblicken, daß die Kommission ihre Vorlagen vor der offiziellen Zustellung an den Ministerrat nicht mehr dem Parlament oder der Öffentlichkeit bekanntgeben dürfte. Die Forderung Frankreichs nach einem Vetorecht für lebensnotwendige Fragen eines Mitgliedstaates seien eine Aushöhlung des Vertrages. Die Vermittlungsvorschläge des belgischen Außenministers <name type="Person" role="Erwaehnung" ref="#SpaakPaul-Henri">Spaak</name> auch für die weitere Terminierung seien erfolgversprechend. Die Fusionen der drei Gemeinschaften sollten alsbald ratifiziert werden; hierzu habe <name type="Person" role="Erwaehnung" ref="#SpaakPaul-Henri">Spaak</name> ein rollierendes System für die Bestellung der Präsidenten und Vizepräsidenten vorgeschlagen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN036" type="comment">
+                     <p>Zum Zusammenhang vgl. den in <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN010">Anm. 10</ref> zit. <bibl type="single-item">Aufsatz von Hellmann in Europa-Archiv 1966, bes. S. 267 f.</bibl> – Eine Vermittlerrolle <name type="Person" role="Erwaehnung" ref="#SpaakPaul-Henri">Spaaks</name> wird darin allerdings nicht erwähnt.</p>
+                  </note>
+               </seg> Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>befaßte sich sodann mit dem Problem der rechtlichen Position der übrigen fünf Vertragsstaaten, wenn Frankreich weiterhin den Beschlüssen fernbleiben sollte. Eine gewisse Durststrecke für die fünf Staaten sei eventuell durchzustehen, wobei man alles versuchen müsse, Frankreich zurückzuholen, in dem man in Einzelheiten nicht starr zu sein brauche, aber im Grundsätzlichen nicht nachgeben dürfe.</p>
+            <p>An der ausführlichen Diskussion beteiligen sich die Genossen <name type="Person" role="Sprecher" ref="#MichelsWilhelm_1961-10-17">Michels</name>, Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>, <name type="Person" role="Sprecher" ref="#MetzgerGuenther_1969-10-20">Metzger</name>, <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name>, <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name>, die übereinstimmend vor einer Haltung warnen, welche der Bundesrepublik den Schwarzen Peter am Scheitern der EWG zuschieben könnte.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN037" type="comment">
+                     <p>Die Äußerungen spielen darauf an, daß die Bundesrepublik zum einen als exportorientiertes Land ein besonderes Interesse an der Durchsetzung von Mehrheitsentscheidungen in der Handelspolitik (<name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>-Runde) hatte, zum anderen bei den Agrarpreisen – wegen der deutschen Milchsubventionen – das Mehrheitsprinzip nicht gelten lassen wollte. Vgl. dazu <bibl type="single-item">Rainer Hellmann in Europa-Archiv 1966 (oben <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN010">Anm. 10</ref>), S. 263</bibl>; ferner den Hinweis von <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> in ihrer Plenarrede vom 27.1.1966, in Straßburg gäbe es Tendenzen, die »Bundesrepublik zu isolieren« und ihr mit der Formel, »der Schlüssel liegt jetzt in Bonn«, die Verantwortung zuzuschieben; <bibl type="btp">
+                           <ref type="external" target="05/17">BT Sten. Ber. 60</ref>, S. 678</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> vertritt die Auffassung, daß die Bundesrepublik außenpolitisch auf Frankreich angewiesen ist und daß man ihm im EWG-Konflikt die Möglichkeit zur Wahrung des Gesichts (z. B. keine Verzögerung der Fusion, rollierender Vorsitz etc.) geben müßte. Die dritte Phase des EGW-Vertrages müsse nicht unbedingt zum vorgesehenen Zeitpunkt beginnen, insoweit sei der Vertrag flexibel in seiner Auslegung. Zu prüfen sei die Frage, ob eine deutsch-französische Zusammenarbeit außerhalb des EWG-Vertrages zu verstärken sei. Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> warnt vor allem vor einer Schwächung des Europäischen Parlamentes, zu der es keine stille Duldung des Deutschen Bundestages oder der SPD-Fraktion im Bundestag geben dürfe. Genosse <name type="Person" role="Sprecher" ref="#MetzgerGuenther_1969-10-20">Metzger</name> spricht Frankreich das Recht ab, die Vorteile, d. h. Leistungen des EWG-Vertrages zu beanspruchen, falls es »als Rechtsbrecher« die Vertragsbestimmungen verletzt und z. B. seinen Beschluß und Beitrag zum EWG-Etat verweigert. Demgegenüber warnt Käte <name type="Person" role="Sprecher" ref="#StrobelKaete_1949-09-07">Strobel</name> vor einem Wunschdenken mit der Feststellung, daß die Agrarfinanzierung nicht der Hebel zur Beseitigung der EWG-Krise sei, da <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> nicht fiskalisch denke. Eine Verschiebung des Beginns der dritten Phase sollte in der Plenardebatte nicht erörtert werden.</p>
+            <p>Abschließend faßt Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> die Diskussion zusammen mit ergänzenden Hinweisen auf die Haltung <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröders</name> und die Rolle einiger Efta-Länder und warnt schließlich vor einer »Spekulation à la Baisse der EWG«.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN038" type="comment">
+                     <p>Vgl. <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> ähnliche Ausführungen im Plenum am 27.1.1966 in <bibl type="btp">
+                           <ref type="external" target="05/17">BT Sten. Ber. 60</ref>, S. 694</bibl>.</p>
+                  </note>
+               </seg> Die Plenardebatte soll auf zwei Gleisen geführt werden:</p>
+            <p>1. Die Kommissionspräsidentschaft und der Termin für Fusionierung soll kein Dogma für uns sein,</p>
+            <p>2. das deutsch-französische Verhältnis ist z. Zt. so schlecht, daß Auswirkungen auf die Deutschlandpolitik zu befürchten sind.</p>
+            <p>Als Sprecher der Fraktion für die Plenardebatte werden vorgeschlagen: Käte <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name>, Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, Genosse <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name>, Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name>.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN039" type="comment">
+                     <p>Neben <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> – vgl. <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_FN035">Anm. 35</ref> – sprachen für die SPD-Fraktion <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name> und <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>. <bibl type="btp">
+                           <ref type="external" target="05/17">Ebd.</ref>, S. 688-690 und 693-695</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Zu Punkt 2 der TO »Vorbereitung der Plenarsitzungen«</p>
+            <p>Genosse <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> berichtet über den Unfallverhütungsbericht der Bundesregierung.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN040" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN027">Nr. 134, TOP 2, bes. Anm. 27</ref>.</p>
+                  </note>
+               </seg> Dazu empfiehlt der Arbeitskreis Sozialpolitik einen Antrag, wonach der Bericht in einer besseren Fassung neu vorzulegen ist. Die Fraktion stimmt zu.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN041" type="comment">
+                     <p>Der am 26.1.1966 eingebrachte »Entschließungsantrag«, die BReg solle eine »Neufassung« vorlegen, wurde in der Plenarsitzung vom gleichen Tag abgelehnt. <bibl type="btp">
+                           <ref type="external" target="05/16">BT Sten. Ber. 60</ref>, S. 644 und 647 (Anl. 2)</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Als Redner für die Plenardebatte werden vorgeschlagen: Genosse <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, <name type="Person" role="Erwaehnung" ref="#BehrendtWalter_1957-10-15">Behrendt</name>, Horst <name type="Person" role="Erwaehnung" ref="#SchmidtHorst_1961-10-17">Schmidt</name>, <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, eventuell noch H. <name type="Person" role="Erwaehnung" ref="#BoernerHolger_1957-10-15">Börner</name>.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN042" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN027">Nr. 134, Anm. 27</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Genosse <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> gibt eine Vorschau auf die weiteren Plenartermine und wichtigsten Beratungsthemen.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Zu Punkt 3 der TO »Vorlagen aus den Arbeiskreisen« (s. Anl.)<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN043" type="comment">
+                     <p>Es handelte sich um den nachfolgenden Antrag und die Kleinen Anfragen a, b und c.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>a) Genosse <name type="Person" role="Sprecher" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> begründet den Antrag betr. Bericht der Bundesregierung über die Lage der Jugend und über die Bestrebungen auf dem Gebiet der Jugendhilfe, dem die Fraktion zustimmt.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN044" type="comment">
+                     <p>Der beiliegende, auf den 25.1.1966 datierte Antrag der Abgeordneten »<name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> und Fraktion der SPD« wurde statt von <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> jedoch von »<name type="Person" role="Erwaehnung" ref="#WestphalHeinz_1965-10-19">Westphal</name> und Genossen« unterzeichnet und am gleichen Tag eingebracht (<bibl type="btd">
+                           <ref type="external" target="5/219">BT Anl. 102, Drs. V/219</ref>
+                        </bibl>), später jedoch zurückgezogen. Vgl. <ref type="internal" target="#spd-05_1966-02-15-t1500_EP_SVP-2">Nr. 137, TOP 2/10</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>b) Genosse <name type="Person" role="Sprecher" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name> berichtet über eine Kleine Anfrage betr. Bundeskriminalamt, der die Fraktion zustimmt.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN045" type="comment">
+                     <p>Die am 25.1.1966 eingebrachte Kleine Anfrage bezog sich u. a. auf die Stellenbesetzung und die Praxis der Datenerfassung und -verarbeitung; <bibl type="btd">
+                           <ref type="external" target="05/22">BT Anl. 102, Drs. V/22</ref>
+                        </bibl>. Beantwortet wurde sie vom BMI am 23.2. 1966; <bibl type="btd">
+                           <ref type="external" target="05/337">BT Anl. 103, Drs. V/337</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>c) Genosse <name type="Person" role="Sprecher" ref="#KurlbaumGeorg_1949-09-07">Kurlbaum</name> berichtet über eine Kleine Anfrage betr. Veba-Aktie, der die Fraktion zustimmt.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN046" type="comment">
+                     <p>Die Kleine Anfrage, eingebracht am 25.1.1966, betraf den Rückkauf von VEBA-Aktien auf Rechnung des Bundes; <bibl type="btd">
+                           <ref type="external" target="05/220">BT Anl. 102, Drs. V/220</ref>
+                        </bibl>. Antwort des BMSchatz vom 3.2.1966 in <bibl type="btd">
+                           <ref type="external" target="05/265">Anl. 103, Drs. V/265</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-01-25-t1500_EP_div_SVP-4">
+            <head>D.</head>
+            <p>Punkt 4 der TO »Nächste Termine«<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN047" type="comment">
+                     <p>Die nächste Fraktionssitzung war am 8.2.1966.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Keine Einwendungen der Fraktion.</p>
+            <p>Punkt 5 der TO »Verschiedenes«</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> gibt die Information, daß der CDU/CSU-Fraktionsvorstand eine Kommission betreffend den 17.Juni beschlossen habe.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN048" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-02-08-t1500_EP_SVP-6">Nr. 136, TOP 5</ref>.</p>
+                  </note>
+               </seg> Das Ergebnis der Beratungen werde die SPD abwarten.</p>
+            <p>Genosse <name type="Person" role="Erwaehnung" ref="#TallertHarry_1965-10-19">Tallert</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN049" type="comment">
+                     <p>Im Or. versehentlich »Tappert«. Die SPD-Fraktion hatte schon am 25.11.1965 eine Kleine Anfrage nach der »Tauglichkeit« der F 104 G (Starfighter) eingebracht; siehe <ref type="internal" target="#spd-05_1965-11-25-t1030_EP_FN031">Nr. 130, Anm. 31</ref>. – Diese Anfrage war vom BMVtdg<name type="Person" role="Erwaehnung" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> am 16.12.1965 – <bibl type="btd">
+                           <ref type="external" target="05/129">BT Anl. 101, Drs. V/129</ref>
+                        </bibl> – dahin beantwortet worden, »aus Gründen der Sicherheit« sehe er sich nicht in der Lage, sie »schriftlich erschöpfend zu behandeln, weil ihre Antwort veröffentlicht würde«. Er sei jedoch bereit, »im Verteidigungsausschuß über den Sachstand zu berichten«. – <name type="Person" role="Erwaehnung" ref="#TallertHarry_1965-10-19">Tallerts</name> Vorstoß dürfte mit durch die Titelgeschichte <bibl type="series-item">»Starfighter« in »Der Spiegel« Nr. 5 vom 24.1.1966, S. 21-36</bibl>, bedingt sein, die den gesamten Komplex der Unfallserie der F 104 G aufgriff.</p>
+                  </note>
+               </seg> fordert, daß die SPD initiativ das Problem der Starfighter-Abstürze aufgreift und diese Debatte zur Rechtfertigung des Genossen <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name> nutze.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN050" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#WienandKarl_1953-10-06">Wienand</name> hatte bereits im Januar 1965 massive Vorwürfe in bezug auf das »Starfighter-Programm« erhoben und die F 104 G als allenfalls »bedingt einsatzfähig« bezeichnet. Siehe <ref type="internal" target="#spd-04_1965-01-26-t1500_EP">Nr. 102, TOP 1</ref>.</p>
+                  </note>
+               </seg> Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> gibt (unter Hinweis auf den Aufsatz von L. <name type="Person" role="Erwaehnung" ref="#RuehlLothar">Rühl</name> in der Welt<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN051" type="comment">
+                     <p>Lothar <name type="Person" role="Erwaehnung" ref="#RuehlLothar">Rühl</name> (geb. 1927), Journalist und Publizist, ab 1949 bei Agence France Press, 1954-1959 beim »Spiegel«, 1960-1964 Leiter des Nachrichtenbüros des Springer-Auslandsdienstes in Paris, seit 1964 militärischer und politischer Korrespondent der »Welt«. Ein Aufsatz oder Artikel von <name type="Person" role="Erwaehnung" ref="#RuehlLothar">Rühl</name> zur Starfighter-Krise ließ sich in der »Welt« vom Januar 1966 nicht finden. Nur ein »W. H.-E.« gezeichneter Artikel <bibl type="series-item">»Starfighter« in »Die Welt« vom 13.1.1966</bibl> befaßte sich mit dem Thema.</p>
+                  </note>
+               </seg>) dazu sachliche Informationen über den Stand der Untersuchungen im Verteidigungsausschuß, die noch andauern und vor deren Abschluß eine Plenardebatte nicht geführt werden sollte.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN052" type="comment">
+                     <p>Der Verteidigungsausschuß hatte sich u. a. am 12.1. und 14.1. aus Anlaß der Kleinen Anfrage der SPD – vgl. <ref type="internal" target="#spd-05_1965-11-25-t1030_EP_FN031">Nr. 130, Anm. 31</ref> – mit der Starfighter-Krise befaßt. Der Inspekteur der Luftwaffe, Generalleutnant Werner <name type="Person" role="Erwaehnung" ref="#PanitzkiWerner">Panitzki</name>, erstattete dazu einen Bericht und schlug gleichzeitig eine Reihe von Maßnahmen, besonders auf dem personellen Sektor vor, die von der Luftwaffe »zur Verbesserung der Lage« für erforderlich gehalten wurden. Ergänzende Berichte gaben Staatssekretär Karl <name type="Person" role="Erwaehnung" ref="#GumbelKarl">Gumbel</name> vom BMVtdg und General <name type="Person" role="Erwaehnung" ref="#SteinhoffJohannes">Steinhoff</name>. Der Ausschuß setzte seine Beratungen am 27. und 28.1.1966 fort. <bibl type="series-item">Bulletin Nr. 7 vom 15.1., S. 54 f.</bibl> und <bibl type="series-item">Nr. 13 vom 28.1. 1966, S. 99</bibl>; <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 10./66 vom 12.1.</bibl> und <bibl type="series-item">Nr. 14/66 vom 14.1.1966</bibl>. Vgl. auch das Interview mit <name type="Person" role="Erwaehnung" ref="#PanitzkiWerner">Panitzki</name> in <bibl type="series-item">»Der Spiegel« Nr. 5 vom 24.1.1966, S. 24</bibl>; ferner <bibl type="series-item">ebd., S. 29 und 30</bibl> sowie <bibl type="single-item">
+                           <hi rendition="#smcap">Hildebrand</hi>, Erhard, S. 213</bibl>.</p>
+                  </note>
+               </seg> Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> äußert die Auffassung, daß in geeigneter Form der Öffentlichkeit zu zeigen sei, daß sich die SPD mit dieser Frage beschäftige; es wird vereinbart, die Erörterung des Themas durch die Fraktion in die Fraktionspressemitteilung aufzunehmen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-25-t1500_EP_FN053" type="comment">
+                     <p>Siehe <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 32/66 vom 25.1.1966 »Betr. Starfighter-Debatte im Bundestag«</bibl>. Der Text lautete: »Die Sozialdemokratische Bundestagsfraktion hat sich gestern abend durch ihren stellvertretenden Vorsitzenden Helmut <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> informieren lassen über den Stand der vom Verteidigungsausschuß des Deutschen Bundestages angestellten Untersuchungen der Unfallursachen beim Starfighter. Die Erörterungen des Verteidigungsausschusses sind noch nicht zum Abschluß gekommen. Nachdem auf sozialdemokratischen Antrag neben den Fachleuten des Bundesverteidigungsministeriums bisher schon Vertreter der deutschen Luftfahrtindustrie sowie der im Stabe des Nato-Kommandos Aircent als Chef des Stabes tätige deutsche General <name type="Person" role="Erwaehnung" ref="#SteinhoffJohannes">Steinhoff</name> gehört worden waren, werden demnächst, ebenfalls auf sozialdemokratische Initiative, Kommandeure, Piloten und Wartungspersonal von Starfighter-Geschwadern vor dem Ausschuß ihre Aussagen machen. Die Sozialdemokratische Bundestagsfraktion hat die Erwartung ausgesprochen, daß die Untersuchung der Unfallergebnisse mit allem Nachdruck vorangetrieben wird. Sie teilt die tiefe Beunruhigung, welche die öffentliche Meinung in Deutschland hinsichtlich des Starfighter-Problems erfaßt hat. Die Sorgen betreffen sowohl das Leben und die Gesundheit der Starfighter-Piloten, Leben und Gesundheit der von Unglücksfällen getroffenen zivilen Bürger als auch die Einsatzfähigkeit der Luftwaffe. Die Sozialdemokratische Bundestagsfraktion will davon absehen, sich vor Beendigung der Untersuchungen des Verteidigungsausschusses im einzelnen zur Sache zu äußern. Sie hält es auch für verfrüht, eine abschließende Wertung vorzunehmen. Sie geht jedoch davon aus, daß nach Beendigung der Untersuchungen des Verteidigungsausschusses eine Debatte des Plenums des Deutschen Bundestages über dieses bisher folgenreichste Problem der Bundeswehr unerläßlich ist. Die vorgestern durch den Bundesverteidigungsminister bekanntgegebene Beauftragung des Brigadegenerals <name type="Person" role="Erwaehnung" ref="#HrabakDietrichAdolf">Hrabak</name> mit der Koordinierung aller zur Beseitigung von Unfallursachen geeigneten Maßnahmen erscheint nützlich; daß eine solche Beauftragung zu einem so späten Zeitpunkt erfolgt, muß allerdings Befremden hervorrufen. Die Sozialdemokraten werden im Verteidigungsausschuß beantragen, daß General <name type="Person" role="Erwaehnung" ref="#HrabakDietrichAdolf">Hrabak</name> zu allen weiteren, das Starfighter-Problem betreffenden Sitzungen des Verteidigungsausschusses zugezogen wird, damit sichergestellt ist, daß ihm auch nicht der kleinste Hinweis entgehen kann.«</p>
+                  </note>
+               </seg>
+            </p>
+            <p>F. d. Prot.: gez. <name type="Person" role="Erwaehnung" ref="#ListHerta">List.</name>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

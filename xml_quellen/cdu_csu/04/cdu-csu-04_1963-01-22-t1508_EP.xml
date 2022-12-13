@@ -1,365 +1,499 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1963-01-22-t1508_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1009/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 22. Januar 1963</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>13 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1963-01-22"><time type="start" when="15:08:00"/><time type="end" when="18:23:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">2</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-1" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-1">A. TOP 1: Deutsch-französische Beziehungen.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-2" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-2">B. TOP 2: Deutschlandpolitik.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-3" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-3">C. TOP 3: Plenarplan.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-4" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-4">D. TOP 4: Versorgungslage mit Heizmaterial.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-5" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-5">E. TOP 5: Wahlen.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-6" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-6">F. TOP 6: Steuern und Abgaben. Personensteuern.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-7" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-7">G. TOP 7: Sozialpolitik.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-8" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-8">H. TOP 8: Notstandsrecht.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-9" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-9">I. TOP 9: Bundestag.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-10" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-10">J. TOP 10: Ausschüsse.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-11" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-11">K. TOP 11: Wirtschaftspolitik.</item>
-					<item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-12" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-12">L. TOP 12: Steuern und Abgaben. Finanz- und Steuerpolitik.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Deutsch-französische Beziehungen]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> berichtet über sein Gespräch vom 18. Januar, das er zusammen mit <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name>, <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> und <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> mit dem Bundeskanzler geführt habe, bevor dieser nach Paris abgereist sei. Er habe dem Bundeskanzler noch einmal versichert, daß die gesamte Fraktion eine Vertiefung der freundschaftlichen Beziehungen zwischen Frankreich und Deutschland unterstützen werde. Der Bundeskanzler habe die Hoffnung ausgedrückt, daß nicht nur zwischen den Regierungen, sondern auch zwischen den beiden Völkern eine Vereinbarung getroffen werden könne. Der Redner erklärt, er habe den Kanzler darauf hingewiesen, daß die Fortsetzung der Verhandlungen mit Großbritannien unter allen Umständen erreicht werden müsse. Man habe Großbritannien gegenüber wiederholt versichert, die Gemeinschaft der Sechs stehe jedem Land offen, das die Verträge nach Inhalt und Ziel billige. Das ergebe sich auch aus dem Kommuniqué zum letzten Besuch <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillans</name> in Bonn.</p>
-				<p>Allerdings gehöre sehr viel guter Wille dazu, die aufgetretenen Schwierigkeiten zu überwinden. Es müsse jedoch möglich sein, die noch offenen Fragen so zu lösen, daß der Vertrag von allen sieben Staaten ratifiziert werden könne. Die Verhandlungen mit Großbritannien hätten Fortschritte gemacht, und es bestehe kein Anlaß, die Verhandlungen abzubrechen (Beifall).</p>
-				<p>Ein Abbruch der Verhandlungen werde auch die innere Zusammenarbeit in der EWG ernstlich stören (Zustimmung).</p>
-				<p>In diesem Fall könnten Tendenzen sichtbar werden, die Realisierung der Römischen Verträge zu verlangsamen. Auch werde ein Abbruch der Verhandlungen eine beträchtliche Verstimmung in Großbritannien auslösen. Schließlich habe der britische Premierminister erklärt, daß die Briten die Römischen Verträge voll und ganz akzeptieren, auch in ihren politischen Zielen. Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> teilt mit, er habe den Kanzler auch darauf hingewiesen, daß sich die amerikanische Politik auf den Beitritt Großbritanniens eingestellt habe.</p>
-				<p>… Mit Befriedigung habe er erfahren, daß der Bundeskanzler inzwischen dem französischen Staatspräsidenten einen Kompromißvorschlag zum Problem des Beitritts Großbritanniens unterbreitet habe. Die Reaktion der französischen Regierung auf diesen Vorschlag könne für die gesamte Bündnispolitik von entscheidender Bedeutung sein.</p>
-				<p>Die Sprecher der Fraktionen der SPD und der FDP hätten sich in dem gleichen Sinne geäußert, desgleichen der Bundestagspräsident. Der Bundeskanzler habe sich also wirklich auf ein Mandat des gesamten Bundestags sowohl hinsichtlich des weiteren Ausbaus der zweiseitigen Beziehungen als auch hinsichtlich der Weiterführung der Gespräche mit Großbritannien beziehen können.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Deutschlandpolitik]</p>
-				<p>Bundesminister Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, gibt einen kurzen Bericht über die Vorgänge anläßlich des SED-Parteitages und des Besuchs <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> in Ost-Berlin. Der Kommunismus sei entgegen seiner eigenen wissenschaftlichen These von Krisen nicht befreit, wie der ideologische Streit zwischen Peking und Moskau zeige. Der Parteitag der SED könne als eine Übung für die kommende ideologische Auseinandersetzung mit den Chinesen oder als eine Art von Fraktionssitzung der moskauhörigen Kommunisten bezeichnet werden. Die von <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> vor sechs Wochen aufgestellte These vom Vorrang der Ökonomie mache deutlich, daß man im Ostblock wegen der großen wirtschaftlichen Schwierigkeiten auf politischem Gebiet keine großen Sprünge machen zu können glaube.</p>
-				<p>Der Minister verweist auf den Ausspruch <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name>: »Ich weiß, daß mit dieser Grenze auch Familien getrennt werden. Aber man muß hierbei beachten, daß sich die Völker jetzt nicht so sehr nach der Familienzusammengehörigkeit als nach der einheitlichen ideologischen Auffassung einteilen.«</p>
-				<p>Vor vier Jahren habe <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> noch erklärt, die Zonengrenze sei keine nationale Grenze, sondern eine Linie, die das Lager des Sozialismus von dem des Kapitalismus scheide. Aus dieser Wandlung der Anschauung ergebe sich klar, daß die Zonengrenze ein Problem sei, das nicht nur die Deutschen etwas angehe. Zwar sei der Ton der Reden etwas ruhiger und sachlicher geworden, der Inhalt sei aber derselbe geblieben. Man habe erneut eine Wiedervereinigung als nur unter kommunistischer Herrschaft möglich angesehen. Allerdings habe <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> auch gesagt, der Friedensvertrag sei nicht mehr so wichtig, weil durch die Mauer eine andere Situation entstanden sei. Die Bundesrepublik müsse sich darauf einrichten, daß ein politischer Druck, und zwar hauptsächlich auf die Bundesrepublik, ausgeübt werden würde; deswegen auch die Hervorhebung der Notwendigkeit einer Anerkennung der Zone.</p>
-				<p>Wirtschaftlich habe sich der Parteitag das Ziel gesetzt, die Bundesrepublik in der Arbeitsproduktivität zu überrunden, nachdem das Ziel, die Bundesrepublik im Verbrauch zu überholen, nicht erreicht worden sei. Die Menschen in der Zone hätten daher mit noch härteren Normen als bisher zu rechnen. Ohne ein Minimum an Arbeitslust und persönlichem Ertrag sei aber die Hebung der Arbeitsproduktivität unmöglich.</p>
-				<p>Der Redner geht sodann auf die inzwischen aufgegebene Absicht des Regierenden Bürgermeisters ein, Ministerpräsident <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> in Ost-Berlin aufzusuchen. Die Bundesregierung habe sich gegen diesen Besuch ausgesprochen, weil er sinnlos sei und auch gefährlich sein könne. Ein solcher Besuch würde Verwirrung in der Welt, in Berlin und auch in der Bundesrepublik geschaffen haben (Beifall). Durch einen solchen Besuch wäre angesichts der Erklärungen <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbrichts</name> und <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name>, daß Berlin zur DDR gehöre, trotz aller papierneren Vorbehalte ein Faktum gesetzt worden, das man nicht mehr aus der Welt hätte schaffen können. Die richtigere Antwort auf die Erklärungen <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> und <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbrichts</name> wäre ein stärkeres Zusammenrücken zwischen Senat und Bundesregierung gewesen. Der Redner bezeichnet die Bemerkung in dem Aufsatz von Jürgen <name type="Person" role="Erwaehnung" ref="#TernJürgen">Tern<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_vxw_kqj_xrb" type="comment"><p>Bei der Bearbeitung korrigiert aus: »Stern«.</p></note></seg></name> in der »Frankfurter Allgemeinen Zeitung« als äußerst treffend: »Was hat es für einen Zweck, wenn der Hering versucht, sich mit dem Haifisch zu unterhalten?« (Beifall).</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> verweist darauf, daß die außenpolitische Vertretung West-Berlins ausschließlich bei der Bundesregierung liege. Es sei verhängnisvoll, wenn der Eindruck entstünde, daß der Regierende Bürgermeister von Berlin Verhandlungen dieser Art mit einer ausländischen Macht führe. Es sei zu begrüßen, daß der Bürgermeister von diesem folgenschweren und gefährlichen Schritt habe abgehalten werden können. Allerdings habe der Regierende Bürgermeister eine etwas verständlichere Begründung geben können als die, die er tatsächlich gegeben habe.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[3. Plenarplan]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt das Programm der nächsten Plenarsitzungen bekannt. Am 23. Januar werde das »Sozialpaket« eingebracht.<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN001" type="comment"><p>Gesetzentwurf zur Neuregelung des Rechts der gesetzlichen Krankenversicherung – Krankenversicherungs-Neuregelungsgesetz – (Drs. IV/816 vom 7. 12. 1962), Gesetzentwurf über die Fortzahlung des Arbeitsentgelts im Krankheitsfalle – Lohnfortzahlungsgesetz – (Drs. IV/817 vom 7. 12. 1962) sowie Entwurf eines Bundeskindergeldgesetzes (Drs. IV/818 vom 7. 12. 1962).</p></note></seg> Nach der Begründung der drei Vorlagen durch Minister <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> werde <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> für die CDU/CSU sprechen. Nach der Debatte werde es zu einer bedeutsamen Geschäftsordnungsabstimmung kommen. Die SPD verlange, daß das Krankenversicherungs-Neuregelungsgesetz und das Kindergeldgesetz federführend, das Lohnfortzahlungsgesetz mitberatend an den Sozialpolitischen Ausschuß überwiesen werde. Wenn das geschehe, werde die Beratung der drei Entwürfe wesentlich länger dauern als veranschlagt und in der laufenden Legislaturperiode wahrscheinlich überhaupt nicht mehr abgeschlossen werden können. Das sei unter Umständen auch die Absicht der SPD. Auch könnten die Entwürfe in diesem Fall nicht gleichzeitig verabschiedet werden.</p>
-				<p>Der Fraktionsvorstand schlage deshalb vor, das Krankenversicherungs-Neuregelungsgesetz dem Ausschuß für Sozialpolitik federführend, das Kindergeldgesetz dem Ausschuß für Arbeit federführend – wobei der Sozialpolitische Ausschuß nicht beteiligt werden solle – und das Lohnfortzahlungsgesetz an den Ausschuß für Arbeit zu überweisen, wobei der Sozialpolitische Ausschuß zu einigen wenigen Fragen gutachtlich gehört werden solle.</p>
-				<p>Die Haltung der FDP in dieser Frage sei nicht einheitlich; es sei aber möglich, diesen Punkt mit der FDP abzustimmen. Von seiten der CDU/CSU habe man gedroht, man werde eher einen Sonderausschuß »Krankenversicherung« einrichten, als alle drei Gesetze vom Sozialpolitischen Ausschuß beraten lassen. – Am Nachmittag würden Verhandlungen mit den anderen Fraktionen geführt. Notfalls werde es jedoch zu einer Kampfabstimmung im Plenum kommen.</p>
-				<p>Die Notstandsgesetzgebung werde ebenfalls insgesamt eingebracht und vom Innenminister begründet. Die Debatte werde vom Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> eröffnet werden. Später solle dann die Beratung in drei Kapitel aufgegliedert werden.</p>
-				<p>Über die Frage der Ausschußüberweisung sei im Ältestenrat folgende Vereinbarung getroffen worden. Nach der Geschäftsordnung solle ein Gesetzentwurf im Normalfall nur an einen Ausschuß überwiesen werden. In Sonderfällen sollten höchstens zwei Ausschüsse mitberatend beteiligt werden. Allerdings hätten die Vorsitzenden des federführenden Ausschusses die Pflicht, die Ausschüsse, die ein Interesse an der Materie hätten, um eine gutachtliche Stellungnahme innerhalb einer bestimmten Frist zu bitten. Hinsichtlich der Notstandsgesetzgebung werde es wohl bei jedem einzelnen Entwurf eine Kampfabstimmung bezüglich der Ausschußüberweisung geben.</p>
-				<p>Der Vorstand habe folgende Ausschußüberweisung vorgesehen: Ergänzung des Grundgesetzes<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN002" type="comment"><p>Gesetzentwurf zur Änderung des Grundgesetzes – Artikel 115 a–m – (Drs. IV/891 vom 11. 1. 1963).</p></note></seg> federführend an den Rechtsausschuß, mitberatend an die Ausschüsse für Inneres und für Verteidigung, Wirtschaftssicherstellungsgesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN003" type="comment"><p>Gesetzentwurf über die Sicherstellung von Leistungen auf dem Gebiet der gewerblichen Wirtschaft sowie des Geld- und Kapitalverkehrs – Wirtschaftssicherstellungsgesetz – (Drs. IV/892 vom 14. 1. 1963).</p></note></seg> federführend an den Wirtschaftsausschuß, mitberatend an den Ausschuß für Inneres und den Rechtsausschuß, Ernährungssicherstellungsgesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN004" type="comment"><p>Gesetzentwurf über die Sicherstellung der Versorgung mit Erzeugnissen der Ernährungs- und Landwirtschaft sowie der Forst- und Holzwirtschaft – Ernährungssicherstellungsgesetz – (Drs. IV/893 vom 14. 1. 1963).</p></note></seg> federführend an den Ernährungsausschuß, mitberatend an den Ausschuß für Inneres und den Wirtschaftsausschuß, Verkehrssicherstellungsgesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN005" type="comment"><p>Gesetzentwurf zur Sicherstellung des Verkehrs – Verkehrssicherstellungsgesetz – (Drs. IV/894 vom 14. 1. 1963).</p></note></seg> federführend an den Verkehrsausschuß, mitberatend an die Ausschüsse für Inneres und für Verteidigung, Zivildienstgesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN006" type="comment"><p>Gesetzentwurf über den Zivildienst im Verteidigungsfall – Zivildienstgesetz – (Drs. IV/450 vom 6. 6. 1962).</p></note></seg> federführend an den Ausschuß für Inneres, mitberatend an den Verteidigungsausschuß und den Rechtsausschuß, Gesetz über den Bundesgrenzschutz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN007" type="comment"><p>Gesetzentwurf zur Ergänzung des Gesetzes über den Bundesgrenzschutz und die Einrichtung von Bundesgrenzschutzbehörden (Drs. IV/343 vom 3. 4. 1962).</p></note></seg> federführend an den Ausschuß für Inneres, mitberatend an den Verteidigungsausschuß und den Rechtsausschuß, Aufenthaltsregelungsgesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN008" type="comment"><p>Gesetzentwurf zur Regelung des Aufenthalts der Zivilbevölkerung im Verteidigungsfall – Aufenthaltsregelungsgesetz – (Drs. IV/895 vom 14. 1. 1963).</p></note></seg> federführend an den Ausschuß für Inneres, mitberatend an den Rechtsausschuß, Schutzbaugesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN009" type="comment"><p>Gesetzentwurf über bauliche Maßnahmen zum Schutz der Zivilbevölkerung – Schutzbaugesetz – (Drs. IV/896 vom 14. 1. 1963).</p></note></seg> federführend an den Ausschuß für Inneres, mitberatend an die Ausschüsse für Wohnungswesen, für Kommunalpolitik und den Rechtsausschuß, Selbstschutzgesetz<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN010" type="comment"><p>Gesetzentwurf über den Selbstschutz der Zivilbevölkerung – Selbstschutzgesetz – (Drs. IV/897 vom 14. 1. 1963).</p></note></seg> federführend an den Ausschuß für Inneres, mitberatend an den Rechtsausschuß und den Ausschuß für Sozialpolitik.</p>
-				<p>Strittig sei auch noch die Beteiligung des Haushaltsausschusses an der Beratung des Schutzbaugesetzes und des Selbstschutzgesetzes. Der Ältestenrat sei im Einvernehmen mit dem Vorsitzenden des Haushaltsausschusses der Meinung gewesen, der Haushaltsausschuß brauche zu diesem Zeitpunkt noch nicht beteiligt zu werden. Wahrscheinlich werde aber im Plenum die Beteiligung des Haushaltsausschusses beantragt und auch beschlossen werden. Im Interesse einer zügigen Beratung sei zu wünschen, daß keine weiteren Ausschüsse beteiligt würden. Die interessierten Ausschüsse könnten aber zu einzelnen Fragen gutachtlich gehört werden.</p>
-				<p>Der Redner teilt anschließend das Programm der Sitzungswoche im Februar mit.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> unterstützt den Appell des MdB <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, sich bezüglich der Ausschußüberweisung an die Vorschläge des Vorstandes zu halten. Die Beteiligung zu zahlreicher Ausschüsse könne die Gesetzgebungsarbeit lahmlegen. Die Fraktion müsse schon deshalb geschlossen abstimmen, um eventuellen Verzögerungsabsichten der SPD entgegenzuwirken.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> schlägt einen Antrag der Fraktion auf Beteiligung des Haushaltsausschusses an der Beratung des Schutzbaugesetzes vor.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-4">
-				<head>D.</head>
-				<p>[4. Versorgungslage mit Heizmaterial]</p>
-				<p>Bundeswirtschaftsminister Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name> erstattet einen kurzen Bericht über die Lage auf dem Heizmaterialmarkt. Die Versorgung mit Heizmaterial sei durch die Kältewelle keineswegs ernsthaft gefährdet. Es könne höchstens in dem einen oder anderen Ort eine vorübergehende Störung eintreten. Gewisse Schwierigkeiten seien auch nur dadurch entstanden, daß sich jeder im Augenblick so schnell wie möglich größere Vorräte anlegen wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> spricht allen, die auch bei der großen Kälte unermüdlich für die Versorgung der Bevölkerung tätig gewesen sind, seinen Dank aus.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-5">
-				<head>E.</head>
-				<p>5. Wahlen</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KankaKarl_1957-10-15">Kanka</name> gibt von einem im Arbeitskreis I geäußerten Wunsch Kenntnis, die Vorstandswahl zu verschieben und mit der Beschlußfassung über organisatorische Maßnahmen zur Hebung der Arbeitswirksamkeit der Fraktion zu verbinden, da sonst die Debatte über die Notstandsgesetzgebung und über das Sozialpaket zu kurz komme.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bittet, die Wahl durchzuführen. Sie sei schon vor sechs Wochen angekündigt worden, und eine Verschiebung könne zu allen möglichen Spekulationen Anlaß geben. Auch könne mit einer Neuorganisation der Fraktion erst begonnen werden, wenn der neue Vorstand gebildet sei. Es sei daher besser, mit der Vorstandswahl sofort zu beginnen. Als Wahlleiter sei <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> vorgeschlagen.</p>
-				<p>Die Fraktion ist mit der Wahlleitung durch <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> einverstanden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> stellt fest, die Wahl des Fraktionsvorsitzenden müsse in geheimer Abstimmung erfolgen und gelte bis zum Ende der Legislaturperiode; eine Aussprache über die Wahl finde nicht statt. – Der Wahlleiter bittet um Wahlvorschläge.</p>
-				<p>(Zurufe: Wiederwahl!)</p>
-				<p>Die Fraktion wählt mit 180 gegen 2 Stimmen bei 11 Stimmenthaltungen <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> zum Fraktionsvorsitzenden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> nimmt die Wahl an und dankt für das durch die Wahl zum Ausdruck gebrachte Vertrauen der Fraktion. Er werde alles tun, um die Fraktion immer enger zusammenzuschließen. Von dem Ergebnis der Arbeit der Fraktion werde es abhängen, ob die CDU/CSU bei der nächsten Wahl wieder die absolute Mehrheit erhalten werde.</p>
-				<p>Zur Wahl der Stellvertreter schlägt der Vorsitzende vor, einen fünften stellvertretenden Vorsitzenden zu wählen, möchte aber, daß darüber erst in einer späteren Sitzung entschieden werde. Im Augenblick sei er noch nicht in der Lage, einen konkreten Vorschlag bezüglich dieses Vertreters zu machen. Der Vorstand schlage der Fraktion als stellvertretende Vorsitzende vor <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> und <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>. Der Vorsitzende stellt fest, daß andere Vorschläge nicht gemacht werden.</p>
-				<p>Die Fraktion wählt <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> mit 176, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name> mit 175, <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> mit 154 und <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> mit 125 von 194 abgegebenen Stimmen zu stellvertretenden Vorsitzenden. Weitere 22 Stimmen entfallen auf 14 Abgeordnete.</p>
-				<p>(Alle Gewählten nehmen die Wahl an.)</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> leitet die Wahl der Vorsitzenden der Arbeitskreise. Es würden zunächst nur die Vorsitzenden der Arbeitskreise I, II, III und V gewählt. Über die eventuelle Einrichtung eines VI. Arbeitskreises werde in der nächsten Fraktionssitzung entschieden. Die Wahl des Vorsitzenden für den Arbeitskreis IV müsse zurückgestellt werden, da noch keine abschließende Vereinbarung mit der CSU zustande gekommen sei. Bis zur Wahl werde <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> wie bisher die Leitung des AK übernehmen. Der Vorschlag für die Wahl der Vorsitzenden der Arbeitskreise laute:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Arbeitskreis I</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name></cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis II</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name></cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis III</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name></cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis V</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>.</cell>
-					</row>
-				</table>
-				<p><name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> bedauert es, daß ausgerechnet der Vorsitzende des Arbeitskreises IV nicht gewählt werde, obwohl er am nächsten Tage als Sprecher der Fraktion zum »Sozialpaket« Stellung nehmen solle. Eine nur kommissarische Beauftragung mit der Leitung des AK mindere sein Gewicht in der Plenardebatte erheblich.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erklärt, die Fraktion habe diesem Verfahren zugestimmt.</p>
-				<p>(Widerspruch.)</p>
-				<p>Der Redner legt dar, <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> habe den Zusammenhang aufgezeigt, und die Fraktion habe zugestimmt. In der Sache könne er <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> gar nicht widersprechen. Um die schnelle Abwicklung der Wahlen nicht zu gefährden, sei es jedoch besser, es bei der einmal getroffenen Regelung zu belassen.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> bemerkt, <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> habe zwar die Situation dargelegt, die Fraktion habe sich aber noch nicht dazu geäußert. Die Abgeordnete stellt den Antrag, die Wahl aller fünf Arbeitskreisvorsitzenden zurückzustellen, damit keine falsche Optik entstehe.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> wendet ein, der Eindruck in der Öffentlichkeit sei schlechter, wenn die ganze Wahl verschoben, als wenn nur ein Posten noch nicht besetzt werde.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> bittet um eine Stellungnahme der CSU.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> führt in Vertretung des Vorsitzenden der CSU aus, es gebe gute Gründe, die Wahl des Vorsitzenden des Arbeitskreises IV im Augenblick nicht vorzunehmen, weil hierzu auch innerhalb der CSU noch Überlegungen angestellt werden müßten.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> zieht nach dieser Erklärung ihren Antrag zurück.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> stellt fest, daß weitere Vorschläge für die Wahl der Arbeitskreisvorsitzenden nicht vorliegen.</p>
-				<p>Die Fraktion wählt in geheimer Wahl zum Vorsitzenden des</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Arbeitskreis I</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> mit 165</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis II</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> mit 164</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis III</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> mit 158</cell>
-					</row>
-					<row>
-						<cell>Arbeitskreis V</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name> mit 168</cell>
-					</row>
-				</table>
-				<p>von 178 abgegebenen Stimmen. Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name>, <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> und <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> nehmen die Wahl an; das Einverständnis des Abg. <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> soll schriftlich eingeholt werden.</p>
-				<p>Die Fraktion wählt sodann <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> und <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> zu parlamentarischen Geschäftsführern der Fraktionen der CDU und der CSU. Beide Abgeordnete nehmen die Wahl an.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> unterbreitet der Fraktion den Vorschlag des Vorstandes für die direkt zu wählenden 16 Mitglieder des Vorstandes.</p>
-				<p>Es sind dies <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name>, <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name>, Frau <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name>, <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> und <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> regt an, die Zahl der direkt zu wählenden Vorstandsmitglieder von 16 auf 20 zu erhöhen und die Zahl der kooptierten von 13 auf 9 herabzusetzen. Das liege im Sinne einer weiteren Aktivierung und Demokratisierung.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> stellt fest, ein solcher Antrag müsse, da er eine Änderung der Fraktionssatzung beinhalte, vorher schriftlich eingebracht und auf die Tagesordnung gesetzt werden. Die Fraktionssatzung sei in der ersten Sitzung mit Zustimmung der Fraktion übernommen worden. Der Redner fragt, ob <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> einen Antrag auf entsprechende Änderung der Fraktionssatzung stellen wolle.</p>
-				<p><name type="Person" role="Sprecher" ref="#KuntscherErnst_1949-09-07">Kuntscher</name> weist darauf hin, daß nach der Fraktionsmitteilung die Wahl ungültig sei, wenn weniger als 16 Mitglieder des Vorstands angekreuzt würden.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> stellt klar, in einem solchen Fall müsse die Wahl gültig sein.</p>
-				<p><name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> schlägt vor, <name type="Person" role="Erwaehnung" ref="#FritzGerhard_1957-10-15">Fritz</name> mit in den Vorstand zu wählen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#KuchtnerEdeltraud_1953-10-06">Kuchtner</name> schlägt die Zuwahl von Frau <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> vor.</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> äußert Zweifel, ob die Wahl wirklich gültig sei, wenn weniger als 16 Namen angekreuzt würden.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> legt dar, zwar sehe die Fraktionsgeschäftsordnung die Ungültigkeit vor, aber bereits in der letzten Legislaturperiode habe die Fraktion festgestellt, daß diese Bestimmung keinen Bestand haben könne, da sie undemokratisch sei. Am besten fasse die Fraktion einen formellen Beschluß in diesem Sinne.</p>
-				<p><name type="Person" role="Sprecher" ref="#MengelkampTheodor_1957-10-15">Mengelkamp</name> meint, wenn die Geschäftsordnung in diesem Punkt so einfach geändert werden könne, könne auch die Anregung des MdB <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> berücksichtigt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bittet, von einer derartigen Änderung Abstand zu nehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> wiederholt seine Anregung, die Zahl der direkt zu wählenden Vorstandsmitglieder zu erhöhen. Es sei für den einzelnen bedeutend angenehmer, wenn er direkt gewählt statt nur kooptiert sei. Unter den Kooptierten befänden sich genügend Persönlichkeiten, die von der Fraktion auch gewählt werden würden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> spricht sich gegen die Anregung des Abg. <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> aus. Die Kooptation sei notwendig, um die landsmannschaftliche Gliederung der Fraktion berücksichtigen zu können. Die landsmannschaftliche Zugehörigkeit könne aber erst berücksichtigt werden, wenn feststehe, wer direkt in den Vorstand gewählt sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> gibt, ohne zu der Sachfrage selbst Stellung zu nehmen, zu bedenken, daß man die Geschäftsordnung nicht einfach ad hoc ändern könne. Dafür spielten hier zu viele Überlegungen, vor allem landsmannschaftlicher Art, eine Rolle.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> führt aus, zwar sprächen viele Gründe für eine Begrenzung der Zahl zu kooptierender Vorstandsmitglieder, jedoch könne man im Augenblick nur schwer eine Entscheidung treffen. – Selbstverständlich könnten einige der vorgeschlagenen Namen gestrichen werden, ohne daß man gezwungen sein dürfe, andere Namen hinzuzusetzen. Es sollten aber nur die vorgeschlagenen Fraktionsmitglieder gewählt und nicht noch Namen hinzugeschrieben werden, die nicht vorgeschlagen seien, da dies zu einer zu großen Zersplitterung führe.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> zieht seine Anregung zurück, um die Wahlhandlung nicht zu komplizieren. Es sei aber wünschenswert, die Geschäftsordnung später einmal in dem vorgeschlagenen Sinne zu ändern.</p>
-				<p>Die Fraktion wählt folgende Abgeordneten in den Vorstand: <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> mit 140, <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> mit 135, Frau <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name> mit 135, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> mit 135, <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name> mit 133, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> mit 131, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> mit 129, <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> mit 128, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> mit 125, <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> mit 123, <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> mit 123, <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name> mit 115, <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name> mit 109, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> mit 109, <name type="Person" role="Erwaehnung" ref="#FritzGerhard_1957-10-15">Fritz</name> mit 107 und <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> mit 103 von insgesamt 158 abgegebenen Stimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> gibt den Vorschlag des Vorstandes für die Wahl der Mitglieder des Etatausschusses bekannt. Es seien dies <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#WernerRudolf_1959-07-24">Werner</name> und <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> bittet, auf seine Benennung zu verzichten.</p>
-				<p>Die Fraktion wählt <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#WernerRudolf_1959-07-24">Werner</name> und <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> in offener Abstimmung zu Mitgliedern des Etatausschusses.</p>
-				<p>Anschließend wählt die Fraktion in offener Abstimmung <name type="Person" role="Erwaehnung" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> und <name type="Person" role="Erwaehnung" ref="#GluesingHermann_1949-09-07">Glüsing</name> zu Mitgliedern des Kontrollausschusses.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-6">
-				<head>F.</head>
-				<p>[6. Steuern und Abgaben. Personensteuern]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HesbergCarl_1953-10-06">Hesberg</name> berichtet, am Vortage habe der in der letzten Fraktionssitzung eingesetzte kleine Arbeitskreis unter Vorsitz von <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> getagt und sei zu dem gleichen Ergebnis wie der Arbeitskreis III gekommen, daß nämlich zur Sicherung der Wettbewerbsgleichheit und der Wettbewerbsneutralität die Frist für die Suspendierung des § 7 b EStG auf den 1. April 1964 limitiert werden solle.<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN011" type="comment"><p>Gesetzentwurf zur Einschränkung des § 7 b des Einkommensteuergesetzes (Drs. IV/738 vom 14. 11. 1962).</p></note></seg> Auch der private Wohnungsbau solle zwar von dieser Suspendierung betroffen werden, ein Regierungsentwurf sehe aber rückwirkend eine kombinierte degressive-lineare Abschreibung vor, mit deren Einführung die Fraktion sicherlich einverstanden sei (Beifall).</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schlägt vor, <name type="Person" role="Erwaehnung" ref="#HesbergCarl_1953-10-06">Hesberg</name> und <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> sollten einen entsprechenden Entschließungsantrag ausarbeiten.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-7">
-				<head>G.</head>
-				<p>[7. Sozialpolitik]</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#BleylerHildegard_1953-10-06">Bleyler</name> erklärt, es sei ihr glaubhaft versichert worden, der Bundesarbeitsminister sei bereit, den gesamten Mutterschutz auf alle Frauen auszudehnen und nicht auf die versicherten oder mitversicherten Frauen zu beschränken. So wünschenswert eine solche Maßnahme auch sei, so führe sie doch in einem wichtigen Lebensbereich zum Versorgungsstaat. In der Frage des Versorgungsstaates habe sich die CDU/CSU früher scharf von der SPD unterschieden. Es müsse einmal grundsätzlich die Frage besprochen werden, wo in der Sozialpolitik der Versorgungsstaat beginne. Man müsse von Zeit zu Zeit in der Routinearbeit innehalten und überlegen, welches eigentlich das Ziel der Arbeit sei und inwieweit man diesem Ziele näher gekommen sei. Auch gelte es, einen Gesamtüberblick über die finanziellen Anforderungen zu bekommen, die durch die in diesem Jahre zu verabschiedenden Gesetze entstünden. Die Leitlinien der Gesetzgebungsarbeit der Fraktion müßten klar herausgearbeitet werden.</p>
-				<p>In weiten Kreisen der Bevölkerung herrsche der Eindruck, die CDU/CSU überlasse der SPD die Initiative und werde nur noch tätig, wenn die Opposition etwas vorgeschlagen habe. Die Fraktion müsse viel häufiger über die Entwicklung unterrichtet werden. So sei bisher noch nicht über die in Brüssel begonnenen Harmonisierungsversuche auf dem Gebiete der Sozialpolitik berichtet worden, die angeblich einen stark sozialistischen Akzent trügen. Auch fehle ein Überblick über den Entwurf der Unfallversicherung, der in der nächsten Woche im Plenum behandelt werde.<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN012" type="comment"><p>CDU/CSU-Gesetzentwurf zur Neuregelung des Rechts der gesetzlichen Unfallversicherung – Unfallversicherungs-Neuregelungsgesetz – (Drs. IV/120 vom 11. 1. 1962).</p></note></seg> Früher sei es üblich gewesen, nach der ersten Lesung eines Entwurfs die Probleme in der Fraktion grundsätzlich zu besprechen.</p>
-				<p>Die Abgeordnete befürchtet, die Einigkeit werde leiden, wenn die Fraktion diesen alten Brauch nicht wiederaufnehme (Beifall).</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> stimmt diesen Ausführungen zu. Leider sei nicht genügend Zeit vorhanden, diesen Punkt zu vertiefen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-8">
-				<head>H.</head>
-				<p>[8. Notstandsrecht]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> wendet sich der Notstandsgesetzgebung zu. Die Entwürfe seien so wichtig, daß der Fraktionsvorsitzende selbst als erster zu ihnen Stellung nehmen solle. Diesmal könne die Opposition nicht behaupten, sie sei bei der Vorbereitung übergangen worden. Für die Diskussion stünden für jeden Gesetzentwurf zwei Redner der Fraktion zur Verfügung. Am Vormittag habe im Arbeitskreis eine abschließende Besprechung stattgefunden. Der Abgeordnete teilt sodann mit, welche Redner im einzelnen zu den Entwürfen Stellung nehmen würden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> führt aus, für den Bau der vorgesehenen zivilen Luftschutzbauten würden im Jahr mindestens 1,8 Milliarden DM zusätzlich benötigt, nach den Berechnungen des Finanzministeriums sogar 2,3 Milliarden DM.<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN013" type="comment"><p>Gesetzentwurf über bauliche Maßnahmen zum Schutz der Zivilbevölkerung – Schutzbaugesetz – (Drs. IV/896 vom 14. 1. 1963).</p></note></seg> Diese Tatsache bringe die Haushalte ab 1964 in eine außerordentliche schwierige Situation, da außerdem noch für den Verteidigungshaushalt 1 Milliarde DM mehr aufgebracht werden müßten, wenn die Stärke der Bundeswehr auf 500 000 Mann gebracht werden solle. Der Arbeitskreis habe am Vormittag in diesem Zusammenhang eine Reihe von Möglichkeiten geprüft.</p>
-				<p>Erstens müsse darauf geachtet werden, daß die Kosten nicht schlagartig auf einmal auf diese Größenordnung gebracht würden. Zweitens müsse versucht werden, eine Anrechnung der Eigenleistungen auf das deutsche NATO-Konto zu erreichen. Drittens könne man sich beim Ausbau der Luftschutzräume mit einer Druckfestigkeit von 0,5 statt 3 atü begnügen, was eine erhebliche Kostenersparnis zur Folge habe.</p>
-				<p>Darüber hinaus sei ausführlich die Frage der Kostenverteilung auf Bund, Länder, Gemeinden und auch auf den einzelnen Staatsbürger behandelt worden. Die Gesamtkosten allein für die Erstellung der Luftschutzbauten betrügen etwa 70 bis 80 Milliarden DM. Wenn man sich nicht finanziell und auch personell übernehmen wolle, müsse man mit sehr großer Vorsicht an das Problem des zivilen Luftschutzes herangehen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> bemängelt, daß zu dieser äußerst schwierigen Frage kein ausführlicher Bericht des Arbeitskreises vorgelegt worden sei. Es sei erfreulich, daß die Bundesregierung nach jahrelangen Verzögerungen nun im Anschluß an die Kuba-Krise doch sehr schnell einen Gesetzentwurf vorgelegt habe. Grundsätzlich seien diese Entwürfe zu bejahen; es könne jedoch angesichts der gewichtigen sachlichen, finanziellen und zum Teil auch verfassungsrechtlichen Probleme nicht im Schnellverfahren über diese Frage entschieden werden. Die Frage der Kostenverteilung auf Bund, Länder und Kommunen sei noch nicht geklärt, auch sei die Stellungnahme des Bundesrates noch nicht ganz klar.</p>
-				<p>§ 8 des Entwurfs des Schutzbaugesetzes sehe eine uneingeschränkte Befugnis der Bundesregierung vor, durch Rechtsverordnung ohne Limitierung die Bundeszuschüsse festzulegen. Die Fraktion müsse noch einmal prüfen, ob angesichts der in Frage stehenden Beträge eine solch weitgehende Ermächtigung erteilt werden sollte. Das stehe im Widerspruch zu der Zuständigkeit und dem Haushaltsrecht des Parlaments.</p>
-				<p>Der Abgeordnete schlägt vor, aus Mitgliedern des AK I und III einen kleinen Ad-hoc-Arbeitskreis zu bilden, der sich nach der ersten Lesung gemeinsam mit der Regierung und der FDP mit solchen offenen Fragen befassen solle (Beifall).</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> betont, der Arbeitskreis habe die von <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> vorgetragenen Bedenken durchaus erkannt. Bei diesen Gesetzen träten jedoch nicht nur finanzpolitische, sondern auch einige kommunalpolitische Aspekte in Erscheinung.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> berichtet über die im Arbeitskreis erzielten Ergebnisse. Das Schutzbaugesetz sehe zunächst bei Neubauten einen obligatorischen Grundschutz vor. Dieser Grundschutz solle bei Altbauten durch Zuschüsse und steuerliche Vergünstigungen gefördert werden. Im zweiten Teil des Gesetzes sei schematisch ein verstärkter Grundschutz für Orte mit mehr als 50 000 Einwohnern vorgesehen. Die Kosten für diesen verstärkten Grundschutz trage der Bund. Die Errichtung öffentlicher Schutzräume an Brennpunkten des Verkehrs sei ebenfalls Sache des Bundes, wobei die Gemeinden die Grundstücke zu stellen und die Verwaltung der Schutzräume zu übernehmen hätten. Die Regelung im einzelnen solle weitgehend durch Rechtsverordnung erfolgen.</p>
-				<p>Es sei am besten, in der ersten Lesung nur auf die Grundzüge einzugehen und sich auch noch nicht auf Einzelvorschläge des Regierungsentwurfs festzulegen. Im einzelnen seien noch sehr viele Änderungen diskutabel, so z. B. die obligatorische Errichtung von Schutzräumen auch in Altbauten und ähnliches.</p>
-				<p>Der Abgeordnete tritt dafür ein, auch den Haushaltsausschuß an den Beratungen zu beteiligen. Auch der Kommunalpolitische Ausschuß sei an der Sache sehr interessiert. Im übrigen werde bei der Ausschußarbeit wahrscheinlich noch sehr viel umgebaut und ausgefüllt werden müssen (Beifall).</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> regt an, die Arbeitskreise I und III sollten Vorschläge für die Besetzung der von <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> vorgeschlagenen kleinen Kommission machen. Der Vorstand werde dann in der nächsten Woche über das Ergebnis berichten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> nimmt zu der kommunalpolitischen Seite der Notstandsgesetzgebung Stellung. Die Kommunen interessierten sich sehr für die Frage des Luftschutzes, da sie von ihm am unmittelbarsten betroffen würden. Die Gemeinden wünschten einen klaren Instanzenzug in der Luftschutzorganisation. Auch bestünden unterschiedliche Auffassungen z. B. hinsichtlich der Auftragsverwaltung. Die Kommunen wünschten eine starke Konzentration aller Pflichten und Aufgaben bei der unteren Verwaltungsbehörde. Es sei jedoch zu berücksichtigen, daß die Kommunalverfassungen in den einzelnen Ländern unterschiedlich seien. Zu den die Kommunen interessierenden Fragen gehöre auch die Kostenverteilung. Alle diese Dinge müßten bei den Ausschußberatungen zur Sprache kommen. Es sei daher zweckmäßig, im federführenden Ausschuß auch die kommunalen Spitzenverbände zu diesen Fragen zu hören. Die Tatsache, daß eine Anhörung dieser Verbände bisher nicht erfolgt sei, habe schon eine beträchtliche Verstimmung ausgelöst.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-9">
-				<head>I.</head>
-				<p>[9. Bundestag]</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> teilt außerhalb der Tagesordnung mit, daß der Bundestagsvorstand am Abend über den Bau eines neuen Bundeshauses entscheiden werde. Der Präsident gibt sodann noch einige Einzelheiten der Planung bekannt.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-10">
-				<head>J.</head>
-				<p>[10. Ausschüsse]</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> regt an, vor der nächsten Fraktionssitzung die in den europäischen Gremien vertretenen Abgeordneten zu der Frage zu hören, ob ein Bundestagsausschuß für Europafragen gebildet werden solle.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> antwortet, diese Frage müsse auch interfraktionell abgestimmt werden. Es gehe hauptsächlich darum, ob ein 27. Bundestagsausschuß oder ein Unterausschuß des Auswärtigen Ausschusses gebildet werden solle. Im letzten Fall sollten sich die Mitglieder jedoch nicht nur aus Mitgliedern des Auswärtigen Ausschusses zusammensetzen, es sollten vielmehr auch Wirtschaftspolitiker, Ernährungspolitiker und Sozialpolitiker beteiligt sein. Zunächst werde diese Sache aber im Ältestenrat besprochen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> führt aus, zweifellos bestehe ein Bedürfnis nach einer engeren Verbindung der Arbeit in den europäischen Parlamenten mit der Arbeit in den Bundestagsausschüssen. Die Einrichtung eines besonderen Ausschusses für europäische Angelegenheiten sei jedoch nicht zu empfehlen, da damit ein wesentlicher Teil aus der Zuständigkeit des Auswärtigen Ausschusses herausgebrochen werde. Es handele sich meist um Fragen, die gar nicht isoliert betrachtet werden könnten, sondern im Zusammenhang mit den allgemeinen Problemen der Außenpolitik gesehen werden müßten. Es sei aber nichts gegen die Bildung eines Unterausschusses des Auswärtigen Ausschusses einzuwenden. Dieser Unterausschuß könne auch die dem Parlament in dem Ratifikationsgesetz zu den Römischen Verträgen übertragenen Aufgaben wahrnehmen. Er könne sich beispielsweise von dem deutschen Vertreter im Ministerrat über den Stand der Verhandlungen des Ministerrats unterrichten lassen. Auch könne er die in den europäischen Gremien erarbeiteten Gesetze und Konventionen prüfen und für das Parlament vorbereiten. Eine ähnliche Aufgabe habe bereits der beim Bundesrat bestehende Ausschuß für auswärtige Angelegenheiten. Bevor die Einrichtung eines Ausschusses für europäische Angelegenheiten mit den anderen Fraktionen erörtert werde, sei es zweckmäßig, eine gemeinsame Auffassung der Fraktion zu erarbeiten (Beifall).</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> verweist auf die Harmonisierung des Steuerrechts innerhalb der europäischen Gemeinschaft, die in den nächsten acht Jahren eine gewaltige Rolle spielen werde, da sie die Voraussetzung für das Funktionieren des Gemeinsamen Marktes sei. Die Europäische Kommission habe eine entscheidende Richtlinie an den Ministerrat herausgegeben, zu der das deutsche Parlament in der Zwischenzeit Stellung nehmen könne. Die Harmonisierung des Steuerrechts mache z. B. eine völlige Reform des deutschen Umsatzsteuerrechts erforderlich. Die Aufgabe eines Unterausschusses für europäische Angelegenheiten könne es nur sein, die in den einzelnen Fachausschüssen erarbeiteten Auffassungen, soweit sie sich widersprächen, zu koordinieren. Der Abgeordnete warnt davor, die in der zu Beginn der Sitzung verteilten Drucksache erwähnte Alternative auch nur in Erwägung zu ziehen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#FritzGerhard_1957-10-15">Fritz</name> bemerkt, das Problem der Koordination zwischen dem Europäischen Parlament und den nationalen Parlamenten bestehe schon seit längerer Zeit. Die Gesetzgebung laufe Gefahr auseinanderzufallen, da sie auch nicht annähernd zu übersehen sei. Vielleicht sei es besser, von der Bildung eines Ausschusses oder Unterausschusses für europäische Angelegenheiten abzusehen und statt dessen bei der Fraktion hauptamtlich jemanden einzustellen, der nichts anderes zu tun habe, als die Entwicklung im Bundestag und in den europäischen Gremien zu beobachten und die Vorsitzenden oder die Obleute sofort zu unterrichten, so daß die Arbeit im Bundestag und in den europäischen Gremien besser koordiniert werden könne (Beifall).</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> betont, die wirklich gesetzgebende Körperschaft unter den europäischen Gremien sei der Ministerrat, dessen Arbeit jedoch unter keinerlei parlamentarischer Kontrolle stehe. Eine solche Kontrolle sei auch in den Römischen Verträgen nicht vorgesehen. Der Bundestag habe aber das Recht der Kontrolle aller Angelegenheiten der Bundesregierung. Auf diesem Wege könne man wenigstens die deutschen Vertreter im Ministerrat kontrollieren. Dazu brauche man ein besonderes parlamentarisches Organ. Ob das ein Ausschuß oder ein Unterausschuß sei, spiele keine Rolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> stimmt der Auffassung des Abg. <name type="Person" role="Erwaehnung" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> zu und vertritt mit Nachdruck erneut den Standpunkt, es müsse sich um einen Unterausschuß des Auswärtigen Ausschusses handeln, damit nicht die Funktionen dieses Ausschusses und auch die parlamentarische Kontrolle des Ministerrats von der allgemeinen Richtung der Außenpolitik abwichen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> verspricht, die Diskussionsbeiträge bei den Beratungen im Vorstand zu verwerten. Die Fraktion solle sich jedoch in Gesprächen mit anderen Fraktionen nicht festlegen, ehe nicht eine Abstimmung innerhalb der eigenen Fraktion und auch mit den Ministern stattgefunden habe. Der Vorstand werde einen Vorschlag ausarbeiten und der Fraktion zur Diskussion stellen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> unterstützt den Vorschlag des Abg. <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>. Die von <name type="Person" role="Erwaehnung" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> angesprochene Erscheinung sei in der Verteidigungspolitik schon seit Jahren festzustellen, daß sich nämlich im Zuge der zu begrüßenden fortschreitenden Integration die Politik der integrierten Gremien in zunehmendem Maße der Kontrolle durch die nationalen Parlamente entziehe. Die Frage, wie dieses Problem am besten gelöst werden könne, bedürfe einer langen und […].<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN014" type="comment"><p>Satzende nicht lesbar.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-11">
-				<head>K.</head>
-				<p>[11. Wirtschaftspolitik]</p>
-				<p><name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> erkundigt sich, ob der Gutachterausschuß immer noch nicht gebildet worden sei, den man vor einem halben Jahr für so dringlich erachtet habe.<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN015" type="comment"><p>CDU/CSU-FDP-Gesetzentwurf über die Bildung eines Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung (Drs. IV/540 vom 26. 6. 1962).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt, diese Frage sei nur zu berechtigt. Er selbst habe wiederholt vergeblich über das Büro des Wirtschaftsausschusses zu erfahren versucht, wann die Sache dem Ausschuß vorgelegt werde. Er werde diesen Versuch noch einmal wiederholen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> möchte etwas Näheres über die vor zwei oder drei Jahren ins Leben gerufene Konzentrationsenquete-Kommission erfahren, von der man seit ihrer Schaffung nichts mehr gehört habe. Man habe vor kurzem lediglich erfahren, daß einige Berliner Professoren diese Kommission im Interesse des Mittelstandes zu einem Bundesamt ausbauen wollten.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> berichtet, er habe noch vor wenigen Tagen mit Staatssekretär <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> und dem Leiter der Enquete-Kommission gesprochen. Es müsse damit gerechnet werden, daß die gesetzten Termine nicht eingehalten werden könnten. Es sei aber auch sehr schwierig, für Spezialaufgaben gute Kräfte zu bekommen, die nur vorübergehend angestellt würden.</p>
-				<p>Hinsichtlich des Ausscheidens der sechs Professoren müsse das Verhalten des Ministeriums voll unterstützt werden. Über die Errichtung einer Monopolkommission habe erst entschieden werden sollen, nachdem der Bericht vorgelegt sei. Wenn man die Kommission schon jetzt in eine solche Behörde umgewandelt hätte, entspräche das nicht dem verabschiedeten Gesetz. Der Bundeswirtschaftsminister solle möglichst schnell Vertretern der drei Fraktionen einen kurzen Überblick über den Stand der Beratungen geben, damit es nicht zu einer unglücklichen Debatte über die Verschiebung des Termins komme. Im übrigen sei als Ergebnis der Studien ein bemerkenswertes Material zu erwarten, wahrscheinlich allerdings erst zum Spätherbst 1963.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-12">
-				<head>L.</head>
-				<p>[12. Steuern und Abgaben. Finanz- und Steuerpolitik]</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> fragt nach der Tätigkeit der Sachverständigenkommission für die Finanzreform, deren Einrichtung vor einem Jahr beschlossen worden sei.<seg type="note"><note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN016" type="comment"><p>SPD-Antrag betr. Einsetzung einer Expertenkommission zur Vorbereitung der Finanzreform (Drs. IV/68 vom 7. 12. 1961).</p></note></seg> Allerdings sei in den Beratungen im Finanzausschuß festgestellt worden, daß für diese Kommission die Bundesregierung zuständig sei. Das Finanzministerium solle veranlaßt werden, wenigstens bekanntzugeben, wann, wo und wie diese Kommission arbeiten solle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> gibt zu bedenken, die Finanzreform sei in erster Linie eine Frage der Aufteilung der Steuerquellen und -erträgnisse auf Bund, Länder, Gemeinden und Gemeindeverbände. Die Notstandsgesetzgebung werfe nun aber neue Probleme in bezug auf die Kostendeckung auf. Deshalb sei im Augenblick die Ausarbeitung einer endgültigen Finanzverfassung nicht möglich. Die Schwierigkeiten, die sich bei der Gesetzgebung gemäß Art. 106 des Grundgesetzes ergäben, hätten sich schon bei den Versuchen zur Änderung des Beteiligungsverhältnisses an der Einkommen- und Körperschaftsteuer von 35 % auf 40,5 % zugunsten des Bundes gezeigt. An sich sei eine Regelung durch Zustimmungsgesetz vorgesehen, in Wirklichkeit werde die Angelegenheit jedoch durch Staatsvertrag geregelt werden müssen. Wenn nicht einmal für das Jahr 1963 eine Ordnung nach dem Grundgesetz zustande komme, gebe er persönlich die Hoffnung auf, überhaupt zu endgültigen Normen zu kommen. Es könne wohl auch nicht erreicht werden, daß für die Gemeinden ein ihrer Autonomie etwas mehr angepaßtes Finanzsystem geschaffen werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> weist darauf hin, daß es sich ursprünglich um einen sozialdemokratischen Antrag gehandelt habe. Die Sozialdemokraten hätten berechtigte Kritik an der vom Finanzminister vorgenommenen Zusammensetzung der Kommission geübt. Der Minister habe daraufhin versprochen, die Zusammensetzung zu ändern. Später seien die von <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name> erwähnten sachlichen Schwierigkeiten hinzugekommen. Der Minister sei froh gewesen, zu einem Übereinkommen mit den Ländern zu gelangen, das er zusammen mit dem Haushaltsplan für das Jahr 1963 habe vorlegen können. Im Grunde brauche man zu einer wirklichen Finanzreform eine Persönlichkeit wie <name type="Person" role="Erwaehnung" ref="#PopitzJohannes">Popitz</name>. Das Finanzministerium sei aber derartig mit Tagesfragen belastet, daß eine wirklich grundlegende Änderung nicht erarbeitet werden könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> bemerkt, gerade in einer so schwierigen Situation wie der gegenwärtigen brauche man die Sachverständigen. Wenn man wirklich den vertikalen Finanzausgleich anstrebe, sei die Arbeit der Kommission ganz besonders erforderlich. Die Zusammensetzung der Kommission, die leider noch nie getagt habe, sei sehr stark von der CDU/CSU beeinflußt, so daß die Fraktion bei der Durchsetzung ihrer Ziele sicherlich die Unterstützung dieser Sachverständigen haben werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> erklärt, das Fehlen einer genialen Persönlichkeit wie <name type="Person" role="Erwaehnung" ref="#PopitzJohannes">Popitz</name> müsse durch Teamarbeit ausgeglichen werden. Der Abgeordnete regt an, den Vorschlag des Instituts Finanzen und Steuern einmal in einem Gremium der Fraktion zu diskutieren, um zu gewissen Grundsätzen zu kommen. Es gehe ja nicht nur um die Verschiebung der Quoten zwischen Bund und Ländern, sondern vor allem auch um die kommunale Finanzreform.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> erinnert daran, daß die von <name type="Person" role="Erwaehnung" ref="#PopitzJohannes">Popitz</name> erlassenen Finanzreformen nicht gerade mit demokratischen Mitteln durchgesetzt worden seien. Vielmehr seien die autonomen Kommunalsteuern durch die <name type="Person" role="Erwaehnung" ref="#BrüningHeinrich">Brüning</name>sche Notverordnung vom 30. Juni 1930 geschaffen worden, während eine andere Reform mit Hilfe des Nationalsozialismus durchgesetzt worden sei. Es sei fraglich, ob vom Bund aus auf diesem stark föderalistischen Gebiet etwas erreicht werden könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> bedauert, daß man bei diesem überaus drängenden Problem praktisch auf der Stelle trete.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1963-01-22-t1508_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1009/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 22. Januar 1963</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>13 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1963-01-22">
+               <time type="start" when="15:08:00"/>
+               <time type="end" when="18:23:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">2</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-1" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-1">A. TOP 1: Deutsch-französische Beziehungen.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-2" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-2">B. TOP 2: Deutschlandpolitik.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-3" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-3">C. TOP 3: Plenarplan.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-4" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-4">D. TOP 4: Versorgungslage mit Heizmaterial.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-5" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-5">E. TOP 5: Wahlen.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-6" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-6">F. TOP 6: Steuern und Abgaben. Personensteuern.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-7" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-7">G. TOP 7: Sozialpolitik.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-8" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-8">H. TOP 8: Notstandsrecht.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-9" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-9">I. TOP 9: Bundestag.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-10" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-10">J. TOP 10: Ausschüsse.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-11" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-11">K. TOP 11: Wirtschaftspolitik.</item>
+               <item xml:id="cdu-csu-04_1963-01-22-t1508_EP_SVP-12" corresp="#cdu-csu-04_1963-01-22-t1508_EP_div_SVP-12">L. TOP 12: Steuern und Abgaben. Finanz- und Steuerpolitik.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Deutsch-französische Beziehungen]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> berichtet über sein Gespräch vom 18. Januar, das er zusammen mit <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name>, <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> und <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> mit dem Bundeskanzler geführt habe, bevor dieser nach Paris abgereist sei. Er habe dem Bundeskanzler noch einmal versichert, daß die gesamte Fraktion eine Vertiefung der freundschaftlichen Beziehungen zwischen Frankreich und Deutschland unterstützen werde. Der Bundeskanzler habe die Hoffnung ausgedrückt, daß nicht nur zwischen den Regierungen, sondern auch zwischen den beiden Völkern eine Vereinbarung getroffen werden könne. Der Redner erklärt, er habe den Kanzler darauf hingewiesen, daß die Fortsetzung der Verhandlungen mit Großbritannien unter allen Umständen erreicht werden müsse. Man habe Großbritannien gegenüber wiederholt versichert, die Gemeinschaft der Sechs stehe jedem Land offen, das die Verträge nach Inhalt und Ziel billige. Das ergebe sich auch aus dem Kommuniqué zum letzten Besuch <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillans</name> in Bonn.</p>
+            <p>Allerdings gehöre sehr viel guter Wille dazu, die aufgetretenen Schwierigkeiten zu überwinden. Es müsse jedoch möglich sein, die noch offenen Fragen so zu lösen, daß der Vertrag von allen sieben Staaten ratifiziert werden könne. Die Verhandlungen mit Großbritannien hätten Fortschritte gemacht, und es bestehe kein Anlaß, die Verhandlungen abzubrechen (Beifall).</p>
+            <p>Ein Abbruch der Verhandlungen werde auch die innere Zusammenarbeit in der EWG ernstlich stören (Zustimmung).</p>
+            <p>In diesem Fall könnten Tendenzen sichtbar werden, die Realisierung der Römischen Verträge zu verlangsamen. Auch werde ein Abbruch der Verhandlungen eine beträchtliche Verstimmung in Großbritannien auslösen. Schließlich habe der britische Premierminister erklärt, daß die Briten die Römischen Verträge voll und ganz akzeptieren, auch in ihren politischen Zielen. Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> teilt mit, er habe den Kanzler auch darauf hingewiesen, daß sich die amerikanische Politik auf den Beitritt Großbritanniens eingestellt habe.</p>
+            <p>… Mit Befriedigung habe er erfahren, daß der Bundeskanzler inzwischen dem französischen Staatspräsidenten einen Kompromißvorschlag zum Problem des Beitritts Großbritanniens unterbreitet habe. Die Reaktion der französischen Regierung auf diesen Vorschlag könne für die gesamte Bündnispolitik von entscheidender Bedeutung sein.</p>
+            <p>Die Sprecher der Fraktionen der SPD und der FDP hätten sich in dem gleichen Sinne geäußert, desgleichen der Bundestagspräsident. Der Bundeskanzler habe sich also wirklich auf ein Mandat des gesamten Bundestags sowohl hinsichtlich des weiteren Ausbaus der zweiseitigen Beziehungen als auch hinsichtlich der Weiterführung der Gespräche mit Großbritannien beziehen können.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Deutschlandpolitik]</p>
+            <p>Bundesminister Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>, gibt einen kurzen Bericht über die Vorgänge anläßlich des SED-Parteitages und des Besuchs <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> in Ost-Berlin. Der Kommunismus sei entgegen seiner eigenen wissenschaftlichen These von Krisen nicht befreit, wie der ideologische Streit zwischen Peking und Moskau zeige. Der Parteitag der SED könne als eine Übung für die kommende ideologische Auseinandersetzung mit den Chinesen oder als eine Art von Fraktionssitzung der moskauhörigen Kommunisten bezeichnet werden. Die von <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> vor sechs Wochen aufgestellte These vom Vorrang der Ökonomie mache deutlich, daß man im Ostblock wegen der großen wirtschaftlichen Schwierigkeiten auf politischem Gebiet keine großen Sprünge machen zu können glaube.</p>
+            <p>Der Minister verweist auf den Ausspruch <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name>: »Ich weiß, daß mit dieser Grenze auch Familien getrennt werden. Aber man muß hierbei beachten, daß sich die Völker jetzt nicht so sehr nach der Familienzusammengehörigkeit als nach der einheitlichen ideologischen Auffassung einteilen.«</p>
+            <p>Vor vier Jahren habe <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> noch erklärt, die Zonengrenze sei keine nationale Grenze, sondern eine Linie, die das Lager des Sozialismus von dem des Kapitalismus scheide. Aus dieser Wandlung der Anschauung ergebe sich klar, daß die Zonengrenze ein Problem sei, das nicht nur die Deutschen etwas angehe. Zwar sei der Ton der Reden etwas ruhiger und sachlicher geworden, der Inhalt sei aber derselbe geblieben. Man habe erneut eine Wiedervereinigung als nur unter kommunistischer Herrschaft möglich angesehen. Allerdings habe <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> auch gesagt, der Friedensvertrag sei nicht mehr so wichtig, weil durch die Mauer eine andere Situation entstanden sei. Die Bundesrepublik müsse sich darauf einrichten, daß ein politischer Druck, und zwar hauptsächlich auf die Bundesrepublik, ausgeübt werden würde; deswegen auch die Hervorhebung der Notwendigkeit einer Anerkennung der Zone.</p>
+            <p>Wirtschaftlich habe sich der Parteitag das Ziel gesetzt, die Bundesrepublik in der Arbeitsproduktivität zu überrunden, nachdem das Ziel, die Bundesrepublik im Verbrauch zu überholen, nicht erreicht worden sei. Die Menschen in der Zone hätten daher mit noch härteren Normen als bisher zu rechnen. Ohne ein Minimum an Arbeitslust und persönlichem Ertrag sei aber die Hebung der Arbeitsproduktivität unmöglich.</p>
+            <p>Der Redner geht sodann auf die inzwischen aufgegebene Absicht des Regierenden Bürgermeisters ein, Ministerpräsident <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> in Ost-Berlin aufzusuchen. Die Bundesregierung habe sich gegen diesen Besuch ausgesprochen, weil er sinnlos sei und auch gefährlich sein könne. Ein solcher Besuch würde Verwirrung in der Welt, in Berlin und auch in der Bundesrepublik geschaffen haben (Beifall). Durch einen solchen Besuch wäre angesichts der Erklärungen <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbrichts</name> und <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name>, daß Berlin zur DDR gehöre, trotz aller papierneren Vorbehalte ein Faktum gesetzt worden, das man nicht mehr aus der Welt hätte schaffen können. Die richtigere Antwort auf die Erklärungen <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschows</name> und <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbrichts</name> wäre ein stärkeres Zusammenrücken zwischen Senat und Bundesregierung gewesen. Der Redner bezeichnet die Bemerkung in dem Aufsatz von Jürgen <name type="Person" role="Erwaehnung" ref="#TernJuergen">Tern<seg type="note">
+                     <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_vxw_kqj_xrb" type="comment">
+                        <p>Bei der Bearbeitung korrigiert aus: »Stern«.</p>
+                     </note>
+                  </seg>
+               </name> in der »Frankfurter Allgemeinen Zeitung« als äußerst treffend: »Was hat es für einen Zweck, wenn der Hering versucht, sich mit dem Haifisch zu unterhalten?« (Beifall).</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> verweist darauf, daß die außenpolitische Vertretung West-Berlins ausschließlich bei der Bundesregierung liege. Es sei verhängnisvoll, wenn der Eindruck entstünde, daß der Regierende Bürgermeister von Berlin Verhandlungen dieser Art mit einer ausländischen Macht führe. Es sei zu begrüßen, daß der Bürgermeister von diesem folgenschweren und gefährlichen Schritt habe abgehalten werden können. Allerdings habe der Regierende Bürgermeister eine etwas verständlichere Begründung geben können als die, die er tatsächlich gegeben habe.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[3. Plenarplan]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt das Programm der nächsten Plenarsitzungen bekannt. Am 23. Januar werde das »Sozialpaket« eingebracht.<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN001" type="comment">
+                     <p>Gesetzentwurf zur Neuregelung des Rechts der gesetzlichen Krankenversicherung – Krankenversicherungs-Neuregelungsgesetz – (Drs. IV/816 vom 7. 12. 1962), Gesetzentwurf über die Fortzahlung des Arbeitsentgelts im Krankheitsfalle – Lohnfortzahlungsgesetz – (Drs. IV/817 vom 7. 12. 1962) sowie Entwurf eines Bundeskindergeldgesetzes (Drs. IV/818 vom 7. 12. 1962).</p>
+                  </note>
+               </seg> Nach der Begründung der drei Vorlagen durch Minister <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name> werde <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> für die CDU/CSU sprechen. Nach der Debatte werde es zu einer bedeutsamen Geschäftsordnungsabstimmung kommen. Die SPD verlange, daß das Krankenversicherungs-Neuregelungsgesetz und das Kindergeldgesetz federführend, das Lohnfortzahlungsgesetz mitberatend an den Sozialpolitischen Ausschuß überwiesen werde. Wenn das geschehe, werde die Beratung der drei Entwürfe wesentlich länger dauern als veranschlagt und in der laufenden Legislaturperiode wahrscheinlich überhaupt nicht mehr abgeschlossen werden können. Das sei unter Umständen auch die Absicht der SPD. Auch könnten die Entwürfe in diesem Fall nicht gleichzeitig verabschiedet werden.</p>
+            <p>Der Fraktionsvorstand schlage deshalb vor, das Krankenversicherungs-Neuregelungsgesetz dem Ausschuß für Sozialpolitik federführend, das Kindergeldgesetz dem Ausschuß für Arbeit federführend – wobei der Sozialpolitische Ausschuß nicht beteiligt werden solle – und das Lohnfortzahlungsgesetz an den Ausschuß für Arbeit zu überweisen, wobei der Sozialpolitische Ausschuß zu einigen wenigen Fragen gutachtlich gehört werden solle.</p>
+            <p>Die Haltung der FDP in dieser Frage sei nicht einheitlich; es sei aber möglich, diesen Punkt mit der FDP abzustimmen. Von seiten der CDU/CSU habe man gedroht, man werde eher einen Sonderausschuß »Krankenversicherung« einrichten, als alle drei Gesetze vom Sozialpolitischen Ausschuß beraten lassen. – Am Nachmittag würden Verhandlungen mit den anderen Fraktionen geführt. Notfalls werde es jedoch zu einer Kampfabstimmung im Plenum kommen.</p>
+            <p>Die Notstandsgesetzgebung werde ebenfalls insgesamt eingebracht und vom Innenminister begründet. Die Debatte werde vom Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> eröffnet werden. Später solle dann die Beratung in drei Kapitel aufgegliedert werden.</p>
+            <p>Über die Frage der Ausschußüberweisung sei im Ältestenrat folgende Vereinbarung getroffen worden. Nach der Geschäftsordnung solle ein Gesetzentwurf im Normalfall nur an einen Ausschuß überwiesen werden. In Sonderfällen sollten höchstens zwei Ausschüsse mitberatend beteiligt werden. Allerdings hätten die Vorsitzenden des federführenden Ausschusses die Pflicht, die Ausschüsse, die ein Interesse an der Materie hätten, um eine gutachtliche Stellungnahme innerhalb einer bestimmten Frist zu bitten. Hinsichtlich der Notstandsgesetzgebung werde es wohl bei jedem einzelnen Entwurf eine Kampfabstimmung bezüglich der Ausschußüberweisung geben.</p>
+            <p>Der Vorstand habe folgende Ausschußüberweisung vorgesehen: Ergänzung des Grundgesetzes<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN002" type="comment">
+                     <p>Gesetzentwurf zur Änderung des Grundgesetzes – Artikel 115 a–m – (Drs. IV/891 vom 11. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Rechtsausschuß, mitberatend an die Ausschüsse für Inneres und für Verteidigung, Wirtschaftssicherstellungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN003" type="comment">
+                     <p>Gesetzentwurf über die Sicherstellung von Leistungen auf dem Gebiet der gewerblichen Wirtschaft sowie des Geld- und Kapitalverkehrs – Wirtschaftssicherstellungsgesetz – (Drs. IV/892 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Wirtschaftsausschuß, mitberatend an den Ausschuß für Inneres und den Rechtsausschuß, Ernährungssicherstellungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN004" type="comment">
+                     <p>Gesetzentwurf über die Sicherstellung der Versorgung mit Erzeugnissen der Ernährungs- und Landwirtschaft sowie der Forst- und Holzwirtschaft – Ernährungssicherstellungsgesetz – (Drs. IV/893 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Ernährungsausschuß, mitberatend an den Ausschuß für Inneres und den Wirtschaftsausschuß, Verkehrssicherstellungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN005" type="comment">
+                     <p>Gesetzentwurf zur Sicherstellung des Verkehrs – Verkehrssicherstellungsgesetz – (Drs. IV/894 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Verkehrsausschuß, mitberatend an die Ausschüsse für Inneres und für Verteidigung, Zivildienstgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN006" type="comment">
+                     <p>Gesetzentwurf über den Zivildienst im Verteidigungsfall – Zivildienstgesetz – (Drs. IV/450 vom 6. 6. 1962).</p>
+                  </note>
+               </seg> federführend an den Ausschuß für Inneres, mitberatend an den Verteidigungsausschuß und den Rechtsausschuß, Gesetz über den Bundesgrenzschutz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN007" type="comment">
+                     <p>Gesetzentwurf zur Ergänzung des Gesetzes über den Bundesgrenzschutz und die Einrichtung von Bundesgrenzschutzbehörden (Drs. IV/343 vom 3. 4. 1962).</p>
+                  </note>
+               </seg> federführend an den Ausschuß für Inneres, mitberatend an den Verteidigungsausschuß und den Rechtsausschuß, Aufenthaltsregelungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN008" type="comment">
+                     <p>Gesetzentwurf zur Regelung des Aufenthalts der Zivilbevölkerung im Verteidigungsfall – Aufenthaltsregelungsgesetz – (Drs. IV/895 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Ausschuß für Inneres, mitberatend an den Rechtsausschuß, Schutzbaugesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN009" type="comment">
+                     <p>Gesetzentwurf über bauliche Maßnahmen zum Schutz der Zivilbevölkerung – Schutzbaugesetz – (Drs. IV/896 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Ausschuß für Inneres, mitberatend an die Ausschüsse für Wohnungswesen, für Kommunalpolitik und den Rechtsausschuß, Selbstschutzgesetz<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN010" type="comment">
+                     <p>Gesetzentwurf über den Selbstschutz der Zivilbevölkerung – Selbstschutzgesetz – (Drs. IV/897 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> federführend an den Ausschuß für Inneres, mitberatend an den Rechtsausschuß und den Ausschuß für Sozialpolitik.</p>
+            <p>Strittig sei auch noch die Beteiligung des Haushaltsausschusses an der Beratung des Schutzbaugesetzes und des Selbstschutzgesetzes. Der Ältestenrat sei im Einvernehmen mit dem Vorsitzenden des Haushaltsausschusses der Meinung gewesen, der Haushaltsausschuß brauche zu diesem Zeitpunkt noch nicht beteiligt zu werden. Wahrscheinlich werde aber im Plenum die Beteiligung des Haushaltsausschusses beantragt und auch beschlossen werden. Im Interesse einer zügigen Beratung sei zu wünschen, daß keine weiteren Ausschüsse beteiligt würden. Die interessierten Ausschüsse könnten aber zu einzelnen Fragen gutachtlich gehört werden.</p>
+            <p>Der Redner teilt anschließend das Programm der Sitzungswoche im Februar mit.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> unterstützt den Appell des MdB <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, sich bezüglich der Ausschußüberweisung an die Vorschläge des Vorstandes zu halten. Die Beteiligung zu zahlreicher Ausschüsse könne die Gesetzgebungsarbeit lahmlegen. Die Fraktion müsse schon deshalb geschlossen abstimmen, um eventuellen Verzögerungsabsichten der SPD entgegenzuwirken.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> schlägt einen Antrag der Fraktion auf Beteiligung des Haushaltsausschusses an der Beratung des Schutzbaugesetzes vor.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-4">
+            <head>D.</head>
+            <p>[4. Versorgungslage mit Heizmaterial]</p>
+            <p>Bundeswirtschaftsminister Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name> erstattet einen kurzen Bericht über die Lage auf dem Heizmaterialmarkt. Die Versorgung mit Heizmaterial sei durch die Kältewelle keineswegs ernsthaft gefährdet. Es könne höchstens in dem einen oder anderen Ort eine vorübergehende Störung eintreten. Gewisse Schwierigkeiten seien auch nur dadurch entstanden, daß sich jeder im Augenblick so schnell wie möglich größere Vorräte anlegen wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> spricht allen, die auch bei der großen Kälte unermüdlich für die Versorgung der Bevölkerung tätig gewesen sind, seinen Dank aus.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-5">
+            <head>E.</head>
+            <p>5. Wahlen</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KankaKarl_1957-10-15">Kanka</name> gibt von einem im Arbeitskreis I geäußerten Wunsch Kenntnis, die Vorstandswahl zu verschieben und mit der Beschlußfassung über organisatorische Maßnahmen zur Hebung der Arbeitswirksamkeit der Fraktion zu verbinden, da sonst die Debatte über die Notstandsgesetzgebung und über das Sozialpaket zu kurz komme.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bittet, die Wahl durchzuführen. Sie sei schon vor sechs Wochen angekündigt worden, und eine Verschiebung könne zu allen möglichen Spekulationen Anlaß geben. Auch könne mit einer Neuorganisation der Fraktion erst begonnen werden, wenn der neue Vorstand gebildet sei. Es sei daher besser, mit der Vorstandswahl sofort zu beginnen. Als Wahlleiter sei <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> vorgeschlagen.</p>
+            <p>Die Fraktion ist mit der Wahlleitung durch <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> einverstanden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> stellt fest, die Wahl des Fraktionsvorsitzenden müsse in geheimer Abstimmung erfolgen und gelte bis zum Ende der Legislaturperiode; eine Aussprache über die Wahl finde nicht statt. – Der Wahlleiter bittet um Wahlvorschläge.</p>
+            <p>(Zurufe: Wiederwahl!)</p>
+            <p>Die Fraktion wählt mit 180 gegen 2 Stimmen bei 11 Stimmenthaltungen <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> zum Fraktionsvorsitzenden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> nimmt die Wahl an und dankt für das durch die Wahl zum Ausdruck gebrachte Vertrauen der Fraktion. Er werde alles tun, um die Fraktion immer enger zusammenzuschließen. Von dem Ergebnis der Arbeit der Fraktion werde es abhängen, ob die CDU/CSU bei der nächsten Wahl wieder die absolute Mehrheit erhalten werde.</p>
+            <p>Zur Wahl der Stellvertreter schlägt der Vorsitzende vor, einen fünften stellvertretenden Vorsitzenden zu wählen, möchte aber, daß darüber erst in einer späteren Sitzung entschieden werde. Im Augenblick sei er noch nicht in der Lage, einen konkreten Vorschlag bezüglich dieses Vertreters zu machen. Der Vorstand schlage der Fraktion als stellvertretende Vorsitzende vor <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> und <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>. Der Vorsitzende stellt fest, daß andere Vorschläge nicht gemacht werden.</p>
+            <p>Die Fraktion wählt <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> mit 176, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name> mit 175, <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> mit 154 und <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> mit 125 von 194 abgegebenen Stimmen zu stellvertretenden Vorsitzenden. Weitere 22 Stimmen entfallen auf 14 Abgeordnete.</p>
+            <p>(Alle Gewählten nehmen die Wahl an.)</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> leitet die Wahl der Vorsitzenden der Arbeitskreise. Es würden zunächst nur die Vorsitzenden der Arbeitskreise I, II, III und V gewählt. Über die eventuelle Einrichtung eines VI. Arbeitskreises werde in der nächsten Fraktionssitzung entschieden. Die Wahl des Vorsitzenden für den Arbeitskreis IV müsse zurückgestellt werden, da noch keine abschließende Vereinbarung mit der CSU zustande gekommen sei. Bis zur Wahl werde <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> wie bisher die Leitung des AK übernehmen. Der Vorschlag für die Wahl der Vorsitzenden der Arbeitskreise laute:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Arbeitskreis I</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis II</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis III</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis V</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>.</cell>
+               </row>
+            </table>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> bedauert es, daß ausgerechnet der Vorsitzende des Arbeitskreises IV nicht gewählt werde, obwohl er am nächsten Tage als Sprecher der Fraktion zum »Sozialpaket« Stellung nehmen solle. Eine nur kommissarische Beauftragung mit der Leitung des AK mindere sein Gewicht in der Plenardebatte erheblich.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erklärt, die Fraktion habe diesem Verfahren zugestimmt.</p>
+            <p>(Widerspruch.)</p>
+            <p>Der Redner legt dar, <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> habe den Zusammenhang aufgezeigt, und die Fraktion habe zugestimmt. In der Sache könne er <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> gar nicht widersprechen. Um die schnelle Abwicklung der Wahlen nicht zu gefährden, sei es jedoch besser, es bei der einmal getroffenen Regelung zu belassen.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> bemerkt, <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> habe zwar die Situation dargelegt, die Fraktion habe sich aber noch nicht dazu geäußert. Die Abgeordnete stellt den Antrag, die Wahl aller fünf Arbeitskreisvorsitzenden zurückzustellen, damit keine falsche Optik entstehe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> wendet ein, der Eindruck in der Öffentlichkeit sei schlechter, wenn die ganze Wahl verschoben, als wenn nur ein Posten noch nicht besetzt werde.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> bittet um eine Stellungnahme der CSU.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauerJosef_1953-10-06">Bauer</name> führt in Vertretung des Vorsitzenden der CSU aus, es gebe gute Gründe, die Wahl des Vorsitzenden des Arbeitskreises IV im Augenblick nicht vorzunehmen, weil hierzu auch innerhalb der CSU noch Überlegungen angestellt werden müßten.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> zieht nach dieser Erklärung ihren Antrag zurück.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> stellt fest, daß weitere Vorschläge für die Wahl der Arbeitskreisvorsitzenden nicht vorliegen.</p>
+            <p>Die Fraktion wählt in geheimer Wahl zum Vorsitzenden des</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Arbeitskreis I</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> mit 165</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis II</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> mit 164</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis III</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> mit 158</cell>
+               </row>
+               <row>
+                  <cell>Arbeitskreis V</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name> mit 168</cell>
+               </row>
+            </table>
+            <p>von 178 abgegebenen Stimmen. Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name>, <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> und <name type="Person" role="Sprecher" ref="#MajonicaErnst_1950-11-19">Majonica</name> nehmen die Wahl an; das Einverständnis des Abg. <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> soll schriftlich eingeholt werden.</p>
+            <p>Die Fraktion wählt sodann <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> und <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> zu parlamentarischen Geschäftsführern der Fraktionen der CDU und der CSU. Beide Abgeordnete nehmen die Wahl an.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> unterbreitet der Fraktion den Vorschlag des Vorstandes für die direkt zu wählenden 16 Mitglieder des Vorstandes.</p>
+            <p>Es sind dies <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name>, <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name>, <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name>, <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name>, Frau <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name>, <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> und <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> regt an, die Zahl der direkt zu wählenden Vorstandsmitglieder von 16 auf 20 zu erhöhen und die Zahl der kooptierten von 13 auf 9 herabzusetzen. Das liege im Sinne einer weiteren Aktivierung und Demokratisierung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> stellt fest, ein solcher Antrag müsse, da er eine Änderung der Fraktionssatzung beinhalte, vorher schriftlich eingebracht und auf die Tagesordnung gesetzt werden. Die Fraktionssatzung sei in der ersten Sitzung mit Zustimmung der Fraktion übernommen worden. Der Redner fragt, ob <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> einen Antrag auf entsprechende Änderung der Fraktionssatzung stellen wolle.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuntscherErnst_1949-09-07">Kuntscher</name> weist darauf hin, daß nach der Fraktionsmitteilung die Wahl ungültig sei, wenn weniger als 16 Mitglieder des Vorstands angekreuzt würden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> stellt klar, in einem solchen Fall müsse die Wahl gültig sein.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> schlägt vor, <name type="Person" role="Erwaehnung" ref="#FritzGerhard_1957-10-15">Fritz</name> mit in den Vorstand zu wählen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#KuchtnerEdeltraud_1953-10-06">Kuchtner</name> schlägt die Zuwahl von Frau <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> vor.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> äußert Zweifel, ob die Wahl wirklich gültig sei, wenn weniger als 16 Namen angekreuzt würden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> legt dar, zwar sehe die Fraktionsgeschäftsordnung die Ungültigkeit vor, aber bereits in der letzten Legislaturperiode habe die Fraktion festgestellt, daß diese Bestimmung keinen Bestand haben könne, da sie undemokratisch sei. Am besten fasse die Fraktion einen formellen Beschluß in diesem Sinne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MengelkampTheodor_1957-10-15">Mengelkamp</name> meint, wenn die Geschäftsordnung in diesem Punkt so einfach geändert werden könne, könne auch die Anregung des MdB <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> berücksichtigt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> bittet, von einer derartigen Änderung Abstand zu nehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> wiederholt seine Anregung, die Zahl der direkt zu wählenden Vorstandsmitglieder zu erhöhen. Es sei für den einzelnen bedeutend angenehmer, wenn er direkt gewählt statt nur kooptiert sei. Unter den Kooptierten befänden sich genügend Persönlichkeiten, die von der Fraktion auch gewählt werden würden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> spricht sich gegen die Anregung des Abg. <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> aus. Die Kooptation sei notwendig, um die landsmannschaftliche Gliederung der Fraktion berücksichtigen zu können. Die landsmannschaftliche Zugehörigkeit könne aber erst berücksichtigt werden, wenn feststehe, wer direkt in den Vorstand gewählt sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> gibt, ohne zu der Sachfrage selbst Stellung zu nehmen, zu bedenken, daß man die Geschäftsordnung nicht einfach ad hoc ändern könne. Dafür spielten hier zu viele Überlegungen, vor allem landsmannschaftlicher Art, eine Rolle.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> führt aus, zwar sprächen viele Gründe für eine Begrenzung der Zahl zu kooptierender Vorstandsmitglieder, jedoch könne man im Augenblick nur schwer eine Entscheidung treffen. – Selbstverständlich könnten einige der vorgeschlagenen Namen gestrichen werden, ohne daß man gezwungen sein dürfe, andere Namen hinzuzusetzen. Es sollten aber nur die vorgeschlagenen Fraktionsmitglieder gewählt und nicht noch Namen hinzugeschrieben werden, die nicht vorgeschlagen seien, da dies zu einer zu großen Zersplitterung führe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> zieht seine Anregung zurück, um die Wahlhandlung nicht zu komplizieren. Es sei aber wünschenswert, die Geschäftsordnung später einmal in dem vorgeschlagenen Sinne zu ändern.</p>
+            <p>Die Fraktion wählt folgende Abgeordneten in den Vorstand: <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name> mit 140, <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> mit 135, Frau <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name> mit 135, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> mit 135, <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name> mit 133, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> mit 131, <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> mit 129, <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name> mit 128, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name> mit 125, <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> mit 123, <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> mit 123, <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name> mit 115, <name type="Person" role="Erwaehnung" ref="#StillerGeorg_1953-10-06">Stiller</name> mit 109, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> mit 109, <name type="Person" role="Erwaehnung" ref="#FritzGerhard_1957-10-15">Fritz</name> mit 107 und <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> mit 103 von insgesamt 158 abgegebenen Stimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> gibt den Vorschlag des Vorstandes für die Wahl der Mitglieder des Etatausschusses bekannt. Es seien dies <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#WernerRudolf_1959-07-24">Werner</name> und <name type="Person" role="Erwaehnung" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name>.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> bittet, auf seine Benennung zu verzichten.</p>
+            <p>Die Fraktion wählt <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#WernerRudolf_1959-07-24">Werner</name> und <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> in offener Abstimmung zu Mitgliedern des Etatausschusses.</p>
+            <p>Anschließend wählt die Fraktion in offener Abstimmung <name type="Person" role="Erwaehnung" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> und <name type="Person" role="Erwaehnung" ref="#GluesingHermann_1949-09-07">Glüsing</name> zu Mitgliedern des Kontrollausschusses.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-6">
+            <head>F.</head>
+            <p>[6. Steuern und Abgaben. Personensteuern]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HesbergCarl_1953-10-06">Hesberg</name> berichtet, am Vortage habe der in der letzten Fraktionssitzung eingesetzte kleine Arbeitskreis unter Vorsitz von <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> getagt und sei zu dem gleichen Ergebnis wie der Arbeitskreis III gekommen, daß nämlich zur Sicherung der Wettbewerbsgleichheit und der Wettbewerbsneutralität die Frist für die Suspendierung des § 7 b EStG auf den 1. April 1964 limitiert werden solle.<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN011" type="comment">
+                     <p>Gesetzentwurf zur Einschränkung des § 7 b des Einkommensteuergesetzes (Drs. IV/738 vom 14. 11. 1962).</p>
+                  </note>
+               </seg> Auch der private Wohnungsbau solle zwar von dieser Suspendierung betroffen werden, ein Regierungsentwurf sehe aber rückwirkend eine kombinierte degressive-lineare Abschreibung vor, mit deren Einführung die Fraktion sicherlich einverstanden sei (Beifall).</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schlägt vor, <name type="Person" role="Erwaehnung" ref="#HesbergCarl_1953-10-06">Hesberg</name> und <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> sollten einen entsprechenden Entschließungsantrag ausarbeiten.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-7">
+            <head>G.</head>
+            <p>[7. Sozialpolitik]</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#BleylerHildegard_1953-10-06">Bleyler</name> erklärt, es sei ihr glaubhaft versichert worden, der Bundesarbeitsminister sei bereit, den gesamten Mutterschutz auf alle Frauen auszudehnen und nicht auf die versicherten oder mitversicherten Frauen zu beschränken. So wünschenswert eine solche Maßnahme auch sei, so führe sie doch in einem wichtigen Lebensbereich zum Versorgungsstaat. In der Frage des Versorgungsstaates habe sich die CDU/CSU früher scharf von der SPD unterschieden. Es müsse einmal grundsätzlich die Frage besprochen werden, wo in der Sozialpolitik der Versorgungsstaat beginne. Man müsse von Zeit zu Zeit in der Routinearbeit innehalten und überlegen, welches eigentlich das Ziel der Arbeit sei und inwieweit man diesem Ziele näher gekommen sei. Auch gelte es, einen Gesamtüberblick über die finanziellen Anforderungen zu bekommen, die durch die in diesem Jahre zu verabschiedenden Gesetze entstünden. Die Leitlinien der Gesetzgebungsarbeit der Fraktion müßten klar herausgearbeitet werden.</p>
+            <p>In weiten Kreisen der Bevölkerung herrsche der Eindruck, die CDU/CSU überlasse der SPD die Initiative und werde nur noch tätig, wenn die Opposition etwas vorgeschlagen habe. Die Fraktion müsse viel häufiger über die Entwicklung unterrichtet werden. So sei bisher noch nicht über die in Brüssel begonnenen Harmonisierungsversuche auf dem Gebiete der Sozialpolitik berichtet worden, die angeblich einen stark sozialistischen Akzent trügen. Auch fehle ein Überblick über den Entwurf der Unfallversicherung, der in der nächsten Woche im Plenum behandelt werde.<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN012" type="comment">
+                     <p>CDU/CSU-Gesetzentwurf zur Neuregelung des Rechts der gesetzlichen Unfallversicherung – Unfallversicherungs-Neuregelungsgesetz – (Drs. IV/120 vom 11. 1. 1962).</p>
+                  </note>
+               </seg> Früher sei es üblich gewesen, nach der ersten Lesung eines Entwurfs die Probleme in der Fraktion grundsätzlich zu besprechen.</p>
+            <p>Die Abgeordnete befürchtet, die Einigkeit werde leiden, wenn die Fraktion diesen alten Brauch nicht wiederaufnehme (Beifall).</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> stimmt diesen Ausführungen zu. Leider sei nicht genügend Zeit vorhanden, diesen Punkt zu vertiefen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-8">
+            <head>H.</head>
+            <p>[8. Notstandsrecht]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> wendet sich der Notstandsgesetzgebung zu. Die Entwürfe seien so wichtig, daß der Fraktionsvorsitzende selbst als erster zu ihnen Stellung nehmen solle. Diesmal könne die Opposition nicht behaupten, sie sei bei der Vorbereitung übergangen worden. Für die Diskussion stünden für jeden Gesetzentwurf zwei Redner der Fraktion zur Verfügung. Am Vormittag habe im Arbeitskreis eine abschließende Besprechung stattgefunden. Der Abgeordnete teilt sodann mit, welche Redner im einzelnen zu den Entwürfen Stellung nehmen würden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> führt aus, für den Bau der vorgesehenen zivilen Luftschutzbauten würden im Jahr mindestens 1,8 Milliarden DM zusätzlich benötigt, nach den Berechnungen des Finanzministeriums sogar 2,3 Milliarden DM.<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN013" type="comment">
+                     <p>Gesetzentwurf über bauliche Maßnahmen zum Schutz der Zivilbevölkerung – Schutzbaugesetz – (Drs. IV/896 vom 14. 1. 1963).</p>
+                  </note>
+               </seg> Diese Tatsache bringe die Haushalte ab 1964 in eine außerordentliche schwierige Situation, da außerdem noch für den Verteidigungshaushalt 1 Milliarde DM mehr aufgebracht werden müßten, wenn die Stärke der Bundeswehr auf 500 000 Mann gebracht werden solle. Der Arbeitskreis habe am Vormittag in diesem Zusammenhang eine Reihe von Möglichkeiten geprüft.</p>
+            <p>Erstens müsse darauf geachtet werden, daß die Kosten nicht schlagartig auf einmal auf diese Größenordnung gebracht würden. Zweitens müsse versucht werden, eine Anrechnung der Eigenleistungen auf das deutsche NATO-Konto zu erreichen. Drittens könne man sich beim Ausbau der Luftschutzräume mit einer Druckfestigkeit von 0,5 statt 3 atü begnügen, was eine erhebliche Kostenersparnis zur Folge habe.</p>
+            <p>Darüber hinaus sei ausführlich die Frage der Kostenverteilung auf Bund, Länder, Gemeinden und auch auf den einzelnen Staatsbürger behandelt worden. Die Gesamtkosten allein für die Erstellung der Luftschutzbauten betrügen etwa 70 bis 80 Milliarden DM. Wenn man sich nicht finanziell und auch personell übernehmen wolle, müsse man mit sehr großer Vorsicht an das Problem des zivilen Luftschutzes herangehen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> bemängelt, daß zu dieser äußerst schwierigen Frage kein ausführlicher Bericht des Arbeitskreises vorgelegt worden sei. Es sei erfreulich, daß die Bundesregierung nach jahrelangen Verzögerungen nun im Anschluß an die Kuba-Krise doch sehr schnell einen Gesetzentwurf vorgelegt habe. Grundsätzlich seien diese Entwürfe zu bejahen; es könne jedoch angesichts der gewichtigen sachlichen, finanziellen und zum Teil auch verfassungsrechtlichen Probleme nicht im Schnellverfahren über diese Frage entschieden werden. Die Frage der Kostenverteilung auf Bund, Länder und Kommunen sei noch nicht geklärt, auch sei die Stellungnahme des Bundesrates noch nicht ganz klar.</p>
+            <p>§ 8 des Entwurfs des Schutzbaugesetzes sehe eine uneingeschränkte Befugnis der Bundesregierung vor, durch Rechtsverordnung ohne Limitierung die Bundeszuschüsse festzulegen. Die Fraktion müsse noch einmal prüfen, ob angesichts der in Frage stehenden Beträge eine solch weitgehende Ermächtigung erteilt werden sollte. Das stehe im Widerspruch zu der Zuständigkeit und dem Haushaltsrecht des Parlaments.</p>
+            <p>Der Abgeordnete schlägt vor, aus Mitgliedern des AK I und III einen kleinen Ad-hoc-Arbeitskreis zu bilden, der sich nach der ersten Lesung gemeinsam mit der Regierung und der FDP mit solchen offenen Fragen befassen solle (Beifall).</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> betont, der Arbeitskreis habe die von <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> vorgetragenen Bedenken durchaus erkannt. Bei diesen Gesetzen träten jedoch nicht nur finanzpolitische, sondern auch einige kommunalpolitische Aspekte in Erscheinung.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> berichtet über die im Arbeitskreis erzielten Ergebnisse. Das Schutzbaugesetz sehe zunächst bei Neubauten einen obligatorischen Grundschutz vor. Dieser Grundschutz solle bei Altbauten durch Zuschüsse und steuerliche Vergünstigungen gefördert werden. Im zweiten Teil des Gesetzes sei schematisch ein verstärkter Grundschutz für Orte mit mehr als 50 000 Einwohnern vorgesehen. Die Kosten für diesen verstärkten Grundschutz trage der Bund. Die Errichtung öffentlicher Schutzräume an Brennpunkten des Verkehrs sei ebenfalls Sache des Bundes, wobei die Gemeinden die Grundstücke zu stellen und die Verwaltung der Schutzräume zu übernehmen hätten. Die Regelung im einzelnen solle weitgehend durch Rechtsverordnung erfolgen.</p>
+            <p>Es sei am besten, in der ersten Lesung nur auf die Grundzüge einzugehen und sich auch noch nicht auf Einzelvorschläge des Regierungsentwurfs festzulegen. Im einzelnen seien noch sehr viele Änderungen diskutabel, so z. B. die obligatorische Errichtung von Schutzräumen auch in Altbauten und ähnliches.</p>
+            <p>Der Abgeordnete tritt dafür ein, auch den Haushaltsausschuß an den Beratungen zu beteiligen. Auch der Kommunalpolitische Ausschuß sei an der Sache sehr interessiert. Im übrigen werde bei der Ausschußarbeit wahrscheinlich noch sehr viel umgebaut und ausgefüllt werden müssen (Beifall).</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> regt an, die Arbeitskreise I und III sollten Vorschläge für die Besetzung der von <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name> vorgeschlagenen kleinen Kommission machen. Der Vorstand werde dann in der nächsten Woche über das Ergebnis berichten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SteckerJosef_1957-10-15">Stecker</name> nimmt zu der kommunalpolitischen Seite der Notstandsgesetzgebung Stellung. Die Kommunen interessierten sich sehr für die Frage des Luftschutzes, da sie von ihm am unmittelbarsten betroffen würden. Die Gemeinden wünschten einen klaren Instanzenzug in der Luftschutzorganisation. Auch bestünden unterschiedliche Auffassungen z. B. hinsichtlich der Auftragsverwaltung. Die Kommunen wünschten eine starke Konzentration aller Pflichten und Aufgaben bei der unteren Verwaltungsbehörde. Es sei jedoch zu berücksichtigen, daß die Kommunalverfassungen in den einzelnen Ländern unterschiedlich seien. Zu den die Kommunen interessierenden Fragen gehöre auch die Kostenverteilung. Alle diese Dinge müßten bei den Ausschußberatungen zur Sprache kommen. Es sei daher zweckmäßig, im federführenden Ausschuß auch die kommunalen Spitzenverbände zu diesen Fragen zu hören. Die Tatsache, daß eine Anhörung dieser Verbände bisher nicht erfolgt sei, habe schon eine beträchtliche Verstimmung ausgelöst.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-9">
+            <head>I.</head>
+            <p>[9. Bundestag]</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> teilt außerhalb der Tagesordnung mit, daß der Bundestagsvorstand am Abend über den Bau eines neuen Bundeshauses entscheiden werde. Der Präsident gibt sodann noch einige Einzelheiten der Planung bekannt.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-10">
+            <head>J.</head>
+            <p>[10. Ausschüsse]</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> regt an, vor der nächsten Fraktionssitzung die in den europäischen Gremien vertretenen Abgeordneten zu der Frage zu hören, ob ein Bundestagsausschuß für Europafragen gebildet werden solle.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> antwortet, diese Frage müsse auch interfraktionell abgestimmt werden. Es gehe hauptsächlich darum, ob ein 27. Bundestagsausschuß oder ein Unterausschuß des Auswärtigen Ausschusses gebildet werden solle. Im letzten Fall sollten sich die Mitglieder jedoch nicht nur aus Mitgliedern des Auswärtigen Ausschusses zusammensetzen, es sollten vielmehr auch Wirtschaftspolitiker, Ernährungspolitiker und Sozialpolitiker beteiligt sein. Zunächst werde diese Sache aber im Ältestenrat besprochen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> führt aus, zweifellos bestehe ein Bedürfnis nach einer engeren Verbindung der Arbeit in den europäischen Parlamenten mit der Arbeit in den Bundestagsausschüssen. Die Einrichtung eines besonderen Ausschusses für europäische Angelegenheiten sei jedoch nicht zu empfehlen, da damit ein wesentlicher Teil aus der Zuständigkeit des Auswärtigen Ausschusses herausgebrochen werde. Es handele sich meist um Fragen, die gar nicht isoliert betrachtet werden könnten, sondern im Zusammenhang mit den allgemeinen Problemen der Außenpolitik gesehen werden müßten. Es sei aber nichts gegen die Bildung eines Unterausschusses des Auswärtigen Ausschusses einzuwenden. Dieser Unterausschuß könne auch die dem Parlament in dem Ratifikationsgesetz zu den Römischen Verträgen übertragenen Aufgaben wahrnehmen. Er könne sich beispielsweise von dem deutschen Vertreter im Ministerrat über den Stand der Verhandlungen des Ministerrats unterrichten lassen. Auch könne er die in den europäischen Gremien erarbeiteten Gesetze und Konventionen prüfen und für das Parlament vorbereiten. Eine ähnliche Aufgabe habe bereits der beim Bundesrat bestehende Ausschuß für auswärtige Angelegenheiten. Bevor die Einrichtung eines Ausschusses für europäische Angelegenheiten mit den anderen Fraktionen erörtert werde, sei es zweckmäßig, eine gemeinsame Auffassung der Fraktion zu erarbeiten (Beifall).</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> verweist auf die Harmonisierung des Steuerrechts innerhalb der europäischen Gemeinschaft, die in den nächsten acht Jahren eine gewaltige Rolle spielen werde, da sie die Voraussetzung für das Funktionieren des Gemeinsamen Marktes sei. Die Europäische Kommission habe eine entscheidende Richtlinie an den Ministerrat herausgegeben, zu der das deutsche Parlament in der Zwischenzeit Stellung nehmen könne. Die Harmonisierung des Steuerrechts mache z. B. eine völlige Reform des deutschen Umsatzsteuerrechts erforderlich. Die Aufgabe eines Unterausschusses für europäische Angelegenheiten könne es nur sein, die in den einzelnen Fachausschüssen erarbeiteten Auffassungen, soweit sie sich widersprächen, zu koordinieren. Der Abgeordnete warnt davor, die in der zu Beginn der Sitzung verteilten Drucksache erwähnte Alternative auch nur in Erwägung zu ziehen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#FritzGerhard_1957-10-15">Fritz</name> bemerkt, das Problem der Koordination zwischen dem Europäischen Parlament und den nationalen Parlamenten bestehe schon seit längerer Zeit. Die Gesetzgebung laufe Gefahr auseinanderzufallen, da sie auch nicht annähernd zu übersehen sei. Vielleicht sei es besser, von der Bildung eines Ausschusses oder Unterausschusses für europäische Angelegenheiten abzusehen und statt dessen bei der Fraktion hauptamtlich jemanden einzustellen, der nichts anderes zu tun habe, als die Entwicklung im Bundestag und in den europäischen Gremien zu beobachten und die Vorsitzenden oder die Obleute sofort zu unterrichten, so daß die Arbeit im Bundestag und in den europäischen Gremien besser koordiniert werden könne (Beifall).</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> betont, die wirklich gesetzgebende Körperschaft unter den europäischen Gremien sei der Ministerrat, dessen Arbeit jedoch unter keinerlei parlamentarischer Kontrolle stehe. Eine solche Kontrolle sei auch in den Römischen Verträgen nicht vorgesehen. Der Bundestag habe aber das Recht der Kontrolle aller Angelegenheiten der Bundesregierung. Auf diesem Wege könne man wenigstens die deutschen Vertreter im Ministerrat kontrollieren. Dazu brauche man ein besonderes parlamentarisches Organ. Ob das ein Ausschuß oder ein Unterausschuß sei, spiele keine Rolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> stimmt der Auffassung des Abg. <name type="Person" role="Erwaehnung" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> zu und vertritt mit Nachdruck erneut den Standpunkt, es müsse sich um einen Unterausschuß des Auswärtigen Ausschusses handeln, damit nicht die Funktionen dieses Ausschusses und auch die parlamentarische Kontrolle des Ministerrats von der allgemeinen Richtung der Außenpolitik abwichen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> verspricht, die Diskussionsbeiträge bei den Beratungen im Vorstand zu verwerten. Die Fraktion solle sich jedoch in Gesprächen mit anderen Fraktionen nicht festlegen, ehe nicht eine Abstimmung innerhalb der eigenen Fraktion und auch mit den Ministern stattgefunden habe. Der Vorstand werde einen Vorschlag ausarbeiten und der Fraktion zur Diskussion stellen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name> unterstützt den Vorschlag des Abg. <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>. Die von <name type="Person" role="Erwaehnung" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> angesprochene Erscheinung sei in der Verteidigungspolitik schon seit Jahren festzustellen, daß sich nämlich im Zuge der zu begrüßenden fortschreitenden Integration die Politik der integrierten Gremien in zunehmendem Maße der Kontrolle durch die nationalen Parlamente entziehe. Die Frage, wie dieses Problem am besten gelöst werden könne, bedürfe einer langen und […].<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN014" type="comment">
+                     <p>Satzende nicht lesbar.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-11">
+            <head>K.</head>
+            <p>[11. Wirtschaftspolitik]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> erkundigt sich, ob der Gutachterausschuß immer noch nicht gebildet worden sei, den man vor einem halben Jahr für so dringlich erachtet habe.<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN015" type="comment">
+                     <p>CDU/CSU-FDP-Gesetzentwurf über die Bildung eines Sachverständigenrates zur Begutachtung der gesamtwirtschaftlichen Entwicklung (Drs. IV/540 vom 26. 6. 1962).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erklärt, diese Frage sei nur zu berechtigt. Er selbst habe wiederholt vergeblich über das Büro des Wirtschaftsausschusses zu erfahren versucht, wann die Sache dem Ausschuß vorgelegt werde. Er werde diesen Versuch noch einmal wiederholen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> möchte etwas Näheres über die vor zwei oder drei Jahren ins Leben gerufene Konzentrationsenquete-Kommission erfahren, von der man seit ihrer Schaffung nichts mehr gehört habe. Man habe vor kurzem lediglich erfahren, daß einige Berliner Professoren diese Kommission im Interesse des Mittelstandes zu einem Bundesamt ausbauen wollten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> berichtet, er habe noch vor wenigen Tagen mit Staatssekretär <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> und dem Leiter der Enquete-Kommission gesprochen. Es müsse damit gerechnet werden, daß die gesetzten Termine nicht eingehalten werden könnten. Es sei aber auch sehr schwierig, für Spezialaufgaben gute Kräfte zu bekommen, die nur vorübergehend angestellt würden.</p>
+            <p>Hinsichtlich des Ausscheidens der sechs Professoren müsse das Verhalten des Ministeriums voll unterstützt werden. Über die Errichtung einer Monopolkommission habe erst entschieden werden sollen, nachdem der Bericht vorgelegt sei. Wenn man die Kommission schon jetzt in eine solche Behörde umgewandelt hätte, entspräche das nicht dem verabschiedeten Gesetz. Der Bundeswirtschaftsminister solle möglichst schnell Vertretern der drei Fraktionen einen kurzen Überblick über den Stand der Beratungen geben, damit es nicht zu einer unglücklichen Debatte über die Verschiebung des Termins komme. Im übrigen sei als Ergebnis der Studien ein bemerkenswertes Material zu erwarten, wahrscheinlich allerdings erst zum Spätherbst 1963.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1963-01-22-t1508_EP_div_SVP-12">
+            <head>L.</head>
+            <p>[12. Steuern und Abgaben. Finanz- und Steuerpolitik]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> fragt nach der Tätigkeit der Sachverständigenkommission für die Finanzreform, deren Einrichtung vor einem Jahr beschlossen worden sei.<seg type="note">
+                  <note xml:id="cdu-csu-04_1963-01-22-t1508_EP_FN016" type="comment">
+                     <p>SPD-Antrag betr. Einsetzung einer Expertenkommission zur Vorbereitung der Finanzreform (Drs. IV/68 vom 7. 12. 1961).</p>
+                  </note>
+               </seg> Allerdings sei in den Beratungen im Finanzausschuß festgestellt worden, daß für diese Kommission die Bundesregierung zuständig sei. Das Finanzministerium solle veranlaßt werden, wenigstens bekanntzugeben, wann, wo und wie diese Kommission arbeiten solle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> gibt zu bedenken, die Finanzreform sei in erster Linie eine Frage der Aufteilung der Steuerquellen und -erträgnisse auf Bund, Länder, Gemeinden und Gemeindeverbände. Die Notstandsgesetzgebung werfe nun aber neue Probleme in bezug auf die Kostendeckung auf. Deshalb sei im Augenblick die Ausarbeitung einer endgültigen Finanzverfassung nicht möglich. Die Schwierigkeiten, die sich bei der Gesetzgebung gemäß Art. 106 des Grundgesetzes ergäben, hätten sich schon bei den Versuchen zur Änderung des Beteiligungsverhältnisses an der Einkommen- und Körperschaftsteuer von 35 % auf 40,5 % zugunsten des Bundes gezeigt. An sich sei eine Regelung durch Zustimmungsgesetz vorgesehen, in Wirklichkeit werde die Angelegenheit jedoch durch Staatsvertrag geregelt werden müssen. Wenn nicht einmal für das Jahr 1963 eine Ordnung nach dem Grundgesetz zustande komme, gebe er persönlich die Hoffnung auf, überhaupt zu endgültigen Normen zu kommen. Es könne wohl auch nicht erreicht werden, daß für die Gemeinden ein ihrer Autonomie etwas mehr angepaßtes Finanzsystem geschaffen werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> weist darauf hin, daß es sich ursprünglich um einen sozialdemokratischen Antrag gehandelt habe. Die Sozialdemokraten hätten berechtigte Kritik an der vom Finanzminister vorgenommenen Zusammensetzung der Kommission geübt. Der Minister habe daraufhin versprochen, die Zusammensetzung zu ändern. Später seien die von <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name> erwähnten sachlichen Schwierigkeiten hinzugekommen. Der Minister sei froh gewesen, zu einem Übereinkommen mit den Ländern zu gelangen, das er zusammen mit dem Haushaltsplan für das Jahr 1963 habe vorlegen können. Im Grunde brauche man zu einer wirklichen Finanzreform eine Persönlichkeit wie <name type="Person" role="Erwaehnung" ref="#PopitzJohannes">Popitz</name>. Das Finanzministerium sei aber derartig mit Tagesfragen belastet, daß eine wirklich grundlegende Änderung nicht erarbeitet werden könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeisHans_1958-07-02">Meis</name> bemerkt, gerade in einer so schwierigen Situation wie der gegenwärtigen brauche man die Sachverständigen. Wenn man wirklich den vertikalen Finanzausgleich anstrebe, sei die Arbeit der Kommission ganz besonders erforderlich. Die Zusammensetzung der Kommission, die leider noch nie getagt habe, sei sehr stark von der CDU/CSU beeinflußt, so daß die Fraktion bei der Durchsetzung ihrer Ziele sicherlich die Unterstützung dieser Sachverständigen haben werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> erklärt, das Fehlen einer genialen Persönlichkeit wie <name type="Person" role="Erwaehnung" ref="#PopitzJohannes">Popitz</name> müsse durch Teamarbeit ausgeglichen werden. Der Abgeordnete regt an, den Vorschlag des Instituts Finanzen und Steuern einmal in einem Gremium der Fraktion zu diskutieren, um zu gewissen Grundsätzen zu kommen. Es gehe ja nicht nur um die Verschiebung der Quoten zwischen Bund und Ländern, sondern vor allem auch um die kommunale Finanzreform.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> erinnert daran, daß die von <name type="Person" role="Erwaehnung" ref="#PopitzJohannes">Popitz</name> erlassenen Finanzreformen nicht gerade mit demokratischen Mitteln durchgesetzt worden seien. Vielmehr seien die autonomen Kommunalsteuern durch die <name type="Person" role="Erwaehnung" ref="#BrueningHeinrich">Brüning</name>sche Notverordnung vom 30. Juni 1930 geschaffen worden, während eine andere Reform mit Hilfe des Nationalsozialismus durchgesetzt worden sei. Es sei fraglich, ob vom Bund aus auf diesem stark föderalistischen Gebiet etwas erreicht werden könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> bedauert, daß man bei diesem überaus drängenden Problem praktisch auf der Stelle trete.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

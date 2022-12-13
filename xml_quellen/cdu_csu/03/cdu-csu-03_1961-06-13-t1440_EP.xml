@@ -1,206 +1,345 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-06-13-t1440_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. Juni 1961</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1961-06-13"><time type="start" when="14:40:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#SchwarzhauptElisabeth_1953-10-06"/><name type="Person" role="Sitzungsleitung" ref="#ArndgenJosef_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1961-06-13-t1440_EP_SVP-1" corresp="#cdu-csu-03_1961-06-13-t1440_EP_div_SVP-1">A. Familienrechtsänderungsgesetz. – Berichte des Vermittlungsausschusses (Bundesfernstraßengesetz, Grundstückverkehrsgesetz, Steueränderungsgesetz 1961, Bundesseuchengesetz, Wirtschaftsprüferordnung, Gesetz über die medizinisch-technischen Assistentinnen). – Beweissicherungsgesetz. – Kreditwesengesetz. – Beschlüsse des Rechtsausschusses zum Richtergesetz. – Reichsbankliquidationsgesetz. – Kriegsgefangenenentschädigungsgesetz. – 15. Novelle zum LAG. – Milch- und Fettgesetz. – Große Anfrage über Mittelstandsfragen.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1961-06-13-t1440_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) referiert über das Familienrechtsänderungsgesetz<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN001" type="comment"><p>Siehe Nr. 260 v. 6. 6. 1961.</p></note></seg> und behandelt zunächst besonders das Problem der Anfechtung der Ehelichkeit eines Kindes. Im NS-Staat sei dem Staatsanwalt ein Anfechtungsrecht gegeben worden, das nun wieder entfallen solle, weil sich der Staat nicht mehr als unbedingt notwendig in die Familie einmischen solle. Die Anfechtung der Ehelichkeit soll nicht mehr möglich sein, wenn das Kind 10 Jahre alt geworden ist. Eine Ausdehnung des Anfechtungsrechts der Ehelichkeit auch auf die Geschwister sei abgelehnt worden. Das Vormundschaftsgericht soll der unehelichen Mutter auf Antrag die elterliche Gewalt übertragen können. Die Unterhaltspflicht des unehelichen Vaters werde auf 18 Jahre ausgedehnt, doch solle vom 16. Lebensjahr ab eigenes Einkommen des Kindes in Anspruch genommen werden können, soweit das den Grundsätzen der Billigkeit entspricht. Die abschließende Behandlung des Unehelichenrechts bleibe jedoch dem nächsten Bundestag vorbehalten.</p>
-				<p>Die Institution der Adoption habe sich im Laufe der Zeit völlig geändert, fast in 100 Prozent der Fälle würden heute Kleinkinder adoptiert. Dieser Entwicklung habe man Rechnung getragen, habe aber auch die Möglichkeit der Adoption von Erwachsenen vorgesehen, wenn etwa ein kinderloses Ehepaar adoptieren wolle, um den Hof oder ein Unternehmen in der Familie zu erhalten.</p>
-				<p>Die Vorlage sehe vor, daß das Vormundschaftsgericht unter gewissen strengen Voraussetzungen die Einwilligung eines Elternteils zur Adoption ersetzen könne. Diese Vorschrift sei umstritten.</p>
-				<p>Im Zusammenhang mit dem Problem der Befreiung von Ehehindernissen sei auch die Frage des § 48 Abs.2 Ehegesetz angesprochen gewesen.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN002" type="comment"><p>Siehe ebd.</p></note></seg> Es sei die Frage aufgetreten, ob sich der Ausschuß überhaupt mit dieser Frage beschäftigen könne; diese Streitfrage erscheine aber nun überwunden zu sein. In der Sache sei es darum gegangen, das Widerspruchsrecht der minderschuldigen oder unschuldigen Ehefrau zu verstärken. Diesem Anliegen sei die Rechtsprechung des BGH in einer Weise entsprochen, die an sich eine gesetzliche Regelung überflüssig gemacht hätte, wenn sich die unteren Gerichte der Rechtsprechung des BGH angeschlossen hätten, was aber nicht in allen Fällen stattgefunden habe. Absicht des Gesetzes sei, die Rechtsprechung des BGH zu stabilisieren und dadurch die unteren Instanzen zu zwingen, sich an dieses Recht zu halten. Die nunmehr vorliegende Fassung schließe sich eng an die Rechtsprechung des BGH an, es lasse sich aber noch nicht abschließend sagen, ob damit wirklich alle möglichen Fälle erfaßt seien. Deshalb seien noch Gespräche im Gange, um diese Frage zu überprüfen. Wenn es nicht gelinge, über mögliche Verbesserungen eine interfraktionelle Einigung zu erzielen, solle man die Ausschußfassung annehmen. Eine Anregung der SPD sei ebenfalls aufgegriffen worden, nämlich, daß in allen Fällen, in denen nach § 48 Abs.2 der Widerspruch nicht beachtet oder beachtet worden ist, ohne weiteres die Revision möglich sein solle. Es sei zu begrüßen, wenn es gelinge, diese Probleme noch in diesem Bundestag zu lösen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> verweist darauf, daß es bei dieser Sache notwendig sein werde, daß die Fraktion geschlossen abstimme. Etwaige Bedenken sollten nun hier in der Fraktion vorgebracht werden.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#KuchtnerEdeltraud_1953-10-06">Kuchtner</name> setzt sich dafür ein, die Erwachsenenadoption ebenso zuzulassen wie die Adoption von Kindern; man solle die Erwachsenenadoption nicht so erschweren.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> erwidert, daß ja die Erwachsenenadoption nicht ausgeschlossen sei; sie bedürfe lediglich einer besonderen Zulassung.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) verweist darauf, daß diese Vorschrift bereits wesentlich erleichtert worden sei. Das notwendige Maß erscheine bei der jetzt vorliegenden Formulierung eingehalten zu sein.</p>
-				<p><name type="Person" role="Sprecher" ref="#SeidlFranz_1953-10-06">Seidl</name> (Dorfen) befürchtet, daß die Gerichte trotzdem Schwierigkeiten machen könnten, und er empfiehlt, die Einschränkung völlig zu streichen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> bittet, die Verabschiedung des Gesetzes nicht zu erschweren, vor allem aber zu vermeiden, daß eventuell der Vermittlungsausschuß angerufen werde. Durch Abstimmung stellt sie fest, daß sowohl die Ausschußfassung zum Familienrechtsänderungsgesetz im ganzen wie auch die Fassung des § 48 Abs.2 Ehegesetz einstimmig angenommen wird.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN003" type="comment"><p>Zur Annahme gem. Ausschußantrag und angen. Änderungen vgl. Sten. Ber., 164. Sitzung am 28./29. 6. 1961, S. 9496–9504.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) trägt vor, daß der Vorstand zu den Berichten des Vermittlungsausschusses in folgenden Punkten Annahme empfehle: Bundesfernstraßengesetz, Grundstückverkehrsgesetz, Steueränderungsgesetz 1961, Bundesseuchengesetz, Wirtschaftsprüferordnung, Gesetz über die medizinisch-technischen Assistentinnen.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN004" type="comment"><p>Vgl. in der genannten Reihenfolge die Drucksachen III/2820, 2821, 2822, 2823, 2818, 2817, sämtlich vom 9. 6. 1961.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> bemerkt, daß das Grundstückverkehrsgesetz nur deswegen annehmbar geworden sei, weil der Vermittlungsausschuß einige Punkte des Bundesrates abgelehnt habe. Wegen der erfolgten Ausschaltung der Landwirtschaftsbehörde<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN005" type="comment"><p>Vgl. die in dem Gesetz v. 28. 7. 1961 enthaltenen Vorschriften über gerichtliche Zuweisung einer Besitzung bei Erbengemeinschaften und Landbewirtschaftung bei schlechter Bewirtschaftung sowie siedlungsrechtliche Vorschriften, in: BGBl. I, S. 1091 ff.</p></note></seg> sei er aber noch immer unschlüssig, ob er dem Gesetz zustimmen könne.</p>
-				<p><name type="Person" role="Sprecher" ref="#SeidlFranz_1953-10-06">Seidl</name> (Dorfen) bedauert, daß nicht alle Anliegen der Landwirtschaft zum Zuge gekommen seien, aber es bestehe ja noch in den Landtagen die Möglichkeit, die Landwirtschaftsbehörde zur Genehmigungsbehörde zu machen. Man solle mit dem Erreichten zufrieden sein und dem Gesetz zustimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> betont, daß es ein Kernstück des Gesetzes gewesen sei, daß der Landwirtschaft und ihrem Berufsstand ein Mitspracherecht gewährt werden sollte. Das sei nun nicht der Fall. Er bitte, dieses Gesetz nicht zu verabschieden, sondern seine Erledigung einer späteren Zeit vorzubehalten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) glaubt, daß über das erwartete Maß hinaus die Interessen des Berufsstandes im Gesetz gewahrt seien, in allen wesentlichen Punkten habe die Fassung des Bundestages sich durchgesetzt. Ein so günstiges Gesetz könne wohl in einer neuen Bundestagsperiode kaum mehr erreicht werden.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> stellt durch Abstimmung fest, daß die Mehrheit der Fraktion sich für den Bericht des Vermittlungsausschusses ausspricht. Zu den anderen vorerwähnten Gesetzen wird ebenfalls die Zustimmung der Fraktion festgestellt.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN006" type="comment"><p>Zum Inkrafttreten aller vor Anm. 4 genannten Gesetze noch im Juli 1961 vgl. in der o.a. Reihenfolge BGBl. I, S. 877, 1091, 981, 1012, 1049, 1011.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#EichelbaumErnstTheodor_1957-10-15">Eichelbaum</name> erklärt, daß durch die Streichung des § 10 die Annahme des Beweissicherungsgesetzes unmöglich geworden sei.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN007" type="comment"><p>Das Wirtschaftliche Beweissicherungsgesetz sollte der Feststellung von Vermögensverlusten in der SBZ und in Ost-Berlin dienen. Gem. § 10 des Entwurfs hatte das Amtsgericht dem Antragsteller über die Durchführung des Verfahrens eine Bescheinigung auszustellen, in welcher der Antragsteller, beweissichernde Maßnahmen und Beweismittel bezeichnet werden sollten. Vgl. Drucksache III/2687 v. 21. 4. 1961, S. 2.</p></note></seg> Er bitte, das Gesetz abzulehnen.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN008" type="comment"><p>Der Einspruch des Bundesrates wurde nicht zurückgewiesen, so daß das Gesetz nicht zustande kam. Vgl. Drucksache III/2866 v. 16. 6. 1961; Sten. Ber., 164. Sitzung am 28. 6. 1961, S. 9459.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KruegerHans_1957-10-15">Krüger</name> schließt sich dieser Auffassung an. Mit der Streichung des § 10 habe das Gesetz keinen Sinn mehr.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, stellt fest, daß die Mehrheit der Fraktion für Ablehnung des Vermittlungsausschußberichts ist.</p>
-				<p><name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> bezeichnet den Vorschlag des Vermittlungsausschusses zum Kreditwesengesetz<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN009" type="comment"><p>Vgl. Drucksache III/2819 v. 9. 6. 1961.</p></note></seg> als problematisch. Der Bundesrat sei der Meinung, daß der Bund zur Einrichtung der Bundesoberbehörde nicht befugt sei. Bei dieser Vorlage sei es wieder so, daß die CDU im Bund eine andere Meinung vertrete als die CDU in den Länderregierungen. Dieser Zustand sei nicht erfreulich. Man solle die Zahl der Gesetze, die vom Bundesverfassungsgericht bereits wegen Verfassungswidrigkeit aufgehoben seien, nicht noch vermehren. Sicher ließen sich die Probleme auch lösen, wenn die Bankenaufsicht nicht zentral geregelt werde. Man könne nicht sagen, daß die jetzt von den Ländern ausgeübte Bankenaufsicht versage. Die Mehrheit des Vorstandes habe sich nach langer Erörterung dafür ausgesprochen, den Vermittlungsvorschlag abzulehnen. Er selbst, <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, teile diese Auffassung nicht. Auch jetzt habe die Bundesregierung die Möglichkeit, nachhaltig einzugreifen, wenn das notwendig werde. Man solle also dem Vorschlag des Vermittlungsausschusses folgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> weist darauf hin, daß das Bundesjustizministerium die Grundgesetzwidrigkeit der Einrichtung einer Bundesoberbehörde verneint habe. Er habe den Eindruck, daß man mit der Dezentralisierung dem eigentlichen Problem ausweichen wolle. Ein dezentralisiertes Bankenaufsichtssystem sei gar nicht in der Lage, die vielfältigen Verflechtungen zu überwachen. Es sei notwendig, daß der Bund schon eingreifen könne, wenn sich irgendwie eine Gefahr abzeichne. Man solle es deshalb auf den Einspruch des Bundesrates ankommen lassen und den Vermittlungsvorschlag ablehnen.</p>
-				<p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> setzt sich ebenfalls für eine zentrale Bankenaufsicht ein, da die Banken in ihrem Wirkungskreis weit über die Länder hinausgingen. Auch <name type="Person" role="Erwaehnung" ref="#BlessingKarl">Blessing</name> habe sich vorbehaltlos hinter die Vorschläge der Bundesregierung gestellt und die zentrale Bankenaufsicht empfohlen. Man solle nicht aus Angst vor Karlsruhe dem Problem ausweichen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#FritzGerhard_1957-10-15">Fritz</name> glaubt, daß gerade für die kleineren Kassen auf dem Lande die dezentralisierte Aufsicht besser sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#SeidlFranz_1953-10-06">Seidl</name> (Dorfen) warnt vor einem weiteren grundgesetzwidrigen Gesetz. Es sei jetzt zehn Jahre ohne zentrale Bankenaufsicht gegangen, es sei nicht einzusehen, warum es nicht auch weiter gehen solle. Weder tatsächliche noch rechtliche Gründe sprächen für die Ablehnung des Vermittlungsvorschlages.</p>
-				<p><name type="Person" role="Sprecher" ref="#WeinkammOtto_1957-10-15">Weinkamm</name> erläutert, daß das Wichtigste sei, daß die Bankenaufsicht nach einheitlichen Grundsätzen durchgeführt werde. Die Richtlinien dafür würden vom Bundeswirtschaftsministerium zentral herausgegeben. Man könne keinen Grund sehen, warum die Länder nicht in der Lage sein sollten, diese Richtlinien einheitlich durchzuführen. Die zentrale Lösung werde bestimmt zu einer Verfassungsklage führen; deshalb solle man den Vermittlungsvorschlag annehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> erklärt, daß er sich noch im vorigen Bundestag für die zentrale Lösung ausgesprochen habe, jetzt aber setze er sich für den im Vermittlungsausschuß gefundenen Kompromiß ein. Das Wesentliche sei tatsächlich, daß die Richtlinien vom Bundeswirtschaftsministerium einheitlich herausgegeben würden. Deshalb spreche er sich für den Vermittlungsvorschlag aus.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> empfiehlt noch einmal, den Vermittlungsvorschlag abzulehnen. Die Fragen der Bankenaufsicht können nicht von den Ländern gelöst werden. Man habe ein einheitliches Wirtschaftsgebiet Bundesrepublik und entsprechend müsse auch die Bankenaufsicht geregelt werden. Ihm sei kein Gesetz lieber als ein Gesetz nach den Vorschlägen des Vermittlungsausschusses.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> erinnert daran, daß der Fraktionsvorstand vorgeschlagen habe, den Vermittlungsvorschlag abzulehnen, und stellt durch Abstimmung fest, daß die Mehrheit der Fraktion dieser Empfehlung folgt.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN010" type="comment"><p>Der Einspruch des Bundesrates wurde zurückgewiesen. Vgl. Sten. Ber., 164. Sitzung am 28. 6. 1961, S. 9459.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SchleeAlbrecht_1957-10-15">Schlee</name> berichtet über die Beschlüsse des Rechtsausschusses zum Richtergesetz.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> wendet sich dagegen, daß die Staatsanwälte im Richtergesetz genannt würden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) bittet dringend, von Anträgen zu diesem Problem Abstand zu nehmen, weil sonst das Gesetz sicher in den Vermittlungsausschuß komme.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Fraktion mit einer Gegenstimme für die Beschlüsse des Rechtsausschusses sich entscheidet.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN011" type="comment"><p>Die Vorlage war dem Wirtschaftsausschuß (f.) und dem Finanzausschuß überwiesen worden. Vgl. Schriftl. Ber. des 16. Ausschusses: Drucksachen III/2563 v. 1. 3. 1961, zu 2563 v. 13. 3. 1961, Nachtrag zu 2563 v. 15. 3. 1961. Nach Zurückweisung des Einspruchs (s. Anm. 10) kam das Gesetz zustande.</p></note></seg></p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name> trägt die Bestimmungen der Bundesärzteordnung vor.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt die Zustimmung der Fraktion fest.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN012" type="comment"><p>Reg.-Entwurf: Drucksache III/2745 v. 16. 5. 1961. Vgl. zur Annahme in 2. und 3. Lesung Sten. Ber., 162. Sitzung am 14. 6. 1961, S. 9382, 9384.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> bittet die Fraktion, dem Reichsbankliquidationsgesetz die Zustimmung zu geben. Dies sei aus politischen wie aus sozialen Gesichtspunkten notwendig.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LindenbergHeinrich_1953-10-06">Lindenberg</name> weist darauf hin, daß es sich bei den Reichsbankaktionären um 20000 Kleinaktionäre handele, die im Besitz von 80% des Kapitals seien. Das vorgeschlagene Gesetz sei gerecht und eilbedürftig.</p>
-				<p><name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> meldet an, daß er dieses Gesetz wiederum ablehnen werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Mehrheit der Fraktion gegen wenige Stimmen dem Gesetz zustimmt.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN013" type="comment"><p>Zur Verabschiedung des Gesetzes noch in der 3. WP siehe Nr. 234 v. 17. 1. 1961, Anm. 29.</p></note></seg></p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> regt zum Kriegsgefangenenentschädigungsgesetz an, wegen der Zeitknappheit die Sache mit einer Entschließung zu erledigen. Diese Auffassung wird von der Fraktion gebilligt.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN014" type="comment"><p>Entschließungsantrag nicht ermittelt. Zur Überweisung der Vorlage an die Ausschüsse am 18. 1. 1961 siehe ebd., Anm. 5.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#StillerGeorg_1953-10-06">Stiller</name> regt an, in der 15. Novelle zum LAG in Frage der Vermögensabgabe für zusammenveranlagte Ehegatten zu regeln. Dies Regelung sei notwendig und die Fraktion solle ihr zustimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KraftWaldemar_1953-10-06">Kraft</name> erläutert, daß man auf eine Erklärung des Bundesfinanzministeriums zu dieser Frage gewartet habe, die aber nicht gekommen sei. So bleibe nun kein anderer Weg, als diese Vorlage anzunehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt die Zustimmung der Fraktion fest.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN015" type="comment"><p>Zur Verabschiedung der Novelle siehe Nr. 251 v. 17. 4. 1961.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> trägt die Problematik des Milch- und Fettgesetzes vor.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Fraktion vorbehaltlich der Äußerung des Rechtsausschusses dem Gesetz zustimmt.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN016" type="comment"><p>Vgl. Schriftl. Ber. des Ausschusses für Ernährung, Landwirtschaft und Forsten: Drucksache III/2827 v. 8. 6. 1961; zur 2. und 3. Beratung Sten. Ber., 163. Sitzung am 16. 6. 1961, S. 9404–9408.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> berichtet, daß der Diskussionskreis Mittelstand die Beantwortung der Großen Anfrage über Mittelstandsfragen<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN017" type="comment"><p>SPD-Anfrage betr. Bericht über die Lage de Mittelschichten: Drucksache III/2758 v. 24. 5. 1961.</p></note></seg> vorbereitet habe. Die Redner seien bestimmt.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN018" type="comment"><p>Vgl. 163. Sitzung am 16. 6. 1961, S. 9416–9419 (<name type="Person" role="Erwaehnung" ref="#WieningerKarl_1953-10-06">Wieninger</name>), 9426–9429 (<name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>), 9434 (<name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>), 9434 f. (<name type="Person" role="Erwaehnung" ref="#SimpfendoerferKarl_1957-10-15">Simpfendörfer</name>).</p></note></seg> Hinsichtlich der vom Finanzausschuß vorgeschlagenen Festlegung des Prozentsatzes auf 75% bei der Organschaft<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN019" type="comment"><p>Zur Organschaft als Unternehmenseinheit siehe Nr. 239 v. 7. 2. 1961, Anm. 16.</p></note></seg> werde er, <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, einen Antrag auf die Festlegung auf 95% einbringen.<seg type="note"><note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN020" type="comment"><p>Ein diesbezüglicher Antrag ließ sich nicht ermitteln.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-06-13-t1440_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. Juni 1961</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1961-06-13">
+               <time type="start" when="14:40:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#SchwarzhauptElisabeth_1953-10-06"/>
+            <name type="Person" role="Sitzungsleitung" ref="#ArndgenJosef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1961-06-13-t1440_EP_SVP-1" corresp="#cdu-csu-03_1961-06-13-t1440_EP_div_SVP-1">A. Familienrechtsänderungsgesetz. – Berichte des Vermittlungsausschusses (Bundesfernstraßengesetz, Grundstückverkehrsgesetz, Steueränderungsgesetz 1961, Bundesseuchengesetz, Wirtschaftsprüferordnung, Gesetz über die medizinisch-technischen Assistentinnen). – Beweissicherungsgesetz. – Kreditwesengesetz. – Beschlüsse des Rechtsausschusses zum Richtergesetz. – Reichsbankliquidationsgesetz. – Kriegsgefangenenentschädigungsgesetz. – 15. Novelle zum LAG. – Milch- und Fettgesetz. – Große Anfrage über Mittelstandsfragen.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1961-06-13-t1440_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) referiert über das Familienrechtsänderungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN001" type="comment">
+                     <p>Siehe Nr. 260 v. 6. 6. 1961.</p>
+                  </note>
+               </seg> und behandelt zunächst besonders das Problem der Anfechtung der Ehelichkeit eines Kindes. Im NS-Staat sei dem Staatsanwalt ein Anfechtungsrecht gegeben worden, das nun wieder entfallen solle, weil sich der Staat nicht mehr als unbedingt notwendig in die Familie einmischen solle. Die Anfechtung der Ehelichkeit soll nicht mehr möglich sein, wenn das Kind 10 Jahre alt geworden ist. Eine Ausdehnung des Anfechtungsrechts der Ehelichkeit auch auf die Geschwister sei abgelehnt worden. Das Vormundschaftsgericht soll der unehelichen Mutter auf Antrag die elterliche Gewalt übertragen können. Die Unterhaltspflicht des unehelichen Vaters werde auf 18 Jahre ausgedehnt, doch solle vom 16. Lebensjahr ab eigenes Einkommen des Kindes in Anspruch genommen werden können, soweit das den Grundsätzen der Billigkeit entspricht. Die abschließende Behandlung des Unehelichenrechts bleibe jedoch dem nächsten Bundestag vorbehalten.</p>
+            <p>Die Institution der Adoption habe sich im Laufe der Zeit völlig geändert, fast in 100 Prozent der Fälle würden heute Kleinkinder adoptiert. Dieser Entwicklung habe man Rechnung getragen, habe aber auch die Möglichkeit der Adoption von Erwachsenen vorgesehen, wenn etwa ein kinderloses Ehepaar adoptieren wolle, um den Hof oder ein Unternehmen in der Familie zu erhalten.</p>
+            <p>Die Vorlage sehe vor, daß das Vormundschaftsgericht unter gewissen strengen Voraussetzungen die Einwilligung eines Elternteils zur Adoption ersetzen könne. Diese Vorschrift sei umstritten.</p>
+            <p>Im Zusammenhang mit dem Problem der Befreiung von Ehehindernissen sei auch die Frage des § 48 Abs.2 Ehegesetz angesprochen gewesen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN002" type="comment">
+                     <p>Siehe ebd.</p>
+                  </note>
+               </seg> Es sei die Frage aufgetreten, ob sich der Ausschuß überhaupt mit dieser Frage beschäftigen könne; diese Streitfrage erscheine aber nun überwunden zu sein. In der Sache sei es darum gegangen, das Widerspruchsrecht der minderschuldigen oder unschuldigen Ehefrau zu verstärken. Diesem Anliegen sei die Rechtsprechung des BGH in einer Weise entsprochen, die an sich eine gesetzliche Regelung überflüssig gemacht hätte, wenn sich die unteren Gerichte der Rechtsprechung des BGH angeschlossen hätten, was aber nicht in allen Fällen stattgefunden habe. Absicht des Gesetzes sei, die Rechtsprechung des BGH zu stabilisieren und dadurch die unteren Instanzen zu zwingen, sich an dieses Recht zu halten. Die nunmehr vorliegende Fassung schließe sich eng an die Rechtsprechung des BGH an, es lasse sich aber noch nicht abschließend sagen, ob damit wirklich alle möglichen Fälle erfaßt seien. Deshalb seien noch Gespräche im Gange, um diese Frage zu überprüfen. Wenn es nicht gelinge, über mögliche Verbesserungen eine interfraktionelle Einigung zu erzielen, solle man die Ausschußfassung annehmen. Eine Anregung der SPD sei ebenfalls aufgegriffen worden, nämlich, daß in allen Fällen, in denen nach § 48 Abs.2 der Widerspruch nicht beachtet oder beachtet worden ist, ohne weiteres die Revision möglich sein solle. Es sei zu begrüßen, wenn es gelinge, diese Probleme noch in diesem Bundestag zu lösen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> verweist darauf, daß es bei dieser Sache notwendig sein werde, daß die Fraktion geschlossen abstimme. Etwaige Bedenken sollten nun hier in der Fraktion vorgebracht werden.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#KuchtnerEdeltraud_1953-10-06">Kuchtner</name> setzt sich dafür ein, die Erwachsenenadoption ebenso zuzulassen wie die Adoption von Kindern; man solle die Erwachsenenadoption nicht so erschweren.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> erwidert, daß ja die Erwachsenenadoption nicht ausgeschlossen sei; sie bedürfe lediglich einer besonderen Zulassung.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) verweist darauf, daß diese Vorschrift bereits wesentlich erleichtert worden sei. Das notwendige Maß erscheine bei der jetzt vorliegenden Formulierung eingehalten zu sein.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SeidlFranz_1953-10-06">Seidl</name> (Dorfen) befürchtet, daß die Gerichte trotzdem Schwierigkeiten machen könnten, und er empfiehlt, die Einschränkung völlig zu streichen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> bittet, die Verabschiedung des Gesetzes nicht zu erschweren, vor allem aber zu vermeiden, daß eventuell der Vermittlungsausschuß angerufen werde. Durch Abstimmung stellt sie fest, daß sowohl die Ausschußfassung zum Familienrechtsänderungsgesetz im ganzen wie auch die Fassung des § 48 Abs.2 Ehegesetz einstimmig angenommen wird.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN003" type="comment">
+                     <p>Zur Annahme gem. Ausschußantrag und angen. Änderungen vgl. Sten. Ber., 164. Sitzung am 28./29. 6. 1961, S. 9496–9504.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) trägt vor, daß der Vorstand zu den Berichten des Vermittlungsausschusses in folgenden Punkten Annahme empfehle: Bundesfernstraßengesetz, Grundstückverkehrsgesetz, Steueränderungsgesetz 1961, Bundesseuchengesetz, Wirtschaftsprüferordnung, Gesetz über die medizinisch-technischen Assistentinnen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN004" type="comment">
+                     <p>Vgl. in der genannten Reihenfolge die Drucksachen III/2820, 2821, 2822, 2823, 2818, 2817, sämtlich vom 9. 6. 1961.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> bemerkt, daß das Grundstückverkehrsgesetz nur deswegen annehmbar geworden sei, weil der Vermittlungsausschuß einige Punkte des Bundesrates abgelehnt habe. Wegen der erfolgten Ausschaltung der Landwirtschaftsbehörde<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN005" type="comment">
+                     <p>Vgl. die in dem Gesetz v. 28. 7. 1961 enthaltenen Vorschriften über gerichtliche Zuweisung einer Besitzung bei Erbengemeinschaften und Landbewirtschaftung bei schlechter Bewirtschaftung sowie siedlungsrechtliche Vorschriften, in: BGBl. I, S. 1091 ff.</p>
+                  </note>
+               </seg> sei er aber noch immer unschlüssig, ob er dem Gesetz zustimmen könne.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SeidlFranz_1953-10-06">Seidl</name> (Dorfen) bedauert, daß nicht alle Anliegen der Landwirtschaft zum Zuge gekommen seien, aber es bestehe ja noch in den Landtagen die Möglichkeit, die Landwirtschaftsbehörde zur Genehmigungsbehörde zu machen. Man solle mit dem Erreichten zufrieden sein und dem Gesetz zustimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> betont, daß es ein Kernstück des Gesetzes gewesen sei, daß der Landwirtschaft und ihrem Berufsstand ein Mitspracherecht gewährt werden sollte. Das sei nun nicht der Fall. Er bitte, dieses Gesetz nicht zu verabschieden, sondern seine Erledigung einer späteren Zeit vorzubehalten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal) glaubt, daß über das erwartete Maß hinaus die Interessen des Berufsstandes im Gesetz gewahrt seien, in allen wesentlichen Punkten habe die Fassung des Bundestages sich durchgesetzt. Ein so günstiges Gesetz könne wohl in einer neuen Bundestagsperiode kaum mehr erreicht werden.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> stellt durch Abstimmung fest, daß die Mehrheit der Fraktion sich für den Bericht des Vermittlungsausschusses ausspricht. Zu den anderen vorerwähnten Gesetzen wird ebenfalls die Zustimmung der Fraktion festgestellt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN006" type="comment">
+                     <p>Zum Inkrafttreten aller vor Anm. 4 genannten Gesetze noch im Juli 1961 vgl. in der o.a. Reihenfolge BGBl. I, S. 877, 1091, 981, 1012, 1049, 1011.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EichelbaumErnstTheodor_1957-10-15">Eichelbaum</name> erklärt, daß durch die Streichung des § 10 die Annahme des Beweissicherungsgesetzes unmöglich geworden sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN007" type="comment">
+                     <p>Das Wirtschaftliche Beweissicherungsgesetz sollte der Feststellung von Vermögensverlusten in der SBZ und in Ost-Berlin dienen. Gem. § 10 des Entwurfs hatte das Amtsgericht dem Antragsteller über die Durchführung des Verfahrens eine Bescheinigung auszustellen, in welcher der Antragsteller, beweissichernde Maßnahmen und Beweismittel bezeichnet werden sollten. Vgl. Drucksache III/2687 v. 21. 4. 1961, S. 2.</p>
+                  </note>
+               </seg> Er bitte, das Gesetz abzulehnen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN008" type="comment">
+                     <p>Der Einspruch des Bundesrates wurde nicht zurückgewiesen, so daß das Gesetz nicht zustande kam. Vgl. Drucksache III/2866 v. 16. 6. 1961; Sten. Ber., 164. Sitzung am 28. 6. 1961, S. 9459.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KruegerHans_1957-10-15">Krüger</name> schließt sich dieser Auffassung an. Mit der Streichung des § 10 habe das Gesetz keinen Sinn mehr.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, stellt fest, daß die Mehrheit der Fraktion für Ablehnung des Vermittlungsausschußberichts ist.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> bezeichnet den Vorschlag des Vermittlungsausschusses zum Kreditwesengesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN009" type="comment">
+                     <p>Vgl. Drucksache III/2819 v. 9. 6. 1961.</p>
+                  </note>
+               </seg> als problematisch. Der Bundesrat sei der Meinung, daß der Bund zur Einrichtung der Bundesoberbehörde nicht befugt sei. Bei dieser Vorlage sei es wieder so, daß die CDU im Bund eine andere Meinung vertrete als die CDU in den Länderregierungen. Dieser Zustand sei nicht erfreulich. Man solle die Zahl der Gesetze, die vom Bundesverfassungsgericht bereits wegen Verfassungswidrigkeit aufgehoben seien, nicht noch vermehren. Sicher ließen sich die Probleme auch lösen, wenn die Bankenaufsicht nicht zentral geregelt werde. Man könne nicht sagen, daß die jetzt von den Ländern ausgeübte Bankenaufsicht versage. Die Mehrheit des Vorstandes habe sich nach langer Erörterung dafür ausgesprochen, den Vermittlungsvorschlag abzulehnen. Er selbst, <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, teile diese Auffassung nicht. Auch jetzt habe die Bundesregierung die Möglichkeit, nachhaltig einzugreifen, wenn das notwendig werde. Man solle also dem Vorschlag des Vermittlungsausschusses folgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> weist darauf hin, daß das Bundesjustizministerium die Grundgesetzwidrigkeit der Einrichtung einer Bundesoberbehörde verneint habe. Er habe den Eindruck, daß man mit der Dezentralisierung dem eigentlichen Problem ausweichen wolle. Ein dezentralisiertes Bankenaufsichtssystem sei gar nicht in der Lage, die vielfältigen Verflechtungen zu überwachen. Es sei notwendig, daß der Bund schon eingreifen könne, wenn sich irgendwie eine Gefahr abzeichne. Man solle es deshalb auf den Einspruch des Bundesrates ankommen lassen und den Vermittlungsvorschlag ablehnen.</p>
+            <p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> setzt sich ebenfalls für eine zentrale Bankenaufsicht ein, da die Banken in ihrem Wirkungskreis weit über die Länder hinausgingen. Auch <name type="Person" role="Erwaehnung" ref="#BlessingKarl">Blessing</name> habe sich vorbehaltlos hinter die Vorschläge der Bundesregierung gestellt und die zentrale Bankenaufsicht empfohlen. Man solle nicht aus Angst vor Karlsruhe dem Problem ausweichen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#FritzGerhard_1957-10-15">Fritz</name> glaubt, daß gerade für die kleineren Kassen auf dem Lande die dezentralisierte Aufsicht besser sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SeidlFranz_1953-10-06">Seidl</name> (Dorfen) warnt vor einem weiteren grundgesetzwidrigen Gesetz. Es sei jetzt zehn Jahre ohne zentrale Bankenaufsicht gegangen, es sei nicht einzusehen, warum es nicht auch weiter gehen solle. Weder tatsächliche noch rechtliche Gründe sprächen für die Ablehnung des Vermittlungsvorschlages.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WeinkammOtto_1957-10-15">Weinkamm</name> erläutert, daß das Wichtigste sei, daß die Bankenaufsicht nach einheitlichen Grundsätzen durchgeführt werde. Die Richtlinien dafür würden vom Bundeswirtschaftsministerium zentral herausgegeben. Man könne keinen Grund sehen, warum die Länder nicht in der Lage sein sollten, diese Richtlinien einheitlich durchzuführen. Die zentrale Lösung werde bestimmt zu einer Verfassungsklage führen; deshalb solle man den Vermittlungsvorschlag annehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> erklärt, daß er sich noch im vorigen Bundestag für die zentrale Lösung ausgesprochen habe, jetzt aber setze er sich für den im Vermittlungsausschuß gefundenen Kompromiß ein. Das Wesentliche sei tatsächlich, daß die Richtlinien vom Bundeswirtschaftsministerium einheitlich herausgegeben würden. Deshalb spreche er sich für den Vermittlungsvorschlag aus.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> empfiehlt noch einmal, den Vermittlungsvorschlag abzulehnen. Die Fragen der Bankenaufsicht können nicht von den Ländern gelöst werden. Man habe ein einheitliches Wirtschaftsgebiet Bundesrepublik und entsprechend müsse auch die Bankenaufsicht geregelt werden. Ihm sei kein Gesetz lieber als ein Gesetz nach den Vorschlägen des Vermittlungsausschusses.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> erinnert daran, daß der Fraktionsvorstand vorgeschlagen habe, den Vermittlungsvorschlag abzulehnen, und stellt durch Abstimmung fest, daß die Mehrheit der Fraktion dieser Empfehlung folgt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN010" type="comment">
+                     <p>Der Einspruch des Bundesrates wurde zurückgewiesen. Vgl. Sten. Ber., 164. Sitzung am 28. 6. 1961, S. 9459.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchleeAlbrecht_1957-10-15">Schlee</name> berichtet über die Beschlüsse des Rechtsausschusses zum Richtergesetz.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KempflerFriedrich_1957-10-15">Kempfler</name> wendet sich dagegen, daß die Staatsanwälte im Richtergesetz genannt würden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) bittet dringend, von Anträgen zu diesem Problem Abstand zu nehmen, weil sonst das Gesetz sicher in den Vermittlungsausschuß komme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Fraktion mit einer Gegenstimme für die Beschlüsse des Rechtsausschusses sich entscheidet.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN011" type="comment">
+                     <p>Die Vorlage war dem Wirtschaftsausschuß (f.) und dem Finanzausschuß überwiesen worden. Vgl. Schriftl. Ber. des 16. Ausschusses: Drucksachen III/2563 v. 1. 3. 1961, zu 2563 v. 13. 3. 1961, Nachtrag zu 2563 v. 15. 3. 1961. Nach Zurückweisung des Einspruchs (s. Anm. 10) kam das Gesetz zustande.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name> trägt die Bestimmungen der Bundesärzteordnung vor.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt die Zustimmung der Fraktion fest.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN012" type="comment">
+                     <p>Reg.-Entwurf: Drucksache III/2745 v. 16. 5. 1961. Vgl. zur Annahme in 2. und 3. Lesung Sten. Ber., 162. Sitzung am 14. 6. 1961, S. 9382, 9384.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WestrickLudger">Westrick</name> bittet die Fraktion, dem Reichsbankliquidationsgesetz die Zustimmung zu geben. Dies sei aus politischen wie aus sozialen Gesichtspunkten notwendig.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LindenbergHeinrich_1953-10-06">Lindenberg</name> weist darauf hin, daß es sich bei den Reichsbankaktionären um 20000 Kleinaktionäre handele, die im Besitz von 80% des Kapitals seien. Das vorgeschlagene Gesetz sei gerecht und eilbedürftig.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> meldet an, daß er dieses Gesetz wiederum ablehnen werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Mehrheit der Fraktion gegen wenige Stimmen dem Gesetz zustimmt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN013" type="comment">
+                     <p>Zur Verabschiedung des Gesetzes noch in der 3. WP siehe Nr. 234 v. 17. 1. 1961, Anm. 29.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> regt zum Kriegsgefangenenentschädigungsgesetz an, wegen der Zeitknappheit die Sache mit einer Entschließung zu erledigen. Diese Auffassung wird von der Fraktion gebilligt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN014" type="comment">
+                     <p>Entschließungsantrag nicht ermittelt. Zur Überweisung der Vorlage an die Ausschüsse am 18. 1. 1961 siehe ebd., Anm. 5.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StillerGeorg_1953-10-06">Stiller</name> regt an, in der 15. Novelle zum LAG in Frage der Vermögensabgabe für zusammenveranlagte Ehegatten zu regeln. Dies Regelung sei notwendig und die Fraktion solle ihr zustimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KraftWaldemar_1953-10-06">Kraft</name> erläutert, daß man auf eine Erklärung des Bundesfinanzministeriums zu dieser Frage gewartet habe, die aber nicht gekommen sei. So bleibe nun kein anderer Weg, als diese Vorlage anzunehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt die Zustimmung der Fraktion fest.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN015" type="comment">
+                     <p>Zur Verabschiedung der Novelle siehe Nr. 251 v. 17. 4. 1961.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> trägt die Problematik des Milch- und Fettgesetzes vor.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> stellt fest, daß die Fraktion vorbehaltlich der Äußerung des Rechtsausschusses dem Gesetz zustimmt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN016" type="comment">
+                     <p>Vgl. Schriftl. Ber. des Ausschusses für Ernährung, Landwirtschaft und Forsten: Drucksache III/2827 v. 8. 6. 1961; zur 2. und 3. Beratung Sten. Ber., 163. Sitzung am 16. 6. 1961, S. 9404–9408.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> berichtet, daß der Diskussionskreis Mittelstand die Beantwortung der Großen Anfrage über Mittelstandsfragen<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN017" type="comment">
+                     <p>SPD-Anfrage betr. Bericht über die Lage de Mittelschichten: Drucksache III/2758 v. 24. 5. 1961.</p>
+                  </note>
+               </seg> vorbereitet habe. Die Redner seien bestimmt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN018" type="comment">
+                     <p>Vgl. 163. Sitzung am 16. 6. 1961, S. 9416–9419 (<name type="Person" role="Erwaehnung" ref="#WieningerKarl_1953-10-06">Wieninger</name>), 9426–9429 (<name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>), 9434 (<name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>), 9434 f. (<name type="Person" role="Erwaehnung" ref="#SimpfendoerferKarl_1957-10-15">Simpfendörfer</name>).</p>
+                  </note>
+               </seg> Hinsichtlich der vom Finanzausschuß vorgeschlagenen Festlegung des Prozentsatzes auf 75% bei der Organschaft<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN019" type="comment">
+                     <p>Zur Organschaft als Unternehmenseinheit siehe Nr. 239 v. 7. 2. 1961, Anm. 16.</p>
+                  </note>
+               </seg> werde er, <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, einen Antrag auf die Festlegung auf 95% einbringen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-06-13-t1440_EP_FN020" type="comment">
+                     <p>Ein diesbezüglicher Antrag ließ sich nicht ermitteln.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

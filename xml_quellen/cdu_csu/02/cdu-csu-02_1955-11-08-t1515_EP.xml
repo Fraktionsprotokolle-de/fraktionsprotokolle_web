@@ -1,211 +1,331 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1955-11-08-t1515_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1007/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 8. November 1955</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>8 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1955-11-08"><time type="start" when="15:15:00"/><time type="end" when="18:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1955-11-08-t1515_EP_SVP-1" corresp="#cdu-csu-02_1955-11-08-t1515_EP_div_SVP-1">A. TOP 1: Vortrag von Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name>. – TOP 2: Christliche Gewerkschaften. – TOP 3: Unterbrochene Rückführung von Heimkehrern. – TOP 4: Parteitag der CDU. – TOP 5: Tagung des Europarats. – TOP 6: Genfer Konferenz. – TOP 7: Bericht aus dem Ältestenrat. – TOP 8: Kartoffelpreise. – TOP 9: Schreiben Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> an den Bundeskanzler. – TOP 10: Bundesgrenzschutz. – TOP 11: Apothekengesetz.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1955-11-08-t1515_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Zu Beginn der Sitzung widmet Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dem an den Folgen eines Unfalls verstorbenen <name type="Person" role="Erwaehnung" ref="#GriemHans_1953-10-06">Griem</name> einen Nachruf<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN001" type="comment"><p>Hans <name type="Person" role="Erwaehnung" ref="#GriemHans_1953-10-06">Griem</name> hatte am 25. 10. 1955 bei einem Verkehrsunfall schwere Verletzungen erlitten, denen er am 7. 11. 1955 erlegen war. Vgl. den »Hamburger Anzeiger« v. 9. 11. 1955.</p></note></seg>; die Fraktion ehrt den Toten.</p>
-				<p>1. [Vortrag von Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name>]</p>
-				<p>Sodann begrüßt Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name>, den Fraktionsvorsitzenden der christlichen Parteien im Montanparlament. Er betont dabei besonders, daß Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name> aus den Niederlanden komme, für das wir viel Verständnis hätten, weil auch dieses Land schweres Leid erlitten habe. Dieser Besuch sei ein Beitrag zu dem europäischen Brückenbau, der Lebensinhalt des Ministers <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name> sei.</p>
-				<p>Minister <name type="Person" role="Sprecher" ref="#SassenEmmanuel">Sassen</name> dankt für die ausgesprochene Begrüßung und bringt seine Freude zum Ausdruck, vor der Fraktion der CDU sprechen zu können, die nicht nur den gleichen christlich demokratischen Gedankenkreis, sondern auch das europäische Ideal mit ihm gemeinsam habe. Auch in Europa müsse man zur Kenntnis nehmen, daß das Atomzeitalter ganz neue Forderungen stelle und daß es verhängnisvoll wäre, wenn es nicht schnell zu einem Zusammenschluß der europäischen Mächte käme. Nur dann könne man hier bereits verlorenes Gebiet wieder zurückgewinnen. Interessant sei, daß unter Einwirkung der Atomkraft auch in England eine größere Neigung zur Integration festzustellen sei, und diesem Zeichen solle man entsprechende Aufmerksamkeit widmen. Jetzt noch sei Europa ein Niemandsland zwischen den beiden Welt-Großmächten Amerika und Rußland. Je mehr in diesem Niemandsland ein Machtvakuum entstehe, desto größer werde die Gefahr für dieses Gebiet. Ein Krieg könne aber auch den Atomkrieg bedeuten und es sei selbstverständlich, daß damit die Gefahr der Vernichtung der Menschheit näher rücke. Wer diese Gefahr aus seiner Verantwortung heraus abwenden wolle, müsse dafür Sorge tragen, daß anstelle des Vakuums ein Kraftzentrum in Europa sich ausbilde. Nicht übersehen dürfe man, daß die Politik der Entspannung und der Koexistenz, wie sie von Rußland betrieben werde, letzten Endes dahin ziele, die europäische Integration und ihre Realisierung gründlich zu stören.</p>
-				<p>Technik, Wissenschaft, Politik und wirtschaftliche Entwicklung wie auch die geopolitische Lage hätten die Europäer zu einer Schicksalsgemeinschaft zusammengeschmiedet. In dieser Gemeinsamkeit müsse man auf die Erreichung der Ziele hinarbeiten, uneinig werde man versagen. Neben den technischen, wirtschaftlichen und sonstigen Dingen dieser Art sei aber auch der geistige Zusammenschluß von eben solcher Bedeutung, und das Christentum bilde in ihm ein leuchtendes Merkmal für Bestrebungen, die auf Frieden, Gerechtigkeit, Wohlfahrt und Glück der Nation gerichtet seien.</p>
-				<p>Selbst der skeptische Betrachter der Dinge werde zugeben müssen, daß es nicht mehr vier Großmächte, sondern in Wirklichkeit nur noch zwei gebe. Nationale Einzelmächte seien überhaupt nicht mehr in der Lage, eine Rolle zu spielen. Für manches Volk sei das vielleicht eine peinliche Feststellung, es sei aber auch eine harte Realität. Eine wirklich mitbestimmende Rolle könne unter den jetzigen Verhältnissen nur ein in sich erneuertes und geeintes Europa spielen. Wer dessen Zustandekommen verhindere, werde der Verantwortung nicht gerecht, die er heute in der Politik zu tragen habe.</p>
-				<p>Freilich sei zu fragen, ob solche Überlegungen auch in dem Deutschland von heute überzeugend wirken könnten. Dieses Land sei gespalten und geteilt, und er wolle betonen, daß dessen Wiedervereinigung nicht nur für die Deutschen ein politisches legitimes nationales Bedürfnis sei, sondern daß es auch für alle anderen Länder ein tief menschliches Problem darstelle, dessen Lösung sich immer mehr als notwendig fühlbar mache. Leider habe der Kreml die Wiedervereinigung bis heute verhindert, weil er hoffe, seine Politik so einrichten zu können, daß der Eiserne Vorhang eines Tages bis zum Rhein reichen werde. Ein Eingehen auf die russische Politik könne nicht verantwortet werden. Man brauche sich ja nur die Folgen solcher Vorgänge vorzustellen. Auch eine Wiedervereinigung durch Krieg sei nicht möglich, weil ein solcher Krieg den Untergang nicht nur Deutschlands, sondern auch der anderen Völker mit sich bringen werde. Die einzige Möglichkeit sei also die eines starken und geeinigten integrierten Europas.</p>
-				<p>Bemerkenswert sei doch, wie nach dem Scheitern der EVG ebenso wie nach dem negativen Ergebnis des Saar-Referendums eine Versteifung der sowjetischen Haltung eingetreten sei. Sehr rasch habe sich der Geist von Genf verflüchtigt. Ein Nachgeben erziele also bei den Sowjets keine Wirkung. Dagegen würden die eingeleiteten Maßnahmen zur Stärkung Europas eher einen Effekt erzielen können. Nur damit könne man einen Zustand schaffen, durch den die Spaltung Deutschlands zwangsläufig unhaltbar werde. Wenn aber Europa schwanke, zögere, sich schwach zeige und den Mut verliere, wenn man vergesse, daß die Saarabstimmung höchstwahrscheinlich etwas ganz anderes beantwortet habe als die Frage nach einer europäischen Einigung, dann sehe man den Kommunismus heranrücken; nicht nur im fernen, sondern auch im Nahen Osten werde er aktiv, und man müsse die Zusammenhänge mit Europa erkennen. Man solle nicht glauben, daß Holland, wenn es von Europa spreche, evtl. seinen Käseexport im Auge habe. Es gehe Holland um die Verwirklichung der Erkenntnis, daß man nur in einem großen europäischen Rahmen auf die Dauer frei und glücklich werde leben können.</p>
-				<p>Er wolle zurückgreifen in die holländische Geschichte. Dieses kleine Volk habe den Kampf gegen die damals größte Weltmacht aufgenommen, um sich zu behaupten, und die Devise seines Führers in diesem Kampf, des <name type="Person" role="Erwaehnung" ref="#WilhelmI_GrafvonNassau-DillenburgPrinzvonOranien">Prinzen von Oranien</name>, sei gewesen: »Man braucht nicht zu hoffen, um ein großes Werk zu beginnen, man braucht keinen Erfolg, um durchzuhalten«. Diese Devise gelte für die Europäer und gelte besonders auch für die Deutschen im Osten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dankt Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name> für die mutigen, klugen und einsichtsvollen Worte, mit denen er sich als Befürworter Europas hier vorgestellt habe. Er danke auch für das Verständnis Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassens</name> für die deutsche Politik, die nicht eine solche rigorose Stärke, sondern eine Politik des Schutzes unseres Landes und unserer Kultur sein solle. Er freue sich über die völlig gleiche Auffassung, daß die Wiedervereinigung die Voraussetzung der europäischen Sicherheit sei und daß auch er richtig erkannt habe, was die Entscheidung an der Saar bedeutet habe; diese Entscheidung sei kein Ausdruck des Nationalismus gewesen, sondern habe das Recht auf freie Selbstbestimmung betont. Jedenfalls werde sie keinen Rückschritt auf dem Wege nach Europa bedeuten dürfen. Abschließend wünsche er dem Vorsitzenden der christlichen Fraktion des Montanparlaments allen Erfolg für seine Arbeit auf der supranationalen Ebene, die getragen sei von dem uns gemeinsamen Geiste des Christentums und der guten Nachbarschaft der Völker und Länder, der Sicherung der Freiheit, des Glücks und der Wohlfahrt Europas.</p>
-				<p>2. [Christliche Gewerkschaften]</p>
-				<p>Sodann wendet sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> der Frage der christlichen Gewerkschaften zu und stellt unter Zustimmung der Fraktion fest, daß weder diese noch die Partei sich zu diesem Problem äußern werde. In der Fraktion seien Kollegen sowohl der Einheits- wie der christlichen Gewerkschaft. Beide seien gleich liebwerte Kollegen, und die Fraktion respektiere die Entscheidung jedes einzelnen.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN002" type="comment"><p>Am 30. 10. 1955 war die »Christliche Gewerkschaftsbewegung Deutschlands« gegründet worden. Als Präsident des Hauptvorstandes war Johannes <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> für die katholische Seite gewählt worden, als Vizepräsident Erich <name type="Person" role="Erwaehnung" ref="#KönigErich">König</name> (evangelisch). Die Funktion des ersten Vorsitzenden des Gewerkschaftsbeirates bekleidete Bernhard <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>. Vgl. AdG 1955, S. 5434 und »Die Welt« v. 1. 11. 1955: »Wenig Beifall für Essener Gründung.«</p></note></seg></p>
-				<p>3. [Unterbrochene Rückführung von Heimkehrern]</p>
-				<p>Zur Frage der unterbrochenen Rückführung von Heimkehrern habe ein Gespräch mit dem Außenminister stattgefunden.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN003" type="comment"><p>Siehe Nr. 200, 2.</p></note></seg> Man könne sagen, daß die ehrenwörtlich abgegebene Versicherung, daß die Gefangenen nach Hause zurückgeführt werden, nach wie vor zu Recht bestehe, und daß man hoffen könne, daß bald neue Transporte erwartet werden könnten.</p>
-				<p>4. [Parteitag der CDU]</p>
-				<p>Weiter teilt Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> mit, daß der Bundes-Parteivorstand in dieser Woche beschließen werde, den Parteitag der CDU bis zum nächsten Frühjahr zu verschieben. Dafür werde in der 3. Novemberwoche eine Sitzung des Bundes-Parteiausschusses stattfinden, der sich mit den Fragen der Außenpolitik und der Sozialreform beschäftigen werde.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN004" type="comment"><p>In der Parteiausschuß-Sitzung am 1. 10. 1955 hatte <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name> über die Planung des Parteitages referiert. Eine weitere Sitzung war hier für den 21. 11. 1955 geplant worden, Unterlagen finden sich jedoch erst wieder für die Sitzung des Parteiausschusses am 26. 4. 1956. ACDP, VII-001–020/5.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> bringt zum Ausdruck, daß er eine Verschiebung des Bundes-Parteitages aufs Tiefste bedauern würde. Aus verschiedenen Gründen hielte er die Durchführung des Parteitages für besser.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> weist darauf hin, daß diese Frage nicht im Rahmen der Fraktion zu behandeln sei, daß man aber auch Verständnis dafür haben solle, wenn der Parteivorsitzende den Wunsch habe, an einer so entscheidenden Tagung selbst teilzunehmen.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN005" type="comment"><p>Der Bundesvorstand verlegte den für den 21. bis 24. 11. 1955 in Baden-Baden geplanten Parteitag auf die Zeit vom 23. bis 28. 4. 1956 (vgl. CDU-Bundesvorstand 1955–1957, S. 653–657). Er fand schließlich vom 26. bis 29. 4. 1956 in Stuttgart statt (vgl. Christlich-Demokratische Union: 6. Bundesparteitag).</p></note></seg></p>
-				<p>5. [Tagung des Europarats]</p>
-				<p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> berichtet kurz über die Tagung des Europarates<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN006" type="comment"><p>Vom 14. bis 27. 10. 1955. Vgl. den ausführlichen Bericht über die Tagung in: EA 1955, S. 8465–8508.</p></note></seg>, die sehr interessant gewesen sei, was er im Gegensatz zu gewissen Pressemeldungen ausdrücklich feststellen möchte. Besonders bemerkenswert sei die Diskussion über die Sozialcharta gewesen. Auch wenn sie wieder an den Ausschuß zurückverwiesen worden sei, so sei es doch ermutigend gewesen, daß man versucht habe, ein soziales Ordnungsbild zu schaffen. Das WEU-Parlament habe sich mit seiner Geschäftsordnung befaßt. Dabei sei es gelungen, auch die deutsche Sprache als Verhandlungssprache durchzusetzen. Erfreulicherweise seien diese Bestrebungen von der christlich-demokratischen Fraktion und auch von französischer Seite sehr lebhaft unterstützt worden.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN007" type="comment"><p>Die Gemeinsame Versammlung der EGKS hatte am 27. 10. 1955 mit der Beratenden Versammlung des Europarates getagt. Der Bericht hierüber (vgl. ebd., S. 8485–8488) gibt nur politische Themen wieder.</p></note></seg></p>
-				<p>6. [Genfer Konferenz]</p>
-				<p>Sodann kommt Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> auf die Entwicklung der Genfer Konferenz, auf der mit seltener Unzweideutigkeit der russische Standpunkt zum Ausdruck komme, zu sprechen. Mindestziel der russischen Politik sei die Aufrechterhaltung der Spaltung Deutschlands, Maximalziel die Bolschewisierung ganz Deutschlands. Wenn nun die SPD sage, daß diese Versteifung darauf zurückgehe, daß die Koalition an Rußland keine brauchbaren Angebote gemacht habe, so müsse man das als eine haltlose Behauptung zurückweisen. Wenn <name type="Person" role="Erwaehnung" ref="#MolotowWjatscheslawMichajlowitsch">Molotow</name> nicht mit neuen Weisungen aus Moskau zurückkomme, würden auf der Konferenz kaum Ergebnisse erzielt werden können. Ob dann die Abrüstung noch erörtert werde, sei sehr fraglich. Man könne hoffen, daß die Westmächte sich an den deutschen Vorschlag halten würden, diesen Punkt dann nicht mehr zu erörtern.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN008" type="comment"><p>Die Genfer Außenministerkonferenz war wegen einer Reise des sowjetischen Außenministers nach Moskau unterbrochen worden. Nach seiner Rückkunft am 8. 11. 1955 lehnte <name type="Person" role="Erwaehnung" ref="#MolotowWjatscheslawMichajlowitsch">Molotow</name> alle Vorschläge zur Wiedervereinigung schroff ab. Die Gespräche über Rüstungsfragen wurden gleichwohl weitergeführt. Vgl. EA 1955, S. 8393f. und S. 8329–8437. Vgl. auch: Die Außenministerkonferenz in Genf.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet, daß die Äußerungen der Linken zum Ablauf der Konferenz starkes Befremden erregt hätten. Die Auffassung, daß Fortschritte sichtbar geworden seien, müsse als absurd bezeichnet werden und werde wohl auch die Politik keinen Schritt weiterbringen. So lange aber die Verhandlungen in Genf liefen, halte es der Vorstand für richtig, sich seitens der Fraktion nicht zu äußern.</p>
-				<p>7. [Bericht aus dem Ältestenrat<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN009" type="comment"><p>Vgl. das Kurzprotokoll der 86. Sitz. des Ältestenrates am 8. 11. 1955, 13.00 Uhr. Parl. Arch., Ältestenrat, 2. Wp.</p></note></seg>]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt dann einen Bericht aus dem Ältestenrat, besonders über den Antrag des BHE betreffend Abberufung der Minister <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name> und Prof. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> [Drucksache II/1809 v. 24. 10. 1955]. Die Koalition habe dem Präsidenten gegenüber den Standpunkt vertreten, daß dieser verfassungswidrige Antrag nicht auf die Tagesordnung gesetzt werden könne. Der Präsident wolle darüber ein Gutachten fertigen lassen. Die Koalition sei sich über die Behandlung dieser Materie einig.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN010" type="comment"><p>Über die Absetzung entstand im Plenum eine längere Geschäftsordnungsdebatte. Mittels namentlicher Abstimmung wurde schließlich beschlossen, zur Tagesordnung überzugehen. Vgl. Sten. Ber., 114. Sitz. am 1. 12. 1955, S. 6130–6136.</p></note></seg></p>
-				<p>Über die Behandlung des Apothekengesetzes [Gesetzentwürfe <name type="Person" role="Erwaehnung" ref="#PlatnerEduard_1953-10-06">Platner</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeiskeWalter_1953-10-06">Leiske</name> und Gen., Drucksache II/1083 v. 15. 12. 1954, und der Regierung, Drucksache II/1233 v. 1. 3. 1955] sei eine Einigung nicht erzielt worden. Man werde also zunächst in seine Beratung eintreten müssen, wenn die Fraktion nicht ein anderes Verfahren beschließe.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN011" type="comment"><p>Siehe TOP 11 und Nr. 203, 2. Die Beratung des Gegenstands wurde von der Tagesordnung der 111. Sitz. am 10. 11. 1955 gestrichen. Vgl. ebd., S. 6006f.</p></note></seg></p>
-				<p>8. [Kartoffelpreise]</p>
-				<p>Josef <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> weist auf die Entwicklung der Kartoffelpreise hin. Diesem Treiben müsse Einhalt geboten werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GlasmeyerHeinrich_1949-09-07">Glasmeyer</name> erklärt, daß die Ernte an sich reichlich genug gewesen sei, um das ganze Volk mit Kartoffeln zu versorgen. Trotz der an sich etwas geringeren Ernte seien jetzt bereits in diesem Jahr 120 000 Tonnen mehr verladen als im Vorjahr. Es könne also nicht an der Landwirtschaft liegen, die übrigens ihre Kartoffeln mit 6 DM pro Zentner verkaufe. Wenn sie dann auf dem Markt 14 DM kosteten, dann wäre es wirklich Zeit, hier entsprechend einzugreifen.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN012" type="comment"><p>Siehe auch Nr. 200, 5.</p></note></seg></p>
-				<p>9. [Schreiben Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> an den Bundeskanzler]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wendet sich dem Schreiben des Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> an den Bundeskanzler zu, in dem dieser die Ministerfrage behandelt. Es sei festzustellen, daß die Handhabung dieser Sache durch den Bundeskanzler dem Grundgesetz entspreche; Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe ja auch lediglich moniert, daß die Frage der Berufung von Ministern vorher in der Koalition besprochen werden solle. In der gestrigen Koalitionsbesprechung sei besprochen worden, dieses Thema bis zur Wiederherstellung des Bundeskanzlers zurückzustellen.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN013" type="comment"><p>Siehe Nr. 194, 4. Am 5. 11. 1955 hatte <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> dem Bundeskanzler erneut geschrieben, daß den Koalitionsfraktionen ein Mitspracherecht vor der Ernennung von Bundesministern zustehe. Der Kanzler antwortete zunächst am 10. 11. 1955 mit einer Empfangsbestätigung (StBKAH, 12/34). Am 22. 11. 1955 ließ er dem Fraktionsvorsitzenden der FDP ein Schreiben zukommen, in dem er ihm im Hinblick auf die Außen- und Verteidigungspolitik die Koalitionsfrage stellte (in: Adenauer, Briefe 1955–1957, S. 94–96).</p></note></seg></p>
-				<p>10. [Bundesgrenzschutz]</p>
-				<p>Bundesminister <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> erklärt, daß der Bundesverteidigungsrat, dessen Einrichtung er auf verschiedene Zwischenrufe hin erläutert<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN014" type="comment"><p>Das Kabinett hatte am 6. 10. 1955 den Bundesverteidigungsrat gegründet, dem unter Vorsitz des Bundeskanzlers die Bundesminister für wirtschaftliche Zusammenarbeit, für Atomfragen, des Auswärtigen, des Innern, der Finanzen, für Verteidigung und für Wirtschaft angehörten. Der Bundesverteidigungsrat sollte militärische, zivile, wirtschaftliche und finanzielle Fragen der Verteidigung vorklären. Vgl. Kabinettsprotokolle 1955, S. 552f.</p></note></seg>, die Frage erörtert habe, ob der Bundesgrenzschutz nicht zur beschleunigten Aufstellung deutscher Streitkräfte verwendet werden könne. Es sei wohl nicht erforderlich darzulegen, daß diese beschleunigte Aufstellung notwendig sei. Ein zu langsames Vorgehen werde jedenfalls Mißtrauen gegen unsere politische Haltung erzeugen. Auch der Vorstand sei zu dem Entschluß gekommen, daß eine Überführung des Bundesgrenzschutzes in die Streitkräfte wünschenswert sei. Durch diese Überführungsmaßnahmen solle der Bundesgrenzschutz als Institution nicht aufgehoben werden. Die praktische Folge davon sei jedoch, daß man dann in den Streitkräften über sieben Kommandos mit sieben Regimentern und etwa 20 000 Mann verfüge, die alle 1–5 Jahre Truppendienst hinter sich hätten. Er empfehle der Fraktion, den Beschluß des Vorstandes<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN015" type="comment"><p>Siehe Nr. 200, 6.</p></note></seg> gutzuheißen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> weist darauf hin, daß die Erörterung dieser Frage im zuständigen Arbeitskreis I tiefe Beunruhigung ausgelöst habe. Es sei unangenehm festzustellen, daß ohne jede Rücksicht auf die Form derartige Dinge betrieben würden, ohne sie vorher in den zuständigen Gremien zu besprechen. Das halte er gleicherweise für die Beratungen des Bundesverteidigungsrates wie für die Behandlung der Sache im Vorstand für erforderlich. Damit werde einem praktisch der Standpunkt in der Öffentlichkeit vorgeschrieben. Ebenso werde auf diese Weise den Beschlüssen des Kabinetts und des Parlaments vorgegriffen.</p>
-				<p>Zu diesen formellen Bedenken kämen erhebliche Bedenken sachlicher Art. Immer habe man betont, daß der BGS eine polizeiliche und keine militärische Organisation sei. Durch die jetzige Überführung ins Militär werde man der Unwahrheit überführt.</p>
-				<p>Wenn man schon die Aufstellung von Truppen beschleunigen wolle, dann solle man doch immer mit der gebührenden Vorsicht verfahren. Auch solle man bedenken, daß man den BGS notwendig haben könne, wenn in entsprechender Form ein Angriff auf unser Gebiet und unsere Sicherheit erfolge. Nicht unter allen Umständen könne man mit dem Einsatz von NATO-Truppen in solchen Fällen rechnen. Wenn man sage, daß der Bundesgrenzschutz ja nicht völlig überführt werde, so bezweifele er doch, ob man mit dem verbleibenden Rest überhaupt noch etwas anfangen könne. Jedenfalls wolle er den Wunsch zum Ausdruck bringen, daß man sich in Zukunft nicht derartig über die Leute hinwegsetze, die bisher an einer Sache mitgearbeitet und die Verantwortung mitgetragen hätten.</p>
-				<p><name type="Person" role="Sprecher" ref="#BerendsenFritz_1953-10-06">Berendsen</name> unterstreicht, daß die Überführung des Bundesgrenzschutzes aus außenpolitischen Gründen notwendig sei; wie sie rechtlich geschehen könne, sei noch im einzelnen zu prüfen. Man müsse auch bedenken, daß ein Großteil der Bundesgrenzschutzleute in der Erwartung eingetreten sei, auf diesem Wege in die neue deutsche Wehrmacht zu gelangen. Die Tätigkeit beim Bundesgrenzschutz habe die beste Vorbereitung für den Wehrdienst dargestellt. Es sei jetzt notwendig, das Freiwilligengesetz<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN016" type="comment"><p>Gesetz v. 23. 7. 1955. BGBl. I/1955, S. 449.</p></note></seg> durch das Soldatengesetz [Drucksache II/1700 v. 23. 9. 1955] zu ersetzen, um die Aufstellung der Truppen beschleunigt durchführen zu können.</p>
-				<p><name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> legt noch einmal dar, daß die Zeitungsmeldungen über die Beratungen des Bundesverteidigungsrates nicht auf eine Mitteilung dieses Organs zurückgingen. Im übrigen müsse man die innere Situation des Bundesgrenzschutzes berücksichtigen. Der größte Teil des Grenzschutzes wolle ohne Zweifel zu den Streitkräften überwechseln. Dabei werde gleichzeitig die Erfahrung übernommen, die diese Leute im Grenzschutz erworben hätten. Auch er wolle die außenpolitischen Gründe dieser Maßnahme besonders unterstreichen. Da jedoch der Zweck des Bundesgrenzschutzes durch Gesetz festgelegt sei, müsse er als Institution aufrecht erhalten bleiben. Die Aufstellung von 500 000 Soldaten in drei Jahren sei eine übermenschlich große Aufgabe, zu deren Lösung alles getan werden müsse, was man überhaupt tun könne.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> unterstreicht ebenfalls die Notwendigkeit der beschleunigten Aufstellung der Truppen. Der Außenstehende könne allerdings nicht begreifen, warum es dazu solcher Maßnahmen bedürfe. Auch sei, wie er schon gesagt habe, vor allem der Weg zu bedauern, wie man das gemacht habe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> legt dar, daß das wesentliche der vorzubringenden Beanstandungen gewesen sei, daß man durch die Verlautbarungen über den Beschluß des Bundesverteidigungsrates vor vollendete Tatsachen gestellt worden sei. Er bitte darum, daß die Frage von Veröffentlichungen einmal gründlich beraten werde, damit nicht derartig überraschende und Verwirrung stiftende Dinge vorkämen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> legt noch einmal dar, daß es sich nicht um eine Verlautbarung des Bundesverteidigungsrates gehandelt habe, daß er im übrigen aber sachlich die Maßnahme durchaus vertrete. Im übrigen könne er nichts dabei finden, wenn der Vorstand der Fraktion »seiner Auffassung« Ausdruck gebe.</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> unterstreicht seinerseits die von Prof. <name type="Person" role="Erwaehnung" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> vorgebrachten Beanstandungen, daß man in Zukunft sowohl Vorstand wie Arbeitskreis früher mit derartigen Dingen befassen solle, jedenfalls bevor es zur Presseveröffentlichung komme.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt sich hinter die Überführung des Bundesgrenzschutzes in die Streitkräfte und versichert, daß der Vorstand, wenn nicht zwingende Gründe es anders geböten, sich bemühen werde, der Meinung der Fraktion nicht vorzugreifen.</p>
-				<p>Dann wendet er sich dem Waffenhilfegesetz zu, das noch in diesem Jahre verabschiedet werden müsse, um bis zum 1. 1. 1956 die für die Truppen benötigten Waffen in Empfang nehmen zu können.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN017" type="comment"><p>Nach Abschluß des Verteidigungshilfeabkommens zwischen der Bundesrepublik und den USA am 30. 6. 1955 kam es zu Meinungsverschiedenheiten zwischen den Vertragspartnern, weil sich insbesondere der Finanzminister weigerte, die Verteidigungsausgaben deutlich zu erhöhen (vgl. Sicherheitspolitik, Bd. 3, S. 198–204). Gleichwohl hatte das Kabinett am 28. 9. 1955 die Vorlage des Waffenhilfegesetzes verabschiedet (vgl. Kabinettsprotokolle 1955, S. 540). Der Bundesrat hatte den Gesetzentwurf am 21. 10. 1955 erhalten (BR-Drucksache 348/1955) und stimmte ihm am 11. 11. 1955 zu. Noch am gleichen Tag leitete die Bundesregierung ihn an den Bundestag weiter (Drucksache II/1855). Dort wurde er am 1. 12. 1955 in 1. Lesung und am 7. 12. 1955 in 2. und 3. Lesung verabschiedet (vgl. Sten. Ber., 114. Sitz. S. 6122–6125 und 116. Sitz., S. 6209–6211), so daß das v. 21. 12. 1955 datierende Gesetz (vgl. BGBl. II/1955, S. 1049) fristgerecht in Kraft treten konnte.</p></note></seg> Er bitte die Fraktion um Zustimmung dazu, da diese Themen im Vorstand bereits vorbehandelt worden seien. Gleiches sei notwendig gewesen in der Milchpreisfrage.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN018" type="comment"><p>Siehe Nr. 200, 4 und 6.</p></note></seg></p>
-				<p>Dr. Karl <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> bemängelt, daß der Bundesverteidigungsrat so stillschweigend gebildet worden sei. Erst jetzt habe er erfahren, daß es sich um einen reinen Kabinettsausschuß handelt, was ihm bedenklich erscheine. Auch er wende sich gegen diese Art der Überführung des Bundesgrenzschutzes in die Streitkräfte, so sehr die Beschleunigung deren Aufstellung notwendig sei. Aber man könne nicht eine vom Gesetz geschaffene Einrichtung auf solche Weise aushöhlen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> stellt fest, daß es in der Organisationsgewalt der Bundesregierung liege, Kabinettsausschüsse zu bilden, die sich mit Schwerpunktproblemen befaßten. Der Beschluß zur Schaffung eines Bundesverteidigungsrates sei vom Bundeskanzler persönlich gefaßt worden.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN019" type="comment"><p>Siehe Anm. 14.</p></note></seg> Niemand habe bisher diesen Beschluß kritisiert. Da die Verteidigung eines Landes heute nicht mehr Angelegenheit der Soldaten allein sei, sei es auch notwendig, entsprechende Organisationsformen zu schaffen. Koordinierung sei notwendig; wie notwendig, ergebe sich aus der Tatsache, daß die rechtlichen Voraussetzungen zur Übernahme der Waffenhilfe bis heute durch das Auswärtige Amt noch nicht geschaffen seien.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> weist darauf hin, daß sich die Kritik wohl mehr gegen ihn als gegen Minister <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> richte, weil die Sache nicht genügend in der Fraktion zur Sprache gebracht worden sei. Er wolle sich bemühen, in Zukunft entsprechend zu handeln. Dann stellt er fest, daß die Mehrheit der Fraktion den Entschluß des Vorstands billige (bei acht Enthaltungen).</p>
-				<p>11. [Apothekengesetz, Entwürfe <name type="Person" role="Erwaehnung" ref="#PlatnerEduard_1953-10-06">Platner</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeiskeWalter_1953-10-06">Leiske</name> und Gen., Drucksache II/1083 v. 15. 12. 1954, und der Regierung, Drucksache II/1233 v. 1. 3. 1955]</p>
-				<p>Es entwickelt sich dann eine Debatte um die Behandlung des Apothekengesetzes, an der sich <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Sprecher" ref="#PlatnerEduard_1953-10-06">Platner</name>, <name type="Person" role="Sprecher" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Sprecher" ref="#PelsterGeorg_1949-09-07">Pelster</name> und Staatssekretär <name type="Person" role="Sprecher" ref="#LexHansRittervon">Ritter von Lex</name> beteiligen. Die abschließende Abstimmung ergibt, daß sich die Mehrheit der Fraktion entgegen dem Antrag <name type="Person" role="Erwaehnung" ref="#PlatnerEduard_1953-10-06">Platner</name> für Durchführung der 2. Beratung im Plenum ausspricht.<seg type="note"><note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN020" type="comment"><p>Siehe Anm. 11.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1955-11-08-t1515_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1007/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 8. November 1955</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>8 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1955-11-08">
+               <time type="start" when="15:15:00"/>
+               <time type="end" when="18:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1955-11-08-t1515_EP_SVP-1" corresp="#cdu-csu-02_1955-11-08-t1515_EP_div_SVP-1">A. TOP 1: Vortrag von Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name>. – TOP 2: Christliche Gewerkschaften. – TOP 3: Unterbrochene Rückführung von Heimkehrern. – TOP 4: Parteitag der CDU. – TOP 5: Tagung des Europarats. – TOP 6: Genfer Konferenz. – TOP 7: Bericht aus dem Ältestenrat. – TOP 8: Kartoffelpreise. – TOP 9: Schreiben Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> an den Bundeskanzler. – TOP 10: Bundesgrenzschutz. – TOP 11: Apothekengesetz.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1955-11-08-t1515_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Zu Beginn der Sitzung widmet Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dem an den Folgen eines Unfalls verstorbenen <name type="Person" role="Erwaehnung" ref="#GriemHans_1953-10-06">Griem</name> einen Nachruf<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN001" type="comment">
+                     <p>Hans <name type="Person" role="Erwaehnung" ref="#GriemHans_1953-10-06">Griem</name> hatte am 25. 10. 1955 bei einem Verkehrsunfall schwere Verletzungen erlitten, denen er am 7. 11. 1955 erlegen war. Vgl. den »Hamburger Anzeiger« v. 9. 11. 1955.</p>
+                  </note>
+               </seg>; die Fraktion ehrt den Toten.</p>
+            <p>1. [Vortrag von Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name>]</p>
+            <p>Sodann begrüßt Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name>, den Fraktionsvorsitzenden der christlichen Parteien im Montanparlament. Er betont dabei besonders, daß Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name> aus den Niederlanden komme, für das wir viel Verständnis hätten, weil auch dieses Land schweres Leid erlitten habe. Dieser Besuch sei ein Beitrag zu dem europäischen Brückenbau, der Lebensinhalt des Ministers <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name> sei.</p>
+            <p>Minister <name type="Person" role="Sprecher" ref="#SassenEmmanuel">Sassen</name> dankt für die ausgesprochene Begrüßung und bringt seine Freude zum Ausdruck, vor der Fraktion der CDU sprechen zu können, die nicht nur den gleichen christlich demokratischen Gedankenkreis, sondern auch das europäische Ideal mit ihm gemeinsam habe. Auch in Europa müsse man zur Kenntnis nehmen, daß das Atomzeitalter ganz neue Forderungen stelle und daß es verhängnisvoll wäre, wenn es nicht schnell zu einem Zusammenschluß der europäischen Mächte käme. Nur dann könne man hier bereits verlorenes Gebiet wieder zurückgewinnen. Interessant sei, daß unter Einwirkung der Atomkraft auch in England eine größere Neigung zur Integration festzustellen sei, und diesem Zeichen solle man entsprechende Aufmerksamkeit widmen. Jetzt noch sei Europa ein Niemandsland zwischen den beiden Welt-Großmächten Amerika und Rußland. Je mehr in diesem Niemandsland ein Machtvakuum entstehe, desto größer werde die Gefahr für dieses Gebiet. Ein Krieg könne aber auch den Atomkrieg bedeuten und es sei selbstverständlich, daß damit die Gefahr der Vernichtung der Menschheit näher rücke. Wer diese Gefahr aus seiner Verantwortung heraus abwenden wolle, müsse dafür Sorge tragen, daß anstelle des Vakuums ein Kraftzentrum in Europa sich ausbilde. Nicht übersehen dürfe man, daß die Politik der Entspannung und der Koexistenz, wie sie von Rußland betrieben werde, letzten Endes dahin ziele, die europäische Integration und ihre Realisierung gründlich zu stören.</p>
+            <p>Technik, Wissenschaft, Politik und wirtschaftliche Entwicklung wie auch die geopolitische Lage hätten die Europäer zu einer Schicksalsgemeinschaft zusammengeschmiedet. In dieser Gemeinsamkeit müsse man auf die Erreichung der Ziele hinarbeiten, uneinig werde man versagen. Neben den technischen, wirtschaftlichen und sonstigen Dingen dieser Art sei aber auch der geistige Zusammenschluß von eben solcher Bedeutung, und das Christentum bilde in ihm ein leuchtendes Merkmal für Bestrebungen, die auf Frieden, Gerechtigkeit, Wohlfahrt und Glück der Nation gerichtet seien.</p>
+            <p>Selbst der skeptische Betrachter der Dinge werde zugeben müssen, daß es nicht mehr vier Großmächte, sondern in Wirklichkeit nur noch zwei gebe. Nationale Einzelmächte seien überhaupt nicht mehr in der Lage, eine Rolle zu spielen. Für manches Volk sei das vielleicht eine peinliche Feststellung, es sei aber auch eine harte Realität. Eine wirklich mitbestimmende Rolle könne unter den jetzigen Verhältnissen nur ein in sich erneuertes und geeintes Europa spielen. Wer dessen Zustandekommen verhindere, werde der Verantwortung nicht gerecht, die er heute in der Politik zu tragen habe.</p>
+            <p>Freilich sei zu fragen, ob solche Überlegungen auch in dem Deutschland von heute überzeugend wirken könnten. Dieses Land sei gespalten und geteilt, und er wolle betonen, daß dessen Wiedervereinigung nicht nur für die Deutschen ein politisches legitimes nationales Bedürfnis sei, sondern daß es auch für alle anderen Länder ein tief menschliches Problem darstelle, dessen Lösung sich immer mehr als notwendig fühlbar mache. Leider habe der Kreml die Wiedervereinigung bis heute verhindert, weil er hoffe, seine Politik so einrichten zu können, daß der Eiserne Vorhang eines Tages bis zum Rhein reichen werde. Ein Eingehen auf die russische Politik könne nicht verantwortet werden. Man brauche sich ja nur die Folgen solcher Vorgänge vorzustellen. Auch eine Wiedervereinigung durch Krieg sei nicht möglich, weil ein solcher Krieg den Untergang nicht nur Deutschlands, sondern auch der anderen Völker mit sich bringen werde. Die einzige Möglichkeit sei also die eines starken und geeinigten integrierten Europas.</p>
+            <p>Bemerkenswert sei doch, wie nach dem Scheitern der EVG ebenso wie nach dem negativen Ergebnis des Saar-Referendums eine Versteifung der sowjetischen Haltung eingetreten sei. Sehr rasch habe sich der Geist von Genf verflüchtigt. Ein Nachgeben erziele also bei den Sowjets keine Wirkung. Dagegen würden die eingeleiteten Maßnahmen zur Stärkung Europas eher einen Effekt erzielen können. Nur damit könne man einen Zustand schaffen, durch den die Spaltung Deutschlands zwangsläufig unhaltbar werde. Wenn aber Europa schwanke, zögere, sich schwach zeige und den Mut verliere, wenn man vergesse, daß die Saarabstimmung höchstwahrscheinlich etwas ganz anderes beantwortet habe als die Frage nach einer europäischen Einigung, dann sehe man den Kommunismus heranrücken; nicht nur im fernen, sondern auch im Nahen Osten werde er aktiv, und man müsse die Zusammenhänge mit Europa erkennen. Man solle nicht glauben, daß Holland, wenn es von Europa spreche, evtl. seinen Käseexport im Auge habe. Es gehe Holland um die Verwirklichung der Erkenntnis, daß man nur in einem großen europäischen Rahmen auf die Dauer frei und glücklich werde leben können.</p>
+            <p>Er wolle zurückgreifen in die holländische Geschichte. Dieses kleine Volk habe den Kampf gegen die damals größte Weltmacht aufgenommen, um sich zu behaupten, und die Devise seines Führers in diesem Kampf, des <name type="Person" role="Erwaehnung" ref="#WilhelmI_GrafvonNassau-DillenburgPrinzvonOranien">Prinzen von Oranien</name>, sei gewesen: »Man braucht nicht zu hoffen, um ein großes Werk zu beginnen, man braucht keinen Erfolg, um durchzuhalten«. Diese Devise gelte für die Europäer und gelte besonders auch für die Deutschen im Osten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dankt Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassen</name> für die mutigen, klugen und einsichtsvollen Worte, mit denen er sich als Befürworter Europas hier vorgestellt habe. Er danke auch für das Verständnis Minister <name type="Person" role="Erwaehnung" ref="#SassenEmmanuel">Sassens</name> für die deutsche Politik, die nicht eine solche rigorose Stärke, sondern eine Politik des Schutzes unseres Landes und unserer Kultur sein solle. Er freue sich über die völlig gleiche Auffassung, daß die Wiedervereinigung die Voraussetzung der europäischen Sicherheit sei und daß auch er richtig erkannt habe, was die Entscheidung an der Saar bedeutet habe; diese Entscheidung sei kein Ausdruck des Nationalismus gewesen, sondern habe das Recht auf freie Selbstbestimmung betont. Jedenfalls werde sie keinen Rückschritt auf dem Wege nach Europa bedeuten dürfen. Abschließend wünsche er dem Vorsitzenden der christlichen Fraktion des Montanparlaments allen Erfolg für seine Arbeit auf der supranationalen Ebene, die getragen sei von dem uns gemeinsamen Geiste des Christentums und der guten Nachbarschaft der Völker und Länder, der Sicherung der Freiheit, des Glücks und der Wohlfahrt Europas.</p>
+            <p>2. [Christliche Gewerkschaften]</p>
+            <p>Sodann wendet sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> der Frage der christlichen Gewerkschaften zu und stellt unter Zustimmung der Fraktion fest, daß weder diese noch die Partei sich zu diesem Problem äußern werde. In der Fraktion seien Kollegen sowohl der Einheits- wie der christlichen Gewerkschaft. Beide seien gleich liebwerte Kollegen, und die Fraktion respektiere die Entscheidung jedes einzelnen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN002" type="comment">
+                     <p>Am 30. 10. 1955 war die »Christliche Gewerkschaftsbewegung Deutschlands« gegründet worden. Als Präsident des Hauptvorstandes war Johannes <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> für die katholische Seite gewählt worden, als Vizepräsident Erich <name type="Person" role="Erwaehnung" ref="#KoenigErich">König</name> (evangelisch). Die Funktion des ersten Vorsitzenden des Gewerkschaftsbeirates bekleidete Bernhard <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>. Vgl. AdG 1955, S. 5434 und »Die Welt« v. 1. 11. 1955: »Wenig Beifall für Essener Gründung.«</p>
+                  </note>
+               </seg>
+            </p>
+            <p>3. [Unterbrochene Rückführung von Heimkehrern]</p>
+            <p>Zur Frage der unterbrochenen Rückführung von Heimkehrern habe ein Gespräch mit dem Außenminister stattgefunden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN003" type="comment">
+                     <p>Siehe Nr. 200, 2.</p>
+                  </note>
+               </seg> Man könne sagen, daß die ehrenwörtlich abgegebene Versicherung, daß die Gefangenen nach Hause zurückgeführt werden, nach wie vor zu Recht bestehe, und daß man hoffen könne, daß bald neue Transporte erwartet werden könnten.</p>
+            <p>4. [Parteitag der CDU]</p>
+            <p>Weiter teilt Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> mit, daß der Bundes-Parteivorstand in dieser Woche beschließen werde, den Parteitag der CDU bis zum nächsten Frühjahr zu verschieben. Dafür werde in der 3. Novemberwoche eine Sitzung des Bundes-Parteiausschusses stattfinden, der sich mit den Fragen der Außenpolitik und der Sozialreform beschäftigen werde.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN004" type="comment">
+                     <p>In der Parteiausschuß-Sitzung am 1. 10. 1955 hatte <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name> über die Planung des Parteitages referiert. Eine weitere Sitzung war hier für den 21. 11. 1955 geplant worden, Unterlagen finden sich jedoch erst wieder für die Sitzung des Parteiausschusses am 26. 4. 1956. ACDP, VII-001–020/5.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HahnKarl_1953-10-06">Hahn</name> bringt zum Ausdruck, daß er eine Verschiebung des Bundes-Parteitages aufs Tiefste bedauern würde. Aus verschiedenen Gründen hielte er die Durchführung des Parteitages für besser.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> weist darauf hin, daß diese Frage nicht im Rahmen der Fraktion zu behandeln sei, daß man aber auch Verständnis dafür haben solle, wenn der Parteivorsitzende den Wunsch habe, an einer so entscheidenden Tagung selbst teilzunehmen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN005" type="comment">
+                     <p>Der Bundesvorstand verlegte den für den 21. bis 24. 11. 1955 in Baden-Baden geplanten Parteitag auf die Zeit vom 23. bis 28. 4. 1956 (vgl. CDU-Bundesvorstand 1955–1957, S. 653–657). Er fand schließlich vom 26. bis 29. 4. 1956 in Stuttgart statt (vgl. Christlich-Demokratische Union: 6. Bundesparteitag).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. [Tagung des Europarats]</p>
+            <p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> berichtet kurz über die Tagung des Europarates<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN006" type="comment">
+                     <p>Vom 14. bis 27. 10. 1955. Vgl. den ausführlichen Bericht über die Tagung in: EA 1955, S. 8465–8508.</p>
+                  </note>
+               </seg>, die sehr interessant gewesen sei, was er im Gegensatz zu gewissen Pressemeldungen ausdrücklich feststellen möchte. Besonders bemerkenswert sei die Diskussion über die Sozialcharta gewesen. Auch wenn sie wieder an den Ausschuß zurückverwiesen worden sei, so sei es doch ermutigend gewesen, daß man versucht habe, ein soziales Ordnungsbild zu schaffen. Das WEU-Parlament habe sich mit seiner Geschäftsordnung befaßt. Dabei sei es gelungen, auch die deutsche Sprache als Verhandlungssprache durchzusetzen. Erfreulicherweise seien diese Bestrebungen von der christlich-demokratischen Fraktion und auch von französischer Seite sehr lebhaft unterstützt worden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN007" type="comment">
+                     <p>Die Gemeinsame Versammlung der EGKS hatte am 27. 10. 1955 mit der Beratenden Versammlung des Europarates getagt. Der Bericht hierüber (vgl. ebd., S. 8485–8488) gibt nur politische Themen wieder.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. [Genfer Konferenz]</p>
+            <p>Sodann kommt Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> auf die Entwicklung der Genfer Konferenz, auf der mit seltener Unzweideutigkeit der russische Standpunkt zum Ausdruck komme, zu sprechen. Mindestziel der russischen Politik sei die Aufrechterhaltung der Spaltung Deutschlands, Maximalziel die Bolschewisierung ganz Deutschlands. Wenn nun die SPD sage, daß diese Versteifung darauf zurückgehe, daß die Koalition an Rußland keine brauchbaren Angebote gemacht habe, so müsse man das als eine haltlose Behauptung zurückweisen. Wenn <name type="Person" role="Erwaehnung" ref="#MolotowWjatscheslawMichajlowitsch">Molotow</name> nicht mit neuen Weisungen aus Moskau zurückkomme, würden auf der Konferenz kaum Ergebnisse erzielt werden können. Ob dann die Abrüstung noch erörtert werde, sei sehr fraglich. Man könne hoffen, daß die Westmächte sich an den deutschen Vorschlag halten würden, diesen Punkt dann nicht mehr zu erörtern.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN008" type="comment">
+                     <p>Die Genfer Außenministerkonferenz war wegen einer Reise des sowjetischen Außenministers nach Moskau unterbrochen worden. Nach seiner Rückkunft am 8. 11. 1955 lehnte <name type="Person" role="Erwaehnung" ref="#MolotowWjatscheslawMichajlowitsch">Molotow</name> alle Vorschläge zur Wiedervereinigung schroff ab. Die Gespräche über Rüstungsfragen wurden gleichwohl weitergeführt. Vgl. EA 1955, S. 8393f. und S. 8329–8437. Vgl. auch: Die Außenministerkonferenz in Genf.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet, daß die Äußerungen der Linken zum Ablauf der Konferenz starkes Befremden erregt hätten. Die Auffassung, daß Fortschritte sichtbar geworden seien, müsse als absurd bezeichnet werden und werde wohl auch die Politik keinen Schritt weiterbringen. So lange aber die Verhandlungen in Genf liefen, halte es der Vorstand für richtig, sich seitens der Fraktion nicht zu äußern.</p>
+            <p>7. [Bericht aus dem Ältestenrat<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN009" type="comment">
+                     <p>Vgl. das Kurzprotokoll der 86. Sitz. des Ältestenrates am 8. 11. 1955, 13.00 Uhr. Parl. Arch., Ältestenrat, 2. Wp.</p>
+                  </note>
+               </seg>]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt dann einen Bericht aus dem Ältestenrat, besonders über den Antrag des BHE betreffend Abberufung der Minister <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name> und Prof. <name type="Person" role="Erwaehnung" ref="#OberlaenderTheodor_1953-10-06">Oberländer</name> [Drucksache II/1809 v. 24. 10. 1955]. Die Koalition habe dem Präsidenten gegenüber den Standpunkt vertreten, daß dieser verfassungswidrige Antrag nicht auf die Tagesordnung gesetzt werden könne. Der Präsident wolle darüber ein Gutachten fertigen lassen. Die Koalition sei sich über die Behandlung dieser Materie einig.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN010" type="comment">
+                     <p>Über die Absetzung entstand im Plenum eine längere Geschäftsordnungsdebatte. Mittels namentlicher Abstimmung wurde schließlich beschlossen, zur Tagesordnung überzugehen. Vgl. Sten. Ber., 114. Sitz. am 1. 12. 1955, S. 6130–6136.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Über die Behandlung des Apothekengesetzes [Gesetzentwürfe <name type="Person" role="Erwaehnung" ref="#PlatnerEduard_1953-10-06">Platner</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeiskeWalter_1953-10-06">Leiske</name> und Gen., Drucksache II/1083 v. 15. 12. 1954, und der Regierung, Drucksache II/1233 v. 1. 3. 1955] sei eine Einigung nicht erzielt worden. Man werde also zunächst in seine Beratung eintreten müssen, wenn die Fraktion nicht ein anderes Verfahren beschließe.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN011" type="comment">
+                     <p>Siehe TOP 11 und Nr. 203, 2. Die Beratung des Gegenstands wurde von der Tagesordnung der 111. Sitz. am 10. 11. 1955 gestrichen. Vgl. ebd., S. 6006f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. [Kartoffelpreise]</p>
+            <p>Josef <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> weist auf die Entwicklung der Kartoffelpreise hin. Diesem Treiben müsse Einhalt geboten werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GlasmeyerHeinrich_1949-09-07">Glasmeyer</name> erklärt, daß die Ernte an sich reichlich genug gewesen sei, um das ganze Volk mit Kartoffeln zu versorgen. Trotz der an sich etwas geringeren Ernte seien jetzt bereits in diesem Jahr 120 000 Tonnen mehr verladen als im Vorjahr. Es könne also nicht an der Landwirtschaft liegen, die übrigens ihre Kartoffeln mit 6 DM pro Zentner verkaufe. Wenn sie dann auf dem Markt 14 DM kosteten, dann wäre es wirklich Zeit, hier entsprechend einzugreifen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN012" type="comment">
+                     <p>Siehe auch Nr. 200, 5.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>9. [Schreiben Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> an den Bundeskanzler]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> wendet sich dem Schreiben des Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> an den Bundeskanzler zu, in dem dieser die Ministerfrage behandelt. Es sei festzustellen, daß die Handhabung dieser Sache durch den Bundeskanzler dem Grundgesetz entspreche; Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe ja auch lediglich moniert, daß die Frage der Berufung von Ministern vorher in der Koalition besprochen werden solle. In der gestrigen Koalitionsbesprechung sei besprochen worden, dieses Thema bis zur Wiederherstellung des Bundeskanzlers zurückzustellen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN013" type="comment">
+                     <p>Siehe Nr. 194, 4. Am 5. 11. 1955 hatte <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> dem Bundeskanzler erneut geschrieben, daß den Koalitionsfraktionen ein Mitspracherecht vor der Ernennung von Bundesministern zustehe. Der Kanzler antwortete zunächst am 10. 11. 1955 mit einer Empfangsbestätigung (StBKAH, 12/34). Am 22. 11. 1955 ließ er dem Fraktionsvorsitzenden der FDP ein Schreiben zukommen, in dem er ihm im Hinblick auf die Außen- und Verteidigungspolitik die Koalitionsfrage stellte (in: Adenauer, Briefe 1955–1957, S. 94–96).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>10. [Bundesgrenzschutz]</p>
+            <p>Bundesminister <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> erklärt, daß der Bundesverteidigungsrat, dessen Einrichtung er auf verschiedene Zwischenrufe hin erläutert<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN014" type="comment">
+                     <p>Das Kabinett hatte am 6. 10. 1955 den Bundesverteidigungsrat gegründet, dem unter Vorsitz des Bundeskanzlers die Bundesminister für wirtschaftliche Zusammenarbeit, für Atomfragen, des Auswärtigen, des Innern, der Finanzen, für Verteidigung und für Wirtschaft angehörten. Der Bundesverteidigungsrat sollte militärische, zivile, wirtschaftliche und finanzielle Fragen der Verteidigung vorklären. Vgl. Kabinettsprotokolle 1955, S. 552f.</p>
+                  </note>
+               </seg>, die Frage erörtert habe, ob der Bundesgrenzschutz nicht zur beschleunigten Aufstellung deutscher Streitkräfte verwendet werden könne. Es sei wohl nicht erforderlich darzulegen, daß diese beschleunigte Aufstellung notwendig sei. Ein zu langsames Vorgehen werde jedenfalls Mißtrauen gegen unsere politische Haltung erzeugen. Auch der Vorstand sei zu dem Entschluß gekommen, daß eine Überführung des Bundesgrenzschutzes in die Streitkräfte wünschenswert sei. Durch diese Überführungsmaßnahmen solle der Bundesgrenzschutz als Institution nicht aufgehoben werden. Die praktische Folge davon sei jedoch, daß man dann in den Streitkräften über sieben Kommandos mit sieben Regimentern und etwa 20 000 Mann verfüge, die alle 1–5 Jahre Truppendienst hinter sich hätten. Er empfehle der Fraktion, den Beschluß des Vorstandes<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN015" type="comment">
+                     <p>Siehe Nr. 200, 6.</p>
+                  </note>
+               </seg> gutzuheißen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> weist darauf hin, daß die Erörterung dieser Frage im zuständigen Arbeitskreis I tiefe Beunruhigung ausgelöst habe. Es sei unangenehm festzustellen, daß ohne jede Rücksicht auf die Form derartige Dinge betrieben würden, ohne sie vorher in den zuständigen Gremien zu besprechen. Das halte er gleicherweise für die Beratungen des Bundesverteidigungsrates wie für die Behandlung der Sache im Vorstand für erforderlich. Damit werde einem praktisch der Standpunkt in der Öffentlichkeit vorgeschrieben. Ebenso werde auf diese Weise den Beschlüssen des Kabinetts und des Parlaments vorgegriffen.</p>
+            <p>Zu diesen formellen Bedenken kämen erhebliche Bedenken sachlicher Art. Immer habe man betont, daß der BGS eine polizeiliche und keine militärische Organisation sei. Durch die jetzige Überführung ins Militär werde man der Unwahrheit überführt.</p>
+            <p>Wenn man schon die Aufstellung von Truppen beschleunigen wolle, dann solle man doch immer mit der gebührenden Vorsicht verfahren. Auch solle man bedenken, daß man den BGS notwendig haben könne, wenn in entsprechender Form ein Angriff auf unser Gebiet und unsere Sicherheit erfolge. Nicht unter allen Umständen könne man mit dem Einsatz von NATO-Truppen in solchen Fällen rechnen. Wenn man sage, daß der Bundesgrenzschutz ja nicht völlig überführt werde, so bezweifele er doch, ob man mit dem verbleibenden Rest überhaupt noch etwas anfangen könne. Jedenfalls wolle er den Wunsch zum Ausdruck bringen, daß man sich in Zukunft nicht derartig über die Leute hinwegsetze, die bisher an einer Sache mitgearbeitet und die Verantwortung mitgetragen hätten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BerendsenFritz_1953-10-06">Berendsen</name> unterstreicht, daß die Überführung des Bundesgrenzschutzes aus außenpolitischen Gründen notwendig sei; wie sie rechtlich geschehen könne, sei noch im einzelnen zu prüfen. Man müsse auch bedenken, daß ein Großteil der Bundesgrenzschutzleute in der Erwartung eingetreten sei, auf diesem Wege in die neue deutsche Wehrmacht zu gelangen. Die Tätigkeit beim Bundesgrenzschutz habe die beste Vorbereitung für den Wehrdienst dargestellt. Es sei jetzt notwendig, das Freiwilligengesetz<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN016" type="comment">
+                     <p>Gesetz v. 23. 7. 1955. BGBl. I/1955, S. 449.</p>
+                  </note>
+               </seg> durch das Soldatengesetz [Drucksache II/1700 v. 23. 9. 1955] zu ersetzen, um die Aufstellung der Truppen beschleunigt durchführen zu können.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> legt noch einmal dar, daß die Zeitungsmeldungen über die Beratungen des Bundesverteidigungsrates nicht auf eine Mitteilung dieses Organs zurückgingen. Im übrigen müsse man die innere Situation des Bundesgrenzschutzes berücksichtigen. Der größte Teil des Grenzschutzes wolle ohne Zweifel zu den Streitkräften überwechseln. Dabei werde gleichzeitig die Erfahrung übernommen, die diese Leute im Grenzschutz erworben hätten. Auch er wolle die außenpolitischen Gründe dieser Maßnahme besonders unterstreichen. Da jedoch der Zweck des Bundesgrenzschutzes durch Gesetz festgelegt sei, müsse er als Institution aufrecht erhalten bleiben. Die Aufstellung von 500 000 Soldaten in drei Jahren sei eine übermenschlich große Aufgabe, zu deren Lösung alles getan werden müsse, was man überhaupt tun könne.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> unterstreicht ebenfalls die Notwendigkeit der beschleunigten Aufstellung der Truppen. Der Außenstehende könne allerdings nicht begreifen, warum es dazu solcher Maßnahmen bedürfe. Auch sei, wie er schon gesagt habe, vor allem der Weg zu bedauern, wie man das gemacht habe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> legt dar, daß das wesentliche der vorzubringenden Beanstandungen gewesen sei, daß man durch die Verlautbarungen über den Beschluß des Bundesverteidigungsrates vor vollendete Tatsachen gestellt worden sei. Er bitte darum, daß die Frage von Veröffentlichungen einmal gründlich beraten werde, damit nicht derartig überraschende und Verwirrung stiftende Dinge vorkämen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> legt noch einmal dar, daß es sich nicht um eine Verlautbarung des Bundesverteidigungsrates gehandelt habe, daß er im übrigen aber sachlich die Maßnahme durchaus vertrete. Im übrigen könne er nichts dabei finden, wenn der Vorstand der Fraktion »seiner Auffassung« Ausdruck gebe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> unterstreicht seinerseits die von Prof. <name type="Person" role="Erwaehnung" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> vorgebrachten Beanstandungen, daß man in Zukunft sowohl Vorstand wie Arbeitskreis früher mit derartigen Dingen befassen solle, jedenfalls bevor es zur Presseveröffentlichung komme.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt sich hinter die Überführung des Bundesgrenzschutzes in die Streitkräfte und versichert, daß der Vorstand, wenn nicht zwingende Gründe es anders geböten, sich bemühen werde, der Meinung der Fraktion nicht vorzugreifen.</p>
+            <p>Dann wendet er sich dem Waffenhilfegesetz zu, das noch in diesem Jahre verabschiedet werden müsse, um bis zum 1. 1. 1956 die für die Truppen benötigten Waffen in Empfang nehmen zu können.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN017" type="comment">
+                     <p>Nach Abschluß des Verteidigungshilfeabkommens zwischen der Bundesrepublik und den USA am 30. 6. 1955 kam es zu Meinungsverschiedenheiten zwischen den Vertragspartnern, weil sich insbesondere der Finanzminister weigerte, die Verteidigungsausgaben deutlich zu erhöhen (vgl. Sicherheitspolitik, Bd. 3, S. 198–204). Gleichwohl hatte das Kabinett am 28. 9. 1955 die Vorlage des Waffenhilfegesetzes verabschiedet (vgl. Kabinettsprotokolle 1955, S. 540). Der Bundesrat hatte den Gesetzentwurf am 21. 10. 1955 erhalten (BR-Drucksache 348/1955) und stimmte ihm am 11. 11. 1955 zu. Noch am gleichen Tag leitete die Bundesregierung ihn an den Bundestag weiter (Drucksache II/1855). Dort wurde er am 1. 12. 1955 in 1. Lesung und am 7. 12. 1955 in 2. und 3. Lesung verabschiedet (vgl. Sten. Ber., 114. Sitz. S. 6122–6125 und 116. Sitz., S. 6209–6211), so daß das v. 21. 12. 1955 datierende Gesetz (vgl. BGBl. II/1955, S. 1049) fristgerecht in Kraft treten konnte.</p>
+                  </note>
+               </seg> Er bitte die Fraktion um Zustimmung dazu, da diese Themen im Vorstand bereits vorbehandelt worden seien. Gleiches sei notwendig gewesen in der Milchpreisfrage.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN018" type="comment">
+                     <p>Siehe Nr. 200, 4 und 6.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. Karl <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> bemängelt, daß der Bundesverteidigungsrat so stillschweigend gebildet worden sei. Erst jetzt habe er erfahren, daß es sich um einen reinen Kabinettsausschuß handelt, was ihm bedenklich erscheine. Auch er wende sich gegen diese Art der Überführung des Bundesgrenzschutzes in die Streitkräfte, so sehr die Beschleunigung deren Aufstellung notwendig sei. Aber man könne nicht eine vom Gesetz geschaffene Einrichtung auf solche Weise aushöhlen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> stellt fest, daß es in der Organisationsgewalt der Bundesregierung liege, Kabinettsausschüsse zu bilden, die sich mit Schwerpunktproblemen befaßten. Der Beschluß zur Schaffung eines Bundesverteidigungsrates sei vom Bundeskanzler persönlich gefaßt worden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN019" type="comment">
+                     <p>Siehe Anm. 14.</p>
+                  </note>
+               </seg> Niemand habe bisher diesen Beschluß kritisiert. Da die Verteidigung eines Landes heute nicht mehr Angelegenheit der Soldaten allein sei, sei es auch notwendig, entsprechende Organisationsformen zu schaffen. Koordinierung sei notwendig; wie notwendig, ergebe sich aus der Tatsache, daß die rechtlichen Voraussetzungen zur Übernahme der Waffenhilfe bis heute durch das Auswärtige Amt noch nicht geschaffen seien.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> weist darauf hin, daß sich die Kritik wohl mehr gegen ihn als gegen Minister <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> richte, weil die Sache nicht genügend in der Fraktion zur Sprache gebracht worden sei. Er wolle sich bemühen, in Zukunft entsprechend zu handeln. Dann stellt er fest, daß die Mehrheit der Fraktion den Entschluß des Vorstands billige (bei acht Enthaltungen).</p>
+            <p>11. [Apothekengesetz, Entwürfe <name type="Person" role="Erwaehnung" ref="#PlatnerEduard_1953-10-06">Platner</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeiskeWalter_1953-10-06">Leiske</name> und Gen., Drucksache II/1083 v. 15. 12. 1954, und der Regierung, Drucksache II/1233 v. 1. 3. 1955]</p>
+            <p>Es entwickelt sich dann eine Debatte um die Behandlung des Apothekengesetzes, an der sich <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Sprecher" ref="#PlatnerEduard_1953-10-06">Platner</name>, <name type="Person" role="Sprecher" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name>, Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Sprecher" ref="#PelsterGeorg_1949-09-07">Pelster</name> und Staatssekretär <name type="Person" role="Sprecher" ref="#LexHansRittervon">Ritter von Lex</name> beteiligen. Die abschließende Abstimmung ergibt, daß sich die Mehrheit der Fraktion entgegen dem Antrag <name type="Person" role="Erwaehnung" ref="#PlatnerEduard_1953-10-06">Platner</name> für Durchführung der 2. Beratung im Plenum ausspricht.<seg type="note">
+                  <note xml:id="cdu-csu-02_1955-11-08-t1515_EP_FN020" type="comment">
+                     <p>Siehe Anm. 11.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

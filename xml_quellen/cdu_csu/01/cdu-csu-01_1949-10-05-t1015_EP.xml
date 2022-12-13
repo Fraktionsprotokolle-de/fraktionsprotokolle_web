@@ -1,261 +1,601 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-01_1949-10-05-t1015_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FoelsSilke"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchumacherRainer"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1953.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/I</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>1998</date>
-						<idno>https://d-nb.info/952142252</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII–001–1501/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 5. Oktober 1949</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1949-10-05"><time type="start" when="10:15:00"/><time type="end" when="20:00:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-22" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-19" who="#WeistenhoeferSimon" status="draft" n="4">SVPs vereinheitlicht/ausgebessert</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-01_1949-10-05-t1015_EP_SVP-1" corresp="#cdu-csu-01_1949-10-05-t1015_EP_div_SVP-1">A. TOP 1: Vorsitz-Verteilung in den Ausschüssen.</item>
-					<item xml:id="cdu-csu-01_1949-10-05-t1015_EP_SVP-2" corresp="#cdu-csu-01_1949-10-05-t1015_EP_div_SVP-2">B. TOP 2: Ausschussbesetzung.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-01_1949-10-05-t1015_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. Vorsitz-Verteilung in den Ausschüssen</p>
-				<p>An der Sitzung beteiligten sich die Mitglieder der 11er und 13 er Kommissionen.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN001" type="comment"><p>Der 11er-Ausschuß war mit der Ausarbeitung von Vorschlägen für die Besetzung des Fraktionsvorstandes und der Ausschüsse des Bundestages betraut (vgl. das Rundschreiben von Brentanos an die Fraktionsmitglieder v. 7.10.1949 [BA NL 384 (Henle)/71]). Über den Zeitpunkt seiner Gründung liegen keine Informationen vor. Zum 13er-Ausschuß vgl. Nr. 10,4.</p></note></seg></p>
-				<p>1. Vorsitz-Verteilung in den Ausschüssen</p>
-				<p><name type="Person" role="Sprecher" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> berichtete über die Abmachungen im Ältestenrat. Danach sind der CDU- Fraktion 14 Vorsitze zugesprochen worden.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN002" type="comment"><p>Am Nachmittag des 4.10. wurde im Ältestenrat die Verteilung der Ausschußvorsitze beraten. Die Verhandlungen wurden am Abend des 5.10. fortgesetzt (vgl. die Protokolle der 12. und 13. Sitzungen des Ältestenrats, Parl. Arch.). Die CDU/CSU-Fraktion erhielt schließlich 15 Vorsitze. Vgl. Datenhandbuch, S. 566–572.</p></note></seg> Die Verhandlungen wurden von uns unter dem leitenden Gesichtspunkt geführt, alle wichtigen wirtschaftlichen Ausschüsse zugesprochen zu erhalten. In der Debatte werden Bedenken gegen die Abgabe des Haushaltsausschusses, des Organisations- und des Auswärtigen Ausschusses geäußert. Besonderen Raum in der Diskussion nimmt die erwogene Abgabe des Ausschusses für Auswärtige Angelegenheiten an die SP (Prof. C. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>) ein<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN003" type="comment"><p>Siehe Nr. 16.</p></note></seg>, und zwar, weil Prof. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> zu erkennen gegeben hat, daß er diese Position zu parteipolitischen Zwecken gebrauchen möchte, die vor allem gegen die Franzosen gerichtet sein könnten.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN004" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> hatte sich im Bundestag dafür ausgesprochen, daß deutsch-französische Verhältnis von Hypotheken zu befreien. Allerdings forderte er eine härtere Gangart betreffend das Ruhrstatut und die Saarfrage (vgl. Sten. Ber., 10. Sitz. am 29.9.1949, S. 184 f.). <name type="Person" role="Erwaehnung" ref="#BlankenhornHerbert">Blankenhorn</name> beurteilt die Ausführungen durchweg positiv (vgl. Blankenhorn, S. 66).</p></note></seg> Die Debatte wird abgeschlossen, da ersichtlich wird, daß eine Änderung nicht mehr erreicht werden könnte. Von dem Stellvertreter, der von der CDU gestellt werden wird<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN005" type="comment"><p><name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> wurde stellvertretender Vorsitzender des Auswärtigen Ausschusses.</p></note></seg>, muß ein besonderes Maß an Arbeitsbeteiligung gefordert werden.</p>
-				<p>In diesem Zusammenhang wird das Verhältnis zu den kleinen Gruppen erörtert. Allgemein ist man der Auffassung für eine freundliche Behandlung der kleinen Gruppen, um sie nicht der SP in die Arme zu treiben. Da auch die Frage der Stellung der katholischen Arbeitnehmerschaft in der CDU angeschnitten wird, schlägt Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> vor, dieser Frage eine eigene Fraktionssitzung zu widmen<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN006" type="comment"><p>Siehe Nr. 36, 1 a und d.</p></note></seg>, um sich ein genaueres Bild, als es bisher – vor allem aus Presseäußerungen – zu entnehmen war, zu bilden. Durchgängig wird aber die öffentliche Bekanntmachung der Düsseldorfer Gespräche<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN007" type="comment"><p>Gemeint sind die Düsseldorfer Leitsätze über Wirtschaftspolitik, Landwirtschaftspolitik, Sozialpolitik, Wohnungsbau vom 15.7.1949, der den Fraktionsmitgliedern am 26.9.1949 vom Wirtschaftsausschuß der CDU der britischen Zone übermittelt worden war (vgl. BA NL 384 (Henle)/71). Nachdruck: Hintze, S. 27–31.</p></note></seg> verurteilt, besonders da die hierbei geäußerten Argumente nicht innerhalb der Fraktion vorgebracht worden seien und der Regierung noch keine Gelegenheit zeitlich geboten gewesen ist, um ggf. die geäußerten Bedenken zu rechtfertigen.</p>
-				<p>Für die weitere Behandlung der Vorsitzendenfrage im Ältestenrat werden folgende Richtlinien beschlossen<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN008" type="comment"><p>Im folgenden wird nur angemerkt, wenn die tatsächliche Besetzung von den hier genannten Beschlüssen abwich. Vgl. Datenhandbuch, S. 566–572.</p></note></seg>:</p>
-				<list type="undefined">
-					<item><p>Wirtschaftsausschuß: CDU</p></item>
-					<item><p>Aussch. f. Ernährung: CDU</p></item>
-					<item><p>Aussch. f. Finanz und Steuerfragen: CDU<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN009" type="comment"><p>Den Vorsitz übernahm Hermann <name type="Person" role="Erwaehnung" ref="#Hoepker-AschoffHermann_1949-09-07">Höpker Aschoff</name> (FDP).</p></note></seg></p></item>
-					<item><p>Aussch. f. Lastenausgleich: CDU</p></item>
-					<item><p>Haushaltsausschuß: SP</p></item>
-					<item><p>Aussch. f. Rechtswesen: zur Zeit SP<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN010" type="comment"><p>Den Vorsitz übernahm Wilhelm <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name> (CDU/CSU).</p></note></seg></p></item>
-					<item><p>Aussch. gem. Art. 15: CDU<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN011" type="comment"><p>Den Vorsitz übernahm Fritz <name type="Person" role="Erwaehnung" ref="#HensslerFritz_1949-09-07">Henßler</name> (SPD).</p></note></seg></p></item>
-					<item><p>Aussch. f. Heimatvertriebene: CDU</p></item>
-					<item><p>Aussch. z. Wahrung der Rechte der Volksvertretung: bleibt einer späteren Zuteilung Vorbehalten<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN012" type="comment"><p>Dieser Ausschuß ist nicht zusammengetreten.</p></note></seg></p></item>
-					<item><p>Aussch. z. Schutz der Verfassung: wegen seiner Bedeutung für den vorparlamentarischen Raum bestehen erhebliche Bedenken gegen den Vorsitz durch die SP<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN013" type="comment"><p>Den Vorsitz übernahm dennoch Georg-August <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name> (SPD).</p></note></seg></p></item>
-					<item><p>Aussch. f. Geschäftsordnung: SP</p></item>
-					<item><p>Aussch. f. das Besatzungsstatut und Auswärtige Angelegenheiten: SP Aussch. f. Gesamtdeutsche Fragen: SP Berlin-Ausschuß: CDU</p></item>
-					<item><p>Außenhandelsausschuß: wahrscheinlich FDP<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN014" type="comment"><p>Den Vorsitz übernahm Christian <name type="Person" role="Erwaehnung" ref="#KuhlemannChristian_1949-09-07">Kuhlemann</name> (DP).</p></note></seg></p></item>
-					<item><p>Die Ausschüsse für Arbeit, Sozialpolitik, Beamtenrecht und Kriegsopferfragen sind noch umstritten.</p></item>
-					<item><p>Aussch. f. den Wiederaufbau: CDU</p></item>
-					<item><p>Aussch. f. Angelegenheiten d. inneren Verwaltung: SP</p></item>
-					<item><p>Aussch. f. Fragen d. Gesundheitswesens: wahrscheinlich FDP</p></item>
-					<item><p>[Aussch. f.] Kulturpolitik: CDU<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN015" type="comment"><p>Den Vorsitz übernahm Karl <name type="Person" role="Erwaehnung" ref="#GaulKarl_1949-09-07">Gaul</name> (FDP). Der Vorsitz wurde gegen den des Ausschusses für Presse und Rundfunk getauscht.</p></note></seg></p></item>
-					<item><p>Aussch. f. Verkehrswesen: CDU<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN016" type="comment"><p>Den Vorsitz übernahm Willy Max <name type="Person" role="Erwaehnung" ref="#RademacherWillyMax_1949-09-07">Rademacher</name> (FDP).</p></note></seg></p></item>
-					<item><p>Aussch. f. Geld u. Kredit: CDU</p></item>
-					<item><p>Aussch. f. ERP-Plan: CDU. Die Abtretung an die Bayernpartei wird mit Mehrheit abgelehnt. Gegen die Überlassung eines stimmberechtigten Sitzes auf Kosten der Fraktion wird nichts eingewendet.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN017" type="comment"><p>Aus den Protokollen des Ältestenrates geht über diesen Sachverhalt nichts hervor. Allerdings war die BP mangels eines kompetenten Vertreters von Anfang an nicht an dem ihr zugesprochenen Ausschuß für Beamtenrecht interessiert. Vgl. das Protokoll der 12. und 13. Sitz. des Ältestenrates vom 4. und 5.10.1949 (Parl. Arch., Ältestenrat). Die BP war schließlich durch Seelos stimmberechtigt im Ausschuß für ERP-Fragen vertreten. Vgl. Drucksache I/339 v. 30.12.1949.</p></note></seg></p></item>
-					<item><p>Aussch. f. Post u. Fernmeldewesen: SP</p></item>
-					<item><p>Aussch. f. Presse/Rundfunk: war ursprünglich für FDP vorgesehen. Es soll versucht werden, mit dem kulturpolitischen Ausschuß zu tauschen.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN018" type="comment"><p>Der Versuch war erfolgreich. Den Vorsitz übernahm Rudolf Vogel (CDU/CSU).</p></note></seg></p></item>
-					<item><p>Aussch. f. Grenzlandfragen: war ursprünglich für das Zentrum vorgesehen. Es wird erwogen, den Vorsitz an die WAV abzutreten.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN019" type="comment"><p>Den Vorsitz übernahm Stephan Weickert (WAV/BHE).</p></note></seg></p></item>
-					<item><p>Aussch. f. Jugendfürsorge: 2 Möglichkeiten werden an die Hand gegeben:</p>
-						<list type="undefined">
-							<item><label>a)</label><p>entweder Tausch der SP mit dem Zentrum, das den Fürsorgeausschuß erhalten hätte,</p></item>
-							<item><label>b)</label><p>unter Abgabe des Verkehrsausschusses an die SP, den Vorsitz für die CDU<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN020" type="comment"><p>Den Vorsitz übernahm Franz Josef Strauß (CDU/CSU). Der Vorsitz im Verkehrsausschuß wurde auch tatsächlich von der CDU/CSU-Faktion abgetreten, allerdings an die FDP.</p></note></seg> Wahlprüfungsausschuß: CDU, wird aber für irgendwelche Kompromisse zur Verfügung gestellt<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN021" type="comment"><p>Den Vorsitz übernahm Ludwig <name type="Person" role="Erwaehnung" ref="#SchneiderLudwig_1949-09-07">Schneider</name> (FDP).</p></note></seg></p></item>
-						</list></item>
-					<item><p>Organisationsausschuß: SP</p></item>
-					<item><p>Patentausschuß: SP</p></item>
-					<item><p>Aussch. f. Bau- u. Bodenrecht: CDU, wird aber für irgendwelche Kompromisse zur Verfügung gehalten<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN022" type="comment"><p>Den Vorsitz übernahm Erich <name type="Person" role="Erwaehnung" ref="#KlabundeErich_1949-09-07">Klabunde</name> (SPD).</p></note></seg></p></item>
-				</list>
-				<p>Für die Unterhandlungen mit der SP bzgl. der Ausschüsse Jugendfürsorge, öffentliche Fürsorge, Verkehrswesen werden <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> und <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> ernannt.</p>
-				<p>Als Vorsitzende für die uns zugesprochenen Ausschüsse werden der Fraktion vorgeschlagen:</p>
-				<list type="undefined">
-					<item><p>Wirtschaftspolitik: <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name></p></item>
-					<item><p>Ernährung: <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name></p></item>
-					<item><p>Lastenausgleich: <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name></p></item>
-					<item><p>gem. Art. 15: <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name><seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN023" type="comment"><p>Den Vorsitz übernahm Fritz <name type="Person" role="Erwaehnung" ref="#HensslerFritz_1949-09-07">Henßler</name> (SPD), <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> wurde stv. Vorsitzender.</p></note></seg></p></item>
-					<item><p>Heimatvertriebene: Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> oder <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name><seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN024" type="comment"><p>Den Vorsitz übernahm Linus <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>.</p></note></seg></p></item>
-					<item><p>Berlin: Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name><seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN025" type="comment"><p>Den Vorsitz übernahm Gerd <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>.</p></note></seg></p></item>
-					<item><p>Arbeit: <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name></p></item>
-					<item><p>Wiederaufbau: Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name><seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN026" type="comment"><p>Den Vorsitz übernahm Johannes <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>.</p></note></seg></p></item>
-					<item><p>Verkehrswesen: Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name><seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN027" type="comment"><p>Den Vorsitz in diesem Ausschuß übernahm die FDP. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wurde Vorsitzender des Berlin- Ausschusses.</p></note></seg></p></item>
-					<item><p>Geld und Kredit: <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name></p></item>
-					<item><p>ERP-Plan: Dr. <name type="Person" role="Erwaehnung" ref="#PuenderHermann_1949-09-07">Pünder</name></p></item>
-					<item><p>Grenzlandfragen: <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name> (falls Vorsitz WAV zugesprochen, wird <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name> als Stellvertreter benannt)<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN028" type="comment"><p>Der Vorsitz wurde der WAV übertragen, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name> wurde stellvertretender Vorsitzender.</p></note></seg></p></item>
-					<item><p>Jugendfürsorge: <name type="Person" role="Erwaehnung" ref="#NellenPeter_1949-09-07">Nellen</name><seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN029" type="comment"><p>Den Vorsitz übernahm Franz Josef <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>.</p></note></seg></p></item>
-				</list>
-				<p>Zu folgendem Austausch erklärt sich der Vorstand bereit:</p>
-				<p>Wenn wir den stellv. Vorsitz im Aussch. gem. Art. 15 bekommen, wird auf den Vorsitz zugunsten der SP verzichtet, um damit den Vorsitz im Aussch. f. Jugendfürsorge zu erhalten.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN030" type="comment"><p>Siehe Anm. 11 und 20.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1949-10-05-t1015_EP_div_SVP-2">
-				<head>B.</head>
-				<p>2.<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN031" type="comment"><p>Verbessert aus: 4.</p></note></seg> Ausschußbesetzung</p>
-				<p>Folgende Abänderungsvorschläge der Besetzung der Ausschüsse werden gebilligt<seg type="note"><note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN032" type="comment"><p>Zur endgültigen Besetzung der Ausschüsse vgl. Drucksache I/339 v. 30.12.1949.</p></note></seg></p>
-				<list type="undefined">
-					<item><p>Aussch. f. Wirtschaftspolitik: <name type="Person" role="Erwaehnung" ref="#SchmitzHans_1949-09-07">Schmitz</name> und Lenz werden als ordentliche Mitglieder beteiligt,</p></item>
-					<item><p>Aussch. f. Ernährung: Frau <name type="Person" role="Erwaehnung" ref="#NiggemeyerMaria_1949-09-07">Niggemeyer</name>, <name type="Person" role="Erwaehnung" ref="#BauereisenFriedrich_1949-09-07">Bauereisen</name> und evtl. <name type="Person" role="Erwaehnung" ref="#SewaldGuenther_1949-09-07">Sewald</name> werden eingefügt,</p></item>
-					<item><p>Aussch. f. Finanz- und Steuerfragen: <name type="Person" role="Erwaehnung" ref="#SchmitzHans_1949-09-07">Schmitz</name> wird ausgetauscht gegen <name type="Person" role="Erwaehnung" ref="#HaggeJohannes_1949-09-07">Hagge</name>. Außerdem werden <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> und Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> eingefügt,</p></item>
-					<item><p>Aussch. f. Lastenausgleich: <name type="Person" role="Erwaehnung" ref="#BeckerJosef_1949-09-07">Becker</name>, <name type="Person" role="Erwaehnung" ref="#FuchsGustav_1949-09-07">Fuchs</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#SewaldGuenther_1949-09-07">Sewald</name>, <name type="Person" role="Erwaehnung" ref="#LeibfriedEugen_1949-09-07">Leibfried</name>, <name type="Person" role="Erwaehnung" ref="#SchulerFritz_1949-09-07">Schuler</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>,</p></item>
-					<item><p>Haushaltsausschuß: evtl. zusätzlich <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>,</p></item>
-					<item><p>Aussch. gem. Art. 15: Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>, <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, <name type="Person" role="Erwaehnung" ref="#NellenPeter_1949-09-07">Nellen</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, <name type="Person" role="Erwaehnung" ref="#SiebelTheodor_1949-09-07">Siebel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Schatz</name>,</p></item>
-					<item><p>Aussch. f. Heimatvertriebene: Dr. <name type="Person" role="Erwaehnung" ref="#EdertEduard_1949-09-07">Edert</name> als ordentliches Mitglied aufgestellt,</p></item>
-					<item><p>Aussch. z. Schutz der Verfassung: <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, <name type="Person" role="Erwaehnung" ref="#MehsMatthiasJoseph_1949-09-07">Mehs</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>; Vertr.: Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>,</p></item>
-					<item><p>Aussch. f. Geschäftsordnung: <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, <name type="Person" role="Erwaehnung" ref="#GenglerKarl_1949-09-07">Gengler</name>, <name type="Person" role="Erwaehnung" ref="#GockelnJosef_1949-09-07">Gockeln</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>,</p></item>
-					<item><p>Aussch. f. Besatzungsstatut: Dr. <name type="Person" role="Erwaehnung" ref="#PuenderHermann_1949-09-07">Pünder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Schlange-SchoeningenHans_1949-09-07">Schlange</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroeterCarl_1949-09-07">Schröter</name>, <name type="Person" role="Erwaehnung" ref="#FuggervonGloettJosef-Ernst_1949-09-07">Fugger</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#SchmittJoseph_1949-09-07">Schmitt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HolzapfelFriedrich_1949-09-07">Holzapfel</name>,</p></item>
-					<item><p>Aussch. f. Gesamtdeutsche Fragen: [Frau] Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Schlange-SchoeningenHans_1949-09-07">Schlange</name>, <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, <name type="Person" role="Erwaehnung" ref="#HoppeAnton_1949-09-07">Hoppe</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name>; Vertr.: <name type="Person" role="Erwaehnung" ref="#GernsHeinrich_1949-09-07">Gerns</name>, <name type="Person" role="Erwaehnung" ref="#SpiesJosef_1949-09-07">Spies</name>,</p></item>
-					<item><p>Aussch. f. Berlin: Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> und Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> scheiden aus, dafür <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>, evtl. <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>,</p></item>
-					<item><p>Aussch. f. Außenhandelsfragen: <name type="Person" role="Erwaehnung" ref="#DegenerJohannes_1949-09-07">Degener</name>, <name type="Person" role="Erwaehnung" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name>, <name type="Person" role="Erwaehnung" ref="#SpiesJosef_1949-09-07">Spies</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeißFranz_1949-09-07">Weiß</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>,</p></item>
-					<item><p>Aussch. f. Arbeit: <name type="Person" role="Erwaehnung" ref="#KarpfHugo_1949-09-07">Karpf</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name>, <name type="Person" role="Erwaehnung" ref="#LeonhardGottfried_1949-09-07">Leonhard</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RaestrupBernhard_1949-09-07">Raestrup</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HolzapfelFriedrich_1949-09-07">Holzapfel</name>, <name type="Person" role="Erwaehnung" ref="#KuntscherErnst_1949-09-07">Kuntscher</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#DegenerJohannes_1949-09-07">Degener</name>,</p></item>
-					<item><p>Aussch. f. Beamtenrecht: Dr. <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name>, <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, <name type="Person" role="Erwaehnung" ref="#EtzenbachPeter_1949-09-07">Etzenbach</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GoetzHermann_1949-09-07">Götz</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>,</p></item>
-					<item><p>Aussch. f. Kriegsopfer: <name type="Person" role="Erwaehnung" ref="#LeibfriedEugen_1949-09-07">Leibfried</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#MassothWilly_1949-09-07">Massoth</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#EhrenHermann_1949-09-07">Ehren</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, Frau <name type="Person" role="Erwaehnung" ref="#RoeschJulie_1949-09-07">Rösch</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>,</p></item>
-					<item><p>Aussch. f. Wiederaufbau: <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#BroekelschenElse_1949-09-07">Brökelschen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, <name type="Person" role="Erwaehnung" ref="#MorgenthalerWendelin_1949-09-07">Morgenthaler</name>, <name type="Person" role="Erwaehnung" ref="#PfenderFranz_1949-09-07">Pfender</name>, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name>, <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name>, <name type="Person" role="Erwaehnung" ref="#HaggeJohannes_1949-09-07">Hagge</name>,</p></item>
-					<item><p>Aussch. f. Angelegenheiten d. inneren Verwaltung: <name type="Person" role="Erwaehnung" ref="#StauchRobert_1949-09-07">Stauch</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name>, <name type="Person" role="Erwaehnung" ref="#FeldmannAloys_1949-09-07">Feldmann</name>, <name type="Person" role="Erwaehnung" ref="#HoppeAnton_1949-09-07">Hoppe</name>, Dr. <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müller</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>,</p></item>
-					<item><p>Aussch. f. Fragen d. Gesundheitswesen: <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, <name type="Person" role="Erwaehnung" ref="#HeilerAnneMarie_1949-09-07">Heiler</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Erwaehnung" ref="#GenglerKarl_1949-09-07">Gengler</name>, <name type="Person" role="Erwaehnung" ref="#HeixMartin_1949-09-07">Heix</name>, <name type="Person" role="Erwaehnung" ref="#EhrenHermann_1949-09-07">Ehren</name>, <name type="Person" role="Erwaehnung" ref="#JunglasJohann_1949-09-07">Junglas</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name>, Frau <name type="Person" role="Erwaehnung" ref="#RoeschJulie_1949-09-07">Rösch</name>,</p></item>
-					<item><p>Aussch. f. Kulturpolitik: <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, <name type="Person" role="Erwaehnung" ref="#GockelnJosef_1949-09-07">Gockeln</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BaurGeorg_1949-09-07">Baur</name>,</p></item>
-					<item><p>Aussch. f. Verkehrswesen: <name type="Person" role="Erwaehnung" ref="#GernsHeinrich_1949-09-07">Gerns</name>, <name type="Person" role="Erwaehnung" ref="#KernKarl_1949-09-07">Kern</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name>, <name type="Person" role="Erwaehnung" ref="#MuckermannRichard_1949-09-07">Muckermann</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#WackerOskar_1949-09-07">Wacker</name>, <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>, <name type="Person" role="Erwaehnung" ref="#Schulze-PellengahrHubert_1949-09-07">Schulze-Pellengahr</name>,</p></item>
-					<item><p>Aussch. f. Geld und Kredit: Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>, <name type="Person" role="Erwaehnung" ref="#EcksteinHeinrich_1949-09-07">Eckstein</name>, <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name>, <name type="Person" role="Erwaehnung" ref="#GockelnJosef_1949-09-07">Gockeln</name>, <name type="Person" role="Erwaehnung" ref="#LoiblMartin_1949-09-07">Loibl</name>,</p></item>
-					<item><p>Aussch. f. ERP-Plan: <name type="Person" role="Erwaehnung" ref="#GernsHeinrich_1949-09-07">Gerns</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PuenderHermann_1949-09-07">Pünder</name>, <name type="Person" role="Erwaehnung" ref="#FunkFriedrich_1949-09-07">Funk</name>, <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, <name type="Person" role="Erwaehnung" ref="#LenzAloys_1949-09-07">Lenz</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Schlange-SchoeningenHans_1949-09-07">Schlange</name>, Vertr.: <name type="Person" role="Erwaehnung" ref="#KuehlingGeorg_1949-09-07">Kühling</name>,</p></item>
-					<item><p>Aussch. f. Post: <name type="Person" role="Erwaehnung" ref="#KarpfHugo_1949-09-07">Karpf</name>, <name type="Person" role="Erwaehnung" ref="#LeonhardGottfried_1949-09-07">Leonhard</name>, <name type="Person" role="Erwaehnung" ref="#MuckermannRichard_1949-09-07">Muckermann</name>, <name type="Person" role="Erwaehnung" ref="#SiebelTheodor_1949-09-07">Siebel</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#MuehlenbergFranz_1949-09-07">Mühlenberg</name>, <name type="Person" role="Erwaehnung" ref="#KernKarl_1949-09-07">Kern</name>,</p></item>
-					<item><p>Aussch. f. Fragen d. Presse: Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#MuckermannRichard_1949-09-07">Muckermann</name>, <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, <name type="Person" role="Erwaehnung" ref="#LoiblMartin_1949-09-07">Loibl</name>,</p></item>
-					<item><p>Aussch. f. Grenzlandfragen: Dr. <name type="Person" role="Erwaehnung" ref="#EdertEduard_1949-09-07">Edert</name>, <name type="Person" role="Erwaehnung" ref="#GuentherBernhard_1949-09-07">Günther</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>, <name type="Person" role="Erwaehnung" ref="#MuehlenbergFranz_1949-09-07">Mühlenberg</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#NicklChristof_1949-09-07">Nickl</name>, <name type="Person" role="Erwaehnung" ref="#BeckerJosef_1949-09-07">Becker</name>,</p></item>
-					<item><p>Aussch. f. innergebietliche Neuordnung: <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Frau <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>, <name type="Person" role="Erwaehnung" ref="#GienckeChristian_1949-09-07">Giencke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>,</p></item>
-					<item><p>Aussch. f. Fragen d. Jugendfürsorge: Frau <name type="Person" role="Erwaehnung" ref="#HeilerAnneMarie_1949-09-07">Heiler</name>, <name type="Person" role="Erwaehnung" ref="#MayerHugo_1949-09-07">Mayer</name>, <name type="Person" role="Erwaehnung" ref="#NellenPeter_1949-09-07">Nellen</name>, Frau <name type="Person" role="Erwaehnung" ref="#NiggemeyerMaria_1949-09-07">Niggemeyer</name>, <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, <name type="Person" role="Erwaehnung" ref="#MassothWilly_1949-09-07">Massoth</name>,</p></item>
-					<item><p>Aussch. f. Fragen d. öffentlichen Fürsorge: Frau <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, Frau <name type="Person" role="Erwaehnung" ref="#RoeschJulie_1949-09-07">Rösch</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#JunglasJohann_1949-09-07">Junglas</name>, <name type="Person" role="Erwaehnung" ref="#KuntscherErnst_1949-09-07">Kuntscher</name>,</p></item>
-					<item><p>Wahlprüfungsausschuß: Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, <name type="Person" role="Erwaehnung" ref="#MuehlenbergFranz_1949-09-07">Mühlenberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name>, Organisationsausschuß: <name type="Person" role="Erwaehnung" ref="#GenglerKarl_1949-09-07">Gengler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name>, <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, Vertr.: <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>,</p></item>
-					<item><p>Aussch. f. Patentrecht: <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Vertr.: Dr. <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Schatz</name>,</p></item>
-					<item><p>Aussch. f. Bau u. Bodenrecht: Dr. <name type="Person" role="Erwaehnung" ref="#BaurGeorg_1949-09-07">Baur</name>, <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>, Vertr.: <name type="Person" role="Erwaehnung" ref="#SchmittJoseph_1949-09-07">Schmitt</name>.</p></item>
-				</list>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-01_1949-10-05-t1015_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FoelsSilke"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchumacherRainer"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1953.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/I</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1998</date>
+                  <idno>https://d-nb.info/952142252</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII–001–1501/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 5. Oktober 1949</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1949-10-05">
+               <time type="start" when="10:15:00"/>
+               <time type="end" when="20:00:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-22" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-19" who="#WeistenhoeferSimon" status="draft" n="4">SVPs vereinheitlicht/ausgebessert</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-01_1949-10-05-t1015_EP_SVP-1" corresp="#cdu-csu-01_1949-10-05-t1015_EP_div_SVP-1">A. TOP 1: Vorsitz-Verteilung in den Ausschüssen.</item>
+               <item xml:id="cdu-csu-01_1949-10-05-t1015_EP_SVP-2" corresp="#cdu-csu-01_1949-10-05-t1015_EP_div_SVP-2">B. TOP 2: Ausschussbesetzung.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-01_1949-10-05-t1015_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. Vorsitz-Verteilung in den Ausschüssen</p>
+            <p>An der Sitzung beteiligten sich die Mitglieder der 11er und 13 er Kommissionen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN001" type="comment">
+                     <p>Der 11er-Ausschuß war mit der Ausarbeitung von Vorschlägen für die Besetzung des Fraktionsvorstandes und der Ausschüsse des Bundestages betraut (vgl. das Rundschreiben von Brentanos an die Fraktionsmitglieder v. 7.10.1949 [BA NL 384 (Henle)/71]). Über den Zeitpunkt seiner Gründung liegen keine Informationen vor. Zum 13er-Ausschuß vgl. Nr. 10,4.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>1. Vorsitz-Verteilung in den Ausschüssen</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> berichtete über die Abmachungen im Ältestenrat. Danach sind der CDU- Fraktion 14 Vorsitze zugesprochen worden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN002" type="comment">
+                     <p>Am Nachmittag des 4.10. wurde im Ältestenrat die Verteilung der Ausschußvorsitze beraten. Die Verhandlungen wurden am Abend des 5.10. fortgesetzt (vgl. die Protokolle der 12. und 13. Sitzungen des Ältestenrats, Parl. Arch.). Die CDU/CSU-Fraktion erhielt schließlich 15 Vorsitze. Vgl. Datenhandbuch, S. 566–572.</p>
+                  </note>
+               </seg> Die Verhandlungen wurden von uns unter dem leitenden Gesichtspunkt geführt, alle wichtigen wirtschaftlichen Ausschüsse zugesprochen zu erhalten. In der Debatte werden Bedenken gegen die Abgabe des Haushaltsausschusses, des Organisations- und des Auswärtigen Ausschusses geäußert. Besonderen Raum in der Diskussion nimmt die erwogene Abgabe des Ausschusses für Auswärtige Angelegenheiten an die SP (Prof. C. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>) ein<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN003" type="comment">
+                     <p>Siehe Nr. 16.</p>
+                  </note>
+               </seg>, und zwar, weil Prof. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> zu erkennen gegeben hat, daß er diese Position zu parteipolitischen Zwecken gebrauchen möchte, die vor allem gegen die Franzosen gerichtet sein könnten.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN004" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> hatte sich im Bundestag dafür ausgesprochen, daß deutsch-französische Verhältnis von Hypotheken zu befreien. Allerdings forderte er eine härtere Gangart betreffend das Ruhrstatut und die Saarfrage (vgl. Sten. Ber., 10. Sitz. am 29.9.1949, S. 184 f.). <name type="Person" role="Erwaehnung" ref="#BlankenhornHerbert">Blankenhorn</name> beurteilt die Ausführungen durchweg positiv (vgl. Blankenhorn, S. 66).</p>
+                  </note>
+               </seg> Die Debatte wird abgeschlossen, da ersichtlich wird, daß eine Änderung nicht mehr erreicht werden könnte. Von dem Stellvertreter, der von der CDU gestellt werden wird<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN005" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> wurde stellvertretender Vorsitzender des Auswärtigen Ausschusses.</p>
+                  </note>
+               </seg>, muß ein besonderes Maß an Arbeitsbeteiligung gefordert werden.</p>
+            <p>In diesem Zusammenhang wird das Verhältnis zu den kleinen Gruppen erörtert. Allgemein ist man der Auffassung für eine freundliche Behandlung der kleinen Gruppen, um sie nicht der SP in die Arme zu treiben. Da auch die Frage der Stellung der katholischen Arbeitnehmerschaft in der CDU angeschnitten wird, schlägt Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> vor, dieser Frage eine eigene Fraktionssitzung zu widmen<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN006" type="comment">
+                     <p>Siehe Nr. 36, 1 a und d.</p>
+                  </note>
+               </seg>, um sich ein genaueres Bild, als es bisher – vor allem aus Presseäußerungen – zu entnehmen war, zu bilden. Durchgängig wird aber die öffentliche Bekanntmachung der Düsseldorfer Gespräche<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN007" type="comment">
+                     <p>Gemeint sind die Düsseldorfer Leitsätze über Wirtschaftspolitik, Landwirtschaftspolitik, Sozialpolitik, Wohnungsbau vom 15.7.1949, der den Fraktionsmitgliedern am 26.9.1949 vom Wirtschaftsausschuß der CDU der britischen Zone übermittelt worden war (vgl. BA NL 384 (Henle)/71). Nachdruck: Hintze, S. 27–31.</p>
+                  </note>
+               </seg> verurteilt, besonders da die hierbei geäußerten Argumente nicht innerhalb der Fraktion vorgebracht worden seien und der Regierung noch keine Gelegenheit zeitlich geboten gewesen ist, um ggf. die geäußerten Bedenken zu rechtfertigen.</p>
+            <p>Für die weitere Behandlung der Vorsitzendenfrage im Ältestenrat werden folgende Richtlinien beschlossen<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN008" type="comment">
+                     <p>Im folgenden wird nur angemerkt, wenn die tatsächliche Besetzung von den hier genannten Beschlüssen abwich. Vgl. Datenhandbuch, S. 566–572.</p>
+                  </note>
+               </seg>:</p>
+            <list type="undefined">
+               <item>
+                  <p>Wirtschaftsausschuß: CDU</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Ernährung: CDU</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Finanz und Steuerfragen: CDU<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN009" type="comment">
+                           <p>Den Vorsitz übernahm Hermann <name type="Person" role="Erwaehnung" ref="#Hoepker-AschoffHermann_1949-09-07">Höpker Aschoff</name> (FDP).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Lastenausgleich: CDU</p>
+               </item>
+               <item>
+                  <p>Haushaltsausschuß: SP</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Rechtswesen: zur Zeit SP<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN010" type="comment">
+                           <p>Den Vorsitz übernahm Wilhelm <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name> (CDU/CSU).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. gem. Art. 15: CDU<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN011" type="comment">
+                           <p>Den Vorsitz übernahm Fritz <name type="Person" role="Erwaehnung" ref="#HensslerFritz_1949-09-07">Henßler</name> (SPD).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Heimatvertriebene: CDU</p>
+               </item>
+               <item>
+                  <p>Aussch. z. Wahrung der Rechte der Volksvertretung: bleibt einer späteren Zuteilung Vorbehalten<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN012" type="comment">
+                           <p>Dieser Ausschuß ist nicht zusammengetreten.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. z. Schutz der Verfassung: wegen seiner Bedeutung für den vorparlamentarischen Raum bestehen erhebliche Bedenken gegen den Vorsitz durch die SP<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN013" type="comment">
+                           <p>Den Vorsitz übernahm dennoch Georg-August <name type="Person" role="Erwaehnung" ref="#ZinnGeorg-August_1949-09-07">Zinn</name> (SPD).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Geschäftsordnung: SP</p>
+               </item>
+               <item>
+                  <p>Aussch. f. das Besatzungsstatut und Auswärtige Angelegenheiten: SP Aussch. f. Gesamtdeutsche Fragen: SP Berlin-Ausschuß: CDU</p>
+               </item>
+               <item>
+                  <p>Außenhandelsausschuß: wahrscheinlich FDP<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN014" type="comment">
+                           <p>Den Vorsitz übernahm Christian <name type="Person" role="Erwaehnung" ref="#KuhlemannChristian_1949-09-07">Kuhlemann</name> (DP).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Die Ausschüsse für Arbeit, Sozialpolitik, Beamtenrecht und Kriegsopferfragen sind noch umstritten.</p>
+               </item>
+               <item>
+                  <p>Aussch. f. den Wiederaufbau: CDU</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Angelegenheiten d. inneren Verwaltung: SP</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Fragen d. Gesundheitswesens: wahrscheinlich FDP</p>
+               </item>
+               <item>
+                  <p>[Aussch. f.] Kulturpolitik: CDU<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN015" type="comment">
+                           <p>Den Vorsitz übernahm Karl <name type="Person" role="Erwaehnung" ref="#GaulKarl_1949-09-07">Gaul</name> (FDP). Der Vorsitz wurde gegen den des Ausschusses für Presse und Rundfunk getauscht.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Verkehrswesen: CDU<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN016" type="comment">
+                           <p>Den Vorsitz übernahm Willy Max <name type="Person" role="Erwaehnung" ref="#RademacherWillyMax_1949-09-07">Rademacher</name> (FDP).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Geld u. Kredit: CDU</p>
+               </item>
+               <item>
+                  <p>Aussch. f. ERP-Plan: CDU. Die Abtretung an die Bayernpartei wird mit Mehrheit abgelehnt. Gegen die Überlassung eines stimmberechtigten Sitzes auf Kosten der Fraktion wird nichts eingewendet.<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN017" type="comment">
+                           <p>Aus den Protokollen des Ältestenrates geht über diesen Sachverhalt nichts hervor. Allerdings war die BP mangels eines kompetenten Vertreters von Anfang an nicht an dem ihr zugesprochenen Ausschuß für Beamtenrecht interessiert. Vgl. das Protokoll der 12. und 13. Sitz. des Ältestenrates vom 4. und 5.10.1949 (Parl. Arch., Ältestenrat). Die BP war schließlich durch Seelos stimmberechtigt im Ausschuß für ERP-Fragen vertreten. Vgl. Drucksache I/339 v. 30.12.1949.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Post u. Fernmeldewesen: SP</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Presse/Rundfunk: war ursprünglich für FDP vorgesehen. Es soll versucht werden, mit dem kulturpolitischen Ausschuß zu tauschen.<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN018" type="comment">
+                           <p>Der Versuch war erfolgreich. Den Vorsitz übernahm Rudolf Vogel (CDU/CSU).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Grenzlandfragen: war ursprünglich für das Zentrum vorgesehen. Es wird erwogen, den Vorsitz an die WAV abzutreten.<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN019" type="comment">
+                           <p>Den Vorsitz übernahm Stephan Weickert (WAV/BHE).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Aussch. f. Jugendfürsorge: 2 Möglichkeiten werden an die Hand gegeben:</p>
+                  <list type="undefined">
+                     <item>
+                        <label>a)</label>
+                        <p>entweder Tausch der SP mit dem Zentrum, das den Fürsorgeausschuß erhalten hätte,</p>
+                     </item>
+                     <item>
+                        <label>b)</label>
+                        <p>unter Abgabe des Verkehrsausschusses an die SP, den Vorsitz für die CDU<seg type="note">
+                              <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN020" type="comment">
+                                 <p>Den Vorsitz übernahm Franz Josef Strauß (CDU/CSU). Der Vorsitz im Verkehrsausschuß wurde auch tatsächlich von der CDU/CSU-Faktion abgetreten, allerdings an die FDP.</p>
+                              </note>
+                           </seg> Wahlprüfungsausschuß: CDU, wird aber für irgendwelche Kompromisse zur Verfügung gestellt<seg type="note">
+                              <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN021" type="comment">
+                                 <p>Den Vorsitz übernahm Ludwig <name type="Person" role="Erwaehnung" ref="#SchneiderLudwig_1949-09-07">Schneider</name> (FDP).</p>
+                              </note>
+                           </seg>
+                        </p>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <p>Organisationsausschuß: SP</p>
+               </item>
+               <item>
+                  <p>Patentausschuß: SP</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Bau- u. Bodenrecht: CDU, wird aber für irgendwelche Kompromisse zur Verfügung gehalten<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN022" type="comment">
+                           <p>Den Vorsitz übernahm Erich <name type="Person" role="Erwaehnung" ref="#KlabundeErich_1949-09-07">Klabunde</name> (SPD).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+            </list>
+            <p>Für die Unterhandlungen mit der SP bzgl. der Ausschüsse Jugendfürsorge, öffentliche Fürsorge, Verkehrswesen werden <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> und <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name> ernannt.</p>
+            <p>Als Vorsitzende für die uns zugesprochenen Ausschüsse werden der Fraktion vorgeschlagen:</p>
+            <list type="undefined">
+               <item>
+                  <p>Wirtschaftspolitik: <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>
+                  </p>
+               </item>
+               <item>
+                  <p>Ernährung: <name type="Person" role="Erwaehnung" ref="#LuebkeHeinrich_1949-09-07">Lübke</name>
+                  </p>
+               </item>
+               <item>
+                  <p>Lastenausgleich: <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>
+                  </p>
+               </item>
+               <item>
+                  <p>gem. Art. 15: <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN023" type="comment">
+                           <p>Den Vorsitz übernahm Fritz <name type="Person" role="Erwaehnung" ref="#HensslerFritz_1949-09-07">Henßler</name> (SPD), <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> wurde stv. Vorsitzender.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Heimatvertriebene: Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> oder <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN024" type="comment">
+                           <p>Den Vorsitz übernahm Linus <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Berlin: Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN025" type="comment">
+                           <p>Den Vorsitz übernahm Gerd <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Arbeit: <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>
+                  </p>
+               </item>
+               <item>
+                  <p>Wiederaufbau: Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN026" type="comment">
+                           <p>Den Vorsitz übernahm Johannes <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Verkehrswesen: Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN027" type="comment">
+                           <p>Den Vorsitz in diesem Ausschuß übernahm die FDP. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wurde Vorsitzender des Berlin- Ausschusses.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Geld und Kredit: <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>
+                  </p>
+               </item>
+               <item>
+                  <p>ERP-Plan: Dr. <name type="Person" role="Erwaehnung" ref="#PuenderHermann_1949-09-07">Pünder</name>
+                  </p>
+               </item>
+               <item>
+                  <p>Grenzlandfragen: <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name> (falls Vorsitz WAV zugesprochen, wird <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name> als Stellvertreter benannt)<seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN028" type="comment">
+                           <p>Der Vorsitz wurde der WAV übertragen, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name> wurde stellvertretender Vorsitzender.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <p>Jugendfürsorge: <name type="Person" role="Erwaehnung" ref="#NellenPeter_1949-09-07">Nellen</name>
+                     <seg type="note">
+                        <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN029" type="comment">
+                           <p>Den Vorsitz übernahm Franz Josef <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+            </list>
+            <p>Zu folgendem Austausch erklärt sich der Vorstand bereit:</p>
+            <p>Wenn wir den stellv. Vorsitz im Aussch. gem. Art. 15 bekommen, wird auf den Vorsitz zugunsten der SP verzichtet, um damit den Vorsitz im Aussch. f. Jugendfürsorge zu erhalten.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN030" type="comment">
+                     <p>Siehe Anm. 11 und 20.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1949-10-05-t1015_EP_div_SVP-2">
+            <head>B.</head>
+            <p>2.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN031" type="comment">
+                     <p>Verbessert aus: 4.</p>
+                  </note>
+               </seg> Ausschußbesetzung</p>
+            <p>Folgende Abänderungsvorschläge der Besetzung der Ausschüsse werden gebilligt<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-10-05-t1015_EP_FN032" type="comment">
+                     <p>Zur endgültigen Besetzung der Ausschüsse vgl. Drucksache I/339 v. 30.12.1949.</p>
+                  </note>
+               </seg>
+            </p>
+            <list type="undefined">
+               <item>
+                  <p>Aussch. f. Wirtschaftspolitik: <name type="Person" role="Erwaehnung" ref="#SchmitzHans_1949-09-07">Schmitz</name> und Lenz werden als ordentliche Mitglieder beteiligt,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Ernährung: Frau <name type="Person" role="Erwaehnung" ref="#NiggemeyerMaria_1949-09-07">Niggemeyer</name>, <name type="Person" role="Erwaehnung" ref="#BauereisenFriedrich_1949-09-07">Bauereisen</name> und evtl. <name type="Person" role="Erwaehnung" ref="#SewaldGuenther_1949-09-07">Sewald</name> werden eingefügt,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Finanz- und Steuerfragen: <name type="Person" role="Erwaehnung" ref="#SchmitzHans_1949-09-07">Schmitz</name> wird ausgetauscht gegen <name type="Person" role="Erwaehnung" ref="#HaggeJohannes_1949-09-07">Hagge</name>. Außerdem werden <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> und Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> eingefügt,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Lastenausgleich: <name type="Person" role="Erwaehnung" ref="#BeckerJosef_1949-09-07">Becker</name>, <name type="Person" role="Erwaehnung" ref="#FuchsGustav_1949-09-07">Fuchs</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#SewaldGuenther_1949-09-07">Sewald</name>, <name type="Person" role="Erwaehnung" ref="#LeibfriedEugen_1949-09-07">Leibfried</name>, <name type="Person" role="Erwaehnung" ref="#SchulerFritz_1949-09-07">Schuler</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>,</p>
+               </item>
+               <item>
+                  <p>Haushaltsausschuß: evtl. zusätzlich <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. gem. Art. 15: Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>, <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, <name type="Person" role="Erwaehnung" ref="#NellenPeter_1949-09-07">Nellen</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, <name type="Person" role="Erwaehnung" ref="#SiebelTheodor_1949-09-07">Siebel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Schatz</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Heimatvertriebene: Dr. <name type="Person" role="Erwaehnung" ref="#EdertEduard_1949-09-07">Edert</name> als ordentliches Mitglied aufgestellt,</p>
+               </item>
+               <item>
+                  <p>Aussch. z. Schutz der Verfassung: <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, <name type="Person" role="Erwaehnung" ref="#MehsMatthiasJoseph_1949-09-07">Mehs</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>; Vertr.: Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Geschäftsordnung: <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, <name type="Person" role="Erwaehnung" ref="#GenglerKarl_1949-09-07">Gengler</name>, <name type="Person" role="Erwaehnung" ref="#GockelnJosef_1949-09-07">Gockeln</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Besatzungsstatut: Dr. <name type="Person" role="Erwaehnung" ref="#PuenderHermann_1949-09-07">Pünder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Schlange-SchoeningenHans_1949-09-07">Schlange</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroeterCarl_1949-09-07">Schröter</name>, <name type="Person" role="Erwaehnung" ref="#FuggervonGloettJosef-Ernst_1949-09-07">Fugger</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#SchmittJoseph_1949-09-07">Schmitt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HolzapfelFriedrich_1949-09-07">Holzapfel</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Gesamtdeutsche Fragen: [Frau] Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Schlange-SchoeningenHans_1949-09-07">Schlange</name>, <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, <name type="Person" role="Erwaehnung" ref="#HoppeAnton_1949-09-07">Hoppe</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name>; Vertr.: <name type="Person" role="Erwaehnung" ref="#GernsHeinrich_1949-09-07">Gerns</name>, <name type="Person" role="Erwaehnung" ref="#SpiesJosef_1949-09-07">Spies</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Berlin: Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> und Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> scheiden aus, dafür <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>, evtl. <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Außenhandelsfragen: <name type="Person" role="Erwaehnung" ref="#DegenerJohannes_1949-09-07">Degener</name>, <name type="Person" role="Erwaehnung" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name>, <name type="Person" role="Erwaehnung" ref="#SpiesJosef_1949-09-07">Spies</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeissFranz_1949-09-07">Weiß</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, <name type="Person" role="Erwaehnung" ref="#GibbertPaul_1949-09-07">Gibbert</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Arbeit: <name type="Person" role="Erwaehnung" ref="#KarpfHugo_1949-09-07">Karpf</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name>, <name type="Person" role="Erwaehnung" ref="#LeonhardGottfried_1949-09-07">Leonhard</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#RaestrupBernhard_1949-09-07">Raestrup</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HolzapfelFriedrich_1949-09-07">Holzapfel</name>, <name type="Person" role="Erwaehnung" ref="#KuntscherErnst_1949-09-07">Kuntscher</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#DegenerJohannes_1949-09-07">Degener</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Beamtenrecht: Dr. <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name>, <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, <name type="Person" role="Erwaehnung" ref="#EtzenbachPeter_1949-09-07">Etzenbach</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GoetzHermann_1949-09-07">Götz</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Kriegsopfer: <name type="Person" role="Erwaehnung" ref="#LeibfriedEugen_1949-09-07">Leibfried</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#MassothWilly_1949-09-07">Massoth</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#EhrenHermann_1949-09-07">Ehren</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, Frau <name type="Person" role="Erwaehnung" ref="#RoeschJulie_1949-09-07">Rösch</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Wiederaufbau: <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#BroekelschenElse_1949-09-07">Brökelschen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, <name type="Person" role="Erwaehnung" ref="#MorgenthalerWendelin_1949-09-07">Morgenthaler</name>, <name type="Person" role="Erwaehnung" ref="#PfenderFranz_1949-09-07">Pfender</name>, <name type="Person" role="Erwaehnung" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name>, <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name>, <name type="Person" role="Erwaehnung" ref="#HaggeJohannes_1949-09-07">Hagge</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Angelegenheiten d. inneren Verwaltung: <name type="Person" role="Erwaehnung" ref="#StauchRobert_1949-09-07">Stauch</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, <name type="Person" role="Erwaehnung" ref="#DresbachAugust_1949-09-07">Dresbach</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name>, <name type="Person" role="Erwaehnung" ref="#FeldmannAloys_1949-09-07">Feldmann</name>, <name type="Person" role="Erwaehnung" ref="#HoppeAnton_1949-09-07">Hoppe</name>, Dr. <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müller</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Fragen d. Gesundheitswesen: <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, <name type="Person" role="Erwaehnung" ref="#HeilerAnneMarie_1949-09-07">Heiler</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name>, <name type="Person" role="Erwaehnung" ref="#GenglerKarl_1949-09-07">Gengler</name>, <name type="Person" role="Erwaehnung" ref="#HeixMartin_1949-09-07">Heix</name>, <name type="Person" role="Erwaehnung" ref="#EhrenHermann_1949-09-07">Ehren</name>, <name type="Person" role="Erwaehnung" ref="#JunglasJohann_1949-09-07">Junglas</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BroennerJosef_1949-09-07">Brönner</name>, Frau <name type="Person" role="Erwaehnung" ref="#RoeschJulie_1949-09-07">Rösch</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Kulturpolitik: <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EhlersHermann_1949-09-07">Ehlers</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, <name type="Person" role="Erwaehnung" ref="#GockelnJosef_1949-09-07">Gockeln</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BaurGeorg_1949-09-07">Baur</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Verkehrswesen: <name type="Person" role="Erwaehnung" ref="#GernsHeinrich_1949-09-07">Gerns</name>, <name type="Person" role="Erwaehnung" ref="#KernKarl_1949-09-07">Kern</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name>, <name type="Person" role="Erwaehnung" ref="#MuckermannRichard_1949-09-07">Muckermann</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#WackerOskar_1949-09-07">Wacker</name>, <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>, <name type="Person" role="Erwaehnung" ref="#Schulze-PellengahrHubert_1949-09-07">Schulze-Pellengahr</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Geld und Kredit: Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>, <name type="Person" role="Erwaehnung" ref="#EcksteinHeinrich_1949-09-07">Eckstein</name>, <name type="Person" role="Erwaehnung" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name>, <name type="Person" role="Erwaehnung" ref="#GockelnJosef_1949-09-07">Gockeln</name>, <name type="Person" role="Erwaehnung" ref="#LoiblMartin_1949-09-07">Loibl</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. ERP-Plan: <name type="Person" role="Erwaehnung" ref="#GernsHeinrich_1949-09-07">Gerns</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PuenderHermann_1949-09-07">Pünder</name>, <name type="Person" role="Erwaehnung" ref="#FunkFriedrich_1949-09-07">Funk</name>, <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, <name type="Person" role="Erwaehnung" ref="#LenzAloys_1949-09-07">Lenz</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Schlange-SchoeningenHans_1949-09-07">Schlange</name>, Vertr.: <name type="Person" role="Erwaehnung" ref="#KuehlingGeorg_1949-09-07">Kühling</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Post: <name type="Person" role="Erwaehnung" ref="#KarpfHugo_1949-09-07">Karpf</name>, <name type="Person" role="Erwaehnung" ref="#LeonhardGottfried_1949-09-07">Leonhard</name>, <name type="Person" role="Erwaehnung" ref="#MuckermannRichard_1949-09-07">Muckermann</name>, <name type="Person" role="Erwaehnung" ref="#SiebelTheodor_1949-09-07">Siebel</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#MuehlenbergFranz_1949-09-07">Mühlenberg</name>, <name type="Person" role="Erwaehnung" ref="#KernKarl_1949-09-07">Kern</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Fragen d. Presse: Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#MuckermannRichard_1949-09-07">Muckermann</name>, <name type="Person" role="Erwaehnung" ref="#BrookmannWalter_1949-09-07">Brookmann</name>, <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name>, <name type="Person" role="Erwaehnung" ref="#HoeflerHeinrich_1949-09-07">Höfler</name>, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>, Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, <name type="Person" role="Erwaehnung" ref="#LoiblMartin_1949-09-07">Loibl</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Grenzlandfragen: Dr. <name type="Person" role="Erwaehnung" ref="#EdertEduard_1949-09-07">Edert</name>, <name type="Person" role="Erwaehnung" ref="#GuentherBernhard_1949-09-07">Günther</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>, <name type="Person" role="Erwaehnung" ref="#MuehlenbergFranz_1949-09-07">Mühlenberg</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#NicklChristof_1949-09-07">Nickl</name>, <name type="Person" role="Erwaehnung" ref="#BeckerJosef_1949-09-07">Becker</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. innergebietliche Neuordnung: <name type="Person" role="Erwaehnung" ref="#HilbertAnton_1949-09-07">Hilbert</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Frau <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>, <name type="Person" role="Erwaehnung" ref="#GienckeChristian_1949-09-07">Giencke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Fragen d. Jugendfürsorge: Frau <name type="Person" role="Erwaehnung" ref="#HeilerAnneMarie_1949-09-07">Heiler</name>, <name type="Person" role="Erwaehnung" ref="#MayerHugo_1949-09-07">Mayer</name>, <name type="Person" role="Erwaehnung" ref="#NellenPeter_1949-09-07">Nellen</name>, Frau <name type="Person" role="Erwaehnung" ref="#NiggemeyerMaria_1949-09-07">Niggemeyer</name>, <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, <name type="Person" role="Erwaehnung" ref="#MassothWilly_1949-09-07">Massoth</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Fragen d. öffentlichen Fürsorge: Frau <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>, Frau <name type="Person" role="Erwaehnung" ref="#RoeschJulie_1949-09-07">Rösch</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>, <name type="Person" role="Erwaehnung" ref="#JunglasJohann_1949-09-07">Junglas</name>, <name type="Person" role="Erwaehnung" ref="#KuntscherErnst_1949-09-07">Kuntscher</name>,</p>
+               </item>
+               <item>
+                  <p>Wahlprüfungsausschuß: Dr. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>, <name type="Person" role="Erwaehnung" ref="#MuehlenbergFranz_1949-09-07">Mühlenberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name>, Organisationsausschuß: <name type="Person" role="Erwaehnung" ref="#GenglerKarl_1949-09-07">Gengler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name>, <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, Vertr.: <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Patentrecht: <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WahlEduard_1949-09-07">Wahl</name>, Vertr.: Dr. <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Schatz</name>,</p>
+               </item>
+               <item>
+                  <p>Aussch. f. Bau u. Bodenrecht: Dr. <name type="Person" role="Erwaehnung" ref="#BaurGeorg_1949-09-07">Baur</name>, <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name>, Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name>, Vertr.: <name type="Person" role="Erwaehnung" ref="#SchmittJoseph_1949-09-07">Schmitt</name>.</p>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
 </TEI>

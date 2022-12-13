@@ -1,217 +1,361 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-11-30-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1503/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 30. November 1959</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>4 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1959-11-30"><time type="start" when="15:00:00"/><time type="end" when="19:10:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> (Remscheid), <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend Regierung:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1959-11-30-t1500_EP_SVP-1" corresp="#cdu-csu-03_1959-11-30-t1500_EP_div_SVP-1">A. Bericht aus der Parteivorstandssitzung. – TOP 1: Altersversorgung der Abgeordneten. – TOP 2: Plenum dieser Woche. – TOP 3: Notstandsgesetz. – TOP 4: Plenum nächster Woche. – TOP 5: Vorsitze im LAG-Ausschuss und im Kontrollausschuss. – TOP 6: Termine. – TOP 7: Fraktionsinitiativantrag betr. Bekämpfung des Dirnenunwesens. – TOP 8: Hausarbeitstag.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1959-11-30-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Vor Eintritt in die Tagesordnung berichtet Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dem Vorstand über die Parteivorstandssitzung<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN001" type="comment"><p>Vgl. CDU-Bundesvorstand 1957–1961, Protokoll v. 25.11. 1959, S. 523–577.</p></note></seg> und teilt mit, daß besonders behandelt worden sei:</p>
-				<list type="undefined">
-					<item><label>a)</label><p>Preise und Löhne<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN002" type="comment"><p>Zur Frage der Lebensmittelpreise vgl. ebd., S. 573–576.</p></note></seg></p></item>
-					<item><label>b)</label><p>Flaggenfrage<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN003" type="comment"><p>Siehe Nr.165 v. 1.12. 1959 (BMI Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>).</p></note></seg></p></item>
-					<item><label>c)</label><p>Verteilung der Aufgaben im Vorstand.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN004" type="comment"><p>Zur Beratung und Beschlußfassung über die Vorschläge des geschäftsführenden Vorstandes zur Aktivierung der Bundespartei vgl. ebd., S. 525–545.</p></note></seg></p></item>
-				</list>
-				<p>Im übrigen sei der Parteivorstand der Meinung, daß das SPD-Grundsatzprogramm<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN005" type="comment"><p>Sog. Godesberger Programm; siehe Nr.151 v. 14.9. 1959, Anm. 37.</p></note></seg> eingehend im Laufe der nächsten Zeit unter die Lupe genommen werden müsse. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß der Bundeskanzler in der nächsten Vorstandssitzung<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN006" type="comment"><p>Vgl. Nr.170 v. 8.12. 1959.</p></note></seg> eingehend über seine Reise nach England und Frankreich berichten werde.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN007" type="comment"><p>Besuch <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in London vom 17. bis 19.11. 1959 und in Paris am 1. und 2.12. 1959. Vgl. AdG 1959, S. 8064, 8088f. und zu den Gesprächen mit <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> Adenauer, Erinnerungen 1959–1963, S. 15–21.</p></note></seg> Dem Kanzler müsse gesagt werden, daß den innenpolitischen Problemen größte Aufmerksamkeit geschenkt werden müßte. Der Vorstand schließt sich dieser Auffassung einmütig an.</p>
-				<p>1. Altersversorgung der Abgeordneten [interfraktioneller Gesetzentwurf der Abg. <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> (Frankfurt), <name type="Person" role="Erwaehnung" ref="#KuehnWalther_1949-09-07">Kühn</name> (Bonn), Dr. <name type="Person" role="Erwaehnung" ref="#SchneiderLudwig_1949-09-07">Schneider</name> (Lollar) u. Gen.: Drucksache III/1444 v. 2.12. 1959]</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#RoeschJulie_1949-09-07">Rösch</name> erläutert den Entwurf, der von Abgeordneten aller Fraktionen ausgearbeitet worden ist. Präsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> unterstützt die Vorlage in dem Sinne, daß nunmehr die Initiative der Abgeordneten in dieser Angelegenheit freigegeben würde. Nach eingehender Diskussion ist der Vorstand der Meinung, daß den Abgeordneten, die einen solchen Entwurf einbringen wollen, die Initiative hierzu freigegeben wird.</p>
-				<p>2. Plenum dieser Woche</p>
-				<p>a) Vermittlungsausschußberichte: [Mdl. Ber. a) zu dem Gesetz über den zivilen Ersatzdienst: Drucksache III/1390 v. 12.11. 1959; b) zu dem Gesetz über Maßnahmen zur Förderung der ganzjährigen Beschäftigung in der Bauwirtschaft und weiteren Änderungen und Ergänzungen des Gesetzes über Arbeitsvermittlung und Arbeitslosenversicherung – 2. ÄndG zum AVAVG: Drucksache III/1404 v. 1959, und c) zu dem Gesetz über die Errichtung des Bundesverwaltungsamtes: Drucksache III/1405 v. 20.11. 1959]<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN008" type="comment"><p>Vgl. Sten. Ber., 91. Sitzung am 2.12. 1959, S. 4938–4940.</p></note></seg></p>
-				<p><name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> soll die Fraktion kurz über die Berichte informieren.</p>
-				<p>b) 2. Rentenanpassungsgesetz: [Reg.-Entwurf für 2. RAG: Drucksache III/1325 v. 28.10. 1959]<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN009" type="comment"><p>Vgl. 2. und 3. Beratung, in: Sten. Ber., 91. Sitzung am 2.12. 1959, S. 4940–4954.</p></note></seg> an Arbeitskreis überwiesen.</p>
-				<p>c) Kleine Aktienrechtsreform: [Reg.-Gesetzentwürfe: Drucksache III/416 und 417 v. 3.6. 1958]<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN010" type="comment"><p>Vgl. 2. und 3. Beratung, in: Sten. Ber., 91. Sitzung am 2.12. 1959, S. 4962–5003.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SchlickJosef_1953-10-06">Schlick</name> wirft die Frage der Steuerfreiheitsgrenze der Belegschaftsaktien auf, wie sie im Ausschuß beschlossen worden sei. <name type="Person" role="Sprecher" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> begründet seinen Abänderungsantrag hierzu. <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> und <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> tragen ihre Bedenken gegen die Ausschußfassung<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN011" type="comment"><p>Schriftl. Ber. des Wirtschaftsausschusses: Drucksache III/1409 v. 20.11. 1959.</p></note></seg> vor. <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erklärt, daß er bei allen Abstimmungen immer gefragt habe, ob abgestimmt werden könne. Keine[r] habe dabei Bedenken geäußert. Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt die Zusammenhänge dar. Der Vorstand billigt im großen und ganzen die Vorlage und überweist sie an den zuständigen Arbeitskreis der Fraktion, der der Fraktion das Ergebnis mitteilen soll.</p>
-				<p>d) Grundgesetzänderung<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN012" type="comment"><p>Vgl. Art.74 Ziffer 11a GG und Art. 87c GG, beide eingeführt durch Gesetz v. 23.12. 1959 (BGBl. I, S. 813).</p></note></seg>: (Atom) [SPD-Gesetzentwurf: Drucksache III/30 v. 28.11. 1957; Reg.-Entwurf: Drucksache III/759 v. 17.12. 1958]</p>
-				<p><name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> erläutert in kurzen Sätzen die Vorlage. Der Vorstand billigt beide Entwürfe einschließlich Grundgesetzänderung.</p>
-				<p>e) Gesetz gegen Volksverhetzung: [Reg.-Entwurf: Drucksache III/918 v. 5.3. 1959]</p>
-				<p><name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> berichtet über Verhandlungen mit der SPD. Die SPD wolle eine Erklärung zur Abstimmung geben, in der sie das politische Anliegen des Gesetzentwurfs unterstützt, die SPD wolle sich aber bei der Abstimmung der Stimme enthalten.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN013" type="comment"><p>Zu den Bedenken der SPD siehe Nr.154 v. 12.10. 1959, TOP 7.</p></note></seg> Vorstand ist mit der Verabschiedung des Gesetzentwurfs einverstanden.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN014" type="comment"><p>In Verbindung mit den Entwürfen f. ÄndG zum StGB von FDP und SPD: Drucksachen III/1527 v. 13.1. 1960 und 1551 v. 19.1. 1960 als 6. Strafrechtsänderungsgesetz einstimmig angenommen am 20.5. 1960. Vgl. Sten. Ber., 116. Sitzung, S. 6667.</p></note></seg></p>
-				<p>f) Vierte Änderung Gewerbeordnung: [Reg.-Entwurf: Drucksache III/318 v. 8.4. 1958]</p>
-				<p>Der Vorstand hat keine Bedenken, den Gesetzentwurf in der Ausschußfassung [Mdl. Ber. des 11. Ausschusses: Drucksache III/1343 v. 4.11. 1959] zu verabschieden.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN015" type="comment"><p>Vgl. Sten. Ber., 94. Sitzung am 11.12. 1959, S. 5187.</p></note></seg></p>
-				<p>g) 1. Lesung FDP-Entwurf betr. Änderung Kapitalverkehrsteuer: [Drucksache III/1264 v. 7.10. 1959]</p>
-				<p>Keine wesentliche Debatte. Bei der 1. Lesung wird <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> zu den Vorwürfen der FDP Stellung nehmen.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN016" type="comment"><p>Vgl. Sten. Ber., 92. Sitzung am 3.12. 1959, S. 5061–5064 (<name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>).</p></note></seg></p>
-				<p>h) Sicherstellungsgesetz: [Reg.-Entwurf: Drucksache III/1096 v. 13.5. 1959]</p>
-				<p><name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> trägt seine Bedenken dagegen vor, daß der Bundestag bei dem Erlaß von Rechtsverordnungen, wie es in der Vorlage vorgesehen sei, eingeschaltet würde. Der Vorstand hat keine Bedenken, wenn hierzu bei der 2. bzw. 3. Lesung Abänderungsanträge gestellt werden.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN017" type="comment"><p>Vgl. Sten. Ber., 91. Sitzung am 2.12. 1959, S. 5003–5006.</p></note></seg></p>
-				<p>i) SPD-Antrag Lebensmittelgesetz: [Antrag. betr. Verordnungen zum Lebensmittelgesetz: Drucksache III/1286 v. 14.10. 1959]</p>
-				<p>Der Vorstand ist der Meinung, wenn eben möglich, die Behandlung nicht in der Plenarsitzung am Freitag vorzunehmen.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN018" type="comment"><p>Die SPD erreichte eine Aussprache über die Frage der Kennzeichnungspflicht von Lebensmitteln. Vgl. Sten. Ber., 92. Sitzung am 3.12. 1959, S. 5089–5112.</p></note></seg> Der Arbeitskreis IV soll Redner für die Debatte bestimmen.</p>
-				<p>3. Notstandsgesetz [Vorbereitung einer Gesetzvorlage]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schlägt vor, daß <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> und Dr. <name type="Person" role="Erwaehnung" ref="#WerberFriedrich_1953-10-06">Werber</name> mit Vertretern der SPD wegen des Notstandsgesetzes in Besprechungen eintreten sollen. Der Vorstand ist mit diesem Vorschlag einverstanden.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN019" type="comment"><p>Zu dieser Gesetzesmaterie siehe Nr.83 v. 3.11. 1958, TOP 1.</p></note></seg></p>
-				<p>4. Plenum nächster Woche</p>
-				<p>1. Lesung Haushalt: [Reg.-Gesetzentwurf: Drucksache III/1400 v. 4.12. 1959]</p>
-				<p>Minister <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> gibt dem Vorstand einen Bericht über den Haushaltsentwurf. In der Diskussion weist Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> darauf hin, daß über die Frage baldigst entschieden werden müsse, ob Steuererhöhungen notwendig seien oder nicht.<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN020" type="comment"><p>Vgl. die 1. Beratung, in: Sten. Berichte, 93. Sitzung am 10.12. 1959, S. 5119–5133 (<name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>).</p></note></seg> Die weitere Beratung wird nach eingehender Diskussion dem zuständigen Arbeitskreis überlassen.</p>
-				<p>5. Vorsitz im LAG-Ausschuß<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN021" type="comment"><p>Vorsitz: Johannes <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> (CDU/CSU), ab 23.6. 1960: Waldemar <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name> (CDU/CSU). Vgl. Datenhandbuch II, S. 2048.</p></note></seg> und im Kontrollausschuß<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN022" type="comment"><p>Kontrollausschuß beim Bundesausgleichsamt, einer selbständigen Bundesbehörde, die der Dienstaufsicht des BMF unterstand. Vorsitzender des Kontrollausschusses war bis November 1959 Dipl.-Kfm. Johannes <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, MdB (CDU), 1949–23.6. 1960 Vorsitzender des Ausschusses für Lastenausgleich. Vgl. Die Bundesrepublik 1958/59, S. 137; Datenhandbuch II, S. 2037, 2043, 2048.</p></note></seg></p>
-				<p>Nach kurzer Diskussion bittet der Vorstand den Fraktionsvorsitzenden, er solle mit den Vertriebenen-Abgeordneten des LAG-Ausschusses ein eingehendes Gespräch wegen des Vorsitzes führen. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> ist damit einverstanden.</p>
-				<p>6. Termine für</p>
-				<p>a) Privatisierung Volkswagenwerk: [Reg.-Gesetzentwürfe: Drucksache III/102 v. 20.12. 1957; CDU/CSU-Gesetzentwurf: Drucksache III/1217 v. 10.7. 1959]</p>
-				<p>Der Vorstand ist der Meinung, daß die Vorlagen möglichst bald verabschiedet werden. Er überweist den Gegenstand dem Arbeitskreis III.</p>
-				<p>b) Teilprivatisierung Deutsche Wochenschau: [Mdl. Ber. des Haushaltsausschusses: Drucksache III/1474 v. 9.12. 1959]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> teilt mit, daß der Haushaltsausschuß die Vorlage in seiner nächsten Sitzung behandeln werde<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN023" type="comment"><p>Vgl. Mdl. Ber. des Haushaltsausschusses: Drucksache III/1474 v. 9. 12. 1959.</p></note></seg>, so daß einer Verabschiedung im Plenum nichts mehr im Wege stände.</p>
-				<p>c) Heizölsteuer: [Reg.-Entwurf f. ÄndG zum Mineralölsteuergesetz: Drucksache III/1327 v. 31.10. 1959]</p>
-				<p>Der Vorstand beschließt nach kurzer Diskussion, daß ein kleiner Kreis des Arbeitskreises III die Angelegenheit durchberaten soll und zwar die Abgeordneten <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>.</p>
-				<p>7. Fraktionsinitiativantrag betr. Bekämpfung des Dirnenunwesens [Entwurf eines Strafrechtsänderungsgesetzes der Abg. <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#SchleeAlbrecht_1957-10-15">Schlee</name>, Frau <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeiskeWalter_1953-10-06">Leiske</name> und Fraktion der CDU/CSU: Drucksache III/1449 v. 3.12. 1959]</p>
-				<p>Der Vorstand ist mit dem Vorschlag des Arbeitskreises I<seg type="note"><note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN024" type="comment"><p>Nicht ermittelt.</p></note></seg> einverstanden und wird der Fraktion die Einbringung des Entwurfs als Fraktionsantrag empfehlen.</p>
-				<p>8. Hausarbeitstag [Entwurf f. ÄndG zum nordrhein-westf. Hausarbeitstagsgesetz der Abg. <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#LenzAloys_1949-09-07">Lenz</name> (Brühl), <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> u. Gen.: Drucksache III/784 v. 14.1. 1959] verschoben.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1959-11-30-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1503/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 30. November 1959</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>4 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1959-11-30">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="19:10:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> (Remscheid), <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#GehringAlbrecht_1957-10-15">Gehring</name>, <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>, <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend Regierung:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1959-11-30-t1500_EP_SVP-1" corresp="#cdu-csu-03_1959-11-30-t1500_EP_div_SVP-1">A. Bericht aus der Parteivorstandssitzung. – TOP 1: Altersversorgung der Abgeordneten. – TOP 2: Plenum dieser Woche. – TOP 3: Notstandsgesetz. – TOP 4: Plenum nächster Woche. – TOP 5: Vorsitze im LAG-Ausschuss und im Kontrollausschuss. – TOP 6: Termine. – TOP 7: Fraktionsinitiativantrag betr. Bekämpfung des Dirnenunwesens. – TOP 8: Hausarbeitstag.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1959-11-30-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Vor Eintritt in die Tagesordnung berichtet Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> dem Vorstand über die Parteivorstandssitzung<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN001" type="comment">
+                     <p>Vgl. CDU-Bundesvorstand 1957–1961, Protokoll v. 25.11. 1959, S. 523–577.</p>
+                  </note>
+               </seg> und teilt mit, daß besonders behandelt worden sei:</p>
+            <list type="undefined">
+               <item>
+                  <label>a)</label>
+                  <p>Preise und Löhne<seg type="note">
+                        <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN002" type="comment">
+                           <p>Zur Frage der Lebensmittelpreise vgl. ebd., S. 573–576.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>b)</label>
+                  <p>Flaggenfrage<seg type="note">
+                        <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN003" type="comment">
+                           <p>Siehe Nr.165 v. 1.12. 1959 (BMI Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>).</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>c)</label>
+                  <p>Verteilung der Aufgaben im Vorstand.<seg type="note">
+                        <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN004" type="comment">
+                           <p>Zur Beratung und Beschlußfassung über die Vorschläge des geschäftsführenden Vorstandes zur Aktivierung der Bundespartei vgl. ebd., S. 525–545.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+            </list>
+            <p>Im übrigen sei der Parteivorstand der Meinung, daß das SPD-Grundsatzprogramm<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN005" type="comment">
+                     <p>Sog. Godesberger Programm; siehe Nr.151 v. 14.9. 1959, Anm. 37.</p>
+                  </note>
+               </seg> eingehend im Laufe der nächsten Zeit unter die Lupe genommen werden müsse. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> teilt mit, daß der Bundeskanzler in der nächsten Vorstandssitzung<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN006" type="comment">
+                     <p>Vgl. Nr.170 v. 8.12. 1959.</p>
+                  </note>
+               </seg> eingehend über seine Reise nach England und Frankreich berichten werde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN007" type="comment">
+                     <p>Besuch <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> in London vom 17. bis 19.11. 1959 und in Paris am 1. und 2.12. 1959. Vgl. AdG 1959, S. 8064, 8088f. und zu den Gesprächen mit <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> Adenauer, Erinnerungen 1959–1963, S. 15–21.</p>
+                  </note>
+               </seg> Dem Kanzler müsse gesagt werden, daß den innenpolitischen Problemen größte Aufmerksamkeit geschenkt werden müßte. Der Vorstand schließt sich dieser Auffassung einmütig an.</p>
+            <p>1. Altersversorgung der Abgeordneten [interfraktioneller Gesetzentwurf der Abg. <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> (Frankfurt), <name type="Person" role="Erwaehnung" ref="#KuehnWalther_1949-09-07">Kühn</name> (Bonn), Dr. <name type="Person" role="Erwaehnung" ref="#SchneiderLudwig_1949-09-07">Schneider</name> (Lollar) u. Gen.: Drucksache III/1444 v. 2.12. 1959]</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#RoeschJulie_1949-09-07">Rösch</name> erläutert den Entwurf, der von Abgeordneten aller Fraktionen ausgearbeitet worden ist. Präsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> unterstützt die Vorlage in dem Sinne, daß nunmehr die Initiative der Abgeordneten in dieser Angelegenheit freigegeben würde. Nach eingehender Diskussion ist der Vorstand der Meinung, daß den Abgeordneten, die einen solchen Entwurf einbringen wollen, die Initiative hierzu freigegeben wird.</p>
+            <p>2. Plenum dieser Woche</p>
+            <p>a) Vermittlungsausschußberichte: [Mdl. Ber. a) zu dem Gesetz über den zivilen Ersatzdienst: Drucksache III/1390 v. 12.11. 1959; b) zu dem Gesetz über Maßnahmen zur Förderung der ganzjährigen Beschäftigung in der Bauwirtschaft und weiteren Änderungen und Ergänzungen des Gesetzes über Arbeitsvermittlung und Arbeitslosenversicherung – 2. ÄndG zum AVAVG: Drucksache III/1404 v. 1959, und c) zu dem Gesetz über die Errichtung des Bundesverwaltungsamtes: Drucksache III/1405 v. 20.11. 1959]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN008" type="comment">
+                     <p>Vgl. Sten. Ber., 91. Sitzung am 2.12. 1959, S. 4938–4940.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> soll die Fraktion kurz über die Berichte informieren.</p>
+            <p>b) 2. Rentenanpassungsgesetz: [Reg.-Entwurf für 2. RAG: Drucksache III/1325 v. 28.10. 1959]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN009" type="comment">
+                     <p>Vgl. 2. und 3. Beratung, in: Sten. Ber., 91. Sitzung am 2.12. 1959, S. 4940–4954.</p>
+                  </note>
+               </seg> an Arbeitskreis überwiesen.</p>
+            <p>c) Kleine Aktienrechtsreform: [Reg.-Gesetzentwürfe: Drucksache III/416 und 417 v. 3.6. 1958]<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN010" type="comment">
+                     <p>Vgl. 2. und 3. Beratung, in: Sten. Ber., 91. Sitzung am 2.12. 1959, S. 4962–5003.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchlickJosef_1953-10-06">Schlick</name> wirft die Frage der Steuerfreiheitsgrenze der Belegschaftsaktien auf, wie sie im Ausschuß beschlossen worden sei. <name type="Person" role="Sprecher" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> begründet seinen Abänderungsantrag hierzu. <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> und <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> tragen ihre Bedenken gegen die Ausschußfassung<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN011" type="comment">
+                     <p>Schriftl. Ber. des Wirtschaftsausschusses: Drucksache III/1409 v. 20.11. 1959.</p>
+                  </note>
+               </seg> vor. <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erklärt, daß er bei allen Abstimmungen immer gefragt habe, ob abgestimmt werden könne. Keine[r] habe dabei Bedenken geäußert. Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt die Zusammenhänge dar. Der Vorstand billigt im großen und ganzen die Vorlage und überweist sie an den zuständigen Arbeitskreis der Fraktion, der der Fraktion das Ergebnis mitteilen soll.</p>
+            <p>d) Grundgesetzänderung<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN012" type="comment">
+                     <p>Vgl. Art.74 Ziffer 11a GG und Art. 87c GG, beide eingeführt durch Gesetz v. 23.12. 1959 (BGBl. I, S. 813).</p>
+                  </note>
+               </seg>: (Atom) [SPD-Gesetzentwurf: Drucksache III/30 v. 28.11. 1957; Reg.-Entwurf: Drucksache III/759 v. 17.12. 1958]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> erläutert in kurzen Sätzen die Vorlage. Der Vorstand billigt beide Entwürfe einschließlich Grundgesetzänderung.</p>
+            <p>e) Gesetz gegen Volksverhetzung: [Reg.-Entwurf: Drucksache III/918 v. 5.3. 1959]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> berichtet über Verhandlungen mit der SPD. Die SPD wolle eine Erklärung zur Abstimmung geben, in der sie das politische Anliegen des Gesetzentwurfs unterstützt, die SPD wolle sich aber bei der Abstimmung der Stimme enthalten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN013" type="comment">
+                     <p>Zu den Bedenken der SPD siehe Nr.154 v. 12.10. 1959, TOP 7.</p>
+                  </note>
+               </seg> Vorstand ist mit der Verabschiedung des Gesetzentwurfs einverstanden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN014" type="comment">
+                     <p>In Verbindung mit den Entwürfen f. ÄndG zum StGB von FDP und SPD: Drucksachen III/1527 v. 13.1. 1960 und 1551 v. 19.1. 1960 als 6. Strafrechtsänderungsgesetz einstimmig angenommen am 20.5. 1960. Vgl. Sten. Ber., 116. Sitzung, S. 6667.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>f) Vierte Änderung Gewerbeordnung: [Reg.-Entwurf: Drucksache III/318 v. 8.4. 1958]</p>
+            <p>Der Vorstand hat keine Bedenken, den Gesetzentwurf in der Ausschußfassung [Mdl. Ber. des 11. Ausschusses: Drucksache III/1343 v. 4.11. 1959] zu verabschieden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN015" type="comment">
+                     <p>Vgl. Sten. Ber., 94. Sitzung am 11.12. 1959, S. 5187.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>g) 1. Lesung FDP-Entwurf betr. Änderung Kapitalverkehrsteuer: [Drucksache III/1264 v. 7.10. 1959]</p>
+            <p>Keine wesentliche Debatte. Bei der 1. Lesung wird <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name> zu den Vorwürfen der FDP Stellung nehmen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN016" type="comment">
+                     <p>Vgl. Sten. Ber., 92. Sitzung am 3.12. 1959, S. 5061–5064 (<name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>h) Sicherstellungsgesetz: [Reg.-Entwurf: Drucksache III/1096 v. 13.5. 1959]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> trägt seine Bedenken dagegen vor, daß der Bundestag bei dem Erlaß von Rechtsverordnungen, wie es in der Vorlage vorgesehen sei, eingeschaltet würde. Der Vorstand hat keine Bedenken, wenn hierzu bei der 2. bzw. 3. Lesung Abänderungsanträge gestellt werden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN017" type="comment">
+                     <p>Vgl. Sten. Ber., 91. Sitzung am 2.12. 1959, S. 5003–5006.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>i) SPD-Antrag Lebensmittelgesetz: [Antrag. betr. Verordnungen zum Lebensmittelgesetz: Drucksache III/1286 v. 14.10. 1959]</p>
+            <p>Der Vorstand ist der Meinung, wenn eben möglich, die Behandlung nicht in der Plenarsitzung am Freitag vorzunehmen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN018" type="comment">
+                     <p>Die SPD erreichte eine Aussprache über die Frage der Kennzeichnungspflicht von Lebensmitteln. Vgl. Sten. Ber., 92. Sitzung am 3.12. 1959, S. 5089–5112.</p>
+                  </note>
+               </seg> Der Arbeitskreis IV soll Redner für die Debatte bestimmen.</p>
+            <p>3. Notstandsgesetz [Vorbereitung einer Gesetzvorlage]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> schlägt vor, daß <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> und Dr. <name type="Person" role="Erwaehnung" ref="#WerberFriedrich_1953-10-06">Werber</name> mit Vertretern der SPD wegen des Notstandsgesetzes in Besprechungen eintreten sollen. Der Vorstand ist mit diesem Vorschlag einverstanden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN019" type="comment">
+                     <p>Zu dieser Gesetzesmaterie siehe Nr.83 v. 3.11. 1958, TOP 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>4. Plenum nächster Woche</p>
+            <p>1. Lesung Haushalt: [Reg.-Gesetzentwurf: Drucksache III/1400 v. 4.12. 1959]</p>
+            <p>Minister <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> gibt dem Vorstand einen Bericht über den Haushaltsentwurf. In der Diskussion weist Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> darauf hin, daß über die Frage baldigst entschieden werden müsse, ob Steuererhöhungen notwendig seien oder nicht.<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN020" type="comment">
+                     <p>Vgl. die 1. Beratung, in: Sten. Berichte, 93. Sitzung am 10.12. 1959, S. 5119–5133 (<name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>).</p>
+                  </note>
+               </seg> Die weitere Beratung wird nach eingehender Diskussion dem zuständigen Arbeitskreis überlassen.</p>
+            <p>5. Vorsitz im LAG-Ausschuß<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN021" type="comment">
+                     <p>Vorsitz: Johannes <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> (CDU/CSU), ab 23.6. 1960: Waldemar <name type="Person" role="Erwaehnung" ref="#KraftWaldemar_1953-10-06">Kraft</name> (CDU/CSU). Vgl. Datenhandbuch II, S. 2048.</p>
+                  </note>
+               </seg> und im Kontrollausschuß<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN022" type="comment">
+                     <p>Kontrollausschuß beim Bundesausgleichsamt, einer selbständigen Bundesbehörde, die der Dienstaufsicht des BMF unterstand. Vorsitzender des Kontrollausschusses war bis November 1959 Dipl.-Kfm. Johannes <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, MdB (CDU), 1949–23.6. 1960 Vorsitzender des Ausschusses für Lastenausgleich. Vgl. Die Bundesrepublik 1958/59, S. 137; Datenhandbuch II, S. 2037, 2043, 2048.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Nach kurzer Diskussion bittet der Vorstand den Fraktionsvorsitzenden, er solle mit den Vertriebenen-Abgeordneten des LAG-Ausschusses ein eingehendes Gespräch wegen des Vorsitzes führen. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> ist damit einverstanden.</p>
+            <p>6. Termine für</p>
+            <p>a) Privatisierung Volkswagenwerk: [Reg.-Gesetzentwürfe: Drucksache III/102 v. 20.12. 1957; CDU/CSU-Gesetzentwurf: Drucksache III/1217 v. 10.7. 1959]</p>
+            <p>Der Vorstand ist der Meinung, daß die Vorlagen möglichst bald verabschiedet werden. Er überweist den Gegenstand dem Arbeitskreis III.</p>
+            <p>b) Teilprivatisierung Deutsche Wochenschau: [Mdl. Ber. des Haushaltsausschusses: Drucksache III/1474 v. 9.12. 1959]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#VogelRudolf_1949-09-07">Vogel</name> teilt mit, daß der Haushaltsausschuß die Vorlage in seiner nächsten Sitzung behandeln werde<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN023" type="comment">
+                     <p>Vgl. Mdl. Ber. des Haushaltsausschusses: Drucksache III/1474 v. 9. 12. 1959.</p>
+                  </note>
+               </seg>, so daß einer Verabschiedung im Plenum nichts mehr im Wege stände.</p>
+            <p>c) Heizölsteuer: [Reg.-Entwurf f. ÄndG zum Mineralölsteuergesetz: Drucksache III/1327 v. 31.10. 1959]</p>
+            <p>Der Vorstand beschließt nach kurzer Diskussion, daß ein kleiner Kreis des Arbeitskreises III die Angelegenheit durchberaten soll und zwar die Abgeordneten <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>.</p>
+            <p>7. Fraktionsinitiativantrag betr. Bekämpfung des Dirnenunwesens [Entwurf eines Strafrechtsänderungsgesetzes der Abg. <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#SchleeAlbrecht_1957-10-15">Schlee</name>, Frau <name type="Person" role="Erwaehnung" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeiskeWalter_1953-10-06">Leiske</name> und Fraktion der CDU/CSU: Drucksache III/1449 v. 3.12. 1959]</p>
+            <p>Der Vorstand ist mit dem Vorschlag des Arbeitskreises I<seg type="note">
+                  <note xml:id="cdu-csu-03_1959-11-30-t1500_EP_FN024" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg> einverstanden und wird der Fraktion die Einbringung des Entwurfs als Fraktionsantrag empfehlen.</p>
+            <p>8. Hausarbeitstag [Entwurf f. ÄndG zum nordrhein-westf. Hausarbeitstagsgesetz der Abg. <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal), <name type="Person" role="Erwaehnung" ref="#LenzAloys_1949-09-07">Lenz</name> (Brühl), <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DittrichStefan_1953-10-06">Dittrich</name> u. Gen.: Drucksache III/784 v. 14.1. 1959] verschoben.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

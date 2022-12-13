@@ -1,217 +1,335 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-02-21-t1545_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1007/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 21. Februar 1956</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>9 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1956-02-21"><time type="start" when="15:45:00"/><time type="end" when="18:10:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="WN" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1956-02-21-t1545_EP_SVP-1" corresp="#cdu-csu-02_1956-02-21-t1545_EP_div_SVP-1">A. TOP 1: Aus dem Ältestenrat. – TOP 2: Regierungswechsel in Nordrhein-Westfalen, Koalitionskrise und Wahlrecht. – TOP 3: . – TOP 4: . – TOP 5: . – TOP 6: . – TOP 7: . – TOP 8: . – TOP 9: . – TOP 10: . – TOP 11: . – TOP 12: . – TOP 13: . – TOP 14: . – TOP 15: . – TOP 16: . – TOP 17: .</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1956-02-21-t1545_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. [Aus dem Ältestenrat]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet, daß im Ältestenrat noch keine Einigung über die endgültige Behandlung des Soldatengesetzes und der Verfassungsänderungen erzielt sei. Von seiten der FDP und der SPD würden große Schwierigkeiten bereitet. Eine weitere Sitzung sei für Donnerstag vorgesehen.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN001" type="comment"><p>Wegen des Junktims von Grundgesetzänderung und Wahlgesetz, das der FDP-Vertreter in der Sitzung des Ältestenrates am Morgen eingeführt hatte, konnte der Ältestenrat auch am 23. 2. 1956 keinen Beschluß fassen. Vgl. die Kurzprotokolle der 103. und 105. Sitz. des Ältestenrates (Parl. Arch., Ältestenrat). Siehe auch Nr. 234, 6.</p></note></seg></p>
-				<p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bemerkt dazu, daß ihm Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> schon vor Wochen erklärt habe, daß für die FDP die Verabschiedung des Soldatengesetzes von der Verabschiedung des Wahlrechts abhängig sei. Es bestehe ein innerer Zusammenhang zwischen beiden Fragenkomplexen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet über ein Gespräch zu den Wehrgesetzen, an dem <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name>, <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>, <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> und er selbst beteiligt gewesen seien.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN002" type="comment"><p>Siehe ebd., 2.</p></note></seg> Bei sehr sachlicher Verhandlungsweise sei man noch nicht zu einer endgültigen Klärung gekommen. Die offenen Fragen sollten in beiden großen Fraktionen noch behandelt werden.</p>
-				<p>2. [Regierungswechsel in Nordrhein-Westfalen, Koalitionskrise und Wahlrecht]</p>
-				<p>Dann wendet sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> den Ereignissen in Düsseldorf<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN003" type="comment"><p>Siehe Nr. 232, Anm. 3.</p></note></seg> zu und bringt seine Überzeugung zum Ausdruck, daß diese Aussprache von großer Bedeutung für die Fraktion, die Partei und für den Weg der ganzen Politik sein werde. Ministerpräsident <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> sei gebeten worden teilzunehmen, habe aber keine Gelegenheit dazu, weil er einen Vertreter der »Times« habe empfangen und dann sogleich wieder abfahren müssen. Es sei Pflicht der Fraktion, ihm Dank und Anerkennung für seine Arbeit auszusprechen. Neun Jahre habe er verantwortungsbewußt die Geschicke Nordrhein-Westfalens geführt. Nun sei er als Opfer nicht seiner Politik gestürzt worden und es sei die tragische Seite der Entscheidung, die gestern gefallen sei, daß sein Sturz sich gegen den Bundeskanzler und dessen Politik richte.</p>
-				<p>Daß es zu dieser Entscheidung in Düsseldorf gekommen sei, habe besonders an der Haltung der Fraktion beim Bundestagswahlgesetz gelegen. Dabei habe allerdings die CDU-Fraktion sich zu jedem Kompromiß mit der FDP bereit gezeigt, durch den auch der Bestand dieser Koalitionsfraktion gesichert gewesen wäre, und diese Bereitschaft habe man bis zum letzten zum Ausdruck gebracht. Hier handele es sich um die Fortsetzung eines Schauspiels, das vor ein paar Jahren in Württemberg begonnen habe, wenn es auch gelungen sei, diesen Vorgang später wieder zu korrigieren.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN004" type="comment"><p>Nach den Landtagswahlen in Baden-Württemberg am 9. 3. 1952 war eine Koalitionsregierung von SPD, FDP und BHE unter Reinhold <name type="Person" role="Erwaehnung" ref="#MaierReinhold_1953-10-06">Maier</name> gebildet worden, obwohl die CDU stärkste Fraktion geworden war (vgl. Ritter/Niehuss, S. 145). Nach der Bundestagswahl 1953 war <name type="Person" role="Erwaehnung" ref="#MaierReinhold_1953-10-06">Maier</name> zurückgetreten und Gebhard <name type="Person" role="Erwaehnung" ref="#MuellerGebhard_1953-10-06">Müller</name> von der CDU führte seitdem eine große Koalition an (vgl. Schwarz, Ära Adenauer 1949–1957, S. 171 und 195).</p></note></seg> Dann sei Bayern gefolgt.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN005" type="comment"><p>Siehe Nr. 114, 2.</p></note></seg> Hier hätten sich Kräfte gefunden, die aus Prinzip gegen die CDU stünden und sich anschickten, diese Fragen nun auch auf Bundesebene anzupacken.</p>
-				<p>Die CDU-Fraktion habe am 2. Februar beschlossen, daß auf der Basis eines Wahlrechts wie 1953 weiter verhandelt werden könne, wenn auch in der Frage der Koalitionspolitik in Bund und Ländern eine Einigung zu erzielen sei.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN006" type="comment"><p>Siehe Nr. 230, 2.</p></note></seg> Einen gleichen Beschluß habe die FDP-Fraktion am 3. 2. gefaßt. Auf der Stuttgarter Tagung haben Bundesparteivorstand und Ausschuß der FDP den gleichen Standpunkt eingenommen.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN007" type="comment"><p>Siehe Nr. 228, Anm. 3.</p></note></seg></p>
-				<p>Die Frage des Wahlgesetzes sei mit der FDP bisher nicht weiter behandelt, sondern bis nach der Entscheidung von Düsseldorf zurückgestellt worden. Dort seien die Dinge allerdings entgegen den übrigen Beschlüssen der FDP und ihrer Organe in einem Sinne weitergeführt worden, der nichts anderes bedeute, als die Politik der Bundesregierung von den Ländern her aufzurollen. Die Sozialisten und die nationalistische Richtung der FDP spielten dort zusammen und man versuche, auf dieser Basis auch eine Front im Bundesrat zu bilden. Man habe dies bei der Debatte in Düsseldorf sehr deutlich zum Ausdruck gebracht und die Antwort, daß »die Schlacht im falschen Saale geführt werde«<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN008" type="comment"><p>Zitat <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnolds</name> aus der Debatte zum konstruktiven Mißtrauensvotum gegen ihn am 16. 2. 1956. Vgl. LT NRW, Sten. Ber, 3.Wp., 32. Sitz., S. 1020.</p></note></seg>, habe durchaus den Sachverhalt getroffen. Man müsse bedenken, daß ähnliche Ereignisse auch in anderen Ländern möglich seien. Die FDP-Fraktion im Bundestag habe allerdings gestern erklärt, daß sie bereit sei, die Koalitionspolitik fortzusetzen, während die Düsseldorfer FDP die Politik des Bundeskanzlers mit allen Mitteln bekämpfen wolle.</p>
-				<p>Bezeichnend sei, daß die FDP im Ältestenrat beantragt habe, das Wahlgesetz vor der dritten Lesung des Soldatengesetzes zu verabschieden. Dagegen habe die CDU scharf Stellung genommen.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN009" type="comment"><p>Siehe Anm. 1.</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> berichtet, daß er zuerst vor einem Jahr durch <name type="Person" role="Erwaehnung" ref="#JohnenWilhelm">Johnen</name> gehört habe, daß zwischen der FDP und der SPD in Düsseldorf Verhandlungen über eine neue Regierungsbildung stattgefunden hätten. Man sei aber damals der Ansicht gewesen, daß ein Mitglied der FDP jedenfalls für <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> stimmen werde, so daß sich ein Stimmenverhältnis von 100:100 ergäbe. In diesem Glauben sei man weiter geblieben und habe sogar in den letzten Tagen noch angenommen, daß drei SPD-Mitglieder für <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> stimmen würden. Auch habe man angenommen, daß das Zentrum geschlossen hinter <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> stehen werde. Er habe gelegentlich Dr. <name type="Person" role="Erwaehnung" ref="#MiddelhauveFriedrich_1949-09-07">Middelhauve</name> vorgehalten, daß er mit der SPD verhandelt habe. Dieser habe jedoch ehrenwörtlich versichert, daß dies nicht zutreffe und habe sich auch jetzt nicht an den Verhandlungen beteiligt.</p>
-				<p>(Hier schaltet der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> ein, daß er von Herren der Presse erfahren habe, daß diese von Mitgliedern der Fraktion über die internen Vorgänge in den Fraktionssitzungen sehr gut informiert würden. Er gab zu, daß es schwierig sei, die Verschwiegenheit bei einer so großen Fraktion zu bewahren, bat aber, über die heute geführten Erörterungen absolutes Schweigen zu bewahren.)</p>
-				<p>In einer so schwierigen Situation, fährt er dann fort, sei es unmöglich, daß Verhandlungen von mehreren geführt würden, dies könne nur der Vorsitzende der Fraktion tun. Die Situation sei sehr ernst. Es sei Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> gelungen, in den beiden großen Ländern des Bundes eine Koalition ohne und gegen die CDU zustande zu bringen. Niemand hätte für möglich gehalten, daß SPD und FDP bei ihren so verschiedenen wirtschaftlichen Anschauungen zusammenfinden könnten. Diese Auffassung sei allerdings nicht mehr zu halten, offensichtlich sei zwischen ihnen jederzeit eine Koalition möglich, weil auf manchen Gebieten kultureller und religiöser Art zwischen ihnen eine größere Verwandtschaft bestehe als zwischen der FDP und der CDU.</p>
-				<p>Man müsse das System der ganzen Sache betrachten. Die Entwicklung habe sich schon bei einer leider zu wenig beachteten Rede Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> im März 1955 in Oldenburg angekündigt.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN010" type="comment"><p>Auf dem Parteitag der FDP am 26. 3. 1955 hatte der Parteivorsitzende erklärt, die FDP-Fraktion habe inkonsequent gehandelt, da sie wegen des von ihr bekämpften Saarabkommens nicht aus der Koalition ausgeschieden sei. Vgl. AdG 1955, S. 5093.</p></note></seg> Und wenn auch die Stuttgarter Tagung der FDP sich zurückhaltend zu den Fragen geäußert habe, so habe doch jetzt die Düsseldorfer Fraktion der FDP sich mit ihren 11 Punkten ausschließlich mit Fragen der Bundespolitik beschäftigt<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN011" type="comment"><p>Der FDP-Landesverband Nordrhein-Westfalen hatte am 9. 2. 1956 11 Gründe für sein Verhalten veröffentlicht, in: AdG 1956, S. 5643.</p></note></seg> und es sei nichts bekannt geworden, daß daraufhin etwa der Vorstand der FDP eingegriffen habe, um die Herren auf das Gebiet der Landespolitik zurückzuführen. Man habe sich darauf beschränkt, Dr. <name type="Person" role="Erwaehnung" ref="#BeckerMax_1949-09-07">Becker</name> und Frau Dr. <name type="Person" role="Erwaehnung" ref="#LuedersMarie-Elisabeth_1953-10-06">Lüders</name> als Beobachter nach Düsseldorf zu schicken und es sei – allerdings ohne Gewähr – berichtet worden, daß beide nachher der Fraktion der FDP ihre Anerkennung ausgesprochen hätten über ihre einmütige und feste Haltung. In dieser Fraktionssitzung sei jeder einzelne öffentlich gefragt worden, ob er für oder gegen eine Regierungsumbildung sei, so daß die Abgeordneten für die spätere geheime Abstimmung festgelegt gewesen seien. Heute werde nun die FDP-Bundestagsfraktion zu den ganzen Vorgängen Stellung nehmen.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN012" type="comment"><p>In der FDP-Fraktionssitzung standen sich zwei Gruppen gegenüber: Die Ministergruppe mit <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name> scheiterte damit, ein Bekenntnis zur Außenpolitik der Bundesregierung durchzusetzen. Angenommen wurde ein Antrag, der die Fortsetzung der Koalition aufgrund einer Punktation vom Dezember 1955, die vor allem regelmäßige Koalitionsgespräche gefordert hatte, (vgl. Lange S. 664f.) in Aussicht stellte. In den folgenden Tagen brach die Fraktion auseinander. Am 23. 2. 1956 gaben 16 FDP-Abgeordnete ihren Parteiaustritt bekannt. Vgl. Wengst, Dehler, S. 287f. und Wengst, FDP-Bundesvorstand 1954–1960, S. 145.</p></note></seg> Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe sich in Siegerstimmung gezeigt, aber gebeten, keine Siegesfanfare zu blasen. Auch habe man in der FDP-Fraktion Sorgen, ob das Bekanntwerden dieser Vorgänge nicht der DP Vorteile bringen werde.</p>
-				<p>Die ganze Sache sei um so bedenklicher, weil sie in eine außenpolitische Spannung hineinfalle, wie sie seit 1949 nicht größer gewesen sei. Er wolle nur an Frankreich erinnern und an die Labilität der dortigen parlamentarischen Verhältnisse. Die französische Regierung habe erklärt, daß zwar Sowjetrußland den Freundschaftsvertrag mit Frankreich gekündigt habe, daß sich Frankreich aber trotzdem an diesen Vertrag gebunden halte. Inhalt dieses Vertrages sei aber ein gegenseitiges Beistandsversprechen gegenüber Deutschland. Es sei bekannt geworden, daß der Verfasser dieser Erklärung im Quai d’Orsay einer der engsten Mitarbeiter von <name type="Person" role="Erwaehnung" ref="#MendèsFrancePierre">Mendès France</name> sei. In Italien sei die kommunistische Gefahr außerordentlich groß. Der ganze vordere Orient gleiche einem Pulverfaß, in das aus Zufall oder mit Absicht ein Funken fallen könne. Noch immer stehe nicht fest, ob <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> wieder kandidiere und wenn auch die Demokraten erklärt hätten, sie würden die gleiche Außenpolitik treiben wie die Republikaner, so sei doch ein Austausch sämtlicher Botschafter zu erwarten, und mit den neuen Leuten kämen neue Ansichten, abgesehen davon, daß bis zu den Wahlen die amerikanische Außenpolitik sowieso viel zurückhaltender sein werde als bisher.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN013" type="comment"><p><name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> erklärte am 29. 2. 1956 seine erneute Kandidatur für die Präsidentschaft und wurde im Dezember 1956 wiedergewählt. Vgl. AdG 1956, S. 5654, 6094 und 6175.</p></note></seg> In Deutschland stehe man vor den Bundestagswahlen 1957. Wenn bei diesen der SPD ein entscheidender Einfluß zufallen würde, dann würde der Neutralismus einen großen Fortschritt erzielen, dann wären die Ziele der Russen greifbar nahe.</p>
-				<p>Ausgerechnet in einem solchen Augenblick größter Gefahr habe Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> schon im Dezember im außenpolitischen Ausschuß seiner Partei einen Beschluß fassen lassen, der vollkommen mit der Haltung der SPD in Fragen der Haltung gegenüber Sowjetrußland übereinstimme. Dieser Beschluß sei in der demokratischen Korrespondenz veröffentlicht worden.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN014" type="comment"><p>Am 17. 11. 1955 hatte fdk berichtet, daß der außenpolitische Ausschuß der FDP »einmütig zu der Überzeugung [gekommen sei], daß die Frage der Wiedervereinigung stärker denn je als innerdeutsche Verpflichtung empfunden werden müsse [… und …] mit größter Beschleunigung das Gespräch mit Moskau aufgenommen« werden müsse.</p></note></seg></p>
-				<p>In der FDP von Nordrhein-Westfalen habe sich eine ganze Reihe früherer Nazis angesiedelt, Dr. <name type="Person" role="Erwaehnung" ref="#NaumannWerner">Naumann</name><seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN015" type="comment"><p>Werner <name type="Person" role="Erwaehnung" ref="#NaumannWerner">Naumann</name>, wegen der Gründung nationalsozialistischer Organisationen 1953 in Haft, war zwar nicht Mitglied der FDP, stand aber über <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> mit ihr in Kontakt. Vgl. Stöss, S. 340.</p></note></seg>, Dr. <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name>, <name type="Person" role="Erwaehnung" ref="#DoeringWolfgang_1957-10-15">Döring</name>, <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name><seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN016" type="comment"><p>Vom Bearbeiter korrigiert aus: Zobelmann.</p></note></seg>, <name type="Person" role="Erwaehnung" ref="#RammsEgonWilhelmTheodor_1957-10-15">Ramms</name><seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN017" type="comment"><p>Vom Bearbeiter korrigiert aus: Rahn.</p></note></seg>. Diese Leute mit starken Ellenbogen wüßten von früher her, wie eine Minderheit eine Majorität zu ihrem Willen zwingen könne. Offenbar gehe es diesen Leuten darum, bei der nächsten Bundestagswahl zusammen mit der SPD eine Mehrheit zu bilden. Die Agitation dafür betreibe man mit der Saarfrage und mit der Frage der Wiedervereinigung, wobei davon ausgegangen werde, daß die wirtschaftliche Struktur der Bundesrepublik der der Deutschen Demokratischen Republik angeglichen werden sollte. Diese Gedanken, die absolut zu den Gedankengängen eines Mannes paßten, der aufgewachsen ist und gelebt hat in Ideen des Nationalsozialismus, sollten zeigen, in welchen Gefahren wir tatsächlich schwebten.</p>
-				<p>Was sei nun zu tun? Gewiß wolle man das erste Wort von der FDP abwarten, aber man solle auch nicht zu lange warten. Die FDP habe eine Minderheit, die diesen Kurs nicht wolle. Inwieweit diese Minderheit die Kraft besitze, entweder sich durchzusetzen oder aber Schlüsse anderer Art zu ziehen, müsse man abwarten. Aber man solle nicht zu lange warten. Die Anhänger der CDU im Lande hätten ein Recht darauf, daß die CDU gegenüber solchen Ereignissen offen und gerade heraus Stellung nehme. Er habe deswegen als Vorsitzender der CDU deren Vorstand auf den Freitag dieser Woche eingeladen<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN018" type="comment"><p>Siehe Nr. 234, 6.</p></note></seg> auch aus der Überlegung, daß diese Dinge weit über den Rahmen der Fraktion hinausgingen und er wäre auch dankbar, wenn die CSU ebenfalls entsprechend Stellung nehmen würde.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN019" type="comment"><p>Die CSU-Correspondenz veröffentlichte am 28. 2. 1956 zwei Artikel zu dem Sachverhalt, die deutliche Kritik übten und die Empfehlung aussprachen, die bundespolitische Koalition nur mit dem loyalen Teil der FDP fortzuführen. »Die Zukunft wird die Entbehrlichkeit der FDP nur noch deutlicher machen. Der politische Wert der FDP war lange genug zu hoch veranschlagt.«.</p></note></seg> Man solle nun der Presse sagen, daß man sich mit den Fragen beschäftigt habe, erkennen lassen, daß man den vollen Ernst der Sache verstehe und daß man es sich nicht gefallen lasse, wenn so verfahren werde, wie das in Nordrhein-Westfalen mit <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> geschehen sei. Auch müsse man den föderalistischen Gedanken gegen den Mißbrauch verteidigen, der jetzt mit ihm getrieben werde.</p>
-				<p>Wenige Monate sei es nun her, daß die Souveränität wiedergewonnen worden sei und nun müsse das deutsche Volk zeigen, was es mit ihr anzufangen wisse. Man könne nur tief betrübt sein, wenn man sehe, wie gewisse Parteien mit der wiedererlangten Freiheit umgingen. Die Folgen solcher Handlungen hätte man deutlich im »Manchester Guardian« ablesen können: Es sei ein Schock für diejenigen, die geglaubt hätten, daß die Demokratie in Westdeutschland Fortschritte gemacht habe und fest verankert sei.</p>
-				<p>Er habe heute mit dem Botschafter in Washington über die Lage in der Welt und in den USA gesprochen und dieser habe dabei dringend gebeten, alles mögliche zu tun, um durch eine möglichst schnelle Verabschiedung des Soldatengesetzes das Vertrauen in die Bundesrepublik in der westlichen Welt zu festigen. Dies sei die einzige Möglichkeit, den in Washington durch die Düsseldorfer Vorgänge entstandenen Schock wieder auszugleichen und das entstandene Mißtrauen zu beseitigen. Er bitte die Fraktion, mit der Erledigung dieser Dinge voranzumachen. Man solle immer daran denken, daß die CDU-Fraktion, nachdem sie durch die Wahl des Jahres 1953 die Mehrheit im Bundestag erhalten habe, die Verantwortung vor der Geschichte und dem Volk trage dafür, ob sie es verstehe und den Mut habe, im geeigneten Augenblick von dieser Mehrheit Gebrauch zu machen.</p>
-				<p><name type="Person" role="Sprecher" ref="#GockelnJosef_1949-09-07">Gockeln</name> betrachtet die Vorgänge als eine Enthüllung längst vorbereiteter Entwicklungen. Die Ideologien der Parteien hätten sich verändert und also auch ihre Koalitionsfähigkeiten. Heute könne man in der SPD-Presse lesen, daß die Vorgänge in Düsseldorf der Testfall für Überlegungen nach der Wahl von 1957 seien. Die FDP behaupte nun, sie habe aus Notwehr gehandelt, weil das Verhältnis zwischen den Koalitionsparteien nicht mehr dem fairen Spiel einer Gemeinschaft entspreche. Dafür führten sie Einzelheiten an. Aber aus dieser Anklage gestalteten sie geradezu eine politisch-ethische Formel: Die CDU sei stark und diese Stärke sei eine Gefahr. Die CDU habe eine Herrschaftsidee entwickelt und das gefährde die Demokratie. Man sei auf dem Weg zu einem Einparteienstaat, und wenn dies eintrete, sei es aussichtslos, die Verhältnisse noch einmal zu verändern. Da sie bei dieser Ideologie keine andere Wirkungsmöglichkeit gehabt hätte, sei ihnen nur dieser Gegenschlag übriggeblieben, zu dem sie also genötigt gewesen seien. Es müsse nicht erst gesagt werden, wie sehr ein Vorwand benützt werden könne, um Motive zu verdecken und Absichten zu verwirklichen. Es sei nur die Frage, wie weit man dem Gegner gestatte, diese verdeckte Motivierung durchzuführen.</p>
-				<p>Diese Vorgänge gäben Anlaß, darüber nachzudenken, daß es außer Deutschland kein Land der Welt gäbe, das zwei oder drei an der Legislative beteiligte Organe habe. Jede Bundesregierung, die ein Gesetz schaffe, rufe unmittelbar den Konflikt mit den beteiligten Exekutivorganen auf den Plan. Daher diese Spekulation, auf dem Weg über den Bundesrat den Sturm zu riskieren und Macht geltend zu machen. Dieser Weg ergäbe sich logisch aus den Fakten der Verfassung.</p>
-				<p>Nun sei es allerdings nicht so, daß die Düsseldorfer Regierung nur ein Opfer der Bonner Politik geworden sei, auch in der Landespolitik gäbe es einige entscheidende Momente; zu sehr habe man sich darauf verlassen, daß es ohne die CDU nicht ginge und habe dann feststellen müssen, daß alles ohne sie schon fertig gewesen sei. Deshalb sei es auch nicht mehr gelungen, die oppositionellen Gruppen gegeneinander auszuspielen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bezeichnet es als unrichtig, wenn man in Düsseldorf meine, Mißtrauen gegen die Führung in Bonn sei irgendwie im Spiele gewesen. Zwischen Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe eine gründliche Aussprache über das Wahlrecht stattgefunden und diese Sache sei in Ordnung gewesen.<seg type="note"><note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN020" type="comment"><p>Am 1. und 2. 2. 1956. Vgl. Wengst, Dehler, S. 284f.</p></note></seg> Was aber in Düsseldorf geschehen sei, sei über ein Jahr vorbereitet gewesen.</p>
-				<p>Was die Rolle des Bundesrates anbelange, so habe er im Parlamentarischen Rat zwei Häuser und daneben den Bundesrat verlangt, um die Interessen der Länder beim Bund zur Geltung zu bringen. Das habe aber die damalige CDU-Fraktion abgelehnt.</p>
-				<p>Präsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betont, daß die CDU jetzt ihre Stunde habe, in der sie Zusammenhalten müsse. Bis jetzt habe man in einer Koalition gestanden und vielleicht mehr, als es dem Profil unserer Partei angemessen gewesen sei, Rücksicht genommen. Man habe dies getan, weil es notwendig war, aber auch dort, wo es um die Weiterführung alter menschlicher Verbindungen gegangen sei. Das letztere müsse nun zurücktreten und man müsse sehen, wie man aus der Situation herauskomme. Es höre der Spaß auf, wenn man verlange, die Verabschiedung des Wahlgesetzes zwischen die zweite und dritte Lesung der Wehrgesetze zu schieben. Eine solche Forderung sei unerhört, und man müsse ein deutliches Wort dazu sagen.</p>
-				<p>Leider könne man in diesem Bundestag nicht noch eine Grundgesetzänderung machen, sonst würde er beantragen, den unverzeihlichen Fehler der CDU im Parlamentarischen Rat wieder gutzumachen. Am 6. September 1953 habe das deutsche Volk eine Entscheidung von solcher Klarheit getroffen, wie sie in der Geschichte von Massenstaaten höchst selten sei, und nun müsse sich eine so zustande gekommene Regierung so mühsam durchringen, um den erklärten Willen des Volkes durchzusetzen. Immer bereite die Überwindung der aus der Exekutive kommenden Stimmen des Bundesrates unablässige Sorgen. Der damals gemachte Fehler müsse korrigiert werden. Auch die CSU brauche sich darüber nicht aufregen. Sicher müsse das nicht von heute auf morgen geschehen, aber das Gespräch darüber sei eröffnet.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> erklärt, daß er nicht eine Frage, die eine deutsche Frage sei, als eine bayerische Frage behandeln wolle. Gewiß könnten beim Bundesrat Konstruktionsfehler gemacht worden sein. Es könne aber auch Konstruktionsfehler der gegenwärtigen Politik geben.</p>
-				<p>Er wolle unterstreichen, wie der Bundeskanzler, daß es darauf ankäme, die Wehrgesetze so rasch wie möglich zu verabschieden. Nach diesem Obersatz müsse sich alles andere einordnen, damit keine Vertrauenskrise entstehe. Die anderen hätten so abgefeimt taktiert, daß sie die CDU nun tatsächlich in eine schwierige Lage gebracht hätten. Deshalb dürfe auch die Frage des Wahlgesetzes nicht in den Vordergrund gerückt werden, sondern mit Rücksicht auf die außenpolitische Lage müsse man eben manches schlucken, was nicht angenehm sei.</p>
-				<p>Das Thema Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> sei eine Frage für sich. Die FDP komme ihm vor wie ein warmer Kuhhaufen; wenn man hineintrete, fliege er auseinander. Aber als er auseinanderflog, sei er von der CDU schnell wieder zusammengeflickt worden. Jetzt sei es notwendig, zu tun, was im Interesse des deutschen Vaterlandes geschehen müsse.</p>
-				<p><name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name> greift zurück auf die Bemerkung des Bundeskanzlers über die Verschwiegenheit in der Fraktion. Dazu wolle er ergänzen: Als er gestern um 19.15 Uhr durchs Restaurant gegangen sei, sei der Inhaber einer Korrespondenz auf ihn zugekommen und habe ihm gesagt, was er aus der Vorstandssitzung wisse; es habe dort drei Strömungen gegeben usw. Dies wolle er nur zur Ergänzung bemerken.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> glaubt, daß die negativen Auswirkungen der Düsseldorfer Vorgänge leichter überwunden werden könnten, wenn man innenpolitisch eine stärkere Aktivität entwickele. Was der Bundeskanzler über die außenpolitische Situation sage, sei sicher richtig. Aber die Bevölkerung spreche nicht darüber. Ihre Interessen richteten sich auf andere Dinge. Die Bundesregierung müsse allmählich mit ihrer innenpolitischen Aktivität beginnen, konkrete Vorschläge machen und sie verwirklichen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BartramWalter_1952-05-13">Bartram</name> betrachtet die Düsseldorfer Vorgänge als Beginn der Wahlschlacht. Dabei sei zu bemerken, daß die Parteiorganisation der CDU nicht stärker, sondern schwächer geworden sei und daß es höchste Zeit sei, dafür mehr zu tun.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> bezeichnet die Koalition in Düsseldorf als auf kulturpolitischem, ja antikatholischem Boden gewachsen. Damit komme die FDP aber in die Schwierigkeit, unter Umständen einen Wahlkampf unter dem Zeichen des Kulturkampfes führen zu müssen.</p>
-				<p>Das Junktim zwischen Wahlgesetz und Soldatengesetz sei abzulehnen. Wenn Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> eine solche Forderung erhebe, müsse man ihm klar machen, daß er einer der stärksten Befürworter der Militarisierung gewesen sei und daß er den Wahlkampf mit Nazis und Militaristen bestritten habe. Nun solle man ihn ruhig in die Verlegenheit bringen, das Soldatengesetz abzulehnen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> greift das Thema Bundesrat noch einmal auf. Es sei klar, daß die Konstruktion des Föderalismus nicht mehr als sakrosankt angesehen werden könne. Die Debatte darüber sei eröffnet.</p>
-				<p>Die Forderung Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mendes</name> nach einem Junktim zwischen Wahlgesetz und Wehrgesetzen sollte man im Ältestenrat glatt ablehnen. Mit weiteren Manipulationen gewinne man nichts außenpolitisch und nichts innenpolitisch.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet, doch nicht die Situation dadurch zu verschärfen, daß man die Frage der Struktur des Bundes in die Debatte bringe.</p>
-				<p><name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> greift das von Präsident Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> angeschnittene Thema wieder auf; auch er sei der Meinung, daß der Bundesrat nicht alles gehalten habe, was man von ihm erwartet habe. Er entwickele sich zu einer Art Nebenregierung. Aber man dürfe nicht den Stab über die Institution als solche brechen. An seinem Versagen sei man auch selber mit schuld, und der Bundeskanzler sei der Bahnbrecher dieser Entwicklung gewesen. Er habe als Erster angefangen, in den Ländern die Gleichschaltung einzuführen. Es müsse möglich sein, dies offen und ehrlich auszusprechen. Es sei notwendig, das zu sagen, um nicht zu vorschnellen Urteilen zu kommen.</p>
-				<p>Anlaß zu dieser Debatte sei sicher das sogenannte Grabensystem gewesen. Er könne nicht begreifen, warum die CDU wegen dieser Frage eine so schlechte Presse gehabt habe. Er könne nicht einsehen, wozu es ein Bundespresse- und Informationsamt mit einem Geheimtitel von mehr als 14 Mio. DM gäbe, wegen deren man Jahr für Jahr größte Angriffe hinnehmen müsse, wenn dann nichts geschehe. Hier müsse man anfangen; man könne noch so fleißig und noch so laut reden, wenn die Presse nicht mitgehe, gewinne man nicht an Einfluß. Auf diese Dinge müßte der Bundeskanzler und auch Dr. <name type="Person" role="Erwaehnung" ref="#GlobkeHans">Globke</name> aufmerksam gemacht werden, denn hier sei offenbar etwas nicht in Ordnung.</p>
-				<p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> fragt, wieso die CDU denn selbst schuld sei an diesen Dingen. Die eingetretene Situation hätte nicht sein müssen, wenn man nicht den Bogen in einem gewissen Zeitpunkt überspannt hätte. Nun solle man sich davor hüten, ihn noch einmal zu überspannen. Sicher sei es leicht zu sagen, man werde sich den Forderungen der FDP nicht beugen. Man solle aber dann auch die Folgen bedenken. Wolle man herausfordern, daß sich die Düsseldorfer Vorgänge in anderen Ländern wiederholen?</p>
-				<p><name type="Person" role="Sprecher" ref="#DonhauserAnton_1949-09-07">Donhauser</name> glaubt, daß die meisten Mitglieder der Fraktion vom Verlauf der Debatte unbefriedigt seien, weil die Frage noch nicht richtig beantwortet sei, was nun geschehen solle. Der Bundeskanzler habe wenigstens die außenpolitische Seite beleuchtet, aber innenpolitisch sei keine Lösung angedeutet. Scharf wolle er sich gegen die vom Bundestagspräsidenten geäußerten Absichten im Hinblick auf das Grundgesetz wenden. Hier lägen Gefahren, die gerade für die CDU/CSU von größter Bedeutung seien. Der liberale Kitt, der SPD und FDP zusammenfüge, wenn das Grundgesetz in zentralistischem Sinne geändert würde, werde eine Situation herbeiführen, die für die CDU/ CSU auf Jahrzehnte jede Hoffnung begrabe, die Schaltstellen wieder in die Hand zu bekommen.</p>
-				<p>Auf dem innenpolitischen Gebiet sehe er die Möglichkeit, sozialpolitisch stärker tätig zu sein. Mit einer zielsicheren Sozialpolitik werde man die FDP entweder auseinanderreißen oder zu einer erheblichen Kompromißbereitschaft zwingen können.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet noch einmal, die schwierige Situation nicht mit der Frage des Föderalismus zu belasten.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> erblickt in den Düsseldorfer Vorgängen einen Vorstoß in die Weltanschauungsparteien hinein. Der Vorgang zeige, daß weite Kreise kein Verständnis dafür hätten, daß Politik aus Weltanschauung gemacht werde, sondern sie lieber aus Zweckmäßigkeitsgründen behandelt sähen. Man müsse sich nun fragen, ob man der Meinung bleiben wolle, daß die CDU eine Notwendigkeit sei oder ob es auch die Möglichkeit gäbe, eine Politik zu führen, die von Fall zu Fall aus Zweckmäßigkeitsgründen entscheide und danach die notwendige Koalition bilde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> verneint die Frage, daß es sich um einen Kampf gegen die Weltanschauungsparteien handele. Der Kampf richte sich gegen die Vormachtstellung der CDU. Dabei seien alle Argumente recht. Gleichzeitig beginne ja ein systematischer Kampf gegen die Mitarbeiter des Kanzlers, den man so herunterzusetzen versuche, daß das Volk zur Auffassung kommen solle, man müsse die Vormachtstellung der CDU und dieses Mannes brechen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> stimmt der Auffassung von Frau Dr. <name type="Person" role="Erwaehnung" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> zu. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe immer wieder bestritten, daß es im politischen Raum einen Raum für weltanschauliche Parteien geben dürfe. Erst am Samstag habe er wieder die Notwendigkeit einer liberalen Partei herausgestellt und die von christlichen Parteien bestritten.</p>
-				<p>Die Vereinbarungen über das Wahlrecht bestünden ja immer noch. Hier sei ein Grund gegeben, um die Forderung nach einem Junktim zwischen Wahlrecht und Wehrgesetzen zurückzuweisen. Schließlich gäbe es ja auch noch eine Selbstachtung, gegen die man nicht verstoßen dürfe.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> glaubt, daß gewisse Verzögerungen in den Wehrfragen auch dadurch entstünden, daß man auch die letzten demokratischen Sicherungen noch einbauen wolle. Man solle lieber darauf achten, daß man rechtzeitig zu einem Ergebnis komme.</p>
-				<p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> fragt, ob man überhaupt noch den Versuch machen solle, mit der FDP Koalitionsverhandlungen zu führen. Wenn nein, sei die Sache klar, wenn ja, müsse man überlegen, was man tue. Die FDP habe sich trotz Nordrhein-Westfalen bereit erklärt, die Koalition fortzuführen. Solle man nun die Situation dadurch hoffnungslos machen, daß man sich nicht darauf einlasse, das Wahlgesetz zu behandeln? Es sei notwendig, sofort mit der FDP die Situation abzuklären, sonst lasse sie sich vielleicht nicht mehr befriedigend regeln.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> glaubt, daß in dieser Sitzung ein endgültiger Beschluß gefaßt werden könne. Man müsse zwischen der Frage Wahlgesetz und Soldatengesetz und der Frage Koalitionsfortführung unterscheiden. Letztere müsse man noch einmal in aller Ruhe überlegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#JostenJohannPeter_1953-10-06">Josten</name> meint, das größte Leid sei das, das man sich selbst antue. Ganz unschuldig an der Entwicklung der letzten Monate sei man nicht. Seit langem habe die Junge Union darauf hingewiesen, daß es zweckmäßig wäre, in den Ländern Koalitionen mit der SPD einzugehen. Aber das sei ja immer überhört worden. Nun sei die gegebene Lage entscheidend. Die Durchsetzung der Grundgesetzänderungen halte er für notwendig, und er wolle hier einmal ein Wort des Dankes an Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> sagen; dessen Gedanken müßten nun verwirklicht werden.</p>
-				<p>Josef <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> fragt, ob es richtig sei, daß bei den Koalitionsverhandlungen 1953 zwischen der CDU/CSU und der FDP vereinbart worden sei, das Wahlrecht von 1953 wieder zu bringen. Dies habe ihm <name type="Person" role="Erwaehnung" ref="#SchloßHanns_1953-10-06">Schloß</name> (FDP) erzählt. Er bitte um Klarstellung, ob diese Behauptung zutreffe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bezieht sich zunächst auf den Fraktionsbeschluß vom 2. 2. 1956. Auf Zwischenruf bemerkt er dann, daß vom Bundeskanzler vereinbart worden sei, ein faires Wahlrecht zu schaffen, das heißt, ein faires Wahlrecht für alle Koalitionsparteien. Sonst sei nichts vereinbart worden.</p>
-				<p>Dann schließt er die Sitzung um 18.10 Uhr.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-02-21-t1545_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1007/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 21. Februar 1956</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>9 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1956-02-21">
+               <time type="start" when="15:45:00"/>
+               <time type="end" when="18:10:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="WN" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1956-02-21-t1545_EP_SVP-1" corresp="#cdu-csu-02_1956-02-21-t1545_EP_div_SVP-1">A. TOP 1: Aus dem Ältestenrat. – TOP 2: Regierungswechsel in Nordrhein-Westfalen, Koalitionskrise und Wahlrecht. – TOP 3: . – TOP 4: . – TOP 5: . – TOP 6: . – TOP 7: . – TOP 8: . – TOP 9: . – TOP 10: . – TOP 11: . – TOP 12: . – TOP 13: . – TOP 14: . – TOP 15: . – TOP 16: . – TOP 17: .</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1956-02-21-t1545_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. [Aus dem Ältestenrat]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet, daß im Ältestenrat noch keine Einigung über die endgültige Behandlung des Soldatengesetzes und der Verfassungsänderungen erzielt sei. Von seiten der FDP und der SPD würden große Schwierigkeiten bereitet. Eine weitere Sitzung sei für Donnerstag vorgesehen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN001" type="comment">
+                     <p>Wegen des Junktims von Grundgesetzänderung und Wahlgesetz, das der FDP-Vertreter in der Sitzung des Ältestenrates am Morgen eingeführt hatte, konnte der Ältestenrat auch am 23. 2. 1956 keinen Beschluß fassen. Vgl. die Kurzprotokolle der 103. und 105. Sitz. des Ältestenrates (Parl. Arch., Ältestenrat). Siehe auch Nr. 234, 6.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bemerkt dazu, daß ihm Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> schon vor Wochen erklärt habe, daß für die FDP die Verabschiedung des Soldatengesetzes von der Verabschiedung des Wahlrechts abhängig sei. Es bestehe ein innerer Zusammenhang zwischen beiden Fragenkomplexen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> berichtet über ein Gespräch zu den Wehrgesetzen, an dem <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name>, <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>, <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> und er selbst beteiligt gewesen seien.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN002" type="comment">
+                     <p>Siehe ebd., 2.</p>
+                  </note>
+               </seg> Bei sehr sachlicher Verhandlungsweise sei man noch nicht zu einer endgültigen Klärung gekommen. Die offenen Fragen sollten in beiden großen Fraktionen noch behandelt werden.</p>
+            <p>2. [Regierungswechsel in Nordrhein-Westfalen, Koalitionskrise und Wahlrecht]</p>
+            <p>Dann wendet sich Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> den Ereignissen in Düsseldorf<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN003" type="comment">
+                     <p>Siehe Nr. 232, Anm. 3.</p>
+                  </note>
+               </seg> zu und bringt seine Überzeugung zum Ausdruck, daß diese Aussprache von großer Bedeutung für die Fraktion, die Partei und für den Weg der ganzen Politik sein werde. Ministerpräsident <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> sei gebeten worden teilzunehmen, habe aber keine Gelegenheit dazu, weil er einen Vertreter der »Times« habe empfangen und dann sogleich wieder abfahren müssen. Es sei Pflicht der Fraktion, ihm Dank und Anerkennung für seine Arbeit auszusprechen. Neun Jahre habe er verantwortungsbewußt die Geschicke Nordrhein-Westfalens geführt. Nun sei er als Opfer nicht seiner Politik gestürzt worden und es sei die tragische Seite der Entscheidung, die gestern gefallen sei, daß sein Sturz sich gegen den Bundeskanzler und dessen Politik richte.</p>
+            <p>Daß es zu dieser Entscheidung in Düsseldorf gekommen sei, habe besonders an der Haltung der Fraktion beim Bundestagswahlgesetz gelegen. Dabei habe allerdings die CDU-Fraktion sich zu jedem Kompromiß mit der FDP bereit gezeigt, durch den auch der Bestand dieser Koalitionsfraktion gesichert gewesen wäre, und diese Bereitschaft habe man bis zum letzten zum Ausdruck gebracht. Hier handele es sich um die Fortsetzung eines Schauspiels, das vor ein paar Jahren in Württemberg begonnen habe, wenn es auch gelungen sei, diesen Vorgang später wieder zu korrigieren.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN004" type="comment">
+                     <p>Nach den Landtagswahlen in Baden-Württemberg am 9. 3. 1952 war eine Koalitionsregierung von SPD, FDP und BHE unter Reinhold <name type="Person" role="Erwaehnung" ref="#MaierReinhold_1953-10-06">Maier</name> gebildet worden, obwohl die CDU stärkste Fraktion geworden war (vgl. Ritter/Niehuss, S. 145). Nach der Bundestagswahl 1953 war <name type="Person" role="Erwaehnung" ref="#MaierReinhold_1953-10-06">Maier</name> zurückgetreten und Gebhard <name type="Person" role="Erwaehnung" ref="#MuellerGebhard_1953-10-06">Müller</name> von der CDU führte seitdem eine große Koalition an (vgl. Schwarz, Ära Adenauer 1949–1957, S. 171 und 195).</p>
+                  </note>
+               </seg> Dann sei Bayern gefolgt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN005" type="comment">
+                     <p>Siehe Nr. 114, 2.</p>
+                  </note>
+               </seg> Hier hätten sich Kräfte gefunden, die aus Prinzip gegen die CDU stünden und sich anschickten, diese Fragen nun auch auf Bundesebene anzupacken.</p>
+            <p>Die CDU-Fraktion habe am 2. Februar beschlossen, daß auf der Basis eines Wahlrechts wie 1953 weiter verhandelt werden könne, wenn auch in der Frage der Koalitionspolitik in Bund und Ländern eine Einigung zu erzielen sei.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN006" type="comment">
+                     <p>Siehe Nr. 230, 2.</p>
+                  </note>
+               </seg> Einen gleichen Beschluß habe die FDP-Fraktion am 3. 2. gefaßt. Auf der Stuttgarter Tagung haben Bundesparteivorstand und Ausschuß der FDP den gleichen Standpunkt eingenommen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN007" type="comment">
+                     <p>Siehe Nr. 228, Anm. 3.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Frage des Wahlgesetzes sei mit der FDP bisher nicht weiter behandelt, sondern bis nach der Entscheidung von Düsseldorf zurückgestellt worden. Dort seien die Dinge allerdings entgegen den übrigen Beschlüssen der FDP und ihrer Organe in einem Sinne weitergeführt worden, der nichts anderes bedeute, als die Politik der Bundesregierung von den Ländern her aufzurollen. Die Sozialisten und die nationalistische Richtung der FDP spielten dort zusammen und man versuche, auf dieser Basis auch eine Front im Bundesrat zu bilden. Man habe dies bei der Debatte in Düsseldorf sehr deutlich zum Ausdruck gebracht und die Antwort, daß »die Schlacht im falschen Saale geführt werde«<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN008" type="comment">
+                     <p>Zitat <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnolds</name> aus der Debatte zum konstruktiven Mißtrauensvotum gegen ihn am 16. 2. 1956. Vgl. LT NRW, Sten. Ber, 3.Wp., 32. Sitz., S. 1020.</p>
+                  </note>
+               </seg>, habe durchaus den Sachverhalt getroffen. Man müsse bedenken, daß ähnliche Ereignisse auch in anderen Ländern möglich seien. Die FDP-Fraktion im Bundestag habe allerdings gestern erklärt, daß sie bereit sei, die Koalitionspolitik fortzusetzen, während die Düsseldorfer FDP die Politik des Bundeskanzlers mit allen Mitteln bekämpfen wolle.</p>
+            <p>Bezeichnend sei, daß die FDP im Ältestenrat beantragt habe, das Wahlgesetz vor der dritten Lesung des Soldatengesetzes zu verabschieden. Dagegen habe die CDU scharf Stellung genommen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN009" type="comment">
+                     <p>Siehe Anm. 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> berichtet, daß er zuerst vor einem Jahr durch <name type="Person" role="Erwaehnung" ref="#JohnenWilhelm">Johnen</name> gehört habe, daß zwischen der FDP und der SPD in Düsseldorf Verhandlungen über eine neue Regierungsbildung stattgefunden hätten. Man sei aber damals der Ansicht gewesen, daß ein Mitglied der FDP jedenfalls für <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> stimmen werde, so daß sich ein Stimmenverhältnis von 100:100 ergäbe. In diesem Glauben sei man weiter geblieben und habe sogar in den letzten Tagen noch angenommen, daß drei SPD-Mitglieder für <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> stimmen würden. Auch habe man angenommen, daß das Zentrum geschlossen hinter <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> stehen werde. Er habe gelegentlich Dr. <name type="Person" role="Erwaehnung" ref="#MiddelhauveFriedrich_1949-09-07">Middelhauve</name> vorgehalten, daß er mit der SPD verhandelt habe. Dieser habe jedoch ehrenwörtlich versichert, daß dies nicht zutreffe und habe sich auch jetzt nicht an den Verhandlungen beteiligt.</p>
+            <p>(Hier schaltet der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> ein, daß er von Herren der Presse erfahren habe, daß diese von Mitgliedern der Fraktion über die internen Vorgänge in den Fraktionssitzungen sehr gut informiert würden. Er gab zu, daß es schwierig sei, die Verschwiegenheit bei einer so großen Fraktion zu bewahren, bat aber, über die heute geführten Erörterungen absolutes Schweigen zu bewahren.)</p>
+            <p>In einer so schwierigen Situation, fährt er dann fort, sei es unmöglich, daß Verhandlungen von mehreren geführt würden, dies könne nur der Vorsitzende der Fraktion tun. Die Situation sei sehr ernst. Es sei Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> gelungen, in den beiden großen Ländern des Bundes eine Koalition ohne und gegen die CDU zustande zu bringen. Niemand hätte für möglich gehalten, daß SPD und FDP bei ihren so verschiedenen wirtschaftlichen Anschauungen zusammenfinden könnten. Diese Auffassung sei allerdings nicht mehr zu halten, offensichtlich sei zwischen ihnen jederzeit eine Koalition möglich, weil auf manchen Gebieten kultureller und religiöser Art zwischen ihnen eine größere Verwandtschaft bestehe als zwischen der FDP und der CDU.</p>
+            <p>Man müsse das System der ganzen Sache betrachten. Die Entwicklung habe sich schon bei einer leider zu wenig beachteten Rede Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> im März 1955 in Oldenburg angekündigt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN010" type="comment">
+                     <p>Auf dem Parteitag der FDP am 26. 3. 1955 hatte der Parteivorsitzende erklärt, die FDP-Fraktion habe inkonsequent gehandelt, da sie wegen des von ihr bekämpften Saarabkommens nicht aus der Koalition ausgeschieden sei. Vgl. AdG 1955, S. 5093.</p>
+                  </note>
+               </seg> Und wenn auch die Stuttgarter Tagung der FDP sich zurückhaltend zu den Fragen geäußert habe, so habe doch jetzt die Düsseldorfer Fraktion der FDP sich mit ihren 11 Punkten ausschließlich mit Fragen der Bundespolitik beschäftigt<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN011" type="comment">
+                     <p>Der FDP-Landesverband Nordrhein-Westfalen hatte am 9. 2. 1956 11 Gründe für sein Verhalten veröffentlicht, in: AdG 1956, S. 5643.</p>
+                  </note>
+               </seg> und es sei nichts bekannt geworden, daß daraufhin etwa der Vorstand der FDP eingegriffen habe, um die Herren auf das Gebiet der Landespolitik zurückzuführen. Man habe sich darauf beschränkt, Dr. <name type="Person" role="Erwaehnung" ref="#BeckerMax_1949-09-07">Becker</name> und Frau Dr. <name type="Person" role="Erwaehnung" ref="#LuedersMarie-Elisabeth_1953-10-06">Lüders</name> als Beobachter nach Düsseldorf zu schicken und es sei – allerdings ohne Gewähr – berichtet worden, daß beide nachher der Fraktion der FDP ihre Anerkennung ausgesprochen hätten über ihre einmütige und feste Haltung. In dieser Fraktionssitzung sei jeder einzelne öffentlich gefragt worden, ob er für oder gegen eine Regierungsumbildung sei, so daß die Abgeordneten für die spätere geheime Abstimmung festgelegt gewesen seien. Heute werde nun die FDP-Bundestagsfraktion zu den ganzen Vorgängen Stellung nehmen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN012" type="comment">
+                     <p>In der FDP-Fraktionssitzung standen sich zwei Gruppen gegenüber: Die Ministergruppe mit <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name> scheiterte damit, ein Bekenntnis zur Außenpolitik der Bundesregierung durchzusetzen. Angenommen wurde ein Antrag, der die Fortsetzung der Koalition aufgrund einer Punktation vom Dezember 1955, die vor allem regelmäßige Koalitionsgespräche gefordert hatte, (vgl. Lange S. 664f.) in Aussicht stellte. In den folgenden Tagen brach die Fraktion auseinander. Am 23. 2. 1956 gaben 16 FDP-Abgeordnete ihren Parteiaustritt bekannt. Vgl. Wengst, Dehler, S. 287f. und Wengst, FDP-Bundesvorstand 1954–1960, S. 145.</p>
+                  </note>
+               </seg> Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe sich in Siegerstimmung gezeigt, aber gebeten, keine Siegesfanfare zu blasen. Auch habe man in der FDP-Fraktion Sorgen, ob das Bekanntwerden dieser Vorgänge nicht der DP Vorteile bringen werde.</p>
+            <p>Die ganze Sache sei um so bedenklicher, weil sie in eine außenpolitische Spannung hineinfalle, wie sie seit 1949 nicht größer gewesen sei. Er wolle nur an Frankreich erinnern und an die Labilität der dortigen parlamentarischen Verhältnisse. Die französische Regierung habe erklärt, daß zwar Sowjetrußland den Freundschaftsvertrag mit Frankreich gekündigt habe, daß sich Frankreich aber trotzdem an diesen Vertrag gebunden halte. Inhalt dieses Vertrages sei aber ein gegenseitiges Beistandsversprechen gegenüber Deutschland. Es sei bekannt geworden, daß der Verfasser dieser Erklärung im Quai d’Orsay einer der engsten Mitarbeiter von <name type="Person" role="Erwaehnung" ref="#MendesFrancePierre">Mendès France</name> sei. In Italien sei die kommunistische Gefahr außerordentlich groß. Der ganze vordere Orient gleiche einem Pulverfaß, in das aus Zufall oder mit Absicht ein Funken fallen könne. Noch immer stehe nicht fest, ob <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> wieder kandidiere und wenn auch die Demokraten erklärt hätten, sie würden die gleiche Außenpolitik treiben wie die Republikaner, so sei doch ein Austausch sämtlicher Botschafter zu erwarten, und mit den neuen Leuten kämen neue Ansichten, abgesehen davon, daß bis zu den Wahlen die amerikanische Außenpolitik sowieso viel zurückhaltender sein werde als bisher.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN013" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> erklärte am 29. 2. 1956 seine erneute Kandidatur für die Präsidentschaft und wurde im Dezember 1956 wiedergewählt. Vgl. AdG 1956, S. 5654, 6094 und 6175.</p>
+                  </note>
+               </seg> In Deutschland stehe man vor den Bundestagswahlen 1957. Wenn bei diesen der SPD ein entscheidender Einfluß zufallen würde, dann würde der Neutralismus einen großen Fortschritt erzielen, dann wären die Ziele der Russen greifbar nahe.</p>
+            <p>Ausgerechnet in einem solchen Augenblick größter Gefahr habe Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> schon im Dezember im außenpolitischen Ausschuß seiner Partei einen Beschluß fassen lassen, der vollkommen mit der Haltung der SPD in Fragen der Haltung gegenüber Sowjetrußland übereinstimme. Dieser Beschluß sei in der demokratischen Korrespondenz veröffentlicht worden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN014" type="comment">
+                     <p>Am 17. 11. 1955 hatte fdk berichtet, daß der außenpolitische Ausschuß der FDP »einmütig zu der Überzeugung [gekommen sei], daß die Frage der Wiedervereinigung stärker denn je als innerdeutsche Verpflichtung empfunden werden müsse [… und …] mit größter Beschleunigung das Gespräch mit Moskau aufgenommen« werden müsse.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der FDP von Nordrhein-Westfalen habe sich eine ganze Reihe früherer Nazis angesiedelt, Dr. <name type="Person" role="Erwaehnung" ref="#NaumannWerner">Naumann</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN015" type="comment">
+                     <p>Werner <name type="Person" role="Erwaehnung" ref="#NaumannWerner">Naumann</name>, wegen der Gründung nationalsozialistischer Organisationen 1953 in Haft, war zwar nicht Mitglied der FDP, stand aber über <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> mit ihr in Kontakt. Vgl. Stöss, S. 340.</p>
+                  </note>
+               </seg>, Dr. <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name>, <name type="Person" role="Erwaehnung" ref="#DoeringWolfgang_1957-10-15">Döring</name>, <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN016" type="comment">
+                     <p>Vom Bearbeiter korrigiert aus: Zobelmann.</p>
+                  </note>
+               </seg>, <name type="Person" role="Erwaehnung" ref="#RammsEgonWilhelmTheodor_1957-10-15">Ramms</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN017" type="comment">
+                     <p>Vom Bearbeiter korrigiert aus: Rahn.</p>
+                  </note>
+               </seg>. Diese Leute mit starken Ellenbogen wüßten von früher her, wie eine Minderheit eine Majorität zu ihrem Willen zwingen könne. Offenbar gehe es diesen Leuten darum, bei der nächsten Bundestagswahl zusammen mit der SPD eine Mehrheit zu bilden. Die Agitation dafür betreibe man mit der Saarfrage und mit der Frage der Wiedervereinigung, wobei davon ausgegangen werde, daß die wirtschaftliche Struktur der Bundesrepublik der der Deutschen Demokratischen Republik angeglichen werden sollte. Diese Gedanken, die absolut zu den Gedankengängen eines Mannes paßten, der aufgewachsen ist und gelebt hat in Ideen des Nationalsozialismus, sollten zeigen, in welchen Gefahren wir tatsächlich schwebten.</p>
+            <p>Was sei nun zu tun? Gewiß wolle man das erste Wort von der FDP abwarten, aber man solle auch nicht zu lange warten. Die FDP habe eine Minderheit, die diesen Kurs nicht wolle. Inwieweit diese Minderheit die Kraft besitze, entweder sich durchzusetzen oder aber Schlüsse anderer Art zu ziehen, müsse man abwarten. Aber man solle nicht zu lange warten. Die Anhänger der CDU im Lande hätten ein Recht darauf, daß die CDU gegenüber solchen Ereignissen offen und gerade heraus Stellung nehme. Er habe deswegen als Vorsitzender der CDU deren Vorstand auf den Freitag dieser Woche eingeladen<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN018" type="comment">
+                     <p>Siehe Nr. 234, 6.</p>
+                  </note>
+               </seg> auch aus der Überlegung, daß diese Dinge weit über den Rahmen der Fraktion hinausgingen und er wäre auch dankbar, wenn die CSU ebenfalls entsprechend Stellung nehmen würde.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN019" type="comment">
+                     <p>Die CSU-Correspondenz veröffentlichte am 28. 2. 1956 zwei Artikel zu dem Sachverhalt, die deutliche Kritik übten und die Empfehlung aussprachen, die bundespolitische Koalition nur mit dem loyalen Teil der FDP fortzuführen. »Die Zukunft wird die Entbehrlichkeit der FDP nur noch deutlicher machen. Der politische Wert der FDP war lange genug zu hoch veranschlagt.«.</p>
+                  </note>
+               </seg> Man solle nun der Presse sagen, daß man sich mit den Fragen beschäftigt habe, erkennen lassen, daß man den vollen Ernst der Sache verstehe und daß man es sich nicht gefallen lasse, wenn so verfahren werde, wie das in Nordrhein-Westfalen mit <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> geschehen sei. Auch müsse man den föderalistischen Gedanken gegen den Mißbrauch verteidigen, der jetzt mit ihm getrieben werde.</p>
+            <p>Wenige Monate sei es nun her, daß die Souveränität wiedergewonnen worden sei und nun müsse das deutsche Volk zeigen, was es mit ihr anzufangen wisse. Man könne nur tief betrübt sein, wenn man sehe, wie gewisse Parteien mit der wiedererlangten Freiheit umgingen. Die Folgen solcher Handlungen hätte man deutlich im »Manchester Guardian« ablesen können: Es sei ein Schock für diejenigen, die geglaubt hätten, daß die Demokratie in Westdeutschland Fortschritte gemacht habe und fest verankert sei.</p>
+            <p>Er habe heute mit dem Botschafter in Washington über die Lage in der Welt und in den USA gesprochen und dieser habe dabei dringend gebeten, alles mögliche zu tun, um durch eine möglichst schnelle Verabschiedung des Soldatengesetzes das Vertrauen in die Bundesrepublik in der westlichen Welt zu festigen. Dies sei die einzige Möglichkeit, den in Washington durch die Düsseldorfer Vorgänge entstandenen Schock wieder auszugleichen und das entstandene Mißtrauen zu beseitigen. Er bitte die Fraktion, mit der Erledigung dieser Dinge voranzumachen. Man solle immer daran denken, daß die CDU-Fraktion, nachdem sie durch die Wahl des Jahres 1953 die Mehrheit im Bundestag erhalten habe, die Verantwortung vor der Geschichte und dem Volk trage dafür, ob sie es verstehe und den Mut habe, im geeigneten Augenblick von dieser Mehrheit Gebrauch zu machen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GockelnJosef_1949-09-07">Gockeln</name> betrachtet die Vorgänge als eine Enthüllung längst vorbereiteter Entwicklungen. Die Ideologien der Parteien hätten sich verändert und also auch ihre Koalitionsfähigkeiten. Heute könne man in der SPD-Presse lesen, daß die Vorgänge in Düsseldorf der Testfall für Überlegungen nach der Wahl von 1957 seien. Die FDP behaupte nun, sie habe aus Notwehr gehandelt, weil das Verhältnis zwischen den Koalitionsparteien nicht mehr dem fairen Spiel einer Gemeinschaft entspreche. Dafür führten sie Einzelheiten an. Aber aus dieser Anklage gestalteten sie geradezu eine politisch-ethische Formel: Die CDU sei stark und diese Stärke sei eine Gefahr. Die CDU habe eine Herrschaftsidee entwickelt und das gefährde die Demokratie. Man sei auf dem Weg zu einem Einparteienstaat, und wenn dies eintrete, sei es aussichtslos, die Verhältnisse noch einmal zu verändern. Da sie bei dieser Ideologie keine andere Wirkungsmöglichkeit gehabt hätte, sei ihnen nur dieser Gegenschlag übriggeblieben, zu dem sie also genötigt gewesen seien. Es müsse nicht erst gesagt werden, wie sehr ein Vorwand benützt werden könne, um Motive zu verdecken und Absichten zu verwirklichen. Es sei nur die Frage, wie weit man dem Gegner gestatte, diese verdeckte Motivierung durchzuführen.</p>
+            <p>Diese Vorgänge gäben Anlaß, darüber nachzudenken, daß es außer Deutschland kein Land der Welt gäbe, das zwei oder drei an der Legislative beteiligte Organe habe. Jede Bundesregierung, die ein Gesetz schaffe, rufe unmittelbar den Konflikt mit den beteiligten Exekutivorganen auf den Plan. Daher diese Spekulation, auf dem Weg über den Bundesrat den Sturm zu riskieren und Macht geltend zu machen. Dieser Weg ergäbe sich logisch aus den Fakten der Verfassung.</p>
+            <p>Nun sei es allerdings nicht so, daß die Düsseldorfer Regierung nur ein Opfer der Bonner Politik geworden sei, auch in der Landespolitik gäbe es einige entscheidende Momente; zu sehr habe man sich darauf verlassen, daß es ohne die CDU nicht ginge und habe dann feststellen müssen, daß alles ohne sie schon fertig gewesen sei. Deshalb sei es auch nicht mehr gelungen, die oppositionellen Gruppen gegeneinander auszuspielen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> bezeichnet es als unrichtig, wenn man in Düsseldorf meine, Mißtrauen gegen die Führung in Bonn sei irgendwie im Spiele gewesen. Zwischen Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> und Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe eine gründliche Aussprache über das Wahlrecht stattgefunden und diese Sache sei in Ordnung gewesen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-02-21-t1545_EP_FN020" type="comment">
+                     <p>Am 1. und 2. 2. 1956. Vgl. Wengst, Dehler, S. 284f.</p>
+                  </note>
+               </seg> Was aber in Düsseldorf geschehen sei, sei über ein Jahr vorbereitet gewesen.</p>
+            <p>Was die Rolle des Bundesrates anbelange, so habe er im Parlamentarischen Rat zwei Häuser und daneben den Bundesrat verlangt, um die Interessen der Länder beim Bund zur Geltung zu bringen. Das habe aber die damalige CDU-Fraktion abgelehnt.</p>
+            <p>Präsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> betont, daß die CDU jetzt ihre Stunde habe, in der sie Zusammenhalten müsse. Bis jetzt habe man in einer Koalition gestanden und vielleicht mehr, als es dem Profil unserer Partei angemessen gewesen sei, Rücksicht genommen. Man habe dies getan, weil es notwendig war, aber auch dort, wo es um die Weiterführung alter menschlicher Verbindungen gegangen sei. Das letztere müsse nun zurücktreten und man müsse sehen, wie man aus der Situation herauskomme. Es höre der Spaß auf, wenn man verlange, die Verabschiedung des Wahlgesetzes zwischen die zweite und dritte Lesung der Wehrgesetze zu schieben. Eine solche Forderung sei unerhört, und man müsse ein deutliches Wort dazu sagen.</p>
+            <p>Leider könne man in diesem Bundestag nicht noch eine Grundgesetzänderung machen, sonst würde er beantragen, den unverzeihlichen Fehler der CDU im Parlamentarischen Rat wieder gutzumachen. Am 6. September 1953 habe das deutsche Volk eine Entscheidung von solcher Klarheit getroffen, wie sie in der Geschichte von Massenstaaten höchst selten sei, und nun müsse sich eine so zustande gekommene Regierung so mühsam durchringen, um den erklärten Willen des Volkes durchzusetzen. Immer bereite die Überwindung der aus der Exekutive kommenden Stimmen des Bundesrates unablässige Sorgen. Der damals gemachte Fehler müsse korrigiert werden. Auch die CSU brauche sich darüber nicht aufregen. Sicher müsse das nicht von heute auf morgen geschehen, aber das Gespräch darüber sei eröffnet.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> erklärt, daß er nicht eine Frage, die eine deutsche Frage sei, als eine bayerische Frage behandeln wolle. Gewiß könnten beim Bundesrat Konstruktionsfehler gemacht worden sein. Es könne aber auch Konstruktionsfehler der gegenwärtigen Politik geben.</p>
+            <p>Er wolle unterstreichen, wie der Bundeskanzler, daß es darauf ankäme, die Wehrgesetze so rasch wie möglich zu verabschieden. Nach diesem Obersatz müsse sich alles andere einordnen, damit keine Vertrauenskrise entstehe. Die anderen hätten so abgefeimt taktiert, daß sie die CDU nun tatsächlich in eine schwierige Lage gebracht hätten. Deshalb dürfe auch die Frage des Wahlgesetzes nicht in den Vordergrund gerückt werden, sondern mit Rücksicht auf die außenpolitische Lage müsse man eben manches schlucken, was nicht angenehm sei.</p>
+            <p>Das Thema Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> sei eine Frage für sich. Die FDP komme ihm vor wie ein warmer Kuhhaufen; wenn man hineintrete, fliege er auseinander. Aber als er auseinanderflog, sei er von der CDU schnell wieder zusammengeflickt worden. Jetzt sei es notwendig, zu tun, was im Interesse des deutschen Vaterlandes geschehen müsse.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name> greift zurück auf die Bemerkung des Bundeskanzlers über die Verschwiegenheit in der Fraktion. Dazu wolle er ergänzen: Als er gestern um 19.15 Uhr durchs Restaurant gegangen sei, sei der Inhaber einer Korrespondenz auf ihn zugekommen und habe ihm gesagt, was er aus der Vorstandssitzung wisse; es habe dort drei Strömungen gegeben usw. Dies wolle er nur zur Ergänzung bemerken.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> glaubt, daß die negativen Auswirkungen der Düsseldorfer Vorgänge leichter überwunden werden könnten, wenn man innenpolitisch eine stärkere Aktivität entwickele. Was der Bundeskanzler über die außenpolitische Situation sage, sei sicher richtig. Aber die Bevölkerung spreche nicht darüber. Ihre Interessen richteten sich auf andere Dinge. Die Bundesregierung müsse allmählich mit ihrer innenpolitischen Aktivität beginnen, konkrete Vorschläge machen und sie verwirklichen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BartramWalter_1952-05-13">Bartram</name> betrachtet die Düsseldorfer Vorgänge als Beginn der Wahlschlacht. Dabei sei zu bemerken, daß die Parteiorganisation der CDU nicht stärker, sondern schwächer geworden sei und daß es höchste Zeit sei, dafür mehr zu tun.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> bezeichnet die Koalition in Düsseldorf als auf kulturpolitischem, ja antikatholischem Boden gewachsen. Damit komme die FDP aber in die Schwierigkeit, unter Umständen einen Wahlkampf unter dem Zeichen des Kulturkampfes führen zu müssen.</p>
+            <p>Das Junktim zwischen Wahlgesetz und Soldatengesetz sei abzulehnen. Wenn Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> eine solche Forderung erhebe, müsse man ihm klar machen, daß er einer der stärksten Befürworter der Militarisierung gewesen sei und daß er den Wahlkampf mit Nazis und Militaristen bestritten habe. Nun solle man ihn ruhig in die Verlegenheit bringen, das Soldatengesetz abzulehnen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> greift das Thema Bundesrat noch einmal auf. Es sei klar, daß die Konstruktion des Föderalismus nicht mehr als sakrosankt angesehen werden könne. Die Debatte darüber sei eröffnet.</p>
+            <p>Die Forderung Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mendes</name> nach einem Junktim zwischen Wahlgesetz und Wehrgesetzen sollte man im Ältestenrat glatt ablehnen. Mit weiteren Manipulationen gewinne man nichts außenpolitisch und nichts innenpolitisch.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet, doch nicht die Situation dadurch zu verschärfen, daß man die Frage der Struktur des Bundes in die Debatte bringe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> greift das von Präsident Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> angeschnittene Thema wieder auf; auch er sei der Meinung, daß der Bundesrat nicht alles gehalten habe, was man von ihm erwartet habe. Er entwickele sich zu einer Art Nebenregierung. Aber man dürfe nicht den Stab über die Institution als solche brechen. An seinem Versagen sei man auch selber mit schuld, und der Bundeskanzler sei der Bahnbrecher dieser Entwicklung gewesen. Er habe als Erster angefangen, in den Ländern die Gleichschaltung einzuführen. Es müsse möglich sein, dies offen und ehrlich auszusprechen. Es sei notwendig, das zu sagen, um nicht zu vorschnellen Urteilen zu kommen.</p>
+            <p>Anlaß zu dieser Debatte sei sicher das sogenannte Grabensystem gewesen. Er könne nicht begreifen, warum die CDU wegen dieser Frage eine so schlechte Presse gehabt habe. Er könne nicht einsehen, wozu es ein Bundespresse- und Informationsamt mit einem Geheimtitel von mehr als 14 Mio. DM gäbe, wegen deren man Jahr für Jahr größte Angriffe hinnehmen müsse, wenn dann nichts geschehe. Hier müsse man anfangen; man könne noch so fleißig und noch so laut reden, wenn die Presse nicht mitgehe, gewinne man nicht an Einfluß. Auf diese Dinge müßte der Bundeskanzler und auch Dr. <name type="Person" role="Erwaehnung" ref="#GlobkeHans">Globke</name> aufmerksam gemacht werden, denn hier sei offenbar etwas nicht in Ordnung.</p>
+            <p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> fragt, wieso die CDU denn selbst schuld sei an diesen Dingen. Die eingetretene Situation hätte nicht sein müssen, wenn man nicht den Bogen in einem gewissen Zeitpunkt überspannt hätte. Nun solle man sich davor hüten, ihn noch einmal zu überspannen. Sicher sei es leicht zu sagen, man werde sich den Forderungen der FDP nicht beugen. Man solle aber dann auch die Folgen bedenken. Wolle man herausfordern, daß sich die Düsseldorfer Vorgänge in anderen Ländern wiederholen?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DonhauserAnton_1949-09-07">Donhauser</name> glaubt, daß die meisten Mitglieder der Fraktion vom Verlauf der Debatte unbefriedigt seien, weil die Frage noch nicht richtig beantwortet sei, was nun geschehen solle. Der Bundeskanzler habe wenigstens die außenpolitische Seite beleuchtet, aber innenpolitisch sei keine Lösung angedeutet. Scharf wolle er sich gegen die vom Bundestagspräsidenten geäußerten Absichten im Hinblick auf das Grundgesetz wenden. Hier lägen Gefahren, die gerade für die CDU/CSU von größter Bedeutung seien. Der liberale Kitt, der SPD und FDP zusammenfüge, wenn das Grundgesetz in zentralistischem Sinne geändert würde, werde eine Situation herbeiführen, die für die CDU/ CSU auf Jahrzehnte jede Hoffnung begrabe, die Schaltstellen wieder in die Hand zu bekommen.</p>
+            <p>Auf dem innenpolitischen Gebiet sehe er die Möglichkeit, sozialpolitisch stärker tätig zu sein. Mit einer zielsicheren Sozialpolitik werde man die FDP entweder auseinanderreißen oder zu einer erheblichen Kompromißbereitschaft zwingen können.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet noch einmal, die schwierige Situation nicht mit der Frage des Föderalismus zu belasten.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> erblickt in den Düsseldorfer Vorgängen einen Vorstoß in die Weltanschauungsparteien hinein. Der Vorgang zeige, daß weite Kreise kein Verständnis dafür hätten, daß Politik aus Weltanschauung gemacht werde, sondern sie lieber aus Zweckmäßigkeitsgründen behandelt sähen. Man müsse sich nun fragen, ob man der Meinung bleiben wolle, daß die CDU eine Notwendigkeit sei oder ob es auch die Möglichkeit gäbe, eine Politik zu führen, die von Fall zu Fall aus Zweckmäßigkeitsgründen entscheide und danach die notwendige Koalition bilde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> verneint die Frage, daß es sich um einen Kampf gegen die Weltanschauungsparteien handele. Der Kampf richte sich gegen die Vormachtstellung der CDU. Dabei seien alle Argumente recht. Gleichzeitig beginne ja ein systematischer Kampf gegen die Mitarbeiter des Kanzlers, den man so herunterzusetzen versuche, daß das Volk zur Auffassung kommen solle, man müsse die Vormachtstellung der CDU und dieses Mannes brechen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> stimmt der Auffassung von Frau Dr. <name type="Person" role="Erwaehnung" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> zu. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> habe immer wieder bestritten, daß es im politischen Raum einen Raum für weltanschauliche Parteien geben dürfe. Erst am Samstag habe er wieder die Notwendigkeit einer liberalen Partei herausgestellt und die von christlichen Parteien bestritten.</p>
+            <p>Die Vereinbarungen über das Wahlrecht bestünden ja immer noch. Hier sei ein Grund gegeben, um die Forderung nach einem Junktim zwischen Wahlrecht und Wehrgesetzen zurückzuweisen. Schließlich gäbe es ja auch noch eine Selbstachtung, gegen die man nicht verstoßen dürfe.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> glaubt, daß gewisse Verzögerungen in den Wehrfragen auch dadurch entstünden, daß man auch die letzten demokratischen Sicherungen noch einbauen wolle. Man solle lieber darauf achten, daß man rechtzeitig zu einem Ergebnis komme.</p>
+            <p>Dr. Otto <name type="Person" role="Sprecher" ref="#LenzOtto_1953-10-06">Lenz</name> fragt, ob man überhaupt noch den Versuch machen solle, mit der FDP Koalitionsverhandlungen zu führen. Wenn nein, sei die Sache klar, wenn ja, müsse man überlegen, was man tue. Die FDP habe sich trotz Nordrhein-Westfalen bereit erklärt, die Koalition fortzuführen. Solle man nun die Situation dadurch hoffnungslos machen, daß man sich nicht darauf einlasse, das Wahlgesetz zu behandeln? Es sei notwendig, sofort mit der FDP die Situation abzuklären, sonst lasse sie sich vielleicht nicht mehr befriedigend regeln.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> glaubt, daß in dieser Sitzung ein endgültiger Beschluß gefaßt werden könne. Man müsse zwischen der Frage Wahlgesetz und Soldatengesetz und der Frage Koalitionsfortführung unterscheiden. Letztere müsse man noch einmal in aller Ruhe überlegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#JostenJohannPeter_1953-10-06">Josten</name> meint, das größte Leid sei das, das man sich selbst antue. Ganz unschuldig an der Entwicklung der letzten Monate sei man nicht. Seit langem habe die Junge Union darauf hingewiesen, daß es zweckmäßig wäre, in den Ländern Koalitionen mit der SPD einzugehen. Aber das sei ja immer überhört worden. Nun sei die gegebene Lage entscheidend. Die Durchsetzung der Grundgesetzänderungen halte er für notwendig, und er wolle hier einmal ein Wort des Dankes an Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> sagen; dessen Gedanken müßten nun verwirklicht werden.</p>
+            <p>Josef <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> fragt, ob es richtig sei, daß bei den Koalitionsverhandlungen 1953 zwischen der CDU/CSU und der FDP vereinbart worden sei, das Wahlrecht von 1953 wieder zu bringen. Dies habe ihm <name type="Person" role="Erwaehnung" ref="#SchlossHanns_1953-10-06">Schloß</name> (FDP) erzählt. Er bitte um Klarstellung, ob diese Behauptung zutreffe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bezieht sich zunächst auf den Fraktionsbeschluß vom 2. 2. 1956. Auf Zwischenruf bemerkt er dann, daß vom Bundeskanzler vereinbart worden sei, ein faires Wahlrecht zu schaffen, das heißt, ein faires Wahlrecht für alle Koalitionsparteien. Sonst sei nichts vereinbart worden.</p>
+            <p>Dann schließt er die Sitzung um 18.10 Uhr.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

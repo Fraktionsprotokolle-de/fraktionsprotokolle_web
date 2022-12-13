@@ -1,326 +1,581 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-06_1969-11-04-t1510_WZ" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#ZehenderKathrin"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1969-1972. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/VI</title>
-						<author>Kathrin Zehender</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2016</date>
-						<idno>https://d-nb.info/1121220037</idno>
-						<idno>https://d-nb.info/1128841533</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>08-001-1020/1</idno>
-							<objectName>Fraktionsprotokoll zur Fraktionssitzung vom 4. Nov.1969</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 4. November 1969</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>14 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1969-11-04"><time type="start" when="15:10:00"/><time type="end" when="18:40:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/><idno type="sitzung"><idno type="wp">06</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="#WZ" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-1" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-1">A. Bericht des Parlamentarischen Geschäftsführers <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>: interfraktionelle Verhandlungen betr. die Organisation der Ausschüsse; Verteilung der Vorsitze in den Ausschüssen; Frage einer einvernehmlichen Lösung mit den anderen Fraktionen; Empfehlung <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasners</name> zur Annahme des Ausschusstableaus.</item>
-					<item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-2" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-2">B. Aussprache über den Bericht: Alternativen beim Verfahren zur Verteilung der Ausschussvorsitze: Zugreifverfahren oder Kampfabstimmung; Benachteiligung der CDU/CSU im Hinblick auf die Vergabe der innenpolitisch relevanten Ausschüsse; Relevanz der Vorsitze; Vor- und Nachteile eines »Kollisionskurses«; Möglichkeit des Tauschs; Beschluss zu erneuten Verhandlungen über die Verteilung der Vorsitze.</item>
-					<item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-3" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-3">C. Benennung des Gesamtdeutschen Ausschusses: Antrag zu namentlicher Abstimmung.</item>
-					<item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-4" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-4">D. Berichte aus den Arbeitskreisen: AK III: Einbringung des Haushalts 1970 sowie der Mittelfristigen Finanzplanung; AK IV: Diskriminierung der Frauenarbeit, Bluter, Heimkehrer-Zertifikate, Arbeitsförderungsgesetz; AK V: Europäische Sicherheitskonferenz, Umbenennung des Gesamtdeutschen Ministeriums bzw. des Ausschusses.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-1">
-				<head>[A.]</head>
-				<p>{(Dieses Protokoll beruht auf 8 DIN A4 Seiten Stenonotizen – Band ist ohne Ausschreiben gelöscht worden.)}<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN002" type="comment"><p>Technischer Hinweis in der Vorlage betr. die Aufnahme der Sitzung auf Tonband.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> eröffnet die Sitzung und nennt als Problem Zahl und Größe der Ausschüsse.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN003" type="comment"><p>Zur Organisation der Bundestagsausschüsse vgl. die Fraktionssitzung am 28. Oktober 1969, Anm. 28.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> weist daraufhin, daß in der kommenden Woche die Ostpolitische Debatte undmit ihr eine politische Entscheidung, nämlich die über den Atomsperrvertrag, stattfinden wird.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN004" type="comment"><p>Zur Plenardebatte am 12. November 1969 vgl. BT Plenarprotokoll 06/10. – Zum Atomwaffensperrvertrag vgl. die Fraktionssitzung am 16. Oktober 1969, Anm. 42.</p></note></seg> Zum Thema der Aufstellung der Ausschüsse: Es herrscht jetzt die Tendenz, zu jedem Ministerium einen korrespondierenden Ausschuß zu bilden. Dazu sollen kommen der Haushaltsausschuß, der Ausschuß für Geschäftsordnung und Immunität, vor allem aber ein Ausschuß für Arbeit<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN005" type="comment"><p>Vgl. dazu die Fraktionssitzung am 28. Oktober 1969, Anm. 25.</p></note></seg>, für Jugend<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN006" type="comment"><p>Vgl. dazu die Fraktionssitzung am 28. Oktober 1969, Anm. 26.</p></note></seg> und für Kriegsfolgen<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN007" type="comment"><p>Vgl. dazu die Fraktionssitzung am 28. Oktober 1969, Anm. 27.</p></note></seg> .</p>
-				<p>Die anderen Fraktionen haben uns wissen lassen, daß sie die Bildung dieser letzteren Ausschüsse auch im Plenum ablehnen werden. Bliebe zu betonen, daß in dieser Frage die Berliner Abgeordneten voll mitstimmen.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN008" type="comment"><p>Zum Stimmrecht der Berliner Abgeordneten vgl. die Fraktionssitzung am 21. Oktober 1969, Anm. 11.</p></note></seg> Das würde bedeuten, daß wir in der Minderheit bleiben würden. Der Fraktionsvorsitzende habe gebeten zu prüfen, ob es nicht möglich sei, eine einvernehmliche Regelung zu erzielen. Wir haben tagelang darüber mit der SPD verhandelt. Das Ergebnis war ein Brief, den <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> verlas.</p>
-				<p>§7 der Geschäftsordnung: Die Leitenden Beamten soll der Präsident nur im Einvernehmen einstellen, befördern oder entlassen können – darüber sei inzwischen mit dem Präsidenten eine Einigung erzielt worden.</p>
-				<p>Der Vermittlungsausschuß(§67) soll nicht geändert werden! Der jetzt zu fassende Beschluß bindet nur diesen Bundestag und unterliegt i.ü. der Diskontinuität. Dabei erhält jede Fraktion vorweg einen Sitz; dann erfolgt die weitere Zusammensetzung nach d’Hondt(6 CDU/CSU), 5 SPD, FDP 0 – jetzt aber 5:5:1. Dafür behalten wir den Vorsitz. Die Alternative wäre eine Kampfabstimmung.</p>
-				<p>Es sollen folgende 17 Ausschüsse gebildet werden und dazu 2 Sonderausschüsse:</p>
-				<p>a) Sonderausschuß Sport und Olympische Spiele (CDU/CSU).</p>
-				<p>b) Sonderausschuß Strafrechtsreform(SPD); der Vorsitz des nächsten Sonderausschusses fällt an die CDU/CSU.</p>
-				<p>Zu den drei weiteren Ausschüssen soll kein Antrag im Plenum gestellt werden, wie es in dem Brief heißt:</p>
-				<p>1. Wahlprüfung, 2. Petitionen, 3. Auswärtiges, 4. Verteidigung, 5. Innen, 6. Bildung und Wissenschaft, 7. Städtebau und Wohnungswesen, 8. Jugend, Familie und Gesundheit,9. Rechtsausschuß, 10. Haushaltsausschuß, 11. Finanzausschuß, 12. Wirtschaftsausschuß, 13. Wirtschaftliche Zusammenarbeit, 14. Ernährung, Landwirtschaft und Forsten, 15. Arbeit und Sozialordnung, 16. Verkehr, Post und Fernmeldewesen.</p>
-				<p>Keine Einigkeit: Innerdeutsche Beziehungen oder Gesamtdeutsche und Berliner Fragen.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN009" type="comment"><p>Vgl. den Antrag der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 4. November 1969 betr. Einsetzung eines Ausschusses für gesamtdeutsche und Berliner Fragen; BT Drs. 06/43. – Vgl. den Antrag der Koalitionsfraktionen vom 4. November 1969 betr. Einsetzung eines Ausschusses für innerdeutsche Beziehungen; BT Drs. 06/39.</p></note></seg></p>
-				<p>Dies ist kontrovers zu entscheiden.</p>
-				<p>Größe der Ausschüsse:<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN010" type="comment"><p>Zur Größe der Bundestagsausschüsse in der 6. Wahlperiode vgl. <hi rendition="#smcap">Datenhandbuch</hi> 1949–1999, II, S. 2100.</p></note></seg></p>
-				<p>33 Mitglieder sollen haben: der Auswärtige Ausschuß, der Haushaltsausschuß, der Finanzausschuß, der Wirtschaftsausschuß, der Landwirtschaftsausschuß und der Sozialausschuß.</p>
-				<p>29 Mitglieder: der Verteidigungsausschuß, der Innenausschuß, der Ausschuß für Jugend, Familie und Gesundheit.</p>
-				<p>17 Mitglieder: der Wahlprüfungsausschuß, Immunität, Wirtschaftliche Zusammenarbeit. Alle übrigen Ausschüsse sollen 25 Mitglieder umfassen.</p>
-				<p>Vorsitzende:<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN011" type="comment"><p>Zur Verteilung der Ausschussvorsitze in der 6. Wahlperiode vgl. <hi rendition="#smcap">Datenhandbuch</hi> 1949–1999, II, S. 2056–2058.</p></note></seg></p>
-				<p>Die CDU/CSU erhält den Vorsitz im Haushaltsausschuß, Finanzausschuß, im Auswärtigen Ausschuß, im Verteidigungsausschuß, im Gesamtdeutschen Ausschuß, im Rechtsausschuß, im Wohnungsbauausschuß und im Petitionsausschuß.</p>
-				<p>Die SPD erhält den Vorsitz im Ernährungsausschuß, im Sozialausschuß, im Wirtschaftsausschuß, im Innenausschuß, im Entwicklungshilfeausschuß, im Gesundheitsausschuß, im Verkehrsausschuß und im Geschäftsordnungsausschuß.</p>
-				<p>Die FDP bekommt den Vorsitz im Wirtschaftsausschuß(das war wohl ein klares Versprechen der SPD an die FDP).</p>
-				<p>Die SPD hat uns wissen lassen, daß sie bereit ist, auf dieser Basis zu akkordieren. Der Nachteil[…]<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN012" type="comment"><p>Vom Bearbeiter gestrichen: »ung«.</p></note></seg> dieses Akkordes wäre:</p>
-				<p>1. daß wir darauf verzichten, die von uns geforderten 3 Ausschüsse zu einer Entscheidung im Plenum zu stellen,</p>
-				<p>2. aus 3 oder 4 gesellschaftspolitisch relevanten Ausschüssen bekommen wir nur einen Ausschuß, weil es nur einen sozialpolitischen Ausschuß gibt,</p>
-				<p>3. die beiden wirtschaftspolitisch relevanten Ausschüsse, Wirtschaft und Landwirtschaft, kommen in die Hände der Koalition.</p>
-				<p>Der Vorteil der Regelung:</p>
-				<p>1. Wir haben im außenpolitischen Bereich die Ausschüsse und sind damit z.B. mit dem Vorsitzenden des Außenpolitischen Ausschusses draußen international unübersehbar und unüberhörbar.</p>
-				<p>2. Den finanzpolitischen Bereich behalten wir in den Händen. Steuer- und Haushaltspolitik sind Teile der Wirtschaftspolitik.</p>
-				<p>3. Der Vorsitz im Vermittlungsausschuß für die Dauer von 4 Jahren bleibt in unserer Hand.</p>
-				<p>Die Alternative ist die Majorisierung und das Zugreifverfahren mit all seinen Zufälligkeiten. Wir könnten am Ende schlechter dastehen als bei dem, was ausgehandelt ist. Ich empfehle der Fraktion, diesen Vorschlag anzunehmen. Die Schlußentscheidung liegt bei der Fraktion. Der Fraktionsvorstand hat mir Vollmacht gegeben zu einem Vorabschluß.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-2">
-				<head>[B.]</head>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Bei der Zahl der Ausschüsse sind wir von der Mehrheit abhängig. Bei der Wahl der Vorsitze können wir das Zugreifverfahren vorziehen, wenn wir Poker spielen wollen. Wir sollten aber dem vorgelegten Vorschlag zustimmen, sonst bekommt nicht einmal jeder unserer Abgeordneten einen ordentlichen Ausschußsitz.</p>
-				<p><name type="Person" role="Sprecher" ref="#FrankeHeinrich_1965-10-19">Franke</name> stellt die Frage, wie wohl das Ergebnis des Zugreifverfahrens aussehen könnte.</p>
-				<p>Im Wahlkampf hätten die inneren Reformen den Vorrang gehabt. Alle einschlägigen Ausschüsse sind nach diesem Verhandlungsvorschlag in der Hand der Koalition. Das sei aber sehr bedenklich, vor allem weil die Koalition starken Wert auf das Instrument der öffentlichen Anhörung legen wird.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Zum Zugreifverfahren: Wenn wir den Haushalt greifen, dann greifen die Sozialdemokraten den Sozialpolitischen Ausschuß usw. Die Zufälligkeiten und Risiken sind sehr groß. Wenn mehrere Ausschüsse, gesellschaftspolitische Ausschüsse zur Debatte gestanden hätten, hätte man etwas durchsetzen können. Das ist aber nicht der Fall – hier darf man sich keinen Illusionen hingeben. Es gibt bei <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> ein Interesse daran, zu Beginn der Legislaturperiode in einer Serie von Abstimmungen uns Abstimmungsniederlagen beizubringen, um zu zeigen, wer im Plenum Chef im Ring ist. Man sollte also keine Entscheidungen suchen, die im Plenum die Mehrheit mehr als notwendig deutlich machen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Es gäbe, wenn nicht akkordiert wäre, 30–40 unserer Abgeordneten, die nicht ordentliches Mitglied in einem der Ausschüsse wären.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wenn das ursprüngliche Angebot der Koalition angenommen worden wäre, hätten wir nicht für jeden Abgeordneten von uns einen Ausschußsitz gehabt. Es wären nur 234 Sitze gewesen, wozu allerdings Sitze in Europäischen Gremien hinzukommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das wäre vielleicht noch zu verkraften, weil nicht alle Europäer hier sein können und weil von der Fraktionsführung nicht alle in Ausschüssen seinmüssen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> (Hessen) stellt fest, das Ergebnis <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasners</name> sei das Optimum des Erreichbaren. Aber es gäbe noch ein Anliegen. Es sei nicht recht einzusehen, warum wir auch die »Bezeichnungen Wirtschaft und Mittelstand« drangegeben hätten. Notfalls sollte das Verschwinden dieser Bezeichnung zu Lasten der Koalition gehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Ich habe mehrmals die Rückkehr zu den alten Namen vorgeschlagen. DieSPDhat das rundweg abgelehnt. Wenn jetzt die Bezeichnung »Mittelstand« fällt, dann geht das zu Lasten der Koalition.</p>
-				<p><name type="Person" role="Sprecher" ref="#DichgansHans_1961-10-17">Dichgans</name> spricht sich für das Verhandlungsergebnis aus. Die Nachteile träten nurdann ein, wenn wir das System der Ausschüsse so starr behandeln wie bisher. In anderen Parlamenten ist das ganz anders. Dort gibt es Ausschüsse, die dürfen und können spätere Ausschüsse fordern.</p>
-				<p><name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name>: Wenn wir Abstimmungen verlieren, muß das im rechten Zahlenverhältnis sein. Wenn aber bei denen 10% und bei uns 12% fehlen, ist das sehr schlecht. DieMitglieder des Vorstandes und die Europäer können doch nicht in den Ausschüssen sein. Dann müssten die Sitze eigentlich ausreichen. Es soll einen Ausschuß für Olympiade und einen für Strafrechtsreform geben. So publikumswirksam der erstere sein kann, umso wichtiger wäre es, den Vorsitz im Strafrechtsausschuß zu behalten. Im Zugreifverfahren bekäme die FDP jedenfalls den Vorsitz im Wirtschaftsausschuß nicht. Wir müßten auch testen, wie es mit der Einigkeit in der Koalition steht.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wenn der Rechtsausschuß für uns geht, dann kann nicht gleichzeitig der Strafrechtsausschuß auch zu uns kommen, i.ü. heißt der Ausschuß »Sport und Olympische Spiele«. Diese Sache muß auch im Hinblick auf die Wirkung in der Öffentlichkeit gesehen werden. Jedenfalls sollte man das Gespräch über den nächsten Ausschuß heute nicht führen.</p>
-				<p>Natürlich hat die FDP selbst den 16. Griff. Aber die SPD wird den Wirtschaftsausschuß greifen und der FDP geben, wie wir dies auch schon getan haben. Daran wird bestimmt nicht die erste schwere Mißstimmung in der Koalition entstehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>: Wir haben jetzt 226 Plätze und 17 Europapolitik, und wir haben 2 Ausschüsse mit 16Plätzen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name>: DieandereRegelung wären mindestens 20 Plätzeweniger.</p>
-				<p><name type="Person" role="Sprecher" ref="#VarelmannFranz_1953-10-06">Varelmann</name>: Das Problem der Ausschüsse ist ein Problem von 4 Jahren! Wir dürfen nicht auf den Vorsitz im Sozialpolitischen Ausschuß verzichten.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>: Zunächst hatte ich Bedenken wegen dieses Ergebnisses. Die Nahtstelle der Koalition liegt in der Koalitions- und Gesellschaftspolitik. Wir besitzen aber bei derBesetzung der Ausschüsse keine Mittel, um den AbsichtenderKoalition zu begegnen, müssenuns aber diesen Gebieten besonders aufmerksam zuwenden. Denndie SPD hat auf diesen Gebieten den gesamten Apparat in der Hand! Wir stehen in der akuten Gefahr, daß das mühsam gehaltene Gleichgewicht in dieser Fraktion aus den Angeln gehoben werden kann dadurch, daß die Mitglieder der Fraktion, die sich um die Sozialpolitik gekümmert haben, mehr oder weniger auf die eigenen Füße gestellt sind, wenn ihnen nicht geholfen wird. Einer weisen Fraktionsführung möchte ich anheimgeben, wie man es verhindert, daß das Gleichgewicht dieser Fraktion nicht in Mitleidenschaft gezogen wird. Da aber Politik die Kunst des Möglichen ist, muß ich zugeben, daß ich kein anderes Vorgehen anraten kann.</p>
-				<p><name type="Person" role="Sprecher" ref="#RitzBurkhard_1965-10-19">Ritz</name>: Man konnte feststellen, daß unsere Anträge für Jugend usw. draußen gut angekommen sind. Nun sollen wir die entsprechenden Anträge stillschweigend zurückziehen. Es käme nicht gut an, wenn wir das stillschweigend tun. Im übrigen haben wir auch noch den Vorsitz im Ernährungsausschuß verloren. Das ist für draußen sehr bedeutungsvoll.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wenn wir uns einigen, müssen die Sozialdemokraten wie wir ihre Anträge zurückziehen. Wir werden dann in der geeigneten Form die dazugehörigen Briefe veröffentlichen. Wir werden sagen, daß wir klar majorisiert wurden.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das läßt sich einfach nicht im Plenum sagen –</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgerAlbert_1965-10-19">Burger</name> spricht sich anerkennend über die Arbeit aus, die <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> geleistet hat, erhabe aber 2 Bemerkungen anzufügen: Wußten wir eigentlich nicht schon immer, wie die Mehrheitsverhältnisse liegen? Gibt es nicht eine große Enttäuschung bei den Verbänden? Die Koalition hat eine Politik der Reformen angekündigt. Ich halte es für technisch unmöglich, die dazu notwendigen gesetzlichen Regelungen durch den Flaschenhals eines einzigen Ausschusses hindurchzujagen. Das ist nicht »mehr Demokratie«, das ist weniger Demokratie! Im letzten Bundestag waren die beteiligtenAusschüsse schwer beschäftigt. Und nun soll das alles durch einen einzigen Flaschenhals? Das bedeutet nicht mehr, sondern weniger Demokratie.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Was mit dem Sozialpolitischen Ausschuß vorgeschlagen wird, wird mit Sicherheit nicht klappen. Muß aber der Bundestag einen 18. Ausschuß einrichten, dann steht dieser Vorsitz uns zu. Jetzt haben wir 8:8:1. Muß der Ausschuß fürSozialpolitik geteilt werden, dann bekommen wir automatisch den Vorsitz.</p>
-				<p><name type="Person" role="Sprecher" ref="#KoepplerHeinrich_1965-10-19">Köppler</name>: Unsere Chancen beim Zugreifverfahren wären nicht klar. Das Zugreifverfahren ist aber durch die Geschäftsordnung nicht gedeckt. Man könnte uns diesen uns zustehenden Ausschuß nicht zuteilen, und dann könnten wir die Chance auch noch verlieren. Es war nicht möglich, diesen Sozialpolitischen Ausschuß zu bekommen. Dieser Tatsache müssen wir in der Fraktion einfach Rechnung tragen. Im übrigen wird das Konzept der Koalition in dieser Sache nicht aufgehen. Im übrigen muß man diese Problematik in der Öffentlichkeit mit allem Nachdruck klarstellen. Wenn wir unsere Anträge zurückziehen, wird das natürlich Enttäuschung geben bei den Verbänden. Aber man wird auch anerkennen, daß wir in harten Verhandlungen unterlegen sind.</p>
-				<p><name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name>: Die Reformausschüsse sind nicht in unserer Hand; das ist aber wohl nicht mehr zu vermeiden. Aber der Wissenschaftsausschuß sollte aufgestockt werden. Für die vielen Aufgaben braucht man auch die entsprechenden Leute im Ausschuß. Das Angebot in der Fraktion ist hervorragend. Das sollten wir auch ausnutzen, also 33 Mitglieder!</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Ich werde darüber mit den anderen Fraktionen verhandeln.</p>
-				<p><name type="Person" role="Sprecher" ref="#BreidbachFerdinand_1969-10-20">Breidbach</name>: Was ausgehandelt ist, ist für die Fraktion wohl der bequemste aller möglichen Wege. Es sind 3 Nachteile angeführt worden. Vor allem werden allepublikumswirksamen Ausschüsse in der Hand der SPD sein. Das ist sehr bedenklich. Wir gelten als kopflastig für die große Politik. Dieser Eindruck setzt sich auf diese Weise jetzt fort. Es ist die Frage, ob das auf lange Sicht gesehen gut ist. Wäre es da nicht überlegenswert, einen der Ausschüsse für auswärtige Politik aufzugeben zugunsten eines gesellschaftspolitischen Ausschusses? Ich stelle aus diesem Grunde den Antrag: Austausch des Ausschusses für gesamtdeutsche Fragen gegen den Ausschuß für Familie.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Parlamentarische Geschäftsführer dürfen nicht empfindlich sein, aber ichbin nicht darauf ausgewesen, die bequemste Lösung zu finden. Das war eswirklich nicht. Zum Antrag <name type="Person" role="Erwaehnung" ref="#BreidbachFerdinand_1969-10-20">Breidbach</name>: Jugend, Familie und Gesundheit soll an Stelle des gesamtdeutschen Ausschusses von uns besetzt werden. Wenn die Fraktion so abstimmt, habe ich das zu vollziehen. Aber ich empfehle der Fraktion, diesem Antrag nicht zu folgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#FircksOtto_1969-10-20">von Fircks</name>: <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hat jetzt ein Schlußgesetz für Kriegsfolgen und Kriegsfolgeschäden angekündigt.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN013" type="comment"><p>Vgl. dazu die Äußerungen des Bundeskanzlers <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in der Regierungserklärung am 28. Oktober 1969; BT Plenarprotokoll 06/5, S. 25.</p></note></seg> Dafür wäre ein Ausschuß angebracht. Die Bevölkerung erwartet keine harte Politik hinter verschlossenen Türen, sondern harte Sondersitzungen im Plenum.</p>
-				<p><name type="Person" role="Sprecher" ref="#StarkAnton_1965-10-19">Stark</name>: Ich bin zutiefst unbefriedigt mit dem vorgelegten Ergebnis. Die Fraktion wird Kopflastigkeit für die Außenpolitik haben, aber die Entscheidung inder nächsten Wahl fällt nicht auf diesem Gebiet, sondern in der Gesellschafts- und Innenpolitik. Aber gerade auf diesem Gebiet werden wir nichts mitgestalten können.</p>
-				<p>Wir haben Anträge vorgelegt und uns öffentlich dazu geäußert. Wir wußten, wie die Mehrheiten liegen. Jetzt wird uns heimlich, still und leise ein Ergebnis vorgelegt und gesagt, daran sei nichts mehr zu ändern. Vielleicht machen wir damit einen kardinalen Fehler. Ich werde gegen dieses Ergebnis stimmen. Ich halte es für sehr unbefriedigend.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Sinn dieser Diskussion ist es, hier seine Meinung und die Meinungen vorzutragen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> begrüßt, daß der Vorsitz im Verteidigungsausschuß erhalten bleibt, nicht nur wegen des Umfangs der Mittel, sondern auch wegen der Möglichkeit, sich als Untersuchungsausschuß zu konstituieren. Aber die Mitgliederzahl ist zu gering. Sie trägt der Aufgabe nicht Rechnung. Man sollte auf 33 Mitglieder gehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name> macht darauf aufmerksam: Wir sind die Minderheit in diesem Bundestag, dassollten wir immer bedenken. Daran muß sich unsere Beurteilung des Vorschlags orientieren. Selbstverständlich hat das Tableau Schönheitsfehler. Aber wenn von Erhöhung der Mitgliedszahlen die Rede ist, dann muß man auch sehen, was für die Koalition noch erträglich ist wegen ihrer personellen Schwäche. Natürlich könnte man eineoffene Feldschlacht wagen, aber man wird in allen Punkten unterliegen. Ein paar Tage lang werden wir Freude daran haben, aber hinterher sieht es dann ganz anders aus. Unter diesen Gesichtspunkten ist das Verhandlungsergebnis optimal.</p>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name>: Die Lösung mit nur einem sozialpolitischen Ausschuß ist sachlich nicht haltbar und wird korrigiert werden müssen. Die Frage lautet: Wenn ein solches Paket angenommen würde, dann müßte man dafür sorgen, daß morgen nicht nur abgestimmt wird, sondern daß die Fraktion klar reklamiert, daß wir diese Lösung für miserabel halten. Ist das möglich?</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Die Vereinbarung zwischen den Fraktionen deckt ausschließlich das Nicht-Stellen von Anträgen, erstreckt sich nicht auf Erklärungen im Plenum. Ich halte eine sachliche Erklärung im Plenum, ich halte eine Sacherklärung im Plenum für möglich, aber es ist notwendig, das der anderen Seite zu sagen, und sie muß von der Sache her sorgfältig [begründet sein]<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN014" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »begründen«.</p></note></seg> . Man kann nicht polemisieren.</p>
-				<p><name type="Person" role="Sprecher" ref="#MikatPaul_1969-10-20">Mikat</name>: Ich habe noch kein abschließendes Urteil über das Ergebnis. Aber eineOpposition muß vor allem an Wahlen denken. Wenn wir uns erfolgreich präsentieren wollen, dann muß man sehen, daß die Interessenlage der Fraktion sich nicht immer mit der öffentlichen Meinung deckt. Nichts gegen die Wichtigkeit der Sozialpolitik. Aber wenn man das prüft, wie das jetzt gegangen ist, dann muß man sehen, daß das für uns publikumswirksam nicht günstig ist. Wir müssen umdenken lernen. Wenn wir auch noch in der Haushalts- und Finanzpolitik die Bremser machen, dann möchte ich mir die Wahlen 1973 erst einmal ansehen.</p>
-				<p>Wir müssen uns fragen, wie wir verhindern können, daß unsere Ausschußinstrumente zum Mittel rein fiskalischen Denkens werden. Was wir tun müssen, ist, Partei- und Fraktionsgremien zu schaffen, die die Materien der Reformvorhaben in die Hand nehmen.</p>
-				<p>Wir müssen einfach einen Stab einrichten, um das wahrzunehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#OrgaßGerhard_1965-10-19">Orgaß</name>: Ich bin mit dem Ergebnis unzufrieden wegen der Kopflastigkeit, der Bremswirkung und der mangelnden Möglichkeiten in der Reformarbeit. <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> hat in der Debatte die Sorge ausgesprochen, daß mit dieser neuen Regierung die gesellschaftlichen Interessen herausgestellt werden. Dieses Wort sollten wir wieder überprüfen.</p>
-				<p>Wir wissen, daß die gesellschaftlichen Verbände für die Einsetzung der entsprechenden Ausschüsse sind, und wissen, in welche Bedrängnis Herren der SPD kommen, wenn man es darauf ankommen läßt. Aus dieser Verantwortung sollten wir sie nicht entlassen. Da nützt dann auch keine Erklärung der Fraktion mehr, daß man auf dem Verhandlungswege alles versucht habe.</p>
-				<p>Wir müssen alle Initiativen durchdenken, bevor wir uns entscheiden. Wenn der Sozialpolitische Ausschuß für die SPD so wichtig ist, daß sie ihn als ersten greifen würde, warum sollten wir ihn nicht als ersten Ausschuß greifen? Und wie geht es dann weiter? Wenn wir den sozialpolitischen Ausschuß greifen, könnte man die Spannung zwischen Partei und Gewerkschaften bis zum Äußersten bringen. Das müssen wir uns überlegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#JenningerPhilipp_1969-10-20">Jenninger</name> möchte hören, wie die Ausschußsitze auf die Fraktionen verteilt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: In allen Ausschüssen hat die Koalition eine Stimme mehr als wir.</p>
-				<p><name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name>: Es ist viel von der Wirksamkeit nach draußen gesprochen worden. Welche Bedeutung hat denn der Vorsitz eines Ausschusses? Aus der Vergangenheit haben wir dazu eine ganze Reihe von negativen Beispielen. Der Ausschußvorsitzende hat vorwiegend nach innen zu wirken. Beim Zustandekommen des Tableaus war für die SPD ein wichtiges Motiv, solche Ausschüsse zu nehmen, für die sie einen geeigneten Vorsitzenden präsentieren konnte. Sonst könnte man nicht verstehen, warum sie auf den gesamtdeutschen Ausschuß verzichtet haben.</p>
-				<p>Gewiß stehen die gesellschaftspolitischen Dinge sehr im Vordergrund, aber einen Tausch gerade mit dem gesamtdeutschen Ausschuß sollten wir nicht machen. Der Vorsitz im deutschlandpolitischen Ausschuß ist die einzige Schlüsselfunktion, die wir noch zur Kontrolle der Regierung und zu unserer eigenen Orientierung haben.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> spricht sich für die Aufstockung des Ausschusses für Wirtschaftspolitik aus.</p>
-				<p>Es wird außerordentlich schwierig sein, überhaupt jedem Mitglied nur einen ordentlichen Sitz zu geben. Deshalb sollteman die Mitgliederzahl der Ausschüsse aufstocken.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Das wird versucht werden. Es gibt Ausschüsse mit Initiativrecht. Diese sind in unserer Hand.</p>
-				<p><name type="Person" role="Sprecher" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> bezweifelt, ob der Ausschußvorsitzende mehr hört, als ein normales Ausschußmitglied. Meine Sorge ist, daß die SPD eine große Zahl von auf den Wähler ausgerichteten Ausschüssen hat. Das wird sie nutzen. Die Zahl solcher Ausschüsse in unserer Hand ist wesentlich kleiner. Vor allem hätte man nicht auf den Landwirtschaftsausschuß verzichten sollen. Das macht mir große Sorge.</p>
-				<p><name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin): Ich habe immer besonderes Interesse für sozial- und gesellschaftspolitische Bedenken gehabt. Mir wäre es auch lieber, wenn wir auf diesem Gebiete einen Ausschußvorsitz hätten. Aber ein ernstes Wort als Berliner. Ich binüberrascht und traurig, daß hier vorgeschlagen wird, den gesamtdeutschen Ausschuß zu tauschen. Sollen wir das auch noch der SPD überlassen? Dies ist eine Existenzfrage für die Berliner. Es darf nicht sein, daß wir diesen Ausschuß aufgeben. Es ist ja eine Existenzfrage für unser gesamtes Deutschland. Die größten Kontroversen sind gerade auf diesem Gebiet zu verzeichnen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Wir werden in diesem Raume, wenn es um die Ausschußverteilung geht, niemals zu einer völligen Übereinstimmung kommen. Aber die Verhandlungsbereiche, die wir haben, sind gleich Null. Wir können keine imaginären Schachspiele vorführen, sondern müssen diese Dinge realistisch regeln ohne Kampfabstimmungen und Zugreifverfahren. Sonst wird die Unzufriedenheit noch größer sein. Wir sollten uns nun entscheiden.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Zum Zugreifverfahren: Es kann so praktiziert werden, wie es bisher schon einmal gemacht worden ist. Aber die Geschäftsordnung erlaubt auch eine andere Auslegung.</p>
-				<p>Es kann auch nach d’Hondt verteilt werden. So könnten wir 8 Ausschüsse bekommen – und die Mehrheit bestimmt, welche. Die SPD wird wohl nicht die Geschäftsordnung strapazieren. Es ist wohl in der SPD erörtert worden. Aber im Rahmen der geltenden Geschäftsordnung ist ein Mehrheitsbeschluß möglich.</p>
-				<p><name type="Person" role="Sprecher" ref="#HortenAlphons_1965-10-19">Horten</name> fragt, ob ein starker Widerstand dagegen spürbar geworden sei, einen publikumswirksamen Ausschuß in die Hand der CDU/CSU zu bekommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Es sind Alternativen denkbar: Die SPD könnte darauf eingehen, daß wir Jugend, Familie und Gesundheit bekommen, wenn wir den Rechtsausschuß abgeben. Über jede Phase der Verhandlungen habe ich die Fraktionsführung informiert. Ich habe meinen Brief begonnen:»In dem Ziele {...}« Abgesehen von dieser einzigen Möglichkeit halte ich eine Verhandlungsmarge nicht mehr für möglich und nicht mehr für gegeben. Die andere Möglichkeit wäre: Die Einigungsbemühungen sind gescheitert. Wir müssen festlegen, nach welchen mechanischen Methoden die Vorsitze vergeben werden.</p>
-				<p>Noch ein Nachtrag zum Bericht: In allen Ausschüssen stellen wir den stellvertretenden Vorsitzenden, wenn wir den Vorsitz nicht haben. Ich würde aber nicht empfehlen, den Rechtsausschuß aufzugeben. Der ist ein Schlüssel-Ausschuß.</p>
-				<p><name type="Person" role="Sprecher" ref="#AignerHeinrich_1957-10-15">Aigner</name> unterstützt <name type="Person" role="Erwaehnung" ref="#MikatPaul_1969-10-20">Mikat</name>. Interessant an der Besetzung der Ausschüsse sei die eine Frage, bei welcher Besetzung man diese Koalition zerbrechen kann oder in 4 Jahren wieder zur Regierung kommen kann. Gewiß habe <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> viel erreicht, aber dies wäre die unpolitischste Fraktion, die dieses Ergebnis annehmen würde. Wir haben Massen von Wählern, die nicht mit der Außenpolitik angesprochen werden. Und diese überlassen wir dem freien Spiel der anderen! Ich würde es für besser halten, sich überstimmen zu lassen, als dieses Verhandlungsergebnis anzunehmen. Wir müssen sobald als möglich auf Kollisionskurs gehen, wenn wir nicht für lange [Zeit] in der Opposition bleiben wollen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Wir werden uns wohl angewöhnen müssen, längere Fraktionssitzungen zu haben als bisher. Wir sprechen immer von der hauchdünnen Mehrheit und scheuen auf der anderen Seite die Abstimmung. Das ist nicht gut.</p>
-				<p>Das Verhandlungsergebnis gewinnt an Bedeutung, wenn wir sagen, daß wir nicht zufrieden sind. Aber wenn wir jetzt auf Anhieb zustimmen, geben wir den anderen einen Hinweis, wie sie mit uns umspringen müssen. Jedenfalls sollten wir einen gesellschaftspolitischen Ausschuß, nämlich Jugend, Familie und Gesundheit verlangen {...}</p>
-				<p><name type="Person" role="Sprecher" ref="#KoesterGottfried_1969-10-20">Köster</name>: Die Wahl eines stellvertretenden Vorsitzenden für Jugendfragen wurde mit den 7 Millionen junger Wähler<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN015" type="comment"><p>Gemeint ist der Zuwachs an Erstwählern bei künftigen Bundestagswahlen aufgrund der für die 6. Wahlperiode geplanten Herabsenkung des aktiven Wahlalters auf 18 Jahre.</p></note></seg> begründet. Wir sollten den Vorsitz des Ausschusses für Jugend zu bekommen suchen. Wenn das nicht möglich ist, sollten wir das Zugreifverfahren nehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BismarckPhilipp_1969-10-20">von Bismarck</name>: In anderen Bereichen stellt man sich die schlechteste und die beste Lösung vor Augen, wenn man diese Frage erörtert. Allein das Ausgehandeltsein dieser Lösung bringt uns in der Öffentlichkeit ein Minus ein. Auf die Reformausschüsse hin wird bestimmt die Frage aufgeworfen werden: Welches wäre die schlechteste aller Lösungen? – Wäre sie wirklich soviel schlechter als die ausgehandelte Lösung?</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Vergessen wir doch dies bei allen unseren Überlegungen nicht: Zu erkämpfenist etwas nur durch die Mehrheit! Zu erreichen ist etwas anderes als dieses Ergebnis, wenn das Zugreifverfahren kommt. Aber für das Wie und Was kann ich nicht garantieren. Das ideale Tableau wäre für mich gewesen: Haushalt, dann Soziales und Verteidigung. Aber für die SPD stand ganz fest, was sie wollte. Es gibt Abgeordnete, die sagen, daß es für das Ansehen der Partei besser ist, in offener Feldschlacht majorisiert zu werden. Dafür habe ich Verständnis. Aber nach einer Majorisierung im Plenum und einer anschließenden Erledigung der Fragen durch Mehrheitsbeschlüsse statt durch Vereinbarung sind wir am Ende ärmer dran, als wenn wir jetzt eine Vereinbarung getroffen hätten. Dieser Meinung schloß sich gestern der Fraktionsvorstand beträchtlich knurrend an.</p>
-				<p>Verhandlungen über Änderungen sind möglich, wenn man tauscht. Ich halte es für realisierbar, wenn man den Rechtsausschuß aufgibt. Der Ausschuß für Jugend wird ein beträchtliches Gewicht bei Familie und Gesundheit haben. Jugend wird beim ersten Ausschuß liegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#LinkHelmut_1969-10-20">Link</name>: Man müsse auch das Image der Fraktion und der Partei bedenken. Das erfordert, daß wir nicht den Steuerausschuß wählen, sondern wir müssen auch im Zugriff einen wählen, der eine gute Plattform im Sozialen abgibt. Übrigens, stellvertretende Vorsitzende haben nicht das Gewicht wie Vorsitzende. Wir sollten nicht zu sehr auf die wichtigen Steuerungsausschüsse sehen, sondern auch die Reformausschüsse im Auge halten.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Es liegen jetzt noch weitere fünf Wortmeldungen vor. Können wir dann die Rednerliste schließen?</p>
-				<p><name type="Person" role="Sprecher" ref="#OrgaßGerhard_1965-10-19">Orgaß</name>: Es war auch die Alternative gesagt: Nicht den Haushaltsausschuß als ersten, sondern als ersten den Sozialpolitischen Ausschuß zu greifen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StarkAnton_1965-10-19">Stark</name>: <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> hat ein Plädoyer für den Vorschlag des Vorstandes gehalten. Ichstelle den Antrag: Die Fraktionsführung sollte nochmals Verhandlungen aufnehmen. Aufgeben: Außenpolitisch, Gesamtdeutsch, Verteidigung – gegen einen gesellschaftspolitischen Ausschuß. Wenn das nicht geht: Kampfabstimmung und Zugreifverfahren. Es kommt draußen nicht besser an, wenn wir Vereinbarungen machen. Von uns wird eine faire und harte Opposition erwartet. Jetzt wird schon wieder der Weg geebnet, daß die Koalition gut arbeiten kann. Wir sind doch die Opposition! Es muß doch dem Volke klar gemacht werden, daß hier erst manipuliert werden muß, damit die Koalition überhaupt arbeiten kann. Über die Bezeichnung eines Ausschusses geht man in eine Kampfabstimmung, für diese Dinge aber geht man nicht in den Kampf!</p>
-				<p><name type="Person" role="Sprecher" ref="#BockelbergHelmut_1969-10-20">von Bockelberg</name>: Der Start der Opposition war glücklich, weil er kämpferisch war. Wir haben gesagt, wir werden um diese Ausschüsse kämpfen. Wenn wir jetzt morgen mit dieser Vereinbarung kommen, dann ist es mit dem Image der kämpferischen Opposition bereits am Ende. Was kann nun eigentlich schlechter werden als dieses Tableau? Diese Frage ist immer noch nicht beantwortet.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wir können verlieren den Haushaltsausschuß, den Verteidigungsausschuß und so weiter! Natürlich können wir dafür einen anderen gewinnen.</p>
-				<p><name type="Person" role="Sprecher" ref="#EckardtFelix_1965-10-19">von Eckardt</name>: Es ist verhältnismäßig einfach, starke Worte zu benutzen und auf Kollisionskurs zu gehen. Wenn wir in dieser Frage auf Kollisionskurs gehen, dann auch in allen anderen Fragen, und zwar für lange Zeit. Wie das ausgeht, ist ungewiß. Die Gewichtigkeit eines Ausschußvorsitzenden hängt von der Person ab. Zum Beispiel: Es ist nicht so, daß, wenn wir den Ausschußvorsitz nicht haben, der Ausschuß dann ohne Bedeutung wäre. Ob <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> Vorsitzender oder stellvertretender Vorsitzender ist, macht wohl keinen sehr großen Unterschied. Auf die Wirkung nach außen kommt es an. Man muß an die Massenmedien denken. Auswärtige, Gesamtdeutsche, Verteidigungsfragen, das sind Fragen, die im Vordergrund der Diskussion stehen werden.</p>
-				<p>(Starker Widerspruch.)</p>
-				<p>Mit diesen Themen ist auf lange Sicht genausoviel zu erreichen.</p>
-				<p><name type="Person" role="Sprecher" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name>: Wir gehen von irrigen Voraussetzungen aus, wenn wir uns vom Zugreifverfahren mehr versprechen. Es gibt keine Garantie für ein Zugreifverfahren! Wir begeben uns nur in eine schwierige, völlig ungesicherte Situation. Es kommt nicht allein auf den Vorsitz eines Ausschusses an. Was hindert uns, unsere Stellungnahme jeweils sofort herauszugeben? Ich möchte die Zeitung sehen, die dem Sprecher der Opposition seine Meinung nicht abzunehmen bereit wäre, wenn er sie gezielt und gut erarbeitet hat!</p>
-				<p><name type="Person" role="Sprecher" ref="#SchroederChrista_1961-10-17">Schroeder</name>: Zusatzfrage wegen Kampfabstimmung: Welchen Einfluß hat es auf die Zahl der Ausschußsitze für die Fraktion?</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Im gleichen Augenblick würde die Zahl der Ausschußsitze reduziert. Die Fraktion hätte dann genau 200 Ausschußsitze.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Auf diese Tatsache habe ich bereits eingangs hingewiesen. Die Koalition hat es so vorgeschlagen, daß bei ihnen jeder einen Ausschußsitz bekommt. Wir würden aber etwa 50 Kollegen haben, die keinen Hauptsitz im Ausschuß bekämen. Wir können alles in der Kampfabstimmung über uns ergehen lassen. Wir haben auch draußen die besseren Argumente, aber in der Sache werden wir nicht besser beraten, als es bei der Einigung geschieht.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Die Zahl 200 basiert auf den ursprünglichen Vorschlägen der Koalition. Der jetzige Antrag ist das Ergebnis von Zwischenverhandlungen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Der Antrag, der vorliegt, geht auf eine Zusage zurück, daß man die Fragen einvernehmlich lösen möchte.</p>
-				<p><name type="Person" role="Sprecher" ref="#MikatPaul_1969-10-20">Mikat</name>: Würden Sie damit rechnen, daß SPD und FDP ihre Zusage zurückziehen?Kann man sich überhaupt noch einer Abstimmung stellen? Sieht man eine Möglichkeit, eventuell von der Doppelnahme Haushalt und Finanzen herunterzukommen?Dann könnten wir vielleicht beim Zugreifverfahren bessere Chancen haben.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Ob die SPD auf die ursprünglichen Größen zurückgeht, kann ich nicht beantworten. Die Wahrscheinlichkeit des Ja liegt in der Ausweglosigkeit der FDP und der SPD, die ihnen soweit als möglich entgegenkommen möchte.</p>
-				<p>§69 GO<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN016" type="comment"><p>§69 Absatz 1 der Geschäftsordnung des <name type="Organisation" ref="#BT">Deutschen Bundestages</name> in der Fassung vom 28. Januar 1952: »Die Ausschüsse bestimmen ihre Vorsitzenden und deren Stellvertreter nach den Vereinbarungen im <name type="Organisation" ref="#AeRat">Ältestenrat</name>. Dem Bundestag ist hiervon Kenntnis zu geben.« Vgl. BGBl. 1952, II, Nr. 5, S. 396.</p></note></seg> . Nichts anderes sagt die GO zu dieser Frage aus. Das beinhaltet einen Zwang zur Einigung im <name type="Organisation" ref="#AeRat">Ältestenrat</name>. Wenn es zu dieser Einigung nicht kommt, dann entscheidet die Mehrheit. Dafür gibt es ein einziges Präjudiz. In allen übrigen Fragen hat man sich geeinigt. Das Zugreifverfahren ist nur einmal für einen Rest von Ausschüssen praktiziert worden (Ausschuß 17–26). Bei Ablehnung einer Einigung gem. [§]69GO sind wir einem Mehrheitsvotum unterworfen. Wie das formuliert wird, das ist offen. Wir müssen aber wohl davon ausgehen, daß wir dann brutal majorisiert werden. Das halte ich für möglich und wahrscheinlich.</p>
-				<p>Ich halte einen Verhandlungsauftrag im Sinne Jugend, Familie und Gesundheit für einen hohen Preis für eventuell realisierbar, ohne aber dessen sicher zu sein. Aber für einen hohen Preis!</p>
-				<p>Als erstes müssen wir morgen dafür sorgen, daß für das »Verhältnis der Fraktionen«d’Hondt gilt. Die Koalition kann auch einen anderen Schlüssel ansetzen. In permanenter Rücksprache mit der Fraktionsführung habe ich verhandelt. Sie sind aber in nichts präjudiziert. Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> hat mir einen Brief geschrieben, in dem er klar für eine einvernehmliche Regelung plädiert. Er hat der Koalition eine Erklärung abgegeben, daß die Angelegenheiten des Hauses soweit wie möglich geregelt werden würden. Das hat die Wahl des Bundestagspräsidenten ermöglicht. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> weiß, daß die Prämisse für das Funktionieren des Hauses ist, daß die Fraktionsvorsitzenden sich auf ein Wort einer Erklärung müssen verlassen können, mindestens cum grano salis. Jetzt sollen Sie entscheiden, oder wir müssen sagen, daß wir die Angelegenheiten des Hauses noch nicht regeln wollen. Das aber empfehle ich Ihnen am allerwenigsten.</p>
-				<p>Noch einmal verhandeln ist wohl möglich, aber nicht zu vertagen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>: Ich habe mit großer Aufmerksamkeit zugehört, und es istmir schwer gefallen, eine dezidierte Meinung mir zu bilden. Mir liegt daran, daß die Fraktion bei dieser Frage nicht auseinanderfällt. Die, die extrem auf Kollisionskurs gehen wollen, und die anderen, die das Einvernehmen wollen, dürfen jetzt nicht auseinanderfallen.</p>
-				<p>1. Den Kollisionskurs kann man nicht gehen. Wir haben schon damit angefangen: In der Frage des Bundestagspräsidenten sind wir den Weg des Einvernehmens gegangen.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN017" type="comment"><p>Zur Wahl des Abg. <name type="Person" role="Erwaehnung" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> zum Bundestagspräsidenten vgl. die Fraktionssitzung am 16. Oktober 1969, SVP D und F, sowie die Fraktionssitzung am 21. Oktober 1969, SVP A.</p></note></seg> Er konnte nur so beschritten werden, wie es <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> getan hat, das ist klar. Es geht nicht, wenn man die Realitäten nicht verkennen will. Der Kollisionskurs bekommt uns auch in der Öffentlichkeit nicht unbedingt. Die erwartet eine klare, harte und entschiedene Opposition, aber nicht den Eindruck erwecken, als ob wir den [permanenten]<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN018" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Paramenten-«.</p></note></seg> Streit wollten. So sind unsere deutschen Landsleute!</p>
-				<p>Mein Gegenargument: Auch wir selbst haben kein Interesse an einem Kollisionskurs. Auch der SPD kann nicht daran gelegen sein – die Regierungserklärung sprach vom Eingeständnis des Bundeskanzlers, daß er sich einer starken Opposition gegenübersehe. Wir sollten trotz der Argumente, die <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> vorgebracht hat, auch das Interesse der anderen an einem Einvernehmen noch dazu nutzen. Daher sollte <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> den Auftrag bekommen, heute mit aller Energie zu verhandeln, um durch ein Auswechseln eines der Ausschüsse – darüber müßte man sich klar werden – einen der anderen hereinzubekommen.</p>
-				<p>Nicht »Reform-Ausschüsse«! Wir übernehmen schon viel zu viel unter der Formulierung der anderen. Wir sollten das entscheiden.</p>
-				<p>Nun muß allerdings, wenn dieser Auftrag kommt, die Fraktion noch einmal zusammenkommen. Ohne endgültige Entscheidung der Fraktion geht es nicht. Und da leider Zeitdruck entsteht, müßte die Fraktion morgen früh –</p>
-				<p>(Zwischenrede.)</p>
-				<p>Zu zähen Verhandlungen gehört auch Zeit. Also Verhandeln, auf das Entschiedenste und hart verhandeln!</p>
-				<p>Wir könnten noch in einem kleinen Kreis überlegen, welche Ausschüsse ausgewechselt werden sollten. Aber, jetzt keine Abstimmung und das Ergebnis endgültig sein lassen für die vor uns liegenden Jahre! Ein wichtiger Ausschuß aus dem gesellschaftspolitischen Bereich sollte für uns geholt werden. Dafür gibt es nur Verhandlungen. Und dann wird sich die Fraktion entscheiden müssen. Dann kann sie sich aber auch entscheiden.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> schlägt vor, daß <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> sofort die Verhandlungen aufnimmt und noch rechtzeitig zurückkommt und berichtet, ob es überhaupt noch einen Ansatzpunkt gibt.</p>
-				<p><name type="Person" role="Sprecher" ref="#RaweWilhelm_1965-10-19">Rawe</name> dankt <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, daß er das Wort ergriffen hat. Ich hatte vorher den Eindruck, als ob längst Absprachen getroffen worden seien. Man kann ja auch mit der SPD eine Regelung treffen, daß man im Zugreifverfahren sich einigt. Die Mehrheit der Fraktion will wohl das Zugreifverfahren. <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> sollte beauftragt werden, auch diese Alternative einzubeziehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Zur Geschäftsordnung.</p>
-				<p><name type="Person" role="Sprecher" ref="#WarnkeJuergen_1969-10-20">Warnke</name>: Wozu war eigentlich immer nur vom Rechtsausschuß die Rede. Man müßte doch auch den Gesamtdeutschen Ausschuß und den Auswärtigen Ausschuß in die Überlegungen einbeziehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#Schulze-VorbergMax_1965-10-19">Schulze-Vorberg</name>: Wenn die SPD auch an einer einvernehmlichen Regelung interessiert ist, sollte man verhandeln, ob nicht im außenpolitischen Bereich die Ausschüsse doch noch geteilt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#WrangelOlaf_1965-10-19">von Wrangel</name>: Dann muß ja die SPD auch noch mal tagen. Das wird die Sache verzögern.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Ist die Fraktion einverstanden, daß <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> versucht, einen gesellschaftspolitisch relevanten Ausschuß gegen einen Ausschuß im außenpolitischen Bereich einzuhandeln?</p>
-				<p>(Unruhe.)</p>
-				<p>Was soll der arme Kerl dann verhandeln?</p>
-				<p><name type="Person" role="Sprecher" ref="#SchroederChrista_1961-10-17">Schroeder</name>: Auch Rechtsausschuß und Finanzausschuß!</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Austausch aus den uns bis jetzt zugebilligten Ausschüssen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RaweWilhelm_1965-10-19">Rawe</name> wiederholt seinen Hinweis auf Einigung im Zugreifverfahren.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Wer ist für diese Verhandlungen? – Die Mehrheit ist für Verhandlungen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-3">
-				<head>[C.]</head>
-				<p>Benennung des bisherigen »Gesamtdeutschen Ausschusses«.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN019" type="comment"><p>Vgl. dazu Anm. 9.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Wir werden im Plenum dazu eine Debatte haben, keine Geschäftsordnungsdebatte, sondern eine politische Debatte. Beim Thema Bundestagssitzungen in Berlin sollten wir uns bei dieser Gelegenheit noch zurückhalten, jedenfalls nichts präjudizieren!</p>
-				<p><name type="Person" role="Sprecher" ref="#RockEdelhard_1965-10-19">Rock</name>: Wir sollten namentliche Abstimmung beantragen.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN020" type="comment"><p>In der Plenarsitzung am 5. November 1969 wurde über den Antrag der <name type="Organisation" ref="#SPDFraktionBT">SPD-Fraktion</name> betr. Einsetzung eines Ausschusses für innerdeutsche Beziehungen namentlich abgestimmt. Der Antrag wurde angenommen. Eine Abstimmung über den CDU/CSU-Antrag betr. Einsetzung eines Ausschusses für gesamtdeutsche und Berliner Fragen erübrigte sich damit. Vgl. BT Plenarprotokoll 06/8, S. 261–267.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Kein Widerspruch! Namentliche Abstimmung!</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-4">
-				<head>[D.]</head>
-				<p>Berichte aus den Arbeitskreisen</p>
-				<p>AK III</p>
-				<p><name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name>: Der Arbeitskreis habe in zwei Punkten noch keine fertigen Ergebnisse erzielen können: Ausgleichung des Aufwertungsverlustes in der Agrarpolitik und Lösung bei den steuerlichen Veränderungen. Die Sache kann aber in der nächsten Woche noch erledigt werden. Ferner wurde beraten das Schreiben des Bundesfinanzministers vom 30. Oktober wegen der Einbringung des Haushalts 1970 sowie der Mittelfristigen Finanzplanung. Der Haushalt soll erst im März oder April ’70 gelesen werden.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN021" type="comment"><p>Das Bundeskabinett stimmte sich endgültig am 13. November 1969 über den Zeitplan für den Bundeshaushalt 1970 und die Finanzplanung 1969 bis 1973 ab. Die erste Beratung des Haushaltsgesetzes 1970 sollte danach am 19./20. Februar 1970 im Bundestag erfolgen. Vgl. <hi rendition="#smcap">Die Kabinettsprotokolle Der <name type="Organisation" ref="#BuReg">Bundesregierung</name></hi> 1969, Sitzung am 13. November 1969, TOP 5, online.</p></note></seg> Das steht im Zusammenhang mit den vorweggenommenen Steueränderungen durch die <name type="Organisation" ref="#BuReg">Bundesregierung</name>.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN022" type="comment"><p>Bundeskanzler <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> kündigte in der Regierungserklärung am 28. Oktober 1969 an, dass der Arbeitnehmerfreibetrag vom 1. Januar 1970 an verdoppelt werden solle. Ebenso werde vom 1. Januar 1970 an auch die Einkommensgrenze, von der ab die Ergänzungsabgabe bislang erhoben werde, zugunsten der mittleren Einkommen verdoppelt. Vgl. BT Plenarprotokoll 06/5, S. 24. – Die <name type="Organisation" ref="#BuReg">Bundesregierung</name> brachte in diesem Sinne am 21. November 1969 den Entwurf eines Gesetzes zur Änderung steuerrechtlicher Vorschriften (Steueränderungsgesetz 1970) ein. Vgl. BT Drs. 06/75.</p></note></seg> Wir wollen den Haushalt noch in diesem Jahr sehen, sodaß er im Januar 1970 gelesen werden kann.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Zwischenbericht: Wir werden in wenigen Minuten verhandeln können. Ich halte die Erfüllung des Wunsches, den Familienausschuß zu bekommen, für einen hohen Preis für möglich. Ich hoffe in etwa ½ Stunde berichten zu können.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Den Preis wollen wir vorher wissen – keine Festlegung!</p>
-				<p>AK IV</p>
-				<p><name type="Person" role="Sprecher" ref="#GoetzHermann_1949-09-07">Götz</name>: Es liegen 4 Kleine Anfragen vor, <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> hat 2 eingereicht, dieauch schon gedruckt sind: Diskriminierung der Frauenarbeit<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN023" type="comment"><p>Zur Kleinen Anfrage von Abgeordneten der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 23. Oktober 1969 betr. Diskriminierung von Frauenarbeit vgl. BT Drs. 06/12.</p></note></seg> und Bluter<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN024" type="comment"><p>Zur Kleinen Anfrage von Abgeordneten der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 5. November 1969 betr. Behandlung Hämophiler (Bluter) vgl. BT Drs. 06/47.</p></note></seg> . Der Arbeitskreis empfiehlt dazu Gruppenanfrage, nicht Fraktionsanfrage.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> betr. Heimkehrer-Zertifikate<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN025" type="comment"><p>Zur Kleinen Anfrage der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 11. November 1969 betr. Heimkehrerstiftung, hier: Kriegsgefangenenzertifikate, vgl. BT Drs. 06/53.</p></note></seg> und Ausweitung im Begriff auf eine personelle Erhöhung des § 44 des AFG<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN026" type="comment"><p>Zur Kleinen Anfrage von Abgeordneten der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 5. November 1969 betr. Anweisung des <name type="Organisation" ref="#BMAS">Bundesministeriums für Arbeit und Sozialordnung</name> zu § 44 AFG vgl. BT Drs. 06/45.</p></note></seg> . Diese beiden Anfragen sollten als Fraktionsanfragen eingebracht werden.<name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15"> Mick</name> erläutert im Anschluß seine Anfrage.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Keine Bedenken gegen Fraktionsanfrage!</p>
-				<p><name type="Person" role="Sprecher" ref="#MdB_Genderunbekannt">[N. N.]</name><seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN027" type="comment"><p>Sprecher fehlt in der Vorlage.</p></note></seg> : Erläuternde Bemerkungzu§ 44AFG –</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Einverstanden.</p>
-				<p>AK V</p>
-				<p><name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Europäische Sicherheitskonferenz, dieses Thema wird politischen sehr bedeutend werden. Die Äußerungen der <name type="Organisation" ref="#BuReg">Bundesregierung</name><seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN028" type="comment"><p>Vgl. dazu die betreffenden Aussagen des Bundeskanzlers <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> und des Bundesverteidigungsministers <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> in der Plenardebatte am 29. Oktober 1969; BT Plenarprotokoll 06/6, S. 67 und S. 116.</p></note></seg> dazu sind bedenklich, <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> wird eine neue Kurzfassung dazu erstellen. Es wird auch bereits in der Fragestunde zur Sprache kommen.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN029" type="comment"><p>Zu den Fragen des Abg. <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> betr. Europäische Sicherheitskonferenz in der Fragestunde am 6. November 1969 vgl. BT Plenarprotokoll 06/9, S. 276–279.</p></note></seg> Es ist möglich, daß sich wegen der Weisung <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheels</name> eine Aktuelle Stunde daraus ergeben kann. Boris <name type="Person" role="Erwaehnung" ref="#MeissnerBoris"> Meissner</name> zur Breschnew-Doktrin<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN030" type="comment"><p>Am 12. November 1968 legte der Erste Sekretär des ZK der <name type="Organisation" ref="#KPdSU">KPdSU</name>, <name type="Person" role="Erwaehnung" ref="#BreschnewLeonidIljitsch">Breschnew</name>, auf dem Parteitag der PVAP in Warschau die sowjetische Auffassung über die sozialistische Gemeinschaft dar: »Und wenn die inneren und äußeren, dem Sozialismus feindlichen Kräfte die Entwicklung irgendeines sozialistischen Landes auf die Restauration der kapitalistischen Ordnung zu lenken versuchen, wenn eine Gefahr für den Sozialismus in diesem Land, eine Gefahr für die Sicherheit der gesamten sozialistischen Staatengemeinschaft entsteht, ist das nicht nur ein Problem des Volkes des betreffenden Landes, sondern ein allgemeines Problem, um das sich alle sozialistischen Staaten kümmern müssen. Es ist verständlich, daß eine Aktion zur Vereitelung einer Gefahr für die sozialistische Ordnung wie die militärische Hilfe für ein Bruderland eine außerordentliche, notgedrungene Maßnahme ist. Sie kann nur durch direkte Aktionen der Feinde des Sozialismus inner- und außerhalb des Landes hervorgerufen werden, durch Aktionen, die die gemeinsamen Interessen des sozialistischen Lagers gefährden.« Vgl. DzD V/2, S. 1475–1479.</p></note></seg> ; zu diesem höchst interessanten Bericht kommt eine Kurzfassung. Dieses Thema rückt auch die Umgestaltung des Gesamtdeutschen Ministeriums in ein merkwürdiges Licht.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal): Was wird geantwortet auf die Ausführungen <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> zum Kabinetts-Ausschuß »Innerdeutsche Beziehungen«? Ist da gewährleistet, daß wir hier zu überzeugenden Antworten kommen?</p>
-				<p><name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Zu diesem Thema wird gesprochen werden. Wir müssen dabei die Ausrede desBundeskanzlers konterkarieren.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal): Wenn die Betreuung der Deutschen im polnischen Raum mit einbezogen wird, dann läge die Betonung auf der Gefahr für das gesamte Deutschland und alle Deutschen.</p>
-				<p><name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name>: 800 000 bis 1 Million Deutscher leben in polnisch verwalteten Gebieten, und nicht »in Polen«. Dafür gibt es eine Obhuts- und Fürsorgepflicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Wir werden in der Wahl der Argumente und Begriffe nicht ins offene Messer laufen. Aber wir müssen auch eine Sprache führen, die klarmacht, daß wir nicht um einen Namen, sondern um eine Deutschland verändernde Politik streiten. <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name> hat darüber gesprochen, daß es sich auch um eine veränderte Politik handelt.<seg type="note"><note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN031" type="comment"><p>Vgl. dazu auch die Ausführungen des Bundesministers für innerdeutsche Beziehungen, <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name>, in der Plenarsitzung am 5. November 1970; BT Plenarprotokoll 06/8, S. 264 f.</p></note></seg> Dort werden wir sie fassen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> unterstütztdasnachdrücklich. Wir können darauf bestehen, daß der Ausschuß den Namen »Gesamtdeutsch« behält, indem wir verlangen, daß, wenn hinter dem Bezeichnungswandel ein Wandel der Politik liegt, wir dann überstimmt werden, dann haben wir unsere Meinung deutlich zum Ausdruck gebracht. Aber nicht nur wegen der Bezeichnung als solcher streiten.</p>
-				<p>Man kann alle möglichen Ausschüsse abgeben. Wenn die CDU darauf verzichten würde, den Auswärtigen Ausschuß anzunehmen, würde sie eine Sünde gegen ihre ganze Tradition begehen, und davor warne ich auf das Dringendste.</p>
-				<p><name type="Person" role="Sprecher" ref="#MikatPaul_1969-10-20">Mikat</name>: Diese Frage steht wohl nicht zur Diskussion. Wenn überhaupt Tausch, dann nur gleichgewichtiger Tausch, nicht Recht gegen Jugend! Es gibt schließlich unwichtigere.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> wird wohl nicht in Kürze zurückkommen. Also morgen 8 Uhr Fraktionssitzung! Die Fraktionssitzung ist geschlossen!</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-06_1969-11-04-t1510_WZ" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#ZehenderKathrin"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1969-1972. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/VI</title>
+                  <author>Kathrin Zehender</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2016</date>
+                  <idno>https://d-nb.info/1121220037</idno>
+                  <idno>https://d-nb.info/1128841533</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>08-001-1020/1</idno>
+                     <objectName>Fraktionsprotokoll zur Fraktionssitzung vom 4. Nov.1969</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 4. November 1969</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>14 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1969-11-04">
+               <time type="start" when="15:10:00"/>
+               <time type="end" when="18:40:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">06</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="#WZ" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-1" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-1">A. Bericht des Parlamentarischen Geschäftsführers <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>: interfraktionelle Verhandlungen betr. die Organisation der Ausschüsse; Verteilung der Vorsitze in den Ausschüssen; Frage einer einvernehmlichen Lösung mit den anderen Fraktionen; Empfehlung <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasners</name> zur Annahme des Ausschusstableaus.</item>
+               <item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-2" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-2">B. Aussprache über den Bericht: Alternativen beim Verfahren zur Verteilung der Ausschussvorsitze: Zugreifverfahren oder Kampfabstimmung; Benachteiligung der CDU/CSU im Hinblick auf die Vergabe der innenpolitisch relevanten Ausschüsse; Relevanz der Vorsitze; Vor- und Nachteile eines »Kollisionskurses«; Möglichkeit des Tauschs; Beschluss zu erneuten Verhandlungen über die Verteilung der Vorsitze.</item>
+               <item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-3" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-3">C. Benennung des Gesamtdeutschen Ausschusses: Antrag zu namentlicher Abstimmung.</item>
+               <item xml:id="cdu-csu-06_1969-11-04-t1510_WZ_SVP-4" corresp="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-4">D. Berichte aus den Arbeitskreisen: AK III: Einbringung des Haushalts 1970 sowie der Mittelfristigen Finanzplanung; AK IV: Diskriminierung der Frauenarbeit, Bluter, Heimkehrer-Zertifikate, Arbeitsförderungsgesetz; AK V: Europäische Sicherheitskonferenz, Umbenennung des Gesamtdeutschen Ministeriums bzw. des Ausschusses.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-1">
+            <head>[A.]</head>
+            <p>{(Dieses Protokoll beruht auf 8 DIN A4 Seiten Stenonotizen – Band ist ohne Ausschreiben gelöscht worden.)}<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN002" type="comment">
+                     <p>Technischer Hinweis in der Vorlage betr. die Aufnahme der Sitzung auf Tonband.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> eröffnet die Sitzung und nennt als Problem Zahl und Größe der Ausschüsse.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN003" type="comment">
+                     <p>Zur Organisation der Bundestagsausschüsse vgl. die Fraktionssitzung am 28. Oktober 1969, Anm. 28.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> weist daraufhin, daß in der kommenden Woche die Ostpolitische Debatte undmit ihr eine politische Entscheidung, nämlich die über den Atomsperrvertrag, stattfinden wird.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN004" type="comment">
+                     <p>Zur Plenardebatte am 12. November 1969 vgl. BT Plenarprotokoll 06/10. – Zum Atomwaffensperrvertrag vgl. die Fraktionssitzung am 16. Oktober 1969, Anm. 42.</p>
+                  </note>
+               </seg> Zum Thema der Aufstellung der Ausschüsse: Es herrscht jetzt die Tendenz, zu jedem Ministerium einen korrespondierenden Ausschuß zu bilden. Dazu sollen kommen der Haushaltsausschuß, der Ausschuß für Geschäftsordnung und Immunität, vor allem aber ein Ausschuß für Arbeit<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN005" type="comment">
+                     <p>Vgl. dazu die Fraktionssitzung am 28. Oktober 1969, Anm. 25.</p>
+                  </note>
+               </seg>, für Jugend<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN006" type="comment">
+                     <p>Vgl. dazu die Fraktionssitzung am 28. Oktober 1969, Anm. 26.</p>
+                  </note>
+               </seg> und für Kriegsfolgen<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN007" type="comment">
+                     <p>Vgl. dazu die Fraktionssitzung am 28. Oktober 1969, Anm. 27.</p>
+                  </note>
+               </seg> .</p>
+            <p>Die anderen Fraktionen haben uns wissen lassen, daß sie die Bildung dieser letzteren Ausschüsse auch im Plenum ablehnen werden. Bliebe zu betonen, daß in dieser Frage die Berliner Abgeordneten voll mitstimmen.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN008" type="comment">
+                     <p>Zum Stimmrecht der Berliner Abgeordneten vgl. die Fraktionssitzung am 21. Oktober 1969, Anm. 11.</p>
+                  </note>
+               </seg> Das würde bedeuten, daß wir in der Minderheit bleiben würden. Der Fraktionsvorsitzende habe gebeten zu prüfen, ob es nicht möglich sei, eine einvernehmliche Regelung zu erzielen. Wir haben tagelang darüber mit der SPD verhandelt. Das Ergebnis war ein Brief, den <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> verlas.</p>
+            <p>§7 der Geschäftsordnung: Die Leitenden Beamten soll der Präsident nur im Einvernehmen einstellen, befördern oder entlassen können – darüber sei inzwischen mit dem Präsidenten eine Einigung erzielt worden.</p>
+            <p>Der Vermittlungsausschuß(§67) soll nicht geändert werden! Der jetzt zu fassende Beschluß bindet nur diesen Bundestag und unterliegt i.ü. der Diskontinuität. Dabei erhält jede Fraktion vorweg einen Sitz; dann erfolgt die weitere Zusammensetzung nach d’Hondt(6 CDU/CSU), 5 SPD, FDP 0 – jetzt aber 5:5:1. Dafür behalten wir den Vorsitz. Die Alternative wäre eine Kampfabstimmung.</p>
+            <p>Es sollen folgende 17 Ausschüsse gebildet werden und dazu 2 Sonderausschüsse:</p>
+            <p>a) Sonderausschuß Sport und Olympische Spiele (CDU/CSU).</p>
+            <p>b) Sonderausschuß Strafrechtsreform(SPD); der Vorsitz des nächsten Sonderausschusses fällt an die CDU/CSU.</p>
+            <p>Zu den drei weiteren Ausschüssen soll kein Antrag im Plenum gestellt werden, wie es in dem Brief heißt:</p>
+            <p>1. Wahlprüfung, 2. Petitionen, 3. Auswärtiges, 4. Verteidigung, 5. Innen, 6. Bildung und Wissenschaft, 7. Städtebau und Wohnungswesen, 8. Jugend, Familie und Gesundheit,9. Rechtsausschuß, 10. Haushaltsausschuß, 11. Finanzausschuß, 12. Wirtschaftsausschuß, 13. Wirtschaftliche Zusammenarbeit, 14. Ernährung, Landwirtschaft und Forsten, 15. Arbeit und Sozialordnung, 16. Verkehr, Post und Fernmeldewesen.</p>
+            <p>Keine Einigkeit: Innerdeutsche Beziehungen oder Gesamtdeutsche und Berliner Fragen.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN009" type="comment">
+                     <p>Vgl. den Antrag der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 4. November 1969 betr. Einsetzung eines Ausschusses für gesamtdeutsche und Berliner Fragen; BT Drs. 06/43. – Vgl. den Antrag der Koalitionsfraktionen vom 4. November 1969 betr. Einsetzung eines Ausschusses für innerdeutsche Beziehungen; BT Drs. 06/39.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dies ist kontrovers zu entscheiden.</p>
+            <p>Größe der Ausschüsse:<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN010" type="comment">
+                     <p>Zur Größe der Bundestagsausschüsse in der 6. Wahlperiode vgl. <hi rendition="#smcap">Datenhandbuch</hi> 1949–1999, II, S. 2100.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>33 Mitglieder sollen haben: der Auswärtige Ausschuß, der Haushaltsausschuß, der Finanzausschuß, der Wirtschaftsausschuß, der Landwirtschaftsausschuß und der Sozialausschuß.</p>
+            <p>29 Mitglieder: der Verteidigungsausschuß, der Innenausschuß, der Ausschuß für Jugend, Familie und Gesundheit.</p>
+            <p>17 Mitglieder: der Wahlprüfungsausschuß, Immunität, Wirtschaftliche Zusammenarbeit. Alle übrigen Ausschüsse sollen 25 Mitglieder umfassen.</p>
+            <p>Vorsitzende:<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN011" type="comment">
+                     <p>Zur Verteilung der Ausschussvorsitze in der 6. Wahlperiode vgl. <hi rendition="#smcap">Datenhandbuch</hi> 1949–1999, II, S. 2056–2058.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die CDU/CSU erhält den Vorsitz im Haushaltsausschuß, Finanzausschuß, im Auswärtigen Ausschuß, im Verteidigungsausschuß, im Gesamtdeutschen Ausschuß, im Rechtsausschuß, im Wohnungsbauausschuß und im Petitionsausschuß.</p>
+            <p>Die SPD erhält den Vorsitz im Ernährungsausschuß, im Sozialausschuß, im Wirtschaftsausschuß, im Innenausschuß, im Entwicklungshilfeausschuß, im Gesundheitsausschuß, im Verkehrsausschuß und im Geschäftsordnungsausschuß.</p>
+            <p>Die FDP bekommt den Vorsitz im Wirtschaftsausschuß(das war wohl ein klares Versprechen der SPD an die FDP).</p>
+            <p>Die SPD hat uns wissen lassen, daß sie bereit ist, auf dieser Basis zu akkordieren. Der Nachteil[…]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN012" type="comment">
+                     <p>Vom Bearbeiter gestrichen: »ung«.</p>
+                  </note>
+               </seg> dieses Akkordes wäre:</p>
+            <p>1. daß wir darauf verzichten, die von uns geforderten 3 Ausschüsse zu einer Entscheidung im Plenum zu stellen,</p>
+            <p>2. aus 3 oder 4 gesellschaftspolitisch relevanten Ausschüssen bekommen wir nur einen Ausschuß, weil es nur einen sozialpolitischen Ausschuß gibt,</p>
+            <p>3. die beiden wirtschaftspolitisch relevanten Ausschüsse, Wirtschaft und Landwirtschaft, kommen in die Hände der Koalition.</p>
+            <p>Der Vorteil der Regelung:</p>
+            <p>1. Wir haben im außenpolitischen Bereich die Ausschüsse und sind damit z.B. mit dem Vorsitzenden des Außenpolitischen Ausschusses draußen international unübersehbar und unüberhörbar.</p>
+            <p>2. Den finanzpolitischen Bereich behalten wir in den Händen. Steuer- und Haushaltspolitik sind Teile der Wirtschaftspolitik.</p>
+            <p>3. Der Vorsitz im Vermittlungsausschuß für die Dauer von 4 Jahren bleibt in unserer Hand.</p>
+            <p>Die Alternative ist die Majorisierung und das Zugreifverfahren mit all seinen Zufälligkeiten. Wir könnten am Ende schlechter dastehen als bei dem, was ausgehandelt ist. Ich empfehle der Fraktion, diesen Vorschlag anzunehmen. Die Schlußentscheidung liegt bei der Fraktion. Der Fraktionsvorstand hat mir Vollmacht gegeben zu einem Vorabschluß.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-2">
+            <head>[B.]</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Bei der Zahl der Ausschüsse sind wir von der Mehrheit abhängig. Bei der Wahl der Vorsitze können wir das Zugreifverfahren vorziehen, wenn wir Poker spielen wollen. Wir sollten aber dem vorgelegten Vorschlag zustimmen, sonst bekommt nicht einmal jeder unserer Abgeordneten einen ordentlichen Ausschußsitz.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#FrankeHeinrich_1965-10-19">Franke</name> stellt die Frage, wie wohl das Ergebnis des Zugreifverfahrens aussehen könnte.</p>
+            <p>Im Wahlkampf hätten die inneren Reformen den Vorrang gehabt. Alle einschlägigen Ausschüsse sind nach diesem Verhandlungsvorschlag in der Hand der Koalition. Das sei aber sehr bedenklich, vor allem weil die Koalition starken Wert auf das Instrument der öffentlichen Anhörung legen wird.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Zum Zugreifverfahren: Wenn wir den Haushalt greifen, dann greifen die Sozialdemokraten den Sozialpolitischen Ausschuß usw. Die Zufälligkeiten und Risiken sind sehr groß. Wenn mehrere Ausschüsse, gesellschaftspolitische Ausschüsse zur Debatte gestanden hätten, hätte man etwas durchsetzen können. Das ist aber nicht der Fall – hier darf man sich keinen Illusionen hingeben. Es gibt bei <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> ein Interesse daran, zu Beginn der Legislaturperiode in einer Serie von Abstimmungen uns Abstimmungsniederlagen beizubringen, um zu zeigen, wer im Plenum Chef im Ring ist. Man sollte also keine Entscheidungen suchen, die im Plenum die Mehrheit mehr als notwendig deutlich machen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Es gäbe, wenn nicht akkordiert wäre, 30–40 unserer Abgeordneten, die nicht ordentliches Mitglied in einem der Ausschüsse wären.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wenn das ursprüngliche Angebot der Koalition angenommen worden wäre, hätten wir nicht für jeden Abgeordneten von uns einen Ausschußsitz gehabt. Es wären nur 234 Sitze gewesen, wozu allerdings Sitze in Europäischen Gremien hinzukommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das wäre vielleicht noch zu verkraften, weil nicht alle Europäer hier sein können und weil von der Fraktionsführung nicht alle in Ausschüssen seinmüssen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> (Hessen) stellt fest, das Ergebnis <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasners</name> sei das Optimum des Erreichbaren. Aber es gäbe noch ein Anliegen. Es sei nicht recht einzusehen, warum wir auch die »Bezeichnungen Wirtschaft und Mittelstand« drangegeben hätten. Notfalls sollte das Verschwinden dieser Bezeichnung zu Lasten der Koalition gehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Ich habe mehrmals die Rückkehr zu den alten Namen vorgeschlagen. DieSPDhat das rundweg abgelehnt. Wenn jetzt die Bezeichnung »Mittelstand« fällt, dann geht das zu Lasten der Koalition.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DichgansHans_1961-10-17">Dichgans</name> spricht sich für das Verhandlungsergebnis aus. Die Nachteile träten nurdann ein, wenn wir das System der Ausschüsse so starr behandeln wie bisher. In anderen Parlamenten ist das ganz anders. Dort gibt es Ausschüsse, die dürfen und können spätere Ausschüsse fordern.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name>: Wenn wir Abstimmungen verlieren, muß das im rechten Zahlenverhältnis sein. Wenn aber bei denen 10% und bei uns 12% fehlen, ist das sehr schlecht. DieMitglieder des Vorstandes und die Europäer können doch nicht in den Ausschüssen sein. Dann müssten die Sitze eigentlich ausreichen. Es soll einen Ausschuß für Olympiade und einen für Strafrechtsreform geben. So publikumswirksam der erstere sein kann, umso wichtiger wäre es, den Vorsitz im Strafrechtsausschuß zu behalten. Im Zugreifverfahren bekäme die FDP jedenfalls den Vorsitz im Wirtschaftsausschuß nicht. Wir müßten auch testen, wie es mit der Einigkeit in der Koalition steht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wenn der Rechtsausschuß für uns geht, dann kann nicht gleichzeitig der Strafrechtsausschuß auch zu uns kommen, i.ü. heißt der Ausschuß »Sport und Olympische Spiele«. Diese Sache muß auch im Hinblick auf die Wirkung in der Öffentlichkeit gesehen werden. Jedenfalls sollte man das Gespräch über den nächsten Ausschuß heute nicht führen.</p>
+            <p>Natürlich hat die FDP selbst den 16. Griff. Aber die SPD wird den Wirtschaftsausschuß greifen und der FDP geben, wie wir dies auch schon getan haben. Daran wird bestimmt nicht die erste schwere Mißstimmung in der Koalition entstehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>: Wir haben jetzt 226 Plätze und 17 Europapolitik, und wir haben 2 Ausschüsse mit 16Plätzen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StommelMaria_1964-12-04">Stommel</name>: DieandereRegelung wären mindestens 20 Plätzeweniger.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#VarelmannFranz_1953-10-06">Varelmann</name>: Das Problem der Ausschüsse ist ein Problem von 4 Jahren! Wir dürfen nicht auf den Vorsitz im Sozialpolitischen Ausschuß verzichten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>: Zunächst hatte ich Bedenken wegen dieses Ergebnisses. Die Nahtstelle der Koalition liegt in der Koalitions- und Gesellschaftspolitik. Wir besitzen aber bei derBesetzung der Ausschüsse keine Mittel, um den AbsichtenderKoalition zu begegnen, müssenuns aber diesen Gebieten besonders aufmerksam zuwenden. Denndie SPD hat auf diesen Gebieten den gesamten Apparat in der Hand! Wir stehen in der akuten Gefahr, daß das mühsam gehaltene Gleichgewicht in dieser Fraktion aus den Angeln gehoben werden kann dadurch, daß die Mitglieder der Fraktion, die sich um die Sozialpolitik gekümmert haben, mehr oder weniger auf die eigenen Füße gestellt sind, wenn ihnen nicht geholfen wird. Einer weisen Fraktionsführung möchte ich anheimgeben, wie man es verhindert, daß das Gleichgewicht dieser Fraktion nicht in Mitleidenschaft gezogen wird. Da aber Politik die Kunst des Möglichen ist, muß ich zugeben, daß ich kein anderes Vorgehen anraten kann.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RitzBurkhard_1965-10-19">Ritz</name>: Man konnte feststellen, daß unsere Anträge für Jugend usw. draußen gut angekommen sind. Nun sollen wir die entsprechenden Anträge stillschweigend zurückziehen. Es käme nicht gut an, wenn wir das stillschweigend tun. Im übrigen haben wir auch noch den Vorsitz im Ernährungsausschuß verloren. Das ist für draußen sehr bedeutungsvoll.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wenn wir uns einigen, müssen die Sozialdemokraten wie wir ihre Anträge zurückziehen. Wir werden dann in der geeigneten Form die dazugehörigen Briefe veröffentlichen. Wir werden sagen, daß wir klar majorisiert wurden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das läßt sich einfach nicht im Plenum sagen –</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgerAlbert_1965-10-19">Burger</name> spricht sich anerkennend über die Arbeit aus, die <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> geleistet hat, erhabe aber 2 Bemerkungen anzufügen: Wußten wir eigentlich nicht schon immer, wie die Mehrheitsverhältnisse liegen? Gibt es nicht eine große Enttäuschung bei den Verbänden? Die Koalition hat eine Politik der Reformen angekündigt. Ich halte es für technisch unmöglich, die dazu notwendigen gesetzlichen Regelungen durch den Flaschenhals eines einzigen Ausschusses hindurchzujagen. Das ist nicht »mehr Demokratie«, das ist weniger Demokratie! Im letzten Bundestag waren die beteiligtenAusschüsse schwer beschäftigt. Und nun soll das alles durch einen einzigen Flaschenhals? Das bedeutet nicht mehr, sondern weniger Demokratie.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Was mit dem Sozialpolitischen Ausschuß vorgeschlagen wird, wird mit Sicherheit nicht klappen. Muß aber der Bundestag einen 18. Ausschuß einrichten, dann steht dieser Vorsitz uns zu. Jetzt haben wir 8:8:1. Muß der Ausschuß fürSozialpolitik geteilt werden, dann bekommen wir automatisch den Vorsitz.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KoepplerHeinrich_1965-10-19">Köppler</name>: Unsere Chancen beim Zugreifverfahren wären nicht klar. Das Zugreifverfahren ist aber durch die Geschäftsordnung nicht gedeckt. Man könnte uns diesen uns zustehenden Ausschuß nicht zuteilen, und dann könnten wir die Chance auch noch verlieren. Es war nicht möglich, diesen Sozialpolitischen Ausschuß zu bekommen. Dieser Tatsache müssen wir in der Fraktion einfach Rechnung tragen. Im übrigen wird das Konzept der Koalition in dieser Sache nicht aufgehen. Im übrigen muß man diese Problematik in der Öffentlichkeit mit allem Nachdruck klarstellen. Wenn wir unsere Anträge zurückziehen, wird das natürlich Enttäuschung geben bei den Verbänden. Aber man wird auch anerkennen, daß wir in harten Verhandlungen unterlegen sind.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MartinBerthold_1957-10-15">Martin</name>: Die Reformausschüsse sind nicht in unserer Hand; das ist aber wohl nicht mehr zu vermeiden. Aber der Wissenschaftsausschuß sollte aufgestockt werden. Für die vielen Aufgaben braucht man auch die entsprechenden Leute im Ausschuß. Das Angebot in der Fraktion ist hervorragend. Das sollten wir auch ausnutzen, also 33 Mitglieder!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Ich werde darüber mit den anderen Fraktionen verhandeln.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BreidbachFerdinand_1969-10-20">Breidbach</name>: Was ausgehandelt ist, ist für die Fraktion wohl der bequemste aller möglichen Wege. Es sind 3 Nachteile angeführt worden. Vor allem werden allepublikumswirksamen Ausschüsse in der Hand der SPD sein. Das ist sehr bedenklich. Wir gelten als kopflastig für die große Politik. Dieser Eindruck setzt sich auf diese Weise jetzt fort. Es ist die Frage, ob das auf lange Sicht gesehen gut ist. Wäre es da nicht überlegenswert, einen der Ausschüsse für auswärtige Politik aufzugeben zugunsten eines gesellschaftspolitischen Ausschusses? Ich stelle aus diesem Grunde den Antrag: Austausch des Ausschusses für gesamtdeutsche Fragen gegen den Ausschuß für Familie.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Parlamentarische Geschäftsführer dürfen nicht empfindlich sein, aber ichbin nicht darauf ausgewesen, die bequemste Lösung zu finden. Das war eswirklich nicht. Zum Antrag <name type="Person" role="Erwaehnung" ref="#BreidbachFerdinand_1969-10-20">Breidbach</name>: Jugend, Familie und Gesundheit soll an Stelle des gesamtdeutschen Ausschusses von uns besetzt werden. Wenn die Fraktion so abstimmt, habe ich das zu vollziehen. Aber ich empfehle der Fraktion, diesem Antrag nicht zu folgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#FircksOtto_1969-10-20">von Fircks</name>: <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hat jetzt ein Schlußgesetz für Kriegsfolgen und Kriegsfolgeschäden angekündigt.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN013" type="comment">
+                     <p>Vgl. dazu die Äußerungen des Bundeskanzlers <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> in der Regierungserklärung am 28. Oktober 1969; BT Plenarprotokoll 06/5, S. 25.</p>
+                  </note>
+               </seg> Dafür wäre ein Ausschuß angebracht. Die Bevölkerung erwartet keine harte Politik hinter verschlossenen Türen, sondern harte Sondersitzungen im Plenum.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StarkAnton_1965-10-19">Stark</name>: Ich bin zutiefst unbefriedigt mit dem vorgelegten Ergebnis. Die Fraktion wird Kopflastigkeit für die Außenpolitik haben, aber die Entscheidung inder nächsten Wahl fällt nicht auf diesem Gebiet, sondern in der Gesellschafts- und Innenpolitik. Aber gerade auf diesem Gebiet werden wir nichts mitgestalten können.</p>
+            <p>Wir haben Anträge vorgelegt und uns öffentlich dazu geäußert. Wir wußten, wie die Mehrheiten liegen. Jetzt wird uns heimlich, still und leise ein Ergebnis vorgelegt und gesagt, daran sei nichts mehr zu ändern. Vielleicht machen wir damit einen kardinalen Fehler. Ich werde gegen dieses Ergebnis stimmen. Ich halte es für sehr unbefriedigend.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Sinn dieser Diskussion ist es, hier seine Meinung und die Meinungen vorzutragen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RommerskirchenJosef_1960-12-12">Rommerskirchen</name> begrüßt, daß der Vorsitz im Verteidigungsausschuß erhalten bleibt, nicht nur wegen des Umfangs der Mittel, sondern auch wegen der Möglichkeit, sich als Untersuchungsausschuß zu konstituieren. Aber die Mitgliederzahl ist zu gering. Sie trägt der Aufgabe nicht Rechnung. Man sollte auf 33 Mitglieder gehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name> macht darauf aufmerksam: Wir sind die Minderheit in diesem Bundestag, dassollten wir immer bedenken. Daran muß sich unsere Beurteilung des Vorschlags orientieren. Selbstverständlich hat das Tableau Schönheitsfehler. Aber wenn von Erhöhung der Mitgliedszahlen die Rede ist, dann muß man auch sehen, was für die Koalition noch erträglich ist wegen ihrer personellen Schwäche. Natürlich könnte man eineoffene Feldschlacht wagen, aber man wird in allen Punkten unterliegen. Ein paar Tage lang werden wir Freude daran haben, aber hinterher sieht es dann ganz anders aus. Unter diesen Gesichtspunkten ist das Verhandlungsergebnis optimal.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name>: Die Lösung mit nur einem sozialpolitischen Ausschuß ist sachlich nicht haltbar und wird korrigiert werden müssen. Die Frage lautet: Wenn ein solches Paket angenommen würde, dann müßte man dafür sorgen, daß morgen nicht nur abgestimmt wird, sondern daß die Fraktion klar reklamiert, daß wir diese Lösung für miserabel halten. Ist das möglich?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Die Vereinbarung zwischen den Fraktionen deckt ausschließlich das Nicht-Stellen von Anträgen, erstreckt sich nicht auf Erklärungen im Plenum. Ich halte eine sachliche Erklärung im Plenum, ich halte eine Sacherklärung im Plenum für möglich, aber es ist notwendig, das der anderen Seite zu sagen, und sie muß von der Sache her sorgfältig [begründet sein]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN014" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »begründen«.</p>
+                  </note>
+               </seg> . Man kann nicht polemisieren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MikatPaul_1969-10-20">Mikat</name>: Ich habe noch kein abschließendes Urteil über das Ergebnis. Aber eineOpposition muß vor allem an Wahlen denken. Wenn wir uns erfolgreich präsentieren wollen, dann muß man sehen, daß die Interessenlage der Fraktion sich nicht immer mit der öffentlichen Meinung deckt. Nichts gegen die Wichtigkeit der Sozialpolitik. Aber wenn man das prüft, wie das jetzt gegangen ist, dann muß man sehen, daß das für uns publikumswirksam nicht günstig ist. Wir müssen umdenken lernen. Wenn wir auch noch in der Haushalts- und Finanzpolitik die Bremser machen, dann möchte ich mir die Wahlen 1973 erst einmal ansehen.</p>
+            <p>Wir müssen uns fragen, wie wir verhindern können, daß unsere Ausschußinstrumente zum Mittel rein fiskalischen Denkens werden. Was wir tun müssen, ist, Partei- und Fraktionsgremien zu schaffen, die die Materien der Reformvorhaben in die Hand nehmen.</p>
+            <p>Wir müssen einfach einen Stab einrichten, um das wahrzunehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#OrgassGerhard_1965-10-19">Orgaß</name>: Ich bin mit dem Ergebnis unzufrieden wegen der Kopflastigkeit, der Bremswirkung und der mangelnden Möglichkeiten in der Reformarbeit. <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> hat in der Debatte die Sorge ausgesprochen, daß mit dieser neuen Regierung die gesellschaftlichen Interessen herausgestellt werden. Dieses Wort sollten wir wieder überprüfen.</p>
+            <p>Wir wissen, daß die gesellschaftlichen Verbände für die Einsetzung der entsprechenden Ausschüsse sind, und wissen, in welche Bedrängnis Herren der SPD kommen, wenn man es darauf ankommen läßt. Aus dieser Verantwortung sollten wir sie nicht entlassen. Da nützt dann auch keine Erklärung der Fraktion mehr, daß man auf dem Verhandlungswege alles versucht habe.</p>
+            <p>Wir müssen alle Initiativen durchdenken, bevor wir uns entscheiden. Wenn der Sozialpolitische Ausschuß für die SPD so wichtig ist, daß sie ihn als ersten greifen würde, warum sollten wir ihn nicht als ersten Ausschuß greifen? Und wie geht es dann weiter? Wenn wir den sozialpolitischen Ausschuß greifen, könnte man die Spannung zwischen Partei und Gewerkschaften bis zum Äußersten bringen. Das müssen wir uns überlegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#JenningerPhilipp_1969-10-20">Jenninger</name> möchte hören, wie die Ausschußsitze auf die Fraktionen verteilt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: In allen Ausschüssen hat die Koalition eine Stimme mehr als wir.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KliesingGeorg_1953-10-06">Kliesing</name>: Es ist viel von der Wirksamkeit nach draußen gesprochen worden. Welche Bedeutung hat denn der Vorsitz eines Ausschusses? Aus der Vergangenheit haben wir dazu eine ganze Reihe von negativen Beispielen. Der Ausschußvorsitzende hat vorwiegend nach innen zu wirken. Beim Zustandekommen des Tableaus war für die SPD ein wichtiges Motiv, solche Ausschüsse zu nehmen, für die sie einen geeigneten Vorsitzenden präsentieren konnte. Sonst könnte man nicht verstehen, warum sie auf den gesamtdeutschen Ausschuß verzichtet haben.</p>
+            <p>Gewiß stehen die gesellschaftspolitischen Dinge sehr im Vordergrund, aber einen Tausch gerade mit dem gesamtdeutschen Ausschuß sollten wir nicht machen. Der Vorsitz im deutschlandpolitischen Ausschuß ist die einzige Schlüsselfunktion, die wir noch zur Kontrolle der Regierung und zu unserer eigenen Orientierung haben.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name> spricht sich für die Aufstockung des Ausschusses für Wirtschaftspolitik aus.</p>
+            <p>Es wird außerordentlich schwierig sein, überhaupt jedem Mitglied nur einen ordentlichen Sitz zu geben. Deshalb sollteman die Mitgliederzahl der Ausschüsse aufstocken.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Das wird versucht werden. Es gibt Ausschüsse mit Initiativrecht. Diese sind in unserer Hand.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> bezweifelt, ob der Ausschußvorsitzende mehr hört, als ein normales Ausschußmitglied. Meine Sorge ist, daß die SPD eine große Zahl von auf den Wähler ausgerichteten Ausschüssen hat. Das wird sie nutzen. Die Zahl solcher Ausschüsse in unserer Hand ist wesentlich kleiner. Vor allem hätte man nicht auf den Landwirtschaftsausschuß verzichten sollen. Das macht mir große Sorge.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuellerJohannes_1961-10-17">Müller</name> (Berlin): Ich habe immer besonderes Interesse für sozial- und gesellschaftspolitische Bedenken gehabt. Mir wäre es auch lieber, wenn wir auf diesem Gebiete einen Ausschußvorsitz hätten. Aber ein ernstes Wort als Berliner. Ich binüberrascht und traurig, daß hier vorgeschlagen wird, den gesamtdeutschen Ausschuß zu tauschen. Sollen wir das auch noch der SPD überlassen? Dies ist eine Existenzfrage für die Berliner. Es darf nicht sein, daß wir diesen Ausschuß aufgeben. Es ist ja eine Existenzfrage für unser gesamtes Deutschland. Die größten Kontroversen sind gerade auf diesem Gebiet zu verzeichnen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Wir werden in diesem Raume, wenn es um die Ausschußverteilung geht, niemals zu einer völligen Übereinstimmung kommen. Aber die Verhandlungsbereiche, die wir haben, sind gleich Null. Wir können keine imaginären Schachspiele vorführen, sondern müssen diese Dinge realistisch regeln ohne Kampfabstimmungen und Zugreifverfahren. Sonst wird die Unzufriedenheit noch größer sein. Wir sollten uns nun entscheiden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Zum Zugreifverfahren: Es kann so praktiziert werden, wie es bisher schon einmal gemacht worden ist. Aber die Geschäftsordnung erlaubt auch eine andere Auslegung.</p>
+            <p>Es kann auch nach d’Hondt verteilt werden. So könnten wir 8 Ausschüsse bekommen – und die Mehrheit bestimmt, welche. Die SPD wird wohl nicht die Geschäftsordnung strapazieren. Es ist wohl in der SPD erörtert worden. Aber im Rahmen der geltenden Geschäftsordnung ist ein Mehrheitsbeschluß möglich.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HortenAlphons_1965-10-19">Horten</name> fragt, ob ein starker Widerstand dagegen spürbar geworden sei, einen publikumswirksamen Ausschuß in die Hand der CDU/CSU zu bekommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Es sind Alternativen denkbar: Die SPD könnte darauf eingehen, daß wir Jugend, Familie und Gesundheit bekommen, wenn wir den Rechtsausschuß abgeben. Über jede Phase der Verhandlungen habe ich die Fraktionsführung informiert. Ich habe meinen Brief begonnen:»In dem Ziele {...}« Abgesehen von dieser einzigen Möglichkeit halte ich eine Verhandlungsmarge nicht mehr für möglich und nicht mehr für gegeben. Die andere Möglichkeit wäre: Die Einigungsbemühungen sind gescheitert. Wir müssen festlegen, nach welchen mechanischen Methoden die Vorsitze vergeben werden.</p>
+            <p>Noch ein Nachtrag zum Bericht: In allen Ausschüssen stellen wir den stellvertretenden Vorsitzenden, wenn wir den Vorsitz nicht haben. Ich würde aber nicht empfehlen, den Rechtsausschuß aufzugeben. Der ist ein Schlüssel-Ausschuß.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AignerHeinrich_1957-10-15">Aigner</name> unterstützt <name type="Person" role="Erwaehnung" ref="#MikatPaul_1969-10-20">Mikat</name>. Interessant an der Besetzung der Ausschüsse sei die eine Frage, bei welcher Besetzung man diese Koalition zerbrechen kann oder in 4 Jahren wieder zur Regierung kommen kann. Gewiß habe <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> viel erreicht, aber dies wäre die unpolitischste Fraktion, die dieses Ergebnis annehmen würde. Wir haben Massen von Wählern, die nicht mit der Außenpolitik angesprochen werden. Und diese überlassen wir dem freien Spiel der anderen! Ich würde es für besser halten, sich überstimmen zu lassen, als dieses Verhandlungsergebnis anzunehmen. Wir müssen sobald als möglich auf Kollisionskurs gehen, wenn wir nicht für lange [Zeit] in der Opposition bleiben wollen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Wir werden uns wohl angewöhnen müssen, längere Fraktionssitzungen zu haben als bisher. Wir sprechen immer von der hauchdünnen Mehrheit und scheuen auf der anderen Seite die Abstimmung. Das ist nicht gut.</p>
+            <p>Das Verhandlungsergebnis gewinnt an Bedeutung, wenn wir sagen, daß wir nicht zufrieden sind. Aber wenn wir jetzt auf Anhieb zustimmen, geben wir den anderen einen Hinweis, wie sie mit uns umspringen müssen. Jedenfalls sollten wir einen gesellschaftspolitischen Ausschuß, nämlich Jugend, Familie und Gesundheit verlangen {...}</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KoesterGottfried_1969-10-20">Köster</name>: Die Wahl eines stellvertretenden Vorsitzenden für Jugendfragen wurde mit den 7 Millionen junger Wähler<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN015" type="comment">
+                     <p>Gemeint ist der Zuwachs an Erstwählern bei künftigen Bundestagswahlen aufgrund der für die 6. Wahlperiode geplanten Herabsenkung des aktiven Wahlalters auf 18 Jahre.</p>
+                  </note>
+               </seg> begründet. Wir sollten den Vorsitz des Ausschusses für Jugend zu bekommen suchen. Wenn das nicht möglich ist, sollten wir das Zugreifverfahren nehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BismarckPhilipp_1969-10-20">von Bismarck</name>: In anderen Bereichen stellt man sich die schlechteste und die beste Lösung vor Augen, wenn man diese Frage erörtert. Allein das Ausgehandeltsein dieser Lösung bringt uns in der Öffentlichkeit ein Minus ein. Auf die Reformausschüsse hin wird bestimmt die Frage aufgeworfen werden: Welches wäre die schlechteste aller Lösungen? – Wäre sie wirklich soviel schlechter als die ausgehandelte Lösung?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Vergessen wir doch dies bei allen unseren Überlegungen nicht: Zu erkämpfenist etwas nur durch die Mehrheit! Zu erreichen ist etwas anderes als dieses Ergebnis, wenn das Zugreifverfahren kommt. Aber für das Wie und Was kann ich nicht garantieren. Das ideale Tableau wäre für mich gewesen: Haushalt, dann Soziales und Verteidigung. Aber für die SPD stand ganz fest, was sie wollte. Es gibt Abgeordnete, die sagen, daß es für das Ansehen der Partei besser ist, in offener Feldschlacht majorisiert zu werden. Dafür habe ich Verständnis. Aber nach einer Majorisierung im Plenum und einer anschließenden Erledigung der Fragen durch Mehrheitsbeschlüsse statt durch Vereinbarung sind wir am Ende ärmer dran, als wenn wir jetzt eine Vereinbarung getroffen hätten. Dieser Meinung schloß sich gestern der Fraktionsvorstand beträchtlich knurrend an.</p>
+            <p>Verhandlungen über Änderungen sind möglich, wenn man tauscht. Ich halte es für realisierbar, wenn man den Rechtsausschuß aufgibt. Der Ausschuß für Jugend wird ein beträchtliches Gewicht bei Familie und Gesundheit haben. Jugend wird beim ersten Ausschuß liegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LinkHelmut_1969-10-20">Link</name>: Man müsse auch das Image der Fraktion und der Partei bedenken. Das erfordert, daß wir nicht den Steuerausschuß wählen, sondern wir müssen auch im Zugriff einen wählen, der eine gute Plattform im Sozialen abgibt. Übrigens, stellvertretende Vorsitzende haben nicht das Gewicht wie Vorsitzende. Wir sollten nicht zu sehr auf die wichtigen Steuerungsausschüsse sehen, sondern auch die Reformausschüsse im Auge halten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Es liegen jetzt noch weitere fünf Wortmeldungen vor. Können wir dann die Rednerliste schließen?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#OrgassGerhard_1965-10-19">Orgaß</name>: Es war auch die Alternative gesagt: Nicht den Haushaltsausschuß als ersten, sondern als ersten den Sozialpolitischen Ausschuß zu greifen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StarkAnton_1965-10-19">Stark</name>: <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> hat ein Plädoyer für den Vorschlag des Vorstandes gehalten. Ichstelle den Antrag: Die Fraktionsführung sollte nochmals Verhandlungen aufnehmen. Aufgeben: Außenpolitisch, Gesamtdeutsch, Verteidigung – gegen einen gesellschaftspolitischen Ausschuß. Wenn das nicht geht: Kampfabstimmung und Zugreifverfahren. Es kommt draußen nicht besser an, wenn wir Vereinbarungen machen. Von uns wird eine faire und harte Opposition erwartet. Jetzt wird schon wieder der Weg geebnet, daß die Koalition gut arbeiten kann. Wir sind doch die Opposition! Es muß doch dem Volke klar gemacht werden, daß hier erst manipuliert werden muß, damit die Koalition überhaupt arbeiten kann. Über die Bezeichnung eines Ausschusses geht man in eine Kampfabstimmung, für diese Dinge aber geht man nicht in den Kampf!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BockelbergHelmut_1969-10-20">von Bockelberg</name>: Der Start der Opposition war glücklich, weil er kämpferisch war. Wir haben gesagt, wir werden um diese Ausschüsse kämpfen. Wenn wir jetzt morgen mit dieser Vereinbarung kommen, dann ist es mit dem Image der kämpferischen Opposition bereits am Ende. Was kann nun eigentlich schlechter werden als dieses Tableau? Diese Frage ist immer noch nicht beantwortet.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Wir können verlieren den Haushaltsausschuß, den Verteidigungsausschuß und so weiter! Natürlich können wir dafür einen anderen gewinnen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EckardtFelix_1965-10-19">von Eckardt</name>: Es ist verhältnismäßig einfach, starke Worte zu benutzen und auf Kollisionskurs zu gehen. Wenn wir in dieser Frage auf Kollisionskurs gehen, dann auch in allen anderen Fragen, und zwar für lange Zeit. Wie das ausgeht, ist ungewiß. Die Gewichtigkeit eines Ausschußvorsitzenden hängt von der Person ab. Zum Beispiel: Es ist nicht so, daß, wenn wir den Ausschußvorsitz nicht haben, der Ausschuß dann ohne Bedeutung wäre. Ob <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> Vorsitzender oder stellvertretender Vorsitzender ist, macht wohl keinen sehr großen Unterschied. Auf die Wirkung nach außen kommt es an. Man muß an die Massenmedien denken. Auswärtige, Gesamtdeutsche, Verteidigungsfragen, das sind Fragen, die im Vordergrund der Diskussion stehen werden.</p>
+            <p>(Starker Widerspruch.)</p>
+            <p>Mit diesen Themen ist auf lange Sicht genausoviel zu erreichen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name>: Wir gehen von irrigen Voraussetzungen aus, wenn wir uns vom Zugreifverfahren mehr versprechen. Es gibt keine Garantie für ein Zugreifverfahren! Wir begeben uns nur in eine schwierige, völlig ungesicherte Situation. Es kommt nicht allein auf den Vorsitz eines Ausschusses an. Was hindert uns, unsere Stellungnahme jeweils sofort herauszugeben? Ich möchte die Zeitung sehen, die dem Sprecher der Opposition seine Meinung nicht abzunehmen bereit wäre, wenn er sie gezielt und gut erarbeitet hat!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchroederChrista_1961-10-17">Schroeder</name>: Zusatzfrage wegen Kampfabstimmung: Welchen Einfluß hat es auf die Zahl der Ausschußsitze für die Fraktion?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Im gleichen Augenblick würde die Zahl der Ausschußsitze reduziert. Die Fraktion hätte dann genau 200 Ausschußsitze.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Auf diese Tatsache habe ich bereits eingangs hingewiesen. Die Koalition hat es so vorgeschlagen, daß bei ihnen jeder einen Ausschußsitz bekommt. Wir würden aber etwa 50 Kollegen haben, die keinen Hauptsitz im Ausschuß bekämen. Wir können alles in der Kampfabstimmung über uns ergehen lassen. Wir haben auch draußen die besseren Argumente, aber in der Sache werden wir nicht besser beraten, als es bei der Einigung geschieht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Die Zahl 200 basiert auf den ursprünglichen Vorschlägen der Koalition. Der jetzige Antrag ist das Ergebnis von Zwischenverhandlungen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Der Antrag, der vorliegt, geht auf eine Zusage zurück, daß man die Fragen einvernehmlich lösen möchte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MikatPaul_1969-10-20">Mikat</name>: Würden Sie damit rechnen, daß SPD und FDP ihre Zusage zurückziehen?Kann man sich überhaupt noch einer Abstimmung stellen? Sieht man eine Möglichkeit, eventuell von der Doppelnahme Haushalt und Finanzen herunterzukommen?Dann könnten wir vielleicht beim Zugreifverfahren bessere Chancen haben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Ob die SPD auf die ursprünglichen Größen zurückgeht, kann ich nicht beantworten. Die Wahrscheinlichkeit des Ja liegt in der Ausweglosigkeit der FDP und der SPD, die ihnen soweit als möglich entgegenkommen möchte.</p>
+            <p>§69 GO<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN016" type="comment">
+                     <p>§69 Absatz 1 der Geschäftsordnung des <name type="Organisation" ref="#BT">Deutschen Bundestages</name> in der Fassung vom 28. Januar 1952: »Die Ausschüsse bestimmen ihre Vorsitzenden und deren Stellvertreter nach den Vereinbarungen im <name type="Organisation" ref="#AeRat">Ältestenrat</name>. Dem Bundestag ist hiervon Kenntnis zu geben.« Vgl. BGBl. 1952, II, Nr. 5, S. 396.</p>
+                  </note>
+               </seg> . Nichts anderes sagt die GO zu dieser Frage aus. Das beinhaltet einen Zwang zur Einigung im <name type="Organisation" ref="#AeRat">Ältestenrat</name>. Wenn es zu dieser Einigung nicht kommt, dann entscheidet die Mehrheit. Dafür gibt es ein einziges Präjudiz. In allen übrigen Fragen hat man sich geeinigt. Das Zugreifverfahren ist nur einmal für einen Rest von Ausschüssen praktiziert worden (Ausschuß 17–26). Bei Ablehnung einer Einigung gem. [§]69GO sind wir einem Mehrheitsvotum unterworfen. Wie das formuliert wird, das ist offen. Wir müssen aber wohl davon ausgehen, daß wir dann brutal majorisiert werden. Das halte ich für möglich und wahrscheinlich.</p>
+            <p>Ich halte einen Verhandlungsauftrag im Sinne Jugend, Familie und Gesundheit für einen hohen Preis für eventuell realisierbar, ohne aber dessen sicher zu sein. Aber für einen hohen Preis!</p>
+            <p>Als erstes müssen wir morgen dafür sorgen, daß für das »Verhältnis der Fraktionen«d’Hondt gilt. Die Koalition kann auch einen anderen Schlüssel ansetzen. In permanenter Rücksprache mit der Fraktionsführung habe ich verhandelt. Sie sind aber in nichts präjudiziert. Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> hat mir einen Brief geschrieben, in dem er klar für eine einvernehmliche Regelung plädiert. Er hat der Koalition eine Erklärung abgegeben, daß die Angelegenheiten des Hauses soweit wie möglich geregelt werden würden. Das hat die Wahl des Bundestagspräsidenten ermöglicht. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> weiß, daß die Prämisse für das Funktionieren des Hauses ist, daß die Fraktionsvorsitzenden sich auf ein Wort einer Erklärung müssen verlassen können, mindestens cum grano salis. Jetzt sollen Sie entscheiden, oder wir müssen sagen, daß wir die Angelegenheiten des Hauses noch nicht regeln wollen. Das aber empfehle ich Ihnen am allerwenigsten.</p>
+            <p>Noch einmal verhandeln ist wohl möglich, aber nicht zu vertagen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>: Ich habe mit großer Aufmerksamkeit zugehört, und es istmir schwer gefallen, eine dezidierte Meinung mir zu bilden. Mir liegt daran, daß die Fraktion bei dieser Frage nicht auseinanderfällt. Die, die extrem auf Kollisionskurs gehen wollen, und die anderen, die das Einvernehmen wollen, dürfen jetzt nicht auseinanderfallen.</p>
+            <p>1. Den Kollisionskurs kann man nicht gehen. Wir haben schon damit angefangen: In der Frage des Bundestagspräsidenten sind wir den Weg des Einvernehmens gegangen.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN017" type="comment">
+                     <p>Zur Wahl des Abg. <name type="Person" role="Erwaehnung" ref="#HasselKai-Uwe_1953-10-06">von Hassel</name> zum Bundestagspräsidenten vgl. die Fraktionssitzung am 16. Oktober 1969, SVP D und F, sowie die Fraktionssitzung am 21. Oktober 1969, SVP A.</p>
+                  </note>
+               </seg> Er konnte nur so beschritten werden, wie es <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> getan hat, das ist klar. Es geht nicht, wenn man die Realitäten nicht verkennen will. Der Kollisionskurs bekommt uns auch in der Öffentlichkeit nicht unbedingt. Die erwartet eine klare, harte und entschiedene Opposition, aber nicht den Eindruck erwecken, als ob wir den [permanenten]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN018" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Paramenten-«.</p>
+                  </note>
+               </seg> Streit wollten. So sind unsere deutschen Landsleute!</p>
+            <p>Mein Gegenargument: Auch wir selbst haben kein Interesse an einem Kollisionskurs. Auch der SPD kann nicht daran gelegen sein – die Regierungserklärung sprach vom Eingeständnis des Bundeskanzlers, daß er sich einer starken Opposition gegenübersehe. Wir sollten trotz der Argumente, die <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> vorgebracht hat, auch das Interesse der anderen an einem Einvernehmen noch dazu nutzen. Daher sollte <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> den Auftrag bekommen, heute mit aller Energie zu verhandeln, um durch ein Auswechseln eines der Ausschüsse – darüber müßte man sich klar werden – einen der anderen hereinzubekommen.</p>
+            <p>Nicht »Reform-Ausschüsse«! Wir übernehmen schon viel zu viel unter der Formulierung der anderen. Wir sollten das entscheiden.</p>
+            <p>Nun muß allerdings, wenn dieser Auftrag kommt, die Fraktion noch einmal zusammenkommen. Ohne endgültige Entscheidung der Fraktion geht es nicht. Und da leider Zeitdruck entsteht, müßte die Fraktion morgen früh –</p>
+            <p>(Zwischenrede.)</p>
+            <p>Zu zähen Verhandlungen gehört auch Zeit. Also Verhandeln, auf das Entschiedenste und hart verhandeln!</p>
+            <p>Wir könnten noch in einem kleinen Kreis überlegen, welche Ausschüsse ausgewechselt werden sollten. Aber, jetzt keine Abstimmung und das Ergebnis endgültig sein lassen für die vor uns liegenden Jahre! Ein wichtiger Ausschuß aus dem gesellschaftspolitischen Bereich sollte für uns geholt werden. Dafür gibt es nur Verhandlungen. Und dann wird sich die Fraktion entscheiden müssen. Dann kann sie sich aber auch entscheiden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> schlägt vor, daß <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> sofort die Verhandlungen aufnimmt und noch rechtzeitig zurückkommt und berichtet, ob es überhaupt noch einen Ansatzpunkt gibt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RaweWilhelm_1965-10-19">Rawe</name> dankt <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>, daß er das Wort ergriffen hat. Ich hatte vorher den Eindruck, als ob längst Absprachen getroffen worden seien. Man kann ja auch mit der SPD eine Regelung treffen, daß man im Zugreifverfahren sich einigt. Die Mehrheit der Fraktion will wohl das Zugreifverfahren. <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> sollte beauftragt werden, auch diese Alternative einzubeziehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Zur Geschäftsordnung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WarnkeJuergen_1969-10-20">Warnke</name>: Wozu war eigentlich immer nur vom Rechtsausschuß die Rede. Man müßte doch auch den Gesamtdeutschen Ausschuß und den Auswärtigen Ausschuß in die Überlegungen einbeziehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Schulze-VorbergMax_1965-10-19">Schulze-Vorberg</name>: Wenn die SPD auch an einer einvernehmlichen Regelung interessiert ist, sollte man verhandeln, ob nicht im außenpolitischen Bereich die Ausschüsse doch noch geteilt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WrangelOlaf_1965-10-19">von Wrangel</name>: Dann muß ja die SPD auch noch mal tagen. Das wird die Sache verzögern.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Ist die Fraktion einverstanden, daß <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> versucht, einen gesellschaftspolitisch relevanten Ausschuß gegen einen Ausschuß im außenpolitischen Bereich einzuhandeln?</p>
+            <p>(Unruhe.)</p>
+            <p>Was soll der arme Kerl dann verhandeln?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchroederChrista_1961-10-17">Schroeder</name>: Auch Rechtsausschuß und Finanzausschuß!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Austausch aus den uns bis jetzt zugebilligten Ausschüssen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RaweWilhelm_1965-10-19">Rawe</name> wiederholt seinen Hinweis auf Einigung im Zugreifverfahren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Wer ist für diese Verhandlungen? – Die Mehrheit ist für Verhandlungen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-3">
+            <head>[C.]</head>
+            <p>Benennung des bisherigen »Gesamtdeutschen Ausschusses«.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN019" type="comment">
+                     <p>Vgl. dazu Anm. 9.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Wir werden im Plenum dazu eine Debatte haben, keine Geschäftsordnungsdebatte, sondern eine politische Debatte. Beim Thema Bundestagssitzungen in Berlin sollten wir uns bei dieser Gelegenheit noch zurückhalten, jedenfalls nichts präjudizieren!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RockEdelhard_1965-10-19">Rock</name>: Wir sollten namentliche Abstimmung beantragen.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN020" type="comment">
+                     <p>In der Plenarsitzung am 5. November 1969 wurde über den Antrag der <name type="Organisation" ref="#SPDFraktionBT">SPD-Fraktion</name> betr. Einsetzung eines Ausschusses für innerdeutsche Beziehungen namentlich abgestimmt. Der Antrag wurde angenommen. Eine Abstimmung über den CDU/CSU-Antrag betr. Einsetzung eines Ausschusses für gesamtdeutsche und Berliner Fragen erübrigte sich damit. Vgl. BT Plenarprotokoll 06/8, S. 261–267.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Kein Widerspruch! Namentliche Abstimmung!</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-04-t1510_WZ_div_SVP-4">
+            <head>[D.]</head>
+            <p>Berichte aus den Arbeitskreisen</p>
+            <p>AK III</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#PohleWolfgang_1953-10-06">Pohle</name>: Der Arbeitskreis habe in zwei Punkten noch keine fertigen Ergebnisse erzielen können: Ausgleichung des Aufwertungsverlustes in der Agrarpolitik und Lösung bei den steuerlichen Veränderungen. Die Sache kann aber in der nächsten Woche noch erledigt werden. Ferner wurde beraten das Schreiben des Bundesfinanzministers vom 30. Oktober wegen der Einbringung des Haushalts 1970 sowie der Mittelfristigen Finanzplanung. Der Haushalt soll erst im März oder April ’70 gelesen werden.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN021" type="comment">
+                     <p>Das Bundeskabinett stimmte sich endgültig am 13. November 1969 über den Zeitplan für den Bundeshaushalt 1970 und die Finanzplanung 1969 bis 1973 ab. Die erste Beratung des Haushaltsgesetzes 1970 sollte danach am 19./20. Februar 1970 im Bundestag erfolgen. Vgl. <hi rendition="#smcap">Die Kabinettsprotokolle Der <name type="Organisation" ref="#BuReg">Bundesregierung</name>
+                        </hi> 1969, Sitzung am 13. November 1969, TOP 5, online.</p>
+                  </note>
+               </seg> Das steht im Zusammenhang mit den vorweggenommenen Steueränderungen durch die <name type="Organisation" ref="#BuReg">Bundesregierung</name>.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN022" type="comment">
+                     <p>Bundeskanzler <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> kündigte in der Regierungserklärung am 28. Oktober 1969 an, dass der Arbeitnehmerfreibetrag vom 1. Januar 1970 an verdoppelt werden solle. Ebenso werde vom 1. Januar 1970 an auch die Einkommensgrenze, von der ab die Ergänzungsabgabe bislang erhoben werde, zugunsten der mittleren Einkommen verdoppelt. Vgl. BT Plenarprotokoll 06/5, S. 24. – Die <name type="Organisation" ref="#BuReg">Bundesregierung</name> brachte in diesem Sinne am 21. November 1969 den Entwurf eines Gesetzes zur Änderung steuerrechtlicher Vorschriften (Steueränderungsgesetz 1970) ein. Vgl. BT Drs. 06/75.</p>
+                  </note>
+               </seg> Wir wollen den Haushalt noch in diesem Jahr sehen, sodaß er im Januar 1970 gelesen werden kann.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Zwischenbericht: Wir werden in wenigen Minuten verhandeln können. Ich halte die Erfüllung des Wunsches, den Familienausschuß zu bekommen, für einen hohen Preis für möglich. Ich hoffe in etwa ½ Stunde berichten zu können.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Den Preis wollen wir vorher wissen – keine Festlegung!</p>
+            <p>AK IV</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GoetzHermann_1949-09-07">Götz</name>: Es liegen 4 Kleine Anfragen vor, <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> hat 2 eingereicht, dieauch schon gedruckt sind: Diskriminierung der Frauenarbeit<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN023" type="comment">
+                     <p>Zur Kleinen Anfrage von Abgeordneten der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 23. Oktober 1969 betr. Diskriminierung von Frauenarbeit vgl. BT Drs. 06/12.</p>
+                  </note>
+               </seg> und Bluter<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN024" type="comment">
+                     <p>Zur Kleinen Anfrage von Abgeordneten der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 5. November 1969 betr. Behandlung Hämophiler (Bluter) vgl. BT Drs. 06/47.</p>
+                  </note>
+               </seg> . Der Arbeitskreis empfiehlt dazu Gruppenanfrage, nicht Fraktionsanfrage.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name> betr. Heimkehrer-Zertifikate<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN025" type="comment">
+                     <p>Zur Kleinen Anfrage der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 11. November 1969 betr. Heimkehrerstiftung, hier: Kriegsgefangenenzertifikate, vgl. BT Drs. 06/53.</p>
+                  </note>
+               </seg> und Ausweitung im Begriff auf eine personelle Erhöhung des § 44 des AFG<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN026" type="comment">
+                     <p>Zur Kleinen Anfrage von Abgeordneten der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> vom 5. November 1969 betr. Anweisung des <name type="Organisation" ref="#BMAS">Bundesministeriums für Arbeit und Sozialordnung</name> zu § 44 AFG vgl. BT Drs. 06/45.</p>
+                  </note>
+               </seg> . Diese beiden Anfragen sollten als Fraktionsanfragen eingebracht werden.<name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15"> Mick</name> erläutert im Anschluß seine Anfrage.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Keine Bedenken gegen Fraktionsanfrage!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MdB_Genderunbekannt">[N. N.]</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN027" type="comment">
+                     <p>Sprecher fehlt in der Vorlage.</p>
+                  </note>
+               </seg> : Erläuternde Bemerkungzu§ 44AFG –</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Einverstanden.</p>
+            <p>AK V</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Europäische Sicherheitskonferenz, dieses Thema wird politischen sehr bedeutend werden. Die Äußerungen der <name type="Organisation" ref="#BuReg">Bundesregierung</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN028" type="comment">
+                     <p>Vgl. dazu die betreffenden Aussagen des Bundeskanzlers <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> und des Bundesverteidigungsministers <name type="Person" role="Erwaehnung" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> in der Plenardebatte am 29. Oktober 1969; BT Plenarprotokoll 06/6, S. 67 und S. 116.</p>
+                  </note>
+               </seg> dazu sind bedenklich, <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> wird eine neue Kurzfassung dazu erstellen. Es wird auch bereits in der Fragestunde zur Sprache kommen.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN029" type="comment">
+                     <p>Zu den Fragen des Abg. <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name> betr. Europäische Sicherheitskonferenz in der Fragestunde am 6. November 1969 vgl. BT Plenarprotokoll 06/9, S. 276–279.</p>
+                  </note>
+               </seg> Es ist möglich, daß sich wegen der Weisung <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheels</name> eine Aktuelle Stunde daraus ergeben kann. Boris <name type="Person" role="Erwaehnung" ref="#MeissnerBoris"> Meissner</name> zur Breschnew-Doktrin<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN030" type="comment">
+                     <p>Am 12. November 1968 legte der Erste Sekretär des ZK der <name type="Organisation" ref="#KPdSU">KPdSU</name>, <name type="Person" role="Erwaehnung" ref="#BreschnewLeonidIljitsch">Breschnew</name>, auf dem Parteitag der PVAP in Warschau die sowjetische Auffassung über die sozialistische Gemeinschaft dar: »Und wenn die inneren und äußeren, dem Sozialismus feindlichen Kräfte die Entwicklung irgendeines sozialistischen Landes auf die Restauration der kapitalistischen Ordnung zu lenken versuchen, wenn eine Gefahr für den Sozialismus in diesem Land, eine Gefahr für die Sicherheit der gesamten sozialistischen Staatengemeinschaft entsteht, ist das nicht nur ein Problem des Volkes des betreffenden Landes, sondern ein allgemeines Problem, um das sich alle sozialistischen Staaten kümmern müssen. Es ist verständlich, daß eine Aktion zur Vereitelung einer Gefahr für die sozialistische Ordnung wie die militärische Hilfe für ein Bruderland eine außerordentliche, notgedrungene Maßnahme ist. Sie kann nur durch direkte Aktionen der Feinde des Sozialismus inner- und außerhalb des Landes hervorgerufen werden, durch Aktionen, die die gemeinsamen Interessen des sozialistischen Lagers gefährden.« Vgl. DzD V/2, S. 1475–1479.</p>
+                  </note>
+               </seg> ; zu diesem höchst interessanten Bericht kommt eine Kurzfassung. Dieses Thema rückt auch die Umgestaltung des Gesamtdeutschen Ministeriums in ein merkwürdiges Licht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal): Was wird geantwortet auf die Ausführungen <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> zum Kabinetts-Ausschuß »Innerdeutsche Beziehungen«? Ist da gewährleistet, daß wir hier zu überzeugenden Antworten kommen?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Zu diesem Thema wird gesprochen werden. Wir müssen dabei die Ausrede desBundeskanzlers konterkarieren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal): Wenn die Betreuung der Deutschen im polnischen Raum mit einbezogen wird, dann läge die Betonung auf der Gefahr für das gesamte Deutschland und alle Deutschen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name>: 800 000 bis 1 Million Deutscher leben in polnisch verwalteten Gebieten, und nicht »in Polen«. Dafür gibt es eine Obhuts- und Fürsorgepflicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MarxWerner_1965-10-19">Marx</name>: Wir werden in der Wahl der Argumente und Begriffe nicht ins offene Messer laufen. Aber wir müssen auch eine Sprache führen, die klarmacht, daß wir nicht um einen Namen, sondern um eine Deutschland verändernde Politik streiten. <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name> hat darüber gesprochen, daß es sich auch um eine veränderte Politik handelt.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-04-t1510_WZ_FN031" type="comment">
+                     <p>Vgl. dazu auch die Ausführungen des Bundesministers für innerdeutsche Beziehungen, <name type="Person" role="Erwaehnung" ref="#FrankeEgon_1951-05-17">Franke</name>, in der Plenarsitzung am 5. November 1970; BT Plenarprotokoll 06/8, S. 264 f.</p>
+                  </note>
+               </seg> Dort werden wir sie fassen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> unterstütztdasnachdrücklich. Wir können darauf bestehen, daß der Ausschuß den Namen »Gesamtdeutsch« behält, indem wir verlangen, daß, wenn hinter dem Bezeichnungswandel ein Wandel der Politik liegt, wir dann überstimmt werden, dann haben wir unsere Meinung deutlich zum Ausdruck gebracht. Aber nicht nur wegen der Bezeichnung als solcher streiten.</p>
+            <p>Man kann alle möglichen Ausschüsse abgeben. Wenn die CDU darauf verzichten würde, den Auswärtigen Ausschuß anzunehmen, würde sie eine Sünde gegen ihre ganze Tradition begehen, und davor warne ich auf das Dringendste.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MikatPaul_1969-10-20">Mikat</name>: Diese Frage steht wohl nicht zur Diskussion. Wenn überhaupt Tausch, dann nur gleichgewichtiger Tausch, nicht Recht gegen Jugend! Es gibt schließlich unwichtigere.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> wird wohl nicht in Kürze zurückkommen. Also morgen 8 Uhr Fraktionssitzung! Die Fraktionssitzung ist geschlossen!</p>
+         </div>
+      </body>
+   </text>
 </TEI>

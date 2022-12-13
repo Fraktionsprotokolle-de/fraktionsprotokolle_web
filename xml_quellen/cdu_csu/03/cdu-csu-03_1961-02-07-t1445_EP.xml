@@ -1,223 +1,440 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-02-07-t1445_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1008/3</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 7. Februar 1961</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>10 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1961-02-07"><time type="start" when="14:45:00"/><time type="end" when="18:15:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1961-02-07-t1445_EP_SVP-1" corresp="#cdu-csu-03_1961-02-07-t1445_EP_div_SVP-1">A. Tagung der Evangelischen Synode in Ostberlin. – Tagung der SPD in Bad Dürkheim und Reaktion auf Äußerungen <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name>. – Kompromissfindung zu den verbundenen Themen Krankenkassenreform/Lohnfortzahlung/ Unfallversicherung/ Kindergeld/ Steuerreform/ Vermögensbildung der Arbeitnehmer/ Organschaft. – Arzneimittelgesetz. – Sonntagsruhe. – Außenhandelsgesetz. – Personenbeförderungsgesetz. – Beratung der Deutschen Welle und des Deutschlandfunks.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1961-02-07-t1445_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> berichtet, daß die Regierung <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> die Tagung der Evangelischen Synode für Ostberlin verboten habe, mit der Begründung, sie könne nicht zulassen, daß dabei Vertreter der NATO Gelegenheit zur Hetze bekämen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN001" type="comment"><p>Vgl. die diesbezügliche Mitteilung des Presseamtes beim Ministerpräsidenten der DDR v. 11. 1. 1961, in: DzD IV/6, S. 68 f.</p></note></seg> Diese Begründung müsse als verlogen bezeichnet werden. In Wirklichkeit komme es <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> auf die Spaltung der Kirche an. Die Folge sei, daß wiederum ein Band der gesamtdeutschen Gemeinsamkeit gelöst werde. Dabei werde die Kirchenfeindlichkeit des Ostregimes ganz deutlich.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt fest, daß diese Erklärung im Namen der Fraktion der Presse übergeben werde.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN002" type="comment"><p>Vgl. »Sozialisten und Christen verbinden gemeinsame Ideale und Ziele«, in: »Neues Deutschland« Nr. 41 v. 10. 2. 1961, S. 1, 3 und auszugsweiser Abdruck, in: »Evangelische Verantwortung«, 9. Jg., Nr. 2 vom Februar 1961, S. 2.</p></note></seg></p>
-				<p>Dann wendet er sich der Tagung der SPD in Bad Dürkheim<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN003" type="comment"><p>Klausurtagung der SPD-Bundestagsfraktion am 6. und 7. 2. 1961. Vgl. Hölscher, SPD-Bundestagsfraktion 1957–1961, S. 512–522.</p></note></seg> zu und führt an, daß die Befragung durch EMNID und Allensbach 51% bzw. 50% für die CDU/CSU ergeben hatten.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN004" type="comment"><p>Zu den bestätigenden Ergebnissen von zwei weiteren Umfragen durch EMNID vgl. Buchstab, CDU-Bundesvorstand 1957–1961, Nr. 19 v. 6. 4. 1961, S. 916 f.</p></note></seg> Auf die Mahnung <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name>, die Bundesregierung und die CDU/CSU sollen vorsichtig sein und nicht zu weich gegenüber den Russen reagieren<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN005" type="comment"><p>Zum Inhalt der Rede <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> vgl. Hölscher (wie Anm. 3), S. 512 f.</p></note></seg>, werde die Fraktion mit folgender Erklärung antworten:</p>
-				<p>»Die Konfusion in der SPD – verstärkt durch die internen Schwierigkeiten innerhalb dieser Partei, den wachsenden Prestigeverlust <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> und die rückläufige Tendenz bei den Meinungsbefragungen – treibt, wie die jüngsten sozialdemokratischen Polemiken auswiesen, einem neuen Höhepunkt zu. Wenn Franz <name type="Person" role="Erwaehnung" ref="#BarsigFranz">Barsig</name> von der bevorstehenden Liquidierung der <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>-GmbH redet<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN006" type="comment"><p>Vgl. »Adenauer-GmbH in Liquidation« von Franz <name type="Person" role="Erwaehnung" ref="#BarsigFranz">Barsig</name>, in: SPD-Pressedienst P/XVI/30 v. 4. 2. 1961, S. 1 f. In dieser kritischen Bilanz wurde <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> als »schwächster Bilanzposten« bezeichnet.</p></note></seg> (bei EMNID-Zahlen von 51:36 zugunsten der CDU), dann kann man das als Propaganda abtun. Wenn aber <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> vom außenpolitischen Defaitismus der CDU spricht, wenn er die Bundesregierung fragt, ob deren angebliche weiche Welle gegenüber Moskau genügend durchdacht und mit den Verbündeten genügend abgesprochen worden sei, dann ist das grotesk. Die Politik der Bundesregierung und der CDU/CSU mit dem Ziel der Sicherheit und der Wiedervereinigung Deutschlands auf der Basis der Einheit und Freiheit ist auf dem Recht des deutschen Volkes zur Selbstbestimmung begründet. Diese Politik hat die CDU/CSU in engster Verbindung mit der Freien Welt in den letzten Jahren mit großer Umsicht durchgeführt.</p>
-				<p>An einer solchen Politik hat die CDU/CSU auch in jeder Zeit unentwegt festgehalten, zu der die SPD zur Außenpolitik lediglich ein ewiges Nein beitrug, zu der führende SPD-Politiker in Ostberlin und Moskau in Gesprächen mit <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> glaubten, andere Wege gehen zu müssen, sich sogar als Genossen titulieren ließen, zu einem Zeitpunkt, als die SPD feierlich ihren Deutschlandplan proklamierte. Man sollte mit solchen Worten der Kritik besonders vorsichtig sein, wenn man sie an die Adresse derjenigen richtet, die von der ersten Stunde an am Wiederaufbau Deutschlands gearbeitet haben. Wenn nach dieser Polemik des Herrn <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> von ihm dann auch noch die fehlende Gemeinsamkeit auf außenpolitischem Gebiet beklagt wird, ist die Inkonsequenz kaum noch zu übertreffen.«<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN007" type="comment"><p>Vgl. ebd.</p></note></seg></p>
-				<p>Was die Arbeit des Parlaments anbelange, so sei es notwendig, in einer Besprechung mit dem Bundeskanzler zu klären, was in den noch zur Verfügung stehenden fünf Monaten geschehen müsse. Die die Landwirtschaft betreffenden Fragen sollten dabei ebenfalls besprochen werden; Vertreter der Landwirtschaft sollten zugezogen werden, wenn diese Themen am kommenden Tage im Bundeskabinett behandelt würden.</p>
-				<p>Zur Krankenkassenreform habe die FDP den Antrag gestellt, die Beratungen dieses Themas abzubrechen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN008" type="comment"><p>Die FDP-Fraktion hatte am 20. 1. 1961 in gleichlautenden Schreiben an die Fraktionsvorsitzenden von CDU/CSU und SPD den unverzüglichen Abbruch der Beratungen über eine Reform der Krankenversicherung im Ausschuß für Sozialpolitik und dafür die Behandlung anderer vorliegender Gesetzentwürfe gefordert. Vgl. fdk, Jg. 12/5 v. 25. 1. 1961, S. 7.</p></note></seg> Jetzt müsse sich die Fraktion entscheiden, ob sie diesen Gedanken aufnehmen wolle oder ob man weiterhin versuchen wolle, das Gesetz zu verabschieden.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN009" type="comment"><p>Zum Scheitern des Regierungsentwurfs siehe Nr. 182 v. 16. 2. 1960.</p></note></seg> Er, der Fraktionsvorsitzende, habe zwei Tage lang mit <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> und Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> und mit den Ministern <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> und Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> über diese Fragen beraten<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN010" type="comment"><p>Wahrscheinlich die Gespräche am 31.1. und 1. 2. 1961. Siehe Nr. 238 v. 6. 2. 1961 (Antrag Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>).</p></note></seg> und es sei verabredet gewesen, keinen Bericht über diese Gespräche zu geben. Durch ein Mißverständnis sei das jedoch nicht eingehalten worden. Es sei ihm, dem Fraktionsvorsitzenden, dabei darum gegangen, eine Geschlossenheit der Fraktion zu erzielen. Für die Fraktion sei ein guter Kompromiß immer noch das beste, und es solle nun versucht werden, in einer Aussprache hier diese Fragen zu klären.</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> schildert den Hergang der Dinge: die FDP habe den Brief geschrieben, in dem vorgeschlagen worden sei, die Beratungen der Reform abzubrechen, und <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> habe diesen Brief im Sozialpolitischen Ausschuß vorgelesen<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN011" type="comment"><p>Vgl. das Schreiben des stellv. Vorsitzenden der FDP-Fraktion v. 19. 1. 1961 an die Vorsitzenden der übrigen Fraktionen und an den Vorsitzenden des Ausschusses für Sozialpolitik. Wortlaut ohne Grußformeln in 92. Sitzung des Ausschusses für Sozialpolitik v. 25.1 1961 (Parl. Arch., Ausschuß für Sozialpolitik).</p></note></seg> und die Fraktionen um eine Äußerung ersucht. Seitens der CDU habe man nur erklären können, daß die Fraktion das erst beraten werde, wenn Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> gesundheitlich wieder hergestellt sei. <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> habe dann im SPD-Pressedienst erklärt, daß damit die Beratungen abgebrochen seien und daß es kein Zurück mehr gebe. Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> habe dann die eben erwähnten Gespräche eingeleitet und man sei zu dem Ergebnis gekommen, daß man mit dieser Vorlage in dieser Legislaturperiode nicht mehr zum Zuge kommen werde. Allerdings müsse man dann auch einen Versuch der SPD verhindern, etwa ein Vorschaltgesetz durchzudrücken.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN012" type="comment"><p>SPD-Gesetzentwurf über vordringliche Maßnahmen in der Gesetzlichen Krankenversicherung: Drucksache III/1926 v. 21. 6. 1960; SPD-Antrag betr. Lohnfortzahlung an Arbeiter im Krankheitsfalle: Drucksache III/1927 v. 21. 6. 1960 (mit dem Ziel der Vorlage eines entsprechenden Gesetzes). Beide Drucksachen wurden an die Ausschüsse verwiesen. Vgl. Sten. Ber., 125. Sitzung am 29. 9. 1960, S. 7270.</p></note></seg></p>
-				<p>Es sei nun zu fragen, was notwendig sei. Seit Monaten sei ein Unterausschuß mit dem Thema Lohnfortzahlung beschäftigt, ohne zu einem Ergebnis zu kommen. Jetzt solle folgender Kompromiß versucht werden: Man solle bei der gespaltenen Lösung von 1957 bleiben und dabei einen weiteren Schritt von 90% auf 100% gehen, wobei die Krankenkassen 65%, die Arbeitgeber 35% tragen sollen. Von den Arbeitnehmern sei seit Monaten gefordert worden, die beiden Karenztage wegfallen zu lassen. Jetzt habe man sich darauf geeinigt, die Karenztage wegfallen zu lassen, wenn der Arbeitnehmer mehr als ein Jahr Betriebsangehörigkeit habe. Bei kürzerer Betriebsangehörigkeit solle die Zahlung des Krankengeldes vom Tag der Arbeitsunfähigkeitsschreibung an beginnen. Weiter sei man sich einig geworden, daß der Wegfall der Aussteuerung ausgedehnt werden solle auf die Gewährleistung von Krankengeld und Krankenhauspflege, als auf die Barleistungen. Die Fraktion möge diesen grundsätzlichen Beschlüssen zustimmen, die erst noch endgültig formuliert werden müßten. Das sollte dann als Fraktionsantrag eingebracht werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> empfiehlt, diesem Kompromiß beizutreten, was möglich sei, wenn feststehe, daß in der Frage der Unfallversicherung<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN013" type="comment"><p>Vgl. zuletzt Zweites Gesetz zur vorläufigen Neuregelung von Geldleistungen in der gesetzlichen Unfallversicherung v. 29. 12. 1960 (BGBl. I, S. 1085).</p></note></seg> nichts mehr geschehe. Allerdings müsse die Frage der Karenztage noch anders gelöst werden; man solle möglichst auf dreijährige Betriebsangehörigkeit abstellen. Weiter müsse sichergestellt werden, daß die bisherige Bemessungsgrundlage so geändert werde, daß gewisse Auswüchse nicht mehr möglich seien. Eindeutig klar müsse aber sein, daß dann auch wirklich niemand weitergehenden Abänderungsanträgen zustimme.</p>
-				<p><name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> schneidet die Frage des Kindergeldes für das zweite Kind an.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN014" type="comment"><p>Siehe Nr. 238 v. 6. 2. 1961.</p></note></seg> Die Familienausgleichskassen könnten diese Aufgaben nicht übernehmen, weil die Mittel ja aus dem Bundeshaushalt genommen werden sollen. Darum sei folgende Lösung erarbeitet worden: ab 1. 4. 1961 soll für das zweite Kind ein Kindergeld von 25 DM gezahlt werden bis zu einer Einkommensgrenze von 550 DM, weil die darüber liegenden Schichten bereits die entsprechenden Steuerfreibeträge hätten. Zur Auszahlung werde eine eigene Bundesanstalt bei der Bundesanstalt für Arbeitslosenversicherung und Arbeitslosenfürsorge notwendig. Die bisherigen Familienausgleichskassen sollen in den kommenden zwei Jahren aufgelöst und die Zahlung des Kindergeldes für die dritten und weiteren Kinder ebenfalls auf diese Anstalt überführt werden; die dazu notwendigen Gesetze könnten im nächsten Bundestag verabschiedet werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erläutert, daß im Rahmen der großen Steuerreform<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN015" type="comment"><p>Steueränderungsgesetz 1961: Drucksache III/2573 v. 4. 3. 1961.</p></note></seg> nichts mehr zur Berücksichtigung der mittelständischen Interessen getan werden könne. Was jetzt aber gemacht werde, solle auf diese Reform abgestellt werden. Man habe der Bundesregierung vorgeschlagen, die vorgesehene Freigrenze auf 12000 DM zu erhöhen und die Organschaftsprivilegien erst bei 95% eintreten zu lassen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN016" type="comment"><p>Ist ein rechtlich selbständiges Unternehmen (Organ) einem anderen Unternehmen (Organträger) derart eingegliedert, daß es keinen eigenen Willen hat, so verliert es seine steuerliche Selbständigkeit bei den einzelnen Steuern in verschiedenem Maße. Die Eingliederung muß finanziell (z. B. durch Mehrheitsbeteiligung), wirtschaftlich (z. B. Einordnung nach Art einer unselbständigen Betriebsabteilung) und organisatorisch (z. B. durch Personalunion hinsichtlich der Geschäftsführung) vorliegen. Die Organschaft wirkt automatisch bei Umsatzsteuer und Gewerbesteuer; bei Körperschaftsteuer und Einkommensteuer nur, wenn ein Gewinnabführungsvertrag hinzukommt. Zur Organschaft als wirtschaftlicher Unternehmenseinheit siehe den Beitrag von Dr. <name type="Person" role="Erwaehnung" ref="#EckhardtWalter_1953-10-06">Eckhardt</name> in diesem Protokoll und vgl. Tipke/Lang, Steuerrecht, S. 509–512 (§ 11).</p></note></seg> Wenn man deutlich werden lasse, daß eine wettbewerbsneutrale Umsatzsteuer kommen werde, werde es wohl nicht zu Vollfusionen kommen. Bei der Großhandelsumsatzsteuer sei man auf den Vorschlag zurückgekommen, den Lebensmittelkatalog zu erweitern. Der Vorschlag der Regierung, in der Vermögensteuer die Freibeträge zu verdoppeln, sei unzureichend, man habe sich aber trotzdem geeinigt, weil die Kinder entsprechend gestellt würden. Die wirtschaftlichen Unternehmen der öffentlichen Hand sollen in die Steuer einbezogen werden, die Formel dafür sei aber noch nicht fertiggestellt. Mit diesem Programm könne man sich schon sehen lassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet die Fraktion, sich diesem eben vorgetragenen Kompromiß anzuschließen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> bedauert, daß die Krankenkassenreform gescheitert ist. Jetzt dürfe man aber in keinem Falle irgend etwas tun, was wie ein Vorschaltgesetz aussehe. Dafür gebe es sachliche wie politische Gründe. Wer sich beklagen wolle, solle sich bei jenen bedanken, die die Reform vereitelt haben. In jedem Falle werde es zu einem Anziehen der Beiträge kommen; wenn man auch nur einige wenige Leistungen beschließe, werde dies die Steigerung noch vermehren.</p>
-				<p>Auch die Frage der Lohnfortzahlung im Krankheitsfalle müsse im gesamten Zusammenhang gesehen werden.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN017" type="comment"><p>Die Frage der Lohnfortzahlung im Krankheitsfall wurde aus dem Gesamtkomplex herausgelöst und durch eine eigene Novelle noch vor Ende der 3. WP geregelt. Siehe Nr. 182 v. 16. 2. 1960.</p></note></seg> Jetzt solle bis zu sechs Wochen 100% des Nettolohnes gewährt werden. Nach sechs Wochen solle die Leistung auf 50% des Grundlohnes absinken. Das sei aber sozial wie politisch nicht zu vertreten. Er glaube nicht, daß die Fraktion diese Linie durchhalten könne.</p>
-				<p>Was die Frage der Karenztage anbelange, so habe er Verständnis dafür, daß die Arbeiter verlangen, den Angestellten gleichgestellt zu werden. Man dürfe aber nicht übersehen, daß 1931 diese Regelung nicht den Angestellten zuliebe getroffen worden sei, sondern daß man damals die Krankenversicherungen sanieren mußte.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN018" type="comment"><p>Hinweis auf die zweite Notverordnung »Zur Sicherung von Wirtschaft und Finanzen« vom 5. 6. 1931, die u. a. Änderungen der Krankenversicherung zum Inhalt hatte. Vgl. Politik und Wirtschaft in der Krise 1930–1932, S. 701, 705f.</p></note></seg> Wenn man nun die Karenztage wegfallen lasse, bleibe das Risiko, daß man nicht wisse, wie sich die Versicherten und die Ärzte verhalten werden. Insgesamt wäre es gut, wenn die Fraktion den Mut aufbrächte und sich nicht bereit fände, solche Fragen in der Atmosphäre des Wahlkampfes zu regeln.</p>
-				<p><name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> erinnert daran, daß hinsichtlich der Gleichstellung der Arbeiter die Fraktion einen Auftrag von den Bundesparteitagen von Karlsruhe und Stuttgart habe.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN019" type="comment"><p>Vgl. das Postulat der Gleichbehandlung von Arbeitern und Angestellten im Krankheitsfall in den Entschließungen der CDU-Bundesparteitage in Stuttgart. 1956, S. 152 und in Karlsruhe 1960, S. 227.</p></note></seg> Die Fraktion habe die Aufgabe und die Pflicht, hier einen weiteren Schritt über das Gesetz von 1957<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN020" type="comment"><p>Gesetz zur Verbesserung der wirtschaftlichen Sicherung der Arbeiter im Krankheitsfalle v. 26. 6. 1957 (BGBl. I, S. 649).</p></note></seg> hinaus zu tun. Man solle den vorgeschlagenen Kompromiß annehmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> glaubt, daß man nicht alles vom Staat verlangen solle. Als der Haushalt aufgestellt worden sei, habe man doch schon gewußt, daß noch alle möglichen Forderungen kommen würden. Mit dieser Methode werde aber die Haushaltspolitik unglaubwürdig.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> (Remscheid) bemerkt, daß es nicht so sei, daß man sich hinsichtlich der Lohnfortzahlung bereits so eindeutig geeinigt habe, wie das dargestellt worden sei. Auch im Vorstand seien diese Dinge nicht im einzelnen behandelt worden. Er müsse sich dagegen wehren, einen Blankoscheck zu geben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, er sei durch diese Bemerkung überrascht. Über diese Punkte sei doch beim Bundeskanzler eine klare Absprache erzielt worden.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN021" type="comment"><p>Siehe Anm. 10.</p></note></seg> Wenn man jetzt so beginne, dann sei am Ende überhaupt alles noch offen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> erläutert, daß man beim Bundeskanzler versucht habe, eine Reihe von Fragen zu klären. Ausgangspunkt sei der Streit um das Ergebnisbeteiligungsgesetz<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN022" type="comment"><p>Reg.-Gesetzentwurf zur Förderung der Vermögensbildung der Arbeitnehmer: Drucksache III/2390 v. 13. 1. 1961.</p></note></seg> gewesen. Sowohl gegenüber den Arbeitnehmern wie gegenüber dem Mittelstand sei man gegenüber der Regierungserklärung<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN023" type="comment"><p>Zur beabsichtigten Mittelstandspolitik vgl. Sten. Ber., 3. Sitzung am 29. 10. 1957, S. 19 f., 21 (<name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>).</p></note></seg> etwas im Verzug. Um das auszugleichen, sei der vorgetragene Kompromiß abgeschlossen worden. Fest stehe, daß man das Gesetz über die Lohnfortzahlung nicht so lassen könne, wie es im Augenblick ist, weil es entscheidende Fehler aufweise, die bereinigt werden müssen. Dieses Ziel erreiche man durch die Auflösung der Kombination zwischen Karenztagen und 14-tägiger Krankheitsdauer. Außerdem werde jetzt nach Arbeitstagen gerechnet. Die Erhöhung auf 100% des Nettolohnes sei nach der ganzen Entwicklung notwendig. Bei den Karenztagen habe man sich auf die Betriebszugehörigkeit als Maßstab geeinigt. Was das Kindergeld anbelange, so könne der Mittelstand nicht hinnehmen, wenn das Gesetz so bleibt wie es ist. Für die Übergangszeit sei nun eine Regelung gefunden. Wenn man auch nicht von einem Tag zum anderen zum Familienlohn kommen könne, so sei man doch vom Christlichen her verpflichtet, zu diesem Ziel hinzustreben.</p>
-				<p>Dem vorgeschlagenen Kompromiß<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN024" type="comment"><p>Siehe Anm. 17.</p></note></seg> sollte man zustimmen, er sei wohlabgewogen und niemand sei in der Lage, alles allen recht zu machen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> setzt sich ebenfalls für das vorgeschlagene Programm ein. Vorhandene Bedenken sollten zurückgestellt werden. Damit fänden auch die endlosen Debatten endlich ein Ende.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#EckhardtWalter_1953-10-06">Eckhardt</name> bezieht sich darauf, daß es bisher unmöglich gewesen sei, eine Umsatzsteuerreform durchzuführen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN025" type="comment"><p>Siehe zu diesem Fragenkomplex Nr. 237 v. 24. 1. 1961.</p></note></seg> Dieses stehe nochmals als Aufgabe vor Regierung und Fraktion. Bei der Lösung dieser Fragen müsse man sich aber klar sein, daß man auch das Problem der Finanzverfassung von Bund, Ländern und Gemeinden anpacken müsse. Daher, daß diese Fragen bisher nicht gelöst seien, rührten viele Schwierigkeiten. Im allgemeinen Interesse wie im Interesse des Mittelstandes wäre es wohl besser gewesen, den Umsatzsteuersatz von 4% auf 3% herabzusetzen, Begünstigungen zu streichen und damit klarzustellen, daß man für eine Reform wirklich etwas tun wolle. Die jetzt vorgeschlagenen Regelungen erschwerten den Übergang zu einem wettbewerbsneutralen System.</p>
-				<p>Bei der Organschaft handele es sich nicht um ein Privileg, sondern die Organschaft sei aus rechtssystematischen Gründen entwickelt worden, und zwar deswegen, weil bei der Umsatzsteuer nur der selbständige Unternehmer in Betracht komme, nicht aber der Angestellte oder das Organ, das einen eigenen Willen nicht bilden kann. Wenn man die Grenze für die Organschaft auf 95% festsetze, dann würden gewisse Beispiele Nachahmer finden. In Wirklichkeit werde bei dieser Maßnahme steuerlich nichts herauskommen, weil die Organschaft kein Privileg darstelle. Bei nicht bestehender Organschaft sei es ohne weiteres möglich, in die Großhandelsstufe einzubrechen und dann einen Steuersatz von 1% oder 0% zu zahlen. Diese Vorschläge würden nur Unsicherheit schaffen und man solle sie deshalb fallenlassen. Dem vorgeschlagenen Kompromiß im ganzen solle man aber folgen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt der Fraktion folgenden Antrag vor:</p>
-				<p>»Am 31.1. und 1. 2. 1961 haben mit dem Bundeskanzler und den zuständigen Ministern Gespräche stattgefunden, in denen folgende Themen behandelt wurden: Krankenversicherung, Lohnfortzahlung, Sondersteuerung, Kindergeld und Steuervorlagen. Die Fraktion stimmt den Ergebnissen dieser Gespräche zu. In der Frage der Lohnfortzahlung wird der Unterausschuß Lohnfortzahlung beauftragt, zusammen mit dem Arbeitsminister den Text für einen Initiativantrag der Fraktion festzulegen.«</p>
-				<p>Bundeswirtschaftsminister Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name> erklärt, daß er nicht begreifen könne, wieso Organschaft kein Privileg darstellen solle. In der Bundesrepublik gäbe es 1500 organschaftlich verbundene Betriebe mit Umsätzen von 124 Milliarden DM. Diese 1500 Betriebe hätten also ein Drittel des gesamten Umsatzes. Wenn das kein Privileg sei, dann wisse er nicht mehr, was ein Privileg sei. Offenbar enthalte das Umsatzsteuersystem eine Ungerechtigkeit zum Schaden des Mittelstandes. Wenn man das gesellschaftspolitische Anliegen der Fraktion ernst nehme, dann könne man an diesen Fragen der wirtschaftlichen Konzentration nicht vorübergehen. Im übrigen glaube er nicht, daß man zur Vollfusion übergehen werde. Jeder Prozentsatz, den man festlege, sei ein Ausdruck des politischen Willens und werde seine Wirkung tun. Wer heute bis zu 95% gehen wolle, werde damit neue Kosten auf sich nehmen und dazu noch gesellschaftspolitischen Widerstand. Es müsse soweit kommen, daß es anrüchig werde, auf diesem Gebiete sich zu weit vorzuwagen und Konzentrationen nur um der Steuervorteile willen zu schaffen.</p>
-				<p>Insgesamt hoffe er, daß es möglich sein werde unter Zurückstellung etwaiger Bedenken den Kompromiß durchzuziehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erläutert, daß es ja auch notwendig sei, die entsprechenden Steuerausfälle zu decken. Dazu biete der Rückgriff auf die Betriebe der öffentlichen Hand eine Möglichkeit. Die übrigen Fragen aber könnten nur im gesamten Zusammenhang geklärt werden und sollten deshalb nun zurückgestellt bleiben. Was die Umsatzsteuer anbelange, so sei die Rechtsprechung zur Organschaft<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN026" type="comment"><p>Zur diesbezüglichen Rechtsprechung des Bundesfinanzhofes vgl. die Quellenhinweise bei Tipke/Lang (wie Anm. 15).</p></note></seg> der beste Beweis für die Unrichtigkeit der gegenwärtigen Umsatzsteuer. Es solle nicht nach Unternehmen besteuert werden, sondern nach Waren und Leistungen. Es gehe darum, die Organschaft, die damals so in die Gesetzgebung hineingeschlüpft sei, wieder zu beseitigen. Das gegenwärtige System beseitige die Wettbewerbsunterschiede nicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> bestätigt, daß bei den Gesprächen bei dem Bundeskanzler bei den Karenztagen auf einjährige Betriebszugehörigkeit abgestellt worden sei. Es hätten sich aber verfassungsrechtliche Bedenken ergeben, weswegen eine andere Lösung notwendig sei; diese Frage müsse noch geklärt werden.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> erklärt, viele hätten über den Beschluß, die Krankenkassenreform aufzugeben<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN027" type="comment"><p>Zum Scheitern des Regierungsentwurfs siehe Nr. 182 v. 16. 2. 1960.</p></note></seg>, aufgeatmet. Die Opposition habe sicher nicht geglaubt, daß das die Regierungspartei fertigbringen werde. Um sich die Diskussion zu erleichtern, solle man jetzt den vorgeschlagenen Kompromiß annehmen, dann dürfe aber niemand aus der Reihe tanzen. Sonst werde das Ganze scheitern.</p>
-				<p><name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> (Mannheim) wendet sich gegen die Darstellung, als ob durch die Lohnfortzahlung das Krankfeiern zugenommen habe. Der höhere Krankenstand sei nicht nur bei den Arbeitern, sondern bei allen Ständen feststellbar. Er habe damals davor gewarnt, die Koppelung bei den Karenztagen mit der Krankheitsdauer vorzunehmen. Dieser Fehler sei ja unterdessen erkannt. Aber auch die jetzt empfohlene Regelung sei bedenklich. Es gehe doch nicht an, den Arbeiter, der nicht aus seinem Verschulden einen Arbeitsplatzwechsel vornehmen müsse, anders zu behandeln; das ergäbe verfassungsrechtliche und moralische Bedenken. Bedenken bestünden auch gegen den Steuerfreibetrag, ob er nicht zu global wirke und nicht überflüssigerweise auch den Großverdiener miteinbeziehe. Es sei besser, hier gezielte Maßnahmen zu treffen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> stimmt dem Kompromiß zu. Leider habe der Bundesfamilienminister durch seine Rede in Walsrode<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN028" type="comment"><p>Rede von Minister Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> am 3. 2. 1961, auf Einladung des CDU-Frauenausschusses Walsrode, mit der Ankündigung, daß die Bundesregierung noch im Februar 1961 den Gesetzentwurf für die Zahlung von DM 25,- für zweite Kinder verabschieden werde. Damit werde insbesondere Familien mit einem Einkommen bis zu DM 550,- geholfen (ACDP, NL Wuermeling I-221-011, Pressemitteilungen).</p></note></seg> die Sache wieder schwieriger gemacht, weil er von »wenigstens zwei Kinder« gesprochen habe. Daraus könne man doch schließen, daß er wohl auch noch zum ersten Kind übergehen wolle. So dürfe man aber die Fraktion nicht festlegen. Es sei auch nicht gerechtfertigt, davon zu sprechen, daß die Familien in ein Schattendasein gebracht werde. Ebenso ungut sei es, mit dem Sozialprodukt zu operieren.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> regt an, diese Diskussion später zu führen. Er begrüße, daß auch Frau Dr. <name type="Person" role="Erwaehnung" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> dem Kompromiß zustimme.</p>
-				<p>Bundesfamilienminister Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> erklärt, er sei überrascht, daß seine Äußerungen so mißverstanden würden. Er habe doch nur die Absicht gehabt, die vorgesehene Einkommensgrenze schmackhaft zu machen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> antwortet, daß die Fraktion zur Kenntnis nehme, daß die Absichten des Bundesfamilienministers gut gewesen seien.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#EckhardtWalter_1953-10-06">Eckhardt</name> erklärt erneut, daß die Organschaft kein Privileg sei. Es gebe keinen Fall, in dem der Bundesfinanzhof Organschaft bei heterogenen Betrieben anerkannt habe. Die Begrenzung der Organschaft werde zu keinem Steuermehraufkommen führen, sondern würde nur die alten Manipulationen wieder fördern. Auf diese Bedenken müsse er hinweisen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erwidert, daß nicht durch Organschaft verbundene Unternehmen mehr Steuern bezahlen müssen; das könne niemand bestreiten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet die beiden Herren, diese Frage unter sich auszumachen. Sodann verliest Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> seinen Antrag noch einmal und stellt durch Abstimmung fest, daß dieser Antrag bei sieben Enthaltungen einstimmig ohne Gegenstimmen angenommen wird.</p>
-				<p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Meine Damen und Herren, auch ich möchte Ihnen namens der Bundesregierung und namens der CDU von Herzen danken für die Sachlichkeit der Diskussion, für Ihre Großzügigkeit und für die ausgezeichnete Abstimmung. Wenn derartig schwierige Sachen zusammengebunden werden, dann kann natürlich nichts ganz Vollkommenes entstehen. Aber in der Politik, das ist eine alte Erfahrung, die Sie nun angewandt haben, kann man nur weiterkommen im Wege des Kompromisses. Wir sind uns einig, daß nun auch bei den Abstimmungen im Plenum die soziale Einigkeit der Fraktion zutage treten muß. In den Augen der Wähler wirkt die Macht, die eine Fraktion ausübt, und wenn eine Fraktion bei wichtigen Anlässen auseinanderfällt, dann ist der Verlust nicht nur in der Sache groß, sondern das Ansehen der Fraktion bei der Wählerschaft steht dann auf dem Spiele. Und darum bitte ich Sie herzlich, lassen Sie Ihre Bedenken fallen; wenn Sie ihnen stattgeben, dann ist der Schaden größer als Sie sich vorstellen können. Ich hoffe, daß diese Entscheidung einen tiefen Eindruck in der ganzen Wählerschaft macht und in der ganzen Öffentlichkeit, daß in dieser Fraktion bei so wichtigen und einander widersprechenden Anliegen schließlich doch alle einig waren; Mittelstand, Arbeitgeber, alle waren einig, und das ist ein großes Plus für die Bundestagswahl.</p>
-				<p><name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> schlägt der Fraktion vor, das Arzneimittelgesetz so anzunehmen, wie es nach einstimmigem Beschluß des Gesundheitsausschusses nun vorliegt.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN029" type="comment"><p>Vgl. Schriftl. Ber. des 11. Ausschusses v. 19. 1. 1961: Drucksache III/2421. Annahme der Vorlage am 8. 2. 1961. Vgl. Sten. Ber., 142. Sitzung, S. 8044–8058; Gesetz v. 16. 5. 1961 (BGBl. I, S. 533).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> regt an, noch einige Lücken zu schließen und trägt dazu einen Antrag vor.</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> warnt davor, entgegen den bisherigen Beschlüssen des Arbeitskreises IV nun doch Änderungsanträge anzunehmen. Wenn man das nun beginne, wisse man nicht, wo das enden werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bemerkt, daß es im Vorstand geheißen habe, es würden keine Änderungsanträge kommen. Man solle sich doch lieber noch einmal zusammensetzen und diese Dinge abklären.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> bedauert, daß nun plötzlich doch Anträge kämen, die eventuell das ganze Gesetz gefährden könnten. <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> sollte sich seinen Antrag noch einmal überlegen. Man solle das Gesetz lassen wie es sei.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN030" type="comment"><p>Der Antrag <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> umriß den Auftrag an die Bundesregierung, sich beim Erlaß von Verordnungen nur von gesundheitspolitischen Gesichtspunkten leiten zu lassen (Abgrenzung von apothekenpflichtigen und freiverkäuflichen Arzneien). Vgl. zu Inhalt und Annahme Sten. Ber., 142. Sitzung am 8. 2. 1961, S. 8045 f., 8056, 8113 (Umdruck 748).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name> schließt sich dieser Aufforderung an.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> fragt, wo denn die betreffenden Beschlüsse des mitbeteiligten Ausschusses geblieben seien. § 27 Abs.4<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN031" type="comment"><p>Bei § 27 ging der Gesundheitsausschuß von der Auffassung aus, daß der Gehalt an verschreibungspflichtigen Stoffen, die nur in Spuren in einem Stoff enthalten sind, die Arzneimittel nicht apothekenpflichtig machen sollte. Vgl. Drucksache III/2421 v. 19. 1. 1961, S. 5.</p></note></seg> könne in seiner jetzigen Form nicht aufrechterhalten bleiben. Es gebe nur die Möglichkeit, sich zusammenzuraufen oder man werde uneinheitlich ins Plenum gehen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, er sei überrascht, jetzt von abweichenden Beschlüssen eines Ausschusses und eines Arbeitskreises hören zu müssen. Bisher sei er der Meinung gewesen, es kämen keine Anträge zu diesem Gesetz.</p>
-				<p><name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> tritt dafür ein, in § 12 die Regierungsvorlage wiederherzustellen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN032" type="comment"><p>§ 12 betr. den Nachweis der erforderlichen Sachkenntnis ließ in der Regierungsvorlage mehr Spielraum als in der vom 11. Ausschuß beschlossenen Vorlage. Vgl. ebd., S. 13.</p></note></seg> Was die beabsichtigte Entschließung anbelange, so solle durch sie nur deutlich gemacht werden, was der Ausschuß eigentlich gewollt habe.</p>
-				<p><name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> empfiehlt, zu konzedieren, daß auch Nichtakademiker derartige Dinge herstellen können. Wenn die Resolution die Abgrenzung innerhalb und außerhalb der Apotheke besser umschreibe, so sei das auch kein Schaden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> verweist auf § 32 Abs.2 des Gesetzes<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN033" type="comment"><p>§ 32 des Entwurfs verbot das Feilbieten von Arzneimitteln und die Annahme von Bestellungen auf Arzneimittel durch Hausieren. Abs.2 regelte die Ausnahmen von diesem Verbot. Vgl. ebd., S. 23.</p></note></seg>, der kein Kernproblem darstelle, aber wirtschaftspolitisch von großer Bedeutung sei. Nach der vorliegenden Fassung werde nun der Hausierhandel für Human- wie Tierarzneimittel verboten. Das schaffe aber ein Handelsmonopol für die Tierärzte. Dieses Thema sei schon bei der Gewerbeordnung behandelt worden. Er kündige einen Abänderungsantrag an, durch den auch für die Zukunft das Aufsuchen von Bestellungen von Tierarzneimitteln statthaft sein solle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, auch dieser Antrag sei ihm neu. So könne man keine Fraktion führen. Er sehe auch nicht, wie man so zu einem Ergebnis kommen solle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erläutert, daß das Votum des Wirtschaftspolitischen Ausschusses<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN034" type="comment"><p>Der Wirtschaftsausschuß entschied am 19. 2. 1959, das Apothekengesetz wegen des Sachzusammenhangs später mit dem Arzneimittelgesetz zusammen zu beraten. Am 6. 10. 1960 beriet er das Arzneimittelgesetz allein. Unter den dabei aufgeführten Einwänden gegen die Vorschläge des Gesundheitsausschusses bzw. gegen die Strafbestimmungen in der Vorlage wird der Hausierhandel nicht genannt. Vgl. 35. und 82. Sitzung des Wirtschaftsausschusses (Parl. Arch., Wirtschaftsausschuß).</p></note></seg> im schriftlichen Bericht des Gesundheitsausschusses nicht erwähnt und in der Sache nicht berücksichtigt sei. Dieser Einwand könne erhoben werden, weshalb eine Entschließung im Sinne des Wirtschaftspolitischen Ausschusses empfehlenswert sei. Was die Anträge anbelange, so solle man sie laufenlassen, da die Sache einfach nicht mehr geklärt werden könne.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> empfiehlt der Fraktion, sich geschlossen hinter die Entschließung zu stellen. Die Fraktion stimmt diesem Vorschlag zu. Die Anträge könnten laufen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> regt an, über die Entschließung mit den anderen Fraktionen zu sprechen; dazu sei man nach den Verhandlungen im Gesundheitsausschuß verpflichtet.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> meint, soweit gehe seine Liebe zu den anderen Fraktionen nicht. Man könne doch selbständig eine Entschließung einbringen, ohne dadurch eine Verpflichtung zu verletzen.</p>
-				<p>Es entwickelt sich dann eine weitere Debatte um die Anträge, die angekündigt sind. Es sprechen <name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name>, <name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name>, <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name>, Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name>, <name type="Person" role="Sprecher" ref="#LeonhardGottfried_1949-09-07">Leonhard</name>, Dr. <name type="Person" role="Sprecher" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und <name type="Person" role="Sprecher" ref="#DielJakob_1957-10-15">Diel</name>. Man kommt zu keinem abschließenden Beschluß.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt zur Frage der Sonntagsruhe vor, daß die Bundesregierung eine Verordnung vorgelegt habe, nach der innerhalb von drei Jahren das Thema Sonntagsruhe geregelt sein muß.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN035" type="comment"><p>Siehe Nr. 234 v. 17. 1. 1961 (Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>).</p></note></seg> Diese Verordnung liege dem Bundesrat vor. Trotzdem versuchten SPD und FDP, die Sache im Plenum anhängig zu machen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN036" type="comment"><p>Große SPD-FDP-Anfrage: Drucksache III/2444 v. 25. 1. 1961; keine Behandlung im Plenum.</p></note></seg> Man solle aber besser den Bundesrat in seiner Verantwortung belassen. Wenn die SPD aber auf der Debatte über ihre Große Anfrage bestehe und zur gleichen Zeit der Bundesrat tage, dann müsse die Fraktion auf ihrer von Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> formulierten Haltung bestehen. Bei aller Notwendigkeit, wirtschaftlichen Notwendigkeiten Rechnung zu tragen, müsse sich die Fraktion doch dafür aussprechen, daß innerhalb der drei Jahre die Sonntagsruhe eingeführt werde. Die Fraktion sei mit diesem Vorschlag einverstanden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SerresGuenther_1949-09-07">Serres</name> referiert über den Inhalt des Außenhandelsgesetzes<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN037" type="comment"><p>Reg.-Entwurf eines Außenwirtschaftsgesetzes: Drucksache III/1285 v. 15. 10. 1959; 1. Schriftl. Ber. des Außenhandelsausschusses: Drucksache III/2386 v. 13. 1. 1961.</p></note></seg>, das wohl kaum zu einer Anrufung des Vermittlungsausschusses führen werde, da mit den Ländern eine weitgehende Übereinstimmung erzielt sei.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN038" type="comment"><p>Annahme der Vorlage am 8. 2. 1961; erneute Annahme nach mdl. Ber. des Vermittlungsausschusses am 16 3. 1961. Vgl. Sten. Ber., 142. Sitzung, S. 8106; 152. Sitzung, S. 8677.</p></note></seg> Auch für das Problem der Einfuhr staatsgefährdender Schriften und Filme sei eine befriedigende Lösung gefunden worden, die den Wünschen des Verfassungsschutzes Rechnung trage. Ob es bei der Streichung des § 10 des Energiewirtschaftsgesetzes<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN039" type="comment"><p>In § 45 Abs.2 Nr. 1 des Gesetzentwurfs war vorgesehen, daß der § 10 des Energiewirtschaftsgesetzes vom 13. 12. 1935 aufgehoben wird. § 10 besagte, daß die Einfuhr von Strom oder Gas in festen Leitungen sowie der Abschluß von Verträgen hierüber der Genehmigung des Reichswirtschaftsministers bedürfe. Vgl. Sten. Ber., 142. Sitzung am 8. 2. 1961, S. 8103 f., 8106.</p></note></seg> bleiben werde, müsse man der Abstimmung überlassen. Im übrigen sollte das Ergebnis der Ausschußberatungen übernommen werden.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN040" type="comment"><p>§ 10 des Energiegesetzes wurde nicht aufgehoben. Vgl. ebd., S. 8106, 8113 (Umdruck 750 neu).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bittet die Fraktion, die Ergebnisse der Ausschußberatungen zum Personenbeförderungsgesetz zu übernehmen. Die Fraktion stimmt dieser Anregung zu.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN041" type="comment"><p>Reg.-Entwurf: Drucksache III/255 v. 8. 3. 1958; Schriftl. Bericht des Ausschusses für Verkehr, Post- und Fernmeldewesen: Drucksache III/2450 v. 30. 1. 1961. Annahme am 8. 3. 1961. Vgl. Sten. Ber., 147. Sitzung, S. 8058; Gesetz v. 21. 3. 1961 (BGBl. I, S. 241).</p></note></seg></p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erinnert daran, daß es der Fraktion bei der Beratung der Deutschen Welle und des Deutschlandfunks darauf angekommen sei, diese Bundessender durchzubringen.<seg type="note"><note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN042" type="comment"><p>Siehe Nr. 238 v. 6. 2. 1961.</p></note></seg> Dabei sei die Fraktion von der FDP gut unterstützt worden. Jetzt gehe es um die Besetzung des Rundfunkrates der Deutschen Welle und des Deutschlandfunks. Für die Deutsche Welle werde <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> vorgeschlagen, für den Deutschlandfunk <name type="Person" role="Erwaehnung" ref="#KruegerHans_1957-10-15">Krüger</name> als Verbandsvorsitzender der Heimatvertriebenen, Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> und Frau <name type="Person" role="Erwaehnung" ref="#GeisendoerferIngeborg_1953-10-06">Geisendörfer</name>; für die vierte Stelle solle <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> (FDP) vorgeschlagen werden. Gegen diese Vorschläge erhebt sich kein Widerspruch.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1961-02-07-t1445_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1008/3</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 7. Februar 1961</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>10 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1961-02-07">
+               <time type="start" when="14:45:00"/>
+               <time type="end" when="18:15:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1961-02-07-t1445_EP_SVP-1" corresp="#cdu-csu-03_1961-02-07-t1445_EP_div_SVP-1">A. Tagung der Evangelischen Synode in Ostberlin. – Tagung der SPD in Bad Dürkheim und Reaktion auf Äußerungen <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name>. – Kompromissfindung zu den verbundenen Themen Krankenkassenreform/Lohnfortzahlung/ Unfallversicherung/ Kindergeld/ Steuerreform/ Vermögensbildung der Arbeitnehmer/ Organschaft. – Arzneimittelgesetz. – Sonntagsruhe. – Außenhandelsgesetz. – Personenbeförderungsgesetz. – Beratung der Deutschen Welle und des Deutschlandfunks.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1961-02-07-t1445_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> berichtet, daß die Regierung <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> die Tagung der Evangelischen Synode für Ostberlin verboten habe, mit der Begründung, sie könne nicht zulassen, daß dabei Vertreter der NATO Gelegenheit zur Hetze bekämen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN001" type="comment">
+                     <p>Vgl. die diesbezügliche Mitteilung des Presseamtes beim Ministerpräsidenten der DDR v. 11. 1. 1961, in: DzD IV/6, S. 68 f.</p>
+                  </note>
+               </seg> Diese Begründung müsse als verlogen bezeichnet werden. In Wirklichkeit komme es <name type="Person" role="Erwaehnung" ref="#UlbrichtWalter">Ulbricht</name> auf die Spaltung der Kirche an. Die Folge sei, daß wiederum ein Band der gesamtdeutschen Gemeinsamkeit gelöst werde. Dabei werde die Kirchenfeindlichkeit des Ostregimes ganz deutlich.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt fest, daß diese Erklärung im Namen der Fraktion der Presse übergeben werde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN002" type="comment">
+                     <p>Vgl. »Sozialisten und Christen verbinden gemeinsame Ideale und Ziele«, in: »Neues Deutschland« Nr. 41 v. 10. 2. 1961, S. 1, 3 und auszugsweiser Abdruck, in: »Evangelische Verantwortung«, 9. Jg., Nr. 2 vom Februar 1961, S. 2.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dann wendet er sich der Tagung der SPD in Bad Dürkheim<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN003" type="comment">
+                     <p>Klausurtagung der SPD-Bundestagsfraktion am 6. und 7. 2. 1961. Vgl. Hölscher, SPD-Bundestagsfraktion 1957–1961, S. 512–522.</p>
+                  </note>
+               </seg> zu und führt an, daß die Befragung durch EMNID und Allensbach 51% bzw. 50% für die CDU/CSU ergeben hatten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN004" type="comment">
+                     <p>Zu den bestätigenden Ergebnissen von zwei weiteren Umfragen durch EMNID vgl. Buchstab, CDU-Bundesvorstand 1957–1961, Nr. 19 v. 6. 4. 1961, S. 916 f.</p>
+                  </note>
+               </seg> Auf die Mahnung <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name>, die Bundesregierung und die CDU/CSU sollen vorsichtig sein und nicht zu weich gegenüber den Russen reagieren<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN005" type="comment">
+                     <p>Zum Inhalt der Rede <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> vgl. Hölscher (wie Anm. 3), S. 512 f.</p>
+                  </note>
+               </seg>, werde die Fraktion mit folgender Erklärung antworten:</p>
+            <p>»Die Konfusion in der SPD – verstärkt durch die internen Schwierigkeiten innerhalb dieser Partei, den wachsenden Prestigeverlust <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> und die rückläufige Tendenz bei den Meinungsbefragungen – treibt, wie die jüngsten sozialdemokratischen Polemiken auswiesen, einem neuen Höhepunkt zu. Wenn Franz <name type="Person" role="Erwaehnung" ref="#BarsigFranz">Barsig</name> von der bevorstehenden Liquidierung der <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>-GmbH redet<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN006" type="comment">
+                     <p>Vgl. »Adenauer-GmbH in Liquidation« von Franz <name type="Person" role="Erwaehnung" ref="#BarsigFranz">Barsig</name>, in: SPD-Pressedienst P/XVI/30 v. 4. 2. 1961, S. 1 f. In dieser kritischen Bilanz wurde <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> als »schwächster Bilanzposten« bezeichnet.</p>
+                  </note>
+               </seg> (bei EMNID-Zahlen von 51:36 zugunsten der CDU), dann kann man das als Propaganda abtun. Wenn aber <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> vom außenpolitischen Defaitismus der CDU spricht, wenn er die Bundesregierung fragt, ob deren angebliche weiche Welle gegenüber Moskau genügend durchdacht und mit den Verbündeten genügend abgesprochen worden sei, dann ist das grotesk. Die Politik der Bundesregierung und der CDU/CSU mit dem Ziel der Sicherheit und der Wiedervereinigung Deutschlands auf der Basis der Einheit und Freiheit ist auf dem Recht des deutschen Volkes zur Selbstbestimmung begründet. Diese Politik hat die CDU/CSU in engster Verbindung mit der Freien Welt in den letzten Jahren mit großer Umsicht durchgeführt.</p>
+            <p>An einer solchen Politik hat die CDU/CSU auch in jeder Zeit unentwegt festgehalten, zu der die SPD zur Außenpolitik lediglich ein ewiges Nein beitrug, zu der führende SPD-Politiker in Ostberlin und Moskau in Gesprächen mit <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> glaubten, andere Wege gehen zu müssen, sich sogar als Genossen titulieren ließen, zu einem Zeitpunkt, als die SPD feierlich ihren Deutschlandplan proklamierte. Man sollte mit solchen Worten der Kritik besonders vorsichtig sein, wenn man sie an die Adresse derjenigen richtet, die von der ersten Stunde an am Wiederaufbau Deutschlands gearbeitet haben. Wenn nach dieser Polemik des Herrn <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> von ihm dann auch noch die fehlende Gemeinsamkeit auf außenpolitischem Gebiet beklagt wird, ist die Inkonsequenz kaum noch zu übertreffen.«<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN007" type="comment">
+                     <p>Vgl. ebd.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Was die Arbeit des Parlaments anbelange, so sei es notwendig, in einer Besprechung mit dem Bundeskanzler zu klären, was in den noch zur Verfügung stehenden fünf Monaten geschehen müsse. Die die Landwirtschaft betreffenden Fragen sollten dabei ebenfalls besprochen werden; Vertreter der Landwirtschaft sollten zugezogen werden, wenn diese Themen am kommenden Tage im Bundeskabinett behandelt würden.</p>
+            <p>Zur Krankenkassenreform habe die FDP den Antrag gestellt, die Beratungen dieses Themas abzubrechen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN008" type="comment">
+                     <p>Die FDP-Fraktion hatte am 20. 1. 1961 in gleichlautenden Schreiben an die Fraktionsvorsitzenden von CDU/CSU und SPD den unverzüglichen Abbruch der Beratungen über eine Reform der Krankenversicherung im Ausschuß für Sozialpolitik und dafür die Behandlung anderer vorliegender Gesetzentwürfe gefordert. Vgl. fdk, Jg. 12/5 v. 25. 1. 1961, S. 7.</p>
+                  </note>
+               </seg> Jetzt müsse sich die Fraktion entscheiden, ob sie diesen Gedanken aufnehmen wolle oder ob man weiterhin versuchen wolle, das Gesetz zu verabschieden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN009" type="comment">
+                     <p>Zum Scheitern des Regierungsentwurfs siehe Nr. 182 v. 16. 2. 1960.</p>
+                  </note>
+               </seg> Er, der Fraktionsvorsitzende, habe zwei Tage lang mit <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> und Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> und mit den Ministern <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name> und Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> über diese Fragen beraten<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN010" type="comment">
+                     <p>Wahrscheinlich die Gespräche am 31.1. und 1. 2. 1961. Siehe Nr. 238 v. 6. 2. 1961 (Antrag Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>).</p>
+                  </note>
+               </seg> und es sei verabredet gewesen, keinen Bericht über diese Gespräche zu geben. Durch ein Mißverständnis sei das jedoch nicht eingehalten worden. Es sei ihm, dem Fraktionsvorsitzenden, dabei darum gegangen, eine Geschlossenheit der Fraktion zu erzielen. Für die Fraktion sei ein guter Kompromiß immer noch das beste, und es solle nun versucht werden, in einer Aussprache hier diese Fragen zu klären.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> schildert den Hergang der Dinge: die FDP habe den Brief geschrieben, in dem vorgeschlagen worden sei, die Beratungen der Reform abzubrechen, und <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> habe diesen Brief im Sozialpolitischen Ausschuß vorgelesen<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN011" type="comment">
+                     <p>Vgl. das Schreiben des stellv. Vorsitzenden der FDP-Fraktion v. 19. 1. 1961 an die Vorsitzenden der übrigen Fraktionen und an den Vorsitzenden des Ausschusses für Sozialpolitik. Wortlaut ohne Grußformeln in 92. Sitzung des Ausschusses für Sozialpolitik v. 25.1 1961 (Parl. Arch., Ausschuß für Sozialpolitik).</p>
+                  </note>
+               </seg> und die Fraktionen um eine Äußerung ersucht. Seitens der CDU habe man nur erklären können, daß die Fraktion das erst beraten werde, wenn Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> gesundheitlich wieder hergestellt sei. <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> habe dann im SPD-Pressedienst erklärt, daß damit die Beratungen abgebrochen seien und daß es kein Zurück mehr gebe. Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name> habe dann die eben erwähnten Gespräche eingeleitet und man sei zu dem Ergebnis gekommen, daß man mit dieser Vorlage in dieser Legislaturperiode nicht mehr zum Zuge kommen werde. Allerdings müsse man dann auch einen Versuch der SPD verhindern, etwa ein Vorschaltgesetz durchzudrücken.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN012" type="comment">
+                     <p>SPD-Gesetzentwurf über vordringliche Maßnahmen in der Gesetzlichen Krankenversicherung: Drucksache III/1926 v. 21. 6. 1960; SPD-Antrag betr. Lohnfortzahlung an Arbeiter im Krankheitsfalle: Drucksache III/1927 v. 21. 6. 1960 (mit dem Ziel der Vorlage eines entsprechenden Gesetzes). Beide Drucksachen wurden an die Ausschüsse verwiesen. Vgl. Sten. Ber., 125. Sitzung am 29. 9. 1960, S. 7270.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Es sei nun zu fragen, was notwendig sei. Seit Monaten sei ein Unterausschuß mit dem Thema Lohnfortzahlung beschäftigt, ohne zu einem Ergebnis zu kommen. Jetzt solle folgender Kompromiß versucht werden: Man solle bei der gespaltenen Lösung von 1957 bleiben und dabei einen weiteren Schritt von 90% auf 100% gehen, wobei die Krankenkassen 65%, die Arbeitgeber 35% tragen sollen. Von den Arbeitnehmern sei seit Monaten gefordert worden, die beiden Karenztage wegfallen zu lassen. Jetzt habe man sich darauf geeinigt, die Karenztage wegfallen zu lassen, wenn der Arbeitnehmer mehr als ein Jahr Betriebsangehörigkeit habe. Bei kürzerer Betriebsangehörigkeit solle die Zahlung des Krankengeldes vom Tag der Arbeitsunfähigkeitsschreibung an beginnen. Weiter sei man sich einig geworden, daß der Wegfall der Aussteuerung ausgedehnt werden solle auf die Gewährleistung von Krankengeld und Krankenhauspflege, als auf die Barleistungen. Die Fraktion möge diesen grundsätzlichen Beschlüssen zustimmen, die erst noch endgültig formuliert werden müßten. Das sollte dann als Fraktionsantrag eingebracht werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> empfiehlt, diesem Kompromiß beizutreten, was möglich sei, wenn feststehe, daß in der Frage der Unfallversicherung<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN013" type="comment">
+                     <p>Vgl. zuletzt Zweites Gesetz zur vorläufigen Neuregelung von Geldleistungen in der gesetzlichen Unfallversicherung v. 29. 12. 1960 (BGBl. I, S. 1085).</p>
+                  </note>
+               </seg> nichts mehr geschehe. Allerdings müsse die Frage der Karenztage noch anders gelöst werden; man solle möglichst auf dreijährige Betriebsangehörigkeit abstellen. Weiter müsse sichergestellt werden, daß die bisherige Bemessungsgrundlage so geändert werde, daß gewisse Auswüchse nicht mehr möglich seien. Eindeutig klar müsse aber sein, daß dann auch wirklich niemand weitergehenden Abänderungsanträgen zustimme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WinkelheideBernhard_1949-09-07">Winkelheide</name> schneidet die Frage des Kindergeldes für das zweite Kind an.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN014" type="comment">
+                     <p>Siehe Nr. 238 v. 6. 2. 1961.</p>
+                  </note>
+               </seg> Die Familienausgleichskassen könnten diese Aufgaben nicht übernehmen, weil die Mittel ja aus dem Bundeshaushalt genommen werden sollen. Darum sei folgende Lösung erarbeitet worden: ab 1. 4. 1961 soll für das zweite Kind ein Kindergeld von 25 DM gezahlt werden bis zu einer Einkommensgrenze von 550 DM, weil die darüber liegenden Schichten bereits die entsprechenden Steuerfreibeträge hätten. Zur Auszahlung werde eine eigene Bundesanstalt bei der Bundesanstalt für Arbeitslosenversicherung und Arbeitslosenfürsorge notwendig. Die bisherigen Familienausgleichskassen sollen in den kommenden zwei Jahren aufgelöst und die Zahlung des Kindergeldes für die dritten und weiteren Kinder ebenfalls auf diese Anstalt überführt werden; die dazu notwendigen Gesetze könnten im nächsten Bundestag verabschiedet werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erläutert, daß im Rahmen der großen Steuerreform<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN015" type="comment">
+                     <p>Steueränderungsgesetz 1961: Drucksache III/2573 v. 4. 3. 1961.</p>
+                  </note>
+               </seg> nichts mehr zur Berücksichtigung der mittelständischen Interessen getan werden könne. Was jetzt aber gemacht werde, solle auf diese Reform abgestellt werden. Man habe der Bundesregierung vorgeschlagen, die vorgesehene Freigrenze auf 12000 DM zu erhöhen und die Organschaftsprivilegien erst bei 95% eintreten zu lassen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN016" type="comment">
+                     <p>Ist ein rechtlich selbständiges Unternehmen (Organ) einem anderen Unternehmen (Organträger) derart eingegliedert, daß es keinen eigenen Willen hat, so verliert es seine steuerliche Selbständigkeit bei den einzelnen Steuern in verschiedenem Maße. Die Eingliederung muß finanziell (z. B. durch Mehrheitsbeteiligung), wirtschaftlich (z. B. Einordnung nach Art einer unselbständigen Betriebsabteilung) und organisatorisch (z. B. durch Personalunion hinsichtlich der Geschäftsführung) vorliegen. Die Organschaft wirkt automatisch bei Umsatzsteuer und Gewerbesteuer; bei Körperschaftsteuer und Einkommensteuer nur, wenn ein Gewinnabführungsvertrag hinzukommt. Zur Organschaft als wirtschaftlicher Unternehmenseinheit siehe den Beitrag von Dr. <name type="Person" role="Erwaehnung" ref="#EckhardtWalter_1953-10-06">Eckhardt</name> in diesem Protokoll und vgl. Tipke/Lang, Steuerrecht, S. 509–512 (§ 11).</p>
+                  </note>
+               </seg> Wenn man deutlich werden lasse, daß eine wettbewerbsneutrale Umsatzsteuer kommen werde, werde es wohl nicht zu Vollfusionen kommen. Bei der Großhandelsumsatzsteuer sei man auf den Vorschlag zurückgekommen, den Lebensmittelkatalog zu erweitern. Der Vorschlag der Regierung, in der Vermögensteuer die Freibeträge zu verdoppeln, sei unzureichend, man habe sich aber trotzdem geeinigt, weil die Kinder entsprechend gestellt würden. Die wirtschaftlichen Unternehmen der öffentlichen Hand sollen in die Steuer einbezogen werden, die Formel dafür sei aber noch nicht fertiggestellt. Mit diesem Programm könne man sich schon sehen lassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet die Fraktion, sich diesem eben vorgetragenen Kompromiß anzuschließen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> bedauert, daß die Krankenkassenreform gescheitert ist. Jetzt dürfe man aber in keinem Falle irgend etwas tun, was wie ein Vorschaltgesetz aussehe. Dafür gebe es sachliche wie politische Gründe. Wer sich beklagen wolle, solle sich bei jenen bedanken, die die Reform vereitelt haben. In jedem Falle werde es zu einem Anziehen der Beiträge kommen; wenn man auch nur einige wenige Leistungen beschließe, werde dies die Steigerung noch vermehren.</p>
+            <p>Auch die Frage der Lohnfortzahlung im Krankheitsfalle müsse im gesamten Zusammenhang gesehen werden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN017" type="comment">
+                     <p>Die Frage der Lohnfortzahlung im Krankheitsfall wurde aus dem Gesamtkomplex herausgelöst und durch eine eigene Novelle noch vor Ende der 3. WP geregelt. Siehe Nr. 182 v. 16. 2. 1960.</p>
+                  </note>
+               </seg> Jetzt solle bis zu sechs Wochen 100% des Nettolohnes gewährt werden. Nach sechs Wochen solle die Leistung auf 50% des Grundlohnes absinken. Das sei aber sozial wie politisch nicht zu vertreten. Er glaube nicht, daß die Fraktion diese Linie durchhalten könne.</p>
+            <p>Was die Frage der Karenztage anbelange, so habe er Verständnis dafür, daß die Arbeiter verlangen, den Angestellten gleichgestellt zu werden. Man dürfe aber nicht übersehen, daß 1931 diese Regelung nicht den Angestellten zuliebe getroffen worden sei, sondern daß man damals die Krankenversicherungen sanieren mußte.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN018" type="comment">
+                     <p>Hinweis auf die zweite Notverordnung »Zur Sicherung von Wirtschaft und Finanzen« vom 5. 6. 1931, die u. a. Änderungen der Krankenversicherung zum Inhalt hatte. Vgl. Politik und Wirtschaft in der Krise 1930–1932, S. 701, 705f.</p>
+                  </note>
+               </seg> Wenn man nun die Karenztage wegfallen lasse, bleibe das Risiko, daß man nicht wisse, wie sich die Versicherten und die Ärzte verhalten werden. Insgesamt wäre es gut, wenn die Fraktion den Mut aufbrächte und sich nicht bereit fände, solche Fragen in der Atmosphäre des Wahlkampfes zu regeln.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> erinnert daran, daß hinsichtlich der Gleichstellung der Arbeiter die Fraktion einen Auftrag von den Bundesparteitagen von Karlsruhe und Stuttgart habe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN019" type="comment">
+                     <p>Vgl. das Postulat der Gleichbehandlung von Arbeitern und Angestellten im Krankheitsfall in den Entschließungen der CDU-Bundesparteitage in Stuttgart. 1956, S. 152 und in Karlsruhe 1960, S. 227.</p>
+                  </note>
+               </seg> Die Fraktion habe die Aufgabe und die Pflicht, hier einen weiteren Schritt über das Gesetz von 1957<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN020" type="comment">
+                     <p>Gesetz zur Verbesserung der wirtschaftlichen Sicherung der Arbeiter im Krankheitsfalle v. 26. 6. 1957 (BGBl. I, S. 649).</p>
+                  </note>
+               </seg> hinaus zu tun. Man solle den vorgeschlagenen Kompromiß annehmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> glaubt, daß man nicht alles vom Staat verlangen solle. Als der Haushalt aufgestellt worden sei, habe man doch schon gewußt, daß noch alle möglichen Forderungen kommen würden. Mit dieser Methode werde aber die Haushaltspolitik unglaubwürdig.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> (Remscheid) bemerkt, daß es nicht so sei, daß man sich hinsichtlich der Lohnfortzahlung bereits so eindeutig geeinigt habe, wie das dargestellt worden sei. Auch im Vorstand seien diese Dinge nicht im einzelnen behandelt worden. Er müsse sich dagegen wehren, einen Blankoscheck zu geben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, er sei durch diese Bemerkung überrascht. Über diese Punkte sei doch beim Bundeskanzler eine klare Absprache erzielt worden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN021" type="comment">
+                     <p>Siehe Anm. 10.</p>
+                  </note>
+               </seg> Wenn man jetzt so beginne, dann sei am Ende überhaupt alles noch offen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoecherlHermann_1953-10-06">Höcherl</name> erläutert, daß man beim Bundeskanzler versucht habe, eine Reihe von Fragen zu klären. Ausgangspunkt sei der Streit um das Ergebnisbeteiligungsgesetz<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN022" type="comment">
+                     <p>Reg.-Gesetzentwurf zur Förderung der Vermögensbildung der Arbeitnehmer: Drucksache III/2390 v. 13. 1. 1961.</p>
+                  </note>
+               </seg> gewesen. Sowohl gegenüber den Arbeitnehmern wie gegenüber dem Mittelstand sei man gegenüber der Regierungserklärung<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN023" type="comment">
+                     <p>Zur beabsichtigten Mittelstandspolitik vgl. Sten. Ber., 3. Sitzung am 29. 10. 1957, S. 19 f., 21 (<name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>).</p>
+                  </note>
+               </seg> etwas im Verzug. Um das auszugleichen, sei der vorgetragene Kompromiß abgeschlossen worden. Fest stehe, daß man das Gesetz über die Lohnfortzahlung nicht so lassen könne, wie es im Augenblick ist, weil es entscheidende Fehler aufweise, die bereinigt werden müssen. Dieses Ziel erreiche man durch die Auflösung der Kombination zwischen Karenztagen und 14-tägiger Krankheitsdauer. Außerdem werde jetzt nach Arbeitstagen gerechnet. Die Erhöhung auf 100% des Nettolohnes sei nach der ganzen Entwicklung notwendig. Bei den Karenztagen habe man sich auf die Betriebszugehörigkeit als Maßstab geeinigt. Was das Kindergeld anbelange, so könne der Mittelstand nicht hinnehmen, wenn das Gesetz so bleibt wie es ist. Für die Übergangszeit sei nun eine Regelung gefunden. Wenn man auch nicht von einem Tag zum anderen zum Familienlohn kommen könne, so sei man doch vom Christlichen her verpflichtet, zu diesem Ziel hinzustreben.</p>
+            <p>Dem vorgeschlagenen Kompromiß<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN024" type="comment">
+                     <p>Siehe Anm. 17.</p>
+                  </note>
+               </seg> sollte man zustimmen, er sei wohlabgewogen und niemand sei in der Lage, alles allen recht zu machen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StruveDetlef_1949-09-07">Struve</name> setzt sich ebenfalls für das vorgeschlagene Programm ein. Vorhandene Bedenken sollten zurückgestellt werden. Damit fänden auch die endlosen Debatten endlich ein Ende.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#EckhardtWalter_1953-10-06">Eckhardt</name> bezieht sich darauf, daß es bisher unmöglich gewesen sei, eine Umsatzsteuerreform durchzuführen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN025" type="comment">
+                     <p>Siehe zu diesem Fragenkomplex Nr. 237 v. 24. 1. 1961.</p>
+                  </note>
+               </seg> Dieses stehe nochmals als Aufgabe vor Regierung und Fraktion. Bei der Lösung dieser Fragen müsse man sich aber klar sein, daß man auch das Problem der Finanzverfassung von Bund, Ländern und Gemeinden anpacken müsse. Daher, daß diese Fragen bisher nicht gelöst seien, rührten viele Schwierigkeiten. Im allgemeinen Interesse wie im Interesse des Mittelstandes wäre es wohl besser gewesen, den Umsatzsteuersatz von 4% auf 3% herabzusetzen, Begünstigungen zu streichen und damit klarzustellen, daß man für eine Reform wirklich etwas tun wolle. Die jetzt vorgeschlagenen Regelungen erschwerten den Übergang zu einem wettbewerbsneutralen System.</p>
+            <p>Bei der Organschaft handele es sich nicht um ein Privileg, sondern die Organschaft sei aus rechtssystematischen Gründen entwickelt worden, und zwar deswegen, weil bei der Umsatzsteuer nur der selbständige Unternehmer in Betracht komme, nicht aber der Angestellte oder das Organ, das einen eigenen Willen nicht bilden kann. Wenn man die Grenze für die Organschaft auf 95% festsetze, dann würden gewisse Beispiele Nachahmer finden. In Wirklichkeit werde bei dieser Maßnahme steuerlich nichts herauskommen, weil die Organschaft kein Privileg darstelle. Bei nicht bestehender Organschaft sei es ohne weiteres möglich, in die Großhandelsstufe einzubrechen und dann einen Steuersatz von 1% oder 0% zu zahlen. Diese Vorschläge würden nur Unsicherheit schaffen und man solle sie deshalb fallenlassen. Dem vorgeschlagenen Kompromiß im ganzen solle man aber folgen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt der Fraktion folgenden Antrag vor:</p>
+            <p>»Am 31.1. und 1. 2. 1961 haben mit dem Bundeskanzler und den zuständigen Ministern Gespräche stattgefunden, in denen folgende Themen behandelt wurden: Krankenversicherung, Lohnfortzahlung, Sondersteuerung, Kindergeld und Steuervorlagen. Die Fraktion stimmt den Ergebnissen dieser Gespräche zu. In der Frage der Lohnfortzahlung wird der Unterausschuß Lohnfortzahlung beauftragt, zusammen mit dem Arbeitsminister den Text für einen Initiativantrag der Fraktion festzulegen.«</p>
+            <p>Bundeswirtschaftsminister Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name> erklärt, daß er nicht begreifen könne, wieso Organschaft kein Privileg darstellen solle. In der Bundesrepublik gäbe es 1500 organschaftlich verbundene Betriebe mit Umsätzen von 124 Milliarden DM. Diese 1500 Betriebe hätten also ein Drittel des gesamten Umsatzes. Wenn das kein Privileg sei, dann wisse er nicht mehr, was ein Privileg sei. Offenbar enthalte das Umsatzsteuersystem eine Ungerechtigkeit zum Schaden des Mittelstandes. Wenn man das gesellschaftspolitische Anliegen der Fraktion ernst nehme, dann könne man an diesen Fragen der wirtschaftlichen Konzentration nicht vorübergehen. Im übrigen glaube er nicht, daß man zur Vollfusion übergehen werde. Jeder Prozentsatz, den man festlege, sei ein Ausdruck des politischen Willens und werde seine Wirkung tun. Wer heute bis zu 95% gehen wolle, werde damit neue Kosten auf sich nehmen und dazu noch gesellschaftspolitischen Widerstand. Es müsse soweit kommen, daß es anrüchig werde, auf diesem Gebiete sich zu weit vorzuwagen und Konzentrationen nur um der Steuervorteile willen zu schaffen.</p>
+            <p>Insgesamt hoffe er, daß es möglich sein werde unter Zurückstellung etwaiger Bedenken den Kompromiß durchzuziehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erläutert, daß es ja auch notwendig sei, die entsprechenden Steuerausfälle zu decken. Dazu biete der Rückgriff auf die Betriebe der öffentlichen Hand eine Möglichkeit. Die übrigen Fragen aber könnten nur im gesamten Zusammenhang geklärt werden und sollten deshalb nun zurückgestellt bleiben. Was die Umsatzsteuer anbelange, so sei die Rechtsprechung zur Organschaft<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN026" type="comment">
+                     <p>Zur diesbezüglichen Rechtsprechung des Bundesfinanzhofes vgl. die Quellenhinweise bei Tipke/Lang (wie Anm. 15).</p>
+                  </note>
+               </seg> der beste Beweis für die Unrichtigkeit der gegenwärtigen Umsatzsteuer. Es solle nicht nach Unternehmen besteuert werden, sondern nach Waren und Leistungen. Es gehe darum, die Organschaft, die damals so in die Gesetzgebung hineingeschlüpft sei, wieder zu beseitigen. Das gegenwärtige System beseitige die Wettbewerbsunterschiede nicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> bestätigt, daß bei den Gesprächen bei dem Bundeskanzler bei den Karenztagen auf einjährige Betriebszugehörigkeit abgestellt worden sei. Es hätten sich aber verfassungsrechtliche Bedenken ergeben, weswegen eine andere Lösung notwendig sei; diese Frage müsse noch geklärt werden.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> erklärt, viele hätten über den Beschluß, die Krankenkassenreform aufzugeben<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN027" type="comment">
+                     <p>Zum Scheitern des Regierungsentwurfs siehe Nr. 182 v. 16. 2. 1960.</p>
+                  </note>
+               </seg>, aufgeatmet. Die Opposition habe sicher nicht geglaubt, daß das die Regierungspartei fertigbringen werde. Um sich die Diskussion zu erleichtern, solle man jetzt den vorgeschlagenen Kompromiß annehmen, dann dürfe aber niemand aus der Reihe tanzen. Sonst werde das Ganze scheitern.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> (Mannheim) wendet sich gegen die Darstellung, als ob durch die Lohnfortzahlung das Krankfeiern zugenommen habe. Der höhere Krankenstand sei nicht nur bei den Arbeitern, sondern bei allen Ständen feststellbar. Er habe damals davor gewarnt, die Koppelung bei den Karenztagen mit der Krankheitsdauer vorzunehmen. Dieser Fehler sei ja unterdessen erkannt. Aber auch die jetzt empfohlene Regelung sei bedenklich. Es gehe doch nicht an, den Arbeiter, der nicht aus seinem Verschulden einen Arbeitsplatzwechsel vornehmen müsse, anders zu behandeln; das ergäbe verfassungsrechtliche und moralische Bedenken. Bedenken bestünden auch gegen den Steuerfreibetrag, ob er nicht zu global wirke und nicht überflüssigerweise auch den Großverdiener miteinbeziehe. Es sei besser, hier gezielte Maßnahmen zu treffen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> stimmt dem Kompromiß zu. Leider habe der Bundesfamilienminister durch seine Rede in Walsrode<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN028" type="comment">
+                     <p>Rede von Minister Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> am 3. 2. 1961, auf Einladung des CDU-Frauenausschusses Walsrode, mit der Ankündigung, daß die Bundesregierung noch im Februar 1961 den Gesetzentwurf für die Zahlung von DM 25,- für zweite Kinder verabschieden werde. Damit werde insbesondere Familien mit einem Einkommen bis zu DM 550,- geholfen (ACDP, NL Wuermeling I-221-011, Pressemitteilungen).</p>
+                  </note>
+               </seg> die Sache wieder schwieriger gemacht, weil er von »wenigstens zwei Kinder« gesprochen habe. Daraus könne man doch schließen, daß er wohl auch noch zum ersten Kind übergehen wolle. So dürfe man aber die Fraktion nicht festlegen. Es sei auch nicht gerechtfertigt, davon zu sprechen, daß die Familien in ein Schattendasein gebracht werde. Ebenso ungut sei es, mit dem Sozialprodukt zu operieren.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> regt an, diese Diskussion später zu führen. Er begrüße, daß auch Frau Dr. <name type="Person" role="Erwaehnung" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> dem Kompromiß zustimme.</p>
+            <p>Bundesfamilienminister Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> erklärt, er sei überrascht, daß seine Äußerungen so mißverstanden würden. Er habe doch nur die Absicht gehabt, die vorgesehene Einkommensgrenze schmackhaft zu machen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> antwortet, daß die Fraktion zur Kenntnis nehme, daß die Absichten des Bundesfamilienministers gut gewesen seien.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#EckhardtWalter_1953-10-06">Eckhardt</name> erklärt erneut, daß die Organschaft kein Privileg sei. Es gebe keinen Fall, in dem der Bundesfinanzhof Organschaft bei heterogenen Betrieben anerkannt habe. Die Begrenzung der Organschaft werde zu keinem Steuermehraufkommen führen, sondern würde nur die alten Manipulationen wieder fördern. Auf diese Bedenken müsse er hinweisen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> erwidert, daß nicht durch Organschaft verbundene Unternehmen mehr Steuern bezahlen müssen; das könne niemand bestreiten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bittet die beiden Herren, diese Frage unter sich auszumachen. Sodann verliest Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> seinen Antrag noch einmal und stellt durch Abstimmung fest, daß dieser Antrag bei sieben Enthaltungen einstimmig ohne Gegenstimmen angenommen wird.</p>
+            <p>Bundeskanzler Dr. <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>: »Meine Damen und Herren, auch ich möchte Ihnen namens der Bundesregierung und namens der CDU von Herzen danken für die Sachlichkeit der Diskussion, für Ihre Großzügigkeit und für die ausgezeichnete Abstimmung. Wenn derartig schwierige Sachen zusammengebunden werden, dann kann natürlich nichts ganz Vollkommenes entstehen. Aber in der Politik, das ist eine alte Erfahrung, die Sie nun angewandt haben, kann man nur weiterkommen im Wege des Kompromisses. Wir sind uns einig, daß nun auch bei den Abstimmungen im Plenum die soziale Einigkeit der Fraktion zutage treten muß. In den Augen der Wähler wirkt die Macht, die eine Fraktion ausübt, und wenn eine Fraktion bei wichtigen Anlässen auseinanderfällt, dann ist der Verlust nicht nur in der Sache groß, sondern das Ansehen der Fraktion bei der Wählerschaft steht dann auf dem Spiele. Und darum bitte ich Sie herzlich, lassen Sie Ihre Bedenken fallen; wenn Sie ihnen stattgeben, dann ist der Schaden größer als Sie sich vorstellen können. Ich hoffe, daß diese Entscheidung einen tiefen Eindruck in der ganzen Wählerschaft macht und in der ganzen Öffentlichkeit, daß in dieser Fraktion bei so wichtigen und einander widersprechenden Anliegen schließlich doch alle einig waren; Mittelstand, Arbeitgeber, alle waren einig, und das ist ein großes Plus für die Bundestagswahl.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> schlägt der Fraktion vor, das Arzneimittelgesetz so anzunehmen, wie es nach einstimmigem Beschluß des Gesundheitsausschusses nun vorliegt.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN029" type="comment">
+                     <p>Vgl. Schriftl. Ber. des 11. Ausschusses v. 19. 1. 1961: Drucksache III/2421. Annahme der Vorlage am 8. 2. 1961. Vgl. Sten. Ber., 142. Sitzung, S. 8044–8058; Gesetz v. 16. 5. 1961 (BGBl. I, S. 533).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> regt an, noch einige Lücken zu schließen und trägt dazu einen Antrag vor.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> warnt davor, entgegen den bisherigen Beschlüssen des Arbeitskreises IV nun doch Änderungsanträge anzunehmen. Wenn man das nun beginne, wisse man nicht, wo das enden werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> bemerkt, daß es im Vorstand geheißen habe, es würden keine Änderungsanträge kommen. Man solle sich doch lieber noch einmal zusammensetzen und diese Dinge abklären.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> bedauert, daß nun plötzlich doch Anträge kämen, die eventuell das ganze Gesetz gefährden könnten. <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> sollte sich seinen Antrag noch einmal überlegen. Man solle das Gesetz lassen wie es sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN030" type="comment">
+                     <p>Der Antrag <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> umriß den Auftrag an die Bundesregierung, sich beim Erlaß von Verordnungen nur von gesundheitspolitischen Gesichtspunkten leiten zu lassen (Abgrenzung von apothekenpflichtigen und freiverkäuflichen Arzneien). Vgl. zu Inhalt und Annahme Sten. Ber., 142. Sitzung am 8. 2. 1961, S. 8045 f., 8056, 8113 (Umdruck 748).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name> schließt sich dieser Aufforderung an.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> fragt, wo denn die betreffenden Beschlüsse des mitbeteiligten Ausschusses geblieben seien. § 27 Abs.4<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN031" type="comment">
+                     <p>Bei § 27 ging der Gesundheitsausschuß von der Auffassung aus, daß der Gehalt an verschreibungspflichtigen Stoffen, die nur in Spuren in einem Stoff enthalten sind, die Arzneimittel nicht apothekenpflichtig machen sollte. Vgl. Drucksache III/2421 v. 19. 1. 1961, S. 5.</p>
+                  </note>
+               </seg> könne in seiner jetzigen Form nicht aufrechterhalten bleiben. Es gebe nur die Möglichkeit, sich zusammenzuraufen oder man werde uneinheitlich ins Plenum gehen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, er sei überrascht, jetzt von abweichenden Beschlüssen eines Ausschusses und eines Arbeitskreises hören zu müssen. Bisher sei er der Meinung gewesen, es kämen keine Anträge zu diesem Gesetz.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> tritt dafür ein, in § 12 die Regierungsvorlage wiederherzustellen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN032" type="comment">
+                     <p>§ 12 betr. den Nachweis der erforderlichen Sachkenntnis ließ in der Regierungsvorlage mehr Spielraum als in der vom 11. Ausschuß beschlossenen Vorlage. Vgl. ebd., S. 13.</p>
+                  </note>
+               </seg> Was die beabsichtigte Entschließung anbelange, so solle durch sie nur deutlich gemacht werden, was der Ausschuß eigentlich gewollt habe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> empfiehlt, zu konzedieren, daß auch Nichtakademiker derartige Dinge herstellen können. Wenn die Resolution die Abgrenzung innerhalb und außerhalb der Apotheke besser umschreibe, so sei das auch kein Schaden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> verweist auf § 32 Abs.2 des Gesetzes<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN033" type="comment">
+                     <p>§ 32 des Entwurfs verbot das Feilbieten von Arzneimitteln und die Annahme von Bestellungen auf Arzneimittel durch Hausieren. Abs.2 regelte die Ausnahmen von diesem Verbot. Vgl. ebd., S. 23.</p>
+                  </note>
+               </seg>, der kein Kernproblem darstelle, aber wirtschaftspolitisch von großer Bedeutung sei. Nach der vorliegenden Fassung werde nun der Hausierhandel für Human- wie Tierarzneimittel verboten. Das schaffe aber ein Handelsmonopol für die Tierärzte. Dieses Thema sei schon bei der Gewerbeordnung behandelt worden. Er kündige einen Abänderungsantrag an, durch den auch für die Zukunft das Aufsuchen von Bestellungen von Tierarzneimitteln statthaft sein solle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erklärt, auch dieser Antrag sei ihm neu. So könne man keine Fraktion führen. Er sehe auch nicht, wie man so zu einem Ergebnis kommen solle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> erläutert, daß das Votum des Wirtschaftspolitischen Ausschusses<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN034" type="comment">
+                     <p>Der Wirtschaftsausschuß entschied am 19. 2. 1959, das Apothekengesetz wegen des Sachzusammenhangs später mit dem Arzneimittelgesetz zusammen zu beraten. Am 6. 10. 1960 beriet er das Arzneimittelgesetz allein. Unter den dabei aufgeführten Einwänden gegen die Vorschläge des Gesundheitsausschusses bzw. gegen die Strafbestimmungen in der Vorlage wird der Hausierhandel nicht genannt. Vgl. 35. und 82. Sitzung des Wirtschaftsausschusses (Parl. Arch., Wirtschaftsausschuß).</p>
+                  </note>
+               </seg> im schriftlichen Bericht des Gesundheitsausschusses nicht erwähnt und in der Sache nicht berücksichtigt sei. Dieser Einwand könne erhoben werden, weshalb eine Entschließung im Sinne des Wirtschaftspolitischen Ausschusses empfehlenswert sei. Was die Anträge anbelange, so solle man sie laufenlassen, da die Sache einfach nicht mehr geklärt werden könne.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> empfiehlt der Fraktion, sich geschlossen hinter die Entschließung zu stellen. Die Fraktion stimmt diesem Vorschlag zu. Die Anträge könnten laufen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name> regt an, über die Entschließung mit den anderen Fraktionen zu sprechen; dazu sei man nach den Verhandlungen im Gesundheitsausschuß verpflichtet.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> meint, soweit gehe seine Liebe zu den anderen Fraktionen nicht. Man könne doch selbständig eine Entschließung einbringen, ohne dadurch eine Verpflichtung zu verletzen.</p>
+            <p>Es entwickelt sich dann eine weitere Debatte um die Anträge, die angekündigt sind. Es sprechen <name type="Person" role="Sprecher" ref="#GewandtHeinrich_1957-10-15">Gewandt</name>, <name type="Person" role="Sprecher" ref="#EhrenHermann_1949-09-07">Ehren</name>, <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name>, Dr. <name type="Person" role="Sprecher" ref="#DittrichStefan_1953-10-06">Dittrich</name>, <name type="Person" role="Sprecher" ref="#LeonhardGottfried_1949-09-07">Leonhard</name>, Dr. <name type="Person" role="Sprecher" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und <name type="Person" role="Sprecher" ref="#DielJakob_1957-10-15">Diel</name>. Man kommt zu keinem abschließenden Beschluß.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt zur Frage der Sonntagsruhe vor, daß die Bundesregierung eine Verordnung vorgelegt habe, nach der innerhalb von drei Jahren das Thema Sonntagsruhe geregelt sein muß.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN035" type="comment">
+                     <p>Siehe Nr. 234 v. 17. 1. 1961 (Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>).</p>
+                  </note>
+               </seg> Diese Verordnung liege dem Bundesrat vor. Trotzdem versuchten SPD und FDP, die Sache im Plenum anhängig zu machen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN036" type="comment">
+                     <p>Große SPD-FDP-Anfrage: Drucksache III/2444 v. 25. 1. 1961; keine Behandlung im Plenum.</p>
+                  </note>
+               </seg> Man solle aber besser den Bundesrat in seiner Verantwortung belassen. Wenn die SPD aber auf der Debatte über ihre Große Anfrage bestehe und zur gleichen Zeit der Bundesrat tage, dann müsse die Fraktion auf ihrer von Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> formulierten Haltung bestehen. Bei aller Notwendigkeit, wirtschaftlichen Notwendigkeiten Rechnung zu tragen, müsse sich die Fraktion doch dafür aussprechen, daß innerhalb der drei Jahre die Sonntagsruhe eingeführt werde. Die Fraktion sei mit diesem Vorschlag einverstanden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SerresGuenther_1949-09-07">Serres</name> referiert über den Inhalt des Außenhandelsgesetzes<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN037" type="comment">
+                     <p>Reg.-Entwurf eines Außenwirtschaftsgesetzes: Drucksache III/1285 v. 15. 10. 1959; 1. Schriftl. Ber. des Außenhandelsausschusses: Drucksache III/2386 v. 13. 1. 1961.</p>
+                  </note>
+               </seg>, das wohl kaum zu einer Anrufung des Vermittlungsausschusses führen werde, da mit den Ländern eine weitgehende Übereinstimmung erzielt sei.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN038" type="comment">
+                     <p>Annahme der Vorlage am 8. 2. 1961; erneute Annahme nach mdl. Ber. des Vermittlungsausschusses am 16 3. 1961. Vgl. Sten. Ber., 142. Sitzung, S. 8106; 152. Sitzung, S. 8677.</p>
+                  </note>
+               </seg> Auch für das Problem der Einfuhr staatsgefährdender Schriften und Filme sei eine befriedigende Lösung gefunden worden, die den Wünschen des Verfassungsschutzes Rechnung trage. Ob es bei der Streichung des § 10 des Energiewirtschaftsgesetzes<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN039" type="comment">
+                     <p>In § 45 Abs.2 Nr. 1 des Gesetzentwurfs war vorgesehen, daß der § 10 des Energiewirtschaftsgesetzes vom 13. 12. 1935 aufgehoben wird. § 10 besagte, daß die Einfuhr von Strom oder Gas in festen Leitungen sowie der Abschluß von Verträgen hierüber der Genehmigung des Reichswirtschaftsministers bedürfe. Vgl. Sten. Ber., 142. Sitzung am 8. 2. 1961, S. 8103 f., 8106.</p>
+                  </note>
+               </seg> bleiben werde, müsse man der Abstimmung überlassen. Im übrigen sollte das Ergebnis der Ausschußberatungen übernommen werden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN040" type="comment">
+                     <p>§ 10 des Energiegesetzes wurde nicht aufgehoben. Vgl. ebd., S. 8106, 8113 (Umdruck 750 neu).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bittet die Fraktion, die Ergebnisse der Ausschußberatungen zum Personenbeförderungsgesetz zu übernehmen. Die Fraktion stimmt dieser Anregung zu.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN041" type="comment">
+                     <p>Reg.-Entwurf: Drucksache III/255 v. 8. 3. 1958; Schriftl. Bericht des Ausschusses für Verkehr, Post- und Fernmeldewesen: Drucksache III/2450 v. 30. 1. 1961. Annahme am 8. 3. 1961. Vgl. Sten. Ber., 147. Sitzung, S. 8058; Gesetz v. 21. 3. 1961 (BGBl. I, S. 241).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> erinnert daran, daß es der Fraktion bei der Beratung der Deutschen Welle und des Deutschlandfunks darauf angekommen sei, diese Bundessender durchzubringen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1961-02-07-t1445_EP_FN042" type="comment">
+                     <p>Siehe Nr. 238 v. 6. 2. 1961.</p>
+                  </note>
+               </seg> Dabei sei die Fraktion von der FDP gut unterstützt worden. Jetzt gehe es um die Besetzung des Rundfunkrates der Deutschen Welle und des Deutschlandfunks. Für die Deutsche Welle werde <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> vorgeschlagen, für den Deutschlandfunk <name type="Person" role="Erwaehnung" ref="#KruegerHans_1957-10-15">Krüger</name> als Verbandsvorsitzender der Heimatvertriebenen, Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> und Frau <name type="Person" role="Erwaehnung" ref="#GeisendoerferIngeborg_1953-10-06">Geisendörfer</name>; für die vierte Stelle solle <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> (FDP) vorgeschlagen werden. Gegen diese Vorschläge erhebt sich kein Widerspruch.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

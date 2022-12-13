@@ -1,166 +1,433 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-01_1950-10-04-t1400_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeberPetra"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#JuengerkesSven"/>
-				</respStmt>
-			</titleStmt><editionStmt><p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p></editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte (OCR, anschließend manueller Korrekturdurchgang) und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1957. (2 Halbbände).</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/I</title><author>Petra Weber</author><pubPlace>Düsseldorf</pubPlace><date>1993</date><idno type="DNB">https://d-nb.info/930107160</idno><idno type="DNB">https://d-nb.info/930109627</idno></bibl></note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 1. WP, 1, Ord. 13.9.1949–11.12.1951</idno>
-							<objectName>Protokoll über die Fraktionssitzung am 4.10.1950, 14.00 Uhr</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 4. Oktober 1950</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>6 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-					
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1950-10-04"><time type="start" when="14:00:00"/><time type="end"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#SchumacherKurt_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-07-22" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-10-27" who="#JuengerkesSven" status="draft" n="3">SVP und Namen ergänzt.</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-01_1950-10-04-t1400_EP_SVP-1" corresp="#spd-01_1950-10-04-t1400_EP_div_SVP-1">A.: Politischer Bericht von Kurt Schumacher (Gespräch mit McCloy und Adenauer, New Yorker Außenministerkonferenz, Polizeifrage, Auslandsschulden, Vorkriegsschulden). – Diskussion der Fraktion über den Bericht.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-01_1950-10-04-t1400_EP_div_SVP-1">
-				<head>A.</head>
-				<p><name type="Person" role="Sprecher" ref="#SchumacherKurt_1949-09-07">Schumacher</name> gibt zunächst den politischen Bericht und führt dabei U.a. aus: Aus den Erklärungen aller Kommissare geht hervor, daß der ganze Komplex politisch<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN001" type="comment"><p>Handschriftlich verbessert aus »technisch«.</p></note></seg> gesehen werden müßte.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN002" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> hatte am 1.10. mit <name type="Person" role="Erwaehnung" ref="#McCloyJohnJay">McCloy</name> und am 3.10. mit <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> längere Gespräche. Gegenstand der Gespräche waren die Beschlüsse der New Yorker Außenminister-Konferenz vom 12.–19.9.1950, der Stand der Polizeifrage und das <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> von der <name type="Organisation" ref="#AHK">AHK</name> überreichte Memorandum über die deutschen Auslandsschulden. <bibl type="series-item"><name type="Organisation" ref="#PPP">PPP</name> vom 3.10.1950</bibl>. Die wichtigsten Beschlüsse der New Yorker Außenminister-Konferenz sind abgedr., in: <bibl type="single-item">Sicherheitspolitik, Bd. 1, S. 85–91.</bibl> Zu der New Yorker Außenminister-Konferenz vgl. auch <bibl type="single-item">FRUS, Bd. 3, S. 1108– 1301</bibl>; <bibl type="single-item"><hi rendition="#smcap">Förster</hi>, Innenpolitische Aspekte, S. 556–571</bibl>.</p></note></seg> Die Anerkenntnis der deutschen Vorkriegsschulden könne nur gesehen werden im Zusammenhang mit den Guthaben.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN003" type="comment"><p>Am 23.9.1950 hatten die drei Hohen Kommissare <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> ein Memorandum überreicht, in dem die Erwartung ausgedrückt wurde, daß die Bundesregierung die Verantwortung für die Vorkriegsschulden des Deutschen Reichs übernehmen und die aus der wirtschaftlichen Unterstützung in der Nachkriegszeit entstandenen Schulden anerkennen werde. Außerdem sollte die Bundesregierung mit den Alliierten zusammenarbeiten in der Verteilung strategisch wichtiger Güter und Rohstoffe. Dafür wurde von der AHK eine Erleichterung des Besatzungsstatuts in Aussicht gestellt. Vgl. <bibl type="single-item"><hi rendition="#smcap">Adenauer</hi>, Erinnerungen, 1945–1953, S. 366–370</bibl>. Zu den Auslandsschulden der Bundesrepublik vgl. auch<bibl type="single-item"> Christoph <hi rendition="#smcap">Buchheim</hi>, Das Londoner Schuldenabkommen, in: Westdeutschland 1945–1955, S. 219–231.</bibl></p></note></seg> Wir könnten auf keinen Fall gegenüber den Alliierten einen Vertrauens-Blankoscheck ausstellen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN004" type="comment"><p><name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> hatte sich für eine grundsätzliche Anerkennung der Vorkriegsschulden des Deutschen Reichs ausgesprochen. In einer Erklärung vor dem außenpolitischen Ausschuß am 6.10.1950 führte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> aus, daß die Bundesrepublik die Haftung der Vorkriegsschulden bejahen müsse, um den Grundsatz des kontinuierlichen Weiterbestehens Deutschlands zu erhärten. Vgl. <bibl type="item-in-archive">Aufzeichnungen <name type="Person" role="Erwaehnung" ref="#LuetkensGerhard_1949-09-07">Lütkens</name> für <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> und <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> vom 8.10.1950, in: Pressearchiv des PV (Zeitungsausschnittsammlung) D 65 (375)</bibl>.</p></note></seg> Auf den Vorschlag Carlo <name type="Person" role="Sprecher" ref="#SchmidCarlo_1949-09-07">Schmids,</name> daß wir die Initiative in der Erörterung ergreifen sollten, ist <name type="Person" role="Sprecher" ref="#SchumacherKurt_1949-09-07">Schumacher</name> der Ansicht, daß das nur nach sehr sorgfältiger Klärung aller Fragen geschehen kann. An dem New Yorker Dokument sei peinlich, daß die gewährten Erleichterungen selbstverständlich seien und an dem Prinzip der übergeordneten Besatzungsbehörde nichts geändert wird.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN005" type="comment"><p>Auf der New Yorker Außenminister-Konferenz war am 19.9.1950 ein »Kommuniqué über Deutschland« verabschiedet worden, in dem eine Revision des Besatzungsstatuts angekündigt wurde »unter Beibehaltung der legalen Basis der Besetzung«. U.a. wurde der Bundesregierung in Aussicht gestellt, ein Außenministerium errichten zu können, eine Überprüfung des Abkommens über verbotene und eingeschränkte Industrien, der Abbau von Exportbeschränkungen bei Handelsschiffen sowie der Limitierung der Stahlerzeugung. <bibl
-									type="single-item">Das Kommuniqué ist abgedr., in: Sicherheitspolitik, Bd. 1, S. 87 f.</bibl> In dem am 23.9.1950 von der <name type="Organisation" ref="#AHK">AHK</name> an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> überreichten Memorandum (vgl. Anm. 3) hatte die AHK weiterhin als Vorbehaltsrecht reklamiert, die Beziehungen der Bundesrepublik zum sowjetischen Machtbereich zu überwachen und den Außenhandel zu kontrollieren. Außerdem wurde der Bundesregierung das Recht verweigert, Botschafter in die Hauptstädte der westlichen alliierten Mächte zu entsenden. Vgl. <bibl type="single-item"><hi rendition="#smcap">Adenauer</hi>, Erinnerungen, 1945–1953, S. 368–370</bibl>.</p></note></seg></p>
-				<p>In der Remilitarisierung fordern wir weiter scharfe Trennung zur Polizei.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN006" type="comment"><p>Nach dem am 19.9.1950 verfaßten »Kommuniqué über Deutschland« (vgl. Anm. 5) sollte die »Teilnahme der deutschen Bundesrepublik an der gemeinsamen Verteidigung Europas« »Gegenstand von Untersuchungen und Gedankenaustausch« werden. Was die innere Sicherheit anbeträfe, sollten der Bundesrepublik mobile Polizeikräfte auf Länderbasis genehmigt werden. In dem von der AHK an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> überreichten Memorandum (vgl. Anm. 3) war eine Verstärkung der Polizeikräfte auf 30000 Mann bewilligt worden. Der Polizei wurde eine Ausrüstung mit leichten Waffen und Panzerspäh-wagen erlaubt, die Polizeiformationen sollten aber keinen paramilitärischen Charakter haben.</p></note></seg> Leider seien in dieser Frage nur die Amerikaner festgeblieben.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN007" type="comment"><p>Auf der New Yorker Außenminister-Konferenz hatte <name type="Person" role="Erwaehnung" ref="#BevinErnest">Bevin</name> den Gedanken einer militärähnlichen Bundespolizei verfochten, was von amerikanischer Seite mit der Begründung der Länderhoheit der Polizei abgelehnt wurde. Vgl. <bibl type="single-item"><hi rendition="#smcap">Wettig</hi>, S. 341–346</bibl>; <bibl type="single-item"><hi rendition="#smcap">Wiggershaus</hi>, Entscheidung, S. 374–379</bibl>.</p></note></seg> Wir müssen auf der Linie des Nein bleiben, wenn unsere Voraussetzungen nicht erfüllt sind. Die nächste Aufgabe sei also lediglich der Polizeikomplex.</p>
-				<p>Die außenpolitische Debatte wird von uns zwar möglichst schnell gewünscht, aber es scheint doch zweckmäßig zu sein, sie erst nach der Debatte im französischen Parlament abzuhalten.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN008" type="comment"><p>Die französische Nationalversammlung trat am 17.10.1950 zusammen. Am 24.10. gab Ministerpräsident René <name type="Person" role="Erwaehnung" ref="#PlevenRené">Pleven</name> eine Regierungserklärung ab, in der er die Schaffung einer europäischen Armee unter Einbeziehung der Bundesrepublik vorschlug. Zum <name type="Person" role="Erwaehnung" ref="#PlevenRené">Pleven</name>-Plan vgl. Nr. 78.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MenzelWalter_1949-09-07">Menzel</name> berichtet über die Arbeit des Polizeiausschusses.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN009" type="comment"><p>Anfang Oktober hatte der Polizeiausschuß des Parteivorstandes getagt und eine Stellungnahme zum Aufbau einer Bundespolizei ausgearbeitet. <bibl type="item-in-archive">Das undatierte Protokoll der Beschlußfassung des Polizeiausschusses befindet sich in: NL Menzel R 17, AdsD</bibl>.</p></note></seg>
-					<name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> habe absichtlich eine unklare Situation gelassen. Die Grundlage für die Organisation seien nunmehr die New Yorker Beschlüsse. Durch diese würde die Polizei nur auf Länderbasis organisiert werden können.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN010" type="comment"><p>Vgl. Anm. 6.</p></note></seg> Man sei also nicht viel weiter gekommen, da keine Kommandogewalt für den Bund vorgesehen und nur ein Generalinspekteur genehmigt worden sei.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN011" type="comment"><p>In dem an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> überreichten Memorandum (vgl. Anm. 3) war die Bundesregierung ermächtigt worden, einen Generalinspekteur des Bundes, der für die Ausbildung, Dienstbereitschaft und Ausrüstung der neuen, auf Länderbasis aufzustellenden Polizeieinheiten verantwortlich sein sollte, zu ernennen. Vgl. auch <bibl type="single-item"><hi rendition="#smcap">Wettig</hi>, S. 346</bibl>.</p></note></seg>
-					<name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> versucht, über die Polizei zur Remilitarisierung zu gelangen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN012" type="comment"><p>Seit einer Aussprache mit <name type="Person" role="Erwaehnung" ref="#McCloyJohnJay">McCloy</name> am 24.9.1950, in der dieser ausdrücklich betont hatte, daß die Westmächte keine westdeutsche Volkspolizei wünschten, hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> den Plan einer Bundespolizei als Vorstufe eines westdeutschen Verteidigungsbeitrags aufgegeben. In der von <name type="Person" role="Erwaehnung" ref="#SchwerinGerhardGrafvon">Schwerin</name> geleiteten »Zentrale für Heimatdienst« wurde allerdings der Plan noch einige Wochen weiter verfolgt. Vgl. <hi rendition="#smcap">Adenauer</hi>, Erinnerungen, 1945–1953, S. 370–374. <hi rendition="#smcap">Förster</hi>, Innenpolitische Aspekte, S. 559 f.</p></note></seg> Dieser Versuch müßte von uns scharf bekämpft werden. Nach einer Schilderung des Unterschiedes zwischen Militär- und Polizeieinsatz berichtet <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzel,</name> daß die Bundesregierung die Erreichung des Zieles durch Verträge mit den Ländern<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN013" type="comment"><p>»Ländern«: handschriftlich von <name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name> eingefügt.</p></note></seg> anstrebe.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN014" type="comment"><p>Am 30.9.1950 hatten <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> mit den Ministerpräsidenten und Innenministern der Länder über die Aufstellung der von den drei Besatzungsmächten zugestandenen Polizeieinheiten eine erste Besprechung geführt. Dem Abschluß eines Verwaltungsabkommens zwischen Bund und Ländern auf der Grundlage von Art. 91 Abs. 2 GG, nach dem die Bundesregierung im Falle der Gefahr die Polizeikräfte ihren Weisungen unterstellen konnte, wurde sowohl von den SPD geführten Ländern aus verfassungsrechtlichen Bedenken als auch von den CDU/CSU regierten Ländern aus grundsätzlich föderalistischen Erwägungen widersprochen. Vgl. <bibl type="single-item"><hi rendition="#smcap">Ritter von Lex</hi>, S. 125</bibl>; <bibl type="single-item"><hi rendition="#smcap">Förster</hi>, Innenpolitische Aspekte, S. 493</bibl>. In den Beschlüssen des Polizeiausschusses des Parteivorstandes (vgl. Anm. 9) wurde ein Verwaltungsabkommen unter Hinweis auf Art. 91 GG aufs »schärfste« abgelehnt.</p></note></seg> Wir sollten dagegen auf eine Verfassungsänderung, und zwar auf Änderung des Art. 87 des Grundgesetzes drängen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN015" type="comment"><p>Art. 87 GG sollte nach Vorschlag des Polizeiausschusses durch die Einfügung eines neuen Abs. 2 geändert werden, der die Länder verpflichtete, auf Anforderung des BMI I/10 ihre Polizeikräfte dem Bund zur Verfügung zu stellen. Zum entsprechenden Antrag der SPD-Fraktion <ref type="internal" target="#spd-01_1950-10-20-t0000_EP">vgl. Nr. 76</ref>.</p></note></seg> Neben der Verfassungsänderung sei eine Änderung der Polizeiorganisation in den einzelnen Ländern notwendig. Vor allen Dingen, soweit die britische Zone in Frage kommt.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN016" type="comment"><p>Zur Organisation der Polizei in der britischen Zone vgl. Nr. 68. Der Polizeiausschuß der SPD hatte vorgeschlagen, auch in der britischen Zone die Polizei dem Weisungsrecht der Länderinnenminister zu unterstellen. <name type="Person" role="Erwaehnung" ref="#HensslerFritz_1949-09-07">Henßler</name> und <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzel</name> arbeiteten einen entsprechenden Gesetzentwurf über den Aufbau der Polizei Nordrhein-Westfalens aus, den sie am 24.1.1951 dem Landtag übermittelten. <bibl type="Parl-Prot">Verhandlungen des Landtages NRW, 2 WP, Anl., Bd. 1, Drs. 189</bibl>. Zur Neuorganisation der Polizei in NRW vgl. <bibl type="single-item"><hi rendition="#smcap">Hüttenberger</hi>, Nordrhein-Westfalen, S. 532–539</bibl>.</p></note></seg> Die Polizeiausschüsse sollten wir als Ausschüsse der Gemeindevertretungen bejahen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN017" type="comment"
-									><p>Neben den »Chefs der Polizei«, die den einzelnen Polizeitruppen der Regierungsbezirke vorstanden, hatten die Briten in ihrer Besatzungszone nach 1945 sogenannte Polizeiausschüsse nach dem Vorbild der Joint Committees in England eingerichtet, die sich aus Repräsentanten der Gerichte und Mitgliedern der Stadträte zusammensetzten. Sie waren für die verwaltungsmäßige Kontrolle der Polizei zuständig und hatten in Zusammenarbeit mit dem Regierungspräsidenten für die Finanzierung des Stellenplans, die Unterkunft und Ausrüstung der Polizei zu sorgen. Ihre Kompetenz sollte nach den Neuordnungsplänen <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzels</name> eingeschränkt werden. Vgl. <bibl type="single-item"><hi rendition="#smcap">Hüttenberger</hi>, Nordrhein-Westfalen, S. 187</bibl>.</p></note></seg></p>
-				<p>In der Diskussion weist <name type="Person" role="Sprecher" ref="#RitzelHeinrichGeorg_1949-09-07">Ritzel</name> darauf hin, daß wir Vollmachten an eine Regierung übertragen wollten, der wir mißtrauen. Nach seiner Auffassung soll man die Angelegenheit durch ein Konkordat zwischen den Ländern lösen. Gleichzeitig sei auch die Kostenfrage zu klären.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN018" type="comment"><p>In den Entwürfen der Bundesregierung war vorgesehen, daß der Bund die gesamte Ausrüstung beschaffen und den Ländern zur Verfügung stellen solle, während die Länder für die Personal- und Unterhaltskosten verantwortlich sein sollten. Bei einer Gesamtstärke von 30000 Mann hätte dies bedeutet, daß der Bund 104 Mio. DM, die Länder 167 Mio. DM hätten übernehmen müssen. Vgl. <bibl type="single-item"><hi rendition="#smcap">Ritter von Lex</hi>, S. 130–132</bibl>; <bibl type="single-item"><hi rendition="#smcap">Baring</hi>, Anfang, S. 135 f.</bibl></p></note></seg> Wir dürften in diesem Augenblick keine prinzipielle, sondern nur eine zweckmäßige Lösung anstreben. Zu der Frage der Remilitarisierung müßten wir für alle Zukunft ein eindeutiges Nein sprechen.</p>
-				<p><name type="Person" role="Sprecher" ref="#KalbitzerHellmut_1949-09-07">Kalbitzer</name> berichtet über die Mitteilung <name type="Person" role="Erwaehnung" ref="#BrauerMax_1961-10-17">Brauers</name><seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN019" type="comment"><p>Max <name type="Person" role="Erwaehnung" ref="#BrauerMax_1961-10-17">Brauer</name> (1887–1973), 1961–1965 MdB (SPD), 1924–1933 Oberbürgermeister von Altona, 1933 Emigration, 1946–1953 und 1957–1961 Erster Bürgermeister von Hamburg.</p></note></seg> in der Hamburger Funktionärskonferenz.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN020" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BrauerMax_1961-10-17">Brauer</name> hatte die Ergebnisse der New Yorker Außenministerkonferenz begrüßt. Vgl. <bibl type="series-item"><name type="Organisation" ref="#NZ">»Neue Zeitung«</name> vom 27.9.1950.</bibl></p></note></seg></p>
-				<p>Fr. <name type="Person" role="Sprecher" ref="#MaierFriedrich_1949-09-07">Maier</name> wünscht wegen der Gefahr falscher Interpellationen ein klares Nein zur Verfassungsänderung.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN021" type="comment"><p>Zu der Interpellation der SPD-Fraktion betr. den Ausbau der Polizeiformationen und den Antrag auf Verfassungsänderung <ref type="internal" target="#spd-01_1950-10-20-t0000_EP">vgl. Nr. 76</ref>.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BlachsteinPeter_1949-09-07">Blachstein</name> hat Bedenken wegen des vorgesehenen Zivilversorgungsscheines.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN022" type="comment"><p>Anfang Oktober 1950 war von der Bundesregierung in die Gesetzesvorlage zu Art. 131 GG die Bestimmung eingefügt worden, daß Berufsoffiziere mit mehr als zehn Dienstjahren und Berufssoldaten, die in die Waffen-SS eingetreten waren, im Zivildienst unterzubringen seien. <bibl type="kbp">Vom Kabinett wurde die Vorlage am 6.10.1950 verabschiedet. Vgl. Kabinettsprotokolle 1950, Bd. 2, S. 733</bibl>; <bibl type="single-item"><hi rendition="#smcap">Wengst</hi>, Beamtentum, S. 198 f.</bibl></p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MelliesWilhelm_1949-09-07">Mellies</name> betont, daß uns durch die Beschlüsse der Außenminister eine grundsätzliche Entscheidung erspart bleibe. Er ist der Ansicht, daß wir grundsätzlich eine Bundespolizei fordern müssen, daß es der Bundesregierung unwürdig sei, wenn der Bundesinnenminister die Länderminister angehen müsse. Bei der Debatte würden im Vergleich mit der Zeit vor 1933 zwei wichtige Punkte übersehen. Erstens, daß das Reich über die Reichswehr verfügt habe und zweitens, daß Preußen ein ungeheures Übergewicht gegenüber dem Reich gehabt habe.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN023" type="comment"><p>Auch nach der Weimarer Reichsverfassung lag die Polizeihoheit bei den Ländern. Nach Art. 9 und Art. 48 der Weimarer Reichsverfassung konnte der Reichspräsident Gesetze und Verordnungen polizeilichen Inhalts erlassen, falls die »öffentliche Sicherheit und Ordnung erheblich gestört und gefährdet« war. Die Durchführung dieser reichsrechtlichen Erlasse blieb gemäß Art. 14 der Reichsverfassung den Ländern überlassen. Um Aufstandsversuchen gegen rechts und links entgegenzuwirken, trat am 17.7.1922 das »Reichsgesetz über die Schutzpolizei der Länder« in Kraft. <ref type="internal" target="#spd-01_1950-09-07-t0930_EP">Vgl. Nr. 68</ref>, Anm. 18. Das Inkrafttreten eines Reichskriminalpolizeigesetzes scheiterte am Widerstand der Länder. Vgl. <bibl type="single-item"><hi rendition="#smcap">Graf</hi>, S. 6–19</bibl>.</p></note></seg> Er betont am Schluß, daß bei der Entscheidung über diese Frage nicht die Ansichten und Wünsche amtierender oder zukünftiger Ministerpräsidenten berücksichtigt werden könnten, sondern nur die politische Linie.</p>
-				<p><name type="Person" role="Sprecher" ref="#GoerlingerRobert_1949-09-07">Görlinger</name> hat ebenfalls Bedenken gegen den Beamtenschein.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN024" type="comment"><p>Vgl. Anm. 22.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MeitmannKarl_1949-09-07">Meitmann</name> wünscht gutes Funktionieren der Polizeiausschüsse.</p>
-				<p><name type="Person" role="Sprecher" ref="#HensslerFritz_1949-09-07">Henßler</name> ist auch der Ansicht, daß dem Bund seine Exekutivgewalt nicht verringert werden kann.</p>
-				<p><name type="Person" role="Sprecher" ref="#RitzelHeinrichGeorg_1949-09-07">Ritzel</name> führt aus, daß er in den wesentlichen Punkten seiner Ausführungen falsch verstanden worden sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchumacherKurt_1949-09-07">Schumacher</name> führt im Schlußwort aus, daß der Frieden nur durch unsere Formel erhalten werden könne.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN025" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> Formel lautete nach dem Titel einer von ihm im Herbst 1950 verfaßten Broschüre <bibl type="single-item">»Deutschlands Forderung: Gleiches Risiko, gleiches Opfer, gleiche Chancen!« Hrsg. PV der SPD, o.O.u.J.</bibl> Vgl. auch <bibl type="single-item"><hi rendition="#smcap">Mai</hi>, S. 164</bibl>.</p></note></seg> Ein unbedingtes Nein zu jedem Beitrag für die Sicherheit ist eine Einladung an die Russen zur Besetzung Deutschlands und der letzte Schluß ist, daß unsere Jugend den russischen Soldatenrock tragen muß.</p>
-				<p>Mit den Vorschlägen zur Tagesordnung ist die Fraktion einverstanden. <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> soll versuchen, die Frage der Getreidepreise von der Tagesordnung abzusetzen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN026" type="comment"><p>Die Beratung der Verordnung PR Nr. 59/50 über »Getreidepreise für die Monate Oktober 1950 bis Juni 1951« (<bibl type="btd"><ref type="external" target="01/1400">BT Anl. 6, Drs. I/1400</ref></bibl>) wurde aufgrund interfraktionellen Beschlusses vom 5. auf den 6.10.1950 verschoben. Die Preisverordnung wurde von <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> wegen der darin vorgesehenen »Reports« (monatlich steigender Preiszuschläge), die nach Ansicht <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemanns</name> zu einer erheblichen Steigerung der Brotpreise führen mußten, im Namen der SPD-Fraktion abgelehnt.<bibl type="btp"><ref type="external" target="01/93"> BT Sten. Ber. 5, S. 3344 f</ref></bibl>.</p></note></seg> In der Frage der Luxussteuer ist die Fraktion der Auffassung, daß unser Redner zwar die Gegnerschaft gegen das Gesetz betonen<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN027" type="comment"><p>Von <name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name> verbessert aus: »die Gegensätzlichkeit des Gesetzes«.</p></note></seg> und die wirtschaftshemmenden Tendenzen herausstellen soll, aber trotzdem sollten wir ein vernünftiges Luxussteuergesetz fördern.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN028" type="comment"><p>Bei der 1. Beratung des Gesetzentwurfs zur »Besteuerung besonderen Aufwands« <bibl type="btd"><ref type="external" target="01/1345">(BT Anl. 6, Drs. I/1345</ref></bibl>), der für eine aufgezählte Reihe von Luxusgütern eine Erhöhung des Umsatzsteuersatzes von 3 auf 10% und die Erhebung einer Spesenabgabe in Form einer Sondersteuer auf die Aufwendungen für die Bewirtung von Geschäftsfreunden vorsah, befürwortete <name type="Person" role="Erwaehnung" ref="#KochHarald_1949-09-07">Koch</name> grundsätzlich die Einführung eines Luxussteuergesetzes, bemängelte aber, daß in dem vorliegenden Entwurf die Exportindustrie einseitig benachteiligt werde und die erhobenen Steuern einer nur »optischen Steuer« glichen. <bibl type="btp"><ref type="external" target="01/90">BT Sten. Ber. 5, S. 3337–3339</ref></bibl>.</p></note></seg> Die von <name type="Person" role="Erwaehnung" ref="#RichterFranz_1949-09-07">Richter</name> vorgeschlagenen Änderungsanträge zum Gesetz über die Sozialversicherung werden gebilligt.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN029" type="comment"><p>Vgl. Nr. 37. Zu der Ausschußvorlage über die Gesetzentwürfe über die Selbstverwaltung in der Sozialversicherung (<bibl type="btd"><ref type="external" target="01/1354">BT Anl. 6, Drs. I/1354</ref></bibl>) unterbreitete die SPD-Fraktion für die 2. Lesung des Gesetzentwurfs am 5.10. 20 Änderungsvorschläge. Der wichtigste Änderungsantrag betraf § 2 Abs. 1, der die in der Ausschußvorlage vorgesehene paritätische Besetzung der Versicherungsorgane zugunsten einer Zweidrittelmajorität der Arbeitnehmer ersetzen wollte. Zu den weiteren Änderungsvorschlägen vgl.<bibl type="item-in-archive"> Umdruck Nr. 2, in: Gesetzesdok., Parl. Arch. I, 105</bibl>. Zur Begründung der Abänderungsanträge durch <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name>, <name type="Person" role="Erwaehnung" ref="#RichterFranz_1949-09-07">Richter</name>, <name type="Person" role="Erwaehnung" ref="#PohleKurt_1949-09-07">Pohle</name>, <name type="Person" role="Erwaehnung" ref="#FreidhofRudolf_1949-09-07">Freidhof</name>, <name type="Person" role="Erwaehnung" ref="#Kipp-KauleLiesel_1949-09-07">Kipp-Kaule</name>, <name type="Person" role="Erwaehnung" ref="#DannebomOtto_1949-09-07">Dannebom</name> und <name type="Person" role="Erwaehnung" ref="#DoehringClara_1949-09-07">Döhring</name> vgl. <bibl type="btp"><ref type="external" target="01/89">BT. Sten. Ber. 5, S. 3304–3325</ref></bibl>. Zu der unterschiedlichen Stellungnahme der Parteien zu dem Gesetzentwurf vgl. <bibl type="single-item"><hi rendition="#smcap">Hockerts</hi>, Sozialpolitische Entscheidungen, S. 139–146</bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-10-12-t0000_EP">vgl. Nr. 74</ref>.</p></note></seg></p>
-				<p>Im Ältestenrat soll versucht werden, die Interpellation über die Zuckerknappheit und über die Zinssenkung für den Wohnungsbau möglichst bald auf die Tagesordnung zu bekommen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN030" type="comment"><p>Zur Interpellation betr. Zuckerversorgung und betr. Vorlage eines Gesetzes über Steuerbegünstigungen zur Förderung des Wohnungsbaus vgl. Nr. 70, Anm. 12 und 14.</p></note></seg> Für die Freitagsitzung wollen wir einem Antrag auf Absetzung des Antrages für die Bewilligung von Mitteln für den Bau von Hochseeschiffen zustimmen.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN031" type="comment"><p>Zum Antrag vgl. Nr. 71, Anm. 19. Der Antrag wurde nicht von der Tagesordnung abgesetzt, sondern am 6.10. im Bundestag behandelt. Nach der Begründung des Antrags durch <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, der die Bundesregierung zur sofortigen Ausarbeitung von entsprechenden Ausführungsverordnungen aufforderte, versicherte BMV <name type="Person" role="Erwaehnung" ref="#SeebohmHans-Christoph_1949-09-07">Seebohm,</name> daß Durchführungsverordnungen bereits in Vorbereitung seien. <bibl type="btp"><ref type="external" target="01/90">BT Sten. Ber. 5, S. 3355 f.</ref></bibl> Der Antrag wurde vom Haushaltsausschuß am 1.12.1950 für erledigt erklärt, weil im außerordentlichen Haushalt 1950 für die Zeit vom 1.10.–31.12.1950 100 Mio. DM für den Bau von Hochseeschiffen vorwegbewilligt waren. <bibl type="btd"><ref type="external" target="01/1667">BT Anl. 8, Drs. I/1667</ref></bibl>.</p></note></seg></p>
-				<p>Die Fraktion erklärt sich mit der Haltung der Mitglieder des Ältestenrats zu den verschiedenen Fragen einverstanden.</p>
-				<p>Die Interpellation über Winterbeihilfe<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN032" type="comment"><p>In der Interpellation betr. »Winterbeihilfe« vom 9.10.1950 ersuchte die SPD-Fraktion die Bundesregierung um Auskunft darüber, in welcher Weise sie gedenke, den ihr vom Bundesrat als Anregung überwiesenen Antrag des Landes Niedersachsen auf eine bundeseinheitliche Winterbeihilfe für die notleidende Bevölkerung zu behandeln.<bibl type="btd"><ref type="external" target="01/1443"> BT Anl. 7, Drs. I/1443</ref></bibl>. Der Antrag Niedersachsens forderte die Beteiligung des Bundes an den Weihnachstsbeihilfen für Hilfs- und Unterstützungsbedürftige bis zu Sätzen von 15 DM für Einzelstehende und 5 DM für jedes hilfsbedürftige Familienmitglied. <bibl type="brd">BR-Drs. 68I/50</bibl>. Zur Begründung der Interpellation und zur parlamentarischen Behandlung <ref type="internal" target="#spd-01_1950-11-09-t1000_EP">vgl. Nr. 81</ref>.</p></note></seg> und die kleine Anfrage betr. Gutsbezirke<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN033" type="comment"><p>In der Anfrage betr. »früheres Wehrmachtsvermögen« wurde die Bundesregierung aufgefordert, nach Rücksprache mit der <name type="Organisation" ref="#AHK">AHK</name> die sog. »Wehrmachtsgutsbezirke« aufzulösen und neue Gemeinden zu bilden, so daß das ehemalige Wehrmachtsvermögen dem Gemeindevermögen zugeführt werden könne. <bibl type="btd"><ref type="external" target="01/1441">BT. Anl. 7, Drs. I/1441</ref></bibl>. Die Anfrage wurde am 31.10.1950 von BMF <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> beantwortet. <bibl type="btd"><ref type="external" target="01/1564">BT Anl. 7, Drs. I/1564</ref></bibl>. Durch Gesetz Nr. 16 vom 4.5.1951 überließ die AHK die Regelung der Rechtsnachfolge für das deutsche Reichsvermögen deutschen Stellen. <bibl type="VOBl">Amtsblatt der AHK S. 881</bibl>. Am 21.7.1951 trat ein Gesetz zur vorläufigen Regelung der Rechtsverhältnisse des Reichsvermögens und der preußischen Beteiligungen in Kraft, das auch die betreffende Eigentumsfrage des früheren Wehrmachtsvermögens regelte. <bibl type="bgbl">BGBl., S. 467</bibl>.</p></note></seg> soll eingebracht werden. Über den Antrag wegen Rückerstattung von Fürsorgeaufwendungen sollen die Mitglieder des Ausschusses für Öffentliche Fürsorge nochmals eine Aussprache haben.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN034" type="comment"><p>Ein Antrag betr. »Rückerstattungspflicht von Fürsorgeaufwendungen«, nach dem politisch, rassisch und religiös Verfolgte, ehemalige Kriegsgefangene, Vertriebene und Bombengeschädigte von der Rückerstattungspflicht ausgenommen werden sollten, war von der SPD-Fraktion bereits am 14.12.1949 im Bundestag eingebracht worden. <bibl type="btd"><ref type="external" target="01/329">BT Sten. Ber. 1, Drs. I/329</ref></bibl>. Nach Überweisung an den Ausschuß für öffentliche Fürsorge war der Antrag in der Plenarsitzung am 1.2.1950 angenommen worden.<bibl type="btp"><ref type="external" target="01/33"> BT Sten. Ber. 2, S. 1043</ref></bibl>. Ein weiterer Antrag wurde von der SPD-Fraktion nicht gestellt. Die Rückerstattungspflicht wurde durch<bibl type="bgbl"> Verordnung vom 30.1.1951 geregelt. BGBl. I, S. 54</bibl>.</p></note></seg> Die Anfragen wegen der Entlohnung der Eisenbahner in der Ostzone<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN035" type="comment"><p>In der Anfrage betr. »Entschädigung der Eisenbahnbediensteten im Ringgau« wurde die Bundesregierung um einen Bericht gebeten über ihre Maßnahmen für die der Eisenbahndirektion Erfurt zugehörenden, dadurch in Ostmark bezahlten Eisenbahnbediensteten des Kreises Ringgau, die in einer aussichtslosen wirtschaftlichen Notlage lebten. <bibl type="btd"><ref type="external" target="01/1442">BT Anl. 7, Drs. I/1442</ref></bibl>. Am 28.10.1950 wurde von BMG <name type="Person" role="Erwaehnung" ref="#KaiserJakob_1949-09-07">Kaiser</name> erklärt, daß die Angelegenheit dem hessischen Staatsministerium der Finanzen zur baldigen Regelung übergeben worden sei. <bibl type="btd"><ref type="external" target="01/1563">BT Anl. 7, Drs. I/1563</ref></bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-12-13-t2000_EP">vgl. Nr. 85</ref>.</p></note></seg> und der Kartoffelpreise<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN036" type="comment"><p>Die Anfrage betr. »Steigerung der Kartoffelpreise« vom 9.10.1950 verlangte von der Bundesregierung Auskunft über ihre Maßnahmen, um angesichts steigender Kartoffelpreise ungerechtfertigte Konjunkturgewinne auf Kosten der Verbraucher zu verhindern. <bibl type="btd"><ref type="external" target="01/1444">BT Anl. 7, Drs. I/1444</ref></bibl>. Am 15.10.1950 erklärte BML <name type="Person" role="Erwaehnung" ref="#NiklasWilhelm_1951-05-30">Niklas,</name> daß keine Gefahr für ungerechtfertigte Konjunkturgewinne mehr drohe. <bibl type="btd"><ref type="external" target="01/1565"
-										>BT Anl. 7, Drs. I/1565</ref></bibl>.</p></note></seg> sollen eingebracht werden.</p>
-				<p>Die Fraktion stimmte dem Vorschlag eines geselligen Abends aus Anlaß des 55. Geburtstages von <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> zu.<seg type="note"><note xml:id="spd-01_1950-10-04-t1400_EP_FN037" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> wurde am 13.10.1950 55 Jahre alt.</p></note></seg></p>
-				<p><name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-01_1950-10-04-t1400_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeberPetra"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#JuengerkesSven"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte (OCR, anschließend manueller Korrekturdurchgang) und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1957. (2 Halbbände).</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/I</title>
+                  <author>Petra Weber</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930107160</idno>
+                  <idno type="DNB">https://d-nb.info/930109627</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 1. WP, 1, Ord. 13.9.1949–11.12.1951</idno>
+                     <objectName>Protokoll über die Fraktionssitzung am 4.10.1950, 14.00 Uhr</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 4. Oktober 1950</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>6 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1950-10-04">
+               <time type="start" when="14:00:00"/>
+               <time type="end"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#SchumacherKurt_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-07-22" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-10-27" who="#JuengerkesSven" status="draft" n="3">SVP und Namen ergänzt.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-01_1950-10-04-t1400_EP_SVP-1" corresp="#spd-01_1950-10-04-t1400_EP_div_SVP-1">A.: Politischer Bericht von Kurt Schumacher (Gespräch mit McCloy und Adenauer, New Yorker Außenministerkonferenz, Polizeifrage, Auslandsschulden, Vorkriegsschulden). – Diskussion der Fraktion über den Bericht.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-01_1950-10-04-t1400_EP_div_SVP-1">
+            <head>A.</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchumacherKurt_1949-09-07">Schumacher</name> gibt zunächst den politischen Bericht und führt dabei U.a. aus: Aus den Erklärungen aller Kommissare geht hervor, daß der ganze Komplex politisch<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN001" type="comment">
+                     <p>Handschriftlich verbessert aus »technisch«.</p>
+                  </note>
+               </seg> gesehen werden müßte.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN002" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> hatte am 1.10. mit <name type="Person" role="Erwaehnung" ref="#McCloyJohnJay">McCloy</name> und am 3.10. mit <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> längere Gespräche. Gegenstand der Gespräche waren die Beschlüsse der New Yorker Außenminister-Konferenz vom 12.–19.9.1950, der Stand der Polizeifrage und das <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> von der <name type="Organisation" ref="#AHK">AHK</name> überreichte Memorandum über die deutschen Auslandsschulden. <bibl type="series-item">
+                           <name type="Organisation" ref="#PPP">PPP</name> vom 3.10.1950</bibl>. Die wichtigsten Beschlüsse der New Yorker Außenminister-Konferenz sind abgedr., in: <bibl type="single-item">Sicherheitspolitik, Bd. 1, S. 85–91.</bibl> Zu der New Yorker Außenminister-Konferenz vgl. auch <bibl type="single-item">FRUS, Bd. 3, S. 1108– 1301</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Förster</hi>, Innenpolitische Aspekte, S. 556–571</bibl>.</p>
+                  </note>
+               </seg> Die Anerkenntnis der deutschen Vorkriegsschulden könne nur gesehen werden im Zusammenhang mit den Guthaben.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN003" type="comment">
+                     <p>Am 23.9.1950 hatten die drei Hohen Kommissare <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> ein Memorandum überreicht, in dem die Erwartung ausgedrückt wurde, daß die Bundesregierung die Verantwortung für die Vorkriegsschulden des Deutschen Reichs übernehmen und die aus der wirtschaftlichen Unterstützung in der Nachkriegszeit entstandenen Schulden anerkennen werde. Außerdem sollte die Bundesregierung mit den Alliierten zusammenarbeiten in der Verteilung strategisch wichtiger Güter und Rohstoffe. Dafür wurde von der AHK eine Erleichterung des Besatzungsstatuts in Aussicht gestellt. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Adenauer</hi>, Erinnerungen, 1945–1953, S. 366–370</bibl>. Zu den Auslandsschulden der Bundesrepublik vgl. auch<bibl type="single-item"> Christoph <hi rendition="#smcap">Buchheim</hi>, Das Londoner Schuldenabkommen, in: Westdeutschland 1945–1955, S. 219–231.</bibl>
+                     </p>
+                  </note>
+               </seg> Wir könnten auf keinen Fall gegenüber den Alliierten einen Vertrauens-Blankoscheck ausstellen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN004" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> hatte sich für eine grundsätzliche Anerkennung der Vorkriegsschulden des Deutschen Reichs ausgesprochen. In einer Erklärung vor dem außenpolitischen Ausschuß am 6.10.1950 führte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> aus, daß die Bundesrepublik die Haftung der Vorkriegsschulden bejahen müsse, um den Grundsatz des kontinuierlichen Weiterbestehens Deutschlands zu erhärten. Vgl. <bibl type="item-in-archive">Aufzeichnungen <name type="Person" role="Erwaehnung" ref="#LuetkensGerhard_1949-09-07">Lütkens</name> für <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> und <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> vom 8.10.1950, in: Pressearchiv des PV (Zeitungsausschnittsammlung) D 65 (375)</bibl>.</p>
+                  </note>
+               </seg> Auf den Vorschlag Carlo <name type="Person" role="Sprecher" ref="#SchmidCarlo_1949-09-07">Schmids,</name> daß wir die Initiative in der Erörterung ergreifen sollten, ist <name type="Person" role="Sprecher" ref="#SchumacherKurt_1949-09-07">Schumacher</name> der Ansicht, daß das nur nach sehr sorgfältiger Klärung aller Fragen geschehen kann. An dem New Yorker Dokument sei peinlich, daß die gewährten Erleichterungen selbstverständlich seien und an dem Prinzip der übergeordneten Besatzungsbehörde nichts geändert wird.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN005" type="comment">
+                     <p>Auf der New Yorker Außenminister-Konferenz war am 19.9.1950 ein »Kommuniqué über Deutschland« verabschiedet worden, in dem eine Revision des Besatzungsstatuts angekündigt wurde »unter Beibehaltung der legalen Basis der Besetzung«. U.a. wurde der Bundesregierung in Aussicht gestellt, ein Außenministerium errichten zu können, eine Überprüfung des Abkommens über verbotene und eingeschränkte Industrien, der Abbau von Exportbeschränkungen bei Handelsschiffen sowie der Limitierung der Stahlerzeugung. <bibl type="single-item">Das Kommuniqué ist abgedr., in: Sicherheitspolitik, Bd. 1, S. 87 f.</bibl> In dem am 23.9.1950 von der <name type="Organisation" ref="#AHK">AHK</name> an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> überreichten Memorandum (vgl. Anm. 3) hatte die AHK weiterhin als Vorbehaltsrecht reklamiert, die Beziehungen der Bundesrepublik zum sowjetischen Machtbereich zu überwachen und den Außenhandel zu kontrollieren. Außerdem wurde der Bundesregierung das Recht verweigert, Botschafter in die Hauptstädte der westlichen alliierten Mächte zu entsenden. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Adenauer</hi>, Erinnerungen, 1945–1953, S. 368–370</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der Remilitarisierung fordern wir weiter scharfe Trennung zur Polizei.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN006" type="comment">
+                     <p>Nach dem am 19.9.1950 verfaßten »Kommuniqué über Deutschland« (vgl. Anm. 5) sollte die »Teilnahme der deutschen Bundesrepublik an der gemeinsamen Verteidigung Europas« »Gegenstand von Untersuchungen und Gedankenaustausch« werden. Was die innere Sicherheit anbeträfe, sollten der Bundesrepublik mobile Polizeikräfte auf Länderbasis genehmigt werden. In dem von der AHK an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> überreichten Memorandum (vgl. Anm. 3) war eine Verstärkung der Polizeikräfte auf 30000 Mann bewilligt worden. Der Polizei wurde eine Ausrüstung mit leichten Waffen und Panzerspäh-wagen erlaubt, die Polizeiformationen sollten aber keinen paramilitärischen Charakter haben.</p>
+                  </note>
+               </seg> Leider seien in dieser Frage nur die Amerikaner festgeblieben.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN007" type="comment">
+                     <p>Auf der New Yorker Außenminister-Konferenz hatte <name type="Person" role="Erwaehnung" ref="#BevinErnest">Bevin</name> den Gedanken einer militärähnlichen Bundespolizei verfochten, was von amerikanischer Seite mit der Begründung der Länderhoheit der Polizei abgelehnt wurde. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Wettig</hi>, S. 341–346</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Wiggershaus</hi>, Entscheidung, S. 374–379</bibl>.</p>
+                  </note>
+               </seg> Wir müssen auf der Linie des Nein bleiben, wenn unsere Voraussetzungen nicht erfüllt sind. Die nächste Aufgabe sei also lediglich der Polizeikomplex.</p>
+            <p>Die außenpolitische Debatte wird von uns zwar möglichst schnell gewünscht, aber es scheint doch zweckmäßig zu sein, sie erst nach der Debatte im französischen Parlament abzuhalten.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN008" type="comment">
+                     <p>Die französische Nationalversammlung trat am 17.10.1950 zusammen. Am 24.10. gab Ministerpräsident René <name type="Person" role="Erwaehnung" ref="#PlevenRene">Pleven</name> eine Regierungserklärung ab, in der er die Schaffung einer europäischen Armee unter Einbeziehung der Bundesrepublik vorschlug. Zum <name type="Person" role="Erwaehnung" ref="#PlevenRene">Pleven</name>-Plan vgl. Nr. 78.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MenzelWalter_1949-09-07">Menzel</name> berichtet über die Arbeit des Polizeiausschusses.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN009" type="comment">
+                     <p>Anfang Oktober hatte der Polizeiausschuß des Parteivorstandes getagt und eine Stellungnahme zum Aufbau einer Bundespolizei ausgearbeitet. <bibl type="item-in-archive">Das undatierte Protokoll der Beschlußfassung des Polizeiausschusses befindet sich in: NL Menzel R 17, AdsD</bibl>.</p>
+                  </note>
+               </seg>
+               <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> habe absichtlich eine unklare Situation gelassen. Die Grundlage für die Organisation seien nunmehr die New Yorker Beschlüsse. Durch diese würde die Polizei nur auf Länderbasis organisiert werden können.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN010" type="comment">
+                     <p>Vgl. Anm. 6.</p>
+                  </note>
+               </seg> Man sei also nicht viel weiter gekommen, da keine Kommandogewalt für den Bund vorgesehen und nur ein Generalinspekteur genehmigt worden sei.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN011" type="comment">
+                     <p>In dem an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> überreichten Memorandum (vgl. Anm. 3) war die Bundesregierung ermächtigt worden, einen Generalinspekteur des Bundes, der für die Ausbildung, Dienstbereitschaft und Ausrüstung der neuen, auf Länderbasis aufzustellenden Polizeieinheiten verantwortlich sein sollte, zu ernennen. Vgl. auch <bibl type="single-item">
+                           <hi rendition="#smcap">Wettig</hi>, S. 346</bibl>.</p>
+                  </note>
+               </seg>
+               <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> versucht, über die Polizei zur Remilitarisierung zu gelangen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN012" type="comment">
+                     <p>Seit einer Aussprache mit <name type="Person" role="Erwaehnung" ref="#McCloyJohnJay">McCloy</name> am 24.9.1950, in der dieser ausdrücklich betont hatte, daß die Westmächte keine westdeutsche Volkspolizei wünschten, hatte <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> den Plan einer Bundespolizei als Vorstufe eines westdeutschen Verteidigungsbeitrags aufgegeben. In der von <name type="Person" role="Erwaehnung" ref="#SchwerinGerhardGrafvon">Schwerin</name> geleiteten »Zentrale für Heimatdienst« wurde allerdings der Plan noch einige Wochen weiter verfolgt. Vgl. <hi rendition="#smcap">Adenauer</hi>, Erinnerungen, 1945–1953, S. 370–374. <hi rendition="#smcap">Förster</hi>, Innenpolitische Aspekte, S. 559 f.</p>
+                  </note>
+               </seg> Dieser Versuch müßte von uns scharf bekämpft werden. Nach einer Schilderung des Unterschiedes zwischen Militär- und Polizeieinsatz berichtet <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzel,</name> daß die Bundesregierung die Erreichung des Zieles durch Verträge mit den Ländern<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN013" type="comment">
+                     <p>»Ländern«: handschriftlich von <name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name> eingefügt.</p>
+                  </note>
+               </seg> anstrebe.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN014" type="comment">
+                     <p>Am 30.9.1950 hatten <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#HeinemannGustavW_1957-10-15">Heinemann</name> mit den Ministerpräsidenten und Innenministern der Länder über die Aufstellung der von den drei Besatzungsmächten zugestandenen Polizeieinheiten eine erste Besprechung geführt. Dem Abschluß eines Verwaltungsabkommens zwischen Bund und Ländern auf der Grundlage von Art. 91 Abs. 2 GG, nach dem die Bundesregierung im Falle der Gefahr die Polizeikräfte ihren Weisungen unterstellen konnte, wurde sowohl von den SPD geführten Ländern aus verfassungsrechtlichen Bedenken als auch von den CDU/CSU regierten Ländern aus grundsätzlich föderalistischen Erwägungen widersprochen. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Ritter von Lex</hi>, S. 125</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Förster</hi>, Innenpolitische Aspekte, S. 493</bibl>. In den Beschlüssen des Polizeiausschusses des Parteivorstandes (vgl. Anm. 9) wurde ein Verwaltungsabkommen unter Hinweis auf Art. 91 GG aufs »schärfste« abgelehnt.</p>
+                  </note>
+               </seg> Wir sollten dagegen auf eine Verfassungsänderung, und zwar auf Änderung des Art. 87 des Grundgesetzes drängen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN015" type="comment">
+                     <p>Art. 87 GG sollte nach Vorschlag des Polizeiausschusses durch die Einfügung eines neuen Abs. 2 geändert werden, der die Länder verpflichtete, auf Anforderung des BMI I/10 ihre Polizeikräfte dem Bund zur Verfügung zu stellen. Zum entsprechenden Antrag der SPD-Fraktion <ref type="internal" target="#spd-01_1950-10-20-t0000_EP">vgl. Nr. 76</ref>.</p>
+                  </note>
+               </seg> Neben der Verfassungsänderung sei eine Änderung der Polizeiorganisation in den einzelnen Ländern notwendig. Vor allen Dingen, soweit die britische Zone in Frage kommt.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN016" type="comment">
+                     <p>Zur Organisation der Polizei in der britischen Zone vgl. Nr. 68. Der Polizeiausschuß der SPD hatte vorgeschlagen, auch in der britischen Zone die Polizei dem Weisungsrecht der Länderinnenminister zu unterstellen. <name type="Person" role="Erwaehnung" ref="#HensslerFritz_1949-09-07">Henßler</name> und <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzel</name> arbeiteten einen entsprechenden Gesetzentwurf über den Aufbau der Polizei Nordrhein-Westfalens aus, den sie am 24.1.1951 dem Landtag übermittelten. <bibl type="Parl-Prot">Verhandlungen des Landtages NRW, 2 WP, Anl., Bd. 1, Drs. 189</bibl>. Zur Neuorganisation der Polizei in NRW vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Hüttenberger</hi>, Nordrhein-Westfalen, S. 532–539</bibl>.</p>
+                  </note>
+               </seg> Die Polizeiausschüsse sollten wir als Ausschüsse der Gemeindevertretungen bejahen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN017" type="comment">
+                     <p>Neben den »Chefs der Polizei«, die den einzelnen Polizeitruppen der Regierungsbezirke vorstanden, hatten die Briten in ihrer Besatzungszone nach 1945 sogenannte Polizeiausschüsse nach dem Vorbild der Joint Committees in England eingerichtet, die sich aus Repräsentanten der Gerichte und Mitgliedern der Stadträte zusammensetzten. Sie waren für die verwaltungsmäßige Kontrolle der Polizei zuständig und hatten in Zusammenarbeit mit dem Regierungspräsidenten für die Finanzierung des Stellenplans, die Unterkunft und Ausrüstung der Polizei zu sorgen. Ihre Kompetenz sollte nach den Neuordnungsplänen <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzels</name> eingeschränkt werden. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Hüttenberger</hi>, Nordrhein-Westfalen, S. 187</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der Diskussion weist <name type="Person" role="Sprecher" ref="#RitzelHeinrichGeorg_1949-09-07">Ritzel</name> darauf hin, daß wir Vollmachten an eine Regierung übertragen wollten, der wir mißtrauen. Nach seiner Auffassung soll man die Angelegenheit durch ein Konkordat zwischen den Ländern lösen. Gleichzeitig sei auch die Kostenfrage zu klären.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN018" type="comment">
+                     <p>In den Entwürfen der Bundesregierung war vorgesehen, daß der Bund die gesamte Ausrüstung beschaffen und den Ländern zur Verfügung stellen solle, während die Länder für die Personal- und Unterhaltskosten verantwortlich sein sollten. Bei einer Gesamtstärke von 30000 Mann hätte dies bedeutet, daß der Bund 104 Mio. DM, die Länder 167 Mio. DM hätten übernehmen müssen. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Ritter von Lex</hi>, S. 130–132</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Baring</hi>, Anfang, S. 135 f.</bibl>
+                     </p>
+                  </note>
+               </seg> Wir dürften in diesem Augenblick keine prinzipielle, sondern nur eine zweckmäßige Lösung anstreben. Zu der Frage der Remilitarisierung müßten wir für alle Zukunft ein eindeutiges Nein sprechen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KalbitzerHellmut_1949-09-07">Kalbitzer</name> berichtet über die Mitteilung <name type="Person" role="Erwaehnung" ref="#BrauerMax_1961-10-17">Brauers</name>
+               <seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN019" type="comment">
+                     <p>Max <name type="Person" role="Erwaehnung" ref="#BrauerMax_1961-10-17">Brauer</name> (1887–1973), 1961–1965 MdB (SPD), 1924–1933 Oberbürgermeister von Altona, 1933 Emigration, 1946–1953 und 1957–1961 Erster Bürgermeister von Hamburg.</p>
+                  </note>
+               </seg> in der Hamburger Funktionärskonferenz.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN020" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BrauerMax_1961-10-17">Brauer</name> hatte die Ergebnisse der New Yorker Außenministerkonferenz begrüßt. Vgl. <bibl type="series-item">
+                           <name type="Organisation" ref="#NZ">»Neue Zeitung«</name> vom 27.9.1950.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>Fr. <name type="Person" role="Sprecher" ref="#MaierFriedrich_1949-09-07">Maier</name> wünscht wegen der Gefahr falscher Interpellationen ein klares Nein zur Verfassungsänderung.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN021" type="comment">
+                     <p>Zu der Interpellation der SPD-Fraktion betr. den Ausbau der Polizeiformationen und den Antrag auf Verfassungsänderung <ref type="internal" target="#spd-01_1950-10-20-t0000_EP">vgl. Nr. 76</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlachsteinPeter_1949-09-07">Blachstein</name> hat Bedenken wegen des vorgesehenen Zivilversorgungsscheines.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN022" type="comment">
+                     <p>Anfang Oktober 1950 war von der Bundesregierung in die Gesetzesvorlage zu Art. 131 GG die Bestimmung eingefügt worden, daß Berufsoffiziere mit mehr als zehn Dienstjahren und Berufssoldaten, die in die Waffen-SS eingetreten waren, im Zivildienst unterzubringen seien. <bibl type="kbp">Vom Kabinett wurde die Vorlage am 6.10.1950 verabschiedet. Vgl. Kabinettsprotokolle 1950, Bd. 2, S. 733</bibl>; <bibl type="single-item">
+                           <hi rendition="#smcap">Wengst</hi>, Beamtentum, S. 198 f.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MelliesWilhelm_1949-09-07">Mellies</name> betont, daß uns durch die Beschlüsse der Außenminister eine grundsätzliche Entscheidung erspart bleibe. Er ist der Ansicht, daß wir grundsätzlich eine Bundespolizei fordern müssen, daß es der Bundesregierung unwürdig sei, wenn der Bundesinnenminister die Länderminister angehen müsse. Bei der Debatte würden im Vergleich mit der Zeit vor 1933 zwei wichtige Punkte übersehen. Erstens, daß das Reich über die Reichswehr verfügt habe und zweitens, daß Preußen ein ungeheures Übergewicht gegenüber dem Reich gehabt habe.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN023" type="comment">
+                     <p>Auch nach der Weimarer Reichsverfassung lag die Polizeihoheit bei den Ländern. Nach Art. 9 und Art. 48 der Weimarer Reichsverfassung konnte der Reichspräsident Gesetze und Verordnungen polizeilichen Inhalts erlassen, falls die »öffentliche Sicherheit und Ordnung erheblich gestört und gefährdet« war. Die Durchführung dieser reichsrechtlichen Erlasse blieb gemäß Art. 14 der Reichsverfassung den Ländern überlassen. Um Aufstandsversuchen gegen rechts und links entgegenzuwirken, trat am 17.7.1922 das »Reichsgesetz über die Schutzpolizei der Länder« in Kraft. <ref type="internal" target="#spd-01_1950-09-07-t0930_EP">Vgl. Nr. 68</ref>, Anm. 18. Das Inkrafttreten eines Reichskriminalpolizeigesetzes scheiterte am Widerstand der Länder. Vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Graf</hi>, S. 6–19</bibl>.</p>
+                  </note>
+               </seg> Er betont am Schluß, daß bei der Entscheidung über diese Frage nicht die Ansichten und Wünsche amtierender oder zukünftiger Ministerpräsidenten berücksichtigt werden könnten, sondern nur die politische Linie.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GoerlingerRobert_1949-09-07">Görlinger</name> hat ebenfalls Bedenken gegen den Beamtenschein.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN024" type="comment">
+                     <p>Vgl. Anm. 22.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MeitmannKarl_1949-09-07">Meitmann</name> wünscht gutes Funktionieren der Polizeiausschüsse.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HensslerFritz_1949-09-07">Henßler</name> ist auch der Ansicht, daß dem Bund seine Exekutivgewalt nicht verringert werden kann.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RitzelHeinrichGeorg_1949-09-07">Ritzel</name> führt aus, daß er in den wesentlichen Punkten seiner Ausführungen falsch verstanden worden sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchumacherKurt_1949-09-07">Schumacher</name> führt im Schlußwort aus, daß der Frieden nur durch unsere Formel erhalten werden könne.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN025" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumachers</name> Formel lautete nach dem Titel einer von ihm im Herbst 1950 verfaßten Broschüre <bibl type="single-item">»Deutschlands Forderung: Gleiches Risiko, gleiches Opfer, gleiche Chancen!« Hrsg. PV der SPD, o.O.u.J.</bibl> Vgl. auch <bibl type="single-item">
+                           <hi rendition="#smcap">Mai</hi>, S. 164</bibl>.</p>
+                  </note>
+               </seg> Ein unbedingtes Nein zu jedem Beitrag für die Sicherheit ist eine Einladung an die Russen zur Besetzung Deutschlands und der letzte Schluß ist, daß unsere Jugend den russischen Soldatenrock tragen muß.</p>
+            <p>Mit den Vorschlägen zur Tagesordnung ist die Fraktion einverstanden. <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> soll versuchen, die Frage der Getreidepreise von der Tagesordnung abzusetzen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN026" type="comment">
+                     <p>Die Beratung der Verordnung PR Nr. 59/50 über »Getreidepreise für die Monate Oktober 1950 bis Juni 1951« (<bibl type="btd">
+                           <ref type="external" target="01/1400">BT Anl. 6, Drs. I/1400</ref>
+                        </bibl>) wurde aufgrund interfraktionellen Beschlusses vom 5. auf den 6.10.1950 verschoben. Die Preisverordnung wurde von <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemann</name> wegen der darin vorgesehenen »Reports« (monatlich steigender Preiszuschläge), die nach Ansicht <name type="Person" role="Erwaehnung" ref="#KriedemannHerbert_1949-09-07">Kriedemanns</name> zu einer erheblichen Steigerung der Brotpreise führen mußten, im Namen der SPD-Fraktion abgelehnt.<bibl type="btp">
+                           <ref type="external" target="01/93"> BT Sten. Ber. 5, S. 3344 f</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> In der Frage der Luxussteuer ist die Fraktion der Auffassung, daß unser Redner zwar die Gegnerschaft gegen das Gesetz betonen<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN027" type="comment">
+                     <p>Von <name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name> verbessert aus: »die Gegensätzlichkeit des Gesetzes«.</p>
+                  </note>
+               </seg> und die wirtschaftshemmenden Tendenzen herausstellen soll, aber trotzdem sollten wir ein vernünftiges Luxussteuergesetz fördern.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN028" type="comment">
+                     <p>Bei der 1. Beratung des Gesetzentwurfs zur »Besteuerung besonderen Aufwands« <bibl type="btd">
+                           <ref type="external" target="01/1345">(BT Anl. 6, Drs. I/1345</ref>
+                        </bibl>), der für eine aufgezählte Reihe von Luxusgütern eine Erhöhung des Umsatzsteuersatzes von 3 auf 10% und die Erhebung einer Spesenabgabe in Form einer Sondersteuer auf die Aufwendungen für die Bewirtung von Geschäftsfreunden vorsah, befürwortete <name type="Person" role="Erwaehnung" ref="#KochHarald_1949-09-07">Koch</name> grundsätzlich die Einführung eines Luxussteuergesetzes, bemängelte aber, daß in dem vorliegenden Entwurf die Exportindustrie einseitig benachteiligt werde und die erhobenen Steuern einer nur »optischen Steuer« glichen. <bibl type="btp">
+                           <ref type="external" target="01/90">BT Sten. Ber. 5, S. 3337–3339</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> Die von <name type="Person" role="Erwaehnung" ref="#RichterFranz_1949-09-07">Richter</name> vorgeschlagenen Änderungsanträge zum Gesetz über die Sozialversicherung werden gebilligt.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN029" type="comment">
+                     <p>Vgl. Nr. 37. Zu der Ausschußvorlage über die Gesetzentwürfe über die Selbstverwaltung in der Sozialversicherung (<bibl type="btd">
+                           <ref type="external" target="01/1354">BT Anl. 6, Drs. I/1354</ref>
+                        </bibl>) unterbreitete die SPD-Fraktion für die 2. Lesung des Gesetzentwurfs am 5.10. 20 Änderungsvorschläge. Der wichtigste Änderungsantrag betraf § 2 Abs. 1, der die in der Ausschußvorlage vorgesehene paritätische Besetzung der Versicherungsorgane zugunsten einer Zweidrittelmajorität der Arbeitnehmer ersetzen wollte. Zu den weiteren Änderungsvorschlägen vgl.<bibl type="item-in-archive"> Umdruck Nr. 2, in: Gesetzesdok., Parl. Arch. I, 105</bibl>. Zur Begründung der Abänderungsanträge durch <name type="Person" role="Erwaehnung" ref="#KorspeterLisa_1949-09-07">Korspeter</name>, <name type="Person" role="Erwaehnung" ref="#RichterFranz_1949-09-07">Richter</name>, <name type="Person" role="Erwaehnung" ref="#PohleKurt_1949-09-07">Pohle</name>, <name type="Person" role="Erwaehnung" ref="#FreidhofRudolf_1949-09-07">Freidhof</name>, <name type="Person" role="Erwaehnung" ref="#Kipp-KauleLiesel_1949-09-07">Kipp-Kaule</name>, <name type="Person" role="Erwaehnung" ref="#DannebomOtto_1949-09-07">Dannebom</name> und <name type="Person" role="Erwaehnung" ref="#DoehringClara_1949-09-07">Döhring</name> vgl. <bibl type="btp">
+                           <ref type="external" target="01/89">BT. Sten. Ber. 5, S. 3304–3325</ref>
+                        </bibl>. Zu der unterschiedlichen Stellungnahme der Parteien zu dem Gesetzentwurf vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Hockerts</hi>, Sozialpolitische Entscheidungen, S. 139–146</bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-10-12-t0000_EP">vgl. Nr. 74</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Im Ältestenrat soll versucht werden, die Interpellation über die Zuckerknappheit und über die Zinssenkung für den Wohnungsbau möglichst bald auf die Tagesordnung zu bekommen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN030" type="comment">
+                     <p>Zur Interpellation betr. Zuckerversorgung und betr. Vorlage eines Gesetzes über Steuerbegünstigungen zur Förderung des Wohnungsbaus vgl. Nr. 70, Anm. 12 und 14.</p>
+                  </note>
+               </seg> Für die Freitagsitzung wollen wir einem Antrag auf Absetzung des Antrages für die Bewilligung von Mitteln für den Bau von Hochseeschiffen zustimmen.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN031" type="comment">
+                     <p>Zum Antrag vgl. Nr. 71, Anm. 19. Der Antrag wurde nicht von der Tagesordnung abgesetzt, sondern am 6.10. im Bundestag behandelt. Nach der Begründung des Antrags durch <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, der die Bundesregierung zur sofortigen Ausarbeitung von entsprechenden Ausführungsverordnungen aufforderte, versicherte BMV <name type="Person" role="Erwaehnung" ref="#SeebohmHans-Christoph_1949-09-07">Seebohm,</name> daß Durchführungsverordnungen bereits in Vorbereitung seien. <bibl type="btp">
+                           <ref type="external" target="01/90">BT Sten. Ber. 5, S. 3355 f.</ref>
+                        </bibl> Der Antrag wurde vom Haushaltsausschuß am 1.12.1950 für erledigt erklärt, weil im außerordentlichen Haushalt 1950 für die Zeit vom 1.10.–31.12.1950 100 Mio. DM für den Bau von Hochseeschiffen vorwegbewilligt waren. <bibl type="btd">
+                           <ref type="external" target="01/1667">BT Anl. 8, Drs. I/1667</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Fraktion erklärt sich mit der Haltung der Mitglieder des Ältestenrats zu den verschiedenen Fragen einverstanden.</p>
+            <p>Die Interpellation über Winterbeihilfe<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN032" type="comment">
+                     <p>In der Interpellation betr. »Winterbeihilfe« vom 9.10.1950 ersuchte die SPD-Fraktion die Bundesregierung um Auskunft darüber, in welcher Weise sie gedenke, den ihr vom Bundesrat als Anregung überwiesenen Antrag des Landes Niedersachsen auf eine bundeseinheitliche Winterbeihilfe für die notleidende Bevölkerung zu behandeln.<bibl type="btd">
+                           <ref type="external" target="01/1443"> BT Anl. 7, Drs. I/1443</ref>
+                        </bibl>. Der Antrag Niedersachsens forderte die Beteiligung des Bundes an den Weihnachstsbeihilfen für Hilfs- und Unterstützungsbedürftige bis zu Sätzen von 15 DM für Einzelstehende und 5 DM für jedes hilfsbedürftige Familienmitglied. <bibl type="brd">BR-Drs. 68I/50</bibl>. Zur Begründung der Interpellation und zur parlamentarischen Behandlung <ref type="internal" target="#spd-01_1950-11-09-t1000_EP">vgl. Nr. 81</ref>.</p>
+                  </note>
+               </seg> und die kleine Anfrage betr. Gutsbezirke<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN033" type="comment">
+                     <p>In der Anfrage betr. »früheres Wehrmachtsvermögen« wurde die Bundesregierung aufgefordert, nach Rücksprache mit der <name type="Organisation" ref="#AHK">AHK</name> die sog. »Wehrmachtsgutsbezirke« aufzulösen und neue Gemeinden zu bilden, so daß das ehemalige Wehrmachtsvermögen dem Gemeindevermögen zugeführt werden könne. <bibl type="btd">
+                           <ref type="external" target="01/1441">BT. Anl. 7, Drs. I/1441</ref>
+                        </bibl>. Die Anfrage wurde am 31.10.1950 von BMF <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> beantwortet. <bibl type="btd">
+                           <ref type="external" target="01/1564">BT Anl. 7, Drs. I/1564</ref>
+                        </bibl>. Durch Gesetz Nr. 16 vom 4.5.1951 überließ die AHK die Regelung der Rechtsnachfolge für das deutsche Reichsvermögen deutschen Stellen. <bibl type="VOBl">Amtsblatt der AHK S. 881</bibl>. Am 21.7.1951 trat ein Gesetz zur vorläufigen Regelung der Rechtsverhältnisse des Reichsvermögens und der preußischen Beteiligungen in Kraft, das auch die betreffende Eigentumsfrage des früheren Wehrmachtsvermögens regelte. <bibl type="bgbl">BGBl., S. 467</bibl>.</p>
+                  </note>
+               </seg> soll eingebracht werden. Über den Antrag wegen Rückerstattung von Fürsorgeaufwendungen sollen die Mitglieder des Ausschusses für Öffentliche Fürsorge nochmals eine Aussprache haben.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN034" type="comment">
+                     <p>Ein Antrag betr. »Rückerstattungspflicht von Fürsorgeaufwendungen«, nach dem politisch, rassisch und religiös Verfolgte, ehemalige Kriegsgefangene, Vertriebene und Bombengeschädigte von der Rückerstattungspflicht ausgenommen werden sollten, war von der SPD-Fraktion bereits am 14.12.1949 im Bundestag eingebracht worden. <bibl type="btd">
+                           <ref type="external" target="01/329">BT Sten. Ber. 1, Drs. I/329</ref>
+                        </bibl>. Nach Überweisung an den Ausschuß für öffentliche Fürsorge war der Antrag in der Plenarsitzung am 1.2.1950 angenommen worden.<bibl type="btp">
+                           <ref type="external" target="01/33"> BT Sten. Ber. 2, S. 1043</ref>
+                        </bibl>. Ein weiterer Antrag wurde von der SPD-Fraktion nicht gestellt. Die Rückerstattungspflicht wurde durch<bibl type="bgbl"> Verordnung vom 30.1.1951 geregelt. BGBl. I, S. 54</bibl>.</p>
+                  </note>
+               </seg> Die Anfragen wegen der Entlohnung der Eisenbahner in der Ostzone<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN035" type="comment">
+                     <p>In der Anfrage betr. »Entschädigung der Eisenbahnbediensteten im Ringgau« wurde die Bundesregierung um einen Bericht gebeten über ihre Maßnahmen für die der Eisenbahndirektion Erfurt zugehörenden, dadurch in Ostmark bezahlten Eisenbahnbediensteten des Kreises Ringgau, die in einer aussichtslosen wirtschaftlichen Notlage lebten. <bibl type="btd">
+                           <ref type="external" target="01/1442">BT Anl. 7, Drs. I/1442</ref>
+                        </bibl>. Am 28.10.1950 wurde von BMG <name type="Person" role="Erwaehnung" ref="#KaiserJakob_1949-09-07">Kaiser</name> erklärt, daß die Angelegenheit dem hessischen Staatsministerium der Finanzen zur baldigen Regelung übergeben worden sei. <bibl type="btd">
+                           <ref type="external" target="01/1563">BT Anl. 7, Drs. I/1563</ref>
+                        </bibl>. Zum Fortgang <ref type="internal" target="#spd-01_1950-12-13-t2000_EP">vgl. Nr. 85</ref>.</p>
+                  </note>
+               </seg> und der Kartoffelpreise<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN036" type="comment">
+                     <p>Die Anfrage betr. »Steigerung der Kartoffelpreise« vom 9.10.1950 verlangte von der Bundesregierung Auskunft über ihre Maßnahmen, um angesichts steigender Kartoffelpreise ungerechtfertigte Konjunkturgewinne auf Kosten der Verbraucher zu verhindern. <bibl type="btd">
+                           <ref type="external" target="01/1444">BT Anl. 7, Drs. I/1444</ref>
+                        </bibl>. Am 15.10.1950 erklärte BML <name type="Person" role="Erwaehnung" ref="#NiklasWilhelm_1951-05-30">Niklas,</name> daß keine Gefahr für ungerechtfertigte Konjunkturgewinne mehr drohe. <bibl type="btd">
+                           <ref type="external" target="01/1565">BT Anl. 7, Drs. I/1565</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> sollen eingebracht werden.</p>
+            <p>Die Fraktion stimmte dem Vorschlag eines geselligen Abends aus Anlaß des 55. Geburtstages von <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> zu.<seg type="note">
+                  <note xml:id="spd-01_1950-10-04-t1400_EP_FN037" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchumacherKurt_1949-09-07">Schumacher</name> wurde am 13.10.1950 55 Jahre alt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#MelliesWilhelm_1949-09-07">Mellies</name>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

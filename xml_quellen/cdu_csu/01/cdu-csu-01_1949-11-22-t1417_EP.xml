@@ -1,212 +1,422 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-01_1949-11-22-t1417_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FoelsSilke"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchumacherRainer"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1953.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/I</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>1998</date>
-						<idno>https://d-nb.info/952142252</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII–001–1006/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 22. November 1949</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>7 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1949-11-22"><time type="start" when="14:17:00"/><time type="end" when="18:40:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BauschPaul_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">2</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-22" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-19" who="#WeistenhoeferSimon" status="draft" n="4">SVPs vereinheitlicht/ausgebessert</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-01_1949-11-22-t1417_EP_SVP-1" corresp="#cdu-csu-01_1949-11-22-t1417_EP_div_SVP-1">A. TOP 1: Bericht über die Koalitionsbesprechung beim Bundeskanzler.</item>
-					<item xml:id="cdu-csu-01_1949-11-22-t1417_EP_SVP-2" corresp="#cdu-csu-01_1949-11-22-t1417_EP_div_SVP-2">B. TOP 2: Vorbereitung der morgigen Plenarsitzung.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-01_1949-11-22-t1417_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Bericht über die Koalitionsbesprechung beim Bundeskanzler<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN006" type="comment"><p>Siehe auch Nr. 46, 2.</p></note></seg>]</p>
-				<p>Die Sitzung leitet, vom Vorstand beauftragt, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN001" type="comment"><p>Siehe Nr. 46,1.</p></note></seg> Infolge der zu gleicher Zeit laufenden Ausschußtagungen ist die Fraktionssitzung schwach besetzt. Eventuell findet heute Abend, wie <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> mitteilt, noch eine Vorstandsbesprechung statt.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN002" type="comment"><p>Für den Abend ist keine Vorstandssitzung ermittelt, erst für den folgenden. Siehe Nr. 49.</p></note></seg> Weiter wird bekanntgegeben, daß Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> sich bereit erklärt hat, am 30. November eine Aussprache über wirtschaftspolitische Fragen herbeizuführen, die von besonderer Wichtigkeit ist; der Zeitpunkt steht noch nicht fest. Dem Antrag <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, diese Zusammenkunft zu verschieben, kann nicht stattgegeben werden.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN003" type="comment"><p>Nicht ermittelt.</p></note></seg></p>
-				<p>Da der Büchereiausschuß morgen, Mittwoch, den Vorsitzenden und stellv. Vorsitzenden zu wählen hat – den Stellvertreter stellt die SPD –, wird unter Fraktionszustimmung beschlossen, anstelle des bereits in Vorschlag gebrachten Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> nunmehr Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name> zu nominieren.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN004" type="comment"><p>Frau <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name> wurde Vorsitzende des Ausschusses, <name type="Person" role="Erwaehnung" ref="#BergstraesserLudwig_1949-09-07">Bergstraesser</name> ihr Stellvertreter. Vgl. Drucksache I/339 v. 30.12.1949.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#AlbersJohannes_1949-09-07">Albers</name> bittet, als Vorsitzenden des Ausschusses für Wiederaufbau und Wohnungswesen einen anderen Herrn zu bestimmen. Er führt als Begründung u.a. an, daß die CDU im Wiederaufbauministerium effektiv nichts zu sagen habe und daß es z.B. nicht angehe, daß das Ergebnis interfraktioneller Besprechungen von der FDP dann zu einem Antrag verdichtet wird, wie er jetzt vorliegt [Drucksache I/214 v. 15.11.1949].</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> bezeichnet diesen Antrag der FDP als ein unerfreuliches Ergebnis und als unbefriedigendes Resultat des Wohnungsbau-Ausschusses, lehnt aber die Niederlegung des Vorsitzes in diesem Ausschuß durch <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name> ab.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN005" type="comment"><p><name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name> legte den Vorsitz vorzeitig, aber doch erst im März 1950 nieder. Vgl. Datenhandbuch, S. 568.</p></note></seg></p>
-				<p>Es folgt der Bericht Dr. <name type="Person" role="Sprecher" ref="#LehrRobert_1949-09-07">Lehrs</name> über die Koalitionsbesprechung beim Bundeskanzler: Es scheint, als ob die außenpolitische<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN007" type="comment"><p>Wort handschriftlich verbessert.</p></note></seg> Aussprache<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN008" type="comment"><p>Vgl. Sten. Ber., 17. Sitz. am 15.11.1949, S. 400–448.</p></note></seg> nicht ohne Wirkung auf Paris geblieben ist. Vom Kanzler wurde sie als Hauptgrund der Verschlechterung hingestellt. Vor der Erklärung des Außenministers <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> ist der Bundeskanzler nicht in der Lage, eine Erklärung abzugeben.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN009" type="comment"><p><name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> gab am Vormittag des 24.11.1949 vor der Nationalversammlung eine Erklärung zur Deutschlandpolitik ab (vgl. AdG 1948/49, S. 2144), <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> nahm am Abend dieses Tages vor dem Bundestag Stellung zum Petersberger Abkommen (vgl. Sten. Ber., 18. Sitz., S. 472–176).</p></note></seg> Im ganzen bezeichnete der Kanzler den bisherigen Fortschritt der Besprechung als zufriedenstellend. Etwa 90% des Gewünschten sind erreicht. Des Kanzlers Bitte an die CDU/CSU lautet: Die ihr nahestehenden Wirtschaftskreise anzuregen, nicht so viele neue Wünsche vorzutragen. Das erste Ziel ist die Einstellung der Demontagen. Auf keinen Fall soll, wie Dr. <name type="Person" role="Sprecher" ref="#LehrRobert_1949-09-07">Lehr</name> weiter ausführt, keine vorzeitige Erklärung vom Kanzler gefordert werden.</p>
-				<p>Der zweite Punkt, der bei dieser Besprechung beim Kanzler zur Sprache kam, betraf den Flüchtlingsmarsch gen Bonn. Diese Flüchtlingsmärsche sind scheinbar nicht spontan zustande gekommen, sondern durch Kreise, die der SPD nahestehen. Der Bundeskanzler hat angeregt, daß diese Flüchtlinge empfangen werden müßten, nicht in der Gesamtheit, sondern eine kleine Abordnung von ihnen. Der Eindruck der »kalten Schulter« soll vermieden werden.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN010" type="comment"><p>Vertreter der Flüchtlinge wurden am 30.11.1949 vom Bundesminister für Vertriebene, <name type="Person" role="Erwaehnung" ref="#LukaschekHans">Lukaschek</name>, empfangen. Vgl. Heidemeyer, S. 96.</p></note></seg> Es wäre aber zu überlegen, ob nicht zur Vermeidung unliebsamer, früherer Ereignisse eine Bannmeile geschaffen werden müsse und damit im Zusammenhang eine Polizei, die der Bundesregierung untersteht und den Schutz dieser Bannmeile garantiert.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> gibt bekannt, daß im Vorstand Einigkeit besteht, den Bundeskanzler zu bitten, in Verhandlungen mit der Opposition darauf hinzuwirken, daß eine weitere, außenpolitische Aussprache vermieden wird.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN011" type="comment"><p>Vgl. Nr. 46,2.</p></note></seg> Was die Sicherung des Bundeshauses betrifft, so hat der Innenminister bereits erklärt, daß in Übereinstimmung mit den Hohen Kommissaren eine Bannmeile geschaffen werde.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN012" type="comment"><p>Eine erste Regelung der Bannmeilenbestimmung wurde im Strafrechtsänderungsgesetz v. 30.8.1950 vorgenommen, das ab Oktober 1949 im Kabinett diskutiert wurde. Vgl. Schiffers, Bürgerfreiheit, S. 92 f.</p></note></seg></p>
-				<p>Von Minister Dr. <name type="Person" role="Sprecher" ref="#LukaschekHans">Lukaschek</name> wird zu dem Thema »Sternfahrten« nach Bonn mitgeteilt, daß die Überprüfung der Flüchtlinge in den Lagern, aber auch die Zusammensetzung der Kommissionen zu Klagen Anlaß gab. Hier müßten gewisse Änderungen getroffen werden.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN013" type="comment"><p>Gemäß den Uelzener Richtlinien waren im Sommer 1949 für Zuwanderer aus der SBZ Aufnahmeausschüsse in den Durchgangslagern eingerichtet worden. Vgl. Heidemeyer, S. 82.</p></note></seg> Auch Minister Dr. <name type="Person" role="Erwaehnung" ref="#LukaschekHans">Lukaschek</name> ist der Ansicht, daß hinter diesen Flüchtlingsmärschen die SPD steht und immer gerade in den sozialen Fragen vorstößt.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> weist daraufhin, daß ein engerer Kontakt mit der Regierung notwendig ist und auch mehr Disziplin.</p>
-				<p>Minister Dr. <name type="Person" role="Sprecher" ref="#LukaschekHans">Lukaschek</name> spricht sich gegen eine weiche Haltung in dieser Flüchtlingsmarschfrage aus<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN014" type="comment"><p>Wort handschriftlich verbessert.</p></note></seg>: Sie müssen zurück ins Lager, wenn man sie angehört hat. Interessant aber ist es, daß der Führer der einen Delegation ein gewisser <name type="Person" role="Erwaehnung" ref="#TrostWalter">Trost</name> ist, ein SED-Mann aus Sangerhausen.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN015" type="comment"><p>Vgl. »Der Spiegel« Nr. 50 v. 8.12.1949, S. 12.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> hält es für angebracht, daß solche Tatsachen auch der breiten Öffentlichkeit bekannt gemacht werden, damit diese propagandistischen Absichten entlarvt werden.</p>
-				<p>Von Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbißViktoria_1949-09-07">Steinbiß</name> wird der Antrag gestellt, daß der letzte Punkt der Tagesordnung, die Förderung des Wohnungsbaues, zuerst behandelt wird.</p>
-				<p>Prof. Dr. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, hat, wie <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> vorträgt, für Mittwoch, den 23.11., auf 17.00 Uhr eine Besprechung über die Demontagen im Sitzungssaal 50 des Wirtschaftsministeriums angesetzt.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN016" type="comment"><p>Nicht ermittelt.</p></note></seg> Fünf Herren sind für diese Sitzung eingeladen: <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name> und <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-01_1949-11-22-t1417_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Vorbereitung der morgigen Plenarsitzung]</p>
-				<p>Es wird nunmehr von <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> die Hauptaufgabe der heutigen Fraktionssitzung, die Vorbereitung der morgigen Plenarsitzung, angeschnitten. Bleibt dann noch Zeit, könnte über die Sitzung am letzten Dienstag noch gesprochen und ein Bericht des Ausschusses für Berlin über seine letzten Beratungen in Berlin<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN017" type="comment"><p>Der Ausschuß hielt sich v. 10.–17.11.1949 in Berlin auf. Nach Besichtigungen fand am 17.11.1949 eine Ausschußsitzung mit Vertretern der Ernährungswirtschaft statt. Vgl. den Bericht von Bucerius, in: Parl. Arch., 9. Ausschuß.</p></note></seg>, die sehr befriedigend waren, angehört werden.</p>
-				<p>Zu Punkt 1 der Tagesordnung der 18. Sitzung des Bundestages (Interpellation der Abg. <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PreuskerVictor-Emanuel_1949-09-07">Preusker</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BeckerMax_1949-09-07">Becker</name> usw. betr. Abschluß der Entnazifizierung [Drucksache I/172 v. 8.11.1949])<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN018" type="comment"><p>Die Themen der einzelnen Punkte sind im Original handschriftlich am Rand vermerkt und werden hier in Klammem eingefügt.</p></note></seg>: Es ist zu erwarten, daß die Demokraten und andere Parteien dazu sprechen werden. Von Seiten der CDU müßte also auch ein Redner bestimmt werden. <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> gibt zu bedenken, ob die Zuständigkeit des Plenums für diese Frage des Abschlusses der Entnazifizierung wirklich gegeben ist, denn die Rechtsverhältnisse lägen ja auf diesem Gebiete wirklich sehr verschieden, so daß sie nicht ohne weiteres durch eine einheitliche Regelung seitens des Bundes geändert werden könnten. Das würde man bedenken müssen, ehe man eine allgemeine Gesetzgebung dafür vornimmt. Daß das Bedürfnis nach einem einheitlichen und baldigen Abschluß dieser Angelegenheit im ganzen Bundesgebiet bestehe, darüber bestände ja kein Zweifel, meinte der Redner abschließend.</p>
-				<p>Von Dr. <name type="Person" role="Sprecher" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wird vorgeschlagen, bei Vorbereitung der Erklärungen doch immer den zuständigen Regierungsvertreter hinzuzuziehen.</p>
-				<p>Von <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> wird erwidert, daß die Bemühungen, die Herren Minister herbeizuzitieren, bisher keinen allzu großen Erfolg hatten, nicht einmal bei den Plenarsitzungen. Dies könnte einmal dazu führen, daß die Herren Minister sehr empfindsame Folgen zu spüren bekämen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> hält es für eigenartig, daß man in den Plenarsitzungen nicht weiß, wie die Regierung denkt, und bittet daher, daß die Regierung ihre Stellungnahme zu den einzelnen Punkten der jeweiligen Tagesordnung vorher uns bekanntgibt.</p>
-				<p>Es erscheint der Vertreter des Justizministers.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußWalter">Strauß</name> teilt mit, daß das Bundeskabinett die Zuständigkeit in den Fragen der Entnazifizierung verneine. In allen drei Zonen herrschte keine einheitliche Lösung dieses Problems. Formell liegt die Sache bei den Ländern, im Kreise der Justizminister aber ist man übereingekommen, die Dinge zu koordinieren. Der Bund kann gesetzgeberisch nichts tun. Es wird aber überlegt, in dieser Sache an den Bundestag im Wege einer Entschließung heranzugehen. Der Artikel 131 gäbe, wie Dr. <name type="Person" role="Sprecher" ref="#StraußWalter">Strauß</name> erläutert, die Möglichkeit, in beamtenrechtlicher Hinsicht eine Schlußregelung durchzuführen, für die dann aber nicht das Justiz-, sondern das Innenministerium zuständig ist. Über die Durchführbarkeit des Art. 131 will Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> mit dem Innenminister Fühlung aufnehmen. Daß von Seiten der CDU ein klares Wort für die Beendigung dieses Kapitels und seinen möglichst raschen Abschluß gesprochen werden sollte, befürwortet <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name>. Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> will es übernehmen, zu diesem Thema der Entnazifizierung psychologisch fundierte Ausführungen zu machen. Neben Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> wird <name type="Person" role="Erwaehnung" ref="#MensingFriedrich_1949-09-07">Mensing</name> als Redner in Vorschlag gebracht.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN019" type="comment"><p>Die Besprechung wurde von der Tagesordnung abgesetzt. Vgl. Sten. Ber., 18. Sitz. am 24./25.11.1949, S. 449.</p></note></seg></p>
-				<p>Punkt 2 der Tagesordnung wird morgen behandelt (Regelung der Rechtsverhältnisse der im Dienst des Bundes stehenden Personen).<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN020" type="comment"><p>Siehe Nr. 48, 1.</p></note></seg></p>
-				<p>Es folgt nun die Durchsprache des Punktes 23 (Antrag der Abg. Dr. <name type="Person" role="Erwaehnung" ref="#PreuskerVictor-Emanuel_1949-09-07">Preusker</name>, <name type="Person" role="Erwaehnung" ref="#TrischlerJosef_1949-09-07">Trischler</name> und Fraktion der FDP betr. Förderung des Wohnungsbaus [Drucksache I/214 v. 15.11.1949]): Die Finanzierungsfrage ist der Ausgangspunkt für diese Fragen. Von der Regierungsseite her liegen noch keine Unterlagen für das Bauprogramm 1950 vor. Laut Wiederaufbauminister werden vielleicht 600 Millionen DM zu Verfügung gestellt. Es ist auch an eine Vorfinanzierung gedacht in Höhe von 500 Millionen DM, eventuell durch die Wiederaufbaubank.</p>
-				<p>Unter Hinweis auf die im Wiederaufbauministerium nunmehr herrschenden Personalverhältnisse zeigt <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name> wenig Neigung, den Vorsitz im Wiederaufbau-Ausschuß zu behalten.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN021" type="comment"><p>Siehe Anm. 5. Für die Position des Staatssekretärs im Wohnungsbauministerium hatte man sich auf Hermann <name type="Person" role="Erwaehnung" ref="#WanderslebHermann">Wandersleb</name> festgelegt. Er hatte durch geschicktes Taktieren dazu beigetragen, daß Bonn Bundeshauptstadt wurde, wodurch er sich gerade auch in der CDU/CSU-Fraktion nicht nur Freunde geschaffen hatte. Vgl. Wengst, Staatsaufbau, S. 155 f.</p></note></seg></p>
-				<p>Die Tendenz, daß dem sozialen Wohnungsbau die freie Wohnungswirtschaft vorzuziehen sei, hält Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> für sehr bedrohlich. Es wäre zu erwägen, die FDP zu bestimmen, den Antrag zurückzunehmen und an den Ausschuß zurückzuverweisen.</p>
-				<p><name type="Person" role="Sprecher" ref="#AlbersJohannes_1949-09-07">Albers</name> gibt nochmals seine Absicht kund, den Vorsitz niederzulegen im Wiederaufbauausschuß. Er wird heute Abend die Koalition nochmals auf die bestehenden Schwierigkeiten aufmerksam machen. Wird aber der Antrag nicht zurückgezogen oder dafür gesorgt, daß solche Vorkommnisse in der Öffentlichkeit bekanntgemacht werden, will er dieses unerfreuliche Amt nicht mehr weiterführen.</p>
-				<p>Präsident Dr. <name type="Person" role="Erwaehnung" ref="#KoehlerErich_1949-09-07">Köhler</name> wird in dieser Angelegenheit mit der FDP Fühlung aufnehmen, ebenso Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> und <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>. Wenn das nicht hilft, so ist eine solche Koalitionspolitik nicht mehr zu machen. Nach langem Hin und Her wird entschieden, die letzte Entscheidung über den Antrag der FDP bis morgen auszusetzen.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN022" type="comment"><p>Die FDP zog schließlich ihren Antrag zurück. Vgl. Nr. 48, 3. 23.</p></note></seg></p>
-				<p>Zu Punkt 1 macht Präsident <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name> noch einige Bemerkungen: Es wäre gut, heute Abend <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name> zu verstehen zu geben, daß wir nicht hundertprozentig hinter seiner Politik stehen.</p>
-				<p>Zu Punkt 4 (Maßnahmen für Deutsche, die in Auswirkung des Krieges im Ausland zurückgehalten werden [Drucksache I/60 v. 29.9.1949]) erwähnt Dr. <name type="Person" role="Sprecher" ref="#StraußWalter">Strauß</name>, daß dem Justizministerium eine kleine Zentralstelle angehängt werden soll. Die Mittel hierfür laufen ab 15. Dezember. Der Berichterstatter des Ausschusses, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, wird einen Bericht abgeben.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN023" type="comment"><p>Vgl. Sten. Ber., 19. Sitz. am 1.12.1949, S. 543–545 und den mündlichen Bericht des Ausschusses (Drucksache I/165 v. 4.11.1949).</p></note></seg></p>
-				<p>Zu dem unter Punkt 3 (Gesetz zum Schutz der Jugend [Drucksache I/180 v. 10.11.1949]) erwähnten Gesetz wird morgen <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> sprechen. Eine neue Drucksache, die morgen vorliegt, kommt hinzu.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN024" type="comment"><p>Nicht ermittelt.</p></note></seg> Von Dr. <name type="Person" role="Sprecher" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wird vorgetragen, daß bei der FDP gewisse Bedenken gegen den Gesetzentwurf bestehen. Es erscheint daher besser, wenn man auf eine Debatte verzichtet. Heute Abend wird dann im Ältestenrat dieser Wunsch, in eine Diskussion nicht einzutreten, bekanntgegeben werden.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN025" type="comment"><p>Siehe Nr. 48, 3.3. Die Debatte fand in der 19. Sitz. am 1.12.1949 statt. Für die CDU/CSU-Fraktion sprachen <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> und <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>. Vgl. Sten. Ber., S. 532–543.</p></note></seg></p>
-				<p>Punkt 5 (Helgoland [Antrag der DP und mündlicher Bericht des Ausschusses, Drucksachen I/41 v. 27.9.1949 und I/166 v. 4.11.1949]): Wenn Diskussion unumgänglich, wird <name type="Person" role="Erwaehnung" ref="#DegenerJohannes_1949-09-07">Degener</name> das Wort ergreifen.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN026" type="comment"><p>Die Behandlung fand statt, aber ohne daß sich ein Redner der CDU/CSU-Fraktion daran beteiligte. Vgl. ebd., S. 548–552.</p></note></seg></p>
-				<p>Bei den Punkten 6 (Antrag der BP betr. der Verteilung der DPs [Drucksachen I/85 v. 7.10.1949 und I/196 v. 11.11.1949]), 7 (Abkommen über Quartierleistungen der Besatzungsmächte [Drucksache I/86 neu v. 7.10.1949 und Drucksache I/197 v. 11.11.1949]) und 8 (Wohnraumbelegung durch verschleppte Personen [Drucksachen I/87 v. 8.10.1949 und I/198 v. 8.10.1949]) wird ebenfalls die Vermeidung einer Aussprache angestrebt. <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> spricht, wenn nicht zu umgehen. Der Ältestenrat soll veranlaßt werden, diese drei Punkte in einem Sachvorschlag zu behandeln.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN027" type="comment"><p>Anträge wurden zusammen behandelt. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> war Berichterstatter. An der Aussprache beteiligte sich kein Redner der CDU/CSU-Fraktion. Vgl. ebd., S. 552–557.</p></note></seg></p>
-				<p>Punkt 9 (Wiederherstellung der staatsbürgerlichen Gleichberechtigung für Militärpensionäre und deren Hinterbliebene [Drucksachen I/96 v. 13.10.1949 und I/216 v. 11.11.1949]): Kann mit Punkt 12 zusammen behandelt werden. Ausgiebige Besprechung über Beamten- und Flüchtlingsgesetz wird morgen vorgenommen.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN028" type="comment"><p>Die Drucksachen wurden nicht mit Punkt 12 zusammen behandelt. Vgl. ebd., 19. Sitz. am 2. 12. 1949, S. 621.</p></note></seg></p>
-				<p>(Minister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> wird begrüßt.)</p>
-				<p>Punkt 10 (Arbeitsvermittlung und Arbeitslosenhilfe für Heimkehrer [Drucksachen I/121 v. 20.10.1949 und I/190v. 11.11.1949]): Von <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> wird vorgeschlagen, 10 und 11 zusammen zu behandeln. Eine Aussprache ist nicht unbedingt notwendig, nur ist zu befürchten, daß die SPD dazu Stellung nehmen wird. Dann spricht <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name>. Von ihm wird der Standpunkt vertreten, daß die Dinge geteilt werden sollten, die mit dem Arbeitsprozeß Zusammenhängen. Auch wenn nur ein Teil der Fragen gelöst würde, sei es vielleicht richtig, mit einem Gesetzentwurf herauszukommen. Auf die Frage von <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name>, ob die Regierung morgen anwesend sein würde, erwidert Minister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>, daß das der Fall wäre und auch er selbst Stellung nehmen würde. Die beiden Anträge zusammen zu behandeln, ist nach Meinung von <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> technisch durchaus möglich. <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> hat die Absicht, nach der Behandlung des ersten Antrages seine Erklärungen abzugeben, möglicherweise erledige sich dann schon die Besprechung des 11. und 12. Punktes.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN029" type="comment"><p>Drucksache wurden nicht mit Punkt 11 (SPD-Antrag betr. einheitliche Heimkehrerbetreuung) – Drucksachen I/118 v. 14.10.1949 und 191 v. 11.11.1949 – und ohne Aussprache behandelt. Vgl. ebd., 19. Sitz. am 1.12.1949, S. 558. In der Aussprache zu Punkt 11 sprach <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name> Vgl. ebd., S. 558–564.</p></note></seg></p>
-				<p>Punkt 12 (Wartegeld und Pensionen der ostvertriebenen Beamten [Drucksachen I/20 o.D., I/29 v. 20.9.1949 und I/210 v. 27.11.1949]): Ist bereits vorweg behandelt.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN030" type="comment"><p>Siehe die Ausführungen zu Punkt 1. Eine Aussprache fand in der 20. und 21. Sitz. statt. Vgl. Sten. Ber., 2.12.1949, S. 635–644. Es sprachen von der CDU/CSU-Fraktion <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> und <name type="Person" role="Erwaehnung" ref="#KahnKarl_1949-09-07">Kahn</name>.</p></note></seg></p>
-				<p>Punkt 13 (Bundesbahn [Drucksachen I/105 v. 14.10.1949 und I/170 v. 26.10.1949]): Im Winter werden bei der Bundesbahn keine Entlassungen vorgenommen: Damit ist eigentlich jegliche Diskussion hinfällig. Der Bundesverkehrsminister wird anwesend sein. Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> übernimmt die Verantwortung für diesen Punkt der Tagesordnung.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN031" type="comment"><p>Zu dem Antrag der KPD fand keine Beratung statt. Vgl. Sten. Ber., 19. Sitz. am 1.12.1949, S. 565.</p></note></seg></p>
-				<p>Punkt 14 (Überweisung von Anträgen an die Ausschüsse [Drucksache I/211 v. 18.11.1949]): Es wurde vorgeschlagen, diese Angelegenheit<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN032" type="comment"><p>Es ist nicht zu ermitteln, welche Angelegenheit gemeint ist. Es wurde keine entsprechende Änderung an Drucksache I/211 v. 18. 11. 1949 vorgenommen. Vgl. Sten. Ber., 19. Sitz. am 1. 12. 1949, S. 565 f.</p></note></seg> an den Ausschuß für Sozialpolitik zu überweisen. <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> bittet, diese Frage im Ältestenrat zu korrigieren. Zusätzliche Überweisungen an andere Ausschüsse sind nur durch den Ältestenrat, nicht durch das Plenum vorzunehmen.</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> kommt aus der Sitzung des Ausschusses für Heimatvertriebene und bittet, sie zu ermächtigen, im Namen der Fraktion Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> zu sagen, daß er sich in der Frage der Heimatvertriebenen nicht festlegt. <name type="Person" role="Sprecher" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name> gibt zu bedenken, daß möglicherweise auch die ostvertriebenen Handwerker, die Kaufleute u.a. kommen werden und sagen: Wir wollen den Beamten gleichgestellt werden. Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> ist der Meinung, daß der Staat nun einmal aufgrund der Treuepflicht als Arbeitgeber seine Verpflichtungen den Beamten gegenüber einhalten muß. An Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> soll ausgerichtet werden: Keine Erklärungen, die nicht im Einklang mit dem Fraktionswillen stehen! Eventuell müsse man eine Einschränkung bzw. Kürzung der Pensionen, eine Art Notgemeinschaft zugunsten der ostvertriebenen Beamten vornehmen, meint <name type="Person" role="Sprecher" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name> abschließend.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN033" type="comment"><p>Bezieht sich auf den Antrag betr. Wartegeld und Pensionen der ostvertriebenen Beamten. Siehe Anm. 30.</p></note></seg></p>
-				<p>Punkt 15 (Streichung der Absätze 2 und 3 des §103 der vorläufigen Geschäftsordnung [Drucksache I/184 v. 10.11.1949])<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN034" type="comment"><p>Betr. die Einführung der geheimen Abstimmung. Die Einfügung dieser Absätze war erst am 3.11.1949 beschlossen worden. Vgl. Handbuch des deutschen Bundestages 1949, S. 95.</p></note></seg>: <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> wird sich überlegen, ob er hierzu sprechen wird. Die CDU ist für freie Abstimmung, aber man sollte für ganz besondere Fälle die Geheimabstimmung beantragen! <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> warnt, daß im Zusammenhang damit die Angelegenheit Frankfurt aufgegriffen wird. Präsident Dr. <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name> erinnert daran, daß [sich] Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> in dieser Angelegenheit schon zu offen geäußert hatte, und bittet den Redner, dies zu berücksichtigen.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN035" type="comment"><p>Kiesinger sprach nicht, es wurde auch keine geheime Abstimmung beantragt. Vgl. Sten. Ber., 19. Sitz. am 1.12.1949, S. 566 und 22. Sitz. am 9.12.1949, S. 677–687, in der Frau Weber für die Fraktion sprach.</p></note></seg></p>
-				<p>Punkt 16, 17 und 18 (Gleichberechtigung der Frauen [SPD-Antrag, Drucksachen I/176 v. 3.11.1949]), Rechtliche Gleichstellung der Frauen [SPD-Antrag, Drucksache I/177 v. 8.11.1949], Frauen im öffentlichen Dienst bei der Bundesverwaltung [Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> und Genossen, Drucksache I/206 v. 15.11.1949]): Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> soll der Wunsch der Fraktion, zu diesen Punkten zu sprechen, übermittelt werden. Minister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> nimmt mit Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> über diesen Fragenkomplex noch Fühlung auf, auch wird Prof. <name type="Person" role="Erwaehnung" ref="#HerschelWilhelm">Herschel</name> ihr beratend zur Seite stehen.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN036" type="comment"><p>Es sprachen für die CDU/CSU Frau <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> und <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>. Vgl. Sten. Ber., 19. Sitz. am 1. 12. 1949, S. 566–569 und 20. Sitz. am 2.12.1949, S. 624–631.</p></note></seg></p>
-				<p>Punkt 19 (Einsetzung eines Ausschusses für den Erwerb von Ausstattungs- und Kunstgegenständen im Raume der vorläufigen Bundeshauptstadt): Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> soll auf Vorschlag von <name type="Person" role="Sprecher" ref="#KunzeJohannes_1949-09-07">Kunze</name> die Behandlung der Drucksache I/199 übernehmen. <name type="Person" role="Sprecher" ref="#LenzAloys_1949-09-07">Lenz</name> erläutert die Ziele, die die SPD mit diesem Antrage verfolgt: Es geht ja schließlich nicht um Bilder oder Skulpturen, sondern hinter all diesem steht die Bundesbauaktiengesellschaft.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN037" type="comment"><p>Es sprach <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>. Vgl. Sten. Ber., 21. Sitz. am 2.12.1949, S. 644–647 und 22. Sitz. am 9.12.1949, S. 687–692.</p></note></seg></p>
-				<p>Punkt 20 (Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> betr. Stellungnahme des Vizekanzlers zu dem behaupteten Wegfall von Subventionen [Drucksache I/207 v. 15.11.1949]): Sollte man an einer Debatte nicht vorbeikommen, so muß sich unser Sprecher an die Gesichtspunkte, die Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> gegeben hat, halten.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN038" type="comment"><p>Es fand keine Debatte statt, nur Minister <name type="Person" role="Erwaehnung" ref="#BluecherFranz_1949-09-07">Blücher</name> gab eine Erklärung ab. Vgl. ebd., S. 692–696.</p></note></seg></p>
-				<p>Punkt 21 (Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> betr. Wahrung der Pressefreiheit gegenüber Zeitungsverboten der britischen Dienststellen [Drucksache I/208 v. 15. 11. 1949]): Man könnte laut Dr. <name type="Person" role="Sprecher" ref="#BuceriusGerd_1949-09-07">Bucerius</name> evtl. mit der SPD gegen den Antrag stimmen. Diese Ansicht vertritt auch Minister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>. Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wird eine Verständigung mit den Sozialdemokraten in dieser Frage aufnehmen.</p>
-				<p>Punkt 22 (Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> betr. einmalige Winterbeihilfe für Erwerbslose [Drucksache I/209 v. 15.11.1949]): Es wäre zu überlegen (<name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name>), ob nicht geschäftsordnungsmäßig etwas unternommen werden könnte, um diese wilden Agitationsanträge zu unterbinden. Durch eine Rücksprache mit der SPD im Ältestenrat könnte man vielleicht eine derartige Änderung der Geschäftsordnung erreichen. Gelingt es nicht, die SPD dafür zu gewinnen, müßte eine Absprache mit der Koalition Zustandekommen. Falls eine Diskussion sich ergibt, übernimmt <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name> die Vertretung der Fraktion.<seg type="note"><note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN039" type="comment"><p>Zu Punkt 21 und 22 wurde eine Übereinkunft mit der SPD erreicht (vgl. Nr. 48, 3.21 und 22). Die Punkte wurden im Plenum behandelt. In der Aussprache zu Punkt 21 nahm kein Vertreter der CDU/CSU-Fraktion das Wort, zu Punkt 22 sprach Sabel. Vgl. Sten. Ber., 22. Sitz. am 9.12.1949, S. 699–711 bzw. 19. Sitz. am 2.12.1949, S. 617 f.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-01_1949-11-22-t1417_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FoelsSilke"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchumacherRainer"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1953.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/I</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1998</date>
+                  <idno>https://d-nb.info/952142252</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII–001–1006/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 22. November 1949</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>7 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1949-11-22">
+               <time type="start" when="14:17:00"/>
+               <time type="end" when="18:40:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BauschPaul_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">2</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-22" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-19" who="#WeistenhoeferSimon" status="draft" n="4">SVPs vereinheitlicht/ausgebessert</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-01_1949-11-22-t1417_EP_SVP-1" corresp="#cdu-csu-01_1949-11-22-t1417_EP_div_SVP-1">A. TOP 1: Bericht über die Koalitionsbesprechung beim Bundeskanzler.</item>
+               <item xml:id="cdu-csu-01_1949-11-22-t1417_EP_SVP-2" corresp="#cdu-csu-01_1949-11-22-t1417_EP_div_SVP-2">B. TOP 2: Vorbereitung der morgigen Plenarsitzung.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-01_1949-11-22-t1417_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Bericht über die Koalitionsbesprechung beim Bundeskanzler<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN006" type="comment">
+                     <p>Siehe auch Nr. 46, 2.</p>
+                  </note>
+               </seg>]</p>
+            <p>Die Sitzung leitet, vom Vorstand beauftragt, <name type="Person" role="Erwaehnung" ref="#BauschPaul_1949-09-07">Bausch</name>.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN001" type="comment">
+                     <p>Siehe Nr. 46,1.</p>
+                  </note>
+               </seg> Infolge der zu gleicher Zeit laufenden Ausschußtagungen ist die Fraktionssitzung schwach besetzt. Eventuell findet heute Abend, wie <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> mitteilt, noch eine Vorstandsbesprechung statt.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN002" type="comment">
+                     <p>Für den Abend ist keine Vorstandssitzung ermittelt, erst für den folgenden. Siehe Nr. 49.</p>
+                  </note>
+               </seg> Weiter wird bekanntgegeben, daß Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> sich bereit erklärt hat, am 30. November eine Aussprache über wirtschaftspolitische Fragen herbeizuführen, die von besonderer Wichtigkeit ist; der Zeitpunkt steht noch nicht fest. Dem Antrag <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, diese Zusammenkunft zu verschieben, kann nicht stattgegeben werden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN003" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Da der Büchereiausschuß morgen, Mittwoch, den Vorsitzenden und stellv. Vorsitzenden zu wählen hat – den Stellvertreter stellt die SPD –, wird unter Fraktionszustimmung beschlossen, anstelle des bereits in Vorschlag gebrachten Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name> nunmehr Frau Dr. <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name> zu nominieren.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN004" type="comment">
+                     <p>Frau <name type="Person" role="Erwaehnung" ref="#GroewelMargarete_1949-09-07">Gröwel</name> wurde Vorsitzende des Ausschusses, <name type="Person" role="Erwaehnung" ref="#BergstraesserLudwig_1949-09-07">Bergstraesser</name> ihr Stellvertreter. Vgl. Drucksache I/339 v. 30.12.1949.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AlbersJohannes_1949-09-07">Albers</name> bittet, als Vorsitzenden des Ausschusses für Wiederaufbau und Wohnungswesen einen anderen Herrn zu bestimmen. Er führt als Begründung u.a. an, daß die CDU im Wiederaufbauministerium effektiv nichts zu sagen habe und daß es z.B. nicht angehe, daß das Ergebnis interfraktioneller Besprechungen von der FDP dann zu einem Antrag verdichtet wird, wie er jetzt vorliegt [Drucksache I/214 v. 15.11.1949].</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> bezeichnet diesen Antrag der FDP als ein unerfreuliches Ergebnis und als unbefriedigendes Resultat des Wohnungsbau-Ausschusses, lehnt aber die Niederlegung des Vorsitzes in diesem Ausschuß durch <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name> ab.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN005" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name> legte den Vorsitz vorzeitig, aber doch erst im März 1950 nieder. Vgl. Datenhandbuch, S. 568.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Es folgt der Bericht Dr. <name type="Person" role="Sprecher" ref="#LehrRobert_1949-09-07">Lehrs</name> über die Koalitionsbesprechung beim Bundeskanzler: Es scheint, als ob die außenpolitische<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN007" type="comment">
+                     <p>Wort handschriftlich verbessert.</p>
+                  </note>
+               </seg> Aussprache<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN008" type="comment">
+                     <p>Vgl. Sten. Ber., 17. Sitz. am 15.11.1949, S. 400–448.</p>
+                  </note>
+               </seg> nicht ohne Wirkung auf Paris geblieben ist. Vom Kanzler wurde sie als Hauptgrund der Verschlechterung hingestellt. Vor der Erklärung des Außenministers <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> ist der Bundeskanzler nicht in der Lage, eine Erklärung abzugeben.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN009" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#SchumanRobert">Schuman</name> gab am Vormittag des 24.11.1949 vor der Nationalversammlung eine Erklärung zur Deutschlandpolitik ab (vgl. AdG 1948/49, S. 2144), <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> nahm am Abend dieses Tages vor dem Bundestag Stellung zum Petersberger Abkommen (vgl. Sten. Ber., 18. Sitz., S. 472–176).</p>
+                  </note>
+               </seg> Im ganzen bezeichnete der Kanzler den bisherigen Fortschritt der Besprechung als zufriedenstellend. Etwa 90% des Gewünschten sind erreicht. Des Kanzlers Bitte an die CDU/CSU lautet: Die ihr nahestehenden Wirtschaftskreise anzuregen, nicht so viele neue Wünsche vorzutragen. Das erste Ziel ist die Einstellung der Demontagen. Auf keinen Fall soll, wie Dr. <name type="Person" role="Sprecher" ref="#LehrRobert_1949-09-07">Lehr</name> weiter ausführt, keine vorzeitige Erklärung vom Kanzler gefordert werden.</p>
+            <p>Der zweite Punkt, der bei dieser Besprechung beim Kanzler zur Sprache kam, betraf den Flüchtlingsmarsch gen Bonn. Diese Flüchtlingsmärsche sind scheinbar nicht spontan zustande gekommen, sondern durch Kreise, die der SPD nahestehen. Der Bundeskanzler hat angeregt, daß diese Flüchtlinge empfangen werden müßten, nicht in der Gesamtheit, sondern eine kleine Abordnung von ihnen. Der Eindruck der »kalten Schulter« soll vermieden werden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN010" type="comment">
+                     <p>Vertreter der Flüchtlinge wurden am 30.11.1949 vom Bundesminister für Vertriebene, <name type="Person" role="Erwaehnung" ref="#LukaschekHans">Lukaschek</name>, empfangen. Vgl. Heidemeyer, S. 96.</p>
+                  </note>
+               </seg> Es wäre aber zu überlegen, ob nicht zur Vermeidung unliebsamer, früherer Ereignisse eine Bannmeile geschaffen werden müsse und damit im Zusammenhang eine Polizei, die der Bundesregierung untersteht und den Schutz dieser Bannmeile garantiert.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> gibt bekannt, daß im Vorstand Einigkeit besteht, den Bundeskanzler zu bitten, in Verhandlungen mit der Opposition darauf hinzuwirken, daß eine weitere, außenpolitische Aussprache vermieden wird.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN011" type="comment">
+                     <p>Vgl. Nr. 46,2.</p>
+                  </note>
+               </seg> Was die Sicherung des Bundeshauses betrifft, so hat der Innenminister bereits erklärt, daß in Übereinstimmung mit den Hohen Kommissaren eine Bannmeile geschaffen werde.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN012" type="comment">
+                     <p>Eine erste Regelung der Bannmeilenbestimmung wurde im Strafrechtsänderungsgesetz v. 30.8.1950 vorgenommen, das ab Oktober 1949 im Kabinett diskutiert wurde. Vgl. Schiffers, Bürgerfreiheit, S. 92 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Von Minister Dr. <name type="Person" role="Sprecher" ref="#LukaschekHans">Lukaschek</name> wird zu dem Thema »Sternfahrten« nach Bonn mitgeteilt, daß die Überprüfung der Flüchtlinge in den Lagern, aber auch die Zusammensetzung der Kommissionen zu Klagen Anlaß gab. Hier müßten gewisse Änderungen getroffen werden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN013" type="comment">
+                     <p>Gemäß den Uelzener Richtlinien waren im Sommer 1949 für Zuwanderer aus der SBZ Aufnahmeausschüsse in den Durchgangslagern eingerichtet worden. Vgl. Heidemeyer, S. 82.</p>
+                  </note>
+               </seg> Auch Minister Dr. <name type="Person" role="Erwaehnung" ref="#LukaschekHans">Lukaschek</name> ist der Ansicht, daß hinter diesen Flüchtlingsmärschen die SPD steht und immer gerade in den sozialen Fragen vorstößt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> weist daraufhin, daß ein engerer Kontakt mit der Regierung notwendig ist und auch mehr Disziplin.</p>
+            <p>Minister Dr. <name type="Person" role="Sprecher" ref="#LukaschekHans">Lukaschek</name> spricht sich gegen eine weiche Haltung in dieser Flüchtlingsmarschfrage aus<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN014" type="comment">
+                     <p>Wort handschriftlich verbessert.</p>
+                  </note>
+               </seg>: Sie müssen zurück ins Lager, wenn man sie angehört hat. Interessant aber ist es, daß der Führer der einen Delegation ein gewisser <name type="Person" role="Erwaehnung" ref="#TrostWalter">Trost</name> ist, ein SED-Mann aus Sangerhausen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN015" type="comment">
+                     <p>Vgl. »Der Spiegel« Nr. 50 v. 8.12.1949, S. 12.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> hält es für angebracht, daß solche Tatsachen auch der breiten Öffentlichkeit bekannt gemacht werden, damit diese propagandistischen Absichten entlarvt werden.</p>
+            <p>Von Frau Dr. <name type="Person" role="Sprecher" ref="#SteinbissViktoria_1949-09-07">Steinbiß</name> wird der Antrag gestellt, daß der letzte Punkt der Tagesordnung, die Förderung des Wohnungsbaues, zuerst behandelt wird.</p>
+            <p>Prof. Dr. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, hat, wie <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> vorträgt, für Mittwoch, den 23.11., auf 17.00 Uhr eine Besprechung über die Demontagen im Sitzungssaal 50 des Wirtschaftsministeriums angesetzt.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN016" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg> Fünf Herren sind für diese Sitzung eingeladen: <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HenleGuenther_1949-09-07">Henle</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name> und <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-01_1949-11-22-t1417_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Vorbereitung der morgigen Plenarsitzung]</p>
+            <p>Es wird nunmehr von <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> die Hauptaufgabe der heutigen Fraktionssitzung, die Vorbereitung der morgigen Plenarsitzung, angeschnitten. Bleibt dann noch Zeit, könnte über die Sitzung am letzten Dienstag noch gesprochen und ein Bericht des Ausschusses für Berlin über seine letzten Beratungen in Berlin<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN017" type="comment">
+                     <p>Der Ausschuß hielt sich v. 10.–17.11.1949 in Berlin auf. Nach Besichtigungen fand am 17.11.1949 eine Ausschußsitzung mit Vertretern der Ernährungswirtschaft statt. Vgl. den Bericht von Bucerius, in: Parl. Arch., 9. Ausschuß.</p>
+                  </note>
+               </seg>, die sehr befriedigend waren, angehört werden.</p>
+            <p>Zu Punkt 1 der Tagesordnung der 18. Sitzung des Bundestages (Interpellation der Abg. <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PreuskerVictor-Emanuel_1949-09-07">Preusker</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BeckerMax_1949-09-07">Becker</name> usw. betr. Abschluß der Entnazifizierung [Drucksache I/172 v. 8.11.1949])<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN018" type="comment">
+                     <p>Die Themen der einzelnen Punkte sind im Original handschriftlich am Rand vermerkt und werden hier in Klammem eingefügt.</p>
+                  </note>
+               </seg>: Es ist zu erwarten, daß die Demokraten und andere Parteien dazu sprechen werden. Von Seiten der CDU müßte also auch ein Redner bestimmt werden. <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name> gibt zu bedenken, ob die Zuständigkeit des Plenums für diese Frage des Abschlusses der Entnazifizierung wirklich gegeben ist, denn die Rechtsverhältnisse lägen ja auf diesem Gebiete wirklich sehr verschieden, so daß sie nicht ohne weiteres durch eine einheitliche Regelung seitens des Bundes geändert werden könnten. Das würde man bedenken müssen, ehe man eine allgemeine Gesetzgebung dafür vornimmt. Daß das Bedürfnis nach einem einheitlichen und baldigen Abschluß dieser Angelegenheit im ganzen Bundesgebiet bestehe, darüber bestände ja kein Zweifel, meinte der Redner abschließend.</p>
+            <p>Von Dr. <name type="Person" role="Sprecher" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wird vorgeschlagen, bei Vorbereitung der Erklärungen doch immer den zuständigen Regierungsvertreter hinzuzuziehen.</p>
+            <p>Von <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> wird erwidert, daß die Bemühungen, die Herren Minister herbeizuzitieren, bisher keinen allzu großen Erfolg hatten, nicht einmal bei den Plenarsitzungen. Dies könnte einmal dazu führen, daß die Herren Minister sehr empfindsame Folgen zu spüren bekämen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> hält es für eigenartig, daß man in den Plenarsitzungen nicht weiß, wie die Regierung denkt, und bittet daher, daß die Regierung ihre Stellungnahme zu den einzelnen Punkten der jeweiligen Tagesordnung vorher uns bekanntgibt.</p>
+            <p>Es erscheint der Vertreter des Justizministers.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussWalter">Strauß</name> teilt mit, daß das Bundeskabinett die Zuständigkeit in den Fragen der Entnazifizierung verneine. In allen drei Zonen herrschte keine einheitliche Lösung dieses Problems. Formell liegt die Sache bei den Ländern, im Kreise der Justizminister aber ist man übereingekommen, die Dinge zu koordinieren. Der Bund kann gesetzgeberisch nichts tun. Es wird aber überlegt, in dieser Sache an den Bundestag im Wege einer Entschließung heranzugehen. Der Artikel 131 gäbe, wie Dr. <name type="Person" role="Sprecher" ref="#StraussWalter">Strauß</name> erläutert, die Möglichkeit, in beamtenrechtlicher Hinsicht eine Schlußregelung durchzuführen, für die dann aber nicht das Justiz-, sondern das Innenministerium zuständig ist. Über die Durchführbarkeit des Art. 131 will Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> mit dem Innenminister Fühlung aufnehmen. Daß von Seiten der CDU ein klares Wort für die Beendigung dieses Kapitels und seinen möglichst raschen Abschluß gesprochen werden sollte, befürwortet <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name>. Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> will es übernehmen, zu diesem Thema der Entnazifizierung psychologisch fundierte Ausführungen zu machen. Neben Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> wird <name type="Person" role="Erwaehnung" ref="#MensingFriedrich_1949-09-07">Mensing</name> als Redner in Vorschlag gebracht.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN019" type="comment">
+                     <p>Die Besprechung wurde von der Tagesordnung abgesetzt. Vgl. Sten. Ber., 18. Sitz. am 24./25.11.1949, S. 449.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 2 der Tagesordnung wird morgen behandelt (Regelung der Rechtsverhältnisse der im Dienst des Bundes stehenden Personen).<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN020" type="comment">
+                     <p>Siehe Nr. 48, 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Es folgt nun die Durchsprache des Punktes 23 (Antrag der Abg. Dr. <name type="Person" role="Erwaehnung" ref="#PreuskerVictor-Emanuel_1949-09-07">Preusker</name>, <name type="Person" role="Erwaehnung" ref="#TrischlerJosef_1949-09-07">Trischler</name> und Fraktion der FDP betr. Förderung des Wohnungsbaus [Drucksache I/214 v. 15.11.1949]): Die Finanzierungsfrage ist der Ausgangspunkt für diese Fragen. Von der Regierungsseite her liegen noch keine Unterlagen für das Bauprogramm 1950 vor. Laut Wiederaufbauminister werden vielleicht 600 Millionen DM zu Verfügung gestellt. Es ist auch an eine Vorfinanzierung gedacht in Höhe von 500 Millionen DM, eventuell durch die Wiederaufbaubank.</p>
+            <p>Unter Hinweis auf die im Wiederaufbauministerium nunmehr herrschenden Personalverhältnisse zeigt <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name> wenig Neigung, den Vorsitz im Wiederaufbau-Ausschuß zu behalten.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN021" type="comment">
+                     <p>Siehe Anm. 5. Für die Position des Staatssekretärs im Wohnungsbauministerium hatte man sich auf Hermann <name type="Person" role="Erwaehnung" ref="#WanderslebHermann">Wandersleb</name> festgelegt. Er hatte durch geschicktes Taktieren dazu beigetragen, daß Bonn Bundeshauptstadt wurde, wodurch er sich gerade auch in der CDU/CSU-Fraktion nicht nur Freunde geschaffen hatte. Vgl. Wengst, Staatsaufbau, S. 155 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Tendenz, daß dem sozialen Wohnungsbau die freie Wohnungswirtschaft vorzuziehen sei, hält Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> für sehr bedrohlich. Es wäre zu erwägen, die FDP zu bestimmen, den Antrag zurückzunehmen und an den Ausschuß zurückzuverweisen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AlbersJohannes_1949-09-07">Albers</name> gibt nochmals seine Absicht kund, den Vorsitz niederzulegen im Wiederaufbauausschuß. Er wird heute Abend die Koalition nochmals auf die bestehenden Schwierigkeiten aufmerksam machen. Wird aber der Antrag nicht zurückgezogen oder dafür gesorgt, daß solche Vorkommnisse in der Öffentlichkeit bekanntgemacht werden, will er dieses unerfreuliche Amt nicht mehr weiterführen.</p>
+            <p>Präsident Dr. <name type="Person" role="Erwaehnung" ref="#KoehlerErich_1949-09-07">Köhler</name> wird in dieser Angelegenheit mit der FDP Fühlung aufnehmen, ebenso Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> und <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>. Wenn das nicht hilft, so ist eine solche Koalitionspolitik nicht mehr zu machen. Nach langem Hin und Her wird entschieden, die letzte Entscheidung über den Antrag der FDP bis morgen auszusetzen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN022" type="comment">
+                     <p>Die FDP zog schließlich ihren Antrag zurück. Vgl. Nr. 48, 3. 23.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu Punkt 1 macht Präsident <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name> noch einige Bemerkungen: Es wäre gut, heute Abend <name type="Person" role="Erwaehnung" ref="#EulerAugust-Martin_1949-09-07">Euler</name> zu verstehen zu geben, daß wir nicht hundertprozentig hinter seiner Politik stehen.</p>
+            <p>Zu Punkt 4 (Maßnahmen für Deutsche, die in Auswirkung des Krieges im Ausland zurückgehalten werden [Drucksache I/60 v. 29.9.1949]) erwähnt Dr. <name type="Person" role="Sprecher" ref="#StraussWalter">Strauß</name>, daß dem Justizministerium eine kleine Zentralstelle angehängt werden soll. Die Mittel hierfür laufen ab 15. Dezember. Der Berichterstatter des Ausschusses, Dr. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, wird einen Bericht abgeben.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN023" type="comment">
+                     <p>Vgl. Sten. Ber., 19. Sitz. am 1.12.1949, S. 543–545 und den mündlichen Bericht des Ausschusses (Drucksache I/165 v. 4.11.1949).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu dem unter Punkt 3 (Gesetz zum Schutz der Jugend [Drucksache I/180 v. 10.11.1949]) erwähnten Gesetz wird morgen <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> sprechen. Eine neue Drucksache, die morgen vorliegt, kommt hinzu.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN024" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg> Von Dr. <name type="Person" role="Sprecher" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wird vorgetragen, daß bei der FDP gewisse Bedenken gegen den Gesetzentwurf bestehen. Es erscheint daher besser, wenn man auf eine Debatte verzichtet. Heute Abend wird dann im Ältestenrat dieser Wunsch, in eine Diskussion nicht einzutreten, bekanntgegeben werden.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN025" type="comment">
+                     <p>Siehe Nr. 48, 3.3. Die Debatte fand in der 19. Sitz. am 1.12.1949 statt. Für die CDU/CSU-Fraktion sprachen <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> und <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name>. Vgl. Sten. Ber., S. 532–543.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 5 (Helgoland [Antrag der DP und mündlicher Bericht des Ausschusses, Drucksachen I/41 v. 27.9.1949 und I/166 v. 4.11.1949]): Wenn Diskussion unumgänglich, wird <name type="Person" role="Erwaehnung" ref="#DegenerJohannes_1949-09-07">Degener</name> das Wort ergreifen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN026" type="comment">
+                     <p>Die Behandlung fand statt, aber ohne daß sich ein Redner der CDU/CSU-Fraktion daran beteiligte. Vgl. ebd., S. 548–552.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Bei den Punkten 6 (Antrag der BP betr. der Verteilung der DPs [Drucksachen I/85 v. 7.10.1949 und I/196 v. 11.11.1949]), 7 (Abkommen über Quartierleistungen der Besatzungsmächte [Drucksache I/86 neu v. 7.10.1949 und Drucksache I/197 v. 11.11.1949]) und 8 (Wohnraumbelegung durch verschleppte Personen [Drucksachen I/87 v. 8.10.1949 und I/198 v. 8.10.1949]) wird ebenfalls die Vermeidung einer Aussprache angestrebt. <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> spricht, wenn nicht zu umgehen. Der Ältestenrat soll veranlaßt werden, diese drei Punkte in einem Sachvorschlag zu behandeln.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN027" type="comment">
+                     <p>Anträge wurden zusammen behandelt. <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> war Berichterstatter. An der Aussprache beteiligte sich kein Redner der CDU/CSU-Fraktion. Vgl. ebd., S. 552–557.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 9 (Wiederherstellung der staatsbürgerlichen Gleichberechtigung für Militärpensionäre und deren Hinterbliebene [Drucksachen I/96 v. 13.10.1949 und I/216 v. 11.11.1949]): Kann mit Punkt 12 zusammen behandelt werden. Ausgiebige Besprechung über Beamten- und Flüchtlingsgesetz wird morgen vorgenommen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN028" type="comment">
+                     <p>Die Drucksachen wurden nicht mit Punkt 12 zusammen behandelt. Vgl. ebd., 19. Sitz. am 2. 12. 1949, S. 621.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>(Minister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> wird begrüßt.)</p>
+            <p>Punkt 10 (Arbeitsvermittlung und Arbeitslosenhilfe für Heimkehrer [Drucksachen I/121 v. 20.10.1949 und I/190v. 11.11.1949]): Von <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> wird vorgeschlagen, 10 und 11 zusammen zu behandeln. Eine Aussprache ist nicht unbedingt notwendig, nur ist zu befürchten, daß die SPD dazu Stellung nehmen wird. Dann spricht <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name>. Von ihm wird der Standpunkt vertreten, daß die Dinge geteilt werden sollten, die mit dem Arbeitsprozeß Zusammenhängen. Auch wenn nur ein Teil der Fragen gelöst würde, sei es vielleicht richtig, mit einem Gesetzentwurf herauszukommen. Auf die Frage von <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name>, ob die Regierung morgen anwesend sein würde, erwidert Minister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>, daß das der Fall wäre und auch er selbst Stellung nehmen würde. Die beiden Anträge zusammen zu behandeln, ist nach Meinung von <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> technisch durchaus möglich. <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> hat die Absicht, nach der Behandlung des ersten Antrages seine Erklärungen abzugeben, möglicherweise erledige sich dann schon die Besprechung des 11. und 12. Punktes.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN029" type="comment">
+                     <p>Drucksache wurden nicht mit Punkt 11 (SPD-Antrag betr. einheitliche Heimkehrerbetreuung) – Drucksachen I/118 v. 14.10.1949 und 191 v. 11.11.1949 – und ohne Aussprache behandelt. Vgl. ebd., 19. Sitz. am 1.12.1949, S. 558. In der Aussprache zu Punkt 11 sprach <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name> Vgl. ebd., S. 558–564.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 12 (Wartegeld und Pensionen der ostvertriebenen Beamten [Drucksachen I/20 o.D., I/29 v. 20.9.1949 und I/210 v. 27.11.1949]): Ist bereits vorweg behandelt.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN030" type="comment">
+                     <p>Siehe die Ausführungen zu Punkt 1. Eine Aussprache fand in der 20. und 21. Sitz. statt. Vgl. Sten. Ber., 2.12.1949, S. 635–644. Es sprachen von der CDU/CSU-Fraktion <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> und <name type="Person" role="Erwaehnung" ref="#KahnKarl_1949-09-07">Kahn</name>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 13 (Bundesbahn [Drucksachen I/105 v. 14.10.1949 und I/170 v. 26.10.1949]): Im Winter werden bei der Bundesbahn keine Entlassungen vorgenommen: Damit ist eigentlich jegliche Diskussion hinfällig. Der Bundesverkehrsminister wird anwesend sein. Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> übernimmt die Verantwortung für diesen Punkt der Tagesordnung.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN031" type="comment">
+                     <p>Zu dem Antrag der KPD fand keine Beratung statt. Vgl. Sten. Ber., 19. Sitz. am 1.12.1949, S. 565.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 14 (Überweisung von Anträgen an die Ausschüsse [Drucksache I/211 v. 18.11.1949]): Es wurde vorgeschlagen, diese Angelegenheit<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN032" type="comment">
+                     <p>Es ist nicht zu ermitteln, welche Angelegenheit gemeint ist. Es wurde keine entsprechende Änderung an Drucksache I/211 v. 18. 11. 1949 vorgenommen. Vgl. Sten. Ber., 19. Sitz. am 1. 12. 1949, S. 565 f.</p>
+                  </note>
+               </seg> an den Ausschuß für Sozialpolitik zu überweisen. <name type="Person" role="Sprecher" ref="#SabelAnton_1949-09-07">Sabel</name> bittet, diese Frage im Ältestenrat zu korrigieren. Zusätzliche Überweisungen an andere Ausschüsse sind nur durch den Ältestenrat, nicht durch das Plenum vorzunehmen.</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#BroekelschenElse_1949-09-07">Brökelschen</name> kommt aus der Sitzung des Ausschusses für Heimatvertriebene und bittet, sie zu ermächtigen, im Namen der Fraktion Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> zu sagen, daß er sich in der Frage der Heimatvertriebenen nicht festlegt. <name type="Person" role="Sprecher" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name> gibt zu bedenken, daß möglicherweise auch die ostvertriebenen Handwerker, die Kaufleute u.a. kommen werden und sagen: Wir wollen den Beamten gleichgestellt werden. Dr. <name type="Person" role="Sprecher" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name> ist der Meinung, daß der Staat nun einmal aufgrund der Treuepflicht als Arbeitgeber seine Verpflichtungen den Beamten gegenüber einhalten muß. An Dr. <name type="Person" role="Erwaehnung" ref="#KatherLinus_1949-09-07">Kather</name> soll ausgerichtet werden: Keine Erklärungen, die nicht im Einklang mit dem Fraktionswillen stehen! Eventuell müsse man eine Einschränkung bzw. Kürzung der Pensionen, eine Art Notgemeinschaft zugunsten der ostvertriebenen Beamten vornehmen, meint <name type="Person" role="Sprecher" ref="#WackerzappOskar_1949-09-07">Wackerzapp</name> abschließend.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN033" type="comment">
+                     <p>Bezieht sich auf den Antrag betr. Wartegeld und Pensionen der ostvertriebenen Beamten. Siehe Anm. 30.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 15 (Streichung der Absätze 2 und 3 des §103 der vorläufigen Geschäftsordnung [Drucksache I/184 v. 10.11.1949])<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN034" type="comment">
+                     <p>Betr. die Einführung der geheimen Abstimmung. Die Einfügung dieser Absätze war erst am 3.11.1949 beschlossen worden. Vgl. Handbuch des deutschen Bundestages 1949, S. 95.</p>
+                  </note>
+               </seg>: <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> wird sich überlegen, ob er hierzu sprechen wird. Die CDU ist für freie Abstimmung, aber man sollte für ganz besondere Fälle die Geheimabstimmung beantragen! <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> warnt, daß im Zusammenhang damit die Angelegenheit Frankfurt aufgegriffen wird. Präsident Dr. <name type="Person" role="Sprecher" ref="#KoehlerErich_1949-09-07">Köhler</name> erinnert daran, daß [sich] Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> in dieser Angelegenheit schon zu offen geäußert hatte, und bittet den Redner, dies zu berücksichtigen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN035" type="comment">
+                     <p>Kiesinger sprach nicht, es wurde auch keine geheime Abstimmung beantragt. Vgl. Sten. Ber., 19. Sitz. am 1.12.1949, S. 566 und 22. Sitz. am 9.12.1949, S. 677–687, in der Frau Weber für die Fraktion sprach.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 16, 17 und 18 (Gleichberechtigung der Frauen [SPD-Antrag, Drucksachen I/176 v. 3.11.1949]), Rechtliche Gleichstellung der Frauen [SPD-Antrag, Drucksache I/177 v. 8.11.1949], Frauen im öffentlichen Dienst bei der Bundesverwaltung [Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> und Genossen, Drucksache I/206 v. 15.11.1949]): Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> soll der Wunsch der Fraktion, zu diesen Punkten zu sprechen, übermittelt werden. Minister <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> nimmt mit Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> über diesen Fragenkomplex noch Fühlung auf, auch wird Prof. <name type="Person" role="Erwaehnung" ref="#HerschelWilhelm">Herschel</name> ihr beratend zur Seite stehen.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN036" type="comment">
+                     <p>Es sprachen für die CDU/CSU Frau <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> und <name type="Person" role="Erwaehnung" ref="#LehrRobert_1949-09-07">Lehr</name>. Vgl. Sten. Ber., 19. Sitz. am 1. 12. 1949, S. 566–569 und 20. Sitz. am 2.12.1949, S. 624–631.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 19 (Einsetzung eines Ausschusses für den Erwerb von Ausstattungs- und Kunstgegenständen im Raume der vorläufigen Bundeshauptstadt): Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> soll auf Vorschlag von <name type="Person" role="Sprecher" ref="#KunzeJohannes_1949-09-07">Kunze</name> die Behandlung der Drucksache I/199 übernehmen. <name type="Person" role="Sprecher" ref="#LenzAloys_1949-09-07">Lenz</name> erläutert die Ziele, die die SPD mit diesem Antrage verfolgt: Es geht ja schließlich nicht um Bilder oder Skulpturen, sondern hinter all diesem steht die Bundesbauaktiengesellschaft.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN037" type="comment">
+                     <p>Es sprach <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>. Vgl. Sten. Ber., 21. Sitz. am 2.12.1949, S. 644–647 und 22. Sitz. am 9.12.1949, S. 687–692.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 20 (Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> betr. Stellungnahme des Vizekanzlers zu dem behaupteten Wegfall von Subventionen [Drucksache I/207 v. 15.11.1949]): Sollte man an einer Debatte nicht vorbeikommen, so muß sich unser Sprecher an die Gesichtspunkte, die Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> gegeben hat, halten.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN038" type="comment">
+                     <p>Es fand keine Debatte statt, nur Minister <name type="Person" role="Erwaehnung" ref="#BluecherFranz_1949-09-07">Blücher</name> gab eine Erklärung ab. Vgl. ebd., S. 692–696.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Punkt 21 (Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> betr. Wahrung der Pressefreiheit gegenüber Zeitungsverboten der britischen Dienststellen [Drucksache I/208 v. 15. 11. 1949]): Man könnte laut Dr. <name type="Person" role="Sprecher" ref="#BuceriusGerd_1949-09-07">Bucerius</name> evtl. mit der SPD gegen den Antrag stimmen. Diese Ansicht vertritt auch Minister <name type="Person" role="Sprecher" ref="#StorchAnton_1949-09-07">Storch</name>. Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name> wird eine Verständigung mit den Sozialdemokraten in dieser Frage aufnehmen.</p>
+            <p>Punkt 22 (Antrag <name type="Person" role="Erwaehnung" ref="#RennerHeinz_1949-09-07">Renner</name> betr. einmalige Winterbeihilfe für Erwerbslose [Drucksache I/209 v. 15.11.1949]): Es wäre zu überlegen (<name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name>), ob nicht geschäftsordnungsmäßig etwas unternommen werden könnte, um diese wilden Agitationsanträge zu unterbinden. Durch eine Rücksprache mit der SPD im Ältestenrat könnte man vielleicht eine derartige Änderung der Geschäftsordnung erreichen. Gelingt es nicht, die SPD dafür zu gewinnen, müßte eine Absprache mit der Koalition Zustandekommen. Falls eine Diskussion sich ergibt, übernimmt <name type="Person" role="Erwaehnung" ref="#SabelAnton_1949-09-07">Sabel</name> die Vertretung der Fraktion.<seg type="note">
+                  <note xml:id="cdu-csu-01_1949-11-22-t1417_EP_FN039" type="comment">
+                     <p>Zu Punkt 21 und 22 wurde eine Übereinkunft mit der SPD erreicht (vgl. Nr. 48, 3.21 und 22). Die Punkte wurden im Plenum behandelt. In der Aussprache zu Punkt 21 nahm kein Vertreter der CDU/CSU-Fraktion das Wort, zu Punkt 22 sprach Sabel. Vgl. Sten. Ber., 22. Sitz. am 9.12.1949, S. 699–711 bzw. 19. Sitz. am 2.12.1949, S. 617 f.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

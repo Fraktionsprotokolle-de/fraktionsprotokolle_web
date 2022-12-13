@@ -1,289 +1,384 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?> <?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="gruene-11_1987-02-10-t1101_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#JuengerkesSven"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die Grünen im Bundestag. Sitzungsprotokolle und Anlagen. 1987–1990.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 14/II, 2 Halbbände.</title>
-						<author>Wolfgang Hölscher</author>
-						<author>Paul Kraatz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2015</date>
-						<idno type="DNB">https://d-nb.info/108115022X</idno>
-						<idno type="DNB">https://d-nb.info/1096231913</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv Grünes Gedächtnis (AGG)</institution>
-							<idno>B.II.1, 2135</idno>
-							<objectName>Fraktionssitzungsprotokoll vom 10. 2. 87</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der Fraktion Die Grünen am 10. Februar 1987</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>4 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1987-02-10"><time type="start"/><time type="end"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#MdB_Genderunbekannt"/><idno type="sitzung"><idno type="wp">11</idno><idno type="Fraktion-Landesgruppe">Grüne</idno><idno type="sitzungsabfolge">2</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-12-02" who="#JuengerkesSven" status="draft" n="3">Erste Bearbeitung der Metadaten.</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="gruene-11_1987-02-10-t1101_EP_SVP-1" corresp="#gruene-11_1987-02-10-t1101_EP_div_SVP-1">A. TOP 1: Fortsetzung der Strukturdiskussion/Regionalbüros. – Fortsetzung TOP 6: Besetzung der Bundestagsausschüsse.</item>
-					<item xml:id="gruene-11_1987-02-10-t1101_EP_SVP-2" corresp="#gruene-11_1987-02-10-t1101_EP_div_SVP-2">B. Beschluss der Fraktion Die Grünen (über die Struktur der Regionalbüros).</item>
-				</list>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Abgeordnete: <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>, <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name>, <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> [u.a.]<seg type="note"><note xml:id="gruene-11_1987-02-10-t1101_EP_FN001" type="comment"><p>Eine Anwesenheitsliste liegt für diese Fraktionssitzung nicht vor. Die Anwesenheit wurde daher gemäß Protokoll erfasst und ist unvollständig.</p></note></seg></p>
-				<p>Fraktionsmitarbeiterinnen und Fraktionsmitarbeiter: <name type="Person" role="Erwaehnung" ref="#DalhoffJutta">Dalhoff</name>, <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>, <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> (Fraktionsgeschäftsführer)</p>
-				<p>Gäste: H. <name type="Person" role="Erwaehnung" ref="#FritschHorst_1986-03-14">Fritsch</name> (Vertreter der Regionalbüros)</p>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="gruene-11_1987-02-10-t1101_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Entgegen einem anderslautenden Vorschlag der Personalkommission wird die vorgeschlagene Tagesordnung<seg type="note"><note xml:id="gruene-11_1987-02-10-t1101_EP_FN002" type="comment"><p>Es handelt sich um eine Fortführung der Tagesordnung der Sitzung am 5. Februar 1987. Vgl. dazu Dok. 4.</p></note></seg> befürwortet.</p>
-				<p>Die vom Vorstand beschlossene Einladung von A. <name type="Person" role="Erwaehnung" ref="#SacharowAndreiDmitrijewitsch">Sacharow</name> wird durch die Fraktion bestätigt.</p>
-				<p>Die Fraktion wird zur Sitzung des BHA am 14. 2. 87 in Wittgenstein eingeladen<seg type="note"><note xml:id="gruene-11_1987-02-10-t1101_EP_FN003" type="comment"><p>Der Bundeshauptausschuss der GRÜNEN befasste sich auf der Tagung am 14./15. Februar 1987 u. a. mit dem Ende der rot-grünen Koalition in Hessen und den weiteren Aussichten für eine erneute Zusammenarbeit mit der hessischen SPD nach den Neuwahlen im April 1987. Kritisiert wurde der geringe Frauenanteil in den wichtigen Bundestagsausschüssen. Vgl. den Artikel »Grüne ohne Beschluß zu Hessen«; »taz«, 16. Februar 1987, S. 4.</p></note></seg>, in diesem Zusammenhang wird die Bedeutung des BHA betont.</p>
-				<p>TOP 1: Fortsetzung der Strukturdiskussion/Regionalbüros</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Bericht von Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> zu seinem Strukturvorschlag (Anlage 1).<seg type="note"><note xml:id="gruene-11_1987-02-10-t1101_EP_FN004" type="comment"><p>Die Vorlage ist dem Protoll beigefügt. Vgl. AGG, B.II.1, 2135. – Zum endgültigen Beschluss vgl. hier Anlage A.</p></note></seg></p></item>
-					<item><label>–</label>
-						<p>Vertreter der Regionalbüros vertritt deren Interessen vor der Fraktion.</p></item>
-					<item><label>–</label>
-						<p>W. <name type="Person" role="Sprecher" ref="#DanielsWolfgang_1987-02-18">Daniels</name> erläutert seine Erfahrungen mit Regionalbüros.</p></item>
-					<item><label>–</label>
-						<p>W. <name type="Person" role="Sprecher" ref="#HossWilli_1983-03-29">Hoss</name> stellt einen Baden-Württemberg-Vorschlag vor: Stellenteilung: ½ Stelle Regionalbüro, ½ Stelle themengebunden.</p></item>
-				</list>
-				<p>Aspekte der Diskussion sind:</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Unterschiedlichkeit der bisher existierenden Regionalbüros.</p></item>
-					<item><label>–</label>
-						<p>Es müssen gezielte Vorgaben für die Aufgaben der Regionalbüros gegeben werden.</p></item>
-					<item><label>–</label>
-						<p>Rückkoppelung an die Fraktion sollte gewährleistet sein.</p></item>
-					<item><label>–</label>
-						<p>Unterschiedliche Finanzierungsmöglichkeiten müssen diskutiert werden.</p></item>
-					<item><label>–</label>
-						<p>Regionalbüros sind keine Partei-Büros, sie können keine Lösung für die Struktur-defizite der Partei sein.</p></item>
-					<item><label>–</label>
-						<p>Die Regionalbüros stimmen dem <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>-Modell im wesentlichen zu; es sollte eine einheitliche Regelung für alle Büros gefunden werden, klare Arbeitsbereichbestimmung für alle Länder.</p></item>
-					<item><label>–</label>
-						<p>M. <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name>: Aus dem 9 200 DM-Topf sollen 3 Stellen finanziert werden: 2 Mitarbeiter/innen in der Fraktion und ein Regionalbüro-Mitarbeiter/in, dies wäre eine verbesserte Situation für alle Landesverbände, eine Realisierung soll zum 1. 3. 87 angestrebt werden.</p></item>
-					<item><label>–</label>
-						<p>Die Regionalbüros sollen keine Wahlkreisbüros eines/r einzelnen Abgeordneten sein, sondern in der jeweiligen Region die Politik der gesamten Fraktion vertreten.</p></item>
-					<item><label>–</label>
-						<p>Gefahr des <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>-Modells wäre eine Betonung der Großstadtstrukturen, dies sollte man durch Solidarität für strukturschwache Gebiete ausgleichen.</p></item>
-					<item><label>–</label>
-						<p>Flächendeckende Lösung für die Verteilung der Regionalbüros finden.</p></item>
-					<item><label>–</label>
-						<p>In der Regel sollte eine Verteilung der Regionalbüros entsprechend der Mandatierten-Verteilung stattfinden, eine Ausnahme wird dann bei strukturschwachen Gebieten gemacht werden müssen, diese könnte in einem entsprechenden Konsens von BT-Fraktion und BHA gefunden werden, der BHA sollte auf der Sitzung am 14./ 15. 2. 87 darüber beraten.</p></item>
-					<item><label>–</label>
-						<p>Eine grundsätzliche Entscheidung sollte heute fallen, um Verfahrenssicherheit zu schaffen.</p></item>
-				</list>
-				<p>Der Antrag auf Verschiebung der Entscheidung (H. <name type="Person" role="Sprecher" ref="#FritschHorst_1986-03-14">Fritsch</name>) wird einstimmig abgelehnt.</p>
-				<p>Der Antrag von M. <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> (Anlage 1) wird in einzelnen Punkten abgestimmt:</p>
-				<p>1. Einstimmig angenommen.</p>
-				<p>2. <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name>: Alle Länder bekommen so viele Stellen wie MdB’s: 17 Ja.</p>
-				<p><name type="Person" role="Sprecher" ref="#LippeltHelmut_1987-02-18">Lippelt</name>: Möglichkeiten der Ausnahmeregelung zu dieser Regelung durch Antrag an den BHA: 22 Ja.</p>
-				<p>Zusatzantrag: Mindestens eine Stelle pro Land: Angenommen.</p>
-				<p>3. 33 Ja / 2 Nein</p>
-				<p>4. Angenommen bei 2 Enthaltungen</p>
-				<p>5. Einstimmig angenommen</p>
-				<p>6. Mehrheitlich beschlossen</p>
-				<p>Zusatzantrag: Aufstockung der koordinierenden Stelle innerhalb der Fraktion von 1/2 Stelle auf eine 1/1 Stelle: Abgelehnt bei 21 Nein-Stimmen.</p>
-				<p>Gesamtabstimmung: 24 Ja / 2 Enthaltungen</p>
-				<p>Der endgültige Beschluß über die Struktur der Regionalbüros findet sich in der Anlage 2 zu diesem Protokoll.<seg type="note"><note xml:id="gruene-11_1987-02-10-t1101_EP_FN005" type="comment"><p>Vgl. hier Anlage A.</p></note></seg></p>
-				<p>TOP 6: Besetzung der Bundestagsausschüsse</p>
-				<p>6.g) Umweltausschuß (2 Sitze)</p>
-				<p>Kandidaten/innen</p>
-				<p>Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name></p>
-				<p>Lilo <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name></p>
-				<p>Wolfgang <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name></p>
-				<p>Wilhelm <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name></p>
-				<p>Michael <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name></p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Aufstockung des Ausschusses wird beantragt.</p></item>
-					<item><label>–</label>
-						<p>Vorstellungsrunde der Kandidaten/innen.</p></item>
-				</list>
-				<p>1. Wahlgang (40 abgegebene Stimmen / Quorum 21 / 3 Enth.)</p>
-				<p>Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>: 21</p>
-				<p>Lilo <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 16</p>
-				<p>2. Wahlgang (39 abgegebene Stimmen / Quorum 20)</p>
-				<p>Lilo <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 12</p>
-				<p>W. <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>: 11</p>
-				<p>W. <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>: 8</p>
-				<p>M. <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>: 8</p>
-				<p>3. Wahlgang: (41 abgegebene Stimmen / Quorum 22 / 1 Enth.)</p>
-				<p>L. <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 13</p>
-				<p>W. <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>: 14</p>
-				<p>W. <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>: 8</p>
-				<p>M. <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>: 6</p>
-				<p>4. Wahlgang (41 abgegebene Stimmen / Quorum 21 / 1 Enth.)</p>
-				<p>L. <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 18</p>
-				<p>W. <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>: 22</p>
-				<p>Damit sind Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> und Wolfgang <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name> in den Ausschuß gewählt.</p>
-				<p>6.m) Wirtschaftsausschuß (3 Sitze)</p>
-				<p>1. Wahlgang: (42 abgegebene Stimmen / Quorum 22 / 9 Enth.)</p>
-				<p>Halo <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name>: 33</p>
-				<p>2. Wahlgang (42 abgegebene Stimmen / Quorum 22 / 1 Enth.)</p>
-				<p>P. <name type="Person" role="Erwaehnung" ref="#SellinPeter_1987-02-18">Sellin</name>: 25</p>
-				<p>E. <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>: 33</p>
-				<p>M. <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>: 12</p>
-				<p>Protokoll: J. <name type="Person" role="Erwaehnung" ref="#DalhoffJutta">Dalhoff</name></p>
-				<p>Übergabe des Protokolls an Udo <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name></p>
-			</div>
-			<div type="SVP" xml:id="gruene-11_1987-02-10-t1101_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Anlage A</p>
-				<p>11. Februar 1987: Beschluss der Fraktion Die Grünen. AGG, B.II.1, 2135.</p>
-				<p>Beschluß über die Struktur der Regionalbüros</p>
-				<p>Die Fraktionsversammlung hat auf ihrer Sitzung vom 10. 02. 1987 beschlossen, auch in der 11. Wahlperiode Regionalbüros einzurichten. Im einzelnen faßte sie folgende Beschlüsse:</p>
-				<p>1. In den Bundesländern werden 44 Stellen nach BAT IV b für Regionalmitarbeiter/innen eingerichtet.</p>
-				<p>2. Diese Stellen werden auf die Bundesländer in der Regel nach dem Schlüssel der auf diese entfallenden Abgeordnetenmandate verteilt.</p>
-				<p>3. Mit dem Bundeshauptausschuß soll Einvernehmen gesucht werden, ob zugunsten eines strukturschwachen Bundeslandes stark mit Regionalbüros besetzte Gebiete um Verlagerung einer Stelle gebeten werden können. Die Mindestausstattung von einer vollen Stelle für eine/n Mitarbeiter/in darf nicht unterschritten werden.</p>
-				<p>4. Über die räumliche und personelle Zuordnung der Stellen innerhalb eines Bundeslandes entscheidet die jeweilige Landesgruppe in Absprache mit dem Landesverband. Hierbei sind vorhandene Strukturen zu berücksichtigen.</p>
-				<p>5. Jede/r Abgeordnete stellt aus seinen/ihren Mitteln für die Beschäftigung von Mitarbeitern/innen eine/n Regionalmitarbeiter/in ein; die Vertragsabwicklung soll über die Fraktionsgeschäftsführung erfolgen.</p>
-				<p>6. Für die Bestreitung ihrer Aufgaben erhalten die Regionalmitarbeiter/innen von den Abgeordneten aus der Aufwandsentschädigung Sachmittel. Jede/r zahlt aus seiner vom Bundestag gewährten Aufwandspauschale monatlich DM 1 000 an den/die von ihm/ihr beschäftigten Regionalmitarbeiter/in. Dieser Sachmittelbetrag wird bei der Spendenberechnung entsprechend berücksichtigt.</p>
-				<p>7. Stellen können im Einvernehmen auch geteilt werden (in zwei halbe Stellen). Die obigen Beschlüsse gelten entsprechend. Regionalmitarbeiter/innen, die auf halbe Stellen beschäftigt werden, erhalten monatlich DM 500 an Sachmitteln.</p>
-				<p>8. Die Regionalmitarbeiter/innen haben folgende Aufgaben:</p>
-				<p>a) Weitergabe der Fraktionspolitik in die Region;</p>
-				<list type="undefined">
-					<item><label>–</label>
-						<p>Weiterleitung von Informationen der Fraktion an Bürgerinitiativen, politische Arbeitsgruppen, Kultureinrichtungen, Vereine, Behörden etc.</p></item>
-					<item><label>–</label>
-						<p>Information der Kreisverbände der Region;</p></item>
-					<item><label>–</label>
-						<p>Information der Kommunalparlamentarier/innen;</p></item>
-				</list>
-				<p>b) Weitergabe von regionalen Informationen an die Fraktion (z. B. für Anfragen bzw. für Gesetzentwürfe);</p>
-				<p>c) Öffentlichkeitsarbeit (regionalpolitische Aufbereitung von Pressemitteilungen der Fraktion, Weitergabe an regionale Medien, Herausgabe eigener Informationsmaterialien zu regionalen Schwerpunktthemen, Organisation von Veranstaltungen und Informationsbesuchen des/der Abgeordneten etc.);</p>
-				<p>d) Organisation von Seminaren und Diskussionsforen zu aktuellen bundespolitischen Schwerpunktthemen;</p>
-				<p>e) Organisation von Bürger/innen-Sprechstunden;</p>
-				<p>f) Beantwortung von Anfragen.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="gruene-11_1987-02-10-t1101_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#JuengerkesSven"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die Grünen im Bundestag. Sitzungsprotokolle und Anlagen. 1987–1990.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 14/II, 2 Halbbände.</title>
+                  <author>Wolfgang Hölscher</author>
+                  <author>Paul Kraatz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2015</date>
+                  <idno type="DNB">https://d-nb.info/108115022X</idno>
+                  <idno type="DNB">https://d-nb.info/1096231913</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv Grünes Gedächtnis (AGG)</institution>
+                     <idno>B.II.1, 2135</idno>
+                     <objectName>Fraktionssitzungsprotokoll vom 10. 2. 87</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der Fraktion Die Grünen am 10. Februar 1987</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>4 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1987-02-10">
+               <time type="start"/>
+               <time type="end"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#MdB_Genderunbekannt"/>
+            <idno type="sitzung">
+               <idno type="wp">11</idno>
+               <idno type="Fraktion-Landesgruppe">Grüne</idno>
+               <idno type="sitzungsabfolge">2</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-12-02" who="#JuengerkesSven" status="draft" n="3">Erste Bearbeitung der Metadaten.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="gruene-11_1987-02-10-t1101_EP_SVP-1" corresp="#gruene-11_1987-02-10-t1101_EP_div_SVP-1">A. TOP 1: Fortsetzung der Strukturdiskussion/Regionalbüros. – Fortsetzung TOP 6: Besetzung der Bundestagsausschüsse.</item>
+               <item xml:id="gruene-11_1987-02-10-t1101_EP_SVP-2" corresp="#gruene-11_1987-02-10-t1101_EP_div_SVP-2">B. Beschluss der Fraktion Die Grünen (über die Struktur der Regionalbüros).</item>
+            </list>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Abgeordnete: <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>, <name type="Person" role="Erwaehnung" ref="#HossWilli_1983-03-29">Hoss</name>, <name type="Person" role="Erwaehnung" ref="#LippeltHelmut_1987-02-18">Lippelt</name> [u.a.]<seg type="note">
+                  <note xml:id="gruene-11_1987-02-10-t1101_EP_FN001" type="comment">
+                     <p>Eine Anwesenheitsliste liegt für diese Fraktionssitzung nicht vor. Die Anwesenheit wurde daher gemäß Protokoll erfasst und ist unvollständig.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Fraktionsmitarbeiterinnen und Fraktionsmitarbeiter: <name type="Person" role="Erwaehnung" ref="#DalhoffJutta">Dalhoff</name>, <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>, <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> (Fraktionsgeschäftsführer)</p>
+            <p>Gäste: H. <name type="Person" role="Erwaehnung" ref="#FritschHorst_1986-03-14">Fritsch</name> (Vertreter der Regionalbüros)</p>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="gruene-11_1987-02-10-t1101_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Entgegen einem anderslautenden Vorschlag der Personalkommission wird die vorgeschlagene Tagesordnung<seg type="note">
+                  <note xml:id="gruene-11_1987-02-10-t1101_EP_FN002" type="comment">
+                     <p>Es handelt sich um eine Fortführung der Tagesordnung der Sitzung am 5. Februar 1987. Vgl. dazu Dok. 4.</p>
+                  </note>
+               </seg> befürwortet.</p>
+            <p>Die vom Vorstand beschlossene Einladung von A. <name type="Person" role="Erwaehnung" ref="#SacharowAndreiDmitrijewitsch">Sacharow</name> wird durch die Fraktion bestätigt.</p>
+            <p>Die Fraktion wird zur Sitzung des BHA am 14. 2. 87 in Wittgenstein eingeladen<seg type="note">
+                  <note xml:id="gruene-11_1987-02-10-t1101_EP_FN003" type="comment">
+                     <p>Der Bundeshauptausschuss der GRÜNEN befasste sich auf der Tagung am 14./15. Februar 1987 u. a. mit dem Ende der rot-grünen Koalition in Hessen und den weiteren Aussichten für eine erneute Zusammenarbeit mit der hessischen SPD nach den Neuwahlen im April 1987. Kritisiert wurde der geringe Frauenanteil in den wichtigen Bundestagsausschüssen. Vgl. den Artikel »Grüne ohne Beschluß zu Hessen«; »taz«, 16. Februar 1987, S. 4.</p>
+                  </note>
+               </seg>, in diesem Zusammenhang wird die Bedeutung des BHA betont.</p>
+            <p>TOP 1: Fortsetzung der Strukturdiskussion/Regionalbüros</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Bericht von Michael <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name> zu seinem Strukturvorschlag (Anlage 1).<seg type="note">
+                        <note xml:id="gruene-11_1987-02-10-t1101_EP_FN004" type="comment">
+                           <p>Die Vorlage ist dem Protoll beigefügt. Vgl. AGG, B.II.1, 2135. – Zum endgültigen Beschluss vgl. hier Anlage A.</p>
+                        </note>
+                     </seg>
+                  </p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Vertreter der Regionalbüros vertritt deren Interessen vor der Fraktion.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>W. <name type="Person" role="Sprecher" ref="#DanielsWolfgang_1987-02-18">Daniels</name> erläutert seine Erfahrungen mit Regionalbüros.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>W. <name type="Person" role="Sprecher" ref="#HossWilli_1983-03-29">Hoss</name> stellt einen Baden-Württemberg-Vorschlag vor: Stellenteilung: ½ Stelle Regionalbüro, ½ Stelle themengebunden.</p>
+               </item>
+            </list>
+            <p>Aspekte der Diskussion sind:</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Unterschiedlichkeit der bisher existierenden Regionalbüros.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Es müssen gezielte Vorgaben für die Aufgaben der Regionalbüros gegeben werden.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Rückkoppelung an die Fraktion sollte gewährleistet sein.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Unterschiedliche Finanzierungsmöglichkeiten müssen diskutiert werden.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Regionalbüros sind keine Partei-Büros, sie können keine Lösung für die Struktur-defizite der Partei sein.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die Regionalbüros stimmen dem <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>-Modell im wesentlichen zu; es sollte eine einheitliche Regelung für alle Büros gefunden werden, klare Arbeitsbereichbestimmung für alle Länder.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>M. <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name>: Aus dem 9 200 DM-Topf sollen 3 Stellen finanziert werden: 2 Mitarbeiter/innen in der Fraktion und ein Regionalbüro-Mitarbeiter/in, dies wäre eine verbesserte Situation für alle Landesverbände, eine Realisierung soll zum 1. 3. 87 angestrebt werden.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Die Regionalbüros sollen keine Wahlkreisbüros eines/r einzelnen Abgeordneten sein, sondern in der jeweiligen Region die Politik der gesamten Fraktion vertreten.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Gefahr des <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name>-Modells wäre eine Betonung der Großstadtstrukturen, dies sollte man durch Solidarität für strukturschwache Gebiete ausgleichen.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Flächendeckende Lösung für die Verteilung der Regionalbüros finden.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>In der Regel sollte eine Verteilung der Regionalbüros entsprechend der Mandatierten-Verteilung stattfinden, eine Ausnahme wird dann bei strukturschwachen Gebieten gemacht werden müssen, diese könnte in einem entsprechenden Konsens von BT-Fraktion und BHA gefunden werden, der BHA sollte auf der Sitzung am 14./ 15. 2. 87 darüber beraten.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Eine grundsätzliche Entscheidung sollte heute fallen, um Verfahrenssicherheit zu schaffen.</p>
+               </item>
+            </list>
+            <p>Der Antrag auf Verschiebung der Entscheidung (H. <name type="Person" role="Sprecher" ref="#FritschHorst_1986-03-14">Fritsch</name>) wird einstimmig abgelehnt.</p>
+            <p>Der Antrag von M. <name type="Person" role="Erwaehnung" ref="#VesperMichael">Vesper</name> (Anlage 1) wird in einzelnen Punkten abgestimmt:</p>
+            <p>1. Einstimmig angenommen.</p>
+            <p>2. <name type="Person" role="Sprecher" ref="#VesperMichael">Vesper</name>: Alle Länder bekommen so viele Stellen wie MdB’s: 17 Ja.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LippeltHelmut_1987-02-18">Lippelt</name>: Möglichkeiten der Ausnahmeregelung zu dieser Regelung durch Antrag an den BHA: 22 Ja.</p>
+            <p>Zusatzantrag: Mindestens eine Stelle pro Land: Angenommen.</p>
+            <p>3. 33 Ja / 2 Nein</p>
+            <p>4. Angenommen bei 2 Enthaltungen</p>
+            <p>5. Einstimmig angenommen</p>
+            <p>6. Mehrheitlich beschlossen</p>
+            <p>Zusatzantrag: Aufstockung der koordinierenden Stelle innerhalb der Fraktion von 1/2 Stelle auf eine 1/1 Stelle: Abgelehnt bei 21 Nein-Stimmen.</p>
+            <p>Gesamtabstimmung: 24 Ja / 2 Enthaltungen</p>
+            <p>Der endgültige Beschluß über die Struktur der Regionalbüros findet sich in der Anlage 2 zu diesem Protokoll.<seg type="note">
+                  <note xml:id="gruene-11_1987-02-10-t1101_EP_FN005" type="comment">
+                     <p>Vgl. hier Anlage A.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>TOP 6: Besetzung der Bundestagsausschüsse</p>
+            <p>6.g) Umweltausschuß (2 Sitze)</p>
+            <p>Kandidaten/innen</p>
+            <p>Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>
+            </p>
+            <p>Lilo <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>
+            </p>
+            <p>Wolfgang <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>
+            </p>
+            <p>Wilhelm <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>
+            </p>
+            <p>Michael <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>
+            </p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Aufstockung des Ausschusses wird beantragt.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Vorstellungsrunde der Kandidaten/innen.</p>
+               </item>
+            </list>
+            <p>1. Wahlgang (40 abgegebene Stimmen / Quorum 21 / 3 Enth.)</p>
+            <p>Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name>: 21</p>
+            <p>Lilo <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 16</p>
+            <p>2. Wahlgang (39 abgegebene Stimmen / Quorum 20)</p>
+            <p>Lilo <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 12</p>
+            <p>W. <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>: 11</p>
+            <p>W. <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>: 8</p>
+            <p>M. <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>: 8</p>
+            <p>3. Wahlgang: (41 abgegebene Stimmen / Quorum 22 / 1 Enth.)</p>
+            <p>L. <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 13</p>
+            <p>W. <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>: 14</p>
+            <p>W. <name type="Person" role="Erwaehnung" ref="#KnabeWilhelm_1987-02-18">Knabe</name>: 8</p>
+            <p>M. <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>: 6</p>
+            <p>4. Wahlgang (41 abgegebene Stimmen / Quorum 21 / 1 Enth.)</p>
+            <p>L. <name type="Person" role="Erwaehnung" ref="#WollnyLieselotte_1987-02-18">Wollny</name>: 18</p>
+            <p>W. <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name>: 22</p>
+            <p>Damit sind Charlotte <name type="Person" role="Erwaehnung" ref="#GarbeCharlotte_1987-02-18">Garbe</name> und Wolfgang <name type="Person" role="Erwaehnung" ref="#DanielsWolfgang_1987-02-18">Daniels</name> in den Ausschuß gewählt.</p>
+            <p>6.m) Wirtschaftsausschuß (3 Sitze)</p>
+            <p>1. Wahlgang: (42 abgegebene Stimmen / Quorum 22 / 9 Enth.)</p>
+            <p>Halo <name type="Person" role="Erwaehnung" ref="#SaiboldHannelore_1987-02-18">Saibold</name>: 33</p>
+            <p>2. Wahlgang (42 abgegebene Stimmen / Quorum 22 / 1 Enth.)</p>
+            <p>P. <name type="Person" role="Erwaehnung" ref="#SellinPeter_1987-02-18">Sellin</name>: 25</p>
+            <p>E. <name type="Person" role="Erwaehnung" ref="#StratmannStratmann-MertensEckhard_1983-03-29">Stratmann</name>: 33</p>
+            <p>M. <name type="Person" role="Erwaehnung" ref="#WeissMichael_1987-02-18">Weiss</name>: 12</p>
+            <p>Protokoll: J. <name type="Person" role="Erwaehnung" ref="#DalhoffJutta">Dalhoff</name>
+            </p>
+            <p>Übergabe des Protokolls an Udo <name type="Person" role="Erwaehnung" ref="#KnappUdo">Knapp</name>
+            </p>
+         </div>
+         <div type="SVP" xml:id="gruene-11_1987-02-10-t1101_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Anlage A</p>
+            <p>11. Februar 1987: Beschluss der Fraktion Die Grünen. AGG, B.II.1, 2135.</p>
+            <p>Beschluß über die Struktur der Regionalbüros</p>
+            <p>Die Fraktionsversammlung hat auf ihrer Sitzung vom 10. 02. 1987 beschlossen, auch in der 11. Wahlperiode Regionalbüros einzurichten. Im einzelnen faßte sie folgende Beschlüsse:</p>
+            <p>1. In den Bundesländern werden 44 Stellen nach BAT IV b für Regionalmitarbeiter/innen eingerichtet.</p>
+            <p>2. Diese Stellen werden auf die Bundesländer in der Regel nach dem Schlüssel der auf diese entfallenden Abgeordnetenmandate verteilt.</p>
+            <p>3. Mit dem Bundeshauptausschuß soll Einvernehmen gesucht werden, ob zugunsten eines strukturschwachen Bundeslandes stark mit Regionalbüros besetzte Gebiete um Verlagerung einer Stelle gebeten werden können. Die Mindestausstattung von einer vollen Stelle für eine/n Mitarbeiter/in darf nicht unterschritten werden.</p>
+            <p>4. Über die räumliche und personelle Zuordnung der Stellen innerhalb eines Bundeslandes entscheidet die jeweilige Landesgruppe in Absprache mit dem Landesverband. Hierbei sind vorhandene Strukturen zu berücksichtigen.</p>
+            <p>5. Jede/r Abgeordnete stellt aus seinen/ihren Mitteln für die Beschäftigung von Mitarbeitern/innen eine/n Regionalmitarbeiter/in ein; die Vertragsabwicklung soll über die Fraktionsgeschäftsführung erfolgen.</p>
+            <p>6. Für die Bestreitung ihrer Aufgaben erhalten die Regionalmitarbeiter/innen von den Abgeordneten aus der Aufwandsentschädigung Sachmittel. Jede/r zahlt aus seiner vom Bundestag gewährten Aufwandspauschale monatlich DM 1 000 an den/die von ihm/ihr beschäftigten Regionalmitarbeiter/in. Dieser Sachmittelbetrag wird bei der Spendenberechnung entsprechend berücksichtigt.</p>
+            <p>7. Stellen können im Einvernehmen auch geteilt werden (in zwei halbe Stellen). Die obigen Beschlüsse gelten entsprechend. Regionalmitarbeiter/innen, die auf halbe Stellen beschäftigt werden, erhalten monatlich DM 500 an Sachmitteln.</p>
+            <p>8. Die Regionalmitarbeiter/innen haben folgende Aufgaben:</p>
+            <p>a) Weitergabe der Fraktionspolitik in die Region;</p>
+            <list type="undefined">
+               <item>
+                  <label>–</label>
+                  <p>Weiterleitung von Informationen der Fraktion an Bürgerinitiativen, politische Arbeitsgruppen, Kultureinrichtungen, Vereine, Behörden etc.</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Information der Kreisverbände der Region;</p>
+               </item>
+               <item>
+                  <label>–</label>
+                  <p>Information der Kommunalparlamentarier/innen;</p>
+               </item>
+            </list>
+            <p>b) Weitergabe von regionalen Informationen an die Fraktion (z. B. für Anfragen bzw. für Gesetzentwürfe);</p>
+            <p>c) Öffentlichkeitsarbeit (regionalpolitische Aufbereitung von Pressemitteilungen der Fraktion, Weitergabe an regionale Medien, Herausgabe eigener Informationsmaterialien zu regionalen Schwerpunktthemen, Organisation von Veranstaltungen und Informationsbesuchen des/der Abgeordneten etc.);</p>
+            <p>d) Organisation von Seminaren und Diskussionsforen zu aktuellen bundespolitischen Schwerpunktthemen;</p>
+            <p>e) Organisation von Bürger/innen-Sprechstunden;</p>
+            <p>f) Beantwortung von Anfragen.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

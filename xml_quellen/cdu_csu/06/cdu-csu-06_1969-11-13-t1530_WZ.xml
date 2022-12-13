@@ -1,406 +1,557 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-06_1969-11-13-t1530_WZ" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#ZehenderKathrin"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1969-1972. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/VI</title>
-						<author>Kathrin Zehender</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2016</date>
-						<idno>https://d-nb.info/1121220037</idno>
-						<idno>https://d-nb.info/1128841533</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>08-001-1020/2</idno>
-							<objectName>Fraktionsprotokoll zur Fraktionssitzung vom 13. Nov.1969</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. November 1969 </p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>14 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1969-11-13"><time type="start" when="15:30:00"/><time type="end" when="17:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/><idno type="sitzung"><idno type="wp">06</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="#WZ" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-1" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-1">A. Hinweise des stellvertretenden Vorsitzenden <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Anpassungsgesetz zur Kriegsopferversorgung; Wahl des Fraktionsvorstands.</item>
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-2" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-2">B. Parlamentarische Initiativen: Bericht und Aussprache über den Gesetzentwurf der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> zur Kriegsopferversorgung; Einbringung eines Gesetzentwurfs zur Städtebauförderung.</item>
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-3" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-3">C. Wahl des Fraktionsvorstands: Wahlmodus; Einbringung von Personalvorschlägen; Frage der Kooptierung von Vorstandsmitgliedern; Zutrittsrechts; Stimmrecht kooptierter Mitglieder; 1. Wahlgang.</item>
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-4" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-4">D. Bericht des CDU-Bundesschatzmeisters<name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07"> Schmücker</name>: Bau und Finanzierung eines Parteihauses für die CDU; finanzielle Beteiligung der Mandatsträger. – Mitteilungen für die neugewählten Fraktionsmitglieder betr. die Orientierung im Bundestag.</item>
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-5" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-5">E. Wahl des Fraktionsvorstands: Ergebnis des 1. Wahlgangs; 2. Wahlgang. – Wahl des Fraktionsältestenrats.</item>
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-6" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-6">F. Bericht des Vorsitzenden <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>: Entschließung der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> betr. Atomwaffensperrvertrag; Antrag der Fraktion betr. europäischer Agrarmarkt.</item>
-					<item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-7" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-7">G. Wahl des Fraktionsvorstands: Ergebnis des 2. Wahlgangs; 3. Wahlgang; Terminhinweis für den neugewählten Fraktionsvorstand.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-1">
-				<head>[A.]</head>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Meine Damen und Herrn! Ich eröffne unsere heutige Fraktionssitzung. Sie ist notwendig, denn die politische Situation zwingt uns dazu, so rasch als möglich ein Anpassungsgesetz zur Kriegsopferversorgung einzubringen.</p>
-				<p>Eine Anpassung der Renten dieses Personenkreises ist seit 1.1.67 aus Gründen, die verständlich sind, unterblieben. Von der anderen Seite wird dieser Gesetzentwurf bereits unterschriftsreif vorbereitet und wir sollten den Versuch unternehmen, eine in sich geschlossene und dann von uns zu diskutierende und zu akzeptierende Konzeption zu diesem Anliegen selbst vorzulegen. Dazu wird Herr Kollege <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> sprechen.</p>
-				<p>Und als Zweites kommen wir zur Wahl des Fraktionsvorstandes, und dazu komme ich im 2. Punkt nochmals gesondert. Es fehlt im Moment noch eine Reihe von Mitgliedern der Fraktion, die alle noch bei den konstituierenden Sitzungen ihrer Ausschüsse sind, z.B. tagt zur Stunde der Außenpolitische Ausschuß noch, ist aber in fünf bis zehn Minuten fertig. Ich darf Ihr Einverständnis voraussetzen und den Herrn Kollegen <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> bitten, mit seinem Vortrag zu beginnen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-2">
-				<head>[B.]</head>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name>: Meine sehr verehrten Damen und Herrn! Der Herr Fraktionsvorsitzende hat, wie Sie wissen, in der Aussprache zur Regierungserklärung angekündigt – und ich habe das in der Debatte dann noch vertieft –, eine Initiative der Fraktion zur Kriegsopferversorgung einzubringen. Sie wissen, daß die Kriegsopferrenten seit dem 1. Januar 1967 unverändert geblieben sind. Die Regierung der Großen Koalition und alle Fraktionen und die Parteivorsitzenden aller drei im Bundestag vertretenen Parteien haben eine Anpassung der Kriegsopferversorgung an die inzwischen veränderte wirtschaftliche Situation ab l. Januar 1970 fest zugesagt. Sie wissen, daß auch im Wahlkampf diese Frage eine nicht unerhebliche Rolle gespielt hat. Bedauerlicherweise war die derzeitige <name type="Organisation" ref="#BuReg">Bundesregierung</name> bisher nicht in der Lage, den Kriegsopferbericht, der beim Regierungswechsel in meinem Hause bis auf redaktionelle Änderungen fertiggestellt war, vorzulegen, noch hat die Regierung den Entwurf eines Anpassungsgesetzes dem Parlament vorgelegt.</p>
-				<p>Durch diese Verzögerung wird die rechtzeitige Anpassung der Kriegsopferrenten zum l. Januar 1970 gefährdet. Wir schlagen daher der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> des Bundestages vor, den Initiativgesetzentwurf eines Anpassungsgesetzes hier heute einzubringen und zu beraten und zu verabschieden.<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN002" type="comment"><p>Die bisherigen Redebeiträge basieren auf einer überarbeiteten Fassung der Vorlage. Für den weiteren Text ist jedoch nur die unbearbeitete Rohfassung als Vorlage vorhanden.</p></note></seg></p>
-				<p>Der Entwurf, meine Damen und Herren, der Ihnen gleich ausgehändigt wird, der wird zur Zeit gedruckt, sieht eine Anpassung, Anhebung der Grund- und Ausgleichsrenten, um 22% vor. Die <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> ist dabei davon ausgegangen, daß sich seit dem 1. Januar 1967 der reale Zuwachs des Bruttosozialprodukts auf rd. 16%, der Zuwachs der Bruttolohn- und -gehaltssumme auf rd. 19,5% und die Erhöhung der Renten auf 26,4% beläuft. Diese Daten rechtfertigen eine Anpassung der Kriegsopferrenten, und das habe ich bereits vor Ausscheiden aus meinem Amte auch in der Öffentlichkeit dargelegt, um 20%. Da die <name type="Organisation" ref="#BuReg">Bundesregierung</name> die Absicht hat, den Krankenversicherungsbeitrag der Rentner in Höhe von 2% ab Januar 1970 zu streichen, erscheint es schon im Interesse der Gleichbehandlung erforderlich, den Anpassungssatz bei den Kriegsopfern auf 22% festzusetzen, denn ich glaube, es geht einfach nicht an, daß ausgerechnet die Kriegsopfer von einer zusätzlichen sozialen Leistung ausgeschlossen bleiben sollen. Das war jedenfalls nicht der erklärte Wille dieser Fraktion, mit [dem]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN003" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »der«.</p></note></seg> wir in [diese]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN004" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »dieser«.</p></note></seg>Wahlauseinandersetzung hineingegangen sind. Ein wesentlicher Punkt des Entwurfs ist ferner die Anhebung der Witwenrente auf 60%. Es scheint nicht einzusehen zu sein, weshalb die Kriegsopferwitwen nicht dieselben Renten erhalten sollen, wie die Witwen von Beamten und Sozialversicherungsrentner. Wir haben bei dem letzten Neuordnungsgesetz, wie Sie wissen, als ersten Schritt auf eine 60%ige Witwenrente hingetan und wollen diesen Schritt nun vollenden. Die Vorlage des Kriegsopferberichts im 2-jährigen Abstand erscheint zudem [für] eine zügige Anpassung der Kriegsopferrenten nicht ausreichend zu sein. Wir schlagen deshalb eine jährliche Anpassung vor. Lassen Sie mich, meine Damen und Herren, nun ein Wort zu den finanziellen Auswirkungen dieses Gesetzentwurfes machen, denn ich bin der Meinung, diese Opposition muß glaubwürdig bleiben in ihren Aussagen, wir können anderen Leuten nichts vorwerfen, daß sie leichtfertig jetzt Geschenke verteilen und deshalb lassen Sie mich zur finanziellen Situation einige Schlußbemerkungen machen:</p>
-				<p>(»Es ist sehr schwer zu sprechen.« »Ja, ja, ich bemühe mich schon ohnedies durch Erheben, nicht aus Langeweile, um eine Veränderung in meiner körperlichen Form zu haben, sondern um zu zeigen, es sollte Ruhe herrschen.« »Es geht um allerhand Geld.«)</p>
-				<p>Die finanziellen Auswirkungen dieses Gesetzentwurfes auf den Bund belaufen sich auf 1,1Mrd.DM. Bei einer Anhebung der Grund- und Ausgleichsrenten um 20% wäre 1Mrd.DM erforderlich. Diesen Betrag von einer Mrd. DM hatte ich bereits in der letzten Regierung dem Finanzminister vorgeschlagen. Die nunmehrige Erhöhung um 100 Millionen von 1Mrd. auf 1,1Mrd.DM erfordert die Gleichbehandlung der Kriegsopfer mit dem vorgesehenen Wegfall des Krankenversicherungsbeitrages der Sozialversicherungsrentner und, meine Damen und Herren, jedenfalls geht es in meinen Veranstaltungen so nicht und ich nehme an, bei Ihnen [ist es] ähnlich. Niemand hat Verständnis, daß z.B. bei den Kriegsopfern wir eine solche Erhöhung nicht vorsehen, wo wir bei Soldaten und Wehrdienstverweigerern ein Weihnachtsgeld von 70 DM [planen]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN005" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »geplant ist«.</p></note></seg>. Ich glaube, es steht in einem inneren sachlichen Zusammenhang. Das Finanzvolumen überschreitet also um 100Millionen das Volumen, womit die Regierung – die alte – schon gerechnet hat und die neue Regierung rechnen mußte. Ich darf die Fraktion bitten, diesem Vorschlag zuzustimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Meine sehr verehrten Damen und Herren, vielen Dank Herr Kollege <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> für diese rasche, gute, zuverlässige Arbeit. Wer wünscht das Wort?</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>: Meine sehr verehrten Damen und Herren!</p>
-				<p>Ich hatte keine Gelegenheit, mich mit dem Herrn Kollegen <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> abzustimmen, weil nun ich praktisch unauffindbar war. Ich war in meinem Zimmer in meinem Büro, aber das ist ja unauffindbar. Ich möchte einige weitere Vorschläge hier machen, die mir dringend notwendig erscheinen, die auch in der Formulierung vorbereitet sind. Es handelt sich hier ausschließlich um den Personenkreis der Schwerstbeschädigten. Also Leute ab total erblindet. Das ist also der leichteste Fall, bei denen, die ich hier vorschlage.</p>
-				<p>Es geht doch zunächst einmal darum, daß den Witwen vonSchwerbeschädigten, die für die Pflege ihres Mannes eine Pflegegeldzulage bekommen haben, daß diesen Witwen diese Pflegegeldzulage beim Tode des Mannes zu 60% erhalten bleibt. Begründung: Die Frau dieser Schwerstkriegsversehrten waren nicht in der Lage, irgendwie eine andere zusätzliche Erwerbsquelle zu finden, sie wurden praktisch, wenn sie so wollen, bezahlt dafür, daß sie ihren Mann gepflegt haben, die billigste Arbeitskraft übrigens, meine Damen und Herren, die Sie sich hier vorstellen können. Daß wir hier diesen Witwen, die 60% der Pflegegeldzulage erhalten. Der zweite Kostenpunkt für diese Maßnahme sind 7,2Mio.DM jährlich. Der zweite Fall ist der, daß wir eine Stufe 6 bei den Schwerstbeschädigten einführen, bei den Schwerstbeschädigten die beginnt, meine sehr verehrten Damen und Herren, bei einem Blind-Tauben, bei einem Ohnhänder und Ohnbeiner, also diese Kategorie, es handelt sich hier um rd. 500 Personen nur. Kostenpunkt für eine Erhöhung, für eine Erhöhung dieser Schwerstbeschädigtenzulage von 250 auf 300 Deutsche Mark betragen 1,4Mio. Und einen letzten Vorschlag, den ich hier zu machen habe, daß auch für diese Schwerstbeschädigten, also ab Ohnhänder und Ohnbeiner, Blind-Taube usw., die Pflegezulage erhöht wird entsprechend dieser höheren Art der Schwerbeschädigung. Ich hab[e] mich aber eben geirrt, letzte Vorlage macht 1,4Mio. DM aus und die Versorgung der Witwen macht aus 7,2Mio. und die Einführung einer weiteren Stufe 16Mio., sind also insgesamt rd. 25Millionen für den Personenkreis, es handelt sich um 12000 Menschen, die wirklich die Opfer des Krieges sind.</p>
-				<p>[<name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]: Dankeschön, Kollege <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Maucher</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Herr Vorsitzender, meine sehr verehrten Damen und Herren!</p>
-				<p>Im Grundsatz zu den Einzelfragen möchte ich durchaus dem Kollegen <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> zwar zustimmen, aber wir müssen einesbedenken, die Situation ist folgende, daß wir jetzt diesen Entwurf einbringen und damit, daß ich die Begründung [gebe, die] Voraussetzung schaffen, daß es noch in diesem Jahr verabschiedet wird. Das heißt, das Gesetz soll am 1. Januar1970 in Kraft treten und wenn wir jetzt mit einer ganzen Reihe, zu diesen Anträgen hätte ich eine ganze Reihe Anträge, und es ist im Hintergrund die Diskussion, daß diese Fragen nur in einer eingehenden Beratung mit viel [Zeitbeanspruchung]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN006" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Zeit in Anspruch«.</p></note></seg> erledigt werden könne[n], d.h., was jetzt geschieht, ist a) die Anpassung oder, <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> hat es klar gesagt, zur Anpassung gehört auch die Anpassung der Leistungen der Kriegerwitwen wie bei den übrigen Leistungen der Sozialversicherungsempfänger und des Beamtenrechts. Das ist die Grundsatzfrage, und wenn wir hier weiter eine ganze Reihe Anträge stellen, dann ist es willkommen für die andern, dann sagen sie, jawohl, wir müssen beraten, aber daß es so lang dauert, ist dann die CDU schuld, daß es dann nicht mehr verabschiedet werden konnte vor Weihnachten. Und dieser Sache können wir uns nicht begeben, das heißt, jetzt den ersten Schritt zu tun und den zweiten anzukündigen, daß wir ohne weiteres zu einer Bereinigung tun müssen.</p>
-				<p>Es kommen eine ganze Reihe Anträge dazu, nicht nur diese, die unbedingt geklärt werden müssen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Herr Kollege [Maucher]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN007" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Maurer«. Der Name ergibt sich aus dem Verlauf des Protokolls.</p></note></seg>, ich glaub, daß diese Anträge vomKollegen <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> in der Zahl so gering und im Tatbestand so übersichtig und überzeugend sind, daß wir das auf jeden Fall aufnehmen sollten und die anderen Fragen, Kollege [Maucher]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN008" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Maurer«. Der Name ergibt sich aus dem Verlauf des Protokolls.</p></note></seg>, die sich noch ergeben, eine ganze Reihe von Detailfragen und Ergänzungsfragen und die dann im Ausschuß behandeln. Auch hier ist eine Ankündigung vielleicht gar nicht notwendig. Wir bringen diesen Gesetzentwurf, wenn die Fraktion dieser Meinung ist, und wieder zur Ergänzung der Vorlage von Kollege <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name>, mit der gleichzeitigen Übereinstimmung der Fraktion im Ausschuß dann die Ergänzungen zu bringen, von [Maucher]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN009" type="comment"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Maurer«. Der Name ergibt sich aus dem Verlauf des Protokolls.</p></note></seg>.</p>
-				<p><name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: {…} zu sagen, glauben Sie mir, die Anträge genau wie diese, ich kenne die Materie sehr genau. Es ist sehr schnell hier dargesagt, das und jenes. Ich hätte zu jedem Antrag sehr viel zu sagen. Wenn wir das wollen, dann können wir immer ankündigen und diese Anträge im Ausschuß nachschieben. Das ist uns jederzeit vorbehalten.</p>
-				<p>Aber ich möchte nicht, daß wir jetzt die Sache verkomplizieren und damit nachher die Schwierigkeit schaffen, die sind schuld, daß vor Weihnachten nicht mehr verabschiedet wird, glauben Sie es mir.</p>
-				<p><name type="Person" role="Sprecher" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name>: (Die Schrittfrage kann ich also nicht einsehen, wenn man […]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN010" type="comment"><p>Vermutlich Auslassung in der Vorlage.</p></note></seg>, dann tagt man 2 Stunden und 3 Stunden mehr, dann kommen wir zum Ergebnis.)</p>
-				<p>[<name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]: Kollege <name type="Person" role="Erwaehnung" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name>!</p>
-				<p><name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Meine Damen, meine Herren, ich möchte nur die Frage stellen, ob wir nicht bei der Einbringung dieses Gesetzes das Thema der Dynamisierung der Rente mindestens anschneiden, da ich annehme, daß die Konkurrenz mit ähnlichen Vorschlägen kommt.</p>
-				<p>[<name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]: Nun darf ich Kollegen <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> das Wort geben und dann <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name>: Darf ich zuerst zu Ihrer Frage sagen:</p>
-				<p>Im Blick darauf, daß die Regierung wahrscheinlich eine solche Klausel bringen wird, hatte ich vorgeschlagen, das haben Sie offenbar überhört, daß wir den §56 ändern wollen, vom zweijährigen Anpassungsprozeß auf 1 Jahr, dann stellt sich die Frage nur noch, wird es automatisch oder wird es jedes Jahr einen Anpassungsprozeß, aber im Anliegen, glaube ich, erfüllt.</p>
-				<p>Wir sind uns einig, daß dynamisch sein soll. Jawohl. Gut.</p>
-				<p>Und nun, meine Damen und Herren, was Herr Kollege <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> gesagt hat… Darf ich eine Sekunde mal um Aufmerksamkeit bitten, denn es ist wirklich wichtig für uns, für den Start dieser Sache. Ich sage noch einmal, entscheidend ist, daß wir in der Opposition glaubwürdig bleiben, daß man uns nicht nachsagt, jetzt geht ihr in die Vollen! Die Differenz ist von 1Milliarde auf 1,1Milliarde und die haben sie selbst verschuldet, weil sie andere Sozialleistungsempfänger vorgezogen haben. Wir ziehen gleich. Das ist also nicht unsere Verantwortung, sondern die Verantwortung dieser Regierung, kann man, glaube ich, jedem klar machen.</p>
-				<p>2. In der Sache bin ich mit dem Kollegen <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> absolut einer Meinung. Das war immer mein Anliegen und ich werde das vertreten noch und noch. Nur, dies haben wir in 3 Stunden jetzt zusammenbasteln müssen, nachdem wir gehört haben, daß morgen wahrscheinlich eine Sache von der anderen Seite kommt. Deshalb, es geht einfach technisch nicht, jetzt um halb Vier – fünf Uhr läuft die Frist ab – ich bitte um Entschuldigung, wir haben also gearbeitet, […]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN011" type="comment"><p>Vom Bearbeiter gestrichen: »daß«.</p></note></seg> das zustande zu bringen in dieser kurzen Zeit. Deshalb eine herzliche Bitte an den Freund <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name>, daß wir in unserer Erklärung, die im wesentlichen den Inhalt hat, den ich hier vorgetragen habe, weil er genau abgestimmt ist, einen Passus aufzunehmen, daß wir diese 3 Punkte bei dem weiteren Verlauf der Beratungen von uns aus als strukturelle Verbesserung des Gesetzentwurfes mit zur Erörterung stellen werden. Ich glaube, damit ist dieses Anliegen als berechtigt anerkannt, und wir haben die Chance es einzubringen. Aber ich muß erklären, wenn sie von uns verlangen, das jetzt in 3 Stunden, nein in einer Stunde, jetzt praktisch reif zu machen, das wird nicht gehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>: Mein Anliegen ist gesetzesreif formuliert. Mit der Änderung der notwendigen Paragraphen, mit der notwendigen Begründung, ich hab[e] also Verständnis, daß man das nicht mehr so schnell umbasteln kann, dann lassen wir das doch gesondert einreichen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: (Das ist natürlich schlecht. Wir können schlecht einen Gesetzentwurf einbringen zur Verbesserung der Kriegsopferversorgung und dann unmittelbar danach eine Novellierung zu unserem Gesetzentwurf. Wenn wir das dann umfassend darstellen in einer Presseerklärung, wenn es also aus zeitlichen Gründen nicht mehr geht, was ich bedauere, aber ich sehe ein, daß es hier um Stunden geht. Es hat keinen Sinn, wenn wir morgen früh einreichen und morgen eine Stunde später die andere Seite da ist, dann läuft das parallel. Heute läuft das als[o] in der Priorität für die CDU/CSU, und das hat ohne Zweifel den Vorteil und das Übergewicht in der Frage Ergänzung oder nicht.)</p>
-				<p>Machen wir es doch somit, eine umfassende Presseerklärung mit konkreten Angaben, daß die und die Punkte in dem Sinne von uns im Ausschuß ergänzend dargelegt werden. Ja, ich bedauere es auch, aber ich sehe keinen anderen Weg. Meine sehr verehrten Damen und Herren, das gleiche gilt auch für <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Mauchers</name> Anliegen. Wünscht dazu noch jemand das Wort?</p>
-				<p>Das ist nicht der Fall. Ich möchte über diese Frage, weil sie von großer Bedeutung ist, abstimmen lassen. Wer dafür ist, bitte ich um ein Handzeichen.</p>
-				<p>Dankeschön. – Wer ist dagegen? – Wer enthält sich?</p>
-				<p>Einstimmige Annahme. Herzlichen Dank.</p>
-				<p>Meine Damen und Herren, wir haben noch einen Dringlichkeitsantrag. Städtebauförderungsgesetz.</p>
-				<p><name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>: Meine Damen und Herren!Es ist denkbar, daß die Koalition über ihre Fraktion auch einen Gesetzentwurf einbringen wird, morgen oder in den nächsten Tagen, Städtebauförderungsgesetz. Ich bitte darum, daß die Fraktion mich autorisiert zu erklären, daß wir einen eigenen Gesetzentwurf einbringen werden, uns aber für die Vorbereitung dieses Gesetzentwurfes auch eine angemessene Zeit belassen. Ich glaube nicht, daß wir damit profitieren, daß wir nun immer die Regierung im Tempo einzuholen bemüht sind. Noch wichtiger ist, daß eine solide Gesetzesinitiative erarbeitet wird, was ungefähr 4 Wochen Zeit kosten wird.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Die Schnelligkeit braucht nicht auf Kosten der Qualität gehen. Wenn es aber in dem Fall nicht anders ist, müssen wir das zur Kenntnis nehmen. Wir können es aus dem Handgelenk ja nicht schütteln.</p>
-				<p><name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name>zu der Frage: Solche Argumente vermögen durchaus zu bestechen und [ich] würde nur zu überlegen geben, daß man in der Begründung klar hinzufügt, daß wir kein besonderes Städtebauförderungsgesetzes einbringenwollen, sondern ein die Gesamtfragen klärendes. Aus den Erklärungen des Bundeswohnungsbauministers geht hervor, daß er den ganzen Finanzierungsteil jetzt nicht einbringen will und daß er ebenso die Formen der Rechtsinstitutionen, insbesondere des Ausbaus der geschlossenen Kapitalanlagegesellschaft, in einem weiteren Entwurf erst später nachschieben will. Das ist ein guter Ansatzpunktfür uns, zu erklären, wir wolleneinumfassendesGesamtgesetz und nicht einen Torso einbringen.</p>
-				<p>Dankeschön.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das ist eine Erklärung, aber glauben Sie mir, wichtiger wäre es, wir würden ein von uns gut durchgearbeitetes Gesetz mindestens 24 StundenvorderanderenSeite auf den Tisch legen können. Wenn das nicht geht, wir können das für die Zukunft als einen Auftrag an uns selber geben, aber wir können es in dem Fall nicht ändern. Dankeschön.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-3">
-				<head>[C.]</head>
-				<p>Nun kommen wir, meine sehr verehrten Damen und Herren, zur Wahl des Vorstandes. Gewählt sind bisher Vorsitzender, Stellvertreter, Arbeitskreisvorsitzender, Geschäftsführer.</p>
-				<p>Ich möchte Sie einmal informieren über die Größe des Vorstandes der V. Legislaturperiode. In der V. Legislaturperiode waren es 40 Mitglieder des Vorstandes gewesen, dazu hatten 11 Bundesminister Zutrittsrecht, weitere 11 Mitglieder hatten kraft Amtes bzw. besondere Aufträge und Bundespartei noch 3, das waren der Ehrenvorsitzende, Generalsekretär und Bundesgeschäftsführer. Das waren insgesamt 65 Mitglieder des Vorstandes. Sie wissen, meine Damen und Herren, darf ich bitten, Sie wissen, daß wir in diesem Raum nebenan tagen und ich sage es hier, wie es häufig auch an anderer Stelle gesagt worden ist, wenn alle reingehen, gehen sie nicht alle rein. Aber da nicht alle reingehen, gehen sie alle rein. Sind 65 Mitglieder der vorigen Legislaturperiode. Nun hat der Elferrat den Kollegen <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> und mich beauftragt, nun die Vorschläge entgegenzunehmen und einen entsprechenden Gesamtvorschlag hier in der Fraktion zu machen. Wir sind zu dem Ergebnis gekommen und würden ihnen das vorschlagen, daß wir zu den zu wählenden Mitgliedern des Vorstandes als Zutrittsrecht gewähren, den Vorsitzenden allerBundestagsausschüsse, die wir besetzt haben, natürlich, das wären 8, Entschuldigung 9, mit dem Vermittlungsausschuß 9. Dazu kämen nun die Vorschläge aus der Fraktion, die zu wählenden Mitglieder. Es sind vorgeschlagen worden 16. Das bedeutet, daß alle landsmannschaftlichen Vorschläge damit Ihnen auf den Tisch gelegt worden sind. Es sind alle Vorschläge berücksichtigt worden. Zu diesen 16 Mitgliedern aus der Fraktion kommen noch die 3 Vorschläge der Landesgruppe der <name type="Organisation" ref="#CSU">CSU</name> aufgrund unserer seit nun mehr als 16 Jahren bestehenden Vereinbarung, die Mitglieder dem Alphabet nach <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und <name type="Person" role="Erwaehnung" ref="#EhnesGeorg_1961-10-17">Ehnes</name>. Über die {…} müssen wir dann noch reden. Das würde also bedeuten, daß sie 19 Namen vermerkt haben auf dem Stimmzettel der Ihnen vorliegt. Nach unserem Wahlverfahren, das bei der letzten Wahl angewandt worden ist, und das auch bei dieser Wahl angewandt werden soll, müßten mindestens 12 Stimmen abgegeben werden, wenn der Stimmzettel gültig ist. Aber nicht mehr als 19, Entschuldigung, um Gottes willen, ich sage es ganz laut jetzt: höchstens 16, mindestens 12. Da 16 ja zu wählen sind. Es ist vorgesehen, daß berücksichtigt werden sollen, die sogenannten soziologischen Gruppen. Die soziologischen Gruppen sind einmal die Arbeitnehmer, dann die Landwirtschaft und der Mittelstand. Nein, die <name type="Organisation" ref="#CSU">CSU</name> ist doch keine soziologische Gruppe. Es ist eine hochpolitische Gruppe, Herr <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name>, wir sind doch keine eigene Rasse hier.</p>
-				<p>Meine sehr verehrten Damen und Herren, der Vorstand, der neu gewählte Vorstand wird sich dann anschließend konstituieren und wird die Frage der Kooptierung der weiteren Mitglieder, also weitere 8 Mitglieder, in den Vorstand sich heute noch unterhalten, aber erst entscheiden, bei der nächsten Fraktionssitzung. Anders geht es ja auch gar nicht. Meine Damen und Herren, ich frage Sie jetzt, ob Sie mit dem Verfahren, das vorgeschlagen worden ist, einverstanden sind? Neu ist, daß statt der zutrittsberechtigten Bundesminister, die wir ja leider nicht mehr haben, nun die Ausschußvorsitzenden Zutrittsrecht bekommen sollen. Und neu ist, daß von vornherein feststeht, daß die soziologischen Gruppen kooptiert werden. Die Namen: <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name>, <name type="Person" role="Erwaehnung" ref="#BewerungeKarl_1961-10-17">Bewerunge</name>.</p>
-				<p>Die Frauen werden gewählt. Stellen Sie sich vor, wir {…}So viel Männermut haben wir, daß wir die Frauen hier reinwählen, in unseren Vorstand.</p>
-				<p>Das wären die Veränderungen gegenüber der vorangegangenen Vorstandswahl. Wer wünscht nun dazu das Wort? Soll ich noch mal die Namen vorlesen, Sie haben sie auf dem Tisch liegen, bitte.</p>
-				<p><name type="Person" role="Sprecher" ref="#BoehmeGuenter_1969-10-20">Böhme</name>: Herr Vorsitzender, ich habe nur eine Frage, sie sagten, es würden die Ausschußvorsitzenden, soweit sie von unserer Fraktion gestellt würden, …</p>
-				<p>(Nein, Zutrittsrecht.)</p>
-				<p>gehören zusätzliche dazu. Wie ist es nun mit den Ausschüssen, in denen wir nur den stellvertretenden Vorsitzenden stellen, das können ja genauso interessante, gesellschaftspolitisch interessante Dinge sein, wie die, in denen wir per Zufall den Vorsitz haben. Soweit das nicht durch die Besetzung des Vorschlages garantiert ist, sollte man überlegen, im Vorstand hier die Stellvertreter zu kooptieren.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das würde natürlich, wenn wir das generell machen würden, würde das eine Zahl geben von zusätzlich 19. Und da wäre der Vorstand auch so stark besetzt, daß vermutlich die Abwicklung der Geschäfte sehr schwer wäre, und im übrigen in dem Raum noch zu tagen wär[e] gar nicht möglich.</p>
-				<p><name type="Person" role="Sprecher" ref="#VeharMax_1957-10-15">Vehar</name>: Ich wollte im Prinzip dasselbe sagen. Ich meine die Arbeit derer, die nun in einem Ausschuß sind, wo wir nicht den Vorsitzenden stellen, wird gegenüber denen, die in einem Ausschuß sind, wo der Vorsitzende auch in unserem Vorstand ist, etwas benachteiligt. Denn der ständige Kontakt zwischen Vorstand und Ausschuß trägt ja auch dazu bei, daß die Arbeit unserer Mitglieder in diesem Ausschuß gefördert werden kann. Ich würde deshalb auch darum bitten, daß bei der Kooptierung auch die berücksichtigt werden, die nur den stellvertretenden Vorsitz haben.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Man kann sich bei der Kooptierung der zusätzlichen Mitglieder überlegen, ob man die von den wichtigen Ausschüssen […]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN012" type="comment"><p>Vermutlich Auslassung in der Vorlage.</p></note></seg>ich glaube nicht, daß man der Meinung ist, daß Wahlprüfung und Petition unter allen Umständen drin sein müssenals Stellvertreter. Entschuldige mal, als Petition nehme ich mit großem Bedauern zurück.</p>
-				<p><name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>: Können ergänzende Personalvorschläge gemacht werden?</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Ja sicher, ergänzende Personalvorschläge können selbstverständlich gemacht werden. Bitte ohne Begründung.</p>
-				<p><name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>: Ja dann möchte ich doch als Begründung voranschicken, warum ich überhaupt einen mache. Die Landesgruppe Rheinland-Pfalz hat als ihren Vorschlag Herrn <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> schriftlich benannt. Er ist trotzdem nicht auf dieser Liste enthalten. Ich nehme an</p>
-				<p>(Lieber <name type="Person" role="Erwaehnung" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>, ist doch Vorsitzender vom Haushaltsausschuß.)</p>
-				<p>Liebe Kollegen, erlauben Sie mir auszusprechen, dann werden Sie gleich verstehen worum es mir dabei geht.</p>
-				<p>(Ah, jetzt kommt noch was nach.)</p>
-				<p>Selbstverständlich haben wir eben gehört, daß alle Ausschußvorsitzenden Zutrittsrecht erhalten sollen. Das kann ja doch aber nicht ausschließen, daß wir solche Kollegen auch mit Stimmrecht in den Fraktionsvorstand wählen</p>
-				<p>(Die haben auch Stimmrecht.)</p>
-				<p>Es wurde hier eben von Zutrittsrecht gesprochen.</p>
-				<p>(Und damit Stimmrecht, was glauben Sie, wie oft da abgestimmt wird, da drin?)</p>
-				<p>Das muß ja mal geklärt werden. Ich bitte um mehr Verständnis</p>
-				<p>(Kollege <name type="Person" role="Erwaehnung" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>, ins Mikrofon bitte.)</p>
-				<p>Ich bitte um Ihr Verständnis, verehrte Kollegen, das sind doch Fragen, die geklärt sein müssen, bevor wir abstimmen. Ich möchte jetzt unter der Maßgabe, daß diese Kollegen auch Stimmrecht haben sollen, daß das hier also die Gesamtmeinung der Fraktion ist, dann natürlich nicht darauf beharren, das ist klar.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das ist wie die Bundesminister, die werden genauso behandelt wie die Bundesminister. Meine sehr verehrten Damen und Herren, dazu weitere Wortmeldungen? Ja, Kollege <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>: Herr Vorsitzender, ich möchte zur Ergänzung der Liste noch den Kollegen <name type="Person" role="Erwaehnung" ref="#LampersbachEgon_1965-10-19">Lampersbach</name> vorschlagen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Ergänzender Vorschlag, Kollege <name type="Person" role="Erwaehnung" ref="#LampersbachEgon_1965-10-19">Lampersbach</name>. Ich bitte Herrn <name type="Person" role="Erwaehnung" ref="#LampersbachEgon_1965-10-19">Lampersbach</name> unter Nr. 19 als Ziffer 20 aufzuführen. Weitere Wortmeldungen sehe ich nicht. Ich darf damit die Aussprache schließen. Der Wahlvorgang ist bekannt. Mindestens 12 Stimmen abzugeben, höchstens 16 Stimmen. Mindestens 12, höchstens 16. Die Abstimmung ist eröffnet. Oh, Entschuldigung nochmals, ich brauch’ noch die Mitarbeiter zum Auszählen Herr <name type="Person" role="Erwaehnung" ref="#BreidbachFerdinand_1969-10-20">Breidbach</name>, <name type="Person" role="Erwaehnung" ref="#VogtWolfgang_1976-12-14">Vogt</name>, <name type="Person" role="Erwaehnung" ref="#ThaddenFranz-Lorenz_1969-10-20">von Thadden</name>, <name type="Person" role="Erwaehnung" ref="#HussingDieter_1969-10-20">Hussing</name>, Dr. <name type="Person" role="Erwaehnung" ref="#FrerichsGoekeD_1965-10-19">Frerichs</name>, Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>, <name type="Person" role="Erwaehnung" ref="#GierensteinKarlHeinz_1965-10-19">Gierenstein</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HammansHugo_1965-10-19">Hammans</name>, <name type="Person" role="Erwaehnung" ref="#SchulteDieter_1969-10-20">Schulte</name>, <name type="Person" role="Erwaehnung" ref="#FrankeHeinrich_1965-10-19">Franke</name>, <name type="Person" role="Erwaehnung" ref="#JostenJohannPeter_1953-10-06">Josten</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SeitersRudolf_1969-10-20">Seiters</name>. Darf ich bitten ins Vorstandszimmer zur Auszählung der Stimmen.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-4">
-				<head>[D.]</head>
-				<p>Der Bundesschatzmeister, Kollege <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, möchte gerne der Fraktion eine Information zukommen lassen über den Stand des Baues eines Parteihauses für die CDU/(CSU).</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>: Herr Vorsitzender, meine lieben Kolleginnen und Kollegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Weil wir in Bayern residieren.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>: Herr Vorsitzender, meine lieben Kolleginnen und Kollegen! Lieber Richard <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, so harmlos ist das nicht, daß es sich nur um eine Information handelt. Ich gehe schon etwas weiter. Am vergangenen Montag hätte im Fraktionsvorstand eine Vorberatung dieses Punktes stattfinden sollen. Das hat sich im Brand der Geschäfte leider nicht machen lassen und so scheint es notwendig zu sein, daß wir mit diesem Punkt unmittelbar in die Fraktion hineingehen.</p>
-				<p>Meine Damen und Herren, die vielen Reformvorschläge und die guten Vorschläge zur Verbesserung der Kooperation sind nur dann durchzuführen, wenn wir die Mitarbeiter der CDU und der Vereinigungen auch räumlich näher aneinanderbringen. Zur Zeit ist die CDU und sind die Vereinigungen an 17 verschiedenen Stellen untergebracht, und der dafür erforderliche Mietaufwand geht jährlich auf eine Viertel Million. Wenn Sie bedenken, daß durch diese räumliche Trennung nicht nur ein Nebeneinander, sondern sehr häufig auch ein Gegeneinander der Arbeit erfolgt, so glaube ich, sind Sie von dorther schon sehr rasch der Meinung, daß hier etwas geändert werden muß. Aber dieser Vorschlag, mehr noch als alle anderen Vorschläge, kostet natürlich erhebliches Geld. Und zu diesem Punkte möchte ich ganz besonders mit Ihnen heute diskutieren.</p>
-				<p>Wir können sehr froh darüber sein, daß unser Kollege Prof. <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name> und Herr <name type="Person" role="Erwaehnung" ref="#KraskeKonrad_1965-10-19">Kraske</name> vor einigen Jahren, es sind schon deren viere her, ein günstig gelegenes Grundstück für uns erworben haben, und zwar zu einem sehr günstigen Preis. An den Erwerb dieses Grundstückes war die Bedingung geknüpft, daß innerhalb eines Jahres mit dem Bau begonnen werden mußte. Wir können sagen, Gott sei Dank gab es jemanden, der Einspruch erhob, so daß diese Frist von dort her verlängert wurde. Aber wir müssen jetzt bis zum Dezember gehandelt haben, sonst fällt das Grundstück zurück an die Stadt Bonn. Das wäre, wenn ich die Schätzung einmal nennen darf, 4 bis 5 Millionen Grundstückswert, wäre das kaufmännisch gesehen geradezu eine Torheit. Wir müßten dort bauen, selbst wenn wir für die CDU kein Verwaltungsgebäude notwendig hätten, weil wir sonst einen Vermögensverlust [haben], und bei uns zählen Vermögensverluste ja und sind nicht lediglich Abbuchungen, wie wir an anderer Stelle heute morgen gehört haben. Wir müssen auf jeden Fall diesen Wert nutzen und bei dem hohen Grundstückwert natürlich auch ein entsprechendes Verwaltungsgebäude dort errichten. Es hat keinen Sinn auf einem Grundstück, das 4 oder 5 Millionen Mark kostet, ein Gebäude in gleicher Größenordnung zu errichten. Das ist keine Ausnutzung der vorhandenen Möglichkeiten und der vorhandenen Kapazität. Mein Vorschlag ist also der, daß wir in kaufmännisch vernünftiger Relation hier ein Gebäude errichten und dann in dem Ausmaß als CDU – und ich hoffe auch, daß die <name type="Organisation" ref="#CSU">CSU</name> sich beteiligt, eine Anforderung ist an sie ergangen, sie wird wahrscheinlich sich für 1 Etage interessieren –, daß wir in dem Ausmaße, wie wir es finanziell tragen können, dann in diesem Gebäude die CDU-Zentrale unterbringen.</p>
-				<p>Nun zur Finanzierung. Natürlich wird es in erster Linie notwendig sein, über Hypotheken sich die Mittel zu beschaffen. Ganz davon abgesehen, daß wir wegen der Dringlichkeit der Sache sehr schnell anfangen müssen. Ich darf Ihnen mitteilen, daß das technisch, rechtlich noch nicht ganz, aber technisch geklärt ist. Es ist vorgeschlagen worden, und zwar gleichzeitig von verschiedenen Orten, daß wir auf dem Parteitag eine Bausteine-Aktion starten, und daß wir alle, vom Vorsitzenden der Partei angefangen bis zu wem, na ich will keine untere Grenze sagen, uns an diesem Verkauf beteiligen. Natürlich ist auch der Vorschlag gemacht worden, daß die Mandatsträger auf allen Ebenen sich bereiterklären, hier vorneweg sich zu engagieren. Und nun kommt der Vorschlag, den ich hier unterbreiten möchte, daß entweder wir uns heute schlüssig werden, in welchem Ausmaß wir das tun, von mir aus auch eine Kommission einsetzen, ich würde aber bitte[n], daß das möglich rasch erledigt wird. Denn wenn wir zum Auftakt des Parteitages unserem Parteivorsitzenden imstande sind zu berichten, daß diese Fraktion und schon andere Landtagsfraktionen mit gutem Beispiel vorangehen, dann glaube ich, werden wir im ersten Aufgalopp den Erfolg erringen, den wir notwendig haben. Und nun habe ich mir überlegt, das mit einigen wenigen, leider nicht im Vorstand, es durchsprechen können.</p>
-				<p>Ich möchte anregen, daß diese Mitglieder dieser Fraktion sich für die Dauer der Legislaturperiode verpflichten, jeden Monat 10 Mark zu bezahlen und daß dieses Geld von der Fraktion eingezogen wird mit den 30 Mark. Das ist auf den Monat gerechnet nicht sehr viel, aber in der Gesamtsumme doch eine recht beträchtliche Leistung. Und wenn der Beschluß erst feststeht, dann würde ich mehr mit der Gesamtsumme als mit der Monatssumme operieren, das ist ganz selbstverständlich. Ich möchte die Anregung geben, daß die Fraktion in dieser Weise verfährt. Ich sage noch einmal, ich weiß, daß es in etwa eine Überrumpelung ist, aber wir brauchen bis zum Parteitag ein sichtbares Zeichen und ich wäre Ihnen sehr dankbar, wenn Sie dem Parteivorsitzenden die Möglichkeit geben, auf die Fraktion hinzuweisen, damit er seinerseits einen Appell [an] alle Parteifreunde richten kann. Dankeschön.</p>
-				<p><name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Meine Damen und Herren!Sie haben den Appell von Kurt <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> gehört. Wird dazu das Wort gewünscht? Der Herr Bundeskanzler.</p>
-				<p><name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>: Ich kann eigentlich jetzt nur noch sagen, ich unterstütze das, was der Bundesschatzmeister gesagt hat, nachdrücklich und ich danke Ihnen, daß ich schon aus Ihrem Beifall ersehen habe, daß Sie offenbar bereit sind, seinen Vorschlag anzunehmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Wird das Wort dazu gewünscht? Darf ich dann feststellen, daß die Fraktion bereit ist, diesem Vorschlag zu folgen. Danke herzlichst.</p>
-				<p>Meine Damen und Herren, ich bitte um Entschuldigung, daß ich jetzt komme, ich hatte einen langfristig angesagten Besuch des amerikanischen Botschafters. Inzwischen hatte ich das Vergnügen, unseren Freund Paul <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> zu seinem Geburtstag im Krankenhaus zu besuchen. Ich habe ihm die Glückwünsche der Fraktion ausgesprochen. Er läßt herzlich wiedergrüßen. Paul <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> ist auf dem Weg der Besserung, er wird morgen aus dem Krankenhaus nach Hause entlassen und ich hoffe, daß wir ihn dann nach einem Genesungsurlaub in geziemendem Abstand vor dem Weihnachtsfest wieder hier in bekannter Weise unter uns sehen werden und habe ihm gesagt – und er hat sich sehr darüber gefreut –, daß wir natürlich daran denken werden, ihn zum Vorstand zu kooptieren. Ich weiß nicht, wie die Geschäftslage jetzt hier ist. Ich glaube, Frau <name type="Person" role="Erwaehnung" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name> wollte noch etwas, bitteschön.</p>
-				<p><name type="Person" role="Sprecher" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name>: Meine Herren und Damen!Ich stehe den neuen Kollegen gegenüber noch im Wort im Blick auf die Orientierung hier im Hause. Wahrscheinlich haben Sie zum Teil aufgrund des schriftlichen Wegweisers, der zum Glück ja nun doch rechtzeitig fertig geworden ist, sich bereits schon privat in vielen Räumen orientieren können. Wir möchten aber trotzdem Ihnen gern die Möglichkeit geben, eine gute Information zumindest in der Bibliothek zu bekommen und an einigen anderen wichtigen Stellen noch, wo Sie die Information sicher gut gebrauchen können. Es ist jetzt die Frage, nachdem heut nachher keine Plenarsitzung ist, es im Anschluß an diese Fraktionssitzung sein sollte, weil wir ja morgen noch Fragestunde haben und Sie verurteilt sind, heute noch hier in Bonn zu sein, oder aber wir es dann in der nächsten Sitzungswoche machen, wo es dann vielleicht nicht mehr so gehetzt zugeht, weil nicht so viel Plenarsitzungen dann sein werden. Ich möchte Sie bitten, mit zu entscheiden, die neuen Kollegen, ob Sie interessiert sind, im Anschluß an die jetzige Fraktionssitzung zumindest eine Orientierung in der Bibliothek, die ja gleich nebenan ist, zu bekommen, oder ob wir es in der nächsten Sitzungswoche gemeinsam vorbereitend Ihnen dann noch einmal anbieten sollen. Machen wir es so, wer ist für den zweiten Vorschlag? Und wer ist für den ersten Vorschlag? Herzlichen Dank. Es wird dann dazuhin Ihnen noch eine Information angeboten werden vom Wissenschaftlichen Hilfsdienst hier in der Fraktion.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-5">
-				<head>[E.]</head>
-				<p><name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Dankeschön, gnädige Frau.</p>
-				<p>Meine Damen und Herren, dann machen wir eine kleine Pause.</p>
-				<p>Ich bitte Platz zu nehmen. Das Ergebnis des ersten Wahlgangs – ein weiterer wird nötig sein – ist wie folgt: Abgegebene Stimmen 218 (hätten wir die doch heute mittagunten im Saal anwesend gehabt), Ungültig 9, Gültig 209, {…} 110</p>
-				<p>Meine Damen und Herren, ich lese vor in der Reihenfolge der Gewählten und nenne hier auch die Stimmzahl:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>1. Herr<name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name> (ich lass’ die Titel bitte wieder weg)</cell>
-						<cell>191</cell>
-					</row>
-					<row>
-						<cell>2. Herr <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name></cell>
-						<cell>186</cell>
-					</row>
-					<row>
-						<cell>3. Herr <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name></cell>
-						<cell>172</cell>
-					</row>
-					<row>
-						<cell>4. Herr <name type="Person" role="Erwaehnung" ref="#WeizsaeckerRichard_1969-10-20">von Weizsäcker</name></cell>
-						<cell>168</cell>
-					</row>
-					<row>
-						<cell>5. Herr <name type="Person" role="Erwaehnung" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name></cell>
-						<cell>167</cell>
-					</row>
-					<row>
-						<cell>6. Herr <name type="Person" role="Erwaehnung" ref="#EhnesGeorg_1961-10-17">Ehnes</name></cell>
-						<cell>163</cell>
-					</row>
-					<row>
-						<cell>7. Herr <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name></cell>
-						<cell>157</cell>
-					</row>
-					<row>
-						<cell>8. Herr <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name></cell>
-						<cell>152</cell>
-					</row>
-					<row>
-						<cell>9. Herr <name type="Person" role="Erwaehnung" ref="#RitzBurkhard_1965-10-19">Ritz</name></cell>
-						<cell>151</cell>
-					</row>
-					<row>
-						<cell>10. Herr <name type="Person" role="Erwaehnung" ref="#StarkAnton_1965-10-19">Stark</name></cell>
-						<cell>149</cell>
-					</row>
-					<row>
-						<cell>11. Fr. <name type="Person" role="Erwaehnung" ref="#SchroederChrista_1961-10-17">Schroeder</name></cell>
-						<cell>148</cell>
-					</row>
-					<row>
-						<cell>12. Herr <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name></cell>
-						<cell>144</cell>
-					</row>
-					<row>
-						<cell>13. Herr <name type="Person" role="Erwaehnung" ref="#RaweWilhelm_1965-10-19">Rawe</name></cell>
-						<cell>137</cell>
-					</row>
-					<row>
-						<cell>14. Frau <name type="Person" role="Erwaehnung" ref="#PieserLiselotte_1968-06-26">Pieser</name></cell>
-						<cell>136</cell>
-					</row>
-					<row>
-						<cell>15. Herr <name type="Person" role="Erwaehnung" ref="#BismarckPhilipp_1969-10-20">von Bismarck</name></cell>
-						<cell>113</cell>
-					</row>
-				</table>
-				<p>15 sind jetzt im ersten Wahlgang gewählt. Auf die 16. und letzte Stelle gibt es eine Stichwahl derer, die die nächsten in der Zahl sind, das sind Herr <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name> mit 103 und Herr <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">Eckardt</name> mit 101, die anderen Kollegen sind nicht gewählt. Dann bitte ich, die Stimmzettel aufzuteilen, für den 2. Wahlgang. Das Verfahren ist wie folgt: daß man den Namen aufschreibt. Es geht nur um eine Wahl zwischen <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name> und <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">Eckardt</name>. Man muß den Namen, den man wünscht, aufschreiben. Bitte die Stimmzettel auszuteilen.</p>
-				<p>Meine Damen und Herren! Wir stehen erstens vor der Frage, ob wir warten wollen bis ausgezählt ist. Es kann ja sein, daß das pari ausgeht. Zweitens, möchte ich gerne nachher den neugewählten Vorstand und natürlich die bisher schon gewählten sofort zu einer Sitzung bitten, der Kooptation wegen. Das war immer so. Wie ist [es] mit den Kooptationen nach der Satzung? Wer beschließt die, der Vorstand oder die Fraktion?</p>
-				<p>(Der Vorstand beschließt die Kooptation und die Fraktion muß zum Gesamtergebnis ja oder nein sagen. Sie kann das Ergebnis von sich aus nicht verändern.)</p>
-				<p>Ich glaube trotzdem, daß der Vorstand heute seinenKooptationsbeschluß aus besonderen Gründen fassen sollte.</p>
-				<p>Meine Damen und Herren! Ich habe noch einen letzten Punkt. Nach unserer Satzung gibt es einen Fraktions-Ältestenrat. Eine Institution, die sich vor allem dann bewährt, wenn es unter uns keinen Krach gibt, die aber jedermann in der in den Satzungen vorgesehenen Form anrufen kann, die kann auch der Vorstand anrufen. Ich glaube in der letzten Zeit hat er einmal getagt, der Fraktions-Ältestenrat, um eine, ich weiß nicht mehr, Schwierigkeit zu regeln. Aber er war auch sehr hilfreich, eine Ehrensache, als es darum ging, daß wir ein paar Mitarbeiter aussuchen mußten, die für Auszeichnungen in Frage kamen, das ist alles sehr {…}Wir würden Ihnen empfehlen, den Fraktionsältestenrat zu {…}, also unserer gesamten Organisation wie folgt zu wählen, und das kann am Block – wenn Sie wollen –, und durch Akklamation auch geschehen. Wir schlagen Ihnen vor, für den Fraktions- <name type="Organisation" ref="#AeRat">Ältestenrat</name>, der aus dreien besteht, das war bisher Herr <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, Frau <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> und Herr <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>. Wir empfehlen Ihnen, Herrn <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>, Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name> und Herrn <name type="Person" role="Erwaehnung" ref="#GuttenbergKarlTheodor_1957-10-15">von Guttenberg</name> als Fraktionsältestenrat zu wählen. Ich stelle klar durch Ihren Beifall fest und danke sehr herzlich, meine Damen und Herren. Das ist in diesem Falle möglich, auch nach unserer Satzung.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-6">
-				<head>[F.]</head>
-				<p><name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name>: Herr Fraktionsvorsitzender!</p>
-				<p><name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Herr <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, ich wollte Ihnen gerade das Wort geben.</p>
-				<p><name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name>: Könnte man vielleicht in der Zwischenzeit erfahren, wie die Entwicklung im Auswärtigen Ausschuß war, hinsichtlich Atom-Sperrvertrag.</p>
-				<p><name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Meine Damen und Herren, ich […]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN013" type="comment"><p>Vom Bearbeiter gestrichen: »be«.</p></note></seg>danke ausdrücklich dafür!</p>
-				<p>Sie wissen, es ist sehr gut daß Sie danach fragen. Es ist so viel, daß man das vergißt hier vorzutragen.</p>
-				<p>Sie waren so freundlich, glaube ich, uns vorgestern zu ermächtigen, eine Resolution einzubringen über den Atom-Sperrvertrag. Wir hatten auch eine fertig. Sie ist identisch mit dem, was <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> am Schluß vorlas. Daraufhin ließ uns die SPD wissen, sie würde dann auch eine einbringen und würde darauf bestehen, sofort darüber abzustimmen. Das ist der zweite Fall, wo sich die sozial-demokratische Fraktion zwar nicht gegen die Geschäftsordnung, aber gegen die guten parlamentarischen Sitten dieses Hauses verhält. Bei dem Blick auf die Präsenz, und in der Hoffnung nicht weitere technische Niederlagen erleiden zu müssen, haben wir dann schnell umgeschaltet und sind diesen Weg gegangen. Die Debatte war ungefähr [nach] 1 1/2 Stunden zu Ende, da bekam der Fraktionsvorsitzende einen Brief des Bundestagspräsidenten mit einer Anlage, ein Brief des Bundeskanzlers. Darin schlug der Bundeskanzler vor, bereits anläßlich der konstituierenden Sitzungen über heute mittag in den beiden vertraulichen Ausschüssen Auswärtiges und Verteidigung die notwendigen Informationen, die dem offenen Punkt des Sperrvertrages, entgegenzunehmen, damit das dann alles erledigt sei. Sie sehen, ich habe hier ja Dienstag vorgetragen, wie eilig die es haben. Daraufhin hörten wir zufällig, daß die Sozialdemokraten die Ausschußbesetzungen noch nicht fertig hatten, sondern erst um 10.30 Uhr die Fraktionssitzung zur Besetzung der Ausschüsse hatten. Ebensozufällig war es notwendig, diese Sitzung auf 15.30 Uhr einzuberufen, sodaß im Auswärtigen Ausschuß und im Verteidigungsausschuß heute die Versuche, das Thema heute zu erledigen, abgeschlagen worden sind. Der Auswärtige Ausschuß nahm einen ersten kurzen Bericht wohl entgegen, hat es dann aber vertagt. Im Verteidigungsausschuß bestand bedauerlicherweise überhaupt keine Möglichkeit, das Thema zu erörtern. Die <name type="Organisation" ref="#BuReg">Bundesregierung</name> hat gestern nicht widersprochen, als ich im Plenum nochmals feststellte, daß solange das hier anhängig sei, sie nicht handeln werde.</p>
-				<p>Wir dürfen uns aber keinen Illusionen hingeben, das wird nicht allzulange sein. Und ich möchte nich[t] heute, sondern erst wenn die Freunde aus den Ausschüssen uns berichten, eine Empfehlung geben zum weiteren Prozedere. Ich glaube, wir haben uns bisher in dieser Sache ziemlich gescheit verhalten, soweit uns das möglich ist, und das sollten wir auch weiter tun, glaube ich.</p>
-				<p>Es war dann notwendig, heute einen innenpolitischen Punkt mal anzusprechen und das ein bißchen deutlicher zu machen. Diesen Antrag, den Sie zu Ihrer Überraschung vorfanden, war leider nötig, gestern im Laufe des Tages zu machen.</p>
-				<p>Einmal im Blick auf die Forderung des Bauernverbandes, um den grünen Dollar abzuschaffen, was nicht unsere Politik von Anfang an sein kann, aber doch unseren bäuerlichen Freunden hilfreich zu sein [scheint]. Ich hab[e] deshalb während der Debatte und über Mittag gestern alle möglichen Konferenzen, Sitzung des Elferrates […]<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN014" type="comment"><p>Vermutlich Auslassung in der Vorlage.</p></note></seg>für eine Übereinstimmung mit Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>. Wir haben dann geglaubt handeln zu müssen, diese Vorlage einzubringen, damit wir in dieser schwierigen Frage nicht ohne eine eigene Politik dastehen. Ich glaube, daß uns das erst mal Luft gegeben hat undnatürlich nicht der Notwendigkeit enthebt, konkret nachzudenken, was ist mit der Mehrwertsteuer und was ist mit der Summe im Haushalt. Aber vielleicht haben wir dochein bißchen Luft uns geschafft und unsere Freunde im <name type="Organisation" ref="#BRat">Bundesrat</name> marschieren auf einer ähnlichen Linie. Das Ganze ist also eine ganz geglückte Operation und heute morgen eine Überraschungsdebatte zu führen, die nicht vorbereitet war, war uns auch nicht um sie aus dem Stand doch zu gewinnen, die Herren so lange zu binden, daß ihre Pläne heute nicht so ganz möglich waren, das war die Politik der letzten 48 Stunden. Es tut mir leid, ich wußte sie Dienstag nicht. Ich hätte sie sonst hier vorgetragen. Aber in der Opposition müssen wir uns umstellen und eben auch manchmal handeln. Und ich bedanke mich, daß nicht laut geschimpft worden ist über diese Politik, die außerdem, glaube ich, richtig war.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-7">
-				<head>[G.]</head>
-				<p>Meine Damen und Herren, ich kriege eben das Ergebnis der Stichwahl:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Abgegebene Stimmen</cell>
-						<cell>181</cell>
-					</row>
-					<row>
-						<cell>Ungültig</cell>
-						<cell>0</cell>
-					</row>
-					<row>
-						<cell>gültige Stimmen</cell>
-						<cell>181</cell>
-					</row>
-					<row>
-						<cell>…</cell>
-						<cell>91<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN015" type="comment"><p>Ausgewiesene Zahl der Stimmen für die absolute Mehrheit.</p></note></seg></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name></cell>
-						<cell>85</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name></cell>
-						<cell>82</cell>
-					</row>
-					<row>
-						<cell>Enthaltungen</cell>
-						<cell>14</cell>
-					</row>
-				</table>
-				<p>Was bedeutet das, Herr <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>?</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Das bedeutet, daß wir erneut wählen müssen. Es muß so lange gewählt werden, bis der, der gewählt ist, die absolute Mehrheit der abgegebenen Stimmen erreicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Meine Damen und Herren!Der Punkt ist also der, jeder in dieser Fraktion kann nur ein Mandat bekommen, der die absolute Mehrheit der abgegebenen Stimmen erhält. Ich bitte, den nächsten Stimmzettel auszuteilen. Und vielleicht darf ich dieFreunde, die sich bisher enthalten haben, aus menschlichen Gründen schon bitten, sich jetzt konkret zu entscheiden, damit wir nicht noch einmal vielleicht hier wählen.</p>
-				<p>Ich bitte die Stimmzettel auszuteilen. Es ist noch einmal der gleiche Wahlakt wie eben. <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">Eckardt</name> oder <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name>. Gewählt ist nur, wer die Majorität der abgegebenen Stimmen auf sich vereint.</p>
-				<p>Ich darf das Ergebnis der zweiten Stichwahl bekanntgeben:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Abgegebene Stimmen</cell>
-						<cell>169</cell>
-					</row>
-					<row>
-						<cell>Ungültige Stimmen</cell>
-						<cell>0</cell>
-					</row>
-					<row>
-						<cell>gültige Stimmen</cell>
-						<cell>169</cell>
-					</row>
-					<row>
-						<cell>…</cell>
-						<cell>85<seg type="note"><note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN016" type="comment"><p>Ausgewiesene Zahl der Stimmen für die absolute Mehrheit.</p></note></seg></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name></cell>
-						<cell>85</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name></cell>
-						<cell>73</cell>
-					</row>
-					<row>
-						<cell>Enthaltungen</cell>
-						<cell>11</cell>
-					</row>
-				</table>
-				<p>Damit ist also Herr <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name> auf den 16. Platz gewählt.</p>
-				<p>Meine Damen und Herren! Wenn zum Punkt Verschiedenes das Wort nicht gewünscht wird, erbitte ich sofort den soeben gewählten Vorstand zum Zwecke der Kooptationin das Vorstandszimmer.</p>
-				<p>Ich schließe die Sitzung und danke Ihnen herzlich.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-06_1969-11-13-t1530_WZ" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#ZehenderKathrin"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RochowSylvia"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1969-1972. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/VI</title>
+                  <author>Kathrin Zehender</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2016</date>
+                  <idno>https://d-nb.info/1121220037</idno>
+                  <idno>https://d-nb.info/1128841533</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>08-001-1020/2</idno>
+                     <objectName>Fraktionsprotokoll zur Fraktionssitzung vom 13. Nov.1969</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 13. November 1969 </p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>14 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1969-11-13">
+               <time type="start" when="15:30:00"/>
+               <time type="end" when="17:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#StuecklenRichard_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">06</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="#WZ" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-1" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-1">A. Hinweise des stellvertretenden Vorsitzenden <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Anpassungsgesetz zur Kriegsopferversorgung; Wahl des Fraktionsvorstands.</item>
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-2" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-2">B. Parlamentarische Initiativen: Bericht und Aussprache über den Gesetzentwurf der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> zur Kriegsopferversorgung; Einbringung eines Gesetzentwurfs zur Städtebauförderung.</item>
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-3" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-3">C. Wahl des Fraktionsvorstands: Wahlmodus; Einbringung von Personalvorschlägen; Frage der Kooptierung von Vorstandsmitgliedern; Zutrittsrechts; Stimmrecht kooptierter Mitglieder; 1. Wahlgang.</item>
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-4" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-4">D. Bericht des CDU-Bundesschatzmeisters<name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07"> Schmücker</name>: Bau und Finanzierung eines Parteihauses für die CDU; finanzielle Beteiligung der Mandatsträger. – Mitteilungen für die neugewählten Fraktionsmitglieder betr. die Orientierung im Bundestag.</item>
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-5" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-5">E. Wahl des Fraktionsvorstands: Ergebnis des 1. Wahlgangs; 2. Wahlgang. – Wahl des Fraktionsältestenrats.</item>
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-6" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-6">F. Bericht des Vorsitzenden <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>: Entschließung der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> betr. Atomwaffensperrvertrag; Antrag der Fraktion betr. europäischer Agrarmarkt.</item>
+               <item xml:id="cdu-csu-06_1969-11-13-t1530_WZ_SVP-7" corresp="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-7">G. Wahl des Fraktionsvorstands: Ergebnis des 2. Wahlgangs; 3. Wahlgang; Terminhinweis für den neugewählten Fraktionsvorstand.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-1">
+            <head>[A.]</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Meine Damen und Herrn! Ich eröffne unsere heutige Fraktionssitzung. Sie ist notwendig, denn die politische Situation zwingt uns dazu, so rasch als möglich ein Anpassungsgesetz zur Kriegsopferversorgung einzubringen.</p>
+            <p>Eine Anpassung der Renten dieses Personenkreises ist seit 1.1.67 aus Gründen, die verständlich sind, unterblieben. Von der anderen Seite wird dieser Gesetzentwurf bereits unterschriftsreif vorbereitet und wir sollten den Versuch unternehmen, eine in sich geschlossene und dann von uns zu diskutierende und zu akzeptierende Konzeption zu diesem Anliegen selbst vorzulegen. Dazu wird Herr Kollege <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> sprechen.</p>
+            <p>Und als Zweites kommen wir zur Wahl des Fraktionsvorstandes, und dazu komme ich im 2. Punkt nochmals gesondert. Es fehlt im Moment noch eine Reihe von Mitgliedern der Fraktion, die alle noch bei den konstituierenden Sitzungen ihrer Ausschüsse sind, z.B. tagt zur Stunde der Außenpolitische Ausschuß noch, ist aber in fünf bis zehn Minuten fertig. Ich darf Ihr Einverständnis voraussetzen und den Herrn Kollegen <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> bitten, mit seinem Vortrag zu beginnen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-2">
+            <head>[B.]</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name>: Meine sehr verehrten Damen und Herrn! Der Herr Fraktionsvorsitzende hat, wie Sie wissen, in der Aussprache zur Regierungserklärung angekündigt – und ich habe das in der Debatte dann noch vertieft –, eine Initiative der Fraktion zur Kriegsopferversorgung einzubringen. Sie wissen, daß die Kriegsopferrenten seit dem 1. Januar 1967 unverändert geblieben sind. Die Regierung der Großen Koalition und alle Fraktionen und die Parteivorsitzenden aller drei im Bundestag vertretenen Parteien haben eine Anpassung der Kriegsopferversorgung an die inzwischen veränderte wirtschaftliche Situation ab l. Januar 1970 fest zugesagt. Sie wissen, daß auch im Wahlkampf diese Frage eine nicht unerhebliche Rolle gespielt hat. Bedauerlicherweise war die derzeitige <name type="Organisation" ref="#BuReg">Bundesregierung</name> bisher nicht in der Lage, den Kriegsopferbericht, der beim Regierungswechsel in meinem Hause bis auf redaktionelle Änderungen fertiggestellt war, vorzulegen, noch hat die Regierung den Entwurf eines Anpassungsgesetzes dem Parlament vorgelegt.</p>
+            <p>Durch diese Verzögerung wird die rechtzeitige Anpassung der Kriegsopferrenten zum l. Januar 1970 gefährdet. Wir schlagen daher der <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> des Bundestages vor, den Initiativgesetzentwurf eines Anpassungsgesetzes hier heute einzubringen und zu beraten und zu verabschieden.<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN002" type="comment">
+                     <p>Die bisherigen Redebeiträge basieren auf einer überarbeiteten Fassung der Vorlage. Für den weiteren Text ist jedoch nur die unbearbeitete Rohfassung als Vorlage vorhanden.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Der Entwurf, meine Damen und Herren, der Ihnen gleich ausgehändigt wird, der wird zur Zeit gedruckt, sieht eine Anpassung, Anhebung der Grund- und Ausgleichsrenten, um 22% vor. Die <name type="Organisation" ref="#CDUFraktionBT">CDU/CSU-Fraktion</name> ist dabei davon ausgegangen, daß sich seit dem 1. Januar 1967 der reale Zuwachs des Bruttosozialprodukts auf rd. 16%, der Zuwachs der Bruttolohn- und -gehaltssumme auf rd. 19,5% und die Erhöhung der Renten auf 26,4% beläuft. Diese Daten rechtfertigen eine Anpassung der Kriegsopferrenten, und das habe ich bereits vor Ausscheiden aus meinem Amte auch in der Öffentlichkeit dargelegt, um 20%. Da die <name type="Organisation" ref="#BuReg">Bundesregierung</name> die Absicht hat, den Krankenversicherungsbeitrag der Rentner in Höhe von 2% ab Januar 1970 zu streichen, erscheint es schon im Interesse der Gleichbehandlung erforderlich, den Anpassungssatz bei den Kriegsopfern auf 22% festzusetzen, denn ich glaube, es geht einfach nicht an, daß ausgerechnet die Kriegsopfer von einer zusätzlichen sozialen Leistung ausgeschlossen bleiben sollen. Das war jedenfalls nicht der erklärte Wille dieser Fraktion, mit [dem]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN003" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »der«.</p>
+                  </note>
+               </seg> wir in [diese]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN004" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »dieser«.</p>
+                  </note>
+               </seg>Wahlauseinandersetzung hineingegangen sind. Ein wesentlicher Punkt des Entwurfs ist ferner die Anhebung der Witwenrente auf 60%. Es scheint nicht einzusehen zu sein, weshalb die Kriegsopferwitwen nicht dieselben Renten erhalten sollen, wie die Witwen von Beamten und Sozialversicherungsrentner. Wir haben bei dem letzten Neuordnungsgesetz, wie Sie wissen, als ersten Schritt auf eine 60%ige Witwenrente hingetan und wollen diesen Schritt nun vollenden. Die Vorlage des Kriegsopferberichts im 2-jährigen Abstand erscheint zudem [für] eine zügige Anpassung der Kriegsopferrenten nicht ausreichend zu sein. Wir schlagen deshalb eine jährliche Anpassung vor. Lassen Sie mich, meine Damen und Herren, nun ein Wort zu den finanziellen Auswirkungen dieses Gesetzentwurfes machen, denn ich bin der Meinung, diese Opposition muß glaubwürdig bleiben in ihren Aussagen, wir können anderen Leuten nichts vorwerfen, daß sie leichtfertig jetzt Geschenke verteilen und deshalb lassen Sie mich zur finanziellen Situation einige Schlußbemerkungen machen:</p>
+            <p>(»Es ist sehr schwer zu sprechen.« »Ja, ja, ich bemühe mich schon ohnedies durch Erheben, nicht aus Langeweile, um eine Veränderung in meiner körperlichen Form zu haben, sondern um zu zeigen, es sollte Ruhe herrschen.« »Es geht um allerhand Geld.«)</p>
+            <p>Die finanziellen Auswirkungen dieses Gesetzentwurfes auf den Bund belaufen sich auf 1,1Mrd.DM. Bei einer Anhebung der Grund- und Ausgleichsrenten um 20% wäre 1Mrd.DM erforderlich. Diesen Betrag von einer Mrd. DM hatte ich bereits in der letzten Regierung dem Finanzminister vorgeschlagen. Die nunmehrige Erhöhung um 100 Millionen von 1Mrd. auf 1,1Mrd.DM erfordert die Gleichbehandlung der Kriegsopfer mit dem vorgesehenen Wegfall des Krankenversicherungsbeitrages der Sozialversicherungsrentner und, meine Damen und Herren, jedenfalls geht es in meinen Veranstaltungen so nicht und ich nehme an, bei Ihnen [ist es] ähnlich. Niemand hat Verständnis, daß z.B. bei den Kriegsopfern wir eine solche Erhöhung nicht vorsehen, wo wir bei Soldaten und Wehrdienstverweigerern ein Weihnachtsgeld von 70 DM [planen]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN005" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »geplant ist«.</p>
+                  </note>
+               </seg>. Ich glaube, es steht in einem inneren sachlichen Zusammenhang. Das Finanzvolumen überschreitet also um 100Millionen das Volumen, womit die Regierung – die alte – schon gerechnet hat und die neue Regierung rechnen mußte. Ich darf die Fraktion bitten, diesem Vorschlag zuzustimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Meine sehr verehrten Damen und Herren, vielen Dank Herr Kollege <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> für diese rasche, gute, zuverlässige Arbeit. Wer wünscht das Wort?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>: Meine sehr verehrten Damen und Herren!</p>
+            <p>Ich hatte keine Gelegenheit, mich mit dem Herrn Kollegen <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> abzustimmen, weil nun ich praktisch unauffindbar war. Ich war in meinem Zimmer in meinem Büro, aber das ist ja unauffindbar. Ich möchte einige weitere Vorschläge hier machen, die mir dringend notwendig erscheinen, die auch in der Formulierung vorbereitet sind. Es handelt sich hier ausschließlich um den Personenkreis der Schwerstbeschädigten. Also Leute ab total erblindet. Das ist also der leichteste Fall, bei denen, die ich hier vorschlage.</p>
+            <p>Es geht doch zunächst einmal darum, daß den Witwen vonSchwerbeschädigten, die für die Pflege ihres Mannes eine Pflegegeldzulage bekommen haben, daß diesen Witwen diese Pflegegeldzulage beim Tode des Mannes zu 60% erhalten bleibt. Begründung: Die Frau dieser Schwerstkriegsversehrten waren nicht in der Lage, irgendwie eine andere zusätzliche Erwerbsquelle zu finden, sie wurden praktisch, wenn sie so wollen, bezahlt dafür, daß sie ihren Mann gepflegt haben, die billigste Arbeitskraft übrigens, meine Damen und Herren, die Sie sich hier vorstellen können. Daß wir hier diesen Witwen, die 60% der Pflegegeldzulage erhalten. Der zweite Kostenpunkt für diese Maßnahme sind 7,2Mio.DM jährlich. Der zweite Fall ist der, daß wir eine Stufe 6 bei den Schwerstbeschädigten einführen, bei den Schwerstbeschädigten die beginnt, meine sehr verehrten Damen und Herren, bei einem Blind-Tauben, bei einem Ohnhänder und Ohnbeiner, also diese Kategorie, es handelt sich hier um rd. 500 Personen nur. Kostenpunkt für eine Erhöhung, für eine Erhöhung dieser Schwerstbeschädigtenzulage von 250 auf 300 Deutsche Mark betragen 1,4Mio. Und einen letzten Vorschlag, den ich hier zu machen habe, daß auch für diese Schwerstbeschädigten, also ab Ohnhänder und Ohnbeiner, Blind-Taube usw., die Pflegezulage erhöht wird entsprechend dieser höheren Art der Schwerbeschädigung. Ich hab[e] mich aber eben geirrt, letzte Vorlage macht 1,4Mio. DM aus und die Versorgung der Witwen macht aus 7,2Mio. und die Einführung einer weiteren Stufe 16Mio., sind also insgesamt rd. 25Millionen für den Personenkreis, es handelt sich um 12000 Menschen, die wirklich die Opfer des Krieges sind.</p>
+            <p>[<name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]: Dankeschön, Kollege <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Maucher</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Herr Vorsitzender, meine sehr verehrten Damen und Herren!</p>
+            <p>Im Grundsatz zu den Einzelfragen möchte ich durchaus dem Kollegen <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> zwar zustimmen, aber wir müssen einesbedenken, die Situation ist folgende, daß wir jetzt diesen Entwurf einbringen und damit, daß ich die Begründung [gebe, die] Voraussetzung schaffen, daß es noch in diesem Jahr verabschiedet wird. Das heißt, das Gesetz soll am 1. Januar1970 in Kraft treten und wenn wir jetzt mit einer ganzen Reihe, zu diesen Anträgen hätte ich eine ganze Reihe Anträge, und es ist im Hintergrund die Diskussion, daß diese Fragen nur in einer eingehenden Beratung mit viel [Zeitbeanspruchung]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN006" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Zeit in Anspruch«.</p>
+                  </note>
+               </seg> erledigt werden könne[n], d.h., was jetzt geschieht, ist a) die Anpassung oder, <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> hat es klar gesagt, zur Anpassung gehört auch die Anpassung der Leistungen der Kriegerwitwen wie bei den übrigen Leistungen der Sozialversicherungsempfänger und des Beamtenrechts. Das ist die Grundsatzfrage, und wenn wir hier weiter eine ganze Reihe Anträge stellen, dann ist es willkommen für die andern, dann sagen sie, jawohl, wir müssen beraten, aber daß es so lang dauert, ist dann die CDU schuld, daß es dann nicht mehr verabschiedet werden konnte vor Weihnachten. Und dieser Sache können wir uns nicht begeben, das heißt, jetzt den ersten Schritt zu tun und den zweiten anzukündigen, daß wir ohne weiteres zu einer Bereinigung tun müssen.</p>
+            <p>Es kommen eine ganze Reihe Anträge dazu, nicht nur diese, die unbedingt geklärt werden müssen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Herr Kollege [Maucher]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN007" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Maurer«. Der Name ergibt sich aus dem Verlauf des Protokolls.</p>
+                  </note>
+               </seg>, ich glaub, daß diese Anträge vomKollegen <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> in der Zahl so gering und im Tatbestand so übersichtig und überzeugend sind, daß wir das auf jeden Fall aufnehmen sollten und die anderen Fragen, Kollege [Maucher]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN008" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Maurer«. Der Name ergibt sich aus dem Verlauf des Protokolls.</p>
+                  </note>
+               </seg>, die sich noch ergeben, eine ganze Reihe von Detailfragen und Ergänzungsfragen und die dann im Ausschuß behandeln. Auch hier ist eine Ankündigung vielleicht gar nicht notwendig. Wir bringen diesen Gesetzentwurf, wenn die Fraktion dieser Meinung ist, und wieder zur Ergänzung der Vorlage von Kollege <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name>, mit der gleichzeitigen Übereinstimmung der Fraktion im Ausschuß dann die Ergänzungen zu bringen, von [Maucher]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN009" type="comment">
+                     <p>Vom Bearbeiter eingefügt. Dafür gestrichen: »Maurer«. Der Name ergibt sich aus dem Verlauf des Protokolls.</p>
+                  </note>
+               </seg>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: {…} zu sagen, glauben Sie mir, die Anträge genau wie diese, ich kenne die Materie sehr genau. Es ist sehr schnell hier dargesagt, das und jenes. Ich hätte zu jedem Antrag sehr viel zu sagen. Wenn wir das wollen, dann können wir immer ankündigen und diese Anträge im Ausschuß nachschieben. Das ist uns jederzeit vorbehalten.</p>
+            <p>Aber ich möchte nicht, daß wir jetzt die Sache verkomplizieren und damit nachher die Schwierigkeit schaffen, die sind schuld, daß vor Weihnachten nicht mehr verabschiedet wird, glauben Sie es mir.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name>: (Die Schrittfrage kann ich also nicht einsehen, wenn man […]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN010" type="comment">
+                     <p>Vermutlich Auslassung in der Vorlage.</p>
+                  </note>
+               </seg>, dann tagt man 2 Stunden und 3 Stunden mehr, dann kommen wir zum Ergebnis.)</p>
+            <p>[<name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]: Kollege <name type="Person" role="Erwaehnung" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name>!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MaucherEugen_1953-10-06">Maucher</name>: Meine Damen, meine Herren, ich möchte nur die Frage stellen, ob wir nicht bei der Einbringung dieses Gesetzes das Thema der Dynamisierung der Rente mindestens anschneiden, da ich annehme, daß die Konkurrenz mit ähnlichen Vorschlägen kommt.</p>
+            <p>[<name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>]: Nun darf ich Kollegen <name type="Person" role="Erwaehnung" ref="#KatzerHans_1957-10-15">Katzer</name> das Wort geben und dann <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KatzerHans_1957-10-15">Katzer</name>: Darf ich zuerst zu Ihrer Frage sagen:</p>
+            <p>Im Blick darauf, daß die Regierung wahrscheinlich eine solche Klausel bringen wird, hatte ich vorgeschlagen, das haben Sie offenbar überhört, daß wir den §56 ändern wollen, vom zweijährigen Anpassungsprozeß auf 1 Jahr, dann stellt sich die Frage nur noch, wird es automatisch oder wird es jedes Jahr einen Anpassungsprozeß, aber im Anliegen, glaube ich, erfüllt.</p>
+            <p>Wir sind uns einig, daß dynamisch sein soll. Jawohl. Gut.</p>
+            <p>Und nun, meine Damen und Herren, was Herr Kollege <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> gesagt hat… Darf ich eine Sekunde mal um Aufmerksamkeit bitten, denn es ist wirklich wichtig für uns, für den Start dieser Sache. Ich sage noch einmal, entscheidend ist, daß wir in der Opposition glaubwürdig bleiben, daß man uns nicht nachsagt, jetzt geht ihr in die Vollen! Die Differenz ist von 1Milliarde auf 1,1Milliarde und die haben sie selbst verschuldet, weil sie andere Sozialleistungsempfänger vorgezogen haben. Wir ziehen gleich. Das ist also nicht unsere Verantwortung, sondern die Verantwortung dieser Regierung, kann man, glaube ich, jedem klar machen.</p>
+            <p>2. In der Sache bin ich mit dem Kollegen <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name> absolut einer Meinung. Das war immer mein Anliegen und ich werde das vertreten noch und noch. Nur, dies haben wir in 3 Stunden jetzt zusammenbasteln müssen, nachdem wir gehört haben, daß morgen wahrscheinlich eine Sache von der anderen Seite kommt. Deshalb, es geht einfach technisch nicht, jetzt um halb Vier – fünf Uhr läuft die Frist ab – ich bitte um Entschuldigung, wir haben also gearbeitet, […]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN011" type="comment">
+                     <p>Vom Bearbeiter gestrichen: »daß«.</p>
+                  </note>
+               </seg> das zustande zu bringen in dieser kurzen Zeit. Deshalb eine herzliche Bitte an den Freund <name type="Person" role="Erwaehnung" ref="#MickJosef_1957-10-15">Mick</name>, daß wir in unserer Erklärung, die im wesentlichen den Inhalt hat, den ich hier vorgetragen habe, weil er genau abgestimmt ist, einen Passus aufzunehmen, daß wir diese 3 Punkte bei dem weiteren Verlauf der Beratungen von uns aus als strukturelle Verbesserung des Gesetzentwurfes mit zur Erörterung stellen werden. Ich glaube, damit ist dieses Anliegen als berechtigt anerkannt, und wir haben die Chance es einzubringen. Aber ich muß erklären, wenn sie von uns verlangen, das jetzt in 3 Stunden, nein in einer Stunde, jetzt praktisch reif zu machen, das wird nicht gehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MickJosef_1957-10-15">Mick</name>: Mein Anliegen ist gesetzesreif formuliert. Mit der Änderung der notwendigen Paragraphen, mit der notwendigen Begründung, ich hab[e] also Verständnis, daß man das nicht mehr so schnell umbasteln kann, dann lassen wir das doch gesondert einreichen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: (Das ist natürlich schlecht. Wir können schlecht einen Gesetzentwurf einbringen zur Verbesserung der Kriegsopferversorgung und dann unmittelbar danach eine Novellierung zu unserem Gesetzentwurf. Wenn wir das dann umfassend darstellen in einer Presseerklärung, wenn es also aus zeitlichen Gründen nicht mehr geht, was ich bedauere, aber ich sehe ein, daß es hier um Stunden geht. Es hat keinen Sinn, wenn wir morgen früh einreichen und morgen eine Stunde später die andere Seite da ist, dann läuft das parallel. Heute läuft das als[o] in der Priorität für die CDU/CSU, und das hat ohne Zweifel den Vorteil und das Übergewicht in der Frage Ergänzung oder nicht.)</p>
+            <p>Machen wir es doch somit, eine umfassende Presseerklärung mit konkreten Angaben, daß die und die Punkte in dem Sinne von uns im Ausschuß ergänzend dargelegt werden. Ja, ich bedauere es auch, aber ich sehe keinen anderen Weg. Meine sehr verehrten Damen und Herren, das gleiche gilt auch für <name type="Person" role="Erwaehnung" ref="#MaucherEugen_1953-10-06">Mauchers</name> Anliegen. Wünscht dazu noch jemand das Wort?</p>
+            <p>Das ist nicht der Fall. Ich möchte über diese Frage, weil sie von großer Bedeutung ist, abstimmen lassen. Wer dafür ist, bitte ich um ein Handzeichen.</p>
+            <p>Dankeschön. – Wer ist dagegen? – Wer enthält sich?</p>
+            <p>Einstimmige Annahme. Herzlichen Dank.</p>
+            <p>Meine Damen und Herren, wir haben noch einen Dringlichkeitsantrag. Städtebauförderungsgesetz.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>: Meine Damen und Herren!Es ist denkbar, daß die Koalition über ihre Fraktion auch einen Gesetzentwurf einbringen wird, morgen oder in den nächsten Tagen, Städtebauförderungsgesetz. Ich bitte darum, daß die Fraktion mich autorisiert zu erklären, daß wir einen eigenen Gesetzentwurf einbringen werden, uns aber für die Vorbereitung dieses Gesetzentwurfes auch eine angemessene Zeit belassen. Ich glaube nicht, daß wir damit profitieren, daß wir nun immer die Regierung im Tempo einzuholen bemüht sind. Noch wichtiger ist, daß eine solide Gesetzesinitiative erarbeitet wird, was ungefähr 4 Wochen Zeit kosten wird.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Die Schnelligkeit braucht nicht auf Kosten der Qualität gehen. Wenn es aber in dem Fall nicht anders ist, müssen wir das zur Kenntnis nehmen. Wir können es aus dem Handgelenk ja nicht schütteln.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#CzajaHerbert_1953-10-06">Czaja</name>zu der Frage: Solche Argumente vermögen durchaus zu bestechen und [ich] würde nur zu überlegen geben, daß man in der Begründung klar hinzufügt, daß wir kein besonderes Städtebauförderungsgesetzes einbringenwollen, sondern ein die Gesamtfragen klärendes. Aus den Erklärungen des Bundeswohnungsbauministers geht hervor, daß er den ganzen Finanzierungsteil jetzt nicht einbringen will und daß er ebenso die Formen der Rechtsinstitutionen, insbesondere des Ausbaus der geschlossenen Kapitalanlagegesellschaft, in einem weiteren Entwurf erst später nachschieben will. Das ist ein guter Ansatzpunktfür uns, zu erklären, wir wolleneinumfassendesGesamtgesetz und nicht einen Torso einbringen.</p>
+            <p>Dankeschön.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das ist eine Erklärung, aber glauben Sie mir, wichtiger wäre es, wir würden ein von uns gut durchgearbeitetes Gesetz mindestens 24 StundenvorderanderenSeite auf den Tisch legen können. Wenn das nicht geht, wir können das für die Zukunft als einen Auftrag an uns selber geben, aber wir können es in dem Fall nicht ändern. Dankeschön.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-3">
+            <head>[C.]</head>
+            <p>Nun kommen wir, meine sehr verehrten Damen und Herren, zur Wahl des Vorstandes. Gewählt sind bisher Vorsitzender, Stellvertreter, Arbeitskreisvorsitzender, Geschäftsführer.</p>
+            <p>Ich möchte Sie einmal informieren über die Größe des Vorstandes der V. Legislaturperiode. In der V. Legislaturperiode waren es 40 Mitglieder des Vorstandes gewesen, dazu hatten 11 Bundesminister Zutrittsrecht, weitere 11 Mitglieder hatten kraft Amtes bzw. besondere Aufträge und Bundespartei noch 3, das waren der Ehrenvorsitzende, Generalsekretär und Bundesgeschäftsführer. Das waren insgesamt 65 Mitglieder des Vorstandes. Sie wissen, meine Damen und Herren, darf ich bitten, Sie wissen, daß wir in diesem Raum nebenan tagen und ich sage es hier, wie es häufig auch an anderer Stelle gesagt worden ist, wenn alle reingehen, gehen sie nicht alle rein. Aber da nicht alle reingehen, gehen sie alle rein. Sind 65 Mitglieder der vorigen Legislaturperiode. Nun hat der Elferrat den Kollegen <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> und mich beauftragt, nun die Vorschläge entgegenzunehmen und einen entsprechenden Gesamtvorschlag hier in der Fraktion zu machen. Wir sind zu dem Ergebnis gekommen und würden ihnen das vorschlagen, daß wir zu den zu wählenden Mitgliedern des Vorstandes als Zutrittsrecht gewähren, den Vorsitzenden allerBundestagsausschüsse, die wir besetzt haben, natürlich, das wären 8, Entschuldigung 9, mit dem Vermittlungsausschuß 9. Dazu kämen nun die Vorschläge aus der Fraktion, die zu wählenden Mitglieder. Es sind vorgeschlagen worden 16. Das bedeutet, daß alle landsmannschaftlichen Vorschläge damit Ihnen auf den Tisch gelegt worden sind. Es sind alle Vorschläge berücksichtigt worden. Zu diesen 16 Mitgliedern aus der Fraktion kommen noch die 3 Vorschläge der Landesgruppe der <name type="Organisation" ref="#CSU">CSU</name> aufgrund unserer seit nun mehr als 16 Jahren bestehenden Vereinbarung, die Mitglieder dem Alphabet nach <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name> und <name type="Person" role="Erwaehnung" ref="#EhnesGeorg_1961-10-17">Ehnes</name>. Über die {…} müssen wir dann noch reden. Das würde also bedeuten, daß sie 19 Namen vermerkt haben auf dem Stimmzettel der Ihnen vorliegt. Nach unserem Wahlverfahren, das bei der letzten Wahl angewandt worden ist, und das auch bei dieser Wahl angewandt werden soll, müßten mindestens 12 Stimmen abgegeben werden, wenn der Stimmzettel gültig ist. Aber nicht mehr als 19, Entschuldigung, um Gottes willen, ich sage es ganz laut jetzt: höchstens 16, mindestens 12. Da 16 ja zu wählen sind. Es ist vorgesehen, daß berücksichtigt werden sollen, die sogenannten soziologischen Gruppen. Die soziologischen Gruppen sind einmal die Arbeitnehmer, dann die Landwirtschaft und der Mittelstand. Nein, die <name type="Organisation" ref="#CSU">CSU</name> ist doch keine soziologische Gruppe. Es ist eine hochpolitische Gruppe, Herr <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name>, wir sind doch keine eigene Rasse hier.</p>
+            <p>Meine sehr verehrten Damen und Herren, der Vorstand, der neu gewählte Vorstand wird sich dann anschließend konstituieren und wird die Frage der Kooptierung der weiteren Mitglieder, also weitere 8 Mitglieder, in den Vorstand sich heute noch unterhalten, aber erst entscheiden, bei der nächsten Fraktionssitzung. Anders geht es ja auch gar nicht. Meine Damen und Herren, ich frage Sie jetzt, ob Sie mit dem Verfahren, das vorgeschlagen worden ist, einverstanden sind? Neu ist, daß statt der zutrittsberechtigten Bundesminister, die wir ja leider nicht mehr haben, nun die Ausschußvorsitzenden Zutrittsrecht bekommen sollen. Und neu ist, daß von vornherein feststeht, daß die soziologischen Gruppen kooptiert werden. Die Namen: <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name>, <name type="Person" role="Erwaehnung" ref="#BewerungeKarl_1961-10-17">Bewerunge</name>.</p>
+            <p>Die Frauen werden gewählt. Stellen Sie sich vor, wir {…}So viel Männermut haben wir, daß wir die Frauen hier reinwählen, in unseren Vorstand.</p>
+            <p>Das wären die Veränderungen gegenüber der vorangegangenen Vorstandswahl. Wer wünscht nun dazu das Wort? Soll ich noch mal die Namen vorlesen, Sie haben sie auf dem Tisch liegen, bitte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BoehmeGuenter_1969-10-20">Böhme</name>: Herr Vorsitzender, ich habe nur eine Frage, sie sagten, es würden die Ausschußvorsitzenden, soweit sie von unserer Fraktion gestellt würden, …</p>
+            <p>(Nein, Zutrittsrecht.)</p>
+            <p>gehören zusätzliche dazu. Wie ist es nun mit den Ausschüssen, in denen wir nur den stellvertretenden Vorsitzenden stellen, das können ja genauso interessante, gesellschaftspolitisch interessante Dinge sein, wie die, in denen wir per Zufall den Vorsitz haben. Soweit das nicht durch die Besetzung des Vorschlages garantiert ist, sollte man überlegen, im Vorstand hier die Stellvertreter zu kooptieren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das würde natürlich, wenn wir das generell machen würden, würde das eine Zahl geben von zusätzlich 19. Und da wäre der Vorstand auch so stark besetzt, daß vermutlich die Abwicklung der Geschäfte sehr schwer wäre, und im übrigen in dem Raum noch zu tagen wär[e] gar nicht möglich.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#VeharMax_1957-10-15">Vehar</name>: Ich wollte im Prinzip dasselbe sagen. Ich meine die Arbeit derer, die nun in einem Ausschuß sind, wo wir nicht den Vorsitzenden stellen, wird gegenüber denen, die in einem Ausschuß sind, wo der Vorsitzende auch in unserem Vorstand ist, etwas benachteiligt. Denn der ständige Kontakt zwischen Vorstand und Ausschuß trägt ja auch dazu bei, daß die Arbeit unserer Mitglieder in diesem Ausschuß gefördert werden kann. Ich würde deshalb auch darum bitten, daß bei der Kooptierung auch die berücksichtigt werden, die nur den stellvertretenden Vorsitz haben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Man kann sich bei der Kooptierung der zusätzlichen Mitglieder überlegen, ob man die von den wichtigen Ausschüssen […]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN012" type="comment">
+                     <p>Vermutlich Auslassung in der Vorlage.</p>
+                  </note>
+               </seg>ich glaube nicht, daß man der Meinung ist, daß Wahlprüfung und Petition unter allen Umständen drin sein müssenals Stellvertreter. Entschuldige mal, als Petition nehme ich mit großem Bedauern zurück.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>: Können ergänzende Personalvorschläge gemacht werden?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Ja sicher, ergänzende Personalvorschläge können selbstverständlich gemacht werden. Bitte ohne Begründung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>: Ja dann möchte ich doch als Begründung voranschicken, warum ich überhaupt einen mache. Die Landesgruppe Rheinland-Pfalz hat als ihren Vorschlag Herrn <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> schriftlich benannt. Er ist trotzdem nicht auf dieser Liste enthalten. Ich nehme an</p>
+            <p>(Lieber <name type="Person" role="Erwaehnung" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>, ist doch Vorsitzender vom Haushaltsausschuß.)</p>
+            <p>Liebe Kollegen, erlauben Sie mir auszusprechen, dann werden Sie gleich verstehen worum es mir dabei geht.</p>
+            <p>(Ah, jetzt kommt noch was nach.)</p>
+            <p>Selbstverständlich haben wir eben gehört, daß alle Ausschußvorsitzenden Zutrittsrecht erhalten sollen. Das kann ja doch aber nicht ausschließen, daß wir solche Kollegen auch mit Stimmrecht in den Fraktionsvorstand wählen</p>
+            <p>(Die haben auch Stimmrecht.)</p>
+            <p>Es wurde hier eben von Zutrittsrecht gesprochen.</p>
+            <p>(Und damit Stimmrecht, was glauben Sie, wie oft da abgestimmt wird, da drin?)</p>
+            <p>Das muß ja mal geklärt werden. Ich bitte um mehr Verständnis</p>
+            <p>(Kollege <name type="Person" role="Erwaehnung" ref="#KlepschEgonAlfred_1965-10-19">Klepsch</name>, ins Mikrofon bitte.)</p>
+            <p>Ich bitte um Ihr Verständnis, verehrte Kollegen, das sind doch Fragen, die geklärt sein müssen, bevor wir abstimmen. Ich möchte jetzt unter der Maßgabe, daß diese Kollegen auch Stimmrecht haben sollen, daß das hier also die Gesamtmeinung der Fraktion ist, dann natürlich nicht darauf beharren, das ist klar.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Das ist wie die Bundesminister, die werden genauso behandelt wie die Bundesminister. Meine sehr verehrten Damen und Herren, dazu weitere Wortmeldungen? Ja, Kollege <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>: Herr Vorsitzender, ich möchte zur Ergänzung der Liste noch den Kollegen <name type="Person" role="Erwaehnung" ref="#LampersbachEgon_1965-10-19">Lampersbach</name> vorschlagen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Ergänzender Vorschlag, Kollege <name type="Person" role="Erwaehnung" ref="#LampersbachEgon_1965-10-19">Lampersbach</name>. Ich bitte Herrn <name type="Person" role="Erwaehnung" ref="#LampersbachEgon_1965-10-19">Lampersbach</name> unter Nr. 19 als Ziffer 20 aufzuführen. Weitere Wortmeldungen sehe ich nicht. Ich darf damit die Aussprache schließen. Der Wahlvorgang ist bekannt. Mindestens 12 Stimmen abzugeben, höchstens 16 Stimmen. Mindestens 12, höchstens 16. Die Abstimmung ist eröffnet. Oh, Entschuldigung nochmals, ich brauch’ noch die Mitarbeiter zum Auszählen Herr <name type="Person" role="Erwaehnung" ref="#BreidbachFerdinand_1969-10-20">Breidbach</name>, <name type="Person" role="Erwaehnung" ref="#VogtWolfgang_1976-12-14">Vogt</name>, <name type="Person" role="Erwaehnung" ref="#ThaddenFranz-Lorenz_1969-10-20">von Thadden</name>, <name type="Person" role="Erwaehnung" ref="#HussingDieter_1969-10-20">Hussing</name>, Dr. <name type="Person" role="Erwaehnung" ref="#FrerichsGoekeD_1965-10-19">Frerichs</name>, Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>, <name type="Person" role="Erwaehnung" ref="#GierensteinKarlHeinz_1965-10-19">Gierenstein</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HammansHugo_1965-10-19">Hammans</name>, <name type="Person" role="Erwaehnung" ref="#SchulteDieter_1969-10-20">Schulte</name>, <name type="Person" role="Erwaehnung" ref="#FrankeHeinrich_1965-10-19">Franke</name>, <name type="Person" role="Erwaehnung" ref="#JostenJohannPeter_1953-10-06">Josten</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SeitersRudolf_1969-10-20">Seiters</name>. Darf ich bitten ins Vorstandszimmer zur Auszählung der Stimmen.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-4">
+            <head>[D.]</head>
+            <p>Der Bundesschatzmeister, Kollege <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, möchte gerne der Fraktion eine Information zukommen lassen über den Stand des Baues eines Parteihauses für die CDU/(CSU).</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>: Herr Vorsitzender, meine lieben Kolleginnen und Kollegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name>: Weil wir in Bayern residieren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>: Herr Vorsitzender, meine lieben Kolleginnen und Kollegen! Lieber Richard <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, so harmlos ist das nicht, daß es sich nur um eine Information handelt. Ich gehe schon etwas weiter. Am vergangenen Montag hätte im Fraktionsvorstand eine Vorberatung dieses Punktes stattfinden sollen. Das hat sich im Brand der Geschäfte leider nicht machen lassen und so scheint es notwendig zu sein, daß wir mit diesem Punkt unmittelbar in die Fraktion hineingehen.</p>
+            <p>Meine Damen und Herren, die vielen Reformvorschläge und die guten Vorschläge zur Verbesserung der Kooperation sind nur dann durchzuführen, wenn wir die Mitarbeiter der CDU und der Vereinigungen auch räumlich näher aneinanderbringen. Zur Zeit ist die CDU und sind die Vereinigungen an 17 verschiedenen Stellen untergebracht, und der dafür erforderliche Mietaufwand geht jährlich auf eine Viertel Million. Wenn Sie bedenken, daß durch diese räumliche Trennung nicht nur ein Nebeneinander, sondern sehr häufig auch ein Gegeneinander der Arbeit erfolgt, so glaube ich, sind Sie von dorther schon sehr rasch der Meinung, daß hier etwas geändert werden muß. Aber dieser Vorschlag, mehr noch als alle anderen Vorschläge, kostet natürlich erhebliches Geld. Und zu diesem Punkte möchte ich ganz besonders mit Ihnen heute diskutieren.</p>
+            <p>Wir können sehr froh darüber sein, daß unser Kollege Prof. <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name> und Herr <name type="Person" role="Erwaehnung" ref="#KraskeKonrad_1965-10-19">Kraske</name> vor einigen Jahren, es sind schon deren viere her, ein günstig gelegenes Grundstück für uns erworben haben, und zwar zu einem sehr günstigen Preis. An den Erwerb dieses Grundstückes war die Bedingung geknüpft, daß innerhalb eines Jahres mit dem Bau begonnen werden mußte. Wir können sagen, Gott sei Dank gab es jemanden, der Einspruch erhob, so daß diese Frist von dort her verlängert wurde. Aber wir müssen jetzt bis zum Dezember gehandelt haben, sonst fällt das Grundstück zurück an die Stadt Bonn. Das wäre, wenn ich die Schätzung einmal nennen darf, 4 bis 5 Millionen Grundstückswert, wäre das kaufmännisch gesehen geradezu eine Torheit. Wir müßten dort bauen, selbst wenn wir für die CDU kein Verwaltungsgebäude notwendig hätten, weil wir sonst einen Vermögensverlust [haben], und bei uns zählen Vermögensverluste ja und sind nicht lediglich Abbuchungen, wie wir an anderer Stelle heute morgen gehört haben. Wir müssen auf jeden Fall diesen Wert nutzen und bei dem hohen Grundstückwert natürlich auch ein entsprechendes Verwaltungsgebäude dort errichten. Es hat keinen Sinn auf einem Grundstück, das 4 oder 5 Millionen Mark kostet, ein Gebäude in gleicher Größenordnung zu errichten. Das ist keine Ausnutzung der vorhandenen Möglichkeiten und der vorhandenen Kapazität. Mein Vorschlag ist also der, daß wir in kaufmännisch vernünftiger Relation hier ein Gebäude errichten und dann in dem Ausmaß als CDU – und ich hoffe auch, daß die <name type="Organisation" ref="#CSU">CSU</name> sich beteiligt, eine Anforderung ist an sie ergangen, sie wird wahrscheinlich sich für 1 Etage interessieren –, daß wir in dem Ausmaße, wie wir es finanziell tragen können, dann in diesem Gebäude die CDU-Zentrale unterbringen.</p>
+            <p>Nun zur Finanzierung. Natürlich wird es in erster Linie notwendig sein, über Hypotheken sich die Mittel zu beschaffen. Ganz davon abgesehen, daß wir wegen der Dringlichkeit der Sache sehr schnell anfangen müssen. Ich darf Ihnen mitteilen, daß das technisch, rechtlich noch nicht ganz, aber technisch geklärt ist. Es ist vorgeschlagen worden, und zwar gleichzeitig von verschiedenen Orten, daß wir auf dem Parteitag eine Bausteine-Aktion starten, und daß wir alle, vom Vorsitzenden der Partei angefangen bis zu wem, na ich will keine untere Grenze sagen, uns an diesem Verkauf beteiligen. Natürlich ist auch der Vorschlag gemacht worden, daß die Mandatsträger auf allen Ebenen sich bereiterklären, hier vorneweg sich zu engagieren. Und nun kommt der Vorschlag, den ich hier unterbreiten möchte, daß entweder wir uns heute schlüssig werden, in welchem Ausmaß wir das tun, von mir aus auch eine Kommission einsetzen, ich würde aber bitte[n], daß das möglich rasch erledigt wird. Denn wenn wir zum Auftakt des Parteitages unserem Parteivorsitzenden imstande sind zu berichten, daß diese Fraktion und schon andere Landtagsfraktionen mit gutem Beispiel vorangehen, dann glaube ich, werden wir im ersten Aufgalopp den Erfolg erringen, den wir notwendig haben. Und nun habe ich mir überlegt, das mit einigen wenigen, leider nicht im Vorstand, es durchsprechen können.</p>
+            <p>Ich möchte anregen, daß diese Mitglieder dieser Fraktion sich für die Dauer der Legislaturperiode verpflichten, jeden Monat 10 Mark zu bezahlen und daß dieses Geld von der Fraktion eingezogen wird mit den 30 Mark. Das ist auf den Monat gerechnet nicht sehr viel, aber in der Gesamtsumme doch eine recht beträchtliche Leistung. Und wenn der Beschluß erst feststeht, dann würde ich mehr mit der Gesamtsumme als mit der Monatssumme operieren, das ist ganz selbstverständlich. Ich möchte die Anregung geben, daß die Fraktion in dieser Weise verfährt. Ich sage noch einmal, ich weiß, daß es in etwa eine Überrumpelung ist, aber wir brauchen bis zum Parteitag ein sichtbares Zeichen und ich wäre Ihnen sehr dankbar, wenn Sie dem Parteivorsitzenden die Möglichkeit geben, auf die Fraktion hinzuweisen, damit er seinerseits einen Appell [an] alle Parteifreunde richten kann. Dankeschön.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Meine Damen und Herren!Sie haben den Appell von Kurt <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> gehört. Wird dazu das Wort gewünscht? Der Herr Bundeskanzler.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>: Ich kann eigentlich jetzt nur noch sagen, ich unterstütze das, was der Bundesschatzmeister gesagt hat, nachdrücklich und ich danke Ihnen, daß ich schon aus Ihrem Beifall ersehen habe, daß Sie offenbar bereit sind, seinen Vorschlag anzunehmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Wird das Wort dazu gewünscht? Darf ich dann feststellen, daß die Fraktion bereit ist, diesem Vorschlag zu folgen. Danke herzlichst.</p>
+            <p>Meine Damen und Herren, ich bitte um Entschuldigung, daß ich jetzt komme, ich hatte einen langfristig angesagten Besuch des amerikanischen Botschafters. Inzwischen hatte ich das Vergnügen, unseren Freund Paul <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> zu seinem Geburtstag im Krankenhaus zu besuchen. Ich habe ihm die Glückwünsche der Fraktion ausgesprochen. Er läßt herzlich wiedergrüßen. Paul <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> ist auf dem Weg der Besserung, er wird morgen aus dem Krankenhaus nach Hause entlassen und ich hoffe, daß wir ihn dann nach einem Genesungsurlaub in geziemendem Abstand vor dem Weihnachtsfest wieder hier in bekannter Weise unter uns sehen werden und habe ihm gesagt – und er hat sich sehr darüber gefreut –, daß wir natürlich daran denken werden, ihn zum Vorstand zu kooptieren. Ich weiß nicht, wie die Geschäftslage jetzt hier ist. Ich glaube, Frau <name type="Person" role="Erwaehnung" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name> wollte noch etwas, bitteschön.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GriesingerAnnemarie_1964-11-23">Griesinger</name>: Meine Herren und Damen!Ich stehe den neuen Kollegen gegenüber noch im Wort im Blick auf die Orientierung hier im Hause. Wahrscheinlich haben Sie zum Teil aufgrund des schriftlichen Wegweisers, der zum Glück ja nun doch rechtzeitig fertig geworden ist, sich bereits schon privat in vielen Räumen orientieren können. Wir möchten aber trotzdem Ihnen gern die Möglichkeit geben, eine gute Information zumindest in der Bibliothek zu bekommen und an einigen anderen wichtigen Stellen noch, wo Sie die Information sicher gut gebrauchen können. Es ist jetzt die Frage, nachdem heut nachher keine Plenarsitzung ist, es im Anschluß an diese Fraktionssitzung sein sollte, weil wir ja morgen noch Fragestunde haben und Sie verurteilt sind, heute noch hier in Bonn zu sein, oder aber wir es dann in der nächsten Sitzungswoche machen, wo es dann vielleicht nicht mehr so gehetzt zugeht, weil nicht so viel Plenarsitzungen dann sein werden. Ich möchte Sie bitten, mit zu entscheiden, die neuen Kollegen, ob Sie interessiert sind, im Anschluß an die jetzige Fraktionssitzung zumindest eine Orientierung in der Bibliothek, die ja gleich nebenan ist, zu bekommen, oder ob wir es in der nächsten Sitzungswoche gemeinsam vorbereitend Ihnen dann noch einmal anbieten sollen. Machen wir es so, wer ist für den zweiten Vorschlag? Und wer ist für den ersten Vorschlag? Herzlichen Dank. Es wird dann dazuhin Ihnen noch eine Information angeboten werden vom Wissenschaftlichen Hilfsdienst hier in der Fraktion.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-5">
+            <head>[E.]</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Dankeschön, gnädige Frau.</p>
+            <p>Meine Damen und Herren, dann machen wir eine kleine Pause.</p>
+            <p>Ich bitte Platz zu nehmen. Das Ergebnis des ersten Wahlgangs – ein weiterer wird nötig sein – ist wie folgt: Abgegebene Stimmen 218 (hätten wir die doch heute mittagunten im Saal anwesend gehabt), Ungültig 9, Gültig 209, {…} 110</p>
+            <p>Meine Damen und Herren, ich lese vor in der Reihenfolge der Gewählten und nenne hier auch die Stimmzahl:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>1. Herr<name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name> (ich lass’ die Titel bitte wieder weg)</cell>
+                  <cell>191</cell>
+               </row>
+               <row>
+                  <cell>2. Herr <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>
+                  </cell>
+                  <cell>186</cell>
+               </row>
+               <row>
+                  <cell>3. Herr <name type="Person" role="Erwaehnung" ref="#KliesingGeorg_1953-10-06">Kliesing</name>
+                  </cell>
+                  <cell>172</cell>
+               </row>
+               <row>
+                  <cell>4. Herr <name type="Person" role="Erwaehnung" ref="#WeizsaeckerRichard_1969-10-20">von Weizsäcker</name>
+                  </cell>
+                  <cell>168</cell>
+               </row>
+               <row>
+                  <cell>5. Herr <name type="Person" role="Erwaehnung" ref="#BirrenbachKurt_1957-10-15">Birrenbach</name>
+                  </cell>
+                  <cell>167</cell>
+               </row>
+               <row>
+                  <cell>6. Herr <name type="Person" role="Erwaehnung" ref="#EhnesGeorg_1961-10-17">Ehnes</name>
+                  </cell>
+                  <cell>163</cell>
+               </row>
+               <row>
+                  <cell>7. Herr <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>
+                  </cell>
+                  <cell>157</cell>
+               </row>
+               <row>
+                  <cell>8. Herr <name type="Person" role="Erwaehnung" ref="#BurgbacherFritz_1957-10-15">Burgbacher</name>
+                  </cell>
+                  <cell>152</cell>
+               </row>
+               <row>
+                  <cell>9. Herr <name type="Person" role="Erwaehnung" ref="#RitzBurkhard_1965-10-19">Ritz</name>
+                  </cell>
+                  <cell>151</cell>
+               </row>
+               <row>
+                  <cell>10. Herr <name type="Person" role="Erwaehnung" ref="#StarkAnton_1965-10-19">Stark</name>
+                  </cell>
+                  <cell>149</cell>
+               </row>
+               <row>
+                  <cell>11. Fr. <name type="Person" role="Erwaehnung" ref="#SchroederChrista_1961-10-17">Schroeder</name>
+                  </cell>
+                  <cell>148</cell>
+               </row>
+               <row>
+                  <cell>12. Herr <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name>
+                  </cell>
+                  <cell>144</cell>
+               </row>
+               <row>
+                  <cell>13. Herr <name type="Person" role="Erwaehnung" ref="#RaweWilhelm_1965-10-19">Rawe</name>
+                  </cell>
+                  <cell>137</cell>
+               </row>
+               <row>
+                  <cell>14. Frau <name type="Person" role="Erwaehnung" ref="#PieserLiselotte_1968-06-26">Pieser</name>
+                  </cell>
+                  <cell>136</cell>
+               </row>
+               <row>
+                  <cell>15. Herr <name type="Person" role="Erwaehnung" ref="#BismarckPhilipp_1969-10-20">von Bismarck</name>
+                  </cell>
+                  <cell>113</cell>
+               </row>
+            </table>
+            <p>15 sind jetzt im ersten Wahlgang gewählt. Auf die 16. und letzte Stelle gibt es eine Stichwahl derer, die die nächsten in der Zahl sind, das sind Herr <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name> mit 103 und Herr <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">Eckardt</name> mit 101, die anderen Kollegen sind nicht gewählt. Dann bitte ich, die Stimmzettel aufzuteilen, für den 2. Wahlgang. Das Verfahren ist wie folgt: daß man den Namen aufschreibt. Es geht nur um eine Wahl zwischen <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name> und <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">Eckardt</name>. Man muß den Namen, den man wünscht, aufschreiben. Bitte die Stimmzettel auszuteilen.</p>
+            <p>Meine Damen und Herren! Wir stehen erstens vor der Frage, ob wir warten wollen bis ausgezählt ist. Es kann ja sein, daß das pari ausgeht. Zweitens, möchte ich gerne nachher den neugewählten Vorstand und natürlich die bisher schon gewählten sofort zu einer Sitzung bitten, der Kooptation wegen. Das war immer so. Wie ist [es] mit den Kooptationen nach der Satzung? Wer beschließt die, der Vorstand oder die Fraktion?</p>
+            <p>(Der Vorstand beschließt die Kooptation und die Fraktion muß zum Gesamtergebnis ja oder nein sagen. Sie kann das Ergebnis von sich aus nicht verändern.)</p>
+            <p>Ich glaube trotzdem, daß der Vorstand heute seinenKooptationsbeschluß aus besonderen Gründen fassen sollte.</p>
+            <p>Meine Damen und Herren! Ich habe noch einen letzten Punkt. Nach unserer Satzung gibt es einen Fraktions-Ältestenrat. Eine Institution, die sich vor allem dann bewährt, wenn es unter uns keinen Krach gibt, die aber jedermann in der in den Satzungen vorgesehenen Form anrufen kann, die kann auch der Vorstand anrufen. Ich glaube in der letzten Zeit hat er einmal getagt, der Fraktions-Ältestenrat, um eine, ich weiß nicht mehr, Schwierigkeit zu regeln. Aber er war auch sehr hilfreich, eine Ehrensache, als es darum ging, daß wir ein paar Mitarbeiter aussuchen mußten, die für Auszeichnungen in Frage kamen, das ist alles sehr {…}Wir würden Ihnen empfehlen, den Fraktionsältestenrat zu {…}, also unserer gesamten Organisation wie folgt zu wählen, und das kann am Block – wenn Sie wollen –, und durch Akklamation auch geschehen. Wir schlagen Ihnen vor, für den Fraktions- <name type="Organisation" ref="#AeRat">Ältestenrat</name>, der aus dreien besteht, das war bisher Herr <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, Frau <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name> und Herr <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>. Wir empfehlen Ihnen, Herrn <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>, Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name> und Herrn <name type="Person" role="Erwaehnung" ref="#GuttenbergKarlTheodor_1957-10-15">von Guttenberg</name> als Fraktionsältestenrat zu wählen. Ich stelle klar durch Ihren Beifall fest und danke sehr herzlich, meine Damen und Herren. Das ist in diesem Falle möglich, auch nach unserer Satzung.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-6">
+            <head>[F.]</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name>: Herr Fraktionsvorsitzender!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Herr <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, ich wollte Ihnen gerade das Wort geben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name>: Könnte man vielleicht in der Zwischenzeit erfahren, wie die Entwicklung im Auswärtigen Ausschuß war, hinsichtlich Atom-Sperrvertrag.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Meine Damen und Herren, ich […]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN013" type="comment">
+                     <p>Vom Bearbeiter gestrichen: »be«.</p>
+                  </note>
+               </seg>danke ausdrücklich dafür!</p>
+            <p>Sie wissen, es ist sehr gut daß Sie danach fragen. Es ist so viel, daß man das vergißt hier vorzutragen.</p>
+            <p>Sie waren so freundlich, glaube ich, uns vorgestern zu ermächtigen, eine Resolution einzubringen über den Atom-Sperrvertrag. Wir hatten auch eine fertig. Sie ist identisch mit dem, was <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> am Schluß vorlas. Daraufhin ließ uns die SPD wissen, sie würde dann auch eine einbringen und würde darauf bestehen, sofort darüber abzustimmen. Das ist der zweite Fall, wo sich die sozial-demokratische Fraktion zwar nicht gegen die Geschäftsordnung, aber gegen die guten parlamentarischen Sitten dieses Hauses verhält. Bei dem Blick auf die Präsenz, und in der Hoffnung nicht weitere technische Niederlagen erleiden zu müssen, haben wir dann schnell umgeschaltet und sind diesen Weg gegangen. Die Debatte war ungefähr [nach] 1 1/2 Stunden zu Ende, da bekam der Fraktionsvorsitzende einen Brief des Bundestagspräsidenten mit einer Anlage, ein Brief des Bundeskanzlers. Darin schlug der Bundeskanzler vor, bereits anläßlich der konstituierenden Sitzungen über heute mittag in den beiden vertraulichen Ausschüssen Auswärtiges und Verteidigung die notwendigen Informationen, die dem offenen Punkt des Sperrvertrages, entgegenzunehmen, damit das dann alles erledigt sei. Sie sehen, ich habe hier ja Dienstag vorgetragen, wie eilig die es haben. Daraufhin hörten wir zufällig, daß die Sozialdemokraten die Ausschußbesetzungen noch nicht fertig hatten, sondern erst um 10.30 Uhr die Fraktionssitzung zur Besetzung der Ausschüsse hatten. Ebensozufällig war es notwendig, diese Sitzung auf 15.30 Uhr einzuberufen, sodaß im Auswärtigen Ausschuß und im Verteidigungsausschuß heute die Versuche, das Thema heute zu erledigen, abgeschlagen worden sind. Der Auswärtige Ausschuß nahm einen ersten kurzen Bericht wohl entgegen, hat es dann aber vertagt. Im Verteidigungsausschuß bestand bedauerlicherweise überhaupt keine Möglichkeit, das Thema zu erörtern. Die <name type="Organisation" ref="#BuReg">Bundesregierung</name> hat gestern nicht widersprochen, als ich im Plenum nochmals feststellte, daß solange das hier anhängig sei, sie nicht handeln werde.</p>
+            <p>Wir dürfen uns aber keinen Illusionen hingeben, das wird nicht allzulange sein. Und ich möchte nich[t] heute, sondern erst wenn die Freunde aus den Ausschüssen uns berichten, eine Empfehlung geben zum weiteren Prozedere. Ich glaube, wir haben uns bisher in dieser Sache ziemlich gescheit verhalten, soweit uns das möglich ist, und das sollten wir auch weiter tun, glaube ich.</p>
+            <p>Es war dann notwendig, heute einen innenpolitischen Punkt mal anzusprechen und das ein bißchen deutlicher zu machen. Diesen Antrag, den Sie zu Ihrer Überraschung vorfanden, war leider nötig, gestern im Laufe des Tages zu machen.</p>
+            <p>Einmal im Blick auf die Forderung des Bauernverbandes, um den grünen Dollar abzuschaffen, was nicht unsere Politik von Anfang an sein kann, aber doch unseren bäuerlichen Freunden hilfreich zu sein [scheint]. Ich hab[e] deshalb während der Debatte und über Mittag gestern alle möglichen Konferenzen, Sitzung des Elferrates […]<seg type="note">
+                  <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN014" type="comment">
+                     <p>Vermutlich Auslassung in der Vorlage.</p>
+                  </note>
+               </seg>für eine Übereinstimmung mit Bundeskanzler <name type="Person" role="Erwaehnung" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name>. Wir haben dann geglaubt handeln zu müssen, diese Vorlage einzubringen, damit wir in dieser schwierigen Frage nicht ohne eine eigene Politik dastehen. Ich glaube, daß uns das erst mal Luft gegeben hat undnatürlich nicht der Notwendigkeit enthebt, konkret nachzudenken, was ist mit der Mehrwertsteuer und was ist mit der Summe im Haushalt. Aber vielleicht haben wir dochein bißchen Luft uns geschafft und unsere Freunde im <name type="Organisation" ref="#BRat">Bundesrat</name> marschieren auf einer ähnlichen Linie. Das Ganze ist also eine ganz geglückte Operation und heute morgen eine Überraschungsdebatte zu führen, die nicht vorbereitet war, war uns auch nicht um sie aus dem Stand doch zu gewinnen, die Herren so lange zu binden, daß ihre Pläne heute nicht so ganz möglich waren, das war die Politik der letzten 48 Stunden. Es tut mir leid, ich wußte sie Dienstag nicht. Ich hätte sie sonst hier vorgetragen. Aber in der Opposition müssen wir uns umstellen und eben auch manchmal handeln. Und ich bedanke mich, daß nicht laut geschimpft worden ist über diese Politik, die außerdem, glaube ich, richtig war.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-06_1969-11-13-t1530_WZ_div_SVP-7">
+            <head>[G.]</head>
+            <p>Meine Damen und Herren, ich kriege eben das Ergebnis der Stichwahl:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Abgegebene Stimmen</cell>
+                  <cell>181</cell>
+               </row>
+               <row>
+                  <cell>Ungültig</cell>
+                  <cell>0</cell>
+               </row>
+               <row>
+                  <cell>gültige Stimmen</cell>
+                  <cell>181</cell>
+               </row>
+               <row>
+                  <cell>…</cell>
+                  <cell>91<seg type="note">
+                        <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN015" type="comment">
+                           <p>Ausgewiesene Zahl der Stimmen für die absolute Mehrheit.</p>
+                        </note>
+                     </seg>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name>
+                  </cell>
+                  <cell>85</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name>
+                  </cell>
+                  <cell>82</cell>
+               </row>
+               <row>
+                  <cell>Enthaltungen</cell>
+                  <cell>14</cell>
+               </row>
+            </table>
+            <p>Was bedeutet das, Herr <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>?</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name>: Das bedeutet, daß wir erneut wählen müssen. Es muß so lange gewählt werden, bis der, der gewählt ist, die absolute Mehrheit der abgegebenen Stimmen erreicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name>: Meine Damen und Herren!Der Punkt ist also der, jeder in dieser Fraktion kann nur ein Mandat bekommen, der die absolute Mehrheit der abgegebenen Stimmen erhält. Ich bitte, den nächsten Stimmzettel auszuteilen. Und vielleicht darf ich dieFreunde, die sich bisher enthalten haben, aus menschlichen Gründen schon bitten, sich jetzt konkret zu entscheiden, damit wir nicht noch einmal vielleicht hier wählen.</p>
+            <p>Ich bitte die Stimmzettel auszuteilen. Es ist noch einmal der gleiche Wahlakt wie eben. <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">Eckardt</name> oder <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name>. Gewählt ist nur, wer die Majorität der abgegebenen Stimmen auf sich vereint.</p>
+            <p>Ich darf das Ergebnis der zweiten Stichwahl bekanntgeben:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Abgegebene Stimmen</cell>
+                  <cell>169</cell>
+               </row>
+               <row>
+                  <cell>Ungültige Stimmen</cell>
+                  <cell>0</cell>
+               </row>
+               <row>
+                  <cell>gültige Stimmen</cell>
+                  <cell>169</cell>
+               </row>
+               <row>
+                  <cell>…</cell>
+                  <cell>85<seg type="note">
+                        <note xml:id="cdu-csu-06_1969-11-13-t1530_WZ_FN016" type="comment">
+                           <p>Ausgewiesene Zahl der Stimmen für die absolute Mehrheit.</p>
+                        </note>
+                     </seg>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name>
+                  </cell>
+                  <cell>85</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#KiepWaltherLeisler_1965-10-19">Kiep</name>
+                  </cell>
+                  <cell>73</cell>
+               </row>
+               <row>
+                  <cell>Enthaltungen</cell>
+                  <cell>11</cell>
+               </row>
+            </table>
+            <p>Damit ist also Herr <name type="Person" role="Erwaehnung" ref="#EckardtFelix_1965-10-19">von Eckardt</name> auf den 16. Platz gewählt.</p>
+            <p>Meine Damen und Herren! Wenn zum Punkt Verschiedenes das Wort nicht gewünscht wird, erbitte ich sofort den soeben gewählten Vorstand zum Zwecke der Kooptationin das Vorstandszimmer.</p>
+            <p>Ich schließe die Sitzung und danke Ihnen herzlich.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

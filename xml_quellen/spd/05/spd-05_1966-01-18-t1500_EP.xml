@@ -1,228 +1,471 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-01-18-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung (Kurzprotokoll)</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#TüffersBettina"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title><author>Heinrich Potthoff</author><pubPlace>Düsseldorf</pubPlace><date>1993</date>
-						<idno type="DNB">https://d-nb.info/930888952</idno>
-						<idno type="DNB">https://d-nb.info/930907760</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv der sozialen Demokratie (AdsD)</institution>
-							<idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 11)</idno>
-							<objectName>Protokoll über die Fraktionssitzung am Dienstag, den 18.1.1966 in Berlin, Reichstag</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 18. Januar 1966</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>8 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1966-01-18"><time type="start" when="15:00:00"/><time type="end" when="18:00:00"/></date><name type="Ort">Berlin</name><name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">SPD</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="spd-05_1966-01-18-t1500_EP_SVP-1" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-1">A. Internes aus der Fraktion. – TOP 1: Bericht von Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>. – Ergänzungen Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehners</name>. – Diskussion der Fraktion über den Vietnam-Krieg.</item>
-					<item xml:id="spd-05_1966-01-18-t1500_EP_SVP-2" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-2">B. TOP 2: Die nächsten Plenarsitzungen.</item>
-					<item xml:id="spd-05_1966-01-18-t1500_EP_SVP-3" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-3">C. TOP 3: Vorlagen aus den Arbeitskreisen: Antrag betreffend Bundesanstalt für Fleischforschung. – Kleine Anfrage betreffend Wahlalter. – Kleiner Antrag, betreffend die Verbesserung der Dienstdauervorschriften.</item>
-					<item xml:id="spd-05_1966-01-18-t1500_EP_SVP-4" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-4">D. TOP 4: Besetzung des Ausschusses gemäß Art. 45 GG. – TOP 5: Nächste Termine. – TOP 6: Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Der Genosse Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> leitet die Fraktionssitzung. Er eröffnet die Sitzung und gibt zunächst einen Bericht über den Krankheitsverlauf von Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>, gemäß der Anlage 1.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN001" type="comment"><p><bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 16/66 vom 18.1.1966</bibl>, Überschrift: »Betr.: Fraktionssitzung (Teil I)«.</p></note></seg></p>
-				<p>Über den Krankheitsverlauf von Herrn Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>, geb. 14. Juli 1913, Mitglied des Bundestages und Fraktionsvorsitzender der Sozialdemokratischen Partei Deutschlands geben wir folgende Mitteilung:</p>
-				<p>Die Überwindung der hämatologischen Störung macht durch die eingeleitete Behandlung planmäßige Fortschritte. Mit dem Abschluß der klinischen Behandlung ist innerhalb der nächsten drei bis vier Wochen zu rechnen. Zur Wiederherstellung der vollen Arbeitsfähigkeit sollte sich ein Erholungsaufenthalt von mindestens zwei bis drei Wochen anschließen.</p>
-				<p>Prof. Dr. <name type="Person" role="Erwaehnung" ref="#HeilmeyerLudwig">Heilmeyer</name><seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN002" type="comment"><p>Ludwig <name type="Person" role="Erwaehnung" ref="#HeilmeyerLudwig">Heilmeyer</name> (geb. 1899), Professor für Innere Medizin, seit 1946 Direktor der Medizinischen Universitätsklinik Freiburg.</p></note></seg></p>
-				<p>Direktor der Klinik.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> entschuldigt die Genossen <name type="Person" role="Erwaehnung" ref="#HeiseBerger-HeiseMargarete_1953-10-06">Berger-Heise</name>, <name type="Person" role="Erwaehnung" ref="#BerlinAugust_1949-09-07">Berlin</name>, <name type="Person" role="Erwaehnung" ref="#KripsUrsula_1965-10-19">Krips</name>, <name type="Person" role="Erwaehnung" ref="#LiedtkeKarl_1965-10-19">Liedtke</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, <name type="Person" role="Erwaehnung" ref="#UrbanWilhelm_1961-10-17">Urban</name> wegen ihrer Erkrankung und wünscht ihnen namens der Fraktion gute Besserung.</p>
-				<p>Namens der Fraktion gratuliert er dem Genossen Werner <name type="Person" role="Erwaehnung" ref="#JacobiWerner_1949-09-07">Jacobi</name> zum Geburtstag.</p>
-				<p>Punkt 1:Bericht von Willy Brandt.</p>
-				<p>Siehe Anlage 2.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN003" type="comment"><p><bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 20/66 vom 18.1.1966</bibl>, Überschrift: »Betr.: Fraktionssitzung (Teil II)«.</p></note></seg></p>
-				<p>Zu Beginn der heutigen Fraktionssitzung der SPD befaßte sich der Parteivorsitzende Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> mit den Erörterungen der letzten Zeit über gesamtdeutsche Fragen. In seinem Gespräch mit dem Fraktionsvorsitzenden der CDU/CSU, Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>, sei übereinstimmend festgestellt worden, daß der Bundeskanzler die Form finden müsse, in der vertrauliche Beratungen im kleinen Kreis erfolgen können.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN004" type="comment"><p>In der <bibl type="item-in-archive">»Sitzung des Parteivorstandes am 21.1. 1966«, AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>, berichtete <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> über das Gespräch mit <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> am 17.1.1966 in Berlin. Vgl. dazu den Bericht in: <bibl type="series-item">»Der Spiegel« Nr. 5 vom 24.1.1966, S. 17</bibl>: <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> habe <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> mit dem Vorschlag überrascht, »man solle die bisher von der CDU kritisierte SPD-Politik der kleinen Schritte fortsetzen« und versuchen, in »Verhandlungen mit der Sowjetzone« ein Arrangement über folgende Punkte zu erzielen: »Wiederherstellung des Telefonverkehrs zwischen Ost- und West Berlin; Ausbau der Zusammenarbeit zwischen den Verwaltungen der Landräte beiderseits der Zonengrenze, Abkommen über westliche Medikamentensendungen in die Zone; Rückführung der 2000 in Mitteldeutschland lebenden Kinder, die von ihren im Westen wohnenden Eltern getrennt sind, und Zeitungsaustausch zwischen Ost- und Westdeutschland. Über diese Fragen sollten, so <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> zu <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, interfraktionelle Gespräche geführt werden. – Zur Frage von vertraulichen Gesprächen über die Deutschlandpolitik siehe <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-1">Nr. 135, TOP 1 a</ref>.</p></note></seg> Energisch wandte sich <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> jedoch gegen die von der FDP geäußerte Auffassung, daß zunächst Kabinett und Koalition untereinander beraten und dann mit der SPD über das zuvor erzielte Ergebnis sprechen sollten.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN005" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> bezog sich auf eine entsprechende Äußerung des Vors. der FDP-Fraktion <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">Kühlmann-Stumm</name> in einer Pressekonferenz. Vgl. <bibl type="series-item">Dokumente zur Deutschlandpolitik IV, Bd. 12, 1. Hbd. S. 139</bibl>; <bibl type="series-item">»Der Spiegel« Nr. 5 vom 24.1.1966, S. 16</bibl>.</p></note></seg> Ein solches Verfahren wäre der Stärke und Bedeutung der SPD nicht angemessen.</p>
-				<p>Die von der SPD im Bundestag vorgeschlagene Erörterung über die Lage der Nation<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN006" type="comment"><p>Die von der SPD schon früher gestellte Forderung, die BReg solle einen Bericht zur Lage der Nation vorlegen (vgl. <bibl type="single-item">Jahrbuch SPD 1964/65, S. 47</bibl>), hatte <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> in seiner Plenarrede vom 29.11.1965 präzisiert: Der Bericht solle eine Bestandsaufnahme »über die ökonomischen, sozialen und geistigen Lebensbedingungen unserer Landsleute in der Zone«, ein Bekenntnis zum Ausbau des Interzonenhandels und zur Förderung des »Reise- und Besucherverkehrs« sowie zu einer »Deutschlandinitiative mit Substanz« enthalten, zu der alle Parteien vertraulich beigezogen werden sollten. <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> griff diese Forderungen in seiner Rede am 2.12.1965 mehrfach auf. <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/07">S. 128</ref> und <ref type="external" target="05/10">374-376</ref></bibl>.</p></note></seg> müsse drei Gesichtspunkten Rechnung tragen:</p>
-				<p>1. Man müsse den ernsthaften Versuch machen, sich über die tatsächliche Lage in der SBZ klarzuwerden.</p>
-				<p>2. Es müsse das Verhältnis der beiden Teile Deutschlands und der beiden Teile Berlins zueinander erörtert werden. In diesem Zusammenhang erwähnte <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, daß die Koordinierung zwischen Bonn und Berlin sich gebessert habe. Man müsse sich darüber klar sein, daß über solche technischen Fragen wie etwa die Passierscheinregelung nur dann Einverständnis erzielt werden könne, wenn diejenigen weiterreichenden Fragen ausgeklammert würden, über die eine Einigung nicht möglich sei. Nachdrücklich wandte sich <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> gegen die abwertende Erklärung eines stellvertretenden Fraktionsvorsitzenden der CDU/CSU gegen »ganz kleine Schritte« in Berlin.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN007" type="comment"><p>Diese Äußerung hatte Franz Josef <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, von 1965-1.12.1966 stellv. Fraktionsvors. der CDU/CSU, in Berlin gemacht. Nach <bibl type="series-item">»Der Spiegel« Nr. 8 vom 14.2.1966, S. 30</bibl>.</p></note></seg> In der letzten Besuchszeit hätten 824 000 Besuche von Westberlinern im Ostsektor stattgefunden. Diese Zahl drücke viele Schritte aus.</p>
-				<p>3. Man müsse sich Klarheit über den Stand der internationalen Diskussion in der deutschen Frage verschaffen. Es sei beunruhigend, daß in manchen Teilen der Welt die deutsche Frage nicht mehr zu den dringendsten Problemen der Welt politik gezählt werde. Andererseits habe er in persönlicher Fühlungnahme mit bedeutenden Staatsmännern große Aufgeschlossenheit und Verständnis für unsere Situation gefunden.</p>
-				<p>Es gebe keinen Anlaß, dem Bundesvertriebenenminister Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name><seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN008" type="comment"><p>Johann Baptist <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>, MdB (CDU/CSU) 1957-1980 für Berlin, Mitgl. des Bundesvorstandes der CDU 1953-1971, BM für Vertriebene, Flüchtlinge und Kriegsgeschädigte 1965-1966.</p></note></seg> wegen seines Interviews<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN009" type="comment"><p>Gemeint ist das Spiegel-Gespräch mit <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> in <bibl type="series-item">»Der Spiegel« Nr. 4 vom 17.1.1966, S. 22-27</bibl>; abgedr. auch in <bibl type="series-item">Dokumente zur Deutschlandpolitik IV/12, 1. Hbd., S. 97-104</bibl>. Zur Beurteilung durch die SPD vgl. das am 22.1.1966 vom Hessischen Rundfunk gesendete Interview mit <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>; abgedr. <bibl type="series-item">ebd., S. 138-146, hier S. 141</bibl>.</p></note></seg> Vorwürfe zu machen. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> habe getan, was andere vor ihm getan hätten: laut gedacht. Seine Vorstellungen müßten in die vertraulichen Gespräche über die deutsche Frage mit einbezogen werden. In diesem Zusammenhang erinnerte Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> daran, daß die sozialdemokratische Regierungsmannschaft im Januar [1965]<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN010" type="comment"><p>Im Or. »1966«. – Gemeint sind die »Grundzüge sozialdemokratischer Regierungspolitik«, die im Januar 1965 von der SPD-Regierungsmannschaft vorgelegt wurden; abgedr. u. a. in <bibl type="single-item">Bundestagswahl 1965, Erklärungen der SPD-Regierungsmannschaft, S. 5-13</bibl>. Darin hieß es: »Wir werden dafür sorgen, daß die Grundzüge einer Friedensregelung erarbeitet, mit den Regierungen der verbündeten Mächte abgesprochen und in die internationalen Verhandlungen einbezogen werden.«</p></note></seg> die Vorarbeit an den Elementen einer friedensvertraglichen Regelung für ganz Deutschland vorgeschlagen habe.</p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> begrüßte die Anwesenheit der Bundestagsabgeordneten in Berlin.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN011" type="comment"><p>Die Fraktionen und Ausschüsse des Bundestages waren vom 17.-21.1.1966 zu einer Arbeitswoche in Berlin.</p></note></seg> Tagungen des Bundestages oder seiner Organe in der Hauptstadt sei[en] nur ein Teilaspekt der Gesamtpolitik. Das Verhältnis Berlins zum Bund werde auch von anderen Elementen, z. B. von finanzpolitischen, berührt. Berlin werde eine große Anstrengung machen, um seine Lebenskraft zu stärken und den Wirtschaftsaufbau rascher voranzubringen. Der sich entwickelnde Ost-West-Handel dürfe dabei nicht zu einem Faktor zusätzlicher Isolierung werden.</p>
-				<p>Zu der Diskussion über den Beauftragten des Bundes in Berlin<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN012" type="comment"><p>Ernst <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> (1898-1970), MdB (CDU) 1952-1970, langjähriger BM – für die Post 1956/57, für Gesamtdeutsche Fragen 1957-1962, für Vertriebene, Flüchtlinge 19.2. 1964-1965 – war seit 17.12.1965 Sonderbeauftragter des Bundeskanzlers für Berlin. Zu einer dringlichen mündlichen Anfrage von <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name> und <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name> (SPD) nach dem »Auftrag« der BReg für <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>, seine »Kompetenzen« und das »Verhältnis« zu dem Bundesbevollmächtigten für Berlin hatte <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> (FDP) als Stellv. des Bundeskanzlers am 12.1.1966 u. a. erklärt, »besondere Kompetenzen« seien damit nicht verbunden. Auf eine »Präzisierung des Auftrags« sei »bewußt verzichtet« worden. Er könne sich vorstellen, daß »in der Auslandspresse« von »<name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>verfaßte Namensartikel zu lesen« seien und dieser im Ausland Vorträge halte. BT Sten. Ber. 60<bibl type="btp">, S. 487-497</bibl>. – Gegen diese Charakterisierung und Qualifizierung seines Auftrages durch <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> protestierte <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> lautstark bei den anwesenden Ministern <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> und <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>. Vgl. <bibl type="series-item">»Der Spiegel« Nr. 4 vom 17.1.1966, S. 18</bibl>.</p></note></seg> warnte <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> davor, daß die Bundesregierung ohne zwingende Gründe Berlin abweichend von anderen Bundesländern behandele. Sie müsse im inneren Verhältnis so handeln, als sei Berlin ein Bundesland wie jedes andere auch. Die Berliner hätten im übrigen bewiesen, daß sie für sich selbst sprechen können. Er gehe davon aus, daß der Vizekanzler Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> in der Bundestagssitzung nur ausgesprochen habe, was ihm mitgeteilt worden sei, als er am 12. Januar erklärte, die Bundesregierung habe den Berliner Senat bereits schriftlich über den Auftrag von Bundesminister a. D. <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> informiert. Tatsächlich sei dieser Brief erst am 14. Januar in Berlin eingetroffen.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN013" type="comment"><p>Auf eine Frage von <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name> (SPD), ob die BReg vor der Ernennung <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> mit der Berliner Landesregierung »verhandelt« oder sie wenigstens informiert habe, und Zusatzfragen von <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>, <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name>, <name type="Person" role="Erwaehnung" ref="#SchulzKlaus-Peter_1965-10-19">Schulz</name>, <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name> (alle SPD), <name type="Person" role="Erwaehnung" ref="#ErtlJosef_1961-10-17">Ertl</name> (FDP) hatte <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> erklärt, BM <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> habe den Bevollmächtigten des Landes Berlin beim Bund, Senator Klaus <name type="Person" role="Erwaehnung" ref="#SchuetzKlaus_1957-10-15">Schütz</name>, am 17.12.1965 mündlich informiert. Ein Schreiben des Regierenden Bürgermeisters <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> vom 21.12.1965, in dem er sich nach den Zuständigkeiten <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> erkundigte, sei »beantwortet« worden und der Brief sei »abgegangen«; ein Datum könne er jedoch nicht nennen.</p></note></seg></p>
-				<p>Zu den Friedensbemühungen der Amerikaner hinsichtlich des Krieges in Vietnam<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN014" type="comment"><p>Zu den von der US-Regierung seit Dezember 1965 eingeleiteten Friedensinitiativen, u. a. durch Einschaltung der UNO und des Papstes, Entsendung von Sonderbotschaftern und eine Aussetzung der Bombenangriffe auf Nord-Vietnam, vgl. <bibl type="series-item">AdG 1966, S. 12281 und 12286-12288</bibl>.</p></note></seg> erklärte <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, er habe Verständnis für die großen Sorgen, die überall in der Welt wegen dieses Krieges herrschten. Auch in Deutschland verfolge man die Friedensbemühungen mit großer Sympathie. Die Bundesrepublik sei aber nicht in der Position, als Ratgeber der USA aufzutreten. In Vietnam stehe die Glaubwürdigkeit der amerikanischen Politik so sehr auf dem Spiel, daß sich Rückwirkungen auch auf Europa ergeben würden.</p>
-				<p>In einem kurzen Bericht über seine Reise nach Italien wies Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> auf die große Bedeutung der bevorstehenden Vereinigung der Parteien <name type="Person" role="Erwaehnung" ref="#SaragatGiuseppe">Saragats</name> und <name type="Person" role="Erwaehnung" ref="#NenniPietro">Nennis</name> hin.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN015" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hatte zunächst den Kongreß der Sozialdemokratischen Partei Italiens (PSDI) vom 8.- 11.1.1966 in Neapel besucht, der sich für eine Vereinigung mit der Sozialistischen Partei Italiens (PSI) unter Pietro <name type="Person" role="Erwaehnung" ref="#NenniPietro">Nenni</name> aussprach. <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> führte daneben noch Gespräche mit dem italienischen Staatspräsidenten Giuseppe <name type="Person" role="Erwaehnung" ref="#SaragatGiuseppe">Saragat</name>, dem früheren Vors. der PSDI, sowie mit dem Generalsekretär der PSI <name type="Person" role="Erwaehnung" ref="#MartinoFrancescoDe">Martino</name> über eine Aufnahme der PSI in die Sozialistische Internationale. Nach <bibl type="item-in-archive">»Aufzeichnung. Sitzung des Ausschusses für Internationale Beziehungen am 19.1.1966 in Berlin« vom 1.2.1966, Verfasser Hans Eberhard <name type="Person" role="Erwaehnung" ref="#DingelsHans-Eberhard">Dingels</name>, AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>. Die Sozialdemokratische Partei Italiens (PSDI) und die Sozialistische Partei Italiens (PSI) einigten sich jedoch erst am 31.7.1966 auf eine gemeinsame Grundsatzerklärung für einen Zusammenschluß, der am 30.10.1966 auf einem gemeinsamen Parteitag erfolgte. Vgl. <bibl type="series-item">AdG 1966, S. 12804</bibl>.</p></note></seg> Sein Besuch beim Papst habe ihm gezeigt, daß die SPD und ihr geistiger Entwicklungsprozeß auch im Vatikan als wichtige Faktoren gesehen würden.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN016" type="comment"><p><name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> war am 11.1.1966 von Papst <name type="Person" role="Erwaehnung" ref="#PapstPaulVI">Paul VI.</name> zu einer Privataudienz empfangen worden. <bibl type="series-item">SPD-Pressemitteilungen Nr. 28/66 vom 14.1.1966</bibl>; ferner den Bericht <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> in der Sitzung des Präsidiums am 14.1.1966, <bibl type="item-in-archive">AdsD, Präsidium v. 5. Nov. 1965 b. Juni 1966</bibl>; <bibl type="series-item">AdG 1966, S. 12283</bibl>.</p></note></seg></p>
-				<p>Abschließend kündigte Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> an, daß die SPD auf ihrem bevorstehenden Dortmunder Parteitag<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN017" type="comment"><p>Vom 1.-5.6.1966.</p></note></seg> ihren Prioritätenkatalog deutlich machen und sich dabei insbesondere mit den gesellschaftspolitischen Fragen befassen werde. Die Erfahrungen und Aktivitäten der Sozialdemokratischen Bundestagsfraktion sollten den Beratungen auf diesem Parteitag nutzbar gemacht werden.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> ergänzte die Fragen zur Berlinpolitik, wie aus der Anlage III hervorgeht.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN018" type="comment"><p><bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 21/66 vom 18.1.1966</bibl>, Überschrift: »Betr. Fraktionssitzung (Teil III)«.</p></note></seg> Der stellvertretende Fraktionsvorsitzende Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> nahm bei seinen anschließenden Bemerkungen auch zu Fragen der Berlin-Politik und zu der Kontroverse um den Sonderbeauftragten Ernst <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name><unclear reason="Fußnotenzeichen-ohne-Fußnotentext">12</unclear> Stellung. Was Berlin brauche, sei nicht mehr Propaganda, sondern mehr selbstverständliche Rolle in der Deutschland-Politik, betonte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>. Fehlende Deutschland-Politik könne auch nicht durch die Ernennung eines Sonderbeauftragten ersetzt werden.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> setzte sich kritisch mit den Ausführungen <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> über seine Aufgaben auseinander.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN019" type="comment"><p><name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> dürfte sich wahrscheinlich auf Ausführungen <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> vor dem Gesamtdeutschen Ausschuß beziehen. In einer Pressekonferenz vom 19.1.1966 äußerte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> u. a., er erwarte »mit milder Spannung«, was der BMG <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> in der Berlin-Sitzung des Gesamtdeutschen Ausschusses an diesem Tage zu den Kompetenzen <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> zu sagen habe. <bibl type="series-item">PPP (Meldungsdienst) Nr. 13 vom 19.1.1966</bibl>; vgl. <bibl type="series-item">Dokumente zur Deutschlandpolitik V/12, 1. Hbd., S. 146 (Anm. 1)</bibl>.</p></note></seg> Wenn die Bundesregierung in politischen Fragen, die Berlin betreffen, Rat brauche, dann sei dafür der gewählte Berliner Senat der Gesprächspartner, »und sonst niemand«. Wenn <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> jetzt zugebe, daß bei der Bundesregierung ein derartiges Durcheinander herrsche, daß der Kanzler in manchen wichtigen Fragen »nur durch Zufall« von Entscheidungen einzelner Ressortminister erfahre, dann bestätige das nur die jahrelangen Warnungen der SPD. Zuletzt habe es geheißen, diese Dinge seien jetzt geregelt und der Bundesminister für gesamtdeutsche Fragen koordiniere alle in den Bereich der gesamtdeutschen Politik fallenden Angelegenheiten. Dies sei jetzt von <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> deutlich korrigiert worden. <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> betrachte sich also offenbar als »Koordinator des Koordinators«.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN020" type="comment"><p>Vgl. in diesem Zusammenhang die in der Pressekonferenz von <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> gegebene Anregung, die BReg solle zur Koordinierung aller Fragen der gesamtdeutschen Politik ein »Wiedervereinigungskabinett« in der Art des Verteidigungsrates und des Wirtschaftskabinetts schaffen.</p></note></seg> Es ist schade – meinte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> – daß ein so sympathischer Mann in eine so unmögliche Rolle gerate.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> fragt Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, ob er nichts in seiner Eigenschaft als Regierender Berliner Bürgermeister tun kann, um auf <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> und auf die Alliierten Einfluß zu nehmen, daß diese zu der Auffassung gelangen, daß die Anwesenheit des Deutschen Bundestages in Berlin notwendig ist, damit der Status quo minus verhindert wird.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN021" type="comment"><p>Vgl. die Äußerung von <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Wehner</name> in dieser Pressekonferenz vom 19.1.1966 – siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN019">Anm. 19</ref> –, er bedaure, daß Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> sich außerstande sehe, von seinem Recht, Plenarsitzungen nach Berlin einzuberufen, Gebrauch zu machen. Er habe den Eindruck, daß die Einsprüche der Alliierten gegen Berlin-Sitzungen des Bundestages »gewohnheitsmäßig erfolgten und ebenso beinahe gewohnheitsmäßig« von <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> befolgt würden.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#BlachsteinPeter_1949-09-07">Blachstein</name> bringt zum Ausdruck, daß man eigentlich keine Veranlassung habe, die moralischen Impulse in der Welt über die Scheußlichkeit des Krieges in Vietnam zu beschränken oder ihnen entgegenzutreten.</p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> erklärt, daß unsere Position in Deutschland uns nicht das Recht gebe, als moralische Ratgeber der USA tätig zu sein. Die Glaubwürdigkeit der Politik der USA in Vietnam habe Auswirkungen auf weite Teile der Welt.</p>
-				<p>Zur Berlinpolitik sei er der Meinung, daß die Bundestagssitzungen kein Element der Berlinpolitik seien und man solle nicht davon ausgehen, daß diese notwendig seien, um die Moral der Berliner zu stärken. Vielmehr müssen diese Bundestagssitzungen als ein Teil der Deutschlandpolitik betrachtet werden.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> erinnert an die Einseitigkeit der Argumentation zum Befreiungskrieg in Vietnam und gibt zu bedenken, daß auch in der Zone mit denselben Worten argumentiert wird. Kritik an den Amerikanern wäre die schlechteste Deutschlandpolitik, man müsse vielmehr die Solidarität mit den Amerikanern zum Ausdruck bringen.</p>
-				<p>Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> gibt zu bedenken, daß die meisten über den Vietnam-Krieg nicht richtig informiert sind.</p>
-				<p><name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> kritisiert die Politik der USA in Asien und in den südamerikanischen Staaten, indem diese bisher niemals die ideologischen Reformen dieser Staaten berücksichtigte.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZerbeEdwin_1965-10-19">Zerbe</name> erinnert daran, daß die Denkschrift der EKD<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN022" type="comment"><p>Siehe <ref type="internal" target="#spd-05_1965-10-26-t1505_EP_FN010">Nr. 126, Anm. 10</ref>.</p></note></seg> die Diskussion über die Deutschlandpolitik in Gang gebracht habe. Hierbei habe die SPD einen erheblichen Anteil gehabt. Er fordert jedoch nunmehr eine verstärkte Arbeit, um nicht von den anderen Fraktionen auf diesem Gebiet überholt zu werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchulzKlaus-Peter_1965-10-19">Schulz</name> hält die verstärkte Deutschlandpolitik für notwendig, die sich optisch durch Sitzungen in Berlin ausdrücken müsse.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> kündigt Schritte für eine bessere Information aus Vietnam an. Er weist die Kritik von <name type="Person" role="Erwaehnung" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> zurück und umreißt die Wichtigkeit der Vietnamposition für die Amerikaner und ist der Meinung, daß die Vietnampolitik das außenpolitische Thema Nr. 1 im Jahre 1966 darstellen wird.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name> fordert, daß Deutschland keinen Soldaten und auch kein Feldlazarett nach Vietnam schicken dürfe.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN023" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN035">Nr. 133, Anm. 35</ref>.</p></note></seg></p>
-				<p>Fritz <name type="Person" role="Sprecher" ref="#SaengerFritz_1961-10-17">Sänger</name> erinnert an die Rede von Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> im Jahre 1960 zur Rechenschaft über die Deutsche Frage,<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN024" type="comment"><p>Zu der bekannten Rede vom 30.6.1960 im Bundestag vgl. <bibl type="single-item"><hi rendition="#smcap">Klotzbach</hi>, S. 499</bibl>.</p></note></seg> die in vieler Hinsicht ein Baustein zur gesamtdeutschen Politik gewesen sei und fordert eine verstärkte Arbeit auf diesem Gebiet.</p>
-				<p><name type="Person" role="Sprecher" ref="#Kahn-AckermannGeorg_1953-10-06">Kahn-Ackermann</name> erinnert an die unterschiedliche Geisteshaltung der Asiaten, insbesondere der Buddhisten, und warnt davor, mit den Maßstäben des Abendlandes die Gewalttaten in Vietnam zu beurteilen.</p>
-				<p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> warnt noch einmal vor besserwisserischer Kritik gegenüber dem Ausland.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> hält die unterschiedlichen Auffassungen gegenüber der USA für nicht erfolgversprechend. Er erinnert an die Zusammenkunft von <name type="Person" role="Erwaehnung" ref="#WilsonHarold">Wilson</name> mit anderen Politikern in Checkers, wo er offiziell seine Partei, aber auch die Opposition über Vietnam informierte.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN025" type="comment"><p>Gemeint ist möglicherweise, daß<name type="Person" role="Erwaehnung" ref="#WilsonHarold">Wilson</name> nach einem informellen Arbeitsbesuch in Washington am 17./18.12.1965, bei dem über Vietnam gesprochen wurde, in dem Landsitz der britischen Regierung Checkers vertrauliche Informationen gab. Vgl. <bibl type="series-item">AdG 1965, S. 12237</bibl>. Im Juli 1965 hatte ein Sonderbeauftragter <name type="Person" role="Erwaehnung" ref="#WilsonHarold">Wilsons</name> Gespräche in Hanoi geführt. <bibl type="series-item">Ebd., S. 12002</bibl>.</p></note></seg> Er unterrichtet die Fraktion davon, daß die Genossen <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> nach Ostasien gehen sollen, damit der Fraktion eine bessere Information, insbesondere über Vietnam gegeben werden könne. Er bittet die Fraktion, die Genehmigung für diese Reise zu erteilen.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN026" type="comment"><p>Über die Informationsreise von <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> beriet die Fraktion erneut am 8.2.1966; siehe <ref type="internal" target="#spd-05_1966-02-08-t1500_EP">Nr. 136</ref>.</p></note></seg></p>
-				<p>Aus der Fraktion erhebt sich kein Widerspruch.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Punkt 2: Die nächsten Termine:</p>
-				<p>Dienstag, den 25.1.1966, um 11.30 Uhr Vorstandssitzung</p>
-				<p>Dienstag, den 25.1.1966, um 15.00 Uhr Fraktionssitzung</p>
-				<p>Mittwoch, den 26.1.1966, um 9.00 Uhr Fragestunde, danach Unfallverhütungsbericht<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN027" type="comment"><p>In der Fragestunde wurde vor allem eine Frage des CDU-Abgeordneten Dietrich-Wilhelm <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> nach »Wirtschaftsflüchtlingen aus den Ostblockländern« und eine Frage Edwin <name type="Person" role="Erwaehnung" ref="#ZerbeEdwin_1965-10-19">Zerbes</name> (SPD), ob die BReg bereit sei, »schon vor der Finanzreform« den Gemeinden einen höheren Steueranteil einzuräumen, ausführlich erörtert. <bibl type="btp"><ref type="external" target="05/16">BT Sten. Ber. 60</ref>, S. 611-616 und 617-619</bibl>. – Zum »Unfallverhütungsbericht 1964« – <ref type="external" target="05/152">BT Anl. 102, Drs. V/152</ref> – sprachen für die SPD-Fraktion <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> (<bibl type="btp">S. 623-628 und 636 f.</bibl>), <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name> (<bibl type="btp">S. 640 f.</bibl>) und Horst <name type="Person" role="Erwaehnung" ref="#SchmidtHorst_1961-10-17">Schmidt</name> (Offenbach) (<bibl type="btp">S. 643 f.</bibl>).</p></note></seg></p>
-				<p>Donnerstag, den 27.1.1966 um 9 Uhr Fragestunde, danach der Bericht <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröders</name> aus Luxemburg mit einer anschließenden Aussprache.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN028" type="comment"><p>Nach der Fragestunde – <bibl type="btd"><ref type="external" target="05/17">ebd., S. 659-673</ref></bibl> – gab BMAusw<name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> eine »Erklärung« zum Stand der Verhandlungen der außerordentlichen Ministerratstagung der EWG, die am 17./18.1.1966 begonnen hatte und am 28./29.1.1966 fortgesetzt wurde; <bibl type="btp"><ref type="external" target="05/17">ebd., S. 673-676</ref></bibl>. Für die SPD-Fraktion sprachen <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> (<bibl type="btp">S. 676-679</bibl>), <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name> (<bibl type="btp">S. 688-690</bibl>) und <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> (<bibl type="btp">S. 693-695</bibl>). – Zu den Verhandlungen, an denen erstmals wieder eine französische Delegation teilnahm, vgl. <bibl type="series-item">AdG 1966, S. 12284 f. und 12306</bibl> sowie <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-1">Nr. 135, TOP 1 c</ref>.</p></note></seg></p>
-				<p>Es muß noch entschieden werden, ob die für Freitag angesetzte Fragestunde bereits auf Donnerstag vorverlegt werden kann.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN029" type="comment"><p>Am 28.1.1966 fand keine Plenarsitzung statt.</p></note></seg></p>
-				<p>Franz <name type="Person" role="Sprecher" ref="#NeumannFranz_1949-09-07">Neumann</name> unterstützt die Vorverlegung, damit genügend Abgeordnete an der Eröffnung der »Grünen Woche« in Berlin<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN030" type="comment"><p>Die Internationale Grüne Woche in Berlin wurde am 27.1.1966 eröffnet.</p></note></seg> teilnehmen können.</p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Punkt 3:Vorlagen aus den Arbeitskreisen:</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#HeroldKarl_1953-10-06">Herold</name> begründet den Antrag betreffend die Bundesanstalt für Fleischforschung.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN031" type="comment"><p>Der Antrag <name type="Person" role="Erwaehnung" ref="#HeroldKarl_1953-10-06">Herold</name> u. a. Abgeordneter aus SPD, CDU/CDU, FDP sowie der drei Fraktionen forderte den Verbleib der Bundesanstalt in Kulmbach. Er wurde am 8.2.1966 eingebracht. <bibl type="btd"><ref type="external" target="05/262">BT Anl. 103, Drs. V/262</ref></bibl>.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MdB_Genderunbekannt">Müller</name><seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_ypn_qns_hsb" type="comment"><p>Es ist unklar, welches Fraktionsmitglied mit dem Namen Müller gemeint ist. </p></note></seg> und <name type="Person" role="Sprecher" ref="#RauFriedrich_1965-10-19">Rau</name> sprechen gegen diesen Antrag und bitten um eine Vertagung.</p>
-				<p>Bei wenigen Enthaltungen spricht sich die Fraktion für die Einbringung des Antrages aus.</p>
-				<p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> begründet die Kleine Anfrage betreffend das Wahlalter.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN032" type="comment"><p>Die Anfrage der SPD-Abgeordneten <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name> (München), <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#WestphalHeinz_1965-10-19">Westphal</name> u. a. und »Fraktion der SPD« bezog sich auf die »Herabsetzung des Wahlalters« und die Verknüpfung mit der Frage der Volljährigkeit und des Wehrpflichtalters. Sie wurde am 19.1.1966 eingebracht und von BMI <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> am 4.2.1966 beantwortet. <bibl type="btd"><ref type="external" target="05/194">BT Anl. 102, Drs. V/194</ref></bibl> und <bibl type="btd"><ref type="external" target="05/264">103, Drs. V/264</ref></bibl>; <bibl type="btp"><ref type="external" target="#spd-05_1966-01-18-t1500_EP_SVP-2">BT Sten. Ber. 60</ref>, S. 705</bibl>.</p></note></seg></p>
-				<p>Die Fraktion hat die Einbringung der Kleinen Anfrage einstimmig gebilligt.</p>
-				<p>Die Fraktion billigt einstimmig die Kleine Anfrage von <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN033" type="comment"><p>Die am 19.1.1966 eingebrachte Anfrage von <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, <name type="Person" role="Erwaehnung" ref="#SeibertPhilipp_1961-10-17">Seibert</name>, <name type="Person" role="Erwaehnung" ref="#GscheidleKurt_1961-10-17">Gscheidle</name> und »Fraktion der SPD« bezog sich auf die Entschließung des Bundestages vom 23.6.1965 »zur Verbesserung der Dienstdauervorschriften bei Bundesbahn und Bundespost; <bibl type="btd"><ref type="external" target="05/195">BT Anl. 102, Drs. V/195</ref></bibl> und <bibl type="btd"><ref type="external" target="05/266">103, Drs. V/266</ref></bibl>.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-4">
-				<head>D.</head>
-				<p>Punkt 4: Besetzung des Ausschusses gemäß Art.45GG:<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN034" type="comment"><p>Der auf Antrag der Fraktionen CDU/CSU, SPD, FDP am 25.1.1966 auf Grund Art. 45 GG eingesetzte ständige Ausschuß zur Wahrung der Rechte der Volksvertretung – <bibl type="btd"><ref type="external" target="05/213">BT Anl. 102, Drs. V/213</ref></bibl>; <bibl type="btd"><ref type="external" target="05/16">BT Sten Ber. 60</ref>, S. 646</bibl> – trat in der 5. WP nicht zusammen. Weder im Amtlichen Handbuch 5 noch in den Sten. Ber. und den Anl. zu den Sten. Ber. finden sich Angaben über die Mitgl.</p></note></seg></p>
-				<p>Die Besetzung wird von der Fraktion einstimmig angenommen.</p>
-				<p>Punkt 5: Die nächsten Termine</p>
-				<p>Am Dienstag, den 25.1.1966, Vorstandssitzung 11.30 Uhr</p>
-				<p>Dienstag, den 25.1.1966, um 15 Uhr Fraktionssitzung</p>
-				<p>Donnerstag, den 27.1.1966, um 18 Uhr Vorstandssitzung</p>
-				<p>Punkt 6: Verschiedenes:</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> berichtet, daß die Untersuchung über eine weitergehende Benutzung der Flugzeuge seitens der Abgeordneten zu keinem Ergebnis gekommen ist. Um eine weitergehende Benutzung der Flugzeuge zu erreichen, müsse das Diätengesetz geändert werden.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN035" type="comment"><p>Vgl. <ref type="internal" target="#spd-05_1965-10-26-t1505_EP_SVP-3">Nr. 126, TOP 4</ref> und <ref type="internal" target="#spd-05_1965-10-20-t1400_EP_FN012">125, TOP 4, bes. Anm. 12</ref>. Der Fraktionsvorstand setzte am 18.1.1966 eine Arbeitsgruppe für Fragen des Diätengesetzes ein, dem <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name>, <name type="Person" role="Erwaehnung" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name>, <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>, <name type="Person" role="Erwaehnung" ref="#CorterierFritz_1953-10-06">Corterier</name>, <name type="Person" role="Erwaehnung" ref="#KoenenWilly_1953-10-06">Könen</name> und <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name> angehörten. <bibl type="item-in-archive">»Protokoll der Vorstandssitzung von Dienstag, d. 18.1.1966«, AdsD, Fraktionsvorstand. Protokolle und Tgo von Okt. 1965 bis 12.12.67</bibl>.</p></note></seg> Diese Änderung ist anläßlich des Ministergesetzes, das evtl. im Herbst von der Bundesregierung vorgelegt werden wird, zu ermöglichen. Hierfür sollen die Genossen <name type="Person" role="Erwaehnung" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name>, <name type="Person" role="Erwaehnung" ref="#MdB_Genderunbekannt">Schmidt</name><seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_gxz_d4s_hsb" type="comment"><p>Es ist unklar, welches Fraktionsmitglied mit dem Namen Schmidt gemeint ist.</p></note></seg>, <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> eine Vorlage erstellen.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN036" type="comment"><p>Vgl. die vorige Anm. – Ein Ministergesetz wurde in der 5. WP nicht eingebracht, wohl aber am 13.2.1967 ein Gesetzentwurf über die Rechtsverhältnisse der Parlamentarischen Staatssekretäre; das Gesetz wurde am 6.4.1967 verkündet. <bibl type="single-item">Datenhandbuch 1949-1972, S. 855</bibl>.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> regt zugleich an, daß eine kostenfreie Benutzung von Dienstwagen ermöglicht werde.</p>
-				<p><name type="Person" role="Sprecher" ref="#Kahn-AckermannGeorg_1953-10-06">Kahn-Ackermann</name> fragt, ob die Terminierung der Plenarwochen in einem Zweiwochenturnus durchgeführt werden könne.</p>
-				<p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> berichtet, daß der Vorstand beschlossen habe, den alten Turnus beizubehalten.<seg type="note"><note xml:id="spd-05_1966-01-18-t1500_EP_FN037" type="comment"><p>Ein Vorschlag <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmars</name> über einen Zweiwochenturnus war vom Fraktionsvorstand am 7. und 9.12.1965 beraten, von <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name> aber wieder zurückgezogen worden. <bibl type="item-in-archive">»Protokoll der Vorstandssitzung am Dienstag, d. 7.12.1965« und »[…] am Donnerstag, d. 9.12.1965«, AdsD, Fraktionsvorstand. Protokolle und Tgo von Okt. 1965 bis 12.12.1967</bibl>.</p></note></seg></p>
-				<p>Ende der Sitzung: 18 Uhr</p>
-				<p>Für das Protokoll gez. <name type="Person" role="Erwaehnung" ref="#LaabsHerbert">Laabs</name> (Laabs)</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="spd-05_1966-01-18-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung (Kurzprotokoll)</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#TueffersBettina"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die SPD-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 8/III</title>
+                  <author>Heinrich Potthoff</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>1993</date>
+                  <idno type="DNB">https://d-nb.info/930888952</idno>
+                  <idno type="DNB">https://d-nb.info/930907760</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv der sozialen Demokratie (AdsD)</institution>
+                     <idno>SPD-BT-Fraktion 5. WP, Ord. 19.10.1965 – 1.3.1966 (alt 1038, neu 11)</idno>
+                     <objectName>Protokoll über die Fraktionssitzung am Dienstag, den 18.1.1966 in Berlin, Reichstag</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der SPD-Bundestagsfraktion am 18. Januar 1966</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>8 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1966-01-18">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="18:00:00"/>
+            </date>
+            <name type="Ort">Berlin</name>
+            <name type="Person" role="Sitzungsleitung" ref="#WehnerHerbert_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">SPD</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-05-14" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-07-01" who="#WeistenhoeferSimon" status="final" n="3">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="spd-05_1966-01-18-t1500_EP_SVP-1" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-1">A. Internes aus der Fraktion. – TOP 1: Bericht von Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>. – Ergänzungen Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehners</name>. – Diskussion der Fraktion über den Vietnam-Krieg.</item>
+               <item xml:id="spd-05_1966-01-18-t1500_EP_SVP-2" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-2">B. TOP 2: Die nächsten Plenarsitzungen.</item>
+               <item xml:id="spd-05_1966-01-18-t1500_EP_SVP-3" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-3">C. TOP 3: Vorlagen aus den Arbeitskreisen: Antrag betreffend Bundesanstalt für Fleischforschung. – Kleine Anfrage betreffend Wahlalter. – Kleiner Antrag, betreffend die Verbesserung der Dienstdauervorschriften.</item>
+               <item xml:id="spd-05_1966-01-18-t1500_EP_SVP-4" corresp="#spd-05_1966-01-18-t1500_EP_div_SVP-4">D. TOP 4: Besetzung des Ausschusses gemäß Art. 45 GG. – TOP 5: Nächste Termine. – TOP 6: Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Der Genosse Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> leitet die Fraktionssitzung. Er eröffnet die Sitzung und gibt zunächst einen Bericht über den Krankheitsverlauf von Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>, gemäß der Anlage 1.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN001" type="comment">
+                     <p>
+                        <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 16/66 vom 18.1.1966</bibl>, Überschrift: »Betr.: Fraktionssitzung (Teil I)«.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Über den Krankheitsverlauf von Herrn Fritz <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name>, geb. 14. Juli 1913, Mitglied des Bundestages und Fraktionsvorsitzender der Sozialdemokratischen Partei Deutschlands geben wir folgende Mitteilung:</p>
+            <p>Die Überwindung der hämatologischen Störung macht durch die eingeleitete Behandlung planmäßige Fortschritte. Mit dem Abschluß der klinischen Behandlung ist innerhalb der nächsten drei bis vier Wochen zu rechnen. Zur Wiederherstellung der vollen Arbeitsfähigkeit sollte sich ein Erholungsaufenthalt von mindestens zwei bis drei Wochen anschließen.</p>
+            <p>Prof. Dr. <name type="Person" role="Erwaehnung" ref="#HeilmeyerLudwig">Heilmeyer</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN002" type="comment">
+                     <p>Ludwig <name type="Person" role="Erwaehnung" ref="#HeilmeyerLudwig">Heilmeyer</name> (geb. 1899), Professor für Innere Medizin, seit 1946 Direktor der Medizinischen Universitätsklinik Freiburg.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Direktor der Klinik.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> entschuldigt die Genossen <name type="Person" role="Erwaehnung" ref="#HeiseBerger-HeiseMargarete_1953-10-06">Berger-Heise</name>, <name type="Person" role="Erwaehnung" ref="#BerlinAugust_1949-09-07">Berlin</name>, <name type="Person" role="Erwaehnung" ref="#KripsUrsula_1965-10-19">Krips</name>, <name type="Person" role="Erwaehnung" ref="#LiedtkeKarl_1965-10-19">Liedtke</name>, <name type="Person" role="Erwaehnung" ref="#SchanzenbachMarta_1949-09-07">Schanzenbach</name>, <name type="Person" role="Erwaehnung" ref="#UrbanWilhelm_1961-10-17">Urban</name> wegen ihrer Erkrankung und wünscht ihnen namens der Fraktion gute Besserung.</p>
+            <p>Namens der Fraktion gratuliert er dem Genossen Werner <name type="Person" role="Erwaehnung" ref="#JacobiWerner_1949-09-07">Jacobi</name> zum Geburtstag.</p>
+            <p>Punkt 1:Bericht von Willy Brandt.</p>
+            <p>Siehe Anlage 2.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN003" type="comment">
+                     <p>
+                        <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 20/66 vom 18.1.1966</bibl>, Überschrift: »Betr.: Fraktionssitzung (Teil II)«.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu Beginn der heutigen Fraktionssitzung der SPD befaßte sich der Parteivorsitzende Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> mit den Erörterungen der letzten Zeit über gesamtdeutsche Fragen. In seinem Gespräch mit dem Fraktionsvorsitzenden der CDU/CSU, Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>, sei übereinstimmend festgestellt worden, daß der Bundeskanzler die Form finden müsse, in der vertrauliche Beratungen im kleinen Kreis erfolgen können.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN004" type="comment">
+                     <p>In der <bibl type="item-in-archive">»Sitzung des Parteivorstandes am 21.1. 1966«, AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>, berichtete <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> über das Gespräch mit <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> am 17.1.1966 in Berlin. Vgl. dazu den Bericht in: <bibl type="series-item">»Der Spiegel« Nr. 5 vom 24.1.1966, S. 17</bibl>: <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> habe <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> mit dem Vorschlag überrascht, »man solle die bisher von der CDU kritisierte SPD-Politik der kleinen Schritte fortsetzen« und versuchen, in »Verhandlungen mit der Sowjetzone« ein Arrangement über folgende Punkte zu erzielen: »Wiederherstellung des Telefonverkehrs zwischen Ost- und West Berlin; Ausbau der Zusammenarbeit zwischen den Verwaltungen der Landräte beiderseits der Zonengrenze, Abkommen über westliche Medikamentensendungen in die Zone; Rückführung der 2000 in Mitteldeutschland lebenden Kinder, die von ihren im Westen wohnenden Eltern getrennt sind, und Zeitungsaustausch zwischen Ost- und Westdeutschland. Über diese Fragen sollten, so <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> zu <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, interfraktionelle Gespräche geführt werden. – Zur Frage von vertraulichen Gesprächen über die Deutschlandpolitik siehe <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-1">Nr. 135, TOP 1 a</ref>.</p>
+                  </note>
+               </seg> Energisch wandte sich <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> jedoch gegen die von der FDP geäußerte Auffassung, daß zunächst Kabinett und Koalition untereinander beraten und dann mit der SPD über das zuvor erzielte Ergebnis sprechen sollten.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN005" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> bezog sich auf eine entsprechende Äußerung des Vors. der FDP-Fraktion <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">Kühlmann-Stumm</name> in einer Pressekonferenz. Vgl. <bibl type="series-item">Dokumente zur Deutschlandpolitik IV, Bd. 12, 1. Hbd. S. 139</bibl>; <bibl type="series-item">»Der Spiegel« Nr. 5 vom 24.1.1966, S. 16</bibl>.</p>
+                  </note>
+               </seg> Ein solches Verfahren wäre der Stärke und Bedeutung der SPD nicht angemessen.</p>
+            <p>Die von der SPD im Bundestag vorgeschlagene Erörterung über die Lage der Nation<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN006" type="comment">
+                     <p>Die von der SPD schon früher gestellte Forderung, die BReg solle einen Bericht zur Lage der Nation vorlegen (vgl. <bibl type="single-item">Jahrbuch SPD 1964/65, S. 47</bibl>), hatte <name type="Person" role="Erwaehnung" ref="#SchillerKarl_1965-10-19">Schiller</name> in seiner Plenarrede vom 29.11.1965 präzisiert: Der Bericht solle eine Bestandsaufnahme »über die ökonomischen, sozialen und geistigen Lebensbedingungen unserer Landsleute in der Zone«, ein Bekenntnis zum Ausbau des Interzonenhandels und zur Förderung des »Reise- und Besucherverkehrs« sowie zu einer »Deutschlandinitiative mit Substanz« enthalten, zu der alle Parteien vertraulich beigezogen werden sollten. <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> griff diese Forderungen in seiner Rede am 2.12.1965 mehrfach auf. <bibl type="btp">BT Sten. Ber. 60, <ref type="external" target="05/07">S. 128</ref> und <ref type="external" target="05/10">374-376</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg> müsse drei Gesichtspunkten Rechnung tragen:</p>
+            <p>1. Man müsse den ernsthaften Versuch machen, sich über die tatsächliche Lage in der SBZ klarzuwerden.</p>
+            <p>2. Es müsse das Verhältnis der beiden Teile Deutschlands und der beiden Teile Berlins zueinander erörtert werden. In diesem Zusammenhang erwähnte <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, daß die Koordinierung zwischen Bonn und Berlin sich gebessert habe. Man müsse sich darüber klar sein, daß über solche technischen Fragen wie etwa die Passierscheinregelung nur dann Einverständnis erzielt werden könne, wenn diejenigen weiterreichenden Fragen ausgeklammert würden, über die eine Einigung nicht möglich sei. Nachdrücklich wandte sich <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> gegen die abwertende Erklärung eines stellvertretenden Fraktionsvorsitzenden der CDU/CSU gegen »ganz kleine Schritte« in Berlin.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN007" type="comment">
+                     <p>Diese Äußerung hatte Franz Josef <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, von 1965-1.12.1966 stellv. Fraktionsvors. der CDU/CSU, in Berlin gemacht. Nach <bibl type="series-item">»Der Spiegel« Nr. 8 vom 14.2.1966, S. 30</bibl>.</p>
+                  </note>
+               </seg> In der letzten Besuchszeit hätten 824 000 Besuche von Westberlinern im Ostsektor stattgefunden. Diese Zahl drücke viele Schritte aus.</p>
+            <p>3. Man müsse sich Klarheit über den Stand der internationalen Diskussion in der deutschen Frage verschaffen. Es sei beunruhigend, daß in manchen Teilen der Welt die deutsche Frage nicht mehr zu den dringendsten Problemen der Welt politik gezählt werde. Andererseits habe er in persönlicher Fühlungnahme mit bedeutenden Staatsmännern große Aufgeschlossenheit und Verständnis für unsere Situation gefunden.</p>
+            <p>Es gebe keinen Anlaß, dem Bundesvertriebenenminister Dr. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN008" type="comment">
+                     <p>Johann Baptist <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>, MdB (CDU/CSU) 1957-1980 für Berlin, Mitgl. des Bundesvorstandes der CDU 1953-1971, BM für Vertriebene, Flüchtlinge und Kriegsgeschädigte 1965-1966.</p>
+                  </note>
+               </seg> wegen seines Interviews<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN009" type="comment">
+                     <p>Gemeint ist das Spiegel-Gespräch mit <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> in <bibl type="series-item">»Der Spiegel« Nr. 4 vom 17.1.1966, S. 22-27</bibl>; abgedr. auch in <bibl type="series-item">Dokumente zur Deutschlandpolitik IV/12, 1. Hbd., S. 97-104</bibl>. Zur Beurteilung durch die SPD vgl. das am 22.1.1966 vom Hessischen Rundfunk gesendete Interview mit <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>; abgedr. <bibl type="series-item">ebd., S. 138-146, hier S. 141</bibl>.</p>
+                  </note>
+               </seg> Vorwürfe zu machen. <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> habe getan, was andere vor ihm getan hätten: laut gedacht. Seine Vorstellungen müßten in die vertraulichen Gespräche über die deutsche Frage mit einbezogen werden. In diesem Zusammenhang erinnerte Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> daran, daß die sozialdemokratische Regierungsmannschaft im Januar [1965]<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN010" type="comment">
+                     <p>Im Or. »1966«. – Gemeint sind die »Grundzüge sozialdemokratischer Regierungspolitik«, die im Januar 1965 von der SPD-Regierungsmannschaft vorgelegt wurden; abgedr. u. a. in <bibl type="single-item">Bundestagswahl 1965, Erklärungen der SPD-Regierungsmannschaft, S. 5-13</bibl>. Darin hieß es: »Wir werden dafür sorgen, daß die Grundzüge einer Friedensregelung erarbeitet, mit den Regierungen der verbündeten Mächte abgesprochen und in die internationalen Verhandlungen einbezogen werden.«</p>
+                  </note>
+               </seg> die Vorarbeit an den Elementen einer friedensvertraglichen Regelung für ganz Deutschland vorgeschlagen habe.</p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> begrüßte die Anwesenheit der Bundestagsabgeordneten in Berlin.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN011" type="comment">
+                     <p>Die Fraktionen und Ausschüsse des Bundestages waren vom 17.-21.1.1966 zu einer Arbeitswoche in Berlin.</p>
+                  </note>
+               </seg> Tagungen des Bundestages oder seiner Organe in der Hauptstadt sei[en] nur ein Teilaspekt der Gesamtpolitik. Das Verhältnis Berlins zum Bund werde auch von anderen Elementen, z. B. von finanzpolitischen, berührt. Berlin werde eine große Anstrengung machen, um seine Lebenskraft zu stärken und den Wirtschaftsaufbau rascher voranzubringen. Der sich entwickelnde Ost-West-Handel dürfe dabei nicht zu einem Faktor zusätzlicher Isolierung werden.</p>
+            <p>Zu der Diskussion über den Beauftragten des Bundes in Berlin<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN012" type="comment">
+                     <p>Ernst <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> (1898-1970), MdB (CDU) 1952-1970, langjähriger BM – für die Post 1956/57, für Gesamtdeutsche Fragen 1957-1962, für Vertriebene, Flüchtlinge 19.2. 1964-1965 – war seit 17.12.1965 Sonderbeauftragter des Bundeskanzlers für Berlin. Zu einer dringlichen mündlichen Anfrage von <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name> und <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name> (SPD) nach dem »Auftrag« der BReg für <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>, seine »Kompetenzen« und das »Verhältnis« zu dem Bundesbevollmächtigten für Berlin hatte <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> (FDP) als Stellv. des Bundeskanzlers am 12.1.1966 u. a. erklärt, »besondere Kompetenzen« seien damit nicht verbunden. Auf eine »Präzisierung des Auftrags« sei »bewußt verzichtet« worden. Er könne sich vorstellen, daß »in der Auslandspresse« von »<name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>verfaßte Namensartikel zu lesen« seien und dieser im Ausland Vorträge halte. BT Sten. Ber. 60<bibl type="btp">, S. 487-497</bibl>. – Gegen diese Charakterisierung und Qualifizierung seines Auftrages durch <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> protestierte <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> lautstark bei den anwesenden Ministern <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> und <name type="Person" role="Erwaehnung" ref="#GradlJohannBaptist_1957-10-15">Gradl</name>. Vgl. <bibl type="series-item">»Der Spiegel« Nr. 4 vom 17.1.1966, S. 18</bibl>.</p>
+                  </note>
+               </seg> warnte <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> davor, daß die Bundesregierung ohne zwingende Gründe Berlin abweichend von anderen Bundesländern behandele. Sie müsse im inneren Verhältnis so handeln, als sei Berlin ein Bundesland wie jedes andere auch. Die Berliner hätten im übrigen bewiesen, daß sie für sich selbst sprechen können. Er gehe davon aus, daß der Vizekanzler Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> in der Bundestagssitzung nur ausgesprochen habe, was ihm mitgeteilt worden sei, als er am 12. Januar erklärte, die Bundesregierung habe den Berliner Senat bereits schriftlich über den Auftrag von Bundesminister a. D. <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> informiert. Tatsächlich sei dieser Brief erst am 14. Januar in Berlin eingetroffen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN013" type="comment">
+                     <p>Auf eine Frage von <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name> (SPD), ob die BReg vor der Ernennung <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> mit der Berliner Landesregierung »verhandelt« oder sie wenigstens informiert habe, und Zusatzfragen von <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#JahnGerhard_1957-10-15">Jahn</name>, <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>, <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name>, <name type="Person" role="Erwaehnung" ref="#SchulzKlaus-Peter_1965-10-19">Schulz</name>, <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name>, <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name> (alle SPD), <name type="Person" role="Erwaehnung" ref="#ErtlJosef_1961-10-17">Ertl</name> (FDP) hatte <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> erklärt, BM <name type="Person" role="Erwaehnung" ref="#WestrickLudger">Westrick</name> habe den Bevollmächtigten des Landes Berlin beim Bund, Senator Klaus <name type="Person" role="Erwaehnung" ref="#SchuetzKlaus_1957-10-15">Schütz</name>, am 17.12.1965 mündlich informiert. Ein Schreiben des Regierenden Bürgermeisters <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> vom 21.12.1965, in dem er sich nach den Zuständigkeiten <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> erkundigte, sei »beantwortet« worden und der Brief sei »abgegangen«; ein Datum könne er jedoch nicht nennen.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Zu den Friedensbemühungen der Amerikaner hinsichtlich des Krieges in Vietnam<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN014" type="comment">
+                     <p>Zu den von der US-Regierung seit Dezember 1965 eingeleiteten Friedensinitiativen, u. a. durch Einschaltung der UNO und des Papstes, Entsendung von Sonderbotschaftern und eine Aussetzung der Bombenangriffe auf Nord-Vietnam, vgl. <bibl type="series-item">AdG 1966, S. 12281 und 12286-12288</bibl>.</p>
+                  </note>
+               </seg> erklärte <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, er habe Verständnis für die großen Sorgen, die überall in der Welt wegen dieses Krieges herrschten. Auch in Deutschland verfolge man die Friedensbemühungen mit großer Sympathie. Die Bundesrepublik sei aber nicht in der Position, als Ratgeber der USA aufzutreten. In Vietnam stehe die Glaubwürdigkeit der amerikanischen Politik so sehr auf dem Spiel, daß sich Rückwirkungen auch auf Europa ergeben würden.</p>
+            <p>In einem kurzen Bericht über seine Reise nach Italien wies Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> auf die große Bedeutung der bevorstehenden Vereinigung der Parteien <name type="Person" role="Erwaehnung" ref="#SaragatGiuseppe">Saragats</name> und <name type="Person" role="Erwaehnung" ref="#NenniPietro">Nennis</name> hin.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN015" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> hatte zunächst den Kongreß der Sozialdemokratischen Partei Italiens (PSDI) vom 8.- 11.1.1966 in Neapel besucht, der sich für eine Vereinigung mit der Sozialistischen Partei Italiens (PSI) unter Pietro <name type="Person" role="Erwaehnung" ref="#NenniPietro">Nenni</name> aussprach. <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> führte daneben noch Gespräche mit dem italienischen Staatspräsidenten Giuseppe <name type="Person" role="Erwaehnung" ref="#SaragatGiuseppe">Saragat</name>, dem früheren Vors. der PSDI, sowie mit dem Generalsekretär der PSI <name type="Person" role="Erwaehnung" ref="#MartinoFrancescoDe">Martino</name> über eine Aufnahme der PSI in die Sozialistische Internationale. Nach <bibl type="item-in-archive">»Aufzeichnung. Sitzung des Ausschusses für Internationale Beziehungen am 19.1.1966 in Berlin« vom 1.2.1966, Verfasser Hans Eberhard <name type="Person" role="Erwaehnung" ref="#DingelsHans-Eberhard">Dingels</name>, AdsD, PV vom 22.9.1965 bis 15.7.1966</bibl>. Die Sozialdemokratische Partei Italiens (PSDI) und die Sozialistische Partei Italiens (PSI) einigten sich jedoch erst am 31.7.1966 auf eine gemeinsame Grundsatzerklärung für einen Zusammenschluß, der am 30.10.1966 auf einem gemeinsamen Parteitag erfolgte. Vgl. <bibl type="series-item">AdG 1966, S. 12804</bibl>.</p>
+                  </note>
+               </seg> Sein Besuch beim Papst habe ihm gezeigt, daß die SPD und ihr geistiger Entwicklungsprozeß auch im Vatikan als wichtige Faktoren gesehen würden.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN016" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> war am 11.1.1966 von Papst <name type="Person" role="Erwaehnung" ref="#PapstPaulVI">Paul VI.</name> zu einer Privataudienz empfangen worden. <bibl type="series-item">SPD-Pressemitteilungen Nr. 28/66 vom 14.1.1966</bibl>; ferner den Bericht <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandts</name> in der Sitzung des Präsidiums am 14.1.1966, <bibl type="item-in-archive">AdsD, Präsidium v. 5. Nov. 1965 b. Juni 1966</bibl>; <bibl type="series-item">AdG 1966, S. 12283</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Abschließend kündigte Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name> an, daß die SPD auf ihrem bevorstehenden Dortmunder Parteitag<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN017" type="comment">
+                     <p>Vom 1.-5.6.1966.</p>
+                  </note>
+               </seg> ihren Prioritätenkatalog deutlich machen und sich dabei insbesondere mit den gesellschaftspolitischen Fragen befassen werde. Die Erfahrungen und Aktivitäten der Sozialdemokratischen Bundestagsfraktion sollten den Beratungen auf diesem Parteitag nutzbar gemacht werden.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> ergänzte die Fragen zur Berlinpolitik, wie aus der Anlage III hervorgeht.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN018" type="comment">
+                     <p>
+                        <bibl type="series-item">»Die SPD-Fraktion teilt mit« Nr. 21/66 vom 18.1.1966</bibl>, Überschrift: »Betr. Fraktionssitzung (Teil III)«.</p>
+                  </note>
+               </seg> Der stellvertretende Fraktionsvorsitzende Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> nahm bei seinen anschließenden Bemerkungen auch zu Fragen der Berlin-Politik und zu der Kontroverse um den Sonderbeauftragten Ernst <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name>
+               <unclear reason="Fußnotenzeichen-ohne-Fußnotentext">12</unclear> Stellung. Was Berlin brauche, sei nicht mehr Propaganda, sondern mehr selbstverständliche Rolle in der Deutschland-Politik, betonte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name>. Fehlende Deutschland-Politik könne auch nicht durch die Ernennung eines Sonderbeauftragten ersetzt werden.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> setzte sich kritisch mit den Ausführungen <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> über seine Aufgaben auseinander.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN019" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> dürfte sich wahrscheinlich auf Ausführungen <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> vor dem Gesamtdeutschen Ausschuß beziehen. In einer Pressekonferenz vom 19.1.1966 äußerte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> u. a., er erwarte »mit milder Spannung«, was der BMG <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> in der Berlin-Sitzung des Gesamtdeutschen Ausschusses an diesem Tage zu den Kompetenzen <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmers</name> zu sagen habe. <bibl type="series-item">PPP (Meldungsdienst) Nr. 13 vom 19.1.1966</bibl>; vgl. <bibl type="series-item">Dokumente zur Deutschlandpolitik V/12, 1. Hbd., S. 146 (Anm. 1)</bibl>.</p>
+                  </note>
+               </seg> Wenn die Bundesregierung in politischen Fragen, die Berlin betreffen, Rat brauche, dann sei dafür der gewählte Berliner Senat der Gesprächspartner, »und sonst niemand«. Wenn <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> jetzt zugebe, daß bei der Bundesregierung ein derartiges Durcheinander herrsche, daß der Kanzler in manchen wichtigen Fragen »nur durch Zufall« von Entscheidungen einzelner Ressortminister erfahre, dann bestätige das nur die jahrelangen Warnungen der SPD. Zuletzt habe es geheißen, diese Dinge seien jetzt geregelt und der Bundesminister für gesamtdeutsche Fragen koordiniere alle in den Bereich der gesamtdeutschen Politik fallenden Angelegenheiten. Dies sei jetzt von <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> deutlich korrigiert worden. <name type="Person" role="Erwaehnung" ref="#LemmerErnst_1952-02-01">Lemmer</name> betrachte sich also offenbar als »Koordinator des Koordinators«.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN020" type="comment">
+                     <p>Vgl. in diesem Zusammenhang die in der Pressekonferenz von <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> gegebene Anregung, die BReg solle zur Koordinierung aller Fragen der gesamtdeutschen Politik ein »Wiedervereinigungskabinett« in der Art des Verteidigungsrates und des Wirtschaftskabinetts schaffen.</p>
+                  </note>
+               </seg> Es ist schade – meinte <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> – daß ein so sympathischer Mann in eine so unmögliche Rolle gerate.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> fragt Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, ob er nichts in seiner Eigenschaft als Regierender Berliner Bürgermeister tun kann, um auf <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> und auf die Alliierten Einfluß zu nehmen, daß diese zu der Auffassung gelangen, daß die Anwesenheit des Deutschen Bundestages in Berlin notwendig ist, damit der Status quo minus verhindert wird.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN021" type="comment">
+                     <p>Vgl. die Äußerung von <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Wehner</name> in dieser Pressekonferenz vom 19.1.1966 – siehe <ref type="internal" target="#spd-05_1966-01-18-t1500_EP_FN019">Anm. 19</ref> –, er bedaure, daß Bundestagspräsident <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> sich außerstande sehe, von seinem Recht, Plenarsitzungen nach Berlin einzuberufen, Gebrauch zu machen. Er habe den Eindruck, daß die Einsprüche der Alliierten gegen Berlin-Sitzungen des Bundestages »gewohnheitsmäßig erfolgten und ebenso beinahe gewohnheitsmäßig« von <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> befolgt würden.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BlachsteinPeter_1949-09-07">Blachstein</name> bringt zum Ausdruck, daß man eigentlich keine Veranlassung habe, die moralischen Impulse in der Welt über die Scheußlichkeit des Krieges in Vietnam zu beschränken oder ihnen entgegenzutreten.</p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#BrandtWilly_1949-09-07">Brandt</name> erklärt, daß unsere Position in Deutschland uns nicht das Recht gebe, als moralische Ratgeber der USA tätig zu sein. Die Glaubwürdigkeit der Politik der USA in Vietnam habe Auswirkungen auf weite Teile der Welt.</p>
+            <p>Zur Berlinpolitik sei er der Meinung, daß die Bundestagssitzungen kein Element der Berlinpolitik seien und man solle nicht davon ausgehen, daß diese notwendig seien, um die Moral der Berliner zu stärken. Vielmehr müssen diese Bundestagssitzungen als ein Teil der Deutschlandpolitik betrachtet werden.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> erinnert an die Einseitigkeit der Argumentation zum Befreiungskrieg in Vietnam und gibt zu bedenken, daß auch in der Zone mit denselben Worten argumentiert wird. Kritik an den Amerikanern wäre die schlechteste Deutschlandpolitik, man müsse vielmehr die Solidarität mit den Amerikanern zum Ausdruck bringen.</p>
+            <p>Willy <name type="Person" role="Sprecher" ref="#KoenenWilly_1953-10-06">Könen</name> gibt zu bedenken, daß die meisten über den Vietnam-Krieg nicht richtig informiert sind.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> kritisiert die Politik der USA in Asien und in den südamerikanischen Staaten, indem diese bisher niemals die ideologischen Reformen dieser Staaten berücksichtigte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZerbeEdwin_1965-10-19">Zerbe</name> erinnert daran, daß die Denkschrift der EKD<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN022" type="comment">
+                     <p>Siehe <ref type="internal" target="#spd-05_1965-10-26-t1505_EP_FN010">Nr. 126, Anm. 10</ref>.</p>
+                  </note>
+               </seg> die Diskussion über die Deutschlandpolitik in Gang gebracht habe. Hierbei habe die SPD einen erheblichen Anteil gehabt. Er fordert jedoch nunmehr eine verstärkte Arbeit, um nicht von den anderen Fraktionen auf diesem Gebiet überholt zu werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchulzKlaus-Peter_1965-10-19">Schulz</name> hält die verstärkte Deutschlandpolitik für notwendig, die sich optisch durch Sitzungen in Berlin ausdrücken müsse.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> kündigt Schritte für eine bessere Information aus Vietnam an. Er weist die Kritik von <name type="Person" role="Erwaehnung" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> zurück und umreißt die Wichtigkeit der Vietnamposition für die Amerikaner und ist der Meinung, daß die Vietnampolitik das außenpolitische Thema Nr. 1 im Jahre 1966 darstellen wird.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KochGerhard_1961-10-17">Koch</name> fordert, daß Deutschland keinen Soldaten und auch kein Feldlazarett nach Vietnam schicken dürfe.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN023" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1966-01-11-t1510_EP_FN035">Nr. 133, Anm. 35</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Fritz <name type="Person" role="Sprecher" ref="#SaengerFritz_1961-10-17">Sänger</name> erinnert an die Rede von Herbert <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> im Jahre 1960 zur Rechenschaft über die Deutsche Frage,<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN024" type="comment">
+                     <p>Zu der bekannten Rede vom 30.6.1960 im Bundestag vgl. <bibl type="single-item">
+                           <hi rendition="#smcap">Klotzbach</hi>, S. 499</bibl>.</p>
+                  </note>
+               </seg> die in vieler Hinsicht ein Baustein zur gesamtdeutschen Politik gewesen sei und fordert eine verstärkte Arbeit auf diesem Gebiet.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Kahn-AckermannGeorg_1953-10-06">Kahn-Ackermann</name> erinnert an die unterschiedliche Geisteshaltung der Asiaten, insbesondere der Buddhisten, und warnt davor, mit den Maßstäben des Abendlandes die Gewalttaten in Vietnam zu beurteilen.</p>
+            <p>Helmut <name type="Person" role="Sprecher" ref="#SchmidtHelmut_1953-10-06">Schmidt</name> warnt noch einmal vor besserwisserischer Kritik gegenüber dem Ausland.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> hält die unterschiedlichen Auffassungen gegenüber der USA für nicht erfolgversprechend. Er erinnert an die Zusammenkunft von <name type="Person" role="Erwaehnung" ref="#WilsonHarold">Wilson</name> mit anderen Politikern in Checkers, wo er offiziell seine Partei, aber auch die Opposition über Vietnam informierte.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN025" type="comment">
+                     <p>Gemeint ist möglicherweise, daß<name type="Person" role="Erwaehnung" ref="#WilsonHarold">Wilson</name> nach einem informellen Arbeitsbesuch in Washington am 17./18.12.1965, bei dem über Vietnam gesprochen wurde, in dem Landsitz der britischen Regierung Checkers vertrauliche Informationen gab. Vgl. <bibl type="series-item">AdG 1965, S. 12237</bibl>. Im Juli 1965 hatte ein Sonderbeauftragter <name type="Person" role="Erwaehnung" ref="#WilsonHarold">Wilsons</name> Gespräche in Hanoi geführt. <bibl type="series-item">Ebd., S. 12002</bibl>.</p>
+                  </note>
+               </seg> Er unterrichtet die Fraktion davon, daß die Genossen <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und <name type="Person" role="Erwaehnung" ref="#EpplerErhard_1961-10-17">Eppler</name> nach Ostasien gehen sollen, damit der Fraktion eine bessere Information, insbesondere über Vietnam gegeben werden könne. Er bittet die Fraktion, die Genehmigung für diese Reise zu erteilen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN026" type="comment">
+                     <p>Über die Informationsreise von <name type="Person" role="Erwaehnung" ref="#BerkhanKarlWilhelm_1957-10-15">Berkhan</name> und <name type="Person" role="Erwaehnung" ref="#ErlerFritz_1949-09-07">Erler</name> beriet die Fraktion erneut am 8.2.1966; siehe <ref type="internal" target="#spd-05_1966-02-08-t1500_EP">Nr. 136</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Aus der Fraktion erhebt sich kein Widerspruch.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Punkt 2: Die nächsten Termine:</p>
+            <p>Dienstag, den 25.1.1966, um 11.30 Uhr Vorstandssitzung</p>
+            <p>Dienstag, den 25.1.1966, um 15.00 Uhr Fraktionssitzung</p>
+            <p>Mittwoch, den 26.1.1966, um 9.00 Uhr Fragestunde, danach Unfallverhütungsbericht<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN027" type="comment">
+                     <p>In der Fragestunde wurde vor allem eine Frage des CDU-Abgeordneten Dietrich-Wilhelm <name type="Person" role="Erwaehnung" ref="#RollmannDietrich-Wilhelm_1960-03-07">Rollmann</name> nach »Wirtschaftsflüchtlingen aus den Ostblockländern« und eine Frage Edwin <name type="Person" role="Erwaehnung" ref="#ZerbeEdwin_1965-10-19">Zerbes</name> (SPD), ob die BReg bereit sei, »schon vor der Finanzreform« den Gemeinden einen höheren Steueranteil einzuräumen, ausführlich erörtert. <bibl type="btp">
+                           <ref type="external" target="05/16">BT Sten. Ber. 60</ref>, S. 611-616 und 617-619</bibl>. – Zum »Unfallverhütungsbericht 1964« – <ref type="external" target="05/152">BT Anl. 102, Drs. V/152</ref> – sprachen für die SPD-Fraktion <name type="Person" role="Erwaehnung" ref="#SchellenbergErnst_1952-02-01">Schellenberg</name> (<bibl type="btp">S. 623-628 und 636 f.</bibl>), <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name> (<bibl type="btp">S. 640 f.</bibl>) und Horst <name type="Person" role="Erwaehnung" ref="#SchmidtHorst_1961-10-17">Schmidt</name> (Offenbach) (<bibl type="btp">S. 643 f.</bibl>).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Donnerstag, den 27.1.1966 um 9 Uhr Fragestunde, danach der Bericht <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröders</name> aus Luxemburg mit einer anschließenden Aussprache.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN028" type="comment">
+                     <p>Nach der Fragestunde – <bibl type="btd">
+                           <ref type="external" target="05/17">ebd., S. 659-673</ref>
+                        </bibl> – gab BMAusw<name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> eine »Erklärung« zum Stand der Verhandlungen der außerordentlichen Ministerratstagung der EWG, die am 17./18.1.1966 begonnen hatte und am 28./29.1.1966 fortgesetzt wurde; <bibl type="btp">
+                           <ref type="external" target="05/17">ebd., S. 673-676</ref>
+                        </bibl>. Für die SPD-Fraktion sprachen <name type="Person" role="Erwaehnung" ref="#StrobelKaete_1949-09-07">Strobel</name> (<bibl type="btp">S. 676-679</bibl>), <name type="Person" role="Erwaehnung" ref="#ApelHans_1965-10-19">Apel</name> (<bibl type="btp">S. 688-690</bibl>) und <name type="Person" role="Erwaehnung" ref="#WehnerHerbert_1949-09-07">Wehner</name> (<bibl type="btp">S. 693-695</bibl>). – Zu den Verhandlungen, an denen erstmals wieder eine französische Delegation teilnahm, vgl. <bibl type="series-item">AdG 1966, S. 12284 f. und 12306</bibl> sowie <ref type="internal" target="#spd-05_1966-01-25-t1500_EP_SVP-1">Nr. 135, TOP 1 c</ref>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Es muß noch entschieden werden, ob die für Freitag angesetzte Fragestunde bereits auf Donnerstag vorverlegt werden kann.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN029" type="comment">
+                     <p>Am 28.1.1966 fand keine Plenarsitzung statt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Franz <name type="Person" role="Sprecher" ref="#NeumannFranz_1949-09-07">Neumann</name> unterstützt die Vorverlegung, damit genügend Abgeordnete an der Eröffnung der »Grünen Woche« in Berlin<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN030" type="comment">
+                     <p>Die Internationale Grüne Woche in Berlin wurde am 27.1.1966 eröffnet.</p>
+                  </note>
+               </seg> teilnehmen können.</p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Punkt 3:Vorlagen aus den Arbeitskreisen:</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#HeroldKarl_1953-10-06">Herold</name> begründet den Antrag betreffend die Bundesanstalt für Fleischforschung.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN031" type="comment">
+                     <p>Der Antrag <name type="Person" role="Erwaehnung" ref="#HeroldKarl_1953-10-06">Herold</name> u. a. Abgeordneter aus SPD, CDU/CDU, FDP sowie der drei Fraktionen forderte den Verbleib der Bundesanstalt in Kulmbach. Er wurde am 8.2.1966 eingebracht. <bibl type="btd">
+                           <ref type="external" target="05/262">BT Anl. 103, Drs. V/262</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MdB_Genderunbekannt">Müller</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_ypn_qns_hsb" type="comment">
+                     <p>Es ist unklar, welches Fraktionsmitglied mit dem Namen Müller gemeint ist. </p>
+                  </note>
+               </seg> und <name type="Person" role="Sprecher" ref="#RauFriedrich_1965-10-19">Rau</name> sprechen gegen diesen Antrag und bitten um eine Vertagung.</p>
+            <p>Bei wenigen Enthaltungen spricht sich die Fraktion für die Einbringung des Antrages aus.</p>
+            <p>Herbert <name type="Person" role="Sprecher" ref="#WehnerHerbert_1949-09-07">Wehner</name> begründet die Kleine Anfrage betreffend das Wahlalter.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN032" type="comment">
+                     <p>Die Anfrage der SPD-Abgeordneten <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name> (München), <name type="Person" role="Erwaehnung" ref="#LiehrHarry_1962-01-11">Liehr</name>, <name type="Person" role="Erwaehnung" ref="#WestphalHeinz_1965-10-19">Westphal</name> u. a. und »Fraktion der SPD« bezog sich auf die »Herabsetzung des Wahlalters« und die Verknüpfung mit der Frage der Volljährigkeit und des Wehrpflichtalters. Sie wurde am 19.1.1966 eingebracht und von BMI <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> am 4.2.1966 beantwortet. <bibl type="btd">
+                           <ref type="external" target="05/194">BT Anl. 102, Drs. V/194</ref>
+                        </bibl> und <bibl type="btd">
+                           <ref type="external" target="05/264">103, Drs. V/264</ref>
+                        </bibl>; <bibl type="btp">
+                           <ref type="external" target="#spd-05_1966-01-18-t1500_EP_SVP-2">BT Sten. Ber. 60</ref>, S. 705</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Fraktion hat die Einbringung der Kleinen Anfrage einstimmig gebilligt.</p>
+            <p>Die Fraktion billigt einstimmig die Kleine Anfrage von <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN033" type="comment">
+                     <p>Die am 19.1.1966 eingebrachte Anfrage von <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, <name type="Person" role="Erwaehnung" ref="#SeibertPhilipp_1961-10-17">Seibert</name>, <name type="Person" role="Erwaehnung" ref="#GscheidleKurt_1961-10-17">Gscheidle</name> und »Fraktion der SPD« bezog sich auf die Entschließung des Bundestages vom 23.6.1965 »zur Verbesserung der Dienstdauervorschriften bei Bundesbahn und Bundespost; <bibl type="btd">
+                           <ref type="external" target="05/195">BT Anl. 102, Drs. V/195</ref>
+                        </bibl> und <bibl type="btd">
+                           <ref type="external" target="05/266">103, Drs. V/266</ref>
+                        </bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="spd-05_1966-01-18-t1500_EP_div_SVP-4">
+            <head>D.</head>
+            <p>Punkt 4: Besetzung des Ausschusses gemäß Art.45GG:<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN034" type="comment">
+                     <p>Der auf Antrag der Fraktionen CDU/CSU, SPD, FDP am 25.1.1966 auf Grund Art. 45 GG eingesetzte ständige Ausschuß zur Wahrung der Rechte der Volksvertretung – <bibl type="btd">
+                           <ref type="external" target="05/213">BT Anl. 102, Drs. V/213</ref>
+                        </bibl>; <bibl type="btd">
+                           <ref type="external" target="05/16">BT Sten Ber. 60</ref>, S. 646</bibl> – trat in der 5. WP nicht zusammen. Weder im Amtlichen Handbuch 5 noch in den Sten. Ber. und den Anl. zu den Sten. Ber. finden sich Angaben über die Mitgl.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Besetzung wird von der Fraktion einstimmig angenommen.</p>
+            <p>Punkt 5: Die nächsten Termine</p>
+            <p>Am Dienstag, den 25.1.1966, Vorstandssitzung 11.30 Uhr</p>
+            <p>Dienstag, den 25.1.1966, um 15 Uhr Fraktionssitzung</p>
+            <p>Donnerstag, den 27.1.1966, um 18 Uhr Vorstandssitzung</p>
+            <p>Punkt 6: Verschiedenes:</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> berichtet, daß die Untersuchung über eine weitergehende Benutzung der Flugzeuge seitens der Abgeordneten zu keinem Ergebnis gekommen ist. Um eine weitergehende Benutzung der Flugzeuge zu erreichen, müsse das Diätengesetz geändert werden.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN035" type="comment">
+                     <p>Vgl. <ref type="internal" target="#spd-05_1965-10-26-t1505_EP_SVP-3">Nr. 126, TOP 4</ref> und <ref type="internal" target="#spd-05_1965-10-20-t1400_EP_FN012">125, TOP 4, bes. Anm. 12</ref>. Der Fraktionsvorstand setzte am 18.1.1966 eine Arbeitsgruppe für Fragen des Diätengesetzes ein, dem <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name>, <name type="Person" role="Erwaehnung" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name>, <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>, <name type="Person" role="Erwaehnung" ref="#CorterierFritz_1953-10-06">Corterier</name>, <name type="Person" role="Erwaehnung" ref="#KoenenWilly_1953-10-06">Könen</name> und <name type="Person" role="Erwaehnung" ref="#BuettnerFritz_1957-10-15">Büttner</name> angehörten. <bibl type="item-in-archive">»Protokoll der Vorstandssitzung von Dienstag, d. 18.1.1966«, AdsD, Fraktionsvorstand. Protokolle und Tgo von Okt. 1965 bis 12.12.67</bibl>.</p>
+                  </note>
+               </seg> Diese Änderung ist anläßlich des Ministergesetzes, das evtl. im Herbst von der Bundesregierung vorgelegt werden wird, zu ermöglichen. Hierfür sollen die Genossen <name type="Person" role="Erwaehnung" ref="#JunghansHans-Juergen_1957-10-15">Junghans</name>, <name type="Person" role="Erwaehnung" ref="#MdB_Genderunbekannt">Schmidt</name>
+               <seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_gxz_d4s_hsb" type="comment">
+                     <p>Es ist unklar, welches Fraktionsmitglied mit dem Namen Schmidt gemeint ist.</p>
+                  </note>
+               </seg>, <name type="Person" role="Erwaehnung" ref="#FrehseeHeinz_1953-10-06">Frehsee</name>, <name type="Person" role="Erwaehnung" ref="#MommerKarl_1949-09-07">Mommer</name> eine Vorlage erstellen.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN036" type="comment">
+                     <p>Vgl. die vorige Anm. – Ein Ministergesetz wurde in der 5. WP nicht eingebracht, wohl aber am 13.2.1967 ein Gesetzentwurf über die Rechtsverhältnisse der Parlamentarischen Staatssekretäre; das Gesetz wurde am 6.4.1967 verkündet. <bibl type="single-item">Datenhandbuch 1949-1972, S. 855</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MatthoeferHans_1961-10-17">Matthöfer</name> regt zugleich an, daß eine kostenfreie Benutzung von Dienstwagen ermöglicht werde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Kahn-AckermannGeorg_1953-10-06">Kahn-Ackermann</name> fragt, ob die Terminierung der Plenarwochen in einem Zweiwochenturnus durchgeführt werden könne.</p>
+            <p>Karl <name type="Person" role="Sprecher" ref="#MommerKarl_1949-09-07">Mommer</name> berichtet, daß der Vorstand beschlossen habe, den alten Turnus beizubehalten.<seg type="note">
+                  <note xml:id="spd-05_1966-01-18-t1500_EP_FN037" type="comment">
+                     <p>Ein Vorschlag <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmars</name> über einen Zweiwochenturnus war vom Fraktionsvorstand am 7. und 9.12.1965 beraten, von <name type="Person" role="Erwaehnung" ref="#LohmarUlrich_1957-10-15">Lohmar</name> aber wieder zurückgezogen worden. <bibl type="item-in-archive">»Protokoll der Vorstandssitzung am Dienstag, d. 7.12.1965« und »[…] am Donnerstag, d. 9.12.1965«, AdsD, Fraktionsvorstand. Protokolle und Tgo von Okt. 1965 bis 12.12.1967</bibl>.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Ende der Sitzung: 18 Uhr</p>
+            <p>Für das Protokoll gez. <name type="Person" role="Erwaehnung" ref="#LaabsHerbert">Laabs</name> (Laabs)</p>
+         </div>
+      </body>
+   </text>
 </TEI>

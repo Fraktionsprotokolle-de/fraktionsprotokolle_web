@@ -1,199 +1,236 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-01_1950-06-14-t1715_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Sitzung der Landesgruppe</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
-						<author>Andreas Zellhuber</author>
-						<author>Tim B. Peters</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2011</date>
-						<idno type="DNB">https://d-nb.info/101322325X</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
-							<idno>LG-Protokolle, 1950/9</idno>
-							<objectName>[Kein Titel überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 14. Juni 1950</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>3 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1950-06-14"><time type="start" when="17:15:00"/><time type="end" when="20:20:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#SollederMax_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">CSU-LG</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-12-06" who="#RabusSimon" status="draft" n="3">Header, SVP abgeschlossen</change>
-			<change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-02-08" who="#RabusSimon" status="draft" n="5">Bibl.- und Ref.-Angaben gesetzt</change>
-			<change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf: (15.)</head>
-				<list type="SVP">
-					<item xml:id="csu-lg-01_1950-04-27-t2020_EP_SVP-1" corresp="#csu-lg-01_1950-04-27-t2020_EP_div_SVP-1">A. Mitbestimmungsrecht; Verbindungsausschuss zwischen Landesgruppe und Landtagsfraktion. – Stellung der Landesgruppe in der CDU/CSU-Bundestagsfraktion. – Referat des Abg. <name type="Person" role="Erwaehnung" ref="#SchatzJosef_1949-09-07">Schatz</name> über vorliegende Drucksachen: Flurbereinigung, Bundesvermögen, Gewerbefreiheit.</item>
-					<item xml:id="csu-lg-01_1950-06-14-t1715_EP_SVP-2" corresp="#csu-lg-01_1950-06-14-t1715_EP_div_SVP-2">B. Vergabe von ERP-Krediten an Bayern. – Anträge zur Stützung der Landwirtschaft. – Steuerliche Belastung der Heimarbeiter.</item>
-					<item xml:id="csu-lg-01_1950-06-14-t1715_EP_SVP-3" corresp="#csu-lg-01_1950-06-14-t1715_EP_div_SVP-3">C. Subventionierung der Lebensmittelwirtschaft.</item>
-				</list>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Die Mitglieder der Landesgruppe außer den Abg. <name type="Person" role="Erwaehnung" ref="#FunkFriedrich_1949-09-07">Funk</name>, <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, <name type="Person" role="Erwaehnung" ref="#OesterleJosef_1949-09-07">Oesterle</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#GramppCarl">Grampp</name>, <name type="Person" role="Erwaehnung" ref="#KopfWilhelm">Kopf</name>, <name type="Person" role="Erwaehnung" ref="#NiklasWilhelm_1951-05-30">Niklas</name>, <name type="Person" role="Erwaehnung" ref="#PfeifferAnton">Pfeiffer</name>, <name type="Person" role="Erwaehnung" ref="#RattenhuberErnst">Rattenhuber</name>, <name type="Person" role="Erwaehnung" ref="#ScheidtWilhelm">Scheidt</name>.</p>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="csu-lg-01_1950-06-14-t1715_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Die Sitzung wurde in Abwesenheit von Abg. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> durch den Abg. Dr. <name type="Person" role="Sprecher" ref="#SollederMax_1949-09-07">Solleder</name> eröffnet.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> empfahl bei der Behandlung der Frage des Mitbestimmungsrechtes sehr zurückhaltend zu sein und die Frage in einer Sondersitzung zu behandeln.</p>
-				<p>Minister <name type="Person" role="Sprecher" ref="#PfeifferAnton">Pfeiffer</name> verweist auf den Entwurf der bayr. Staatsregierung zum bayerischen Betriebsrätegesetz, der von Gewerkschaften und Arbeitgebern als ein guter mittlerer Weg bezeichnet worden ist. Er schlägt darüber eine Aussprache in Kempten mit dem Verbindungsausschuß des Landtages vor. Die Unterlagen will er besorgen. Man beschließt eine Sitzung in 14 Tagen mit einem Referat von Abg. <name type="Person" role="Erwaehnung" ref="#KarpfHugo_1949-09-07">Karpf</name> und einem Korreferat von Abg. <name type="Person" role="Erwaehnung" ref="#LoiblMartin_1949-09-07">Loibl</name>.</p>
-				<p>Es wird bedauert, daß vom Fraktionsvorsitzenden Dr. <name type="Person" role="Erwaehnung" ref="#HundhammerAlois">Hundhammer</name> der Verbindungsausschuß bisher überhaupt nicht gefördert wurde. Weiter kommt zur Sprache, daß man bei wichtigen Fragen im Plenum mehr zu Wort kommen müsse. U.U. müsse man sogar ultimative Forderungen an die CDU-Fraktion stellen. Es wird bemängelt, daß der stellv. Obmann Abg. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> manchmal nicht genügend die Forderungen der Landesgruppe im Vorstand durchsetze. Die Behauptung von Staatsminister <name type="Person" role="Erwaehnung" ref="#PfeifferAnton">Pfeiffer</name>, daß die CSU mit Anträgen überhaupt nicht in Erscheinung trete, wird heftig zurückgewiesen. Die Forderung, bei der 3. Lesung der Europaratsdebatte noch einmal zu Wort zu kommen, wird aufgestellt. Nachdem ihr teilweise scharf widersprochen worden war, einigte sich die Landesgruppe darauf, daß bei Behandlung der Frage der Wählbarkeit der Mitglieder der Straßburg-Delegation, die nicht im Handumdrehen entschieden werden kann, die Gruppe einen eigenen Antrag stellt, wenn der CDU-Antrag der Ausschußüberweisung überstimmt werden sollte. Man war der Meinung, daß der Bundesrat mit 2 oder 3 Abgeordneten auch vertreten sein solle. Vor einem Auseinanderfallen der Gesamtfraktion wird besonders von Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> und Minister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> sehr gewarnt, da dies immer schädlich sei. 1. Vertagung, 2. Einfügung der Worte »und des Bundesrates« nach »wählbar sind Mitglieder des Bundestages«.</p>
-				<p>2. Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> referiert über die neuen vorliegenden Drucksachen. Bei der Frage der Flurbereinigung wird festgestallt, daß sie eine reine Länderangelegenheit sei. Vorbildlich sei die bayerische Flurbereinigung. Man solle mit der Fraktion die Frage besprechen und sich darüber einigen, notfalls sich durchsetzen. Zur Frage der vermögensrechtlichen Regelung bei Bundesbahn und Bundespost wird eine Sondersitzung vorgeschlagen und mitgeteilt, daß der Gesetzesvorschlag durch den Bundesrat und von der Bayerischen Staatsregierung bereits bejaht worden sei. In der Frage der Gewerbefreiheit wurde unser Gesetzesvorschlag durch den Widerspruch der FDP und norddeutscher CDU-Freunde verzögert, da die Regelung in der französischen und britischen Zone durchaus befriedigend ist. Man war sich einig, den Entwurf jetzt nach Mitteilung an die Fraktion mit den CSU-Unterschriften einzureichen.</p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-01_1950-06-14-t1715_EP_div_SVP-2">
-				<head>B.</head>
-				<p>3. Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> kündigt eine Aufstellung der Vergebung von ERP-Geldern nach Bayern an, die aber vorsichtig behandelt werden soll, um Unruhe unter den Interessenten zu vermeiden. An der Werbung Bayerns für zu übernehmende Bundesämter wird wegen ihrer Nachlässigkeit schärfste Kritik geübt.</p>
-				<p>Staatsminister <name type="Person" role="Sprecher" ref="#PfeifferAnton">Pfeiffer</name> kündigt eine Auswertung der Ergebnisse der Bundestagswahl auf Bayern und den Landtag an. Diese Auswertung darf nicht aus der Hand gegeben werden.</p>
-				<p>4. Abg. Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> schlägt als Anträge vor: 1. Aufstellung einer Denkschrift der Bundesregierung über die in anderen Ländern getroffenen Maßnahmen zu Stützung der Landwirtschaft, um die auswärtigen Angriffe auf deutsche Unterstützungsmaßnahmen zurückweisen zu können. 2. Einleitung von Verhandlungen, damit ERP-Kredite für die Molkereiwirtschaft von 15 auf 25 Mio. erhöht werden; Gewährung von verbilligten ERP-Krediten zur Errichtung von Waschanlagen in den Dörfern, um die Arbeit der Bauernfrauen zu erleichtern. Diese Anlagen sollten über die Raiffeisenkassen errichtet werden. 3. Anfrage, welche Maßnahmen zum Wiederaufbau der kriegszerstörten landwirtschaftlichen Anwesen bisher getroffen worden sind, und was in der Frage der Benutzung der Grenzgrundstücke erreicht worden ist. Anfrage, welche Maßnahmen zur Bekämpfung des Kartoffelkäfers in den einzelnen Ländern getroffen wurden und was noch getan werden kann?</p>
-				<p>Frau Abg. Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name>: Es muß die Verfügung über ERP-Kredite den Banken aus den Händen genommen werden. Minister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> ist einverstanden.</p>
-				<p>In der Frage der Hilfe für die bayerische Wildbachregulierung lehnt Bundesfinanzminister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> ab, da es unmöglich ist, auf der Länderzuständigkeit zu besehen, aber finanziell die Hilfe des Bundes zu fordern. Diesen Standpunkt werde er auch bei der Frage: Hilfe für Schleswig-Holstein einnehmen.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#BodensteinerHans_1949-09-07">Bodensteiner</name>: Der Antrag auf selbständiges Antragsrecht unehelicher Kinder auf Unterstützung aus Mitteln der Soforthilfe wird begrüßt.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> schildert die ungerechte steuerliche Belastung der Heimarbeiter durch die Umsatzsteuer, die sie nicht wieder abwälzen können und allein aus ihrem Lohn bezahlen müssen. Er fragt, ob eine andere Regelung auf dem Wege der Durchführungsverordnung möglich ist oder ob eine Behandlung im Plenum des Bundestages notwendig ist. Minister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> will die Frage sofort prüfen und versuchen, ob es noch mit den Durchführungsbestimmungen geht.</p>
-				<p>Die Anregung, eine Anfrage über die Vorlage eines Versorgungsgesetzes bis 1. Juli wird begrüßt. Sie befindet sich nach Mitteilung von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> bereits in den Händen der Verbände und es ist gut, wenn die Zeit haben, es sorgfältig zu prüfen. Diese Mitteilung soll möglichst auch in Reden verwendet werden und auch an den Rundfunk gehen. In der Frage der Rentenaufwertung stehen sich deutsche und amerikanische Rechtsauffassungen gegenüber. Hier muß mindestens eine Aufwertung in Härtefällen vorgenommen werden.</p>
-				<p>Die Kritik des Abg. <name type="Person" role="Sprecher" ref="#BodensteinerHans_1949-09-07">Bodensteiner</name> am neuen Einkommensteuergesetz, in der er diesem vorwarf, daß es unsozial sei, ist in die Hände der SPD geraten und wird in ihrer Presse als Wahlkampfschlager in Nordrhein-Westfalen benutzt.</p>
-				<p>Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> wird den Abg. eine Liste der Auftragsvergebungen des Bundes nach Bayern zustellen.</p>
-				<p>Die Liste der Zeitungen, die die CSU-Correspondenz beziehen, soll vervielfältigt und den Abgeordneten gegeben werden.</p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-01_1950-06-14-t1715_EP_div_SVP-3">
-				<head>C.</head>
-				<p>5. Subventionen an Lebensmittelwirtschaft: Bundesernährungsminister <name type="Person" role="Sprecher" ref="#NiklasWilhelm_1951-05-30">Niklas</name> gab eine Übersicht über den Werdegang und den Stand der Lebensmittelsubventionen. Im Januar 1949 wurden zur Vermeidung von Preissteigerungen die Subventionen vom Wirtschaftsrat beschlossen. Sie betrugen im letzten Jahr rund 700 Mio. DM. Nun erklärt jetzt der Bundesfinanzminister, daß er in Zukunft keine Subventionen mehr bezahlen kann. Bei den im Rahmen der Weltweizenkonvention zu einem Preise von 320–330 Mark eingeführten Weizen geht es noch. Bei dem anderwärts beschafften Weizen (600 000 to) ist es schwerer; man versucht es den Mühlen frei anzubieten, die sollen es vermahlen und frei verkaufen dürfen für Torten und Kuchen, wo der Preis keine so wesentliche Rolle spielt. Bei Roggen können wir mit der eigenen Produktion etwa 9 Monate auskommen, aber wir haben von draußen ein starkes Angebot, das wesentlich ungünstiger liegt. Die Verbilligung der Einfuhr des Kraftfutters für 210 Mark hat unseren Roggen geschont und uns ermöglicht, den Aufbau unseres Schweinebestandes durchzuführen, der jetzt zu einer Herabsetzung der Fleischpreise geführt hat. Diese Verbilligung war besonders wichtig für die industriellen Mästereien. Wenn nun eine Erhöhung des Futterpreises eintritt, so wird der Preis bei 260 CIF bis Mitteldeutschland auf 280, in Südwestdeutschland auf 290 Mark je to zu stehen kommen. Damit tritt die Gefahr der Verfütterung von Roggen auf.</p>
-				<p>Die größte Schwierigkeit liegt in der Düngemittelversorgung. Hier kann die Verbilligung nicht wegfallen. Wir haben unseren Phosphatbedarf bisher aus Thomasmehl gedeckt. Wir können es weiterhin zu 95% tun, 5 v.H. aber müssen wir einführen. Während bei der eigenen Produktion die Bauernverbände mit der Industrie sich über eine Erhöhung von 5 Pfg. je Kilo geeinigt haben, muß die Einfuhrquote zu höherem Preis getragen werden. – Die größte Schwierigkeit aber besteht bei den unersetzlichen Superphosphaten, die wir alle einführen müssen. Sie werden künftig das 2½fache kosten, was für die Landwirtschaft unmöglich ist. Hier handelt es sich um eine Kardinalfrage der Landwirtschaft.</p>
-				<p>Fettsteuer: Es ist notwendig im Interesse der Milchwirtschaft eine feste Preisrelation zwischen Butter und Margarine wiederherzustellen. 1920 wurde eine Fettsteuer auf Margarine eingeführt und besteht heute immer noch. [Sie] wurde nur 1940 zeitweilig außer Kraft gesetzt. Diese Steuer würde heute, da durch die verbilligte Öleinfuhr eine Preissenkung bei Margarine möglich ist, etwa 280 Mio. aufbringen. Das Kabinett hat diese Steuer abgelehnt. Es würde durch sie keine Erhöhung des gegenwärtigen Preises eintreten, aber eine mögliche Preissenkung verhindert werden, die von 175 auf 135 DM je 50 kg möglich wäre. Die FDP und DP seien damit einverstanden, die Haltung der CDU/CSU ist nicht gewiß.</p>
-				<p>Brotpreis: Man möchte eine Brotpreiserhöhung vermeiden. Dabei denkt man an eine Freigabe des Brotpreises und rechnet damit, daß die Bäcker aus Sorge um den Kunden (der Konsum ging seit 1948 stark zurück) nach einem kurzen Zögern ihre Backlohnspannen ermäßigen. In der kritischen Zeit von vielleicht 4 Wochen müßte man die Nerven behalten. Vielleicht müßte man für eine Roggenbrottype noch am Höchstpreis festhalten, um den Bedarf des Verbrauchers sicherzustellen.</p>
-				<p>Diese Ausführungen über die Lage der Subventionsfrage sollen vertraulich behandelt werden. Minister <name type="Person" role="Erwaehnung" ref="#NiklasWilhelm_1951-05-30">Niklas</name> soll ersucht werden, die Zahlen an die Abg. schriftlich zu geben. Abg. <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> nennt die Schwarzbrottype eine »Geste« und weist darauf hin, daß es sie in Wirklichkeit überhaupt nicht gebe. Die Fettsteuer ist nach seiner Ansicht untragbar. Die Fragen der Preisbildung, der Fettsteuer und des Brotpreises sollen in der nächsten Sitzung behandelt werden.</p>
-				<p>[Erstellt am: 14. 6. 1950.]</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="csu-lg-01_1950-06-14-t1715_EP"
+     rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Sitzung der Landesgruppe</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
+                  <author>Andreas Zellhuber</author>
+                  <author>Tim B. Peters</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2011</date>
+                  <idno type="DNB">https://d-nb.info/101322325X</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
+                     <idno>LG-Protokolle, 1950/9</idno>
+                     <objectName>[Kein Titel überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 14. Juni 1950</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>3 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1950-06-14">
+               <time type="start" when="17:15:00"/>
+               <time type="end" when="20:20:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#SollederMax_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">CSU-LG</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19"
+                 who="textloop"
+                 status="textloop-2_basic"
+                 n="2"/>
+         <change when="2021-12-06" who="#RabusSimon" status="draft" n="3">Header, SVP abgeschlossen</change>
+         <change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-02-08" who="#RabusSimon" status="draft" n="5">Bibl.- und Ref.-Angaben gesetzt</change>
+         <change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf: (15.)</head>
+            <list type="SVP">
+               <item xml:id="csu-lg-01_1950-04-27-t2020_EP_SVP-1"
+                     corresp="#csu-lg-01_1950-04-27-t2020_EP_div_SVP-1">A. Mitbestimmungsrecht; Verbindungsausschuss zwischen Landesgruppe und Landtagsfraktion. – Stellung der Landesgruppe in der CDU/CSU-Bundestagsfraktion. – Referat des Abg. <name type="Person" role="Erwaehnung" ref="#SchatzJosef_1949-09-07">Schatz</name> über vorliegende Drucksachen: Flurbereinigung, Bundesvermögen, Gewerbefreiheit.</item>
+               <item xml:id="csu-lg-01_1950-06-14-t1715_EP_SVP-2"
+                     corresp="#csu-lg-01_1950-06-14-t1715_EP_div_SVP-2">B. Vergabe von ERP-Krediten an Bayern. – Anträge zur Stützung der Landwirtschaft. – Steuerliche Belastung der Heimarbeiter.</item>
+               <item xml:id="csu-lg-01_1950-06-14-t1715_EP_SVP-3"
+                     corresp="#csu-lg-01_1950-06-14-t1715_EP_div_SVP-3">C. Subventionierung der Lebensmittelwirtschaft.</item>
+            </list>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Die Mitglieder der Landesgruppe außer den Abg. <name type="Person" role="Erwaehnung" ref="#FunkFriedrich_1949-09-07">Funk</name>, <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, <name type="Person" role="Erwaehnung" ref="#OesterleJosef_1949-09-07">Oesterle</name>, <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#GramppCarl">Grampp</name>, <name type="Person" role="Erwaehnung" ref="#KopfWilhelm">Kopf</name>, <name type="Person" role="Erwaehnung" ref="#NiklasWilhelm_1951-05-30">Niklas</name>, <name type="Person" role="Erwaehnung" ref="#PfeifferAnton">Pfeiffer</name>, <name type="Person" role="Erwaehnung" ref="#RattenhuberErnst">Rattenhuber</name>, <name type="Person" role="Erwaehnung" ref="#ScheidtWilhelm">Scheidt</name>.</p>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="csu-lg-01_1950-06-14-t1715_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Die Sitzung wurde in Abwesenheit von Abg. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> durch den Abg. Dr. <name type="Person" role="Sprecher" ref="#SollederMax_1949-09-07">Solleder</name> eröffnet.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> empfahl bei der Behandlung der Frage des Mitbestimmungsrechtes sehr zurückhaltend zu sein und die Frage in einer Sondersitzung zu behandeln.</p>
+            <p>Minister <name type="Person" role="Sprecher" ref="#PfeifferAnton">Pfeiffer</name> verweist auf den Entwurf der bayr. Staatsregierung zum bayerischen Betriebsrätegesetz, der von Gewerkschaften und Arbeitgebern als ein guter mittlerer Weg bezeichnet worden ist. Er schlägt darüber eine Aussprache in Kempten mit dem Verbindungsausschuß des Landtages vor. Die Unterlagen will er besorgen. Man beschließt eine Sitzung in 14 Tagen mit einem Referat von Abg. <name type="Person" role="Erwaehnung" ref="#KarpfHugo_1949-09-07">Karpf</name> und einem Korreferat von Abg. <name type="Person" role="Erwaehnung" ref="#LoiblMartin_1949-09-07">Loibl</name>.</p>
+            <p>Es wird bedauert, daß vom Fraktionsvorsitzenden Dr. <name type="Person" role="Erwaehnung" ref="#HundhammerAlois">Hundhammer</name> der Verbindungsausschuß bisher überhaupt nicht gefördert wurde. Weiter kommt zur Sprache, daß man bei wichtigen Fragen im Plenum mehr zu Wort kommen müsse. U.U. müsse man sogar ultimative Forderungen an die CDU-Fraktion stellen. Es wird bemängelt, daß der stellv. Obmann Abg. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> manchmal nicht genügend die Forderungen der Landesgruppe im Vorstand durchsetze. Die Behauptung von Staatsminister <name type="Person" role="Erwaehnung" ref="#PfeifferAnton">Pfeiffer</name>, daß die CSU mit Anträgen überhaupt nicht in Erscheinung trete, wird heftig zurückgewiesen. Die Forderung, bei der 3. Lesung der Europaratsdebatte noch einmal zu Wort zu kommen, wird aufgestellt. Nachdem ihr teilweise scharf widersprochen worden war, einigte sich die Landesgruppe darauf, daß bei Behandlung der Frage der Wählbarkeit der Mitglieder der Straßburg-Delegation, die nicht im Handumdrehen entschieden werden kann, die Gruppe einen eigenen Antrag stellt, wenn der CDU-Antrag der Ausschußüberweisung überstimmt werden sollte. Man war der Meinung, daß der Bundesrat mit 2 oder 3 Abgeordneten auch vertreten sein solle. Vor einem Auseinanderfallen der Gesamtfraktion wird besonders von Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> und Minister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> sehr gewarnt, da dies immer schädlich sei. 1. Vertagung, 2. Einfügung der Worte »und des Bundesrates« nach »wählbar sind Mitglieder des Bundestages«.</p>
+            <p>2. Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> referiert über die neuen vorliegenden Drucksachen. Bei der Frage der Flurbereinigung wird festgestallt, daß sie eine reine Länderangelegenheit sei. Vorbildlich sei die bayerische Flurbereinigung. Man solle mit der Fraktion die Frage besprechen und sich darüber einigen, notfalls sich durchsetzen. Zur Frage der vermögensrechtlichen Regelung bei Bundesbahn und Bundespost wird eine Sondersitzung vorgeschlagen und mitgeteilt, daß der Gesetzesvorschlag durch den Bundesrat und von der Bayerischen Staatsregierung bereits bejaht worden sei. In der Frage der Gewerbefreiheit wurde unser Gesetzesvorschlag durch den Widerspruch der FDP und norddeutscher CDU-Freunde verzögert, da die Regelung in der französischen und britischen Zone durchaus befriedigend ist. Man war sich einig, den Entwurf jetzt nach Mitteilung an die Fraktion mit den CSU-Unterschriften einzureichen.</p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-01_1950-06-14-t1715_EP_div_SVP-2">
+            <head>B.</head>
+            <p>3. Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> kündigt eine Aufstellung der Vergebung von ERP-Geldern nach Bayern an, die aber vorsichtig behandelt werden soll, um Unruhe unter den Interessenten zu vermeiden. An der Werbung Bayerns für zu übernehmende Bundesämter wird wegen ihrer Nachlässigkeit schärfste Kritik geübt.</p>
+            <p>Staatsminister <name type="Person" role="Sprecher" ref="#PfeifferAnton">Pfeiffer</name> kündigt eine Auswertung der Ergebnisse der Bundestagswahl auf Bayern und den Landtag an. Diese Auswertung darf nicht aus der Hand gegeben werden.</p>
+            <p>4. Abg. Dr. <name type="Person" role="Sprecher" ref="#HorlacherMichael_1949-09-07">Horlacher</name> schlägt als Anträge vor: 1. Aufstellung einer Denkschrift der Bundesregierung über die in anderen Ländern getroffenen Maßnahmen zu Stützung der Landwirtschaft, um die auswärtigen Angriffe auf deutsche Unterstützungsmaßnahmen zurückweisen zu können. 2. Einleitung von Verhandlungen, damit ERP-Kredite für die Molkereiwirtschaft von 15 auf 25 Mio. erhöht werden; Gewährung von verbilligten ERP-Krediten zur Errichtung von Waschanlagen in den Dörfern, um die Arbeit der Bauernfrauen zu erleichtern. Diese Anlagen sollten über die Raiffeisenkassen errichtet werden. 3. Anfrage, welche Maßnahmen zum Wiederaufbau der kriegszerstörten landwirtschaftlichen Anwesen bisher getroffen worden sind, und was in der Frage der Benutzung der Grenzgrundstücke erreicht worden ist. Anfrage, welche Maßnahmen zur Bekämpfung des Kartoffelkäfers in den einzelnen Ländern getroffen wurden und was noch getan werden kann?</p>
+            <p>Frau Abg. Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name>: Es muß die Verfügung über ERP-Kredite den Banken aus den Händen genommen werden. Minister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> ist einverstanden.</p>
+            <p>In der Frage der Hilfe für die bayerische Wildbachregulierung lehnt Bundesfinanzminister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> ab, da es unmöglich ist, auf der Länderzuständigkeit zu besehen, aber finanziell die Hilfe des Bundes zu fordern. Diesen Standpunkt werde er auch bei der Frage: Hilfe für Schleswig-Holstein einnehmen.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#BodensteinerHans_1949-09-07">Bodensteiner</name>: Der Antrag auf selbständiges Antragsrecht unehelicher Kinder auf Unterstützung aus Mitteln der Soforthilfe wird begrüßt.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> schildert die ungerechte steuerliche Belastung der Heimarbeiter durch die Umsatzsteuer, die sie nicht wieder abwälzen können und allein aus ihrem Lohn bezahlen müssen. Er fragt, ob eine andere Regelung auf dem Wege der Durchführungsverordnung möglich ist oder ob eine Behandlung im Plenum des Bundestages notwendig ist. Minister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> will die Frage sofort prüfen und versuchen, ob es noch mit den Durchführungsbestimmungen geht.</p>
+            <p>Die Anregung, eine Anfrage über die Vorlage eines Versorgungsgesetzes bis 1. Juli wird begrüßt. Sie befindet sich nach Mitteilung von Frau Dr. <name type="Person" role="Erwaehnung" ref="#ProbstMaria_1949-09-07">Probst</name> bereits in den Händen der Verbände und es ist gut, wenn die Zeit haben, es sorgfältig zu prüfen. Diese Mitteilung soll möglichst auch in Reden verwendet werden und auch an den Rundfunk gehen. In der Frage der Rentenaufwertung stehen sich deutsche und amerikanische Rechtsauffassungen gegenüber. Hier muß mindestens eine Aufwertung in Härtefällen vorgenommen werden.</p>
+            <p>Die Kritik des Abg. <name type="Person" role="Sprecher" ref="#BodensteinerHans_1949-09-07">Bodensteiner</name> am neuen Einkommensteuergesetz, in der er diesem vorwarf, daß es unsozial sei, ist in die Hände der SPD geraten und wird in ihrer Presse als Wahlkampfschlager in Nordrhein-Westfalen benutzt.</p>
+            <p>Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> wird den Abg. eine Liste der Auftragsvergebungen des Bundes nach Bayern zustellen.</p>
+            <p>Die Liste der Zeitungen, die die CSU-Correspondenz beziehen, soll vervielfältigt und den Abgeordneten gegeben werden.</p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-01_1950-06-14-t1715_EP_div_SVP-3">
+            <head>C.</head>
+            <p>5. Subventionen an Lebensmittelwirtschaft: Bundesernährungsminister <name type="Person" role="Sprecher" ref="#NiklasWilhelm_1951-05-30">Niklas</name> gab eine Übersicht über den Werdegang und den Stand der Lebensmittelsubventionen. Im Januar 1949 wurden zur Vermeidung von Preissteigerungen die Subventionen vom Wirtschaftsrat beschlossen. Sie betrugen im letzten Jahr rund 700 Mio. DM. Nun erklärt jetzt der Bundesfinanzminister, daß er in Zukunft keine Subventionen mehr bezahlen kann. Bei den im Rahmen der Weltweizenkonvention zu einem Preise von 320–330 Mark eingeführten Weizen geht es noch. Bei dem anderwärts beschafften Weizen (600 000 to) ist es schwerer; man versucht es den Mühlen frei anzubieten, die sollen es vermahlen und frei verkaufen dürfen für Torten und Kuchen, wo der Preis keine so wesentliche Rolle spielt. Bei Roggen können wir mit der eigenen Produktion etwa 9 Monate auskommen, aber wir haben von draußen ein starkes Angebot, das wesentlich ungünstiger liegt. Die Verbilligung der Einfuhr des Kraftfutters für 210 Mark hat unseren Roggen geschont und uns ermöglicht, den Aufbau unseres Schweinebestandes durchzuführen, der jetzt zu einer Herabsetzung der Fleischpreise geführt hat. Diese Verbilligung war besonders wichtig für die industriellen Mästereien. Wenn nun eine Erhöhung des Futterpreises eintritt, so wird der Preis bei 260 CIF bis Mitteldeutschland auf 280, in Südwestdeutschland auf 290 Mark je to zu stehen kommen. Damit tritt die Gefahr der Verfütterung von Roggen auf.</p>
+            <p>Die größte Schwierigkeit liegt in der Düngemittelversorgung. Hier kann die Verbilligung nicht wegfallen. Wir haben unseren Phosphatbedarf bisher aus Thomasmehl gedeckt. Wir können es weiterhin zu 95% tun, 5 v.H. aber müssen wir einführen. Während bei der eigenen Produktion die Bauernverbände mit der Industrie sich über eine Erhöhung von 5 Pfg. je Kilo geeinigt haben, muß die Einfuhrquote zu höherem Preis getragen werden. – Die größte Schwierigkeit aber besteht bei den unersetzlichen Superphosphaten, die wir alle einführen müssen. Sie werden künftig das 2½fache kosten, was für die Landwirtschaft unmöglich ist. Hier handelt es sich um eine Kardinalfrage der Landwirtschaft.</p>
+            <p>Fettsteuer: Es ist notwendig im Interesse der Milchwirtschaft eine feste Preisrelation zwischen Butter und Margarine wiederherzustellen. 1920 wurde eine Fettsteuer auf Margarine eingeführt und besteht heute immer noch. [Sie] wurde nur 1940 zeitweilig außer Kraft gesetzt. Diese Steuer würde heute, da durch die verbilligte Öleinfuhr eine Preissenkung bei Margarine möglich ist, etwa 280 Mio. aufbringen. Das Kabinett hat diese Steuer abgelehnt. Es würde durch sie keine Erhöhung des gegenwärtigen Preises eintreten, aber eine mögliche Preissenkung verhindert werden, die von 175 auf 135 DM je 50 kg möglich wäre. Die FDP und DP seien damit einverstanden, die Haltung der CDU/CSU ist nicht gewiß.</p>
+            <p>Brotpreis: Man möchte eine Brotpreiserhöhung vermeiden. Dabei denkt man an eine Freigabe des Brotpreises und rechnet damit, daß die Bäcker aus Sorge um den Kunden (der Konsum ging seit 1948 stark zurück) nach einem kurzen Zögern ihre Backlohnspannen ermäßigen. In der kritischen Zeit von vielleicht 4 Wochen müßte man die Nerven behalten. Vielleicht müßte man für eine Roggenbrottype noch am Höchstpreis festhalten, um den Bedarf des Verbrauchers sicherzustellen.</p>
+            <p>Diese Ausführungen über die Lage der Subventionsfrage sollen vertraulich behandelt werden. Minister <name type="Person" role="Erwaehnung" ref="#NiklasWilhelm_1951-05-30">Niklas</name> soll ersucht werden, die Zahlen an die Abg. schriftlich zu geben. Abg. <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> nennt die Schwarzbrottype eine »Geste« und weist darauf hin, daß es sie in Wirklichkeit überhaupt nicht gebe. Die Fettsteuer ist nach seiner Ansicht untragbar. Die Fragen der Preisbildung, der Fettsteuer und des Brotpreises sollen in der nächsten Sitzung behandelt werden.</p>
+            <p>[Erstellt am: 14. 6. 1950.]</p>
+         </div>
+      </body>
+   </text>
 </TEI>

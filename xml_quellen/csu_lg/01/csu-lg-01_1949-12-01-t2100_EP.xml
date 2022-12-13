@@ -1,194 +1,234 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-01_1949-12-01-t2100_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Sitzung der Landesgruppe</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HölscherWolfgang"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
-						<author>Andreas Zellhuber</author>
-						<author>Tim B. Peters</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2011</date>
-						<idno type="DNB">https://d-nb.info/101322325X</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
-							<idno>LG-Protokolle, 1949/3</idno>
-							<objectName>[Kein Titel überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 1. Dezember 1949</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>3 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1949-12-01"><time type="start" when="21:00:00"/><time type="end" when="23:30:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#StraußFranzJosef_1949-09-07"/><idno type="sitzung"><idno type="wp">01</idno><idno type="Fraktion-Landesgruppe">CSU-LG</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-12-06" who="#RabusSimon" status="draft" n="3">Header, SVP abgeschlossen</change>
-			<change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-02-08" who="#RabusSimon" status="draft" n="5">Bibl.- und Ref.-Angaben gesetzt</change>
-			<change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf: (4.)</head>
-				<list type="SVP">
-					<item xml:id="csu-lg-01_1949-12-01-t2100_EP_SVP-1" corresp="#csu-lg-01_1949-12-01-t2100_EP_div_SVP-1">A. Geschäftsorganisation und Personalangelegenheiten; Finanzen der Landesgruppe. – TOP 1: Sitzungsturnus der Landesgruppe. – Besetzung der Bayerischen Vertretung in Bonn. – TOP 2: Vorgehensweise bei der Einbringung von Anträgen. – Presse- und Öffentlichkeitsarbeit der Landesgruppe.</item>
-					<item xml:id="csu-lg-01_1949-12-01-t2100_EP_SVP-2" corresp="#csu-lg-01_1949-12-01-t2100_EP_div_SVP-2">B. TOP 3: Zusammenarbeit mit der Bayernpartei im Bereich der Grenzförderung. – TOP 4: Besuch und Besetzung der Bundestagsausschüsse. – TOP 5: Arbeit im Wahlkreis. – TOP 6: Verschiedenes; Anträge der Landesgruppe.</item>
-				</list>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Die Mitglieder der Landesgruppe außer den Abg. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#RattenhuberErnst">Rattenhuber</name>.</p>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="csu-lg-01_1949-12-01-t2100_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Der <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Vorsitzende</name> eröffnet die Sitzung und stellt zu Anfang die für die Landesgruppe neu eingestellte Sekretärin Frl. <name type="Person" role="Erwaehnung" ref="#BauerErmelinde">Bauer</name> vor. Er führt dabei aus, daß die beiden Angestellten der Landesgruppe CSU aus der gemeinsamen Kasse der CDU/CSU bezahlt werden müssen. Wenn die CDU mit dieser Regelung nicht einverstanden sein sollte, muß angestrebt werden, die Kasse zu trennen. Der Landesgruppe CSU stehen monatlich 1 680 DM zur Bezahlung der Löhne für die Angestellten <name type="Person" role="Erwaehnung" ref="#HartmannMax">Hartmann</name> und <name type="Person" role="Erwaehnung" ref="#BauerErmelinde">Bauer</name> und zur Bestreitung der sächlichen Kosten zur Verfügung. Dieser Betrag setzt sich daraus zusammen, daß für jeden Abgeordneten monatlich 70 DM zur Verfügung gestellt werden. Es ist daher zu verantworten und zu befürworten, daß für die beiden Angestellten soziale Löhne bezahlt werden.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#SchuetzHans_1949-09-07">Schütz</name> stellt den Antrag, daß Direktor <name type="Person" role="Erwaehnung" ref="#TroßmannHans">Troßmann</name> aufgefordert wird, die Schreibkräfte, die allgemeine Schreibarbeiten für Abgeordnete zu erledigen haben, darauf hinzuweisen, daß diese Schreiben diskret zu behandeln sind.</p>
-				<p>Punkt 1.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> schlägt vor, daß jeden Mittwoch ab 17.30 Uhr abends eine CSU-Gruppensitzung stattfinden soll, vorausgesetzt, daß eine Plenarsitzung vorgesehen ist. Die Gruppensitzungen sollen jeweils an der großen Tafel in der Halle, mit Angabe der Zeit und des Zimmers, angeschlagen werden. Weiter soll alle 4 Wochen ein voller Tag eingeschaltet werden, an dem sich die CSU ohne Zeitdruck unterhalten kann.</p>
-				<p>Abg. Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> schlägt vor, für diesen Aussprachetag jeweils einen Tag vor einer Plenarsitzung zu bestimmen, damit die CSU-Landesgruppe die Möglichkeit hat sich über Fragen, die dem Plenum vorgelegt werden, vorher aussprechen zu können und für das Plenum einen Redner zu bestimmen. Als nächster Aussprachetag wird Freitag, 9. Dezember 1949, 9.30 Uhr festgesetzt. Als Tagesordnungspunkt ist vorgesehen: 1. Allgemeine Aussprache über politische Fragen, 2. Aussprache über alle noch nicht erledigten oder den Ausschüssen überwiesenen Drucksachen.</p>
-				<p>Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> führt aus, daß den Abgeordneten für ihre Anträge oft nicht das nötige Material zur Verfügung stehe. Er bittet daher die Abgeordneten, daß sie sich das Material rechtzeitig bei den zuständigen bayerischen Referenten besorgen und sich auch von diesen beraten lassen. Als Referenten der Bayerischen Vertretung in Bonn sind vorgesehen: Für Finanzen: Herr <name type="Person" role="Erwaehnung" ref="#DziembowskiKonstantinvon">von Dziembowski</name>, für Wirtschaft: Dr. <name type="Person" role="Erwaehnung" ref="#CrugRudolf">Crug</name>, für Arbeit: <name type="Person" role="Erwaehnung" ref="#HertelPhilipp">Hertel</name>, für Landwirtschaft: offen, für Inneres: <name type="Person" role="Erwaehnung" ref="#Steinlinger">Steinlinger</name>, für Justiz: offen, persönlicher Referent: <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>. Ferner teilt Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> mit, daß jeden Mittwoch und Samstag der politische Beirat des Bundesrates zusammengerufen wird. Ministerpräsident <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> berichtet über die Aussprachen des politischen Beirates an <name type="Person" role="Erwaehnung" ref="#RattenhuberErnst">Rattenhuber</name>, und dieser erklärt sich bereit, diese Informationen der Landesgruppe CSU mündlich weiterzugeben. (Politischer Beirat setzt sich aus den Vertretern der Länder zusammen.) Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> bittet, die von ihm bis jetzt und weiterhin gemachten Mitteilungen vertraulich zu behandeln.</p>
-				<p>Punkt 2.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> beantragt: Wenn ein Abgeordneter einen Antrag einreicht und ihn vor dem Plenum nicht selbst weiter vertritt, muß er das Material und die Unterlagen an den betr. Abgeordneten, der den Antrag weiter bearbeitet, weitergeben. Jeder Abgeordneter muß sich vor einem Ausschuß die Tagesordnung ansehen und prüfen, ob Anträge von der CSU behandelt werden. Bei der Einreichung von Anträgen müssen die Abgeordneten zusammenspielen und müssen energisch für die Anträge der CSU eintreten. Es geht auch nicht an, daß die Tagesordnungen für die Ausschüsse erst kurz vor Beginn eines Ausschusses an die Abgeordneten ausgehändigt werden. Außerdem muß der Ältestenrat gebeten werden, den § 31 des GG den Herrn Abgeordneten noch einmal zur Kenntnis zu geben.</p>
-				<p>Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> erklärt sich bereit, einen Herrn vom Wirtschaftsministerium zu veranlassen vor der Landesgruppe CSU über Fragen zu Handelsverträgen zu sprechen. Ferner muß der Präsident des Bundestages veranlaßt werden, daß alle Antragsteller zu den Ausschüssen eingeladen werden.</p>
-				<p>Presse:</p>
-				<p>Presse und Rundfunk beschweren sich, daß sie von der CSU nicht mit genügend Material versorgt werden. Es wird deshalb angeordnet: Jedes Ausschußmitglied muß nach jeder Ausschußsitzung am gleichen Tage noch eine kurze Notiz der Landesgruppe übermitteln, was im Ausschuß vorgegangen ist. Die Notizen können darauf beschränkt werden, was für die Öffentlichkeit von Wert ist. Die Mitteilungen müssen je nach dem, welchen Inhalt sie haben, mit »vertraulich« gekennzeichnet sein. Die Landesgruppe CSU leitet von sich aus die Notizen an Presse und Rundfunk weiter. Weiter werden die Abgeordneten aufgefordert, in ihren Heimatzeitungen möglichst viele Artikel zu veröffentlichen, um mit der Bevölkerung Fühlung zu halten. Außerdem wird bestimmt, daß alle 4–6 Wochen der Presseausschuß zusammentreten soll, der zur Versorgung der Redner mit Rednermaterial ein Konzept ausarbeitet und herausgibt. Für die Arbeitsgruppe muß die CSU Korrespondenz bestellt werden. Sämtliche anwesende Abgeordnete erklären sich mit diesen Regelungen einverstanden.</p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-01_1949-12-01-t2100_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Punkt 3.</p>
-				<p>Abg. Dr. <name type="Person" role="Sprecher" ref="#SollederMax_1949-09-07">Solleder</name> berichtet: Die Bayernpartei hat einen Antrag wegen der bayerischen Ostmark gestellt und ersucht nun die CSU, diesen Antrag weiter zu stellen. Das Grenzgebiet der bayerischen Ostmark soll zu einem Grenznotstandsgebiet erklärt und durch einen Fond des bayerischen Finanzministeriums gestützt werden. Vorsitzender <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> bittet den Abg. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name> zusammen mit Abg. <name type="Person" role="Erwaehnung" ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> die Frage mit Minister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> zu besprechen, eine Formulierung für diesen Antrag zu finden und den Antrag auszuarbeiten.</p>
-				<p>Punkt 4.</p>
-				<p>Es wird darauf hingewiesen, daß die Bayernpartei überprüft, ob die Ausschüsse von den CSU-Abgeordneten regelmäßig besucht werden. Abg. <name type="Person" role="Sprecher" ref="#OesterleJosef_1949-09-07">Oesterle</name> stellt den Antrag, daß er aus dem Ausschuß für Recht und Verfassung zurücktreten darf, erklärt sich aber bereit, weiter beratend mitzuarbeiten. Diese Frage wurde zurückgestellt, bis Abg. <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name>, der der Vertreter <name type="Person" role="Erwaehnung" ref="#OesterleJosef_1949-09-07">Oesterles</name> im Ausschuß für Recht und Verfassung ist, zu dieser Frage gehört worden ist. Es wird gebeten, daß wenn ein Ausschußmitglied verhindert ist, er einen Vertreter benennt. Die ständigen Vertreter haben die Aufgabe und den Zweck, die unentschuldigt fehlenden Mitglieder automatisch zu ersetzen. Sie haben auch das Recht sich in die Gästeliste einzutragen und mit der Kasse abzurechnen.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> bringt vor: Das Mitglied des Geschäftsordnungsausschusses, Abg. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, hat bis jetzt diesen Ausschuß noch nie besucht. Er empfiehlt, daß Abg. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name> ausgewechselt wird. Abg. Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> schlägt vor, daß der Vorsitzende Abg. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name> mit <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name> ein offenes Wort darüber spricht und ihn bittet, in Zukunft beim Geschäftsordnungsausschuß zugegen zu sein.</p>
-				<p>Punkt 5.</p>
-				<p>Jeder Abgeordnete erhält: 600 DM Diäten (monatlich), 100 DM Aufwandsentschädigung, 200 DM Zuschuß für eine persönliche Hilfskraft zur Bearbeitung von Angelegenheiten im Wahlkreis. Es wird nun die Frage aufgeworfen, ob jeder Abgeordnete sich für seinen Wahlkreis einen Assistenten anstellen soll. Dieser Mann müßte zugleich die politische Organisation in den Wahlkreisen leiten. Es wird beschlossen die Angelegenheit 4 Wochen zurückzustellen.</p>
-				<p>Punkt 6.</p>
-				<p>Abg. <name type="Person" role="Sprecher" ref="#SpretiKarl_1949-09-07">Graf Spreti</name> beantragt, daß beim Präsidenten angeregt wird, daß die Auszahlungen bei der Kasse diskreter vorgenommen werden. Ferner schlägt Abg. <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name> vor, daß wenn ein Antrag über Landwirtschaft oder Flüchtlinge eingebracht wird, dieser von allen Abgeordneten der Landesgruppe unterzeichnet wird. Abg. <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name> bittet die anwesenden Abgeordneten, ihm umgehend die Preise für einen cbm umbauten Raumes in den einzelnen Wahlkreisen zuzuschicken. Abg. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> bittet sämtliche anwesende Abgeordnete, bis zur nächsten Gruppensitzung am Freitag, den 9. Dezember sämtliches Material über in nächster Zeit zu stellende Anträge mitzubringen.</p>
-				<p>[Erstellt am: 1. 12. 1949.]</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="csu-lg-01_1949-12-01-t2100_EP"
+     rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Sitzung der Landesgruppe</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#ZellhuberAndreas"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HoelscherWolfgang"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KraatzPaul"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SavecVera"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1949–1972.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/I</title>
+                  <author>Andreas Zellhuber</author>
+                  <author>Tim B. Peters</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2011</date>
+                  <idno type="DNB">https://d-nb.info/101322325X</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
+                     <idno>LG-Protokolle, 1949/3</idno>
+                     <objectName>[Kein Titel überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CSU-Landesgruppe am 1. Dezember 1949</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>3 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1949-12-01">
+               <time type="start" when="21:00:00"/>
+               <time type="end" when="23:30:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person"
+                  role="Sitzungsleitung"
+                  ref="#StraussFranzJosef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">01</idno>
+               <idno type="Fraktion-Landesgruppe">CSU-LG</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19"
+                 who="textloop"
+                 status="textloop-2_basic"
+                 n="2"/>
+         <change when="2021-12-06" who="#RabusSimon" status="draft" n="3">Header, SVP abgeschlossen</change>
+         <change when="2022-02-01" who="#RabusSimon" status="draft" n="4">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-02-08" who="#RabusSimon" status="draft" n="5">Bibl.- und Ref.-Angaben gesetzt</change>
+         <change when="2022-02-22" who="#RabusSimon" status="final" n="6">Vereinheitlichung XML</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf: (4.)</head>
+            <list type="SVP">
+               <item xml:id="csu-lg-01_1949-12-01-t2100_EP_SVP-1"
+                     corresp="#csu-lg-01_1949-12-01-t2100_EP_div_SVP-1">A. Geschäftsorganisation und Personalangelegenheiten; Finanzen der Landesgruppe. – TOP 1: Sitzungsturnus der Landesgruppe. – Besetzung der Bayerischen Vertretung in Bonn. – TOP 2: Vorgehensweise bei der Einbringung von Anträgen. – Presse- und Öffentlichkeitsarbeit der Landesgruppe.</item>
+               <item xml:id="csu-lg-01_1949-12-01-t2100_EP_SVP-2"
+                     corresp="#csu-lg-01_1949-12-01-t2100_EP_div_SVP-2">B. TOP 3: Zusammenarbeit mit der Bayernpartei im Bereich der Grenzförderung. – TOP 4: Besuch und Besetzung der Bundestagsausschüsse. – TOP 5: Arbeit im Wahlkreis. – TOP 6: Verschiedenes; Anträge der Landesgruppe.</item>
+            </list>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Die Mitglieder der Landesgruppe außer den Abg. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#KemmerEmil_1949-09-07">Kemmer</name>, <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#RattenhuberErnst">Rattenhuber</name>.</p>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="csu-lg-01_1949-12-01-t2100_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Der <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Vorsitzende</name> eröffnet die Sitzung und stellt zu Anfang die für die Landesgruppe neu eingestellte Sekretärin Frl. <name type="Person" role="Erwaehnung" ref="#BauerErmelinde">Bauer</name> vor. Er führt dabei aus, daß die beiden Angestellten der Landesgruppe CSU aus der gemeinsamen Kasse der CDU/CSU bezahlt werden müssen. Wenn die CDU mit dieser Regelung nicht einverstanden sein sollte, muß angestrebt werden, die Kasse zu trennen. Der Landesgruppe CSU stehen monatlich 1 680 DM zur Bezahlung der Löhne für die Angestellten <name type="Person" role="Erwaehnung" ref="#HartmannMax">Hartmann</name> und <name type="Person" role="Erwaehnung" ref="#BauerErmelinde">Bauer</name> und zur Bestreitung der sächlichen Kosten zur Verfügung. Dieser Betrag setzt sich daraus zusammen, daß für jeden Abgeordneten monatlich 70 DM zur Verfügung gestellt werden. Es ist daher zu verantworten und zu befürworten, daß für die beiden Angestellten soziale Löhne bezahlt werden.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#SchuetzHans_1949-09-07">Schütz</name> stellt den Antrag, daß Direktor <name type="Person" role="Erwaehnung" ref="#TrossmannHans">Troßmann</name> aufgefordert wird, die Schreibkräfte, die allgemeine Schreibarbeiten für Abgeordnete zu erledigen haben, darauf hinzuweisen, daß diese Schreiben diskret zu behandeln sind.</p>
+            <p>Punkt 1.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> schlägt vor, daß jeden Mittwoch ab 17.30 Uhr abends eine CSU-Gruppensitzung stattfinden soll, vorausgesetzt, daß eine Plenarsitzung vorgesehen ist. Die Gruppensitzungen sollen jeweils an der großen Tafel in der Halle, mit Angabe der Zeit und des Zimmers, angeschlagen werden. Weiter soll alle 4 Wochen ein voller Tag eingeschaltet werden, an dem sich die CSU ohne Zeitdruck unterhalten kann.</p>
+            <p>Abg. Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> schlägt vor, für diesen Aussprachetag jeweils einen Tag vor einer Plenarsitzung zu bestimmen, damit die CSU-Landesgruppe die Möglichkeit hat sich über Fragen, die dem Plenum vorgelegt werden, vorher aussprechen zu können und für das Plenum einen Redner zu bestimmen. Als nächster Aussprachetag wird Freitag, 9. Dezember 1949, 9.30 Uhr festgesetzt. Als Tagesordnungspunkt ist vorgesehen: 1. Allgemeine Aussprache über politische Fragen, 2. Aussprache über alle noch nicht erledigten oder den Ausschüssen überwiesenen Drucksachen.</p>
+            <p>Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> führt aus, daß den Abgeordneten für ihre Anträge oft nicht das nötige Material zur Verfügung stehe. Er bittet daher die Abgeordneten, daß sie sich das Material rechtzeitig bei den zuständigen bayerischen Referenten besorgen und sich auch von diesen beraten lassen. Als Referenten der Bayerischen Vertretung in Bonn sind vorgesehen: Für Finanzen: Herr <name type="Person" role="Erwaehnung" ref="#DziembowskiKonstantinvon">von Dziembowski</name>, für Wirtschaft: Dr. <name type="Person" role="Erwaehnung" ref="#CrugRudolf">Crug</name>, für Arbeit: <name type="Person" role="Erwaehnung" ref="#HertelPhilipp">Hertel</name>, für Landwirtschaft: offen, für Inneres: <name type="Person" role="Erwaehnung" ref="#Steinlinger">Steinlinger</name>, für Justiz: offen, persönlicher Referent: <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>. Ferner teilt Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> mit, daß jeden Mittwoch und Samstag der politische Beirat des Bundesrates zusammengerufen wird. Ministerpräsident <name type="Person" role="Erwaehnung" ref="#ArnoldKarl_1957-10-15">Arnold</name> berichtet über die Aussprachen des politischen Beirates an <name type="Person" role="Erwaehnung" ref="#RattenhuberErnst">Rattenhuber</name>, und dieser erklärt sich bereit, diese Informationen der Landesgruppe CSU mündlich weiterzugeben. (Politischer Beirat setzt sich aus den Vertretern der Länder zusammen.) Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> bittet, die von ihm bis jetzt und weiterhin gemachten Mitteilungen vertraulich zu behandeln.</p>
+            <p>Punkt 2.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> beantragt: Wenn ein Abgeordneter einen Antrag einreicht und ihn vor dem Plenum nicht selbst weiter vertritt, muß er das Material und die Unterlagen an den betr. Abgeordneten, der den Antrag weiter bearbeitet, weitergeben. Jeder Abgeordneter muß sich vor einem Ausschuß die Tagesordnung ansehen und prüfen, ob Anträge von der CSU behandelt werden. Bei der Einreichung von Anträgen müssen die Abgeordneten zusammenspielen und müssen energisch für die Anträge der CSU eintreten. Es geht auch nicht an, daß die Tagesordnungen für die Ausschüsse erst kurz vor Beginn eines Ausschusses an die Abgeordneten ausgehändigt werden. Außerdem muß der Ältestenrat gebeten werden, den § 31 des GG den Herrn Abgeordneten noch einmal zur Kenntnis zu geben.</p>
+            <p>Staatsrat <name type="Person" role="Sprecher" ref="#RattenhuberErnst">Rattenhuber</name> erklärt sich bereit, einen Herrn vom Wirtschaftsministerium zu veranlassen vor der Landesgruppe CSU über Fragen zu Handelsverträgen zu sprechen. Ferner muß der Präsident des Bundestages veranlaßt werden, daß alle Antragsteller zu den Ausschüssen eingeladen werden.</p>
+            <p>Presse:</p>
+            <p>Presse und Rundfunk beschweren sich, daß sie von der CSU nicht mit genügend Material versorgt werden. Es wird deshalb angeordnet: Jedes Ausschußmitglied muß nach jeder Ausschußsitzung am gleichen Tage noch eine kurze Notiz der Landesgruppe übermitteln, was im Ausschuß vorgegangen ist. Die Notizen können darauf beschränkt werden, was für die Öffentlichkeit von Wert ist. Die Mitteilungen müssen je nach dem, welchen Inhalt sie haben, mit »vertraulich« gekennzeichnet sein. Die Landesgruppe CSU leitet von sich aus die Notizen an Presse und Rundfunk weiter. Weiter werden die Abgeordneten aufgefordert, in ihren Heimatzeitungen möglichst viele Artikel zu veröffentlichen, um mit der Bevölkerung Fühlung zu halten. Außerdem wird bestimmt, daß alle 4–6 Wochen der Presseausschuß zusammentreten soll, der zur Versorgung der Redner mit Rednermaterial ein Konzept ausarbeitet und herausgibt. Für die Arbeitsgruppe muß die CSU Korrespondenz bestellt werden. Sämtliche anwesende Abgeordnete erklären sich mit diesen Regelungen einverstanden.</p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-01_1949-12-01-t2100_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Punkt 3.</p>
+            <p>Abg. Dr. <name type="Person" role="Sprecher" ref="#SollederMax_1949-09-07">Solleder</name> berichtet: Die Bayernpartei hat einen Antrag wegen der bayerischen Ostmark gestellt und ersucht nun die CSU, diesen Antrag weiter zu stellen. Das Grenzgebiet der bayerischen Ostmark soll zu einem Grenznotstandsgebiet erklärt und durch einen Fond des bayerischen Finanzministeriums gestützt werden. Vorsitzender <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> bittet den Abg. <name type="Person" role="Erwaehnung" ref="#SollederMax_1949-09-07">Solleder</name> zusammen mit Abg. <name type="Person"
+                     role="Erwaehnung"
+                     ref="#KleindinstJosefFerdinand_1949-09-07">Kleindinst</name> die Frage mit Minister <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name> zu besprechen, eine Formulierung für diesen Antrag zu finden und den Antrag auszuarbeiten.</p>
+            <p>Punkt 4.</p>
+            <p>Es wird darauf hingewiesen, daß die Bayernpartei überprüft, ob die Ausschüsse von den CSU-Abgeordneten regelmäßig besucht werden. Abg. <name type="Person" role="Sprecher" ref="#OesterleJosef_1949-09-07">Oesterle</name> stellt den Antrag, daß er aus dem Ausschuß für Recht und Verfassung zurücktreten darf, erklärt sich aber bereit, weiter beratend mitzuarbeiten. Diese Frage wurde zurückgestellt, bis Abg. <name type="Person" role="Erwaehnung" ref="#LaforetWilhelm_1949-09-07">Laforet</name>, der der Vertreter <name type="Person" role="Erwaehnung" ref="#OesterleJosef_1949-09-07">Oesterles</name> im Ausschuß für Recht und Verfassung ist, zu dieser Frage gehört worden ist. Es wird gebeten, daß wenn ein Ausschußmitglied verhindert ist, er einen Vertreter benennt. Die ständigen Vertreter haben die Aufgabe und den Zweck, die unentschuldigt fehlenden Mitglieder automatisch zu ersetzen. Sie haben auch das Recht sich in die Gästeliste einzutragen und mit der Kasse abzurechnen.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#KarpfHugo_1949-09-07">Karpf</name> bringt vor: Das Mitglied des Geschäftsordnungsausschusses, Abg. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, hat bis jetzt diesen Ausschuß noch nie besucht. Er empfiehlt, daß Abg. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name> ausgewechselt wird. Abg. Dr. <name type="Person" role="Sprecher" ref="#SchatzJosef_1949-09-07">Schatz</name> schlägt vor, daß der Vorsitzende Abg. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name> mit <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name> ein offenes Wort darüber spricht und ihn bittet, in Zukunft beim Geschäftsordnungsausschuß zugegen zu sein.</p>
+            <p>Punkt 5.</p>
+            <p>Jeder Abgeordnete erhält: 600 DM Diäten (monatlich), 100 DM Aufwandsentschädigung, 200 DM Zuschuß für eine persönliche Hilfskraft zur Bearbeitung von Angelegenheiten im Wahlkreis. Es wird nun die Frage aufgeworfen, ob jeder Abgeordnete sich für seinen Wahlkreis einen Assistenten anstellen soll. Dieser Mann müßte zugleich die politische Organisation in den Wahlkreisen leiten. Es wird beschlossen die Angelegenheit 4 Wochen zurückzustellen.</p>
+            <p>Punkt 6.</p>
+            <p>Abg. <name type="Person" role="Sprecher" ref="#SpretiKarl_1949-09-07">Graf Spreti</name> beantragt, daß beim Präsidenten angeregt wird, daß die Auszahlungen bei der Kasse diskreter vorgenommen werden. Ferner schlägt Abg. <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name> vor, daß wenn ein Antrag über Landwirtschaft oder Flüchtlinge eingebracht wird, dieser von allen Abgeordneten der Landesgruppe unterzeichnet wird. Abg. <name type="Person" role="Erwaehnung" ref="#SpretiKarl_1949-09-07">Spreti</name> bittet die anwesenden Abgeordneten, ihm umgehend die Preise für einen cbm umbauten Raumes in den einzelnen Wahlkreisen zuzuschicken. Abg. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> bittet sämtliche anwesende Abgeordnete, bis zur nächsten Gruppensitzung am Freitag, den 9. Dezember sämtliches Material über in nächster Zeit zu stellende Anträge mitzubringen.</p>
+            <p>[Erstellt am: 1. 12. 1949.]</p>
+         </div>
+      </body>
+   </text>
 </TEI>

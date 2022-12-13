@@ -1,395 +1,587 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1962-01-16-t1515_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1009/1</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 16. Januar 1962</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>7 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1962-01-16"><time type="start" when="15:15:00"/><time type="end" when="17:45:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-1" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-1">A. TOP 1: Bericht aus dem Ältestenrat.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-2" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-2">B. TOP 2: Wahl des Fraktionsvorstandes.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-3" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-3">C. TOP 3: Sozialversicherung. Unfallversicherung.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-4" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-4">D. TOP 4: Kriegsopferversorgung.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-5" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-5">E. TOP 5: Steuern und Abgaben. Finanzpolitik.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-6" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-6">F. TOP 6: Steuern und Abgaben. Verbrauchsteuern.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-7" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-7">G. TOP 7: Wahl des Fraktionsvorstandes.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-8" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-8">H. TOP 8: Steuern und Abgaben. Verbrauchsteuern.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-9" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-9">I. TOP 9: EWG-Agrarpolitik.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-10" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-10">J. TOP 10: Wahl des Fraktionsvorstandes.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-11" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-11">K. TOP 11: Steuern und Abgaben. Verbrauchsteuern.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-12" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-12">L. TOP 12: Erklärung der Fraktion zu Anträgen der SPD.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-13" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-13">M. TOP 13: Fischerei.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-14" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-14">N. TOP 14: Berlinhilfe.</item>
-					<item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-15" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-15">O. TOP 15: Vertriebene und Flüchtlinge. Sowjetzonenflüchtlinge.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Bericht aus dem Ältestenrat]</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Sitzung des Ältestenrates. Zur Frage der Ausschußvorsitzenden habe <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bei <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> erfahren, daß die SPD nicht zu einem interfraktionellen Übereinkommen bereit sei, durch die <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> den Vorsitz im Außenpolitischen Ausschuß bekommt. Die Alternative sei dann das Zugriffsystem. Im Ältestenrat sei man übereingekommen, morgen um 18.00 Uhr nach einem vorher festgelegten Zugriffsystem diese Sache zu erledigen. Es sollen 26 Ausschüsse, dazu einen zum Entwicklungsministerium und einen zum Schatzministerium, also 28 Ausschüsse insgesamt, gebildet werden. Die Frage der Sonderausschüsse solle noch ausgeklammert werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> berichtet, daß er vereinbarungsgemäß mit <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> gesprochen habe und daß die Frage der Ausschußvorsitzenden auch in der Koalition besprochen worden sei. Das Ergebnis sei eben mitgeteilt worden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-2">
-				<head>B.</head>
-				<p>[2. Wahl des Fraktionsvorstandes]</p>
-				<p>Zur Wahl des Fraktionsvorstandes wolle er folgendes ausführen: 16 Mitglieder seien zu wählen, 8 würden dann kooptiert. Der nun der Fraktion vorgelegte Vorschlag sei nach Fühlungnahme mit den Landesgruppen aufgestellt worden und solle dazu dienen, Zufallsentscheidungen zu vermeiden. Natürlich könnten weitere Vorschläge über die genannten 16 Namen hinaus gemacht werden. Jeder solcher Vorschlag sollte aber dann mit einem Streichungsvorschlag verbunden sein. Die auf der Liste enthaltenen Vorschläge der CSU sollten nach hergebrachtem Gebrauch von der CDU übernommen werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BeckerJosef_1949-09-07">Becker</name> erklärt, daß es sich doch nicht um eine echte Wahl handele, wenn nur 16 Namen vorgeschlagen seien. So wähle er nicht; das sei doch mehr als gelenkte Demokratie.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erwidert, daß selbstverständlich diese Vorschläge ergänzt werden könnten. Wenn neue Namen genannt würden, würde die Vorschlagsliste eben neu gefertigt und wieder vorgelegt. Selbstverständlich sei die Wahl vollkommen frei.</p>
-				<p><name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> weist darauf hin, daß <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schon vorher darauf hingewiesen gehabt habe, daß die Liste selbstverständlich ergänzt werden könne. Er selbst schlage als weitere Namen <name type="Person" role="Erwaehnung" ref="#SteckerJosef_1957-10-15">Stecker</name> und <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> vor.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> fragt, ob noch weitere Vorschläge gemacht werden. Daraufhin schlagen <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name>
-					<name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name> und <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name>,</p>
-				<p>Frau Dr. <name type="Person" role="Sprecher" ref="#BleylerHildegard_1953-10-06">Bleyler</name> Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name> und Frau <name type="Person" role="Erwaehnung" ref="#WelterEmmi_1954-01-04">Welter</name>,</p>
-				<p><name type="Person" role="Sprecher" ref="#AdornoEduard_1961-10-17">Adorno</name>
-					<name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> und <name type="Person" role="Erwaehnung" ref="#BuehlerKarlAugust_1957-10-15">Bühler</name> vor.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt fest, daß weitere Vorschläge nicht erfolgen und schließt damit die Vorschlagsliste ab.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN001" type="comment"><p>Fortgang siehe TOP 7.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-3">
-				<head>C.</head>
-				<p>[3. Sozialversicherung. Unfallversicherung]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> berichtet zur Beratung des Unfallversicherungsgesetzes<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN002" type="comment"><p>CDU/CSU-Gesetzentwurf zur Neuregelung des Rechts der gesetzlichen Unfallversicherung – Unfallversicherungs-Neuregelungsgesetz – (Drs. IV/120 vom 11. 1. 1962).</p></note></seg>, daß der AK IV als Redner <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> und Frau <name type="Person" role="Erwaehnung" ref="#KalinkeMargot_1949-09-07">Kalinke</name> vorschlage. Die Fraktion stimmt diesem Vorschlag zu.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-4">
-				<head>D.</head>
-				<p>[4. Kriegsopferversorgung]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> erstattet Bericht über die Verhandlungen über den SPD-Antrag zur Anpassung der Renten der Kriegsopferversorgung.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN003" type="comment"><p>SPD-Gesetzentwurf über die Anpassung der Renten der Kriegsopferversorgung (Drs. IV/54 vom 5. 12. 1961).</p></note></seg> Zu diesem Thema wird von der Koalition eine gemeinsame Erklärung abgegeben, ebenso zu den Themen Unterhaltshilfe aus dem Lastenausgleich und Weihnachtsgeld für Rentenempfänger.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-5">
-				<head>E.</head>
-				<p>[5. Steuern und Abgaben. Finanzpolitik]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> berichtet über die Beratungen über die Einsetzung einer Expertenkommission zur Verwaltungs- und Finanzreform. AK III habe die Drucksache IV/68<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN004" type="comment"><p>SPD-Antrag betr. Einsetzung einer Expertenkommission zur Vorbereitung der Finanzreform (Drs. IV/68 vom 7. 12. 1961).</p></note></seg> beraten und empfehle, sie als gegenstandslos abzulehnen, weil hier die Regierung zuständig sei. Diese habe schon in der Regierungserklärung gesagt<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN005" type="comment"><p>Regierungserklärung vom 29. 11. 1961.</p></note></seg>, daß sie eine solche Kommission einsetzen wolle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bezweifelt, ob man einfach mit Zuständigkeitsgründen ablehnen könne; sicher könne auch der Bundestag eine solche Kommission einsetzen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> antwortet, bei einer Ablehnung mit anderen Gründen werde die Ablehnung etwas unhöflich werden. Man solle sagen, daß diese Kommission bereits beschlossen und die Sache also erledigt sei.</p>
-				<p><name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> bemerkt, daß die SPD eine völlig andere Kommission wolle als die Regierung. Deshalb könne man eventuell den Antrag der Regierung als Material überweisen und die Art und Weise der Zusammensetzung der Kommission der Bundesregierung überlassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt sich mit dieser Verfahrensweise einverstanden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-6">
-				<head>F.</head>
-				<p>[6. Steuern und Abgaben. Verbrauchsteuern]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> trägt vor, daß die SPD vorschlage, die Kaffeesteuer jetzt um ein Drittel, ab 1. 1.1963 um ein weiteres Drittel zu senken und sie 1964 völlig aufzuheben.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN006" type="comment"><p>SPD-Gesetzentwurf zur Änderung und Aufhebung des Kaffeesteuergesetzes (Drs. IV/65 vom 7. 12. 1961).</p></note></seg> Die Teesteuer solle sofort aufgehoben werden.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN007" type="comment"><p>SPD-Gesetzentwurf zur Aufhebung des Teesteuergesetzes (Drs. IV/66 vom 7. 12. 1961).</p></note></seg> Diese Vorschläge bedeuteten 1962 230 Millionen, 1963 565 Millionen und 1964 862 Millionen DM Steuerausfall. Die Schwierigkeit, in der man sich befinde, liege darin, daß der Wirtschaftsminister sich für die Aufhebung der Kaffeesteuer ausgesprochen habe, während der Bundesfinanzminister sich dem widersetze. Der Wirtschaftsminister sehe in einem solchen Schritt eine gezielte Entwicklungshilfe; es sei zweckmäßig, diese Steuersenkung vorwegzunehmen, solange man noch politisches Kapital daraus schlagen könne. Der AK III sei diesen Vorstellungen nicht gefolgt. Der Kaffeeverbrauch hänge weniger von der Höhe der Steuer als von der Höhe des Volkseinkommens ab. Eine Senkung der Steuer werde maximal zu einem Mehrverbrauch von 20 000 t führen. Das würde eine Entwicklungshilfe von etwa 70 Millionen DM bedeuten, die sich auf die verschiedenen Kaffeeländer verteilen würden. Man solle lieber bei einer gezielten Entwicklungshilfe bleiben und den Haushalt nicht unnötig schwächen. Man solle erklären, daß die gegenwärtige Haushaltslage einen solchen Schritt nicht gestatte; es solle aber auch überlegt werden, wie im Laufe der nächsten Jahre die Kaffeesteuer abgebaut werden könnte.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN008" type="comment"><p>Fortgang siehe TOP 8.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-7">
-				<head>G.</head>
-				<p>[7. Wahl des Fraktionsvorstandes]</p>
-				<p>(Inzwischen sind die neuen Vorschlagslisten für die Wahl des Fraktionsvorstandes verteilt).</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt fest, daß jedes Fraktionsmitglied 16 Stimmen habe. Wer mehr Stimmen abgebe, mache seinen Wahlzettel ungültig. <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, <name type="Person" role="Erwaehnung" ref="#SchwoererHermann_1958-10-21">Schwörer</name> und <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name> werden als Stimmzähler bestellt. Der Wahlvorgang wird eröffnet.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN009" type="comment"><p>Fortgang siehe TOP 10.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-8">
-				<head>H.</head>
-				<p>[8. Steuern und Abgaben. Verbrauchsteuern]</p>
-				<p>Dann wendet sich Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> dem Thema Kaffeesteuer<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN0010" type="comment"><p>SPD-Gesetzentwurf zur Änderung und Aufhebung des Kaffeesteuergesetzes (Drs. IV/65 vom 7.12.1961).</p></note></seg> zu und teilt mit, daß der Vorstand sich ebenfalls dafür ausgesprochen habe, bei einer gezielten Entwicklungshilfe zu bleiben. Abgesehen von dem geringen Erfolg einer solchen Maßnahme könne man nicht in der Regierungserklärung Opfer verlangen und dann gleich die Kaffeesteuer senken. Immerhin habe der Haushalt noch einen ungedeckten Betrag von 4,5 Milliarden DM. Was die abzugebende Erklärung anbelange, so müsse man wohl Rücksicht darauf nehmen, daß die FDP bisher immer für die Abbauung der Steuer gestimmt habe und nun den Antrag der SPD nicht a limine ablehnen könne. Man solle deshalb die Überlegungen der SPD überprüfen und einen langsamen Abbau der Steuer vorbereiten. Gewiß sei dieser Weg nicht redlich, aber die CDU/CSU solle sich nicht aus übergroßer Gewissenhaftigkeit als einzige den Speer in die Brust rennen.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> ruft dazwischen, daß dann Steuererhöhungen unvermeidbar seien.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, daß auch ihm ein sauberes Nein am liebsten wäre, weil es redlicher wäre. Bei der Überprüfung im Haushaltsausschuß werde sich dann schon zeigen, daß Steuererhöhungen in nächster Zeit undenkbar sind. Auch müsse in dieser Sache der Bundesfinanzminister ein Wort im Plenum sagen.</p>
-				<p><name type="Person" role="Sprecher" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> weist darauf hin, daß die Abgeordneten des Europäischen Parlaments in dieser Sache in einer schwierigen Situation seien. Dort habe man beschlossen, auf den Abbau der Verbrauchsteuern hinzuwirken. Aus politischen Gründen solle man nicht ein schroffes Nein sagen, sondern die Sache lieber auf die lange Bank schieben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> erklärt, daß man nicht den fiskalischen Gesichtspunkt in den Vordergrund stellen müsse, es gebe auch noch genügend andere Gründe. Es könne aber nicht hingenommen werden, daß sich der Bundesfinanzminister um eine klare Stellungnahme drücke. Es müsse der FDP deutlich gesagt werden, daß man erwarte, daß der Bundesfinanzminister die Steuersenkung eindeutig ablehnt und daß nur dann die CDU bereit sei, auf diesem Weg zu folgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> wehrt sich gegen den Vorschlag, die unangenehmen Dinge auf den Haushaltsausschuß abzuwälzen. Die Bundesregierung sei durch die Verfassung verpflichtet, einen ausgeglichenen Haushalt vorzulegen, und zuständig dafür sei der Bundesfinanzminister. Wenn der Bundesfinanzminister in dieser Frage nicht klar nein sage, sei auch die Fraktion nicht verpflichtet, mehr zu tun als er. Es könne auch dem neuen Bundesfinanzminister nicht erspart bleiben, um seinen Haushalt zu kämpfen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> verweist auf den Charakter der Tabak-, Kaffee- und Alkoholsteuern als typische innere Verbrauchsteuern. Die SPD sei doch bestrebt, durch die Politik der Senkung der Verbrauchsteuern die Ergänzungsabgabe herbeizuführen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SerresGuenther_1949-09-07">Serres</name> übernimmt es, für die Auffassung des Wirtschaftsministers zu sprechen. Sicher hätte eine Senkung der Kaffeesteuer gute handelspolitische Auswirkungen und stelle auch eine Art Entwicklungshilfe dar. Wenn auch die fiskalischen Gesichtspunkte eine große Rolle spielten, so müsse man doch sehen, daß sich die inneren Abgaben auf lange Sicht nicht aufrechterhalten lassen würden. Jedenfalls solle man die Bundesregierung auffordern, diese Probleme schnell zu lösen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> schließt sich der Auffassung der Abg. <name type="Person" role="Erwaehnung" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> und <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> an. Die damalige Erhöhung der Kaffeesteuer sei ein schlechter europäischer Stil gewesen. Die Lösung der jetzt gestellten Frage habe eine große Bedeutung für die Auffassung des Auslandes: Dort sage man, daß die Deutschen zwar viel von Europa reden, daß sie es aber in solchen Fragen im Stich lassen. Es sei besser zu sagen, daß man nach Prüfung der ganzen Fragen zu dem Entschluß gekommen sei, diese Steuermittel zu behalten und sie dann zur Verstärkung der Entwicklungshilfe zu verwenden.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> tritt für die Annahme der Empfehlung des AK III ein. Hier handele es sich um eine Finanzsteuer; das solle man nicht verschweigen. Die Haushaltslage erlaube es nicht, diese Steuer abzubauen. Freilich sei die FDP in einer schwierigen Lage, aber sie müsse eben sehen, wie sie damit fertig werde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> erinnert daran, daß die Fraktion nicht mehr die absolute Mehrheit habe. Man müsse doch erst wissen, wie sich die FDP verhalten wolle, nachdem es den Anschein habe, als ob der Bundesfinanzminister zum Nachgeben bereit sei.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> räumt ein, daß man sich sicher fragen müsse, was die FDP mache. Aber man könne nicht auch noch erklären, daß man ohne weiteres mitmache. Schließlich werde doch die CDU/CSU mit allem belastet, was hier im Parlament passiere. Man werde unglaubwürdig, wenn man angesichts der Haushaltslage nicht nein sage.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> betont, daß es sich hier um eine politische Frage handele. Sicher könne man nicht ja zum Antrag der SPD sagen, sicher könne man aber auch nicht härter sein als der Koalitionspartner und dessen Finanzminister. Die FDP sei sehr offen und ernsthaft darauf angesprochen worden, daß sie die Verantwortung mitzutragen habe. Man solle zuerst den Bundesfinanzminister sprechen lassen und dann erst die Erklärung der Fraktion abgeben, in der auf die schweren Bedenken hingewiesen werden müsse. Die weitere Behandlung müsse dann im Haushaltsausschuß im Zusammenhang mit der Haushaltsberatung erfolgen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> teilt mit, daß der Bundesfinanzminister im Kabinett gegen die Aufhebung oder Senkung der Kaffeesteuer gesprochen und daß dann das Kabinett entsprechend beschlossen habe. Es gehe nicht an, daß nun die FDP-Fraktion ihren Minister wieder umstimme; das stehe auch einem Finanzminister nicht gut an. Man solle die Stellungnahme der Fraktion davon abhängig machen, ob der Bundesfinanzminister auf seinem ursprünglichen Standpunkt bleiben wolle oder nicht.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, er sehe sich nicht in der Lage, zur FDP-Fraktion zu gehen, um diese zu bitten, sie sollten in diesem Punkt hart sein. Dagegen wolle er mit dem Bundesfinanzminister sprechen, daß er den Standpunkt des Kabinetts klar zu vertreten habe und daß er dafür sorgen solle, daß seine Fraktion diesen Standpunkt teilt. Das werde eine der ersten Proben der Koalition sein.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> weist auf die Diskrepanz hin, daß man den Kaffeepreis senken und den Milchpreis erhöhen wolle. Wegen der Negerlein senke man den Kaffeepreis, und den Milchpreis erhöhe man!</p>
-				<p><name type="Person" role="Sprecher" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> erinnert an die Finanzverhandlungen mit den Ländern wegen der Abdeckung des Haushaltes. Jetzt sei man offenbar bereit, 800 Millionen DM zum Fenster hinauszuwerfen. Wenn man den Kaffeepreis senke, müsse man doch wohl andere Einnahmen schaffen. Es sei zu fragen, wie das politisch ankomme.</p>
-				<p><name type="Person" role="Sprecher" ref="#RichartsHans_1953-10-06">Richarts</name> erläutert, daß die Anträge der SPD insgesamt doch Milliarden kosten würden. Es sei auch nicht richtig, wenn die Afrikaner es immer so hinstellten, als stelle die Kaffeesteuer weggenommen Lohn der Kaffeebauern in Afrika dar; das sei doch gar nicht wahr.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schließt diese Debatte mit der Bemerkung, daß er mit dem Bundesfinanzminister noch einmal sprechen und ihn darauf hinweisen werde, was die Fraktion von ihm erwarte.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN011" type="comment"><p>Fortgang siehe TOP 11.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-9">
-				<head>I.</head>
-				<p>[9. EWG-Agrarpolitik]</p>
-				<p>Dann wiederholt er den bereits am Vortage ausgesprochen Dank an Bundesminister <name type="Person" role="Erwaehnung" ref="#SchwarzWerner_1953-10-06">Schwarz</name> für den Abschluß der Brüsseler Verhandlungen (Beifall). Ein Scheitern dieser Verhandlungen wäre eine Katastrophe gewesen, weil es auch praktisch eine Absage an das englische Beitrittsgesuch zum Gemeinsamen Markt dargestellt hätte. Minister <name type="Person" role="Erwaehnung" ref="#SchwarzWerner_1953-10-06">Schwarz</name> habe eine sehr schwere Aufgabe zu lösen gehabt. Er habe die vitalen Interessen der deutschen Landwirtschaft vertreten und doch dabei vermieden, daß die europäische Entwicklung einen nicht auszugleichenden Schaden erlitt.</p>
-				<p>Bundeslandwirtschaftsminister <name type="Person" role="Sprecher" ref="#SchwarzWerner_1953-10-06">Schwarz</name> erstattet einen Bericht über die Brüsseler Verhandlungen. Wegen des fast völligen Gleichlauts wird auf das Protokoll der 12. Sitzung des Deutschen Bundestages vom 24. 1. 1962 verwiesen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> dankt für diesen Bericht und dehnt den Dank der Fraktion auf die Mitglieder der Brüsseler Kommission aus.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-10">
-				<head>J.</head>
-				<p>[10. Wahl des Fraktionsvorstandes]</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> teilt sodann das Ergebnis der Vorstandswahl mit. Gewählt sind:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name></cell>
-						<cell>Vorsitzender</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name></cell>
-						<cell>stellvertretender Vorsitzender</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name></cell>
-						<cell>stellvertretender Vorsitzender</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name></cell>
-						<cell>stellvertretender Vorsitzender</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name></cell>
-						<cell>stellvertretender Vorsitzender</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name></cell>
-						<cell>parlamentarischer Geschäftsführer</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name></cell>
-						<cell>parlamentarischer Geschäftsführer</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name></cell>
-						<cell>parlamentarischer Geschäftsführer</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name> (Wasserburg)</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name></cell>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name></cell>
-					</row>
-					<row>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BuehlerKarlAugust_1957-10-15">Bühler</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal)</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln)</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SteckerJosef_1957-10-15">Stecker</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name> (Bielefeld)</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name></cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#KruegerHans_1957-10-15">Krüger</name></cell>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> (Essen)</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</cell>
-					</row>
-					<row>
-						<cell>
-							<name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> (München)</cell>
-					</row>
-				</table>
-				<p>Die Gewählten nehmen die Wahl an.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-11">
-				<head>K.</head>
-				<p>[11. Steuern und Abgaben. Verbrauchsteuern]</p>
-				<p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#HettlageKarlMaria">Hettlage</name> (BMF) teilt mit, daß er soeben vom Bundesfinanzminister erfahren habe, daß dieser beabsichtige, nach der Begründung des Antrags der SPD<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN012" type="comment"><p>SPD-Gesetzentwurf zur Änderung und Aufhebung des Kaffeesteuergesetzes (Drs. IV/65 vom 7. 12. 1961).</p></note></seg> als Finanzminister und Mitglied des Kabinetts ablehnend zur Frage der Senkung der Kaffeesteuer Stellung zu nehmen. Diese Stellungnahme sei aber nicht identisch mit der Stellungnahme der FDP-Fraktion.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> tritt dafür ein, daß die Fraktion auf ihrem ablehnenden Standpunkt verharren sollte.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> regt an, wenigstens einen Schritt mitzugehen, wenn die FDP schon mit der SPD zusammenstimmen werde. Der Überweisung an den Ausschuß könne man vielleicht zustimmen.</p>
-				<p><name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> erklärt, man müsse um die FDP kämpfen und sie auf dem rechten Weg halten. Wenn man sich einig sei, daß die Ablehnung gut und richtig sei, müsse man um diese Linie auch kämpfen und die FDP auch ermahnen, sich auch hinter die Regierung zu stellen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> fragt, ob man sich denn bei der ersten Lesung das Maul mehr verbrennen müsse, als unbedingt notwendig sei. Das Weitere könne man doch im Ausschuß sehen, mit der FDP müsse man aber ein deutliches Wort reden.</p>
-				<p><name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> setzt sich noch einmal dafür ein, an der grundsätzlichen Linie der Ablehnung festzuhalten. Die Fraktion könne über ihre eigene Verantwortung nicht hinweggehen. Auch werde es bei der Bevölkerung besser ankommen, Verantwortungsbewußtsein zu zeigen, als einfach nachzugeben.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-12">
-				<head>L.</head>
-				<p>[12. Erklärung der Fraktion zu Anträgen der SPD]</p>
-				<p><name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> erläutert der Fraktion die beabsichtigte Erklärung zu den Anträgen der SPD (Verbesserung der Renten der Kriegsopfer<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN013" type="comment"><p>SPD-Gesetzentwurf über die Anpassung der Renten der Kriegsopferversorgung (Drs. IV/54 vom 5. 12. 1961).</p></note></seg>, Unterhaltshilfe aus dem Lastenausgleich<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN014" type="comment"><p>SPD-Gesetzentwurf über die Gewährung einer einmaligen Zuwendung an Bezieher von Unterhaltshilfe nach dem Lastenausgleichsgesetz (Drs. IV/55 vom 6. 12. 1961).</p></note></seg> und Weihnachtsgeld für Rentenempfänger<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN015" type="comment"><p>SPD-Antrag betr. Zahlung eines Weihnachtsgeldes an Empfänger von Renten nach dem BEG (Drs. IV/82 vom 12. 12. 1961).</p></note></seg>). Nach kurzer Aussprache, an der sich Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Sprecher" ref="#KuntscherErnst_1949-09-07">Kuntscher</name>, Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> und <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> beteiligen, wird die vorgeschlagene Erklärung gebilligt.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-13">
-				<head>M.</head>
-				<p>[13. Fischerei]</p>
-				<p><name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> trägt einen Entschließungsantrag betr. Hochseefischerei<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN0016" type="comment"><p>Antrag <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> u. a. und Fraktionen der CDU/CSU und FDP betr. Bericht über die Lage der deutschen Hochseefischerei (Drs. IV/133 neu vom 17. 1. 1962).</p></note></seg> vor, der vom AK II behandelt und gebilligt worden ist.</p>
-				<p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#HettlageKarlMaria">Hettlage</name> (BMF) teilt mit, daß die Bundesregierung schon in zwei Tagen in der Fragestunde zu diesem Komplex Stellung nehmen werde.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-14">
-				<head>N.</head>
-				<p>[14. Berlinhilfe]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> berichtet über die Beratungen des AK V über die Frage der Berlinhilfe. Die in Aussicht genommenen Maßnahmen sollten schnell getroffen werden. Das Wirtschaftskabinett habe über diese Fragen noch nicht abschließend entschieden. Je schneller aber die Entscheidung falle, desto besser sei es. Die Fraktionsführung solle der Bundesregierung den Wunsch nahebringen, daß sie sich schnell entscheiden möge.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> empfiehlt der Fraktion, diese Anregung zu unterstützen. AK V solle seine Vorschläge dem Fraktionsvorstand schriftlich vorlegen, damit die materielle Beratung beginnen könne. Die Fraktion ist mit diesem Vorgehen einverstanden.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-15">
-				<head>O.</head>
-				<p>[15. Vertriebene und Flüchtlinge. Sowjetzonenflüchtlinge]</p>
-				<p><name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> kündigt eine Anfrage an die Bundesregierung zum Thema Familienzusammenführung aus der Zone an.<seg type="note"><note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN017" type="comment"><p>Kleine Anfrage <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> u. a. betr. Familienzusammenführung (Drs. IV/131 vom 17. 1. 1962).</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> regt an, diese Frage noch im Vorstand zu besprechen.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-04_1962-01-16-t1515_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1009/1</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 16. Januar 1962</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>7 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1962-01-16">
+               <time type="start" when="15:15:00"/>
+               <time type="end" when="17:45:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#BrentanoHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2022-09-12" who="#WeistenhoeferSimon" status="draft" n="3">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-1" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-1">A. TOP 1: Bericht aus dem Ältestenrat.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-2" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-2">B. TOP 2: Wahl des Fraktionsvorstandes.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-3" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-3">C. TOP 3: Sozialversicherung. Unfallversicherung.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-4" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-4">D. TOP 4: Kriegsopferversorgung.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-5" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-5">E. TOP 5: Steuern und Abgaben. Finanzpolitik.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-6" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-6">F. TOP 6: Steuern und Abgaben. Verbrauchsteuern.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-7" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-7">G. TOP 7: Wahl des Fraktionsvorstandes.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-8" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-8">H. TOP 8: Steuern und Abgaben. Verbrauchsteuern.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-9" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-9">I. TOP 9: EWG-Agrarpolitik.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-10" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-10">J. TOP 10: Wahl des Fraktionsvorstandes.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-11" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-11">K. TOP 11: Steuern und Abgaben. Verbrauchsteuern.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-12" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-12">L. TOP 12: Erklärung der Fraktion zu Anträgen der SPD.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-13" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-13">M. TOP 13: Fischerei.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-14" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-14">N. TOP 14: Berlinhilfe.</item>
+               <item xml:id="cdu-csu-04_1962-01-16-t1515_EP_SVP-15" corresp="#cdu-csu-04_1962-01-16-t1515_EP_div_SVP-15">O. TOP 15: Vertriebene und Flüchtlinge. Sowjetzonenflüchtlinge.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Bericht aus dem Ältestenrat]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> berichtet über die Sitzung des Ältestenrates. Zur Frage der Ausschußvorsitzenden habe <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bei <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> erfahren, daß die SPD nicht zu einem interfraktionellen Übereinkommen bereit sei, durch die <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> den Vorsitz im Außenpolitischen Ausschuß bekommt. Die Alternative sei dann das Zugriffsystem. Im Ältestenrat sei man übereingekommen, morgen um 18.00 Uhr nach einem vorher festgelegten Zugriffsystem diese Sache zu erledigen. Es sollen 26 Ausschüsse, dazu einen zum Entwicklungsministerium und einen zum Schatzministerium, also 28 Ausschüsse insgesamt, gebildet werden. Die Frage der Sonderausschüsse solle noch ausgeklammert werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> berichtet, daß er vereinbarungsgemäß mit <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> gesprochen habe und daß die Frage der Ausschußvorsitzenden auch in der Koalition besprochen worden sei. Das Ergebnis sei eben mitgeteilt worden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-2">
+            <head>B.</head>
+            <p>[2. Wahl des Fraktionsvorstandes]</p>
+            <p>Zur Wahl des Fraktionsvorstandes wolle er folgendes ausführen: 16 Mitglieder seien zu wählen, 8 würden dann kooptiert. Der nun der Fraktion vorgelegte Vorschlag sei nach Fühlungnahme mit den Landesgruppen aufgestellt worden und solle dazu dienen, Zufallsentscheidungen zu vermeiden. Natürlich könnten weitere Vorschläge über die genannten 16 Namen hinaus gemacht werden. Jeder solcher Vorschlag sollte aber dann mit einem Streichungsvorschlag verbunden sein. Die auf der Liste enthaltenen Vorschläge der CSU sollten nach hergebrachtem Gebrauch von der CDU übernommen werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BeckerJosef_1949-09-07">Becker</name> erklärt, daß es sich doch nicht um eine echte Wahl handele, wenn nur 16 Namen vorgeschlagen seien. So wähle er nicht; das sei doch mehr als gelenkte Demokratie.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erwidert, daß selbstverständlich diese Vorschläge ergänzt werden könnten. Wenn neue Namen genannt würden, würde die Vorschlagsliste eben neu gefertigt und wieder vorgelegt. Selbstverständlich sei die Wahl vollkommen frei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name> weist darauf hin, daß <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schon vorher darauf hingewiesen gehabt habe, daß die Liste selbstverständlich ergänzt werden könne. Er selbst schlage als weitere Namen <name type="Person" role="Erwaehnung" ref="#SteckerJosef_1957-10-15">Stecker</name> und <name type="Person" role="Erwaehnung" ref="#StorchAnton_1949-09-07">Storch</name> vor.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> fragt, ob noch weitere Vorschläge gemacht werden. Daraufhin schlagen <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name>
+               <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name> und <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name>,</p>
+            <p>Frau Dr. <name type="Person" role="Sprecher" ref="#BleylerHildegard_1953-10-06">Bleyler</name> Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name> und Frau <name type="Person" role="Erwaehnung" ref="#WelterEmmi_1954-01-04">Welter</name>,</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#AdornoEduard_1961-10-17">Adorno</name>
+               <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name> und <name type="Person" role="Erwaehnung" ref="#BuehlerKarlAugust_1957-10-15">Bühler</name> vor.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt fest, daß weitere Vorschläge nicht erfolgen und schließt damit die Vorschlagsliste ab.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN001" type="comment">
+                     <p>Fortgang siehe TOP 7.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-3">
+            <head>C.</head>
+            <p>[3. Sozialversicherung. Unfallversicherung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> berichtet zur Beratung des Unfallversicherungsgesetzes<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN002" type="comment">
+                     <p>CDU/CSU-Gesetzentwurf zur Neuregelung des Rechts der gesetzlichen Unfallversicherung – Unfallversicherungs-Neuregelungsgesetz – (Drs. IV/120 vom 11. 1. 1962).</p>
+                  </note>
+               </seg>, daß der AK IV als Redner <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name> und Frau <name type="Person" role="Erwaehnung" ref="#KalinkeMargot_1949-09-07">Kalinke</name> vorschlage. Die Fraktion stimmt diesem Vorschlag zu.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-4">
+            <head>D.</head>
+            <p>[4. Kriegsopferversorgung]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> erstattet Bericht über die Verhandlungen über den SPD-Antrag zur Anpassung der Renten der Kriegsopferversorgung.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN003" type="comment">
+                     <p>SPD-Gesetzentwurf über die Anpassung der Renten der Kriegsopferversorgung (Drs. IV/54 vom 5. 12. 1961).</p>
+                  </note>
+               </seg> Zu diesem Thema wird von der Koalition eine gemeinsame Erklärung abgegeben, ebenso zu den Themen Unterhaltshilfe aus dem Lastenausgleich und Weihnachtsgeld für Rentenempfänger.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-5">
+            <head>E.</head>
+            <p>[5. Steuern und Abgaben. Finanzpolitik]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> berichtet über die Beratungen über die Einsetzung einer Expertenkommission zur Verwaltungs- und Finanzreform. AK III habe die Drucksache IV/68<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN004" type="comment">
+                     <p>SPD-Antrag betr. Einsetzung einer Expertenkommission zur Vorbereitung der Finanzreform (Drs. IV/68 vom 7. 12. 1961).</p>
+                  </note>
+               </seg> beraten und empfehle, sie als gegenstandslos abzulehnen, weil hier die Regierung zuständig sei. Diese habe schon in der Regierungserklärung gesagt<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN005" type="comment">
+                     <p>Regierungserklärung vom 29. 11. 1961.</p>
+                  </note>
+               </seg>, daß sie eine solche Kommission einsetzen wolle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> bezweifelt, ob man einfach mit Zuständigkeitsgründen ablehnen könne; sicher könne auch der Bundestag eine solche Kommission einsetzen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchmidtOtto_1957-10-15">Schmidt</name> antwortet, bei einer Ablehnung mit anderen Gründen werde die Ablehnung etwas unhöflich werden. Man solle sagen, daß diese Kommission bereits beschlossen und die Sache also erledigt sei.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> bemerkt, daß die SPD eine völlig andere Kommission wolle als die Regierung. Deshalb könne man eventuell den Antrag der Regierung als Material überweisen und die Art und Weise der Zusammensetzung der Kommission der Bundesregierung überlassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt sich mit dieser Verfahrensweise einverstanden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-6">
+            <head>F.</head>
+            <p>[6. Steuern und Abgaben. Verbrauchsteuern]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ArtzingerHelmut_1961-10-17">Artzinger</name> trägt vor, daß die SPD vorschlage, die Kaffeesteuer jetzt um ein Drittel, ab 1. 1.1963 um ein weiteres Drittel zu senken und sie 1964 völlig aufzuheben.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN006" type="comment">
+                     <p>SPD-Gesetzentwurf zur Änderung und Aufhebung des Kaffeesteuergesetzes (Drs. IV/65 vom 7. 12. 1961).</p>
+                  </note>
+               </seg> Die Teesteuer solle sofort aufgehoben werden.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN007" type="comment">
+                     <p>SPD-Gesetzentwurf zur Aufhebung des Teesteuergesetzes (Drs. IV/66 vom 7. 12. 1961).</p>
+                  </note>
+               </seg> Diese Vorschläge bedeuteten 1962 230 Millionen, 1963 565 Millionen und 1964 862 Millionen DM Steuerausfall. Die Schwierigkeit, in der man sich befinde, liege darin, daß der Wirtschaftsminister sich für die Aufhebung der Kaffeesteuer ausgesprochen habe, während der Bundesfinanzminister sich dem widersetze. Der Wirtschaftsminister sehe in einem solchen Schritt eine gezielte Entwicklungshilfe; es sei zweckmäßig, diese Steuersenkung vorwegzunehmen, solange man noch politisches Kapital daraus schlagen könne. Der AK III sei diesen Vorstellungen nicht gefolgt. Der Kaffeeverbrauch hänge weniger von der Höhe der Steuer als von der Höhe des Volkseinkommens ab. Eine Senkung der Steuer werde maximal zu einem Mehrverbrauch von 20 000 t führen. Das würde eine Entwicklungshilfe von etwa 70 Millionen DM bedeuten, die sich auf die verschiedenen Kaffeeländer verteilen würden. Man solle lieber bei einer gezielten Entwicklungshilfe bleiben und den Haushalt nicht unnötig schwächen. Man solle erklären, daß die gegenwärtige Haushaltslage einen solchen Schritt nicht gestatte; es solle aber auch überlegt werden, wie im Laufe der nächsten Jahre die Kaffeesteuer abgebaut werden könnte.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN008" type="comment">
+                     <p>Fortgang siehe TOP 8.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-7">
+            <head>G.</head>
+            <p>[7. Wahl des Fraktionsvorstandes]</p>
+            <p>(Inzwischen sind die neuen Vorschlagslisten für die Wahl des Fraktionsvorstandes verteilt).</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> stellt fest, daß jedes Fraktionsmitglied 16 Stimmen habe. Wer mehr Stimmen abgebe, mache seinen Wahlzettel ungültig. <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, <name type="Person" role="Erwaehnung" ref="#SchwoererHermann_1958-10-21">Schwörer</name> und <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name> werden als Stimmzähler bestellt. Der Wahlvorgang wird eröffnet.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN009" type="comment">
+                     <p>Fortgang siehe TOP 10.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-8">
+            <head>H.</head>
+            <p>[8. Steuern und Abgaben. Verbrauchsteuern]</p>
+            <p>Dann wendet sich Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> dem Thema Kaffeesteuer<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN0010" type="comment">
+                     <p>SPD-Gesetzentwurf zur Änderung und Aufhebung des Kaffeesteuergesetzes (Drs. IV/65 vom 7.12.1961).</p>
+                  </note>
+               </seg> zu und teilt mit, daß der Vorstand sich ebenfalls dafür ausgesprochen habe, bei einer gezielten Entwicklungshilfe zu bleiben. Abgesehen von dem geringen Erfolg einer solchen Maßnahme könne man nicht in der Regierungserklärung Opfer verlangen und dann gleich die Kaffeesteuer senken. Immerhin habe der Haushalt noch einen ungedeckten Betrag von 4,5 Milliarden DM. Was die abzugebende Erklärung anbelange, so müsse man wohl Rücksicht darauf nehmen, daß die FDP bisher immer für die Abbauung der Steuer gestimmt habe und nun den Antrag der SPD nicht a limine ablehnen könne. Man solle deshalb die Überlegungen der SPD überprüfen und einen langsamen Abbau der Steuer vorbereiten. Gewiß sei dieser Weg nicht redlich, aber die CDU/CSU solle sich nicht aus übergroßer Gewissenhaftigkeit als einzige den Speer in die Brust rennen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> ruft dazwischen, daß dann Steuererhöhungen unvermeidbar seien.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, daß auch ihm ein sauberes Nein am liebsten wäre, weil es redlicher wäre. Bei der Überprüfung im Haushaltsausschuß werde sich dann schon zeigen, daß Steuererhöhungen in nächster Zeit undenkbar sind. Auch müsse in dieser Sache der Bundesfinanzminister ein Wort im Plenum sagen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> weist darauf hin, daß die Abgeordneten des Europäischen Parlaments in dieser Sache in einer schwierigen Situation seien. Dort habe man beschlossen, auf den Abbau der Verbrauchsteuern hinzuwirken. Aus politischen Gründen solle man nicht ein schroffes Nein sagen, sondern die Sache lieber auf die lange Bank schieben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> erklärt, daß man nicht den fiskalischen Gesichtspunkt in den Vordergrund stellen müsse, es gebe auch noch genügend andere Gründe. Es könne aber nicht hingenommen werden, daß sich der Bundesfinanzminister um eine klare Stellungnahme drücke. Es müsse der FDP deutlich gesagt werden, daß man erwarte, daß der Bundesfinanzminister die Steuersenkung eindeutig ablehnt und daß nur dann die CDU bereit sei, auf diesem Weg zu folgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#NiederaltAlois_1953-10-06">Niederalt</name> wehrt sich gegen den Vorschlag, die unangenehmen Dinge auf den Haushaltsausschuß abzuwälzen. Die Bundesregierung sei durch die Verfassung verpflichtet, einen ausgeglichenen Haushalt vorzulegen, und zuständig dafür sei der Bundesfinanzminister. Wenn der Bundesfinanzminister in dieser Frage nicht klar nein sage, sei auch die Fraktion nicht verpflichtet, mehr zu tun als er. Es könne auch dem neuen Bundesfinanzminister nicht erspart bleiben, um seinen Haushalt zu kämpfen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> verweist auf den Charakter der Tabak-, Kaffee- und Alkoholsteuern als typische innere Verbrauchsteuern. Die SPD sei doch bestrebt, durch die Politik der Senkung der Verbrauchsteuern die Ergänzungsabgabe herbeizuführen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SerresGuenther_1949-09-07">Serres</name> übernimmt es, für die Auffassung des Wirtschaftsministers zu sprechen. Sicher hätte eine Senkung der Kaffeesteuer gute handelspolitische Auswirkungen und stelle auch eine Art Entwicklungshilfe dar. Wenn auch die fiskalischen Gesichtspunkte eine große Rolle spielten, so müsse man doch sehen, daß sich die inneren Abgaben auf lange Sicht nicht aufrechterhalten lassen würden. Jedenfalls solle man die Bundesregierung auffordern, diese Probleme schnell zu lösen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> schließt sich der Auffassung der Abg. <name type="Person" role="Erwaehnung" ref="#IllerhausJoseph_1953-10-06">Illerhaus</name> und <name type="Person" role="Erwaehnung" ref="#SerresGuenther_1949-09-07">Serres</name> an. Die damalige Erhöhung der Kaffeesteuer sei ein schlechter europäischer Stil gewesen. Die Lösung der jetzt gestellten Frage habe eine große Bedeutung für die Auffassung des Auslandes: Dort sage man, daß die Deutschen zwar viel von Europa reden, daß sie es aber in solchen Fragen im Stich lassen. Es sei besser zu sagen, daß man nach Prüfung der ganzen Fragen zu dem Entschluß gekommen sei, diese Steuermittel zu behalten und sie dann zur Verstärkung der Entwicklungshilfe zu verwenden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> tritt für die Annahme der Empfehlung des AK III ein. Hier handele es sich um eine Finanzsteuer; das solle man nicht verschweigen. Die Haushaltslage erlaube es nicht, diese Steuer abzubauen. Freilich sei die FDP in einer schwierigen Lage, aber sie müsse eben sehen, wie sie damit fertig werde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ToussaintHans_1957-10-15">Toussaint</name> erinnert daran, daß die Fraktion nicht mehr die absolute Mehrheit habe. Man müsse doch erst wissen, wie sich die FDP verhalten wolle, nachdem es den Anschein habe, als ob der Bundesfinanzminister zum Nachgeben bereit sei.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> räumt ein, daß man sich sicher fragen müsse, was die FDP mache. Aber man könne nicht auch noch erklären, daß man ohne weiteres mitmache. Schließlich werde doch die CDU/CSU mit allem belastet, was hier im Parlament passiere. Man werde unglaubwürdig, wenn man angesichts der Haushaltslage nicht nein sage.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> betont, daß es sich hier um eine politische Frage handele. Sicher könne man nicht ja zum Antrag der SPD sagen, sicher könne man aber auch nicht härter sein als der Koalitionspartner und dessen Finanzminister. Die FDP sei sehr offen und ernsthaft darauf angesprochen worden, daß sie die Verantwortung mitzutragen habe. Man solle zuerst den Bundesfinanzminister sprechen lassen und dann erst die Erklärung der Fraktion abgeben, in der auf die schweren Bedenken hingewiesen werden müsse. Die weitere Behandlung müsse dann im Haushaltsausschuß im Zusammenhang mit der Haushaltsberatung erfolgen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name> teilt mit, daß der Bundesfinanzminister im Kabinett gegen die Aufhebung oder Senkung der Kaffeesteuer gesprochen und daß dann das Kabinett entsprechend beschlossen habe. Es gehe nicht an, daß nun die FDP-Fraktion ihren Minister wieder umstimme; das stehe auch einem Finanzminister nicht gut an. Man solle die Stellungnahme der Fraktion davon abhängig machen, ob der Bundesfinanzminister auf seinem ursprünglichen Standpunkt bleiben wolle oder nicht.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, er sehe sich nicht in der Lage, zur FDP-Fraktion zu gehen, um diese zu bitten, sie sollten in diesem Punkt hart sein. Dagegen wolle er mit dem Bundesfinanzminister sprechen, daß er den Standpunkt des Kabinetts klar zu vertreten habe und daß er dafür sorgen solle, daß seine Fraktion diesen Standpunkt teilt. Das werde eine der ersten Proben der Koalition sein.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> weist auf die Diskrepanz hin, daß man den Kaffeepreis senken und den Milchpreis erhöhen wolle. Wegen der Negerlein senke man den Kaffeepreis, und den Milchpreis erhöhe man!</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name> erinnert an die Finanzverhandlungen mit den Ländern wegen der Abdeckung des Haushaltes. Jetzt sei man offenbar bereit, 800 Millionen DM zum Fenster hinauszuwerfen. Wenn man den Kaffeepreis senke, müsse man doch wohl andere Einnahmen schaffen. Es sei zu fragen, wie das politisch ankomme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RichartsHans_1953-10-06">Richarts</name> erläutert, daß die Anträge der SPD insgesamt doch Milliarden kosten würden. Es sei auch nicht richtig, wenn die Afrikaner es immer so hinstellten, als stelle die Kaffeesteuer weggenommen Lohn der Kaffeebauern in Afrika dar; das sei doch gar nicht wahr.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> schließt diese Debatte mit der Bemerkung, daß er mit dem Bundesfinanzminister noch einmal sprechen und ihn darauf hinweisen werde, was die Fraktion von ihm erwarte.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN011" type="comment">
+                     <p>Fortgang siehe TOP 11.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-9">
+            <head>I.</head>
+            <p>[9. EWG-Agrarpolitik]</p>
+            <p>Dann wiederholt er den bereits am Vortage ausgesprochen Dank an Bundesminister <name type="Person" role="Erwaehnung" ref="#SchwarzWerner_1953-10-06">Schwarz</name> für den Abschluß der Brüsseler Verhandlungen (Beifall). Ein Scheitern dieser Verhandlungen wäre eine Katastrophe gewesen, weil es auch praktisch eine Absage an das englische Beitrittsgesuch zum Gemeinsamen Markt dargestellt hätte. Minister <name type="Person" role="Erwaehnung" ref="#SchwarzWerner_1953-10-06">Schwarz</name> habe eine sehr schwere Aufgabe zu lösen gehabt. Er habe die vitalen Interessen der deutschen Landwirtschaft vertreten und doch dabei vermieden, daß die europäische Entwicklung einen nicht auszugleichenden Schaden erlitt.</p>
+            <p>Bundeslandwirtschaftsminister <name type="Person" role="Sprecher" ref="#SchwarzWerner_1953-10-06">Schwarz</name> erstattet einen Bericht über die Brüsseler Verhandlungen. Wegen des fast völligen Gleichlauts wird auf das Protokoll der 12. Sitzung des Deutschen Bundestages vom 24. 1. 1962 verwiesen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> dankt für diesen Bericht und dehnt den Dank der Fraktion auf die Mitglieder der Brüsseler Kommission aus.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-10">
+            <head>J.</head>
+            <p>[10. Wahl des Fraktionsvorstandes]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> teilt sodann das Ergebnis der Vorstandswahl mit. Gewählt sind:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>
+                  </cell>
+                  <cell>Vorsitzender</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#ArndgenJosef_1949-09-07">Arndgen</name>
+                  </cell>
+                  <cell>stellvertretender Vorsitzender</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>
+                  </cell>
+                  <cell>stellvertretender Vorsitzender</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>
+                  </cell>
+                  <cell>stellvertretender Vorsitzender</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>
+                  </cell>
+                  <cell>stellvertretender Vorsitzender</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>
+                  </cell>
+                  <cell>parlamentarischer Geschäftsführer</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name>
+                  </cell>
+                  <cell>parlamentarischer Geschäftsführer</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>
+                  </cell>
+                  <cell>parlamentarischer Geschäftsführer</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BauerJosef_1953-10-06">Bauer</name> (Wasserburg)</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#NiederaltAlois_1953-10-06">Niederalt</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BlumenfeldErikBernhard_1961-10-17">Blumenfeld</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#PflaumbaumWalter_1957-10-15">Pflaumbaum</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>
+                  </cell>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#RehlingLuise_1949-09-07">Rehling</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#RufThomas_1953-10-06">Ruf</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BuehlerKarlAugust_1957-10-15">Bühler</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#ScheppmannHeinrich_1953-10-06">Scheppmann</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BurgemeisterAlfred_1953-10-06">Burgemeister</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EtzelFranz_1949-09-07">Etzel</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchmidtOtto_1957-10-15">Schmidt</name> (Wuppertal)</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#EvenJohannes_1949-09-07">Even</name> (Köln)</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchuetzHans_1949-09-07">Schütz</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#GotteslebenLeo_1957-10-15">Gottesleben</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SteckerJosef_1957-10-15">Stecker</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#HahnKarl_1953-10-06">Hahn</name> (Bielefeld)</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StoltenbergGerhard_1957-10-15">Stoltenberg</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#KopfHermann_1949-09-07">Kopf</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#KruegerHans_1957-10-15">Krüger</name>
+                  </cell>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name> (Essen)</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz)</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#MemmelLinus_1957-10-15">Memmel</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> (München)</cell>
+               </row>
+            </table>
+            <p>Die Gewählten nehmen die Wahl an.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-11">
+            <head>K.</head>
+            <p>[11. Steuern und Abgaben. Verbrauchsteuern]</p>
+            <p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#HettlageKarlMaria">Hettlage</name> (BMF) teilt mit, daß er soeben vom Bundesfinanzminister erfahren habe, daß dieser beabsichtige, nach der Begründung des Antrags der SPD<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN012" type="comment">
+                     <p>SPD-Gesetzentwurf zur Änderung und Aufhebung des Kaffeesteuergesetzes (Drs. IV/65 vom 7. 12. 1961).</p>
+                  </note>
+               </seg> als Finanzminister und Mitglied des Kabinetts ablehnend zur Frage der Senkung der Kaffeesteuer Stellung zu nehmen. Diese Stellungnahme sei aber nicht identisch mit der Stellungnahme der FDP-Fraktion.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> tritt dafür ein, daß die Fraktion auf ihrem ablehnenden Standpunkt verharren sollte.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> regt an, wenigstens einen Schritt mitzugehen, wenn die FDP schon mit der SPD zusammenstimmen werde. Der Überweisung an den Ausschuß könne man vielleicht zustimmen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BauschPaul_1949-09-07">Bausch</name> erklärt, man müsse um die FDP kämpfen und sie auf dem rechten Weg halten. Wenn man sich einig sei, daß die Ablehnung gut und richtig sei, müsse man um diese Linie auch kämpfen und die FDP auch ermahnen, sich auch hinter die Regierung zu stellen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BurgbacherErnst_1998-10-26">Burgbacher</name> fragt, ob man sich denn bei der ersten Lesung das Maul mehr verbrennen müsse, als unbedingt notwendig sei. Das Weitere könne man doch im Ausschuß sehen, mit der FDP müsse man aber ein deutliches Wort reden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#EtzelFranz_1949-09-07">Etzel</name> setzt sich noch einmal dafür ein, an der grundsätzlichen Linie der Ablehnung festzuhalten. Die Fraktion könne über ihre eigene Verantwortung nicht hinweggehen. Auch werde es bei der Bevölkerung besser ankommen, Verantwortungsbewußtsein zu zeigen, als einfach nachzugeben.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-12">
+            <head>L.</head>
+            <p>[12. Erklärung der Fraktion zu Anträgen der SPD]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HornPeter_1950-06-10">Horn</name> erläutert der Fraktion die beabsichtigte Erklärung zu den Anträgen der SPD (Verbesserung der Renten der Kriegsopfer<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN013" type="comment">
+                     <p>SPD-Gesetzentwurf über die Anpassung der Renten der Kriegsopferversorgung (Drs. IV/54 vom 5. 12. 1961).</p>
+                  </note>
+               </seg>, Unterhaltshilfe aus dem Lastenausgleich<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN014" type="comment">
+                     <p>SPD-Gesetzentwurf über die Gewährung einer einmaligen Zuwendung an Bezieher von Unterhaltshilfe nach dem Lastenausgleichsgesetz (Drs. IV/55 vom 6. 12. 1961).</p>
+                  </note>
+               </seg> und Weihnachtsgeld für Rentenempfänger<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN015" type="comment">
+                     <p>SPD-Antrag betr. Zahlung eines Weihnachtsgeldes an Empfänger von Renten nach dem BEG (Drs. IV/82 vom 12. 12. 1961).</p>
+                  </note>
+               </seg>). Nach kurzer Aussprache, an der sich Dr. <name type="Person" role="Sprecher" ref="#ConringHermann_1953-10-06">Conring</name>, <name type="Person" role="Sprecher" ref="#ArndgenJosef_1949-09-07">Arndgen</name>, <name type="Person" role="Sprecher" ref="#KuntscherErnst_1949-09-07">Kuntscher</name>, Frau Dr. <name type="Person" role="Sprecher" ref="#ProbstMaria_1949-09-07">Probst</name> und <name type="Person" role="Sprecher" ref="#StinglJosef_1953-10-06">Stingl</name> beteiligen, wird die vorgeschlagene Erklärung gebilligt.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-13">
+            <head>M.</head>
+            <p>[13. Fischerei]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Mueller-HermannErnst_1952-01-01">Müller-Hermann</name> trägt einen Entschließungsantrag betr. Hochseefischerei<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN0016" type="comment">
+                     <p>Antrag <name type="Person" role="Erwaehnung" ref="#GewandtHeinrich_1957-10-15">Gewandt</name> u. a. und Fraktionen der CDU/CSU und FDP betr. Bericht über die Lage der deutschen Hochseefischerei (Drs. IV/133 neu vom 17. 1. 1962).</p>
+                  </note>
+               </seg> vor, der vom AK II behandelt und gebilligt worden ist.</p>
+            <p>Staatssekretär Dr. <name type="Person" role="Sprecher" ref="#HettlageKarlMaria">Hettlage</name> (BMF) teilt mit, daß die Bundesregierung schon in zwei Tagen in der Fragestunde zu diesem Komplex Stellung nehmen werde.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-14">
+            <head>N.</head>
+            <p>[14. Berlinhilfe]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GradlJohannBaptist_1957-10-15">Gradl</name> berichtet über die Beratungen des AK V über die Frage der Berlinhilfe. Die in Aussicht genommenen Maßnahmen sollten schnell getroffen werden. Das Wirtschaftskabinett habe über diese Fragen noch nicht abschließend entschieden. Je schneller aber die Entscheidung falle, desto besser sei es. Die Fraktionsführung solle der Bundesregierung den Wunsch nahebringen, daß sie sich schnell entscheiden möge.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> empfiehlt der Fraktion, diese Anregung zu unterstützen. AK V solle seine Vorschläge dem Fraktionsvorstand schriftlich vorlegen, damit die materielle Beratung beginnen könne. Die Fraktion ist mit diesem Vorgehen einverstanden.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-04_1962-01-16-t1515_EP_div_SVP-15">
+            <head>O.</head>
+            <p>[15. Vertriebene und Flüchtlinge. Sowjetzonenflüchtlinge]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> kündigt eine Anfrage an die Bundesregierung zum Thema Familienzusammenführung aus der Zone an.<seg type="note">
+                  <note xml:id="cdu-csu-04_1962-01-16-t1515_EP_FN017" type="comment">
+                     <p>Kleine Anfrage <name type="Person" role="Erwaehnung" ref="#KuehnFriedrich_1961-10-17">Kühn</name> u. a. betr. Familienzusammenführung (Drs. IV/131 vom 17. 1. 1962).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmueckerKurt_1949-09-07">Schmücker</name> regt an, diese Frage noch im Vorstand zu besprechen.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

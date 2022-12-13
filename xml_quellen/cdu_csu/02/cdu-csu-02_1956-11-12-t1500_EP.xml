@@ -1,327 +1,474 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-11-12-t1500_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionsvorstandssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-08-16"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
-						<author>Helge Heidemeyer</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2003</date>
-						<idno>https://d-nb.info/964846314</idno>
-						<idno>https://d-nb.info/967578256</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001–1502/2</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 12. November 1956</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1956-11-12"><time type="start" when="15:00:00"/><time type="end" when="19:40:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><idno type="sitzung"><idno type="wp">02</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#FunkFriedrich_1949-09-07">Funk</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. Karl <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müller</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend Regierung:</head>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name><seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN001" type="comment"><p>Zeitweise anwesend.</p></note></seg>, Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VockelHeinrich">Vockel</name>.</p>
-			</div>
-			<div type="Anwesenheitsliste">
-				<head>Anwesende Gäste:</head>
-				<p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>, <name type="Person" role="Erwaehnung" ref="#HuthEugen_1949-09-07">Huth</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#SabaßWilmar_1953-10-06">Sabaß</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-02_1956-11-12-t1500_EP_SVP-1" corresp="#cdu-csu-02_1956-11-12-t1500_EP_div_SVP-1">A. TOP 2: Kohlendebatte. – TOP 3: Unerledigte Tagesordnungspunkte der letzten Woche. – TOP 1: Bericht zur Lage. – TOP 4: Tagesordnung der laufenden Woche. – TOP 5: Agrarpolitische Anträge. – TOP 9: Stand der Beratungen im Ausschuss für Beamtenrecht. – TOP 11: Gesetzgebungsbefugnis auf dem Gebiet des Wasserrechts. – TOP 12: Ausschuss-Umbesetzungen. – TOP 13: Technik der Fraktionsarbeit. – TOP 14: Verschiedenes.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-02_1956-11-12-t1500_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Der <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Fraktionsvorsitzende</name> gibt bekannt, daß ab 16.00 Uhr der Bundeskanzler an der Vorstandssitzung teilnehmen werde. (Punkt 1 wird bis dahin zurückgestellt.)</p>
-				<p>2. Kohlendebatte</p>
-				<p>Nach eingehender Diskussion, an der sich Minister Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>, <name type="Person" role="Sprecher" ref="#SabaßWilmar_1953-10-06">Sabaß</name>, <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> und <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> beteiligten, wurde insbesondere die Abgabe für den Bergarbeiterwohnungsbau [Drucksache II/2356 v. 4. 5. 1956] besprochen sowie die Frage, in welcher Form die Debatte im Plenum durchgeführt werden soll. Die Beratung soll eingeleitet werden durch eine Erklärung des Wirtschaftsministers. Angestrebt werden soll eine gemeinsame Entschließung, in der eine Neuregelung für die Abgabe für den Bergarbeiterwohnungsbau gefordert wird.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN002" type="comment"><p>Vor dem Bundesminister für Wirtschaft gab der Bundesminister für Wohnungsbau eine Erklärung ab. Die Koalitionsfraktionen brachten keine gemeinsame Entschließung ein. Vgl. Sten. Ber., 174. Sitz. am 29. 11. 1956, S. 9635–9676.</p></note></seg> Zur Vorbereitung der Debatte soll ein Koalitionsgespräch stattfinden.</p>
-				<p>3. Unerledigte Tagesordnungspunkte der letzten Woche</p>
-				<p>a) AVAVG [Drucksache II/1274 v. 17. 3. 1955]: Bereits in der vorigen Woche erledigt.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN003" type="comment"><p>Siehe Nr. 306, 3 und Nr. 308, 2.</p></note></seg></p>
-				<p>b) [CDU/CSU, DP, FVP-Entwurf zur] Änderung der Einkommen- und Körperschaftsteuer [Drucksache II/2724 v. 28. 9. 1956]: Dr. <name type="Person" role="Sprecher" ref="#LindrathHermann_1953-10-06">Lindrath</name> teilt mit, daß inzwischen<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN004" type="comment"><p>Siehe Nr. 308, 5.</p></note></seg> ein Kompromißvorschlag, der auch Landwirtschaft, Handwerk und Mittelstand berücksichtigt, zustande gekommen sei, wodurch die bisher bestandenen Bedenken weitgehend entfallen und die Annahme des Gesetzes gesichert sei.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN005" type="comment"><p>Der Bundestag nahm den Gesetzentwurf am 30. 11. 1956 in 3. Lesung an. Vgl. Sten. Ber., 175. Sitz., S. 9684–9696.</p></note></seg></p>
-				<p>c) Industrie- und Handelskammer [Gesetzentwurf <name type="Person" role="Erwaehnung" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und Gen., Drucksache II/1964 v. 14. 12. 1955]: Zur 3. Lesung ist eine gemeinsame Erklärung der Koalition vorgesehen.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN006" type="comment"><p><name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> gab die Erklärung für die Koalitionsfraktionen in der 3. Lesung am 16. 11. 1956 ab. Vgl. ebd., 173. Sitz., S. 9569f.</p></note></seg></p>
-				<p>d) Bundesnotenbank-Gesetz [Entwürfe der Regierung, Drucksache II/2781 v. 18.10. 1936, und <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#KrammigKarl_1953-10-06">Krammig</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> und Gen., Drucksache II/2832 v. 7. 11. 1956] (Sonderausschuß?): Auf Grund eines zwischen Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name> und <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> besprochenen Vorschlages soll entweder der Ausschuß für Geld und Kredit oder ein Sonderausschuß die Beratung des Gesetzes durchführen.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN007" type="comment"><p>Der Bundestag überwies die Gesetzentwürfe federführend dem Ausschuß für Geld und Kredit. Vgl. ebd., 175. Sitz. am 30. 11. 1956, S. 9717.</p></note></seg> Der Vorsitzende dieses Ausschusses soll das Recht haben, den Ausschuß jederzeit einzuberufen.</p>
-				<p>Zur Vorbereitung und Orientierung der Ausschußmitglieder über die in der Fraktion bestehenden Auffassungen sollen nachstehende Mitglieder der Fraktion für Donnerstag abend ¼ Stunde nach dem Plenum – aber nicht vor 20.00 Uhr – und für Freitag eingeladen werden: <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, Prof. <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ConringHermann_1953-10-06">Conring</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EckhardtWalter_1953-10-06">Eckhardt</name>, <name type="Person" role="Erwaehnung" ref="#GeigerHugo_1953-10-06">Geiger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, Aloys <name type="Person" role="Erwaehnung" ref="#LenzAloys_1949-09-07">Lenz</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeverkuehnPaul_1953-10-06">Leverkuehn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindenbergHeinrich_1953-10-06">Lindenberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>, Dr. Karl <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müller</name>, <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PohleWolfgang_1953-10-06">Pohle</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#SabaßWilmar_1953-10-06">Samwer</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WellhausenHans_1949-09-07">Wellhausen</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>.</p>
-				<p>1. Bericht zur Lage</p>
-				<p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> gab einen ausführlichen Bericht, in dem er eingangs auf das Ergebnis der Kommunalwahlen einging<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN008" type="comment"><p>Am 11. 11. 1956 hatten Kommunalwahlen in Rheinland-Pfalz stattgefunden, bei denen die CDU Stimmengewinne erzielen konnte und stärkste Kraft geblieben war, die SPD jedoch die größeren Gewinne hatte verbuchen können. Vgl. AdG 1956, S. 6095.</p></note></seg> und hierbei die Notwendigkeiten herausstellte, die sich nun für die CDU daraus ergeben. Insbesondere unterstrich er die Notwendigkeit der schnellen Verabschiedung des Gesetzes zur Rentenversicherungsreform, die Förderung des Wohnungsbaus, stärkere Publizität bei Presse und Rundfunk.</p>
-				<p>Im weiteren Verlauf der Ausführungen gab der Kanzler eine Analyse der derzeitigen politischen Lage, die er als sehr kritisch bezeichnet. Der Brief <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> an <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name>, in dem praktisch die Aufteilung der Welt in zwei Einflußsphären vorgeschlagen wird, bedeute die größte Drohung, die je gegenüber der Menschheit ausgesprochen wurde.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN009" type="comment"><p>Auf ein Telegramm <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhowers</name> v. 4. 11. 1956 hatte <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name> am 8. d. M. unter anderem geantwortet, »daß die darin berührte Frage des Abzugs der sowjetischen Truppen voll und ganz in die Kompetenz der ungarischen und der sowjetischen Regierung fällt.« In: AdG 1956, S. 6089.</p></note></seg> Der Kanzler gab dann eine Darstellung über die Entwicklung im Nahen Osten, wobei er insbesondere die Lage Israels und das starke Vordringen Rußlands in diesem Raum herausstellte. Die politische Entwicklung im Nahen Osten sei für den Mittelmeerraum von entscheidender Bedeutung. Amerika scheine durch die Ereignisse im Nahen Osten und in Ungarn wach geworden zu sein. Der Kanzler weist auf die Notwendigkeit hin, die NATO wieder in Ordnung zu bringen sowie auf die Notwendigkeit des Aufbaus der Bundeswehr.</p>
-				<p>Die Ausführungen des Kanzlers wurden anschließend diskutiert. An der Diskussion beteiligten sich hauptsächlich <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> und <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>.</p>
-				<p>Haushalt: Bundesminister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> gab in kurzen Zügen wesentliche Punkte des Haushaltsplanes 1957/58 bekannt. Als wesentliche Punkte in seinen Ausführungen stellte er die Stabilität der DM heraus und die Notwendigkeit, diesen Punkt in Zukunft bei allen Anträgen auf Mehrausgaben bewußt klar und deutlich herauszustellen.</p>
-				<p>4. Tagesordnung der laufenden Woche</p>
-				<p>a) Antrag <name type="Person" role="Erwaehnung" ref="#HuthEugen_1949-09-07">Huth</name><seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN010" type="comment"><p>Nicht ermittelt.</p></note></seg>: zurückgestellt.</p>
-				<p>b) DP-Antrag betriebliche Altersfürsorge [Drucksache II/2578 v. 29. 6. 1956],</p>
-				<p>c) [SPD-Gesetzentwurf über] Bundeswehr-Haftpflichtgesetz [Drucksache II/2800 v. 23. 10. 1956],</p>
-				<p>d) Konvention zum Schutz der Menschenrechte und Grundfreiheiten [Drucksache II/85 v. 23. 11. 1953]:</p>
-				<p>[zu b) bis d)] Keine weitere nähere Beratung. Soll in Koalitionsbesprechung geregelt werden.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN011" type="comment"><p>Nicht ermittelt.</p></note></seg></p>
-				<p>e) Änderung des Gesetzes über die Förderung des Wohnungsbaus für Umsiedler [SPD-Antrag, Drucksache II/1899 v. 1. 12. 1955]: keine besonderen Beschlüsse.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN012" type="comment"><p>Die beteiligten Ausschüsse hatten in ihren Berichten empfohlen, den Antrag für erledigt zu erklären aufgrund einer bereits erlassenen Verordnung der Bundesregierung zur Umsiedlung aus überbelegten Ländern bzw. aufgrund fehlender Deckungsmöglichkeit (Drucksachen II/2846 v. 24. 10. 1956 und II/2849 v. 9. 6. 1956). Der Bundestag schloß sich diesem Votum an (vgl. Sten. Ber., 174. Sitz. am 29. 11. 1956, S. 9677).</p></note></seg></p>
-				<p>5. Agrarpolitische Anträge</p>
-				<p>a) Interfraktioneller] Antrag der CDU/CSU und FVP<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN013" type="comment"><p>Die Fraktionen brachten am 14. 11. 1956 einen Gesetzentwurf betr. Maßnahmen zur Durchführung des Landwirtschaftsgesetzes ein (Drucksache II/2864).</p></note></seg>,</p>
-				<p>b) Kapazitätsbereinigung in der Mühlenwirtschaft und Mehlpreis [Mühlengesetz, Drucksache II/2376 v. 9. 5. 1956]: zurückgestellt.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN014" type="comment"><p>Siehe Nr. 310, 7 bzw. Nr. 311.</p></note></seg></p>
-				<p>6. Gleichstellung aller Arbeitnehmer im Krankheitsfall [SPD-Gesetzentwurf, Drucksache II/1704 v. 28. 9. 1956]: zurückgestellt.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN015" type="comment"><p>Siehe Nr. 348, 3.</p></note></seg></p>
-				<p>7. Wirtschaftshilfe Berlin [FDP-Antrag, Drucksache II/2794 v. 23. 10. 1956]: zurückgestellt.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN016" type="comment"><p>Siehe Nr. 355, 1.</p></note></seg></p>
-				<p>8. Landsmannschaften und BvD: zurückgestellt.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN017" type="comment"><p>Siehe Nr. 321, 10.</p></note></seg></p>
-				<p>9. Stand der Beratungen im Ausschuß für Beamtenrecht: wird noch weiter beraten.</p>
-				<p>10. Personenstandsgesetz [Drucksache II/848 v. 27. 9. 1954]: zurückgestellt.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN018" type="comment"><p>Siehe Nr. 316, 18.</p></note></seg></p>
-				<p>11. Gesetzgebungsbefugnis auf dem Gebiet des Wasserrechts: Überweisung an Arbeitskreis II.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN019" type="comment"><p>Am 1. 2. 1957 brachten alle Fraktionen des Bundestages mit Ausnahme der der CDU/CSU einen entsprechenden Gesetzentwurf ein (Drucksache II/3158).</p></note></seg></p>
-				<p>12. Ausschuß-Umbesetzungen</p>
-				<p>Der Vorstand beschließt, folgende Änderung vorzunehmen:</p>
-				<p>Ausschuß für Verteidigung:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name></cell>
-						<cell>eintreten:</cell>
-						<cell>Theodor <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name></cell>
-						<cell>o. M.</cell>
-					</row>
-					<row>
-						<cell>Ausschuß für Kulturpolitik:</cell>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell>ausscheiden: Frau <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name></cell>
-						<cell>eintreten:</cell>
-						<cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#GantenbergMathilde_1956-10-08">Gantenberg</name></cell>
-						<cell>o.M</cell>
-					</row>
-					<row>
-						<cell>Ausschuß für Fragen der öffentliche Fürsorge:</cell>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell>eintreten:</cell>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#KaiserPia_1956-09-17">Kaiser</name></cell>
-						<cell>o. M.</cell>
-					</row>
-					<row>
-						<cell>Ausschuß für Geld und Kredit:</cell>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name></cell>
-						<cell>eintreten:</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#RichartsHans_1953-10-06">Richarts</name></cell>
-						<cell>stv. M.</cell>
-					</row>
-					<row>
-						<cell>Ausschuß für Kriegsopfer- und Heimkehrerfragen:</cell>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell>eintreten:</cell>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#KaiserPia_1956-09-17">Kaiser</name></cell>
-						<cell>o. M.</cell>
-					</row>
-					<row>
-						<cell>Ausschuß für Verkehrsfragen:</cell>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name></cell>
-						<cell>eintreten:</cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name></cell>
-						<cell>o. M.</cell>
-					</row>
-					<row>
-						<cell>Ausschuß für Beamtenrecht:</cell>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell/>
-						<cell>eintreten:</cell>
-						<cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#GantenbergMathilde_1956-10-08">Gantenberg</name></cell>
-						<cell>o. M.</cell>
-					</row>
-					<row>
-						<cell>Vermittlungsausschuß:</cell>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name></cell>
-						<cell>eintreten:</cell>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name></cell>
-						<cell>o. M.</cell>
-					</row>
-					<row>
-						<cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name></cell>
-						<cell>eintreten:</cell>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name></cell>
-						<cell>stv. M.</cell>
-					</row>
-					<row>
-						<cell>Richterwahlausschuß:</cell>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row>
-						<cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#LeverkuehnPaul_1953-10-06">Leverkuehn</name></cell>
-						<cell>eintreten:</cell>
-						<cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name></cell>
-						<cell/>
-					</row>
-				</table>
-				<p>13. Technik der Fraktionsarbeit</p>
-				<p>a) Der Vorstand nimmt davon Kenntnis, daß nunmehr wöchentlich jeden Dienstag und Freitag Pressekonferenzen der Fraktion stattfinden.</p>
-				<p>b) Der Vorstand stimmt dem Vorschlag zu, jeden Dienstagmorgen eine Zusammenkunft der Ausschußvorsitzenden und -obleute zwecks Koordinierung der Ausschußarbeiten durchzuführen.</p>
-				<p>c) Die Betreuung der CDU-Angehörigen innerhalb der Bundestagsverwaltung soll von <name type="Person" role="Erwaehnung" ref="#HuthEugen_1949-09-07">Huth</name> und <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> übernommen werden.</p>
-				<p>Bei den Plenarsitzungen sollen bei den einzelnen Tagesordnungspunkten die zuständigen Vorsitzenden der Arbeitskreise, die betreffenden Vorsitzenden der Bundestags-ausschüsse und die Obleute der Ausschüsse während der ganzen Verhandlungsdauer anwesend sein (Sitzplatz auf den vordersten Bänken).</p>
-				<p>Dazu soll neben den amtierenden stellvertretenden Vorsitzenden <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name> (z. Zt. krank), <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, ein kleines Team – bestehend aus Theodor <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> – gemäß einem für jede Plenarsitzung aufzustellenden Dienstplan als Sitzungsverantwortliche amtieren. Die Einteilung für jede Plenarsitzung soll <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> vornehmen.</p>
-				<p>14. Verschiedenes</p>
-				<p>a) In jeder Woche sollen nach Möglichkeit zwei Fraktionssitzungen stattfinden.</p>
-				<p>b) Die Obleute sollen die Teilnahme in den einzelnen Ausschüssen überprüfen.</p>
-				<p>c) Termin der Einberufung: Es wird beschlossen, daß über den Termin bezüglich der Einberufung der Wehrpflicht[igen] ein Koalitionsgespräch stattfinden soll.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN020" type="comment"><p>Nicht ermittelt.</p></note></seg></p>
-				<p>d) Der Vorsitzende gibt dem Vorstand Kenntnis von einem gefälschten Brief an Bischof Dr. <name type="Person" role="Erwaehnung" ref="#KellerMichael_1896-02-16">Keller</name> in Münster. Der Vorstand beschließt, daß alles getan wird, um die Öffentlichkeit auf diese Fälschung aufmerksam zu machen.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN021" type="comment"><p>Die FAZ meldete am 14. 11. 1956 unter »Gefälschte Briefe«: »Ein Sprecher der Unionsfraktion hat bekanntgegeben, daß an alle katholischen Organisationen ein gefälschter Brief des Abgeordneten Otto <name type="Person" role="Erwaehnung" ref="#LenzOtto_1953-10-06">Lenz</name> abgesandt worden ist. In diesem Brief werden die Empfänger aufgefordert, katholische Kandidaten für die Bundestagswahl aufzustellen, da nur Katholiken die Politik des Kanzlers gegenüber den oppositionellen evangelischen Kreisen stützen könnten.«</p></note></seg></p>
-				<p><name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rg</name>.<seg type="note"><note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN022" type="comment"><p>Von <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name> handschriftlich unterzeichnet.</p></note></seg></p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-02_1956-11-12-t1500_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionsvorstandssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HeidemeyerHelge"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#GutzlerKarl"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#KilpertDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SolbachDaniel"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-08-16"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1953-1957. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/II</title>
+                  <author>Helge Heidemeyer</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2003</date>
+                  <idno>https://d-nb.info/964846314</idno>
+                  <idno>https://d-nb.info/967578256</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001–1502/2</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung des Vorstands der CDU/CSU-Bundestagsfraktion am 12. November 1956</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1956-11-12">
+               <time type="start" when="15:00:00"/>
+               <time type="end" when="19:40:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">02</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-08-18" who="#WeistenhoeferSimon" status="draft" n="4">Sitzungsverlauf und Anwesenheit</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#KroneHeinrich_1949-09-07">Krone</name>, <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>; <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#FunkFriedrich_1949-09-07">Funk</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name>, <name type="Person" role="Erwaehnung" ref="#HornPeter_1950-06-10">Horn</name>, <name type="Person" role="Erwaehnung" ref="#KemperHeinrich_1949-09-07">Kemper</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, <name type="Person" role="Erwaehnung" ref="#MajonicaErnst_1950-11-19">Majonica</name>, Dr. Karl <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müller</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, <name type="Person" role="Erwaehnung" ref="#RuemmeleOskar_1949-09-07">Rümmele</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, <name type="Person" role="Erwaehnung" ref="#WacherGerhard_1953-10-06">Wacher</name>, Frau Dr. <name type="Person" role="Erwaehnung" ref="#WeberHelene_1949-09-07">Weber</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend Regierung:</head>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN001" type="comment">
+                     <p>Zeitweise anwesend.</p>
+                  </note>
+               </seg>, Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, <name type="Person" role="Erwaehnung" ref="#SchaefferFritz_1949-09-07">Schäffer</name>, Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WuermelingFranz-Josef_1949-09-07">Wuermeling</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VockelHeinrich">Vockel</name>.</p>
+         </div>
+         <div type="Anwesenheitsliste">
+            <head>Anwesende Gäste:</head>
+            <p>Prof. <name type="Person" role="Erwaehnung" ref="#FurlerHans_1953-10-06">Furler</name>, <name type="Person" role="Erwaehnung" ref="#HuthEugen_1949-09-07">Huth</name>, Dr. <name type="Person" role="Erwaehnung" ref="#Manteuffel-SzoegeGeorg_1953-10-06">Baron Manteuffel-Szoege</name>, <name type="Person" role="Erwaehnung" ref="#SabassWilmar_1953-10-06">Sabaß</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-02_1956-11-12-t1500_EP_SVP-1" corresp="#cdu-csu-02_1956-11-12-t1500_EP_div_SVP-1">A. TOP 2: Kohlendebatte. – TOP 3: Unerledigte Tagesordnungspunkte der letzten Woche. – TOP 1: Bericht zur Lage. – TOP 4: Tagesordnung der laufenden Woche. – TOP 5: Agrarpolitische Anträge. – TOP 9: Stand der Beratungen im Ausschuss für Beamtenrecht. – TOP 11: Gesetzgebungsbefugnis auf dem Gebiet des Wasserrechts. – TOP 12: Ausschuss-Umbesetzungen. – TOP 13: Technik der Fraktionsarbeit. – TOP 14: Verschiedenes.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-02_1956-11-12-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Der <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Fraktionsvorsitzende</name> gibt bekannt, daß ab 16.00 Uhr der Bundeskanzler an der Vorstandssitzung teilnehmen werde. (Punkt 1 wird bis dahin zurückgestellt.)</p>
+            <p>2. Kohlendebatte</p>
+            <p>Nach eingehender Diskussion, an der sich Minister Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>, <name type="Person" role="Sprecher" ref="#SabassWilmar_1953-10-06">Sabaß</name>, <name type="Person" role="Sprecher" ref="#HoogenMatthias_1949-09-07">Hoogen</name> und <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name> beteiligten, wurde insbesondere die Abgabe für den Bergarbeiterwohnungsbau [Drucksache II/2356 v. 4. 5. 1956] besprochen sowie die Frage, in welcher Form die Debatte im Plenum durchgeführt werden soll. Die Beratung soll eingeleitet werden durch eine Erklärung des Wirtschaftsministers. Angestrebt werden soll eine gemeinsame Entschließung, in der eine Neuregelung für die Abgabe für den Bergarbeiterwohnungsbau gefordert wird.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN002" type="comment">
+                     <p>Vor dem Bundesminister für Wirtschaft gab der Bundesminister für Wohnungsbau eine Erklärung ab. Die Koalitionsfraktionen brachten keine gemeinsame Entschließung ein. Vgl. Sten. Ber., 174. Sitz. am 29. 11. 1956, S. 9635–9676.</p>
+                  </note>
+               </seg> Zur Vorbereitung der Debatte soll ein Koalitionsgespräch stattfinden.</p>
+            <p>3. Unerledigte Tagesordnungspunkte der letzten Woche</p>
+            <p>a) AVAVG [Drucksache II/1274 v. 17. 3. 1955]: Bereits in der vorigen Woche erledigt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN003" type="comment">
+                     <p>Siehe Nr. 306, 3 und Nr. 308, 2.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>b) [CDU/CSU, DP, FVP-Entwurf zur] Änderung der Einkommen- und Körperschaftsteuer [Drucksache II/2724 v. 28. 9. 1956]: Dr. <name type="Person" role="Sprecher" ref="#LindrathHermann_1953-10-06">Lindrath</name> teilt mit, daß inzwischen<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN004" type="comment">
+                     <p>Siehe Nr. 308, 5.</p>
+                  </note>
+               </seg> ein Kompromißvorschlag, der auch Landwirtschaft, Handwerk und Mittelstand berücksichtigt, zustande gekommen sei, wodurch die bisher bestandenen Bedenken weitgehend entfallen und die Annahme des Gesetzes gesichert sei.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN005" type="comment">
+                     <p>Der Bundestag nahm den Gesetzentwurf am 30. 11. 1956 in 3. Lesung an. Vgl. Sten. Ber., 175. Sitz., S. 9684–9696.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>c) Industrie- und Handelskammer [Gesetzentwurf <name type="Person" role="Erwaehnung" ref="#NaegelWilhelm_1949-09-07">Naegel</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, Dr. <name type="Person" role="Erwaehnung" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ElbraechterAlexander_1953-10-06">Elbrächter</name> und Gen., Drucksache II/1964 v. 14. 12. 1955]: Zur 3. Lesung ist eine gemeinsame Erklärung der Koalition vorgesehen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN006" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> gab die Erklärung für die Koalitionsfraktionen in der 3. Lesung am 16. 11. 1956 ab. Vgl. ebd., 173. Sitz., S. 9569f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>d) Bundesnotenbank-Gesetz [Entwürfe der Regierung, Drucksache II/2781 v. 18.10. 1936, und <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#KrammigKarl_1953-10-06">Krammig</name>, Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> und Gen., Drucksache II/2832 v. 7. 11. 1956] (Sonderausschuß?): Auf Grund eines zwischen Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name> und <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name> besprochenen Vorschlages soll entweder der Ausschuß für Geld und Kredit oder ein Sonderausschuß die Beratung des Gesetzes durchführen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN007" type="comment">
+                     <p>Der Bundestag überwies die Gesetzentwürfe federführend dem Ausschuß für Geld und Kredit. Vgl. ebd., 175. Sitz. am 30. 11. 1956, S. 9717.</p>
+                  </note>
+               </seg> Der Vorsitzende dieses Ausschusses soll das Recht haben, den Ausschuß jederzeit einzuberufen.</p>
+            <p>Zur Vorbereitung und Orientierung der Ausschußmitglieder über die in der Fraktion bestehenden Auffassungen sollen nachstehende Mitglieder der Fraktion für Donnerstag abend ¼ Stunde nach dem Plenum – aber nicht vor 20.00 Uhr – und für Freitag eingeladen werden: <name type="Person" role="Erwaehnung" ref="#BauknechtBernhard_1949-09-07">Bauknecht</name>, Prof. <name type="Person" role="Erwaehnung" ref="#BoehmFranz_1953-10-06">Böhm</name>, Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>, Dr. <name type="Person" role="Erwaehnung" ref="#ConringHermann_1953-10-06">Conring</name>, Dr. <name type="Person" role="Erwaehnung" ref="#EckhardtWalter_1953-10-06">Eckhardt</name>, <name type="Person" role="Erwaehnung" ref="#GeigerHugo_1953-10-06">Geiger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>, <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#HorlacherMichael_1949-09-07">Horlacher</name>, Aloys <name type="Person" role="Erwaehnung" ref="#LenzAloys_1949-09-07">Lenz</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LeverkuehnPaul_1953-10-06">Leverkuehn</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindenbergHeinrich_1953-10-06">Lindenberg</name>, Dr. <name type="Person" role="Erwaehnung" ref="#LindrathHermann_1953-10-06">Lindrath</name>, <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>, Dr. Karl <name type="Person" role="Erwaehnung" ref="#MuellerKarl_1949-09-07">Müller</name>, <name type="Person" role="Erwaehnung" ref="#NeuburgerAugust_1949-09-07">Neuburger</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PohleWolfgang_1953-10-06">Pohle</name>, <name type="Person" role="Erwaehnung" ref="#PelsterGeorg_1949-09-07">Pelster</name>, Dr. <name type="Person" role="Erwaehnung" ref="#PferdmengesRobert_1950-01-12">Pferdmenges</name>, <name type="Person" role="Erwaehnung" ref="#SabassWilmar_1953-10-06">Samwer</name>, <name type="Person" role="Erwaehnung" ref="#ScharnbergHugo_1949-09-07">Scharnberg</name>, <name type="Person" role="Erwaehnung" ref="#SchmueckerKurt_1949-09-07">Schmücker</name>, <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>, Dr. <name type="Person" role="Erwaehnung" ref="#WellhausenHans_1949-09-07">Wellhausen</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>.</p>
+            <p>1. Bericht zur Lage</p>
+            <p>Der <name type="Person" role="Sprecher" ref="#AdenauerKonrad_1949-09-07">Bundeskanzler</name> gab einen ausführlichen Bericht, in dem er eingangs auf das Ergebnis der Kommunalwahlen einging<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN008" type="comment">
+                     <p>Am 11. 11. 1956 hatten Kommunalwahlen in Rheinland-Pfalz stattgefunden, bei denen die CDU Stimmengewinne erzielen konnte und stärkste Kraft geblieben war, die SPD jedoch die größeren Gewinne hatte verbuchen können. Vgl. AdG 1956, S. 6095.</p>
+                  </note>
+               </seg> und hierbei die Notwendigkeiten herausstellte, die sich nun für die CDU daraus ergeben. Insbesondere unterstrich er die Notwendigkeit der schnellen Verabschiedung des Gesetzes zur Rentenversicherungsreform, die Förderung des Wohnungsbaus, stärkere Publizität bei Presse und Rundfunk.</p>
+            <p>Im weiteren Verlauf der Ausführungen gab der Kanzler eine Analyse der derzeitigen politischen Lage, die er als sehr kritisch bezeichnet. Der Brief <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> an <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name>, in dem praktisch die Aufteilung der Welt in zwei Einflußsphären vorgeschlagen wird, bedeute die größte Drohung, die je gegenüber der Menschheit ausgesprochen wurde.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN009" type="comment">
+                     <p>Auf ein Telegramm <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhowers</name> v. 4. 11. 1956 hatte <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name> am 8. d. M. unter anderem geantwortet, »daß die darin berührte Frage des Abzugs der sowjetischen Truppen voll und ganz in die Kompetenz der ungarischen und der sowjetischen Regierung fällt.« In: AdG 1956, S. 6089.</p>
+                  </note>
+               </seg> Der Kanzler gab dann eine Darstellung über die Entwicklung im Nahen Osten, wobei er insbesondere die Lage Israels und das starke Vordringen Rußlands in diesem Raum herausstellte. Die politische Entwicklung im Nahen Osten sei für den Mittelmeerraum von entscheidender Bedeutung. Amerika scheine durch die Ereignisse im Nahen Osten und in Ungarn wach geworden zu sein. Der Kanzler weist auf die Notwendigkeit hin, die NATO wieder in Ordnung zu bringen sowie auf die Notwendigkeit des Aufbaus der Bundeswehr.</p>
+            <p>Die Ausführungen des Kanzlers wurden anschließend diskutiert. An der Diskussion beteiligten sich hauptsächlich <name type="Person" role="Sprecher" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Sprecher" ref="#DollingerWerner_1953-10-06">Dollinger</name> und <name type="Person" role="Sprecher" ref="#BlankTheodor_1949-09-07">Blank</name>.</p>
+            <p>Haushalt: Bundesminister <name type="Person" role="Sprecher" ref="#SchaefferFritz_1949-09-07">Schäffer</name> gab in kurzen Zügen wesentliche Punkte des Haushaltsplanes 1957/58 bekannt. Als wesentliche Punkte in seinen Ausführungen stellte er die Stabilität der DM heraus und die Notwendigkeit, diesen Punkt in Zukunft bei allen Anträgen auf Mehrausgaben bewußt klar und deutlich herauszustellen.</p>
+            <p>4. Tagesordnung der laufenden Woche</p>
+            <p>a) Antrag <name type="Person" role="Erwaehnung" ref="#HuthEugen_1949-09-07">Huth</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN010" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg>: zurückgestellt.</p>
+            <p>b) DP-Antrag betriebliche Altersfürsorge [Drucksache II/2578 v. 29. 6. 1956],</p>
+            <p>c) [SPD-Gesetzentwurf über] Bundeswehr-Haftpflichtgesetz [Drucksache II/2800 v. 23. 10. 1956],</p>
+            <p>d) Konvention zum Schutz der Menschenrechte und Grundfreiheiten [Drucksache II/85 v. 23. 11. 1953]:</p>
+            <p>[zu b) bis d)] Keine weitere nähere Beratung. Soll in Koalitionsbesprechung geregelt werden.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN011" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>e) Änderung des Gesetzes über die Förderung des Wohnungsbaus für Umsiedler [SPD-Antrag, Drucksache II/1899 v. 1. 12. 1955]: keine besonderen Beschlüsse.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN012" type="comment">
+                     <p>Die beteiligten Ausschüsse hatten in ihren Berichten empfohlen, den Antrag für erledigt zu erklären aufgrund einer bereits erlassenen Verordnung der Bundesregierung zur Umsiedlung aus überbelegten Ländern bzw. aufgrund fehlender Deckungsmöglichkeit (Drucksachen II/2846 v. 24. 10. 1956 und II/2849 v. 9. 6. 1956). Der Bundestag schloß sich diesem Votum an (vgl. Sten. Ber., 174. Sitz. am 29. 11. 1956, S. 9677).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>5. Agrarpolitische Anträge</p>
+            <p>a) Interfraktioneller] Antrag der CDU/CSU und FVP<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN013" type="comment">
+                     <p>Die Fraktionen brachten am 14. 11. 1956 einen Gesetzentwurf betr. Maßnahmen zur Durchführung des Landwirtschaftsgesetzes ein (Drucksache II/2864).</p>
+                  </note>
+               </seg>,</p>
+            <p>b) Kapazitätsbereinigung in der Mühlenwirtschaft und Mehlpreis [Mühlengesetz, Drucksache II/2376 v. 9. 5. 1956]: zurückgestellt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN014" type="comment">
+                     <p>Siehe Nr. 310, 7 bzw. Nr. 311.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>6. Gleichstellung aller Arbeitnehmer im Krankheitsfall [SPD-Gesetzentwurf, Drucksache II/1704 v. 28. 9. 1956]: zurückgestellt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN015" type="comment">
+                     <p>Siehe Nr. 348, 3.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>7. Wirtschaftshilfe Berlin [FDP-Antrag, Drucksache II/2794 v. 23. 10. 1956]: zurückgestellt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN016" type="comment">
+                     <p>Siehe Nr. 355, 1.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>8. Landsmannschaften und BvD: zurückgestellt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN017" type="comment">
+                     <p>Siehe Nr. 321, 10.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>9. Stand der Beratungen im Ausschuß für Beamtenrecht: wird noch weiter beraten.</p>
+            <p>10. Personenstandsgesetz [Drucksache II/848 v. 27. 9. 1954]: zurückgestellt.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN018" type="comment">
+                     <p>Siehe Nr. 316, 18.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>11. Gesetzgebungsbefugnis auf dem Gebiet des Wasserrechts: Überweisung an Arbeitskreis II.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN019" type="comment">
+                     <p>Am 1. 2. 1957 brachten alle Fraktionen des Bundestages mit Ausnahme der der CDU/CSU einen entsprechenden Gesetzentwurf ein (Drucksache II/3158).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>12. Ausschuß-Umbesetzungen</p>
+            <p>Der Vorstand beschließt, folgende Änderung vorzunehmen:</p>
+            <p>Ausschuß für Verteidigung:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#VogelRudolf_1949-09-07">Vogel</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>Theodor <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>
+                  </cell>
+                  <cell>o. M.</cell>
+               </row>
+               <row>
+                  <cell>Ausschuß für Kulturpolitik:</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>ausscheiden: Frau <name type="Person" role="Erwaehnung" ref="#DietzMaria_1949-09-07">Dietz</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#GantenbergMathilde_1956-10-08">Gantenberg</name>
+                  </cell>
+                  <cell>o.M</cell>
+               </row>
+               <row>
+                  <cell>Ausschuß für Fragen der öffentliche Fürsorge:</cell>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>eintreten:</cell>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#KaiserPia_1956-09-17">Kaiser</name>
+                  </cell>
+                  <cell>o. M.</cell>
+               </row>
+               <row>
+                  <cell>Ausschuß für Geld und Kredit:</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#RichartsHans_1953-10-06">Richarts</name>
+                  </cell>
+                  <cell>stv. M.</cell>
+               </row>
+               <row>
+                  <cell>Ausschuß für Kriegsopfer- und Heimkehrerfragen:</cell>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>eintreten:</cell>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#KaiserPia_1956-09-17">Kaiser</name>
+                  </cell>
+                  <cell>o. M.</cell>
+               </row>
+               <row>
+                  <cell>Ausschuß für Verkehrsfragen:</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#SchlickJosef_1953-10-06">Schlick</name>
+                  </cell>
+                  <cell>o. M.</cell>
+               </row>
+               <row>
+                  <cell>Ausschuß für Beamtenrecht:</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>eintreten:</cell>
+                  <cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#GantenbergMathilde_1956-10-08">Gantenberg</name>
+                  </cell>
+                  <cell>o. M.</cell>
+               </row>
+               <row>
+                  <cell>Vermittlungsausschuß:</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>
+                  </cell>
+                  <cell>o. M.</cell>
+               </row>
+               <row>
+                  <cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#BuceriusGerd_1949-09-07">Bucerius</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#HellwigFritz_1953-10-06">Hellwig</name>
+                  </cell>
+                  <cell>stv. M.</cell>
+               </row>
+               <row>
+                  <cell>Richterwahlausschuß:</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+               </row>
+               <row>
+                  <cell>ausscheiden: Dr. <name type="Person" role="Erwaehnung" ref="#LeverkuehnPaul_1953-10-06">Leverkuehn</name>
+                  </cell>
+                  <cell>eintreten:</cell>
+                  <cell>Frau Dr. <name type="Person" role="Erwaehnung" ref="#SchwarzhauptElisabeth_1953-10-06">Schwarzhaupt</name>
+                  </cell>
+                  <cell/>
+               </row>
+            </table>
+            <p>13. Technik der Fraktionsarbeit</p>
+            <p>a) Der Vorstand nimmt davon Kenntnis, daß nunmehr wöchentlich jeden Dienstag und Freitag Pressekonferenzen der Fraktion stattfinden.</p>
+            <p>b) Der Vorstand stimmt dem Vorschlag zu, jeden Dienstagmorgen eine Zusammenkunft der Ausschußvorsitzenden und -obleute zwecks Koordinierung der Ausschußarbeiten durchzuführen.</p>
+            <p>c) Die Betreuung der CDU-Angehörigen innerhalb der Bundestagsverwaltung soll von <name type="Person" role="Erwaehnung" ref="#HuthEugen_1949-09-07">Huth</name> und <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> übernommen werden.</p>
+            <p>Bei den Plenarsitzungen sollen bei den einzelnen Tagesordnungspunkten die zuständigen Vorsitzenden der Arbeitskreise, die betreffenden Vorsitzenden der Bundestags-ausschüsse und die Obleute der Ausschüsse während der ganzen Verhandlungsdauer anwesend sein (Sitzplatz auf den vordersten Bänken).</p>
+            <p>Dazu soll neben den amtierenden stellvertretenden Vorsitzenden <name type="Person" role="Erwaehnung" ref="#AlbersJohannes_1949-09-07">Albers</name>, <name type="Person" role="Erwaehnung" ref="#CillienAdolf_1953-10-06">Cillien</name> (z. Zt. krank), <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, ein kleines Team – bestehend aus Theodor <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name>, Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#HoogenMatthias_1949-09-07">Hoogen</name> – gemäß einem für jede Plenarsitzung aufzustellenden Dienstplan als Sitzungsverantwortliche amtieren. Die Einteilung für jede Plenarsitzung soll <name type="Person" role="Erwaehnung" ref="#KunzeJohannes_1949-09-07">Kunze</name> vornehmen.</p>
+            <p>14. Verschiedenes</p>
+            <p>a) In jeder Woche sollen nach Möglichkeit zwei Fraktionssitzungen stattfinden.</p>
+            <p>b) Die Obleute sollen die Teilnahme in den einzelnen Ausschüssen überprüfen.</p>
+            <p>c) Termin der Einberufung: Es wird beschlossen, daß über den Termin bezüglich der Einberufung der Wehrpflicht[igen] ein Koalitionsgespräch stattfinden soll.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN020" type="comment">
+                     <p>Nicht ermittelt.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>d) Der Vorsitzende gibt dem Vorstand Kenntnis von einem gefälschten Brief an Bischof Dr. <name type="Person" role="Erwaehnung" ref="#KellerMichael_1896-02-16">Keller</name> in Münster. Der Vorstand beschließt, daß alles getan wird, um die Öffentlichkeit auf diese Fälschung aufmerksam zu machen.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN021" type="comment">
+                     <p>Die FAZ meldete am 14. 11. 1956 unter »Gefälschte Briefe«: »Ein Sprecher der Unionsfraktion hat bekanntgegeben, daß an alle katholischen Organisationen ein gefälschter Brief des Abgeordneten Otto <name type="Person" role="Erwaehnung" ref="#LenzOtto_1953-10-06">Lenz</name> abgesandt worden ist. In diesem Brief werden die Empfänger aufgefordert, katholische Kandidaten für die Bundestagswahl aufzustellen, da nur Katholiken die Politik des Kanzlers gegenüber den oppositionellen evangelischen Kreisen stützen könnten.«</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rg</name>.<seg type="note">
+                  <note xml:id="cdu-csu-02_1956-11-12-t1500_EP_FN022" type="comment">
+                     <p>Von <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name> handschriftlich unterzeichnet.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

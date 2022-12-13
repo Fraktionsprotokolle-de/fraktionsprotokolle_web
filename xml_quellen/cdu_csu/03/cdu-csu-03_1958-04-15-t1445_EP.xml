@@ -1,195 +1,292 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-04-15-t1445_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1007/4</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 15. April 1958</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1958-04-15"><time type="start" when="14:45:00"/><time type="end" when="17:45:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">2</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1958-04-15-t1445_EP_SVP-1" corresp="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-1">A. Bericht aus dem Ältestenrat.</item>
-					<item xml:id="cdu-csu-03_1958-04-15-t1445_EP_SVP-2" corresp="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-2">B. Aussprache über den SPD-Gesetzentwurf zur Volksbefragung wegen einer atomaren Ausrüstung der Bundeswehr.</item>
-					<item xml:id="cdu-csu-03_1958-04-15-t1445_EP_SVP-3" corresp="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-3">C. Erläuterungen des Abgeordneten <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name> zu seiner Rede zum Thema »Technische Bildungseinrichtungen« mit anschließender Diskussion.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-1">
-				<head>A.</head>
-				<p>1. <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt einen Überblick über die Beratungen des Ältestenrates.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN001" type="comment"><p>11. Sitzung des Ältestenrates vom 15. 4. 1958, 12.30 Uhr (Parl. Arch., Ältestenrat).</p></note></seg> Dabei teilt er mit, daß der Bundestagspräsident das an ihn gerichtete Schreiben des Obersten Sowjets<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN002" type="comment"><p>Ebd., TOP 4. Er betraf den Beschluß des Obersten Sowjets auf einseitige Einstellung der Kernwaffenversuche und einen entsprechenden Appell an die Parlamente der Welt, insbesondere an den Deutschen Bundestag vom 31. 3. 1958. Vgl. AdG 1958, S. 6989, Abschnitte 3, 5 und 6.</p></note></seg> lediglich bestätigt habe. Auch die übrigen Fraktionen hätten die Auffassung geteilt, daß die Führung der Außenpolitik ausschließlich bei der Bundesregierung liege.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN003" type="comment"><p>Ebd.</p></note></seg></p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-2">
-				<head>B.</head>
-				<p>2. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> leitet sodann die Aussprache über den SPD-Entwurf »Volksbefragung«<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN004" type="comment"><p>SPD-Gesetzentwurf zur Volksbefragung wegen einer atomaren Ausrüstung der Bundeswehr: Drucksache III/303 v. 25. 3. 1958.</p></note></seg> ein und erklärt, daß dieser offenbar in Verbindung mit der außenpolitischen Debatte<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN005" type="comment"><p>Außenpolitische Debatte im Bundestag: vgl. Sten. Ber., 18. Sitzung am 20. 3. 1958–21. Sitzung v. 25. 3. 1958.</p></note></seg> zu sehen sei. Im Zusammenhang mit den vielen negativen Äußerungen über den äußeren Verlauf dieser Debatte sei zu überprüfen, ob man weiterhin Rundfunk- und Fernsehübertragungen zulassen könne. Am Schluß dieser Debatte sei vom Nationalen Notstand die Rede gewesen<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN006" type="comment"><p><name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> (SPD) hatte beim Einbringen des Gesetzentwurfs zur Volksbefragung von einem drohenden »nationalen Notstand« gesprochen. Vgl. Sten. Ber., 21. Sitzung am 25. 3. 1958, S. 1151.</p></note></seg>, einem absurden Gedanken, dem durch die geschlossene Abstimmung der CDU/CSU-Fraktion<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN007" type="comment"><p>Zum Abstimmungsverhalten der CDU/CSU-Fraktion vgl. Sten. Ber., ebd., S. 1156–1165.</p></note></seg> ja jeder Boden entzogen worden sei.</p>
-				<p>Was den nun eingebrachten Antrag angehe, so werde es Sache der CDU-Partei sein, eine Aufklärung durchzuführen, die der Bevölkerung sage, was tatsächlich beschlossen worden sei und was nicht. Der Gedanke einer Volksbefragung selbst sei im Juli 1933 von Adolf <name type="Person" role="Erwaehnung" ref="#HitlerAdolf">Hitler</name> in das deutsche Verfassungsleben gebracht worden.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN008" type="comment"><p>Gesetz über Volksabstimmung v. 14. 7. 1933, RGBl. I, S. 479.</p></note></seg> Eine solche Volksbefragung bedeute nichts anderes als eine Aushöhlung des Grundgesetzes und eine Entmachtung des vom Volk gewählten Parlaments. Dagegen müsse man mit allen gesetzlichen Mitteln angehen. Wenn sich die Frage stelle, ob sofortige Ablehnung oder Überweisung an den Rechtsausschuß stattfinden solle, so hindere diese Fragestellung doch nicht, festzustellen, daß dieses Gesetz gegen den Geist und das Wort der Verfassung verstoße. Die Fraktion müsse endgültig darüber beschließen, wie das Gesetz behandelt werden solle. Dabei müsse man berücksichtigen, daß die SPD in allen Ländern versuche, derartige Volksbefragungen durchzuführen, auch wenn ganz deutlich sei, daß hier eine Kompetenz der Länder überhaupt nicht gegeben sei.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> vertritt die Auffassung, daß der Antrag der SPD verfassungswidrig sei. Eine Volksbefragung sei im Grundgesetz nicht vorgesehen. Eine Befragung ohne rechtliche Konsequenzen sei sinnlos. Dieser Antrag ruiniere die Art und Form des freiheitlichen Rechtsstaates in der festgelegten Form der parlamentarischen Demokratie repräsentativen Charakters. Das Volk werde durch das Parlament repräsentiert. In diesem vollziehe das Volk seine Entscheidungen nach Reflexion und Debatte, was das Volk selbstverständlich selbst nicht könne. Wie würden sich die Dinge entwickeln, wenn dieses Beispiel Schule mache Wie wäre es z. B. mit einer Volksbefragung über die Todesstrafe? Als dieser Gedanke erwähnt wurde, habe sich Herr <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzel</name> schockiert gezeigt. Das Verfahren, das die Opposition angeschlagen habe, öffne der Demagogie Tür und Tor. Der CDU komme die Aufgabe zu, hier die freiheitliche Demokratie zu verteidigen. Ein solcher Antrag verdiene nicht, in einem Organ dieses Hauses beraten zu werden. Wenn die Verfassungswidrigkeit diesem Antrag schon an der Stirn geschrieben stehe, dann sollte man nicht mit dem Vorwand, daß es einer besonderen Prüfung bedürfe, ob der Antrag verfassungswidrig sei oder nicht, ein Organ dieses Hauses dazu mißbrauchen. Eigentlich müßte er in der 1. Lesung abgewiesen werden. Da dies aber geschäftsordnungsmäßig nicht möglich sei, müsse es in der sofort folgenden 2. Lesung geschehen.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN009" type="comment"><p>Der SPD-Gesetzentwurf wurde in der 2. Beratung in namentlicher Abstimmung abgelehnt. Vgl. Sten. Ber., 31. Sitzung am 13. 6. 1958, S. 1695, 1746.</p></note></seg> Das sei auch wegen der Lage in den Ländern und Gemeinden geboten, wo sich auch die Notwendigkeit sofortiger Klageerhebung ergebe. Bei dieser Frage dürfe der Bundestag nicht von den Erfolgschancen ausgehen, sondern mit der Klage solle der Wille bekundet werden, sich vor die Verfassung zu stellen. Man solle schnell handeln und so bald als möglich die Sache beim Verfassungsgericht anhängig machen.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN010" type="comment"><p>Nachdem die Opposition im Jahr 1958 im Deutschen Bundestag mit ihren gegen die militärpolitische Konzeption der Bundesregierung, insbesondere gegen die Ausrüstung der Bundeswehr mit Atomwaffen und die Lagerung solcher Waffen im Bundesgebiet, gerichteten Anträgen keinen Erfolg gehabt hatte und auch mit dem Entwurf eines Volksbefragungsgesetzes hierzu gescheitert war, erließen Hamburg und Bremen Volksbefragungsgesetze, nach denen die Wahlberechtigten in einer Volksbefragung Fragen nach ihrer Einstellung zur Bewaffnung der deutschen Streitkräfte mit Atomwaffen, zur Lagerung solcher Waffen auf bundesrepublikanischem Gebiet und zur Errichtung von Abschußbasen für Atomraketen auf dem Gebiet der Bundesrepublik Deutschland beantworten sollten. Auf die von der Bundesregierung gegen beide Gesetze eingeleiteten abstrakten Normenkontrollverfahren nach Art. 93 Abs.1 Nr. 2 GG wurden beide Gesetze vom Bundesverfassungsgericht für nichtig erklärt. Vgl. Mdl. Berichte des 12. Ausschusses über die Streitsache vor dem BVerfG: Drucksachen III/438 v. 11. 6. 1958 und III/474 v. 20. 6. 1958 betr. das hamburgische und das bremische Volksbefragungsgesetz; BVerfGE 8, S. 104–122 v. 30. 7. 1958.</p></note></seg></p>
-				<p><name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> teilt die vorgetragene Meinung über die Verfassungswidrigkeit des Antrages. Dann führt er aus, daß die SPD in der Richtung arbeite, das »Provisorium« der Bundesrepublik Deutschland möglichst auszuhöhlen, indem man jede seiner Einrichtungen in Frage stelle. Das sei eine außerordentlich gefährliche Entwicklung. Daß die FDP sich noch liederlicher benehme in dieser Frage als die SPD, müsse einen bei dem offensichtlichen Verfall dieser Partei nicht wundern. Nun gehe es um die Frage der Behandlung des Antrages im Parlament. Im Vorstand sei eine starke Meinung vorhanden gewesen, die auch der Bundeskanzler unterstützt habe, man solle eine Überweisung an den Rechtsausschuß vornehmen aus praktischen Gründen.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN011" type="comment"><p>Die Ausschußberatung entfiel, weil am Ende der 1. Beratung kein Antrag auf Überweisung gestellt wurde. Vgl. Sten. Ber., 26. Sitzung am 25. 4. 1958, S. 1508 f.</p></note></seg> Die SPD erwarte, daß man sofort ablehne und wolle damit Propaganda machen, daß sie wieder von Majorisierung und Vergewaltigung der Minderheit rede. Das werde ihr durch eine Überweisung unmöglich gemacht. Mit Rücksicht auf die bevorstehenden Wahlkämpfe<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN012" type="comment"><p>Hinweis auf die Landtagswahlen in Nordrhein-Westfalen (6. 7. 1958), Schleswig-Holstein (29. 9. 1958), Bayern und Hessen (23. 11. 1958).</p></note></seg>, auf die Stellungnahme der Gewerkschaften<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN013" type="comment"><p>Der Bundesvorstand des DGB hatte am 28. 3. 1958 in Hamburg Protestdemonstrationen gemeinsam mit dem Arbeitsausschuß »Kampf dem Atomtod« beschlossen und erwog eine Befragung seiner Mitglieder über die atomare Bewaffnung. Vgl. AdG 1958, S. 6988.</p></note></seg> und auf den bevorstehenden 1. Mai empfehle sich dieser Weg. Auch könne man damit die günstige Situation, die z.Zt. in der seriösen Presse für die CDU bestehe, besser erhalten, als wenn man ablehne. Im Plenum dürfe man natürlich keinen Zweifel daran lassen, daß es sich um ein verfassungswidriges Vorgehen handele und daß man nur deswegen in den Ausschuß gehe, um der Opposition auch nicht den Schein eines Vorwandes für ihre Agitation zu geben.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchneiderGeorg_1953-10-06">Schneider</name> spricht sich zunächst für Fortsetzung der Rundfunkübertragungen aus, da gerade jetzt der schlechteste Zeitpunkt sei, hier eine Änderung eintreten zu lassen. Weiter empfiehlt er eine Ausschußüberweisung des Antrages aus politischen, optischen und psychologischen Gründen. Die Ausschußberatung gebe Gelegenheit, die Bevölkerung völlig über die Hintergründe und über die Verfassungswidrigkeit des Antrages aufzuklären.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> verweist darauf, daß es auch einen Minderheitenbericht geben werde. Im übrigen wendet er sich gegen Rundfunk- und Fernsehübertragung, die es in keinem anderen Parlament der Welt gebe. Auch diese Übertragungen seien schon ein Schritt in Richtung auf die plebiszitäre Demokratie.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> gibt einen kurzen Überblick über die sich in Frankfurt a.M. entwickelnde Situation<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN014" type="comment"><p>Am 23. 3. 1958 hatte die Aktion »Kampf dem Atomtod« eine Auftaktkundgebung in Frankfurt a.M. durchgeführt. Die Aktion konnte in den folgenden Monaten organisatorisch stabilisiert werden und mobilisierte bis Ende Juni bei Demonstrationen weiter über 300000 Menschen. Vgl. Klotzbach, Staatspartei, S. 470–473; Schwarz, Ära Adenauer 1957–1963, S. 52–54.</p></note></seg> und wendet sich in diesem Zusammenhang gegen die Ausschußüberweisung, weil sie eine Stütze für die Opposition darstellen könne. Notwendige Entscheidungen könnten dadurch eventuell verzögert werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> erklärt, daß er nach den neuesten Erfahrungen ebenfalls gegen Rundfunkübertragung sei. Die Achtung vor dem Parlament dürfe nicht weiter geschmälert werden. Rundfunkübertragungen und unbeschränkte Redezeiten machten ein Parlament kaputt.</p>
-				<p>Zur Sache selbst stelle sich die Frage, wohin es mit der SPD eigentlich gehe. Bei der Paulskirchen-Aktion habe sie sich sehr zurückgehalten. Heute wolle sie einen als Befragung getarnten Volksentscheid. Das beweise, daß ihr linker Flügel immer mehr Übergewicht bekomme. Zur Frage Ausschußüberweisung oder nicht solle man sich im Augenblick noch nicht entscheiden, sondern diese Frage noch gründlich prüfen. Man könne damit der Bevölkerung klarmachen, wie ernst man dieser Frage der Verfassungswidrigkeit oder Verfassungsmäßigkeit nehme. Im übrigen sei es besser, Zeit zu gewinnen. Diese Volksbefragungsaktion laufe sich ebenso tot wie andere Aktionen auch. Er, der Redner selbst, neige eher zu einer Ausschußüberweisung nach einer scharf geführten Debatte.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KankaKarl_1957-10-15">Kanka</name> meint, man solle den Antrag der SPD nicht von der rein juristischen Seite aus betrachten, weil es keine Rechtsfrage gebe, in der nicht sofort eine Gegenmeinung auftrete, sondern man solle es als politische Frage sehen, die klar liege und politisch entschieden werden müsse. Durch eine Ausschußüberweisung entstehe der falsche Anschein, als ob man sich nicht gründlich mit der Frage auseinandergesetzt habe, den man durch sofortige Abweisung vermeiden könne. Es empfehle sich, zu überprüfen, ob nicht Bundestag und Bundesregierung gemeinsam vorgehen sollten, um das Volk über die beabsichtigte Irreführung aufzuklären.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt den am 14. 4. 1958 gefaßten Beschluß des Kabinetts zu diesem Problem vor<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN015" type="comment"><p>Das Bundeskabinett verständigte sich am 14. 4. 1958 darüber, die von der SPD initiierten Volksbefragungen als verfassungswidrig anzusehen und, falls notwendig, vor dem Bundesverfassungsgericht zu klagen (was dann auch geschah). Vgl. »Bonn wird gegen Volksbefragungen einschreiten«, in: FAZ Nr. 87 v. 15. 4. 1958, S. 1; siehe Anm. 10 in diesem Protokoll.</p></note></seg> und teilt mit, daß die FDP den Antrag der SPD nicht unterstützen werde. Da die Dinge im Fluß seien, empfehle es sich nicht, daß die Fraktion heute noch einen Beschluß zu diesem Thema fasse.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> spricht sich gegen eine Rundfunkübertragung aus, da das Plenum während der außenpolitischen Debatte nicht immer ein »couleurfähiges Lokal« dargestellt habe.</p>
-				<p>Zur Sache bemerke er, daß man einen Antrag, den man für verfassungswidrig halte und dessentwegen man sogar klagen wolle, nicht erst dem Ausschuß überweisen solle.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> spricht sich ebenfalls gegen die Ausschußüberweisung aus. Durch diese werde eventuell auch eine sofortige Inanspruchnahme des Bundesverfassungsgerichts erschwert und dessen Entscheidung eventuell sehr verzögert. Niemand nehme es einem ab, wenn man ständig erkläre, der Antrag sei verfassungswidrig, ihn aber dann doch einem Ausschuß überweise.</p>
-				<p><name type="Person" role="Sprecher" ref="#WacherGerhard_1953-10-06">Wacher</name> setzt sich ebenfalls für sofortige Ablehnung ein.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> glaubt, daß es nicht genüge, durch sofortige Ablehnung einem spontanen Rechtsempfinden Ausdruck zu verleihen, sondern man müsse durch Beratungen im Ausschuß eine fundierte Entscheidung herbeiführen. Es entspreche der guten Sitte des Hauses, Anträge größerer Fraktionen auch dann in den Ausschuß zu überweisen, wenn beabsichtigt sei, diesen Antrag abzulehnen. Mit einer sofortigen Ablehnung komme man außerdem nur den Wünschen der SPD entgegen, was man auch nicht gerade müsse.</p>
-				<p><name type="Person" role="Sprecher" ref="#JostenJohannPeter_1953-10-06">Josten</name> teilt nicht die Auffassung, daß die Überweisung des Antrages sachdienlich sei. Je länger die Sache in der Diskussion bleibe, desto schlechter sei es. Man solle a limine abweisen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) begrüßt die Absicht, eine endgültige Entscheidung der Fraktion erst später herbeizuführen. Es sei fraglich, ob es psychologisch richtig sei, den Antrag sofort abzuweisen, da die Lage in der Atomfrage für die CDU nicht sehr günstig sei, was die öffentliche Meinung anbelange. Der Ausschußbericht könne völlig klarstellen, in welch schwerer Weise der Antrag gegen die Verfassung verstoße.</p>
-				<p><name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> wendet sich gegen die Ausschußüberweisungen mit der Begründung, daß der Bundeskanzler sich nur dann an die Länder wenden und diese zur Verfassungstreue aufrufen könne, wenn der Bundestag entschieden habe.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt dar, daß hinter dieser Volksbefragungsaktion eine großangelegte Konzeption stehe, die bis zum Generalstreik reiche. Dr. <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> habe ihm, dem Redner, erklärt, daß er einen Streik für legitim halte, weil er sich in diesem Falle nur gegen einen Beschluß und nicht gegen ein formelles Gesetz des Bundestages richte. Der »Vorwärts« habe das dann ergänzt: Am Schluß stehe zwar nichts rechtlich Verbindliches, aber eine Tatsache, die man durchsetzen werde; nachdem ein konstruktives Mißtrauen abgelehnt worden sei, werde man gegen diesen Beschluß den Generalstreik einsetzen. Die Fraktion solle feststellen, daß sie dieses Gesetz für verfassungswidrig halte und daß sie für die Aufrechterhaltung der Ordnung eintrete, die von der Opposition angegriffen würde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KankaKarl_1957-10-15">Kanka</name> wiederholt noch einmal die Forderung, das Gesetz von vornherein abzulehnen.</p>
-				<p><name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> glaubt, daß man mit einer Ausschußüberweisung die Aktionsbasis der SPD noch erweitere. Man solle die Frage so rasch als möglich, das heißt durch Ablehnung entscheiden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt fest, daß die Fraktion jetzt keinen Beschluß in dieser Sache fasse. Einheitliche Auffassung der Fraktion sei, daß dieses Vorgehen der Opposition in Bund, Ländern und Gemeinden einen Anschlag auf die Verfassung darstelle. Diese einstimmige Meinung stelle er ausdrücklich fest.</p>
-			</div>
-			<div type="SVP" xml:id="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-3">
-				<head>C.</head>
-				<p>3. Dr. <name type="Person" role="Sprecher" ref="#HeckBruno_1957-10-15">Heck</name> referiert über die von ihm beabsichtigte Rede zum Thema »Technische Bildungseinrichtungen«. Wegen des Gleichlauts dieser Rede wird auf die entsprechende Rede im Protokoll der Sitzung des Deutschen Bundestages vom 18. April 1958, Nr. 23, Seite 1240 hingewiesen.<seg type="note"><note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN016" type="comment"><p>Anlaß war die Große SPD-Anfrage betr. Ausbau der technischen Bildungseinrichtungen: Drucksache III/154 v. 25. 1. 1958.</p></note></seg></p>
-				<p>In der Aussprache stellt Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> heraus, daß bei erheblicher Steigerung der Leistungen des Bundes die Leistungen der Länder auf diesem Gebiet erheblich hinter der Steigerung der Steuereinnahmen der Länder zurückgeblieben seien. Zu Einzelfragen der Bildungspläne und ähnlichem ergibt sich dann eine Debatte, an der sich <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> (Mannheim), Frau Dr. <name type="Person" role="Sprecher" ref="#GantenbergMathilde_1956-10-08">Gantenberg</name>, Dr. <name type="Person" role="Sprecher" ref="#WillekeFriedrichWilhelm_1953-10-06">Willeke</name>, <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) und <name type="Person" role="Sprecher" ref="#HackethalKarl_1957-10-15">Hackethal</name> beteiligen.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-04-15-t1445_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1007/4</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 15. April 1958</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1958-04-15">
+               <time type="start" when="14:45:00"/>
+               <time type="end" when="17:45:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#KroneHeinrich_1949-09-07"/>
+            <name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">2</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1958-04-15-t1445_EP_SVP-1" corresp="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-1">A. Bericht aus dem Ältestenrat.</item>
+               <item xml:id="cdu-csu-03_1958-04-15-t1445_EP_SVP-2" corresp="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-2">B. Aussprache über den SPD-Gesetzentwurf zur Volksbefragung wegen einer atomaren Ausrüstung der Bundeswehr.</item>
+               <item xml:id="cdu-csu-03_1958-04-15-t1445_EP_SVP-3" corresp="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-3">C. Erläuterungen des Abgeordneten <name type="Person" role="Erwaehnung" ref="#HeckBruno_1957-10-15">Heck</name> zu seiner Rede zum Thema »Technische Bildungseinrichtungen« mit anschließender Diskussion.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1. <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> gibt einen Überblick über die Beratungen des Ältestenrates.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN001" type="comment">
+                     <p>11. Sitzung des Ältestenrates vom 15. 4. 1958, 12.30 Uhr (Parl. Arch., Ältestenrat).</p>
+                  </note>
+               </seg> Dabei teilt er mit, daß der Bundestagspräsident das an ihn gerichtete Schreiben des Obersten Sowjets<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN002" type="comment">
+                     <p>Ebd., TOP 4. Er betraf den Beschluß des Obersten Sowjets auf einseitige Einstellung der Kernwaffenversuche und einen entsprechenden Appell an die Parlamente der Welt, insbesondere an den Deutschen Bundestag vom 31. 3. 1958. Vgl. AdG 1958, S. 6989, Abschnitte 3, 5 und 6.</p>
+                  </note>
+               </seg> lediglich bestätigt habe. Auch die übrigen Fraktionen hätten die Auffassung geteilt, daß die Führung der Außenpolitik ausschließlich bei der Bundesregierung liege.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN003" type="comment">
+                     <p>Ebd.</p>
+                  </note>
+               </seg>
+            </p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-2">
+            <head>B.</head>
+            <p>2. Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> leitet sodann die Aussprache über den SPD-Entwurf »Volksbefragung«<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN004" type="comment">
+                     <p>SPD-Gesetzentwurf zur Volksbefragung wegen einer atomaren Ausrüstung der Bundeswehr: Drucksache III/303 v. 25. 3. 1958.</p>
+                  </note>
+               </seg> ein und erklärt, daß dieser offenbar in Verbindung mit der außenpolitischen Debatte<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN005" type="comment">
+                     <p>Außenpolitische Debatte im Bundestag: vgl. Sten. Ber., 18. Sitzung am 20. 3. 1958–21. Sitzung v. 25. 3. 1958.</p>
+                  </note>
+               </seg> zu sehen sei. Im Zusammenhang mit den vielen negativen Äußerungen über den äußeren Verlauf dieser Debatte sei zu überprüfen, ob man weiterhin Rundfunk- und Fernsehübertragungen zulassen könne. Am Schluß dieser Debatte sei vom Nationalen Notstand die Rede gewesen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN006" type="comment">
+                     <p>
+                        <name type="Person" role="Erwaehnung" ref="#OllenhauerErich_1949-09-07">Ollenhauer</name> (SPD) hatte beim Einbringen des Gesetzentwurfs zur Volksbefragung von einem drohenden »nationalen Notstand« gesprochen. Vgl. Sten. Ber., 21. Sitzung am 25. 3. 1958, S. 1151.</p>
+                  </note>
+               </seg>, einem absurden Gedanken, dem durch die geschlossene Abstimmung der CDU/CSU-Fraktion<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN007" type="comment">
+                     <p>Zum Abstimmungsverhalten der CDU/CSU-Fraktion vgl. Sten. Ber., ebd., S. 1156–1165.</p>
+                  </note>
+               </seg> ja jeder Boden entzogen worden sei.</p>
+            <p>Was den nun eingebrachten Antrag angehe, so werde es Sache der CDU-Partei sein, eine Aufklärung durchzuführen, die der Bevölkerung sage, was tatsächlich beschlossen worden sei und was nicht. Der Gedanke einer Volksbefragung selbst sei im Juli 1933 von Adolf <name type="Person" role="Erwaehnung" ref="#HitlerAdolf">Hitler</name> in das deutsche Verfassungsleben gebracht worden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN008" type="comment">
+                     <p>Gesetz über Volksabstimmung v. 14. 7. 1933, RGBl. I, S. 479.</p>
+                  </note>
+               </seg> Eine solche Volksbefragung bedeute nichts anderes als eine Aushöhlung des Grundgesetzes und eine Entmachtung des vom Volk gewählten Parlaments. Dagegen müsse man mit allen gesetzlichen Mitteln angehen. Wenn sich die Frage stelle, ob sofortige Ablehnung oder Überweisung an den Rechtsausschuß stattfinden solle, so hindere diese Fragestellung doch nicht, festzustellen, daß dieses Gesetz gegen den Geist und das Wort der Verfassung verstoße. Die Fraktion müsse endgültig darüber beschließen, wie das Gesetz behandelt werden solle. Dabei müsse man berücksichtigen, daß die SPD in allen Ländern versuche, derartige Volksbefragungen durchzuführen, auch wenn ganz deutlich sei, daß hier eine Kompetenz der Länder überhaupt nicht gegeben sei.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> vertritt die Auffassung, daß der Antrag der SPD verfassungswidrig sei. Eine Volksbefragung sei im Grundgesetz nicht vorgesehen. Eine Befragung ohne rechtliche Konsequenzen sei sinnlos. Dieser Antrag ruiniere die Art und Form des freiheitlichen Rechtsstaates in der festgelegten Form der parlamentarischen Demokratie repräsentativen Charakters. Das Volk werde durch das Parlament repräsentiert. In diesem vollziehe das Volk seine Entscheidungen nach Reflexion und Debatte, was das Volk selbstverständlich selbst nicht könne. Wie würden sich die Dinge entwickeln, wenn dieses Beispiel Schule mache Wie wäre es z. B. mit einer Volksbefragung über die Todesstrafe? Als dieser Gedanke erwähnt wurde, habe sich Herr <name type="Person" role="Erwaehnung" ref="#MenzelWalter_1949-09-07">Menzel</name> schockiert gezeigt. Das Verfahren, das die Opposition angeschlagen habe, öffne der Demagogie Tür und Tor. Der CDU komme die Aufgabe zu, hier die freiheitliche Demokratie zu verteidigen. Ein solcher Antrag verdiene nicht, in einem Organ dieses Hauses beraten zu werden. Wenn die Verfassungswidrigkeit diesem Antrag schon an der Stirn geschrieben stehe, dann sollte man nicht mit dem Vorwand, daß es einer besonderen Prüfung bedürfe, ob der Antrag verfassungswidrig sei oder nicht, ein Organ dieses Hauses dazu mißbrauchen. Eigentlich müßte er in der 1. Lesung abgewiesen werden. Da dies aber geschäftsordnungsmäßig nicht möglich sei, müsse es in der sofort folgenden 2. Lesung geschehen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN009" type="comment">
+                     <p>Der SPD-Gesetzentwurf wurde in der 2. Beratung in namentlicher Abstimmung abgelehnt. Vgl. Sten. Ber., 31. Sitzung am 13. 6. 1958, S. 1695, 1746.</p>
+                  </note>
+               </seg> Das sei auch wegen der Lage in den Ländern und Gemeinden geboten, wo sich auch die Notwendigkeit sofortiger Klageerhebung ergebe. Bei dieser Frage dürfe der Bundestag nicht von den Erfolgschancen ausgehen, sondern mit der Klage solle der Wille bekundet werden, sich vor die Verfassung zu stellen. Man solle schnell handeln und so bald als möglich die Sache beim Verfassungsgericht anhängig machen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN010" type="comment">
+                     <p>Nachdem die Opposition im Jahr 1958 im Deutschen Bundestag mit ihren gegen die militärpolitische Konzeption der Bundesregierung, insbesondere gegen die Ausrüstung der Bundeswehr mit Atomwaffen und die Lagerung solcher Waffen im Bundesgebiet, gerichteten Anträgen keinen Erfolg gehabt hatte und auch mit dem Entwurf eines Volksbefragungsgesetzes hierzu gescheitert war, erließen Hamburg und Bremen Volksbefragungsgesetze, nach denen die Wahlberechtigten in einer Volksbefragung Fragen nach ihrer Einstellung zur Bewaffnung der deutschen Streitkräfte mit Atomwaffen, zur Lagerung solcher Waffen auf bundesrepublikanischem Gebiet und zur Errichtung von Abschußbasen für Atomraketen auf dem Gebiet der Bundesrepublik Deutschland beantworten sollten. Auf die von der Bundesregierung gegen beide Gesetze eingeleiteten abstrakten Normenkontrollverfahren nach Art. 93 Abs.1 Nr. 2 GG wurden beide Gesetze vom Bundesverfassungsgericht für nichtig erklärt. Vgl. Mdl. Berichte des 12. Ausschusses über die Streitsache vor dem BVerfG: Drucksachen III/438 v. 11. 6. 1958 und III/474 v. 20. 6. 1958 betr. das hamburgische und das bremische Volksbefragungsgesetz; BVerfGE 8, S. 104–122 v. 30. 7. 1958.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KiesingerKurtGeorg_1949-09-07">Kiesinger</name> teilt die vorgetragene Meinung über die Verfassungswidrigkeit des Antrages. Dann führt er aus, daß die SPD in der Richtung arbeite, das »Provisorium« der Bundesrepublik Deutschland möglichst auszuhöhlen, indem man jede seiner Einrichtungen in Frage stelle. Das sei eine außerordentlich gefährliche Entwicklung. Daß die FDP sich noch liederlicher benehme in dieser Frage als die SPD, müsse einen bei dem offensichtlichen Verfall dieser Partei nicht wundern. Nun gehe es um die Frage der Behandlung des Antrages im Parlament. Im Vorstand sei eine starke Meinung vorhanden gewesen, die auch der Bundeskanzler unterstützt habe, man solle eine Überweisung an den Rechtsausschuß vornehmen aus praktischen Gründen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN011" type="comment">
+                     <p>Die Ausschußberatung entfiel, weil am Ende der 1. Beratung kein Antrag auf Überweisung gestellt wurde. Vgl. Sten. Ber., 26. Sitzung am 25. 4. 1958, S. 1508 f.</p>
+                  </note>
+               </seg> Die SPD erwarte, daß man sofort ablehne und wolle damit Propaganda machen, daß sie wieder von Majorisierung und Vergewaltigung der Minderheit rede. Das werde ihr durch eine Überweisung unmöglich gemacht. Mit Rücksicht auf die bevorstehenden Wahlkämpfe<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN012" type="comment">
+                     <p>Hinweis auf die Landtagswahlen in Nordrhein-Westfalen (6. 7. 1958), Schleswig-Holstein (29. 9. 1958), Bayern und Hessen (23. 11. 1958).</p>
+                  </note>
+               </seg>, auf die Stellungnahme der Gewerkschaften<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN013" type="comment">
+                     <p>Der Bundesvorstand des DGB hatte am 28. 3. 1958 in Hamburg Protestdemonstrationen gemeinsam mit dem Arbeitsausschuß »Kampf dem Atomtod« beschlossen und erwog eine Befragung seiner Mitglieder über die atomare Bewaffnung. Vgl. AdG 1958, S. 6988.</p>
+                  </note>
+               </seg> und auf den bevorstehenden 1. Mai empfehle sich dieser Weg. Auch könne man damit die günstige Situation, die z.Zt. in der seriösen Presse für die CDU bestehe, besser erhalten, als wenn man ablehne. Im Plenum dürfe man natürlich keinen Zweifel daran lassen, daß es sich um ein verfassungswidriges Vorgehen handele und daß man nur deswegen in den Ausschuß gehe, um der Opposition auch nicht den Schein eines Vorwandes für ihre Agitation zu geben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchneiderGeorg_1953-10-06">Schneider</name> spricht sich zunächst für Fortsetzung der Rundfunkübertragungen aus, da gerade jetzt der schlechteste Zeitpunkt sei, hier eine Änderung eintreten zu lassen. Weiter empfiehlt er eine Ausschußüberweisung des Antrages aus politischen, optischen und psychologischen Gründen. Die Ausschußberatung gebe Gelegenheit, die Bevölkerung völlig über die Hintergründe und über die Verfassungswidrigkeit des Antrages aufzuklären.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> verweist darauf, daß es auch einen Minderheitenbericht geben werde. Im übrigen wendet er sich gegen Rundfunk- und Fernsehübertragung, die es in keinem anderen Parlament der Welt gebe. Auch diese Übertragungen seien schon ein Schritt in Richtung auf die plebiszitäre Demokratie.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WilhelmiHans_1957-10-15">Wilhelmi</name> gibt einen kurzen Überblick über die sich in Frankfurt a.M. entwickelnde Situation<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN014" type="comment">
+                     <p>Am 23. 3. 1958 hatte die Aktion »Kampf dem Atomtod« eine Auftaktkundgebung in Frankfurt a.M. durchgeführt. Die Aktion konnte in den folgenden Monaten organisatorisch stabilisiert werden und mobilisierte bis Ende Juni bei Demonstrationen weiter über 300000 Menschen. Vgl. Klotzbach, Staatspartei, S. 470–473; Schwarz, Ära Adenauer 1957–1963, S. 52–54.</p>
+                  </note>
+               </seg> und wendet sich in diesem Zusammenhang gegen die Ausschußüberweisung, weil sie eine Stütze für die Opposition darstellen könne. Notwendige Entscheidungen könnten dadurch eventuell verzögert werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> erklärt, daß er nach den neuesten Erfahrungen ebenfalls gegen Rundfunkübertragung sei. Die Achtung vor dem Parlament dürfe nicht weiter geschmälert werden. Rundfunkübertragungen und unbeschränkte Redezeiten machten ein Parlament kaputt.</p>
+            <p>Zur Sache selbst stelle sich die Frage, wohin es mit der SPD eigentlich gehe. Bei der Paulskirchen-Aktion habe sie sich sehr zurückgehalten. Heute wolle sie einen als Befragung getarnten Volksentscheid. Das beweise, daß ihr linker Flügel immer mehr Übergewicht bekomme. Zur Frage Ausschußüberweisung oder nicht solle man sich im Augenblick noch nicht entscheiden, sondern diese Frage noch gründlich prüfen. Man könne damit der Bevölkerung klarmachen, wie ernst man dieser Frage der Verfassungswidrigkeit oder Verfassungsmäßigkeit nehme. Im übrigen sei es besser, Zeit zu gewinnen. Diese Volksbefragungsaktion laufe sich ebenso tot wie andere Aktionen auch. Er, der Redner selbst, neige eher zu einer Ausschußüberweisung nach einer scharf geführten Debatte.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KankaKarl_1957-10-15">Kanka</name> meint, man solle den Antrag der SPD nicht von der rein juristischen Seite aus betrachten, weil es keine Rechtsfrage gebe, in der nicht sofort eine Gegenmeinung auftrete, sondern man solle es als politische Frage sehen, die klar liege und politisch entschieden werden müsse. Durch eine Ausschußüberweisung entstehe der falsche Anschein, als ob man sich nicht gründlich mit der Frage auseinandergesetzt habe, den man durch sofortige Abweisung vermeiden könne. Es empfehle sich, zu überprüfen, ob nicht Bundestag und Bundesregierung gemeinsam vorgehen sollten, um das Volk über die beabsichtigte Irreführung aufzuklären.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> trägt den am 14. 4. 1958 gefaßten Beschluß des Kabinetts zu diesem Problem vor<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN015" type="comment">
+                     <p>Das Bundeskabinett verständigte sich am 14. 4. 1958 darüber, die von der SPD initiierten Volksbefragungen als verfassungswidrig anzusehen und, falls notwendig, vor dem Bundesverfassungsgericht zu klagen (was dann auch geschah). Vgl. »Bonn wird gegen Volksbefragungen einschreiten«, in: FAZ Nr. 87 v. 15. 4. 1958, S. 1; siehe Anm. 10 in diesem Protokoll.</p>
+                  </note>
+               </seg> und teilt mit, daß die FDP den Antrag der SPD nicht unterstützen werde. Da die Dinge im Fluß seien, empfehle es sich nicht, daß die Fraktion heute noch einen Beschluß zu diesem Thema fasse.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DresbachAugust_1949-09-07">Dresbach</name> spricht sich gegen eine Rundfunkübertragung aus, da das Plenum während der außenpolitischen Debatte nicht immer ein »couleurfähiges Lokal« dargestellt habe.</p>
+            <p>Zur Sache bemerke er, daß man einen Antrag, den man für verfassungswidrig halte und dessentwegen man sogar klagen wolle, nicht erst dem Ausschuß überweisen solle.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> spricht sich ebenfalls gegen die Ausschußüberweisung aus. Durch diese werde eventuell auch eine sofortige Inanspruchnahme des Bundesverfassungsgerichts erschwert und dessen Entscheidung eventuell sehr verzögert. Niemand nehme es einem ab, wenn man ständig erkläre, der Antrag sei verfassungswidrig, ihn aber dann doch einem Ausschuß überweise.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WacherGerhard_1953-10-06">Wacher</name> setzt sich ebenfalls für sofortige Ablehnung ein.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KopfHermann_1949-09-07">Kopf</name> glaubt, daß es nicht genüge, durch sofortige Ablehnung einem spontanen Rechtsempfinden Ausdruck zu verleihen, sondern man müsse durch Beratungen im Ausschuß eine fundierte Entscheidung herbeiführen. Es entspreche der guten Sitte des Hauses, Anträge größerer Fraktionen auch dann in den Ausschuß zu überweisen, wenn beabsichtigt sei, diesen Antrag abzulehnen. Mit einer sofortigen Ablehnung komme man außerdem nur den Wünschen der SPD entgegen, was man auch nicht gerade müsse.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#JostenJohannPeter_1953-10-06">Josten</name> teilt nicht die Auffassung, daß die Überweisung des Antrages sachdienlich sei. Je länger die Sache in der Diskussion bleibe, desto schlechter sei es. Man solle a limine abweisen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#WeberKarl_1949-09-07">Weber</name> (Koblenz) begrüßt die Absicht, eine endgültige Entscheidung der Fraktion erst später herbeizuführen. Es sei fraglich, ob es psychologisch richtig sei, den Antrag sofort abzuweisen, da die Lage in der Atomfrage für die CDU nicht sehr günstig sei, was die öffentliche Meinung anbelange. Der Ausschußbericht könne völlig klarstellen, in welch schwerer Weise der Antrag gegen die Verfassung verstoße.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MemmelLinus_1957-10-15">Memmel</name> wendet sich gegen die Ausschußüberweisungen mit der Begründung, daß der Bundeskanzler sich nur dann an die Länder wenden und diese zur Verfassungstreue aufrufen könne, wenn der Bundestag entschieden habe.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BarzelRainer_1957-10-15">Barzel</name> stellt dar, daß hinter dieser Volksbefragungsaktion eine großangelegte Konzeption stehe, die bis zum Generalstreik reiche. Dr. <name type="Person" role="Erwaehnung" ref="#ArndtAdolf_1949-09-07">Arndt</name> habe ihm, dem Redner, erklärt, daß er einen Streik für legitim halte, weil er sich in diesem Falle nur gegen einen Beschluß und nicht gegen ein formelles Gesetz des Bundestages richte. Der »Vorwärts« habe das dann ergänzt: Am Schluß stehe zwar nichts rechtlich Verbindliches, aber eine Tatsache, die man durchsetzen werde; nachdem ein konstruktives Mißtrauen abgelehnt worden sei, werde man gegen diesen Beschluß den Generalstreik einsetzen. Die Fraktion solle feststellen, daß sie dieses Gesetz für verfassungswidrig halte und daß sie für die Aufrechterhaltung der Ordnung eintrete, die von der Opposition angegriffen würde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KankaKarl_1957-10-15">Kanka</name> wiederholt noch einmal die Forderung, das Gesetz von vornherein abzulehnen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Wittmer-EigenbrodtKurt_1957-10-15">Wittmer-Eigenbrodt</name> glaubt, daß man mit einer Ausschußüberweisung die Aktionsbasis der SPD noch erweitere. Man solle die Frage so rasch als möglich, das heißt durch Ablehnung entscheiden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KroneHeinrich_1949-09-07">Krone</name> stellt fest, daß die Fraktion jetzt keinen Beschluß in dieser Sache fasse. Einheitliche Auffassung der Fraktion sei, daß dieses Vorgehen der Opposition in Bund, Ländern und Gemeinden einen Anschlag auf die Verfassung darstelle. Diese einstimmige Meinung stelle er ausdrücklich fest.</p>
+         </div>
+         <div type="SVP" xml:id="cdu-csu-03_1958-04-15-t1445_EP_div_SVP-3">
+            <head>C.</head>
+            <p>3. Dr. <name type="Person" role="Sprecher" ref="#HeckBruno_1957-10-15">Heck</name> referiert über die von ihm beabsichtigte Rede zum Thema »Technische Bildungseinrichtungen«. Wegen des Gleichlauts dieser Rede wird auf die entsprechende Rede im Protokoll der Sitzung des Deutschen Bundestages vom 18. April 1958, Nr. 23, Seite 1240 hingewiesen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-04-15-t1445_EP_FN016" type="comment">
+                     <p>Anlaß war die Große SPD-Anfrage betr. Ausbau der technischen Bildungseinrichtungen: Drucksache III/154 v. 25. 1. 1958.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>In der Aussprache stellt Dr. <name type="Person" role="Sprecher" ref="#HellwigFritz_1953-10-06">Hellwig</name> heraus, daß bei erheblicher Steigerung der Leistungen des Bundes die Leistungen der Länder auf diesem Gebiet erheblich hinter der Steigerung der Steuereinnahmen der Länder zurückgeblieben seien. Zu Einzelfragen der Bildungspläne und ähnlichem ergibt sich dann eine Debatte, an der sich <name type="Person" role="Sprecher" ref="#MaierJosef_1953-11-20">Maier</name> (Mannheim), Frau Dr. <name type="Person" role="Sprecher" ref="#GantenbergMathilde_1956-10-08">Gantenberg</name>, Dr. <name type="Person" role="Sprecher" ref="#WillekeFriedrichWilhelm_1953-10-06">Willeke</name>, <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) und <name type="Person" role="Sprecher" ref="#HackethalKarl_1957-10-15">Hackethal</name> beteiligen.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

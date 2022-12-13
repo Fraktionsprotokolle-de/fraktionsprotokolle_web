@@ -1,233 +1,303 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1965-10-26-t1105_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
-						<author>Corinna Franz</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/968631657</idno>
-						<idno>https://d-nb.info/969682360</idno>
-						<idno>https://d-nb.info/969682646</idno>
-						<idno>https://d-nb.info/969682670</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VII-001-1010/1</idno>
-							<objectName>[Nicht überliefert]</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 26. Oktober 1965</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>5 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1965-10-26"><time type="start" when="11:05:00"/><time type="end" when="12:05:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#StraußFranzJosef_1949-09-07"/><idno type="sitzung"><idno type="wp">05</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
-			<change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-05_1965-10-26-t1105_EP_SVP-1" corresp="#cdu-csu-05_1965-10-26-t1105_EP_div_SVP-1">A. TOP 1: Wahl der stv. Fraktionsvorsitzenden und parlamentarischen Geschäftsführer. – TOP 2: Bericht des <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Bundeskanzlers</name>. – TOP 3: Besetzung der Ausschüsse, Ausschussarbeit.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-05_1965-10-26-t1105_EP_div_SVP-1">
-				<head>A.</head>
-				<p>[1. Wahl der stv. Fraktionsvorsitzenden und parlamentarischen Geschäftsführer]</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> berichtet zu Beginn der Sitzung über die Beratungen des Vorstandes, der der Fraktion zur Fortsetzung des Ausbaus der Fraktionsführung die Wahl von vier stellvertretenden Vorsitzenden empfehle, und zwar Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> und <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>. Ebenfalls zur Sprache gekommen sei die Frage der sechs Arbeitskreisvorsitzenden. Hierzu schlage der Vorstand vor, diese Sache einstweilen zurückzustellen, weil die Frage, ob fünf oder sechs Arbeitskreise eingerichtet werden sollen, noch offenstehe, da Arbeitskreis VI nicht ganz harmonisch abgestimmt war. Trotzdem sollte ein sechster Arbeitskreis im Zusammenhang mit den Aufgaben einer formierten Gesellschaft gebildet werden. Auch die personelle Besetzung der Arbeitskreise III und VI stehe noch aus. Bei diesen Wahlen, die in der kommenden Woche vorzunehmen seien, sollen auch gebietsmäßige Rücksichten, besonders hinsichtlich Rheinland-Pfalz und Baden-Württemberg, wahrgenommen werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> erinnert daran, daß beabsichtigt war, die Wahlen bis zur Vorlage eines Gesamttableaus zu verschieben. Nach den eben abgegebenen Erklärungen verzichte er auf diesen Antrag, bitte aber die Fraktion, alles zu tun, um das Gesamttableau zu erarbeiten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> betont, die Wahl zum stellvertretenden Vorsitzenden gelte vorerst für ein Jahr und werde dann später durch erneute Wahl auf drei Jahre verlängert. Gegen dieses Vorgehen erhebt sich nur geringer Widerspruch. Zu Wahlhelfern werden <name type="Person" role="Erwaehnung" ref="#WoernerManfred_1965-10-19">Wörner</name>, <name type="Person" role="Erwaehnung" ref="#HauserAlo_1965-10-19">Hauser</name>, <name type="Person" role="Erwaehnung" ref="#HaefeleHansjoerg_1965-10-19">Häfele</name>, <name type="Person" role="Erwaehnung" ref="#JostenJohannPeter_1953-10-06">Josten</name> und <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> bestellt.</p>
-				<p>An der Abstimmung beteiligen sich 201 Abgeordnete. Eine Stimme war ungültig. Sieben Abgeordnete enthielten sich der Stimme. Von den abgegebenen gültigen Stimmen erhielten:</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name></cell>
-						<cell>174,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name></cell>
-						<cell>166,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name></cell>
-						<cell>157,</cell>
-					</row>
-					<row>
-						<cell><name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name></cell>
-						<cell>158.</cell>
-					</row>
-				</table>
-				<p>Alle Gewählten nehmen die Wahl an.</p>
-				<p>Anschließend bestellt die Fraktion einstimmig in nicht geheimer Wahl <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name> und <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> zu parlamentarischen Geschäftsführern.</p>
-				<p>[2. Bericht des Bundeskanzlers]</p>
-				<p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine Damen und Herren, liebe Parteifreunde. Ich bin einigermaßen erleichtert, daß ich diese schwierige Aufgabe der Regierungsbildung hinter mir habe. Es ging weniger um die Sache, mehr um die Personen, und ich gestehe frank und frei, daß mir das Geschäft eines Menschenhandels wenig liegt und daß ich auch nicht die Eigenschaften eines englischen Premiers habe.</p>
-				<p>Wir können an die Arbeit gehen, auf die ich mich trotz aller Schwere und Sorgen freue, denn jetzt muß angepackt werden. Ich bitte Sie, zu mir zu stehen, denn die Entscheidungen werden nicht leicht sein, aber es sind die Entscheidungen, die das deutsche Volk erwartet, die unsere Wirtschaft und finanzielle Sicherheit von uns aus gewährleisten. Das ist eine große Aufgabe, und daran wird einmal diese Regierung und dieses Parlament gemessen werden. Es sind zwar noch Ressortabgrenzungen im Gang, die aber nicht dramatisch sind, so daß heute nachmittag die Vereidigung stattfinden kann. Die Kabinettsbildung war dadurch erschwert, daß wir die Zusage von <name type="Person" role="Erwaehnung" ref="#MikatPaul_1969-10-20">Mikat</name> hatten, und dieser am nächsten Tag erklärt hat, er könne den Ministerposten nicht übernehmen, da er nicht Abgeordneter ist. Dadurch waren eine Reihe von Positionen im Gespräch. Ich möchte <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> danken, der sich nicht nach dem Innenminister drängt, der aber um der Sache willen manche Bedenken zurückstellte (Beifall). Er verdient wirklich unseren Dank. Manche Sorge, die durch das Freiwerden des Wohnungsbauministeriums entstanden ist, kann ich zerstreuen, denn das wesentlichste Element, die Raumplanung, kommt vom Wohnungsbauministerium ins Innenministerium. Das ist die eigentlich interessanteste Aufgabe, die auch für das deutsche Volk von Faszination sein wird. Wohnungsbau und Städteplanung bleibt zwar beim Wohnungsbauministerium, hängt aber von der Raumplanung ab.</p>
-				<p>Jede Kabinettsbildung – im positiven und negativen – bereitet manche Schmerzen, und es ist nicht leicht, alle Wünsche zu berücksichtigen. Aber ich meine, wir sollten uns daran gewöhnen, und das soll für die Zukunft gelten, daß wir das Amt eines Ministers nicht als Erbhof ansehen, sondern daß nichts natürlicher und würdiger ist, als die Funktion auch einmal aufzugeben. Vielleicht haben wir in der Vergangenheit allzusehr der Vorstellung angehangen, daß, wer ein Ministeramt verwaltet, einen Anspruch darauf hat und bei Entlassung disqualifiziert wird. Das ist eine falsche Betrachtungsweise, und ich möchte ausdrücklich erklären, daß nicht die Qualifikation den Ausschlag gab, sondern daß es ein natürlicher parlamentarischer Vorgang ist, der sich vollzieht.</p>
-				<p>Die Besetzung des neuen Kabinetts kennen Sie. Natürlich hätte es für diese oder jene Position eine idealere Gestalt gegeben, aber im ganzen ist das Kabinett wohlausgewogen, und ich glaube, daß es zu der Harmonie und auch zu dem Verhältnis zur Fraktion findet, daß wir eine ersprießliche Arbeit leisten können.«</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> dankt für den Bericht. Hinsichtlich der Bemerkung von den Erbhöfen werde es von der Arbeit der nächsten vier Jahre abhängen, ob es überhaupt Erbhöfe für die CDU/CSU geben werde.</p>
-				<p>Die Entscheidung, die Zuständigkeit für die Raumordnung wieder ins Innenministerium zu legen, halte er für dankenswert. Das neue Wohnungsbauministerium sei jetzt eine ausgesprochene Allzweckwaffe. Es sei sicher denkbar, daß nun nicht wieder »Gewissens-konflikte« auftauchten und man mit einer kontinuierlichen Arbeit des Ministers rechnen könne.</p>
-				<p>[3. Besetzung der Ausschüsse, Ausschußarbeit]</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> verliest zur Frage der Ausschußbesetzung die Leitsätze, die sich gegenüber der vergangenen Wahlperiode nicht geändert hätten:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>a) Von den bestehenden 28 Ausschüssen wurden 10 Ausschüsse zu sperrenden Ausschüssen gemacht.</p>
-						<p>Verteidigung (5), Inneres (6), Recht (12), Haushalt (13), Finanzen (14), Wirtschaft (16), Ernährung (19), Sozialpolitik (20), Arbeit (21), Verkehr (23).</p>
-						<p>Wer in einem sperrenden Ausschuß einen ordentlichen Sitz hat, kann in einem anderen Ausschuß kein ordentliches Mitglied mehr sein.</p>
-						<p>b) Bei Abstimmung im Ausschuß sind nur die ordentlichen und stellvertretenden Mitglieder dieses Ausschusses stimmberechtigt.</p></item>
-					<item><label>2.</label><p>Die stellvertretenden Fraktionsvorsitzenden können nicht Ausschußvorsitzende und nicht Mitglied in Europäischen Gremien sein.</p></item>
-					<item><label>3.</label><p>Die Arbeitskreisvorsitzenden können nicht Ausschußvorsitzende und nicht Mitglied der Europäischen Gremien sein.</p></item>
-					<item><label>4.</label><p>Die Ausschußvorsitzenden können nicht Mitglied in der Europäischen Wirtschaftsgemeinschaft (Europa-Parlament) sein, wohl aber im Europarat.</p></item>
-					<item><label>5.</label><p>Die ordentliche Mitgliedschaft in einem sperrenden Ausschuß ist unvereinbar mit der Mitgliedschaft in der EWG.</p></item>
-				</list>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> bezweifelt, ob eine einmalige Verlesung genüge, alle Konsequenzen zu begreifen. Andererseits solle die Fraktion <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> die Vollmacht erteilen, nach diesen Grundsätzen zunächst einmal zu verfahren.</p>
-				<p><name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> hält es für gefährlich, jetzt die Frage der Stimmberechtigung in den Ausschüssen, so wie es vorgeschlagen wurde, mitzuregeln. Man habe immer wieder feststellen müssen, daß mit ordentlichen und stellvertretenden Mitgliedern allein die Mehrheit nicht erreicht werden könne. Eine Entscheidung des Präsidenten laufe dahin, auch andere Mitglieder als stimmberechtigt anzuerkennen. Deshalb sollte diese Frage noch zurückgestellt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erläutert, Punkt 1 b könne nur realisiert werden, wenn auch die anderen Fraktionen diesen Punkt ebenso handhabten. Immer wieder habe es sich bei Debatten, die die Interessen herausforderten, gezeigt, daß sich die Ausschüsse plötzlich mit Interessenvertretern anfüllten, wodurch Entscheidungen zustande kamen, die diesen Interessen entsprachen.</p>
-				<p><name type="Person" role="Sprecher" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name> überlegt, ob man nicht zu einer stärkeren Reform der Ausschußarbeit kommen könne. Die Ausschüsse tagten stets zur gleichen Zeit, so daß es sinnlos erscheine, in mehreren Ausschüssen eine Mitarbeit zu versuchen. Es bestehe aber die Möglichkeit, die Zahl der Ausschüsse zu verkleinern. Jetzt habe man 15er, 23er und 27er Ausschüsse, wenn man auf 11, 17 und 21 verkleinere, würden etwa 162 Ausschußsitze eingespart. Die Fraktion mache sich selber etwas vor, wenn sie die Ausschüsse mit soundsoviel Abgeordneten besetze, die praktisch nicht zur Verfügung ständen. Diese Frage müsse man sich einmal überlegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> informiert die Fraktion über die Schritte des Bundestagspräsidenten, der im Ältestenrat dafür Sorge getragen habe, diese Vorschläge zur Änderung der Ausschußarbeit allen Fraktionen zugänglich zu machen. Man werde noch 14 Tage benötigen, diese Fragen zu klären. Ob die Zahl der Mitglieder so radikal gesenkt werden könne, erscheine auch angesichts der Gewichtigkeit der Ausschüsse problematisch. Der Unterschied der Arbeitsbelastung werde außerordentliche Ausmaße annehmen. Der Weg der sperrenden Ausschüsse sei sicher richtig, eventuell müßte die Zahl der sperrenden Ausschüsse noch vermehrt werden. Der Grundsatz, jeden Abgeordneten nur für einen Ausschuß zu benennen, lasse sich allerdings nicht durchhalten.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bittet, hinsichtlich der Frage der Stimmberechtigung zu prüfen, wie die Anwesenheit von ordentlichen und stellvertretenden Mitgliedern sichergestellt werden könne. Die Vergangenheit habe bewiesen, daß die CDU/CSU öfters in der Minderheit war und eine Niederlage hinnehmen mußte. Eine solche Situation sollte man für die Zukunft unmöglich machen und darüber hinaus Leitsätze aufstellen in dem Sinne, [daß,] wenn ein ordentliches Mitglied mehrere Male unentschuldigt fehle, eine Änderung in der Ausschußbesetzung erfolgen könne.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> erwähnt, daß <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> zur Ergänzung der Leitsätze ebenfalls diese Anregung gemacht habe.</p>
-				<p><name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> kündigt an, bevor jemand endgültig einem Ausschuß zugeteilt werde, einen Brief folgenden Inhalts zu versenden:</p>
-				<list type="undefined">
-					<item><p>»Herrn/Frau …,</p></item>
-					<item><p>Sie sind als ordentliches – stellvertretendes Mitglied für den Ausschuß … vorgemerkt. Im Interesse einer geordneten Parlamentsarbeit und einer unserer Fraktionsstärke entsprechenden Vertretung in den einzelnen Ausschüssen ist der pünktliche und regelmäßige Besuch der Ausschußsitzungen unbedingt erforderlich. Wer verspätet kommen oder die Sitzung vorzeitig verlassen muß oder sich von der ganzen Sitzung beurlauben möchte, muß dies rechtzeitig dem Fraktionsobmann des Ausschusses melden und von sich aus für einen Ersatzmann sorgen. Wer diese Verpflichtung in einer die Ausschußarbeit gefährdenden Weise versäumt, wird durch Vorstandsbeschluß gegen ein anderes Fraktionsmitglied ausgetauscht.</p></item>
-					<item><p>Ihre obrige Nominierung wird erst gültig, nachdem Sie die beigefügte Empfangsbestätigung unterschrieben zurückgesandt haben.</p></item>
-					<item><p>Empfangsbestätigung</p></item>
-					<item><p>Die Benachrichtigung meiner Nominierung für den … habe ich erhalten, nehme sie an und habe von den sich hieraus für mich ergebenden Verpflichtungen zustimmend Kenntnis genommen.</p></item>
-				</list>
-				<p rendition="center">………</p>
-				<p rendition="center">Unterschrift«</p>
-				<p>Er bitte, diese Richtlinien vorläufig einmal anzunehmen. Die bis jetzt geleistete Arbeit der Kommission habe dieser Vorarbeit gegolten, die erforderlich war, um die Ausschüsse so bald wie möglich zu besetzen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BesoldAnton_1949-09-07">Besold</name> hält die Vorschläge zur Abstimmungsberechtigung zwar für ideal, wenn auch nicht für praktikabel. Es handele sich doch nur um Interessengruppen, deren Einfluß doch von den ordentlichen und stellvertretenden Mitgliedern verhindert werden könne. Wenn aber die Notwendigkeit bestehe, eine qualifizierte Abstimmungsmöglichkeit zu schaffen, müßten andere Mitglieder auch hinzugezogen werden können. Es geschehe aber öfters, daß aus der Arbeitsüberlastung heraus eine richtige Besetzung des Ausschusses nicht möglich ist. Wenn es dann zu Fehlentscheidungen komme, sei das unangenehmer, als wenn einmal ein anderer Abgeordneter in einen solchen Ausschuß kommen könne. Diese Sache sei einfach unpraktikabel und müsse schließlich und endlich vom Politischen und nicht vom Erzieherischen her geregelt werden.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> setzt sich dafür ein, die Aufgabe der Ausschußbesetzung nicht noch mühseliger zu machen. Die Sache müsse praktikabel bleiben. Wenn es zu einer Abrede zwischen CDU/CSU und SPD hinsichtlich der Stimmberechtigung der ordentlichen und stellvertretenden Mitglieder komme, könnte diese bei der SPD verwirklicht werden, bei der CDU/CSU aber nicht. In der Koalition komme es oft auf eine Stimme an, und die Lage im Ausschuß werde bei einer harten Opposition auch härter werden.</p>
-				<p>Die Befürchtung, daß Interessenvertreter in die Ausschüsse eindringen, bestehe wohl nicht. Jeder Abgeordnete sei in seiner Entscheidung dem Grundgesetz verpflichtet und müsse die Belange aller Seiten wahrnehmen. Darin liege ein gemeinsames oberstes Gesetz. Auch aus diesem Grunde sollte die Fraktion diesem Leitsatz nicht zustimmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> macht darauf aufmerksam, der Leitsatz sei in der Geschäftsordnung des Bundestages zu finden, wenn er auch bisher keine Beachtung fand.</p>
-				<p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> erwähnt, es gebe natürlich immer die Möglichkeit, sich über die Geschäftsordnung hinwegzusetzen. Daß der neue Bundestag sich aber nicht den Schlendrian der beiden letzten Perioden erlauben könne, müsse auch klar sein. Man habe ja gesehen, wie weit man mit der Weimarer Verfassung gekommen sei, die von den Staatsrechtlern als geradezu ideal beurteilt wurde. Man habe nun versucht, daraus Konsequenzen für die Geschäftsordnung des Bundestages zu ziehen. In Anbetracht dessen werde der Bundestagspräsident von Amts wegen gehalten sein, den § 73 Ziffer 4 der Geschäftsordnung durchzusetzen und durchzuhalten, es sei denn, daß der Bundestag eine Änderung der Geschäftsordnung beschließe. »Als Zuhörer teilnehmen« besage das Ausgeschlossensein von der Abstimmung. So laute das geltende Recht.</p>
-				<p><name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> warnt, nach dem Vorschlag <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäckers</name> zu verfahren. Bei dem geübten Proporzdenken würde das bedeuten, daß kleine Gruppen nie zum Zuge kämen. Weiter werde ein neuer »Schwur« vorgeschlagen, dessen Anwendbarkeit sich erst noch erweisen müsse. Die Ausschußbesetzung sollte zunächst auch nur für ein Jahr erfolgen.</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> empfiehlt, dem Vorschlag <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brands</name> beizutreten. Wo dieser Grundsatz angewandt wurde, habe die Sache gut funktioniert. Man sollte nicht gleich der Opposition mehr Disziplin unterstellen als der eigenen Fraktion. Im Hause herumzulaufen und irgendeinen Abgeordneten für die Abstimmung zu finden, halte er für unwürdig, auch für den Abgeordneten selbst.</p>
-				<p><name type="Person" role="Sprecher" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) spricht sich dafür aus, die Leitsätze bis auf Ziffer 1 b anzunehmen. Ziffer 1 b könne zwar als Grundlage für die Fraktion, nicht aber als Forderung für den ganzen Bundestag gelten. Die Fraktion müsse dafür sorgen, eine Mehrheit zur Geltung zu bringen. Dieser Notwendigkeit scheine die Geschäftsordnung nach allem, was er gehört habe, nicht zu entsprechen. Eine persönliche Vertretung werde ja nicht ausgeschlossen.</p>
-				<p>Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> gibt zu bedenken, daß bei Beratung einer Vorlage in mehreren Ausschüssen die Beteiligten doch Zutritt haben müßten. In diesem Zusammenhang stelle sie die Frage, ob diese Anliegen an anderer Stelle der Geschäftsordnung geregelt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> sieht hierin eine schlechte Argumentation. Der Sinn der Mitberatung bestehe nicht darin, eine Vorlage, die in einem Ausschuß durchgefallen sei, in einem anderen durchzuziehen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StraußFranzJosef_1949-09-07">Strauß</name> stellt fest, daß alle übrigen Leitsätze von der Fraktion akzeptiert werden. Auch bei der Abstimmung über den Leitsatz 1 b ergibt sich eine Mehrheit für die Beibehaltung bei zahlreichen Gegenstimmen und einigen Enthaltungen.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-05_1965-10-26-t1105_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#FranzCorinna"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PippelLaura"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1961-1966. 4 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/IV</title>
+                  <author>Corinna Franz</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/968631657</idno>
+                  <idno>https://d-nb.info/969682360</idno>
+                  <idno>https://d-nb.info/969682646</idno>
+                  <idno>https://d-nb.info/969682670</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VII-001-1010/1</idno>
+                     <objectName>[Nicht überliefert]</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 26. Oktober 1965</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>5 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1965-10-26">
+               <time type="start" when="11:05:00"/>
+               <time type="end" when="12:05:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#StraussFranzJosef_1949-09-07"/>
+            <idno type="sitzung">
+               <idno type="wp">05</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-01" who="#WeistenhoeferSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2021-11-12" who="#WeistenhoeferSimon" status="draft" n="4">Header ausgefüllt</change>
+         <change when="2022-09-08" who="#WeistenhoeferSimon" status="draft" n="5">SVPs</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-05_1965-10-26-t1105_EP_SVP-1" corresp="#cdu-csu-05_1965-10-26-t1105_EP_div_SVP-1">A. TOP 1: Wahl der stv. Fraktionsvorsitzenden und parlamentarischen Geschäftsführer. – TOP 2: Bericht des <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Bundeskanzlers</name>. – TOP 3: Besetzung der Ausschüsse, Ausschussarbeit.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-05_1965-10-26-t1105_EP_div_SVP-1">
+            <head>A.</head>
+            <p>[1. Wahl der stv. Fraktionsvorsitzenden und parlamentarischen Geschäftsführer]</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> berichtet zu Beginn der Sitzung über die Beratungen des Vorstandes, der der Fraktion zur Fortsetzung des Ausbaus der Fraktionsführung die Wahl von vier stellvertretenden Vorsitzenden empfehle, und zwar Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>, <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>, <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> und <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>. Ebenfalls zur Sprache gekommen sei die Frage der sechs Arbeitskreisvorsitzenden. Hierzu schlage der Vorstand vor, diese Sache einstweilen zurückzustellen, weil die Frage, ob fünf oder sechs Arbeitskreise eingerichtet werden sollen, noch offenstehe, da Arbeitskreis VI nicht ganz harmonisch abgestimmt war. Trotzdem sollte ein sechster Arbeitskreis im Zusammenhang mit den Aufgaben einer formierten Gesellschaft gebildet werden. Auch die personelle Besetzung der Arbeitskreise III und VI stehe noch aus. Bei diesen Wahlen, die in der kommenden Woche vorzunehmen seien, sollen auch gebietsmäßige Rücksichten, besonders hinsichtlich Rheinland-Pfalz und Baden-Württemberg, wahrgenommen werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LeichtAlbert_1957-10-15">Leicht</name> erinnert daran, daß beabsichtigt war, die Wahlen bis zur Vorlage eines Gesamttableaus zu verschieben. Nach den eben abgegebenen Erklärungen verzichte er auf diesen Antrag, bitte aber die Fraktion, alles zu tun, um das Gesamttableau zu erarbeiten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> betont, die Wahl zum stellvertretenden Vorsitzenden gelte vorerst für ein Jahr und werde dann später durch erneute Wahl auf drei Jahre verlängert. Gegen dieses Vorgehen erhebt sich nur geringer Widerspruch. Zu Wahlhelfern werden <name type="Person" role="Erwaehnung" ref="#WoernerManfred_1965-10-19">Wörner</name>, <name type="Person" role="Erwaehnung" ref="#HauserAlo_1965-10-19">Hauser</name>, <name type="Person" role="Erwaehnung" ref="#HaefeleHansjoerg_1965-10-19">Häfele</name>, <name type="Person" role="Erwaehnung" ref="#JostenJohannPeter_1953-10-06">Josten</name> und <name type="Person" role="Erwaehnung" ref="#LenzeFranz_1953-10-06">Lenze</name> bestellt.</p>
+            <p>An der Abstimmung beteiligen sich 201 Abgeordnete. Eine Stimme war ungültig. Sieben Abgeordnete enthielten sich der Stimme. Von den abgegebenen gültigen Stimmen erhielten:</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Frau <name type="Person" role="Erwaehnung" ref="#BrauksiepeAenne_1949-09-07">Brauksiepe</name>
+                  </cell>
+                  <cell>174,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BlankTheodor_1949-09-07">Blank</name>
+                  </cell>
+                  <cell>166,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name>
+                  </cell>
+                  <cell>157,</cell>
+               </row>
+               <row>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#StruveDetlef_1949-09-07">Struve</name>
+                  </cell>
+                  <cell>158.</cell>
+               </row>
+            </table>
+            <p>Alle Gewählten nehmen die Wahl an.</p>
+            <p>Anschließend bestellt die Fraktion einstimmig in nicht geheimer Wahl <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name> und <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name> zu parlamentarischen Geschäftsführern.</p>
+            <p>[2. Bericht des Bundeskanzlers]</p>
+            <p>Bundeskanzler Prof. <name type="Person" role="Sprecher" ref="#ErhardLudwig_1949-09-07">Erhard</name>: »Meine Damen und Herren, liebe Parteifreunde. Ich bin einigermaßen erleichtert, daß ich diese schwierige Aufgabe der Regierungsbildung hinter mir habe. Es ging weniger um die Sache, mehr um die Personen, und ich gestehe frank und frei, daß mir das Geschäft eines Menschenhandels wenig liegt und daß ich auch nicht die Eigenschaften eines englischen Premiers habe.</p>
+            <p>Wir können an die Arbeit gehen, auf die ich mich trotz aller Schwere und Sorgen freue, denn jetzt muß angepackt werden. Ich bitte Sie, zu mir zu stehen, denn die Entscheidungen werden nicht leicht sein, aber es sind die Entscheidungen, die das deutsche Volk erwartet, die unsere Wirtschaft und finanzielle Sicherheit von uns aus gewährleisten. Das ist eine große Aufgabe, und daran wird einmal diese Regierung und dieses Parlament gemessen werden. Es sind zwar noch Ressortabgrenzungen im Gang, die aber nicht dramatisch sind, so daß heute nachmittag die Vereidigung stattfinden kann. Die Kabinettsbildung war dadurch erschwert, daß wir die Zusage von <name type="Person" role="Erwaehnung" ref="#MikatPaul_1969-10-20">Mikat</name> hatten, und dieser am nächsten Tag erklärt hat, er könne den Ministerposten nicht übernehmen, da er nicht Abgeordneter ist. Dadurch waren eine Reihe von Positionen im Gespräch. Ich möchte <name type="Person" role="Erwaehnung" ref="#LueckePaul_1949-09-07">Lücke</name> danken, der sich nicht nach dem Innenminister drängt, der aber um der Sache willen manche Bedenken zurückstellte (Beifall). Er verdient wirklich unseren Dank. Manche Sorge, die durch das Freiwerden des Wohnungsbauministeriums entstanden ist, kann ich zerstreuen, denn das wesentlichste Element, die Raumplanung, kommt vom Wohnungsbauministerium ins Innenministerium. Das ist die eigentlich interessanteste Aufgabe, die auch für das deutsche Volk von Faszination sein wird. Wohnungsbau und Städteplanung bleibt zwar beim Wohnungsbauministerium, hängt aber von der Raumplanung ab.</p>
+            <p>Jede Kabinettsbildung – im positiven und negativen – bereitet manche Schmerzen, und es ist nicht leicht, alle Wünsche zu berücksichtigen. Aber ich meine, wir sollten uns daran gewöhnen, und das soll für die Zukunft gelten, daß wir das Amt eines Ministers nicht als Erbhof ansehen, sondern daß nichts natürlicher und würdiger ist, als die Funktion auch einmal aufzugeben. Vielleicht haben wir in der Vergangenheit allzusehr der Vorstellung angehangen, daß, wer ein Ministeramt verwaltet, einen Anspruch darauf hat und bei Entlassung disqualifiziert wird. Das ist eine falsche Betrachtungsweise, und ich möchte ausdrücklich erklären, daß nicht die Qualifikation den Ausschlag gab, sondern daß es ein natürlicher parlamentarischer Vorgang ist, der sich vollzieht.</p>
+            <p>Die Besetzung des neuen Kabinetts kennen Sie. Natürlich hätte es für diese oder jene Position eine idealere Gestalt gegeben, aber im ganzen ist das Kabinett wohlausgewogen, und ich glaube, daß es zu der Harmonie und auch zu dem Verhältnis zur Fraktion findet, daß wir eine ersprießliche Arbeit leisten können.«</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> dankt für den Bericht. Hinsichtlich der Bemerkung von den Erbhöfen werde es von der Arbeit der nächsten vier Jahre abhängen, ob es überhaupt Erbhöfe für die CDU/CSU geben werde.</p>
+            <p>Die Entscheidung, die Zuständigkeit für die Raumordnung wieder ins Innenministerium zu legen, halte er für dankenswert. Das neue Wohnungsbauministerium sei jetzt eine ausgesprochene Allzweckwaffe. Es sei sicher denkbar, daß nun nicht wieder »Gewissens-konflikte« auftauchten und man mit einer kontinuierlichen Arbeit des Ministers rechnen könne.</p>
+            <p>[3. Besetzung der Ausschüsse, Ausschußarbeit]</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> verliest zur Frage der Ausschußbesetzung die Leitsätze, die sich gegenüber der vergangenen Wahlperiode nicht geändert hätten:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>a) Von den bestehenden 28 Ausschüssen wurden 10 Ausschüsse zu sperrenden Ausschüssen gemacht.</p>
+                  <p>Verteidigung (5), Inneres (6), Recht (12), Haushalt (13), Finanzen (14), Wirtschaft (16), Ernährung (19), Sozialpolitik (20), Arbeit (21), Verkehr (23).</p>
+                  <p>Wer in einem sperrenden Ausschuß einen ordentlichen Sitz hat, kann in einem anderen Ausschuß kein ordentliches Mitglied mehr sein.</p>
+                  <p>b) Bei Abstimmung im Ausschuß sind nur die ordentlichen und stellvertretenden Mitglieder dieses Ausschusses stimmberechtigt.</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>Die stellvertretenden Fraktionsvorsitzenden können nicht Ausschußvorsitzende und nicht Mitglied in Europäischen Gremien sein.</p>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>Die Arbeitskreisvorsitzenden können nicht Ausschußvorsitzende und nicht Mitglied der Europäischen Gremien sein.</p>
+               </item>
+               <item>
+                  <label>4.</label>
+                  <p>Die Ausschußvorsitzenden können nicht Mitglied in der Europäischen Wirtschaftsgemeinschaft (Europa-Parlament) sein, wohl aber im Europarat.</p>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <p>Die ordentliche Mitgliedschaft in einem sperrenden Ausschuß ist unvereinbar mit der Mitgliedschaft in der EWG.</p>
+               </item>
+            </list>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> bezweifelt, ob eine einmalige Verlesung genüge, alle Konsequenzen zu begreifen. Andererseits solle die Fraktion <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> die Vollmacht erteilen, nach diesen Grundsätzen zunächst einmal zu verfahren.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KuehnFriedrich_1961-10-17">Kühn</name> hält es für gefährlich, jetzt die Frage der Stimmberechtigung in den Ausschüssen, so wie es vorgeschlagen wurde, mitzuregeln. Man habe immer wieder feststellen müssen, daß mit ordentlichen und stellvertretenden Mitgliedern allein die Mehrheit nicht erreicht werden könne. Eine Entscheidung des Präsidenten laufe dahin, auch andere Mitglieder als stimmberechtigt anzuerkennen. Deshalb sollte diese Frage noch zurückgestellt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> erläutert, Punkt 1 b könne nur realisiert werden, wenn auch die anderen Fraktionen diesen Punkt ebenso handhabten. Immer wieder habe es sich bei Debatten, die die Interessen herausforderten, gezeigt, daß sich die Ausschüsse plötzlich mit Interessenvertretern anfüllten, wodurch Entscheidungen zustande kamen, die diesen Interessen entsprachen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DiebaeckerHermann_1957-10-15">Diebäcker</name> überlegt, ob man nicht zu einer stärkeren Reform der Ausschußarbeit kommen könne. Die Ausschüsse tagten stets zur gleichen Zeit, so daß es sinnlos erscheine, in mehreren Ausschüssen eine Mitarbeit zu versuchen. Es bestehe aber die Möglichkeit, die Zahl der Ausschüsse zu verkleinern. Jetzt habe man 15er, 23er und 27er Ausschüsse, wenn man auf 11, 17 und 21 verkleinere, würden etwa 162 Ausschußsitze eingespart. Die Fraktion mache sich selber etwas vor, wenn sie die Ausschüsse mit soundsoviel Abgeordneten besetze, die praktisch nicht zur Verfügung ständen. Diese Frage müsse man sich einmal überlegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RasnerWill_1953-10-06">Rasner</name> informiert die Fraktion über die Schritte des Bundestagspräsidenten, der im Ältestenrat dafür Sorge getragen habe, diese Vorschläge zur Änderung der Ausschußarbeit allen Fraktionen zugänglich zu machen. Man werde noch 14 Tage benötigen, diese Fragen zu klären. Ob die Zahl der Mitglieder so radikal gesenkt werden könne, erscheine auch angesichts der Gewichtigkeit der Ausschüsse problematisch. Der Unterschied der Arbeitsbelastung werde außerordentliche Ausmaße annehmen. Der Weg der sperrenden Ausschüsse sei sicher richtig, eventuell müßte die Zahl der sperrenden Ausschüsse noch vermehrt werden. Der Grundsatz, jeden Abgeordneten nur für einen Ausschuß zu benennen, lasse sich allerdings nicht durchhalten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrueckValentin_1953-10-06">Brück</name> bittet, hinsichtlich der Frage der Stimmberechtigung zu prüfen, wie die Anwesenheit von ordentlichen und stellvertretenden Mitgliedern sichergestellt werden könne. Die Vergangenheit habe bewiesen, daß die CDU/CSU öfters in der Minderheit war und eine Niederlage hinnehmen mußte. Eine solche Situation sollte man für die Zukunft unmöglich machen und darüber hinaus Leitsätze aufstellen in dem Sinne, [daß,] wenn ein ordentliches Mitglied mehrere Male unentschuldigt fehle, eine Änderung in der Ausschußbesetzung erfolgen könne.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> erwähnt, daß <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> zur Ergänzung der Leitsätze ebenfalls diese Anregung gemacht habe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BrandPeterWilhelm_1953-10-06">Brand</name> kündigt an, bevor jemand endgültig einem Ausschuß zugeteilt werde, einen Brief folgenden Inhalts zu versenden:</p>
+            <list type="undefined">
+               <item>
+                  <p>»Herrn/Frau …,</p>
+               </item>
+               <item>
+                  <p>Sie sind als ordentliches – stellvertretendes Mitglied für den Ausschuß … vorgemerkt. Im Interesse einer geordneten Parlamentsarbeit und einer unserer Fraktionsstärke entsprechenden Vertretung in den einzelnen Ausschüssen ist der pünktliche und regelmäßige Besuch der Ausschußsitzungen unbedingt erforderlich. Wer verspätet kommen oder die Sitzung vorzeitig verlassen muß oder sich von der ganzen Sitzung beurlauben möchte, muß dies rechtzeitig dem Fraktionsobmann des Ausschusses melden und von sich aus für einen Ersatzmann sorgen. Wer diese Verpflichtung in einer die Ausschußarbeit gefährdenden Weise versäumt, wird durch Vorstandsbeschluß gegen ein anderes Fraktionsmitglied ausgetauscht.</p>
+               </item>
+               <item>
+                  <p>Ihre obrige Nominierung wird erst gültig, nachdem Sie die beigefügte Empfangsbestätigung unterschrieben zurückgesandt haben.</p>
+               </item>
+               <item>
+                  <p>Empfangsbestätigung</p>
+               </item>
+               <item>
+                  <p>Die Benachrichtigung meiner Nominierung für den … habe ich erhalten, nehme sie an und habe von den sich hieraus für mich ergebenden Verpflichtungen zustimmend Kenntnis genommen.</p>
+               </item>
+            </list>
+            <p rendition="center">………</p>
+            <p rendition="center">Unterschrift«</p>
+            <p>Er bitte, diese Richtlinien vorläufig einmal anzunehmen. Die bis jetzt geleistete Arbeit der Kommission habe dieser Vorarbeit gegolten, die erforderlich war, um die Ausschüsse so bald wie möglich zu besetzen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BesoldAnton_1949-09-07">Besold</name> hält die Vorschläge zur Abstimmungsberechtigung zwar für ideal, wenn auch nicht für praktikabel. Es handele sich doch nur um Interessengruppen, deren Einfluß doch von den ordentlichen und stellvertretenden Mitgliedern verhindert werden könne. Wenn aber die Notwendigkeit bestehe, eine qualifizierte Abstimmungsmöglichkeit zu schaffen, müßten andere Mitglieder auch hinzugezogen werden können. Es geschehe aber öfters, daß aus der Arbeitsüberlastung heraus eine richtige Besetzung des Ausschusses nicht möglich ist. Wenn es dann zu Fehlentscheidungen komme, sei das unangenehmer, als wenn einmal ein anderer Abgeordneter in einen solchen Ausschuß kommen könne. Diese Sache sei einfach unpraktikabel und müsse schließlich und endlich vom Politischen und nicht vom Erzieherischen her geregelt werden.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#KalinkeMargot_1949-09-07">Kalinke</name> setzt sich dafür ein, die Aufgabe der Ausschußbesetzung nicht noch mühseliger zu machen. Die Sache müsse praktikabel bleiben. Wenn es zu einer Abrede zwischen CDU/CSU und SPD hinsichtlich der Stimmberechtigung der ordentlichen und stellvertretenden Mitglieder komme, könnte diese bei der SPD verwirklicht werden, bei der CDU/CSU aber nicht. In der Koalition komme es oft auf eine Stimme an, und die Lage im Ausschuß werde bei einer harten Opposition auch härter werden.</p>
+            <p>Die Befürchtung, daß Interessenvertreter in die Ausschüsse eindringen, bestehe wohl nicht. Jeder Abgeordnete sei in seiner Entscheidung dem Grundgesetz verpflichtet und müsse die Belange aller Seiten wahrnehmen. Darin liege ein gemeinsames oberstes Gesetz. Auch aus diesem Grunde sollte die Fraktion diesem Leitsatz nicht zustimmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> macht darauf aufmerksam, der Leitsatz sei in der Geschäftsordnung des Bundestages zu finden, wenn er auch bisher keine Beachtung fand.</p>
+            <p>Bundestagspräsident Dr. <name type="Person" role="Sprecher" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name> erwähnt, es gebe natürlich immer die Möglichkeit, sich über die Geschäftsordnung hinwegzusetzen. Daß der neue Bundestag sich aber nicht den Schlendrian der beiden letzten Perioden erlauben könne, müsse auch klar sein. Man habe ja gesehen, wie weit man mit der Weimarer Verfassung gekommen sei, die von den Staatsrechtlern als geradezu ideal beurteilt wurde. Man habe nun versucht, daraus Konsequenzen für die Geschäftsordnung des Bundestages zu ziehen. In Anbetracht dessen werde der Bundestagspräsident von Amts wegen gehalten sein, den § 73 Ziffer 4 der Geschäftsordnung durchzusetzen und durchzuhalten, es sei denn, daß der Bundestag eine Änderung der Geschäftsordnung beschließe. »Als Zuhörer teilnehmen« besage das Ausgeschlossensein von der Abstimmung. So laute das geltende Recht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RiedelClemens_1957-10-15">Riedel</name> warnt, nach dem Vorschlag <name type="Person" role="Erwaehnung" ref="#DiebaeckerHermann_1957-10-15">Diebäckers</name> zu verfahren. Bei dem geübten Proporzdenken würde das bedeuten, daß kleine Gruppen nie zum Zuge kämen. Weiter werde ein neuer »Schwur« vorgeschlagen, dessen Anwendbarkeit sich erst noch erweisen müsse. Die Ausschußbesetzung sollte zunächst auch nur für ein Jahr erfolgen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> empfiehlt, dem Vorschlag <name type="Person" role="Erwaehnung" ref="#BrandPeterWilhelm_1953-10-06">Brands</name> beizutreten. Wo dieser Grundsatz angewandt wurde, habe die Sache gut funktioniert. Man sollte nicht gleich der Opposition mehr Disziplin unterstellen als der eigenen Fraktion. Im Hause herumzulaufen und irgendeinen Abgeordneten für die Abstimmung zu finden, halte er für unwürdig, auch für den Abgeordneten selbst.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) spricht sich dafür aus, die Leitsätze bis auf Ziffer 1 b anzunehmen. Ziffer 1 b könne zwar als Grundlage für die Fraktion, nicht aber als Forderung für den ganzen Bundestag gelten. Die Fraktion müsse dafür sorgen, eine Mehrheit zur Geltung zu bringen. Dieser Notwendigkeit scheine die Geschäftsordnung nach allem, was er gehört habe, nicht zu entsprechen. Eine persönliche Vertretung werde ja nicht ausgeschlossen.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#Pitz-SavelsbergElisabeth_1953-10-06">Pitz-Savelsberg</name> gibt zu bedenken, daß bei Beratung einer Vorlage in mehreren Ausschüssen die Beteiligten doch Zutritt haben müßten. In diesem Zusammenhang stelle sie die Frage, ob diese Anliegen an anderer Stelle der Geschäftsordnung geregelt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#RufThomas_1953-10-06">Ruf</name> sieht hierin eine schlechte Argumentation. Der Sinn der Mitberatung bestehe nicht darin, eine Vorlage, die in einem Ausschuß durchgefallen sei, in einem anderen durchzuziehen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StraussFranzJosef_1949-09-07">Strauß</name> stellt fest, daß alle übrigen Leitsätze von der Fraktion akzeptiert werden. Auch bei der Abstimmung über den Leitsatz 1 b ergibt sich eine Mehrheit für die Beibehaltung bei zahlreichen Gegenstimmen und einigen Enthaltungen.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

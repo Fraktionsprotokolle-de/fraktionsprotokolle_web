@@ -1,542 +1,1128 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-08_1977-01-18-t1745_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Sitzung der Landesgruppe</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1972-1983.</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/II</title>
-						<author>Volker Stalmann</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2019</date>
-						<idno type="DNB">https://d-nb.info/1193134889</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
-							<idno>LG 1977: 2</idno>
-							<objectName>Protokoll über die 110. Sitzung der CSU-Landesgruppe am 18.1.1977</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Ediertes Sitzungsprotokoll der CSU-Landesgruppe im Deutschen Bundestag vom 18. Januar 1977</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>7 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-			<stdVals> 					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p> 				</stdVals> 			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1977-01-18"><time type="start" when="17:45:00"/><time type="end" when="19:50:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#ZimmermannFriedrich_1957-10-15"/><idno type="sitzung"><idno type="wp">08</idno><idno type="Fraktion-Landesgruppe">CSU-LG</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-29" who="#StalmannVolker" status="draft" n="3">Header ausgefüllt</change>
-			<change when="2022-05-13" who="#WeistenhoeferSimon" status="draft" n="4">Bibl.+ Ref.</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="Anwesenheitsliste">
-				<head>Anwesend:</head>
-				<p><name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name>, <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, <name type="Person" role="Erwaehnung" ref="#BecherWalter_1965-10-19">Becher</name>, <name type="Person" role="Erwaehnung" ref="#BiehleAlfred_1969-10-20">Biehle</name>, <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name>, <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#EngelsbergerMatthias_1969-10-20">Engelsberger</name>, <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name>, <name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name>, <name type="Person" role="Erwaehnung" ref="#GerlachPaul_1969-10-20">Gerlach</name>, <name type="Person" role="Erwaehnung" ref="#GierensteinKarlHeinz_1965-10-19">Gierenstein</name>, <name type="Person" role="Erwaehnung" ref="#GlosMichael_1976-12-14">Glos</name>, <name type="Person" role="Erwaehnung" ref="#HaberlFritz_1976-12-14">Haberl</name>, <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name>, <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name>, <name type="Person" role="Erwaehnung" ref="#HoeffkesPeterWilhelm_1976-12-14">Höffkes</name>, <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name>, <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>, <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name>, <name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name>, <name type="Person" role="Erwaehnung" ref="#KleinHans_1976-12-14">Klein</name>, <name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name>, <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name>, <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name>, <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name>, <name type="Person" role="Erwaehnung" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name>, <name type="Person" role="Erwaehnung" ref="#LintnerEduard_1976-12-14">Lintner</name>, <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>, <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name>, <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name>, <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name>, <name type="Person" role="Erwaehnung" ref="#RegenspurgerOtto_1976-12-14">Regenspurger</name>, <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>, <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name>, <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name>, <name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name>, <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>, <name type="Person" role="Erwaehnung" ref="#SchneiderOscar_1969-10-20">Schneider</name>, <name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name>, <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name>, <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name>, <name type="Person" role="Erwaehnung" ref="#StauffenbergFranzLudwigSchenk_1972-12-13">Graf von Stauffenberg</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#VossFriedrich_1976-12-14">Voss</name>, <name type="Person" role="Erwaehnung" ref="#WaigelTheodor_1972-12-13">Waigel</name>, <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name>, <name type="Person" role="Erwaehnung" ref="#WittmannFritz_1971-09-06">Wittmann</name>, <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>, <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>.</p>
-			</div>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="csu-lg-08_1977-01-18-t1745_EP_SVP-1" corresp="#csu-lg-08_1977-01-18-t1745_EP_div_SVP-1">A. Bericht des Landesgruppenvorsitzenden <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> über das Ergebnis der interfraktionellen Verhandlungen über die Besetzung der Bundestagsausschüsse mit anschließender Aussprache.</item>
-					<item xml:id="csu-lg-08_1977-01-18-t1745_EP_SVP-2" corresp="#csu-lg-08_1977-01-18-t1745_EP_div_SVP-2">B. Besetzung der Bundestagsausschüsse.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="csu-lg-08_1977-01-18-t1745_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> eröffnet die Landesgruppensitzung mit einem besonderen Dank an den Parlamentarischen Geschäftsführer <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name> für seine Leistungen bei den interfraktionellen Verhandlungen über die Vergabe der Ausschüsse. Dieser Dank sei besonders wichtig, da man bei der gemeinsamen Fraktionssitzung nur den Einsatz des Parlamentarischen Geschäftsführers <name type="Person" role="Erwaehnung" ref="#JenningerPhilipp_1969-10-20">Jenninger</name><seg type="note"><note xml:id="csu-lg-08_1977-01-18-t1745_EP_FN001" type="comment"><p>Philipp <name type="Person" role="Erwaehnung" ref="#JenningerPhilipp_1969-10-20">Jenninger</name>, Erster Parlamentarischer Geschäftsführer der CDU/CSU-Bundestagsfraktion.</p></note></seg> hervorgehoben habe. Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> betont, daß das Verhandlungsergebnis sehr beachtlich sei. Es sei auch besonders hervorzuheben, daß die CSU 3 Ausschußvorsitzende von den insgesamt 10 Ausschußvorsitzenden, die die CDU/CSU stellt, einsetzen kann. Ein spektakuläres Ergebnis wäre auch die Zahl der Obleute, die durch die CSU gestellt werden. Dies wären für den Finanzausschuß Herr Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name>, für den Innenausschuß Herr <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name> und für den Wirtschaftsausschuß Herr <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>. Nach diesen Ausführungen eröffnet Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> die Debatte.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#RiedlErich_1969-10-20">Riedl</name> bemängelt die Besetzung des Haushaltsausschusses. Er betont, daß nunmehr die CSU keinen Vorsitzenden oder Stellvertreter im Haushaltsausschuß stellt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> sagt dazu, daß nach Abwägung aller Dinge dies Ergebnis trotzdem optimal sei.</p>
-				<p>Herr <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> sagt zu Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>, daß über den Vorsitz des Rechnungsprüfungsausschusses noch nicht endgültig entschieden sei und daß man darüber evtl. noch mit der CDU sprechen könne.</p>
-				<p>In der folgenden weiteren kurzen Diskussion über die Besetzung des Haushaltsausschusses zwischen Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> und Dr. <name type="Person" role="Sprecher" ref="#RiedlErich_1969-10-20">Riedl</name> wird auch der Obmann des Haushaltsausschusses angesprochen. Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> betont dabei, daß die CSU im Gesamtbereich des Haushalts berücksichtigt werden muß.</p>
-				<p>Zu den Obleuten sagt Herr <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Röhner</name>, daß in der Wunschliste für Obleute, die dem Landesgruppenvorstand am 14.12.1976 vorlag, Wünsche für den Haushalts-, Finanz-, Wirtschafts-, Verkehrs-, Innen-, Auswärtiger Ausschuß, Sportausschuß, Jugendausschuß vorlagen. Man hatte sich dann auf das Votum für einen sogenannten »klassischen« Ausschuß und einen sonstigen Ausschuß geeinigt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> stellt nochmals das Gesamtergebnis als unerwartet gut heraus. Wenn die CDU/CSU 10 von 19 Ausschußvorsitzenden stellen kann und die CSU von den 10 drei durch ihre Leute, so läge die Quote weit über dem Durchschnitt. Die CDU wäre zumindest sehr sauer auf die CSU, da sie glaubt, daß sie weit über die Notwendigkeit dotiert wäre.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> unterstreicht den Erfolg der Verhandlung.</p>
-				<p>Bei der anschließenden Abstimmung wird das Verhandlungsergebnis bei einer Enthaltung einstimmig angenommen.</p>
-			</div>
-			<div type="SVP" xml:id="csu-lg-08_1977-01-18-t1745_EP_div_SVP-2">
-				<head>B.</head>
-				<p>Anschließend verliest der <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Parlamentarische Geschäftsführer</name> den Vorschlag des Vorstandes zur Ausschußbesetzung. Bei der Besetzung des Europäischen Parlaments schlägt der Vorstand Herrn <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name>, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name> und Herrn Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> oder Herrn <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name> vor. Die Entsendung von Herrn <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name> und Dr. <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name> ins Europäische Parlament beschließt die Landesgruppe bei 2 Enthaltungen von Betroffenen einstimmig. Die Abstimmung über die weitere Besetzung zwischen Herrn Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> und Herrn <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name> führt zu folgendem Ergebnis: Herr Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> 35 Stimmen, Herr <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name> 14 Stimmen, 1 Stimme für einen anderen Abgeordneten, 1 Enthaltung. Insgesamt wurden 51 Stimmen abgegeben.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> betont nochmals, daß es völlig klar sei, daß nicht alle Wünsche erfüllt werden konnten. Er bittet jedoch zu glauben, daß der Vorstand unter Abwägung aller Gesichtspunkte entschieden hat. Man konnte erreichen, daß jedes Mitglied der Landesgruppe eine Hauptaufgabe bekommt. Es wäre auf keinen Fall irgendeine Hinterlist überlegt worden. Er bittet auch darum, daß man dem Vorstand keine bösen Absichten bei der Ablehnung unterstelle.</p>
-				<p>Anschließend verliest der Parlamentarische Geschäftsführer <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name> die Ausschußliste.</p>
-				<p>Dann stellt Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> die vorgeschlagene Besetzung der einzelnen Ausschüsse zur Diskussion.</p>
-				<p>Die Besetzung der Ausschüsse 1) und 2) wird ohne Diskussion beschlossen.</p>
-				<p>Zur Besetzung des Ausschusses 3) (Auswärtiger Ausschuß) hinsichtlich der stellvertretenden Mitglieder bittet Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> die Verdienste von <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> zu würdigen. Er schlägt Herrn <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> vor, auf seine Kandidatur zu verzichten, da er kraft Amtes sowieso jeden Ausschuß betreten könne.<seg type="note"><note xml:id="csu-lg-08_1977-01-18-t1745_EP_FN002" type="comment"><p><bibl type="btp">Richard <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> war Bundestagsvizepräsident. Zu seiner Wahl am 14. Dezember 1976 vgl. <ref type="external" target="08/01">BT Plenarprotokoll 08/1</ref>, S. 6.</bibl></p></note></seg></p>
-				<p>Nachdem Herr <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> diesem Vorschlag zustimmt, wird beschlossen, daß <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> stellvertretendes Mitglied des Auswärtigen Ausschusses wird.</p>
-				<p>Die Besetzung der Ausschüsse 4), 5) und 6) wird ohne Diskussion beschlossen.</p>
-				<p>Zur Besetzung des Ausschusses 7) (Finanzausschuß) sagt Herr <name type="Person" role="Sprecher" ref="#HaberlFritz_1976-12-14">Haberl</name>, daß er sich um diesen Ausschuß beworben habe und nochmals bittet, zu überprüfen, ob er nicht zumindest als stellvertretendes Mitglied berücksichtigt werden kann.</p>
-				<p>Nachdem Herr <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Röhner</name> begründet, warum die Besetzung des Ausschusses durch Herrn <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>, Herrn <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name> und Herrn <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name> vorgezogen wurde, wird der erstgemachte Vorschlag beschlossen.</p>
-				<p>Die Besetzung der Ausschüsse 8) und 9) wird ohne Diskussion beschlossen.</p>
-				<p>Zur Besetzung des Ausschusses 10) (Ausschuß für Ernährung, Landwirtschaft und Forsten) bittet Dr. <name type="Person" role="Sprecher" ref="#KunzMax_1972-12-13">Kunz</name>, ihn möglichst nicht zu berücksichtigen. Nach kurzer Diskussion erklärte sich Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name> doch zur Mitarbeit bereit.</p>
-				<p>Der Vorschlag des Vorstandes wird danach beschlossen.</p>
-				<p>Zum Vorschlag zur Besetzung des Ausschusses 11) (Ausschuß für Arbeit und Sozialordnung) bedauert Herr <name type="Person" role="Sprecher" ref="#ZieglerErich_1963-04-01">Ziegler</name>, daß seine Bewerbung nicht berücksichtigt worden wäre. Vor allen Dingen hätte er erwartet, daß man ihn gehört hätte, wenn man ihn nicht berücksichtigen wollte.</p>
-				<p>Herr <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Röhner</name> erklärt, daß allgemein keine Vorgespräche stattgefunden hätten.</p>
-				<p>Herr <name type="Person" role="Sprecher" ref="#HoeslAlex_1961-10-17">Hösl</name>, Herr Dr. <name type="Person" role="Sprecher" ref="#JobstDionys_1969-10-20">Jobst</name> und Herr <name type="Person" role="Sprecher" ref="#KiechleIgnaz_1969-10-20">Kiechle</name> begründen, daß sie gerne stellvertretende Mitglieder des Verteidigungsausschusses geworden wären.</p>
-				<p>Nachdem Herr <name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name> seine Bewerbung zurückzieht und <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> seinen Platz freigibt, wird zwischen Herrn <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name> und Herrn Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> abgestimmt. Die Abstimmung endet mit folgendem Ergebnis:</p>
-				<p>Herr Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> 29 Stimmen, Herr <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name> 18 Stimmen, 3 Enthaltungen.</p>
-				<p>Insgesamt wurden 50 Stimmen abgegeben.</p>
-				<p>Als stellvertretende Mitglieder des Verteidigungsausschusses sind damit Herr Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>, Herr Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> und Frau <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name> gewählt.</p>
-				<p>Die Besetzung der Ausschüsse 13) bis 19) sind ohne Diskussion mit folgenden Änderungen beschlossen:</p>
-				<p>Ausschuß 13): Als stellvertretendes Mitglied wird statt Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> Herr Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name> gewählt.</p>
-				<p>Ausschuß 14): Herr <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name> wird statt Herrn <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> gewählt.</p>
-				<p>Im Ausschuß 15) werden als Stellvertreter Herr Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name> und Herr <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name> statt Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> und Herr <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name> gewählt.</p>
-				<p>Im Ausschuß 18) wird statt Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name> Herr Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> gewählt.</p>
-				<p>Somit ist die Besetzung der Ausschüsse gemäß der beiliegenden Liste beschlossen.</p>
-				<p>Bei der Besetzung der sonstigen Gremien wird der Vorschlag des Vorstandes mit der Abweichung beschlossen, daß als Mitglied des Rundfunkrates des Deutschlandfunks <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> statt Dr. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name> eingesetzt wird.</p>
-				<p>Nachdem es über die Besetzung des Rundfunkrates der Deutschen Welle zur kurzen Diskussion kommt, zu der u.a. Dr. <name type="Person" role="Sprecher" ref="#RiedlErich_1969-10-20">Riedl</name> sagt, daß über den Haushaltsausschuß eine Überprüfung möglich ist, endet die Landesgruppensitzung um 19.50 Uhr.</p>
-				<p>Ausschußbesetzung</p>
-				<table rendition="#hidden">
-					<row>
-						<cell>Ausschuß</cell>
-						<cell>ordentliche Mitglieder (CSU)</cell>
-						<cell>stellvertretende Mitglieder (CSU)</cell>
-					</row>
-					<row>
-						<cell>1. Ausschuß für Wahlprüfung, Immunität und Geschäftsordnung <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#SchulteManfred_1965-10-19">Schulte</name> (Unna) (SPD)</p></item>
-								<item><p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#MiltnerKarl_1969-10-20">Miltner</name> (CDU)</p></item>
-								<item><p>Obmann: –</p></item>
-							</list></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name></cell>
-					</row>
-					<row>
-						<cell>Wahlprüfungsausschuß</cell>
-						<cell>Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name></cell>
-						<cell><name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name></cell>
-					</row>
-					<row>
-						<cell>2. Petitionsausschuß <list type="undefined">
-								<item><p>Vorsitz: Frau <name type="Person" role="Erwaehnung" ref="#BergerLieselotte_1971-08-26">Berger</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MuellerRichard_1972-12-13">Müller</name> (Bayreuth) (SPD)</p></item>
-								<item><p>Obmann: –</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HoeffkesPeterWilhelm_1976-12-14">Höffkes</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#RegenspurgerOtto_1976-12-14">Regenspurger</name></p></item>
-							</list>
-						</cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#LintnerEduard_1976-12-14">Lintner</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#VossFriedrich_1976-12-14">Voss</name></p></item>
-							</list>
-						</cell>
-					</row>
-					<row>
-						<cell>3. Auswärtiger Ausschuß <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#CorterierPeter_1969-10-20">Corterier</name> (SPD)</p></item>
-								<item><p>Obmann: –</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#BecherWalter_1965-10-19">Becher</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#StauffenbergFranzLudwigSchenk_1972-12-13">Graf Stauffenberg</name></p></item>
-							</list>
-						</cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>4. Innenausschuß <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#WernitzAxel_1972-12-13">Wernitz</name> (SPD)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#BergerUlrich_1957-10-15">Berger</name>, Ulrich (CDU)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name> (CSU)</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#GerlachPaul_1969-10-20">Gerlach</name></p></item>
-								<item><p>Regenspurger</p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#WittmannFritz_1971-09-06">Wittmann</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>5. Sportausschuß <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#EversHans_1969-10-20">Evers</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> (FDP)</p></item>
-								<item><p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#SchaeubleWolfgang_1972-12-13">Schäuble</name> (CDU)</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#BiehleAlfred_1969-10-20">Biehle</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>6. Rechtsausschuß <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#LenzCarlOtto_1965-10-19">Lenz</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#EmmerlichAlfred_1972-12-13">Emmerlich</name> (SPD)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) (CDU)</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#WittmannFritz_1971-09-06">Wittmann</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#GerlachPaul_1969-10-20">Gerlach</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>7. Finanzausschuß <list type="undefined">
-								<item><p>Vorsitz: Frau <name type="Person" role="Erwaehnung" ref="#FunckeLiselotte_1961-10-17">Funcke</name> (FDP)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MeinikeErich_1969-10-20">Meinike</name> (Oberhausen) (SPD)</p></item>
-								<item><p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name> (CSU)</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#VossFriedrich_1976-12-14">Voss</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>8. Haushaltsausschuß <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#BußmannBernhard_1969-10-20">Bußmann</name> (SPD)</p></item>
-								<item><p>Obmann: –</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#GlosMichael_1976-12-14">Glos</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#WaigelTheodor_1972-12-13">Waigel</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name></p></item>
-								<item><p>Röhner</p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>9. Wirtschaftsausschuß <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#ReuschenbachPeterW_1972-12-13">Reuschenbach</name> (SPD)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name> (CSU)</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HaberlFritz_1976-12-14">Haberl</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#EngelsbergerMatthias_1969-10-20">Engelsberger</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>10. Ausschuß für Ernährung, Landwirtschaft und Forsten <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#SchmidtRMartin_1949-09-07">Schmidt</name> (Gellersen) (SPD)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> (Wilhelm.) (CDU)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#SussetEgon_1969-10-20">Susset</name> (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#GlosMichael_1976-12-14">Glos</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>11. Ausschuß für Arbeit und Sozialordnung <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#RappeHermann_1972-12-13">Rappe</name> (Hildesheim) (SPD)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MuellerAdolf_1961-10-17">Müller</name> (Remscheid) (CDU)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#ZinkOtto_1965-10-19">Zink</name> (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HoepfingerStefan_1976-12-14">Höpfinger</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>12. Verteidigungsausschuß <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#WoernerManfred_1965-10-19">Wörner</name> (CDU)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#BuchstallerWerner_1961-10-17">Buchstaller</name> (SPD)</p></item>
-								<item><p>Obmann: –</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#BiehleAlfred_1969-10-20">Biehle</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#GierensteinKarlHeinz_1965-10-19">Gierenstein</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>13. Ausschuß für Jugend, Familie und Gesundheit <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#HauckRudolf_1965-10-19">Hauck</name> (SPD)</p></item>
-								<item><p>Stv. Vorsitz: Frau <name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name> (CSU)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#BurgerAlbert_1965-10-19">Burger</name> (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#LintnerEduard_1976-12-14">Lintner</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HoepfingerStefan_1976-12-14">Höpfinger</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>14. Ausschuß für Verkehr und für das Post- und Fernmeldewesen <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> (CSU)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#BatzHans_1969-10-20">Batz</name> (SPD)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#SchulteDieter_1969-10-20">Schulte</name> (Schw. Gmünd) (CDU)</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name></p></item>
-								<item><p>Lemmrich</p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name></p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HaberlFritz_1976-12-14">Haberl</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>15. Ausschuß für Raumordnung, Bauwesenund Städtebau <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#SchneiderOscar_1969-10-20">Schneider</name> (CSU)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#HenkeErich_1969-10-20">Henke</name> (SPD)</p></item>
-								<item><p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#JahnFriedrich-Adolf_1972-12-13">Jahn</name> (Münster) (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#SchneiderOscar_1969-10-20">Schneider</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>16. Ausschuß für innerdeutsche Beziehungen <list type="undefined">
-								<item><p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name> (SPD)</p></item>
-								<item><p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#WrangelOlaf_1965-10-19">von Wrangel</name> (CDU)</p></item>
-								<item><p>Obmann: –</p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>17. Ausschuß für Forschung und Technologie <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name> (CSU)</p></item>
-								<item><p>Stv. Vorsitz: Prof. <name type="Person" role="Erwaehnung" ref="#LaermannKarl-Hans_1974-06-28">Laermann</name> (FDP)</p></item>
-								<item><p>Obmann: <name type="Person" role="Erwaehnung" ref="#LenzerChristian_1969-10-20">Lenzer</name> (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#EngelsbergerMatthias_1969-10-20">Engelsberger</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>18. Ausschuß für Bildung und Wissenschaft <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#MeineckeRolf_1965-10-19">Meinecke</name> (Hamburg) (SPD)</p></item>
-								<item><p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name> (München) (CSU)</p></item>
-								<item><p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#GoelterGeorg_1969-10-20">Gölter</name> (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#KleinHans_1976-12-14">Klein</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name></p></item>
-							</list></cell>
-					</row>
-					<row>
-						<cell>19. Ausschuß für wirtschaftliche Zusammenarbeit <list type="undefined">
-								<item><p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#HoltzUwe_1972-12-13">Holtz</name> (SPD)</p></item>
-								<item><p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#KoehlerVolkmar_1972-12-13">Köhler</name> (Wolfsburg) [(CDU)]</p></item>
-								<item><p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#TodenhoeferJuergen_1972-12-13">Todenhöfer</name> (CDU)</p></item>
-							</list></cell>
-						<cell>
-							<list type="undefined">
-								<item><p><name type="Person" role="Erwaehnung" ref="#HoeffkesPeterWilhelm_1976-12-14">Höffkes</name></p></item>
-								<item><p><name type="Person" role="Erwaehnung" ref="#KleinHans_1976-12-14">Klein</name></p></item>
-							</list></cell>
-						<cell><list type="undefined">
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name></p></item>
-								<item><p>Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name></p></item>
-							</list></cell>
-					</row>
-				</table>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="csu-lg-08_1977-01-18-t1745_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Sitzung der Landesgruppe</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CSU-Landesgruppe im Deutschen Bundestag. Sitzungsprotokolle 1972-1983.</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien, Vierte Reihe, Bd. 15/II</title>
+                  <author>Volker Stalmann</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2019</date>
+                  <idno type="DNB">https://d-nb.info/1193134889</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Soziale Politik (ACSP)</institution>
+                     <idno>LG 1977: 2</idno>
+                     <objectName>Protokoll über die 110. Sitzung der CSU-Landesgruppe am 18.1.1977</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Ediertes Sitzungsprotokoll der CSU-Landesgruppe im Deutschen Bundestag vom 18. Januar 1977</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>7 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1977-01-18">
+               <time type="start" when="17:45:00"/>
+               <time type="end" when="19:50:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#ZimmermannFriedrich_1957-10-15"/>
+            <idno type="sitzung">
+               <idno type="wp">08</idno>
+               <idno type="Fraktion-Landesgruppe">CSU-LG</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-11-19" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-29" who="#StalmannVolker" status="draft" n="3">Header ausgefüllt</change>
+         <change when="2022-05-13" who="#WeistenhoeferSimon" status="draft" n="4">Bibl.+ Ref.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="Anwesenheitsliste">
+            <head>Anwesend:</head>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name>, <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>, <name type="Person" role="Erwaehnung" ref="#BecherWalter_1965-10-19">Becher</name>, <name type="Person" role="Erwaehnung" ref="#BiehleAlfred_1969-10-20">Biehle</name>, <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name>, <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>, <name type="Person" role="Erwaehnung" ref="#EngelsbergerMatthias_1969-10-20">Engelsberger</name>, <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name>, <name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name>, <name type="Person" role="Erwaehnung" ref="#GerlachPaul_1969-10-20">Gerlach</name>, <name type="Person" role="Erwaehnung" ref="#GierensteinKarlHeinz_1965-10-19">Gierenstein</name>, <name type="Person" role="Erwaehnung" ref="#GlosMichael_1976-12-14">Glos</name>, <name type="Person" role="Erwaehnung" ref="#HaberlFritz_1976-12-14">Haberl</name>, <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name>, <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name>, <name type="Person" role="Erwaehnung" ref="#HoeffkesPeterWilhelm_1976-12-14">Höffkes</name>, <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name>, <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>, <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>, <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name>, <name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name>, <name type="Person" role="Erwaehnung" ref="#KleinHans_1976-12-14">Klein</name>, <name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name>, <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name>, <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name>, <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name>, <name type="Person" role="Erwaehnung" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name>, <name type="Person" role="Erwaehnung" ref="#LintnerEduard_1976-12-14">Lintner</name>, <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>, <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name>, <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name>, <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name>, <name type="Person" role="Erwaehnung" ref="#RegenspurgerOtto_1976-12-14">Regenspurger</name>, <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>, <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name>, <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name>, <name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name>, <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>, <name type="Person" role="Erwaehnung" ref="#SchneiderOscar_1969-10-20">Schneider</name>, <name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name>, <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name>, <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name>, <name type="Person" role="Erwaehnung" ref="#StauffenbergFranzLudwigSchenk_1972-12-13">Graf von Stauffenberg</name>, <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>, <name type="Person" role="Erwaehnung" ref="#VossFriedrich_1976-12-14">Voss</name>, <name type="Person" role="Erwaehnung" ref="#WaigelTheodor_1972-12-13">Waigel</name>, <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name>, <name type="Person" role="Erwaehnung" ref="#WittmannFritz_1971-09-06">Wittmann</name>, <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>, <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>.</p>
+         </div>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="csu-lg-08_1977-01-18-t1745_EP_SVP-1" corresp="#csu-lg-08_1977-01-18-t1745_EP_div_SVP-1">A. Bericht des Landesgruppenvorsitzenden <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> über das Ergebnis der interfraktionellen Verhandlungen über die Besetzung der Bundestagsausschüsse mit anschließender Aussprache.</item>
+               <item xml:id="csu-lg-08_1977-01-18-t1745_EP_SVP-2" corresp="#csu-lg-08_1977-01-18-t1745_EP_div_SVP-2">B. Besetzung der Bundestagsausschüsse.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="csu-lg-08_1977-01-18-t1745_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> eröffnet die Landesgruppensitzung mit einem besonderen Dank an den Parlamentarischen Geschäftsführer <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name> für seine Leistungen bei den interfraktionellen Verhandlungen über die Vergabe der Ausschüsse. Dieser Dank sei besonders wichtig, da man bei der gemeinsamen Fraktionssitzung nur den Einsatz des Parlamentarischen Geschäftsführers <name type="Person" role="Erwaehnung" ref="#JenningerPhilipp_1969-10-20">Jenninger</name>
+               <seg type="note">
+                  <note xml:id="csu-lg-08_1977-01-18-t1745_EP_FN001" type="comment">
+                     <p>Philipp <name type="Person" role="Erwaehnung" ref="#JenningerPhilipp_1969-10-20">Jenninger</name>, Erster Parlamentarischer Geschäftsführer der CDU/CSU-Bundestagsfraktion.</p>
+                  </note>
+               </seg> hervorgehoben habe. Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> betont, daß das Verhandlungsergebnis sehr beachtlich sei. Es sei auch besonders hervorzuheben, daß die CSU 3 Ausschußvorsitzende von den insgesamt 10 Ausschußvorsitzenden, die die CDU/CSU stellt, einsetzen kann. Ein spektakuläres Ergebnis wäre auch die Zahl der Obleute, die durch die CSU gestellt werden. Dies wären für den Finanzausschuß Herr Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name>, für den Innenausschuß Herr <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name> und für den Wirtschaftsausschuß Herr <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>. Nach diesen Ausführungen eröffnet Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> die Debatte.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#RiedlErich_1969-10-20">Riedl</name> bemängelt die Besetzung des Haushaltsausschusses. Er betont, daß nunmehr die CSU keinen Vorsitzenden oder Stellvertreter im Haushaltsausschuß stellt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> sagt dazu, daß nach Abwägung aller Dinge dies Ergebnis trotzdem optimal sei.</p>
+            <p>Herr <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> sagt zu Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>, daß über den Vorsitz des Rechnungsprüfungsausschusses noch nicht endgültig entschieden sei und daß man darüber evtl. noch mit der CDU sprechen könne.</p>
+            <p>In der folgenden weiteren kurzen Diskussion über die Besetzung des Haushaltsausschusses zwischen Dr. <name type="Person" role="Sprecher" ref="#AlthammerWalter_1961-10-17">Althammer</name> und Dr. <name type="Person" role="Sprecher" ref="#RiedlErich_1969-10-20">Riedl</name> wird auch der Obmann des Haushaltsausschusses angesprochen. Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name> betont dabei, daß die CSU im Gesamtbereich des Haushalts berücksichtigt werden muß.</p>
+            <p>Zu den Obleuten sagt Herr <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Röhner</name>, daß in der Wunschliste für Obleute, die dem Landesgruppenvorstand am 14.12.1976 vorlag, Wünsche für den Haushalts-, Finanz-, Wirtschafts-, Verkehrs-, Innen-, Auswärtiger Ausschuß, Sportausschuß, Jugendausschuß vorlagen. Man hatte sich dann auf das Votum für einen sogenannten »klassischen« Ausschuß und einen sonstigen Ausschuß geeinigt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> stellt nochmals das Gesamtergebnis als unerwartet gut heraus. Wenn die CDU/CSU 10 von 19 Ausschußvorsitzenden stellen kann und die CSU von den 10 drei durch ihre Leute, so läge die Quote weit über dem Durchschnitt. Die CDU wäre zumindest sehr sauer auf die CSU, da sie glaubt, daß sie weit über die Notwendigkeit dotiert wäre.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#JaegerRichard_1949-09-07">Jaeger</name> unterstreicht den Erfolg der Verhandlung.</p>
+            <p>Bei der anschließenden Abstimmung wird das Verhandlungsergebnis bei einer Enthaltung einstimmig angenommen.</p>
+         </div>
+         <div type="SVP" xml:id="csu-lg-08_1977-01-18-t1745_EP_div_SVP-2">
+            <head>B.</head>
+            <p>Anschließend verliest der <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Parlamentarische Geschäftsführer</name> den Vorschlag des Vorstandes zur Ausschußbesetzung. Bei der Besetzung des Europäischen Parlaments schlägt der Vorstand Herrn <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name>, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name> und Herrn Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> oder Herrn <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name> vor. Die Entsendung von Herrn <name type="Person" role="Erwaehnung" ref="#LueckerHansAugust_1953-10-06">Lücker</name>, Herrn Dr. <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name> und Dr. <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name> ins Europäische Parlament beschließt die Landesgruppe bei 2 Enthaltungen von Betroffenen einstimmig. Die Abstimmung über die weitere Besetzung zwischen Herrn Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> und Herrn <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name> führt zu folgendem Ergebnis: Herr Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> 35 Stimmen, Herr <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name> 14 Stimmen, 1 Stimme für einen anderen Abgeordneten, 1 Enthaltung. Insgesamt wurden 51 Stimmen abgegeben.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> betont nochmals, daß es völlig klar sei, daß nicht alle Wünsche erfüllt werden konnten. Er bittet jedoch zu glauben, daß der Vorstand unter Abwägung aller Gesichtspunkte entschieden hat. Man konnte erreichen, daß jedes Mitglied der Landesgruppe eine Hauptaufgabe bekommt. Es wäre auf keinen Fall irgendeine Hinterlist überlegt worden. Er bittet auch darum, daß man dem Vorstand keine bösen Absichten bei der Ablehnung unterstelle.</p>
+            <p>Anschließend verliest der Parlamentarische Geschäftsführer <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name> die Ausschußliste.</p>
+            <p>Dann stellt Dr. <name type="Person" role="Sprecher" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name> die vorgeschlagene Besetzung der einzelnen Ausschüsse zur Diskussion.</p>
+            <p>Die Besetzung der Ausschüsse 1) und 2) wird ohne Diskussion beschlossen.</p>
+            <p>Zur Besetzung des Ausschusses 3) (Auswärtiger Ausschuß) hinsichtlich der stellvertretenden Mitglieder bittet Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name> die Verdienste von <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> zu würdigen. Er schlägt Herrn <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> vor, auf seine Kandidatur zu verzichten, da er kraft Amtes sowieso jeden Ausschuß betreten könne.<seg type="note">
+                  <note xml:id="csu-lg-08_1977-01-18-t1745_EP_FN002" type="comment">
+                     <p>
+                        <bibl type="btp">Richard <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> war Bundestagsvizepräsident. Zu seiner Wahl am 14. Dezember 1976 vgl. <ref type="external" target="08/01">BT Plenarprotokoll 08/1</ref>, S. 6.</bibl>
+                     </p>
+                  </note>
+               </seg>
+            </p>
+            <p>Nachdem Herr <name type="Person" role="Sprecher" ref="#StuecklenRichard_1949-09-07">Stücklen</name> diesem Vorschlag zustimmt, wird beschlossen, daß <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> stellvertretendes Mitglied des Auswärtigen Ausschusses wird.</p>
+            <p>Die Besetzung der Ausschüsse 4), 5) und 6) wird ohne Diskussion beschlossen.</p>
+            <p>Zur Besetzung des Ausschusses 7) (Finanzausschuß) sagt Herr <name type="Person" role="Sprecher" ref="#HaberlFritz_1976-12-14">Haberl</name>, daß er sich um diesen Ausschuß beworben habe und nochmals bittet, zu überprüfen, ob er nicht zumindest als stellvertretendes Mitglied berücksichtigt werden kann.</p>
+            <p>Nachdem Herr <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Röhner</name> begründet, warum die Besetzung des Ausschusses durch Herrn <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>, Herrn <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name> und Herrn <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name> vorgezogen wurde, wird der erstgemachte Vorschlag beschlossen.</p>
+            <p>Die Besetzung der Ausschüsse 8) und 9) wird ohne Diskussion beschlossen.</p>
+            <p>Zur Besetzung des Ausschusses 10) (Ausschuß für Ernährung, Landwirtschaft und Forsten) bittet Dr. <name type="Person" role="Sprecher" ref="#KunzMax_1972-12-13">Kunz</name>, ihn möglichst nicht zu berücksichtigen. Nach kurzer Diskussion erklärte sich Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name> doch zur Mitarbeit bereit.</p>
+            <p>Der Vorschlag des Vorstandes wird danach beschlossen.</p>
+            <p>Zum Vorschlag zur Besetzung des Ausschusses 11) (Ausschuß für Arbeit und Sozialordnung) bedauert Herr <name type="Person" role="Sprecher" ref="#ZieglerErich_1963-04-01">Ziegler</name>, daß seine Bewerbung nicht berücksichtigt worden wäre. Vor allen Dingen hätte er erwartet, daß man ihn gehört hätte, wenn man ihn nicht berücksichtigen wollte.</p>
+            <p>Herr <name type="Person" role="Sprecher" ref="#RoehnerPaul_1965-10-19">Röhner</name> erklärt, daß allgemein keine Vorgespräche stattgefunden hätten.</p>
+            <p>Herr <name type="Person" role="Sprecher" ref="#HoeslAlex_1961-10-17">Hösl</name>, Herr Dr. <name type="Person" role="Sprecher" ref="#JobstDionys_1969-10-20">Jobst</name> und Herr <name type="Person" role="Sprecher" ref="#KiechleIgnaz_1969-10-20">Kiechle</name> begründen, daß sie gerne stellvertretende Mitglieder des Verteidigungsausschusses geworden wären.</p>
+            <p>Nachdem Herr <name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name> seine Bewerbung zurückzieht und <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> seinen Platz freigibt, wird zwischen Herrn <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name> und Herrn Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> abgestimmt. Die Abstimmung endet mit folgendem Ergebnis:</p>
+            <p>Herr Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> 29 Stimmen, Herr <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name> 18 Stimmen, 3 Enthaltungen.</p>
+            <p>Insgesamt wurden 50 Stimmen abgegeben.</p>
+            <p>Als stellvertretende Mitglieder des Verteidigungsausschusses sind damit Herr Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>, Herr Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> und Frau <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name> gewählt.</p>
+            <p>Die Besetzung der Ausschüsse 13) bis 19) sind ohne Diskussion mit folgenden Änderungen beschlossen:</p>
+            <p>Ausschuß 13): Als stellvertretendes Mitglied wird statt Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> Herr Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name> gewählt.</p>
+            <p>Ausschuß 14): Herr <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name> wird statt Herrn <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name> gewählt.</p>
+            <p>Im Ausschuß 15) werden als Stellvertreter Herr Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name> und Herr <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name> statt Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name> und Herr <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name> gewählt.</p>
+            <p>Im Ausschuß 18) wird statt Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name> Herr Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name> gewählt.</p>
+            <p>Somit ist die Besetzung der Ausschüsse gemäß der beiliegenden Liste beschlossen.</p>
+            <p>Bei der Besetzung der sonstigen Gremien wird der Vorschlag des Vorstandes mit der Abweichung beschlossen, daß als Mitglied des Rundfunkrates des Deutschlandfunks <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name> statt Dr. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name> eingesetzt wird.</p>
+            <p>Nachdem es über die Besetzung des Rundfunkrates der Deutschen Welle zur kurzen Diskussion kommt, zu der u.a. Dr. <name type="Person" role="Sprecher" ref="#RiedlErich_1969-10-20">Riedl</name> sagt, daß über den Haushaltsausschuß eine Überprüfung möglich ist, endet die Landesgruppensitzung um 19.50 Uhr.</p>
+            <p>Ausschußbesetzung</p>
+            <table rendition="#hidden">
+               <row>
+                  <cell>Ausschuß</cell>
+                  <cell>ordentliche Mitglieder (CSU)</cell>
+                  <cell>stellvertretende Mitglieder (CSU)</cell>
+               </row>
+               <row>
+                  <cell>1. Ausschuß für Wahlprüfung, Immunität und Geschäftsordnung <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#SchulteManfred_1965-10-19">Schulte</name> (Unna) (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#MiltnerKarl_1969-10-20">Miltner</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: –</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>Wahlprüfungsausschuß</cell>
+                  <cell>Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name>
+                  </cell>
+                  <cell>
+                     <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name>
+                  </cell>
+               </row>
+               <row>
+                  <cell>2. Petitionsausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Frau <name type="Person" role="Erwaehnung" ref="#BergerLieselotte_1971-08-26">Berger</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MuellerRichard_1972-12-13">Müller</name> (Bayreuth) (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: –</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HoeffkesPeterWilhelm_1976-12-14">Höffkes</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#RegenspurgerOtto_1976-12-14">Regenspurger</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#LintnerEduard_1976-12-14">Lintner</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#VossFriedrich_1976-12-14">Voss</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>3. Auswärtiger Ausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#CorterierPeter_1969-10-20">Corterier</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: –</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#BecherWalter_1965-10-19">Becher</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#JaegerRichard_1949-09-07">Jaeger</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#StauffenbergFranzLudwigSchenk_1972-12-13">Graf Stauffenberg</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>4. Innenausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#WernitzAxel_1972-12-13">Wernitz</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#BergerUlrich_1957-10-15">Berger</name>, Ulrich (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name> (CSU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GerlachPaul_1969-10-20">Gerlach</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Regenspurger</p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#WittmannFritz_1971-09-06">Wittmann</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>5. Sportausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#EversHans_1969-10-20">Evers</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> (FDP)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#SchaeubleWolfgang_1972-12-13">Schäuble</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#BiehleAlfred_1969-10-20">Biehle</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#StuecklenRichard_1949-09-07">Stücklen</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>6. Rechtsausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#LenzCarlOtto_1965-10-19">Lenz</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#EmmerlichAlfred_1972-12-13">Emmerlich</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#ErhardBenno_1965-10-19">Erhard</name> (Bad Schwalbach) (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#WittmannFritz_1971-09-06">Wittmann</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GerlachPaul_1969-10-20">Gerlach</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SprangerCarl-Dieter_1972-12-13">Spranger</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>7. Finanzausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Frau <name type="Person" role="Erwaehnung" ref="#FunckeLiselotte_1961-10-17">Funcke</name> (FDP)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MeinikeErich_1969-10-20">Meinike</name> (Oberhausen) (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name> (CSU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#KreileReinhold_1969-10-20">Kreile</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#VossFriedrich_1976-12-14">Voss</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>8. Haushaltsausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#LeichtAlbert_1957-10-15">Leicht</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#BussmannBernhard_1969-10-20">Bußmann</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: –</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GlosMichael_1976-12-14">Glos</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#RiedlErich_1969-10-20">Riedl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#WaigelTheodor_1972-12-13">Waigel</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Röhner</p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>9. Wirtschaftsausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#BarzelRainer_1957-10-15">Barzel</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#ReuschenbachPeterW_1972-12-13">Reuschenbach</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name> (CSU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HaberlFritz_1976-12-14">Haberl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchmidhuberPeterM_1965-10-19">Schmidhuber</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#DollingerWerner_1953-10-06">Dollinger</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#EngelsbergerMatthias_1969-10-20">Engelsberger</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>10. Ausschuß für Ernährung, Landwirtschaft und Forsten <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#SchmidtRMartin_1949-09-07">Schmidt</name> (Gellersen) (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> (Wilhelm.) (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#SussetEgon_1969-10-20">Susset</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GlosMichael_1976-12-14">Glos</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#RoehnerPaul_1965-10-19">Röhner</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>11. Ausschuß für Arbeit und Sozialordnung <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#RappeHermann_1972-12-13">Rappe</name> (Hildesheim) (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#MuellerAdolf_1961-10-17">Müller</name> (Remscheid) (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#ZinkOtto_1965-10-19">Zink</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HoepfingerStefan_1976-12-14">Höpfinger</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KrausRudolf_1976-12-14">Kraus</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>12. Verteidigungsausschuß <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#WoernerManfred_1965-10-19">Wörner</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#BuchstallerWerner_1961-10-17">Buchstaller</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: –</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#BiehleAlfred_1969-10-20">Biehle</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GierensteinKarlHeinz_1965-10-19">Gierenstein</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HandlosFranz_1972-12-13">Handlos</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#ZimmermannFriedrich_1957-10-15">Zimmermann</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>13. Ausschuß für Jugend, Familie und Gesundheit <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#HauckRudolf_1965-10-19">Hauck</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Frau <name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name> (CSU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#BurgerAlbert_1965-10-19">Burger</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#LintnerEduard_1976-12-14">Lintner</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchleicherUrsula_1972-12-13">Schleicher</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HoepfingerStefan_1976-12-14">Höpfinger</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SpilkerKarl-Heinz_1969-10-20">Spilker</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>14. Ausschuß für Verkehr und für das Post- und Fernmeldewesen <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#LemmrichKarlHeinz_1961-10-17">Lemmrich</name> (CSU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#BatzHans_1969-10-20">Batz</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#SchulteDieter_1969-10-20">Schulte</name> (Schw. Gmünd) (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#JobstDionys_1969-10-20">Jobst</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Lemmrich</p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#ZieglerErich_1963-04-01">Ziegler</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HaberlFritz_1976-12-14">Haberl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KiechleIgnaz_1969-10-20">Kiechle</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#RainerAlois_1965-10-19">Rainer</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>15. Ausschuß für Raumordnung, Bauwesenund Städtebau <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#SchneiderOscar_1969-10-20">Schneider</name> (CSU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#HenkeErich_1969-10-20">Henke</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#JahnFriedrich-Adolf_1972-12-13">Jahn</name> (Münster) (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#NiegelLorenz_1969-10-20">Niegel</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#SchneiderOscar_1969-10-20">Schneider</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#BoetschWolfgang_1976-12-14">Bötsch</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>16. Ausschuß für innerdeutsche Beziehungen <list type="undefined">
+                        <item>
+                           <p>Vorsitz: <name type="Person" role="Erwaehnung" ref="#MattickKurt_1953-10-06">Mattick</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: <name type="Person" role="Erwaehnung" ref="#WrangelOlaf_1965-10-19">von Wrangel</name> (CDU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: –</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HoeslAlex_1961-10-17">Hösl</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HuynHans_1976-12-14">Graf Huyn</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#WarnkeJuergen_1969-10-20">Warnke</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>17. Ausschuß für Forschung und Technologie <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name> (CSU)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Prof. <name type="Person" role="Erwaehnung" ref="#LaermannKarl-Hans_1974-06-28">Laermann</name> (FDP)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: <name type="Person" role="Erwaehnung" ref="#LenzerChristian_1969-10-20">Lenzer</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#EngelsbergerMatthias_1969-10-20">Engelsberger</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#ProbstAlbert_1969-10-20">Probst</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#AlthammerWalter_1961-10-17">Althammer</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HartmannKlaus_1976-12-14">Hartmann</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>18. Ausschuß für Bildung und Wissenschaft <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#MeineckeRolf_1965-10-19">Meinecke</name> (Hamburg) (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name> (München) (CSU)</p>
+                        </item>
+                        <item>
+                           <p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#GoelterGeorg_1969-10-20">Gölter</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KleinHans_1976-12-14">Klein</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#Krone-AppuhnUrsula_1976-12-14">Krone-Appuhn</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#MuellerGuenther_1965-10-19">Müller</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#FuchsKarl_1969-10-20">Fuchs</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#GeisenhoferFranzXaver_1967-05-03">Geisenhofer</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#SchedlAlbert_1971-01-07">Schedl</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+               <row>
+                  <cell>19. Ausschuß für wirtschaftliche Zusammenarbeit <list type="undefined">
+                        <item>
+                           <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#HoltzUwe_1972-12-13">Holtz</name> (SPD)</p>
+                        </item>
+                        <item>
+                           <p>Stv. Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#KoehlerVolkmar_1972-12-13">Köhler</name> (Wolfsburg) [(CDU)]</p>
+                        </item>
+                        <item>
+                           <p>Obmann: Dr. <name type="Person" role="Erwaehnung" ref="#TodenhoeferJuergen_1972-12-13">Todenhöfer</name> (CDU)</p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#HoeffkesPeterWilhelm_1976-12-14">Höffkes</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>
+                              <name type="Person" role="Erwaehnung" ref="#KleinHans_1976-12-14">Klein</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+                  <cell>
+                     <list type="undefined">
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#AignerHeinrich_1957-10-15">Aigner</name>
+                           </p>
+                        </item>
+                        <item>
+                           <p>Dr. <name type="Person" role="Erwaehnung" ref="#KunzMax_1972-12-13">Kunz</name>
+                           </p>
+                        </item>
+                     </list>
+                  </cell>
+               </row>
+            </table>
+         </div>
+      </body>
+   </text>
 </TEI>

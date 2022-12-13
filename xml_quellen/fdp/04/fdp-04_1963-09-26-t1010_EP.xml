@@ -1,392 +1,724 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="fdp-04_1963-09-26-t1010_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Gemeinsame Sitzung des Bundesvorstandes und der Fraktion</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address><street>Schiffbauerdamm 40</street><postCode>10117</postCode><name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name></address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die FDP-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1969. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 16/I</title>
-						<author>Volker Stalmann</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2017</date>
-						<idno>https://d-nb.info/1135738092</idno>
-						<idno>https://d-nb.info/1145327699</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv des Liberalismus (AdL)</institution>
-							<idno>Bestand Wolfgang Mischnick, A40-754</idno>
-							<objectName>Kurzprotokoll der gemeinsamen Sitzung von Bundestagsfraktion und Bundesvorstand am 26. September 1963</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Protokoll der gemeinsamen Sitzung des Bundesvorstandes und der Bundestagsfraktion der FDP vom 26. September 1963</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>14 Seiten </extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1963-09-26"><time type="start" when="10:10:00"/><time type="end" when="18:15:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#MendeErich_1949-09-07"/><name type="Person" role="Sitzungsleitung" ref="#LeverenzBernhard"/><idno type="sitzung"><idno type="wp">04</idno><idno type="Fraktion-Landesgruppe">FDP</idno><idno type="sitzungsabfolge">1</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-09-30" who="#StalmannVolker" status="draft" n="3">Header, SV, Namen</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-1" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-1">A. Geschäftliche Mitteilungen.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-2" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-2">B. Bericht des Partei- und Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> über die allgemeine politische Lage.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-3" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-3">C. Bericht des Vizepräsidenten des Deutschen Bundestages <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> über seine Moskau-Reise.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-4" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-4">D. Bericht des hessischen Landesvorsitzenden <name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name> über seine USA-Reise.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-5" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-5">E. Allgemeine Aussprache.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-6" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-6">F. Bericht über den Stand der Regierungsverhandlungen mit anschließender Aussprache.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-7" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-7">G. Bericht über die Verhandlungen über das Sozialpaket mit anschließender Aussprache.</item>
-					<item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-8" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-8">H. Bericht über die Mitteilung eines Verfassungsschutzbeamten über die Überwachung eines Mitarbeiters des nordrhein-westfälischen Landesverbandes der FDP mit anschließender Aussprache.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Entschuldigte Fraktionsmitglieder: 8.</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Geburtstagsglückwünsche</p>
-						<table rendition="#hidden">
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name></cell>
-								<cell>6.9.1922 (41 Jahre)</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#OpitzRudolf_1961-10-17">Opitz</name></cell>
-								<cell>11.9.1920 (43 Jahre)</cell>
-							</row>
-							<row>
-								<cell>Dr. <name type="Person" role="Erwaehnung" ref="#KruemmerEwald_1963-01-24">Krümmer</name></cell>
-								<cell>17.9.1896 (67 Jahre)</cell>
-							</row>
-							<row>
-								<cell>Dr. <name type="Person" role="Erwaehnung" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name></cell>
-								<cell>22.9.1895 (68 Jahre)</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#MuehlenKlaus_1959-10-06">von Mühlen</name></cell>
-								<cell>26.9.1909 (54 Jahre)</cell>
-							</row>
-							<row>
-								<cell>Dr. <name type="Person" role="Erwaehnung" ref="#IlkHerta_1949-11-03">Ilk</name></cell>
-								<cell>9.9.1902</cell>
-							</row>
-						</table></item>
-					<item><label>2.</label><p>Entschuldigt</p>
-						<table rendition="#hidden">
-							<row>
-								<cell>Dr. <name type="Person" role="Erwaehnung" ref="#DoerinkelWolfram_1961-10-17">Dörinkel</name></cell>
-								<cell>berufliche Verpflichtungen</cell>
-							</row>
-							<row>
-								<cell>Dr. <name type="Person" role="Erwaehnung" ref="#HelligeWalther_1961-10-17">Hellige</name></cell>
-								<cell>Auslandsaufenthalt</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#MaukAdolf_1952-04-07">Mauk</name></cell>
-								<cell>Ausschußsitzung des Europäischen Parlaments in Rom</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#RademacherWillyMax_1949-09-07">Rademacher</name></cell>
-								<cell>als Präsident Teilnahme am Deutschen Bauerntag im Hamburg</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#SanderHeinrich_1957-10-15">Sander</name></cell>
-								<cell>Teilnahme am Deutschen Bauerntag in Hamburg</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#WaechterGerold_1961-10-17">Wächter</name></cell>
-								<cell>private Verpflichtungen</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#WalterFritz_1957-10-15">Walter</name></cell>
-								<cell>Teilnahme am Deutschen Bauerntag in Hamburg</cell>
-							</row>
-							<row>
-								<cell><name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name></cell>
-								<cell>Auslandsaufenthalt</cell>
-							</row>
-						</table></item>
-					<item><label>3.</label><p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name> gibt bekannt, daß morgen erstmalig die Verhandlungskommission mit Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN001" type="comment"><p>Ludwig <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, MdB (CDU), Bundesminister für Wirtschaft, Vizekanzler.</p></note></seg> zur Behandlung von Sachfragen zusammentritt. Die FDP-Verhandlungskommission trifft sich anschließend an die Fraktionssitzung noch einmal in der Parlamentarischen Gesellschaft.</p></item>
-					<item><label>4.</label><p>Die Sitzung wird für vertraulich erklärt.</p></item>
-					<item><label>5.</label><p>Senatsdirektor Dr. <name type="Person" role="Erwaehnung" ref="#HartkopfGünter">Hartkopf</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN002" type="comment"><p>Günter <name type="Person" role="Erwaehnung" ref="#HartkopfGünter">Hartkopf</name>, Senatsdirektor für Bundesangelegenheiten des Landes Berlin in Bonn.</p></note></seg> wird als Gast begrüßt.</p></item>
-				</list>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-2">
-				<head>B.</head>
-				<p>TOP 1: Bericht über die allgemeine politische Lage</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Es fanden zwei Gespräche statt, und zwar einmal zwischen Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> und Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> über die Moskaureise Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name>, und ein Gespräch, an dem neben Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> Dr. <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name> als Vorsitzender des Arbeitskreises I teilnahm, mit Außenminister Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN003" type="comment"><p>Gerhard <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, MdB (CDU), Bundesminister des Auswärtigen.</p></note></seg> vor dessen USA-Reise.</p>
-				<p>Im nächsten Jahr finden Präsidentenwahlen in den USA statt.Da <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN004" type="comment"><p>John Fitzgerald <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>, Präsident der Vereinigten Staaten von Amerika.</p></note></seg> bisher keine großen innenpolitischen Erfolge verzeichnen kann, sucht er Erfolge in der Außenpolitik, d. h. er neigt zu einem Entgegenkommen in der Entspannung Ost-West. Die gleiche Tendenz ist in England zu verzeichnen. Anders steht <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN005" type="comment"><p>Charles <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>, Präsident der Französischen Republik.</p></note></seg> dazu, der an der harten Linie festhält.<name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> sind der Meinung, daßman zunächst den Konflikt UdSSR – China weiter schwelen lassen sollte, damit <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN006" type="comment"><p>Nikita Sergejewitsch <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>, Erster Sekretär des Zentralkomitees der KPdSU sowie Vorsitzender des Ministerrates der UdSSR.</p></note></seg> zu größerem Entgegenkommen bereit ist. <name type="Person" role="Erwaehnung" ref="#MonnetJean">Monnet</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN007" type="comment"><p>Jean <name type="Person" role="Erwaehnung" ref="#MonnetJean">Monnet</name>, Vorsitzender des Aktionskomitees für die Vereinigten Staaten von Europa, 1952–1955 Präsident der Hohen Behörde der Europäischen Gemeinschaft für Kohle und Stahl.</p></note></seg>, mit dem Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> eine Aussprache hatte, teilt die amerikanische Auffassung, abwarten und nichts tun sei falsch.</p>
-				<p>Das Atomstoppabkommen wurde von der FDP schon in der letzten Sitzung gebilligt. Das entscheidende Gremium in den USA hat sich ebenfalls mit 4/5-Mehrheit dafür ausgesprochen. Da auch SPD und CDU für das Atomstoppabkommen stimmen werden, ist mit einer großen Mehrheit im Bundestag für das Ratifizierungsgesetz zu rechnen. Die Verabschiedung soll bis Weihnachten erfolgen. Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> will gegenüber <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> eine bewegliche Haltung zeigen. Zu dem Gespräch, das Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> mit CDU-Politikern in Cadenabbia führte, ist die FDP nicht eingeladen worden, da hier im Gegensatz zu den Presseberichten nur CDU-interne Differenzen ausgetragen werden sollten.</p>
-				<p>Das am 9. August 1963 übergebene Memorandum wird nach wie vor im Botschafterlenkungsausschuß beraten. Die Frage der Kontrollstationen spielt zur Zeit eine große Rolle. Diese sollen sich aber nicht nur auf den deutschen Raum beziehen. Ihr Bereich sollüber Europa hinausgehen. Die Rede <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedys</name> vor der UNO am 20.9.1963 ließ ebenfalls eine Entspannungstendenz erkennen.Die Mondplanung ist nur eine Fortsetzung der gemeinsamen Planung, also keine Überraschung, wie es zum Teil in der Presse dargestellt wurde. Das Nichtangriffsabkommen wurde von <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> in seiner UNO-Rede nicht erwähnt. Die Berlin-Garantie wurde jedoch erneuert. Das Nichtangriffsabkommen ist deshalb in den Hintergrund getreten, da völkerrechtliche Schwierigkeiten aufgetreten sind.</p>
-				<p>Von den 120 UNO-Staaten haben nur 11 die DDR anerkannt. Eine Aufwertung der DDR durch das Atomstoppabkommen ist nichterfolgt. Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> will seine Gesprächspartner von der FDP, die er vor seiner Abreise nach den USA konsultiert hat, auch nach seiner Rückkehr wieder konsultieren. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> dankt Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> für die staatsmännische Klugheit, die er auf seiner Reise durch die UdSSR bewiesen hat. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> hat damit auch der Partei einen Dienst erwiesen.</p>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-3">
-				<head>C.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DehlerThomas_1949-09-07">Dehler</name>: Man sollte die Bedeutung seiner Reise nicht überschätzen. Die Einladung dafür lag schon seit 1955 vor. Das Bundestagspräsidium vertrat die Auffassung, daß es gut sei, jetzt eine solche Reise zu veranstalten. Auch die Engländer haben zugeredet. Die Reise war verbunden mit einer Einladung zum Präsidium der Unionskammer des Obersten Sowjets. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> konnte sich jedes Reiseziel wählen, das er wollte, und alles besichtigen, was er wollte, von einer Seidenspinnerei bis zur Sowchose. Er hat mit Professoren, Gelehrten, Technikern und nicht nur mit Parteibonzen gesprochen. Auch in den technischen Betrieben stellte er ein hohes Niveau fest, das von dem Niveau in unseren Betrieben nicht wesentlich abweicht. Von dem Polizeistaat hat er nichts gespürt. Auch die Haltung der Bevölkerung ist gelockert. Man kann nicht von einer revolutionären Stimmung sprechen. Insgesamt muß auch von einer ertragsreichen Wirtschaft gesprochen werden, denn die wirtschaftliche Entwicklung ist gut. Er hat viele technische Schulen gesehen – es gibt nur 2 % Analphabeten. Es wäre eine Verkennung der Dinge, wenn man auf einen wirtschaftlichen Zusammenbruch spekulieren würde, selbst wenn durch die Planwirtschaft Rückschläge eintreten sollten.Trinkgelder werden wieder genommen, weil der Verbraucher wieder die Möglichkeit der Konsumwahl hat. Im ganzen muß das System <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> für sehr saturiert gehalten werden. Es besteht ein großer Unterschied zur <name type="Person" role="Erwaehnung" ref="#StalinJosefWissarionowitsch">Stalin</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN008" type="comment"><p>Josef Wissarionowitsch<name type="Person" role="Erwaehnung" ref="#StalinJosefWissarionowitsch">Stalin</name> († 1953), 1922–1953 Generalsekretär des Zentralkomitees der KPdSU, 1941–1953 Vorsitzender des Rates der Volkskommissare bzw. des Ministerrates der UdSSR.</p></note></seg>-Periode. Der China-Konflikt wurde nicht als dringende Sorge empfunden. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> hat es aber vermieden, viel darüber zu sprechen.</p>
-				<p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> glaubt noch immer an eine politische Lösung als Folge einer starken Rüstung des Westens, wie er zu Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> sagte. In der Sowjetunion klingt bei jedem Gespräch und bei jedem Tischspruch der Friedenswille an. Immer wieder ist die Sorge der Russen zu spüren, daß die friedliche Entwicklung durch Krieg gestört wird. Daraus ergibt sich, daß die Kriegsfurcht des Westens eine falsche These ist, jedenfalls soweit es die Haltung der russischen Bevölkerung betrifft. Natürlich wird nach wie vor eine Ausdehnung der Ideologie angestrebt. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> Reise war von ihm als eine politische Demonstration gewollt, gegen eine Politik, die auf das Wirken in den Osten verzichtet. So wurde es auch von den Sowjets aufgefaßt und diese Reaktion war auch in Deutschland zu spüren, wie er aus zahlreichen Leserbriefen erfahren hat. Eine harte Auseinandersetzung gab es von Anfang an über die Frage des Friedensvertrages. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> war kurz vor seiner Reise noch in Berlin gewesen, so daß er noch unter dem Eindruck der Mauer stand.</p>
-				<p>Das Gespräch mit <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN009" type="comment"><p>Andrei Andrejewitsch<name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>, sowjetischer Außenminister.</p></note></seg> war sehr hart, wenn auch konziliant in der Form. In der deutschen Frage, sagte <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>, sind wir hart wie Granit. <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> will zwei Friedensverträge, da die Teilung Deutschlands eine Folge des Krieges ist. Hier gibt es für ihn keine Konzession. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> hat dagegen den Standpunkt vertreten, daß dieser Zustand gefahrvoll ist. Nur eine gesamtdeutsche Regierung kann einen Friedensvertrag unterzeichnen. <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> sagte, daß derjenige, der die Realitäten nicht anerkennt, nur Krieg will. Es kam eine starke Animosität gegen Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> heraus. In Wirklichkeit, so meinte <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>, wollen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und die Westmächte den Status quo. Diesen Vorwurf hat Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> abgewehrt. Er hat auf Österreich und die Haltung der Sowjets auf der 1958er-Konferenz verwiesen. Der Fall Österreich liegt aber laut <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> ganz anders. Auf die bei der 1958er-Konferenz von den Sowjets gezeigte Haltung zu einem gesamtdeutschen Friedensvertrag ist <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> nicht eingegangen. Das Gespräch dauerte 70 Minuten.</p>
-				<p>Aus der Sicht Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> gibt es keinen anderen Weg, als Gespräche dieser Art fortzusetzen, um in der deutschen Frage weiterzukommen.</p>
-				<p>Über eine Fülle von Problemen gäbe es aus Indien zu berichten. <name type="Person" role="Erwaehnung" ref="#NehruJawaharlal">Nehru</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN010" type="comment"><p>Jawaharlal<name type="Person" role="Erwaehnung" ref="#NehruJawaharlal">Nehru</name>, Premierminister der Republik Indien.</p></note></seg> ist die zentrale Figur auch gegenüber der Opposition im Parlament. Zu einer wirklichen Entspannung kann es nicht kommen, wenn die Krankheitsherde nicht beseitigt werden. <name type="Person" role="Erwaehnung" ref="#NehruJawaharlal">Nehru</name> war der Meinung, daß wir die Entspannung unserer nationalen Anliegen wegen verhindern wollen. Insgesamt kann festgestellt werden, daß Indien, wenn es auch unsere Wünsche erfüllt (keine Anerkennung der DDR), unserem Anliegen doch sehr fern steht.</p>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-4">
-				<head>D.</head>
-				<p><name type="Person" role="Sprecher" ref="#KohlHeinrich">Kohl</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN011" type="comment"><p>Heinrich <name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name>, MdL Hessen (FDP), Landesvorsitzender der FDP in Hessen, Mitglied des Bundesvorstandes der FDP.</p></note></seg>: Er war sieben Wochen auf Einladung des State Department in den USA und konnte seine Reise in Washington selbst zusammenstellen. Er hat die Luftfahrt- und Elektronenindustrie besichtigt und viele Gespräche geführt. Man bringt Deutschland großes Vertrauen entgegen.<name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name> ist durch die gesamten Staaten gereist. Er stellte eine gute Ausbildung der Flugzeugführer in den USA fest. Hier wie überall fand er großes Entgegenkommen von seiten der Amerikaner. Verständnis hat er auch in der Hähnchenfrage gefunden. Gefragt wurde, was die Deutschen gegen die Mauer tun. Man hat ihm Gelegenheit gegeben, selbst ein Flugzeug zu führen (Hercules), das bisher noch nie von einem Deutschen geführt wurde, und [er] konnte sich von den ausgezeichneten Flugeigenschaften dieser Maschine überzeugen. Von der deutschen Botschaft ist er gut betreut worden. Die deutschen Soldaten sind drüben besser angekommen, als mancher Diplomat. Die Amerikaner halten sehr viel von unserer Tüchtigkeit. Die Franzosen und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> dagegen mögen sie gar nicht.Auch für die deutsche politische Lage hat man viel Verständnis. Schließlich hat <name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name> mit Bob <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN012" type="comment"><p>Robert Francis <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>, US-amerikanischer Justizminister.</p></note></seg> gesprochen. Mit dem Negerproblem fällt es den Amerikanern schwer, fertig zu werden. Wenn <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> die Wahl verliert, liegt es am Negerproblem.</p>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-5">
-				<head>E.</head>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Es sollte in Zukunft mehr darauf geachtet werden, daß der Kauf von Flugzeugen nach militärpolitischen Gesichtspunkten erfolgt (Hercules).</p>
-				<p><name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN013" type="comment"><p>Hans-Günter <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>, Senator für Finanzen von West-Berlin, stellvertretender Landesvorsitzender der FDP in Berlin, Mitglied des Bundesvorstandes der FDP.</p></note></seg>: Das Zustimmungsgesetz zum Atomstoppabkommen wurde am 11.9. im Kabinett nicht abschließend behandelt, da darin keine Berlinklausel enthalten ist. Der Westen leistet gegen die Berlinklausel Widerstand. Dem sollten wir entgegentreten, zumal in Berlin die Vorbehaltsrechte der Alliierten nicht berührt werden. Sonst könnte damit eine gefährliche Entwicklung eingeleitet werden, da es präjudizierend für weitere Entspannungsschritte wäre, wenn beim ersten Entspannungsschritt in dem Zustimmungsgesetz keine Berlinklausel enthalten ist. Das Ergebnis dieser Entwicklung könnte die Isolierung Berlins sein. Partei und Fraktion müssen daher alles tun, die Berlinklausel in das Zustimmungsgesetz zum Atomstoppabkommen hinzuzubekommen. Darin sieht <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> einen Teil der deutschen Frage. Gelingt das nicht, so müßte man sich schwer überlegen, ob man unter diesen Umständen ratifizieren kann.</p>
-				<p><name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> hat recht und <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheel</name> glaubt, daß man von gewisser Seite mit Absicht auf die Berlinklausel verzichtet hat, um die Dreiteilung zu dokumentieren. Im Kabinett wurde diese Frage besprochen. Die rechtliche Frage wird geprüft und das Kabinett ist auch weitgehend der Meinung, daß die Berlinklausel in das Ratifizierungsgesetz hinein muß.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HartkopfGünter">Hartkopf</name>: In dem Abkommen mit Polen ist nur eine sehr weiche Berlinklausel enthalten. Auch bei dem Abkommen mit Ungarn besteht die Gefahr einer Aufweichung der Berlinklausel. Zu erreichen war lediglich die Hilfsklausel »Gebiet der DM West«. Diese Gefahr besteht nun auch bei dem Atomstoppabkommen. Die FDP sollte heute erklären, daß sie die Berlinklausel für selbstverständlich hält.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Erst sollte man mit Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> Verbindung aufnehmen, da wir uns verpflichtet haben, keine selbständigen Schritte in dieser Sache zu unternehmen. In der Sache haben <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> und Dr. <name type="Person" role="Erwaehnung" ref="#HartkopfGünter">Hartkopf</name> recht. Es ist aber ebenso ein Problem von SPD und CDU, eine Lösung zu finden.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Ein Beschluß kann seines Erachtens, wenn man keine bestimmte Formel nennt, gefaßt werden. Natürlich muß man die Entspannung mitmachen, nur darf man dabei nicht gleich beim ersten Schritt eine russische Forderung erfüllen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Das Abkommen wird so ratifiziert, wie wir das für richtig halten, also mit Berlinklausel. Da brauchen wir gar keinen Beschluß zu fassen. Die Russen haben ihre Ausgangsposition nicht verändert, und wir werden das auch nicht tun.</p>
-				<p><name type="Person" role="Sprecher" ref="#ErtlJosef_1961-10-17">Ertl</name>: Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> Bericht hat gezeigt, daß die Sowjets nicht bereit sind, ernsthaft zu verhandeln. Er fragt sich daher, ob nicht die Gefahr besteht, daß wir zu einem Status quo minus kommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>: Er glaubt nicht daran, daß man allgemein die Berlinklausel für selbstverständlich hält. Wenn wir hier schwach werden und Berlin nicht vollwertig einschließen, verderben wir uns zukünftige Verhandlungen.</p>
-				<p><name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: Es kommt darauf an, die Amerikaner davon zu überzeugen, daß die Berlinklausel hinein muß. Es ist aber gar nicht so sicher, daß das gelingt.</p>
-				<p>(Zuruf Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Wenn der Bundestag den Ratifizierungsvertrag mit der Berlinklausel beschließt, werden das die Amerikaner akzeptieren.)</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#RiegerWalter_1961-10-17">Rieger</name>: Entweder man erreicht die Wiedervereinigung im Rahmen einer Entspannung oder man entscheidet sich für verstärkte Rüstung.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Eine Verpflichtung zur Konsultation (Atomstoppvertrag) ergibt sich aus dem Deutschland-Vertrag, dem NATO-Vertrag und aus der moralischen Verpflichtung der Allianz (auf Frage Dr. <name type="Person" role="Sprecher" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name>). Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name> stellt fest, daß wir in der Frage der Ratifizierung souverän sind und daß die FDP auch in der Frage der Entspannung an ihrer bisherigen Auffassung – auch am Deutschlandplan – festhält.</p>
-				<p>– Er verliest die FDP-Presseerklärung von Baden-Baden. –</p>
-				<p><name type="Person" role="Sprecher" ref="#BormWilliam_1965-10-19">Borm</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN014" type="comment"><p>William <name type="Person" role="Erwaehnung" ref="#BormWilliam_1965-10-19">Borm</name>, MdA (FDP), Landesvorsitzender der FDP in Berlin, Mitglied des Bundesvorstandes der FDP.</p></note></seg>: Er stellt die Frage, ob man damit rechnen kann, daß die Fraktion den Vertrag nicht ratifiziert, wenn die Berlinklausel nicht in das Atomstoppabkommen hineinkommt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Ein Beschluß ist hier nicht notwendig, da es sich um eine Selbstverständlichkeit handelt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Wir müssen sagen, daß wir bereit sind, das Atomstoppabkommen mit Berlinklausel zu ratifizieren. Er warnt vor einer Negativaussage.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er möchte vermeiden, daß wir plötzlich Seite an Seite mit denjenigen aus der CDU stehen, die die Ratifizierung aus ganz anderen Motiven ablehnen. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> stellt fest, daß die hier versammelten Gremien einstimmig akzeptiert haben, daß der Geltungsbereich des Atomstoppabkommens selbstverständlich Berlin einschließt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN015" type="comment"><p>Bernhard <name type="Person" role="Erwaehnung" ref="#LeverenzBernhard">Leverenz</name>, Minister für Justiz des Landes Schleswig-Holstein, stellvertretender Bundesvorsitzender der FDP.</p></note></seg>: Er beantragt, den Bericht über den Stand der Regierungsverhandlungen vorzuziehen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Morgen findet eine erste Fühlungnahme über die Sachfragen, nicht aber über personelle Fragen statt.</p>
-				<p><name type="Person" role="Sprecher" ref="#HammersenWalter_1961-10-17">Hammersen</name>: Auch er tritt für ein Vorziehen des Berichtes über den Stand der Regierungsverhandlungen ein.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: So beschlossen.</p>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-6">
-				<head>F.</head>
-				<p>TOP 3: Bericht über den Stand der Regierungsverhandlungen</p>
-				<p><name type="Person" role="Sprecher" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name>: Die Besprechungen in Bad Wiessee dienten der Klärung, was die Regierungskoalition in dieser Legislaturperiode noch erreichen kann.</p>
-				<p>Agrarpolitik: Die Arbeitsunterlage aus der Regierungsbildung 1962 soll auch für die Zukunft gelten. <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> hat eine Erklärung zur Getreidepreisfrage abgegeben. An der Sitzung nahmen von uns noch Dr. <name type="Person" role="Erwaehnung" ref="#EffertzJosef_1961-10-17">Effertz</name> und <name type="Person" role="Erwaehnung" ref="#MaukAdolf_1952-04-07">Mauk</name> teil.</p>
-				<p>Sozialpolitik: Hier galt es, den Verhandlungsspielraum festzulegen. <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> glaubt, daß man hier noch zu einer Einigung kommen kann.</p>
-				<p>Allgemein sollten die eingesetzten Kommissionen versuchen, die Meinungen zwischen CDU und FDP bis Anfang Oktober zu koordinieren.</p>
-				<p>Innenpolitik: Eine Kommission hat sich mit dem Parteiengesetz befaßt. Die erarbeitete Konzeption soll uns durch die zwei Säulen der Parteienfinanzierung die Möglichkeit geben, den Wahlkampf 1965 zu finanzieren. <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> hat die Hoffnung, auf eine baldige Verabschiedung des Parteiengesetzes.</p>
-				<p>Wirtschaftspolitik: Bei dem Aktiengesetz gilt es, die nennwertlose Aktie herauszubringen, damit das Gesetz verabschiedet werden kann. Bei der Aussprache über die Mehrwertsteuer hat sich die <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN016" type="comment"><p>Manfred <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name>, MdB (CDU).</p></note></seg>-Konzeption nicht bestätigt. Es fand ein fruchtbares Gespräch statt.</p>
-				<p>Wir sollten mit Angriffen gegen <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN017" type="comment"><p>Hermann <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, MdB (CSU), Bundesminister des Innern.</p></note></seg> zurückhalten und auf der sachlichen Ebene bleiben. Je stärker <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> von uns angegriffen wird, um so sicherer bleibt er. Das zukünftige Kabinett soll nicht vergrößert, aber auch nicht verkleinert werden. Wenn die CDU eines der zwei zusätzlichen Ministerien an die FDP abgeben soll, kann die FDP kein klassisches Ministerium zusätzlich fordern. Entscheidungen über einzelne Minister sind bisher noch nicht gefallen. Wir sollten uns weniger um die Veränderungen in der CDU als um unsere eigenen Personalwünsche kümmern. Zwischen der Kanzlerwahl und der Vorstellung des Kabinetts sollen nicht mehr als zwei Tage liegen. Ausgangspunkt der Verhandlungen sind die Beschlüsse von Bundesvorstand und Bundestagsfraktion.</p>
-				<p><name type="Person" role="Sprecher" ref="#MuehlenKlaus_1959-10-06">von Mühlen</name>: Prof. <name type="Person" role="Erwaehnung" ref="#EschenburgTheodor">Eschenburg</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN018" type="comment"><p>Theodor <name type="Person" role="Erwaehnung" ref="#EschenburgTheodor">Eschenburg</name>, Professor für Politikwissenschaft an der Universität Tübingen.</p></note></seg> hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> geraten, sich personell freie Hand zu halten. Wir sollten hier aber auf Klarheit dringen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#RutschkeWolfgang_1957-10-15">Rutschke</name>: Er stellt die Frage, ob sich in der Angelegenheit <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> wegen Präsidentschaft im Bundesrechnungshof etwas getan hat.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Wir haben ein Gespräch mit <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> darüber abgelehnt, da <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> nicht da war. Ob mit <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> später ein solches Gespräch stattgefunden hat, ist ihm nicht bekannt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: Ihm liegt eine Meldung vor, wonach <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> es abgelehnt hat, vor seiner Wahl über Personalfragen zu sprechen. Das soll er <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheel</name> gegenüber erklärt haben. Er bemängelt, daß bisher noch nicht einmal von unserer Seite mit <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> gesprochen wurde.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Er hat gewisse Bedenken gegenüber den geführten Informationsgesprächen, da wir hier zu einer Meinungsbildung kommen, von der wir nachher nicht wieder herunterkommen. <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> bestätigt das <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheel</name>-<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>-Gespräch, wonach <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> nicht einmal die Verhandlungskommission empfangen wollte. Wir haben aber am Montag erklärt, daß wir verhandeln müssen, worauf die Einladung für morgen erfolgte. Zu den Sachfragen gehört aber auch, daß<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> seine personellen Vorstellungen entwickelt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: In der Tat haben bisher noch keine offiziellen Verhandlungen stattgefunden, weil die CDU – insbesondere aber Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN019" type="comment"><p>Heinrich <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, MdB (CDU), Vorsitzender der CDU/CSU-Bundestagsfraktion.</p></note></seg> – in der Neubildung den Vollzug der 61er Vereinbarung sieht. Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> wird den vereinbarten Brief am 15.10. schreiben. Die CDU hat bis zur Stunde keine Verhandlungskommission ernannt; der Vollzug sollte nach ihrer Auffassung durch den Vorstand bzw. im Koalitionsausschuß erfolgen. Die Sachberatung ist durch Fachleute auf verschiedenen Gebieten zustande gekommen. In bezug auf den personellen Bereich hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> am Tegernsee Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> und <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> gegenüber erklärt, daß er erst einmal die Vorstellungen der CDU erfahren müsse. Im übrigen will <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> von seinen ihm mit dem Grundgesetz gegebenen Möglichkeiten Gebrauch machen und nicht wieder eine Wahlkapitulation eingehen. <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> erklärt, daß er ja schließlich gewählt werden will und daher gezwungen ist, mit offenen Karten zu spielen. Wir haben versucht, <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> von der Meinung der Theoretiker (<name type="Person" role="Erwaehnung" ref="#EschenburgTheodor">Eschenburg</name>) zu lösen. Die Praxis sieht anders aus, denn ein zweiter Wahlgang würde auch an <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>nicht spurlos vorübergehen. Nunmehr hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> erklärt, daß die FDP seine personellen Vorstellungen schon vor der Wahl erfahren wird. Die SPD hat erklärt, daß sie nach wie vor bereit ist, unter <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> eine Große Koalition einzugehen.</p>
-				<p><name type="Person" role="Sprecher" ref="#ErtlJosef_1961-10-17">Ertl</name>: Er kann nur dann <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> wählen, wenn er weiß, was sachlich und personell geschehen wird.</p>
-				<p><name type="Person" role="Sprecher" ref="#Müller-LinkPeter-Heinz">Müller-Link</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN020" type="comment"><p>Peter-Heinz <name type="Person" role="Erwaehnung" ref="#Müller-LinkPeter-Heinz">Müller-Link</name>, Senator der Baubehörde der Freien und Hansestadt Hamburg (FDP), stellvertretender Landesvorsitzender der FDP in Hamburg, Mitglied des Bundesvorstandes der FDP.</p></note></seg>: Wir sollten uns nicht immer Dinge vornehmen, die wir nachher nicht halten können. Wir können auch nicht einfach sagen, daß wir <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> nicht wählen, da dieser ja schließlich unser Mann ist.</p>
-				<p>Ein Wechsel zwischen Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> und <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> scheint dem Landesverband Hamburg der einzig mögliche Wechsel zu sein, da <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> offenbar einverstanden ist. <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> sollte man nicht auswechseln. Der Landesverband Hamburg fragt sich aber nach wie vor, ob es zweckmäßig für Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> ist, ins Kabinett einzutreten. Es ist der einstimmige Wunsch, nicht aber ein Beschluß des Landesverbandes Hamburg, daß Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> auf einen Eintritt ins Kabinett verzichtet. Eine weitere Frage ist, was über die Fortsetzung der Koalition 1965 vereinbart wurde.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MenneWAlexander_1961-10-17">Menne</name>: Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> kann uns die Diskussion über die Leute, die Minister werden wollen, nicht verweigern. In bezug auf die SPD ist Dr. <name type="Person" role="Erwaehnung" ref="#MenneWAlexander_1961-10-17">Menne</name> nicht so ängstlich. Ein 6. Minister erscheint ihm erreichbar. Gelingt das nicht, soll sich die Verhandlungskommission eine Lösung überlegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>: Er glaubt, daß es für die nächsten zwei Jahre genausowenig eine gute Koalition geben wird, wie in den 1. beiden Jahren dieser Legislaturperiode. Wir sollten nicht warten, was <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> sagt, sondern wir sollten mit klaren eigenen Vorstellungen in die Verhandlung gehen. Wenn wir keine eigenen Vorstellungen haben, wird es auch schwer, den Hauptausschuß auf unsere Seite zu bringen.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchultzFritz-Rudolf_1957-10-15">Schultz</name>: Die FDP hat sich in der Öffentlichkeit bisher noch nichts vergeben. Es hat auch keinen Sinn, so zu tun, als wenn wir alles erreichen könnten. In der Tat kommt es darauf an, zu hören, was sich die andere Seite vorstellt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KohutOswaldAdolph_1957-10-15">Kohut</name>: Wir sollten handeln und nicht so sehr zurückhaltend sein.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name>: Er glaubt, daß<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> deshalb nicht verhandeln will, weil er sich nicht entscheiden kann. Deshalb sollte man <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> drängen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name>: Die Vizekanzlerfrage ist klar, darauf aufbauend kann man die anderen Forderungen entwickeln. Dr. <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name> spricht sich gegen eine parlamentarische Puppe neben einem Mann à la <name type="Person" role="Erwaehnung" ref="#SeecktHansvon">Seeckt</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN021" type="comment"><p>Hans <name type="Person" role="Erwaehnung" ref="#SeecktHansvon">von Seeckt</name> († 1936), 1920–1926 Chef der Heeresleitung, 1930–1932 MdR (DVP).</p></note></seg> im Verteidigungsministerium aus. Man kann auch nicht immer mit der schwarz-roten Koalition drohen, wenn ein klarer Beschluß kommen soll. Auch mit unseren Ministern sollte man nicht so sehr lavieren.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Die Formel, einmal Minister immer Minister, gilt nicht. Unsere Minister haben 1961 bei der Amtsübernahme gewußt, daß bei der Kanzlerwahl 1963 Veränderungen eintreten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: Er glaubt nicht an einen 6. Minister, wenn wir es auch versuchen werden. Deshalb sollte der Beschluß, an einem 6. Minister festzuhalten, nicht aufrecht erhalten werden, damit die Kommission etwas mehr Freiheit hat. Außerdem sollte die Frage geklärt werden, wer von den 5 Ministern für einen Rücktritt in Frage kommt.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AschoffAlbrecht_1961-10-17">Aschoff</name>: Mit der CDU sollte man nur darüber sprechen, was man in dieser Legislaturperiode noch machen kann.Natürlich muß <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> seine sachlichen und persönlichen Auffassungen noch vor der Wahl darlegen. Über den 6. Ministersitz sollte man jetzt gar nichts sagen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Ausdiskutiert ist, daß Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> als Vizekanzler in die Regierung geht. Ausdiskutiert ist auch, daß man versucht, einen 6. Ministersitz zu erreichen, sich aber notfalls mit 5 Ministerien begnügt.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Man wird mit <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> morgen über die Sache sprechen und dann die Frage nach den Personen stellen. Wenn gesagt wird, daß das Auswechseln eines Ministers ein Politikum ist, so muß man sagen, daß es auch ein Politikum wäre, wenn man Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> nicht ins Kabinett schicken würde. Wir sollten diese Frage also von der Person wegnehmen und sehen, wo wir etwas ändern können.</p>
-				<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Der Spielraum 6 von 21 muß bleiben. Wenn es bei 5 Ministern bleibt, ist es aber auch keine Katastrophe.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzHans_1953-10-06">Lenz</name>: Es hat kein Gespräch über die Funktion des Präsidenten des Bundesrechnungshofes gegeben.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> bittet die Verhandlungskommission, über die Kompetenzen des Forschungsministeriums in den Sachverhandlungen zu sprechen.</p>
-				<p><name type="Person" role="Sprecher" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name>: Zum Sachlichen ist noch zu sagen, daß in den Arbeitskreisen gute Arbeit geleistet wurde. Personell ist es selbstverständlich, daß wir versuchen werden, unsere 5 Minister zu halten. Geht das nicht, weil für Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> etwa nur das Innenministerium frei ist und das Bukett der 5 Minister dafür aufgewertet wird, müssen wir auf einen Minister verzichten. Über die Personenfrage muß natürlich schon jetzt verhandelt werden, das wünscht auch die CDU. Es besteht aber kein Grund, jetzt schon zum Rückzug zu blasen.</p>
-				<p><name type="Person" role="Sprecher" ref="#WeyerWilli_1953-10-06">Weyer</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN022" type="comment"><p>Willi <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name>, Minister für Inneres sowie Stellvertreter des Ministerpräsidenten des Landes Nordrhein-Westfalen (FDP), Landesvorsitzender der FDP in Nordrhein-Westfalen, Mitglied des Bundesvorstandes der FDP.</p></note></seg>: <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> muß die Verhandlungskommission natürlich auch über seine Gesamtvorstellungen auf personellem Gebiet unterrichten (<name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN023" type="comment"><p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraußFranzJosef_1949-09-07">Strauß</name>, MdB (CSU), Vorsitzender der CSU-Landesgruppe, stellvertretender Vorsitzender der CDU/CSU-Bundestagsfraktion, Landesvorsitzender der CSU.</p></note></seg>).</p>
-				<p>Personelle Möglichkeiten der FDP:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Wenn die CDU auf zwei Minister verzichtet, bleibt es bei der 5er-Lösung –<name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name> bezweifelt das aber.</p></item>
-					<item><label>2.</label><p>6er-Lösung bei 21 Ministerien. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> muß ein politisch wirksames Ministerium bekommen, sonst lieber</p></item>
-					<item><label>3.</label><p>5er-Lösung mit gewichtigen Ministerien.</p></item>
-				</list>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HammLudwig_1961-10-17">Hamm</name>: Er tritt für 19 Ministerien ein, wobei die FDP nicht mehr als 5 Minister stellen sollte. 6 Minister nimmt man uns draußen nicht ab.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MenneWAlexander_1961-10-17">Menne</name>: Das 6er-Verfahren sollte man nicht ausschalten, aber die Einzelheiten der Verhandlungskommission überlassen. Die FDP sollte nicht verlangen, daß die Kabinettsliste von mehr FDP als CDU-Leuten eingesehen wird. Wir müssen der Kommission das Vertrauen schenken und auf die Information notfalls verzichten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Handlungsfreiheit ist für die Kommission bereits in der letzten Sitzung beschlossen worden. Natürlich wird aber die Kommission Bundesvorstand und Bundestagsfraktion weitgehend unterrichten.</p>
-				<p>Für die Koalition von 1965 ist noch keine Vereinbarung getroffen worden. Eine Weiterführung hängt von dem Erfolg dieser Koalition ab. Im übrigen müssen wir uns hier Handlungsfreiheit vorbehalten. Die Frage des Wechsels stellt sich auch zu diesem Zeitpunkt noch nicht.</p>
-				<p><name type="Person" role="Sprecher" ref="#MertesWerner_1961-10-17">Mertes</name>: Vor der Stimmabgabe muß die Fraktion und der Bundesvorstand von dem Verhandlungsergebnis unterrichtet werden. Schließlich hängt auch die Wirkungsmöglichkeit des Abgeordneten von diesem Ergebnis ab.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#SchneiderHeinrich_1957-01-04">Schneider</name> unterstützt.</p>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-7">
-				<head>G.</head>
-				<p>TOP 4: Sozialpaket</p>
-				<p><name type="Person" role="Sprecher" ref="#DenekeJFVolrad_1963-07-26">Deneke</name>: Er berichtet über die Verhandlungen vom 18. und 23. September. Am 18.9. wurden lediglich die gegenseitigen Vorstellungen ausgetauscht und Unterkommissionen gebildet. Am 23.9. waren <name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#DenekeJFVolrad_1963-07-26">Deneke</name> und <name type="Person" role="Erwaehnung" ref="#LiebichWerner">Liebich</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN024" type="comment"><p>Werner <name type="Person" role="Erwaehnung" ref="#LiebichWerner">Liebich</name>, Assistent der FDP-Bundestagsfraktion, zuständig für den Arbeitskreis III (Arbeits- und Sozialpolitik).</p></note></seg>als Assistent vertreten. Es wurde von uns der Standpunkt vertreten, daß das Sozialpaket als Einheit erhalten bleiben muß.</p>
-				<p>Zum Kindergeld forderte die CDU, noch einmal über die Finanzamtslösung zu sprechen. Es wurde von der CDU auf den Brief des Finanzministers verwiesen und die Arbeitsamtslösung gefordert. Von uns wurde gesagt, daß für die FDP primär die Realisierung ihrer Forderung auf Übernahme des Kindergeldes auf den Haushalt ist.</p>
-				<p>Zur Krankenversicherungsneuregelung erklärte die CDU ihre Zustimmung zum Kostenerstattungsprinzip ab 1 250,– DM. Bei der Versicherungspflichtgrenze wurden Beträge von 850,– und 1 000,–DM genannt. Wir beharrten auf 750,– DM, sagten aber, daß das auch abhängig vom System sei. Wenn die CDU bei der Kostenerstattung entgegenkommt, kann die FDP unter Umständen auch bei der Versicherungspflichtgrenze entgegenkommen. Weiter wurde eine Wahlmöglichkeit zwischen Kostenerstattung und Individualbeitrag erwogen.</p>
-				<p>Bei der Lohnfortzahlung betonte die CDU die Wichtigkeit des Anspruchs an den Arbeitgeber. In der Ausgleichsfrage zeigte sich die CDU sehr hart. Die CDU wurde gebeten, möglichst keine Beschlüsse zu fassen, damit die Möglichkeiten weiterer Annäherung nicht verbaut werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#OpitzRudolf_1961-10-17">Opitz</name>: Der Mittelstandsausschuß der CDU setzt sich nach wie vor für die versicherungsrechtliche Lösung ein. Deshalb sollten wir hier nicht einlenken.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>: Er beglückwünscht <name type="Person" role="Erwaehnung" ref="#DenekeJFVolrad_1963-07-26">Deneke</name>, daß er in den wichtigsten Forderungen hart geblieben ist. Man sollte die finanziellen Belastungen und den Vernunftstandpunkt der CDU gegenüber herausstellen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: In diesem Zusammenhang ist es nicht unwichtig, daß auch der Ministerpräsident von Schleswig-Holstein für die versicherungsrechtliche Lösung eintritt.</p>
-				<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Wenn die versicherungsrechtliche Lösung durchgestanden werden soll, darf auch von einzelnen Abgeordneten nicht davon abgegangen werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>: <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN025" type="comment"><p>Josef <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, MdB (CDU).</p></note></seg> bestreitet den erneuten Beschluß der CDU-Fraktion über eine arbeitsrechtliche Lösung.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Ihm erscheint es wichtiger, daß man die arbeitsrechtliche Lösung für den Arbeitgeber erträglicher gestaltet. Das ist besser, als der Streit um versicherungsrechtliche oder arbeitsrechtliche Lösung.</p>
-				<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Wenn wir bereit sind, auf die arbeitsrechtliche Lösung einzugehen, werden wir vom Handwerk angegriffen werden, und die CDU wird es der FDP zuschreiben, daß die versicherungsrechtliche Lösung nicht zustande kam.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name>: Er war ursprünglich gleicher Auffassung wie Dr. <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name>, steht aber jetzt auf dem Boden der versicherungsrechtlichen Lösung. Wenn man einen entsprechenden Ausgleich findet, ist der Unternehmer nur der Kassenwart der Versicherung und das erscheint wenig sinnvoll.</p>
-				<p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#LeverenzBernhard">Leverenz</name>.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#HeuserHeuser-SchreiberHedda_1962-12-06">Heuser</name>: Das Ergebnis der bisherigen Verhandlungen ist als ein Erfolg zu betrachten und unsere Position ist gar nicht so schlecht. Was wir schon seit 5 Jahren behauptet haben, ist auch heute noch richtig.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#IlkHerta_1949-11-03">Ilk</name>: Wir sollten keinesfalls von der versicherungsrechtlichen Lösung abgehen. Das ideelle Moment muß herausgestellt werden, daß bei der versicherungsrechtlichen Lösung der Arbeitgeber die Krankheitskontrolle übernehmen muß. Außerdem sollten wir in der CDU die Leute stärken, die unsere Meinung vertreten.</p>
-				<p><name type="Person" role="Sprecher" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN026" type="comment"><p>Hans-Dietrich <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>, Geschäftsführer der FDP-Bundestagsfraktion sowie Bundesgeschäftsführer der FDP.</p></note></seg>: In dem Kommuniqué, das wir herausgeben, sollten wir uns zu der versicherungsrechtlichen Form bei der Lohnfortzahlung für kranke Arbeiter bekennen, da sie die bestmögliche Methode zur materiellen Gleichstellung von Arbeitern und Angestellten ist.</p>
-				<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Unser Wunsch zur Kostenerstattung kann gegenüber der Presse wiederholt werden. Es sollte aber kein Beschluß gefaßt werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#DenekeJFVolrad_1963-07-26">Deneke</name>: Man kann der Presse sagen, daß wir mit Befriedigung festgestellt haben, daß unsere Vorstellungen zur Kostenerstattung an Boden gewinnen und daß die Fraktion auf dem Boden der versicherungsrechtlichen Lösung steht.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: <name type="Person" role="Erwaehnung" ref="#MoerschKarl_1964-09-01">Moersch</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN027" type="comment"><p>Karl <name type="Person" role="Erwaehnung" ref="#MoerschKarl_1964-09-01">Moersch</name>, Leiter der Abteilung Presse- und Öffentlichkeitsarbeit der FDP-Bundesgeschäftsstelle.</p></note></seg> wird einen Formulierungsvorschlag vorlegen.</p>
-				<p><name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>: Es ist beabsichtigt (Briefwechsel <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN028" type="comment"><p>Eugen <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, MdB (CDU), Bundestagspräsident.</p></note></seg> – <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN029" type="comment"><p>Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, Regierender Bürgermeister von West-Berlin (SPD), stellvertretender Bundesvorsitzender der SPD.</p></note></seg>), den Bundestag im November nach Berlin einzuberufen. Mit Rücksicht auf die Absicht, wäre es zweckmäßig, wenn die FDP in diesem Augenblick eine Berlin-Sitzung fordern würde.</p>
-				<p><name type="Person" role="Sprecher" ref="#BormWilliam_1965-10-19">Borm</name>: Der Landesverband Berlin könnte ein Telegramm schicken, wenn jetzt Bedenken bestehen, diese Forderung ins Kommuniqué aufzunehmen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#RutschkeWolfgang_1957-10-15">Rutschke</name>: Wenn es dann zu keiner Berlin-Sitzung kommt, sieht es schlecht aus.</p>
-				<p><name type="Person" role="Sprecher" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>: Wenn die Angelegenheit schon perfekt ist, kann sie doch nicht mehr zerstört werden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Die Frage sollte noch einmal im kleinen Kreis besprochen werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#MoerschKarl_1964-09-01">Moersch</name>: Er verliest die Presseerklärung (vgl.»fdk« Nr. 69 und 70/63 (T) vom 26.9.1963).</p>
-			</div>
-			<div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-8">
-				<head>H.</head>
-				<p>TOP 2: Verfassungsschutz</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er wurde von einem Beamten des Verfassungsschutzes aufgesucht, der ihm die Frage stellte, ob ein Herr <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> die Aufgabe habe, Verbindung mit der sowjetischen Botschaft zu halten. <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> ist bei dem Landesverband in Düsseldorf angestellt und mit der Aufgabe betraut worden, Geld für die Partei hereinzuholen. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> hat den Beamten mit Minister <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name> in Verbindung gebracht. Der Verfassungsschutz hat festgestellt, daß<name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> mit MWD<seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN030" type="comment"><p>Ministerstwo wnutrennich del (Ministerium für innere Angelegenheiten).</p></note></seg>-Offizieren in Verbindung steht. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> hat dem Beamten erklärt, daß<name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> keinen Auftrag hat, mit sowjetischen Botschaftsangehörigen Verbindung zu halten.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name> ist mit dem Beamten der Sache nachgegangen und es hat sich herausgestellt, daß nichts hinter der Sache steht. Die Gespräche von <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> mit sowjetischen Botschaftsangehörigen haben in der Öffentlichkeit stattgefunden und dienten nur dem Geltungsbedürfnis von <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name>.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> hat aus dem Telefon bei Abnahme des Hörers ein Gespräch, das er gestern mit seiner Freundin führte, gehört. Er hat davon seinem Hauptgeschäftsführer Meldung gemacht. Der »Spiegel« hat davon erfahren und ohne Nennung von Namen und Partei einen Bericht darüber gebracht. Dazwischen lag dann der Bericht der »Zeit« über die Telefonüberwachung.</p>
-				<p>Der Verfassungsschutz hat nun laut <name type="Person" role="Erwaehnung" ref="#PätschWernerKurt">Pätsch</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN031" type="comment"><p>Werner Kurt <name type="Person" role="Erwaehnung" ref="#PätschWernerKurt">Pätsch</name>, 1956–19. September 1963 Sachbearbeiter im Referat »Abwehr des sowjetischen Nachrichtendienstes« der Spionageabwehrabteilung des Bundesamtes für Verfassungsschutz.</p></note></seg> monatelang die Briefe von <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> geöffnet und seine Gespräche überwacht.</p>
-				<p>Minister <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hat die Vorsitzenden der Fraktionen zu sich geladen, um über diese Angelegenheit zu berichten. Für die FDP erschien <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>. Zu diesem Zeitpunkt waren <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN032" type="comment"><p>Hermann <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, MdB (SPD), Vorsitzender des Ausschusses für Inneres.</p></note></seg> und <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> schon informiert.<name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hat versucht, nur einen Zipfel zu lüften. Gegen diese Methode hat sich <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> verwahrt und verlangt, daß alle Fakten bekanntgegeben werden. Verfassungsschutzchef <name type="Person" role="Erwaehnung" ref="#SchrübbersHubert">Schrübbers</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN033" type="comment"><p>Hubert <name type="Person" role="Erwaehnung" ref="#SchrübbersHubert">Schrübbers</name>, Präsident des Bundesamtes für Verfassungsschutz.</p></note></seg>, der an dem Gespräch teilnahm, hat gesagt, daß er nach seiner Amtsübernahme die bis dahin üblichen Praktiken abgestellt habe. Er hat Vordrucke geschaffen, auf denen Namen und Telefonnummer des Betreffenden stehen und die Engländer gebeten werden, den Mann zu überwachen. <name type="Person" role="Erwaehnung" ref="#PätschWernerKurt">Pätsch</name> hat heute ausgesagt, daß die Engländer nur kommentarlos Telefonnummer und Namen des zu Überwachenden erhielten. Die Berichte der Alliierten gaben dann die wörtliche Rede aufgrund einer Tonbandaufnahme der Telefongespräche wieder. Im Innenausschuß hat die CDU zum Teil (Dr. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN034" type="comment"><p>Max <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name>, MdB (CDU).</p></note></seg>, <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN035" type="comment"><p>Leo <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name>, MdB (CSU), Parlamentarischer Geschäftsführer der CSU-Landesgruppe.</p></note></seg>) in bezug auf den Beschluß des Innenausschusses mitgezogen. Dort wurde gefordert, daß alle Namen der Überwachten mitgeteilt werden sollen, einschließlich derjenigen, die von anderen Ämtern, auch der Landesämter, überwacht werden. <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> hat verlangt, daß alle Nachrichtendienste Auskunft geben, ob sie Abhöraufträge erteilen.</p>
-				<p>Es hat sich herausgestellt, daß sich die Abhörerei in den Räumen der Post durch deutsche Stellen vollzieht. Der Postminister hat erklärt, daß er davon nichts weiß. <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hat gesagt, daß es besser sei, wenn diese Überwachung bei der Post erfolgt, als wenn es die Alliierten selbst tun.</p>
-				<p><name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> wird jetzt vom Innenausschuß gebeten, dessen Petitum zu erfüllen und die Liste über Namen und Veranlasser vorzulegen. Wenn es richtig ist, daß die Akten frisiert werden, wird es Zeit, einen Untersuchungsausschuß einzuschalten, wo unter Eid ausgesagt werden muß. Nach <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmanns</name> Auffassung ist <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> persönlich an der Überwachung unbeteiligt und hier der Verwaltung aufgelaufen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name>: Hier tritt ein Geist zutage, der uns als Hüter des Rechtsstaates erschrecken muß. Die Grundrechte wurden einfach durch mittelbare Täterschaft verletzt. Auch das grundgesetzlich geschützte Postgeheimnis wurde verletzt. Dr. <name type="Person" role="Erwaehnung" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name> gibt der Verwunderung Ausdruck, daß die SPD nicht sofort einen Untersuchungsausschuß gefordert hat.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name>: Im 1. und 2. Bundestag hat es einen Ausschuß zum Schutz der Verfassung gegeben. Diesen benötigen wir offenbar wieder. Dr. <name type="Person" role="Erwaehnung" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name> hat berechtigten Anlaß zu glauben, daß auch er zu den Überprüften gehört.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BucherEwald_1953-10-06">Bucher</name>: Dieser Sache kann man nur mit einem Untersuchungsausschuß beikommen.</p>
-				<p><name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: In der Post gibt es einen Raum, in dem man abhören kann. Dort sitzen die Alliierten. Der Postvorsteher veranlaßt nur auf Verlangen der Alliierten nach einem vorgeschriebenen Formular die Schaltung.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#DehlerThomas_1949-09-07">Dehler</name>: Die Bundesregierung hat aber nach dem Deutschlandvertrag die Prüfungsmöglichkeit.</p>
-				<p><name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: Er will hier nur den technischen Vorgang schildern. Die Post hat von der Bundesregierung generell die Vollmacht, solche Schaltungen vorzunehmen. Die Frage reduziert sich also darauf, wie deutsche Stellen von diesem Recht der Alliierten für ihre Zwecke Gebrauch gemacht haben.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Er zitiert Artikel 5 des Deutschlandvertrages. Hier ist eine Konsultation der Bundesregierung vorgesehen. Auch nach Artikel 3 Abs. 2 des Truppenvertrags ist keine aktive deutsche Haltung möglich.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er gibt bekannt, daß die SPD keine Untersuchungskommission, sondern nur eine Kommission beim Innenausschuß fordert. Aus einer Pressemitteilung ergibt sich mittelbar, daß auch auf Landesebene abgehört wurde. Die SPD-Presseerklärung ist sehr weich gehalten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: Hier haben Bundesminister unvollständig und damit falsch ausgesagt. Das sollte man festhalten. Er bittet um Abschriften der vorhandenen Unterlagen einschließlich der Presseerklärung der SPD.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name>: Wir sollten die Sache keinesfalls einschlafen lassen. Auch wenn die SPD nicht mitmacht; denn auch das ist eine Frage des Staates, in dem wir leben. Man ist den Nachrichtendiensten schutzlos preisgegeben. Im Gegensatz zu England tanzen in der Bundesrepublik die Beamten den Ministern auf dem Kopf herum.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Das Wort Untersuchungsausschuß sollte man nicht aus dem Raum lassen.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#KruemmerEwald_1963-01-24">Krümmer</name>: Was sich hier vollzieht, schadet dem gesamten Parlament.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Man sollte draußen darauf hinweisen, daß bei einer absoluten Mehrheit der CDU diese Dinge gar nicht diskutiert worden wären, denn es hätte sich schon im Innenausschuß nicht die erforderliche Mehrheit ergeben. Dazu kommt, daß die Opposition ihre Aufgabe nicht ordnungsgemäß wahrnimmt. Allerdings muß man auch an die 16 000 Agenten in der Bundesrepublik denken und darf nicht das Kind mit dem Bade ausschütten. Im Bundestag ist außer bei dem staatsanwaltschaftlichen Fall <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN036" type="comment"><p>Eduard <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>, Minister für Unterricht und Kultus des Landes Rheinland-Pfalz (CDU), 1949–7. Oktober 1956 MdB (CDU).</p></note></seg> nicht abgehört worden. Er wird veranlassen, daß eine Zusammenstellung der von Dr. <name type="Person" role="Erwaehnung" ref="#LeverenzBernhard">Leverenz</name> gewünschten Unterlagen der Fraktion und dem Bundesvorstand vorgelegt wird.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name>: Das Ausführungsgesetz zu Artikel 10 des Grundgesetzes darf aber nicht so verabschiedet werden, daß die bisherige Praxis legalisiert wird.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#RutschkeWolfgang_1957-10-15">Rutschke</name>: Wir sollten einen Untersuchungsausschuß fordern.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Die alliierten Vorbehaltsrechte müssen abgeschafft werden.</p>
-				<p><name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Mit einer Presseerklärung sollten wir warten, bis die Sitzungen von Ältestenrat und Innenausschuß abgeschlossen sind und klar ist, ob <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> eine Liste vorlegt oder nicht.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#EmdeHansGeorg_1961-10-17">Emde</name>: Im Ältestenrat wurde folgende Erklärung abgegeben:</p>
-				<list type="undefined">
-					<item><label>1.</label><p>Die Dinge wurden sehr genau behandelt.</p></item>
-					<item><label>2.</label><p><name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN037" type="comment"><p>Friedrich <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>, MdB (SPD), Parlamentarischer Geschäftsführer der SPD-Bundestagsfraktion.</p></note></seg> hat erklärt, daß er einer falschen Information aufgesessen ist.</p></item>
-					<item><label>3.</label><p>»Panorama« hat falsch berichtet. – Es hat nie eine Abhöranlage im Bundeshaus gegeben.</p></item>
-				</list>
-				<p>Hintergrund: Die CDU wollte »Panorama« und <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> gleichzeitig hochgehen lassen. <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> hat an Gesicht verloren und befand sich taktisch in einer schlechten Lage. <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN038" type="comment"><p>Will <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, MdB (CDU), Parlamentarischer Geschäftsführer der CDU/CSU-Bundestagsfraktion.</p></note></seg> versucht, die Sache aufzubauschen. Dr. <name type="Person" role="Erwaehnung" ref="#EmdeHansGeorg_1961-10-17">Emde</name> und <name type="Person" role="Erwaehnung" ref="#DuerrHermann_1957-10-15">Dürr</name> haben sich aber zurückgehalten.<name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> konnte den Beweis des Abhörens nicht führen. Auch der ehemalige Abgeordnete <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name> ist nicht vom Bundeshaus aus abgehört worden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Gegen <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name> ist von der Staatsanwaltschaft ermittelt worden.</p>
-				<p><name type="Person" role="Sprecher" ref="#DuerrHermann_1957-10-15">Dürr</name>(zur Ergänzung): <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> legte Wert auf einen Strafantrag gegen <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>. Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN039" type="comment"><p>Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>, MdB (SPD), Bundestagsvizepräsident, stellvertretender Vorsitzender der SPD-Bundestagsfraktion, stellvertretender Vorsitzender des Ausschusses für auswärtige Angelegenheiten.</p></note></seg> und <name type="Person" role="Erwaehnung" ref="#DuerrHermann_1957-10-15">Dürr</name> hatten aber Bedenken.</p>
-				<p>Wegen der Tagesordnung verweist <name type="Person" role="Erwaehnung" ref="#DuerrHermann_1957-10-15">Dürr</name> auf den Zeitplan. Vom 8.–11.10. ist am Mittwoch und Freitag Plenum, am Dienstag, den 15.10., ist die Verabschiedung von Kanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, am 16.10. die Kanzlerneuwahl. Am 17.10. soll um 15 Uhr die Vereidigung der Minister stattfinden. Der Freitag ist für die Abgabe der Regierungserklärung vorgesehen, falls sie bis dahin fertiggestellt ist.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Die CDU kritisiert »Das Freie Wort« wegen eines Artikels von <name type="Person" role="Erwaehnung" ref="#Aldenhoven">Aldenhoven</name> über das sozialpolitische Gespräch mit der CDU.</p>
-				<p><name type="Person" role="Sprecher" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>: »Das Freie Wort« ist unabhängig, wie auch durch einen Beschluß der hier versammelten Gremien im Zusammenhang mit der Finanzierung festgestellt wurde. Als offizielle Stimme der Partei ist dagegen die »fdk« zu betrachten, die sich in ihren Kommentaren zurückgehalten hat. <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> wird <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN040" type="comment"><p>Josef <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, Kreisvorsitzender der CDU Bonn-Land.</p></note></seg> anrufen und diese Auffassung vertreten.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er gibt bekannt, daß der bisherige Geschäftsführer der Industrie- und Handelskammer Mainz, Außenstelle Bingen, Dr. <name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name><seg type="note"><note xml:id="fdp-04_1963-09-26-t1010_EP_FN041" type="comment"><p>Hans <name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name>, stellvertretender Bundesgeschäftsführer der FDP.</p></note></seg>, am 1.10.1963 als stellvertretender Bundesgeschäftsführer eingestellt worden ist. Hierzu bedarf es keiner Genehmigung des Bundesvorstandes.</p>
-				<p>Die nächste Fraktionssitzung findet am 2. Oktober 1963 statt. Die Hauptausschußsitzung findet am 5.10.1963 in Köln statt.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="fdp-04_1963-09-26-t1010_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Gemeinsame Sitzung des Bundesvorstandes und der Fraktion</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 08. September 2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die FDP-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1949-1969. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 16/I</title>
+                  <author>Volker Stalmann</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2017</date>
+                  <idno>https://d-nb.info/1135738092</idno>
+                  <idno>https://d-nb.info/1145327699</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv des Liberalismus (AdL)</institution>
+                     <idno>Bestand Wolfgang Mischnick, A40-754</idno>
+                     <objectName>Kurzprotokoll der gemeinsamen Sitzung von Bundestagsfraktion und Bundesvorstand am 26. September 1963</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Protokoll der gemeinsamen Sitzung des Bundesvorstandes und der Bundestagsfraktion der FDP vom 26. September 1963</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>14 Seiten </extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1963-09-26">
+               <time type="start" when="10:10:00"/>
+               <time type="end" when="18:15:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#MendeErich_1949-09-07"/>
+            <name type="Person" role="Sitzungsleitung" ref="#LeverenzBernhard"/>
+            <idno type="sitzung">
+               <idno type="wp">04</idno>
+               <idno type="Fraktion-Landesgruppe">FDP</idno>
+               <idno type="sitzungsabfolge">1</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-09-30" who="#StalmannVolker" status="draft" n="3">Header, SV, Namen</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-1" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-1">A. Geschäftliche Mitteilungen.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-2" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-2">B. Bericht des Partei- und Fraktionsvorsitzenden <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> über die allgemeine politische Lage.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-3" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-3">C. Bericht des Vizepräsidenten des Deutschen Bundestages <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> über seine Moskau-Reise.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-4" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-4">D. Bericht des hessischen Landesvorsitzenden <name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name> über seine USA-Reise.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-5" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-5">E. Allgemeine Aussprache.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-6" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-6">F. Bericht über den Stand der Regierungsverhandlungen mit anschließender Aussprache.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-7" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-7">G. Bericht über die Verhandlungen über das Sozialpaket mit anschließender Aussprache.</item>
+               <item xml:id="fdp-04_1963-09-26-t1010_EP_SVP-8" corresp="#fdp-04_1963-09-26-t1010_EP_div_SVP-8">H. Bericht über die Mitteilung eines Verfassungsschutzbeamten über die Überwachung eines Mitarbeiters des nordrhein-westfälischen Landesverbandes der FDP mit anschließender Aussprache.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Entschuldigte Fraktionsmitglieder: 8.</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Geburtstagsglückwünsche</p>
+                  <table rendition="#hidden">
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>
+                        </cell>
+                        <cell>6.9.1922 (41 Jahre)</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#OpitzRudolf_1961-10-17">Opitz</name>
+                        </cell>
+                        <cell>11.9.1920 (43 Jahre)</cell>
+                     </row>
+                     <row>
+                        <cell>Dr. <name type="Person" role="Erwaehnung" ref="#KruemmerEwald_1963-01-24">Krümmer</name>
+                        </cell>
+                        <cell>17.9.1896 (67 Jahre)</cell>
+                     </row>
+                     <row>
+                        <cell>Dr. <name type="Person" role="Erwaehnung" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>
+                        </cell>
+                        <cell>22.9.1895 (68 Jahre)</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#MuehlenKlaus_1959-10-06">von Mühlen</name>
+                        </cell>
+                        <cell>26.9.1909 (54 Jahre)</cell>
+                     </row>
+                     <row>
+                        <cell>Dr. <name type="Person" role="Erwaehnung" ref="#IlkHerta_1949-11-03">Ilk</name>
+                        </cell>
+                        <cell>9.9.1902</cell>
+                     </row>
+                  </table>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>Entschuldigt</p>
+                  <table rendition="#hidden">
+                     <row>
+                        <cell>Dr. <name type="Person" role="Erwaehnung" ref="#DoerinkelWolfram_1961-10-17">Dörinkel</name>
+                        </cell>
+                        <cell>berufliche Verpflichtungen</cell>
+                     </row>
+                     <row>
+                        <cell>Dr. <name type="Person" role="Erwaehnung" ref="#HelligeWalther_1961-10-17">Hellige</name>
+                        </cell>
+                        <cell>Auslandsaufenthalt</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#MaukAdolf_1952-04-07">Mauk</name>
+                        </cell>
+                        <cell>Ausschußsitzung des Europäischen Parlaments in Rom</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#RademacherWillyMax_1949-09-07">Rademacher</name>
+                        </cell>
+                        <cell>als Präsident Teilnahme am Deutschen Bauerntag im Hamburg</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#SanderHeinrich_1957-10-15">Sander</name>
+                        </cell>
+                        <cell>Teilnahme am Deutschen Bauerntag in Hamburg</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#WaechterGerold_1961-10-17">Wächter</name>
+                        </cell>
+                        <cell>private Verpflichtungen</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#WalterFritz_1957-10-15">Walter</name>
+                        </cell>
+                        <cell>Teilnahme am Deutschen Bauerntag in Hamburg</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name>
+                        </cell>
+                        <cell>Auslandsaufenthalt</cell>
+                     </row>
+                  </table>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name> gibt bekannt, daß morgen erstmalig die Verhandlungskommission mit Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>
+                     <seg type="note">
+                        <note xml:id="fdp-04_1963-09-26-t1010_EP_FN001" type="comment">
+                           <p>Ludwig <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>, MdB (CDU), Bundesminister für Wirtschaft, Vizekanzler.</p>
+                        </note>
+                     </seg> zur Behandlung von Sachfragen zusammentritt. Die FDP-Verhandlungskommission trifft sich anschließend an die Fraktionssitzung noch einmal in der Parlamentarischen Gesellschaft.</p>
+               </item>
+               <item>
+                  <label>4.</label>
+                  <p>Die Sitzung wird für vertraulich erklärt.</p>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <p>Senatsdirektor Dr. <name type="Person" role="Erwaehnung" ref="#HartkopfGuenter">Hartkopf</name>
+                     <seg type="note">
+                        <note xml:id="fdp-04_1963-09-26-t1010_EP_FN002" type="comment">
+                           <p>Günter <name type="Person" role="Erwaehnung" ref="#HartkopfGuenter">Hartkopf</name>, Senatsdirektor für Bundesangelegenheiten des Landes Berlin in Bonn.</p>
+                        </note>
+                     </seg> wird als Gast begrüßt.</p>
+               </item>
+            </list>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-2">
+            <head>B.</head>
+            <p>TOP 1: Bericht über die allgemeine politische Lage</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Es fanden zwei Gespräche statt, und zwar einmal zwischen Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name>, Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> und Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> über die Moskaureise Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name>, und ein Gespräch, an dem neben Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> Dr. <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name> als Vorsitzender des Arbeitskreises I teilnahm, mit Außenminister Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN003" type="comment">
+                     <p>Gerhard <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name>, MdB (CDU), Bundesminister des Auswärtigen.</p>
+                  </note>
+               </seg> vor dessen USA-Reise.</p>
+            <p>Im nächsten Jahr finden Präsidentenwahlen in den USA statt.Da <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN004" type="comment">
+                     <p>John Fitzgerald <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>, Präsident der Vereinigten Staaten von Amerika.</p>
+                  </note>
+               </seg> bisher keine großen innenpolitischen Erfolge verzeichnen kann, sucht er Erfolge in der Außenpolitik, d. h. er neigt zu einem Entgegenkommen in der Entspannung Ost-West. Die gleiche Tendenz ist in England zu verzeichnen. Anders steht <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN005" type="comment">
+                     <p>Charles <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name>, Präsident der Französischen Republik.</p>
+                  </note>
+               </seg> dazu, der an der harten Linie festhält.<name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> sind der Meinung, daßman zunächst den Konflikt UdSSR – China weiter schwelen lassen sollte, damit <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN006" type="comment">
+                     <p>Nikita Sergejewitsch <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name>, Erster Sekretär des Zentralkomitees der KPdSU sowie Vorsitzender des Ministerrates der UdSSR.</p>
+                  </note>
+               </seg> zu größerem Entgegenkommen bereit ist. <name type="Person" role="Erwaehnung" ref="#MonnetJean">Monnet</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN007" type="comment">
+                     <p>Jean <name type="Person" role="Erwaehnung" ref="#MonnetJean">Monnet</name>, Vorsitzender des Aktionskomitees für die Vereinigten Staaten von Europa, 1952–1955 Präsident der Hohen Behörde der Europäischen Gemeinschaft für Kohle und Stahl.</p>
+                  </note>
+               </seg>, mit dem Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> eine Aussprache hatte, teilt die amerikanische Auffassung, abwarten und nichts tun sei falsch.</p>
+            <p>Das Atomstoppabkommen wurde von der FDP schon in der letzten Sitzung gebilligt. Das entscheidende Gremium in den USA hat sich ebenfalls mit 4/5-Mehrheit dafür ausgesprochen. Da auch SPD und CDU für das Atomstoppabkommen stimmen werden, ist mit einer großen Mehrheit im Bundestag für das Ratifizierungsgesetz zu rechnen. Die Verabschiedung soll bis Weihnachten erfolgen. Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> will gegenüber <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> eine bewegliche Haltung zeigen. Zu dem Gespräch, das Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> mit CDU-Politikern in Cadenabbia führte, ist die FDP nicht eingeladen worden, da hier im Gegensatz zu den Presseberichten nur CDU-interne Differenzen ausgetragen werden sollten.</p>
+            <p>Das am 9. August 1963 übergebene Memorandum wird nach wie vor im Botschafterlenkungsausschuß beraten. Die Frage der Kontrollstationen spielt zur Zeit eine große Rolle. Diese sollen sich aber nicht nur auf den deutschen Raum beziehen. Ihr Bereich sollüber Europa hinausgehen. Die Rede <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedys</name> vor der UNO am 20.9.1963 ließ ebenfalls eine Entspannungstendenz erkennen.Die Mondplanung ist nur eine Fortsetzung der gemeinsamen Planung, also keine Überraschung, wie es zum Teil in der Presse dargestellt wurde. Das Nichtangriffsabkommen wurde von <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> in seiner UNO-Rede nicht erwähnt. Die Berlin-Garantie wurde jedoch erneuert. Das Nichtangriffsabkommen ist deshalb in den Hintergrund getreten, da völkerrechtliche Schwierigkeiten aufgetreten sind.</p>
+            <p>Von den 120 UNO-Staaten haben nur 11 die DDR anerkannt. Eine Aufwertung der DDR durch das Atomstoppabkommen ist nichterfolgt. Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> will seine Gesprächspartner von der FDP, die er vor seiner Abreise nach den USA konsultiert hat, auch nach seiner Rückkehr wieder konsultieren. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> dankt Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> für die staatsmännische Klugheit, die er auf seiner Reise durch die UdSSR bewiesen hat. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> hat damit auch der Partei einen Dienst erwiesen.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-3">
+            <head>C.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DehlerThomas_1949-09-07">Dehler</name>: Man sollte die Bedeutung seiner Reise nicht überschätzen. Die Einladung dafür lag schon seit 1955 vor. Das Bundestagspräsidium vertrat die Auffassung, daß es gut sei, jetzt eine solche Reise zu veranstalten. Auch die Engländer haben zugeredet. Die Reise war verbunden mit einer Einladung zum Präsidium der Unionskammer des Obersten Sowjets. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> konnte sich jedes Reiseziel wählen, das er wollte, und alles besichtigen, was er wollte, von einer Seidenspinnerei bis zur Sowchose. Er hat mit Professoren, Gelehrten, Technikern und nicht nur mit Parteibonzen gesprochen. Auch in den technischen Betrieben stellte er ein hohes Niveau fest, das von dem Niveau in unseren Betrieben nicht wesentlich abweicht. Von dem Polizeistaat hat er nichts gespürt. Auch die Haltung der Bevölkerung ist gelockert. Man kann nicht von einer revolutionären Stimmung sprechen. Insgesamt muß auch von einer ertragsreichen Wirtschaft gesprochen werden, denn die wirtschaftliche Entwicklung ist gut. Er hat viele technische Schulen gesehen – es gibt nur 2 % Analphabeten. Es wäre eine Verkennung der Dinge, wenn man auf einen wirtschaftlichen Zusammenbruch spekulieren würde, selbst wenn durch die Planwirtschaft Rückschläge eintreten sollten.Trinkgelder werden wieder genommen, weil der Verbraucher wieder die Möglichkeit der Konsumwahl hat. Im ganzen muß das System <name type="Person" role="Erwaehnung" ref="#ChruschtschowNikitaSergejewitsch">Chruschtschow</name> für sehr saturiert gehalten werden. Es besteht ein großer Unterschied zur <name type="Person" role="Erwaehnung" ref="#StalinJosefWissarionowitsch">Stalin</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN008" type="comment">
+                     <p>Josef Wissarionowitsch<name type="Person" role="Erwaehnung" ref="#StalinJosefWissarionowitsch">Stalin</name> († 1953), 1922–1953 Generalsekretär des Zentralkomitees der KPdSU, 1941–1953 Vorsitzender des Rates der Volkskommissare bzw. des Ministerrates der UdSSR.</p>
+                  </note>
+               </seg>-Periode. Der China-Konflikt wurde nicht als dringende Sorge empfunden. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> hat es aber vermieden, viel darüber zu sprechen.</p>
+            <p>Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> glaubt noch immer an eine politische Lösung als Folge einer starken Rüstung des Westens, wie er zu Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> sagte. In der Sowjetunion klingt bei jedem Gespräch und bei jedem Tischspruch der Friedenswille an. Immer wieder ist die Sorge der Russen zu spüren, daß die friedliche Entwicklung durch Krieg gestört wird. Daraus ergibt sich, daß die Kriegsfurcht des Westens eine falsche These ist, jedenfalls soweit es die Haltung der russischen Bevölkerung betrifft. Natürlich wird nach wie vor eine Ausdehnung der Ideologie angestrebt. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> Reise war von ihm als eine politische Demonstration gewollt, gegen eine Politik, die auf das Wirken in den Osten verzichtet. So wurde es auch von den Sowjets aufgefaßt und diese Reaktion war auch in Deutschland zu spüren, wie er aus zahlreichen Leserbriefen erfahren hat. Eine harte Auseinandersetzung gab es von Anfang an über die Frage des Friedensvertrages. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> war kurz vor seiner Reise noch in Berlin gewesen, so daß er noch unter dem Eindruck der Mauer stand.</p>
+            <p>Das Gespräch mit <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN009" type="comment">
+                     <p>Andrei Andrejewitsch<name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>, sowjetischer Außenminister.</p>
+                  </note>
+               </seg> war sehr hart, wenn auch konziliant in der Form. In der deutschen Frage, sagte <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>, sind wir hart wie Granit. <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> will zwei Friedensverträge, da die Teilung Deutschlands eine Folge des Krieges ist. Hier gibt es für ihn keine Konzession. Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> hat dagegen den Standpunkt vertreten, daß dieser Zustand gefahrvoll ist. Nur eine gesamtdeutsche Regierung kann einen Friedensvertrag unterzeichnen. <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> sagte, daß derjenige, der die Realitäten nicht anerkennt, nur Krieg will. Es kam eine starke Animosität gegen Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> heraus. In Wirklichkeit, so meinte <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name>, wollen <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> und die Westmächte den Status quo. Diesen Vorwurf hat Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehler</name> abgewehrt. Er hat auf Österreich und die Haltung der Sowjets auf der 1958er-Konferenz verwiesen. Der Fall Österreich liegt aber laut <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> ganz anders. Auf die bei der 1958er-Konferenz von den Sowjets gezeigte Haltung zu einem gesamtdeutschen Friedensvertrag ist <name type="Person" role="Erwaehnung" ref="#GromykoAndrejAndrejewitsch">Gromyko</name> nicht eingegangen. Das Gespräch dauerte 70 Minuten.</p>
+            <p>Aus der Sicht Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> gibt es keinen anderen Weg, als Gespräche dieser Art fortzusetzen, um in der deutschen Frage weiterzukommen.</p>
+            <p>Über eine Fülle von Problemen gäbe es aus Indien zu berichten. <name type="Person" role="Erwaehnung" ref="#NehruJawaharlal">Nehru</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN010" type="comment">
+                     <p>Jawaharlal<name type="Person" role="Erwaehnung" ref="#NehruJawaharlal">Nehru</name>, Premierminister der Republik Indien.</p>
+                  </note>
+               </seg> ist die zentrale Figur auch gegenüber der Opposition im Parlament. Zu einer wirklichen Entspannung kann es nicht kommen, wenn die Krankheitsherde nicht beseitigt werden. <name type="Person" role="Erwaehnung" ref="#NehruJawaharlal">Nehru</name> war der Meinung, daß wir die Entspannung unserer nationalen Anliegen wegen verhindern wollen. Insgesamt kann festgestellt werden, daß Indien, wenn es auch unsere Wünsche erfüllt (keine Anerkennung der DDR), unserem Anliegen doch sehr fern steht.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-4">
+            <head>D.</head>
+            <p>
+               <name type="Person" role="Sprecher" ref="#KohlHeinrich">Kohl</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN011" type="comment">
+                     <p>Heinrich <name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name>, MdL Hessen (FDP), Landesvorsitzender der FDP in Hessen, Mitglied des Bundesvorstandes der FDP.</p>
+                  </note>
+               </seg>: Er war sieben Wochen auf Einladung des State Department in den USA und konnte seine Reise in Washington selbst zusammenstellen. Er hat die Luftfahrt- und Elektronenindustrie besichtigt und viele Gespräche geführt. Man bringt Deutschland großes Vertrauen entgegen.<name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name> ist durch die gesamten Staaten gereist. Er stellte eine gute Ausbildung der Flugzeugführer in den USA fest. Hier wie überall fand er großes Entgegenkommen von seiten der Amerikaner. Verständnis hat er auch in der Hähnchenfrage gefunden. Gefragt wurde, was die Deutschen gegen die Mauer tun. Man hat ihm Gelegenheit gegeben, selbst ein Flugzeug zu führen (Hercules), das bisher noch nie von einem Deutschen geführt wurde, und [er] konnte sich von den ausgezeichneten Flugeigenschaften dieser Maschine überzeugen. Von der deutschen Botschaft ist er gut betreut worden. Die deutschen Soldaten sind drüben besser angekommen, als mancher Diplomat. Die Amerikaner halten sehr viel von unserer Tüchtigkeit. Die Franzosen und <name type="Person" role="Erwaehnung" ref="#deGaulleCharles">de Gaulle</name> dagegen mögen sie gar nicht.Auch für die deutsche politische Lage hat man viel Verständnis. Schließlich hat <name type="Person" role="Erwaehnung" ref="#KohlHeinrich">Kohl</name> mit Bob <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN012" type="comment">
+                     <p>Robert Francis <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name>, US-amerikanischer Justizminister.</p>
+                  </note>
+               </seg> gesprochen. Mit dem Negerproblem fällt es den Amerikanern schwer, fertig zu werden. Wenn <name type="Person" role="Erwaehnung" ref="#KennedyJohnF">Kennedy</name> die Wahl verliert, liegt es am Negerproblem.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-5">
+            <head>E.</head>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Es sollte in Zukunft mehr darauf geachtet werden, daß der Kauf von Flugzeugen nach militärpolitischen Gesichtspunkten erfolgt (Hercules).</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN013" type="comment">
+                     <p>Hans-Günter <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>, Senator für Finanzen von West-Berlin, stellvertretender Landesvorsitzender der FDP in Berlin, Mitglied des Bundesvorstandes der FDP.</p>
+                  </note>
+               </seg>: Das Zustimmungsgesetz zum Atomstoppabkommen wurde am 11.9. im Kabinett nicht abschließend behandelt, da darin keine Berlinklausel enthalten ist. Der Westen leistet gegen die Berlinklausel Widerstand. Dem sollten wir entgegentreten, zumal in Berlin die Vorbehaltsrechte der Alliierten nicht berührt werden. Sonst könnte damit eine gefährliche Entwicklung eingeleitet werden, da es präjudizierend für weitere Entspannungsschritte wäre, wenn beim ersten Entspannungsschritt in dem Zustimmungsgesetz keine Berlinklausel enthalten ist. Das Ergebnis dieser Entwicklung könnte die Isolierung Berlins sein. Partei und Fraktion müssen daher alles tun, die Berlinklausel in das Zustimmungsgesetz zum Atomstoppabkommen hinzuzubekommen. Darin sieht <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> einen Teil der deutschen Frage. Gelingt das nicht, so müßte man sich schwer überlegen, ob man unter diesen Umständen ratifizieren kann.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> hat recht und <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheel</name> glaubt, daß man von gewisser Seite mit Absicht auf die Berlinklausel verzichtet hat, um die Dreiteilung zu dokumentieren. Im Kabinett wurde diese Frage besprochen. Die rechtliche Frage wird geprüft und das Kabinett ist auch weitgehend der Meinung, daß die Berlinklausel in das Ratifizierungsgesetz hinein muß.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HartkopfGuenter">Hartkopf</name>: In dem Abkommen mit Polen ist nur eine sehr weiche Berlinklausel enthalten. Auch bei dem Abkommen mit Ungarn besteht die Gefahr einer Aufweichung der Berlinklausel. Zu erreichen war lediglich die Hilfsklausel »Gebiet der DM West«. Diese Gefahr besteht nun auch bei dem Atomstoppabkommen. Die FDP sollte heute erklären, daß sie die Berlinklausel für selbstverständlich hält.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Erst sollte man mit Dr. <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> Verbindung aufnehmen, da wir uns verpflichtet haben, keine selbständigen Schritte in dieser Sache zu unternehmen. In der Sache haben <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> und Dr. <name type="Person" role="Erwaehnung" ref="#HartkopfGuenter">Hartkopf</name> recht. Es ist aber ebenso ein Problem von SPD und CDU, eine Lösung zu finden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Ein Beschluß kann seines Erachtens, wenn man keine bestimmte Formel nennt, gefaßt werden. Natürlich muß man die Entspannung mitmachen, nur darf man dabei nicht gleich beim ersten Schritt eine russische Forderung erfüllen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Das Abkommen wird so ratifiziert, wie wir das für richtig halten, also mit Berlinklausel. Da brauchen wir gar keinen Beschluß zu fassen. Die Russen haben ihre Ausgangsposition nicht verändert, und wir werden das auch nicht tun.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ErtlJosef_1961-10-17">Ertl</name>: Dr. <name type="Person" role="Erwaehnung" ref="#DehlerThomas_1949-09-07">Dehlers</name> Bericht hat gezeigt, daß die Sowjets nicht bereit sind, ernsthaft zu verhandeln. Er fragt sich daher, ob nicht die Gefahr besteht, daß wir zu einem Status quo minus kommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>: Er glaubt nicht daran, daß man allgemein die Berlinklausel für selbstverständlich hält. Wenn wir hier schwach werden und Berlin nicht vollwertig einschließen, verderben wir uns zukünftige Verhandlungen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: Es kommt darauf an, die Amerikaner davon zu überzeugen, daß die Berlinklausel hinein muß. Es ist aber gar nicht so sicher, daß das gelingt.</p>
+            <p>(Zuruf Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Wenn der Bundestag den Ratifizierungsvertrag mit der Berlinklausel beschließt, werden das die Amerikaner akzeptieren.)</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#RiegerWalter_1961-10-17">Rieger</name>: Entweder man erreicht die Wiedervereinigung im Rahmen einer Entspannung oder man entscheidet sich für verstärkte Rüstung.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Eine Verpflichtung zur Konsultation (Atomstoppvertrag) ergibt sich aus dem Deutschland-Vertrag, dem NATO-Vertrag und aus der moralischen Verpflichtung der Allianz (auf Frage Dr. <name type="Person" role="Sprecher" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name>). Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name> stellt fest, daß wir in der Frage der Ratifizierung souverän sind und daß die FDP auch in der Frage der Entspannung an ihrer bisherigen Auffassung – auch am Deutschlandplan – festhält.</p>
+            <p>– Er verliest die FDP-Presseerklärung von Baden-Baden. –</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BormWilliam_1965-10-19">Borm</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN014" type="comment">
+                     <p>William <name type="Person" role="Erwaehnung" ref="#BormWilliam_1965-10-19">Borm</name>, MdA (FDP), Landesvorsitzender der FDP in Berlin, Mitglied des Bundesvorstandes der FDP.</p>
+                  </note>
+               </seg>: Er stellt die Frage, ob man damit rechnen kann, daß die Fraktion den Vertrag nicht ratifiziert, wenn die Berlinklausel nicht in das Atomstoppabkommen hineinkommt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Ein Beschluß ist hier nicht notwendig, da es sich um eine Selbstverständlichkeit handelt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Wir müssen sagen, daß wir bereit sind, das Atomstoppabkommen mit Berlinklausel zu ratifizieren. Er warnt vor einer Negativaussage.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er möchte vermeiden, daß wir plötzlich Seite an Seite mit denjenigen aus der CDU stehen, die die Ratifizierung aus ganz anderen Motiven ablehnen. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> stellt fest, daß die hier versammelten Gremien einstimmig akzeptiert haben, daß der Geltungsbereich des Atomstoppabkommens selbstverständlich Berlin einschließt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN015" type="comment">
+                     <p>Bernhard <name type="Person" role="Erwaehnung" ref="#LeverenzBernhard">Leverenz</name>, Minister für Justiz des Landes Schleswig-Holstein, stellvertretender Bundesvorsitzender der FDP.</p>
+                  </note>
+               </seg>: Er beantragt, den Bericht über den Stand der Regierungsverhandlungen vorzuziehen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Morgen findet eine erste Fühlungnahme über die Sachfragen, nicht aber über personelle Fragen statt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HammersenWalter_1961-10-17">Hammersen</name>: Auch er tritt für ein Vorziehen des Berichtes über den Stand der Regierungsverhandlungen ein.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: So beschlossen.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-6">
+            <head>F.</head>
+            <p>TOP 3: Bericht über den Stand der Regierungsverhandlungen</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name>: Die Besprechungen in Bad Wiessee dienten der Klärung, was die Regierungskoalition in dieser Legislaturperiode noch erreichen kann.</p>
+            <p>Agrarpolitik: Die Arbeitsunterlage aus der Regierungsbildung 1962 soll auch für die Zukunft gelten. <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> hat eine Erklärung zur Getreidepreisfrage abgegeben. An der Sitzung nahmen von uns noch Dr. <name type="Person" role="Erwaehnung" ref="#EffertzJosef_1961-10-17">Effertz</name> und <name type="Person" role="Erwaehnung" ref="#MaukAdolf_1952-04-07">Mauk</name> teil.</p>
+            <p>Sozialpolitik: Hier galt es, den Verhandlungsspielraum festzulegen. <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> glaubt, daß man hier noch zu einer Einigung kommen kann.</p>
+            <p>Allgemein sollten die eingesetzten Kommissionen versuchen, die Meinungen zwischen CDU und FDP bis Anfang Oktober zu koordinieren.</p>
+            <p>Innenpolitik: Eine Kommission hat sich mit dem Parteiengesetz befaßt. Die erarbeitete Konzeption soll uns durch die zwei Säulen der Parteienfinanzierung die Möglichkeit geben, den Wahlkampf 1965 zu finanzieren. <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> hat die Hoffnung, auf eine baldige Verabschiedung des Parteiengesetzes.</p>
+            <p>Wirtschaftspolitik: Bei dem Aktiengesetz gilt es, die nennwertlose Aktie herauszubringen, damit das Gesetz verabschiedet werden kann. Bei der Aussprache über die Mehrwertsteuer hat sich die <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN016" type="comment">
+                     <p>Manfred <name type="Person" role="Erwaehnung" ref="#LudaManfred_1961-10-17">Luda</name>, MdB (CDU).</p>
+                  </note>
+               </seg>-Konzeption nicht bestätigt. Es fand ein fruchtbares Gespräch statt.</p>
+            <p>Wir sollten mit Angriffen gegen <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN017" type="comment">
+                     <p>Hermann <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, MdB (CSU), Bundesminister des Innern.</p>
+                  </note>
+               </seg> zurückhalten und auf der sachlichen Ebene bleiben. Je stärker <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> von uns angegriffen wird, um so sicherer bleibt er. Das zukünftige Kabinett soll nicht vergrößert, aber auch nicht verkleinert werden. Wenn die CDU eines der zwei zusätzlichen Ministerien an die FDP abgeben soll, kann die FDP kein klassisches Ministerium zusätzlich fordern. Entscheidungen über einzelne Minister sind bisher noch nicht gefallen. Wir sollten uns weniger um die Veränderungen in der CDU als um unsere eigenen Personalwünsche kümmern. Zwischen der Kanzlerwahl und der Vorstellung des Kabinetts sollen nicht mehr als zwei Tage liegen. Ausgangspunkt der Verhandlungen sind die Beschlüsse von Bundesvorstand und Bundestagsfraktion.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MuehlenKlaus_1959-10-06">von Mühlen</name>: Prof. <name type="Person" role="Erwaehnung" ref="#EschenburgTheodor">Eschenburg</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN018" type="comment">
+                     <p>Theodor <name type="Person" role="Erwaehnung" ref="#EschenburgTheodor">Eschenburg</name>, Professor für Politikwissenschaft an der Universität Tübingen.</p>
+                  </note>
+               </seg> hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> geraten, sich personell freie Hand zu halten. Wir sollten hier aber auf Klarheit dringen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#RutschkeWolfgang_1957-10-15">Rutschke</name>: Er stellt die Frage, ob sich in der Angelegenheit <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> wegen Präsidentschaft im Bundesrechnungshof etwas getan hat.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Wir haben ein Gespräch mit <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> darüber abgelehnt, da <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> nicht da war. Ob mit <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> später ein solches Gespräch stattgefunden hat, ist ihm nicht bekannt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: Ihm liegt eine Meldung vor, wonach <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> es abgelehnt hat, vor seiner Wahl über Personalfragen zu sprechen. Das soll er <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheel</name> gegenüber erklärt haben. Er bemängelt, daß bisher noch nicht einmal von unserer Seite mit <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> gesprochen wurde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Er hat gewisse Bedenken gegenüber den geführten Informationsgesprächen, da wir hier zu einer Meinungsbildung kommen, von der wir nachher nicht wieder herunterkommen. <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> bestätigt das <name type="Person" role="Erwaehnung" ref="#ScheelWalter_1953-10-06">Scheel</name>-<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>-Gespräch, wonach <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> nicht einmal die Verhandlungskommission empfangen wollte. Wir haben aber am Montag erklärt, daß wir verhandeln müssen, worauf die Einladung für morgen erfolgte. Zu den Sachfragen gehört aber auch, daß<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> seine personellen Vorstellungen entwickelt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: In der Tat haben bisher noch keine offiziellen Verhandlungen stattgefunden, weil die CDU – insbesondere aber Dr. <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN019" type="comment">
+                     <p>Heinrich <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>, MdB (CDU), Vorsitzender der CDU/CSU-Bundestagsfraktion.</p>
+                  </note>
+               </seg> – in der Neubildung den Vollzug der 61er Vereinbarung sieht. Dr. <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> wird den vereinbarten Brief am 15.10. schreiben. Die CDU hat bis zur Stunde keine Verhandlungskommission ernannt; der Vollzug sollte nach ihrer Auffassung durch den Vorstand bzw. im Koalitionsausschuß erfolgen. Die Sachberatung ist durch Fachleute auf verschiedenen Gebieten zustande gekommen. In bezug auf den personellen Bereich hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> am Tegernsee Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> und <name type="Person" role="Erwaehnung" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name> gegenüber erklärt, daß er erst einmal die Vorstellungen der CDU erfahren müsse. Im übrigen will <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> von seinen ihm mit dem Grundgesetz gegebenen Möglichkeiten Gebrauch machen und nicht wieder eine Wahlkapitulation eingehen. <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> erklärt, daß er ja schließlich gewählt werden will und daher gezwungen ist, mit offenen Karten zu spielen. Wir haben versucht, <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> von der Meinung der Theoretiker (<name type="Person" role="Erwaehnung" ref="#EschenburgTheodor">Eschenburg</name>) zu lösen. Die Praxis sieht anders aus, denn ein zweiter Wahlgang würde auch an <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name>nicht spurlos vorübergehen. Nunmehr hat <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> erklärt, daß die FDP seine personellen Vorstellungen schon vor der Wahl erfahren wird. Die SPD hat erklärt, daß sie nach wie vor bereit ist, unter <name type="Person" role="Erwaehnung" ref="#SchroederGerhard_1949-09-07">Schröder</name> eine Große Koalition einzugehen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ErtlJosef_1961-10-17">Ertl</name>: Er kann nur dann <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> wählen, wenn er weiß, was sachlich und personell geschehen wird.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Mueller-LinkPeter-Heinz">Müller-Link</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN020" type="comment">
+                     <p>Peter-Heinz <name type="Person" role="Erwaehnung" ref="#Mueller-LinkPeter-Heinz">Müller-Link</name>, Senator der Baubehörde der Freien und Hansestadt Hamburg (FDP), stellvertretender Landesvorsitzender der FDP in Hamburg, Mitglied des Bundesvorstandes der FDP.</p>
+                  </note>
+               </seg>: Wir sollten uns nicht immer Dinge vornehmen, die wir nachher nicht halten können. Wir können auch nicht einfach sagen, daß wir <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> nicht wählen, da dieser ja schließlich unser Mann ist.</p>
+            <p>Ein Wechsel zwischen Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> und <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> scheint dem Landesverband Hamburg der einzig mögliche Wechsel zu sein, da <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> offenbar einverstanden ist. <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> sollte man nicht auswechseln. Der Landesverband Hamburg fragt sich aber nach wie vor, ob es zweckmäßig für Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> ist, ins Kabinett einzutreten. Es ist der einstimmige Wunsch, nicht aber ein Beschluß des Landesverbandes Hamburg, daß Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> auf einen Eintritt ins Kabinett verzichtet. Eine weitere Frage ist, was über die Fortsetzung der Koalition 1965 vereinbart wurde.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MenneWAlexander_1961-10-17">Menne</name>: Prof. <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> kann uns die Diskussion über die Leute, die Minister werden wollen, nicht verweigern. In bezug auf die SPD ist Dr. <name type="Person" role="Erwaehnung" ref="#MenneWAlexander_1961-10-17">Menne</name> nicht so ängstlich. Ein 6. Minister erscheint ihm erreichbar. Gelingt das nicht, soll sich die Verhandlungskommission eine Lösung überlegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>: Er glaubt, daß es für die nächsten zwei Jahre genausowenig eine gute Koalition geben wird, wie in den 1. beiden Jahren dieser Legislaturperiode. Wir sollten nicht warten, was <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> sagt, sondern wir sollten mit klaren eigenen Vorstellungen in die Verhandlung gehen. Wenn wir keine eigenen Vorstellungen haben, wird es auch schwer, den Hauptausschuß auf unsere Seite zu bringen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchultzFritz-Rudolf_1957-10-15">Schultz</name>: Die FDP hat sich in der Öffentlichkeit bisher noch nichts vergeben. Es hat auch keinen Sinn, so zu tun, als wenn wir alles erreichen könnten. In der Tat kommt es darauf an, zu hören, was sich die andere Seite vorstellt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KohutOswaldAdolph_1957-10-15">Kohut</name>: Wir sollten handeln und nicht so sehr zurückhaltend sein.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name>: Er glaubt, daß<name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> deshalb nicht verhandeln will, weil er sich nicht entscheiden kann. Deshalb sollte man <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> drängen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name>: Die Vizekanzlerfrage ist klar, darauf aufbauend kann man die anderen Forderungen entwickeln. Dr. <name type="Person" role="Erwaehnung" ref="#StarkeHeinz_1953-10-06">Starke</name> spricht sich gegen eine parlamentarische Puppe neben einem Mann à la <name type="Person" role="Erwaehnung" ref="#SeecktHansvon">Seeckt</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN021" type="comment">
+                     <p>Hans <name type="Person" role="Erwaehnung" ref="#SeecktHansvon">von Seeckt</name> († 1936), 1920–1926 Chef der Heeresleitung, 1930–1932 MdR (DVP).</p>
+                  </note>
+               </seg> im Verteidigungsministerium aus. Man kann auch nicht immer mit der schwarz-roten Koalition drohen, wenn ein klarer Beschluß kommen soll. Auch mit unseren Ministern sollte man nicht so sehr lavieren.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Die Formel, einmal Minister immer Minister, gilt nicht. Unsere Minister haben 1961 bei der Amtsübernahme gewußt, daß bei der Kanzlerwahl 1963 Veränderungen eintreten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: Er glaubt nicht an einen 6. Minister, wenn wir es auch versuchen werden. Deshalb sollte der Beschluß, an einem 6. Minister festzuhalten, nicht aufrecht erhalten werden, damit die Kommission etwas mehr Freiheit hat. Außerdem sollte die Frage geklärt werden, wer von den 5 Ministern für einen Rücktritt in Frage kommt.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AschoffAlbrecht_1961-10-17">Aschoff</name>: Mit der CDU sollte man nur darüber sprechen, was man in dieser Legislaturperiode noch machen kann.Natürlich muß <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> seine sachlichen und persönlichen Auffassungen noch vor der Wahl darlegen. Über den 6. Ministersitz sollte man jetzt gar nichts sagen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Ausdiskutiert ist, daß Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> als Vizekanzler in die Regierung geht. Ausdiskutiert ist auch, daß man versucht, einen 6. Ministersitz zu erreichen, sich aber notfalls mit 5 Ministerien begnügt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Man wird mit <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> morgen über die Sache sprechen und dann die Frage nach den Personen stellen. Wenn gesagt wird, daß das Auswechseln eines Ministers ein Politikum ist, so muß man sagen, daß es auch ein Politikum wäre, wenn man Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> nicht ins Kabinett schicken würde. Wir sollten diese Frage also von der Person wegnehmen und sehen, wo wir etwas ändern können.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Der Spielraum 6 von 21 muß bleiben. Wenn es bei 5 Ministern bleibt, ist es aber auch keine Katastrophe.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzHans_1953-10-06">Lenz</name>: Es hat kein Gespräch über die Funktion des Präsidenten des Bundesrechnungshofes gegeben.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#LenzHans_1953-10-06">Lenz</name> bittet die Verhandlungskommission, über die Kompetenzen des Forschungsministeriums in den Sachverhandlungen zu sprechen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#Kuehlmann-StummKnut_1960-08-08">von Kühlmann</name>: Zum Sachlichen ist noch zu sagen, daß in den Arbeitskreisen gute Arbeit geleistet wurde. Personell ist es selbstverständlich, daß wir versuchen werden, unsere 5 Minister zu halten. Geht das nicht, weil für Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> etwa nur das Innenministerium frei ist und das Bukett der 5 Minister dafür aufgewertet wird, müssen wir auf einen Minister verzichten. Über die Personenfrage muß natürlich schon jetzt verhandelt werden, das wünscht auch die CDU. Es besteht aber kein Grund, jetzt schon zum Rückzug zu blasen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#WeyerWilli_1953-10-06">Weyer</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN022" type="comment">
+                     <p>Willi <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name>, Minister für Inneres sowie Stellvertreter des Ministerpräsidenten des Landes Nordrhein-Westfalen (FDP), Landesvorsitzender der FDP in Nordrhein-Westfalen, Mitglied des Bundesvorstandes der FDP.</p>
+                  </note>
+               </seg>: <name type="Person" role="Erwaehnung" ref="#ErhardLudwig_1949-09-07">Erhard</name> muß die Verhandlungskommission natürlich auch über seine Gesamtvorstellungen auf personellem Gebiet unterrichten (<name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name>, <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN023" type="comment">
+                     <p>Franz Josef <name type="Person" role="Erwaehnung" ref="#StraussFranzJosef_1949-09-07">Strauß</name>, MdB (CSU), Vorsitzender der CSU-Landesgruppe, stellvertretender Vorsitzender der CDU/CSU-Bundestagsfraktion, Landesvorsitzender der CSU.</p>
+                  </note>
+               </seg>).</p>
+            <p>Personelle Möglichkeiten der FDP:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Wenn die CDU auf zwei Minister verzichtet, bleibt es bei der 5er-Lösung –<name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name> bezweifelt das aber.</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>6er-Lösung bei 21 Ministerien. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> muß ein politisch wirksames Ministerium bekommen, sonst lieber</p>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>5er-Lösung mit gewichtigen Ministerien.</p>
+               </item>
+            </list>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HammLudwig_1961-10-17">Hamm</name>: Er tritt für 19 Ministerien ein, wobei die FDP nicht mehr als 5 Minister stellen sollte. 6 Minister nimmt man uns draußen nicht ab.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MenneWAlexander_1961-10-17">Menne</name>: Das 6er-Verfahren sollte man nicht ausschalten, aber die Einzelheiten der Verhandlungskommission überlassen. Die FDP sollte nicht verlangen, daß die Kabinettsliste von mehr FDP als CDU-Leuten eingesehen wird. Wir müssen der Kommission das Vertrauen schenken und auf die Information notfalls verzichten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Handlungsfreiheit ist für die Kommission bereits in der letzten Sitzung beschlossen worden. Natürlich wird aber die Kommission Bundesvorstand und Bundestagsfraktion weitgehend unterrichten.</p>
+            <p>Für die Koalition von 1965 ist noch keine Vereinbarung getroffen worden. Eine Weiterführung hängt von dem Erfolg dieser Koalition ab. Im übrigen müssen wir uns hier Handlungsfreiheit vorbehalten. Die Frage des Wechsels stellt sich auch zu diesem Zeitpunkt noch nicht.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MertesWerner_1961-10-17">Mertes</name>: Vor der Stimmabgabe muß die Fraktion und der Bundesvorstand von dem Verhandlungsergebnis unterrichtet werden. Schließlich hängt auch die Wirkungsmöglichkeit des Abgeordneten von diesem Ergebnis ab.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#SchneiderHeinrich_1957-01-04">Schneider</name> unterstützt.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-7">
+            <head>G.</head>
+            <p>TOP 4: Sozialpaket</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DenekeJFVolrad_1963-07-26">Deneke</name>: Er berichtet über die Verhandlungen vom 18. und 23. September. Am 18.9. wurden lediglich die gegenseitigen Vorstellungen ausgetauscht und Unterkommissionen gebildet. Am 23.9. waren <name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name> und <name type="Person" role="Erwaehnung" ref="#DenekeJFVolrad_1963-07-26">Deneke</name> und <name type="Person" role="Erwaehnung" ref="#LiebichWerner">Liebich</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN024" type="comment">
+                     <p>Werner <name type="Person" role="Erwaehnung" ref="#LiebichWerner">Liebich</name>, Assistent der FDP-Bundestagsfraktion, zuständig für den Arbeitskreis III (Arbeits- und Sozialpolitik).</p>
+                  </note>
+               </seg>als Assistent vertreten. Es wurde von uns der Standpunkt vertreten, daß das Sozialpaket als Einheit erhalten bleiben muß.</p>
+            <p>Zum Kindergeld forderte die CDU, noch einmal über die Finanzamtslösung zu sprechen. Es wurde von der CDU auf den Brief des Finanzministers verwiesen und die Arbeitsamtslösung gefordert. Von uns wurde gesagt, daß für die FDP primär die Realisierung ihrer Forderung auf Übernahme des Kindergeldes auf den Haushalt ist.</p>
+            <p>Zur Krankenversicherungsneuregelung erklärte die CDU ihre Zustimmung zum Kostenerstattungsprinzip ab 1 250,– DM. Bei der Versicherungspflichtgrenze wurden Beträge von 850,– und 1 000,–DM genannt. Wir beharrten auf 750,– DM, sagten aber, daß das auch abhängig vom System sei. Wenn die CDU bei der Kostenerstattung entgegenkommt, kann die FDP unter Umständen auch bei der Versicherungspflichtgrenze entgegenkommen. Weiter wurde eine Wahlmöglichkeit zwischen Kostenerstattung und Individualbeitrag erwogen.</p>
+            <p>Bei der Lohnfortzahlung betonte die CDU die Wichtigkeit des Anspruchs an den Arbeitgeber. In der Ausgleichsfrage zeigte sich die CDU sehr hart. Die CDU wurde gebeten, möglichst keine Beschlüsse zu fassen, damit die Möglichkeiten weiterer Annäherung nicht verbaut werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#OpitzRudolf_1961-10-17">Opitz</name>: Der Mittelstandsausschuß der CDU setzt sich nach wie vor für die versicherungsrechtliche Lösung ein. Deshalb sollten wir hier nicht einlenken.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AtzenrothKarl_1949-09-07">Atzenroth</name>: Er beglückwünscht <name type="Person" role="Erwaehnung" ref="#DenekeJFVolrad_1963-07-26">Deneke</name>, daß er in den wichtigsten Forderungen hart geblieben ist. Man sollte die finanziellen Belastungen und den Vernunftstandpunkt der CDU gegenüber herausstellen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: In diesem Zusammenhang ist es nicht unwichtig, daß auch der Ministerpräsident von Schleswig-Holstein für die versicherungsrechtliche Lösung eintritt.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Wenn die versicherungsrechtliche Lösung durchgestanden werden soll, darf auch von einzelnen Abgeordneten nicht davon abgegangen werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>: <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN025" type="comment">
+                     <p>Josef <name type="Person" role="Erwaehnung" ref="#StinglJosef_1953-10-06">Stingl</name>, MdB (CDU).</p>
+                  </note>
+               </seg> bestreitet den erneuten Beschluß der CDU-Fraktion über eine arbeitsrechtliche Lösung.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Ihm erscheint es wichtiger, daß man die arbeitsrechtliche Lösung für den Arbeitgeber erträglicher gestaltet. Das ist besser, als der Streit um versicherungsrechtliche oder arbeitsrechtliche Lösung.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Wenn wir bereit sind, auf die arbeitsrechtliche Lösung einzugehen, werden wir vom Handwerk angegriffen werden, und die CDU wird es der FDP zuschreiben, daß die versicherungsrechtliche Lösung nicht zustande kam.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name>: Er war ursprünglich gleicher Auffassung wie Dr. <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name>, steht aber jetzt auf dem Boden der versicherungsrechtlichen Lösung. Wenn man einen entsprechenden Ausgleich findet, ist der Unternehmer nur der Kassenwart der Versicherung und das erscheint wenig sinnvoll.</p>
+            <p>Vorsitz: Dr. <name type="Person" role="Erwaehnung" ref="#LeverenzBernhard">Leverenz</name>.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#HeuserHeuser-SchreiberHedda_1962-12-06">Heuser</name>: Das Ergebnis der bisherigen Verhandlungen ist als ein Erfolg zu betrachten und unsere Position ist gar nicht so schlecht. Was wir schon seit 5 Jahren behauptet haben, ist auch heute noch richtig.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#IlkHerta_1949-11-03">Ilk</name>: Wir sollten keinesfalls von der versicherungsrechtlichen Lösung abgehen. Das ideelle Moment muß herausgestellt werden, daß bei der versicherungsrechtlichen Lösung der Arbeitgeber die Krankheitskontrolle übernehmen muß. Außerdem sollten wir in der CDU die Leute stärken, die unsere Meinung vertreten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN026" type="comment">
+                     <p>Hans-Dietrich <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>, Geschäftsführer der FDP-Bundestagsfraktion sowie Bundesgeschäftsführer der FDP.</p>
+                  </note>
+               </seg>: In dem Kommuniqué, das wir herausgeben, sollten wir uns zu der versicherungsrechtlichen Form bei der Lohnfortzahlung für kranke Arbeiter bekennen, da sie die bestmögliche Methode zur materiellen Gleichstellung von Arbeitern und Angestellten ist.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>: Unser Wunsch zur Kostenerstattung kann gegenüber der Presse wiederholt werden. Es sollte aber kein Beschluß gefaßt werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DenekeJFVolrad_1963-07-26">Deneke</name>: Man kann der Presse sagen, daß wir mit Befriedigung festgestellt haben, daß unsere Vorstellungen zur Kostenerstattung an Boden gewinnen und daß die Fraktion auf dem Boden der versicherungsrechtlichen Lösung steht.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: <name type="Person" role="Erwaehnung" ref="#MoerschKarl_1964-09-01">Moersch</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN027" type="comment">
+                     <p>Karl <name type="Person" role="Erwaehnung" ref="#MoerschKarl_1964-09-01">Moersch</name>, Leiter der Abteilung Presse- und Öffentlichkeitsarbeit der FDP-Bundesgeschäftsstelle.</p>
+                  </note>
+               </seg> wird einen Formulierungsvorschlag vorlegen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>: Es ist beabsichtigt (Briefwechsel <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN028" type="comment">
+                     <p>Eugen <name type="Person" role="Erwaehnung" ref="#GerstenmaierEugen_1949-09-07">Gerstenmaier</name>, MdB (CDU), Bundestagspräsident.</p>
+                  </note>
+               </seg> – <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN029" type="comment">
+                     <p>Willy <name type="Person" role="Erwaehnung" ref="#BrandtWilly_1949-09-07">Brandt</name>, Regierender Bürgermeister von West-Berlin (SPD), stellvertretender Bundesvorsitzender der SPD.</p>
+                  </note>
+               </seg>), den Bundestag im November nach Berlin einzuberufen. Mit Rücksicht auf die Absicht, wäre es zweckmäßig, wenn die FDP in diesem Augenblick eine Berlin-Sitzung fordern würde.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#BormWilliam_1965-10-19">Borm</name>: Der Landesverband Berlin könnte ein Telegramm schicken, wenn jetzt Bedenken bestehen, diese Forderung ins Kommuniqué aufzunehmen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#RutschkeWolfgang_1957-10-15">Rutschke</name>: Wenn es dann zu keiner Berlin-Sitzung kommt, sieht es schlecht aus.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>: Wenn die Angelegenheit schon perfekt ist, kann sie doch nicht mehr zerstört werden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Die Frage sollte noch einmal im kleinen Kreis besprochen werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#MoerschKarl_1964-09-01">Moersch</name>: Er verliest die Presseerklärung (vgl.»fdk« Nr. 69 und 70/63 (T) vom 26.9.1963).</p>
+         </div>
+         <div type="SVP" xml:id="fdp-04_1963-09-26-t1010_EP_div_SVP-8">
+            <head>H.</head>
+            <p>TOP 2: Verfassungsschutz</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er wurde von einem Beamten des Verfassungsschutzes aufgesucht, der ihm die Frage stellte, ob ein Herr <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> die Aufgabe habe, Verbindung mit der sowjetischen Botschaft zu halten. <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> ist bei dem Landesverband in Düsseldorf angestellt und mit der Aufgabe betraut worden, Geld für die Partei hereinzuholen. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> hat den Beamten mit Minister <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name> in Verbindung gebracht. Der Verfassungsschutz hat festgestellt, daß<name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> mit MWD<seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN030" type="comment">
+                     <p>Ministerstwo wnutrennich del (Ministerium für innere Angelegenheiten).</p>
+                  </note>
+               </seg>-Offizieren in Verbindung steht. Dr. <name type="Person" role="Erwaehnung" ref="#MendeErich_1949-09-07">Mende</name> hat dem Beamten erklärt, daß<name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> keinen Auftrag hat, mit sowjetischen Botschaftsangehörigen Verbindung zu halten.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: <name type="Person" role="Erwaehnung" ref="#WeyerWilli_1953-10-06">Weyer</name> ist mit dem Beamten der Sache nachgegangen und es hat sich herausgestellt, daß nichts hinter der Sache steht. Die Gespräche von <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> mit sowjetischen Botschaftsangehörigen haben in der Öffentlichkeit stattgefunden und dienten nur dem Geltungsbedürfnis von <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name>.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> hat aus dem Telefon bei Abnahme des Hörers ein Gespräch, das er gestern mit seiner Freundin führte, gehört. Er hat davon seinem Hauptgeschäftsführer Meldung gemacht. Der »Spiegel« hat davon erfahren und ohne Nennung von Namen und Partei einen Bericht darüber gebracht. Dazwischen lag dann der Bericht der »Zeit« über die Telefonüberwachung.</p>
+            <p>Der Verfassungsschutz hat nun laut <name type="Person" role="Erwaehnung" ref="#PaetschWernerKurt">Pätsch</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN031" type="comment">
+                     <p>Werner Kurt <name type="Person" role="Erwaehnung" ref="#PaetschWernerKurt">Pätsch</name>, 1956–19. September 1963 Sachbearbeiter im Referat »Abwehr des sowjetischen Nachrichtendienstes« der Spionageabwehrabteilung des Bundesamtes für Verfassungsschutz.</p>
+                  </note>
+               </seg> monatelang die Briefe von <name type="Person" role="Erwaehnung" ref="#Segert">Segert</name> geöffnet und seine Gespräche überwacht.</p>
+            <p>Minister <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hat die Vorsitzenden der Fraktionen zu sich geladen, um über diese Angelegenheit zu berichten. Für die FDP erschien <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>. Zu diesem Zeitpunkt waren <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN032" type="comment">
+                     <p>Hermann <name type="Person" role="Erwaehnung" ref="#SchmittHermann_1953-10-06">Schmitt-Vockenhausen</name>, MdB (SPD), Vorsitzender des Ausschusses für Inneres.</p>
+                  </note>
+               </seg> und <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> schon informiert.<name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hat versucht, nur einen Zipfel zu lüften. Gegen diese Methode hat sich <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> verwahrt und verlangt, daß alle Fakten bekanntgegeben werden. Verfassungsschutzchef <name type="Person" role="Erwaehnung" ref="#SchruebbersHubert">Schrübbers</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN033" type="comment">
+                     <p>Hubert <name type="Person" role="Erwaehnung" ref="#SchruebbersHubert">Schrübbers</name>, Präsident des Bundesamtes für Verfassungsschutz.</p>
+                  </note>
+               </seg>, der an dem Gespräch teilnahm, hat gesagt, daß er nach seiner Amtsübernahme die bis dahin üblichen Praktiken abgestellt habe. Er hat Vordrucke geschaffen, auf denen Namen und Telefonnummer des Betreffenden stehen und die Engländer gebeten werden, den Mann zu überwachen. <name type="Person" role="Erwaehnung" ref="#PaetschWernerKurt">Pätsch</name> hat heute ausgesagt, daß die Engländer nur kommentarlos Telefonnummer und Namen des zu Überwachenden erhielten. Die Berichte der Alliierten gaben dann die wörtliche Rede aufgrund einer Tonbandaufnahme der Telefongespräche wieder. Im Innenausschuß hat die CDU zum Teil (Dr. <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN034" type="comment">
+                     <p>Max <name type="Person" role="Erwaehnung" ref="#GuedeMax_1961-10-17">Güde</name>, MdB (CDU).</p>
+                  </note>
+               </seg>, <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN035" type="comment">
+                     <p>Leo <name type="Person" role="Erwaehnung" ref="#WagnerLeo_1961-10-17">Wagner</name>, MdB (CSU), Parlamentarischer Geschäftsführer der CSU-Landesgruppe.</p>
+                  </note>
+               </seg>) in bezug auf den Beschluß des Innenausschusses mitgezogen. Dort wurde gefordert, daß alle Namen der Überwachten mitgeteilt werden sollen, einschließlich derjenigen, die von anderen Ämtern, auch der Landesämter, überwacht werden. <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name> hat verlangt, daß alle Nachrichtendienste Auskunft geben, ob sie Abhöraufträge erteilen.</p>
+            <p>Es hat sich herausgestellt, daß sich die Abhörerei in den Räumen der Post durch deutsche Stellen vollzieht. Der Postminister hat erklärt, daß er davon nichts weiß. <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> hat gesagt, daß es besser sei, wenn diese Überwachung bei der Post erfolgt, als wenn es die Alliierten selbst tun.</p>
+            <p>
+               <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> wird jetzt vom Innenausschuß gebeten, dessen Petitum zu erfüllen und die Liste über Namen und Veranlasser vorzulegen. Wenn es richtig ist, daß die Akten frisiert werden, wird es Zeit, einen Untersuchungsausschuß einzuschalten, wo unter Eid ausgesagt werden muß. Nach <name type="Person" role="Erwaehnung" ref="#ZoglmannSiegfried_1957-10-15">Zoglmanns</name> Auffassung ist <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> persönlich an der Überwachung unbeteiligt und hier der Verwaltung aufgelaufen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name>: Hier tritt ein Geist zutage, der uns als Hüter des Rechtsstaates erschrecken muß. Die Grundrechte wurden einfach durch mittelbare Täterschaft verletzt. Auch das grundgesetzlich geschützte Postgeheimnis wurde verletzt. Dr. <name type="Person" role="Erwaehnung" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name> gibt der Verwunderung Ausdruck, daß die SPD nicht sofort einen Untersuchungsausschuß gefordert hat.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name>: Im 1. und 2. Bundestag hat es einen Ausschuß zum Schutz der Verfassung gegeben. Diesen benötigen wir offenbar wieder. Dr. <name type="Person" role="Erwaehnung" ref="#StammbergerWolfgang_1953-10-06">Stammberger</name> hat berechtigten Anlaß zu glauben, daß auch er zu den Überprüften gehört.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BucherEwald_1953-10-06">Bucher</name>: Dieser Sache kann man nur mit einem Untersuchungsausschuß beikommen.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: In der Post gibt es einen Raum, in dem man abhören kann. Dort sitzen die Alliierten. Der Postvorsteher veranlaßt nur auf Verlangen der Alliierten nach einem vorgeschriebenen Formular die Schaltung.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#DehlerThomas_1949-09-07">Dehler</name>: Die Bundesregierung hat aber nach dem Deutschlandvertrag die Prüfungsmöglichkeit.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ScheelWalter_1953-10-06">Scheel</name>: Er will hier nur den technischen Vorgang schildern. Die Post hat von der Bundesregierung generell die Vollmacht, solche Schaltungen vorzunehmen. Die Frage reduziert sich also darauf, wie deutsche Stellen von diesem Recht der Alliierten für ihre Zwecke Gebrauch gemacht haben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Er zitiert Artikel 5 des Deutschlandvertrages. Hier ist eine Konsultation der Bundesregierung vorgesehen. Auch nach Artikel 3 Abs. 2 des Truppenvertrags ist keine aktive deutsche Haltung möglich.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er gibt bekannt, daß die SPD keine Untersuchungskommission, sondern nur eine Kommission beim Innenausschuß fordert. Aus einer Pressemitteilung ergibt sich mittelbar, daß auch auf Landesebene abgehört wurde. Die SPD-Presseerklärung ist sehr weich gehalten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LeverenzBernhard">Leverenz</name>: Hier haben Bundesminister unvollständig und damit falsch ausgesagt. Das sollte man festhalten. Er bittet um Abschriften der vorhandenen Unterlagen einschließlich der Presseerklärung der SPD.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#StarkeHeinz_1953-10-06">Starke</name>: Wir sollten die Sache keinesfalls einschlafen lassen. Auch wenn die SPD nicht mitmacht; denn auch das ist eine Frage des Staates, in dem wir leben. Man ist den Nachrichtendiensten schutzlos preisgegeben. Im Gegensatz zu England tanzen in der Bundesrepublik die Beamten den Ministern auf dem Kopf herum.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Das Wort Untersuchungsausschuß sollte man nicht aus dem Raum lassen.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#KruemmerEwald_1963-01-24">Krümmer</name>: Was sich hier vollzieht, schadet dem gesamten Parlament.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Man sollte draußen darauf hinweisen, daß bei einer absoluten Mehrheit der CDU diese Dinge gar nicht diskutiert worden wären, denn es hätte sich schon im Innenausschuß nicht die erforderliche Mehrheit ergeben. Dazu kommt, daß die Opposition ihre Aufgabe nicht ordnungsgemäß wahrnimmt. Allerdings muß man auch an die 16 000 Agenten in der Bundesrepublik denken und darf nicht das Kind mit dem Bade ausschütten. Im Bundestag ist außer bei dem staatsanwaltschaftlichen Fall <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN036" type="comment">
+                     <p>Eduard <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name>, Minister für Unterricht und Kultus des Landes Rheinland-Pfalz (CDU), 1949–7. Oktober 1956 MdB (CDU).</p>
+                  </note>
+               </seg> nicht abgehört worden. Er wird veranlassen, daß eine Zusammenstellung der von Dr. <name type="Person" role="Erwaehnung" ref="#LeverenzBernhard">Leverenz</name> gewünschten Unterlagen der Fraktion und dem Bundesvorstand vorgelegt wird.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Diemer-NicolausEmmy_1957-10-15">Diemer</name>: Das Ausführungsgesetz zu Artikel 10 des Grundgesetzes darf aber nicht so verabschiedet werden, daß die bisherige Praxis legalisiert wird.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#RutschkeWolfgang_1957-10-15">Rutschke</name>: Wir sollten einen Untersuchungsausschuß fordern.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#AchenbachErnst_1957-10-15">Achenbach</name>: Die alliierten Vorbehaltsrechte müssen abgeschafft werden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#ZoglmannSiegfried_1957-10-15">Zoglmann</name>: Mit einer Presseerklärung sollten wir warten, bis die Sitzungen von Ältestenrat und Innenausschuß abgeschlossen sind und klar ist, ob <name type="Person" role="Erwaehnung" ref="#HoecherlHermann_1953-10-06">Höcherl</name> eine Liste vorlegt oder nicht.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#EmdeHansGeorg_1961-10-17">Emde</name>: Im Ältestenrat wurde folgende Erklärung abgegeben:</p>
+            <list type="undefined">
+               <item>
+                  <label>1.</label>
+                  <p>Die Dinge wurden sehr genau behandelt.</p>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <p>
+                     <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>
+                     <seg type="note">
+                        <note xml:id="fdp-04_1963-09-26-t1010_EP_FN037" type="comment">
+                           <p>Friedrich <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>, MdB (SPD), Parlamentarischer Geschäftsführer der SPD-Bundestagsfraktion.</p>
+                        </note>
+                     </seg> hat erklärt, daß er einer falschen Information aufgesessen ist.</p>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <p>»Panorama« hat falsch berichtet. – Es hat nie eine Abhöranlage im Bundeshaus gegeben.</p>
+               </item>
+            </list>
+            <p>Hintergrund: Die CDU wollte »Panorama« und <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> gleichzeitig hochgehen lassen. <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> hat an Gesicht verloren und befand sich taktisch in einer schlechten Lage. <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN038" type="comment">
+                     <p>Will <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name>, MdB (CDU), Parlamentarischer Geschäftsführer der CDU/CSU-Bundestagsfraktion.</p>
+                  </note>
+               </seg> versucht, die Sache aufzubauschen. Dr. <name type="Person" role="Erwaehnung" ref="#EmdeHansGeorg_1961-10-17">Emde</name> und <name type="Person" role="Erwaehnung" ref="#DuerrHermann_1957-10-15">Dürr</name> haben sich aber zurückgehalten.<name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name> konnte den Beweis des Abhörens nicht führen. Auch der ehemalige Abgeordnete <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name> ist nicht vom Bundeshaus aus abgehört worden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Gegen <name type="Person" role="Erwaehnung" ref="#OrthEduard_1949-09-07">Orth</name> ist von der Staatsanwaltschaft ermittelt worden.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#DuerrHermann_1957-10-15">Dürr</name>(zur Ergänzung): <name type="Person" role="Erwaehnung" ref="#RasnerWill_1953-10-06">Rasner</name> legte Wert auf einen Strafantrag gegen <name type="Person" role="Erwaehnung" ref="#SchaeferFriedrich_1957-10-15">Schäfer</name>. Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN039" type="comment">
+                     <p>Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>, MdB (SPD), Bundestagsvizepräsident, stellvertretender Vorsitzender der SPD-Bundestagsfraktion, stellvertretender Vorsitzender des Ausschusses für auswärtige Angelegenheiten.</p>
+                  </note>
+               </seg> und <name type="Person" role="Erwaehnung" ref="#DuerrHermann_1957-10-15">Dürr</name> hatten aber Bedenken.</p>
+            <p>Wegen der Tagesordnung verweist <name type="Person" role="Erwaehnung" ref="#DuerrHermann_1957-10-15">Dürr</name> auf den Zeitplan. Vom 8.–11.10. ist am Mittwoch und Freitag Plenum, am Dienstag, den 15.10., ist die Verabschiedung von Kanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, am 16.10. die Kanzlerneuwahl. Am 17.10. soll um 15 Uhr die Vereidigung der Minister stattfinden. Der Freitag ist für die Abgabe der Regierungserklärung vorgesehen, falls sie bis dahin fertiggestellt ist.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Die CDU kritisiert »Das Freie Wort« wegen eines Artikels von <name type="Person" role="Erwaehnung" ref="#Aldenhoven">Aldenhoven</name> über das sozialpolitische Gespräch mit der CDU.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>: »Das Freie Wort« ist unabhängig, wie auch durch einen Beschluß der hier versammelten Gremien im Zusammenhang mit der Finanzierung festgestellt wurde. Als offizielle Stimme der Partei ist dagegen die »fdk« zu betrachten, die sich in ihren Kommentaren zurückgehalten hat. <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> wird <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN040" type="comment">
+                     <p>Josef <name type="Person" role="Erwaehnung" ref="#RoesingJosef_1954-01-14">Rösing</name>, Kreisvorsitzender der CDU Bonn-Land.</p>
+                  </note>
+               </seg> anrufen und diese Auffassung vertreten.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#MendeErich_1949-09-07">Mende</name>: Er gibt bekannt, daß der bisherige Geschäftsführer der Industrie- und Handelskammer Mainz, Außenstelle Bingen, Dr. <name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name>
+               <seg type="note">
+                  <note xml:id="fdp-04_1963-09-26-t1010_EP_FN041" type="comment">
+                     <p>Hans <name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name>, stellvertretender Bundesgeschäftsführer der FDP.</p>
+                  </note>
+               </seg>, am 1.10.1963 als stellvertretender Bundesgeschäftsführer eingestellt worden ist. Hierzu bedarf es keiner Genehmigung des Bundesvorstandes.</p>
+            <p>Die nächste Fraktionssitzung findet am 2. Oktober 1963 statt. Die Hauptausschußsitzung findet am 5.10.1963 in Köln statt.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

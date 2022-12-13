@@ -1,193 +1,350 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-01-15-t1510_EP" rendition="fraktionsprotokolle">
-	<teiHeader>
-		<fileDesc>
-			<titleStmt>
-				<title level="a">Fraktionssitzung</title>
-				<title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
-				<editor>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
-				</editor>
-				<respStmt>
-					<resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-				<respStmt>
-					<resp>Finale Bearbeitung der XML-Datei</resp>
-					<name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
-				</respStmt>
-			</titleStmt>
-			<editionStmt>
-				<p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
-			</editionStmt>
-			<publicationStmt>
-				<publisher><orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName><address>
-						<street>Schiffbauerdamm 40</street>
-						<postCode>10117</postCode>
-						<name type="Ort"><country>Deutschland</country><settlement type="town">Berlin</settlement></name>
-					</address><email>info@fraktionsprotokolle.de</email></publisher>
-				<pubPlace>Berlin</pubPlace>
-				<date when="2022-06-09"/>
-				<idno type="url">https://fraktionsprotokolle.de/</idno>
-				<availability status="restricted">
-					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
-				</availability>
-			</publicationStmt>
-			<seriesStmt>
-				<title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
-				<title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
-				<respStmt>
-					<resp>Herausgegeben von der</resp>
-					<name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
-				</respStmt>
-				<idno type="isbn"/>
-			</seriesStmt>
-			<notesStmt>
-				<note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
-				<note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
-						<title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
-						<title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
-						<author>Reinhard Schiffers</author>
-						<pubPlace>Düsseldorf</pubPlace>
-						<date>2004</date>
-						<idno>https://d-nb.info/970105894</idno>
-						<idno>https://d-nb.info/971355630</idno>
-					</bibl>
-				</note>
-				<note type="Verbundene-Protokolle"><listRelation>
-						<relation name="Erwaehnung" ref="#"/>
-					</listRelation></note>
-			</notesStmt>
-			<sourceDesc>
-				<listObject>
-					<object type="Papier" xml:id="Vorlage">
-						<objectIdentifier>
-							<institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
-							<idno>VIII-001-1007/4</idno>
-							<objectName>Nicht überliefert</objectName>
-						</objectIdentifier>
-						<msContents>
-							<p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 15. Januar 1958</p>
-						</msContents>
-						<physDesc>
-							<objectDesc form="protokoll">
-								<supportDesc>
-									<support>Zeitgenössisches maschinenschriftliches Typoskript</support>
-									<extent>7 Seiten</extent>
-								</supportDesc>
-							</objectDesc>
-						</physDesc>
-					</object>
-				</listObject>
-			</sourceDesc>
-		</fileDesc>
-		<encodingDesc>
-			<editorialDecl>
-				<p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
-				<correction>
-					<p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
-				</correction>
-				<normalization>
-					<p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
-				</normalization>
-				<stdVals>
-					<p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd"> <ref type="external" target="01/45"\></bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
-				</stdVals>
-			</editorialDecl>
-			<projectDesc>
-				<p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
-			</projectDesc>
-			<classDecl>
-				<taxonomy xml:id="FP-Dokumenttyp">
-					<category xml:id="WZ">
-						<catDesc>Wortprotokoll zeitgenössisch</catDesc>
-					</category>
-					<category xml:id="WN">
-						<catDesc>Wortprotokoll nachträglich</catDesc>
-					</category>
-					<category xml:id="EP">
-						<catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
-					</category>
-					<category xml:id="VE">
-						<catDesc>Verzeichnis</catDesc>
-					</category>
-					<category xml:id="AN">
-						<catDesc>Andere Protokolltypen</catDesc>
-					</category>
-				</taxonomy>
-			</classDecl>
-			<tagsDecl>
-				<rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
-				<rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
-				<rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
-				<rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
-			</tagsDecl>
-		</encodingDesc>
-		<profileDesc>
-			<creation><date when="1958-01-15"><time type="start" when="15:10:00"/><time type="end" when="16:15:00"/></date><name type="Ort">Bonn</name><name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/><idno type="sitzung"><idno type="wp">03</idno><idno type="Fraktion-Landesgruppe">CDU/CSU</idno><idno type="sitzungsabfolge">2</idno></idno></creation>
-			<langUsage>
-				<language ident="de-DE">German</language>
-			</langUsage>
-			<textClass>
-				<catRef target="EP" scheme="FP-Dokumenttyp"/>
-			</textClass>
-		</profileDesc>
-		<revisionDesc>
-			<change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
-			<change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
-			<change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
-			<change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
-		</revisionDesc>
-	</teiHeader>
-	<text>
-		<front>
-			<div type="SVPListe">
-				<head>Sitzungsverlauf:</head>
-				<list type="SVP">
-					<item xml:id="cdu-csu-03_1958-01-15-t0900_EP_SVP-1" corresp="cdu-csu-03_1958-01-15-t0900_EP_div_SVP-1"> A. Bericht von Bundesaußenminister <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> über die außenpolitische Lage.</item>
-				</list>
-			</div>
-		</front>
-		<body>
-			<div type="SVP" xml:id="cdu-csu-03_1958-01-15-t1510_EP_div_SVP-1">
-				<head>A.</head>
-				<p>Bundesaußenminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erinnert zu Beginn seines Referats über die außenpolitische Situation<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN001" type="comment"><p>Zur Debatte über die NATO-Konferenz vom 16. bis 19. 12. 1957 vgl. Sten. Ber., 9. Sitzung am 23. 1. 1958, S. 297–419; Baring, Kanzlerdemokratie, 1969, S. 223–239; Kosthorst, von Brentano, 1993, S. 210–246.</p></note></seg> an seine letzten Ausführungen in der Fraktion<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN002" type="comment"><p>Siehe Nr. 28 v. 11. 12. 1957, TOP 3.</p></note></seg> und erklärt, daß er durch die gegenwärtige Stellungnahme keinerlei Entscheidungen präjudizieren wolle, da ja auch noch nicht alle Fragen ausdiskutiert seien.</p>
-				<p>Auf der NATO-Konferenz<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN003" type="comment"><p>Tagung der Regierungschefs der NATO-Mitgliedstaaten vom 16. bis 19. 12. 1957 in Paris. Siehe Nr. 28 v. 11. 12. 1957, TOP 3.</p></note></seg> sei es der Wunsch der Bundesregierung gewesen, das Schwergewicht auf die politische Zusammenarbeit zu legen und die mehr taktischen und militärischen Fragen zurücktreten zu lassen. Diese Allianz habe gewisse Risse gezeigt, z. B. die Spannung zwischen Frankreich einerseits und England und Amerika andererseits. Es habe gegolten, diese Allianz politisch zu stärken. Natürlich könne man sie nicht zu einem rein politischen Gremium umgestalten, und man könne auch keine obligatorische Konsultation für alle Fragen und für jedes Mitglied fordern. Dazu seien die politischen Verpflichtungen der Staaten und die jeweils gedeckten Bereiche zu verschieden. Es gebe eine Reihe von möglichen Fällen, in denen eine vorherige Konsultation auch nicht möglich sei. Deshalb habe man sich bei der Stärkung des politischen Gehaltes der NATO von jedem gefährlichen Perfektionismus auf diesem Gebiete ferngehalten.</p>
-				<p>Die Bundesregierung habe mit diesen Vorstellungen volles Verständnis gefunden, und hinsichtlich Konsultation und Information sei Einmütigkeit festzustellen gewesen. Das erste Beispiel dafür sei die gemeinsame Behandlung des ersten <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Briefes.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN004" type="comment"><p>Siehe ebd., TOP 3.</p></note></seg></p>
-				<p>Die NATO-Konferenz habe sich weiterhin beschäftigt mit einer Verstärkung der wissenschaftlichen Zusammenarbeit, nicht nur auf dem Gebiete der Waffenproduktion, sondern auf dem der wirtschaftlichen Forschung schlechthin. Es sei ja auch tatsächlich nicht sinnvoll, sich gegenseitig die Ergebnisse der Forschung vorzuenthalten und dadurch die anderen zu zwingen, alle Entwicklungen selbst zu betreiben. Das deutsche Interesse an dieser Frage sei besonders deutlich. Aber auch die gesamte NATO sei daran interessiert, daß es gelte, den Vorsprung einzuholen, den eine totalitäre, zentral gelenkte Macht auf diesem Gebiet besitze.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN005" type="comment"><p>Vgl. das Schlußdokument der NATO-Tagung v. 19. 12. 1957, in: DzD III/3, S. 2154–2159, bes. S. 2157 Ziffer 22.</p></note></seg></p>
-				<p>Die Diskussion der politischen Lage habe deutlich gezeigt, daß sich die Mitglieder der NATO nicht in ihrem grundsätzlichen Kurs geändert und nicht zu neuen Erkenntnissen über die Möglichkeiten der Entspannung des Ost-West-Konfliktes gekommen seien. Der Bundeskanzler, und nicht nur dieser, habe ernsthaft und nachdrücklich davon gesprochen, daß es gemeinsame Aufgabe sei, alles zu tun, um zu einer Entspannung zu kommen, damit vielleicht doch ein aussichtsreiches Gespräch eröffnet werden könne über die Abrüstung oder ähnliche Probleme.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN006" type="comment"><p>Vgl. die Erklärung des Bundeskanzlers auf der Eröffnungssitzung der NATO-Tagung am 16. 12. 1957, in: Dokumente zur Deutschlandpolitik III/3, S. 2148–2151.</p></note></seg> Dieser Appell des Bundeskanzlers sei richtig und gut verstanden und aufgenommen worden, aber man habe darüber nicht vergessen, daß sich leider die Lage nicht geändert habe und daß kein Anlaß bestehe, in den Anstrengungen nachzulassen, die Verteidigung gemeinsam zu organisieren.</p>
-				<p>In gewissen Teilen der Öffentlichkeit in Deutschland und in anderen Ländern erlebe man einen Aufweichungsprozeß, der sehr gefährlich sei. Bei dieser Lage sei es Aufgabe der CDU/CSU, in der deutschen Öffentlichkeit keinen Zweifel über den Kurs der Politik aufkommen zu lassen; das bedeute nicht, der Politik der Stärke das Wort zu reden, aber es wäre verhängnisvoll und gefährlich, wenn diese Stimmung eines politischen New Look aufkäme, der auch dazu gebraucht werde, um Mißtrauen zwischen den NATO-Partnern zu sähen. Auch die Tonart des <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Briefes, die diesmal etwas anders als gewohnt gewesen sei<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN007" type="comment"><p>Anders als frühere Schreiben <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> war seine Botschaft an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> vom 10. 12. 1957 in einer verbindlicheren Sprache verfaßt und wünschte u. a. einen Beitrag »zur Herbeiführung einer Wende vom gegenseitigen Mißtrauen und sogar einer gewissen Feindseligkeit zu Vertrauen und Freundschaft in den Beziehungen zwischen unseren Ländern.« Siehe DzD III/3, S. 2055 (Übersetzung des BPA).</p></note></seg>, habe nicht über die Notwendigkeit, einer unvermindert fortbestehenden Drohung zu begegnen, hinwegsehen lassen. So solle auch durch starke Standardisierung der Waffen und Geräte und durch Verbilligung und Rationalisierung der Produktion diesem Zweck gedient werden.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN008" type="comment"><p>Siehe Anm. 5.</p></note></seg> Die Vorbereitungen dafür würden bis März abgeschlossen sein, so daß man dann konkreter verhandeln könne.</p>
-				<p>Sehr zu begrüßen sei gewesen, daß mit großer Deutlichkeit erklärt worden sei, man sei bereit, die Erklärung von 1954 zu wiederholen.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN009" type="comment"><p>Anlaß für die Erklärung der drei westlichen Außenminister vom 20. 2. 1954 war die Konferenz der Außenminister Frankreichs, Großbritanniens, der Vereinigten Staaten und Österreichs in Berlin vom 25.1. bis 18. 2. 1954. Vgl. die Erklärung, in: AdG 1954, S. 4389 Ziffer 1.</p></note></seg> In dieser Beziehung sei leider eine falsche Fassung des Kommuniqués im Bulletin veröffentlicht worden, was korrigiert werde.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN010" type="comment"><p>Vgl. den Wortlaut, in: Bulletin des BPA Nr. 237 v. 21. 12. 1957, S. 2190–2192, und die Erläuterung dazu unter dem Titel »Das Ergebnis von Paris«, in: Bulletin des BPA Nr. 238 v. 28. 12. 1957, S. 2207.</p></note></seg> Man habe die Vereinbarung von 1954, die sich auf den Status und die Sicherheit Berlins beziehe, wieder aufgegriffen<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN011" type="comment"><p>Vgl. Ziffer 2 der Erklärung der drei Außenminister v. 20. 3. 1954: »2. Die drei westlichen Regierungen werden ihre Anstrengungen zur Einigung Deutschlands in Freiheit und mit friedlichen Mitteln fortsetzen. Für den Augenblick haben sie verschiedene Maßnahmen zur Milderung der Auswirkungen der gegenwärtigen Teilung Deutschlands und ihrer Folgen für Berlin angeregt. Sie haben vorgeschlagen, daß die drei Hochkommissare diese Fragen mit dem sowjetischen Hochkommissar prüfen. In bezug auf Berlin bestätigen die drei Regierungen erneut ihr Interesse an der Sicherheit der Stadt. Sie werden alles im Rahmen der Dreimächteerklärung vom 27. Mai 1952 in ihrer Macht Stehende tun, um die Lage Berlins zu verbessern und die Entwicklung der Stadt zu fördern.«</p></note></seg> und zwar auf Vorschlag des französischen Außenministers und Ministerpräsidenten.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN012" type="comment"><p>Christian <name type="Person" role="Erwaehnung" ref="#PineauChristian">Pineau</name> (Soz.), Außenminister, Félix <name type="Person" role="Erwaehnung" ref="#GaillardFélix">Gaillard</name> (Rad.-Soz.), Ministerpräsident, beide im Amt von November 1957 bis April 1958.</p></note></seg></p>
-				<p>Wenn man auch mit gewissen Sorgen in diese NATO-Sitzung gegangen sei, so habe doch deren Ergebnis die Befürchtungen zerstreut. Ohne Wunschdenken könne man sagen, daß die politische Zusammenarbeit gekräftigt worden sei in einer Weise, die man nicht ohne Befriedigung feststellen könne. Darüber hinaus habe das Gespräch der Regierungschefs und der Außenminister untereinander wesentlich zur Vertiefung der Beziehungen beigetragen.</p>
-				<p>Natürlich habe die Tagung auch schon unter dem Eindruck der verschiedenen, von der Sowjetunion verschickten Briefe gestanden. Es entspreche ja jetzt schon einer alten Übung, daß vor einer solchen Sitzung der Briefträger in Bewegung gesetzt werde, um die andern Mächte zu ermahnen, was sie tun dürften und was nicht. Diesmal seien über 80 Briefe verteilt worden, darunter auch solche an die Bundesrepublik.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN013" type="comment"><p>Vor der NATO-Tagung in Paris vom 16. bis 19. 12. 1957 hatte die Regierung der UdSSR mit Datum v. 10. 12. 1957 ähnlich lautende Botschaften <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> an Präsident <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name>, Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, Premierminister <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und Ministerpräsident <name type="Person" role="Erwaehnung" ref="#GaillardFélix">Gaillard</name> gesandt, sodann mit Datum v. 12. 12. 1957 eine gleichlautende Note an die Regierungen der Mitglieder der UNO und der Schweiz. Abdruck in dieser Reihenfolge, in: DzD III/3, S. 2030–2069; 2110–2117.</p></note></seg> Diese Briefe seien Ausdruck einer nicht ungeschickten Propaganda, die darauf ausgehe, die einzelnen Mächte gegeneinander auszuspielen, wie ein Vergleich der Briefe beweise.</p>
-				<p>Beachtenswert sei auch die Diskussion um die sogenannten Vorschläge von Mr. <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name>.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN014" type="comment"><p>George F. <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name>, amerikanischer Historiker und Politiker, zuvor Botschafter in Moskau, hielt im November und Dezember 1957 eine umstrittene Vortragsreihe (The Reith Lectures) zur Ost- und Sicherheitspolitik im britischen Rundfunk. Dabei sprach er sich für die Neutralität Deutschlands und den Abzug der amerikanischen und russischen Truppen aus Europa aus. Abdruck der sechs Vorträge in: George F. Kennan: Rußland, der Westen und die Atomwaffe (The Reith Lectures), Frankfurt a.M. 1958. Vgl. den Vortrag v. 24. 11. 1958 in: DzD III/3, S. 1930–1938.</p></note></seg> In Wirklichkeit handele es sich nicht um Vorschläge, sondern um Vorträge. Er, der Redner, könne nicht recht verstehen, daß ihnen teilweise von deutschen Politikern leidenschaftlich zugestimmt werde. Wenn man z. B. an den 4. Vortrag denke, in dem <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> zum Ausdruck bringe, daß es sinnlos sei, Deutschland an der Verteidigung zu beteiligen, daß es nur eine Miliz brauche, um im rechten Augenblick einen Partisanenkrieg zu führen, dann könne er sagen: Wenn ein Deutscher sich unterstehen wollte, diese abgestandene Wehrwolfideologie anzubieten, dann würde man ihn mit Recht auslachen und fortjagen. Es sei auch nicht so, daß <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> als präsumptiver Außenminister der Demokraten zu betrachten sei. Er sei von seinen eigenen Parteifreunden schonungslos wegen dieser Vorträge verurteilt worden. Man könne nicht genug davor warnen, solche Vorschläge ernst zu nehmen. Es müsse sonst auch im Ausland ein sehr nachteiliger Eindruck entstehen, den man sicher nicht wünschen könne.</p>
-				<p>In diesen Bereich der zahllosen Vorschläge zu einer Entspannungspolitik gehöre auch der <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN015" type="comment"><p>Adam <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>, 1956–1958 polnischer Außenminister, legte am 2. 10. 1957 in der 12. UN-Vollversammlung einen Plan zur Schaffung einer atomwaffenfreien Zone in Mitteleuropa vor. Vgl. DzD III/3, S. 1681–1686.</p></note></seg> Man lehne solche Vorschläge nicht deswegen, weil sie aus dieser Gegend kämen, ohne Diskussion ab, sondern alle derartigen Dinge würden ernsthaft geprüft; aber auch hier sei zu sagen, daß sich solche Vorschläge nicht isoliert behandeln ließen und daß ein Eingehen auf sie das bedeute, was man der Bundesregierung so oft vorgeworfen habe, nämlich Vorleistungen, die nicht honoriert würden. Das Eingehen auf diese Pläne würde einen irreparablen Zustand schaffen, jede Ausgangsbasis für neue Verhandlungen zerstören, und dieser Zustand wäre dann der neue Status quo. Der letzte <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief vom 10. Dezember habe ja auf diese Pläne Bezug genommen. Aber könne man glauben, daß ein atomfreier Raum auch eine wirkliche Gewährleistung dafür sei, daß in diesem Raum keine Atombomben zur Anwendung kommen? Oder könne man den Amerikanern vorschreiben, wie sie ihre Truppen ausrüsten dürften? Die Annahme eines solchen Planes bedeute, daß die amerikanischen Truppen Deutschland verlassen müßten, und das wolle dieser Plan ja auch. Das bestätige auch der zweite <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief, der Abzug aller Truppen und Beseitigung aller Stützpunkte verlange.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN016" type="comment"><p>Schreiben des Ministerpräsidenten der UdSSR <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name> an Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> v. 8. 1. 1958, in dem <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name> eine Gipfelkonferenz vorschlug, auf der die Deutschlandfrage jedoch ausgeklammert werden sollte. Der Bundeskanzler wies diesen Vorschlag in seiner Rundfunkansprache vom 15. 1. 1958 zurück. Vgl. DzD III/4, S. 27–41 und 145–149. Vgl. dazu auch Adenauer, Erinnerungen 1955–1959, S. 360 f., 364 f.</p></note></seg> Damit werde eine Entwicklung eingeleitet, die man nicht verantworten könne.</p>
-				<p>Mit dieser Frage hänge auch das Problem der Raketenbasen zusammen. Dazu sei festzustellen, daß noch kein militärischer Vorschlag gemacht worden sei, wo Raketenbasen angelegt werden sollten, weshalb auch eine Entscheidung noch nicht möglich sei. Man müsse sich aber darüber klar sein, daß, wenn die gemeinsame Planung es für richtig halte, daß Raketenbasen errichtet werden müßten, man nicht sagen könne, das wolle man nicht. Man könne ja auch nicht verlangen, daß in den Nachbarländern das geschehe, was zu unserm Schutz notwendig sei. Das müsse Reaktionen auslösen, auf die schon mit Ernst hingewiesen worden sei. Wenn man in einer solchen militärischen Allianz stehe, müsse man sich auch über die Konsequenzen klar sein. Die geographische Lage der Bundesrepublik schiebe diese mitten in den Spannungsherd hinein. Diese Lage könne man nicht ändern, und ihre Konsequenzen müsse man hinnehmen.</p>
-				<p>Allerdings sei in dieser Frage noch keine Entscheidung gefallen und auch nicht in Kürze zu erwarten. Wenn die Frage aber aufkomme, müsse man den Mut haben, eine solche Entscheidung vor dem deutschen Volk zu rechtfertigen. Wenn sie richtig und mit dem ganzen Ernst dieser Sache vorgetragen werde, werde sie auch verstanden werden, um so mehr, wenn man die Konsequenzen einer Verweigerung für das ganze deutsche Volk und auch für die Wiedervereinigung darstelle. Es würde dann keinen mehr geben, der das deutsche Anliegen unterstützen würde, und wie dieses von der Sowjetunion behandelt werde, zeige der <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief: Es gibt keinen anderen Weg als die Konföderation zweier souveräner Staaten unter Beibehaltung ihrer Ordnung.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN017" type="comment"><p>Schreiben <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> (wie Anm. 16), S. 39 f.</p></note></seg> Die Direktiven von Genf aus dem Jahre 1954 werden nicht mehr anerkannt.</p>
-				<p>Auch von englischen Politikern seien Vorschläge gekommen. <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name> verlange nicht nur, daß Deutschland neutralisiert werden müsse, er gebe auch Gründe an. Er gehöre zu jenen, die die Vier-Mächte-Erklärung als eine westliche Verschwörung zugunsten <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> bezeichneten. Er werfe <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> wie <name type="Person" role="Erwaehnung" ref="#HitlerAdolf">Hitler</name> vor, daß er die Politik des Westens paralysiere.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN018" type="comment"><p>Aneurin <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name>, 1945–1951 britischer Gesundheitsminister, Abg. des Unterhauses (Labour). <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">Von Brentano</name> wiederholte seine Kritik an <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name> in seiner außenpolitischen Rede in Berlin am 19. 1. 1958. Vgl. DzD III/4, S. 164–172.</p></note></seg></p>
-				<p>Dennis <name type="Person" role="Erwaehnung" ref="#HillaryDennis">Hillary</name> habe <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name> noch übertroffen. Er wolle auch noch andere Länder als Gleichgewicht gegen Deutschland neutralisieren und wolle einen politisch neutralisierten Raum zwischen Rußland und Deutschland schaffen.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN019" type="comment"><p>Dennis <name type="Person" role="Erwaehnung" ref="#HillaryDennis">Hillary</name>, Abg. des britischen Unterhauses (Labour).</p></note></seg></p>
-				<p>Als Letzter sei <name type="Person" role="Erwaehnung" ref="#BoothbyRobert">Boothby</name><seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN020" type="comment"><p>Robert <name type="Person" role="Erwaehnung" ref="#BoothbyRobert">Boothby</name>, Baron of Buchan and Rattray, Head, Abg. des britischen Unterhauses (Conservative) und des Europarates.</p></note></seg> mit Plänen hervorgetreten. Er sei als maßgebender Politiker der Konservativen geschildert worden. Sein Einfluß dort beschränke sich jedoch auf seine eigene Stimme.</p>
-				<p>Bei der bevorstehenden außenpolitischen Debatte<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN021" type="comment"><p>Vgl. Sten. Ber., 9. Sitzung am 23. 1. 1958, S. 297–419.</p></note></seg> hoffe er, der Minister, daß jeder Redner sich der Verantwortung bewußt sei, was er sage und was nicht. Es wäre verhängnisvoll, wenn die Opposition versuchen würde, durch Resolutionsentwürfe die Entscheidungsfreiheit der Bundesregierung zu binden<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN022" type="comment"><p>Die SPD-Fraktion brachte einen Antrag betr. Bemühungen der Bundesrepublik um internationale Entspannung und Einstellung des Wettrüstens ein: Drucksache III/54 (neu) v. 21. 1. 1958. Die Ausschußüberweisung wurde abgelehnt. Vgl. Sten. Ber. (wie Anm. 21), S. 419.</p></note></seg> und wenn die Diskussion in emotioneller Spannung geführt würde. Man müsse bedenken, wie solche Entschließungen, die im übrigen verfassungsmäßig nicht zulässig seien, in der Umwelt wirkten. Sie bedeuteten eine Unterstützung des Ostens und störten das Vertrauen im Westen. Außerdem würde jede solche Äußerung von jedem Interessierten für die eigenen Zwecke mißtdeutet. Der letzte <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief beweise, daß man in Moskau die deutsche Presse sehr sorgfältig lese, und er habe manche Argumente aus dieser übernommen. Der Russe habe gelernt, mit der deutschen Presse zu spielen.</p>
-				<p>Die Sitzung der Außenminister in Paris sei besser verlaufen, als das aus gewissen Kommentaren zu ersehen sei. Was in diesem so engen Kreise diskutiert worden sei, eigne sich ja auch nicht zur Wiedergabe. Wenn eine endgültige Lösung für den Sitz der europäischen Organe an einem Ort, was unbedingt notwendig sei, gefunden werden solle, sei es unumgänglich, die Interessen aller zu berücksichtigen. In wenigen Monaten werde man diese endgültigen Entscheidungen finden. Einige Vorentscheidungen seien bereits angebahnt.</p>
-				<p>Ohne alle Schwierigkeiten sei auf Antrag der französischen Regierung <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name> zum Präsidenten bestellt worden.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN023" type="comment"><p>Walter <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name>, CDU, 1951–1957 Sts. im AA, 1958–1967 Präsident der EWG-Kommission.</p></note></seg> Damit sei geschehen, was man vor drei Monaten noch für unmöglich gehalten habe: Die wichtigste Stellung sei an einen Deutschen gekommen; ein großer Vertrauensbeweis in die deutsche Politik und auch in die Persönlichkeit <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallsteins</name>, den er, der Außenminister, nur ungern gehenlasse, wenn er ihn auch für diese Aufgabe gehenlassen müsse.</p>
-				<p>Die Art, wie diese personellen Entscheidungen getroffen worden seien, sei sehr befriedigend gewesen. Dabei habe sich gezeigt, daß kleine Konferenzen sehr zweckdienlich seien. Die gefallene Entscheidung sei für die europäische Politik von großer Bedeutung, weil man alles tun müsse, um den gemeinsamen Markt zustande zu bringen. Auch im Hinblick auf die Freihandelszone bringe <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name> gute Voraussetzungen mit, so daß man damit rechnen könne, auf die Zustimmung der assoziierten wie der interessierten Mächte zu stoßen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#BoehmFranz_1953-10-06">Böhm</name> erinnert daran, daß es <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> gewesen sei, der nach der Genfer Konferenz<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN024" type="comment"><p>Genfer Viererkonferenz vom 17. bis 23. 7. 1955, an der neben den Delegationen Frankreichs, Großbritanniens, der Sowjetunion und der Vereinigten Staaten auch Beobachterdelegationen der Bundesrepublik Deutschland und der DDR teilnahmen. Vgl. die Dokumentation in AdG 1955, S. 5263–5276.</p></note></seg> jenen entgegengetreten sei, die damals geradezu in einen Rausch der Entspannung gekommen seien. Seine jetzt gehaltenen Vorträge<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN025" type="comment"><p>Siehe Anm. 14.</p></note></seg> legten die Frage nahe, ob sich nicht bei einer Reihe von realistischen Amerikanern eine Beurteilung der gegenwärtigen Situation in einem gewissen Pessimismus auswirke, weil diese zu der Auffassung gekommen sein könnten, daß gegenwärtig ein Tiefpunkt im Kräfteverhältnis eingetreten sei. Wenn sich <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> so äußere, so sei die deprimierende Wirkung dieser Äußerungen natürlich besonders groß. Er, der Redner, wolle fragen, ob man etwas über <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennans</name> Motivationen wisse, ob das Gründe habe, die nicht in einer ideologischen Wendung begründet seien und welche Kräfte hinter diesen Äußerungen stünden.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> fragt, welchen Eindruck es bei den Konferenzteilnehmern gemacht habe, daß Dänemark und Norwegen die Anlegung von Abschußrampen für Raketen abgelehnt haben.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) regt an, die wesentlichsten Themen <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennans</name> im Rahmen der Fraktion eingehend zu behandeln. Hinsichtlich des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN026" type="comment"><p>Siehe Anm. 15.</p></note></seg> führt er aus, daß die Schaffung eines solchen atomfreien Raumes geradezu die Vorbereitung dafür sei, in ihm den Krieg mit Atomwaffen zu führen und so die Voraussetzungen zur Sowjetisierung dieses Raumes zu schaffen.</p>
-				<p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> regt an, in der Regierungserklärung die Absurdität einer Konföderation der deutschen Landesteile nicht nur moralisch und gefühlsmäßig zu betonen, sondern auch sachlich nachzuweisen. Es sei doch unmöglich, ein Gefälle auszuhalten, wie es dann von Ost nach West entstehen müsse. Ein solches Nebeneinander sei doch nur möglich, wenn der Eiserne Vorhang noch viel mehr als bis jetzt seine Wirkung tue. Das deutsche Volk sei ja nicht an einer geographischen Annexion interessiert, sondern an der echten Zusammenfassung zweier deutscher Landesteile.</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, daß es für ihn sehr schwer sei, zu sagen, warum <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> diese Reden gehalten habe. Dieser sei früher ein aufgeschlossener Amerikaner gewesen, der die offizielle amerikanische Politik lebhaft unterstützt habe. Er wisse nicht, ob es vielleicht die Lust am Fabulieren gewesen sei, die ihn zu solchen Äußerungen veranlaßt habe. Die letzten drei Absätze der sechsten Rede hätten wirklich nichts mehr mit Realismus zu tun.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN027" type="comment"><p>Siehe Anm. 14. Der 6. Vortrag mit dem Titel »Soll die NATO verstärkt werden?« endet mit der Aufforderung, sich nicht allein auf Armeen und Waffen zu verlassen, sondern der Mißachtung und Feindseligkeit, »die der Weltkommunismus auf uns gehäuft hat«, auch auf der moralisch-geistigen Ebene entgegenzuwirken. Vgl. ebd., S. 126 f.</p></note></seg></p>
-				<p>Dean <name type="Person" role="Erwaehnung" ref="#AchesonDeanG">Acheson</name> habe sich in schärfster Weise mit den Formulierungen auseinandergesetzt und erklärt, daß niemand der maßgeblichen Sprecher der demokratischen Partei sich damit identifizieren werde.</p>
-				<p>Was den <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan anbelange, so bedeute dieser eine völlige Zerstörung des bisher bestehenden Gleichgewichts und die Herstellung einer völlig neuen Basis, womit man alles aus der Hand gebe, worüber man überhaupt verhandeln könne.</p>
-				<p>Sodann vergleicht der Außenminister die Abrüstungsvorschläge <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name><seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN028" type="comment"><p>Erste Botschaft <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> vom 10. 12. 1957 an die Teilnehmer der Tagung der NATO-Mitgliedstaaten in Paris vom 16. bis 19. 12. 1957. Siehe Nr. 28 v. 11. 12. 1957, TOP 3.</p></note></seg> und <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhowers</name><seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN029" type="comment"><p>Schreiben des Präsidenten <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> an Ministerpräsident <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>, mit dem <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> das Schreiben <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> vom 10. 12. 1957 beantwortete. Vgl. DzD III/4, S. 100–109.</p></note></seg> und bezeichnet letzteren als einen Weg, der nicht die Risiken des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes in sich trage. Der <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan würde das ganze Gewicht der konventionellen Waffen zum Tragen bringen und damit das ungeheure Übergewicht der Russen auf dieser Seite. Die bekanntgegebene Entlassung von Soldaten könne nicht ohne weiteres als Zeichen guten Willens gewertet werden; kein Mensch wisse, ob es tatsächlich so sei, ob nicht neue einberufen würden, und auch, nachdem die Russen aus der Zone 31000 Mann abziehen sollten, blieben dort noch 20 Divisionen übrig. Das mache das Propagandistische dieser Maßnahme klar. Die von <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> in seiner Antwort auf den ersten <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief gemachten Abrüstungsvorschläge könnten auch von der Bundesregierung voll unterstützt werden. Unter allen Umständen seien Abrüstungsgespräche anzustreben. Aber es gehe nicht so, daß eine Macht, die sich selbst als mächtigste auf der Welt rühmt, die imstande sei, binnen 24 Stunden alle Gegner zerschlagen zu können, vorschlägt, unter Beibehaltung des Rüstungsstandes einen Teil der Abrüstungsfragen isoliert zu behandeln; man spüre, daß das nicht glaubwürdig sei.</p>
-				<p>Auf die Anregungen des Abg. Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> eingehend, erklärt der Minister, daß er in der Regierungserklärung sagen werde, warum diese Konföderation nicht gehe.<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN030" type="comment"><p>Vgl. dazu Sten. Ber., 9. Sitzung am 23. 1. 1958, S. 302 (<name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>).</p></note></seg> Der einfache Mann auf der Straße überlege sich tatsächlich nicht immer, welche Widernatürlichkeiten entstehen müßten, wenn zwei in ihrer ganzen Struktur so völlig verschiedene Staaten sich zu einer Konföderation zusammenschließen und vielleicht eine gemeinsame Politik betreiben sollten. Hie Rechtsstaat – dort Volksgericht, die demokratische Freiheit – dort politischer Terror. Das Gefälle der Flüchtlinge müsse noch größer werden, weil die Leute spüren würden, daß ihnen eine solche Konföderation nichts bringe als vielleicht noch schärfere Unterdrückung.</p>
-				<p>Auf die Anfrage des Abg. Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> antwortet der Außenminister, weder Dänemark noch Norwegen hätten eine Erklärung abgegeben, daß sie sich weigerten, Raketenbasen zuzulassen. Beide hätten festgestellt, daß diese Frage noch nicht gestellt sei. Die Verteidigungsminister und ihr Stab hätten erklärt, daß auch sie sich dieser militärischen Notwendigkeit beugen müßten, wenn sie komme.</p>
-				<p><name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) fragt an, ob der Minister nicht vielleicht der Ansicht sei, daß weniger die Lust zum Fabulieren als die Erkenntnis, daß eine gewisse Erstarrung der Fronten eingetreten und damit die Gefahr einer Kurzschlußreaktion größer geworden sei, <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> zu seinen Vorschlägen bewogen haben könne. Bestehe nicht die Aufgabe, gerade die Kreise in Deutschland, die diesen Dingen am meisten zugänglich seien, nämlich die Intellektuellen, etwas besser zu betreuen? Müsse man nicht schließlich in der Debatte auch darauf hinweisen, daß Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> die Auffassung vertreten habe, ein atomfreier Raum erfordere ein möglichst starkes deutsches Heer<seg type="note"><note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN031" type="comment"><p>Vgl. dazu ebd., S. 362 (C. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>).</p></note></seg>, was bedeute, daß die SPD heute ihre Haltung zur Wehrpflicht revidieren müsse, wenn sie einen atomfreien Raum wolle?</p>
-				<p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, natürlich habe nicht lediglich die Lust am Fabulieren die Äußerungen <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennans</name> hervorgerufen. Seine Analysen der innenpolitischen Zustände in der Sowjetunion seien wirklich wertvoll und wert, gelesen zu werden. Auch die Äußerungen über das Verhältnis zu den Entwicklungsländern seien ausgezeichnet. Aber in konkreten Fragen sei er in abstruse Ideen geraten. Was die Äußerungen Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmids</name> anbelange, so könne das ruhig einmal von einem Redner der Fraktion angesprochen werden. Es werde interessant sein, die Antwort zu hören. Die Konsequenzen, die sich, so gesehen, aus dem <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan ergäben, seien denen, die für diesen Plan einträten, nämlich durchaus nicht angenehm.</p>
-			</div>
-		</body>
-	</text>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="cdu-csu-03_1958-01-15-t1510_EP" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#SchiffersReinhard"/>
+            </editor>
+            <respStmt>
+               <resp>An der Edition waren außerdem folgende Personen beteiligt</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#DemaryMonika"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#HillenMichael"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#PetersTimB"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#RabusSimon"/>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WintgensBenedikt"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.2, basierend auf dem Bearbeitungsstand der Edition vom 04. Oktober  2022.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode>
+                  <name type="Ort">
+                     <country>Deutschland</country>
+                     <settlement type="town">Berlin</settlement>
+                  </name>
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2022-06-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+            <idno type="isbn"/>
+         </seriesStmt>
+         <notesStmt>
+            <note type="Kommentar-Edition">Vergleiche auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+            <note type="Erstveroeffentlichung">Das vorliegende Protokoll ist eine digitalisierte und für die TEI-XML-Version leicht angepasste Variante der Erstveröffentlichung: <bibl type="single-item">
+                  <title level="a">Die CDU/CSU-Fraktion im Deutschen Bundestag. Sitzungsprotokolle 1957-1961. 2 Halbbände</title>
+                  <title level="s">Quellen zur Geschichte des Parlamentarismus und der politischen Parteien. Vierte Reihe. Deutschland seit 1945. Band 11/III</title>
+                  <author>Reinhard Schiffers</author>
+                  <pubPlace>Düsseldorf</pubPlace>
+                  <date>2004</date>
+                  <idno>https://d-nb.info/970105894</idno>
+                  <idno>https://d-nb.info/971355630</idno>
+               </bibl>
+            </note>
+            <note type="Verbundene-Protokolle">
+               <listRelation>
+                  <relation name="Erwaehnung" ref="#"/>
+               </listRelation>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv für Christlich-Demokratische Politik (ACDP)</institution>
+                     <idno>VIII-001-1007/4</idno>
+                     <objectName>Nicht überliefert</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der CDU/CSU-Bundestagsfraktion am 15. Januar 1958</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>7 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://www.fraktionsprotokolle.de/exist/apps/Fraktionsprotokolle/editionshinweise.html</p>
+            <correction>
+               <p>Die Schreibweise in der Quelle wurde behutsam der damals gültigen deutschen Rechtschreibung angepasst. Tonbandtranskiptionen, die durch die KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung gehalten. Durch Verschreibung bedingte Durchstreichungen wurden weggelassen. Korrekturen wurden in der Form dokumentiert, dass die korrigierte Fassung wiedergegeben wurde und, sofern der Sinn verändert wurde, die ursprüngliche Form in den Anmerkungen erscheint. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert. Größere Korrekturen werden in den Anmerkungen nachgewiesen. Generell wurde versucht, den Charakter des Textkorpus zu erhalten.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen wurden in der Regel quellennah wiedergegeben und werden, wie andere Personennamen auch, über eine eindeutige Referenz identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> erzeugt eine URL, die auf das beim Dt. Bundestag gehostete PDF der Drucksache "01/45" verweist. Sowohl bei Drucksachen wie bei Plenarprotokollen des Bundestags ist der Inhalt des target-Attributs immer gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an, hier 1. Wahlperiode. Die Ziffern hinter dem "/" geben entweder die Drucksachennummer (im Falle von Typ "btd") oder die Sitzungsnummer (im Falle von Typ "btp") an. Somit können Drucksachen oder Plenarprotokolle problemlos über das "Dokumentations- und Informationssystem für Parlamentsmaterialien" des Deutschen Bundestags, URL: https://dip.bundestag.de/, gefunden werden.</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>In dieser Online-Edition »Fraktionen im Deutschen Bundestag 1949–2005« werden die historischen Sitzungsprotokolle der Fraktionen im Deutschen Bundestag seit 1949 veröffentlicht. Im Zentrum steht die textkritische Prüfung und digitale Aufbereitung der archivischen Vorlagen. Primäres Ziel ist die Herausgabe einer wissenschaftlich gesicherten, authentischen und anwendungsbereiten (Lese-)Fassung jedes Sitzungsprotokolls.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1958-01-15">
+               <time type="start" when="15:10:00"/>
+               <time type="end" when="16:15:00"/>
+            </date>
+            <name type="Ort">Bonn</name>
+            <name type="Person" role="Sitzungsleitung" ref="#CillienAdolf_1953-10-06"/>
+            <idno type="sitzung">
+               <idno type="wp">03</idno>
+               <idno type="Fraktion-Landesgruppe">CDU/CSU</idno>
+               <idno type="sitzungsabfolge">2</idno>
+            </idno>
+         </creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2021" who="textloop" status="textloop-1_raw" n="1"/>
+         <change when="2021-09-05" who="textloop" status="textloop-2_basic" n="2"/>
+         <change when="2021-11-15" who="#RabusSimon" status="draft" n="3">Namensauszeichnung abgeschlossen</change>
+         <change when="2022-09-01" who="#WeistenhoeferSimon" status="draft" n="4">SV + Anwesende</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="cdu-csu-03_1958-01-15-t0900_EP_SVP-1" corresp="cdu-csu-03_1958-01-15-t0900_EP_div_SVP-1"> A. Bericht von Bundesaußenminister <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> über die außenpolitische Lage.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="cdu-csu-03_1958-01-15-t1510_EP_div_SVP-1">
+            <head>A.</head>
+            <p>Bundesaußenminister Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erinnert zu Beginn seines Referats über die außenpolitische Situation<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN001" type="comment">
+                     <p>Zur Debatte über die NATO-Konferenz vom 16. bis 19. 12. 1957 vgl. Sten. Ber., 9. Sitzung am 23. 1. 1958, S. 297–419; Baring, Kanzlerdemokratie, 1969, S. 223–239; Kosthorst, von Brentano, 1993, S. 210–246.</p>
+                  </note>
+               </seg> an seine letzten Ausführungen in der Fraktion<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN002" type="comment">
+                     <p>Siehe Nr. 28 v. 11. 12. 1957, TOP 3.</p>
+                  </note>
+               </seg> und erklärt, daß er durch die gegenwärtige Stellungnahme keinerlei Entscheidungen präjudizieren wolle, da ja auch noch nicht alle Fragen ausdiskutiert seien.</p>
+            <p>Auf der NATO-Konferenz<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN003" type="comment">
+                     <p>Tagung der Regierungschefs der NATO-Mitgliedstaaten vom 16. bis 19. 12. 1957 in Paris. Siehe Nr. 28 v. 11. 12. 1957, TOP 3.</p>
+                  </note>
+               </seg> sei es der Wunsch der Bundesregierung gewesen, das Schwergewicht auf die politische Zusammenarbeit zu legen und die mehr taktischen und militärischen Fragen zurücktreten zu lassen. Diese Allianz habe gewisse Risse gezeigt, z. B. die Spannung zwischen Frankreich einerseits und England und Amerika andererseits. Es habe gegolten, diese Allianz politisch zu stärken. Natürlich könne man sie nicht zu einem rein politischen Gremium umgestalten, und man könne auch keine obligatorische Konsultation für alle Fragen und für jedes Mitglied fordern. Dazu seien die politischen Verpflichtungen der Staaten und die jeweils gedeckten Bereiche zu verschieden. Es gebe eine Reihe von möglichen Fällen, in denen eine vorherige Konsultation auch nicht möglich sei. Deshalb habe man sich bei der Stärkung des politischen Gehaltes der NATO von jedem gefährlichen Perfektionismus auf diesem Gebiete ferngehalten.</p>
+            <p>Die Bundesregierung habe mit diesen Vorstellungen volles Verständnis gefunden, und hinsichtlich Konsultation und Information sei Einmütigkeit festzustellen gewesen. Das erste Beispiel dafür sei die gemeinsame Behandlung des ersten <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Briefes.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN004" type="comment">
+                     <p>Siehe ebd., TOP 3.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die NATO-Konferenz habe sich weiterhin beschäftigt mit einer Verstärkung der wissenschaftlichen Zusammenarbeit, nicht nur auf dem Gebiete der Waffenproduktion, sondern auf dem der wirtschaftlichen Forschung schlechthin. Es sei ja auch tatsächlich nicht sinnvoll, sich gegenseitig die Ergebnisse der Forschung vorzuenthalten und dadurch die anderen zu zwingen, alle Entwicklungen selbst zu betreiben. Das deutsche Interesse an dieser Frage sei besonders deutlich. Aber auch die gesamte NATO sei daran interessiert, daß es gelte, den Vorsprung einzuholen, den eine totalitäre, zentral gelenkte Macht auf diesem Gebiet besitze.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN005" type="comment">
+                     <p>Vgl. das Schlußdokument der NATO-Tagung v. 19. 12. 1957, in: DzD III/3, S. 2154–2159, bes. S. 2157 Ziffer 22.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Die Diskussion der politischen Lage habe deutlich gezeigt, daß sich die Mitglieder der NATO nicht in ihrem grundsätzlichen Kurs geändert und nicht zu neuen Erkenntnissen über die Möglichkeiten der Entspannung des Ost-West-Konfliktes gekommen seien. Der Bundeskanzler, und nicht nur dieser, habe ernsthaft und nachdrücklich davon gesprochen, daß es gemeinsame Aufgabe sei, alles zu tun, um zu einer Entspannung zu kommen, damit vielleicht doch ein aussichtsreiches Gespräch eröffnet werden könne über die Abrüstung oder ähnliche Probleme.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN006" type="comment">
+                     <p>Vgl. die Erklärung des Bundeskanzlers auf der Eröffnungssitzung der NATO-Tagung am 16. 12. 1957, in: Dokumente zur Deutschlandpolitik III/3, S. 2148–2151.</p>
+                  </note>
+               </seg> Dieser Appell des Bundeskanzlers sei richtig und gut verstanden und aufgenommen worden, aber man habe darüber nicht vergessen, daß sich leider die Lage nicht geändert habe und daß kein Anlaß bestehe, in den Anstrengungen nachzulassen, die Verteidigung gemeinsam zu organisieren.</p>
+            <p>In gewissen Teilen der Öffentlichkeit in Deutschland und in anderen Ländern erlebe man einen Aufweichungsprozeß, der sehr gefährlich sei. Bei dieser Lage sei es Aufgabe der CDU/CSU, in der deutschen Öffentlichkeit keinen Zweifel über den Kurs der Politik aufkommen zu lassen; das bedeute nicht, der Politik der Stärke das Wort zu reden, aber es wäre verhängnisvoll und gefährlich, wenn diese Stimmung eines politischen New Look aufkäme, der auch dazu gebraucht werde, um Mißtrauen zwischen den NATO-Partnern zu sähen. Auch die Tonart des <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Briefes, die diesmal etwas anders als gewohnt gewesen sei<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN007" type="comment">
+                     <p>Anders als frühere Schreiben <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> war seine Botschaft an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> vom 10. 12. 1957 in einer verbindlicheren Sprache verfaßt und wünschte u. a. einen Beitrag »zur Herbeiführung einer Wende vom gegenseitigen Mißtrauen und sogar einer gewissen Feindseligkeit zu Vertrauen und Freundschaft in den Beziehungen zwischen unseren Ländern.« Siehe DzD III/3, S. 2055 (Übersetzung des BPA).</p>
+                  </note>
+               </seg>, habe nicht über die Notwendigkeit, einer unvermindert fortbestehenden Drohung zu begegnen, hinwegsehen lassen. So solle auch durch starke Standardisierung der Waffen und Geräte und durch Verbilligung und Rationalisierung der Produktion diesem Zweck gedient werden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN008" type="comment">
+                     <p>Siehe Anm. 5.</p>
+                  </note>
+               </seg> Die Vorbereitungen dafür würden bis März abgeschlossen sein, so daß man dann konkreter verhandeln könne.</p>
+            <p>Sehr zu begrüßen sei gewesen, daß mit großer Deutlichkeit erklärt worden sei, man sei bereit, die Erklärung von 1954 zu wiederholen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN009" type="comment">
+                     <p>Anlaß für die Erklärung der drei westlichen Außenminister vom 20. 2. 1954 war die Konferenz der Außenminister Frankreichs, Großbritanniens, der Vereinigten Staaten und Österreichs in Berlin vom 25.1. bis 18. 2. 1954. Vgl. die Erklärung, in: AdG 1954, S. 4389 Ziffer 1.</p>
+                  </note>
+               </seg> In dieser Beziehung sei leider eine falsche Fassung des Kommuniqués im Bulletin veröffentlicht worden, was korrigiert werde.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN010" type="comment">
+                     <p>Vgl. den Wortlaut, in: Bulletin des BPA Nr. 237 v. 21. 12. 1957, S. 2190–2192, und die Erläuterung dazu unter dem Titel »Das Ergebnis von Paris«, in: Bulletin des BPA Nr. 238 v. 28. 12. 1957, S. 2207.</p>
+                  </note>
+               </seg> Man habe die Vereinbarung von 1954, die sich auf den Status und die Sicherheit Berlins beziehe, wieder aufgegriffen<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN011" type="comment">
+                     <p>Vgl. Ziffer 2 der Erklärung der drei Außenminister v. 20. 3. 1954: »2. Die drei westlichen Regierungen werden ihre Anstrengungen zur Einigung Deutschlands in Freiheit und mit friedlichen Mitteln fortsetzen. Für den Augenblick haben sie verschiedene Maßnahmen zur Milderung der Auswirkungen der gegenwärtigen Teilung Deutschlands und ihrer Folgen für Berlin angeregt. Sie haben vorgeschlagen, daß die drei Hochkommissare diese Fragen mit dem sowjetischen Hochkommissar prüfen. In bezug auf Berlin bestätigen die drei Regierungen erneut ihr Interesse an der Sicherheit der Stadt. Sie werden alles im Rahmen der Dreimächteerklärung vom 27. Mai 1952 in ihrer Macht Stehende tun, um die Lage Berlins zu verbessern und die Entwicklung der Stadt zu fördern.«</p>
+                  </note>
+               </seg> und zwar auf Vorschlag des französischen Außenministers und Ministerpräsidenten.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN012" type="comment">
+                     <p>Christian <name type="Person" role="Erwaehnung" ref="#PineauChristian">Pineau</name> (Soz.), Außenminister, Félix <name type="Person" role="Erwaehnung" ref="#GaillardFelix">Gaillard</name> (Rad.-Soz.), Ministerpräsident, beide im Amt von November 1957 bis April 1958.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Wenn man auch mit gewissen Sorgen in diese NATO-Sitzung gegangen sei, so habe doch deren Ergebnis die Befürchtungen zerstreut. Ohne Wunschdenken könne man sagen, daß die politische Zusammenarbeit gekräftigt worden sei in einer Weise, die man nicht ohne Befriedigung feststellen könne. Darüber hinaus habe das Gespräch der Regierungschefs und der Außenminister untereinander wesentlich zur Vertiefung der Beziehungen beigetragen.</p>
+            <p>Natürlich habe die Tagung auch schon unter dem Eindruck der verschiedenen, von der Sowjetunion verschickten Briefe gestanden. Es entspreche ja jetzt schon einer alten Übung, daß vor einer solchen Sitzung der Briefträger in Bewegung gesetzt werde, um die andern Mächte zu ermahnen, was sie tun dürften und was nicht. Diesmal seien über 80 Briefe verteilt worden, darunter auch solche an die Bundesrepublik.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN013" type="comment">
+                     <p>Vor der NATO-Tagung in Paris vom 16. bis 19. 12. 1957 hatte die Regierung der UdSSR mit Datum v. 10. 12. 1957 ähnlich lautende Botschaften <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> an Präsident <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name>, Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name>, Premierminister <name type="Person" role="Erwaehnung" ref="#MacmillanHarold">Macmillan</name> und Ministerpräsident <name type="Person" role="Erwaehnung" ref="#GaillardFelix">Gaillard</name> gesandt, sodann mit Datum v. 12. 12. 1957 eine gleichlautende Note an die Regierungen der Mitglieder der UNO und der Schweiz. Abdruck in dieser Reihenfolge, in: DzD III/3, S. 2030–2069; 2110–2117.</p>
+                  </note>
+               </seg> Diese Briefe seien Ausdruck einer nicht ungeschickten Propaganda, die darauf ausgehe, die einzelnen Mächte gegeneinander auszuspielen, wie ein Vergleich der Briefe beweise.</p>
+            <p>Beachtenswert sei auch die Diskussion um die sogenannten Vorschläge von Mr. <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name>.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN014" type="comment">
+                     <p>George F. <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name>, amerikanischer Historiker und Politiker, zuvor Botschafter in Moskau, hielt im November und Dezember 1957 eine umstrittene Vortragsreihe (The Reith Lectures) zur Ost- und Sicherheitspolitik im britischen Rundfunk. Dabei sprach er sich für die Neutralität Deutschlands und den Abzug der amerikanischen und russischen Truppen aus Europa aus. Abdruck der sechs Vorträge in: George F. Kennan: Rußland, der Westen und die Atomwaffe (The Reith Lectures), Frankfurt a.M. 1958. Vgl. den Vortrag v. 24. 11. 1958 in: DzD III/3, S. 1930–1938.</p>
+                  </note>
+               </seg> In Wirklichkeit handele es sich nicht um Vorschläge, sondern um Vorträge. Er, der Redner, könne nicht recht verstehen, daß ihnen teilweise von deutschen Politikern leidenschaftlich zugestimmt werde. Wenn man z. B. an den 4. Vortrag denke, in dem <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> zum Ausdruck bringe, daß es sinnlos sei, Deutschland an der Verteidigung zu beteiligen, daß es nur eine Miliz brauche, um im rechten Augenblick einen Partisanenkrieg zu führen, dann könne er sagen: Wenn ein Deutscher sich unterstehen wollte, diese abgestandene Wehrwolfideologie anzubieten, dann würde man ihn mit Recht auslachen und fortjagen. Es sei auch nicht so, daß <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> als präsumptiver Außenminister der Demokraten zu betrachten sei. Er sei von seinen eigenen Parteifreunden schonungslos wegen dieser Vorträge verurteilt worden. Man könne nicht genug davor warnen, solche Vorschläge ernst zu nehmen. Es müsse sonst auch im Ausland ein sehr nachteiliger Eindruck entstehen, den man sicher nicht wünschen könne.</p>
+            <p>In diesen Bereich der zahllosen Vorschläge zu einer Entspannungspolitik gehöre auch der <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN015" type="comment">
+                     <p>Adam <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>, 1956–1958 polnischer Außenminister, legte am 2. 10. 1957 in der 12. UN-Vollversammlung einen Plan zur Schaffung einer atomwaffenfreien Zone in Mitteleuropa vor. Vgl. DzD III/3, S. 1681–1686.</p>
+                  </note>
+               </seg> Man lehne solche Vorschläge nicht deswegen, weil sie aus dieser Gegend kämen, ohne Diskussion ab, sondern alle derartigen Dinge würden ernsthaft geprüft; aber auch hier sei zu sagen, daß sich solche Vorschläge nicht isoliert behandeln ließen und daß ein Eingehen auf sie das bedeute, was man der Bundesregierung so oft vorgeworfen habe, nämlich Vorleistungen, die nicht honoriert würden. Das Eingehen auf diese Pläne würde einen irreparablen Zustand schaffen, jede Ausgangsbasis für neue Verhandlungen zerstören, und dieser Zustand wäre dann der neue Status quo. Der letzte <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief vom 10. Dezember habe ja auf diese Pläne Bezug genommen. Aber könne man glauben, daß ein atomfreier Raum auch eine wirkliche Gewährleistung dafür sei, daß in diesem Raum keine Atombomben zur Anwendung kommen? Oder könne man den Amerikanern vorschreiben, wie sie ihre Truppen ausrüsten dürften? Die Annahme eines solchen Planes bedeute, daß die amerikanischen Truppen Deutschland verlassen müßten, und das wolle dieser Plan ja auch. Das bestätige auch der zweite <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief, der Abzug aller Truppen und Beseitigung aller Stützpunkte verlange.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN016" type="comment">
+                     <p>Schreiben des Ministerpräsidenten der UdSSR <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name> an Bundeskanzler <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> v. 8. 1. 1958, in dem <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name> eine Gipfelkonferenz vorschlug, auf der die Deutschlandfrage jedoch ausgeklammert werden sollte. Der Bundeskanzler wies diesen Vorschlag in seiner Rundfunkansprache vom 15. 1. 1958 zurück. Vgl. DzD III/4, S. 27–41 und 145–149. Vgl. dazu auch Adenauer, Erinnerungen 1955–1959, S. 360 f., 364 f.</p>
+                  </note>
+               </seg> Damit werde eine Entwicklung eingeleitet, die man nicht verantworten könne.</p>
+            <p>Mit dieser Frage hänge auch das Problem der Raketenbasen zusammen. Dazu sei festzustellen, daß noch kein militärischer Vorschlag gemacht worden sei, wo Raketenbasen angelegt werden sollten, weshalb auch eine Entscheidung noch nicht möglich sei. Man müsse sich aber darüber klar sein, daß, wenn die gemeinsame Planung es für richtig halte, daß Raketenbasen errichtet werden müßten, man nicht sagen könne, das wolle man nicht. Man könne ja auch nicht verlangen, daß in den Nachbarländern das geschehe, was zu unserm Schutz notwendig sei. Das müsse Reaktionen auslösen, auf die schon mit Ernst hingewiesen worden sei. Wenn man in einer solchen militärischen Allianz stehe, müsse man sich auch über die Konsequenzen klar sein. Die geographische Lage der Bundesrepublik schiebe diese mitten in den Spannungsherd hinein. Diese Lage könne man nicht ändern, und ihre Konsequenzen müsse man hinnehmen.</p>
+            <p>Allerdings sei in dieser Frage noch keine Entscheidung gefallen und auch nicht in Kürze zu erwarten. Wenn die Frage aber aufkomme, müsse man den Mut haben, eine solche Entscheidung vor dem deutschen Volk zu rechtfertigen. Wenn sie richtig und mit dem ganzen Ernst dieser Sache vorgetragen werde, werde sie auch verstanden werden, um so mehr, wenn man die Konsequenzen einer Verweigerung für das ganze deutsche Volk und auch für die Wiedervereinigung darstelle. Es würde dann keinen mehr geben, der das deutsche Anliegen unterstützen würde, und wie dieses von der Sowjetunion behandelt werde, zeige der <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief: Es gibt keinen anderen Weg als die Konföderation zweier souveräner Staaten unter Beibehaltung ihrer Ordnung.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN017" type="comment">
+                     <p>Schreiben <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> an <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> (wie Anm. 16), S. 39 f.</p>
+                  </note>
+               </seg> Die Direktiven von Genf aus dem Jahre 1954 werden nicht mehr anerkannt.</p>
+            <p>Auch von englischen Politikern seien Vorschläge gekommen. <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name> verlange nicht nur, daß Deutschland neutralisiert werden müsse, er gebe auch Gründe an. Er gehöre zu jenen, die die Vier-Mächte-Erklärung als eine westliche Verschwörung zugunsten <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauers</name> bezeichneten. Er werfe <name type="Person" role="Erwaehnung" ref="#AdenauerKonrad_1949-09-07">Adenauer</name> wie <name type="Person" role="Erwaehnung" ref="#HitlerAdolf">Hitler</name> vor, daß er die Politik des Westens paralysiere.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN018" type="comment">
+                     <p>Aneurin <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name>, 1945–1951 britischer Gesundheitsminister, Abg. des Unterhauses (Labour). <name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">Von Brentano</name> wiederholte seine Kritik an <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name> in seiner außenpolitischen Rede in Berlin am 19. 1. 1958. Vgl. DzD III/4, S. 164–172.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dennis <name type="Person" role="Erwaehnung" ref="#HillaryDennis">Hillary</name> habe <name type="Person" role="Erwaehnung" ref="#BevanAneurin">Bevan</name> noch übertroffen. Er wolle auch noch andere Länder als Gleichgewicht gegen Deutschland neutralisieren und wolle einen politisch neutralisierten Raum zwischen Rußland und Deutschland schaffen.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN019" type="comment">
+                     <p>Dennis <name type="Person" role="Erwaehnung" ref="#HillaryDennis">Hillary</name>, Abg. des britischen Unterhauses (Labour).</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Als Letzter sei <name type="Person" role="Erwaehnung" ref="#BoothbyRobert">Boothby</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN020" type="comment">
+                     <p>Robert <name type="Person" role="Erwaehnung" ref="#BoothbyRobert">Boothby</name>, Baron of Buchan and Rattray, Head, Abg. des britischen Unterhauses (Conservative) und des Europarates.</p>
+                  </note>
+               </seg> mit Plänen hervorgetreten. Er sei als maßgebender Politiker der Konservativen geschildert worden. Sein Einfluß dort beschränke sich jedoch auf seine eigene Stimme.</p>
+            <p>Bei der bevorstehenden außenpolitischen Debatte<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN021" type="comment">
+                     <p>Vgl. Sten. Ber., 9. Sitzung am 23. 1. 1958, S. 297–419.</p>
+                  </note>
+               </seg> hoffe er, der Minister, daß jeder Redner sich der Verantwortung bewußt sei, was er sage und was nicht. Es wäre verhängnisvoll, wenn die Opposition versuchen würde, durch Resolutionsentwürfe die Entscheidungsfreiheit der Bundesregierung zu binden<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN022" type="comment">
+                     <p>Die SPD-Fraktion brachte einen Antrag betr. Bemühungen der Bundesrepublik um internationale Entspannung und Einstellung des Wettrüstens ein: Drucksache III/54 (neu) v. 21. 1. 1958. Die Ausschußüberweisung wurde abgelehnt. Vgl. Sten. Ber. (wie Anm. 21), S. 419.</p>
+                  </note>
+               </seg> und wenn die Diskussion in emotioneller Spannung geführt würde. Man müsse bedenken, wie solche Entschließungen, die im übrigen verfassungsmäßig nicht zulässig seien, in der Umwelt wirkten. Sie bedeuteten eine Unterstützung des Ostens und störten das Vertrauen im Westen. Außerdem würde jede solche Äußerung von jedem Interessierten für die eigenen Zwecke mißtdeutet. Der letzte <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief beweise, daß man in Moskau die deutsche Presse sehr sorgfältig lese, und er habe manche Argumente aus dieser übernommen. Der Russe habe gelernt, mit der deutschen Presse zu spielen.</p>
+            <p>Die Sitzung der Außenminister in Paris sei besser verlaufen, als das aus gewissen Kommentaren zu ersehen sei. Was in diesem so engen Kreise diskutiert worden sei, eigne sich ja auch nicht zur Wiedergabe. Wenn eine endgültige Lösung für den Sitz der europäischen Organe an einem Ort, was unbedingt notwendig sei, gefunden werden solle, sei es unumgänglich, die Interessen aller zu berücksichtigen. In wenigen Monaten werde man diese endgültigen Entscheidungen finden. Einige Vorentscheidungen seien bereits angebahnt.</p>
+            <p>Ohne alle Schwierigkeiten sei auf Antrag der französischen Regierung <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name> zum Präsidenten bestellt worden.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN023" type="comment">
+                     <p>Walter <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name>, CDU, 1951–1957 Sts. im AA, 1958–1967 Präsident der EWG-Kommission.</p>
+                  </note>
+               </seg> Damit sei geschehen, was man vor drei Monaten noch für unmöglich gehalten habe: Die wichtigste Stellung sei an einen Deutschen gekommen; ein großer Vertrauensbeweis in die deutsche Politik und auch in die Persönlichkeit <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallsteins</name>, den er, der Außenminister, nur ungern gehenlasse, wenn er ihn auch für diese Aufgabe gehenlassen müsse.</p>
+            <p>Die Art, wie diese personellen Entscheidungen getroffen worden seien, sei sehr befriedigend gewesen. Dabei habe sich gezeigt, daß kleine Konferenzen sehr zweckdienlich seien. Die gefallene Entscheidung sei für die europäische Politik von großer Bedeutung, weil man alles tun müsse, um den gemeinsamen Markt zustande zu bringen. Auch im Hinblick auf die Freihandelszone bringe <name type="Person" role="Erwaehnung" ref="#HallsteinWalter_1969-10-20">Hallstein</name> gute Voraussetzungen mit, so daß man damit rechnen könne, auf die Zustimmung der assoziierten wie der interessierten Mächte zu stoßen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#BoehmFranz_1953-10-06">Böhm</name> erinnert daran, daß es <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> gewesen sei, der nach der Genfer Konferenz<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN024" type="comment">
+                     <p>Genfer Viererkonferenz vom 17. bis 23. 7. 1955, an der neben den Delegationen Frankreichs, Großbritanniens, der Sowjetunion und der Vereinigten Staaten auch Beobachterdelegationen der Bundesrepublik Deutschland und der DDR teilnahmen. Vgl. die Dokumentation in AdG 1955, S. 5263–5276.</p>
+                  </note>
+               </seg> jenen entgegengetreten sei, die damals geradezu in einen Rausch der Entspannung gekommen seien. Seine jetzt gehaltenen Vorträge<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN025" type="comment">
+                     <p>Siehe Anm. 14.</p>
+                  </note>
+               </seg> legten die Frage nahe, ob sich nicht bei einer Reihe von realistischen Amerikanern eine Beurteilung der gegenwärtigen Situation in einem gewissen Pessimismus auswirke, weil diese zu der Auffassung gekommen sein könnten, daß gegenwärtig ein Tiefpunkt im Kräfteverhältnis eingetreten sei. Wenn sich <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> so äußere, so sei die deprimierende Wirkung dieser Äußerungen natürlich besonders groß. Er, der Redner, wolle fragen, ob man etwas über <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennans</name> Motivationen wisse, ob das Gründe habe, die nicht in einer ideologischen Wendung begründet seien und welche Kräfte hinter diesen Äußerungen stünden.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> fragt, welchen Eindruck es bei den Konferenzteilnehmern gemacht habe, daß Dänemark und Norwegen die Anlegung von Abschußrampen für Raketen abgelehnt haben.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) regt an, die wesentlichsten Themen <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennans</name> im Rahmen der Fraktion eingehend zu behandeln. Hinsichtlich des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN026" type="comment">
+                     <p>Siehe Anm. 15.</p>
+                  </note>
+               </seg> führt er aus, daß die Schaffung eines solchen atomfreien Raumes geradezu die Vorbereitung dafür sei, in ihm den Krieg mit Atomwaffen zu führen und so die Voraussetzungen zur Sowjetisierung dieses Raumes zu schaffen.</p>
+            <p>Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> regt an, in der Regierungserklärung die Absurdität einer Konföderation der deutschen Landesteile nicht nur moralisch und gefühlsmäßig zu betonen, sondern auch sachlich nachzuweisen. Es sei doch unmöglich, ein Gefälle auszuhalten, wie es dann von Ost nach West entstehen müsse. Ein solches Nebeneinander sei doch nur möglich, wenn der Eiserne Vorhang noch viel mehr als bis jetzt seine Wirkung tue. Das deutsche Volk sei ja nicht an einer geographischen Annexion interessiert, sondern an der echten Zusammenfassung zweier deutscher Landesteile.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, daß es für ihn sehr schwer sei, zu sagen, warum <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> diese Reden gehalten habe. Dieser sei früher ein aufgeschlossener Amerikaner gewesen, der die offizielle amerikanische Politik lebhaft unterstützt habe. Er wisse nicht, ob es vielleicht die Lust am Fabulieren gewesen sei, die ihn zu solchen Äußerungen veranlaßt habe. Die letzten drei Absätze der sechsten Rede hätten wirklich nichts mehr mit Realismus zu tun.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN027" type="comment">
+                     <p>Siehe Anm. 14. Der 6. Vortrag mit dem Titel »Soll die NATO verstärkt werden?« endet mit der Aufforderung, sich nicht allein auf Armeen und Waffen zu verlassen, sondern der Mißachtung und Feindseligkeit, »die der Weltkommunismus auf uns gehäuft hat«, auch auf der moralisch-geistigen Ebene entgegenzuwirken. Vgl. ebd., S. 126 f.</p>
+                  </note>
+               </seg>
+            </p>
+            <p>Dean <name type="Person" role="Erwaehnung" ref="#AchesonDeanG">Acheson</name> habe sich in schärfster Weise mit den Formulierungen auseinandergesetzt und erklärt, daß niemand der maßgeblichen Sprecher der demokratischen Partei sich damit identifizieren werde.</p>
+            <p>Was den <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan anbelange, so bedeute dieser eine völlige Zerstörung des bisher bestehenden Gleichgewichts und die Herstellung einer völlig neuen Basis, womit man alles aus der Hand gebe, worüber man überhaupt verhandeln könne.</p>
+            <p>Sodann vergleicht der Außenminister die Abrüstungsvorschläge <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN028" type="comment">
+                     <p>Erste Botschaft <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> vom 10. 12. 1957 an die Teilnehmer der Tagung der NATO-Mitgliedstaaten in Paris vom 16. bis 19. 12. 1957. Siehe Nr. 28 v. 11. 12. 1957, TOP 3.</p>
+                  </note>
+               </seg> und <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhowers</name>
+               <seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN029" type="comment">
+                     <p>Schreiben des Präsidenten <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> an Ministerpräsident <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>, mit dem <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> das Schreiben <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganins</name> vom 10. 12. 1957 beantwortete. Vgl. DzD III/4, S. 100–109.</p>
+                  </note>
+               </seg> und bezeichnet letzteren als einen Weg, der nicht die Risiken des <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Planes in sich trage. Der <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan würde das ganze Gewicht der konventionellen Waffen zum Tragen bringen und damit das ungeheure Übergewicht der Russen auf dieser Seite. Die bekanntgegebene Entlassung von Soldaten könne nicht ohne weiteres als Zeichen guten Willens gewertet werden; kein Mensch wisse, ob es tatsächlich so sei, ob nicht neue einberufen würden, und auch, nachdem die Russen aus der Zone 31000 Mann abziehen sollten, blieben dort noch 20 Divisionen übrig. Das mache das Propagandistische dieser Maßnahme klar. Die von <name type="Person" role="Erwaehnung" ref="#EisenhowerDwightD">Eisenhower</name> in seiner Antwort auf den ersten <name type="Person" role="Erwaehnung" ref="#BulganinNikolaiAlexandrowitsch">Bulganin</name>-Brief gemachten Abrüstungsvorschläge könnten auch von der Bundesregierung voll unterstützt werden. Unter allen Umständen seien Abrüstungsgespräche anzustreben. Aber es gehe nicht so, daß eine Macht, die sich selbst als mächtigste auf der Welt rühmt, die imstande sei, binnen 24 Stunden alle Gegner zerschlagen zu können, vorschlägt, unter Beibehaltung des Rüstungsstandes einen Teil der Abrüstungsfragen isoliert zu behandeln; man spüre, daß das nicht glaubwürdig sei.</p>
+            <p>Auf die Anregungen des Abg. Prof. <name type="Person" role="Sprecher" ref="#FriedensburgFerdinand_1952-02-01">Friedensburg</name> eingehend, erklärt der Minister, daß er in der Regierungserklärung sagen werde, warum diese Konföderation nicht gehe.<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN030" type="comment">
+                     <p>Vgl. dazu Sten. Ber., 9. Sitzung am 23. 1. 1958, S. 302 (<name type="Person" role="Erwaehnung" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name>).</p>
+                  </note>
+               </seg> Der einfache Mann auf der Straße überlege sich tatsächlich nicht immer, welche Widernatürlichkeiten entstehen müßten, wenn zwei in ihrer ganzen Struktur so völlig verschiedene Staaten sich zu einer Konföderation zusammenschließen und vielleicht eine gemeinsame Politik betreiben sollten. Hie Rechtsstaat – dort Volksgericht, die demokratische Freiheit – dort politischer Terror. Das Gefälle der Flüchtlinge müsse noch größer werden, weil die Leute spüren würden, daß ihnen eine solche Konföderation nichts bringe als vielleicht noch schärfere Unterdrückung.</p>
+            <p>Auf die Anfrage des Abg. Dr. <name type="Person" role="Sprecher" ref="#Haniel-NiethammerFritz_1957-10-15">von Haniel-Niethammer</name> antwortet der Außenminister, weder Dänemark noch Norwegen hätten eine Erklärung abgegeben, daß sie sich weigerten, Raketenbasen zuzulassen. Beide hätten festgestellt, daß diese Frage noch nicht gestellt sei. Die Verteidigungsminister und ihr Stab hätten erklärt, daß auch sie sich dieser militärischen Notwendigkeit beugen müßten, wenn sie komme.</p>
+            <p>
+               <name type="Person" role="Sprecher" ref="#LenzeFranz_1953-10-06">Lenze</name> (Attendorn) fragt an, ob der Minister nicht vielleicht der Ansicht sei, daß weniger die Lust zum Fabulieren als die Erkenntnis, daß eine gewisse Erstarrung der Fronten eingetreten und damit die Gefahr einer Kurzschlußreaktion größer geworden sei, <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennan</name> zu seinen Vorschlägen bewogen haben könne. Bestehe nicht die Aufgabe, gerade die Kreise in Deutschland, die diesen Dingen am meisten zugänglich seien, nämlich die Intellektuellen, etwas besser zu betreuen? Müsse man nicht schließlich in der Debatte auch darauf hinweisen, daß Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name> die Auffassung vertreten habe, ein atomfreier Raum erfordere ein möglichst starkes deutsches Heer<seg type="note">
+                  <note xml:id="cdu-csu-03_1958-01-15-t1510_EP_FN031" type="comment">
+                     <p>Vgl. dazu ebd., S. 362 (C. <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmid</name>).</p>
+                  </note>
+               </seg>, was bedeute, daß die SPD heute ihre Haltung zur Wehrpflicht revidieren müsse, wenn sie einen atomfreien Raum wolle?</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#BrentanoHeinrich_1949-09-07">von Brentano</name> erklärt, natürlich habe nicht lediglich die Lust am Fabulieren die Äußerungen <name type="Person" role="Erwaehnung" ref="#KennanGeorgeF">Kennans</name> hervorgerufen. Seine Analysen der innenpolitischen Zustände in der Sowjetunion seien wirklich wertvoll und wert, gelesen zu werden. Auch die Äußerungen über das Verhältnis zu den Entwicklungsländern seien ausgezeichnet. Aber in konkreten Fragen sei er in abstruse Ideen geraten. Was die Äußerungen Carlo <name type="Person" role="Erwaehnung" ref="#SchmidCarlo_1949-09-07">Schmids</name> anbelange, so könne das ruhig einmal von einem Redner der Fraktion angesprochen werden. Es werde interessant sein, die Antwort zu hören. Die Konsequenzen, die sich, so gesehen, aus dem <name type="Person" role="Erwaehnung" ref="#RapackiAdam">Rapacki</name>-Plan ergäben, seien denen, die für diesen Plan einträten, nämlich durchaus nicht angenehm.</p>
+         </div>
+      </body>
+   </text>
 </TEI>
