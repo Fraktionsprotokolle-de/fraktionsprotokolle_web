@@ -11,6 +11,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2023-01-26: Weitere XML-Ergänzungen (Incidents, Sitzungsverlauf etc.) in den Protokollen von SPD- und CDU/CSU-Fraktion.
 - 2023-01-16: Update des Personenauthority-File (GND-Nummern, neue Personen, Fehlerkorrekturen), Update Organisationen.xml (neue Einträge), Korrekturen und Namensverknüpfungen in einigen Protokollen der Grünen (10. und 11. WP)
 - 2022-12-22: Update des Personenauthority-File (GND-Nummern, neue Personen, Fehlerkorrekturen) und des Organisationen-File.
 - 2022-12-13: Normalisierung von XML:ID (Umlaute, Sonderzeichen), allg. Fehlerkorrekturen im Bereich der Personen-ID, Update des Personenauthority-File (GND-Nummern, neue Personen, Fehlerkorrekturen).
