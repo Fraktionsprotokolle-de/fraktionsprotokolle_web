@@ -11,7 +11,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
-- 2023-05-22: Ergänzungen und Korrekturen Personen-Normdaten. [Anm. Organisationen.xml wurde ebenfalls aktualisiert, allerdings ist wird das Register in einem der nächsten Updates umgebaut.]
+- 2023-05-22: Ergänzungen und Korrekturen Personen-Normdaten. [Anm. Organisationen.xml wurde ebenfalls aktualisiert, allerdings ist wird das Register in einem der nächsten Updates umgebaut.] Kleine formale Korrekturen und Ergänzungen (XML-Auszeichnung) an CDU/CSU, SPD und FDP.
 - 2023-04-11: Ergänzungen und Korrekturen (Personen-ID) bei SPD 04. Wahlperiode
 - 2023-04-05: Ergänzungen und Korrekturen (Personen-ID) bei SPD 07. Wahlperiode.
 - 2023-03-22: Ergänzungen und Korrekturen (Personen-ID) bei Grüne 10. und 11. Wahlperiode.
