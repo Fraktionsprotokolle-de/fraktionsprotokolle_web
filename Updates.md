@@ -11,6 +11,8 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2023-09-26: Neues RNG-Schema für die kommenden digitalisierten Einleitungen zu den Printeditionen.
+
 - 2023-08-10: Update des Personenauthority-File (v.a. neue Personen, Fehlerkorrekturen) und des Organisationen-File (Korrekturen, Ergänzungen).
 - 2023-05-22: Ergänzungen und Korrekturen Personen-Normdaten. [Anm. Organisationen.xml wurde ebenfalls aktualisiert, allerdings ist wird das Register in einem der nächsten Updates umgebaut.] Kleine formale Korrekturen und Ergänzungen (XML-Auszeichnung) an CDU/CSU, SPD und FDP.
 - 2023-04-11: Ergänzungen und Korrekturen (Personen-ID) bei SPD 04. Wahlperiode
