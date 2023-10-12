@@ -11,6 +11,8 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2023-10-12: XML-Korrekturen und weitere Auszeichnung älterer, digitalisierter Protokolle bei SPD, 2. und 3. Wahlperiode
+
 - 2023-09-26: Neues RNG-Schema für die kommenden digitalisierten Einleitungen zu den Printeditionen.
 
 - 2023-08-10: Update des Personenauthority-File (v.a. neue Personen, Fehlerkorrekturen) und des Organisationen-File (Korrekturen, Ergänzungen).
