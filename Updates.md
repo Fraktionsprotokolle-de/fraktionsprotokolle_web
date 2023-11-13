@@ -11,7 +11,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
-- 2023-11-13: Ergänzungen und Korrekturen Personen-Normdaten.
+- 2023-11-13: Ergänzungen und Korrekturen Personen-Normdaten. Korrigierte Schemadatei für Einleitungen hinzugefügt (von Kruse)
 
 - 2023-10-12: XML-Korrekturen und weitere Auszeichnung älterer, digitalisierter Protokolle bei SPD, 2. und 3. Wahlperiode
 
