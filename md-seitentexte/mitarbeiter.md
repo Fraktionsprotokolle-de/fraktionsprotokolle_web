@@ -22,11 +22,11 @@ Für die Konzeption und Realisierung der seit 2017 bestehenden Internetpräsenz 
 
 
 
-## Externe technische Betreuung und Beratung:
+## Technische Betreuung (Webserver, eXist_db, teiPublisher) und Beratung erfolgt durch:
 
 - [Stephan Makowski](https://www.stephan-makowski.de/): Entwicklung und technische Betreuung eXist_db, teiPublisher, Webserver
 
-### An der Konzeption um Umsetzung wirkten bis 2022 auch mit:
+### An der Konzeption und technischen Umsetzung wirkten bis 2022 mit:
 
 - [Martina Gödel (textloop)](https://textloop.de/): Entwicklung des Datenschemas, XML-Konversion der Altdaten
 - [Lena-Luise Stahn](https://www.geschichte.uni-wuppertal.de/de/personen/digital-humanities/lena-luise-stahn-ma.html): Programmierung der Benutzeroberfläche für den [Oxygen-XML-Editor](https://www.oxygenxml.com/) und XSLT-Programmierung
