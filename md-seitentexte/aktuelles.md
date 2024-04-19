@@ -8,7 +8,7 @@
 
 Ende Dezember 2021 musste aus technischen Gründen die PDF-Edition abgeschaltet werden, da ihre Basis, DSpace 5, veraltet war und keine Updates mehr erfolgten. Da jedoch der Umstieg von PDF auf TEI-XML geplant war, wurden keine Ressourcen investiert, um die alte Edition auf DSpace 7 zu portieren.
 
-Seit **Januar 2022** ist daher die neue TEI-XML-Edition online. Die technische Grundlage der Webseite basiert im Wesentlichen auf der Software [tei-Publisher](https://teipublisher.com/index.html). Die Dokumente selbst sind in TEI-XML codiert. Näheres dazu finden Sie unter den Editionsrichtlinien.
+Seit **Januar 2022** ist daher die neue TEI-XML-Edition online. Die technische Grundlage der Webseite basiert im Wesentlichen auf der Software [tei-Publisher](https://teipublisher.com/index.html). Die Dokumente selbst sind in [TEI-XML](https://tei-c.org/) codiert. Näheres dazu finden Sie unter den [Editionsrichtlinien](https://fraktionsprotokolle.de/editionshinweise.html).
 
 Die Edition umfasst alle bislang veröffentlichten Dokumente der Edition. Einschränkungen gibt es nur bei der semantischen Erschließung der Dokumente:
 
