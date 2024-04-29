@@ -39,7 +39,7 @@ Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeich
 
 ## Beacon
 
-Eine Beacon-Datei (XML:ID und GND-Nummer) findet sich unter https://fraktionsprotokolle.de/beacon_kgparl.txt
+Eine Beacon-Datei (XML:ID und GND-Nummer) findet sich unter [https://fraktionsprotokolle.de/beacon_kgparl.txt](https://www.fraktionsprotokolle.de/beacon_kgparl_gnd.txt)
 
 ## Veröffentlichungszyklus
 
