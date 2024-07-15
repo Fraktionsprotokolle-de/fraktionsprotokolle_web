@@ -19,6 +19,7 @@ Für die Konzeption und Realisierung der seit 2017 bestehenden Internetpräsenz 
 
 - Jérôme **[Bakendorf](https://kgparl.de/personen/jerome-bakendorf/)** (Studentischer Mitarbeiter)
 - Nicolas **[Bengs](https://kgparl.de/personen/nicolas-bengs/)** (Studentischer Mitarbeiter)
+- Justine **[Seurig](https://kgparl.de/personen/justine-seurig/)** (Studentische Mitarbeiterin)
 
 
 
@@ -33,5 +34,5 @@ Für die Konzeption und Realisierung der seit 2017 bestehenden Internetpräsenz 
 
 <p/>
 
-<p style="text-align: right;">Stand: Februar 2024</p>
+<p style="text-align: right;">Stand: Juli 2024</p>
 
