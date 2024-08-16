@@ -11,6 +11,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- Korrektur eines Tippfehlers in der classDecl zur Beschreibung der Protokollsorten im TEI-Header bei 07. WP CDU/CSU.
 - 2024-07-03: Korrektur falsch gesetzter Responsability-Attribute im `<desc>`-Element des `<incident>`-Elements bei CDU/CSU 06. und 07. Wahlperiode.
 - 2024-07-03: Fehlerkorrektur (spd-06_1970-06-02_Geschaeftsordnung: Fehler bei der Retrodigitalisierung behoben, fehlende Teile eingefügt). Entfernung aller rein internen Bearbeitungsvermerke im teiHeader.
 - 2024-05-23: Fehlerkorrekturen (Layoutverbesserung, überflüssige Leerzeichen entfernt bei CDU/CSU, fehlerhafte oder fehlende Personen-ID, OCR-Fehler, Syntaxfehler). Ergänzungen und Korrekturen der Personen-Normdaten (Stand: Mai 2024).
