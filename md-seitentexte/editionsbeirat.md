@@ -1,4 +1,4 @@
-# <p style="text-align: center;">Editionsfachbeirat<p/>
+# <p style="text-align: center;">Editionsfachbeirat</p>
 
 ------
 
