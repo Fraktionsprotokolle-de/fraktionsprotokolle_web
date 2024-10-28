@@ -88,7 +88,7 @@
 	<pattern id="institution">
 		<rule context="tei:institution">
 			<assert test="text() = 'Archiv der sozialen Demokratie (AdsD)' or 
-				text() = 'Archiv des Liberalismus (AdL)' or 
+				text() = 'Archiv des Liberalismus (ADL)' or 
 				text() = 'Archiv für Christlich-Demokratische Politik (ACDP)' or 
 				text() = 'Archiv Grünes Gedächtnis (AGG)' or 
 				text() = 'Archiv für Christlich-Soziale Politik (ACSP)' or 
