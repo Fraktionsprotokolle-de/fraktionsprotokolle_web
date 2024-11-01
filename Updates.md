@@ -11,6 +11,8 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2024-10-03: Korrektur falscher Dokumenten-ID zu cdu-csu-07_1973-05-10-t1915_WZ im Protokoll der CDU/CSU vom 10.05.1973.
+- 2024-09-06: Kommentierung der Aussage »Verwaltung der Frau«. Gemeint ist »Vergewaltigung der Frau« im Protokoll der Grünen vom 03.05.1983.
 - Korrektur eines Tippfehlers in der classDecl zur Beschreibung der Protokollsorten im TEI-Header bei 07. WP CDU/CSU.
 - 2024-07-03: Korrektur falsch gesetzter Responsability-Attribute im `<desc>`-Element des `<incident>`-Elements bei CDU/CSU 06. und 07. Wahlperiode.
 - 2024-07-03: Fehlerkorrektur (spd-06_1970-06-02_Geschaeftsordnung: Fehler bei der Retrodigitalisierung behoben, fehlende Teile eingefügt). Entfernung aller rein internen Bearbeitungsvermerke im teiHeader.
