@@ -28,7 +28,7 @@ Durch die Bereitstellung zusätzlicher Mittel des Deutschen Bundestages konnte d
 
 - Steffen *Dähne*, Fraktionsdirektor für Zentrale Angelegenheiten der FDP-Fraktion im Deutschen Bundestag
 - Annette *Düwel-Frings*, Geschäftsführerin der Fraktion Bündnis 90/DIE GRÜNEN im Deutschen Bundestag
-- Markus *Franzkowiak*, Büroleiter des Parlamentarischen Geschäftsführers der CSU-Landesgruppe im Deutschen Bundestag
+- Dr. Hagen Langheim, Büroleiter des Parlamentarischen Geschäftsführers der CSU-Landesgruppe im Deutschen Bundestag
 - Mathias *Martin*, Geschäftsführer der SPD-Fraktion im Deutschen Bundestag
 - Dr. Jörg *Semmler*, Fraktionsdirektor der CDU/CSU-Fraktion im Deutschen Bundestag
 - Katharina *Slanina*, Geschäftsführerin DIE LINKE im Deutschen Bundestag
