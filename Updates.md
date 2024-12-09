@@ -7,15 +7,17 @@
 ------
 
 Genauere Veränderungen an den Dateien lassen sich über die Versionierung in Github nachvollziehen. Sobald substantielle Veränderungen erfolgen, beispielsweise eine neue Fraktion oder Wahlperiode hinzugefügt wird oder die Annotationsarbeit bei einer Fraktion oder Wahlperiode abgeschlossen ist, wird die [Github-Release-Seite](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/releases) ergänzt.
-Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig und kurzfristig, ohne hier eigens erwähnt zu werden.
+
+Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig und kurzfristig, in der Regel ohne hier eigens erwähnt zu werden.
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2024-12-09: Größeres Update der Personenliste/Namensliste: Nicht-MdB-Personen hinzugefügt sowie umfangreiche Korrekturen und Erweiterungen bei einzelnen Einträgen.
 - 2024-11-21: Erstellung der Datei Editionshinweise und Datenmodell ( [Datenmodell_Editionshinweise.md](..\Protokolle\Dokumentation\Datenmodell_Editionshinweise.md)), die die Grundlage ist für die [entsprechende Webseite der Edition](https://fraktionsprotokolle.de/editionshinweise.html).
 - 2024-11-05: Korrektur eines kleinen Fehlers in den FDP-Protokollen bei der Abkürzung für das »Archiv des Liberalismus« im teiHeader; »AdL« nun korrekt »ADL«.
 - 2024-10-03: Korrektur falscher Dokumenten-ID zu cdu-csu-07_1973-05-10-t1915_WZ im Protokoll der CDU/CSU vom 10.05.1973.
 - 2024-09-06: Kommentierung der Aussage »Verwaltung der Frau«. Gemeint ist »Vergewaltigung der Frau« im Protokoll der Grünen vom 03.05.1983.
-- Korrektur eines Tippfehlers in der classDecl zur Beschreibung der Protokollsorten im TEI-Header bei 07. WP CDU/CSU.
+- Korrektur eines Tippfehlers in der `<classDecl>` zur Beschreibung der Protokollsorten im TEI-Header bei 07. WP CDU/CSU.
 - 2024-07-03: Korrektur falsch gesetzter Responsability-Attribute im `<desc>`-Element des `<incident>`-Elements bei CDU/CSU 06. und 07. Wahlperiode.
 - 2024-07-03: Fehlerkorrektur (spd-06_1970-06-02_Geschaeftsordnung: Fehler bei der Retrodigitalisierung behoben, fehlende Teile eingefügt). Entfernung aller rein internen Bearbeitungsvermerke im teiHeader.
 - 2024-05-23: Fehlerkorrekturen (Layoutverbesserung, überflüssige Leerzeichen entfernt bei CDU/CSU, fehlerhafte oder fehlende Personen-ID, OCR-Fehler, Syntaxfehler). Ergänzungen und Korrekturen der Personen-Normdaten (Stand: Mai 2024).
