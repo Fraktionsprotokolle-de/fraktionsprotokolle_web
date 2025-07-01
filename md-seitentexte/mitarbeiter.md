@@ -13,13 +13,11 @@ Für die Konzeption und Realisierung der seit 2017 bestehenden Internetpräsenz 
 - Dipl.-Pol. Sylvia **[Rochow](https://kgparl.de/personen/sylvia-rochow/)** (Bearbeiterin der Personendatenbank, Betreuung der Editionsplattform)
 - Dr. Volker **[Stalmann](https://kgparl.de/personen/volker-stalmann/)** (Bearbeiter CSU-Landesgruppe und FDP-Fraktion)
 - Dr. Barbara **[von Hindenburg](https://kgparl.de/personen/barbara-von-hindenburg/)** (Bearbeiterin SPD-Fraktion)
-- Dr. Benedikt **[Wintgens](https://kgparl.de/personen/benedikt-wintgens/)** (Bearbeiter CDU/CSU-Fraktion)
 
 ### Studentische Mitarbeiter:
 
 - Jérôme **[Bakendorf](https://kgparl.de/personen/jerome-bakendorf/)** (Studentischer Mitarbeiter)
 - Nicolas **[Bengs](https://kgparl.de/personen/nicolas-bengs/)** (Studentischer Mitarbeiter)
-- Justine **[Seurig](https://kgparl.de/personen/justine-seurig/)** (Studentische Mitarbeiterin)
 
 
 
