@@ -20,7 +20,7 @@ Für die Konzeption und Realisierung der seit 2017 bestehenden Internetpräsenz 
 
 - Jérôme **[Bakendorf](https://kgparl.de/personen/jerome-bakendorf/)** (Studentischer Mitarbeiter)
 - Nicolas **[Bengs](https://kgparl.de/personen/nicolas-bengs/)** (Studentischer Mitarbeiter)
-- Elisa [**Bruchhäuser**](https://kgparl.de/personen/elisa-bruchhaeuser/) (Studentische Mitarbeiterin)
+- Elisa **[Bruchhäuser](https://kgparl.de/personen/elisa-bruchhaeuser/)** (Studentische Mitarbeiterin)
 
 ## Technische Betreuung (Webserver, eXist_db, teiPublisher) und Beratung erfolgt durch:
 
