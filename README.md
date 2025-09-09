@@ -31,7 +31,7 @@ Aktuell umfasst die veröffentlichte Edition die Protokolle von
 
 - CDU/CSU-Fraktion 1.–7. Wahlperiode (1949–1976)
 - SPD-Fraktion 1.–7. Wahlperiode (1949–1976)
-- FDP-Fraktion 1.–5. Wahlperiode (1949–1969)
+- FDP-Fraktion 1.–9. Wahlperiode (1949–1983)
 - CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983)
 - Grüne-Fraktion 10. und 11. Wahlperiode (1983–1990)
 
