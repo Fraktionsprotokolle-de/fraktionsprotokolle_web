@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/main/xml_schema/fraktionsprotokolle.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="fdp-08_1977-01-18-t1500_EP.xml" rendition="fraktionsprotokolle">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">Fraktionssitzung</title>
+            <title level="s">Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005"</title>
+            <editor>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+            </editor>
+            <respStmt>
+               <resp>Das OCR und die Texterfassung wurden unterstützt von</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#WeistenhoeferSimon"/>
+            </respStmt>
+            <respStmt>
+               <resp>Finale Bearbeitung der XML-Datei</resp>
+               <name type="Person" role="Mitarbeiter-KGParl" ref="#StalmannVolker"/>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>Version 1.3, basierend auf dem Bearbeitungsstand der Edition vom 9. September 2025.</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+               <address>
+                  <street>Schiffbauerdamm 40</street>
+                  <postCode>10117</postCode><settlement type="town">Berlin</settlement><country>Deutschland</country>                     
+               </address>
+               <email>info@fraktionsprotokolle.de</email>
+            </publisher>
+            <pubPlace>Berlin</pubPlace>
+            <date when="2025-09-09"/>
+            <idno type="url">https://fraktionsprotokolle.de/</idno>
+            <availability status="restricted">
+               <licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de">Maschinenlesbare Transkriptionen von Protokollen und Audiomitschnitten der Fraktionen und Gruppen des Deutschen Bundestags von 1949 bis 2005</title>
+            <title xml:lang="en">Machine-Readable Transcriptions of Protocols and Audio Recordings of the German Bundestags Parliamentary Groups from 1949 to 2005</title>
+            <respStmt>
+               <resp>Herausgegeben von der</resp>
+               <name type="Organisation" ref="#KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)</name>
+            </respStmt>
+         </seriesStmt> <notesStmt>
+            <note type="Kommentar-Edition">Vergleich auch die Projektbeschreibung sowie die Dokumentation dieser Web-Application unter Über diese Webseite.</note>
+         </notesStmt>
+         <sourceDesc>
+            <listObject>
+               <object type="Papier" xml:id="Vorlage">
+                  <objectIdentifier>
+                     <institution>Archiv des Liberalismus (ADL)</institution>
+                     <idno>A49-14</idno>
+                     <objectName>Kurz- und Beschlußprotokoll der Sitzung der Fraktion am 18. Januar 1977</objectName>
+                  </objectIdentifier>
+                  <msContents>
+                     <p>Historisches Protokoll einer Sitzung der FDP-Bundestagsfraktion am 18. Januar 1977</p>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="protokoll">
+                        <supportDesc>
+                           <support>Zeitgenössisches maschinenschriftliches Typoskript</support>
+                           <extent>11 Seiten</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+               </object>
+            </listObject>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>Zu den ausführlichen Editionshinweisen vgl. https://fraktionsprotokolle.de/editionshinweise.html</p>
+            <correction><p>Die Schreibweise in den Quellen wurde behutsam an die jeweils gültige deutsche Rechtschreibung angepasst. Tonbandtranskriptionen, die von der KGParl angefertigt wurden, sind in neuer deutscher Rechtschreibung wiedergegeben. Verschreibungsbedingte Durchstreichungen wurden weggelassen. Korrekturen wurden so dokumentiert, dass die korrigierte Fassung erscheint und – sofern sich der Sinn dadurch verändert – die ursprüngliche Form in den Anmerkungen nachgewiesen wird. Einfache Syntaxfehler wurden in der Regel stillschweigend korrigiert, umfangreichere Eingriffe hingegen in den Anmerkungen ausgewiesen. Generell wurde angestrebt, den Charakter des Textkorpus zu bewahren.</p>
+            </correction>
+            <normalization>
+               <p>Ausländische Personennamen werden in der Regel quellennah wiedergegeben. Wie alle Personennamen sind sie durch eine eindeutige Referenz (xml:id) identifiziert.</p>
+            </normalization>
+            <stdVals>
+               <p>Die Target-Referenzierung auf Drucksachen und Protokolle des Deutschen Bundestags innerhalb eines Bibl-Elements der Typen "btd" und "btp" erfolgt über einen Resolvermechanismus. Beispiel: <![CDATA[<bibl type="btd">
+                     <ref type="external" target="01/45"/>
+                  </bibl>]]> Diese Angabe erzeugt eine URL, die auf das beim Deutschen Bundestag gehostete PDF der Drucksache „01/45“ verweist. Der Inhalt des target-Attributs ist dabei stets gleich aufgebaut: Die ersten beiden Ziffern geben die Wahlperiode an (im Beispiel: 1. Wahlperiode), die Ziffern nach dem Schrägstrich bezeichnen entweder die Drucksachennummer (bei Typ „btd“) oder die Sitzungsnummer (bei Typ „btp“). Drucksachen und Plenarprotokolle können so problemlos über das Dokumentations- und Informationssystem für Parlamentsmaterialien (DIP) des Deutschen Bundestags gefunden werden (https://dip.bundestag.de/).</p>
+            </stdVals>
+         </editorialDecl>
+         <projectDesc>
+            <p>Die Digitale Edition »Fraktionen im Deutschen Bundestag 1949–2005« veröffentlicht die historischen Sitzungsprotokolle der Bundestagsfraktionen seit 1949. Im Mittelpunkt stehen die textkritische Prüfung und die digitale Aufbereitung der archivischen Vorlagen. Ziel ist die Bereitstellung einer wissenschaftlich gesicherten, authentischen und benutzerfreundlichen Fassung jedes Sitzungsprotokolls; ausgewählte Protokolle sind zudem kommentiert. Ergänzend zur Online-Edition erscheint eine kommentierte Buchausgabe, die ausgewählte Protokolle abdruckt und jeweils durch eine wissenschaftliche Einleitung erschließt.</p>
+         </projectDesc>
+         <classDecl>
+            <taxonomy xml:id="FP-Dokumenttyp">
+               <category xml:id="WZ">
+                  <catDesc>Wortprotokoll zeitgenössisch</catDesc>
+               </category>
+               <category xml:id="WN">
+                  <catDesc>Wortprotokoll nachträglich</catDesc>
+               </category>
+               <category xml:id="EP">
+                  <catDesc>Verlauf-/Ergebnisprotokoll</catDesc>
+               </category>
+               <category xml:id="VE">
+                  <catDesc>Verzeichnis</catDesc>
+               </category>
+               <category xml:id="AN">
+                  <catDesc>Andere Protokolltypen</catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition xml:id="smcap" scheme="css">font-variant: small-caps</rendition>
+            <rendition xml:id="sup" scheme="css">font-size: .7em; vertical-align: super;</rendition>
+            <rendition xml:id="sub" scheme="css">font-size: .7em; vertical-align: sub;</rendition>
+            <rendition xml:id="u" scheme="css">text-decoration: underline;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+				<date when="1977-01-18">
+					<time type="start" when="15:00:00"/>
+					<time type="end" when="20:00:00"/>
+				</date>
+				<name type="Ort">Bonn</name>
+				<name type="Person" role="Sitzungsleitung" ref="#MdB_Genderunbekannt"/>
+				<idno type="sitzung">
+					<idno type="wp">08</idno>
+					<idno type="Fraktion-Landesgruppe">FDP</idno>
+					<idno type="sitzungsabfolge">1</idno>
+				</idno>
+			</creation>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <textClass>
+            <catRef target="EP" scheme="FP-Dokumenttyp"/>
+         </textClass>
+      </profileDesc>
+      
+   </teiHeader>
+   <text>
+      <front>
+         <div type="SVPListe">
+            <head>Sitzungsverlauf:</head>
+            <list type="SVP">
+               <item xml:id="fdp-08_1977-01-18-t1500_EP_SVP-1" corresp="#fdp-08_1977-01-18-t1500_EP_div_SVP-1">A. Bericht über eine interfraktionelle Besprechung über den Ablauf der Plenardebatte und die Besetzung der Ausschüsse.</item>
+               <item xml:id="fdp-08_1977-01-18-t1500_EP_SVP-2" corresp="#fdp-08_1977-01-18-t1500_EP_div_SVP-2">B. Vorbereitung der Tagesordnung der folgenden Plenarsitzung.</item>
+               <item xml:id="fdp-08_1977-01-18-t1500_EP_SVP-3" corresp="#fdp-08_1977-01-18-t1500_EP_div_SVP-3">C. Wahl des Fraktionsvorstands.</item>
+               <item xml:id="fdp-08_1977-01-18-t1500_EP_SVP-4" corresp="#fdp-08_1977-01-18-t1500_EP_div_SVP-4">D. Besetzung der Bundestagsausschüsse.</item>
+               <item xml:id="fdp-08_1977-01-18-t1500_EP_SVP-5" corresp="#fdp-08_1977-01-18-t1500_EP_div_SVP-5">E. Ergebnis der Beratungen zur Stabilisierung der Renten.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div type="SVP" xml:id="fdp-08_1977-01-18-t1500_EP_div_SVP-1">
+            <head>A.</head>
+            <p>1.a. <name type="Person" role="Sprecher" ref="#OlleschAlfred_1961-10-17">Ollesch</name> berichtete aus den interfraktionellen Besprechungen über den geplanten Ablauf der Debatte. <seg type="note">Vor Aufnahme der Debatte soll im Plenum über TOP 1 »Bestimmung des Verfahrens für die Berechnung der Stellenanteile der Fraktionen im Ältestenrat« entschieden werden.<note xml:id="fdp-08_1977-01-18-t1500_EP_3" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 127</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/32">BT Drs. 08/32</ref> vom 13. Januar 1977.</bibl></p></note></seg>
+				</p>
+            <p>Für Mittwoch ist dann im Rahmen von <seg type="note">TOP 2 »Aussprache über die Regierungserklärung« eine Diskussion der Außen-, Deutschland- und Europapolitik vorgesehen, an der seitens der Regierung <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> und <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name> sprechen werden.<note xml:id="fdp-08_1977-01-18-t1500_EP_4" type="comment"><p><bibl type="btp">Zur Fortsetzung der Aussprache über die Erklärung der Bundesregierung am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 127–227</ref>. Zu den Reden von Außenminister <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> und Verteidigungsminister <name type="Person" role="Erwaehnung" ref="#LeberGeorg_1957-10-15">Leber</name> vgl. <ref type="external" target="08/7">ebd., S. 145–149, 191–195</ref>.</bibl>
+							</p></note></seg> Ende Mittwoch 21.00 h.</p>
+            <p><seg type="note">Für Donnerstag ist Sozialpolitik, Wirtschafts- und Konjunkturpolitik vorgesehen.<note xml:id="fdp-08_1977-01-18-t1500_EP_5" type="comment"><bibl type="btp">Zur Fortsetzung der Aussprache über die Regierungserklärung am 20. Januar 1977 vgl. <ref type="external" target="08/8">BT Plenarprotokoll 08/8, S. 232–313</ref>.</bibl></note></seg> Die Debatte wird um 17.30 h für eine Dreiviertelstunde zur Konstituierung der Ausschüsse unterbrochen. <seg type="note">Fortsetzung am Freitag bis 12.00 h, spätestens 13.00 h.<note xml:id="fdp-08_1977-01-18-t1500_EP_6" type="comment"><p><bibl type="btp">Vgl. <ref type="external" target="08/9">BT Plenarprotokoll 08/9, S. 349–383</ref>.</bibl>
+							</p></note></seg> Eine Entschließung ist bisher nicht vorgesehen.</p>
+            <p>b. Zum Verfahren der Berechnung der Stellenanteile der Fraktionen erklärte <name type="Person" role="Sprecher" ref="#OlleschAlfred_1961-10-17">Ollesch</name>: Man habe durch Nachgeben – Verzicht auf einen Ausschußvorsitz – erreichen können, daß die Berechnung der Anteile nach dem Berechnungsmodus von <name type="Person" role="Erwaehnung" ref="#NiemeyerHorstF">Niemeyer</name> erfolgt, <quote>»soweit nicht Abweichendes vereinbart ist«</quote>. Abweichend von <name type="Person" role="Erwaehnung" ref="#NiemeyerHorstF">Niemeyer</name> sei vereinbart worden, daß die <name type="Organisation" ref="#FDP">F.D.P.</name>, die nach <name type="Person" role="Erwaehnung" ref="#NiemeyerHorstF">Niemeyer</name> erst den Vorsitz im 7. und 19. Ausschuß erhalten hätte, den Vorsitz im Finanzausschuß erhält. Außerdem sei abweichend von <name type="Person" role="Erwaehnung" ref="#NiemeyerHorstF">Niemeyer</name> vereinbart, daß die F.D.P. in Fünfer- und Dreier-Gremien vertreten sein wird.</p>
+            <p>Was die Stellvertretung in den Ausschüssen betrifft, bleibt es bei dem <name type="Person" role="Erwaehnung" ref="#NiemeyerHorstF">Niemeyerischen</name> Berechnungsmodus, d.h. der F.D.P. stehen zwei stellvertretende Ausschußvorsitzende zu.</p>
+            <p>Die Fraktion stimmt dieser Vereinbarung zu.</p>
+            <p>Die Ergebnisse für die Ausschüssebesetzung im einzelnen: </p>
+            <p>Die F.D.P. erhält in folgenden Ausschüssen drei Sitze: Haushaltsausschuß, Auswärtiger Ausschuß, Ausschuß für Arbeit und Sozialordnung, in folgenden Ausschüssen zwei Sitze: Finanzausschuß, Ausschuß für Verkehr und für das Post- und Fernmeldewesen, Ausschuß für Bildung, Petitionsausschuß, Innenausschuß, Rechtsausschuß, Wirtschaftsausschuß, Ausschuß für Ernährung, Landwirtschaft und Forsten, Verteidigungsausschuß, Ausschuß für Jugend, Familie und Gesundheit, Ausschuß für Raumordnung, Bauwesen und Städtebau, Innerdeutscher Ausschuß, Ausschuß für wirtschaftliche Zusammenarbeit.</p>
+            <p>Die F.D.P. erhält einen Sitz im Ausschuß für Wahlprüfung, Immunität und Geschäftsordnung, im Ausschuß für Forschung und Technologie und im Sportausschuß.</p>
+            <p>Sie besetzt also 38 Ausschußsitze, davon einen Vorsitz, zwei Stellvertreter und außerdem zwei Schriftführer.</p>
+            <p>Auf die F.D.P. entfallen außerdem ein Mitglied im <name type="Organisation" ref="#CdE">Europarat</name> und drei Mitglieder im <name type="Organisation" ref="#EP">Europäischen Parlament</name>.</p>
+            <p><name type="Person" role="Sprecher" ref="#OlleschAlfred_1961-10-17">Ollesch</name> erläuterte die Schwierigkeiten, die sich für die Wahl der Mitglieder im <name type="Organisation" ref="#EP">Europäischen Parlament</name> daraus ergeben, daß die Fraktion beabsichtigt, Herrn <name type="Person" role="Erwaehnung" ref="#KrallLothar_1970-03-16">Krall</name> so lange im <name type="Organisation" ref="#EP">Europäischen Parlament</name> zu belassen, wie es die Geschäftsordnung des <name type="Organisation" ref="#EP">Euro-Parlaments</name> zuläßt.</p>
+            <p>Der Vorsitzende [<name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] teilte mit, daß <name type="Person" role="Erwaehnung" ref="#AchenbachErnst_1957-10-15">Achenbach</name> an einem Verbleib im <name type="Organisation" ref="#EP">Europäischen Parlament</name> nicht interessiert ist.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-08_1977-01-18-t1500_EP_div_SVP-2">
+            <head>B.</head>
+            <p>2. Vorbereitung der TO</p>
+            <p>Zu den <seg type="note">TOP 1 – Berechnung der Stellenanteile im Ältestenrat<note xml:id="fdp-08_1977-01-18-t1500_EP_28" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP über die Bestimmung des Verfahrens für die Berechnung der Stellenanteile der Fraktionen im Ältestenrat am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarpotokoll 08/7, S. 127</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/32">BT Drs. 08/32</ref> vom 13. Januar 1977.</bibl></p></note></seg>,</p>
+            <p><seg type="note">TOP 3 – Bestimmung des Verfahrens für die Berechnung der Stellenanteile der Fraktionen<note xml:id="fdp-08_1977-01-18-t1500_EP_7" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 166</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/35">BT Drs. 08/35</ref> vom 18. Januar 1977.</bibl>
+							</p></note></seg>, </p>
+            <p><seg type="note">TOP 4 – Einsetzung von Ausschüssen<note xml:id="fdp-08_1977-01-18-t1500_EP_8" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 166</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/36">BT Drs. 08/36</ref> vom 18. Januar 1977.</bibl></p></note></seg></p>
+            <p>erklärte sich die Fraktion einverstanden.</p>
+            <p><seg type="note">Zu TOP 5<note xml:id="fdp-08_1977-01-18-t1500_EP_9" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP betr. Wahl der Vertreter der Bundesrepublik Deutschland im Europäischen Parlament am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 166</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/47">BT Drs. 08/47</ref> vom 19. Januar 1977.</bibl></p></note></seg> – vgl. unten –</p>
+            <p><seg type="note">Zu TOP 6<note xml:id="fdp-08_1977-01-18-t1500_EP_10" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP betr. Wahl der Vertreter der Bundesrepublik Deutschland in der Parlamentarischen Versammlung des Europarats am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 167</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/48">BT Drs. 08/48</ref> vom 19. Januar 1977.</bibl></p></note></seg> – Einverständnis –</p>
+            <p><seg type="note">Zu TOP 7<note xml:id="fdp-08_1977-01-18-t1500_EP_11" type="comment"><p><bibl type="btp">Zur Beratung des Antrags der Fraktionen von CDU/CSU, SPD und FDP betr. Mitglieder des Gremiums gemäß § 9 Abs. 1 des Gesetzes zur Beschränkung des Brief-, Post- und Fernmeldegeheimnisses am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 167</ref>;</bibl>
+								<bibl type="btd"><ref type="external" target="08/49">BT Drs. 08/49</ref> vom 19. Januar 1977.</bibl></p></note></seg> – Einverständnis –</p>
+            <p><seg type="note">Zu TOP 8–11<note xml:id="fdp-08_1977-01-18-t1500_EP_12" type="comment"><p><bibl type="btp">Zur Beratung der Tagesordnungspunkte am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 167</ref>; </bibl><bibl type="btd"><ref type="external" target="08/10">BT Drs. 08/10</ref>, <ref type="external" target="08/11">08/11</ref>, <ref type="external" target="08/12">08/12</ref>,<ref type="external" target="08/13"> 08/13</ref>.</bibl></p></note></seg> – Einverständnis für Überweisungsvorschlag – </p>
+            <p>Zu TOP 2 – Vorbereitung der Aussprache zur Regierungserklärung – </p>
+            <p><seg type="note">Es sprechen: <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name>, <name type="Person" role="Erwaehnung" ref="#BangemannMartin_1972-12-13">Bangemann</name> antwortet auf <name type="Person" role="Erwaehnung" ref="#WeizsaeckerRichard_1969-10-20">[von] Weizsäcker</name> zum Thema Europapolitik.<note xml:id="fdp-08_1977-01-18-t1500_EP_13" type="comment"><p><bibl type="btp">Zu den Reden der Abgeordneten <name type="Person" role="Erwaehnung" ref="#WeizsaeckerRichard_1969-10-20">von Weizsäcker</name> (CDU) und <name type="Person" role="Erwaehnung" ref="#BangemannMartin_1972-12-13">Bangemann</name> sowie von Bundesaußenminister <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> am 19. Januar 1977 vgl. <ref type="external" target="08/7">BT Plenarprotokoll 08/7, S. 127–133, 140–145, 145–149</ref>.</bibl>
+							</p></note></seg>
+					<seg type="note">Zum Thema Verteidigung: <name type="Person" role="Erwaehnung" ref="#MoellemannJuergenW_1972-12-13">Möllemann</name>.<note xml:id="fdp-08_1977-01-18-t1500_EP_14" type="comment"><p><bibl type="btp">Vgl. <ref type="external" target="08/7">ebd., S. 197–201</ref>.</bibl></p></note></seg>
+					<seg type="note">Für eine etwaige zweite Runde: <name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name>/<name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name>.<note xml:id="fdp-08_1977-01-18-t1500_EP_15" type="comment"><p><bibl type="btp">Zur Rede des Abg. <name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name> vgl. <ref type="external" target="08/7">ebd., S. 212–214</ref>.</bibl>
+							</p></note></seg>
+					<seg type="note">Deutschland- und Berlinpolitik: <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name><note xml:id="fdp-08_1977-01-18-t1500_EP_16" type="comment"><p><bibl type="btp">Vgl. <ref type="external" target="08/7">ebd., S. 167–171</ref>.</bibl></p></note></seg>, Entwicklungshilfepolitik ggfs. <name type="Person" role="Erwaehnung" ref="#BangemannMartin_1972-12-13">Bangemann</name>. <seg type="note">Zum Thema Renten: <name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>, ggfs. zum Arbeitsmarkt: <name type="Person" role="Erwaehnung" ref="#HoelscherFriedrich_1972-12-13">Hölscher</name>, Gesundheit: <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name>, Wirtschaft: <name type="Person" role="Erwaehnung" ref="#LambsdorffOtto_1972-12-13">Graf Lambsdorff</name>.<note xml:id="fdp-08_1977-01-18-t1500_EP_17" type="comment"><p><bibl type="btp">Zur Rede des Abg. <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> am 19. Januar 1977 vgl. <ref type="external" target="08/7">ebd., S. 196 f.</ref> Zu den Reden der Abg. <name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt (Kempten)</name> und <name type="Person" role="Erwaehnung" ref="#LambsdorffOtto_1972-12-13">Graf Lambsdorff</name> am 20. Januar 1977 vgl. <ref type="external" target="08/8">BT Plenarprotokoll 08/8, S. 244–251, 281–291</ref>.</bibl></p></note></seg>
+					<seg type="note"><name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name> wird ggfs. erst nach einer Parlamentarier-Runde sprechen.<note xml:id="fdp-08_1977-01-18-t1500_EP_18" type="comment"><p><bibl type="btp">Zur Rede von Bundeswirtschaftsminister <name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name> am 20. Januar 1977 vgl. <ref type="external" target="08/8">ebd., S. 306–312</ref>. </bibl></p></note></seg> Falls Verkehrspolitik und Sanierung der Bundesbahn angesprochen <seg type="note">[werden]<note xml:id="fdp-08_1977-01-18-t1500_EP_30" type="critical"><p>Vom Bearbeiter eingefügt. In der Vorlage: »wird«.</p></note></seg>: <name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name>.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-08_1977-01-18-t1500_EP_div_SVP-3">
+            <head>C.</head>
+            <p>3. Vorstandswahl</p>
+            <p>Der Vorsitzende [<name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] betonte einleitend, daß der <name type="Organisation" ref="#FDP">F.D.P.</name>-Fraktionsvorstand im Unterschied zu den Vorständen der anderen Fraktionen zweimal hintereinander jeweils für ein Jahr zur Wahl anstehe und dann für den Rest der Legislaturperiode. Er bedauerte, daß seine praktischen Überlegungen, dieses Mal die Parlamentarischen Geschäftsführer vor den Fraktionsstellvertretern zu wählen, zu Mißdeutungen in der Presse geführt hätten. Er habe wegen der Unvereinbarkeit beider Positionen vermeiden wollen, daß ein eben gewählter stellvertretender Fraktionsvorsitzender nach der etwaigen Wahl zum Parlamentarischen Geschäftsführer sein Amt wieder niederlegen müsse.</p>
+            <p><seg type="note">Der Vorsitzende [<name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] verwahrte sich gegen Presseangriffe, in denen <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> die Beschäftigung von <name type="Person" role="Erwaehnung" ref="#WitzelReimar">Witzel</name> zum Vorwurf gemacht wird.<note xml:id="fdp-08_1977-01-18-t1500_EP_19" type="comment"><p>Für Kritik sorgte die Tatsache, dass der Assistent des Bundestagsabgeordneten <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name>, Reimar <name type="Person" role="Erwaehnung" ref="#WitzelReimar">Witzel</name>, gleichzeitig Vorstandsassistent bei den Farbwerken Hoechst war. <bibl type="series-item">Vgl. den Artikel »Kritik um Assistenten«; <name type="Organisation" ref="#BonnerRund">»Bonner Rundschau«</name> vom 15. Januar 1977; BT Pressedokumentation, Personenordner Kurt Spitzmüller.</bibl><hi rendition="#smcap"> </hi><bibl type="series-item">Ferner den Artikel »FDP-Abgeordneter beschäftigt Hoechst-Vorstandsassistent«; <name type="Organisation" ref="#FR">»Frankfurter Rundschau</name>« vom 15. Januar 1977; ebd.</bibl></p></note></seg></p>
+            <p>Der Vorsitzende [<name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] stellte klar, daß <name type="Person" role="Erwaehnung" ref="#WitzelReimar">Witzel</name>, ein aktiver Parteifreund, der auch in der <seg type="note">letzten hessischen Landtagswahl<note xml:id="fdp-08_1977-01-18-t1500_EP_27" type="comment"><p>Am 27. Oktober 1974.</p></note></seg> kandidiert hat, vor seiner Einstellung bei Hoechst jahrelang Assistent von Herrn <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> gewesen ist. Seine Arbeit bei Herrn <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> laufe nun aus.</p>
+            <p>Der Vorsitzende [<name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] betonte, daß es nach diesem Wahlgang darauf ankomme, daß alle Mitglieder der Fraktion gut zusammenarbeiten.</p>
+            <p><name type="Person" role="Sprecher" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> machte darauf aufmerksam, daß diese Vorstandswahl im besonderen Blickpunkt der Öffentlichkeit stehe; wo es keinen Gegenkandidaten gebe, dürfe durch die Wahl die Autorität des Gewählten nicht geschwächt werden. </p>
+            <p>Auf Vorschlag des Vorsitzenden [<name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] übernahm Frau <name type="Person" role="Erwaehnung" ref="#FunckeLiselotte_1961-10-17">Funcke</name> den Vorsitz zur Durchführung der Vorstandswahl.</p>
+            <p>Zur Auszählung der Stimmscheine wurden mit Zustimmung der Fraktion Frau <name type="Person" role="Erwaehnung" ref="#Matthaeus-MaierIngrid_1976-12-14">Matthäus</name> und die Herren <name type="Person" role="Erwaehnung" ref="#GaertnerKlaus_1976-12-14">Gärtner</name> und <name type="Person" role="Erwaehnung" ref="#HaussmannHelmut_1976-12-14">Haussmann</name> bestimmt.</p>
+            <p>a. Wahl des Fraktionsvorsitzenden</p>
+            <p>Auf Vorschlag von <name type="Person" role="Erwaehnung" ref="#GenscherHans-Dietrich_1965-10-19">Genscher</name> wurde <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> mit 37 Stimmen gewählt, abgegebene Stimmen 39 (gültige Stimmen 39), Stimmenthaltung 2.</p>
+				<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> nahm die Wahl an.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#FunckeLiselotte_1961-10-17">Funcke</name> gratulierte im Namen der Fraktion und würdigte die Arbeit des Fraktionsvorsitzenden [<name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>].</p>
+            <p>Der Fraktionsvorsitzende teilt mit, daß er die Absicht hat, <name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name> und <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> als Parlamentarische Geschäftsführer vorzuschlagen.</p>
+            <p>b. Wahl der stellvertretenden Fraktionsvorsitzenden </p>
+            <p>Auf Vorschlag von <name type="Person" role="Erwaehnung" ref="#FriderichsHans_1965-10-19">Friderichs</name>: <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> gewählt mit 37 Stimmen, 2 Enthaltungen bei 39 abgegebenen Stimmen; </p>
+            <p>auf Vorschlag von <name type="Person" role="Erwaehnung" ref="#WurbsRichard_1965-10-19">Wurbs</name> wurde <name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name> mit 25 Stimmen gewählt, <name type="Person" role="Erwaehnung" ref="#HoffieKlaus-Juergen_1972-12-13">Hoffie</name> (Vorschlag <name type="Person" role="Erwaehnung" ref="#LaermannKarl-Hans_1974-06-28">Laermann</name>) erhielt 13 Stimmen, abgegebene Stimmen 40, Enthaltungen 2; </p>
+            <p>Wahl von <name type="Person" role="Erwaehnung" ref="#EngelhardHansA_1972-12-13">Engelhard</name> zum stellvertretenden Fraktionsvorsitzenden: </p>
+            <p>Erster Wahlgang: Von 40 gültigen abgegebenen Stimmen bei 1 Enthaltung entfielen auf <name type="Person" role="Erwaehnung" ref="#MoellemannJuergenW_1972-12-13">Möllemann</name> 10, Frau <name type="Person" role="Erwaehnung" ref="#SchuchardtHelga_1972-12-13">Schuchardt</name> 15 und <name type="Person" role="Erwaehnung" ref="#EngelhardHansA_1972-12-13">Engelhard</name> 14 Stimmen. In der sich anschließenden Stichwahl zwischen Frau <name type="Person" role="Erwaehnung" ref="#SchuchardtHelga_1972-12-13">Schuchardt</name> und Herrn <name type="Person" role="Erwaehnung" ref="#EngelhardHansA_1972-12-13">Engelhard</name> entfielen von 40 abgegebenen gültigen Stimmen bei 1 Enthaltung 21 Stimmen auf <name type="Person" role="Erwaehnung" ref="#EngelhardHansA_1972-12-13">Engelhard</name>, 18 Stimmen auf Frau <name type="Person" role="Erwaehnung" ref="#SchuchardtHelga_1972-12-13">Schuchardt</name>.</p>
+            <p>c. Wahl der Parlamentarischen Geschäftsführer</p>
+            <p>Bei 39 gültig abgegebenen Stimmkarten, 7 Stimmkarten: nein und 4 Enthaltungen, entfielen auf <name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name> 26 Stimmen und auf <name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name> 28 Stimmen.</p>
+            <p>d. Kassenprüfer</p>
+            <p>Durch Akklamation wurden <name type="Person" role="Erwaehnung" ref="#KleinertDetlef_1969-10-20">Kleinert</name> und <name type="Person" role="Erwaehnung" ref="#GaertnerKlaus_1976-12-14">Gärtner</name> gewählt.</p>
+        	<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> kündigte an, daß nach Ende der Fraktionssitzung der neue Vorstand zu einer ersten Sitzung zusammentritt. <seg type="note">In der nächsten Fraktionssitzung solle dann auch über die Benennung des ständigen Vertreters der Fraktion im F.D.P.-Präsidium entschieden werden.<note xml:id="fdp-08_1977-01-18-t1500_EP_20" type="comment"><p>Vgl. das <ref type="internal" target="#fdp-08_1977-02-01-t1500_EP_SVP-3">Protokoll der Fraktionssitzung am 1. Februar 1977, SVP C.</ref></p></note></seg>
+				</p>
+         </div>
+         <div type="SVP" xml:id="fdp-08_1977-01-18-t1500_EP_div_SVP-4">
+            <head>D.</head>
+            <p>4. Ausschußbesetzung</p>
+            <p>Das Ergebnis der Beratungen auf der Grundlage des von <name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name> vorgetragenen Berichts der »Ausschuß-Kommission« ergibt folgendes Bild: </p>
+            <p>
+					<table rendition="#hidden">
+						<row>
+							<cell>Ausschuß</cell>
+							<cell>ordentl. Mitglied</cell>
+							<cell>stellv. Mitglied</cell>
+						</row>
+						<row>
+							<cell>Innenausschuß</cell>
+							<cell>Dr. <name type="Person" role="Erwaehnung" ref="#WendigFriedrich_1972-12-13">Wendig</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#KleinertDetlef_1969-10-20">Kleinert</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#WolfgrammTorsten_1974-07-05">Wolfgramm</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name>
+							</cell>
+						</row>
+					</table>Bei einer Abstimmung um den zweiten Sitz im Innenausschuß erhielten <name type="Person" role="Erwaehnung" ref="#WolfgrammTorsten_1974-07-05">Wolfgramm</name> 28, <name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name> 9 Stimmen bei 37 abgegebenen gültigen Stimmen.</p>
+            <p>
+               <table rendition="#hidden">
+                  <row>
+                     <cell>Sportausschuß</cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>
+                     </cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#HoffieKlaus-Juergen_1972-12-13">Hoffie</name>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell cols="3">
+                        <seg type="note">[...]<note xml:id="fdp-08_1977-01-18-t1500_EP_FN001" type="critical"><p>Die im Original wegen eines Seitenumbruchs erneut eingefügten Spaltenbezeichnungen »Ausschuß«, »ordentl. Mitglied« und »stellv. Mitglied« wurden vom Bearbeiter gestrichen.</p></note></seg>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>Rechtsausschuß</cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#EngelhardHansA_1972-12-13">Engelhard</name>
+                     </cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#GattermannHansH_1976-12-14">Gattermann</name>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell/>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#KleinertDetlef_1969-10-20">Kleinert</name>
+                     </cell>
+                     <cell>Dr. <name type="Person" role="Erwaehnung" ref="#WendigFriedrich_1972-12-13">Wendig</name>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>Finanzausschuß</cell>
+                     <cell>Frau <name type="Person" role="Erwaehnung" ref="#FunckeLiselotte_1961-10-17">Funcke</name>
+                     </cell>
+                     <cell>Dr. <name type="Person" role="Erwaehnung" ref="#LambsdorffOtto_1972-12-13">Graf Lambsdorff</name>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell/>
+                     <cell>Frau <name type="Person" role="Erwaehnung" ref="#Matthaeus-MaierIngrid_1976-12-14">Matthäus</name>
+                     </cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name>
+                     </cell>
+                  </row>
+               </table>Bei der Abstimmung um den zweiten Platz im Finanzausschuß erhalten von 35 abgegebenen gültigen Stimmen Frau <name type="Person" role="Erwaehnung" ref="#Matthaeus-MaierIngrid_1976-12-14">Matthäus</name> 18, <name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name> 17.</p>
+            <p>Bei der Abstimmung um die Stellvertretung im Finanzausschuß erhielten <name type="Person" role="Erwaehnung" ref="#LambsdorffOtto_1972-12-13">Graf Lambsdorff</name> 21, <name type="Person" role="Erwaehnung" ref="#CronenbergDieter-Julius_1976-12-14">Cronenberg</name> 14, <name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name> 16, <name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name> 13 Stimmen.</p>
+            <p>
+					<table rendition="#hidden">
+						<row>
+							<cell>Ausschuß für Wirtschaft</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#LambsdorffOtto_1972-12-13">Graf Lambsdorff</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#WurbsRichard_1965-10-19">Wurbs</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#AngermeyerJoachim_1976-12-14">Angermeyer</name>
+							</cell>
+							<cell>Dr. <name type="Person" role="Erwaehnung" ref="#HaussmannHelmut_1976-12-14">Haussmann</name>
+							</cell>
+						</row>
+					</table>Bei der Abstimmung um den zweiten Sitz im Wirtschaftsausschuß erhielten von 35 gültigen abgegebenen Stimmen <name type="Person" role="Erwaehnung" ref="#AngermeyerJoachim_1976-12-14">Angermeyer</name> 13, <name type="Person" role="Erwaehnung" ref="#HaussmannHelmut_1976-12-14">Haussmann</name> 12, <name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name> 10. In der sich anschließenden Stichwahl erhielt bei 36 Stimmen, 1 Enthaltung, <name type="Person" role="Erwaehnung" ref="#AngermeyerJoachim_1976-12-14">Angermeyer</name> 21 u. <name type="Person" role="Erwaehnung" ref="#HaussmannHelmut_1976-12-14">Haussmann</name> 14 Stimmen.</p>
+            <p>
+					<table rendition="#hidden">
+						<row>
+							<cell>Ausschuß für Ernährung, Landwirtschaft u. Forsten</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#PetersWalter_1961-10-17">Peters</name>
+							</cell>
+							<cell>Dr. <name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#PaintnerJohann_1976-12-14">Paintner</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#EimerNorbert_1976-12-14">Eimer</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Arbeit und Sozialordnung</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoelscherFriedrich_1972-12-13">Hölscher</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#EimerNorbert_1976-12-14">Eimer</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#CronenbergDieter-Julius_1976-12-14">Cronenberg</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#LudewigWalther_1976-12-14">Ludewig</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Verteidigungsausschuß</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#MoellemannJuergenW_1972-12-13">Möllemann</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#LudewigWalther_1976-12-14">Ludewig</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Jugend, Familie und Gesundheit</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SpitzmuellerKurt_1957-10-15">Spitzmüller</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#EimerNorbert_1976-12-14">Eimer</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoelscherFriedrich_1972-12-13">Hölscher</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Verkehr</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#AngermeyerJoachim_1976-12-14">Angermeyer</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoffieKlaus-Juergen_1972-12-13">Hoffie</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#PaintnerJohann_1976-12-14">Paintner</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Städtebau, Wohnungswesen u. Raumordnung</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#GattermannHansH_1976-12-14">Gattermann</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#EngelhardHansA_1972-12-13">Engelhard</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#WurbsRichard_1965-10-19">Wurbs</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#GaertnerKlaus_1976-12-14">Gärtner</name>
+							</cell>
+						</row>
+						<row>
+							<cell cols="3">
+								<seg type="note">[...]<note xml:id="fdp-08_1977-01-18-t1500_EP_FN002" type="critical"><p>Die im Original wegen eines Seitenumbruchs erneut eingefügten Spaltenbezeichnungen »Ausschuß«, »ordentl. Mitglied« und »stellv. Mitglied« wurden vom Bearbeiter gestrichen.</p></note></seg>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Innerdeutsche Beziehungen</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#KleinertDetlef_1969-10-20">Kleinert</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#WendigFriedrich_1972-12-13">Wendig</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Forschung und Technologie</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#LaermannKarl-Hans_1974-06-28">Laermann</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoffieKlaus-Juergen_1972-12-13">Hoffie</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Bildung und Wissenschaft</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SchuchardtHelga_1972-12-13">Schuchardt</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#MoellemannJuergenW_1972-12-13">Möllemann</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#LaermannKarl-Hans_1974-06-28">Laermann</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoelscherFriedrich_1972-12-13">Hölscher</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für wirtschaftliche Zusammenarbeit</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SchuchardtHelga_1972-12-13">Schuchardt</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#CronenbergDieter-Julius_1976-12-14">Cronenberg</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Auswärtiger Ausschuß</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#BangemannMartin_1972-12-13">Bangemann</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#LudewigWalther_1976-12-14">Ludewig</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#MoellemannJuergenW_1972-12-13">Möllemann</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#GattermannHansH_1976-12-14">Gattermann</name>
+							</cell>
+						</row>
+					</table>Es bestand Einvernehmen, daß <name type="Person" role="Erwaehnung" ref="#MoellemannJuergenW_1972-12-13">Möllemann</name> den Ausschußsitz nur so lange innehaben soll, wie <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> durch seine Mitgliedschaft im Innerdeutschen Ausschuß an der Mitwirkung im Auswärtigen Ausschuß gehindert ist. <name type="Person" role="Erwaehnung" ref="#HoppeHans-Guenter_1972-12-13">Hoppe</name> räumt den Sitz im Innerdeutschen Ausschuß, sobald <name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name> sich zur Übernahme des Ausschußsitzes bereit erklärt.</p>
+            <p>
+					<table rendition="#hidden">
+						<row>
+							<cell>Petitionsausschuß</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#Matthaeus-MaierIngrid_1976-12-14">Matthäus</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#WolfgrammTorsten_1974-07-05">Wolfgramm</name>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#AngermeyerJoachim_1976-12-14">Angermeyer</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#WendigFriedrich_1972-12-13">Wendig</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Ausschuß für Wahlprüfung, Immunität und Geschäftsordnung</cell>
+							<cell cols="2">Wird von den Parlamentarischen Geschäftsführern wahrgenommen.</cell>
+						</row>
+						<row>
+							<cell>Schriftführer</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#HoffieKlaus-Juergen_1972-12-13">Hoffie</name>
+							</cell>
+							<cell/>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name>
+							</cell>
+							<cell/>
+						</row>
+						<row>
+							<cell>Europarat</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#VohrerManfred_1972-12-13">Vohrer</name>
+							</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#SchmidtHansheinrich_1961-10-17">Schmidt</name>
+							</cell>
+						</row>
+						<row>
+							<cell>Europäisches Parlament</cell>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#BangemannMartin_1972-12-13">Bangemann</name>
+							</cell>
+							<cell/>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name>
+							</cell>
+							<cell/>
+						</row>
+						<row>
+							<cell/>
+							<cell>
+								<name type="Person" role="Erwaehnung" ref="#ZywietzWerner_1972-12-13">Zywietz</name>
+							</cell>
+							<cell/>
+						</row>
+					</table> Die sofortige Benennung von <name type="Person" role="Erwaehnung" ref="#JungKurt_1966-05-17">Jung</name> soll nur dann erfolgen, wenn auch ein Gespräch zwischen dem Fraktionsvorsitzenden [<name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name>] und dem Parlamentspräsidenten [<name type="Person" role="Erwaehnung" ref="#SpenaleGeorges">Spenale</name>]  ergibt, daß es nicht möglich ist, Herrn <name type="Person" role="Erwaehnung" ref="#KrallLothar_1970-03-16">Krall</name> den Sitz im <name type="Organisation" ref="#EP">Europäischen Parlament</name> so lange zu belassen, <seg type="note">wie es die Geschäftsordnung des <name type="Organisation" ref="#EP">Europäischen Parlaments</name> zuläßt.<note xml:id="fdp-08_1977-01-18-t1500_EP_21" type="comment"><p>Nach Artikel 4 Absatz 2 der Geschäftsordnung des Europäischen Parlaments von 1976 konnte ein Abgeordneter bei Verlust seines nationalen Parlamentsmandats <quote>»im Amt bleiben, bis die Benennung seines Nachfolgers dem Europäischen Parlament mitgeteilt wird, jedoch längstens für die Dauer von sechs Monaten und unter der Voraussetzung, daß das ihm vom nationalen Parlament erteilte Mandat für das Europäische Parlament inzwischen nicht abgelaufen ist«</quote>. <bibl type="series-item">Vgl. Geschäftsordnung des Europäischen Parlaments vom Juli 1976, o.O. 1976, S. 6.</bibl></p></note></seg>
+				</p>
+            <p>Es bestand Einvernehmen, daß man Herrn <name type="Person" role="Erwaehnung" ref="#KrallLothar_1970-03-16">Krall</name>, der beabsichtigt, auch weiterhin im europäischen Bereich tätig zu sein, wenn irgend möglich, das vorläufige Verbleiben im <name type="Organisation" ref="#EP">Europäischen Parlament</name>
+					<seg type="note">[ermöglichen sollte]<note xml:id="fdp-08_1977-01-18-t1500_EP_29" type="critical"><p>Vom Bearbeiter eingefügt. Dafür gestrichen: »zu ermöglichen«.</p></note></seg>.</p>
+            <p>
+               <table rendition="#hidden">
+                  <row>
+                     <cell>Vermittlungsausschuß</cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#KleinertDetlef_1969-10-20">Kleinert</name>
+                     </cell>
+                     <cell>
+                        <name type="Person" role="Erwaehnung" ref="#FunckeLiselotte_1961-10-17">Funcke</name>
+                     </cell>
+                  </row>
+               </table>
+            </p>
+            <p>Die Fraktion beauftragt <name type="Person" role="Erwaehnung" ref="#OlleschAlfred_1961-10-17">Ollesch</name>, wie bisher nach dem Gesetz über die Beschränkung des Brief- und Postgeheimnisses tätig zu werden. Über die aus der Besetzung der Ausschüsse sich ergebenden Folgebesetzungen wird der Fraktionsvorstand befinden.</p>
+         </div>
+         <div type="SVP" xml:id="fdp-08_1977-01-18-t1500_EP_div_SVP-5">
+            <head>E.</head>
+         	<p>5. Das Ergebnis der Beratungen zur Stabilisierung der Renten vgl. <seg type="note">Anlage.<note xml:id="fdp-08_1977-01-18-t1500_EP_22" type="comment"><p><bibl type="item-in-archive">Zum »Vermerk vom 19.1.1977. Betr.: Fraktionssitzung 18.1.1977. Sozialpolitik« vgl. ADL, Bestand FDP-Bundestagsfraktion, A49-14, Bl. 131–133.</bibl></p></note></seg></p>
+            <p>Betr.: Fraktionssitzung 18.1.1977</p>
+            <p>Sozialpolitik</p>
+            <p>Zur Beitragsbemessungsgrenze in der gesetzlichen Krankenversicherung wird nach weiteren Koalitionsgesprächen folgender Kompromiß vorgeschlagen: </p>
+            <p>Die Beitragsbemessungsgrenze wird nicht auf 100 v.H., sondern auf 85 v.H. der Beitragsbemessungsgrenze der Rentenversicherung angehoben. Damit wird den Bedenken der <name type="Organisation" ref="#FDP">FDP</name> gegen die zunächst vorgesehene Anhebung auf 100 v.H. weitgehend Rechnung getragen. Die Versicherungspflichtgrenze bleibt – entgegen den Forderungen der <name type="Organisation" ref="#SPD">SPD</name> – unverändert.</p>
+            <p>Der Belastungsausgleich in der Krankenversicherung der Rentner aufgrund der unterschiedlichen Rentnerdichte in den einzelnen Kassenarten soll grundlohnbezogen durchgeführt werden. <seg type="note">Dieser Belastungsausgleich bringt gegenüber der in der Regierungsvorlage des KVWG 1974 vorgesehenen Festbetragslösung für die Ersatzkassen eine Mehrbelastung von rd. 100 Mio. DM jährlich.<note xml:id="fdp-08_1977-01-18-t1500_EP_23" type="comment"><p><bibl type="btd">Zu dem von der Bundesregierung eingebrachten Gesetzentwurf zur Weiterentwicklung des Kassenarztrechts und zur Änderung der Krankenversicherung der Rentner (Krankenversicherungs-Weiterentwicklungsgesetz – KVWG) vom 7. März 1975 </bibl><bibl type="btd">vgl. <ref type="external" target="07/3336">BT Drs. 07/3336</ref>.</bibl></p></note></seg> Entsprechend den Vorstellungen der FDP wird der Belastungsausgleich von <name type="Organisation" ref="#BMAS">BMA</name> und Bundesversicherungsamt – also ohne Einschaltung einer »Kopfstelle« in der <seg type="note">GKV<note xml:id="fdp-08_1977-01-18-t1500_EP_24" type="comment"><p>Gesetzliche Krankenversicherung.</p></note></seg> – technisch durchgeführt.</p>
+            <p>Die Fraktion stimmt diesem Kompromißvorschlag zu. Die Mitglieder der Fraktion erhalten eine Argumentationshilfe zu diesem Kompromiß und zu den weiteren Beschlüssen zur Renten- und zur Gesundheitspolitik.</p>
+        	<p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> erklärt, daß er den Koalitionspartner bereits während der Verhandlungen auf die Bedenken gegen eine Anhebung der Beitragsbemessungsgrenze hingewiesen habe. <seg type="note">Diese Bedenken seien auch ausführlich in der gemeinsamen Sitzung von Bundesvorstand und Bundestagsfraktion am 13.12.1976 behandelt worden.<note xml:id="fdp-08_1977-01-18-t1500_EP_25" type="comment"><p>Vgl. das <ref type="internal" target="#fdp-07_1976-12-13-t0000_EP">Sitzungsprotokoll.</ref></p></note></seg>
+					<seg type="note">Er selbst habe sich anläßlich der Debatte über die Regierungserklärung am 17.12.1976 für eine Überprüfung der Anhebung der Beitragsbemessungsgrenze ausgesprochen (vgl. <name type="Organisation" ref="#fdk">»fdk«</name> Nr. 674/76 vom 20.12.1976, die noch vor der Weihnachtspause an die Privatanschrift aller Fraktionsmitglieder zugeschickt wurde).<note xml:id="fdp-08_1977-01-18-t1500_EP_26" type="comment"><p><bibl type="btp">Vgl. die Rede <name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnicks</name> am 17. Dezember 1976; <ref type="external" target="08/6">BT Plenarprotokoll 08/6, S. 79–85, hier S. 81–83</ref>.</bibl>
+								<bibl type="series-item">Ferner den Artikel »<name type="Person" role="Erwaehnung" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> zur Renten- und Gesundheitspolitik«;<name type="Organisation" ref="#fdk">»fdk«</name>, Nr. 674/76 vom 20.12.1976.</bibl></p></note></seg></p>
+            <p>Prof. Dr. <name type="Person" role="Sprecher" ref="#MaihoferWerner_1972-12-13">Maihofer</name> weist zum Problem einer <quote>»Überversorgung«</quote> von Arbeitern und Angestellten des öffentlichen Dienstes auf die tarifvertraglichen Grundlagen dieser Regelungen hin.</p>
+            <p>Frau <name type="Person" role="Sprecher" ref="#SchuchardtHelga_1972-12-13">Schuchardt</name> bezweifelt, daß die im Januar 1977 ergänzten Rentenbeschlüsse (u.a. Beitrag der Bundesanstalt für Arbeit zur Rentenversicherung ab 1979) ausreichten, das Defizit zu decken; für diesen Fall müßten weitere Maßnahmen vorgesehen werden. Ferner sei es erforderlich, die finanziellen Auswirkungen der vorgesehenen Maßnahmen zur Dämpfung der Kosten in der gesetzlichen Krankenversicherung zu beziffern.</p>
+            <p><name type="Person" role="Sprecher" ref="#MischnickWolfgang_1957-10-15">Mischnick</name> erklärt, daß die jetzigen Annahmen – entgegen der früheren Praxis des <name type="Organisation" ref="#BMAS">BMA</name> – von den realistischen Projektionen des <name type="Organisation" ref="#BMWi">BMWi</name> über Lohnsteigerungen und Entwicklung der Arbeitslosigkeit bis 1980 ausgingen. Garantien, daß diese Annahmen eintreffen, seien selbstverständlich ausgeschlossen. Ebensowenig sei es möglich, die Kostendämpfungsmaßnahmen in der Krankenversicherung zu beziffern.</p>
+            <p>Dr. <name type="Person" role="Sprecher" ref="#LambsdorffOtto_1972-12-13">Graf Lambsdorff </name> hält den Beitrag der Bundesanstalt für Arbeit zur Rentenversicherung und die Begrenzung des Beitrags der Rentenversicherung an die Krankenversicherung für systemgerecht. In der sozialen Sicherung müßten die Kosten jeweils in dem Bereich aufgebracht werden, in dem sie entstehen. Leider hätten die anderen Bundestagsparteien bisher ständig gegen diesen Grundsatz verstoßen. Diese hätten die Kostenprobleme im System der sozialen Sicherung auch zu spät erkannt und deren Lösung zu spät in Angriff genommen. Die gegenwärtige <quote>»chaotische Diskussion«</quote>, die der FDP in keiner Weise zuzurechnen sei, sei deshalb unvermeidlich. Die jetzt beschlossenen Konsolidierungsmaßnahmen müßten aber im wahlfreien Jahr 1977 in Gesetzesform gebracht werden.</p>
+            <p><name type="Person" role="Sprecher" ref="#BaumGerhartRudolf_1972-12-13">Baum</name> warnt davor, die bestehenden Unsicherheitsfaktoren zu beschönigen.</p>
+         </div>
+      </body>
+   </text>
+</TEI>
