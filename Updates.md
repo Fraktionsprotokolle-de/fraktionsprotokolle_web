@@ -12,6 +12,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2025-11-19: Update der Personenliste/Namensliste: Tippfehler behoben, Updates bei einigen `<affiliations>`.
 - 2025-11-10: Größeres Update der Personenliste/Namensliste: Weitere nicht-MdB-Personen hinzugefügt sowie umfangreiche Korrekturen und Erweiterungen bei einzelnen Einträgen.
 - 2025-09-0: Veröffentlichung der 443 edierten und bearbeiteten Sitzungsprotokolle der FDP-Fraktion von 1969 bis 1983 (6. bis 9. Wahlperiode). Die Edition ist in Auswahl auch in Buchforum und ergänzt um eine ausführliche wissenschaftliche Einleitung erschienen. Vgl. dazu https://kgparl.de/neuveroeffentlichung-die-fdp-fraktion-im-deutschen-bundestag-sitzungsprotokolle-1969-1983/
 - 2024-12-09: Größeres Update der Personenliste/Namensliste: Nicht-MdB-Personen hinzugefügt sowie umfangreiche Korrekturen und Erweiterungen bei einzelnen Einträgen.
