@@ -8,7 +8,7 @@ Für die Konzeption und Realisierung der seit 2017 bestehenden Internetpräsenz 
 
 ### Wissenschaftliche Mitarbeiterinnen und Mitarbeiter der KGParl:
 
-- Dr. Cordula **[Greinert](https://kgparl.de/personen/cordula-greinert/)** (Bearbeiterin der CSU-Landesgruppe)
+- Cordula **[Greinert](https://kgparl.de/personen/cordula-greinert/)**, M.A. (Bearbeiterin der CSU-Landesgruppe)
 - Anna **[Hesse](https://kgparl.de/personen/anna-hesse/)**, M.A. (Bearbeiterin der SPD-Fraktion)
 - Dr. Sven **[Jüngerkes](https://kgparl.de/personen/sven-juengerkes/)** (Leiter der Edition, Bearbeiter SPD-Fraktion)
 - Maximilian **[Kruse](https://kgparl.de/personen/maximilian-kruse/)** , M.A. (Bearbeiter der PDS-Fraktion, Digital Humanities)
