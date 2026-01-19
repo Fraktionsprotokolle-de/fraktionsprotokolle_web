@@ -30,7 +30,7 @@ Das XML-Schema und die Schematron-Datei finden sich im gleichnamigen Verzeichnis
 Aktuell umfasst die veröffentlichte Edition die Protokolle von
 
 - CDU/CSU-Fraktion 1.–7. Wahlperiode (1949–1976)
-- SPD-Fraktion 1.–7. Wahlperiode (1949–1976)
+- SPD-Fraktion 1.–8. Wahlperiode (1949–1980)
 - FDP-Fraktion 1.–9. Wahlperiode (1949–1983)
 - CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983)
 - Grüne-Fraktion 10. und 11. Wahlperiode (1983–1990)
@@ -49,7 +49,7 @@ Neue (substantielle) Veröffentlichungen werden entsprechend als Release in Gith
 
 ## Partizipation und Feedback
 
-Wir freuen uns über jede Anregung zu diesem Repositorium und darüber wie wir es verbessern können. Wir freuen uns auch über jeden Hinweis oder jeden Kommentar zu den edierten Quellen. Sie können uns per E-Mail info@fraktionsprotokolle.de oder über das Issue-System von Github erreichen.
+Wir freuen uns über jede Anregung zu diesem Repositorium und darüber wie wir es verbessern können. Wir freuen uns auch über jeden Hinweis oder jeden Kommentar zu den edierten Quellen. Sie können uns per E-Mail info@fraktionsprotokolle.de oder gerne über das [Issue-System von Github](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/issues) erreichen.
 
 ## Lizenz
 
