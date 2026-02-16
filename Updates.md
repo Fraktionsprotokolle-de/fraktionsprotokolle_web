@@ -12,6 +12,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2026-02-16: Update der Personenliste/Namensliste (Ergänzungen  und Korrekturen).
 - 2026-01-19: Veröffentlichung der 144 edierten und bearbeiteten Sitzungsprotokolle der SPD-Fraktion von 1976 bis 1980 (8. Wahlperiode). Die Edition ist in Auswahl auch in Buchforum und ergänzt um eine ausführliche wissenschaftliche Einleitung erschienen. Vgl. dazu https://kgparl.de/neuerscheinung-die-spd-fraktion-im-deutschen-bundestag-sitzungsprotokolle-1976-1980/.
 - 2025-11-19: Update der Personenliste/Namensliste: Tippfehler behoben, Updates bei einigen `<affiliations>`.
 - 2025-11-10: Größeres Update der Personenliste/Namensliste: Weitere nicht-MdB-Personen hinzugefügt sowie umfangreiche Korrekturen und Erweiterungen bei einzelnen Einträgen.
