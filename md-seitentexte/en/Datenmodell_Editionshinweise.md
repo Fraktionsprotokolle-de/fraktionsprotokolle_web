@@ -1,1 +1,1 @@
-# TBA
+The editorial guidelines and the encoding guidelines (TEI-XML) are currently available in German only.

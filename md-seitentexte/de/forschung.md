@@ -1,4 +1,4 @@
-# <p style="text-align: center;">Forschungsrelevanz<p/>
+# <p style="text-align: center;">Forschungsrelevanz</p>
 
 ------
 
