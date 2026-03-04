@@ -1,35 +1,36 @@
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en" version="4.9.0">
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
 				<title>Fraktionsprotokolle - TEI with minimal setup</title>
 			</titleStmt>
 			<publicationStmt>
-				<publisher>TEI Consortium</publisher>
-				<availability status="free">
-					<licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed under a Creative Commons Attribution-ShareAlike 3.0 Unported License </licence>
-					<licence target="http://www.opensource.org/licenses/BSD-2-Clause"> <p>Copyright 2013 TEI Consortium.</p> <p>All rights reserved.</p> <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p> <list>
-						<item>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</item>
-						<item>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</item>
-						</list> <p>This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</p> </licence>
-					<p>TEI material can be licensed differently depending on the use you intend to make of it. Hence it is made available under both the CC+BY and BSD-2 licences. The CC+BY licence is generally appropriate for usages which treat TEI content as data or documentation. The BSD-2 licence is generally appropriate for usage of TEI content in a software environment. For further information or clarification, please contact the <ref target="mailto:info@tei-c.org">TEI Consortium</ref>. </p>
+				<publisher>
+					<orgName xml:id="KGParl">Kommission für Geschichte des Parlamentarismus und der politischen Parteien e. V. (KGParl)</orgName>
+				</publisher>
+				<availability status="restricted">
+					<licence>Alle Rechte vorbehalten. © Copyright KGParl</licence>
 				</availability>
 			</publicationStmt>
 			<sourceDesc>
-				<p>Written from scratch.</p>
+				<p>Based on a minimal TEI Customization.</p>
 			</sourceDesc>
 		</fileDesc>
+		<revisionDesc>
+			<change when="2021" who="textloop" status="textloop-1_basic" n="1"/>
+			<change when="2025" who="textloop" status="textloop-2_restriktive" n="2"/>
+		</revisionDesc>
 	</teiHeader>
 	<text>
 		<body>
-			<head>A Minimal TEI Customization</head>
-			<p>This is as minimal a TEI customization as is possible. That is, this ODD file is just about as simple as can be. It does not create a minimal TEI schema, of course. Adding various <gi>elementSpec</gi>, <gi>classSpec</gi>, and <gi>macroSpec</gi> elements to this customization file could make the resulting schema more minimal, but would make this customization more complicated. E.g., the customization <name>tei_bare</name> produces a much more minimal schema than the one created here.</p>
+			<head>A Minimal TEI Customization for project "Fraktionsprotokolle. Digitale Edition im Rahmen des Programms "Fraktionen im Deutschen Bundestag 1949–2005""</head>
+			<p>This is as minimal a TEI customization as is possible. That is, this ODD file is just about as simple as can be.By adding various <gi>elementSpec</gi> and <gi>classSpec</gi> elements to this customization file, we made the resulting schema even more minimal.</p>
 			<schemaSpec ident="tei_minimal" start="TEI" prefix="tei_" targetLang="en" docLang="de">
 				<!--modules-->
 				<!---->
 				<!---->
 				<moduleRef key="header" except="abstract appInfo classCode keywords"/>
-				<moduleRef key="core" except="biblScope foreign graphic lg term"/>
+				<moduleRef key="core" except="biblScope foreign graphic lg"/>
 				<moduleRef key="tei"/>
 				<moduleRef key="textstructure" except="back titlePage titlePart docTitle docAuthor byline epigraph floatingText"/>
 				<!--Ungeprüft übergreifend für teiHeader eingeführt-->
@@ -38,7 +39,7 @@
 				<!--Ungeprüft übergreifend für Nutzung von<table> eingeführt-->
 				<moduleRef key="figures" except="figDesc graphic"/>
 				<!--Ungeprüft übergreifend für Nutzung von @corresp und <seg> eingeführt-->
-				<moduleRef key="linking" except="link linkGrp ptr term join joinGrp"/>
+				<moduleRef key="linking" except="link linkGrp ptr join joinGrp"/>
 				<!--Ermöglicht <incident> und <pause> (alle anderen Elemente aus spoken gelöscht) transcriptionDesc eventuell wieder zu lassen -->
 				<moduleRef key="spoken" except="annotationBlock broadcast equipment kinesic recording recordingStmt scriptStmt shift u vocal writing"/>
 				<!--attribute specifications-->
@@ -1518,6 +1519,13 @@
 								</valItem>
 							</valList>
 						</attDef>
+						<attDef ident="version" mode="change" usage="rec">
+							<valList type="closed" mode="replace">
+								<valItem ident="4.9.0">
+									<desc>P5 Version 4.9.0. Last updated on 24th January 2025, revision f73186978</desc>
+								</valItem>
+							</valList>
+						</attDef>
 						<attDef ident="xml:id" mode="change" usage="req"/>
 						<attDef ident="xmlns" mode="change" usage="req"/>
 						<attDef ident="n" mode="delete"/>
@@ -1527,7 +1535,6 @@
 						<attDef ident="xml:lang" mode="delete"/>
 						<attDef ident="cert" mode="delete"/>
 						<attDef ident="type" mode="delete"/>
-						<attDef ident="version" mode="delete"/>
 					</attList>
 				</elementSpec>
 				<elementSpec ident="teiCorpus" mode="delete" module="core"/>
