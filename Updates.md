@@ -12,6 +12,7 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- 2026-03-13: Korrektur von falschgesetzen Fußnoten im `<name>`-Element.
 - 2026-03-10: Ergänzung eckiger Klammern [] in /TEI/text[1]/body[1]/div/head. Löschung überflüssiger Oxygen-interner XML-Kommentare. Automatische Einfügung von Namen der Sitzungsleitungen in /TEI/teiHeader[1]/profileDesc[1]/creation[1]/name.
 - 2026-03-04: Anpassung des Datenmodells. Zulassung von `<term>` in `<p>`-Elementen
 - 2026-02-24 und 2026-02-25: Korrekturen (Sonderzeichen in IDs entfernt) an der Liste von Organisationen, Abgleich mit den den Protokollen; in Personen.xml neuen Attributwert  `<affiliation type="Mandatsbezogen">` eingeführt (nur bei MdB ab der 19. WP), um Tätigkeiten im Bundestag besser von Fraktionszugehörigkeit unterscheiden zu können.
