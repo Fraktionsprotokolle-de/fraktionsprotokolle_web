@@ -6,7 +6,7 @@ Seit **Januar 2022** ist die neue TEI-XML-Edition online. Die technische Grundla
 
 Die Edition umfasst alle bislang veröffentlichten Dokumente der Edition. 
 
-**Stand Februar 2026** sind folgende Sitzungsprotokolle in TEI-XML veröffentlicht worden:
+**Stand Mai 2026** sind folgende Sitzungsprotokolle in TEI-XML veröffentlicht worden:
 
 - CDU/CSU-Fraktion: 1949–1976
 - SPD-Fraktion: 1949–1980

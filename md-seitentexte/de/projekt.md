@@ -10,6 +10,18 @@ Zu den regelmäßigen Sitzungen der zwischen 1949 und 2005 maßgeblichen Fraktio
 
 Mehrere tausend Protokolle aus über 60 Jahren Parlamentarismusgeschichte der Bundesrepublik Deutschland sind bereits jetzt online bequem zugänglich sein. Die Edition bietet damit Forscherinnen und Forschern sowie der Öffentlichkeit eine einzigartige Dokumentation zur internen Kommunikations- und Entscheidungsstruktur in einem modernen Parlament. Das Editionsprogramm der KGParl leistet so auch einen wichtigen Beitrag zur politischen Bildung, zur Transparenz und zur Aufklärung über die Grundlagen unserer parlamentarischen Demokratie.
 
+## Stand der Edition
+
+**Stand Mai 2025** sind folgende Sitzungsprotokolle in TEI-XML veröffentlicht worden:
+
+- CDU/CSU-Fraktion: 1949–1976
+- SPD-Fraktion: 1949–1980
+- FDP-Fraktion: 1949–1983
+- CSU-Landesgruppe: 1949–1983
+- Fraktion DIE GRÜNEN: 1983–1990
+
+Die Sitzungsprotokolle für die CDU/CSU-Fraktion (1976–1980) werden derzeit bearbeitet und sollen 2027 online sowie als Teiledition im Druck verfügbar sein. Die Protokolle der damals parlamentarischen Gruppe und später Fraktion der PDS werden derzeit für die Jahre 1990 bis 1998 erfasst und bearbeitet.
+
 ## Kontakt
 
 info@fraktionsprotokolle.de
