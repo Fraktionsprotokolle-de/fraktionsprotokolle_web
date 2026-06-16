@@ -12,6 +12,10 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
+- **2026-06-16: Großer Relaunch der Website (Version 1.4).**
+  - Die Plattform wurde vollständig neu aufgebaut. TEI-Publisher/eXist-db wurde durch eine statische Architektur mit Typesense-Suche ersetzt, basierend auf dem ACDH-Framework `dse-static-cookiecutter`. Siehe dazu: https://github.com/Fraktionsprotokolle-de/kgparl-protokolle-ssg. 
+  - Im Zuge der Umstellung wurden kleinere Fehlerkorrekturen und Anpassungen an fast allen editierten Protokollen vorgenommen. Größte Änderung ist die Umstellung des [neuen Schlagwortregisters](https://github.com/Fraktionsprotokolle-de/fpv-skos) von `<name type="Organisation" ref="#XXX">` zu `<term ref="#XXX">`. In diesem Zuge wurde das Register auf die Datei `tei-fpv.xml`  umgestellt.
+  - Zur Personendatei `Personen.xml` wurden weitere Daten aus dem OpenData-Bestand des Deutschen Bundestages hinzugefügt (bspw. Konfession nach Selbstauskunft der ParlamentarierInnen). 
 - 2026-05-04: Kleine Änderung an ODD und RNG-Schema (u.a. keine verpflichtende `XML:ID` bei `<orgName>` erforderlich). 
 - 2026-03-13: Korrektur von falsch gesetzten Fußnoten im `<name>`-Element.
 - 2026-03-10: Ergänzung eckiger Klammern [] in `/TEI/text[1]/body[1]/div/head`. Löschung überflüssiger Oxygen-interner XML-Kommentare. Automatische Einfügung von Namen der Sitzungsleitungen in `/TEI/teiHeader[1]/profileDesc[1]/creation[1]/name`.

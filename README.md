@@ -1,10 +1,10 @@
-[<img src="https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/blob/main/logos/logo_editionsprogramm_1990-2005_Oswald_quer_ohneURL_mitLinie_rgb_210x52px_final.svg" />](https:///www.fraktionsprotokolle.de)
+[<img src="https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web/blob/main/logos/LogoFraktionsprotokolleKGParlgreen.svg" />](https:///www.fraktionsprotokolle.de)
 
 # »Editionsprogramm: Fraktionen im Deutschen Bundestag 1949–2005«
 
 *Digitale Edition – herausgegeben von der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien, e.V. (KGParl)](https://kgparl.de/) in Berlin. – Gefördert durch den Deutschen Bundestag.*
 
-*Stand: 10. Januar 2022*
+*Stand: 16. Juni 2026*
 
 ------
 
@@ -15,8 +15,8 @@ In diesem öffentlichen Repositorium werden alle TEI-XML-Dateien der edierten Si
 Die Edition versteht sich als *work in progress* – dies gilt sowohl für die semantische Erschließung und Anreicherung der Protokolle wie auch für den Gesamtumfang der Edition.
 
 ## Struktur und Umfang der Daten
-
-Alle veröffentlichten Quellen finden sich als XML-Dateien im Verzeichnis `xml_quellen`. Dort sind sie nach Fraktion/Landesgruppe und Wahlperiode in Unterordnern gesammelt. Personen- wie Organisationenregister befinden sich im entsprechenden Unterordner `Normdaten`. Die weitere Sortierung der Sitzungsprotokolle erfolgt über die Dateinamen. Beispiel: 
+### Protokokolle
+Alle veröffentlichten Quellen finden sich als XML-Dateien im Verzeichnis `xml_quellen`. Dort sind sie nach Fraktion/Landesgruppe und Wahlperiode in Unterordnern gesammelt. Die weitere Sortierung der Sitzungsprotokolle erfolgt über die Dateinamen. Beispiel: 
 
 `fdp-05_1965-09-28-t1540_EP.xml`
 
@@ -27,17 +27,22 @@ Alle veröffentlichten Quellen finden sich als XML-Dateien im Verzeichnis `xml_q
 
 Das XML-Schema und die Schematron-Datei finden sich im gleichnamigen Verzeichnis `xml_schema`. 
 
-Aktuell umfasst die veröffentlichte Edition die Protokolle von
+**Aktuell** umfasst die veröffentlichte Edition die Protokolle von
 
 - CDU/CSU-Fraktion 1.–7. Wahlperiode (1949–1976)
 - SPD-Fraktion 1.–8. Wahlperiode (1949–1980)
 - FDP-Fraktion 1.–9. Wahlperiode (1949–1983)
 - CSU-Landesgruppe 1.–9. Wahlperiode (1949–1983)
 - Grüne-Fraktion 10. und 11. Wahlperiode (1983–1990)
+### Normdaten
 
-Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeichnen, erhält die als XML-Datei vorliegende Personendatenbank. Sie ist Grundlage des Namensregisters der Edition. Sie wird kontinuierlich um Personennamen ergänzt, die bisherigen Einträge um Normdaten wie GND und Kurzbiogramme angereichert sowie etwaige Fehler behoben. 
+Alle Authority-Dateien liegen im Ordner `.\xml_quellen\Normdaten`.
 
-## Beacon
+Ein regelmäßiges Update, auch ohne dies ausdrücklich als Release zu kennzeichnen, erhält die als XML-Datei vorliegende Personendatenbank `Personen.xml`. Sie ist Grundlage des Namensregisters der Edition. Sie wird kontinuierlich um Personennamen ergänzt, die bisherigen Einträge um Normdaten wie GND und Kurzbiogramme angereichert sowie etwaige Fehler behoben. 
+
+Gleiches gilt auch für das Schlagwortregister `tei-fpv.xml`. Es basiert auf dem neuen Schlagwortverzeichnis der Edition, das unter https://github.com/Fraktionsprotokolle-de/fpv-skos zu finden ist.
+
+### Beacon-Datei
 
 Eine Beacon-Datei (XML:ID und GND-Nummer) findet sich unter [https://fraktionsprotokolle.de/beacon_kgparl.txt](https://www.fraktionsprotokolle.de/beacon_kgparl_gnd.txt)
 
@@ -58,12 +63,12 @@ Copyright © 2022 KGParl e.V. – Alle Rechte vorbehalten! Möchten Sie dieses T
 
 ## Kontakt
 
-**Dr. Sven Jüngerkes**\
-Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)\
-Schiffbauerdamm 40\
-10117 Berlin\
-juengerkes@kgparl.de\
-Telefon 030/206 33 94-32 - Fax 030/206 33 94-50\
+**Dr. Sven Jüngerkes**
+Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)
+Schiffbauerdamm 40
+10117 Berlin
+juengerkes@kgparl.de
+Telefon 030/206 33 94-32
 http://www.kgparl.de – https://fraktionsprotokolle.de
 
 ------

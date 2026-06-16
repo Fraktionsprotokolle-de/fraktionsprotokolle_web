@@ -1,14 +1,16 @@
-# <p style="text-align: center;">Online Edition of the Minutes of the Parliamentary Groups of the German Bundestag</p>
+# <p style="text-align: center;">About the Online Edition</p>
 
-------
+---
 
-**This online edition publishes the historical minutes of the parliamentary groups and groups in the German Bundestag since 1949.**
+**This digital edition presents the records of the parliamentary party groups, parliamentary groups, and the CSU Regional Group in the German Bundestag from 1949 to 2005 in an edited digital form.**
 
-As part of the [edition program “Parliamentary Groups in the German Bundestag 1949–2005”](https://kgparl.de/forschung/fraktionen-im-bundestag/), the [Commission for the History of Parliamentarism and Political Parties (KGParl)](https://kgparl.de/) makes accessible, for both research and the public, a unique body of sources on the history of parliamentary culture and parliamentarism in the Federal Republic of Germany and provides it online.
+It is being developed within the framework of the [edition project *“Parliamentary Party Groups in the German Bundestag, 1949–2005”*](https://kgparl.de/forschung/fraktionen-im-bundestag/) conducted by the [Commission for the History of Parliamentarism and Political Parties (KGParl)](https://kgparl.de/). In this way, a central body of sources for the history of parliamentarism in the Federal Republic of Germany is made available for research and the broader public.
 
-For the regular meetings of the major parliamentary groups, groups, and regional groups represented in the German Bundestag between 1949 and 2005 (CDU/CSU, SPD, FDP, CSU Regional Group, as well as the Greens and the PDS), minutes have been preserved almost continuously since 1949, in some cases even including audio recordings. These materials constitute an excellent source base for post-Second World War German history and provide comprehensive insights into the functioning of the political system of the Federal Republic. No other national parliament in Europe possesses a comparably extensive and continuous archival record of these central parliamentary organizational units.
+A large number of records have survived for the sessions of the CDU/CSU, SPD, FDP, the CSU Regional Group (CSU-Landesgruppe), the Greens, and the PDS, in some cases supplemented by transcribed tape recordings. The edition makes these materials available in a structured form for research, reading, and scholarly use.
 
-Several thousand minutes from more than sixty years of parliamentary history in the Federal Republic of Germany are already conveniently accessible online. The edition thus offers researchers and the wider public a unique documentation of the internal communication and decision-making structures of a modern parliament. In this way, the KGParl’s edition program also makes an important contribution to civic education, transparency, and public understanding of the foundations of our parliamentary democracy.
+## Access and Use
+
+The digital edition allows both full-text searching and navigation by parliamentary party group, period, and individual session; it also includes register-based access to persons and additional contextual information. The digital resource is further complemented by scholarly introductions. The digital edition forms part of a broader long-term undertaking that also includes the parallel publication of printed volumes.
 
 ## Contact
 

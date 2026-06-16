@@ -1,18 +1,20 @@
-# <p style="text-align: center;">Online-Edition der Protokolle der Fraktionen des Deutschen Bundestags</p>
+# <p style="text-align: center;">Über die Online-Edition</p>
 
 ------
 
-**In dieser Online-Edition werden die historischen Sitzungsprotokolle der Fraktionen und Gruppen im Deutschen Bundestag seit 1949 veröffentlicht.**
+**Die vorliegende digitale Edition wird in den nächsten Jahren die Protokolle der Fraktionen, Gruppen und der CSU-Landesgruppe des Deutschen Bundestages aus der Zeit von 1949 bis 2005 erschließen.**
 
-Im Rahmen des [Editionsprogramms »Fraktionen im Deutschen Bundestag 1949–2005«](https://kgparl.de/forschung/fraktionen-im-bundestag/) erschließt die [Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)](https://kgparl.de/) mit dieser Edition einen einzigartigen Quellenbestand zur Geschichte der parlamentarischen Kultur und des Parlamentarismus in der Bundesrepublik Deutschland für Forschung und Öffentlichkeit und stellt diesen online bereit.
+Sie entsteht im Rahmen des [Editionsprogramms »Fraktionen im Deutschen Bundestag 1949–2005«](https://kgparl.de/forschung/fraktionen-im-bundestag/) der [Kommission für Geschichte des Parlamentarismus und der politischen Parteien (KGParl)](https://kgparl.de/). Damit wird ein zentraler Quellenbestand zur Geschichte des Parlamentarismus in der Bundesrepublik Deutschland für Forschung und Öffentlichkeit bereitgestellt.
 
-Zu den regelmäßigen Sitzungen der zwischen 1949 und 2005 maßgeblichen Fraktionen, Gruppen und Landesgruppen im Deutschen Bundestag (CDU/CSU, SPD, FDP, CSU-Landesgruppe sowie GRÜNE und PDS), sind seit 1949 fast durchgängig Protokolle, teilweise sogar Tonbandaufzeichnungen, überliefert, die eine exzellente Quellenbasis zur deutschen Geschichte nach dem Zweiten Weltkrieg bieten und umfassend über die Funktionsweise des politischen Systems der Bundesrepublik Auskunft geben können. Kein anderes Nationalparlament in Europa verfügt über eine vergleichbar umfassende und kontinuierliche Überlieferung zu diesen zentralen parlamentarischen Organisationseinheiten.
+Überliefert sind zu den Sitzungen von CDU/CSU, SPD, FDP, CSU-Landesgruppe, GRÜNEN und PDS in großer Zahl Protokolle, teilweise auch verschriftlichte Tonbandaufzeichnungen. Die Edition macht diese Materialien in strukturierter Form für Recherche, Lektüre und wissenschaftliche Nutzung zugänglich.
 
-Mehrere tausend Protokolle aus über 60 Jahren Parlamentarismusgeschichte der Bundesrepublik Deutschland sind bereits jetzt online bequem zugänglich sein. Die Edition bietet damit Forscherinnen und Forschern sowie der Öffentlichkeit eine einzigartige Dokumentation zur internen Kommunikations- und Entscheidungsstruktur in einem modernen Parlament. Das Editionsprogramm der KGParl leistet so auch einen wichtigen Beitrag zur politischen Bildung, zur Transparenz und zur Aufklärung über die Grundlagen unserer parlamentarischen Demokratie.
+## Zugänge und Nutzung
+
+Die digitale Edition ermöglicht die Recherche in den Volltexten ebenso wie die Navigation nach Fraktionen, Zeiträumen und Sitzungen; hinzu kommen registergestützte Zugänge zu Personen und weiteren Kontextinformationen. Ergänzt wird das digitale Angebot durch wissenschaftliche Einleitungen. Die digitale Edition ist Teil eines Gesamtvorhabens der KGParl, zu dem auch die parallel erscheinenden Druckbände sowie wissenschaftliche Veranstaltungen, Tagungen und Workshops gehören.
 
 ## Stand der Edition
 
-**Stand Mai 2025** sind folgende Sitzungsprotokolle in TEI-XML veröffentlicht worden:
+**Stand Sommer 2026** sind folgende Quellenbestände veröffentlicht worden:
 
 - CDU/CSU-Fraktion: 1949–1976
 - SPD-Fraktion: 1949–1980
@@ -20,7 +22,7 @@ Mehrere tausend Protokolle aus über 60 Jahren Parlamentarismusgeschichte der Bu
 - CSU-Landesgruppe: 1949–1983
 - Fraktion DIE GRÜNEN: 1983–1990
 
-Die Sitzungsprotokolle für die CDU/CSU-Fraktion (1976–1980) werden derzeit bearbeitet und sollen 2027 online sowie als Teiledition im Druck verfügbar sein. Die Protokolle der damals parlamentarischen Gruppe und später Fraktion der PDS werden derzeit für die Jahre 1990 bis 1998 erfasst und bearbeitet.
+Die Sitzungsprotokolle für die CDU/CSU-Fraktion (1976–1980) werden derzeit bearbeitet und sollen 2027 vollständig online sowie als Teiledition im Druck verfügbar sein. Die Protokolle der damals parlamentarischen Gruppe und später Fraktion der PDS werden derzeit für die Jahre 1990 bis 1998 bearbeitet.
 
 ## Kontakt
 

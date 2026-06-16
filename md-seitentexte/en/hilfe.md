@@ -1,53 +1,53 @@
-## Navigating the Website
+# Navigating the Website
 
-The Fraktionsprotokolle edition offers several ways to explore the documents:
+The Fraktionsprotokolle edition offers various ways to explore the documents:
 
 - **Protocol List:** The [Protocol List](liste.html) allows you to browse all available protocols chronologically and filter by parliamentary group or legislative period.
-- **Full-Text Search:** The [Search](suche.html) enables you to search all protocols by keywords, persons, or topics.
+- **Full-text Search:** The [Search](suche.html) enables you to search all protocols by keywords, persons, or topics.
 - **Calendar:** The [Calendar](kalender.html) provides a chronological overview of all session dates.
-- **Indices:** The [Person Index](personenregister.html) and the [Organisation Index](listorg.html) offer alphabetical access.
+- **Indexes:** The indexes offer alphabetical access points.
 
-## Reading Protocols
+# Reading Protocols
 
-Each protocol contains the transcribed and edited text of the respective parliamentary group meeting. The protocols have been prepared according to scholarly standards and are annotated.
+Each protocol contains the transcribed and edited text of the respective parliamentary group session. The protocols have been prepared according to scholarly standards and are supplemented with annotations.
 
-### Session Agenda
+## Session Agenda
 
-On the right-hand side, you will find the table of contents (session agenda), which gives you a quick overview of the topics discussed and facilitates navigation within the document.
+On the left margin or at the top of the document you will find the table of contents (session agenda), which gives you a quick overview of the topics discussed and facilitates navigation within the document.
 
-### Annotations
+## Annotations
 
-The footnotes contain editorial annotations, source references, and additional information. Click on a footnote number to jump to the corresponding annotation.
+The endnotes/annotations contain editorial comments, source references, and further information. Click on a footnote number to jump to the corresponding annotation. Many annotations contain hyperlinks, mostly to resources of the German Bundestag and its parliamentary information and documentation system.
 
-## Using the Search
+# Using the Search
 
-The full-text search allows you to search all protocols for your search terms.
+The full-text search searches all protocols for your search terms.
 
-### Search Tips
+## Search Tips
 
 - Use precise search terms for better results
-- You can search for names, places, or subject topics
-- The filters on the left side allow you to narrow results by parliamentary group, legislative period, and persons
-- Search results can be sorted by various criteria
+- You can search for any string (including truncated forms, etc.)
+- The filters on the right side allow you to narrow results by parliamentary group, legislative period, and persons
+- Due to technical limitations, only the first match is shown in context. However, additional matches may exist within the same document — open the document itself to find them. Matches are visually highlighted.
 
-## Download and Citation
+# Download and Citation
 
-All protocols are available for download in XML format (TEI). Use the download button on the protocol page to download the source file.
+All protocols are available for download in XML format (TEI) and as PDF. Use the download button on the protocol page to view the XML file or the PDF.
 
-### Citation
+# How to Cite
 
-When citing the protocols, please provide the edition, the date of the session, and the corresponding page number. Detailed citation guidelines can be found in the respective introductory volumes.
+When citing the protocols, please provide the edition, the date of the session, and, where applicable, the agenda item (SVP). You may also use the consecutively numbered paragraphs or paragraph numbers (starting from 1 per SVP). Citation suggestions can be found at the top of each document.
 
-## Technical Notes
+# Technical Notes
 
-### Browser Compatibility
+## Browser Compatibility
 
 This website works best with current versions of Firefox, Chrome, Safari, or Edge. JavaScript must be enabled to use all features.
 
-### Mobile Use
+## Mobile Use
 
-The website is optimised for use on mobile devices. The menu can be accessed via the icon in the upper right corner.
+The website is designed for use on mobile devices. The menu is accessible via the icon in the upper right corner.
 
-## Contact for Issues
+# Contact for Issues
 
-For technical problems or questions about using the website, please refer to the [Contact page](kontakt.html) or email [info@kgparl.de](mailto:info@kgparl.de).
+For technical problems or questions about using the website, please visit the [Contact page](kontakt.html) or send an email to [info@kgparl.de](mailto:info@kgparl.de).
