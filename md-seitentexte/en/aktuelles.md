@@ -12,7 +12,7 @@ The new website has not only been visually redesigned, but is also significantly
 
 Care was taken to preserve all existing features. For example, access to the person index via GND number through a web interface continues to work: https://www.fraktionsprotokolle.de/gnd/GND-number (example: https://www.fraktionsprotokolle.de/gnd/107432587).
 
-An automatically generated Beacon list continues to be available at https://fraktionsprotokolle.de/beacon_kgparl_gnd.txt. However, the Beacon format has lost its most important aggregator with the discontinuation of Findbuch.de and therefore plays a lesser role in practice than before.
+An automatically generated Beacon list continues to be available at `https://fraktionsprotokolle.de/beacon_kgparl_gnd.txt`. However, the Beacon format has lost its most important aggregator with the discontinuation of Findbuch.de and therefore plays a lesser role in practice than before.
 
 The [GitHub repository of the edition](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web) continues to serve as the basis for the website: changes made to the GitHub directory are automatically applied to the website overnight.
 
