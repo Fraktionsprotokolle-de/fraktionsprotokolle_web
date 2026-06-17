@@ -10,7 +10,7 @@ Auf dieser Seite informieren wir über wesentliche Neuerungen der Edition: neue 
 
 Der neue Webauftritt ist nicht nur optisch überarbeitet, sondern auch deutlich schneller, responsiver und insgesamt einfacher zu nutzen. Ob auf dem PC, Telefon oder einem Tablet, die Edition lässt sich überall sehr gut nutzen. Zugleich schafft die neue technische Basis bessere Voraussetzungen für eine nachhaltige Weiterentwicklung der digitalen Edition.
 
-Es wurde dabei Wert darauf gelegt, alle bisherigen Features zu übernehmen. So funktioniert beispielsweise weiterhin der Zugriff auf den Personenindex via GND-Nummer über eine Webschnittstelle: https://www.fraktionsprotokolle.de/gnd/GND-Nummer (Beispiel:  https://www.fraktionsprotokolle.de/gnd/107432587).
+Es wurde dabei Wert darauf gelegt, alle bisherigen Features zu übernehmen. So funktioniert beispielsweise weiterhin der Zugriff auf den Personenindex via GND-Nummer über eine Webschnittstelle: `https://www.fraktionsprotokolle.de/gnd/GND-Nummer` (Beispiel:  https://www.fraktionsprotokolle.de/gnd/107432587).
 
 Eine automatisiert erstellte Beacon-Liste wird weiterhin unter `https://fraktionsprotokolle.de/beacon_kgparl_gnd.txt` bereitgestellt. Das Beacon-Format hat allerdings mit der Einstellung von Findbuch.de seinen wichtigsten Aggregator verloren und spielt daher in der Praxis eine geringere Rolle als früher.
 

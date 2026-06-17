@@ -10,7 +10,7 @@ On this page we report on significant updates to the edition: newly unlocked col
 
 The new website has not only been visually redesigned, but is also significantly faster, more responsive, and easier to use overall. Whether on a PC, phone, or tablet, the edition works very well across all devices. At the same time, the new technical foundation creates better conditions for the sustainable further development of the digital edition.
 
-Care was taken to preserve all existing features. For example, access to the person index via GND number through a web interface continues to work: https://www.fraktionsprotokolle.de/gnd/GND-number (example: https://www.fraktionsprotokolle.de/gnd/107432587).
+Care was taken to preserve all existing features. For example, access to the person index via GND number through a web interface continues to work: `https://www.fraktionsprotokolle.de/gnd/GND-number` (example: https://www.fraktionsprotokolle.de/gnd/107432587).
 
 An automatically generated Beacon list continues to be available at `https://fraktionsprotokolle.de/beacon_kgparl_gnd.txt`. However, the Beacon format has lost its most important aggregator with the discontinuation of Findbuch.de and therefore plays a lesser role in practice than before.
 
