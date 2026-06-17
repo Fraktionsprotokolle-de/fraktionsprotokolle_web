@@ -12,7 +12,7 @@ Der neue Webauftritt ist nicht nur optisch überarbeitet, sondern auch deutlich 
 
 Es wurde dabei Wert darauf gelegt, alle bisherigen Features zu übernehmen. So funktioniert beispielsweise weiterhin der Zugriff auf den Personenindex via GND-Nummer über eine Webschnittstelle: https://www.fraktionsprotokolle.de/gnd/GND-Nummer (Beispiel:  https://www.fraktionsprotokolle.de/gnd/107432587).
 
-Eine automatisiert erstellte Beacon-Liste wird weiterhin unter https://fraktionsprotokolle.de/beacon_kgparl_gnd.txt bereitgestellt. Das Beacon-Format hat allerdings mit der Einstellung von Findbuch.de seinen wichtigsten Aggregator verloren und spielt daher in der Praxis eine geringere Rolle als früher.
+Eine automatisiert erstellte Beacon-Liste wird weiterhin unter `https://fraktionsprotokolle.de/beacon_kgparl_gnd.txt` bereitgestellt. Das Beacon-Format hat allerdings mit der Einstellung von Findbuch.de seinen wichtigsten Aggregator verloren und spielt daher in der Praxis eine geringere Rolle als früher.
 
 Auch weiterhin ist das [Github-Repositorium der Edition](https://github.com/Fraktionsprotokolle-de/fraktionsprotokolle_web) Grundlage für die Webseite: Werden Änderungen am Github-Verzeichnis vorgenommen, so werden diese automatisch über Nacht für die Website übernommen.
 
