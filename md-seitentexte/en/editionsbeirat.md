@@ -38,5 +38,5 @@ The responsibilities of the Advisory Board include reviewing the progress of the
 - Annette *Düwel-Frings*, Managing Director of the Parliamentary Group of Bündnis 90/DIE GRÜNEN in the German Bundestag- 
 - Ines *Feierabend*, Former State Secretary, Managing Director of DIE LINKE in the German Bundestag
 - Dr. Hagen *Langheim*, Head of Office to the Parliamentary Managing Director of the CSU Regional Group in the German Bundestag
-- Mathias *Martin*, Managing Director of the SPD Parliamentary Group in the German Bundestag
+- Dr. Judith *Horrichs*, Managing Director of the SPD Parliamentary Group in the German Bundestag
 - Dr. Tobias *Pohl*, Parliamentary Group Director of the CDU/CSU Parliamentary Group in the German Bundestag

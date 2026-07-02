@@ -29,5 +29,5 @@ Durch die Bereitstellung zusätzlicher Mittel des Deutschen Bundestages konnte d
 - Annette *Düwel-Frings*, Geschäftsführerin der Fraktion Bündnis 90/DIE GRÜNEN im Deutschen Bundestag
 - Ines *Feierabend*, Staatssekretärin a. D., Geschäftsführerin DIE LINKE im Deutschen Bundestag
 - Dr. Hagen *Langheim*, Büroleiter des Parlamentarischen Geschäftsführers der CSU-Landesgruppe im Deutschen Bundestag
-- Mathias *Martin*, Geschäftsführer der SPD-Fraktion im Deutschen Bundestag
+- Dr. Judith *Horrichs*, Geschäftsführerin der SPD-Fraktion im Deutschen Bundestag
 - Dr. Tobias *Pohl*, Fraktionsdirektor der CDU/CSU-Fraktion im Deutschen Bundestag
