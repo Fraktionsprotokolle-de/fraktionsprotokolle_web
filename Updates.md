@@ -12,7 +12,8 @@ Updates bei personen.xml (neue Personen, Inhalte etc.) erfolgen unregelmäßig u
 
 *(Protokolle und Namensliste werden spätestens 24h nach Veröffentlichung hier auch auf der Webseite fraktionsprotokolle.de abrufbar sein.)*
 
-- 2026-08.24: idno type="DOI" zum Schema hinzugefügt
+- 2026-09-14: Personen-Liste aktualisiert, Stand 31. August 2026. Fehlerkorrektur beim Eintrag zu Gert Bastian (falsche GND korrigiert). Genauere Hinweise zur verwendeten Datenquelle beim Deutschen Bundestag und zum Zeitraum des Datenimports.
+- 2026-08-24: idno type="DOI" zum Schema hinzugefügt
 - 2026-08-13: ref Attribut in orgName erlauben, xml:id auf optional gesetzt
 - **2026-06-16: Großer Relaunch der Website (Version 1.4).**
   - Die Plattform wurde vollständig neu aufgebaut. TEI-Publisher/eXist-db wurde durch eine statische Architektur mit Typesense-Suche ersetzt, basierend auf dem ACDH-Framework `dse-static-cookiecutter`. Siehe dazu: https://github.com/Fraktionsprotokolle-de/kgparl-protokolle-ssg. 
